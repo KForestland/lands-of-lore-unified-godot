@@ -1,0 +1,16 @@
+# Diagnostic wall texture review
+
+Launch `tools/lol2/run_wall_review.sh`. N/P or left/right arrows cycle through
+exported walls. The default is rock wall2168; photo material3 is labelled.
+The scene shows original file-palette textures with inferred UVs, unlit and
+without transparency. It does not replace cave collision or geometry.
+
+Local assets are required under assets/lol2/generated/wall_review: walls.json
+(the RE export_flat_wall_uvs.py flat_wall_uvs.json output), plus material_ID.png
+for each referenced descriptor (the corrected RE wall review's first variant,
+mip0). Generated game assets are excluded from Git. The RE tools accept local
+game paths; see KForestland/lands-of-lore-2-re docs/wall-texture-review.md.
+
+Validation: --wall-smoke loads946 meshes and14 textures; --wall-capture saves
+captures/wall_texture_review.png. Rendered output inspected on the local Godot
+OpenGL compatibility renderer. Live original-game visual parity remains open.
