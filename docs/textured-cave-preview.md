@@ -98,3 +98,14 @@ GPU checkpoint14 inspected. Prop inspectors343/134 were occluded by walls;
 fixed110-unit camera offset needs improvement, not treated as visual proof.
 No prop collision or creature spawn changes. Creature frame binding remains
 open. Source artifact lol2_out/draracle_expanded_props_2026-09-11/.
+
+Prop inspection camera corrected (2026-09-11): after physics registration,
+--prop-record samples16 horizontal directions using cave collision, keeps
+the original view when clear, otherwise selects the greatest clearance
+(up to110 units,6-unit wall margin). Player collision is excluded. It warns
+if no8-unit horizontal view exists; this is not a guarantee for every
+possible prop or occlusion by non-colliding props.
+Rendered343 boulder and134 vegetation inspected successfully (previously
+both blocked by walls); clearance97.2 and110 units respectively. Clean
+644-prop/2373-wall/1939-ceiling smoke. Both working copies updated. Prop
+positions and walking collision unchanged. Creature placement still open.

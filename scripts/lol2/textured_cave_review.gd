@@ -36,9 +36,8 @@ func _ready() -> void:
 				return
 			prop_capture = "--walk-capture" in OS.get_cmdline_user_args()
 			var center: Vector3 = prop_centers[int(value)]
-			player.position = center + Vector3(0, -24, 110)
-			player.rotation = Vector3.ZERO
-			camera.rotation = Vector3.ZERO
+			await get_tree().physics_frame
+			_place_prop_camera(center)
 			flying = true
 			flight_label.text = "Prop %s inspection · fly mode · F returns to walking" % value
 	flight_label.position.y = 215
@@ -208,3 +207,31 @@ func _process(_delta: float) -> void:
 			DirAccess.make_dir_recursive_absolute("res://captures")
 			get_viewport().get_texture().get_image().save_png("res://captures/prop_preview.png")
 			get_tree().quit()
+
+func _place_prop_camera(center: Vector3) -> void:
+	# Query after the scene collision has entered the physics world.
+	# Keep the original +Z view when clear; otherwise choose more open space.
+	var space := get_world_3d().direct_space_state
+	var best_direction := Vector3.BACK
+	var best_distance := 0.0
+	for index in range(16):
+		var angle := float(index) * TAU / 16.0
+		var direction := Vector3(sin(angle), 0, cos(angle))
+		var query := PhysicsRayQueryParameters3D.create(center, center + direction * 116.0)
+		query.exclude = [player.get_rid()]
+		query.hit_from_inside = true
+		var hit := space.intersect_ray(query)
+		var distance := 110.0
+		if not hit.is_empty():
+			distance = maxf(0.0, center.distance_to(hit.position) - 6.0)
+		if distance > best_distance:
+			best_distance = distance
+			best_direction = direction
+		if best_distance >= 110.0:
+			break
+	if best_distance < 8.0:
+		push_warning("Prop center has no clear horizontal inspection view")
+	player.global_position = center + best_direction * maxf(best_distance, 1.0) - Vector3(0, 24, 0)
+	player.rotation = Vector3(0, atan2(best_direction.x, best_direction.z), 0)
+	camera.rotation = Vector3.ZERO
+	print("Prop inspection camera clearance: %.1f units" % best_distance)
