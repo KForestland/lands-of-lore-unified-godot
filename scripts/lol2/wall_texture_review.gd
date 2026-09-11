@@ -40,6 +40,20 @@ func _ready() -> void:
 		if int(walls[i]["record"]) == 2168:
 			selected = i
 			break
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--wall-id="):
+			var requested := argument.trim_prefix("--wall-id=")
+			var found := false
+			if requested.is_valid_int():
+				for i in range(walls.size()):
+					if int(walls[i]["record"]) == int(requested):
+						selected = i
+						found = true
+						break
+			if not found:
+				push_error("Wall ID not present in diagnostic export: " + requested)
+				get_tree().quit(1)
+				return
 	if "--wall-smoke" in OS.get_cmdline_user_args():
 		for i in range(walls.size()):
 			selected = i

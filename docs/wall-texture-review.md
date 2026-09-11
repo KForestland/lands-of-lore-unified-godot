@@ -20,3 +20,8 @@ shader handles clamp/clamp, repeat/clamp and repeat/repeat per fragment. The
 original946-wall set was accepted visually by the project owner before this
 expansion. All2035 meshes load in smoke; GPU capture succeeds. The added walls
 remain diagnostic and have not received that same user visual acceptance yet.
+
+Jump directly to a record with `tools/lol2/run_wall_review.sh -- --wall-id=2702`.
+Unknown or malformed IDs exit with an error. Wall2702's blue file-palette image
+was audited against original indices (16384 pixels, zero mismatches); direct
+selection and its GPU capture were checked. Live lighting remains unverified.
