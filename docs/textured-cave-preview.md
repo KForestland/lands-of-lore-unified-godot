@@ -48,3 +48,20 @@ added by the roof change. Audio remains deferred.
 Direct checkpoint navigation: `tools/lol2/run_textured_cave.sh --checkpoint=14`.
 Valid checkpoint numbers are 1–119. The RE object catalogue links placement
 groups to nearby checkpoints for identification work. It does not spawn props.
+
+## Placed static props
+
+354 instances now visible from templates16/21/23/24: vegetation, stalagmite
+and boulder sprite candidates. B toggles. Direct inspection:
+`tools/lol2/run_textured_cave.sh --prop-record=196` starts in fly mode facing
+vegetation; N/P returns to checkpoints. Optional --walk-capture saves a view.
+
+Build assets with RE `export_cave_prop_preview.py --game-root GAME
+--sprites SPRITE_PREVIEW_OUTPUT --out GODOT/assets/lol2/generated/prop_review`
+on one line, after running the sprite preview extractor. Assets ignored by Git.
+
+Positions and state/frame dimensions come from source. Renderer129300..129377
+supports width/height and frame trims by disassembly. Alpha, fixed-Y billboard
+and frame-flag orientation remain provisional. No prop interactions/collision
+or native spawn-state parity. Column28 deferred because of region-height flag2.
+Clean354-instance smoke and GPU record196 capture inspected.

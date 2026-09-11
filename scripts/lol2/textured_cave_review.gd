@@ -3,6 +3,11 @@ extends "res://scripts/lol2/original_walk_review.gd"
 const WALL_ROOT := "res://assets/lol2/generated/wall_review/"
 var native_walls: Node3D
 var comparison_walls: Node3D
+var prop_capture := false
+var prop_capture_frames := 0
+var props_root: Node3D
+var prop_count := 0
+var prop_centers: Dictionary = {}
 var ceiling_count := 0
 var roof: MeshInstance3D
 var wall_count := 0
@@ -22,10 +27,24 @@ func _ready() -> void:
 					return
 				initial_checkpoint = int(value) - 1
 		_jump_checkpoint(initial_checkpoint)
-	flight_label.position.y = 190
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--prop-record="):
+			var value := argument.trim_prefix("--prop-record=")
+			if not value.is_valid_int() or not prop_centers.has(int(value)):
+				push_error("Prop record is not in this preview")
+				get_tree().quit(1)
+				return
+			prop_capture = "--walk-capture" in OS.get_cmdline_user_args()
+			var center: Vector3 = prop_centers[int(value)]
+			player.position = center + Vector3(0, -24, 110)
+			player.rotation = Vector3.ZERO
+			camera.rotation = Vector3.ZERO
+			flying = true
+			flight_label.text = "Prop %s inspection · fly mode · F returns to walking" % value
+	flight_label.position.y = 215
 	if "--textured-smoke" in OS.get_cmdline_user_args():
 		print("Textured cave: %d walls, %d ceilings, %d wall materials; existing collision retained" % [wall_count, ceiling_count, wall_materials.size()])
-		get_tree().quit(0 if wall_count > 0 and ceiling_count == 1939 else 1)
+		get_tree().quit(0 if wall_count > 0 and ceiling_count == 1939 and prop_count == 354 else 1)
 
 func _show_shell_face(_points: Array) -> bool:
 	# Rebuild visuals from explicit shell kinds below; retain all original collision.
@@ -65,6 +84,7 @@ func _load_pair() -> void:
 			break
 	var translation := point(fixtures[selected].faces[0][0]) - point(anchor.points[0]) * 64.0
 	_build_roof(translation)
+	_build_props(translation)
 	var groups: Dictionary = {}
 	wall_count = 0
 	for wall in wall_data.walls:
@@ -95,7 +115,47 @@ func _load_pair() -> void:
 		var instance := MeshInstance3D.new()
 		instance.mesh = surface.commit()
 		native_walls.add_child(instance)
-	label.text = "Textured cave — restoration preview\n%d recovered wall spans · T: compare provisional walls\nWASD: move · Shift: sprint · Mouse: look · Esc: release · R: reset\nF: fly · Space/Ctrl: fly up/down · N/P: checkpoints\nC: show/hide roof · Ceiling rock assignment provisional.\nFirst variants; lighting, transparency and collision unfinished." % wall_count
+	label.text = "Textured cave — restoration preview\n%d recovered wall spans · T: compare provisional walls\nWASD: move · Shift: sprint · Mouse: look · Esc: release · R: reset\nF: fly · Space/Ctrl: fly up/down · N/P: checkpoints\nC: roof · B: props (354 static preview placements).\nRoof material, prop alpha/orientation, lighting and collision provisional." % wall_count
+
+func _build_props(translation: Vector3) -> void:
+	props_root = Node3D.new()
+	stage.add_child(props_root)
+	var root := "res://assets/lol2/generated/prop_review/"
+	if not FileAccess.file_exists(root + "props.json"):
+		push_error("Prop preview assets missing: run export_cave_prop_preview.py")
+		get_tree().quit(1)
+		return
+	var catalog = JSON.parse_string(FileAccess.get_file_as_string(root + "props.json"))
+	var materials: Dictionary = {}
+	prop_count = 0
+	for prop in catalog.props:
+		var id := int(prop.descriptor)
+		if not materials.has(id):
+			var image := Image.load_from_file(root + "prop_%d.png" % id)
+			if image == null or image.is_empty():
+				push_error("Prop image missing")
+				get_tree().quit(1)
+				return
+			var material := StandardMaterial3D.new()
+			material.albedo_texture = ImageTexture.create_from_image(image)
+			material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+			material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+			material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
+			material.alpha_scissor_threshold = 0.5
+			material.cull_mode = BaseMaterial3D.CULL_DISABLED
+			material.billboard_mode = BaseMaterial3D.BILLBOARD_FIXED_Y
+			materials[id] = material
+		var quad := QuadMesh.new()
+		quad.size = Vector2(float(prop.right) - float(prop.left), float(prop.top) - float(prop.bottom))
+		quad.center_offset = Vector3((float(prop.left) + float(prop.right)) / 2, (float(prop.bottom) + float(prop.top)) / 2, 0)
+		quad.material = materials[id]
+		var instance := MeshInstance3D.new()
+		instance.mesh = quad
+		instance.position = point(prop.position_native) + translation
+		props_root.add_child(instance)
+		prop_centers[int(prop.record)] = instance.position + quad.center_offset
+		prop_count += 1
+	print("Static prop preview: %d instances" % prop_count)
 
 func _build_roof(translation: Vector3) -> void:
 	# Original ceiling geometry; diagnostic rock material and planar UVs.
@@ -128,8 +188,18 @@ func _build_roof(translation: Vector3) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	super._unhandled_input(event)
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_B:
+		props_root.visible = not props_root.visible
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_C:
 		roof.visible = not roof.visible
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_T:
 		native_walls.visible = not native_walls.visible
 		comparison_walls.visible = not native_walls.visible
+
+func _process(_delta: float) -> void:
+	if prop_capture:
+		prop_capture_frames += 1
+		if prop_capture_frames == 30:
+			DirAccess.make_dir_recursive_absolute("res://captures")
+			get_viewport().get_texture().get_image().save_png("res://captures/prop_preview.png")
+			get_tree().quit()
