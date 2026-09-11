@@ -89,8 +89,9 @@ func show_wall() -> void:
 	material.set_shader_parameter("wall_texture", textures[int(wall["descriptor"])])
 	material.set_shader_parameter("address_mode", int(wall.get("addressing", 8)))
 	mesh_instance.material_override = material
-	var normal := (points[1] - points[0]).cross(points[3] - points[0]).normalized()
-	var extent := maxf(points[0].distance_to(points[1]), points[0].distance_to(points[3]))
+	var edge := points[1] - points[0]
+	var normal := Vector3(-edge.z, 0.0, edge.x).normalized()
+	var extent := maxf(points[0].distance_to(points[1]), maxf(points[0].distance_to(points[3]), points[1].distance_to(points[2])))
 	camera.position = normal * maxf(extent * 1.5, 10.0)
 	camera.look_at(Vector3.ZERO, Vector3.UP)
 	label.text = "Diagnostic wall textures | N/P or arrows: next/previous\nWall %d | region %d | material %d | %d/%d\nOriginal palette, inferred UVs; lighting and transparency unverified." % [wall["record"], wall["region"], wall["descriptor"], selected + 1, walls.size()]

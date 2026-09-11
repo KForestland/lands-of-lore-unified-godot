@@ -25,3 +25,7 @@ Jump directly to a record with `tools/lol2/run_wall_review.sh -- --wall-id=2702`
 Unknown or malformed IDs exit with an error. Wall2702's blue file-palette image
 was audited against original indices (16384 pixels, zero mismatches); direct
 selection and its GPU capture were checked. Live lighting remains unverified.
+
+Sloped extension:2327 walls/23 textures. Camera facing now uses the horizontal
+edge so triangular spans with a zero-height endpoint remain viewable. Smoke
+passes without camera errors; sloped wall2338 was captured and inspected.
