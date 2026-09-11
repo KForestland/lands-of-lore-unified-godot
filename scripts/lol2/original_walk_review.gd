@@ -1,4 +1,5 @@
 extends Node3D
+@export var default_full_map := false
 const WALK_SPEED = 80.0
 const SPRINT_SPEED = 144.0
 const ROOT = "res://assets/lol2/generated/original_floors/"
@@ -32,7 +33,7 @@ func point(p: Array) -> Vector3:
 	return Vector3(p[0], p[1], p[2])
 func _ready() -> void:
 	data = JSON.parse_string(FileAccess.get_file_as_string(ROOT + "floors.json"))
-	full_map = "--full-map" in OS.get_cmdline_user_args()
+	full_map = default_full_map or "--full-map" in OS.get_cmdline_user_args()
 	connected = full_map or "--connected" in OS.get_cmdline_user_args()
 	fixtures = JSON.parse_string(FileAccess.get_file_as_string(ROOT + ("full_walk.json" if full_map else ("connected_walk.json" if connected else "traversal_expanded.json"))))
 	checkpoint_smoke = "--checkpoint-smoke" in OS.get_cmdline_user_args()
@@ -93,7 +94,11 @@ func _load_pair() -> void:
 	var neutral := StandardMaterial3D.new()
 	neutral.cull_mode = BaseMaterial3D.CULL_DISABLED
 	neutral.albedo_color = Color(0.35, 0.39, 0.43)
-	for face in fixture.shell: _add_face(face, neutral, collision_faces)
+	for face in fixture.shell:
+		if _show_shell_face(face):
+			_add_face(face, neutral, collision_faces)
+		else:
+			for index in [0, 1, 2, 0, 2, 3]: collision_faces.append(point(face[index]))
 	for surface in surface_groups.values():
 		surface.generate_normals()
 		var mesh := MeshInstance3D.new()
@@ -145,6 +150,8 @@ func _load_pair() -> void:
 		label.text = "Original cave — connected experimental walk\n%d original regions · amber edges: exits into omitted geometry\nWASD: move · Shift: sprint · Mouse: look · Esc: release · Click: capture · R: reset\nAssumed player size; diagnostic floor UVs and provisional interior spans.\nOpen exits are not barriers. Falls reset automatically." % fixture.regions.size()
 	if full_map:
 		label.text = "Full recovered cave — experimental walk\n1,953 floors · complete extracted layout · walls and openings provisional\nWASD: move · Shift: sprint · Mouse: look · Esc: release · R: reset\nF: fly through geometry · Space/Ctrl: fly up/down · N/P: jump to checkpoint\nAmber: special links · Pink: unresolved materials · Objects and hazards incomplete."
+func _show_shell_face(_points: Array) -> bool:
+	return true
 func _add_face(points: Array, material: Material, collision_faces: PackedVector3Array, uv: Array = []) -> void:
 	var key := material.get_instance_id()
 	var surface: SurfaceTool
