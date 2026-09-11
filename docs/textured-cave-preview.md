@@ -44,3 +44,7 @@ Available research inventory: 1,559 spatial records, 101 action records,
 monster homes, guard paths and fireflies. Classes, asset binding, animation,
 spawn conditions and behavior still need evidence; no plants/enemies are
 added by the roof change. Audio remains deferred.
+
+Direct checkpoint navigation: `tools/lol2/run_textured_cave.sh --checkpoint=14`.
+Valid checkpoint numbers are 1–119. The RE object catalogue links placement
+groups to nearby checkpoints for identification work. It does not spawn props.

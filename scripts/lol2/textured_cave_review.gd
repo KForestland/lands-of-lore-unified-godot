@@ -11,7 +11,17 @@ var wall_materials: Dictionary = {}
 func _ready() -> void:
 	default_full_map = true
 	super._ready()
-	if not checkpoint_smoke: _jump_checkpoint(0)
+	if not checkpoint_smoke:
+		var initial_checkpoint := 0
+		for argument in OS.get_cmdline_user_args():
+			if argument.begins_with("--checkpoint="):
+				var value := argument.trim_prefix("--checkpoint=")
+				if not value.is_valid_int() or int(value) < 1 or int(value) > fixtures[0].checkpoints.size():
+					push_error("Checkpoint must be between 1 and %d" % fixtures[0].checkpoints.size())
+					get_tree().quit(1)
+					return
+				initial_checkpoint = int(value) - 1
+		_jump_checkpoint(initial_checkpoint)
 	flight_label.position.y = 190
 	if "--textured-smoke" in OS.get_cmdline_user_args():
 		print("Textured cave: %d walls, %d ceilings, %d wall materials; existing collision retained" % [wall_count, ceiling_count, wall_materials.size()])
