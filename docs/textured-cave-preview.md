@@ -65,3 +65,17 @@ supports width/height and frame trims by disassembly. Alpha, fixed-Y billboard
 and frame-flag orientation remain provisional. No prop interactions/collision
 or native spawn-state parity. Column28 deferred because of region-height flag2.
 Clean354-instance smoke and GPU record196 capture inspected.
+
+## Region-height columns
+
+The preview now includes88 template28 columns, bringing the total to442
+props. Inspect one using `--prop-record=0`. B toggles all props.
+The native height selector F1DD2..F1E12 passes88 source and72 synthetic
+cases: template bit2 with a region uses signed ceiling-floor, capped255
+and stored as a byte; otherwise it uses the state height. Original anchors
+remain intact, including nine that differ from the base region floor.
+Source region association is supplied rather than live-captured.
+
+This supersedes the earlier column exclusion. Column0 GPU view inspected;
+clean442-prop smoke and33 Python tests pass. Billboard/alpha/spawn and
+interaction/collision limitations still apply.
