@@ -109,3 +109,14 @@ Rendered343 boulder and134 vegetation inspected successfully (previously
 both blocked by walls); clearance97.2 and110 units respectively. Clean
 644-prop/2373-wall/1939-ceiling smoke. Both working copies updated. Prop
 positions and walking collision unchanged. Creature placement still open.
+
+Rock formations expanded (2026-09-11): resources297/298/299/300/301 added
+through the existing28E decoder. Nine total sprite resources pass44 mip
+images/3142 row checks. Thirteen additional static templates supply366
+placements; total1010. All644 previous placement records remain identical.
+Original positions, state dimensions and trim/flip fields retained.
+Headless1010-prop smoke passed; GPU252 hanging rock and273 floor rock
+visually inspected.45 tests pass. Both local Godot trees updated.
+Source artifacts: lol2_out/draracle_rock_previews_2026-09-11/ and
+lol2_out/draracle_rock_props_2026-09-11/. Alpha, billboarding and shading
+remain provisional; no prop collision or creature placement changes.
