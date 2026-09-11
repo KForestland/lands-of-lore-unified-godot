@@ -43,7 +43,7 @@ func _ready() -> void:
 	flight_label.position.y = 215
 	if "--textured-smoke" in OS.get_cmdline_user_args():
 		print("Textured cave: %d walls, %d ceilings, %d wall materials; existing collision retained" % [wall_count, ceiling_count, wall_materials.size()])
-		get_tree().quit(0 if wall_count > 0 and ceiling_count == 1939 and prop_count == 1096 else 1)
+		get_tree().quit(0 if wall_count > 0 and ceiling_count == 1939 and prop_count == 1171 else 1)
 
 func _show_shell_face(_points: Array) -> bool:
 	# Rebuild visuals from explicit shell kinds below; retain all original collision.
@@ -114,7 +114,7 @@ func _load_pair() -> void:
 		var instance := MeshInstance3D.new()
 		instance.mesh = surface.commit()
 		native_walls.add_child(instance)
-	label.text = "Textured cave — restoration preview\n%d recovered wall spans · T: compare provisional walls\nWASD: move · Shift: sprint · Mouse: look · Esc: release · R: reset\nF: fly · Space/Ctrl: fly up/down · N/P: checkpoints\nC: roof · B: props (1096 static preview placements).\nRoof material, prop alpha/orientation, lighting and collision provisional." % wall_count
+	label.text = "Textured cave — restoration preview\n%d recovered wall spans · T: compare provisional walls\nWASD: move · Shift: sprint · Mouse: look · Esc: release · R: reset\nF: fly · Space/Ctrl: fly up/down · N/P: checkpoints\nC: roof · B: props (1171 static preview placements).\nRoof material, prop alpha/orientation, lighting and collision provisional." % wall_count
 
 func _build_props(translation: Vector3) -> void:
 	props_root = Node3D.new()
