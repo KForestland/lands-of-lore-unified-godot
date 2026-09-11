@@ -29,3 +29,10 @@ selection and its GPU capture were checked. Live lighting remains unverified.
 Sloped extension:2327 walls/23 textures. Camera facing now uses the horizontal
 edge so triangular spans with a zero-height endpoint remain viewable. Smoke
 passes without camera errors; sloped wall2338 was captured and inspected.
+
+Manual variants: V cycles stored images, with no automatic timing.2373 walls and
+27 material descriptors now load; smoke covers each wall/variant combination.
+Example: --wall-id=1115. New asset names are material_ID_variant_N.png; older
+single-variant material_ID.png remains supported. Variant layout/transparency
+and playback are explicitly unverified. Original orientation concerns remain
+scheduled for a later visual pass at the owner's request.

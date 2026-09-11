@@ -6,6 +6,7 @@ var selected := 0
 var mesh_instance := MeshInstance3D.new()
 var camera := Camera3D.new()
 var label := Label.new()
+var variant := 0
 var frames := 0
 var textures: Dictionary = {}
 
@@ -29,12 +30,18 @@ func _ready() -> void:
 	for wall in walls:
 		var id := int(wall["descriptor"])
 		if not textures.has(id):
-			var image := Image.load_from_file(ROOT + "material_%d.png" % id)
-			if image == null or image.is_empty():
-				push_error("Missing wall texture %d" % id)
-				get_tree().quit(1)
-				return
-			textures[id] = ImageTexture.create_from_image(image)
+			var variants: Array = []
+			for v in range(int(wall.get("variant_count", 1))):
+				var path := ROOT + "material_%d_variant_%d.png" % [id, v]
+				if v == 0 and not FileAccess.file_exists(path):
+					path = ROOT + "material_%d.png" % id
+				var image := Image.load_from_file(path)
+				if image == null or image.is_empty():
+					push_error("Missing wall variant: " + path)
+					get_tree().quit(1)
+					return
+				variants.append(ImageTexture.create_from_image(image))
+			textures[id] = variants
 	# Start with the original rock fixture rather than the unresolved photo material.
 	for i in range(walls.size()):
 		if int(walls[i]["record"]) == 2168:
@@ -57,7 +64,9 @@ func _ready() -> void:
 	if "--wall-smoke" in OS.get_cmdline_user_args():
 		for i in range(walls.size()):
 			selected = i
-			show_wall()
+			for v in range(textures[int(walls[i]["descriptor"])].size()):
+				variant = v
+				show_wall()
 		print("Wall review: %d meshes and %d textures loaded" % [walls.size(), textures.size()])
 		get_tree().quit()
 	else:
@@ -86,7 +95,7 @@ func show_wall() -> void:
 	mesh_instance.mesh = mesh
 	var material := ShaderMaterial.new()
 	material.shader = load("res://scripts/lol2/wall_review.gdshader")
-	material.set_shader_parameter("wall_texture", textures[int(wall["descriptor"])])
+	material.set_shader_parameter("wall_texture", textures[int(wall["descriptor"])][variant % textures[int(wall["descriptor"])].size()])
 	material.set_shader_parameter("address_mode", int(wall.get("addressing", 8)))
 	mesh_instance.material_override = material
 	var edge := points[1] - points[0]
@@ -95,12 +104,18 @@ func show_wall() -> void:
 	camera.position = normal * maxf(extent * 1.5, 10.0)
 	camera.look_at(Vector3.ZERO, Vector3.UP)
 	label.text = "Diagnostic wall textures | N/P or arrows: next/previous\nWall %d | region %d | material %d | %d/%d\nOriginal palette, inferred UVs; lighting and transparency unverified." % [wall["record"], wall["region"], wall["descriptor"], selected + 1, walls.size()]
+	label.text += "\nV: next stored variant | %d/%d (timing and layout unverified)" % [variant % textures[int(wall["descriptor"])].size() + 1, textures[int(wall["descriptor"])].size()]
 	if int(wall["descriptor"]) == 3:
 		label.text += "\nPHOTO/TEST MATERIAL: cave use unresolved."
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if walls.is_empty() or not event.is_pressed() or event.is_echo():
 		return
+	if event.keycode == KEY_V:
+		variant += 1
+		show_wall()
+		return
+	variant = 0
 	if event.keycode in [KEY_N, KEY_RIGHT]:
 		selected = (selected + 1) % walls.size()
 	elif event.keycode in [KEY_P, KEY_LEFT]:
