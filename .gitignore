@@ -1,0 +1,25 @@
+# Godot
+.godot/
+.import/
+*.translation
+export_presets.cfg
+
+# Build output
+build/
+tmp/
+
+# Session artifacts
+captures/
+edit_log.jsonl
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Locally extracted game content; regenerate from verified material kit.
+assets/lol2/generated/
