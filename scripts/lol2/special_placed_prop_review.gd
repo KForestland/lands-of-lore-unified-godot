@@ -10,7 +10,7 @@ func _remap_path() -> String:
 	return PLACED_ROOT + "remap.png"
 
 func _capture_directory() -> String:
-	return "res://captures/special_placed_%d" % selected_record
+	return _capture_path("special_placed_%d") % selected_record
 
 func _configure_review() -> void:
 	placed_props = JSON.parse_string(FileAccess.get_file_as_string(PLACED_ROOT + "props.json")).props
@@ -81,5 +81,5 @@ func _build_review() -> void:
 	resolve_surface.material.set_shader_parameter("packed_wall_indices", previous)
 	DirAccess.make_dir_recursive_absolute(_capture_directory())
 	var file := FileAccess.open(_capture_directory() + "/placement_view.json", FileAccess.WRITE)
-	file.store_string(JSON.stringify({"selected_record": selected_record, "far_to_near_records": order, "translation": [native_translation.x, native_translation.y, native_translation.z], "scope": "Recovered three single-state placements; fixed-Y preview, fixed inspection camera, original draw order not claimed."}, "  "))
+	if file != null: file.store_string(JSON.stringify({"selected_record": selected_record, "far_to_near_records": order, "translation": [native_translation.x, native_translation.y, native_translation.z], "scope": "Recovered three single-state placements; fixed-Y preview, fixed inspection camera, original draw order not claimed."}, "  "))
 	print("Recovered special placement review: ", order)

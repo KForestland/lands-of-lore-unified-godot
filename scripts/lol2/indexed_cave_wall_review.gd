@@ -67,7 +67,7 @@ func _process(_delta: float) -> void:
 		capture_frames += 1
 		if capture_frames == 20:
 			await RenderingServer.frame_post_draw
-			DirAccess.make_dir_recursive_absolute("res://captures")
-			index_view.get_texture().get_image().save_png("res://captures/cave_wall_indices.png")
-			get_viewport().get_texture().get_image().save_png("res://captures/cave_wall_resolved.png")
+			DirAccess.make_dir_recursive_absolute(_capture_path(""))
+			index_view.get_texture().get_image().save_png(_capture_path("cave_wall_indices.png"))
+			get_viewport().get_texture().get_image().save_png(_capture_path("cave_wall_resolved.png"))
 			get_tree().quit()

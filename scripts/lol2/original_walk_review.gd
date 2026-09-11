@@ -263,5 +263,12 @@ func _physics_process(delta: float) -> void:
 			get_tree().quit(1)
 	if capture and ticks == 30:
 		await RenderingServer.frame_post_draw
-		get_viewport().get_texture().get_image().save_png("res://captures/" + ("full_walk_review.png" if full_map else ("connected_walk_review.png" if connected else "original_walk_review.png")))
+		get_viewport().get_texture().get_image().save_png(_capture_path("") + ("full_walk_review.png" if full_map else ("connected_walk_review.png" if connected else "original_walk_review.png")))
 		get_tree().quit()
+
+func _capture_path(relative: String) -> String:
+	# Exported demos store diagnostics in their writable user-data folder.
+	var root := "res://captures/" if OS.has_feature("editor") else "user://captures/"
+	var destination := root + relative
+	DirAccess.make_dir_recursive_absolute(destination.get_base_dir())
+	return destination

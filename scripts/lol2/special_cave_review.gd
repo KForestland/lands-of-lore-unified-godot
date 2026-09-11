@@ -98,7 +98,7 @@ func _configure_review() -> void:
 	pass
 
 func _capture_directory() -> String:
-	return "res://captures/special_cave"
+	return _capture_path("special_cave")
 
 func _build_review() -> void:
 	var texture := ImageTexture.create_from_image(Image.load_from_file(SPECIAL_ROOT + "sprite_474.png"))

@@ -204,8 +204,8 @@ func _process(_delta: float) -> void:
 	if prop_capture:
 		prop_capture_frames += 1
 		if prop_capture_frames == 30:
-			DirAccess.make_dir_recursive_absolute("res://captures")
-			get_viewport().get_texture().get_image().save_png("res://captures/prop_preview.png")
+			DirAccess.make_dir_recursive_absolute(_capture_path(""))
+			get_viewport().get_texture().get_image().save_png(_capture_path("prop_preview.png"))
 			get_tree().quit()
 
 func _place_prop_camera(center: Vector3) -> void:

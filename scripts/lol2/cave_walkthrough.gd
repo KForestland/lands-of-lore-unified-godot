@@ -134,7 +134,7 @@ func _process(_delta: float) -> void:
 		audit_frame += 1
 		if audit_frame % 12 == 0:
 			await RenderingServer.frame_post_draw
-			var directory := "res://captures/walkthrough/pose%d" % audit_pose
+			var directory := _capture_path("walkthrough/pose%d") % audit_pose
 			DirAccess.make_dir_recursive_absolute(directory)
 			index_view.get_texture().get_image().save_png(directory + "/background.png")
 			var records: Array = []
@@ -171,12 +171,14 @@ func _walk_check() -> void:
 		var displacement := Vector2(player.global_position.x - walk_check_start.x, player.global_position.z - walk_check_start.z).length()
 		print("Walkthrough input check: moved %.2f units; resets %d; grounded %s" % [displacement, resets, player.is_on_floor()])
 		await RenderingServer.frame_post_draw
-		DirAccess.make_dir_recursive_absolute("res://captures")
-		get_viewport().get_texture().get_image().save_png("res://captures/walkthrough_ready.png")
+		DirAccess.make_dir_recursive_absolute(_capture_path(""))
+		get_viewport().get_texture().get_image().save_png(_capture_path("walkthrough_ready.png"))
 		get_tree().quit(0 if displacement > 1.0 and resets == 0 and player.is_on_floor() else 1)
 
 func _run_controls_check() -> void:
 	set_physics_process(false)
+	# Real desktop mouse events must not rotate the camera mid-test.
+	set_process_unhandled_input(false)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player.collision_mask = 0
 	var failures := 0
@@ -281,7 +283,7 @@ func _capture_lighting() -> void:
 	lighting_frame += 1
 	if lighting_frame in [18, 30, 42]:
 		await RenderingServer.frame_post_draw
-		var directory := "res://captures/lighting_%d" % (checkpoint + 1)
+		var directory := _capture_path("lighting_%d") % (checkpoint + 1)
 		DirAccess.make_dir_recursive_absolute(directory)
 		var name := "enhanced" if lighting_frame == 18 else "reference" if lighting_frame == 30 else "restored"
 		get_viewport().get_texture().get_image().save_png(directory + "/" + name + ".png")
@@ -327,7 +329,7 @@ func _capture_glow() -> void:
 	glow_frame += 1
 	if glow_frame in [18, 30, 42]:
 		await RenderingServer.frame_post_draw
-		var directory := "res://captures/glow_%d" % glow_record
+		var directory := _capture_path("glow_%d") % glow_record
 		DirAccess.make_dir_recursive_absolute(directory)
 		var name := "glow" if glow_frame == 18 else "plain" if glow_frame == 30 else "restored"
 		get_viewport().get_texture().get_image().save_png(directory + "/" + name + ".png")
@@ -382,7 +384,7 @@ func _capture_dummies() -> void:
 	if dummy_frame in [60, 72, 84]:
 		await RenderingServer.frame_post_draw
 		set_physics_process(false)
-		var directory := "res://captures/dummies_%d" % (checkpoint + 1)
+		var directory := _capture_path("dummies_%d") % (checkpoint + 1)
 		DirAccess.make_dir_recursive_absolute(directory)
 		var name := "shown" if dummy_frame == 60 else "hidden" if dummy_frame == 72 else "restored"
 		get_viewport().get_texture().get_image().save_png(directory + "/" + name + ".png")

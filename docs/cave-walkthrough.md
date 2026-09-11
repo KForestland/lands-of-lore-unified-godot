@@ -11,8 +11,7 @@ flatpak run org.godotengine.Godot --path /path/to/project res://scenes/lol2/cave
 
 The local launcher is /home/bob/run_lol2_cave_walkthrough.sh. This starts at
 checkpoint14; --checkpoint=N selects another of119 checkpoints. Existing
-original/diagnostic scenes remain available. This is a local runnable scene,
-not yet a standalone redistributable build.
+original/diagnostic scenes remain available. Standalone Linux and Windows exports are documented in standalone-demo.md.
 
 Controls: WASD and mouse; Shift sprint; Esc release mouse and click to resume;
 F fly; Space/Ctrl ascend/descend in flight; N/P checkpoints; R reset;
@@ -48,8 +47,7 @@ at checkpoint14, not a new full119-route certification. The resulting HUD
 and cave capture were visually inspected. Tested on Godot4.7.2 Compatibility
 with Radeon RX9070XT; other hardware/backends are untested.
 
-Remaining walkthrough work: broader movement/performance checks, packaging
-and obvious visual cleanup.93 floor material assignments remain unresolved,
+Remaining walkthrough work: broader movement/performance checks and obvious visual cleanup.93 floor material assignments remain unresolved,
 roof material/tint and lighting are provisional, prop billboarding is a
 preview convention. The multi-pass approach still duplicates static masks;
 no broad FPS target or native screenshot/draw-order parity is claimed.
