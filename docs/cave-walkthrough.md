@@ -68,3 +68,10 @@ against camera-relative forward/right across two checkpoints and three mouse
 turns. Before the fix all24 direction cases failed (alignment -0.6044);
 afterwards all24 pass. A separate check verifies reset clears inherited yaw
 and roll. The existing forward-walk/floor-collision check also passes.
+
+## Lighting mode
+
+Enhanced distance-based warm/cool lighting is now on by default. L toggles
+the exact reference view; --reference-lighting starts without the enhancement.
+See cave-lighting.md for scope and validation. This does not add gameplay,
+world light sources or cast shadows.

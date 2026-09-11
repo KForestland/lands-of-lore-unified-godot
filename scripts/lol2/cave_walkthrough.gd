@@ -8,6 +8,11 @@ var audit_pose := 0
 var audit_start: Transform3D
 var walk_check_frame := 0
 var walk_check_start := Vector3.ZERO
+var light_view: SubViewport
+var light_camera: Camera3D
+var light_pairs: Array = []
+var lighting_enabled := true
+var lighting_frame := 0
 
 func _ready() -> void:
 	await super._ready()
@@ -23,6 +28,9 @@ func _ready() -> void:
 	hud.add_theme_constant_override("shadow_offset_x", 2)
 	hud.add_theme_constant_override("shadow_offset_y", 2)
 	ui.add_child(hud)
+	_build_lighting()
+	lighting_enabled = not ("--walkthrough-capture" in OS.get_cmdline_user_args() or "--reference-lighting" in OS.get_cmdline_user_args())
+	_set_lighting(lighting_enabled)
 	walkthrough_ready = true
 	if "--walkthrough-capture" in OS.get_cmdline_user_args():
 		audit_start = camera.global_transform
@@ -35,11 +43,16 @@ func _ready() -> void:
 		set_physics_process(true)
 		set_process_unhandled_input(true)
 	_resize_index_view()
+	if "--lighting-capture" in OS.get_cmdline_user_args():
+		set_physics_process(false)
+		set_process_unhandled_input(false)
+		hud.visible = false
 	if "--controls-check" in OS.get_cmdline_user_args():
 		call_deferred("_run_controls_check")
 
 func _resize_index_view() -> void:
 	super._resize_index_view()
+	if light_view != null: light_view.size = index_view.size
 	for view in layer_views: view.size = index_view.size
 	for view in composites:
 		view.size = index_view.size
@@ -56,17 +69,22 @@ func _jump_checkpoint(index: int) -> void:
 	super._jump_checkpoint(index)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_L:
+		_set_lighting(not lighting_enabled)
+		return
 	# Comparison-wall toggle is a diagnostic feature, not part of this view.
 	if event is InputEventKey and event.keycode == KEY_T: return
 	super._unhandled_input(event)
 
 func _process(_delta: float) -> void:
 	if not walkthrough_ready: return
+	for instance in placed_instances: instance.visible = props_root.visible
+	light_camera.global_transform = camera.global_transform
+	for pair in light_pairs: pair[1].visible = pair[0].is_visible_in_tree()
 	index_camera.global_transform = camera.global_transform
 	for cam in layer_cameras: cam.global_transform = camera.global_transform
 	for pair in occluder_pairs:
 		pair[1].visible = pair[0].is_visible_in_tree()
-	for instance in placed_instances: instance.visible = props_root.visible
 	var order: Array = range(placed_props.size())
 	var direction := Vector3(camera.global_basis.z.x, 0, camera.global_basis.z.z)
 	order.sort_custom(func(a, b):
@@ -76,7 +94,9 @@ func _process(_delta: float) -> void:
 	dynamic_order = order
 	for i in range(order.size()):
 		composites[i].get_child(0).material.set_shader_parameter("source_indices", layer_views[order[i]].get_texture())
-	hud.text = "Draracle Caverns · Walkthrough proof of concept\nWASD + mouse · Shift sprint · Esc release mouse · Click resume\nF fly · Space/Ctrl fly up/down · N/P checkpoints · R reset\nB props · C roof · %s · checkpoint %d\nOriginal assets; lighting and some materials remain provisional." % ["Flying" if flying else "Walking", checkpoint + 1]
+	hud.text = "Draracle Caverns · Walkthrough proof of concept\nWASD + mouse · Shift sprint · Esc release mouse · Click resume\nF fly · Space/Ctrl fly up/down · N/P checkpoints · R reset\nB props · C roof · L lighting: %s · %s · checkpoint %d\nOriginal assets; lighting and some materials remain provisional." % ["Enhanced" if lighting_enabled else "Reference", "Flying" if flying else "Walking", checkpoint + 1]
+	if "--lighting-capture" in OS.get_cmdline_user_args():
+		_capture_lighting()
 	if "--walkthrough-walk-check" in OS.get_cmdline_user_args():
 		_walk_check()
 	if "--walkthrough-capture" in OS.get_cmdline_user_args():
@@ -171,3 +191,60 @@ func _run_controls_check() -> void:
 	if absf(camera.rotation.y) > 0.0001 or absf(camera.rotation.z) > 0.0001: failures += 1
 	print("WASD camera-relative checks: %d cases, %d failures" % [cases, failures])
 	get_tree().quit(0 if failures == 0 else 1)
+
+func _set_lighting(enabled: bool) -> void:
+	lighting_enabled = enabled
+	resolve_surface.material.set_shader_parameter("enhanced_lighting", enabled)
+	light_view.render_target_update_mode = SubViewport.UPDATE_ALWAYS if enabled else SubViewport.UPDATE_DISABLED
+
+func _build_lighting() -> void:
+	var originals: Array = []
+	for pair in occluder_pairs: originals.append(pair[0])
+	originals.append_array(placed_instances)
+	var materials: Dictionary = {}
+	for original in originals:
+		var source: Material = original.material_override if original.material_override != null else original.mesh.surface_get_material(0)
+		var key := source.get_instance_id()
+		if not materials.has(key):
+			var material: ShaderMaterial = source.duplicate()
+			material.set_shader_parameter("mask_capture", false)
+			material.set_shader_parameter("lighting_capture", true)
+			materials[key] = material
+		var mesh := MeshInstance3D.new()
+		mesh.mesh = original.mesh
+		mesh.material_override = materials[key]
+		mesh.layers = 64
+		add_child(mesh)
+		mesh.global_transform = original.global_transform
+		light_pairs.append([original, mesh])
+	light_view = SubViewport.new()
+	light_view.size = index_view.size
+	light_view.world_3d = get_world_3d()
+	add_child(light_view)
+	light_camera = Camera3D.new()
+	light_camera.cull_mask = 64
+	light_camera.fov = camera.fov
+	light_camera.near = camera.near
+	light_camera.far = camera.far
+	light_camera.environment = Environment.new()
+	light_camera.environment.background_mode = Environment.BG_COLOR
+	light_camera.environment.background_color = Color(0.48, 0.55, 0.65)
+	light_view.add_child(light_camera)
+	light_camera.current = true
+	resolve_surface.material.set_shader_parameter("light_field", light_view.get_texture())
+
+func _capture_lighting() -> void:
+	lighting_frame += 1
+	if lighting_frame in [18, 30, 42]:
+		await RenderingServer.frame_post_draw
+		var directory := "res://captures/lighting_%d" % (checkpoint + 1)
+		DirAccess.make_dir_recursive_absolute(directory)
+		var name := "enhanced" if lighting_frame == 18 else "reference" if lighting_frame == 30 else "restored"
+		get_viewport().get_texture().get_image().save_png(directory + "/" + name + ".png")
+		index_view.get_texture().get_image().save_png(directory + "/indices_" + name + ".png")
+		composites.back().get_texture().get_image().save_png(directory + "/final_indices_" + name + ".png")
+		if lighting_frame == 18:
+			light_view.get_texture().get_image().save_png(directory + "/light.png")
+			_set_lighting(false)
+		elif lighting_frame == 30: _set_lighting(true)
+		else: get_tree().quit()

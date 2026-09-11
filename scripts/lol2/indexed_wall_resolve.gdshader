@@ -3,6 +3,8 @@ render_mode unshaded;
 uniform sampler2D packed_wall_indices : filter_nearest, repeat_disable;
 uniform sampler2D palette : filter_nearest, repeat_disable;
 uniform bool apply_roof_tint = false;
+uniform sampler2D light_field : filter_nearest, repeat_disable;
+uniform bool enhanced_lighting = false;
 void fragment() {
     vec2 packed = texture(packed_wall_indices, UV).rg;
     ivec2 nibbles = clamp(ivec2(round((packed * 255.0 - 64.0) / 12.0)), ivec2(0), ivec2(15));
@@ -11,5 +13,6 @@ void fragment() {
     float marker = texture(packed_wall_indices, UV).b;
     if (apply_roof_tint && marker > 0.75) { rgb = floor(rgb * 255.0 * 0.65 + 0.5) / 255.0; }
     else if (apply_roof_tint && marker > 0.25) { rgb = vec3(217.0, 38.0, 140.0) / 255.0; }
+    if (enhanced_lighting) { rgb *= texture(light_field, UV).rgb; }
     COLOR = vec4(rgb, 1.0);
 }
