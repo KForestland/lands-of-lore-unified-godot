@@ -9,7 +9,9 @@ The scene recovers the walk-map translation from its first floor anchor.
 For the current assets this is (4, 430, 12794); all 1,953 floor polygons
 match original coordinates scaled by64 plus this translation exactly.
 The wall UV mappings remain unchanged. Native wall surfaces replace the
-provisional vertical visual spans; floor, ceiling and walking collision remain.
+provisional vertical visual spans; floor and walking collision remain. The 1,939 original ceiling faces now
+use recovered rock134 with provisional planar UVs and a darker preview tint.
+Ceiling material assignment is not native-verified. C toggles the roof.
 42 material/addressing combinations batch 27 texture descriptors. First
 variants only; no native visibility culling, transparency or lighting parity.
 Missing spans may leave visual gaps; F allows inspection past old collision.
@@ -21,3 +23,24 @@ The tracing preflight passed for the existing material hook, but its L20
 capture does not establish the guest address for the cave descriptor watch.
 No new live trace was launched and no runtime-table handoff is claimed.
 Further guest address mapping is required before a meaningful pointer watch.
+
+Roof validation: 1,939 original ceiling polygons match the walking fixture
+exactly after scale/translation. Clean Godot smoke and GPU capture inspected.
+Existing collision faces and the original ceiling triangle split are preserved.
+
+## Path to a public playable demo
+
+1. Verify ceiling material selectors and remaining wall gaps against original views.
+2. Recover one plant/static-prop class, its image/transparency and placement fields;
+   validate a few witnesses before applying it across the map.
+3. Recover one enemy class, correct sprite sequence and spawn conditions, then
+   movement/combat. Named patrol/home markers alone do not prove spawns.
+4. Add verified bridge/chain interactions, triggers and hazards.
+5. Package a reproducible demo, test a fresh installation and document remaining
+   differences before a forum release.
+
+Available research inventory: 1,559 spatial records, 101 action records,
+52 named-state candidates and 92 markers. Marker names include roach paths,
+monster homes, guard paths and fireflies. Classes, asset binding, animation,
+spawn conditions and behavior still need evidence; no plants/enemies are
+added by the roof change. Audio remains deferred.
