@@ -79,3 +79,12 @@ Source region association is supplied rather than live-captured.
 This supersedes the earlier column exclusion. Column0 GPU view inspected;
 clean442-prop smoke and33 Python tests pass. Billboard/alpha/spawn and
 interaction/collision limitations still apply.
+
+Prop frame mirroring (2026-09-11): the native sprite setup uses frame bit
+0x40 for horizontal reversal and 0x80 for vertical reversal. The preview
+now applies these through per-flag material UV transforms. Current placements
+include 142 horizontal flips and no vertical flips, among 442 props.
+The bounded native setup replay passes all 256 flag bytes on two unclipped
+rectangles (512 cases). This does not establish full clipping, shading,
+alpha or billboard parity. Godot smoke and rendered record365 inspection
+passed; 33 extraction tests passed. Wall UVs retain their prior behavior.

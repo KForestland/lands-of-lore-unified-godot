@@ -130,7 +130,9 @@ func _build_props(translation: Vector3) -> void:
 	prop_count = 0
 	for prop in catalog.props:
 		var id := int(prop.descriptor)
-		if not materials.has(id):
+		var flags := int(prop.frame_flags) & 0xC0
+		var key := "%d:%d" % [id, flags]
+		if not materials.has(key):
 			var image := Image.load_from_file(root + "prop_%d.png" % id)
 			if image == null or image.is_empty():
 				push_error("Prop image missing")
@@ -144,11 +146,14 @@ func _build_props(translation: Vector3) -> void:
 			material.alpha_scissor_threshold = 0.5
 			material.cull_mode = BaseMaterial3D.CULL_DISABLED
 			material.billboard_mode = BaseMaterial3D.BILLBOARD_FIXED_Y
-			materials[id] = material
+			# Native 129AC8 setup: 0x40 reverses columns, 0x80 reverses rows.
+			material.uv1_scale = Vector3(-1.0 if flags & 0x40 else 1.0, -1.0 if flags & 0x80 else 1.0, 1.0)
+			material.uv1_offset = Vector3(1.0 if flags & 0x40 else 0.0, 1.0 if flags & 0x80 else 0.0, 0.0)
+			materials[key] = material
 		var quad := QuadMesh.new()
 		quad.size = Vector2(float(prop.right) - float(prop.left), float(prop.top) - float(prop.bottom))
 		quad.center_offset = Vector3((float(prop.left) + float(prop.right)) / 2, (float(prop.bottom) + float(prop.top)) / 2, 0)
-		quad.material = materials[id]
+		quad.material = materials[key]
 		var instance := MeshInstance3D.new()
 		instance.mesh = quad
 		instance.position = point(prop.position_native) + translation
