@@ -36,3 +36,9 @@ Example: --wall-id=1115. New asset names are material_ID_variant_N.png; older
 single-variant material_ID.png remains supported. Variant layout/transparency
 and playback are explicitly unverified. Original orientation concerns remain
 scheduled for a later visual pass at the owner's request.
+
+Rebuilding is now automated by the RE repository's
+`tools/draracle/build_wall_review.py --game-root /path/to/lol2 --out /path/to/build
+--godot-project /path/to/this-checkout`. See its docs/build-wall-review.md.
+It runs verification and installs generated assets; no manual copying is needed.
+A clean2373-wall build matches all60 installed asset files byte-for-byte.
