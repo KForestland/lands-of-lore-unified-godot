@@ -13,6 +13,6 @@ void fragment() {
     float marker = texture(packed_wall_indices, UV).b;
     if (apply_roof_tint && marker > 0.75) { rgb = floor(rgb * 255.0 * 0.65 + 0.5) / 255.0; }
     else if (apply_roof_tint && marker > 0.25) { rgb = vec3(217.0, 38.0, 140.0) / 255.0; }
-    if (enhanced_lighting) { rgb *= texture(light_field, UV).rgb; }
+    if (enhanced_lighting) { rgb *= texture(light_field, UV).rgb * 2.0; }
     COLOR = vec4(rgb, 1.0);
 }

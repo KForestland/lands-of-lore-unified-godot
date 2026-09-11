@@ -13,6 +13,10 @@ var light_camera: Camera3D
 var light_pairs: Array = []
 var lighting_enabled := true
 var lighting_frame := 0
+var light_materials: Array[ShaderMaterial] = []
+var glows_enabled := true
+var glow_frame := 0
+var glow_record := 1108
 
 func _ready() -> void:
 	await super._ready()
@@ -43,6 +47,16 @@ func _ready() -> void:
 		set_physics_process(true)
 		set_process_unhandled_input(true)
 	_resize_index_view()
+	if not "--glow-capture" in OS.get_cmdline_user_args():
+		for argument in OS.get_cmdline_user_args():
+			if argument.begins_with("--glow-record="):
+				_position_glow_review()
+				player.global_position.y += 16.0
+	if "--glow-capture" in OS.get_cmdline_user_args():
+		_position_glow_review()
+		set_physics_process(false)
+		set_process_unhandled_input(false)
+		hud.visible = false
 	if "--lighting-capture" in OS.get_cmdline_user_args():
 		set_physics_process(false)
 		set_process_unhandled_input(false)
@@ -72,6 +86,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_L:
 		_set_lighting(not lighting_enabled)
 		return
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_G:
+		glows_enabled = not glows_enabled
+		return
 	# Comparison-wall toggle is a diagnostic feature, not part of this view.
 	if event is InputEventKey and event.keycode == KEY_T: return
 	super._unhandled_input(event)
@@ -80,6 +97,7 @@ func _process(_delta: float) -> void:
 	if not walkthrough_ready: return
 	for instance in placed_instances: instance.visible = props_root.visible
 	light_camera.global_transform = camera.global_transform
+	for material in light_materials: material.set_shader_parameter("glow_enabled", glows_enabled and props_root.visible)
 	for pair in light_pairs: pair[1].visible = pair[0].is_visible_in_tree()
 	index_camera.global_transform = camera.global_transform
 	for cam in layer_cameras: cam.global_transform = camera.global_transform
@@ -94,7 +112,9 @@ func _process(_delta: float) -> void:
 	dynamic_order = order
 	for i in range(order.size()):
 		composites[i].get_child(0).material.set_shader_parameter("source_indices", layer_views[order[i]].get_texture())
-	hud.text = "Draracle Caverns · Walkthrough proof of concept\nWASD + mouse · Shift sprint · Esc release mouse · Click resume\nF fly · Space/Ctrl fly up/down · N/P checkpoints · R reset\nB props · C roof · L lighting: %s · %s · checkpoint %d\nOriginal assets; lighting and some materials remain provisional." % ["Enhanced" if lighting_enabled else "Reference", "Flying" if flying else "Walking", checkpoint + 1]
+	hud.text = "Draracle Caverns · Walkthrough proof of concept\nWASD + mouse · Shift sprint · Esc release mouse · Click resume\nF fly · Space/Ctrl fly up/down · N/P checkpoints · R reset\nB props · C roof · G glow · L lighting: %s · %s · checkpoint %d\nOriginal assets; lighting and some materials remain provisional." % ["Enhanced" if lighting_enabled else "Reference", "Flying" if flying else "Walking", checkpoint + 1]
+	if "--glow-capture" in OS.get_cmdline_user_args():
+		_capture_glow()
 	if "--lighting-capture" in OS.get_cmdline_user_args():
 		_capture_lighting()
 	if "--walkthrough-walk-check" in OS.get_cmdline_user_args():
@@ -198,6 +218,16 @@ func _set_lighting(enabled: bool) -> void:
 	light_view.render_target_update_mode = SubViewport.UPDATE_ALWAYS if enabled else SubViewport.UPDATE_DISABLED
 
 func _build_lighting() -> void:
+	var catalog = JSON.parse_string(FileAccess.get_file_as_string("res://assets/lol2/generated/prop_review/props.json")).props
+	var positions := PackedVector3Array()
+	var glow_material_ids: Dictionary = {}
+	for i in range(catalog.size()):
+		var prop: Dictionary = catalog[i]
+		if int(prop.descriptor) == 469:
+			positions.append(point(prop.position_native) + native_translation + Vector3(0, float(prop.top) * 0.65, 0))
+			var instance: MeshInstance3D = props_root.get_child(i)
+			glow_material_ids[instance.material_override.get_instance_id()] = true
+	assert(positions.size() == 4)
 	var originals: Array = []
 	for pair in occluder_pairs: originals.append(pair[0])
 	originals.append_array(placed_instances)
@@ -209,6 +239,9 @@ func _build_lighting() -> void:
 			var material: ShaderMaterial = source.duplicate()
 			material.set_shader_parameter("mask_capture", false)
 			material.set_shader_parameter("lighting_capture", true)
+			material.set_shader_parameter("glow_positions", positions)
+			material.set_shader_parameter("glowing_prop", glow_material_ids.has(key))
+			light_materials.append(material)
 			materials[key] = material
 		var mesh := MeshInstance3D.new()
 		mesh.mesh = original.mesh
@@ -228,7 +261,7 @@ func _build_lighting() -> void:
 	light_camera.far = camera.far
 	light_camera.environment = Environment.new()
 	light_camera.environment.background_mode = Environment.BG_COLOR
-	light_camera.environment.background_color = Color(0.48, 0.55, 0.65)
+	light_camera.environment.background_color = Color(0.24, 0.275, 0.325)
 	light_view.add_child(light_camera)
 	light_camera.current = true
 	resolve_surface.material.set_shader_parameter("light_field", light_view.get_texture())
@@ -247,4 +280,48 @@ func _capture_lighting() -> void:
 			light_view.get_texture().get_image().save_png(directory + "/light.png")
 			_set_lighting(false)
 		elif lighting_frame == 30: _set_lighting(true)
+		else: get_tree().quit()
+
+func _position_glow_review() -> void:
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--glow-record="): glow_record = int(argument.trim_prefix("--glow-record="))
+	var catalog = JSON.parse_string(FileAccess.get_file_as_string("res://assets/lol2/generated/prop_review/props.json")).props
+	for prop in catalog:
+		if int(prop.record) == glow_record and int(prop.descriptor) == 469:
+			var center := point(prop.position_native) + native_translation + Vector3(0, float(prop.top) / 2, 0)
+			var location := Vector3.ZERO
+			for face in data.faces:
+				if int(face.region) == int(prop.region):
+					for vertex in face.points: location += point(vertex) * 64.0
+					location /= face.points.size()
+					break
+			location += native_translation
+			if Vector2(location.x - center.x, location.z - center.z).length() < 20.0:
+				var farthest := location
+				for face in data.faces:
+					if int(face.region) == int(prop.region):
+						for vertex in face.points:
+							var candidate := point(vertex) * 64.0 + native_translation
+							if candidate.distance_squared_to(center) > farthest.distance_squared_to(center): farthest = candidate
+				location = location.lerp(farthest, 0.65)
+			location.y = center.y + 12
+			player.global_position = location - Vector3(0, 24, 0)
+			player.look_at(Vector3(center.x, player.global_position.y, center.z))
+			camera.look_at(center)
+			return
+	push_error("Glow review record must be111,543,1108 or1137")
+	get_tree().quit(1)
+
+func _capture_glow() -> void:
+	glow_frame += 1
+	if glow_frame in [18, 30, 42]:
+		await RenderingServer.frame_post_draw
+		var directory := "res://captures/glow_%d" % glow_record
+		DirAccess.make_dir_recursive_absolute(directory)
+		var name := "glow" if glow_frame == 18 else "plain" if glow_frame == 30 else "restored"
+		get_viewport().get_texture().get_image().save_png(directory + "/" + name + ".png")
+		composites.back().get_texture().get_image().save_png(directory + "/indices_" + name + ".png")
+		light_view.get_texture().get_image().save_png(directory + "/light_" + name + ".png")
+		if glow_frame == 18: glows_enabled = false
+		elif glow_frame == 30: glows_enabled = true
 		else: get_tree().quit()

@@ -75,3 +75,6 @@ Enhanced distance-based warm/cool lighting is now on by default. L toggles
 the exact reference view; --reference-lighting starts without the enhancement.
 See cave-lighting.md for scope and validation. This does not add gameplay,
 world light sources or cast shadows.
+
+G toggles optional green glow on four existing resource469 props. To start
+near one, use --glow-record=1108. See cave-prop-glow.md.

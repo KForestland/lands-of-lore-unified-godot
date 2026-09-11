@@ -23,7 +23,7 @@ def main():
  reference_errors=sum(x!=y for x,y in zip(reference.getdata(),expected));assert reference_errors==0
  changed=0;max_error=0;rounding_pixels=0
  for original,factor,actual in zip(reference.getdata(),light.getdata(),enhanced.getdata()):
-  cpu=tuple(int(c*m/255+.5) for c,m in zip(original,factor));error=max(abs(x-y) for x,y in zip(cpu,actual));max_error=max(max_error,error);rounding_pixels+=error>0;changed+=original!=actual
+  cpu=tuple(min(255,int(c*m*2/255+.5)) for c,m in zip(original,factor));error=max(abs(x-y) for x,y in zip(cpu,actual));max_error=max(max_error,error);rounding_pixels+=error>0;changed+=original!=actual
  assert changed>0 and max_error<=1
  report=dict(checkpoint=a.checkpoint,pixels=size[0]*size[1],changed_pixels=changed,reference_rgb_mismatches=reference_errors,index_buffers_unchanged=True,toggle_restoration_exact=True,enhanced_max_channel_rounding_error=max_error,enhanced_rounding_pixels=rounding_pixels)
  (root/'verification.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))

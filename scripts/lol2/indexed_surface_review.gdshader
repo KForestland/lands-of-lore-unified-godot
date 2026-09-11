@@ -26,6 +26,6 @@ void fragment() {
     if (mask_capture) { ALBEDO = vec3(64.0, 64.0, 0.0) / 255.0; }
     if (lighting_capture) {
         if (sprite && index <= 1) { discard; }
-        ALBEDO = cave_light_field(VERTEX);
+        ALBEDO = cave_light_field(VERTEX, (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz);
     }
 }

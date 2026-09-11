@@ -44,3 +44,7 @@ reports are local under captures/lighting_14 and captures/lighting_119.
 
 Next evaluate the look while walking and refine if needed. Dummy creature
 sprites remain a subsequent visual step; gameplay is outside the demo scope.
+
+The optional resource469 glow extends the light buffer to0..2 multipliers
+encoded at half scale. G toggles glow independently. See cave-prop-glow.md
+for the newer validation and known lack of wall occlusion.
