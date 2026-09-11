@@ -55,3 +55,16 @@ preview convention. The multi-pass approach still duplicates static masks;
 no broad FPS target or native screenshot/draw-order parity is claimed.
 Additional special bindings and enhanced lighting can follow without making
 gameplay a requirement for this demo.
+
+## WASD direction fix
+
+The initial walkthrough inherited local camera yaw from the prop inspection
+look_at call, while its reset only restored pitch. WASD followed the player
+heading but the view faced elsewhere. The walkthrough reset now restores
+camera rotation to pitch-only, including R and checkpoint changes.
+
+`--controls-check` injects physical W/A/S/D inputs and measures displacement
+against camera-relative forward/right across two checkpoints and three mouse
+turns. Before the fix all24 direction cases failed (alignment -0.6044);
+afterwards all24 pass. A separate check verifies reset clears inherited yaw
+and roll. The existing forward-walk/floor-collision check also passes.

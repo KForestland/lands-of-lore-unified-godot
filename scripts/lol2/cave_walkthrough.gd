@@ -35,6 +35,8 @@ func _ready() -> void:
 		set_physics_process(true)
 		set_process_unhandled_input(true)
 	_resize_index_view()
+	if "--controls-check" in OS.get_cmdline_user_args():
+		call_deferred("_run_controls_check")
 
 func _resize_index_view() -> void:
 	super._resize_index_view()
@@ -42,6 +44,12 @@ func _resize_index_view() -> void:
 	for view in composites:
 		view.size = index_view.size
 		view.get_child(0).size = Vector2(index_view.size)
+
+func _reset() -> void:
+	super._reset()
+	# Inspection look_at can leave local yaw/roll. Walking owns yaw on
+	# the player, and only pitch on the child camera.
+	camera.rotation = Vector3(-0.15, 0.0, 0.0)
 
 func _jump_checkpoint(index: int) -> void:
 	flying = false
@@ -115,3 +123,51 @@ func _walk_check() -> void:
 		DirAccess.make_dir_recursive_absolute("res://captures")
 		get_viewport().get_texture().get_image().save_png("res://captures/walkthrough_ready.png")
 		get_tree().quit(0 if displacement > 1.0 and resets == 0 and player.is_on_floor() else 1)
+
+func _run_controls_check() -> void:
+	set_physics_process(false)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	player.collision_mask = 0
+	var failures := 0
+	var cases := 0
+	for checkpoint_id in [13, 0]:
+		_jump_checkpoint(checkpoint_id)
+		for turn in [0.0, 100.0, -200.0]:
+			var mouse := InputEventMouseMotion.new()
+			mouse.relative = Vector2(turn, 15)
+			_unhandled_input(mouse)
+			var forward := -camera.global_basis.z
+			forward.y = 0
+			forward = forward.normalized()
+			var right := camera.global_basis.x
+			right.y = 0
+			right = right.normalized()
+			for pair in [[KEY_W, forward], [KEY_S, -forward], [KEY_A, -right], [KEY_D, right]]:
+				player.global_position = Vector3(0, 10000, 0)
+				player.velocity = Vector3.ZERO
+				var event := InputEventKey.new()
+				event.keycode = pair[0]
+				event.physical_keycode = pair[0]
+				event.pressed = true
+				Input.parse_input_event(event)
+				Input.flush_buffered_events()
+				await get_tree().physics_frame
+				var before := player.global_position
+				_physics_process(1.0 / 60.0)
+				var release: InputEventKey = event.duplicate()
+				release.pressed = false
+				Input.parse_input_event(release)
+				Input.flush_buffered_events()
+				var moved := player.global_position - before
+				moved.y = 0
+				var alignment := moved.normalized().dot(pair[1])
+				cases += 1
+				if alignment < 0.999:
+					failures += 1
+					print("Direction mismatch key %s: camera alignment %.4f" % [pair[0], alignment])
+	# R/reset must also remove an inherited inspection yaw/roll.
+	camera.rotation = Vector3(0.2, 1.1, 0.3)
+	_reset()
+	if absf(camera.rotation.y) > 0.0001 or absf(camera.rotation.z) > 0.0001: failures += 1
+	print("WASD camera-relative checks: %d cases, %d failures" % [cases, failures])
+	get_tree().quit(0 if failures == 0 else 1)
