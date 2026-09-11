@@ -60,6 +60,9 @@ func _source_view(layer: int, occlusion: bool = true) -> SubViewport:
 	else: raw_views.append(view)
 	return view
 
+func _remap_path() -> String:
+	return SPECIAL_ROOT + "remap.png"
+
 func _compose(background: Texture2D, source: Texture2D) -> SubViewport:
 	var view := SubViewport.new()
 	view.size = index_view.size
@@ -72,7 +75,7 @@ func _compose(background: Texture2D, source: Texture2D) -> SubViewport:
 	material.shader = load("res://scripts/lol2/indexed_remap_layer.gdshader")
 	material.set_shader_parameter("background_indices", background)
 	material.set_shader_parameter("source_indices", source)
-	material.set_shader_parameter("remap", ImageTexture.create_from_image(Image.load_from_file(SPECIAL_ROOT + "remap.png")))
+	material.set_shader_parameter("remap", ImageTexture.create_from_image(Image.load_from_file(_remap_path())))
 	surface.material = material
 	view.add_child(surface)
 	composites.append(view)
@@ -83,7 +86,19 @@ func _ready() -> void:
 	get_window().title = "Cave remap diagnostic — two test sprites, fixed camera"
 	set_physics_process(false)
 	set_process_unhandled_input(false)
+	await get_tree().physics_frame
+	_configure_review()
+	index_camera.global_transform = camera.global_transform
 	_copy_occluders(stage)
+	_build_review()
+
+func _configure_review() -> void:
+	pass
+
+func _capture_directory() -> String:
+	return "res://captures/special_cave"
+
+func _build_review() -> void:
 	var texture := ImageTexture.create_from_image(Image.load_from_file(SPECIAL_ROOT + "sprite_474.png"))
 	# Equal angular size provides both repeated remaps and ordinary overlap.
 	_plane(36, Vector2(36, 24), Vector2.ZERO, 8, texture)
@@ -105,16 +120,17 @@ func _ready() -> void:
 	print("Two diagnostic resource474 layers, ordered far-to-near; placements are not native")
 
 func _process(_delta: float) -> void:
-	if layer_views.size() != 2:
+	if layer_views.is_empty():
 		return
 	special_frames += 1
 	if special_frames == 25 and "--capture-special-cave" in OS.get_cmdline_user_args():
 		await RenderingServer.frame_post_draw
-		DirAccess.make_dir_recursive_absolute("res://captures/special_cave")
-		index_view.get_texture().get_image().save_png("res://captures/special_cave/background.png")
-		for i in range(2):
-			layer_views[i].get_texture().get_image().save_png("res://captures/special_cave/source%d.png" % i)
-			raw_views[i].get_texture().get_image().save_png("res://captures/special_cave/raw%d.png" % i)
-			composites[i].get_texture().get_image().save_png("res://captures/special_cave/composite%d.png" % i)
-		get_viewport().get_texture().get_image().save_png("res://captures/special_cave/resolved.png")
+		var destination := _capture_directory()
+		DirAccess.make_dir_recursive_absolute(destination)
+		index_view.get_texture().get_image().save_png(destination + "/background.png")
+		for i in range(layer_views.size()):
+			layer_views[i].get_texture().get_image().save_png(destination + "/source%d.png" % i)
+			raw_views[i].get_texture().get_image().save_png(destination + "/raw%d.png" % i)
+			composites[i].get_texture().get_image().save_png(destination + "/composite%d.png" % i)
+		get_viewport().get_texture().get_image().save_png(destination + "/resolved.png")
 		get_tree().quit()
