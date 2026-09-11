@@ -14,3 +14,9 @@ game paths; see KForestland/lands-of-lore-2-re docs/wall-texture-review.md.
 Validation: --wall-smoke loads946 meshes and14 textures; --wall-capture saves
 captures/wall_texture_review.png. Rendered output inspected on the local Godot
 OpenGL compatibility renderer. Live original-game visual parity remains open.
+
+The review now supports2035 rectangular walls and22 textures. A nearest-filter
+shader handles clamp/clamp, repeat/clamp and repeat/repeat per fragment. The
+original946-wall set was accepted visually by the project owner before this
+expansion. All2035 meshes load in smoke; GPU capture succeeds. The added walls
+remain diagnostic and have not received that same user visual acceptance yet.

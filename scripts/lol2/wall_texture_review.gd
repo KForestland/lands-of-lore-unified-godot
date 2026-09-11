@@ -70,12 +70,10 @@ func show_wall() -> void:
 	var mesh := ArrayMesh.new()
 	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 	mesh_instance.mesh = mesh
-	var material := StandardMaterial3D.new()
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
-	material.texture_repeat = true
-	material.albedo_texture = textures[int(wall["descriptor"])]
+	var material := ShaderMaterial.new()
+	material.shader = load("res://scripts/lol2/wall_review.gdshader")
+	material.set_shader_parameter("wall_texture", textures[int(wall["descriptor"])])
+	material.set_shader_parameter("address_mode", int(wall.get("addressing", 8)))
 	mesh_instance.material_override = material
 	var normal := (points[1] - points[0]).cross(points[3] - points[0]).normalized()
 	var extent := maxf(points[0].distance_to(points[1]), points[0].distance_to(points[3]))
