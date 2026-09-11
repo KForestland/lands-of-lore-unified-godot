@@ -78,3 +78,9 @@ world light sources or cast shadows.
 
 G toggles optional green glow on four existing resource469 props. To start
 near one, use --glow-record=1108. See cave-prop-glow.md.
+
+## Creature stand-ins
+
+K toggles two guard and two roach-like static dummies. Their positions and
+scale are provisional, with no AI/collision/gameplay. Checkpoint119 shows
+both types; see dummy-creatures.md. Approved lighting and glow are retained.

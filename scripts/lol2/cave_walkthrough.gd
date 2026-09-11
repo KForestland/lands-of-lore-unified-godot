@@ -17,6 +17,8 @@ var light_materials: Array[ShaderMaterial] = []
 var glows_enabled := true
 var glow_frame := 0
 var glow_record := 1108
+var dummy_root: Node3D
+var dummy_frame := 0
 
 func _ready() -> void:
 	await super._ready()
@@ -57,6 +59,10 @@ func _ready() -> void:
 		set_physics_process(false)
 		set_process_unhandled_input(false)
 		hud.visible = false
+	if "--dummy-capture" in OS.get_cmdline_user_args():
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		set_process_unhandled_input(false)
+		hud.visible = false
 	if "--lighting-capture" in OS.get_cmdline_user_args():
 		set_physics_process(false)
 		set_process_unhandled_input(false)
@@ -89,6 +95,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_G:
 		glows_enabled = not glows_enabled
 		return
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_K:
+		dummy_root.visible = not dummy_root.visible
+		return
 	# Comparison-wall toggle is a diagnostic feature, not part of this view.
 	if event is InputEventKey and event.keycode == KEY_T: return
 	super._unhandled_input(event)
@@ -112,7 +121,9 @@ func _process(_delta: float) -> void:
 	dynamic_order = order
 	for i in range(order.size()):
 		composites[i].get_child(0).material.set_shader_parameter("source_indices", layer_views[order[i]].get_texture())
-	hud.text = "Draracle Caverns · Walkthrough proof of concept\nWASD + mouse · Shift sprint · Esc release mouse · Click resume\nF fly · Space/Ctrl fly up/down · N/P checkpoints · R reset\nB props · C roof · G glow · L lighting: %s · %s · checkpoint %d\nOriginal assets; lighting and some materials remain provisional." % ["Enhanced" if lighting_enabled else "Reference", "Flying" if flying else "Walking", checkpoint + 1]
+	hud.text = "Draracle Caverns · Walkthrough proof of concept\nWASD + mouse · Shift sprint · Esc release mouse · Click resume\nF fly · Space/Ctrl fly up/down · N/P checkpoints · R reset\nK dummy creatures · B props · C roof · G glow · L lighting: %s · %s · checkpoint %d\nOriginal assets; lighting and some materials remain provisional." % ["Enhanced" if lighting_enabled else "Reference", "Flying" if flying else "Walking", checkpoint + 1]
+	if "--dummy-capture" in OS.get_cmdline_user_args():
+		_capture_dummies()
 	if "--glow-capture" in OS.get_cmdline_user_args():
 		_capture_glow()
 	if "--lighting-capture" in OS.get_cmdline_user_args():
@@ -324,4 +335,58 @@ func _capture_glow() -> void:
 		light_view.get_texture().get_image().save_png(directory + "/light_" + name + ".png")
 		if glow_frame == 18: glows_enabled = false
 		elif glow_frame == 30: glows_enabled = true
+		else: get_tree().quit()
+
+func _configure_review() -> void:
+	super._configure_review()
+	dummy_root = Node3D.new()
+	stage.add_child(dummy_root)
+	var root := "res://assets/lol2/generated/dummy_creatures/"
+	var catalog = JSON.parse_string(FileAccess.get_file_as_string(root + "creatures.json"))
+	var frames: Dictionary = {}
+	var materials: Dictionary = {}
+	for frame in catalog.frames:
+		var descriptor := int(frame.descriptor)
+		frames[descriptor] = frame
+		var material := _indexed_material(root + "creature_%d.png" % descriptor)
+		material.set_shader_parameter("sprite", true)
+		materials[descriptor] = material
+	for placement in catalog.placements:
+		var center := Vector3.ZERO
+		var found := false
+		for face in data.faces:
+			if int(face.region) == int(placement.region):
+				for vertex in face.points: center += point(vertex) * 64.0
+				center /= face.points.size()
+				if placement.has("vertex"):
+					center = center.lerp(point(face.points[int(placement.vertex)]) * 64.0, float(placement.fraction))
+				found = true
+				break
+		assert(found)
+		var descriptor := int(placement.descriptor)
+		var frame: Dictionary = frames[descriptor]
+		var quad := QuadMesh.new()
+		quad.size = Vector2(frame.preview_width, frame.preview_height)
+		quad.center_offset.y = float(frame.preview_height) * 0.5
+		quad.material = materials[descriptor]
+		var instance := MeshInstance3D.new()
+		instance.mesh = quad
+		instance.position = center + native_translation
+		instance.layers = 2
+		dummy_root.add_child(instance)
+	print("Dummy creature preview:2 guards and2 roach-like sprites; provisional scale/positions")
+
+func _capture_dummies() -> void:
+	if dummy_frame == 0 and not player.is_on_floor(): return
+	dummy_frame += 1
+	if dummy_frame in [60, 72, 84]:
+		await RenderingServer.frame_post_draw
+		set_physics_process(false)
+		var directory := "res://captures/dummies_%d" % (checkpoint + 1)
+		DirAccess.make_dir_recursive_absolute(directory)
+		var name := "shown" if dummy_frame == 60 else "hidden" if dummy_frame == 72 else "restored"
+		get_viewport().get_texture().get_image().save_png(directory + "/" + name + ".png")
+		index_view.get_texture().get_image().save_png(directory + "/indices_" + name + ".png")
+		if dummy_frame == 60: dummy_root.visible = false
+		elif dummy_frame == 72: dummy_root.visible = true
 		else: get_tree().quit()
