@@ -7,7 +7,7 @@ func _ready() -> void:
 	get_window().content_scale_size = Vector2i.ZERO
 	get_window().content_scale_factor = 1.0
 	get_window().size = Vector2i(640, 400)
-	get_window().title = "Sprite remap test — candidate shade64 (unverified binding) · Space: toggle"
+	get_window().title = "Sprite remap test — initial shade64 (loader verified) · Space: toggle"
 	remap_material = ShaderMaterial.new()
 	remap_material.shader = load("res://scripts/lol2/special_pixel_review.gdshader")
 	for item in [["background_indices", "background"], ["sprite_indices", "sprite"], ["palette", "palette"], ["destination_remap", "remap"]]:
