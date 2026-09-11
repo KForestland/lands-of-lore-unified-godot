@@ -6,6 +6,7 @@ var composites: Array[SubViewport] = []
 var layer_cameras: Array[Camera3D] = []
 var special_frames := 0
 var raw_views: Array[SubViewport] = []
+var occluder_pairs: Array = []
 
 func _copy_occluders(node: Node) -> void:
 	if node is MeshInstance3D and node.layers == 2:
@@ -19,6 +20,7 @@ func _copy_occluders(node: Node) -> void:
 		duplicate.material_override = mask
 		add_child(duplicate)
 		duplicate.global_transform = original.global_transform
+		occluder_pairs.append([original, duplicate])
 	for child in node.get_children():
 		_copy_occluders(child)
 

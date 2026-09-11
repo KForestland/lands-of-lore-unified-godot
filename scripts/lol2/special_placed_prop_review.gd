@@ -4,6 +4,7 @@ const PLACED_ROOT := "res://assets/lol2/generated/special_prop_review/"
 var placed_props: Array
 var native_translation := Vector3.ZERO
 var selected_record := 1057
+var placed_instances: Array[MeshInstance3D] = []
 
 func _remap_path() -> String:
 	return PLACED_ROOT + "remap.png"
@@ -71,6 +72,7 @@ func _build_review() -> void:
 		instance.position = point(prop.position_native) + native_translation
 		instance.layers = layer
 		add_child(instance)
+		placed_instances.append(instance)
 		_source_view(layer, false)
 		var view := _source_view(layer)
 		var composite := _compose(previous, view.get_texture())
