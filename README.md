@@ -1,5 +1,7 @@
 # Lands of Lore — Godot restoration research
 
+Recent update: [Executioner combat component and asset-free test](docs/executioner-combat-core.md).
+
 This repository contains the experimental Lands of Lore 2 cave scenes, geometry
 exporters and collision checks. The full recovered static layout has been explored
 locally in Godot. Standalone cave walkthrough exports are now prepared locally for Linux and
