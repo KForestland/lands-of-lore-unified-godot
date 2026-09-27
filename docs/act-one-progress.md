@@ -13,9 +13,9 @@ Act One remains in development; this checkpoint does not claim completion or a n
 
 ## Current work and remaining acceptance
 
-Opus 5.5 contributed shop callback implementation and source item-producer analysis, and is assigned Julian's post-translation Power Orb sequence. Grok contributed Champion Stone behavior, integration review and a source dagger pickup module. Their outputs require independent integration and verification.
+Opus 5.5 contributed shop callbacks, Julian's delayed orb sequence, Morgan's blessing and original Museum case geometry. Grok contributed Champion Stone behavior, Jungle dagger pickup and Museum broken-sword behavior. Their outputs undergo independent integration and verification.
 
-Julian's delayed orb grant, the orb-to-Firestorm exchange and dagger integration are still being checked. Earlier suite and route results do not establish acceptance of these additions. Remaining Act One work includes required item effects, encounter behavior, form/environment interactions, room branches and visual review. Departure retains the original local-state admission rather than adding a rune prerequisite.
+Julian's delayed orb grant, Morgan's blessing, the orb-to-Firestorm exchange and dagger integration now have focused checks and linked route evidence. These checks do not establish full Act One acceptance. Remaining Act One work includes required item effects, encounter behavior, form/environment interactions, room branches and visual review. Departure retains the original local-state admission rather than adding a rune prerequisite.
 
 ## Publication boundary
 
@@ -28,3 +28,11 @@ Julian's original entry/exit behavior now matches 2,176 local native replay case
 The Jungle dagger and Dagger of Light exchange are integrated. Verification found and fixed the Hive transfer dropping Jungle shop and pickup history; a real Hive save/load round trip now retains those states. The 68-check suite has passing latest results across a full60/68 desktop run and isolated-display follow-ups. The follow-ups use software rendering and do not establish GPU visual equivalence. Original failed logs remain local.
 
 The detached weapon-shop state code and128 admission fixtures are published in [PR6](https://github.com/KForestland/lands-of-lore-unified-godot/pull/6), tested without original assets. Broader live integration publication and Act One acceptance remain pending.
+
+## Museum exhibit and workflow follow-up
+
+The Museum now includes the original stone case and Broken Thohan pickup/return behavior. The sword height was corrected using the native renderer argument order. Four focused checks pass, including rendered pickup/return, inventory holding, disk rollback and transport to Rashar; repair in that test uses a supplied orb. The rendered exhibit was visually inspected.
+
+A separate earned route now starts at the verified cave-derived Museum arrival, walks to the case, takes Broken Thohan, completes the Museum puzzles and reaches the Jungle through the original dragon sequence. The run passed in38.09seconds with actual input/output save hashes checked; the item and exhibit history survive. Earned repair with Julian’s orb remains pending. Automated steering and accelerated clocks are test adapters.
+
+Morgan’s returned-orb blessing also passes the eleven-link Firestorm departure continuation. Detached monastery state/planner code is published in [PR7](https://github.com/KForestland/lands-of-lore-unified-godot/pull/7). The faster test runner and private-display workflow are published in [PR8](https://github.com/KForestland/lands-of-lore-unified-godot/pull/8), with five runner checks and the portable Godot test passing in a clean publication checkout. Full Act One acceptance and broader live source publication remain open.
