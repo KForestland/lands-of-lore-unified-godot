@@ -20,3 +20,11 @@ Julian's delayed orb grant, the orb-to-Firestorm exchange and dagger integration
 ## Publication boundary
 
 Publish implementation source, preparation tools and verification documentation separately from locally extracted original game payloads and personal saves. This progress checkpoint contains documentation only.
+
+## Follow-up integration
+
+Julian's original entry/exit behavior now matches 2,176 local native replay cases. A new earned continuation obtains his delayed Power Orb, walks to the weapon shop, exchanges it for Firestorm and reaches the darker jungle. Eleven actual saves are hash-linked; the first nine are reused from earlier verified runs. This is not a fresh full campaign.
+
+The Jungle dagger and Dagger of Light exchange are integrated. Verification found and fixed the Hive transfer dropping Jungle shop and pickup history; a real Hive save/load round trip now retains those states. The 68-check suite has passing latest results across a full60/68 desktop run and isolated-display follow-ups. The follow-ups use software rendering and do not establish GPU visual equivalence. Original failed logs remain local.
+
+The detached weapon-shop state code and128 admission fixtures are published in [PR6](https://github.com/KForestland/lands-of-lore-unified-godot/pull/6), tested without original assets. Broader live integration publication and Act One acceptance remain pending.
