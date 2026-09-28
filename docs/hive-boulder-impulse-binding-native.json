@@ -1,0 +1,669 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "code": [
+    {
+      "start": 733712,
+      "end": 734154,
+      "sha256": "bb143c85e73e53d106deac9d7bdc9d2e5ee44f6784781d7f73d9d32734952810"
+    },
+    {
+      "start": 736004,
+      "end": 736097,
+      "sha256": "6cf6fcb7bd585a28b72ef3ebe01f05d522d1b974fe8fe739bdb682a544a2cb12"
+    },
+    {
+      "start": 719701,
+      "end": 719718,
+      "sha256": "f007d16080b9324d641a8ec5b0a2cec772d347fc48183078a65c2524cdab5f42"
+    },
+    {
+      "start": 993860,
+      "end": 993876,
+      "sha256": "a885cc3c90e1972d4f199027ebd5d22b47a7abe08de450fc61da158c4cff88a7"
+    },
+    {
+      "start": 877580,
+      "end": 877590,
+      "sha256": "37326af918d8bdebfd48a077043b8a262c161294d500d48885ce10a27d46623b"
+    },
+    {
+      "start": 682684,
+      "end": 682690,
+      "sha256": "2db31f4e09597946e56e859813bfdad7046d457c32332c3a882654d1e3ffdf67"
+    },
+    {
+      "start": 879064,
+      "end": 879075,
+      "sha256": "d65ecd4f1235b522344499efd0dce9045ecffe87135e897e8936a069a4efd13a"
+    },
+    {
+      "start": 682700,
+      "end": 682703,
+      "sha256": "4500d4b3ef171798a43029a1bb05cd3a5a45cb853a53708d0ac30101d7a60c9e"
+    },
+    {
+      "start": 879388,
+      "end": 879391,
+      "sha256": "e18aacce29affcdddaa5f641ac1ec12552e0fe9d066e6408941b1792818b8619"
+    }
+  ],
+  "bindings": [
+    {
+      "slot": 22748,
+      "target": 993860
+    },
+    {
+      "slot": 22780,
+      "target": 682684
+    },
+    {
+      "slot": 22736,
+      "target": 682700
+    },
+    {
+      "slot": 23596,
+      "target": 877580
+    },
+    {
+      "slot": 23628,
+      "target": 879064
+    },
+    {
+      "slot": 23584,
+      "target": 879388
+    }
+  ],
+  "definition_sha256": "5bd8511d19bf8256bce5e59d4659e24c98f236e7c96255dd21ce31c06c152b42",
+  "form_record_sha256": [
+    "b4a7e5606291c1793784c14e71d294cbabdbac44481fbb453920be3e38ca9243",
+    "76e8ebde554c3d93c1fa1046c9b518cb59e75400c9ae8502e76129537e0db4b6",
+    "79a30e331e6516e9afc9750bea3a59367a65454560e684a107f47f7ec5dbb6c2"
+  ],
+  "worm_virtual_c": 255,
+  "player_virtual_c": [
+    125,
+    200,
+    50
+  ],
+  "cases": 72,
+  "rows": [
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 0,
+      "player_impulse": 130,
+      "player_impulse_angle": 32768
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 16384,
+      "player_impulse": 130,
+      "player_impulse_angle": 49152
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 32767,
+      "player_impulse": 130,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 65535,
+      "player_impulse": 130,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 0,
+      "player_impulse": 130,
+      "player_impulse_angle": 32768
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 16384,
+      "player_impulse": 130,
+      "player_impulse_angle": 49152
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 32767,
+      "player_impulse": 130,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 65535,
+      "player_impulse": 130,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 0,
+      "player_impulse": 130,
+      "player_impulse_angle": 32768
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 16384,
+      "player_impulse": 130,
+      "player_impulse_angle": 49152
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 32767,
+      "player_impulse": 130,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 0,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 65535,
+      "player_impulse": 130,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 0,
+      "player_impulse": 130,
+      "player_impulse_angle": 0
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 16384,
+      "player_impulse": 130,
+      "player_impulse_angle": 16384
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 32767,
+      "player_impulse": 130,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 65535,
+      "player_impulse": 130,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 0,
+      "player_impulse": 130,
+      "player_impulse_angle": 0
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 16384,
+      "player_impulse": 130,
+      "player_impulse_angle": 16384
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 32767,
+      "player_impulse": 130,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 65535,
+      "player_impulse": 130,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 0,
+      "player_impulse": 130,
+      "player_impulse_angle": 0
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 16384,
+      "player_impulse": 130,
+      "player_impulse_angle": 16384
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 32767,
+      "player_impulse": 130,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 0,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 65535,
+      "player_impulse": 130,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 0,
+      "player_impulse": 55,
+      "player_impulse_angle": 32768
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 16384,
+      "player_impulse": 55,
+      "player_impulse_angle": 49152
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 32767,
+      "player_impulse": 55,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 65535,
+      "player_impulse": 55,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 0,
+      "player_impulse": 55,
+      "player_impulse_angle": 32768
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 16384,
+      "player_impulse": 55,
+      "player_impulse_angle": 49152
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 32767,
+      "player_impulse": 55,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 65535,
+      "player_impulse": 55,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 0,
+      "player_impulse": 55,
+      "player_impulse_angle": 32768
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 16384,
+      "player_impulse": 55,
+      "player_impulse_angle": 49152
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 32767,
+      "player_impulse": 55,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 1,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 65535,
+      "player_impulse": 55,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 0,
+      "player_impulse": 55,
+      "player_impulse_angle": 0
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 16384,
+      "player_impulse": 55,
+      "player_impulse_angle": 16384
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 32767,
+      "player_impulse": 55,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 65535,
+      "player_impulse": 55,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 0,
+      "player_impulse": 55,
+      "player_impulse_angle": 0
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 16384,
+      "player_impulse": 55,
+      "player_impulse_angle": 16384
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 32767,
+      "player_impulse": 55,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 65535,
+      "player_impulse": 55,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 0,
+      "player_impulse": 55,
+      "player_impulse_angle": 0
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 16384,
+      "player_impulse": 55,
+      "player_impulse_angle": 16384
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 32767,
+      "player_impulse": 55,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 1,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 65535,
+      "player_impulse": 55,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 0,
+      "player_impulse": 205,
+      "player_impulse_angle": 32768
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 16384,
+      "player_impulse": 205,
+      "player_impulse_angle": 49152
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 32767,
+      "player_impulse": 205,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 0,
+      "contact_angle": 65535,
+      "player_impulse": 205,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 0,
+      "player_impulse": 205,
+      "player_impulse_angle": 32768
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 16384,
+      "player_impulse": 205,
+      "player_impulse_angle": 49152
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 32767,
+      "player_impulse": 205,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 1,
+      "contact_angle": 65535,
+      "player_impulse": 205,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 0,
+      "player_impulse": 205,
+      "player_impulse_angle": 32768
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 16384,
+      "player_impulse": 205,
+      "player_impulse_angle": 49152
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 32767,
+      "player_impulse": 205,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 2,
+      "player_moves": false,
+      "health": 30,
+      "contact_angle": 65535,
+      "player_impulse": 205,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 0,
+      "player_impulse": 205,
+      "player_impulse_angle": 0
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 16384,
+      "player_impulse": 205,
+      "player_impulse_angle": 16384
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 32767,
+      "player_impulse": 205,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 0,
+      "contact_angle": 65535,
+      "player_impulse": 205,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 0,
+      "player_impulse": 205,
+      "player_impulse_angle": 0
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 16384,
+      "player_impulse": 205,
+      "player_impulse_angle": 16384
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 32767,
+      "player_impulse": 205,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 1,
+      "contact_angle": 65535,
+      "player_impulse": 205,
+      "player_impulse_angle": 65535
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 0,
+      "player_impulse": 205,
+      "player_impulse_angle": 0
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 16384,
+      "player_impulse": 205,
+      "player_impulse_angle": 16384
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 32767,
+      "player_impulse": 205,
+      "player_impulse_angle": 32767
+    },
+    {
+      "form": 2,
+      "player_moves": true,
+      "health": 30,
+      "contact_angle": 65535,
+      "player_impulse": 205,
+      "player_impulse_angle": 65535
+    }
+  ],
+  "scope": "Actual AFB55 mover virtualC setup, B3210 stationary response, pinned WORM/player virtualC/2C/type getters and original definition/form fields. Both movement directions push the player by130/55/205 for human/beast/lizard; WORM remains stationary in this supplied zero-impulse fixture. Health does not gate these directions because the negative branch queries WORM virtual2C=1. B3B04 executes its actual player-address no-op branch; no scheduling boundary remains in these stationary response cases. Form interpolation already has a separate native verifier. Moving-impulse composition, full collision callbacks and cadence remain separate."
+}
