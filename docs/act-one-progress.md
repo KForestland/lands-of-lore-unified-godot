@@ -104,3 +104,12 @@ The harness now drives the curse clock once per movement/wait tick. Grok’s rea
 
 
 Lower-chamber follow-up: two earned attempts obtained lizard form naturally but stopped at a narrow passage. Source floor/ceiling checks reject the candidate connection because it has no vertical opening; the lower encounter is still unproven. No collision was weakened. A separate pinned-source audit confirms that the flute’s selector-state request has an upper-stop callback, preserving the current lift behavior. Further environmental effects remain unresolved; no lava damage or universal flute gate is inferred.
+
+
+## Lower Hive encounter and recovery fix
+
+The earned continuation now uses lift stop4’s west landing, follows81 source-connected regions to the unfolding warrior, defeats it, and returns to the lift. Approach and fight/return checks pass in8.70 and8.05seconds under the accelerated harness; actual save hashes link both legs. Final saved actors33/35 are defeated. Earlier cave/flute legs are reused, and original combat/presentation fidelity remains open.
+
+This route exposed an inherited−2048 void-reset threshold inside legitimate Hive terrain. Recovery now remains below the lowest staged floor with an explicit512-unit adapter margin: Hive−3512, Jungle unchanged−2048. A focused rendered check verifies normal movement on the−3000 floor and actual void recovery in both areas. No terrain or player collision was weakened. The previous narrow-passage candidate remains rejected.
+
+The fresh full **88/88** regression suite passes, including the continuous supplied-start Hive quest walk in72.39seconds. Grok’s review prompted explicit failed/dead-run rejection and an initially-inactive encounter check in the earned harness; hardened approach/fight reruns pass10.60/9.30seconds with actual save hashes verified again.
