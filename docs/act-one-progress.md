@@ -57,4 +57,12 @@ Translation-gated regions812/818 now work through the existing runes-translated 
 
 A fresh **78/78** Hive suite now passes, including Spark/Aloe, the new gates, shared saves and the live Hive quest walk. Six focused gate/save checks also pass. These tests do not establish full Act One content or owner acceptance. Detached gate state and numeric fixtures are in [PR11](https://github.com/KForestland/lands-of-lore-unified-godot/pull/11), with a clean asset-free test.
 
-Ancient Stone's counter is statically bound to free highest-charge attack-spell consumers, with per-spell admission exceptions. The current basic Spark is a different effect; actual highest-charge spell implementation is required before live Ancient Stone casting can be completed.
+Ancient Stone's counter is statically bound to free highest-charge attack-spell consumers, with per-spell admission exceptions. Basic Spark remains a separate effect. The highest-charge implementation is now integrated as described below.
+
+## Ancient Stone and lightning aura
+
+Ancient Stone inventory use now adds a saved free maximum-charge cast. Maximum Spark creates the original effect type: a protective lightning aura with repeated homing level0–3 bolts, health reduced to one, timer extension on recast and gradual recovery after expiry or transformation cancellation. Basic Spark does not spend the stone counter. Original timing, damage, target predicates and presentation still have explicit adapter limits.
+
+Opus supplied the aura source binding; the lead independently checked it and replayed180 expiry cases plus three incoming-hit condition-gate cases. Grok's earlier save review informed integration after correcting its counter-cap and pickup-history assumptions. The local live test covers actual stone pickup/use, multiple targets, combat protection, repeated Executioner magic-only XP, in-flight rollback and Jungle transport, using documented room/combat fixtures.
+
+A fresh **81/81** Hive suite passes, including the live quest walk in72.88seconds. This is regression coverage, not exhaustive Act One acceptance or a new full campaign run. The detached state model and exact state-only test are published in [PR12](https://github.com/KForestland/lands-of-lore-unified-godot/pull/12), tested in a clean checkout without original game assets. Broader live integration remains local. Actor activation classification and remaining content/presentation work stay open.
