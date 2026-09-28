@@ -2,7 +2,7 @@
 
 Four pre-departure map archives only. Positive implementation bindings are reviewed leads, not completion. Unmatched actors may be alternate states, script placeholders, cinematic actors or playable encounters; source reachability and live implementation classification remain required. L8_SJ acceptance ends at verified arrival/onward walk, not completion of Act Two content.
 
-194 source placements across four archives; 4 explicitly reviewed live encounter bindings. These numbers are not a completion percentage.
+194 source placements across four archives; 11 explicitly reviewed live encounter bindings. These numbers are not a completion percentage.
 
 | Area | Definition / label | Source actors | Reviewed live actors | Classification pending |
 | --- | --- | --- | --- | --- |
@@ -35,13 +35,13 @@ Four pre-departure map archives only. Positive implementation bindings are revie
 | L4_HJ | 10 / VILLAGER | none | none | none |
 | L4_HJ | 11 / B_HUMAN | 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 | none | 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 |
 | L4_HJ | 12 / SSAR | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | none | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 |
-| L5_HC | 0 / HIVEW | 21, 22, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34 | 32, 34 | 21, 22, 23, 24, 25, 26, 27, 28, 29, 33 |
+| L5_HC | 0 / HIVEW | 21, 22, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34 | 23, 24, 25, 26, 27, 28, 29, 32, 34 | 21, 22, 33 |
 | L5_HC | 1 / EXEC | 35, 36 | 36 | 35 |
 | L5_HC | 2 / WORM | 30, 31 | none | 30, 31 |
 | L5_HC | 3 / DAWNL4 | 20 | none | 20 |
 | L5_HC | 4 / B_HUMAN | 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 | none | 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 |
 | L5_HC | 5 / B_HUMAN | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 | none | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 |
 
-The local research tool `audit_act_one_actor_coverage.py` generated this inventory from pinned source metadata and reviewed implementation files. Its local JSON records source and code hashes. This documentation publication excludes that broader local source tree. The check joins inventory bindings; it does not execute encounters.
+Reproduce with `python3 tools/audit_act_one_actor_coverage.py`. The JSON pins the source inventory and reviewed implementation hashes. This checks bindings and inventory consistency; it does not execute encounters.
 
-Next: classify the unreviewed placements by source activation and existing scene owners before adding encounters. In particular, the 24 definition4 Roach placements are distinct from live cave actor23; do not treat the single tested duel as coverage of that population. Likewise Hive guardians32/34 do not establish coverage of all HIVEW placements.
+Next: classify the unreviewed placements by source activation and existing scene owners before adding encounters. In particular, the 24 definition4 Roach placements are distinct from live cave actor23; do not treat the single tested duel as coverage of that population. Return groups now bind seven additional HIVEW actors23–29, but their remaining native AI/presentation limits and other placements stay open.
