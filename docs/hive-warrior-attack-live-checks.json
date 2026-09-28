@@ -13,7 +13,7 @@
     }
   ],
   "full_suite": "tmp/regressions/warrior_attack_full_20260928/report.json",
-  "full_suite_status": "running; initial screenshot-fixture failure superseded by focused visual rerun",
+  "full_suite_status": "Terminal91/92; only attack screenshot-fixture failure, superseded by final focused visual pass. All92 latest results pass; not a fresh full92/92 run.",
   "earned_fight": "docs/hive-unfold-earned-fight-checks.json",
   "source_hashes": {
     "scripts/lol2/hive_warrior_attack.gd": "f7a89a5a0007c0023f506e0e9175c001a4aeab535ed58ad29edf94877fb1e9f5",
@@ -23,5 +23,7 @@
     "tests/hive_warrior_attack_live_test.gd": "cf5d5e11ea33f833a798f9cda72646dd16de01fe04455bd25808a663aafa4751",
     "tests/hive_warrior_attack_clock_test.gd": "057b416045bcaa6165a7cd96baf5cb62a949e85d5d0a690fa3763154e9033e36",
     "tests/hive_warrior_death_live_test.gd": "a11b0fdc65c1311960110ad57e7b06ace0475d64b8232dc8c227da5c9e49ed92"
-  }
+  },
+  "full_suite_sha256": "3abf7232ba01bb0f3483d6254a9dd2d17f6e298e1b44f94d145aae5f15f8a8f0",
+  "quest_walk_seconds": 72.72
 }
