@@ -58,4 +58,3 @@ static func advance(s: Dictionary, seconds: float) -> Dictionary:
 		s.fraction = 0.0
 		s.pulse = 0.0
 	return {"expired":expired,"pulses":count}
-
