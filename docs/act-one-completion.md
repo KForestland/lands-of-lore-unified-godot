@@ -139,3 +139,6 @@ Actor scope now has a reproducible [placement-to-implementation inventory](act-o
 
 
 2026-09-28 live boulder movement: actors30/31 now use original sprites, source path1, saved independent position/vertical velocity/frame clocks and a state5 terminal-stop latch alongside the moving surfaces. [Implementation and limits](hive-boulders-live.md), [checks](hive-boulders-live-checks.json). Full99/99 Hive run and final-source focused checks pass; earned lower-fight→lift6→trap→exit passes with actual save hashes. Speed/gravity/scheduler are explicit adapters. Player contact response/damage and sound remain absent; this is not complete hazard or Act One acceptance. The source inventory now has15 reviewed bindings out of194 placements, including these two partial bindings; counts are not completion percentages.
+
+
+2026-09-28 live boulder audio: original close/exit/rolling clips now use saved independent PCM clocks, owner stop, pause and Jungle transport. Native command/pool/removal/restart and2,000 distance/fade cases pass; Godot voice mixing and device scheduling remain adapters. Focused state/live and earned continuation pass. See [audio evidence](hive-boulder-audio.md). Contact response/damage and full ActOne remain OPEN.

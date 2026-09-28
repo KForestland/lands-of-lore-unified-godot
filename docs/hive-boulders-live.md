@@ -6,7 +6,7 @@ The implementation reuses the source-checked path-index helper, shared native-fr
 
 This is an explicit motion/scheduling adapter: speed160 world units/s, gravity320, sphere radius20/height40, and15360 animation units/s. Only radius/height and source clip/path selection are independently native-bound. Marker flag1024 effects, original motion/gravity/clock conversion, exact callback/queue ordering and presentation scale/anchor remain open. Consuming the state5 stop at a rolling terminal composes individually checked boundaries with a modern schedule; it is not a complete native scheduler replay.
 
-**Player contact response/damage and sound are not implemented.** Boulders collide with world geometry and explicitly exclude the player. They have no ordinary enemy health, melee, spell target or loot behavior. The moving actors do not yet make this a complete hazard encounter.
+**Player contact response/damage is not implemented.** Original sound cues now have saved playback; see [audio evidence](hive-boulder-audio.md). Boulders collide with world geometry and explicitly exclude the player. They have no ordinary enemy health, melee, spell target or loot behavior. The moving actors do not yet make this a complete hazard encounter.
 
 ## Save contract
 
