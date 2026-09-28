@@ -27,5 +27,22 @@ func _initialize() -> void:
 	var bad:=s.duplicate(true)
 	bad.local7=0
 	assert(not S.validate(bad).is_empty())
+	var feeding:=S.initial()
+	S.advance(feeding,0.25)
+	assert(S.spark_feeding(feeding) and not feeding.contact716 and feeding.actors["35"].phase==0)
+	assert(not S.spark_feeding(feeding) and feeding.actors["35"].elapsed==0.25)
+	assert(S.canonical(JSON.parse_string(JSON.stringify(feeding)))==feeding)
+	var legacy:=S.initial()
+	legacy.erase("feeding_hit_disabled")
+	assert(S.validate(legacy).is_empty() and not S.canonical(legacy).feeding_hit_disabled)
+	var bad_hit:=S.initial()
+	bad_hit.feeding_hit_disabled=true
+	assert(S.validate(bad_hit).is_empty())
+	for phase in [1,2]:
+		var running:=S.initial()
+		S.arm(running,35,true)
+		if phase==2: S.advance(running,0.25)
+		var prior: Dictionary=running.actors["35"].duplicate(true)
+		assert(S.spark_feeding(running) and running.actors["35"]==prior)
 	print("PASS ambush stages, partial JSON, independent timers, saved defeat and malformed rejection")
 	quit()

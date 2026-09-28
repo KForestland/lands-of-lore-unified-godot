@@ -11,10 +11,11 @@ static func initial() -> Dictionary:
 	for id in SPAWNS:
 		var p: Vector3=SPAWNS[id]
 		actors[str(id)]={"active":false,"health":HEALTH[id],"position":[p.x,p.y,p.z],"windup":0.0,"cooldown":0.0,"seed":324508639+id,"phase":0,"elapsed":0.0}
-	return {"version":1,"actors":actors,"local7":0,"contact716":false}
+	return {"version":1,"actors":actors,"local7":0,"contact716":false,"feeding_hit_disabled":false}
 static func validate(s: Variant) -> String:
 	if not s is Dictionary or s.get("version")!=1 or not s.get("actors") is Dictionary or s.actors.size()!=2: return "Invalid Hive ambush state."
 	if not Values.integer(s.get("local7"),1) or not s.get("contact716") is bool: return "Invalid Hive ambush history."
+	if not s.get("feeding_hit_disabled",false) is bool: return "Invalid feeding hit history."
 	for id in SPAWNS:
 		var a=s.actors.get(str(id))
 		if not a is Dictionary or not a.get("active") is bool: return "Invalid ambush actor."
@@ -36,6 +37,7 @@ static func validate(s: Variant) -> String:
 static func canonical(s: Dictionary) -> Dictionary:
 	var result:=s.duplicate(true)
 	result.version=1;result.local7=int(result.local7)
+	result.feeding_hit_disabled=bool(result.get("feeding_hit_disabled",false))
 	for a in result.actors.values():
 		for key in ["health","seed","phase"]: a[key]=int(a[key])
 		for key in ["elapsed","windup","cooldown"]: a[key]=float(a[key])
@@ -50,6 +52,11 @@ static func arm(s: Dictionary, id: int, contact: bool=false) -> bool:
 	if a.phase!=0: return false
 	a.phase=1
 	if id==33: s.local7=1;a.elapsed=0.0
+	return true
+static func spark_feeding(s: Dictionary) -> bool:
+	if s.get("feeding_hit_disabled",false) or s.actors["35"].phase not in [0,1,2]: return false
+	# Native level5/current prop318 exception suppresses group4022.
+	s.feeding_hit_disabled=true
 	return true
 static func advance(s: Dictionary, delta: float) -> void:
 	if not is_finite(delta) or delta<=0: return
