@@ -123,3 +123,6 @@ Warrior death/corpse presentation is now integrated locally for return warriors2
 
 
 Warrior attacks now use all four verified source variants and damage frames locally, with saved partial clocks, terminal stopping, health-dependent selection and death cancellation. Rendered tests cover both return and lower actors; the earned lower fight/return rerun passes8.79seconds. Opus5.5 and Grok returned bounded reviews. [Attack evidence and remaining adapters](hive-warrior-attack-live.md). The full suite finishes91/92; the camera-fixture correction passes its focused rerun, establishing all92 latest checks passing. The continuous supplied-start quest walk passes72.72seconds. Full Act One and broad live-code publication remain open.
+
+
+The remaining Hive worm actors30/31 now have verified surface-completion triggers and event/state behavior. They belong to a scripted ceiling/floor sequence, so generic proximity combat would not reproduce the recovered behavior. [Source evidence and missing integration](hive-worm-sequence.md). No new gameplay or actor-coverage acceptance is claimed. Full Act One remains open.
