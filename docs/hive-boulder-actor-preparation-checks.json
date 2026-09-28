@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "sources": {
+    "scripts/lol2/hive_executioner_sprite.gd": "13705e77a1fff0805757c51839933027e4dc082e164f53724f9bf5612417d4d4",
+    "scripts/lol2/save_value_rules.gd": "8722c2d784b5edde3d4df73544ff37ae0ba5e542f09f192ee250a6b84000b73a",
+    "tests/hive_boulder_sprite_test.gd": "e4aa148e499644b6faecd9404213a777b59c40df55586f5b5b9afd632718d6fc",
+    "tests/hive_sprite_canvas_portable_test.gd": "c3ac89b2f065301bb42fa9438fd64428eae29584dcd744bcbfb4ec46fe326043",
+    "tools/verify_hive_boulder_pair.py": "36c4ef9773d72b837c5a26830cbfb377a3a9d1bc335ac49b5bb529091ab380c4",
+    "tools/verify_hive_boulder_selection.py": "25f0e5f03b5b70bb64cc4589d079116ac2b4fd0cd6ea5aec46c68bd5dbcb6131",
+    "tools/verify_hive_boulder_idle.py": "1a908690ccc6734e60a1b382dbb730929aefea5035264b93db194d3f0a67bb85"
+  },
+  "native_reports": {
+    "docs/hive-boulder-pair-checks.json": "4e8b33517a577c6d3386952c3d7bfc6e367fad54e8046a4444945a2affde4d82",
+    "docs/hive-boulder-selection-checks.json": "cc1bce77c9952a3dd63866df79e63e73f9d3434bc02df393d2a386e11b92d68d",
+    "docs/hive-boulder-idle-checks.json": "98b0df860aac715c75a8405b065e160bb49574babdc19529671f5c48296057e0"
+  },
+  "focused": {
+    "path": "tmp/regressions/boulder_sprite_final_20260928/report.json",
+    "sha256": "615f2e0e0bb8f31014c612b8f868bfea900ee954df4ab1c8d52f5553802130c6",
+    "passed": 4,
+    "total": 4
+  },
+  "scope": "Native pair/selection/ordinary action9 boundaries plus original sprite presentation and existing actor regression checks. Actual saved boulder motion/contact/sound remains unimplemented; no97-test full run or complete ActOne claim."
+}
