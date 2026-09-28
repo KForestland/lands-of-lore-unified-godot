@@ -94,3 +94,10 @@ Portable ambush state is in [PR14](https://github.com/KForestland/lands-of-lore-
 Opus found a Hive-specific exception that the earlier generic hit-filter replay skipped. The lead independently replayed160 level/owner/allocation cases and96 consumed-record repeats: basic Spark can deplete prop318, but the native Hive owner318 filter disables its condition and suppresses activation. Region716 remains the activation route. The earlier765 damage cases are valid damage evidence, not activation evidence.
 
 The live cast now leaves feeding and transition stages unchanged, retains the consumed condition through saved travel, and still permits normal region activation. Four focused tests and a fresh full87/87 Hive suite pass, including the continuous quest walk in71.09seconds. [PR14](https://github.com/KForestland/lands-of-lore-unified-godot/pull/14) commita94b519 publishes the updated state and tests, with a clean portable test pass. Original event-record lifetime across reload, other weapons, earned approaches and full Act One remain open.
+
+
+## Earned feeding encounter
+
+Two hash-linked continuation checks pass from the earned flute-return save: normal walking, lift controls and jumps reach region716; actual maximum Spark and aimed melee defeat the feeding Executioner; normal movement returns the player to the lift. Accelerated runs took5.51 and3.37seconds. Earlier cave/flute legs are reused. The lower unfolding warrior remains unactivated and its earned approach remains open.
+
+The harness now drives the curse clock once per movement/wait tick. Grok’s read-only approach review found no confirmed defect; it did not execute the test. Opus’s environmental-effect investigation reached its bounded turn limit without a verified conclusion. Production code is unchanged from the87/87 regression checkpoint. Original combat fidelity and full Act One acceptance remain open.
