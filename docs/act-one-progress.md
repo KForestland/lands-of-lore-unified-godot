@@ -126,3 +126,6 @@ Warrior attacks now use all four verified source variants and damage frames loca
 
 
 The remaining Hive worm actors30/31 now have verified surface-completion triggers and event/state behavior. They belong to a scripted ceiling/floor sequence, so generic proximity combat would not reproduce the recovered behavior. [Source evidence and missing integration](hive-worm-sequence.md). No new gameplay or actor-coverage acceptance is claimed. Full Act One remains open.
+
+
+The source WORM actors30/31 visibly use rolling-boulder sprites. Their contact state gate, path1 initialization, script control fields and two source poses now have native checks;11 frames/55 mip frames are staged locally and Godot matches192 native updates. Existing warrior/Executioner checks remain passing. [Updated sequence evidence](hive-worm-sequence.md). Saved surface/path/contact integration is still pending; no new playable encounter is claimed.

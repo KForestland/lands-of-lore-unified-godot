@@ -1,0 +1,42 @@
+{
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 664479,
+      "end": 664659,
+      "sha256": "9b71c71a018dd42601aa2b5c244b88488a58665bd414d3d3aacd4845586bf9bb"
+    },
+    {
+      "start": 680692,
+      "end": 682021,
+      "sha256": "7ce0789e2a1d2a1b73307a0705b63fd0765d1ed60750be348c627129c0ec5573"
+    }
+  ],
+  "initial": [
+    {
+      "actor": 30,
+      "path": 1,
+      "index": 0,
+      "behavior": 14,
+      "pending_behavior": 14,
+      "action": 9,
+      "pending_action": 9,
+      "mask": 1,
+      "mode": 0
+    },
+    {
+      "actor": 31,
+      "path": 1,
+      "index": 0,
+      "behavior": 14,
+      "pending_behavior": 14,
+      "action": 9,
+      "pending_action": 9,
+      "mask": 1,
+      "mode": 0
+    }
+  ],
+  "property_cases": 1536,
+  "scope": "Actual source placement record copied into supplied initializer frame; nativeA239F..A2453 binds path1/index0/behavior14/action9. Earlier construction/stat setup and later scheduling omitted. Native creature opcode0d dispatcher through checked relocations for actual source property0=7/property1=0 or9, all256 incoming behaviors; behavior15 ignores writes. These properties do not directly select animation. Path1 has13 original markers via game-paths audit; movement, marker arrival, behavior14/action9 scheduling and event3 production remain open."
+}
