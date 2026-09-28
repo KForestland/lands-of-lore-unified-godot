@@ -17,7 +17,7 @@ static func validate(s: Variant) -> String:
 	if not s.get("bolts") is Array or s.bolts.size() > 128: return "Invalid Spark aura bolts."
 	if not s.bolts.is_empty() and s.area.is_empty(): return "Spark bolts require an area."
 	for bolt in s.bolts:
-		if not bolt is Dictionary or bolt.get("target") not in ["roach23","guardian32","guardian34","executioner36","hivewarrior23","hivewarrior24","hivewarrior25","hivewarrior26","hivewarrior27","hivewarrior28","hivewarrior29"]: return "Invalid Spark target."
+		if not bolt is Dictionary or bolt.get("target") not in ["roach23","guardian32","guardian34","executioner36","hivewarrior23","hivewarrior24","hivewarrior25","hivewarrior26","hivewarrior27","hivewarrior28","hivewarrior29","hiveambush33","hiveambush35"]: return "Invalid Spark target."
 		if not Values.integer(bolt.get("effect"),23) or bolt.effect < 20: return "Invalid Spark effect."
 		if not Values.vector(bolt.get("position"),32768): return "Invalid Spark bolt position."
 		var life = bolt.get("life")
