@@ -1,0 +1,15 @@
+# Live Hive warrior attacks
+
+Return warriors23–29 and lower unfolding warrior33 now use verified HIVEW selection and original attack frames11–14. Healthy warriors choose12/14; health updates at or below50 switch subsequent attacks to11/13. Existing attacks finish their selected clip when health changes. Death cancels the pending attack.
+
+The shared frame runtime emits damage at source frames11/11/8/9. The host stops at the first terminal frame even on a large time step, so a hitch cannot wrap into another attack and hit again. Saved selector/frame/timer/fraction/flags restore partial attacks, and malformed, inactive or dead attack records fail validation. Actor35 cannot carry HIVEW attack state. Old saves retain absent optional attack records.
+
+Source percentages60/100/20/50 now scale the provisional base6 to3/6/1/3 damage. Host15fps conversion, base damage, reach75, awareness420, pursuit55, recovery0.8seconds, ordinary mode0 and ordinary health-update kind0 remain adapters. The existing actor LCG seed supplies one0–100 selection sample per attack; this shares ordering with reward draws and is not the native global RNG. A committed attack finishes after the player leaves reach, with damage suppressed if the target is out of range, obstructed or protected at the event. Native admission, resistance/type handling, stat feedback, audio, directional views and exact clock/anchoring remain open. Feeding Executioner35 retains its previous controller behavior.
+
+Rendered checks pass all four variants on actors27 and33: pre-hit frame, source-scaled hit, large-step single hit, cooldown, partial JSON rollback, inventory pause/resume, malformed atomic rejection, out-of-range miss, death cancellation, health-family selection and Jungle transport. Atlas changes are asserted and the lower-warrior screenshot was visually inspected. A standalone test checks coarse/fine cycles, source percentages, fractional JSON tolerance and invalid dead/inactive/Executioner state. Existing population/ambush/death tests pass focused checks; the92-test suite is running.
+
+The earned lower encounter was rerun through actual maximum Spark, aimed melee and return to the lift in8.79seconds. Actual input/output save hashes match the approach and saved JSON; the defeated lower warrior retains its corpse. Earlier campaign legs are reused. This is not full Act One acceptance.
+
+Opus5.5 returned terminal-loop, RNG-order, callback and save warnings; Grok returned optional-state validation/transport invariants. Lead tests establish the adopted behavior. The source selection verifier supersedes Opus's uncertainty about lookup boundaries. Initial retained failures include a legacy fixed-six-damage assertion, exact float equality after JSON, deferred inventory closure, and a screenshot camera offset that invalidated the second actor fixture. The camera-only test correction passes; no collision was weakened.
+
+Implementation and original media remain local. GitHub progress publication contains documentation and numerical verification summaries only. Full Act One remains open.
