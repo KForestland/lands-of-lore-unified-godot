@@ -1,0 +1,72 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "global_sha256": "1e3e2a46340d714aaf4d583e5aff7e58dc11005bac6c694fac49c07d13e01edd",
+  "literal": {
+    "target_object": 5,
+    "target_offset": 72,
+    "record_file_offset": 248630,
+    "record_hex": "07006102054800"
+  },
+  "sources": [
+    {
+      "name": "global\\ai\\globalai.csv",
+      "entry": {
+        "index": 348,
+        "key": 2034966871,
+        "offset": 6729127,
+        "size": 34668
+      },
+      "sha256": "c588b7981128589c3528c6ee954cab9f67a42dfb8968092b3a4e59e13791fc5c"
+    },
+    {
+      "name": "global\\ai\\Roach\\effector.csv",
+      "entry": {
+        "index": 47,
+        "key": 2798615896,
+        "offset": 7182551,
+        "size": 3044
+      },
+      "sha256": "94bacafe66adb04251c44ebae0a39c277ea68855bb987e46556f111f1ad5b1b6"
+    }
+  ],
+  "spans": [
+    {
+      "start": 367957,
+      "end": 368041,
+      "sha256": "d116ddcbc057f438250b5a4c7a862e25e936d46aa71d2d8182d1df213718e368"
+    },
+    {
+      "start": 369051,
+      "end": 369054,
+      "sha256": "faeefb2168e12ec8a7f7a80cd8bdd714d5ceb2c6a47c8ee271460228fde6c67a"
+    },
+    {
+      "start": 369140,
+      "end": 369228,
+      "sha256": "089a1a1018c41604e931dc10641b3b05f69a5f3be5149dd75fa4f24c092646c7"
+    },
+    {
+      "start": 369276,
+      "end": 369301,
+      "sha256": "14f818da5152fa0e73ed753654a3b2952690c1b5a205670049fa695b0bcfe2bf"
+    },
+    {
+      "start": 699565,
+      "end": 699588,
+      "sha256": "216b94b122d01c945ef7427a2681b907ff0778a53a8d6287481b7776ac49b618"
+    },
+    {
+      "start": 697134,
+      "end": 697178,
+      "sha256": "07a0332bd371215b6657d5eed46ee31eecc59de12fa5bda94952f05c9d0f831f"
+    }
+  ],
+  "cases": 512,
+  "goal_admission_cases": 256,
+  "boundaries": [
+    "CSV decimal/empty fields parsed in Python, native loader shape checked; full parser not replayed here.",
+    "Native signed adjustment helpers and condition-call arguments replayed.",
+    "Goal and true-condition indexes supplied; their live producers remain open.",
+    "Caller supplies persistent bank after behavior-byte preparation; no full AI decision or health outcome claimed."
+  ]
+}

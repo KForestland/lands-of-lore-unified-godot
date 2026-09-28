@@ -21,3 +21,7 @@ PYTHONPATH=/home/bob/lol2_out/native_codec_deps:tools python3 tools/verify_cave_
 ```
 
 The verifier depends on the local reverse-engineering toolchain and original files; neither original game media nor a standalone game build is published with the numeric report. ActOne acceptance remains open.
+
+The shared effective-stat engine now accepts a validated per-creature profile. The condition evaluator exposes that configuration while retaining the existing Executioner default. Original Roach `stat.csv` bytes decode to unsigned actor stats (for example −106→150 and −56→200); source base stats and initial goal14 choose goal6/wander then action0 in native replay with no world-condition adjustments. This is a controlled baseline, not a claim that the player is absent or that all live roaches always wander.
+
+Reused `verify_hive_effective_stats.main("Roach")` verifies512 native goal/condition compositions,49 condition-row bindings and256 goal admissions. Six focused engine tests pass, covering existing Hive consumers as well as the Roach profile. Configuration copies the profile and rejects malformed updates atomically. Source perception/conditions, movement and the23-actor cave scene/save integration remain open.

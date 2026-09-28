@@ -68,9 +68,19 @@
         "size": 3044
       },
       "sha256": "94bacafe66adb04251c44ebae0a39c277ea68855bb987e46556f111f1ad5b1b6"
+    },
+    "stats": {
+      "name": "global\\ai\\Roach\\stat.csv",
+      "entry": {
+        "index": 296,
+        "key": 1245194268,
+        "offset": 7174876,
+        "size": 321
+      },
+      "sha256": "4961ae57033d1575d6b4fb3302df9815e14bbdceca0b4de6e73730418b071020"
     }
   },
   "cases": 480,
-  "initial_goal14_cases": 32,
+  "initial_goal14_cases": 33,
   "scope": "Supplied stat banks. Native scoring instructions; checked memset and explicit MOVSX/zero-borrow SBB bridges. Goal14 reads the first row of the adjacent actions table; action chooser goal14 reads adjacent effector row0. No live condition production, scheduler, movement, hostile admission or route acceptance claim."
 }
