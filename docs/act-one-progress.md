@@ -49,3 +49,12 @@ Opus’s Cave Aloe planner is independently verified against36 use and980 healin
 2026-09-28 verified update: fresh Aloe-integrated Hive suite passes75/75. Earned cave entry through Aloe harvest/use after real injury to Museum passes290.35s; health24→30, mana17 unchanged, consumed history and actual save hash verified. Lowest-charge Executioner Spark magic XP now passes source binding,25,792 native reward cases and six distinct focused checks including growth, mana ordering, rollback and Hive-to-Jungle transport. The75-suite predates Spark integration; current77 suite not rerun in full. [PR10](https://github.com/KForestland/lands-of-lore-unified-godot/pull/10) commit ce18219 publishes detached planner/5902 sanitized numeric fixtures with clean asset-free testPASS. Grok is investigating Ancient Stone use with admission-only evidence; no effect promoted. Full Act One remains OPEN.
 
 The [actor coverage audit](act-one-actor-coverage.md) now enumerates194 source placements across the four pre-departure archives. Four live encounter bindings were explicitly reviewed; other placements need classification against source activation and existing scene owners. This is not a completion percentage or a claim that every placement is a mandatory enemy. The eleven-save repaired-sword departure chain was independently rechecked and still passes.
+
+
+## Hive transformation follow-up
+
+Translation-gated regions812/818 now work through the existing runes-translated flag. Source command04 is a one-shot human return, used in four regions391/818/1259/1260; command3c remains repeatable. Live integration preserves slope contact, pending-return saves and consumed-command history through Jungle transport. Native checks cover256 predicate cases,36 dispatch cases and24 human-request cases. Native timing and mutation lifetime across original level reload remain explicit adapter limits.
+
+A fresh **78/78** Hive suite now passes, including Spark/Aloe, the new gates, shared saves and the live Hive quest walk. Six focused gate/save checks also pass. These tests do not establish full Act One content or owner acceptance. Detached gate state and numeric fixtures are in [PR11](https://github.com/KForestland/lands-of-lore-unified-godot/pull/11), with a clean asset-free test.
+
+Ancient Stone's counter is statically bound to free highest-charge attack-spell consumers, with per-spell admission exceptions. The current basic Spark is a different effect; actual highest-charge spell implementation is required before live Ancient Stone casting can be completed.
