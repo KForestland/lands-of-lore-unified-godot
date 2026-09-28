@@ -1,0 +1,104 @@
+{
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "sound_bank_sha256": "e2d6df9a11a3d5bf6746911eac464c7f90efceaf7535e32a0f582dcea6afc3f6",
+  "commands": [
+    {
+      "payload": "1403ea00c00296000c06",
+      "archive_offset": 5958469,
+      "request": 704,
+      "config": [
+        150,
+        0,
+        12,
+        6
+      ]
+    },
+    {
+      "payload": "14034d00bd0296000c06",
+      "archive_offset": 5958509,
+      "request": 701,
+      "config": [
+        150,
+        0,
+        12,
+        6
+      ]
+    },
+    {
+      "payload": "14021e00c502ff020306",
+      "archive_offset": 5902609,
+      "request": 709,
+      "config": [
+        255,
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "payload": "14021f00c502ff020306",
+      "archive_offset": 5902689,
+      "request": 709,
+      "config": [
+        255,
+        2,
+        3,
+        6
+      ]
+    }
+  ],
+  "clips": {
+    "704": {
+      "source_name": "stone4.aud",
+      "rate": 22050,
+      "samples": 32256,
+      "chunks": 32,
+      "declared_bytes": 64514,
+      "pcm_bytes": 64512,
+      "pcm_sha256": "7814b2e5605a9919fb3476848d83b26feca3f3d6b32abb485f0512cf74a16282",
+      "decoder_diagnostics": [
+        "Error during demuxing: Input/output error",
+        "Error retrieving a packet from demuxer: Input/output error"
+      ],
+      "duration": 1.4628571428571429,
+      "audio_sha256": "b0aa66062f64e43bb033b6100a1bbfbc0b1f2869cf556712b4fd5b8db9b89107",
+      "wav_sha256": "dc318024ee76935a1904d42e3155e38e6e75761b7ebe969001e7fb829186bafc",
+      "path": "res://assets/lol2/generated/hive_boulder_audio/704.wav"
+    },
+    "701": {
+      "source_name": "stone6.aud",
+      "rate": 22050,
+      "samples": 47616,
+      "chunks": 47,
+      "declared_bytes": 95232,
+      "pcm_bytes": 95232,
+      "pcm_sha256": "adb0aaa15852c5849de39d6d048457598aec369abae37f44b41cb6eb44ce341a",
+      "decoder_diagnostics": [
+        "Error during demuxing: Input/output error",
+        "Error retrieving a packet from demuxer: Input/output error"
+      ],
+      "duration": 2.159455782312925,
+      "audio_sha256": "e2b4eac2d3c7baa098b086a22e0791fcfa7345f3fe7933ee34d55d1ea08c2b42",
+      "wav_sha256": "4e42f29caafc70c1c69a369cd014b4d96dcc3e44ac16dd886e5e70620c45a882",
+      "path": "res://assets/lol2/generated/hive_boulder_audio/701.wav"
+    },
+    "709": {
+      "source_name": "stonel1.aud",
+      "rate": 22050,
+      "samples": 7616,
+      "chunks": 8,
+      "declared_bytes": 15232,
+      "pcm_bytes": 15232,
+      "pcm_sha256": "4a678f3c2a766f2bef9a95887e364c66c6d872adb69d255c6449cdde36ce226e",
+      "decoder_diagnostics": [
+        "Error during demuxing: Input/output error",
+        "Error retrieving a packet from demuxer: Input/output error"
+      ],
+      "duration": 0.3453968253968254,
+      "audio_sha256": "9534b39350a74933a880ef5c2988685f9949a6e5a0900f4f4b81eda2571abbb4",
+      "wav_sha256": "1805d315e5ba602c85e7c254cfda87fc1ae01a365572170d2109a5bbb60a580f",
+      "path": "res://assets/lol2/generated/hive_boulder_audio/709.wav"
+    }
+  },
+  "scope": "Four exact command payloads occur once each in the pinned Hive archive. Their sound words select three named bank records; decoded mono PCM16 counts match the encoded nibble counts; declared extra samples are not padded. Native playback, looping, attenuation and owner removal are not established by this extraction. Original media remains local."
+}
