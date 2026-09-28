@@ -1,6 +1,6 @@
 # Boulder actor integration evidence
 
-The Hive's moving surfaces and earned approach/exit work locally. Actors30/31 still need their saved path motion, live presentation, contact effect and sound attached. The following checks establish inputs for that integration; they do not make the encounter complete.
+The Hive's moving surfaces and earned approach/exit work locally. Subsequent work now attaches saved path motion and live presentation for actors30/31; see [live movement](hive-boulders-live.md). Contact effect and sound remain pending. This page records the prerequisite checkpoint. The following checks establish inputs for that integration; they do not make the encounter complete.
 
 `verify_hive_boulder_pair.py` passes4,352 bounded native B276C cases. The original WORM definition and native getters establish radius20 and height40. The pair routine uses a strict distance threshold:20 for two type2 actors, otherwise candidate radius plus mover radius. Vertical classes2/4/5 and a clear suppression byte admit the pair and write penetration/bearing outputs. Equality at the radius threshold rejects. The Euclidean distance result, vertical-class calculation/global setup and bearing result are supplied boundaries, with helper arguments checked. Contact cadence and final damage are not established.
 

@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "sources": {
+    "scripts/lol2/hive_boulders.gd": "1f5c77bc0aaffde3a63507fbb758eb3104897ad5c21eef9ddc03dba06e8ae242",
+    "scripts/lol2/hive_boulder_actor_state.gd": "27a3309e0ad975e58bcbbe7a2c484616bba3aba2f322dc273a52227e0e5026b1",
+    "scripts/lol2/hive_boulder_surfaces.gd": "4c761d880b2cd3cc6e01e5c6dde5f0c3f60ea501f72fdc98b663f578361c1168",
+    "scripts/lol2/hive_boulder_sequence.gd": "0167cc32968682469a23125f0e96fba041a6fb056e1998bc3b94304a707c8b8f",
+    "scripts/lol2/hive_executioner_sprite.gd": "13705e77a1fff0805757c51839933027e4dc082e164f53724f9bf5612417d4d4",
+    "scripts/lol2/hive_path_control.gd": "fc2961cddebcbdfcbedcf642ebf9f96b673e22a807d57426af74674ef8b12998",
+    "scripts/lol2/hive_attack_runtime.gd": "b6944031389506f3ea386ffb8cfea1ca4d91ef2a59c3e41662e9dc12f5731fc4",
+    "scripts/lol2/hive_review.gd": "7f371523ac7cd9beae8c02cbd5a2824b50fa7841a2b7d21f36c80650f1c662dc",
+    "scripts/lol2/act_one_quest_state.gd": "e972ecad59bc47c33d058989db499e2f9af83d744e9434c99f14db0af76a772b",
+    "tests/hive_boulders_live_test.gd": "a3f94d9a474d7f7344485594cec413b08817dcffa2a11d0255b4400514966eae",
+    "tests/hive_boulder_actor_state_test.gd": "29ed15a15640c940279e6237654605c72ef63dc05ab83f5e95ed8e1b60ab9d2b",
+    "tests/hive_boulders_earned_walk_test.gd": "7d8201d6288cf66bd3da4a71865c3b9b21ce3b39ff48c95f2a08f852009a75ae",
+    "tests/hive_lift_wax_walk_test.gd": "0d2601073600ba06ef87b76b64aeb5f68b4139aeec30901817355cca0c45b4e8",
+    "scripts/lol2/player_form_rules.gd": "3398be6619fea5fcbb4249a4d5996897c0fb0febd14c143824a57211facc9266"
+  },
+  "regressions": [
+    {
+      "path": "tmp/regressions/boulders_full_20260928/report.json",
+      "sha256": "2bdfbea663b885b73405900f58125f6f17a8a724658e800d50b7786fd5ec696d",
+      "passed": 99,
+      "total": 99
+    },
+    {
+      "path": "tmp/regressions/boulders_player_excluded_20260928/report.json",
+      "sha256": "186e92e1b0947afa6a5e2463228583cde18419c292d216f028b07b0dc1f0b251",
+      "passed": 1,
+      "total": 1
+    },
+    {
+      "path": "tmp/regressions/boulder_path_shared_values_20260928/report.json",
+      "sha256": "80a8dc169ae2109120b2cf58c796736f2fc15e4a856459bbb2f3dcf3849b2706",
+      "passed": 1,
+      "total": 1
+    }
+  ],
+  "earned": {
+    "path": "docs/hive-boulders-earned-checks.json",
+    "sha256": "a7a13e6f5c101f340aedaf9dbeded3b6ebd42f9bb34c764ffed0f6126ec3b7f5",
+    "runner_sha256": "232697b0559707a3a15a051341277893945c5592bd02e394dc2a1dba50d5fc60",
+    "seconds": 8.554481767001562,
+    "input_sha256": "29c972223478adc882bb97ef85f2a384ac26e8e4c058f1616ca5cc2dbee17013",
+    "output_sha256": "66126d0afac46454142ea715da8b9bf57e1c906476fcefb4c603b3cc19d329d5",
+    "exact_actor_packet_verified": true
+  },
+  "visual": {
+    "path": "tmp/hive_boulders.png",
+    "sha256": "201c1574252aed3185529d77d4a99cdef88890c509ada93fd7ef691477858200",
+    "inspected": true
+  },
+  "scope": "Full99/99 Hive run passed, continuous supplied-start quest76.77s. Run overlapped final player-collision exclusion and shared numeric-validator cleanup; final-source focused live and native path tests both pass. Earned continuation uses earlier lower-fight save; actual save hashes and actor packets independently verified. Motion/presentation only: contact damage/response and sounds remain disabled, original speed/gravity/scheduler/marker-flag fidelity open. No original media or personal save publication, no full ActOne acceptance."
+}

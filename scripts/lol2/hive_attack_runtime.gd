@@ -38,7 +38,7 @@ func validate(state: Variant) -> String:
 	if not state is Dictionary: return "Invalid attack state."
 	if not _integer(state.get("version"),1,SAVE_VERSION): return "Unsupported attack save version."
 	var selector = state.get("selector")
-	if not _integer(selector,11,12): return "Invalid attack selector."
+	if not _integer(selector,0,255) or not _clips.has(int(selector)): return "Invalid attack selector."
 	if not _integer(state.get("frame"),0,int(_clips[int(selector)].frames)-1): return "Invalid attack frame."
 	if not _integer(state.get("timer"),0,int(_clips[int(selector)].interval)-1): return "Invalid attack timer."
 	for key in ["flags","base"]:
