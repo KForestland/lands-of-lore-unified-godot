@@ -2,7 +2,7 @@
   "source_inventory_sha256": "015ad7e0c79ce05fe598c3498e0c5b22bc618ede725569c122cf82f8e46c388e",
   "scope": "Four pre-departure map archives only. Positive implementation bindings are reviewed leads, not completion. Unmatched actors may be alternate states, script placeholders, cinematic actors or playable encounters; source reachability and live implementation classification remain required. L8_SJ acceptance ends at verified arrival/onward walk, not completion of Act Two content.",
   "placement_count": 194,
-  "reviewed_live_bindings": 15,
+  "reviewed_live_bindings": 17,
   "areas": [
     {
       "id": "L1_DC",
@@ -644,39 +644,49 @@
             34
           ],
           "reviewed_live_bindings": {
+            "21": {
+              "path": "scripts/lol2/hive_rune_population_state.gd",
+              "sha256": "07cbbdffd57f75e38c635e47037d1940d06fd1d3156bc185ba1bf5071e233fc3",
+              "scope": "template copied into finite restored slots; local combat/save headless integration, rendered admission still pending; partial pool/clock/loot adapters"
+            },
+            "22": {
+              "path": "scripts/lol2/hive_rune_population_state.gd",
+              "sha256": "07cbbdffd57f75e38c635e47037d1940d06fd1d3156bc185ba1bf5071e233fc3",
+              "scope": "template copied into finite restored slots; local combat/save headless integration, rendered admission still pending; partial pool/clock/loot adapters"
+            },
             "23": {
               "path": "scripts/lol2/hive_return_population.gd",
-              "sha256": "d164621684a26627fcb7e79ac7bc6cc1187ff91651c754a4e696d59a17f48cf1",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
               "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
             },
             "24": {
               "path": "scripts/lol2/hive_return_population.gd",
-              "sha256": "d164621684a26627fcb7e79ac7bc6cc1187ff91651c754a4e696d59a17f48cf1",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
               "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
             },
             "25": {
               "path": "scripts/lol2/hive_return_population.gd",
-              "sha256": "d164621684a26627fcb7e79ac7bc6cc1187ff91651c754a4e696d59a17f48cf1",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
               "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
             },
             "26": {
               "path": "scripts/lol2/hive_return_population.gd",
-              "sha256": "d164621684a26627fcb7e79ac7bc6cc1187ff91651c754a4e696d59a17f48cf1",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
               "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
             },
             "27": {
               "path": "scripts/lol2/hive_return_population.gd",
-              "sha256": "d164621684a26627fcb7e79ac7bc6cc1187ff91651c754a4e696d59a17f48cf1",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
               "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
             },
             "28": {
               "path": "scripts/lol2/hive_return_population.gd",
-              "sha256": "d164621684a26627fcb7e79ac7bc6cc1187ff91651c754a4e696d59a17f48cf1",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
               "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
             },
             "29": {
               "path": "scripts/lol2/hive_return_population.gd",
-              "sha256": "d164621684a26627fcb7e79ac7bc6cc1187ff91651c754a4e696d59a17f48cf1",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
               "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
             },
             "32": {
@@ -695,10 +705,7 @@
               "scope": "stationary guardian; authored health/timing"
             }
           },
-          "classification_pending": [
-            21,
-            22
-          ]
+          "classification_pending": []
         },
         {
           "definition": 1,
@@ -715,7 +722,7 @@
             },
             "36": {
               "path": "scripts/lol2/hive_executioner_live.gd",
-              "sha256": "808204a5af1fb1436286f018f193b97c782b3074db6418a6be4ccb33f09730c5",
+              "sha256": "ff2405131fc0c6395712d8dcf976c69bc796f966cb17cb893b28c2c1b4806673",
               "scope": "live Executioner; source rewards, adapter navigation/damage"
             }
           },
@@ -731,13 +738,13 @@
           "reviewed_live_bindings": {
             "30": {
               "path": "scripts/lol2/hive_boulders.gd",
-              "sha256": "1f5c77bc0aaffde3a63507fbb758eb3104897ad5c21eef9ddc03dba06e8ae242",
-              "scope": "partial rolling-boulder presentation/path/save integration; motion/scheduler/audio-mixing adapters, player contact absent"
+              "sha256": "62bcbdf3fb6cab3160d84a621c325aa5b45cc408bb0bf45ba857924db8d0b079",
+              "scope": "partial rolling-boulder presentation/path/save integration; motion/scheduler/audio-mixing/contact-geometry/health adapters; live contact damage and saved impulse"
             },
             "31": {
               "path": "scripts/lol2/hive_boulders.gd",
-              "sha256": "1f5c77bc0aaffde3a63507fbb758eb3104897ad5c21eef9ddc03dba06e8ae242",
-              "scope": "partial rolling-boulder presentation/path/save integration; motion/scheduler/audio-mixing adapters, player contact absent"
+              "sha256": "62bcbdf3fb6cab3160d84a621c325aa5b45cc408bb0bf45ba857924db8d0b079",
+              "scope": "partial rolling-boulder presentation/path/save integration; motion/scheduler/audio-mixing/contact-geometry/health adapters; live contact damage and saved impulse"
             }
           },
           "classification_pending": []

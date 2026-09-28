@@ -2,7 +2,7 @@
 
 Four pre-departure map archives only. Positive implementation bindings are reviewed leads, not completion. Unmatched actors may be alternate states, script placeholders, cinematic actors or playable encounters; source reachability and live implementation classification remain required. L8_SJ acceptance ends at verified arrival/onward walk, not completion of Act Two content.
 
-194 source placements across four archives; 15 explicitly reviewed live encounter bindings. These numbers are not a completion percentage.
+194 source placements across four archives; 17 explicitly reviewed live encounter bindings. These numbers are not a completion percentage.
 
 | Area | Definition / label | Source actors | Reviewed live actors | Classification pending |
 | --- | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ Four pre-departure map archives only. Positive implementation bindings are revie
 | L4_HJ | 10 / VILLAGER | none | none | none |
 | L4_HJ | 11 / B_HUMAN | 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 | none | 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 |
 | L4_HJ | 12 / SSAR | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | none | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 |
-| L5_HC | 0 / HIVEW | 21, 22, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34 | 23, 24, 25, 26, 27, 28, 29, 32, 33, 34 | 21, 22 |
+| L5_HC | 0 / HIVEW | 21, 22, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34 | 21, 22, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34 | none |
 | L5_HC | 1 / EXEC | 35, 36 | 35, 36 | none |
 | L5_HC | 2 / WORM | 30, 31 | 30, 31 | none |
 | L5_HC | 3 / DAWNL4 | 20 | none | 20 |
@@ -44,4 +44,4 @@ Four pre-departure map archives only. Positive implementation bindings are revie
 
 Reproduce with `python3 tools/audit_act_one_actor_coverage.py`. The JSON pins the source inventory and reviewed implementation hashes. This checks bindings and inventory consistency; it does not execute encounters.
 
-Next: classify the unreviewed placements by source activation and existing scene owners before adding encounters. In particular, the 24 definition4 Roach placements are distinct from live cave actor23; do not treat the single tested duel as coverage of that population. Return groups bind seven additional HIVEW actors23–29; source-region ambushes now bind actors33/35. Rolling boulders30/31 now have partial path/presentation/save bindings; their original audio cues now have saved playback; contact response/damage remains absent. Native AI/presentation limits, alternate activation paths and other placements stay open.
+Next: classify the unreviewed placements by source activation and existing scene owners before adding encounters. In particular, the 23 definition4 Roach placements are distinct from live cave actor23; do not treat the single tested duel as coverage of that population. Return groups bind seven additional HIVEW actors23–29; source-region ambushes now bind actors33/35. Rolling boulders30/31 now have partial path/presentation/save bindings; their original audio cues now have saved playback; contact response/damage and saved momentum are live with documented adapters. Native AI/presentation limits, alternate activation paths and other placements stay open.

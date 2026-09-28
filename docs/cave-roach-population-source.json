@@ -1,0 +1,746 @@
+{
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "geometry_entry": {
+    "index": 1,
+    "key": 2971673856,
+    "offset": 7091978,
+    "size": 297542
+  },
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": {
+    "start": 680692,
+    "end": 682021,
+    "sha256": "7ce0789e2a1d2a1b73307a0705b63fd0765d1ed60750be348c627129c0ec5573"
+  },
+  "constructor_code": {
+    "start": 664479,
+    "end": 664659,
+    "sha256": "9b71c71a018dd42601aa2b5c244b88488a58665bd414d3d3aacd4845586bf9bb"
+  },
+  "constructor_cases": 23,
+  "bindings": [
+    {
+      "slot": 316108,
+      "target": 680776
+    },
+    {
+      "slot": 316004,
+      "target": 681131
+    },
+    {
+      "slot": 316028,
+      "target": 681281
+    }
+  ],
+  "property_cases": 1536,
+  "placements": [
+    {
+      "actor": 25,
+      "definition": 4,
+      "position": [
+        498,
+        -215,
+        -12286
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "f201fe2f608b29ff02613f040000000000000000000000000000000000000a0004350000000e094300ff000a000000000000000000000000",
+      "archive_offset": 7321214,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 26,
+      "definition": 4,
+      "position": [
+        510,
+        -215,
+        -12255
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "fe01df2f608b29ff02613b040000000000000000000000000000000000000a0004350000000e094700ff000a000000000000000000000000",
+      "archive_offset": 7321270,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 27,
+      "definition": 4,
+      "position": [
+        538,
+        -215,
+        -12248
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "1a02d82f608b29ff02613f040000000000000000000000000000000000000a0004350000000e094900ff000a000000000000000000000000",
+      "archive_offset": 7321326,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 28,
+      "definition": 4,
+      "position": [
+        537,
+        -215,
+        -12243
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "1902d32f608b29ff02613f040000000000000000000000000000000000000a0004350000000e094800ff000a000000000000000000000000",
+      "archive_offset": 7321382,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 29,
+      "definition": 4,
+      "position": [
+        529,
+        -215,
+        -12276
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "1102f42f608b29ff02613f040000000000000000000000000000000000000a0004350000000e094500ff000a000000000000000000000000",
+      "archive_offset": 7321438,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 30,
+      "definition": 4,
+      "position": [
+        506,
+        -215,
+        -12292
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "fa010430608b29ff02613f040000000000000000000000000000000000000a0004350000000e094100ff000a000000000000000000000000",
+      "archive_offset": 7321494,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 31,
+      "definition": 4,
+      "position": [
+        599,
+        -215,
+        -12314
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "57021a30608b29ff02613f040000000000000000000000000000000000000a0004350000000e093f00ff000a000000000000000000000000",
+      "archive_offset": 7321550,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 32,
+      "definition": 4,
+      "position": [
+        609,
+        -215,
+        -12270
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "6102ee2f608b29ff02613f040000000000000000000000000000000000000a0004350000000e094200ff000a000000000000000000ffffff",
+      "archive_offset": 7321606,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 33,
+      "definition": 4,
+      "position": [
+        628,
+        -215,
+        -12271
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "7402ef2f608b29ff02613f040000000000000000000000000000000000000a0004350000000e094600ff000a000000000000000000000000",
+      "archive_offset": 7321662,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 34,
+      "definition": 4,
+      "position": [
+        651,
+        -215,
+        -12244
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "8b02d42f608b29ff02613f040000000000000000000000000000000000000a0004350000000e094400ff000a000000000000000050ad6201",
+      "archive_offset": 7321718,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 35,
+      "definition": 4,
+      "position": [
+        619,
+        -215,
+        -12287
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "6b02ff2f608b29ff02613f040000000000000000000000000000000000000a0004350000000e094000ff000a000000000000000000000000",
+      "archive_offset": 7321774,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 40,
+      "definition": 4,
+      "position": [
+        895,
+        -215,
+        -11594
+      ],
+      "heading": 61531,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "7f034a2d5bf029ff02613d030000000000000000000000000000000000000a0004240000000e094c00ff000a0000000000000000080cde00",
+      "archive_offset": 7322054,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 41,
+      "definition": 4,
+      "position": [
+        859,
+        -215,
+        -12028
+      ],
+      "heading": 35134,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "5b03fc2e3e8929ff026125030000000000000000000000000000000000000a0004240000000e094b00ff000a000000000000000002020000",
+      "archive_offset": 7322110,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 42,
+      "definition": 4,
+      "position": [
+        -545,
+        -195,
+        -9991
+      ],
+      "heading": 36408,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "dffd0727388e3dff026131040000000000000000000000000000000000000a0004240000000e095000ff000a0000000000000000ff0300bc",
+      "archive_offset": 7322166,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 43,
+      "definition": 4,
+      "position": [
+        587,
+        -215,
+        -12332
+      ],
+      "heading": 35680,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "4b022c30608b29ff02613f040000000000000000000000000000000000000a0004350000000e093e00ff000a000000000000000000000000",
+      "archive_offset": 7322222,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 44,
+      "definition": 4,
+      "position": [
+        -155,
+        -265,
+        -14685
+      ],
+      "heading": 24576,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "65ff5d390060f7fe02612e040000000000000000000000000000000000000a0004240000000e093a00ff000a000000000000000066550054",
+      "archive_offset": 7322278,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 45,
+      "definition": 4,
+      "position": [
+        -107,
+        0,
+        -6465
+      ],
+      "heading": 45875,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "95ff411933b30000026188020000000000000000000000000000000000000a0004240000000e095400ff000a000000000000000000000054",
+      "archive_offset": 7322334,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 46,
+      "definition": 4,
+      "position": [
+        -253,
+        0,
+        -7233
+      ],
+      "heading": 36772,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "03ff411ca48f0000026192020000000000000000000000000000000000000a0004240000000e095300ff000a000000000000000054000000",
+      "archive_offset": 7322390,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 47,
+      "definition": 4,
+      "position": [
+        -1431,
+        0,
+        -5957
+      ],
+      "heading": 42780,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "69fa45171ca700000261bb030000000000000000000000000000000000000a0004240000000e095a00ff000a0000000000000000050f0000",
+      "archive_offset": 7322446,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 48,
+      "definition": 4,
+      "position": [
+        -2186,
+        9,
+        -5057
+      ],
+      "heading": 32950,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "76f7c113b6800900026152020000000000000000000000000000000000000a0004240000000e095800ff000a000000000000000000000000",
+      "archive_offset": 7322502,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 49,
+      "definition": 4,
+      "position": [
+        -2371,
+        9,
+        -5089
+      ],
+      "heading": 32950,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "bdf6e113b680090002613a020000000000000000000000000000000000000a0004240000000e095600ff000a000000000000000029665500",
+      "archive_offset": 7322558,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 50,
+      "definition": 4,
+      "position": [
+        -2352,
+        9,
+        -5361
+      ],
+      "heading": 32950,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "d0f6f114b6800900026174020000000000000000000000000000000000000a0004240000000e095500ff000a00000000000000000003b5fd",
+      "archive_offset": 7322614,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    },
+    {
+      "actor": 51,
+      "definition": 4,
+      "position": [
+        -2233,
+        9,
+        -5238
+      ],
+      "heading": 32950,
+      "health": 10,
+      "flags": 24834,
+      "raw_hex": "47f77614b6800900026174020000000000000000000000000000000000000a0004240000000e095700ff000a000000000000000002020000",
+      "archive_offset": 7322670,
+      "initial_behavior": 14,
+      "initial_action": 9,
+      "initial_b5": 0
+    }
+  ],
+  "direct_references": [
+    {
+      "stream": 0,
+      "group": 996,
+      "commands": [
+        {
+          "offset": 1002,
+          "archive_offset": 7328967,
+          "raw_hex": "0d021b000d000000"
+        },
+        {
+          "offset": 1010,
+          "archive_offset": 7328975,
+          "raw_hex": "0d021e000d000000"
+        },
+        {
+          "offset": 1018,
+          "archive_offset": 7328983,
+          "raw_hex": "0d021a000d000000"
+        },
+        {
+          "offset": 1026,
+          "archive_offset": 7328991,
+          "raw_hex": "0d0219000d000000"
+        },
+        {
+          "offset": 1034,
+          "archive_offset": 7328999,
+          "raw_hex": "0d021d000d000000"
+        },
+        {
+          "offset": 1042,
+          "archive_offset": 7329007,
+          "raw_hex": "0d021c000d000000"
+        },
+        {
+          "offset": 1050,
+          "archive_offset": 7329015,
+          "raw_hex": "0d0221000d000000"
+        },
+        {
+          "offset": 1058,
+          "archive_offset": 7329023,
+          "raw_hex": "0d021f000d000000"
+        },
+        {
+          "offset": 1066,
+          "archive_offset": 7329031,
+          "raw_hex": "0d022b000d000000"
+        },
+        {
+          "offset": 1074,
+          "archive_offset": 7329039,
+          "raw_hex": "0d0222000d000000"
+        },
+        {
+          "offset": 1082,
+          "archive_offset": 7329047,
+          "raw_hex": "0d0223000d000000"
+        },
+        {
+          "offset": 1090,
+          "archive_offset": 7329055,
+          "raw_hex": "0d0220000d000000"
+        },
+        {
+          "offset": 1098,
+          "archive_offset": 7329063,
+          "raw_hex": "0d022b0007000000"
+        },
+        {
+          "offset": 1106,
+          "archive_offset": 7329071,
+          "raw_hex": "0d02230007000000"
+        },
+        {
+          "offset": 1114,
+          "archive_offset": 7329079,
+          "raw_hex": "0d02220007000000"
+        },
+        {
+          "offset": 1122,
+          "archive_offset": 7329087,
+          "raw_hex": "0d02210007000000"
+        },
+        {
+          "offset": 1130,
+          "archive_offset": 7329095,
+          "raw_hex": "0d02200007000000"
+        },
+        {
+          "offset": 1138,
+          "archive_offset": 7329103,
+          "raw_hex": "0d021f0007000000"
+        },
+        {
+          "offset": 1146,
+          "archive_offset": 7329111,
+          "raw_hex": "0d021e0007000000"
+        },
+        {
+          "offset": 1154,
+          "archive_offset": 7329119,
+          "raw_hex": "0d021d0007000000"
+        },
+        {
+          "offset": 1162,
+          "archive_offset": 7329127,
+          "raw_hex": "0d021c0007000000"
+        },
+        {
+          "offset": 1170,
+          "archive_offset": 7329135,
+          "raw_hex": "0d021b0007000000"
+        },
+        {
+          "offset": 1178,
+          "archive_offset": 7329143,
+          "raw_hex": "0d021a0007000000"
+        },
+        {
+          "offset": 1186,
+          "archive_offset": 7329151,
+          "raw_hex": "0d02190007000000"
+        }
+      ],
+      "owners": [
+        {
+          "stream": 0,
+          "group": 996,
+          "owner_kind": "region",
+          "owner": 1140,
+          "descriptors": [
+            102
+          ],
+          "event": 4,
+          "value": 0,
+          "predicate": null,
+          "archive_offset": 7330881
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 1738,
+      "commands": [
+        {
+          "offset": 1744,
+          "archive_offset": 7329709,
+          "raw_hex": "0d021b000d000000"
+        },
+        {
+          "offset": 1752,
+          "archive_offset": 7329717,
+          "raw_hex": "0d021e000d000000"
+        },
+        {
+          "offset": 1760,
+          "archive_offset": 7329725,
+          "raw_hex": "0d021a000d000000"
+        },
+        {
+          "offset": 1768,
+          "archive_offset": 7329733,
+          "raw_hex": "0d0219000d000000"
+        },
+        {
+          "offset": 1776,
+          "archive_offset": 7329741,
+          "raw_hex": "0d021d000d000000"
+        },
+        {
+          "offset": 1784,
+          "archive_offset": 7329749,
+          "raw_hex": "0d021c000d000000"
+        },
+        {
+          "offset": 1792,
+          "archive_offset": 7329757,
+          "raw_hex": "0d0221000d000000"
+        },
+        {
+          "offset": 1800,
+          "archive_offset": 7329765,
+          "raw_hex": "0d021f000d000000"
+        },
+        {
+          "offset": 1808,
+          "archive_offset": 7329773,
+          "raw_hex": "0d022b000d000000"
+        },
+        {
+          "offset": 1816,
+          "archive_offset": 7329781,
+          "raw_hex": "0d0222000d000000"
+        },
+        {
+          "offset": 1824,
+          "archive_offset": 7329789,
+          "raw_hex": "0d0223000d000000"
+        },
+        {
+          "offset": 1832,
+          "archive_offset": 7329797,
+          "raw_hex": "0d0220000d000000"
+        },
+        {
+          "offset": 1840,
+          "archive_offset": 7329805,
+          "raw_hex": "0d022b0007000000"
+        },
+        {
+          "offset": 1848,
+          "archive_offset": 7329813,
+          "raw_hex": "0d02230007000000"
+        },
+        {
+          "offset": 1856,
+          "archive_offset": 7329821,
+          "raw_hex": "0d02220007000000"
+        },
+        {
+          "offset": 1864,
+          "archive_offset": 7329829,
+          "raw_hex": "0d02210007000000"
+        },
+        {
+          "offset": 1872,
+          "archive_offset": 7329837,
+          "raw_hex": "0d02200007000000"
+        },
+        {
+          "offset": 1880,
+          "archive_offset": 7329845,
+          "raw_hex": "0d021f0007000000"
+        },
+        {
+          "offset": 1888,
+          "archive_offset": 7329853,
+          "raw_hex": "0d021e0007000000"
+        },
+        {
+          "offset": 1896,
+          "archive_offset": 7329861,
+          "raw_hex": "0d021d0007000000"
+        },
+        {
+          "offset": 1904,
+          "archive_offset": 7329869,
+          "raw_hex": "0d021c0007000000"
+        },
+        {
+          "offset": 1912,
+          "archive_offset": 7329877,
+          "raw_hex": "0d021b0007000000"
+        },
+        {
+          "offset": 1920,
+          "archive_offset": 7329885,
+          "raw_hex": "0d021a0007000000"
+        },
+        {
+          "offset": 1928,
+          "archive_offset": 7329893,
+          "raw_hex": "0d02190007000000"
+        }
+      ],
+      "owners": [
+        {
+          "stream": 0,
+          "group": 1738,
+          "owner_kind": "region",
+          "owner": 1358,
+          "descriptors": [
+            133
+          ],
+          "event": 4,
+          "value": 0,
+          "predicate": null,
+          "archive_offset": 7331171
+        }
+      ]
+    }
+  ],
+  "addressed_actors": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    43
+  ],
+  "actors_without_direct_commands": [
+    40,
+    41,
+    42,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "scope": "23 definition4 Roach placements (not24); health10. Two region event4 groups each address the same12 actors with property13 then7. Native setter sets B5 bits0C then clears bit01; clears7C for each, except behavior15 bypasses both. These are bit mutations, not verified enable or spawn operations. AI meaning of B5, initial admission, region-event production and gameplay reachability remain OPEN. Other11 placements lack direct literal commands; absence is not proof of inactivity."
+}
