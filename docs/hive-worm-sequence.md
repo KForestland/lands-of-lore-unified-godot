@@ -1,6 +1,6 @@
 # Hive worm sequence: verified source behavior
 
-WORM actors30/31 are an unresolved scripted boulder encounter, not an ordinary HIVEW population. The internal label is WORM; locally decoded source frames visibly depict rounded rocks. This visual identification does not rename the source definition. Both source placements request1000 health and generic construction preserves flags0x582/state0. This does not establish their complete derived startup or playable behavior. No worm gameplay has been added yet.
+WORM actors30/31 are an unresolved scripted boulder encounter, not an ordinary HIVEW population. The internal label is WORM; locally decoded source frames visibly depict rounded rocks. This visual identification does not rename the source definition. Both source placements request1000 health and generic construction preserves flags0x582/state0. This does not establish their complete derived startup or playable behavior. The local saved moving-surface chain is now integrated; the boulder actors and contact effect are still pending. See [surface integration](hive-boulder-runtime.md).
 
 The source sequence is now bounded more precisely:
 
@@ -29,4 +29,4 @@ The two source poses are now staged locally: selector0/resource284 is one95×78 
 
 The first extraction failed because the old replay helper accepted block groups and static rows only. Support for the explicitly checked0x2c6 internal row sequence fixes that limitation. The original failure is retained. Existing warrior1,792 event/912 update checks and Executioner2,880 update/288 feedback checks pass again. The two-test Godot runner passes; the new93-check suite has not been run in full, and the previous all92 latest results remain the gameplay checkpoint.
 
-Opus's first animation review hit its limit; report-only continuation returned the property-write anchors, which the lead independently replayed. Grok's bounded contact review reached its turn limit without substantive findings. No unsupported collaborator conclusions were promoted. Production gameplay is unchanged by this preparation; full Act One remains open.
+Opus's first animation review hit its limit; report-only continuation returned the property-write anchors, which the lead independently replayed. Grok's bounded contact review reached its turn limit without substantive findings. No unsupported collaborator conclusions were promoted. That preparation did not change gameplay. The subsequent surface integration is documented separately; full Act One remains open.
