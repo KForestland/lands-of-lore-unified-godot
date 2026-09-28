@@ -1,0 +1,11 @@
+# Hive warrior variant selection
+
+Native A7D4C/A1E44 replay now covers21,504 combinations: actions5/14/15, all256 mask bytes, four modes, and seven random-sample boundaries. HIVEW attacks select11/12/13/14; death selects19/20; corpse selects21. Modes2/3 force effective mask1. The source weighted attack entries use20/80; death/corpse entries have weight0 and use the native fallback. Even the weight0 lookup requests one random sample. `hive_warrior_selection.gd` matches all vectors with explicit caller-supplied mask/mode/sample.
+
+A separate native replay covers7,236 health-mask updates and the initializer stores: initial mask1/mode0, source threshold50, changed health at or below50 switches mask1 to4 for update-kind2 or2 otherwise; recovery above50 switches2/4 back to1. Unchanged health preserves the mask. Input health admission/clamping, update-kind production, dead-actor early return, later virtual callbacks and temporary mode producers remain outside this slice.
+
+The first planner used100 for death/corpse weights and failed the native-vector test. Correcting those constants to the actual source zero weights resolves it; no vector was discarded. The original failure stopped at test line8 with no failing row printed, then the20-second wrapper terminated it. Its console output is retained in the conversation, not a separate full log. Current selection/mask/animation tests pass in `tmp/regressions/warrior_selection_20260928/report.json`.
+
+Opus supplied health-mask producer anchors. The lead independently replayed their relevant instructions. The existing outcome-transition verifier already resolves the native mode dispatch table, contrary to the advisory report’s unresolved table note. The after-death animation-to-corpse callback is still being traced separately. This module does not choose an initial live idle, invent AI admission, apply damage, or integrate sprites. First-view source animation frames are staged locally; the separate local animation evidence remains outside this publication.
+
+The isolated publication contains only this deterministic planner, numeric fixtures and an asset-free test. Full Act One, native AI/stat/presentation fidelity and live warrior animation integration remain open.
