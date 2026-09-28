@@ -8,7 +8,11 @@ Two region event4 groups (region1140/group996 and region1358/group1738) each add
 
 The other eleven placements have no direct literal actor command references in either scanned stream. That does not establish inactivity or optionality. Runtime selectors, general AI and indirect effects are outside this scan.
 
-Next implementation prerequisite: bind behavior14/action9 and B5 bits0C to their observable actor behavior, then determine which placements are reached on the ordinary cave route. Reuse existing cave animation/combat infrastructure when appropriate, preserving source positions and saved individual identities. Do not turn the region flag mutations into an invented spawn trigger or count the existing single duel as coverage of this population.
+B5 bits04/08 request pending goal/action selection, with goal chosen first; bit01 blocks both. This caller order is already covered by the existing native Hive chooser verifier. The source Roach goals/actions/effector profiles have now been bound to the shared scoring implementation. The action9 dispatcher calls A459C, whose ordinary animation-completion path requests selector lookup for action0; this disassembly lead alone is not a full movement/AI classification.
+
+The initial goal14 exposed a concrete shared-helper gap. Native loader arguments establish contiguous goals at profile+28 (46×14), actions at+2AC (46×15), and effectors at+55E (58×30). The chooser has no goal14 clamp: its bias row lands in the first row of the next table. New native replay checks480 supplied-stat choices, including32 with goal14. The Godot helper now accepts an explicitly supplied `initial_goal_bias` row, rejects goal14 without it, and preserves atomic validation/reconfiguration. No invented zero row or goal remapping. Three focused tests pass, including existing Hive goal/action suites. See `cave-roach-ai-choice.json` and the numeric fixture.
+
+Next implementation prerequisite: bind the source stat/condition producers and decision commits to ordinary cave gameplay, then determine which placements are reached on the ordinary route. Reuse existing cave animation/combat infrastructure when appropriate, preserving source positions and saved individual identities. Do not turn the region flag mutations into an invented spawn trigger or count the existing single duel as coverage of this population.
 
 Reproduce locally:
 
