@@ -80,3 +80,11 @@ The actor audit now records194 source placements and11 positively reviewed live 
 ## Next encounter source verification
 
 [Hive actors33/35](hive-remaining-actor-triggers.md) now have independently checked activation chains, initial shared-constructor flags and original unfold/eating-to-attack media bindings. Native checks cover768 predicate cases,3,072 event cases,1,280 state writes,90 hit filters and768 two-visit contact cases. Opus contributed the source-chain analysis. These are missing live encounters; the verification identifies their implementation requirements and does not increase live actor coverage or establish Act One completion.
+
+## Live unfolding and feeding encounters
+
+The two additional Hive encounters now activate through source-region checks and play their original96 animation frames before combat. Melee, basic Spark, aura, partial saves, defeat and Jungle transport pass focused tests. The lower Hive chamber exposed a shared save-height limit that is now corrected. [Live evidence and remaining limits](hive-ambush-live.md).
+
+A fresh full **86/86** Hive suite passes, including the continuous quest walk in73.42seconds. The eleven actual repaired-sword departure save links still pass their independent audit. These tests do not establish earned approaches to the two new encounters or a fresh full campaign. The actor audit now has13 positive bindings across194 placements, not a completion percentage.
+
+Portable ambush state is in [PR14](https://github.com/KForestland/lands-of-lore-unified-godot/pull/14), commit28d687b, and aura target support updates [PR12](https://github.com/KForestland/lands-of-lore-unified-godot/pull/12), commit6fd8467. Both documented clean-checkout tests pass without original media or saves. Broad live integration remains local. Next is the separately source-proven Spark activation path for the feeding prop, followed by earned reachability and remaining native combat/presentation work. Full Act One remains open.

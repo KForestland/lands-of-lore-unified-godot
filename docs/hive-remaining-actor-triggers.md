@@ -1,6 +1,6 @@
 # Remaining Hive encounter triggers
 
-Actor33 and actor35 are distinct missing encounters. This source work does not add them to the live game or close Act One acceptance. Opus identified the mechanism chains; the lead independently checked source bytes and replayed their conditions, state writers, shared constructor and additional trigger paths.
+Actor33 and actor35 are distinct encounters. This document records their source verification; subsequent local integration and remaining limits are in [live ambush evidence](hive-ambush-live.md). Act One acceptance remains open. Opus identified the mechanism chains; the lead independently checked source bytes and replayed their conditions, state writers, shared constructor and additional trigger paths.
 
 | Actor | Mechanism | Source activation sequence | Original media |
 | --- | --- | --- | --- |
@@ -20,6 +20,6 @@ All three clips are 320×200 at15fps. Template, resource, archive entry and clip
 
 The existing `verify_hive_movie_callbacks.py` was independently rerun:160 controller cases,512 callbacks,512 selectors and65,536 activation cases pass. Status5 emits event0; status4 emits event1. Status4 can occur on the first decoded frame, so it must not be described as exclusively a clip-end event. These are composed bounded proofs, not a captured complete native playthrough of either encounter.
 
-Remaining integration: source-bound playback and props, saved mechanism state/local7/contact history, player reachability, actor33/35 combat, and actual weapon-trigger binding for prop318. Region444 event2 producer and prop318 operation10 remain to be checked before assigning their complete observable behavior. The generic constructor result does not by itself prove final post-load activation. Reuse the existing playback/save/combat systems where their behavior matches; do not substitute the current nest animation for the recovered unfold/eating clips.
+Playback, props, saved mechanism state/local7/contact history and combat now have local integration checks. Earned player reachability and actual weapon-trigger binding for prop318 remain open. Region444 event2 producer and prop318 operation10 remain to be checked before assigning their complete observable behavior. The generic constructor result does not by itself prove final post-load activation. Reuse the existing playback/save/combat systems where their behavior matches; do not substitute the current nest animation for the recovered unfold/eating clips.
 
 Verification development caught two harness assumptions: placement flags occupy a16-bit word, and event4 admission calls a shared instruction slice atF2DB7. Both were corrected before the passing report. No gameplay code changed in this work package.
