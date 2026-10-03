@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-03T05:45:01.333532+00:00",
+  "legs": [
+    {
+      "proof": "docs/cave-starting-spells-walk-checks.json",
+      "proof_sha256": "34451c3d9dabb55035481c744c8a833f7b7cb25f758f41f97dfa358484f7f394",
+      "output_save": "act1_magic_museum_arrival.json",
+      "output_sha256": "2c079e0a65facc5cb22f8214908ad6ace383cedb501704888ecaad7a4eb5463d"
+    },
+    {
+      "proof": "docs/museum-broken-sword-earned-checks.json",
+      "proof_sha256": "cb616f26ed2c6ad191e09064b27dbe9646b060444d5ca4283cb63c274dcc3dea",
+      "output_save": "act1_broken_museum_jungle.json",
+      "output_sha256": "7e45e053b89fd7678ca4601a6d6b2c2d07cad42c65699f8ccfacc3b86a8e4f8c"
+    },
+    {
+      "proof": "docs/broken-earned-jungle-hive-walk-checks.json",
+      "proof_sha256": "59a74027cc7107256957952ceb52606869095b1ef7394a021cfe317ad2fbe81f",
+      "output_save": "act1_broken_hive_entry.json",
+      "output_sha256": "d147802ad65c41fd1cb273b557e40037c6749f89ddf4ba717884d67e36def8f6"
+    },
+    {
+      "proof": "docs/broken-earned-flute-return-walk-checks.json",
+      "proof_sha256": "76324394fcbf65a272ca2c11f166a5ffd5bfd9341dd8a3f38ac3fd07c779f5bd",
+      "output_save": "act1_broken_flute_hive_return.json",
+      "output_sha256": "f2155a869b71f0f6ec5764f889d116e766a56e97fa4d0f7acd7197c2a8321515"
+    },
+    {
+      "proof": "docs/broken-hive-wax-return-checks.json",
+      "proof_sha256": "26dfabd3f20c4b98885f1874e7f4c2ceeb121188c3ea34714c76525742ca302f",
+      "output_save": "act1_broken_wax_upper_return.json",
+      "output_sha256": "2d1a2b53667df29cf080c1bcfc1c5854b45448818b2a16eedba2fede8c9cfe48"
+    },
+    {
+      "proof": "docs/broken-hive-earned-rune-walk-checks.json",
+      "proof_sha256": "013a602560416f58f2cd2eff28c5cd50bbf479d259628a7aac8e9f026f304b0c",
+      "output_save": "act1_broken_earned_runes.json",
+      "output_sha256": "36dc1cb1523f3639ce867124345a7e241476f6deb5d2c84a480377d0d3b8250e"
+    },
+    {
+      "proof": "docs/broken-hive-earned-rune-return-checks.json",
+      "proof_sha256": "73e8f89e79736dba3d471faa2d9d5edcec35a7f102125ba7fc9579df5acdd6f4",
+      "output_save": "act1_broken_runes_monastery_return.json",
+      "output_sha256": "7c10716395ed103a9d8c5a4c63c838df15d0d6f147a3a54c96479db94c0258d9"
+    },
+    {
+      "proof": "docs/broken-magic-knowledge-walk-checks.json",
+      "proof_sha256": "dd0056ecaf0421a33f278020998918c8f15b76b0e5a9066ea300e622080cc498",
+      "output_save": "act1_broken_orb_monastery.json",
+      "output_sha256": "de15b8040ed3492c8d293803799ff3e3a9ccceb0a56faf1eb2beef68ed017fdb"
+    },
+    {
+      "proof": "docs/broken-monastery-rune-offer-live-checks.json",
+      "proof_sha256": "66131453929a8ee86d2ed562ac5631633b31f079c7064386fbf0fcc3310ac533",
+      "output_save": "act1_broken_runes_translated.json",
+      "output_sha256": "044a2601094efc569c83b7615d410d41957010674d39510694d12c9638bd3f02"
+    },
+    {
+      "proof": "docs/broken-repair-earned-walk-checks.json",
+      "proof_sha256": "ad79f64b2f52aac0d2e05db42fbae266ef17ce28558e650eaf4a85e2ad5d311c",
+      "output_save": "act1_broken_repaired_monastery.json",
+      "output_sha256": "02b8632bc00f51de573a2e2fce26fab83fdf188dae7d3d167e5391b61c6cca02"
+    },
+    {
+      "proof": "docs/broken-act-one-departure-full-walk-checks.json",
+      "proof_sha256": "67c08805d239c8f2d02b003e15126261170a30ac3015f9c638c84b800e2134f5",
+      "output_save": "act1_broken_earned_darker_arrival.json",
+      "output_sha256": "10eaf5f2a3675f91665f222c5eed2c282105ebeb01f3e3a70c54dc63667ee685"
+    }
+  ],
+  "scope": "Eleven actual save links from cave start to Museum broken sword, Hive rescue/flute/wax/runes, Rashar knowledge, Julian translation/orb, Morgan blessing, Rashar repair and darker-jungle arrival. Cave leg reused; downstream legs rerun. Automated steering, accelerated time/audio and manually driven movement/curse ticks; no new position/inventory/quest injection. Full content, fresh complete campaign and owner acceptance remain open."
+}

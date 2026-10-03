@@ -49,5 +49,34 @@
   "route4-6: wall-corner stall",
   "route7: beast-form stall at narrow passage"
  ],
- "scope": "Earned cave entrance\u2192Museum arrival with all23 source Roaches live. Automated steering and4x clock are test adapters. Not full Act One acceptance."
+ "scope": "Earned cave entrance\u2192Museum arrival with all23 source Roaches live. Automated steering and4x clock are test adapters. Not full Act One acceptance.",
+ "final_rerun": {
+  "log": "tmp/regressions/roach_ai_route_20261003/route9.log",
+  "output_sha256": "487dba1eb6f01a7f0d485d9cdd9916f907d55935b198fe7e80de4542ee35ce22",
+  "note": "Rerun on final code after clock-grid/insertion fixes; full suite158/158 passed beforehand."
+ },
+ "guards_rerun": {
+  "log": "tmp/regressions/roach_ai_route_20261003/route15.log",
+  "output_sha256": "04c279d141655d4525a66b043b377327516b4d3d27794c18dbf7df1e9ca43dc9",
+  "roaches": [
+   47,
+   46,
+   42,
+   40,
+   44
+  ],
+  "guards": [
+   52,
+   53,
+   54
+  ],
+  "driver_changes": [
+   "fight_guards (production strike + spell-key healing)",
+   "curse wait refreshes the stop budget",
+   "removed waypoint (90,-16440) that pinned the route to a lizard-only gap; direct line clear at beast radius"
+  ],
+  "intermittent": [
+   "route7/11 stalls in beast/human form at narrow passages (curse seed varies per run); route14 stall near (-213,-15480) unresolved, diagnostics added"
+  ]
+ }
 }
