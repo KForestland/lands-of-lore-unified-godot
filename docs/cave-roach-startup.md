@@ -1,0 +1,9 @@
+# Cave Roach initial presentation
+
+Fresh entrance actor23 and the23 definition4 population actors now start with action0's front-facing resource769. Native behavior14 sets current action byteAA=9 but requests action0 through A7D4C; AA9 does not select the visible startup clip. The source idle selectors0/1 both use769 without mirroring. Native replay covers3,072 entry cases and202 actual idle lookup/base-setter cases across both definitions and every RNG result0..100. See `cave-roach-behavior-entry-checks.json`.
+
+Idle currently holds the first frame. Native idle cadence, sound/selector differences, admission ordering and full world scheduling remain open. Movement/attack/death retain their existing presentation paths. Both source definitions also provide original action9/selector7/resource830 and action10/selector8/resource838, each eight frames; retaining these assets does not prove they play on admission.
+
+Existing saves containing the previous action9 presentation adapter remain readable and finish their own eight-fps clip. Partial elapsed time restores from disk. Missing legacy fields do not replay that clip; half-present, terminal-active, nonfinite and inconsistent packets are rejected. Population death clocks remain separate, and native current/pending AI fields are unchanged by this presentation correction.
+
+Four focused headless tests pass in `tmp/regressions/roach_idle_entry/report.json`: population visual state, live population, entrance startup compatibility and population disk save. The live test substitutes the world-active mouse gate; rendered input/fidelity and fresh Act One acceptance remain open. The portable visual-state test also passes in the clean publication worktree. Earlier broader save-suite results remain historical; they were not rerun for this correction.

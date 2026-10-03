@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-03",
+  "passed": true,
+  "scope": "Partial23-actor source-position presentation/damage/save integration; not native AI or completed encounters.",
+  "source_actors": 23,
+  "source_health": 10,
+  "source_reward_scale": 1,
+  "focused_reports": [
+    "tmp/regressions/roach_population_live_melee_20261003/report.json",
+    "tmp/regressions/roach_population_shared_spell_20261003/report.json",
+    "tmp/regressions/roach_population_visual_state_20261003/report.json"
+  ],
+  "focused_tests": [
+    "cave_roach_population_state_test",
+    "cave_roach_population_choice_test",
+    "cave_roach_population_live_test",
+    "cave_roach_startup_test",
+    "cave_roach_population_save_test",
+    "player_spark_aura_state_test",
+    "executioner_spell_reward_test",
+    "cave_roach_population_visual_state_test"
+  ],
+  "save_suite": {
+    "validation": 67,
+    "integration": 17,
+    "restart_write": 4,
+    "restart_read": 7,
+    "passed": true,
+    "log": "tmp/act1_roach_live_20261003/save_suite.log"
+  },
+  "source_reward_bindings": "docs/live-spell-reward-bindings.json",
+  "sha256": {
+    "scripts/lol2/cave_roach_population.gd": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+    "scripts/lol2/cave_roach_population_state.gd": "486a4d3581a9d4e1fdb19808d936b33146f97bd46d29552d6ba52abb66443c99",
+    "scripts/lol2/cave_roach_population_source.json": "7463cf672c907e2da94ce4f8605104be6012ea741d4be839d1d2566ab28979d6",
+    "scripts/lol2/cave_walkthrough.gd": "b5e5c27caf3755816f7b34d7493f78f1711ae64429df357246245038e492106a",
+    "scripts/lol2/player_starting_magic.gd": "0593c3a7853477ccfd814b45993fb125fe6f454f37f8d6c4bfff6e44755a0621",
+    "scripts/lol2/player_spark_aura.gd": "68063db9db5fe26dda9d926cf8c1ab88d7cf62d08f0a172b36ca14624d5faaec",
+    "scripts/lol2/player_spark_aura_state.gd": "f4d7266f23f4672af58d2b930b454252ee11de92de79d4ebfb6afecd38b0d45f",
+    "tests/cave_roach_population_live_test.gd": "cd778f068a36680b835c382a6b9fbd78362a655ec6cd13fcfe9f48564d1f797c",
+    "tests/cave_roach_population_visual_state_test.gd": "de930a39cbebe3a226810cbdbbab06e90ca0b5ff2d42a2b6ef606589f7184bcd",
+    "tools/prepare_cave_roach_population.py": "8cc018741559bb83c9643e485ccfb363ca1f2ae014affb25f0560e8c5105e7ad"
+  },
+  "limits": [
+    "Headless scene tests substitute only the mouse/world-active gate; production input capture and rendered visual acceptance not established.",
+    "Stationary bodies: perception, decision scheduling, movement, attack admission and enemy attacks remain open.",
+    "Melee damage works; cave melee progression is not yet bound. Spark rewards use pinned source scale1 and actual loss.",
+    "12-unit body/visual size,8fps timing and visibility/interruption policy remain modern adapters.",
+    "Source contact mutations and saved pending/current AI decisions remain separate from presentation; no invented region spawn semantics.",
+    "No new earned route or full Act One acceptance."
+  ],
+  "retained_failures": [
+    "roach_population_live_compile_20261003:Variant type-inference parse failure",
+    "roach_population_live_compile2_20261003:native class name shadowing parse failure",
+    "roach_population_live_compile3_20261003:JSON float action membership caused temporary-write verification failure; fixed integer canonical comparison",
+    "roach_population_live_compile4_20261003:legacy test expected no visual initialization; corrected expected migrated presentation",
+    "roach_population_live_first_20261003:test local Dictionary type annotation missing"
+  ],
+  "advisors": {
+    "opus": "explicit claude-opus-5-5 shell request timeout90 exit124; no output",
+    "grok": "shell request timeout90 exit124; no output"
+  },
+  "idle_correction": {
+    "report": "tmp/regressions/roach_idle_entry/report.json",
+    "passed": true,
+    "tests": 4,
+    "native_lookup_setter_cases": 202,
+    "scope": "Fresh source idle front view; saved action9 compatibility. Native idle cadence and live AI unclaimed."
+  }
+}

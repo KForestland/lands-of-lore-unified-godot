@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "source_and_evidence_sha256": {
+    "scripts/lol2/hive_boulder_audio_state.gd": "e406623f607b8d3f00fc129418c65e9c1449985596221444ea2aee8bb41d1a15",
+    "scripts/lol2/hive_boulder_audio.gd": "df3a51db0e444dce8da1cd522baa347409fb7fcc3410004f4bb8c488e0034fb0",
+    "scripts/lol2/hive_review.gd": "c448fb1e45d82bd907600f0344ebee191dff175a7070514ae2fd413f85a56559",
+    "scripts/lol2/act_one_quest_state.gd": "9ab8a7be8ba3da341d7e2201069d9c92b0554ffc78690ca21347acf96c208164",
+    "tools/prepare_hive_boulder_audio.py": "aea25ea7fdfbbd43173fcdc874f630fdac83bf1fff0d7a13f757cea99237800d",
+    "tools/verify_hive_boulder_audio.py": "4644bf85dd7be2666114b7800b4f2dd1ee2c9ddc03beb862b0b7ad4c33f631b1",
+    "tests/hive_boulder_audio_state_test.gd": "8836d4ea975721a173a57eedb4ec40ebd35ca22609bbda0768af5fb1605f3cdc",
+    "tests/hive_boulder_audio_live_test.gd": "778cd5ef84d70f24fdf7e29d166587dd35d52a760f243aa1b77e06da17b44c58",
+    "tests/hive_boulder_audio_earned_walk_test.gd": "9ea98e3cdcaf19bc07cf843c81208014a6d1826178c83c12b15284e3add19af2",
+    "tests/fixtures/hive_boulder_audio_spatial_native.json": "729d59937907dd549188c3dad97ee3ab69baeb366495c55f5fd426466344b777",
+    "docs/hive-boulder-audio-source.json": "3ec36a8b181a70292ad97a87570da9c6b0f126671d1afdef14b863f6dfa23c4f",
+    "docs/hive-boulder-audio-native.json": "9fc32d22ba10c7037c668b1b2ec95d0387cb171c45ba0e30196f21053cb6c1de",
+    "docs/hive-boulder-audio-earned-checks.json": "fbbe8a0781a12f903eff655dad66c892d17125a82c05a103b578c5d16145d3d0",
+    "tmp/regressions/boulder_audio_20260928/report.json": "fbb93564a3ac02e54db52cc798db57a00466d3586acabcfe3879586b0e93e854",
+    "tmp/regressions/boulder_audio_final_20260928/report.json": "67e016253dc203e7263e19a32a1b5f92515c6d1070e221e90e1b8afb5bae51eb",
+    "tmp/act1_team_20260927/boulder_audio_earned_stop6_report.json": "b77d97c638241d1f4b6d89cc77beb6df829fea48b1b823593096d4497bc64f15",
+    "tmp/act1_team_20260927/opus_boulder_audio_save_review.txt": "fd5577c205c842085e6674255c9b2c7a4ef5ca47343ceb36a2fccaa72937efc5",
+    "tmp/act1_team_20260927/grok_boulder_audio_save_review.txt": "66ef46f88b947d93cb2d0d7190b2918e023e39316a7feafcb34d04d186c9e8c6",
+    "tmp/act1_team_20260927/opus_boulder_audio_code_review.txt": "dbd21253e9f8c7fc06021d83642d6abf3fb2cd07031eb43e1c68e9b2b95dcc92",
+    "tmp/regressions/boulder_audio_full_20260928/report.json": "d14aa746cb79ab5c5494eb5e462e10959cf4f6e30ce00ab1ccdc9d9edd1ea9cc"
+  },
+  "focused_initial": "6/6 passed",
+  "focused_final": "2/2 passed after Opus timing fixes and native distance integration",
+  "earned": "8.285735148998356s PASS; actual input/output hashes and exact audio/actor save packets independently match",
+  "publication": "Asset-free state/spatial fixture test passes in isolated publication checkout; original media/personal saves excluded",
+  "boundaries": "Full scene/save wiring local; Godot waveform looping, stereo panning, voice mixing, listener placement and host scheduling remain adapters. Native save/device timing and contact damage remain open. Act One incomplete.",
+  "broad_run": "101/101 passed, quest walk71.65s. The run overlapped final one-shot/loop-drift fixes and native spatial integration; final-source focused2/2 and earned8.29s pass separately."
+}

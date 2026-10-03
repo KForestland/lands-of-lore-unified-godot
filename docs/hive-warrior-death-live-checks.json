@@ -1,0 +1,25 @@
+{
+  "scope": "Local ordinary-mode HIVEW death/corpse integration; Act One remains open.",
+  "reports": [
+    {
+      "path": "tmp/regressions/warrior_death_full_20260928/report.json",
+      "sha256": "98123eeef41912b200281afc8bdcbedd2fdd07161b970f4273619188be5a0ca2",
+      "passed": 91
+    },
+    {
+      "path": "tmp/regressions/warrior_death_release_safe_20260928/report.json",
+      "sha256": "6b958da96b61a38f2beb920f69542fd7a3078a50ac41f91832268f628c0d95bd",
+      "passed": 2
+    }
+  ],
+  "final_source_hashes": {
+    "scripts/lol2/hive_warrior_death.gd": "505888a71d9107e491b9e461de5230506d7e3173fca162e3e4bd8a643e432f98",
+    "scripts/lol2/hive_return_population.gd": "08a9348a9e3317feb07f0687deb30fc2e00026fa59006f0bfc14d6920f4adacf",
+    "scripts/lol2/hive_executioner_sprite.gd": "e971612ec50b458b8212ccdf13ce96bc6652098400fce807bb4fdaa726ad2d85",
+    "scripts/lol2/hive_ambush_state.gd": "9ed9ee5e53e3b10b2cd95e03aacb39d1d25a607ba424c3e6a2385e2ecaddbbdb",
+    "scripts/lol2/hive_return_population_state.gd": "c730ef17339b691a1ce0a10d1e1b5aefd42fced214a764559ed7f565c9092c75",
+    "tests/hive_warrior_death_live_test.gd": "cc85b8f76904e22db1c8df652027ccc2ba187f5658af7c723bcfb4fb32cc5ffa",
+    "tests/hive_warrior_death_clock_test.gd": "48bb67dd508373d616c01499d2842f53654a13dc01507e55f7564a56be5b9b9a"
+  },
+  "timing_note": "The full suite overlapped removal of side-effectful asserts in two production files; the two focused rendered tests ran after that correction. Earned fight source hashes remain the actual earlier run provenance."
+}

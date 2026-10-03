@@ -1,0 +1,105 @@
+{
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 414159,
+      "end": 414325,
+      "sha256": "2473890dfa467225677f44a42138df92e8c7e63e325d5eef334dc91591c62d22"
+    },
+    {
+      "start": 995264,
+      "end": 995574,
+      "sha256": "574c07a3a7f829e592701b0867b40fe03e6c1b8696be4a0619d28f6449fa0808"
+    }
+  ],
+  "source_bindings": [
+    {
+      "region": 793,
+      "descriptor": 68,
+      "record_region": 794,
+      "event": 7,
+      "group": 6250,
+      "raw_hex": "080b6a181a030700",
+      "archive_offset": 5960105
+    },
+    {
+      "region": 794,
+      "descriptor": 68,
+      "record_region": 794,
+      "event": 7,
+      "group": 6250,
+      "raw_hex": "080b6a181a030700",
+      "archive_offset": 5960105
+    },
+    {
+      "region": 1216,
+      "descriptor": 124,
+      "record_region": 1216,
+      "event": 5,
+      "group": 6806,
+      "raw_hex": "080b961ac0040500",
+      "archive_offset": 5960473
+    }
+  ],
+  "source_entry_owners": [
+    {
+      "stream": 0,
+      "group": 6778,
+      "owner_kind": "region",
+      "owner": 1216,
+      "descriptors": [
+        124
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 5960465
+    }
+  ],
+  "surface_requests": [
+    {
+      "group": 6778,
+      "region": 794,
+      "target": -1387,
+      "flags": 1,
+      "speed": 50,
+      "raw_hex": "c4901a0395fa013200000000"
+    },
+    {
+      "group": 6250,
+      "region": 1217,
+      "target": -1670,
+      "flags": 0,
+      "speed": 10,
+      "raw_hex": "c490c1047af9000a00000000"
+    },
+    {
+      "group": 6250,
+      "region": 1216,
+      "target": -1700,
+      "flags": 0,
+      "speed": 10,
+      "raw_hex": "c490c0045cf9000a00000000"
+    },
+    {
+      "group": 6250,
+      "region": 1218,
+      "target": -1670,
+      "flags": 0,
+      "speed": 10,
+      "raw_hex": "c490c2047af9000a00000000"
+    },
+    {
+      "group": 6806,
+      "region": 801,
+      "target": 100,
+      "flags": 9,
+      "speed": 20,
+      "raw_hex": "c49021036400091400000000"
+    }
+  ],
+  "dispatch_cases": 768,
+  "producer_cases": 4608,
+  "scope": "Native F2FC0 source kind11 dispatch with actual source region descriptor IDs and original event lists; runtime table addresses/42-byte descriptor event offsets supplied, enqueue not executed. Native651CF completion tail with supplied signed direction/remaining movement, both surfaces and all flag bytes. Movement clock, obstruction, surface-request producer, queued command execution and worm hit effects remain open. Event7 is nonpositive ceiling completion; event5 is nonpositive floor completion, not ordinary player entry. Region793 shares descriptor68 but cannot match the record targeting794."
+}

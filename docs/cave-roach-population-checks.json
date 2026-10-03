@@ -1,0 +1,67 @@
+{
+  "suite": "core",
+  "project": "/home/bob/lol2_github_source_20260911",
+  "started_utc": "20260928T065629317901Z",
+  "godot": [
+    "/home/bob/lol2_github_source_20260911/tmp/godot_host.sh"
+  ],
+  "filtered": true,
+  "suite_test_count": 39,
+  "selected_tests": [
+    "cave_roach_population_state_test",
+    "cave_roach_population_save_test",
+    "cave_roach_effective_stats_test",
+    "cave_roach_ai_choice_test"
+  ],
+  "complete": true,
+  "passed": true,
+  "tests": [
+    {
+      "name": "cave_roach_population_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.15,
+      "log": "cave_roach_population_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_population_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.46,
+      "log": "cave_roach_population_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_effective_stats_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.15,
+      "log": "cave_roach_effective_stats_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_ai_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.15,
+      "log": "cave_roach_ai_choice_test.log",
+      "errors": []
+    }
+  ],
+  "save_validation_checks": 67,
+  "scope": "Persistence and grounded source-region state effects; no visual/combat population integration",
+  "source_sha256": {
+    "scripts/lol2/cave_roach_population_state.gd": "65f5cba09aee7924ae21d6973cbccc3352866958145a5d1f7557f939f5ea9e14",
+    "scripts/lol2/cave_walkthrough.gd": "1423bad3e7c0ee0be2ba2e9e2f74a3ce57714e41e30f993b4979d735ae1aeda2",
+    "scripts/lol2/walkthrough_save.gd": "1d44cffcf10060e809c23ab910b4445901560c6f5041e08e0f2421566a174ca3"
+  }
+}

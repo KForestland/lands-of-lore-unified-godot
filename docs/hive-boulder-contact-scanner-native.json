@@ -1,0 +1,424 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 729012,
+      "end": 730030,
+      "sha256": "83e32194084e0a31cbdc419e4782bc82a8f12e6a8e767d835e53bff92a2b90de"
+    },
+    {
+      "start": 720648,
+      "end": 720726,
+      "sha256": "2fea4b05f1e24108391a1777e6be5f4df581ccc16b67ad9bdf7f85d9a49da35d"
+    },
+    {
+      "start": 682700,
+      "end": 682703,
+      "sha256": "4500d4b3ef171798a43029a1bb05cd3a5a45cb853a53708d0ac30101d7a60c9e"
+    },
+    {
+      "start": 879388,
+      "end": 879391,
+      "sha256": "e18aacce29affcdddaa5f641ac1ec12552e0fe9d066e6408941b1792818b8619"
+    }
+  ],
+  "bindings": [
+    {
+      "slot": 22952,
+      "target": 729012,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 364432,
+        "record_file_offset": 519716,
+        "record_hex": "0710a80902908f0500"
+      }
+    },
+    {
+      "slot": 22956,
+      "target": 730988,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 366408,
+        "record_file_offset": 519725,
+        "record_hex": "0710ac090248970500"
+      }
+    },
+    {
+      "slot": 23800,
+      "target": 729012,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 364432,
+        "record_file_offset": 518978,
+        "record_hex": "0710f80c02908f0500"
+      }
+    },
+    {
+      "slot": 23804,
+      "target": 730988,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 366408,
+        "record_file_offset": 518987,
+        "record_hex": "0710fc0c0248970500"
+      }
+    }
+  ],
+  "reset_cases": 243,
+  "scanner_cases": 768,
+  "representative_cases": [
+    {
+      "mover_type": 1,
+      "candidate_type": 1,
+      "count": 0,
+      "suppressed": 0,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 1,
+      "count": 0,
+      "suppressed": 0,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": true
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 1,
+      "count": 0,
+      "suppressed": 1,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 1,
+      "count": 0,
+      "suppressed": 1,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 1,
+      "count": 1,
+      "suppressed": 0,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 1,
+      "count": 1,
+      "suppressed": 0,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 1,
+      "count": 1,
+      "suppressed": 1,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 1,
+      "count": 1,
+      "suppressed": 1,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 2,
+      "count": 0,
+      "suppressed": 0,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 2,
+      "count": 0,
+      "suppressed": 0,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": true
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 2,
+      "count": 0,
+      "suppressed": 1,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 2,
+      "count": 0,
+      "suppressed": 1,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 2,
+      "count": 1,
+      "suppressed": 0,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 2,
+      "count": 1,
+      "suppressed": 0,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 2,
+      "count": 1,
+      "suppressed": 1,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 1,
+      "candidate_type": 2,
+      "count": 1,
+      "suppressed": 1,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 1,
+      "count": 0,
+      "suppressed": 0,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 1,
+      "count": 0,
+      "suppressed": 0,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": true
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 1,
+      "count": 0,
+      "suppressed": 1,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 1,
+      "count": 0,
+      "suppressed": 1,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 1,
+      "count": 1,
+      "suppressed": 0,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 1,
+      "count": 1,
+      "suppressed": 0,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 1,
+      "count": 1,
+      "suppressed": 1,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 1,
+      "count": 1,
+      "suppressed": 1,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 2,
+      "count": 0,
+      "suppressed": 0,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 2,
+      "count": 0,
+      "suppressed": 0,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 2,
+      "count": 0,
+      "suppressed": 1,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 2,
+      "count": 0,
+      "suppressed": 1,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 2,
+      "count": 1,
+      "suppressed": 0,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 2,
+      "count": 1,
+      "suppressed": 0,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 2,
+      "count": 1,
+      "suppressed": 1,
+      "pair": 0,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    },
+    {
+      "mover_type": 2,
+      "candidate_type": 2,
+      "count": 1,
+      "suppressed": 1,
+      "pair": 1,
+      "small": 0,
+      "height": 21,
+      "phased": 0,
+      "emits": false
+    }
+  ],
+  "scope": "Actual player and WORM virtualD8/DC bindings; native AFF08 proposed-XY/reset slice; full one-candidate B1FB4 traversal through cleanup, native type getters, explicit height/pair/v40/event-getter/peer-event boundaries. Both movement directions select the boulder source list for event1/subtype255. B7D62 must still be0 after mover callback and B7D8C clear after candidate callback; counter increments on admitted collisions. Movement caller cadence, callback side effects, multiple-candidate priority, physical separation and actual contact damage are not claimed."
+}

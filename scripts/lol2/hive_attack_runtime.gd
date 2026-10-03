@@ -8,6 +8,7 @@ var _clips: Dictionary = {}
 var _state: Dictionary = {}
 var _advancing := false
 var _source_adjustments: Dictionary = {}
+var _source_ai_adjustments: Dictionary = {}
 
 func _init(supplied_contract: Dictionary = {}) -> void:
 	var contract = supplied_contract.duplicate(true) if not supplied_contract.is_empty() else JSON.parse_string(FileAccess.get_file_as_string(CONTRACT))
@@ -38,7 +39,7 @@ func validate(state: Variant) -> String:
 	if not state is Dictionary: return "Invalid attack state."
 	if not _integer(state.get("version"),1,SAVE_VERSION): return "Unsupported attack save version."
 	var selector = state.get("selector")
-	if not _integer(selector,11,12): return "Invalid attack selector."
+	if not _integer(selector,0,255) or not _clips.has(int(selector)): return "Invalid attack selector."
 	if not _integer(state.get("frame"),0,int(_clips[int(selector)].frames)-1): return "Invalid attack frame."
 	if not _integer(state.get("timer"),0,int(_clips[int(selector)].interval)-1): return "Invalid attack timer."
 	for key in ["flags","base"]:
@@ -65,6 +66,7 @@ func restore(state: Variant) -> String:
 
 static func validate_feedback(reply: Variant) -> String:
 	if not reply is Dictionary: return "Invalid attack feedback."
+	if reply.has("callback") and not reply.callback is bool: return "Invalid feedback callback control."
 	for key in ["loss","percentage"]:
 		if not _integer(reply.get(key),0,4294967295): return "Invalid attack feedback value."
 	# Lethal responses require the full target/AI continuation, still unbound.
@@ -118,12 +120,13 @@ func advance_native(delta: Variant, damage_feedback: Callable = Callable()) -> D
 							_state = before
 							_advancing = false
 							return {"error":error,"events":[]}
-						_state.flags |= 8
-						if _state.flags & 16 and int(reply.loss) != 0:
-							output.append({"type":"adjustment","frame":_state.frame,"operation":7})
-							_state.flags &= 239
-						_state.result_total = (_state.result_total + int(reply.percentage)) & 65535
-						_state.result_count = (_state.result_count + 1) & 255
+						if reply.get("callback",true):
+							_state.flags |= 8
+							if _state.flags & 16 and int(reply.loss) != 0:
+								output.append({"type":"adjustment","frame":_state.frame,"operation":7})
+								_state.flags &= 239
+							_state.result_total = (_state.result_total + int(reply.percentage)) & 65535
+							_state.result_count = (_state.result_count + 1) & 255
 	_advancing = false
 	return {"state":{"selector":_state.selector,"frame":_state.frame,"timer":_state.timer,"flags":_state.flags},"events":output}
 
@@ -173,7 +176,7 @@ static func damage_split(total: Variant, minimum: Variant, first: Variant, secon
 	return maxi(int(minimum),int(int(total)*int(first)/(int(first)+int(second))))
 
 func executioner_initial_stats(reduced: bool) -> Dictionary:
-	# Caller must supply the unresolved constructor A3 condition explicitly.
+	# Explicit incoming A3 condition for reused/supplied actor state.
 	var path := "res://assets/lol2/generated/hive_attack/initial_stats.json"
 	if not FileAccess.file_exists(path): return {"error":"Executioner initial stat data is missing."}
 	var data = JSON.parse_string(FileAccess.get_file_as_string(path))
@@ -183,10 +186,89 @@ func executioner_initial_stats(reduced: bool) -> Dictionary:
 	if not data.get("copied_tail") is Array or data.copied_tail.size() != 2: return {"error":"Invalid copied stat tail."}
 	for value in data.copied_tail:
 		if not _integer(value,0,255): return {"error":"Invalid copied stat tail byte."}
-	var base := damage_split(data.get("total"),data.get("minimum"),validated.stats[3],validated.stats[2])
+	var result := recompute_attack_stats(validated.stats,data.get("total"),data.get("minimum"),reduced)
+	if result.has("error"): return result
+	result["stats"] = validated.stats
+	result["copied_tail"] = data.copied_tail.duplicate()
+	return result
+
+func executioner_fresh_stats() -> Dictionary:
+	# Verified Hive source-construction pass: actor36 arrives zeroed, A3=0.
+	# Creation only. Do not replace restored or subsequently adjusted state.
+	var result := executioner_initial_stats(false)
+	if result.has("error"): return result
+	result["a3"] = 0
+	return result
+
+static func recompute_attack_stats(stats: Variant, total: Variant, minimum: Variant, reduced: bool) -> Dictionary:
+	# AA3DB uses the persistent bank; final AB053 uses a temporary bank after
+	# AI adjustments. Caller supplies the appropriate bank and scheduling.
+	# Return derived values without mutating either bank or live state.
+	var validated := apply_stat_adjustments(stats,{},[])
+	if validated.has("error"): return validated
+	var base := damage_split(total,minimum,validated.stats[3],validated.stats[2])
 	if base < 0: return {"error":"Invalid executioner damage definition."}
-	var reserve := (int(data.total)-base) & 255
+	var reserve := (int(total)-base) & 255
 	if reduced:
 		base -= int(base/4)
 		reserve -= int(reserve/4)
-	return {"stats":validated.stats,"copied_tail":data.copied_tail.duplicate(),"base":base,"reserve":reserve}
+	return {"base":base,"reserve":reserve}
+
+
+func configure_ai_adjustments(data: Variant) -> String:
+	if not data is Dictionary or data.get("version") != 1: return "Invalid AI adjustment data."
+	for field in {"goals":14,"conditions":49}:
+		var count: int=14 if field=="goals" else 49
+		if not data.get(field) is Array or data[field].size()!=count: return "Incomplete AI adjustment data."
+		for row in data[field]:
+			if not row is Array or row.size()!=30: return "Invalid AI adjustment row."
+			for value in row:
+				if not _integer(value,-128,127): return "Invalid AI adjustment byte."
+	_source_ai_adjustments=data.duplicate(true)
+	return ""
+
+func executioner_effective_stats(stats: Variant, goal: Variant, true_conditions: Variant) -> Dictionary:
+	# AA208 copies the persistent bank, applies global goal then condition rows
+	# in ascending index order, and uses the temporary bank for its final split.
+	var validated := apply_stat_adjustments(stats,{},[])
+	if validated.has("error"): return validated
+	if not _integer(goal,0,255) or not true_conditions is Array:
+		return {"error":"Invalid AI adjustment selection."}
+	var selected: Array[int] = []
+	for condition in true_conditions:
+		if not _integer(condition,0,48) or int(condition) in selected:
+			return {"error":"Invalid or duplicate AI condition."}
+		selected.append(int(condition))
+	selected.sort()
+	if _source_ai_adjustments.is_empty():
+		var path := "res://assets/lol2/generated/hive_attack/ai_adjustments.json"
+		if not FileAccess.file_exists(path): return {"error":"Executioner AI adjustment data is missing."}
+		var data = JSON.parse_string(FileAccess.get_file_as_string(path))
+		var error:=configure_ai_adjustments(data)
+		if not error.is_empty(): return {"error":error}
+	var rows: Array = []
+	if int(goal) < 14: rows.append(_source_ai_adjustments.goals[int(goal)])
+	for condition in selected: rows.append(_source_ai_adjustments.conditions[condition])
+	var result: Array = validated.stats
+	for row in rows:
+		for i in range(30): result[i] = clampi(int(result[i])+int(row[i]),0,255)
+	return {"stats":result}
+
+static func executioner_actor_conditions(stats: Variant, feedback: Variant, target_flags: Variant, group: Variant, flags_b8: Variant, flags_b4: Variant) -> Dictionary:
+	# Partial predicate evaluator: geometry, player and global conditions must be
+	# resolved separately before the caller has a complete effective-stat input.
+	var validated := apply_stat_adjustments(stats,{},[])
+	if validated.has("error"): return validated
+	if not _integer(feedback,0,65535) or not _integer(target_flags,0,255) or not _integer(group,0,255) or not _integer(flags_b8,0,4294967295) or not _integer(flags_b4,0,4294967295):
+		return {"error":"Invalid actor condition fields."}
+	var conditions: Array[int] = [1 if target_flags != 0 else 2]
+	if feedback != 0: conditions.append(3 if feedback < 32768 else 4)
+	# The native threshold chain substitutes1000 after a match, making these
+	# four bands exclusive rather than four independent less-than comparisons.
+	conditions.append(5+int(validated.stats[4])/64)
+	conditions.append(45+int(validated.stats[25])/64)
+	if group != 255: conditions.append(40)
+	if int(flags_b8) & 256: conditions.append(42)
+	if int(flags_b4) & 16777216: conditions.append(44)
+	conditions.sort()
+	return {"conditions":conditions,"evaluated":[1,2,3,4,5,6,7,8,10,11,38,39,40,42,44,45,46,47,48],"complete":false}

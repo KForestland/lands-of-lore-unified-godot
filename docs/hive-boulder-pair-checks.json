@@ -1,0 +1,57 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "definition_sha256": "5bd8511d19bf8256bce5e59d4659e24c98f236e7c96255dd21ce31c06c152b42",
+  "code": [
+    {
+      "start": 730988,
+      "end": 731227,
+      "sha256": "e8f2d0409bbb565873d7aa52bf53cfeb28665c5c628b9d364cad96e5505ee514"
+    },
+    {
+      "start": 993896,
+      "end": 993914,
+      "sha256": "acd5bc70ecefa1e5b4f79339fd7a1e34ac36f5f6c1643f8088b751bdeffa05a3"
+    },
+    {
+      "start": 686652,
+      "end": 686708,
+      "sha256": "80ff5ea2527f9706f39b4287c97daffce708469f8d17f9ed509ae6c641067973"
+    }
+  ],
+  "cases": 4352,
+  "source_radius": 20,
+  "source_height": 40,
+  "vertical_dispatch": [
+    731220,
+    731220,
+    731090,
+    731220,
+    731090,
+    731090,
+    731220
+  ],
+  "representative_cases": [
+    {
+      "distance": 34,
+      "vertical_class": 1,
+      "admitted": false
+    },
+    {
+      "distance": 34,
+      "vertical_class": 4,
+      "admitted": true
+    },
+    {
+      "distance": 35,
+      "vertical_class": 1,
+      "admitted": false
+    },
+    {
+      "distance": 35,
+      "vertical_class": 4,
+      "admitted": false
+    }
+  ],
+  "scope": "Native B276C pair gate, original WORM dimension getters F2A68/A7A3C, pinned virtual and vertical-class dispatch relocations. Strict rounded-distance threshold is20 for type2/type2, otherwise candidate radius plus mover radius. Vertical classes2/4/5 and zero B7D63 admit and write penetration/bearing. Euclidean helper136594 result, B1D58 vertical classification/global setup and1366EA bearing result supplied; exact helper arguments checked. Not proof of actual contact scheduling, moving actor position, cadence, event-list target or final player damage."
+}

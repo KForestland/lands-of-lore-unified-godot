@@ -1,0 +1,82 @@
+{
+ "date": "2026-10-03",
+ "passed": true,
+ "returncode": 0,
+ "script": "res://tests/cave_opening_route_walk.gd",
+ "arguments": [
+  "--middle-route",
+  "--bridge-route",
+  "--through-museum",
+  "--sprint-smoke",
+  "--route-fast"
+ ],
+ "display": "private Xvfb :77, gl_compatibility",
+ "log": "tmp/regressions/roach_ai_route_20261003/route8.log",
+ "output_save": "user://tests/act1_earned_museum_arrival.json",
+ "output_sha256": "cc9a7ab25122d0e9160bfa2d2875f261b6c3d5548d1d3029d73ff53cad3ec7fa",
+ "population_roaches_defeated": [
+  47,
+  46,
+  42,
+  40,
+  44
+ ],
+ "player_health_at_kills": 30,
+ "fighting": {
+  "cave_melee_seed": 324508639,
+  "player_reward_state": {
+   "player": {
+    "condition": 0,
+    "experience": 83,
+    "health": 8,
+    "level": 1,
+    "maximum": 8,
+    "stat151": 5,
+    "stat155": 10
+   },
+   "version": 1
+  }
+ },
+ "health": 30,
+ "driver_changes": [
+  "fight_population: engaged or adjacent living population Roaches are aimed and struck through the production mouse input; no damage/health/position injection",
+  "curse wait: when stalled in a timed curse shape, release movement and wait for the next natural shape change (max3 per stop); no form injection",
+  "late waypoint (1100,-11970) added to route around a source wall corner after fight-shifted arrival; collision unchanged"
+ ],
+ "failures_preserved": [
+  "route.log: actor46 bit and blocked the unmodified driver",
+  "route2/3: save-reload mismatch from float32 positions (fixed by1/64 quantization)",
+  "route4-6: wall-corner stall",
+  "route7: beast-form stall at narrow passage"
+ ],
+ "scope": "Earned cave entrance\u2192Museum arrival with all23 source Roaches live. Automated steering and4x clock are test adapters. Not full Act One acceptance.",
+ "final_rerun": {
+  "log": "tmp/regressions/roach_ai_route_20261003/route9.log",
+  "output_sha256": "487dba1eb6f01a7f0d485d9cdd9916f907d55935b198fe7e80de4542ee35ce22",
+  "note": "Rerun on final code after clock-grid/insertion fixes; full suite158/158 passed beforehand."
+ },
+ "guards_rerun": {
+  "log": "tmp/regressions/roach_ai_route_20261003/route15.log",
+  "output_sha256": "04c279d141655d4525a66b043b377327516b4d3d27794c18dbf7df1e9ca43dc9",
+  "roaches": [
+   47,
+   46,
+   42,
+   40,
+   44
+  ],
+  "guards": [
+   52,
+   53,
+   54
+  ],
+  "driver_changes": [
+   "fight_guards (production strike + spell-key healing)",
+   "curse wait refreshes the stop budget",
+   "removed waypoint (90,-16440) that pinned the route to a lizard-only gap; direct line clear at beast radius"
+  ],
+  "intermittent": [
+   "route7/11 stalls in beast/human form at narrow passages (curse seed varies per run); route14 stall near (-213,-15480) unresolved, diagnostics added"
+  ]
+ }
+}

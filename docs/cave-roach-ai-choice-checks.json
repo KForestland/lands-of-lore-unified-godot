@@ -1,0 +1,53 @@
+{
+  "suite": "core",
+  "project": "/home/bob/lol2_github_source_20260911",
+  "started_utc": "20260928T064427578597Z",
+  "godot": [
+    "/home/bob/lol2_github_source_20260911/tmp/godot_host.sh"
+  ],
+  "filtered": true,
+  "suite_test_count": 36,
+  "selected_tests": [
+    "cave_roach_ai_choice_test",
+    "hive_ai_action_choice_test",
+    "hive_ai_goal_choice_test"
+  ],
+  "complete": true,
+  "passed": true,
+  "tests": [
+    {
+      "name": "cave_roach_ai_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.15,
+      "log": "cave_roach_ai_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ai_action_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.43,
+      "log": "hive_ai_action_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ai_goal_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.43,
+      "log": "hive_ai_goal_choice_test.log",
+      "errors": []
+    }
+  ],
+  "source_sha256": {
+    "scripts/lol2/hive_ai_action_choice.gd": "ac8c327df92cbb29003452d3f34c291cc55c2cebd3a1fb85f4630884eec86cc5",
+    "tests/cave_roach_ai_choice_test.gd": "613ea1427090a0630f8b9bca369cb72a3098892d3af5f0877f88525917aa2cac"
+  }
+}

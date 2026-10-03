@@ -1,0 +1,86 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "global_sha256": "1e3e2a46340d714aaf4d583e5aff7e58dc11005bac6c694fac49c07d13e01edd",
+  "code": [
+    {
+      "start": 368044,
+      "end": 368360,
+      "sha256": "c035eed09d6398425d8bebcf490a1d98b8d103e24a8aa1616c3113839d714394"
+    },
+    {
+      "start": 368360,
+      "end": 368675,
+      "sha256": "65488404081df1dbc147a763f9e24c76f27f82900e8d57a8182a055f45865981"
+    },
+    {
+      "start": 367794,
+      "end": 367908,
+      "sha256": "01e40f9bec661e93c2ddc2a712eeba7d4e2d35fea440922f483cc368a876272a"
+    }
+  ],
+  "loader_checks": [
+    {
+      "table": "goals",
+      "offset": 40,
+      "rows": 46,
+      "columns": 14
+    },
+    {
+      "table": "actions",
+      "offset": 684,
+      "rows": 46,
+      "columns": 15
+    },
+    {
+      "table": "effector",
+      "offset": 1374,
+      "rows": 58,
+      "columns": 30
+    }
+  ],
+  "sources": {
+    "goals": {
+      "name": "global\\ai\\Roach\\goals.csv",
+      "entry": {
+        "index": 339,
+        "key": 1850741416,
+        "offset": 7175197,
+        "size": 1143
+      },
+      "sha256": "2f124b5abb19205efa67742cfd1a8f95f3e8cc685aca6de61ca17f5fd9e992b4"
+    },
+    "actions": {
+      "name": "global\\ai\\Roach\\actions.csv",
+      "entry": {
+        "index": 216,
+        "key": 420640117,
+        "offset": 7181408,
+        "size": 1143
+      },
+      "sha256": "8d006a5d252a2ad87c85f36196eb11bd16c366626bff3e153f1f0d766224a648"
+    },
+    "effector": {
+      "name": "global\\ai\\Roach\\effector.csv",
+      "entry": {
+        "index": 47,
+        "key": 2798615896,
+        "offset": 7182551,
+        "size": 3044
+      },
+      "sha256": "94bacafe66adb04251c44ebae0a39c277ea68855bb987e46556f111f1ad5b1b6"
+    },
+    "stats": {
+      "name": "global\\ai\\Roach\\stat.csv",
+      "entry": {
+        "index": 296,
+        "key": 1245194268,
+        "offset": 7174876,
+        "size": 321
+      },
+      "sha256": "4961ae57033d1575d6b4fb3302df9815e14bbdceca0b4de6e73730418b071020"
+    }
+  },
+  "cases": 480,
+  "initial_goal14_cases": 33,
+  "scope": "Supplied stat banks. Native scoring instructions; checked memset and explicit MOVSX/zero-borrow SBB bridges. Goal14 reads the first row of the adjacent actions table; action chooser goal14 reads adjacent effector row0. No live condition production, scheduler, movement, hostile admission or route acceptance claim."
+}

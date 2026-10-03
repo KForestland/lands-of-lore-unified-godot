@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "sources": {
+    "tests/hive_lift_wax_walk_test.gd": "0d2601073600ba06ef87b76b64aeb5f68b4139aeec30901817355cca0c45b4e8",
+    "scripts/lol2/player_form_rules.gd": "3398be6619fea5fcbb4249a4d5996897c0fb0febd14c143824a57211facc9266",
+    "scripts/lol2/player_curse.gd": "7299da4117084de12e9a798a806ae8e175066846bf4a2cb718d4cf8f0384b4ee",
+    "scripts/lol2/hive_boulder_sequence.gd": "0167cc32968682469a23125f0e96fba041a6fb056e1998bc3b94304a707c8b8f",
+    "scripts/lol2/hive_moving_geometry.gd": "a3cc4cdcbf8d241002cf5271690a1a7e631aee9a84dfd61ab916ea7d251e81c2",
+    "scripts/lol2/hive_boulder_surfaces.gd": "4c761d880b2cd3cc6e01e5c6dde5f0c3f60ea501f72fdc98b663f578361c1168",
+    "scripts/lol2/hive_review.gd": "280a0a00ea542a49fa0de0b8915e2b352c534c4333456b7b9721e9da7c44a8d7",
+    "scripts/lol2/act_one_quest_state.gd": "b42eb56d6b681e22e7eb742f0212212755a4745b02b134db6e5096f4d3a35507",
+    "tools/prepare_hive_boulders.py": "e1d8e86469f67260ee76228810ce934c2d18d1cdcc5295f4c2a68fa723201bee",
+    "tests/hive_moving_geometry_test.gd": "87d4259edbc950eed2c97aaf4fad8b74343ba1eeefcf455a2a44af204a209f3d",
+    "tests/hive_moving_geometry_portable_test.gd": "e57c7bec002e656a64a45a46bd2b561c136a1e5cb8259d850c2dc4fe278e701e",
+    "tests/hive_boulder_surfaces_live_test.gd": "194da4d2decfedf3a887b0c607d700503f3a829f5a7eb9fcfdfff9e9bf98b9be",
+    "tests/hive_boulder_earned_walk_test.gd": "ac88e532a9eba510309c671b8aa2bd69c8e67154c22b90221a9472c595a1e318",
+    "tests/hive_small_route_test.gd": "eac3d40d08090bdbdb05758961f3f7e4c1995c7d512a2d03e8464aace84f8cff",
+    "tests/hive_route_test.gd": "e189addad15d6cfab52b175677f125deb5089bedb20a7e59bd37bae1f3896e77",
+    "tests/fixtures/hive_boulder_stop6_route.json": "de87014d346f97c4e24ab663df3b195da12dddbb9316a99c30f650cdfe50ad5c"
+  },
+  "full_suite": {
+    "path": "tmp/regressions/boulder_surfaces_full_20260928/report.json",
+    "sha256": "eb03a73538dc9d7017988beae018a3bebaef47069e95deb7fbfdd6d5c51e9c2c",
+    "passed": 95,
+    "total": 96
+  },
+  "corrected_routes": {
+    "path": "tmp/regressions/boulder_route_expectations_20260928/report.json",
+    "sha256": "6eaf4b2b057e4741a0d8bfa42e0c9cc2aa0cc90893f26d997f044db7dca45f83",
+    "passed": 2,
+    "total": 2
+  },
+  "latest_unique_passed": 96,
+  "earned": {
+    "path": "docs/hive-boulder-surfaces-earned-checks.json",
+    "sha256": "3956d3213f636d1408dd4657f499e9ae5e8ce857263bf63256b92c732a8e572c",
+    "input_sha256": "29c972223478adc882bb97ef85f2a384ac26e8e4c058f1616ca5cc2dbee17013",
+    "output_sha256": "a95b1bf59b25be87da9f4c182b9d13a35fef7235881582693188e9f23ecb4799",
+    "health": 30,
+    "natural_morphs": [
+      {
+        "from": 0,
+        "health": 30,
+        "to": 2
+      }
+    ]
+  },
+  "scope": "All96 latest unique Hive checks pass: full95/96 plus corrected legacy small-form expected checkpoint. Normal route passed both. Not a fresh96/96 run. Surface geometry/save/ground transport and actual earned approach/exit verified; actor hazards, sound, original clock/contact fidelity and full ActOne remain open. Source hashes bind final files; no original bitmap or personal save included. Earned player naturally changed from human to lizard, invoking the existing morph-health restoration30; no direct healing was injected."
+}

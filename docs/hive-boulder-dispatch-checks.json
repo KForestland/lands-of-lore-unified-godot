@@ -1,0 +1,44 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "actor_vtable": 22736,
+  "entries": [
+    {
+      "slot": 22736,
+      "virtual_offset": 0,
+      "target": 682700,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 318120,
+        "record_file_offset": 520252,
+        "record_hex": "0710d00802a8da0400"
+      }
+    },
+    {
+      "slot": 22952,
+      "virtual_offset": 216,
+      "target": 729012,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 364432,
+        "record_file_offset": 519716,
+        "record_hex": "0710a80902908f0500"
+      }
+    },
+    {
+      "slot": 22956,
+      "virtual_offset": 220,
+      "target": 730988,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 366408,
+        "record_file_offset": 519725,
+        "record_hex": "0710ac090248970500"
+      }
+    }
+  ],
+  "type_getter": {
+    "bytes": "b002c3",
+    "meaning": "mov al,2; ret"
+  },
+  "scope": "Pinned LE relocation/static dispatch audit. Source actor vtable +D8 selects B1FB4, not5B974; +DC selects B276C; virtual0 returns type2 in AL. This resolves the scanner-pointer lead independently of Opus. Actual invocation, B276C pair geometry/global setup, contact cadence, vertical placement and damage remain unverified. No live encounter behavior follows from the pointers alone."
+}

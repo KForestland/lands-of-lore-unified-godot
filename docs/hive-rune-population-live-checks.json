@@ -1,0 +1,78 @@
+{
+  "status": "focused PASS; rendered pending",
+  "headless_state_tests": {
+    "suite": "hive",
+    "project": "/home/bob/lol2_github_source_20260911",
+    "started_utc": "20260928T063205046124Z",
+    "godot": [
+      "/home/bob/lol2_github_source_20260911/tmp/godot_host.sh"
+    ],
+    "filtered": true,
+    "suite_test_count": 108,
+    "selected_tests": [
+      "hive_warrior_animation_test",
+      "hive_ambush_state_test",
+      "hive_rune_population_state_test",
+      "hive_return_population_state_test"
+    ],
+    "complete": true,
+    "passed": true,
+    "tests": [
+      {
+        "name": "hive_warrior_animation_test",
+        "mode": "headless",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "seconds": 0.25,
+        "log": "hive_warrior_animation_test.log",
+        "errors": []
+      },
+      {
+        "name": "hive_ambush_state_test",
+        "mode": "headless",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "seconds": 0.15,
+        "log": "hive_ambush_state_test.log",
+        "errors": []
+      },
+      {
+        "name": "hive_rune_population_state_test",
+        "mode": "headless",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "seconds": 0.15,
+        "log": "hive_rune_population_state_test.log",
+        "errors": []
+      },
+      {
+        "name": "hive_return_population_state_test",
+        "mode": "headless",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "seconds": 0.15,
+        "log": "hive_return_population_state_test.log",
+        "errors": []
+      }
+    ]
+  },
+  "live_headless": {
+    "log_sha256": "8329115bc671ed618bcb28b3bd9f1c71de134576d06701049257b64556475223",
+    "pass": true,
+    "admission": "test-only override; headless mouse capture unavailable"
+  },
+  "source_sha256": {
+    "scripts/lol2/hive_rune_population.gd": "d83842e5d7907a6adc02c38dc579833d5e7079bcb4bb5411400df95486d2c6df",
+    "scripts/lol2/hive_rune_population_state.gd": "07cbbdffd57f75e38c635e47037d1940d06fd1d3156bc185ba1bf5071e233fc3",
+    "scripts/lol2/hive_return_population_state.gd": "2d1e320518340d435cf67b0cefaa85f40010bb853b9162cfa824e9a98b5d5190",
+    "scripts/lol2/hive_review.gd": "893be04ab589c5cc935730d10848f251dc231aa1095b6a3d1dd6b189e4913dea",
+    "scripts/lol2/act_one_quest_state.gd": "bba786c79c8b7634c662c1024baa3df8d40663cc398f25a36309d68168d62980",
+    "tests/hive_rune_population_live_test.gd": "86426ba485bbf51d0af6540750bf4b4c2c225b67068e1a9d2d94964ad6e6488d",
+    "tests/hive_rune_population_headless.gd": "8e35ae91d0733e28ed9a86b94c5d4b1d9edcc1196aafa4de19ff774e09a86cf3"
+  },
+  "full_rendered": "not run: Xvfb socket creation denied"
+}

@@ -1,0 +1,376 @@
+{
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 710880,
+      "end": 711178,
+      "sha256": "142591782a16b776e3935c2f21501175febc809436b3769e1a914a76faa8d486"
+    },
+    {
+      "start": 420528,
+      "end": 421056,
+      "sha256": "7ce0fc95a1d4e28065cd54ca30536e62ac0a2dc0d69e6c183626b69f9d7341b2"
+    },
+    {
+      "start": 375416,
+      "end": 375525,
+      "sha256": "574dab1d287faad79e616b7bfeeb5f85a819efc2acadb9f996256e99faca988c"
+    }
+  ],
+  "cases": 8668,
+  "caller_cases": [
+    {
+      "contact": 0,
+      "suppressed": 0,
+      "player": false,
+      "events": []
+    },
+    {
+      "contact": 0,
+      "suppressed": 0,
+      "player": true,
+      "events": []
+    },
+    {
+      "contact": 0,
+      "suppressed": 1,
+      "player": false,
+      "events": []
+    },
+    {
+      "contact": 0,
+      "suppressed": 1,
+      "player": true,
+      "events": []
+    },
+    {
+      "contact": 1,
+      "suppressed": 0,
+      "player": false,
+      "events": []
+    },
+    {
+      "contact": 1,
+      "suppressed": 0,
+      "player": true,
+      "events": [
+        [
+          1,
+          255
+        ]
+      ]
+    },
+    {
+      "contact": 1,
+      "suppressed": 1,
+      "player": false,
+      "events": []
+    },
+    {
+      "contact": 1,
+      "suppressed": 1,
+      "player": true,
+      "events": []
+    }
+  ],
+  "representative_cases": [
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 0,
+      "subtype": 0,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 0,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 0,
+      "subtype": 255,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 1,
+      "subtype": 0,
+      "groups": [
+        10324
+      ],
+      "result": 1
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 1,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 1,
+      "subtype": 255,
+      "groups": [
+        10324
+      ],
+      "result": 1
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 2,
+      "subtype": 0,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 2,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 2,
+      "subtype": 255,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 0,
+      "subtype": 0,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 0,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 0,
+      "subtype": 255,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 1,
+      "subtype": 0,
+      "groups": [],
+      "result": 4294967295
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 1,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 1,
+      "subtype": 255,
+      "groups": [],
+      "result": 4294967295
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 2,
+      "subtype": 0,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 2,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 2,
+      "subtype": 255,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 0,
+      "subtype": 0,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 0,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 0,
+      "subtype": 255,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 1,
+      "subtype": 0,
+      "groups": [
+        10404
+      ],
+      "result": 1
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 1,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 1,
+      "subtype": 255,
+      "groups": [
+        10404
+      ],
+      "result": 1
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 2,
+      "subtype": 0,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 2,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 2,
+      "subtype": 255,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 0,
+      "subtype": 0,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 0,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 0,
+      "subtype": 255,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 1,
+      "subtype": 0,
+      "groups": [],
+      "result": 4294967295
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 1,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 1,
+      "subtype": 255,
+      "groups": [],
+      "result": 4294967295
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 2,
+      "subtype": 0,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 2,
+      "subtype": 1,
+      "groups": [],
+      "result": 0
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 2,
+      "subtype": 255,
+      "groups": [],
+      "result": 0
+    }
+  ],
+  "scope": "Native AD8E0 with actual WORM30/31 lists and native predicate206 owner-state equality. Supplied event/subtype/global owner and enqueue boundary. Contact producer5BA78..5BAE5 verifies marker/suppression/player identity gates and (list,1,255) arguments; virtual list getters and peer AE7D8 effects supplied. Upstream5BD90 collision geometry, marker production/lifetime, alternativeB230E caller, queued target resolution and final player damage remain open. State0 admits damage-request groups10324/10404; state5 returns rejection\u22121, not ordinary queue success."
+}

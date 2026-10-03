@@ -1,0 +1,88 @@
+{
+ "version": 1,
+ "stat_source": {
+  "name": "global\\ai\\DINO\\stat.csv",
+  "entry": {
+   "index": 307,
+   "key": 1413562985,
+   "offset": 6929082,
+   "size": 310
+  },
+  "sha256": "42a91870e0d365cf7efbc70f17e93cc8ad13b699e3a33ed9cd23ff6cbc952f6b"
+ },
+ "stats": [
+  0,
+  0,
+  50,
+  206,
+  0,
+  0,
+  0,
+  50,
+  0,
+  0,
+  25,
+  0,
+  0,
+  30,
+  0,
+  50,
+  0,
+  25,
+  206,
+  0,
+  236,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "total81": 30,
+ "minimum82": 3,
+ "constructor_bases": {
+  "18/5": {
+   "count": 255,
+   "a3_zero": false
+  },
+  "24/6": {
+   "count": 1,
+   "a3_zero": true
+  }
+ },
+ "fresh_base": 24,
+ "event": {
+  "selector": 4,
+  "resource": 952,
+  "frame": 9,
+  "percent": 100
+ },
+ "damage_request": 24,
+ "code_spans": [
+  {
+   "start": 664315,
+   "end": 664479,
+   "sha256": "1583c4a8198702872e552e3443fd859a41018ec832748e1764556c7c27632e04"
+  },
+  {
+   "start": 662824,
+   "end": 662861,
+   "sha256": "29a74402fae336facd3cf29531628560b705eb36ba8e3bf4a15d3a0121be7c68"
+  },
+  {
+   "start": 663340,
+   "end": 663423,
+   "sha256": "820351dfff1c2e839ded99d59d192a1a698c1afb30b18352520302e664936fb9"
+  }
+ ],
+ "source_json_sha256": "33a0d50ac05fb815317a99710bf2b04fae9ae0d530c81b2c7474834e676f0bac",
+ "boundaries": [
+  "Native loader/constructor executed on the original DINO bank; fresh actors use A3=0 (adapter, as Hive fresh pass).",
+  "Damage request precedes heading/difficulty and player mitigation; playable health remains the provisional30 pool.",
+  "Perception, pursuit speed, reach and the8fps clip clock are modern adapters."
+ ]
+}

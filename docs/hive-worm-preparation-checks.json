@@ -1,0 +1,13 @@
+{
+  "scope": "Source boulder preparation, not live encounter acceptance.",
+  "report": "tmp/regressions/worm_animation_native_20260928/report.json",
+  "report_sha256": "8f5b8ad9fa3163b18672413cd5f5a99b9990b96c1f86e4bfe9c46a4c46780bad",
+  "source_hashes": {
+    "tools/verify_hive_worm_contact.py": "6d096c1febbfd6c4e2cbdac323a4eae0afa780c2cbd657d637a67cd823dfb752",
+    "tools/verify_hive_worm_control.py": "7bf91fecca188a0571e2ade9043bdfdd2af8bceaa46ff3685c548aa1642b1243",
+    "tools/verify_hive_worm_animation.py": "1ecd88e626765406c08627c5f71f685896ee1d173d0fc436d62e7462eb281db4",
+    "tools/prepare_hive_worm_sprites.py": "9c07b150066911b27b2509fbfb028a42e6ef8138979938e54d702974acb34fce",
+    "tools/verify_hive_attack_runtime.py": "833ca269520b6341a2f135989ce0df4fa092d6332ade05c37aaf32dac19a38e0",
+    "tests/hive_worm_animation_test.gd": "1a057ede85700d12c6466628acfd15f6c1e1ac5648563e2ecd426b0048d7c2ed"
+  }
+}

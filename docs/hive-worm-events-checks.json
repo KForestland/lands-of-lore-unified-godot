@@ -1,0 +1,370 @@
+{
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 420528,
+      "end": 421056,
+      "sha256": "7ce0fc95a1d4e28065cd54ca30536e62ac0a2dc0d69e6c183626b69f9d7341b2"
+    },
+    {
+      "start": 712160,
+      "end": 712499,
+      "sha256": "4fc6dc4ad2ac10b59d5c2f1302e4dd1f59794b1b5a7e38707d70490896fd2ca9"
+    },
+    {
+      "start": 748398,
+      "end": 748437,
+      "sha256": "fc825bb7662b391250796d845a700192271f836b5d190768c41d56dab43a1377"
+    },
+    {
+      "start": 743996,
+      "end": 744012,
+      "sha256": "98c2eeaf2ba8db747af815353c35ea100254d10db886e98b8b59a36ae08fb368"
+    },
+    {
+      "start": 715162,
+      "end": 715289,
+      "sha256": "9743bd6a1b8144c5f70021e609b2699ec5375eca36f3c81e15605bcd6b346ea0"
+    },
+    {
+      "start": 741568,
+      "end": 741606,
+      "sha256": "b25012a3e2c4e5baf2baeea3139e217751ea96a12c8bd1ae8386f7a253ecb4e8"
+    },
+    {
+      "start": 742472,
+      "end": 742506,
+      "sha256": "8383338e83054a81ae9457ce311c8c74c2a5a0944b7cdf689cc2d39578e28b4e"
+    },
+    {
+      "start": 742305,
+      "end": 742319,
+      "sha256": "f4a48d35343220be6bb772a3dc89e6d6132e749dee2575698028f06e4812c8ac"
+    },
+    {
+      "start": 742126,
+      "end": 742168,
+      "sha256": "980bdc43ee783f7babd3ea18fa86018e09d5f2ce1c2ee03299549db0a9e3ae78"
+    },
+    {
+      "start": 418096,
+      "end": 418287,
+      "sha256": "20bdaa207e244197935a676bfd455c048111d615dccc38c3d4a36afa19ea99b4"
+    }
+  ],
+  "predicate_cases": 512,
+  "event_cases": 4568,
+  "flag_cases": 65536,
+  "packet_cases": 512,
+  "source_packet": {
+    "mask": 256,
+    "flags": 28,
+    "amount": 10,
+    "mode": 0,
+    "kind": 4,
+    "tag": 255
+  },
+  "constructors": [
+    {
+      "actor": 30,
+      "flags": 1410,
+      "state": 0,
+      "requested_health": 1000
+    },
+    {
+      "actor": 31,
+      "flags": 1410,
+      "state": 0,
+      "requested_health": 1000
+    }
+  ],
+  "state_writes": [
+    {
+      "actor": 30,
+      "state": 5,
+      "cases": 256
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "cases": 256
+    }
+  ],
+  "dispatch": [
+    {
+      "actor": 30,
+      "operation": 21,
+      "event": 20
+    },
+    {
+      "actor": 31,
+      "operation": 21,
+      "event": 20
+    }
+  ],
+  "representative_cases": [
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 1,
+      "groups": []
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 3,
+      "groups": []
+    },
+    {
+      "actor": 30,
+      "state": 0,
+      "event": 20,
+      "groups": [
+        10254,
+        10272
+      ]
+    },
+    {
+      "actor": 30,
+      "state": 1,
+      "event": 1,
+      "groups": []
+    },
+    {
+      "actor": 30,
+      "state": 1,
+      "event": 3,
+      "groups": []
+    },
+    {
+      "actor": 30,
+      "state": 1,
+      "event": 20,
+      "groups": [
+        10254,
+        10272
+      ]
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 1,
+      "groups": []
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 3,
+      "groups": [
+        10304
+      ]
+    },
+    {
+      "actor": 30,
+      "state": 5,
+      "event": 20,
+      "groups": [
+        10254,
+        10272
+      ]
+    },
+    {
+      "actor": 30,
+      "state": 255,
+      "event": 1,
+      "groups": []
+    },
+    {
+      "actor": 30,
+      "state": 255,
+      "event": 3,
+      "groups": []
+    },
+    {
+      "actor": 30,
+      "state": 255,
+      "event": 20,
+      "groups": [
+        10254,
+        10272
+      ]
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 1,
+      "groups": []
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 3,
+      "groups": []
+    },
+    {
+      "actor": 31,
+      "state": 0,
+      "event": 20,
+      "groups": [
+        10334,
+        10352
+      ]
+    },
+    {
+      "actor": 31,
+      "state": 1,
+      "event": 1,
+      "groups": []
+    },
+    {
+      "actor": 31,
+      "state": 1,
+      "event": 3,
+      "groups": []
+    },
+    {
+      "actor": 31,
+      "state": 1,
+      "event": 20,
+      "groups": [
+        10334,
+        10352
+      ]
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 1,
+      "groups": []
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 3,
+      "groups": [
+        10384
+      ]
+    },
+    {
+      "actor": 31,
+      "state": 5,
+      "event": 20,
+      "groups": [
+        10334,
+        10352
+      ]
+    },
+    {
+      "actor": 31,
+      "state": 255,
+      "event": 1,
+      "groups": []
+    },
+    {
+      "actor": 31,
+      "state": 255,
+      "event": 3,
+      "groups": []
+    },
+    {
+      "actor": 31,
+      "state": 255,
+      "event": 20,
+      "groups": [
+        10334,
+        10352
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "stream": 0,
+      "group": 6250,
+      "commands": [
+        "c490c1047af9000a00000000",
+        "c490c0045cf9000a00000000",
+        "c490c2047af9000a00000000",
+        "09021f000300",
+        "09021e000300",
+        "09021f001500",
+        "09021e001500"
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 6806,
+      "commands": [
+        "10021f000500",
+        "10021e000500",
+        "c49021036400091400000000",
+        "14034d00bd0296000c06"
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10254,
+      "commands": [
+        "09021e000b00",
+        "09021e000600"
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10272,
+      "commands": [
+        "14021e00c502ff020306",
+        "0d021e0000070000",
+        "0d021e0001000000"
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10304,
+      "commands": [
+        "09021e001000",
+        "0d021e0001090000"
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10324,
+      "commands": [
+        "1301000000011c000a00"
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10334,
+      "commands": [
+        "09021f000b00",
+        "09021f000600"
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10352,
+      "commands": [
+        "14021f00c502ff020306",
+        "0d021f0000070000",
+        "0d021f0001000000"
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10384,
+      "commands": [
+        "09021f001000",
+        "0d021f0001090000"
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10404,
+      "commands": [
+        "1301000000011c000a00"
+      ]
+    }
+  ],
+  "scope": "Native predicates206/211 and full ADDE0 source lists for actors30/31; enqueue and level sign-extension supplied. Operation21 dispatch requests event20 through supplied virtual event-list getter. Native state5 writer and generic spatial constructor; full derived startup omitted. Operations11/6 verified only through flag writes and list-removal call boundary, not complete lifecycle/effect. 66130 constructs the source direct-amount10 request to supplied target virtual80; memset boundary supplied, target resolution and damage application not executed. Kind5 records are not dispatched by ADDE0; their separate hit/contact producer, stream0 callers, action/property/sound effects and playable behavior remain open."
+}

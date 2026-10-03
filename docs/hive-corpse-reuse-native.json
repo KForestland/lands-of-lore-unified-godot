@@ -1,0 +1,45 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "definition_sha256": "d6ccd4ce88ffd9295e5ad3d6c1a6cd4150a10efae9c1804160eab2c35711b9d6",
+  "corpse_counter": 5,
+  "code": [
+    {
+      "start": 686021,
+      "end": 686074,
+      "sha256": "30b6b926510b2abf46136ba2f8f5c63e7aa6320c94f2828d475be3a892dd7650"
+    },
+    {
+      "start": 702091,
+      "end": 702156,
+      "sha256": "805f18f29795f4a3db2d8c4fe1bbbb18adec879880cc3400e67889ceeec145ea"
+    },
+    {
+      "start": 676611,
+      "end": 676660,
+      "sha256": "f92aad9a5a3be34d2f3b15ec8ef5fcb19eacdd66b2c7c75e06202d923f842d22"
+    },
+    {
+      "start": 676881,
+      "end": 677049,
+      "sha256": "846210152f1776e1cee6b78b204db54d120255503af5890a86ce8c1b33513b63"
+    },
+    {
+      "start": 748440,
+      "end": 748851,
+      "sha256": "ccd5f72cd6555eed1af8b1e7da1f527969798eb0a14ab34912ed1ba8d2c12d7b"
+    },
+    {
+      "start": 736004,
+      "end": 736097,
+      "sha256": "6cf6fcb7bd585a28b72ef3ebe01f05d522d1b974fe8fe739bdb682a544a2cb12"
+    }
+  ],
+  "dispatch": {
+    "slot": 309512,
+    "target": 676611
+  },
+  "counter_cases": 1536,
+  "cleanup_cases": 512,
+  "scope": "HIVEW definition77=5 copied into AE by actual zero-health outcome slice. Native update decrements AE only for behavior15;0/255 remain fixed, B4bit20 holds expiring1 at1. Actual AA16 normal branch waits for AE0 and global96A38 clear, sets globalbusy, requests event12, then native B6B98 marks flag800000 and removes active-list membership. Empty-inventory/direct-region fixture runs native queue removal. SETE and JNE after DEC (replay backend does not retain DEC flags) explicitly bridged. Event12 effects and final B49EC disable remain boundaries; source update clock and nonempty loot disposal not bound. This proves a delayed reusable-slot transition, not immediate recycling on health0 or permanent corpses."
+}

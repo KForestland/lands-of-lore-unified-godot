@@ -1,0 +1,558 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L3_DH.MIX",
+  "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "geometry_key": 3106551060,
+  "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+ },
+ "actors": [
+  {
+   "actor": 20,
+   "definition": 2,
+   "position": [
+    3048,
+    0,
+    -716
+   ],
+   "heading": 33132,
+   "health": 150,
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": null,
+   "reward_scale": 2
+  },
+  {
+   "actor": 21,
+   "definition": 0,
+   "position": [
+    -4232,
+    0,
+    -957
+   ],
+   "heading": 17112,
+   "health": 150,
+   "behavior": 4,
+   "flags": 30082,
+   "present": false,
+   "loot": null,
+   "reward_scale": 4
+  },
+  {
+   "actor": 22,
+   "definition": 1,
+   "position": [
+    -1625,
+    -170,
+    -1100
+   ],
+   "heading": 0,
+   "health": 40,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 3732130108,
+   "reward_scale": 3
+  },
+  {
+   "actor": 23,
+   "definition": 2,
+   "position": [
+    -1307,
+    0,
+    -900
+   ],
+   "heading": 46967,
+   "health": 100,
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": 394988083,
+   "reward_scale": 2
+  },
+  {
+   "actor": 24,
+   "definition": 2,
+   "position": [
+    2,
+    10,
+    -261
+   ],
+   "heading": 48605,
+   "health": 100,
+   "behavior": 14,
+   "flags": 25986,
+   "present": true,
+   "loot": 394988083,
+   "reward_scale": 2
+  },
+  {
+   "actor": 25,
+   "definition": 2,
+   "position": [
+    8,
+    10,
+    -470
+   ],
+   "heading": 48605,
+   "health": 100,
+   "behavior": 14,
+   "flags": 25986,
+   "present": true,
+   "loot": 394988083,
+   "reward_scale": 2
+  },
+  {
+   "actor": 26,
+   "definition": 2,
+   "position": [
+    5,
+    10,
+    -669
+   ],
+   "heading": 48605,
+   "health": 100,
+   "behavior": 14,
+   "flags": 25986,
+   "present": true,
+   "loot": 394988083,
+   "reward_scale": 2
+  },
+  {
+   "actor": 27,
+   "definition": 2,
+   "position": [
+    -2107,
+    0,
+    -1422
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 25986,
+   "present": true,
+   "loot": 394988083,
+   "reward_scale": 2
+  },
+  {
+   "actor": 28,
+   "definition": 0,
+   "position": [
+    -2112,
+    0,
+    -1258
+   ],
+   "heading": 33132,
+   "health": 150,
+   "behavior": 14,
+   "flags": 25986,
+   "present": true,
+   "loot": 394988083,
+   "reward_scale": 4
+  },
+  {
+   "actor": 29,
+   "definition": 0,
+   "position": [
+    1124,
+    0,
+    -432
+   ],
+   "heading": 0,
+   "health": 150,
+   "behavior": 14,
+   "flags": 25986,
+   "present": true,
+   "loot": 394988083,
+   "reward_scale": 4
+  },
+  {
+   "actor": 30,
+   "definition": 0,
+   "position": [
+    431,
+    0,
+    -1335
+   ],
+   "heading": 49334,
+   "health": 150,
+   "behavior": 6,
+   "flags": 30082,
+   "present": false,
+   "loot": 2790957503,
+   "reward_scale": 4
+  },
+  {
+   "actor": 31,
+   "definition": 0,
+   "position": [
+    1319,
+    0,
+    -1910
+   ],
+   "heading": 49516,
+   "health": 150,
+   "behavior": 14,
+   "flags": 25986,
+   "present": true,
+   "loot": 394988083,
+   "reward_scale": 4
+  },
+  {
+   "actor": 32,
+   "definition": 0,
+   "position": [
+    891,
+    0,
+    -2334
+   ],
+   "heading": 49698,
+   "health": 150,
+   "behavior": 14,
+   "flags": 25986,
+   "present": true,
+   "loot": 1958882940,
+   "reward_scale": 4
+  }
+ ],
+ "definitions": {
+  "0": {
+   "name": "skel",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 16
+    },
+    "walk": {
+     "selector": 4,
+     "frames": 13
+    },
+    "rise": {
+     "selector": 14,
+     "frames": 9
+    },
+    "death": {
+     "selector": 18,
+     "frames": 15
+    },
+    "corpse": {
+     "selector": 20,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 11,
+      "frames": 13,
+      "hits": [
+       [
+        6,
+        50
+       ]
+      ],
+      "damage": [
+       7
+      ]
+     },
+     {
+      "selector": 12,
+      "frames": 16,
+      "hits": [
+       [
+        8,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     },
+     {
+      "selector": 13,
+      "frames": 16,
+      "hits": [
+       [
+        6,
+        50
+       ],
+       [
+        11,
+        50
+       ]
+      ],
+      "damage": [
+       7,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "1": {
+   "name": "Rat",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 8
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 8
+    },
+    "rise": {
+     "selector": 5,
+     "frames": 6
+    },
+    "death": {
+     "selector": 7,
+     "frames": 11
+    },
+    "corpse": {
+     "selector": 8,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 4,
+      "frames": 13,
+      "hits": [
+       [
+        7,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   }
+  },
+  "2": {
+   "name": "skel",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 16
+    },
+    "walk": {
+     "selector": 4,
+     "frames": 13
+    },
+    "rise": {
+     "selector": 13,
+     "frames": 9
+    },
+    "death": {
+     "selector": 17,
+     "frames": 15
+    },
+    "corpse": {
+     "selector": 19,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 10,
+      "frames": 13,
+      "hits": [
+       [
+        6,
+        50
+       ]
+      ],
+      "damage": [
+       7
+      ]
+     },
+     {
+      "selector": 11,
+      "frames": 16,
+      "hits": [
+       [
+        9,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     },
+     {
+      "selector": 12,
+      "frames": 16,
+      "hits": [
+       [
+        6,
+        50
+       ],
+       [
+        11,
+        50
+       ]
+      ],
+      "damage": [
+       7,
+       7
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "native_bases": {
+  "skel": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "e737ecb733da98913413a28c577bd421175619d7a81a2d13693b5e4827d223ed"
+  },
+  "Rat": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "4961ae57033d1575d6b4fb3302df9815e14bbdceca0b4de6e73730418b071020"
+  }
+ },
+ "regions": [
+  {
+   "region": 35,
+   "wake": [
+    26,
+    25,
+    24
+   ],
+   "polygon": [
+    [
+     -384.0,
+     -636.0
+    ],
+    [
+     -128.0,
+     -636.0
+    ],
+    [
+     -128.0,
+     -256.0
+    ],
+    [
+     -384.0,
+     -256.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "region": 346,
+   "wake": [
+    28,
+    27,
+    31,
+    32
+   ],
+   "polygon": [
+    [
+     -2368.0,
+     -1023.0
+    ],
+    [
+     -2496.0,
+     -1023.0
+    ],
+    [
+     -2496.0,
+     -1152.0
+    ],
+    [
+     -2368.0,
+     -1152.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "region": 1057,
+   "wake": [
+    29
+   ],
+   "polygon": [
+    [
+     1194.0,
+     -902.0
+    ],
+    [
+     1192.0,
+     -648.0
+    ],
+    [
+     1063.0,
+     -644.0
+    ],
+    [
+     1062.0,
+     -902.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  }
+ ],
+ "neighbour_wake": {
+  "24": [
+   25,
+   26
+  ],
+  "25": [
+   26,
+   24
+  ],
+  "26": [
+   25,
+   24
+  ]
+ },
+ "counted": [
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32
+ ],
+ "counter_target": 10,
+ "scripted_dormant": [
+  20,
+  21,
+  30
+ ],
+ "controls": [
+  {
+   "control": 92,
+   "position": [
+    3049,
+    35,
+    -826
+   ],
+   "group": 7596,
+   "use": {
+    "owner_state": 0,
+    "next_state": 1,
+    "wake": [
+     20
+    ]
+   },
+   "note": "event4 value0 predicate206: control92 state1 and actor20 operations/properties (exact property semantics not replayed)"
+  }
+ ],
+ "counter_result": {
+  "prop": 93,
+  "state": 3,
+  "audio_level": 0
+ }
+}

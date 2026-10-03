@@ -1,0 +1,40 @@
+{
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "cases": 6144,
+  "source_entries": [
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ]
+  ],
+  "code": [
+    {
+      "start": 687436,
+      "end": 687555,
+      "sha256": "9eec16da0498ef2c491e3eab7bf71fa11778895a06c43c9dc874bfd2ee8d689f"
+    },
+    {
+      "start": 663108,
+      "end": 663338,
+      "sha256": "a494ab8689b2eef74eeb9235eb7fd8ad61271de3cebfd551c1efaa1e616758ac"
+    }
+  ],
+  "selected": {
+    "0": [
+      0
+    ],
+    "1": [
+      1
+    ]
+  },
+  "scope": "Native A7D4C/A1E44 wrapper and weighted lookup, actual WORM table. All mask bytes/four modes/three RNG boundaries; supplied RNG0..100. Source action0 selects0 and action1 selects1. Admission of those actions, path movement and action9 transition remain separate."
+}

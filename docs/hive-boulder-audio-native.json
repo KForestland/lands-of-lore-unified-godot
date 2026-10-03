@@ -1,0 +1,2209 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 744412,
+      "end": 744507,
+      "sha256": "81613a8a13dee64494dc9f09b0b51ab28616286bd6ac4d46c43d0804bd5d88f2"
+    },
+    {
+      "start": 742401,
+      "end": 742428,
+      "sha256": "59aad7478d624107a28171f4f72c1443aa4e8e5ab2df025c1f70891cf7633d28"
+    },
+    {
+      "start": 932132,
+      "end": 932264,
+      "sha256": "cfe64f31d945fa0de41f7872e0e33166c2d11056f86510316f30ae335db2931e"
+    },
+    {
+      "start": 932445,
+      "end": 932503,
+      "sha256": "5c6f04e687ab636a80c1f29afe359ded1a2802e8387a421c837054cf0aa37d93"
+    },
+    {
+      "start": 932519,
+      "end": 932543,
+      "sha256": "2e99aebba7b7547e21b715a0c3a9373f7879fa6681ff5dbec1b49d35ccb8a158"
+    },
+    {
+      "start": 932651,
+      "end": 932709,
+      "sha256": "fe44be8e27eaae961dc90f2eece73b7c29fd21966dd5747285e65377088276e6"
+    },
+    {
+      "start": 934252,
+      "end": 934547,
+      "sha256": "af94a69251b78b9e531cf8d9bb398ce36dc71fc851115f5672c4ae990fa534de"
+    },
+    {
+      "start": 936156,
+      "end": 936369,
+      "sha256": "39e2218cbc4a53c95d7080a0ed67fcf90c146aae8a9f6696d83171190718dc1b"
+    },
+    {
+      "start": 939642,
+      "end": 939711,
+      "sha256": "f8b6bd3f54b0f3057428cb7f2b98ca309d044e31f3e78bb585dea49bc4c46044"
+    },
+    {
+      "start": 937934,
+      "end": 938175,
+      "sha256": "7950518d7a4a80fadad3662cb73f026d05b033f861966f3e62ce26a09aae2514"
+    }
+  ],
+  "bindings": [
+    {
+      "slot": 379076,
+      "target": 744412,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 379832,
+        "record_file_offset": 335111,
+        "record_hex": "0710c40802b8cb0500"
+      }
+    },
+    {
+      "slot": 376912,
+      "target": 742401,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 377821,
+        "record_file_offset": 336531,
+        "record_hex": "0710500002ddc30500"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "stream": 0,
+      "group": 6778,
+      "payload": "1403ea00c00296000c06",
+      "request": 704,
+      "config": [
+        150,
+        0,
+        12,
+        6
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 6806,
+      "payload": "14034d00bd0296000c06",
+      "request": 701,
+      "config": [
+        150,
+        0,
+        12,
+        6
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10272,
+      "payload": "14021e00c502ff020306",
+      "request": 709,
+      "config": [
+        255,
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10352,
+      "payload": "14021f00c502ff020306",
+      "request": 709,
+      "config": [
+        255,
+        2,
+        3,
+        6
+      ]
+    }
+  ],
+  "dispatcher_cases": 12,
+  "pool_cases": [
+    {
+      "flags": 0,
+      "persistent": false
+    },
+    {
+      "flags": 1,
+      "persistent": false
+    },
+    {
+      "flags": 2,
+      "persistent": true
+    },
+    {
+      "flags": 3,
+      "persistent": true
+    },
+    {
+      "flags": 4,
+      "persistent": false
+    },
+    {
+      "flags": 5,
+      "persistent": false
+    },
+    {
+      "flags": 6,
+      "persistent": true
+    },
+    {
+      "flags": 7,
+      "persistent": true
+    },
+    {
+      "flags": 8,
+      "persistent": false
+    },
+    {
+      "flags": 9,
+      "persistent": false
+    },
+    {
+      "flags": 10,
+      "persistent": true
+    },
+    {
+      "flags": 11,
+      "persistent": true
+    },
+    {
+      "flags": 12,
+      "persistent": false
+    },
+    {
+      "flags": 13,
+      "persistent": false
+    },
+    {
+      "flags": 14,
+      "persistent": true
+    },
+    {
+      "flags": 15,
+      "persistent": true
+    },
+    {
+      "flags": 16,
+      "persistent": false
+    },
+    {
+      "flags": 17,
+      "persistent": false
+    },
+    {
+      "flags": 18,
+      "persistent": true
+    },
+    {
+      "flags": 19,
+      "persistent": true
+    },
+    {
+      "flags": 20,
+      "persistent": false
+    },
+    {
+      "flags": 21,
+      "persistent": false
+    },
+    {
+      "flags": 22,
+      "persistent": true
+    },
+    {
+      "flags": 23,
+      "persistent": true
+    },
+    {
+      "flags": 24,
+      "persistent": false
+    },
+    {
+      "flags": 25,
+      "persistent": false
+    },
+    {
+      "flags": 26,
+      "persistent": true
+    },
+    {
+      "flags": 27,
+      "persistent": true
+    },
+    {
+      "flags": 28,
+      "persistent": false
+    },
+    {
+      "flags": 29,
+      "persistent": false
+    },
+    {
+      "flags": 30,
+      "persistent": true
+    },
+    {
+      "flags": 31,
+      "persistent": true
+    },
+    {
+      "flags": 32,
+      "persistent": false
+    },
+    {
+      "flags": 33,
+      "persistent": false
+    },
+    {
+      "flags": 34,
+      "persistent": true
+    },
+    {
+      "flags": 35,
+      "persistent": true
+    },
+    {
+      "flags": 36,
+      "persistent": false
+    },
+    {
+      "flags": 37,
+      "persistent": false
+    },
+    {
+      "flags": 38,
+      "persistent": true
+    },
+    {
+      "flags": 39,
+      "persistent": true
+    },
+    {
+      "flags": 40,
+      "persistent": false
+    },
+    {
+      "flags": 41,
+      "persistent": false
+    },
+    {
+      "flags": 42,
+      "persistent": true
+    },
+    {
+      "flags": 43,
+      "persistent": true
+    },
+    {
+      "flags": 44,
+      "persistent": false
+    },
+    {
+      "flags": 45,
+      "persistent": false
+    },
+    {
+      "flags": 46,
+      "persistent": true
+    },
+    {
+      "flags": 47,
+      "persistent": true
+    },
+    {
+      "flags": 48,
+      "persistent": false
+    },
+    {
+      "flags": 49,
+      "persistent": false
+    },
+    {
+      "flags": 50,
+      "persistent": true
+    },
+    {
+      "flags": 51,
+      "persistent": true
+    },
+    {
+      "flags": 52,
+      "persistent": false
+    },
+    {
+      "flags": 53,
+      "persistent": false
+    },
+    {
+      "flags": 54,
+      "persistent": true
+    },
+    {
+      "flags": 55,
+      "persistent": true
+    },
+    {
+      "flags": 56,
+      "persistent": false
+    },
+    {
+      "flags": 57,
+      "persistent": false
+    },
+    {
+      "flags": 58,
+      "persistent": true
+    },
+    {
+      "flags": 59,
+      "persistent": true
+    },
+    {
+      "flags": 60,
+      "persistent": false
+    },
+    {
+      "flags": 61,
+      "persistent": false
+    },
+    {
+      "flags": 62,
+      "persistent": true
+    },
+    {
+      "flags": 63,
+      "persistent": true
+    },
+    {
+      "flags": 64,
+      "persistent": false
+    },
+    {
+      "flags": 65,
+      "persistent": false
+    },
+    {
+      "flags": 66,
+      "persistent": true
+    },
+    {
+      "flags": 67,
+      "persistent": true
+    },
+    {
+      "flags": 68,
+      "persistent": false
+    },
+    {
+      "flags": 69,
+      "persistent": false
+    },
+    {
+      "flags": 70,
+      "persistent": true
+    },
+    {
+      "flags": 71,
+      "persistent": true
+    },
+    {
+      "flags": 72,
+      "persistent": false
+    },
+    {
+      "flags": 73,
+      "persistent": false
+    },
+    {
+      "flags": 74,
+      "persistent": true
+    },
+    {
+      "flags": 75,
+      "persistent": true
+    },
+    {
+      "flags": 76,
+      "persistent": false
+    },
+    {
+      "flags": 77,
+      "persistent": false
+    },
+    {
+      "flags": 78,
+      "persistent": true
+    },
+    {
+      "flags": 79,
+      "persistent": true
+    },
+    {
+      "flags": 80,
+      "persistent": false
+    },
+    {
+      "flags": 81,
+      "persistent": false
+    },
+    {
+      "flags": 82,
+      "persistent": true
+    },
+    {
+      "flags": 83,
+      "persistent": true
+    },
+    {
+      "flags": 84,
+      "persistent": false
+    },
+    {
+      "flags": 85,
+      "persistent": false
+    },
+    {
+      "flags": 86,
+      "persistent": true
+    },
+    {
+      "flags": 87,
+      "persistent": true
+    },
+    {
+      "flags": 88,
+      "persistent": false
+    },
+    {
+      "flags": 89,
+      "persistent": false
+    },
+    {
+      "flags": 90,
+      "persistent": true
+    },
+    {
+      "flags": 91,
+      "persistent": true
+    },
+    {
+      "flags": 92,
+      "persistent": false
+    },
+    {
+      "flags": 93,
+      "persistent": false
+    },
+    {
+      "flags": 94,
+      "persistent": true
+    },
+    {
+      "flags": 95,
+      "persistent": true
+    },
+    {
+      "flags": 96,
+      "persistent": false
+    },
+    {
+      "flags": 97,
+      "persistent": false
+    },
+    {
+      "flags": 98,
+      "persistent": true
+    },
+    {
+      "flags": 99,
+      "persistent": true
+    },
+    {
+      "flags": 100,
+      "persistent": false
+    },
+    {
+      "flags": 101,
+      "persistent": false
+    },
+    {
+      "flags": 102,
+      "persistent": true
+    },
+    {
+      "flags": 103,
+      "persistent": true
+    },
+    {
+      "flags": 104,
+      "persistent": false
+    },
+    {
+      "flags": 105,
+      "persistent": false
+    },
+    {
+      "flags": 106,
+      "persistent": true
+    },
+    {
+      "flags": 107,
+      "persistent": true
+    },
+    {
+      "flags": 108,
+      "persistent": false
+    },
+    {
+      "flags": 109,
+      "persistent": false
+    },
+    {
+      "flags": 110,
+      "persistent": true
+    },
+    {
+      "flags": 111,
+      "persistent": true
+    },
+    {
+      "flags": 112,
+      "persistent": false
+    },
+    {
+      "flags": 113,
+      "persistent": false
+    },
+    {
+      "flags": 114,
+      "persistent": true
+    },
+    {
+      "flags": 115,
+      "persistent": true
+    },
+    {
+      "flags": 116,
+      "persistent": false
+    },
+    {
+      "flags": 117,
+      "persistent": false
+    },
+    {
+      "flags": 118,
+      "persistent": true
+    },
+    {
+      "flags": 119,
+      "persistent": true
+    },
+    {
+      "flags": 120,
+      "persistent": false
+    },
+    {
+      "flags": 121,
+      "persistent": false
+    },
+    {
+      "flags": 122,
+      "persistent": true
+    },
+    {
+      "flags": 123,
+      "persistent": true
+    },
+    {
+      "flags": 124,
+      "persistent": false
+    },
+    {
+      "flags": 125,
+      "persistent": false
+    },
+    {
+      "flags": 126,
+      "persistent": true
+    },
+    {
+      "flags": 127,
+      "persistent": true
+    },
+    {
+      "flags": 128,
+      "persistent": false
+    },
+    {
+      "flags": 129,
+      "persistent": false
+    },
+    {
+      "flags": 130,
+      "persistent": true
+    },
+    {
+      "flags": 131,
+      "persistent": true
+    },
+    {
+      "flags": 132,
+      "persistent": false
+    },
+    {
+      "flags": 133,
+      "persistent": false
+    },
+    {
+      "flags": 134,
+      "persistent": true
+    },
+    {
+      "flags": 135,
+      "persistent": true
+    },
+    {
+      "flags": 136,
+      "persistent": false
+    },
+    {
+      "flags": 137,
+      "persistent": false
+    },
+    {
+      "flags": 138,
+      "persistent": true
+    },
+    {
+      "flags": 139,
+      "persistent": true
+    },
+    {
+      "flags": 140,
+      "persistent": false
+    },
+    {
+      "flags": 141,
+      "persistent": false
+    },
+    {
+      "flags": 142,
+      "persistent": true
+    },
+    {
+      "flags": 143,
+      "persistent": true
+    },
+    {
+      "flags": 144,
+      "persistent": false
+    },
+    {
+      "flags": 145,
+      "persistent": false
+    },
+    {
+      "flags": 146,
+      "persistent": true
+    },
+    {
+      "flags": 147,
+      "persistent": true
+    },
+    {
+      "flags": 148,
+      "persistent": false
+    },
+    {
+      "flags": 149,
+      "persistent": false
+    },
+    {
+      "flags": 150,
+      "persistent": true
+    },
+    {
+      "flags": 151,
+      "persistent": true
+    },
+    {
+      "flags": 152,
+      "persistent": false
+    },
+    {
+      "flags": 153,
+      "persistent": false
+    },
+    {
+      "flags": 154,
+      "persistent": true
+    },
+    {
+      "flags": 155,
+      "persistent": true
+    },
+    {
+      "flags": 156,
+      "persistent": false
+    },
+    {
+      "flags": 157,
+      "persistent": false
+    },
+    {
+      "flags": 158,
+      "persistent": true
+    },
+    {
+      "flags": 159,
+      "persistent": true
+    },
+    {
+      "flags": 160,
+      "persistent": false
+    },
+    {
+      "flags": 161,
+      "persistent": false
+    },
+    {
+      "flags": 162,
+      "persistent": true
+    },
+    {
+      "flags": 163,
+      "persistent": true
+    },
+    {
+      "flags": 164,
+      "persistent": false
+    },
+    {
+      "flags": 165,
+      "persistent": false
+    },
+    {
+      "flags": 166,
+      "persistent": true
+    },
+    {
+      "flags": 167,
+      "persistent": true
+    },
+    {
+      "flags": 168,
+      "persistent": false
+    },
+    {
+      "flags": 169,
+      "persistent": false
+    },
+    {
+      "flags": 170,
+      "persistent": true
+    },
+    {
+      "flags": 171,
+      "persistent": true
+    },
+    {
+      "flags": 172,
+      "persistent": false
+    },
+    {
+      "flags": 173,
+      "persistent": false
+    },
+    {
+      "flags": 174,
+      "persistent": true
+    },
+    {
+      "flags": 175,
+      "persistent": true
+    },
+    {
+      "flags": 176,
+      "persistent": false
+    },
+    {
+      "flags": 177,
+      "persistent": false
+    },
+    {
+      "flags": 178,
+      "persistent": true
+    },
+    {
+      "flags": 179,
+      "persistent": true
+    },
+    {
+      "flags": 180,
+      "persistent": false
+    },
+    {
+      "flags": 181,
+      "persistent": false
+    },
+    {
+      "flags": 182,
+      "persistent": true
+    },
+    {
+      "flags": 183,
+      "persistent": true
+    },
+    {
+      "flags": 184,
+      "persistent": false
+    },
+    {
+      "flags": 185,
+      "persistent": false
+    },
+    {
+      "flags": 186,
+      "persistent": true
+    },
+    {
+      "flags": 187,
+      "persistent": true
+    },
+    {
+      "flags": 188,
+      "persistent": false
+    },
+    {
+      "flags": 189,
+      "persistent": false
+    },
+    {
+      "flags": 190,
+      "persistent": true
+    },
+    {
+      "flags": 191,
+      "persistent": true
+    },
+    {
+      "flags": 192,
+      "persistent": false
+    },
+    {
+      "flags": 193,
+      "persistent": false
+    },
+    {
+      "flags": 194,
+      "persistent": true
+    },
+    {
+      "flags": 195,
+      "persistent": true
+    },
+    {
+      "flags": 196,
+      "persistent": false
+    },
+    {
+      "flags": 197,
+      "persistent": false
+    },
+    {
+      "flags": 198,
+      "persistent": true
+    },
+    {
+      "flags": 199,
+      "persistent": true
+    },
+    {
+      "flags": 200,
+      "persistent": false
+    },
+    {
+      "flags": 201,
+      "persistent": false
+    },
+    {
+      "flags": 202,
+      "persistent": true
+    },
+    {
+      "flags": 203,
+      "persistent": true
+    },
+    {
+      "flags": 204,
+      "persistent": false
+    },
+    {
+      "flags": 205,
+      "persistent": false
+    },
+    {
+      "flags": 206,
+      "persistent": true
+    },
+    {
+      "flags": 207,
+      "persistent": true
+    },
+    {
+      "flags": 208,
+      "persistent": false
+    },
+    {
+      "flags": 209,
+      "persistent": false
+    },
+    {
+      "flags": 210,
+      "persistent": true
+    },
+    {
+      "flags": 211,
+      "persistent": true
+    },
+    {
+      "flags": 212,
+      "persistent": false
+    },
+    {
+      "flags": 213,
+      "persistent": false
+    },
+    {
+      "flags": 214,
+      "persistent": true
+    },
+    {
+      "flags": 215,
+      "persistent": true
+    },
+    {
+      "flags": 216,
+      "persistent": false
+    },
+    {
+      "flags": 217,
+      "persistent": false
+    },
+    {
+      "flags": 218,
+      "persistent": true
+    },
+    {
+      "flags": 219,
+      "persistent": true
+    },
+    {
+      "flags": 220,
+      "persistent": false
+    },
+    {
+      "flags": 221,
+      "persistent": false
+    },
+    {
+      "flags": 222,
+      "persistent": true
+    },
+    {
+      "flags": 223,
+      "persistent": true
+    },
+    {
+      "flags": 224,
+      "persistent": false
+    },
+    {
+      "flags": 225,
+      "persistent": false
+    },
+    {
+      "flags": 226,
+      "persistent": true
+    },
+    {
+      "flags": 227,
+      "persistent": true
+    },
+    {
+      "flags": 228,
+      "persistent": false
+    },
+    {
+      "flags": 229,
+      "persistent": false
+    },
+    {
+      "flags": 230,
+      "persistent": true
+    },
+    {
+      "flags": 231,
+      "persistent": true
+    },
+    {
+      "flags": 232,
+      "persistent": false
+    },
+    {
+      "flags": 233,
+      "persistent": false
+    },
+    {
+      "flags": 234,
+      "persistent": true
+    },
+    {
+      "flags": 235,
+      "persistent": true
+    },
+    {
+      "flags": 236,
+      "persistent": false
+    },
+    {
+      "flags": 237,
+      "persistent": false
+    },
+    {
+      "flags": 238,
+      "persistent": true
+    },
+    {
+      "flags": 239,
+      "persistent": true
+    },
+    {
+      "flags": 240,
+      "persistent": false
+    },
+    {
+      "flags": 241,
+      "persistent": false
+    },
+    {
+      "flags": 242,
+      "persistent": true
+    },
+    {
+      "flags": 243,
+      "persistent": true
+    },
+    {
+      "flags": 244,
+      "persistent": false
+    },
+    {
+      "flags": 245,
+      "persistent": false
+    },
+    {
+      "flags": 246,
+      "persistent": true
+    },
+    {
+      "flags": 247,
+      "persistent": true
+    },
+    {
+      "flags": 248,
+      "persistent": false
+    },
+    {
+      "flags": 249,
+      "persistent": false
+    },
+    {
+      "flags": 250,
+      "persistent": true
+    },
+    {
+      "flags": 251,
+      "persistent": true
+    },
+    {
+      "flags": 252,
+      "persistent": false
+    },
+    {
+      "flags": 253,
+      "persistent": false
+    },
+    {
+      "flags": 254,
+      "persistent": true
+    },
+    {
+      "flags": 255,
+      "persistent": true
+    }
+  ],
+  "field_cases": 76,
+  "removal_cases": [
+    {
+      "flags": 0,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 0,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 0,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 0,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 1,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 1,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 1,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 1,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 2,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 2,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 2,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 2,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 3,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 3,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 3,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": [
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 3,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp",
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 4,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 4,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 4,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 4,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 5,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 5,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 5,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 5,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 6,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 6,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 6,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 6,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 7,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 7,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 7,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": [
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 7,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp",
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 8,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 8,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 8,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 8,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 9,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 9,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 9,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 9,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 10,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 10,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 10,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 10,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 11,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 11,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 11,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": [
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 11,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp",
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 12,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 12,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 12,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 12,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 13,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 13,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 13,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 13,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 14,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 14,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 14,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 14,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 15,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 15,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 15,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": [
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 15,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp",
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 16,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 16,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 16,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 16,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 17,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 17,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 17,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 17,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 18,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 18,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 18,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 18,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 19,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 19,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 19,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": [
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 19,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp",
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 20,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 20,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 20,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 20,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 21,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 21,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 21,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 21,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 22,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 22,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 22,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 22,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 23,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 23,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 23,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": [
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 23,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp",
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 24,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 24,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 24,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 24,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 25,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 25,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 25,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 25,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 26,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 26,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 26,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 26,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 27,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 27,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 27,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": [
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 27,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp",
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 28,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 28,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 28,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 28,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 29,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 29,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 29,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 29,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 30,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 30,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 30,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 30,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp"
+      ]
+    },
+    {
+      "flags": 31,
+      "matching_owner": false,
+      "stop_audio": 0,
+      "calls": []
+    },
+    {
+      "flags": 31,
+      "matching_owner": false,
+      "stop_audio": 1,
+      "calls": []
+    },
+    {
+      "flags": 31,
+      "matching_owner": true,
+      "stop_audio": 0,
+      "calls": [
+        "queue_remove"
+      ]
+    },
+    {
+      "flags": 31,
+      "matching_owner": true,
+      "stop_audio": 1,
+      "calls": [
+        "channel_stop",
+        "timestamp",
+        "queue_remove"
+      ]
+    }
+  ],
+  "restart_cases": [
+    {
+      "flags": 16,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 16,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 17,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 17,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 18,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 18,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 19,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 19,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 20,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 20,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 21,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 21,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 22,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 22,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 23,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 23,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 24,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 24,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 25,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 25,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 26,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 26,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 27,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 27,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 28,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 28,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 29,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 29,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 30,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 30,
+      "playing": true,
+      "starts": false
+    },
+    {
+      "flags": 31,
+      "playing": false,
+      "starts": true
+    },
+    {
+      "flags": 31,
+      "playing": true,
+      "starts": false
+    }
+  ],
+  "spatial_cases": 2000,
+  "scope": "Actual command14 and operation16 relocation/arguments; 256 config flag pool branches; both config-copy slices; full 19-slot/256-record owner-removal loops. Allocator, spatial mixer, channel-stop API and queue-copy calls remain explicit supplied boundaries. Persistent completion preserves ownership and selected inactive records request playback again (32 cases). 2000 native distance/fade cases cover both source ranges before stereo panning. Selection/mixing eligibility and native save policy remain outside this proof; no low-level waveform loop claim."
+}

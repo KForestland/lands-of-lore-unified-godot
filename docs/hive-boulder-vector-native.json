@@ -1,0 +1,97 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "rotation_table_sha256": "d7c7437da1c1be8f1d19e78433e8a976f19a90fe8004827a36dc383470294c53",
+  "code": [
+    {
+      "start": 1120980,
+      "end": 1121330,
+      "sha256": "cbc4d70f6e66b94c21cdc52b86f836b6d562a49ea389439dd51aa8d2a41bc711",
+      "relocated_sha256": "edf957f13d9ea4b0ac9a5ff442881e92a3b8d732ce08cb34bf1398742d6d59b9"
+    },
+    {
+      "start": 604900,
+      "end": 604945,
+      "sha256": "6f80f3027718731f5bfb70473e4f006b0d8c488de7f27aa908a6f91e7cbb2419",
+      "relocated_sha256": "385673e8d11f11536e01eb10023ff2143663b1eb23a093ac43e11e77a5197834"
+    },
+    {
+      "start": 1271188,
+      "end": 1271236,
+      "sha256": "695a1596cd742860cb1804b6229f83eef79a2a48262529c4f6242c93788a34a3",
+      "relocated_sha256": "695a1596cd742860cb1804b6229f83eef79a2a48262529c4f6242c93788a34a3"
+    },
+    {
+      "start": 1412830,
+      "end": 1412859,
+      "sha256": "e8e5057d4262fa80aa524f7f130d273e0dd9b35f25cbc72950dd0c7c37277a21",
+      "relocated_sha256": "e8e5057d4262fa80aa524f7f130d273e0dd9b35f25cbc72950dd0c7c37277a21"
+    },
+    {
+      "start": 1430273,
+      "end": 1430294,
+      "sha256": "bb5d92348d2e401ce0e8460ede4b0c86b9cd3ab4775021e46fe0a83c1e4eca38",
+      "relocated_sha256": "3dbd46cc92fc06f596d452a18d7153159efb67173143ef2080bd6980001ef60a"
+    }
+  ],
+  "data_relocations": [
+    {
+      "instruction": 1121014,
+      "original": 898640,
+      "relocated": 2995792
+    },
+    {
+      "instruction": 1121031,
+      "original": 898640,
+      "relocated": 2995792
+    },
+    {
+      "instruction": 1121105,
+      "original": 898640,
+      "relocated": 2995792
+    },
+    {
+      "instruction": 1121122,
+      "original": 898640,
+      "relocated": 2995792
+    },
+    {
+      "instruction": 1121164,
+      "original": 898640,
+      "relocated": 2995792
+    },
+    {
+      "instruction": 1121181,
+      "original": 898640,
+      "relocated": 2995792
+    },
+    {
+      "instruction": 1121290,
+      "original": 13672,
+      "relocated": 2110824
+    },
+    {
+      "instruction": 1121300,
+      "original": 13680,
+      "relocated": 2110832
+    },
+    {
+      "instruction": 604919,
+      "original": 898640,
+      "relocated": 2995792
+    },
+    {
+      "instruction": 604935,
+      "original": 898640,
+      "relocated": 2995792
+    },
+    {
+      "instruction": 1430275,
+      "original": 117360,
+      "relocated": 2214512
+    }
+  ],
+  "cases": 4096,
+  "sine_formula_cases": 4096,
+  "max_formula_bearing_error": 0,
+  "scope": "Actual111AD4 vector composition, native sine lookup, distance and x87 bearing/conversion helpers executed as32-bit x86. Absolute data references relocated by200000; constants recovered from original, rotation table independently reproduced. Hardware FPATAN flag0 supplied, four rounding modes checked; live FPU control state not observed. Formula bearing tolerance1unit; distance exact under tested rounding modes. Native caller stores low16 bearing and low8 integer magnitude, including wrap beyond255. Full collision callbacks and cadence remain separate."
+}

@@ -1,0 +1,82 @@
+{
+  "suite": "core",
+  "project": "/home/bob/lol2_github_source_20260911",
+  "started_utc": "20260928T064925242508Z",
+  "godot": [
+    "/home/bob/lol2_github_source_20260911/tmp/godot_host.sh"
+  ],
+  "filtered": true,
+  "suite_test_count": 37,
+  "selected_tests": [
+    "cave_roach_effective_stats_test",
+    "cave_roach_ai_choice_test",
+    "hive_ai_action_choice_test",
+    "hive_ai_goal_choice_test",
+    "hive_condition_runtime_test",
+    "hive_effective_stats_test"
+  ],
+  "complete": true,
+  "passed": true,
+  "tests": [
+    {
+      "name": "cave_roach_effective_stats_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.15,
+      "log": "cave_roach_effective_stats_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_ai_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.15,
+      "log": "cave_roach_ai_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ai_action_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.43,
+      "log": "hive_ai_action_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ai_goal_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.44,
+      "log": "hive_ai_goal_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_condition_runtime_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.34,
+      "log": "hive_condition_runtime_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_effective_stats_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.15,
+      "log": "hive_effective_stats_test.log",
+      "errors": []
+    }
+  ]
+}

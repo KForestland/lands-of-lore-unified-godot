@@ -1,0 +1,33 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 679691,
+      "end": 679819,
+      "sha256": "5254bcaef384d5405cc5ce23a473a634234475cd63670244509ebc3ccb8fa9e3"
+    },
+    {
+      "start": 679827,
+      "end": 679964,
+      "sha256": "700a05a26cd4b9f417abb22acd363c057dbd323feba8028ff786db0f64352b45"
+    },
+    {
+      "start": 875952,
+      "end": 876087,
+      "sha256": "d57b68704d95e427aae481175f54a6369930c1a8da6e19b5fed7ca17db9ca759"
+    },
+    {
+      "start": 604836,
+      "end": 604886,
+      "sha256": "20e5561ee8cea703386b21c51726cc44541853f2f9b52832888c7226ef456570"
+    },
+    {
+      "start": 604900,
+      "end": 604945,
+      "sha256": "6f80f3027718731f5bfb70473e4f006b0d8c488de7f27aa908a6f91e7cbb2419"
+    }
+  ],
+  "rotation_table_sha256": "d7c7437da1c1be8f1d19e78433e8a976f19a90fe8004827a36dc383470294c53",
+  "cases": 47160,
+  "scope": "Native player D5DB0 and WORM A5F0B/A5F93 displacement slices (including no-peer counter decrement and flag clear). Only the active mover with flag0x100 adjusts proposed XY by signed fixed-point trig times penetration. Player mover additionally clears B7C95. SHRD EAX,EDX,16 is explicitly bridged as a double-word shift. Actual sine/cosine helpers execute against the independently reproduced and hash-pinned x87 rotation table. Full callbacks, velocity response, cadence and live damage remain separate."
+}

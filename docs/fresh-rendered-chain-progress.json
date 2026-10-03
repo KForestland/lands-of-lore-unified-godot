@@ -1,0 +1,163 @@
+{
+  "verified_fresh_prefix": 11,
+  "total_legs": 11,
+  "complete": true,
+  "source_baseline": "tmp/regressions/aura_area_fix/report.json",
+  "source_changed_files": [],
+  "baseline_verified": true,
+  "checked_utc": "2026-10-03T05:45:01.452260+00:00",
+  "legs": [
+    {
+      "name": "01_cave",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [],
+      "proof_sha256": "34451c3d9dabb55035481c744c8a833f7b7cb25f758f41f97dfa358484f7f394",
+      "output_sha256": "2c079e0a65facc5cb22f8214908ad6ace383cedb501704888ecaad7a4eb5463d",
+      "log_sha256": "4ad49a4c5b45c9cc56326e9ef6bce4e89b9c9c751ac78871cfaedbec218eac80"
+    },
+    {
+      "name": "02_museum",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history"
+      ],
+      "proof_sha256": "cb616f26ed2c6ad191e09064b27dbe9646b060444d5ca4283cb63c274dcc3dea",
+      "output_sha256": "7e45e053b89fd7678ca4601a6d6b2c2d07cad42c65699f8ccfacc3b86a8e4f8c",
+      "log_sha256": "ba151b43d44eb5969ba90335d5811a547fb76de07a1ff958fced2d25bfdde55e"
+    },
+    {
+      "name": "03_jungle_hive",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history"
+      ],
+      "proof_sha256": "59a74027cc7107256957952ceb52606869095b1ef7394a021cfe317ad2fbe81f",
+      "output_sha256": "d147802ad65c41fd1cb273b557e40037c6749f89ddf4ba717884d67e36def8f6",
+      "log_sha256": "fea7e08f51d1f93045b56a7075a27af403c9f7b829c380abe6e272812877b5be"
+    },
+    {
+      "name": "04_flute",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history"
+      ],
+      "proof_sha256": "76324394fcbf65a272ca2c11f166a5ffd5bfd9341dd8a3f38ac3fd07c779f5bd",
+      "output_sha256": "f2155a869b71f0f6ec5764f889d116e766a56e97fa4d0f7acd7197c2a8321515",
+      "log_sha256": "7d20fbd8a6ab780785391d827598943b9227546fcacc987b494628593742e9a2"
+    },
+    {
+      "name": "05_wax",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history"
+      ],
+      "proof_sha256": "26dfabd3f20c4b98885f1874e7f4c2ceeb121188c3ea34714c76525742ca302f",
+      "output_sha256": "2d1a2b53667df29cf080c1bcfc1c5854b45448818b2a16eedba2fede8c9cfe48",
+      "log_sha256": "067b01ca361db145f40bdbc5cd9100bc4574257c474277cc54232b9d2eaba7d7"
+    },
+    {
+      "name": "06_runes",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history"
+      ],
+      "proof_sha256": "013a602560416f58f2cd2eff28c5cd50bbf479d259628a7aac8e9f026f304b0c",
+      "output_sha256": "36dc1cb1523f3639ce867124345a7e241476f6deb5d2c84a480377d0d3b8250e",
+      "log_sha256": "251de0647c006691ed7c0f428e9f8c703cae3687775376baf5b1bf58f94fa68a"
+    },
+    {
+      "name": "07_rune_return",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history"
+      ],
+      "proof_sha256": "73e8f89e79736dba3d471faa2d9d5edcec35a7f102125ba7fc9579df5acdd6f4",
+      "output_sha256": "7c10716395ed103a9d8c5a4c63c838df15d0d6f147a3a54c96479db94c0258d9",
+      "log_sha256": "9aec69a93be9ca619f8f2165aa00cf7143bf995ba3706b941dcadd306e130ee6"
+    },
+    {
+      "name": "08_knowledge",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history"
+      ],
+      "proof_sha256": "dd0056ecaf0421a33f278020998918c8f15b76b0e5a9066ea300e622080cc498",
+      "output_sha256": "de15b8040ed3492c8d293803799ff3e3a9ccceb0a56faf1eb2beef68ed017fdb",
+      "log_sha256": "6c8fb412caa567fb107ac2fbe88f9ae4b1b200ff94782adb4ab7c10efb08e44f"
+    },
+    {
+      "name": "09_translation",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history"
+      ],
+      "proof_sha256": "66131453929a8ee86d2ed562ac5631633b31f079c7064386fbf0fcc3310ac533",
+      "output_sha256": "044a2601094efc569c83b7615d410d41957010674d39510694d12c9638bd3f02",
+      "log_sha256": "79938e8a6b178f70a9818910bf9e72d58b38b3fd8ec590d47d8f7f7ecc27321c"
+    },
+    {
+      "name": "10_repair",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history"
+      ],
+      "proof_sha256": "ad79f64b2f52aac0d2e05db42fbae266ef17ce28558e650eaf4a85e2ad5d311c",
+      "output_sha256": "02b8632bc00f51de573a2e2fce26fab83fdf188dae7d3d167e5391b61c6cca02",
+      "log_sha256": "1f6521bfa4ce144bfe2487a2960c199b5d8699985e3b06defc4ac58044b8b3f6"
+    },
+    {
+      "name": "11_departure",
+      "status": "verified",
+      "errors": [],
+      "exit_code": 0,
+      "content_checks": [
+        "Cave weapon retained",
+        "Museum sword retained",
+        "Broken-sword branch inventory and exhibit history",
+        "Darker-jungle arrival, translation, orb, blessing and repair flags"
+      ],
+      "proof_sha256": "67c08805d239c8f2d02b003e15126261170a30ac3015f9c638c84b800e2134f5",
+      "output_sha256": "10eaf5f2a3675f91665f222c5eed2c282105ebeb01f3e3a70c54dc63667ee685",
+      "log_sha256": "aad056f790d2f9a60a170b2dd0b5cf870fbe78a878ab85ce8a8dfc21507dca17"
+    }
+  ],
+  "scope": "Fresh single-day Europe/Berlin receipts, clean PASS logs, proof/save timestamps, actual linked hashes, branch inventory/quest checks and source endpoint comparison. Media excluded. Endpoint equality cannot exclude intervening edits. Content completeness, rendering quality and original-game parity require separate acceptance."
+}

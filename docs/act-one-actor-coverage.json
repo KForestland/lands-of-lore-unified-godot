@@ -1,0 +1,916 @@
+{
+  "source_inventory_sha256": "015ad7e0c79ce05fe598c3498e0c5b22bc618ede725569c122cf82f8e46c388e",
+  "scope": "Four pre-departure map archives only. Positive implementation bindings are reviewed leads, not completion. Unmatched actors may be alternate states, script placeholders, cinematic actors or playable encounters; source reachability and live implementation classification remain required. L8_SJ acceptance ends at verified arrival/onward walk, not completion of Act Two content.",
+  "placement_count": 194,
+  "reviewed_live_bindings": 40,
+  "areas": [
+    {
+      "id": "L1_DC",
+      "source": {
+        "file": "DAT/L1_DC.MIX",
+        "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+        "geometry_key": 2971673856,
+        "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+      },
+      "placement_count": 57,
+      "definitions": [
+        {
+          "definition": 0,
+          "name": "GGCAPT",
+          "actors": [
+            56
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            56
+          ]
+        },
+        {
+          "definition": 1,
+          "name": "GGUARD",
+          "actors": [
+            2,
+            38,
+            39,
+            54
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            2,
+            38,
+            39,
+            54
+          ]
+        },
+        {
+          "definition": 2,
+          "name": "GGUARD",
+          "actors": [
+            1,
+            52,
+            53
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            1,
+            52,
+            53
+          ]
+        },
+        {
+          "definition": 3,
+          "name": "Kenneth",
+          "actors": [],
+          "reviewed_live_bindings": {},
+          "classification_pending": []
+        },
+        {
+          "definition": 4,
+          "name": "Roach",
+          "actors": [
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51
+          ],
+          "reviewed_live_bindings": {
+            "25": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "26": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "27": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "28": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "29": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "30": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "31": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "32": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "33": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "34": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "35": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "40": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "41": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "42": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "43": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "44": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "45": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "46": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "47": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "48": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "49": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "50": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "51": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            }
+          },
+          "classification_pending": []
+        },
+        {
+          "definition": 5,
+          "name": "ROACH",
+          "actors": [
+            0,
+            23
+          ],
+          "reviewed_live_bindings": {
+            "23": {
+              "path": "scripts/lol2/cave_roach.gd",
+              "sha256": "e4dba6b80bb417285dff752ea5a50c6b2a3a5cfa22ec9b998a003ec2113b1b84",
+              "scope": "live encounter; authored combat tuning"
+            }
+          },
+          "classification_pending": [
+            0
+          ]
+        },
+        {
+          "definition": 6,
+          "name": "WORM",
+          "actors": [
+            36,
+            37
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            36,
+            37
+          ]
+        },
+        {
+          "definition": 7,
+          "name": "B_HUMAN",
+          "actors": [
+            55
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            55
+          ]
+        },
+        {
+          "definition": 8,
+          "name": "WORM",
+          "actors": [
+            24
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            24
+          ]
+        },
+        {
+          "definition": 9,
+          "name": "B_HUMAN",
+          "actors": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        {
+          "definition": 10,
+          "name": "B_HUMAN",
+          "actors": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L3_DH",
+      "source": {
+        "file": "DAT/L3_DH.MIX",
+        "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+        "geometry_key": 3106551060,
+        "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+      },
+      "placement_count": 33,
+      "definitions": [
+        {
+          "definition": 0,
+          "name": "skel",
+          "actors": [
+            21,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            21,
+            28,
+            29,
+            30,
+            31,
+            32
+          ]
+        },
+        {
+          "definition": 1,
+          "name": "Rat",
+          "actors": [
+            22
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            22
+          ]
+        },
+        {
+          "definition": 2,
+          "name": "skel",
+          "actors": [
+            20,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            20,
+            23,
+            24,
+            25,
+            26,
+            27
+          ]
+        },
+        {
+          "definition": 3,
+          "name": "B_HUMAN",
+          "actors": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "definition": 4,
+          "name": "B_HUMAN",
+          "actors": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L4_HJ",
+      "source": {
+        "file": "DAT/L4_HJ.MIX",
+        "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+        "geometry_key": 3710797084,
+        "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+      },
+      "placement_count": 67,
+      "definitions": [
+        {
+          "definition": 0,
+          "name": "TIG_ROG",
+          "actors": [
+            36,
+            37,
+            38
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            36,
+            37,
+            38
+          ]
+        },
+        {
+          "definition": 1,
+          "name": "TIG_MAL",
+          "actors": [
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            62
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            62
+          ]
+        },
+        {
+          "definition": 2,
+          "name": "TIG_FEM",
+          "actors": [
+            46,
+            47,
+            48,
+            49,
+            50
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            46,
+            47,
+            48,
+            49,
+            50
+          ]
+        },
+        {
+          "definition": 3,
+          "name": "TIG_CUB",
+          "actors": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        },
+        {
+          "definition": 4,
+          "name": "DINO",
+          "actors": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "definition": 5,
+          "name": "BACL4",
+          "actors": [
+            57,
+            61,
+            65
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            57,
+            61,
+            65
+          ]
+        },
+        {
+          "definition": 6,
+          "name": "L4WW",
+          "actors": [
+            0,
+            66
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            0,
+            66
+          ]
+        },
+        {
+          "definition": 7,
+          "name": "Kelsrick",
+          "actors": [
+            64
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            64
+          ]
+        },
+        {
+          "definition": 8,
+          "name": "DawnL4",
+          "actors": [
+            63
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            63
+          ]
+        },
+        {
+          "definition": 9,
+          "name": "GGuard",
+          "actors": [
+            58,
+            59,
+            60
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            58,
+            59,
+            60
+          ]
+        },
+        {
+          "definition": 10,
+          "name": "VILLAGER",
+          "actors": [],
+          "reviewed_live_bindings": {},
+          "classification_pending": []
+        },
+        {
+          "definition": 11,
+          "name": "B_HUMAN",
+          "actors": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "definition": 12,
+          "name": "SSAR",
+          "actors": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L5_HC",
+      "source": {
+        "file": "DAT/L5_HC.MIX",
+        "sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+        "geometry_key": 3776990464,
+        "geometry_sha256": "69a9c0dd739ad36691c6513d53cf007204aa3bd35d5762e8f8f4e8c6dbcb9e85"
+      },
+      "placement_count": 37,
+      "definitions": [
+        {
+          "definition": 0,
+          "name": "HIVEW",
+          "actors": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            32,
+            33,
+            34
+          ],
+          "reviewed_live_bindings": {
+            "21": {
+              "path": "scripts/lol2/hive_rune_population_state.gd",
+              "sha256": "07cbbdffd57f75e38c635e47037d1940d06fd1d3156bc185ba1bf5071e233fc3",
+              "scope": "template copied into finite restored slots; local combat/save headless integration, rendered admission still pending; partial pool/clock/loot adapters"
+            },
+            "22": {
+              "path": "scripts/lol2/hive_rune_population_state.gd",
+              "sha256": "07cbbdffd57f75e38c635e47037d1940d06fd1d3156bc185ba1bf5071e233fc3",
+              "scope": "template copied into finite restored slots; local combat/save headless integration, rendered admission still pending; partial pool/clock/loot adapters"
+            },
+            "23": {
+              "path": "scripts/lol2/hive_return_population.gd",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
+              "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
+            },
+            "24": {
+              "path": "scripts/lol2/hive_return_population.gd",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
+              "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
+            },
+            "25": {
+              "path": "scripts/lol2/hive_return_population.gd",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
+              "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
+            },
+            "26": {
+              "path": "scripts/lol2/hive_return_population.gd",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
+              "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
+            },
+            "27": {
+              "path": "scripts/lol2/hive_return_population.gd",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
+              "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
+            },
+            "28": {
+              "path": "scripts/lol2/hive_return_population.gd",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
+              "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
+            },
+            "29": {
+              "path": "scripts/lol2/hive_return_population.gd",
+              "sha256": "d075b69f9145efdc1e4f8ac16193a8ee14c76cdcf9372cdcbe1307c40aef6013",
+              "scope": "return-warrior pool; source positions/health/rewards, adapter arrival/movement/attacks"
+            },
+            "32": {
+              "path": "scripts/lol2/hive_warriors.gd",
+              "sha256": "675ae553b79b90af2e579313020c0096491e13498d39cbf309a71707b58ba1f7",
+              "scope": "stationary guardian; authored health/timing"
+            },
+            "33": {
+              "path": "scripts/lol2/hive_ambush.gd",
+              "sha256": "83e484c73f526968b7408a6e81fc0137eb9e59d142253aa9248c0322e35f2188",
+              "scope": "source-region unfolding film and live combat; adapter scheduling/presentation"
+            },
+            "34": {
+              "path": "scripts/lol2/hive_warriors.gd",
+              "sha256": "675ae553b79b90af2e579313020c0096491e13498d39cbf309a71707b58ba1f7",
+              "scope": "stationary guardian; authored health/timing"
+            }
+          },
+          "classification_pending": []
+        },
+        {
+          "definition": 1,
+          "name": "EXEC",
+          "actors": [
+            35,
+            36
+          ],
+          "reviewed_live_bindings": {
+            "35": {
+              "path": "scripts/lol2/hive_ambush.gd",
+              "sha256": "83e484c73f526968b7408a6e81fc0137eb9e59d142253aa9248c0322e35f2188",
+              "scope": "source-region feeding-to-attack films and live combat; alternate hit path still open"
+            },
+            "36": {
+              "path": "scripts/lol2/hive_executioner_live.gd",
+              "sha256": "ff2405131fc0c6395712d8dcf976c69bc796f966cb17cb893b28c2c1b4806673",
+              "scope": "live Executioner; source rewards, adapter navigation/damage"
+            }
+          },
+          "classification_pending": []
+        },
+        {
+          "definition": 2,
+          "name": "WORM",
+          "actors": [
+            30,
+            31
+          ],
+          "reviewed_live_bindings": {
+            "30": {
+              "path": "scripts/lol2/hive_boulders.gd",
+              "sha256": "62bcbdf3fb6cab3160d84a621c325aa5b45cc408bb0bf45ba857924db8d0b079",
+              "scope": "partial rolling-boulder presentation/path/save integration; motion/scheduler/audio-mixing/contact-geometry/health adapters; live contact damage and saved impulse"
+            },
+            "31": {
+              "path": "scripts/lol2/hive_boulders.gd",
+              "sha256": "62bcbdf3fb6cab3160d84a621c325aa5b45cc408bb0bf45ba857924db8d0b079",
+              "scope": "partial rolling-boulder presentation/path/save integration; motion/scheduler/audio-mixing/contact-geometry/health adapters; live contact damage and saved impulse"
+            }
+          },
+          "classification_pending": []
+        },
+        {
+          "definition": 3,
+          "name": "DAWNL4",
+          "actors": [
+            20
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            20
+          ]
+        },
+        {
+          "definition": 4,
+          "name": "B_HUMAN",
+          "actors": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "definition": 5,
+          "name": "B_HUMAN",
+          "actors": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "reviewed_live_bindings": {},
+          "classification_pending": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "code": [
+    {
+      "start": 680692,
+      "end": 682021,
+      "sha256": "7ce0789e2a1d2a1b73307a0705b63fd0765d1ed60750be348c627129c0ec5573"
+    },
+    {
+      "start": 682024,
+      "end": 682332,
+      "sha256": "b2c4d7414bd58f7d11301a408104115fa6b317dceecef0af2e0e8cd8d90b3ac4"
+    },
+    {
+      "start": 391288,
+      "end": 391333,
+      "sha256": "0ba24fcb77dfe59e5271fbd48ced6d829386ea6e2e14ee2a240ea0db82538ac2"
+    },
+    {
+      "start": 735940,
+      "end": 736004,
+      "sha256": "8d3f624d01d9f56dcda0a860c9b8f41f22181a743c9e468bba12fe701e8bb356"
+    },
+    {
+      "start": 1394904,
+      "end": 1394922,
+      "sha256": "7da5488cbf6d0c03aaa47eb278e7ed91c2c6a082486562da5da43da5e844813a"
+    },
+    {
+      "start": 748725,
+      "end": 748761,
+      "sha256": "2c109a013beed1a6c57892498690dce9b8304f8463ddbbba3cb1c7a894472508"
+    }
+  ],
+  "bindings": [
+    {
+      "slot": 316108,
+      "target": 680776
+    },
+    {
+      "slot": 316056,
+      "target": 681762
+    }
+  ],
+  "setter_cases": 512,
+  "copy_cases": 512,
+  "actors": [
+    {
+      "actor": 21,
+      "position": [
+        -1023,
+        -235,
+        -8185
+      ],
+      "heading": 0,
+      "definition": 0,
+      "health": 400,
+      "source_offset": 5945458,
+      "sha256": "a636c06b09fc20c72e998cc63a976d83514b119eb42cc0bf7b74d3aaaf93e5bc"
+    },
+    {
+      "actor": 22,
+      "position": [
+        189,
+        -140,
+        -4949
+      ],
+      "heading": 0,
+      "definition": 0,
+      "health": 400,
+      "source_offset": 5945514,
+      "sha256": "6d6378df0b5d106d33e63bd0418eec059df95674004824ccd62e54f774c7808c"
+    }
+  ],
+  "owners": [
+    {
+      "stream": 1,
+      "group": 420,
+      "owner_kind": "prop",
+      "owner": 76,
+      "event": 6,
+      "value": 9,
+      "predicate": 61,
+      "archive_offset": 5903331
+    },
+    {
+      "stream": 1,
+      "group": 420,
+      "owner_kind": "prop",
+      "owner": 76,
+      "event": 6,
+      "value": 20,
+      "predicate": 61,
+      "archive_offset": 5903341
+    }
+  ],
+  "region_trigger": [
+    {
+      "stream": 0,
+      "group": 150,
+      "owner_kind": "region",
+      "owner": 284,
+      "descriptors": [
+        19
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 5958601
+    }
+  ],
+  "examples": [
+    {
+      "occupied": 0,
+      "reusable": 0,
+      "queued": 0,
+      "selected": null
+    },
+    {
+      "occupied": 0,
+      "reusable": 0,
+      "queued": 1,
+      "selected": null
+    },
+    {
+      "occupied": 0,
+      "reusable": 1,
+      "queued": 0,
+      "selected": null
+    },
+    {
+      "occupied": 0,
+      "reusable": 1,
+      "queued": 1,
+      "selected": null
+    },
+    {
+      "occupied": 0,
+      "reusable": 2,
+      "queued": 0,
+      "selected": null
+    },
+    {
+      "occupied": 0,
+      "reusable": 2,
+      "queued": 1,
+      "selected": null
+    },
+    {
+      "occupied": 0,
+      "reusable": 15,
+      "queued": 0,
+      "selected": null
+    },
+    {
+      "occupied": 0,
+      "reusable": 15,
+      "queued": 1,
+      "selected": null
+    },
+    {
+      "occupied": 15,
+      "reusable": 0,
+      "queued": 0,
+      "selected": null
+    },
+    {
+      "occupied": 15,
+      "reusable": 0,
+      "queued": 1,
+      "selected": null
+    },
+    {
+      "occupied": 15,
+      "reusable": 1,
+      "queued": 0,
+      "selected": 0
+    },
+    {
+      "occupied": 15,
+      "reusable": 1,
+      "queued": 1,
+      "selected": 0
+    },
+    {
+      "occupied": 15,
+      "reusable": 2,
+      "queued": 0,
+      "selected": 1
+    },
+    {
+      "occupied": 15,
+      "reusable": 2,
+      "queued": 1,
+      "selected": 1
+    },
+    {
+      "occupied": 15,
+      "reusable": 15,
+      "queued": 0,
+      "selected": 0
+    },
+    {
+      "occupied": 15,
+      "reusable": 15,
+      "queued": 1,
+      "selected": 0
+    }
+  ],
+  "scope": "Source group420 property20 targets22 then21 under shared9==1 (GV_HAS_RUNES independently named in return-population proof). Region284 event2 -> group150 property21 on prop76 -> event20 route. Actual property20 setter and A6828 scan choose first allocated actor whose flag800000 is set, copy188 bytes, preserve destination inventory, enqueue, request enable1 and event23. No eligible slot returns0, while setter still clears source7C and returns1. Copy bytes, SETE and world-enable/event-getter/event-dispatch effects are explicit boundaries; native bitmap read and queue insertion execute. Initial availability/recycling lifetime, full event producer, gameplay instance count and native save identity remain unverified. Actors21/22 must not be treated as ordinary enable-only return warriors."
+}
