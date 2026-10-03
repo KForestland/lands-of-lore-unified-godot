@@ -14,16 +14,17 @@ func _initialize() -> void:
 	# Placement flag0x1000: only guard52 starts in the world; it waits for region1104.
 	for id in ["1","2","38","39","53","54","56"]: assert(not s.actors[id].present,id)
 	assert(s.actors["52"].present and not s.actors["52"].woken and not State.ready_to_fight(s,src,"52"))
-	# Region769 (wake39) before region631 (spawn39) does nothing: absent actors cannot wake.
 	var r: Dictionary={}
 	for region in src.regions: r[int(region.region)]=region
+	# Region631 alone spawns39 dormant (its scripted wake is pending).
+	var s2:=State.initial(src)
+	State.contact(s2,src,centre(r[631]),float(r[631].floor_min))
+	assert(s2.actors["39"].present and not s2.actors["39"].woken)
+	# Region769 (control109 -> prop533 chain, collapsed) spawns and wakes39.
 	State.contact(s,src,centre(r[769]),float(r[769].floor_min))
-	assert(not s.actors["39"].present and not s.actors["39"].woken and s.regions==[769])
-	# Region631 spawns39; it was scripted dormant, so it rises only after a wake region.
-	State.contact(s,src,centre(r[631]),float(r[631].floor_min))
-	assert(s.actors["39"].present and not s.actors["39"].woken)
+	assert(s.actors["39"].present and s.actors["39"].woken and s.regions==[769])
 	State.contact(s,src,centre(r[772]),float(r[772].floor_min))
-	assert(s.actors["39"].woken)
+	assert(s.regions==[769,772])
 	State.advance_clocks(s,src,2.0)
 	assert(State.ready_to_fight(s,src,"39"))
 	# Region1941 spawns38 which fights directly (no later wake command).
@@ -43,5 +44,5 @@ func _initialize() -> void:
 	assert(State.damage(s,src,"56",5)==0)
 	var bad: Dictionary=State.canonical(s,src);bad.actors["54"].health=10
 	assert(not State.validate(bad,src).is_empty())
-	print("PASS: 8 source cave guards; absent until region spawn (631/1941), wake only when present (769-775/1104), rise, playable6 hit, JSON, defeat and malformed rejection")
+	print("PASS: 8 source cave guards; absent until region spawn (631/769-775/1941), control109 chain spawn+wake39, wake52 (1104), rise, playable6 hit, JSON, defeat and malformed rejection")
 	quit()

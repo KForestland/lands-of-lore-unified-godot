@@ -12,7 +12,9 @@ from build_game_atlas import parse_mix,section
 from audit_game_transition_owners import GAME
 from verify_cave_roach_attack import native_bases
 ROOT=Path(__file__).resolve().parents[1]
-REGIONS=[(631,[39],[]),(769,[],[39]),(772,[],[39]),(775,[],[39]),(1104,[],[52]),(1941,[38],[]),(106,[53],[]),(121,[53],[]),(969,[54],[]),(23,[1,2],[])]
+# 769/772/775 start control109 (op16 state1); its animation endpoint (event5) relinks guard39
+# through prop533, whose endpoint spawns guard39; property13/7 enable it. Collapsed: spawn+wake.
+REGIONS=[(631,[39],[]),(769,[39],[39]),(772,[39],[39]),(775,[39],[39]),(1104,[],[52]),(1941,[38],[]),(106,[53],[]),(121,[53],[]),(969,[54],[]),(23,[1,2],[])]
 def main():
     inventory=json.loads((ROOT/'docs/game-actors.json').read_text())
     area=next(a for a in inventory['areas'] if a['id']=='L1_DC')
