@@ -3,6 +3,20 @@ extends RefCounted
 const Values=preload("res://scripts/lol2/save_value_rules.gd")
 const Choice=preload("res://scripts/lol2/hive_ai_action_choice.gd")
 const SOURCE="res://scripts/lol2/cave_roach_population_source.json"
+## Live behavior adapter (docs/cave-roach-population-live.md). Damage7 at selector6
+## frame12 is native-derived (docs/cave-roach-attack.json); perception range, reach,
+## speed and the8fps clip clock reuse the accepted entrance-Roach adapters.
+const Live=preload("res://scripts/lol2/creature_live_rules.gd")
+const IDLE:=Live.IDLE
+const PURSUE:=Live.PURSUE
+const ATTACK:=Live.ATTACK
+const ALERT_RANGE:=180.0
+const REACH:=40.0
+const SPEED:=42.0
+const DAMAGE:=7
+const IMPACT_SECONDS:=12.0/8.0
+const ATTACK_SECONDS:=16.0/8.0
+const RULES:={"alert":ALERT_RANGE,"reach":REACH,"damage":DAMAGE,"impact":IMPACT_SECONDS,"clip":ATTACK_SECONDS}
 static func initial() -> Dictionary:
 	var source: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(SOURCE))
 	var actors: Dictionary={}
@@ -34,6 +48,11 @@ static func validate(state: Variant) -> String:
 			if not (elapsed is int or elapsed is float) or not is_finite(float(elapsed)) or elapsed<0 or elapsed>duration: return "Invalid cave Roach visual clock."
 			if v.action==9 and elapsed>=duration: return "Completed cave Roach startup remains active."
 			if (state.actors[id].health==0)!=(v.action==14): return "Cave Roach death presentation disagrees."
+	if state.has("live"):
+		if not state.live is Dictionary or state.live.size()!=expected.size(): return "Incomplete cave Roach live packets."
+		for id in expected:
+			var live_error:=Live.validate(state.live.get(id),state.actors[id].health>0,RULES)
+			if not live_error.is_empty(): return live_error
 	if not state.get("regions") is Array or state.regions.size()>2: return "Invalid cave Roach region history."
 	var seen: Array=[]
 	for region in state.regions:
@@ -51,6 +70,10 @@ static func canonical(state: Dictionary) -> Dictionary:
 	if result.has("visuals"):
 		for v in result.visuals.values():
 			v.action=int(v.action);v.elapsed=float(v.elapsed)
+	if result.has("live"):
+		for live in result.live.values():
+			live.mode=int(live.mode);live.elapsed=float(live.elapsed)
+			live.heading=int(live.heading)
 	return result
 
 static func initialize_visuals(state: Dictionary) -> void:
@@ -81,6 +104,7 @@ static func damage(state: Dictionary, id: String, amount: int) -> int:
 	if actor.health==0:
 		actor.a8=15;actor.a9=15;actor.aa=14;actor.ab=14
 		state.visuals[id]={"action":14,"elapsed":0.0}
+		if state.has("live"): state.live[id].merge({"mode":IDLE,"elapsed":0.0,"hit":false},true)
 	return loss
 static func first_contact(state: Dictionary, region: int) -> bool:
 	if region not in [1140,1358] or region in state.regions: return false
@@ -127,3 +151,20 @@ static func commit(state: Dictionary, id: String, mode: int) -> bool:
 	if result.has("error"): return false
 	state.actors[id]=result.state
 	return result.committed
+
+## Facing is saved as the source16-bit heading unit so disk/JSON round trips are exact.
+static func heading_units(facing: Vector2) -> int: return Live.heading_units(facing)
+static func heading_vector(units: int) -> Vector2: return Live.heading_vector(units)
+static func initialize_live(state: Dictionary) -> void:
+	if state.has("live"): return
+	var source: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(SOURCE))
+	state.live={}
+	for row in source.actors:
+		state.live[str(int(row.actor))]={"mode":IDLE,"elapsed":0.0,"hit":false,"heading":int(row.heading)}
+
+## One bounded step. Returns player damage dealt (0 or DAMAGE-capped). An attack
+## clip always completes and lands at most once; only the impact frame checks reach.
+static func advance_live(state: Dictionary, id: String, delta: float, distance: float, sight: bool, protected: bool, player_health: int) -> int:
+	if not state.actors.has(id): return 0
+	initialize_live(state)
+	return Live.advance(state.live[id],state.actors[id].health>0,delta,distance,sight,protected,player_health,RULES)

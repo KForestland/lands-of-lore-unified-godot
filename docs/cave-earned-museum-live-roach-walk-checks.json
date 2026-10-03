@@ -1,0 +1,53 @@
+{
+ "date": "2026-10-03",
+ "passed": true,
+ "returncode": 0,
+ "script": "res://tests/cave_opening_route_walk.gd",
+ "arguments": [
+  "--middle-route",
+  "--bridge-route",
+  "--through-museum",
+  "--sprint-smoke",
+  "--route-fast"
+ ],
+ "display": "private Xvfb :77, gl_compatibility",
+ "log": "tmp/regressions/roach_ai_route_20261003/route8.log",
+ "output_save": "user://tests/act1_earned_museum_arrival.json",
+ "output_sha256": "cc9a7ab25122d0e9160bfa2d2875f261b6c3d5548d1d3029d73ff53cad3ec7fa",
+ "population_roaches_defeated": [
+  47,
+  46,
+  42,
+  40,
+  44
+ ],
+ "player_health_at_kills": 30,
+ "fighting": {
+  "cave_melee_seed": 324508639,
+  "player_reward_state": {
+   "player": {
+    "condition": 0,
+    "experience": 83,
+    "health": 8,
+    "level": 1,
+    "maximum": 8,
+    "stat151": 5,
+    "stat155": 10
+   },
+   "version": 1
+  }
+ },
+ "health": 30,
+ "driver_changes": [
+  "fight_population: engaged or adjacent living population Roaches are aimed and struck through the production mouse input; no damage/health/position injection",
+  "curse wait: when stalled in a timed curse shape, release movement and wait for the next natural shape change (max3 per stop); no form injection",
+  "late waypoint (1100,-11970) added to route around a source wall corner after fight-shifted arrival; collision unchanged"
+ ],
+ "failures_preserved": [
+  "route.log: actor46 bit and blocked the unmodified driver",
+  "route2/3: save-reload mismatch from float32 positions (fixed by1/64 quantization)",
+  "route4-6: wall-corner stall",
+  "route7: beast-form stall at narrow passage"
+ ],
+ "scope": "Earned cave entrance\u2192Museum arrival with all23 source Roaches live. Automated steering and4x clock are test adapters. Not full Act One acceptance."
+}

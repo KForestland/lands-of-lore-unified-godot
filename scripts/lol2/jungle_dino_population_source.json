@@ -1,0 +1,187 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "reward_scale": 4,
+ "max_health": 150,
+ "damage": 24,
+ "clips": {
+  "idle": {
+   "selector": 0,
+   "frames": 12
+  },
+  "walk": {
+   "selector": 1,
+   "frames": 14
+  },
+  "bite": {
+   "selector": 4,
+   "frames": 14,
+   "hit_frame": 9
+  },
+  "death": {
+   "selector": 8,
+   "frames": 12
+  },
+  "corpse": {
+   "selector": 9,
+   "frames": 1
+  }
+ },
+ "actors": [
+  {
+   "actor": 21,
+   "position": [
+    -1740,
+    30,
+    -1718
+   ],
+   "heading": 47149,
+   "health": 150
+  },
+  {
+   "actor": 22,
+   "position": [
+    -1687,
+    35,
+    -1771
+   ],
+   "heading": 12196,
+   "health": 150
+  },
+  {
+   "actor": 23,
+   "position": [
+    -1607,
+    25,
+    -1651
+   ],
+   "heading": 26214,
+   "health": 150
+  },
+  {
+   "actor": 24,
+   "position": [
+    -2910,
+    0,
+    -4984
+   ],
+   "heading": 45693,
+   "health": 150
+  },
+  {
+   "actor": 25,
+   "position": [
+    -2822,
+    0,
+    -5000
+   ],
+   "heading": 45693,
+   "health": 150
+  },
+  {
+   "actor": 26,
+   "position": [
+    -2743,
+    0,
+    -5046
+   ],
+   "heading": 14563,
+   "health": 150
+  },
+  {
+   "actor": 27,
+   "position": [
+    -2570,
+    0,
+    -4848
+   ],
+   "heading": 30947,
+   "health": 150
+  },
+  {
+   "actor": 28,
+   "position": [
+    -2529,
+    0,
+    -4938
+   ],
+   "heading": 30947,
+   "health": 150
+  },
+  {
+   "actor": 29,
+   "position": [
+    -2359,
+    0,
+    -1660
+   ],
+   "heading": 31675,
+   "health": 150
+  },
+  {
+   "actor": 30,
+   "position": [
+    -2474,
+    0,
+    -1588
+   ],
+   "heading": 31675,
+   "health": 150
+  },
+  {
+   "actor": 31,
+   "position": [
+    4153,
+    0,
+    3373
+   ],
+   "heading": 46057,
+   "health": 150
+  },
+  {
+   "actor": 32,
+   "position": [
+    4385,
+    0,
+    3450
+   ],
+   "heading": 46057,
+   "health": 150
+  },
+  {
+   "actor": 33,
+   "position": [
+    4281,
+    0,
+    3358
+   ],
+   "heading": 46057,
+   "health": 150
+  },
+  {
+   "actor": 34,
+   "position": [
+    4106,
+    0,
+    3507
+   ],
+   "heading": 46057,
+   "health": 150
+  },
+  {
+   "actor": 35,
+   "position": [
+    3932,
+    0,
+    3522
+   ],
+   "heading": 46057,
+   "health": 150
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "version": 1,
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "global_sha256": "1e3e2a46340d714aaf4d583e5aff7e58dc11005bac6c694fac49c07d13e01edd",
+ "stat_source": {
+  "name": "global\\ai\\Roach\\stat.csv",
+  "entry": {
+   "index": 296,
+   "key": 1245194268,
+   "offset": 7174876,
+   "size": 321
+  },
+  "sha256": "4961ae57033d1575d6b4fb3302df9815e14bbdceca0b4de6e73730418b071020"
+ },
+ "stats": [
+  75,
+  0,
+  50,
+  50,
+  255,
+  0,
+  0,
+  0,
+  0,
+  150,
+  0,
+  0,
+  0,
+  30,
+  50,
+  10,
+  20,
+  100,
+  50,
+  0,
+  0,
+  200,
+  20,
+  255,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "total81": 30,
+ "minimum82": 3,
+ "constructor_bases": {
+  "12/12": {
+   "count": 255,
+   "a3_zero": false
+  },
+  "15/15": {
+   "count": 1,
+   "a3_zero": true
+  }
+ },
+ "clips": {
+  "Roach": {
+   "definition": 4,
+   "selector": 6,
+   "resource": 794,
+   "interval": 1024,
+   "hit_frame": 12,
+   "raw_hex": "010c320000040400",
+   "percent": 50,
+   "mask": 1024,
+   "flags": 4,
+   "amount": {
+    "12": 6,
+    "15": 7
+   }
+  },
+  "ROACH": {
+   "definition": 5,
+   "selector": 6,
+   "resource": 794,
+   "interval": 1024,
+   "hit_frame": 12,
+   "raw_hex": "010c0a0004000400",
+   "percent": 10,
+   "mask": 4,
+   "flags": 4,
+   "amount": {
+    "12": 1,
+    "15": 1
+   }
+  }
+ },
+ "code_spans": [
+  {
+   "start": 664315,
+   "end": 664479,
+   "sha256": "1583c4a8198702872e552e3443fd859a41018ec832748e1764556c7c27632e04"
+  },
+  {
+   "start": 662824,
+   "end": 662861,
+   "sha256": "29a74402fae336facd3cf29531628560b705eb36ba8e3bf4a15d3a0121be7c68"
+  },
+  {
+   "start": 663340,
+   "end": 663423,
+   "sha256": "820351dfff1c2e839ded99d59d192a1a698c1afb30b18352520302e664936fb9"
+  }
+ ],
+ "constructor_cases": 256,
+ "boundaries": [
+  "Native A1D28/A1F2C/A22FB executed on the original Roach bank; memcpy body supplied after argument check.",
+  "ActorA3 supplied for all256 values; fresh cave actors use A3=0 like the verified Hive fresh pass (adapter).",
+  "Hit amount = base*byte2/100 per verified Hive runtime; heading/difficulty stage and player mitigation not applied.",
+  "Perception, scheduling, steering, reach and real-time cadence remain modern adapters."
+ ]
+}
