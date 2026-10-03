@@ -1,0 +1,2756 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "room_name_table": [
+    {
+      "index": 0,
+      "name": "pool_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13055,
+        "record_file_offset": 577499,
+        "record_hex": "07006c0a05ff32"
+      },
+      "file_offset": 1852195
+    },
+    {
+      "index": 1,
+      "name": "cave_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13061,
+        "record_file_offset": 577506,
+        "record_hex": "0700700a050533"
+      },
+      "file_offset": 1852201
+    },
+    {
+      "index": 2,
+      "name": "skel_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13067,
+        "record_file_offset": 577513,
+        "record_hex": "0700740a050b33"
+      },
+      "file_offset": 1852207
+    },
+    {
+      "index": 3,
+      "name": "ment_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13073,
+        "record_file_offset": 577520,
+        "record_hex": "0700780a051133"
+      },
+      "file_offset": 1852213
+    },
+    {
+      "index": 4,
+      "name": "mcel_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13079,
+        "record_file_offset": 577527,
+        "record_hex": "07007c0a051733"
+      },
+      "file_offset": 1852219
+    },
+    {
+      "index": 5,
+      "name": "mgar_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13085,
+        "record_file_offset": 577534,
+        "record_hex": "0700800a051d33"
+      },
+      "file_offset": 1852225
+    },
+    {
+      "index": 6,
+      "name": "moff_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13091,
+        "record_file_offset": 577541,
+        "record_hex": "0700840a052333"
+      },
+      "file_offset": 1852231
+    },
+    {
+      "index": 7,
+      "name": "mlib_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13097,
+        "record_file_offset": 577548,
+        "record_hex": "0700880a052933"
+      },
+      "file_offset": 1852237
+    },
+    {
+      "index": 8,
+      "name": "wpn_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13103,
+        "record_file_offset": 577555,
+        "record_hex": "07008c0a052f33"
+      },
+      "file_offset": 1852243
+    },
+    {
+      "index": 9,
+      "name": "sever_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13108,
+        "record_file_offset": 577562,
+        "record_hex": "0700900a053433"
+      },
+      "file_offset": 1852248
+    },
+    {
+      "index": 10,
+      "name": "runecl_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13115,
+        "record_file_offset": 577569,
+        "record_hex": "0700940a053b33"
+      },
+      "file_offset": 1852255
+    },
+    {
+      "index": 11,
+      "name": "runes_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13123,
+        "record_file_offset": 577576,
+        "record_hex": "0700980a054333"
+      },
+      "file_offset": 1852263
+    },
+    {
+      "index": 12,
+      "name": "village_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13130,
+        "record_file_offset": 577583,
+        "record_hex": "07009c0a054a33"
+      },
+      "file_offset": 1852270
+    },
+    {
+      "index": 13,
+      "name": "can_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13139,
+        "record_file_offset": 577590,
+        "record_hex": "0700a00a055333"
+      },
+      "file_offset": 1852279
+    },
+    {
+      "index": 14,
+      "name": "chut_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13144,
+        "record_file_offset": 577597,
+        "record_hex": "0700a40a055833"
+      },
+      "file_offset": 1852284
+    },
+    {
+      "index": 15,
+      "name": "magic_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13150,
+        "record_file_offset": 577604,
+        "record_hex": "0700a80a055e33"
+      },
+      "file_offset": 1852290
+    },
+    {
+      "index": 16,
+      "name": "tcel_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13157,
+        "record_file_offset": 577611,
+        "record_hex": "0700ac0a056533"
+      },
+      "file_offset": 1852297
+    },
+    {
+      "index": 17,
+      "name": "tdoor_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13163,
+        "record_file_offset": 577618,
+        "record_hex": "0700b00a056b33"
+      },
+      "file_offset": 1852303
+    },
+    {
+      "index": 18,
+      "name": "tint_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13170,
+        "record_file_offset": 577625,
+        "record_hex": "0700b40a057233"
+      },
+      "file_offset": 1852310
+    },
+    {
+      "index": 19,
+      "name": "liz_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13176,
+        "record_file_offset": 577632,
+        "record_hex": "0700b80a057833"
+      },
+      "file_offset": 1852316
+    },
+    {
+      "index": 20,
+      "name": "stat_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13181,
+        "record_file_offset": 577639,
+        "record_hex": "0700bc0a057d33"
+      },
+      "file_offset": 1852321
+    },
+    {
+      "index": 21,
+      "name": "empt_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13187,
+        "record_file_offset": 577646,
+        "record_hex": "0700c00a058333"
+      },
+      "file_offset": 1852327
+    },
+    {
+      "index": 22,
+      "name": "shaman_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13193,
+        "record_file_offset": 577653,
+        "record_hex": "0700c40a058933"
+      },
+      "file_offset": 1852333
+    },
+    {
+      "index": 23,
+      "name": "shbak_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13201,
+        "record_file_offset": 577660,
+        "record_hex": "0700c80a059133"
+      },
+      "file_offset": 1852341
+    },
+    {
+      "index": 24,
+      "name": "herb_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13208,
+        "record_file_offset": 577667,
+        "record_hex": "0700cc0a059833"
+      },
+      "file_offset": 1852348
+    },
+    {
+      "index": 25,
+      "name": "daniel_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13214,
+        "record_file_offset": 577674,
+        "record_hex": "0700d00a059e33"
+      },
+      "file_offset": 1852354
+    },
+    {
+      "index": 26,
+      "name": "hut1_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13222,
+        "record_file_offset": 577681,
+        "record_hex": "0700d40a05a633"
+      },
+      "file_offset": 1852362
+    },
+    {
+      "index": 27,
+      "name": "hut2_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13228,
+        "record_file_offset": 577688,
+        "record_hex": "0700d80a05ac33"
+      },
+      "file_offset": 1852368
+    },
+    {
+      "index": 28,
+      "name": "dslave_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13234,
+        "record_file_offset": 577695,
+        "record_hex": "0700dc0a05b233"
+      },
+      "file_offset": 1852374
+    },
+    {
+      "index": 29,
+      "name": "slaves_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13242,
+        "record_file_offset": 577702,
+        "record_hex": "0700e00a05ba33"
+      },
+      "file_offset": 1852382
+    },
+    {
+      "index": 30,
+      "name": "chv_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13250,
+        "record_file_offset": 577709,
+        "record_hex": "0700e40a05c233"
+      },
+      "file_offset": 1852390
+    },
+    {
+      "index": 31,
+      "name": "balcony_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13255,
+        "record_file_offset": 577716,
+        "record_hex": "0700e80a05c733"
+      },
+      "file_offset": 1852395
+    },
+    {
+      "index": 32,
+      "name": "cfall_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13264,
+        "record_file_offset": 577723,
+        "record_hex": "0700ec0a05d033"
+      },
+      "file_offset": 1852404
+    },
+    {
+      "index": 33,
+      "name": "dragon_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13271,
+        "record_file_offset": 577730,
+        "record_hex": "0700f00a05d733"
+      },
+      "file_offset": 1852411
+    },
+    {
+      "index": 34,
+      "name": "hive1_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13279,
+        "record_file_offset": 577737,
+        "record_hex": "0700f40a05df33"
+      },
+      "file_offset": 1852419
+    },
+    {
+      "index": 35,
+      "name": "hive2_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13286,
+        "record_file_offset": 577744,
+        "record_hex": "0700f80a05e633"
+      },
+      "file_offset": 1852426
+    },
+    {
+      "index": 36,
+      "name": "hive3_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13293,
+        "record_file_offset": 577751,
+        "record_hex": "0700fc0a05ed33"
+      },
+      "file_offset": 1852433
+    },
+    {
+      "index": 37,
+      "name": "hive4_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13300,
+        "record_file_offset": 577758,
+        "record_hex": "0700000b05f433"
+      },
+      "file_offset": 1852440
+    },
+    {
+      "index": 38,
+      "name": "tmpldor_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13307,
+        "record_file_offset": 577765,
+        "record_hex": "0700040b05fb33"
+      },
+      "file_offset": 1852447
+    },
+    {
+      "index": 39,
+      "name": "settle1_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13316,
+        "record_file_offset": 577772,
+        "record_hex": "0700080b050434"
+      },
+      "file_offset": 1852456
+    },
+    {
+      "index": 40,
+      "name": "settle2_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13325,
+        "record_file_offset": 577779,
+        "record_hex": "07000c0b050d34"
+      },
+      "file_offset": 1852465
+    },
+    {
+      "index": 41,
+      "name": "settle3_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13334,
+        "record_file_offset": 577786,
+        "record_hex": "0700100b051634"
+      },
+      "file_offset": 1852474
+    },
+    {
+      "index": 42,
+      "name": "settle4_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13343,
+        "record_file_offset": 577793,
+        "record_hex": "0700140b051f34"
+      },
+      "file_offset": 1852483
+    },
+    {
+      "index": 43,
+      "name": "wpnext_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13352,
+        "record_file_offset": 577800,
+        "record_hex": "0700180b052834"
+      },
+      "file_offset": 1852492
+    },
+    {
+      "index": 44,
+      "name": "text_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13360,
+        "record_file_offset": 577807,
+        "record_hex": "07001c0b053034"
+      },
+      "file_offset": 1852500
+    },
+    {
+      "index": 45,
+      "name": "altar_",
+      "relocation": {
+        "target_object": 5,
+        "target_offset": 13366,
+        "record_file_offset": 577814,
+        "record_hex": "0700200b053634"
+      },
+      "file_offset": 1852506
+    }
+  ],
+  "rooms": {
+    "MAGIC": {
+      "archive_sha256": "6c0b44382172d08c986508ff16da4d3af98a602f38bd6ecd61e8121894effc80",
+      "dll": {
+        "index": 59,
+        "key": 343639571,
+        "offset": 762,
+        "size": 6094,
+        "name": "WOMS\\MAGIC_.WOM",
+        "sha256": "9233e3334fa696b82a9efb798491dfda2de47041c8ead86e03210a8ec80887e0"
+      },
+      "host_bindings": {
+        "0x1214": {
+          "table_offset": 100,
+          "target": 980044,
+          "relocation": {
+            "target_object": 2,
+            "target_offset": 615464,
+            "record_file_offset": 578016,
+            "record_hex": "071090090228640900"
+          }
+        },
+        "0x1230": {
+          "table_offset": 128,
+          "target": 980232,
+          "relocation": {
+            "target_object": 2,
+            "target_offset": 615652,
+            "record_file_offset": 578079,
+            "record_hex": "0710ac0902e4640900"
+          }
+        },
+        "0x124c": {
+          "table_offset": 156,
+          "target": 980544,
+          "relocation": {
+            "target_object": 2,
+            "target_offset": 615964,
+            "record_file_offset": 578142,
+            "record_hex": "0710c809021c660900"
+          }
+        }
+      },
+      "mana_debit_cases": [
+        {
+          "before": 0,
+          "debit": 1000,
+          "after": 0
+        },
+        {
+          "before": 1,
+          "debit": 1000,
+          "after": 0
+        },
+        {
+          "before": 20,
+          "debit": 1000,
+          "after": 0
+        },
+        {
+          "before": 999,
+          "debit": 1000,
+          "after": 0
+        },
+        {
+          "before": 1000,
+          "debit": 1000,
+          "after": 0
+        },
+        {
+          "before": 1001,
+          "debit": 1000,
+          "after": 1
+        },
+        {
+          "before": 2000,
+          "debit": 1000,
+          "after": 1000
+        }
+      ],
+      "timer_binding": "Slot1230/table80 calls timer methods14FABD/14FA79, then stores returned counter+600 atDB4B8. Original counter cadence/hold integration remains unbound.",
+      "hotspots": [
+        {
+          "address": "0x4a1",
+          "kind": "hotspot",
+          "args": [
+            0,
+            150,
+            6,
+            495,
+            151
+          ]
+        },
+        {
+          "address": "0x4ba",
+          "kind": "hotspot",
+          "args": [
+            2,
+            4,
+            6,
+            141,
+            364
+          ]
+        },
+        {
+          "address": "0x4d6",
+          "kind": "hotspot",
+          "args": [
+            3,
+            507,
+            2,
+            629,
+            242
+          ]
+        },
+        {
+          "address": "0x4f5",
+          "kind": "hotspot",
+          "args": [
+            4,
+            376,
+            159,
+            497,
+            254
+          ]
+        },
+        {
+          "address": "0x514",
+          "kind": "hotspot",
+          "args": [
+            1,
+            180,
+            211,
+            250,
+            264
+          ]
+        }
+      ],
+      "background": {
+        "index": 58,
+        "key": 4168242421,
+        "offset": 7445412,
+        "size": 827394,
+        "name": "WOMS\\MAGIC\\MAGIC_.VQA",
+        "sha256": "f22713712bd2b5c2a03d52d8c6edb02e313f586a1203ee6eefef87722c50f458",
+        "frames": 29,
+        "width": 640,
+        "height": 400,
+        "fps": 15,
+        "x": 0,
+        "y": 0
+      },
+      "idle": {
+        "index": 56,
+        "key": 3125902695,
+        "offset": 11846234,
+        "size": 125688,
+        "name": "WOMS\\MAGIC\\3099906E.VQA",
+        "sha256": "77888f7370deb2eaea413fe5cb8e4cf05bdcf4821d9519a973ac147179a1d7c4",
+        "frames": 30,
+        "width": 208,
+        "height": 260,
+        "fps": 15,
+        "x": 196,
+        "y": 140
+      },
+      "offer_disassembly": [
+        "960 push ebx",
+        "961 mov ebx, 1",
+        "966 call dword ptr [0x1234]",
+        "96c push 0x34",
+        "96e call dword ptr [0x11fc]",
+        "974 add esp, 4",
+        "977 test eax, eax",
+        "979 jne 0xbaa",
+        "97f push 0x10bc",
+        "984 call dword ptr [0x123c]",
+        "98a add esp, 4",
+        "98d test eax, eax",
+        "98f je 0x9f5",
+        "991 push 0x31",
+        "993 call dword ptr [0x11fc]",
+        "999 add esp, 4",
+        "99c test eax, eax",
+        "99e je 0x9f5",
+        "9a0 call dword ptr [0x12c8]",
+        "9a6 call dword ptr [0x11f0]",
+        "9ac push 0x64",
+        "9ae call dword ptr [0x12d4]",
+        "9b4 add esp, 4",
+        "9b7 push 6",
+        "9b9 push 0x1bb",
+        "9be push 0x1e",
+        "9c0 call dword ptr [0x1200]",
+        "9c6 add esp, 0xc",
+        "9c9 push 6",
+        "9cb push 0x1bc",
+        "9d0 push 0x1e",
+        "9d2 call dword ptr [0x1200]",
+        "9d8 add esp, 0xc",
+        "9db push 0",
+        "9dd push 0x10ca",
+        "9e2 call dword ptr [0x11ec]",
+        "9e8 add esp, 8",
+        "9eb call dword ptr [0x12c4]",
+        "9f1 mov eax, ebx",
+        "9f3 pop ebx",
+        "9f4 ret ",
+        "9f5 push 0x10bc",
+        "9fa call dword ptr [0x123c]",
+        "a00 add esp, 4",
+        "a03 test eax, eax",
+        "a05 je 0xa98",
+        "a0b push 0xa0",
+        "a10 push 6",
+        "a12 push 0x1a7",
+        "a17 push 0x1e",
+        "a19 call dword ptr [0x12cc]",
+        "a1f add esp, 0x10",
+        "a22 push 0x80",
+        "a27 push 6",
+        "a29 push 0x1a8",
+        "a2e push 0x1e",
+        "a30 call dword ptr [0x12cc]",
+        "a36 add esp, 0x10",
+        "a39 push 6",
+        "a3b push 0x1a9",
+        "a40 push 0x1e",
+        "a42 call dword ptr [0x1200]",
+        "a48 add esp, 0xc",
+        "a4b push 6",
+        "a4d push 0x1aa",
+        "a52 push 0x1e",
+        "a54 call dword ptr [0x1200]",
+        "a5a add esp, 0xc",
+        "a5d push 6",
+        "a5f push 0x1ab",
+        "a64 push 0x1e",
+        "a66 call dword ptr [0x1200]",
+        "a6c add esp, 0xc",
+        "a6f push 1",
+        "a71 push 0x10d7",
+        "a76 call dword ptr [0x124c]",
+        "a7c add esp, 8",
+        "a7f push 6",
+        "a81 push 0x1ac",
+        "a86 push 0x1e",
+        "a88 call dword ptr [0x1200]",
+        "a8e add esp, 0xc",
+        "a91 mov eax, 1",
+        "a96 pop ebx",
+        "a97 ret "
+      ],
+      "movies": [
+        {
+          "index": 13,
+          "key": 2519558503,
+          "offset": 6235044,
+          "size": 584556,
+          "name": "WOMS\\MAGIC\\3040006E.VQA",
+          "sha256": "fbe09b0894b4351d1d9e62d1a89881320ab07cef760593b2258e208491915590",
+          "frames": 130,
+          "width": 480,
+          "height": 400,
+          "fps": 15,
+          "x": 100,
+          "y": 0
+        },
+        {
+          "index": 18,
+          "key": 2586667367,
+          "offset": 12285034,
+          "size": 329518,
+          "name": "WOMS\\MAGIC\\3040106E.VQA",
+          "sha256": "b74e25dba7aa21bcd22b95b3feecac1d20af09c499e9f5af23d91ecf58166b6c",
+          "frames": 69,
+          "width": 608,
+          "height": 400,
+          "fps": 15,
+          "x": 32,
+          "y": 0
+        },
+        {
+          "index": 24,
+          "key": 2653776231,
+          "offset": 12614552,
+          "size": 344460,
+          "name": "WOMS\\MAGIC\\3040206E.VQA",
+          "sha256": "012a7157803f4b65f413fc1e054ba5eccc7e23171eb2f0ef2cdd6d5c5e7b5d9b",
+          "frames": 87,
+          "width": 244,
+          "height": 260,
+          "fps": 15,
+          "x": 164,
+          "y": 140
+        },
+        {
+          "index": 30,
+          "key": 2720885095,
+          "offset": 9854338,
+          "size": 329894,
+          "name": "WOMS\\MAGIC\\3040306E.VQA",
+          "sha256": "2e2ee636b6eb2f84e46ac69bfa9a9656680c65b365ee1f6b99b89bb26c416579",
+          "frames": 84,
+          "width": 212,
+          "height": 260,
+          "fps": 15,
+          "x": 192,
+          "y": 140
+        },
+        {
+          "index": 35,
+          "key": 2787993959,
+          "offset": 11971922,
+          "size": 313112,
+          "name": "WOMS\\MAGIC\\3040406E.VQA",
+          "sha256": "ccc2556c66905d4310175b4f63927ef3ff3c923a06bd3356c9b8cf617dad2e6c",
+          "frames": 80,
+          "width": 216,
+          "height": 260,
+          "fps": 15,
+          "x": 188,
+          "y": 140
+        },
+        {
+          "index": 40,
+          "key": 2855102823,
+          "offset": 4240296,
+          "size": 267164,
+          "name": "WOMS\\MAGIC\\3040506E.VQA",
+          "sha256": "bf2fb9008b8ee3be455e7dd623f11a3dd4392bbe30fee35feae74adbc8903af6",
+          "frames": 66,
+          "width": 212,
+          "height": 260,
+          "fps": 15,
+          "x": 192,
+          "y": 140
+        },
+        {
+          "index": 44,
+          "key": 2922211687,
+          "offset": 1249194,
+          "size": 419382,
+          "name": "WOMS\\MAGIC\\3040606E.VQA",
+          "sha256": "051aa031a0758244178393bb03e0839c290cadd47d4fa11f612c8117fb59a133",
+          "frames": 117,
+          "width": 208,
+          "height": 260,
+          "fps": 15,
+          "x": 192,
+          "y": 140
+        },
+        {
+          "index": 47,
+          "key": 2989320551,
+          "offset": 4507460,
+          "size": 114038,
+          "name": "WOMS\\MAGIC\\3040706E.VQA",
+          "sha256": "26909a14e8260d02fe619c4090532cc129f6304ad16dd0325cfcbc8f76b0540e",
+          "frames": 17,
+          "width": 200,
+          "height": 260,
+          "fps": 15,
+          "x": 196,
+          "y": 140
+        },
+        {
+          "index": 50,
+          "key": 3056429415,
+          "offset": 1923762,
+          "size": 198402,
+          "name": "WOMS\\MAGIC\\3040806E.VQA",
+          "sha256": "a2ab22b6c01dcd8ee76eb007dea40ee3991626922062b4e768a0e89770ce7cab",
+          "frames": 43,
+          "width": 216,
+          "height": 260,
+          "fps": 15,
+          "x": 184,
+          "y": 140
+        },
+        {
+          "index": 53,
+          "key": 3123538279,
+          "offset": 627868,
+          "size": 621326,
+          "name": "WOMS\\MAGIC\\3040906E.VQA",
+          "sha256": "00ceb004fb765a0d645da87ab94d041ff4b55acee3a5ea145e48c6e107a86db9",
+          "frames": 176,
+          "width": 212,
+          "height": 260,
+          "fps": 15,
+          "x": 188,
+          "y": 140
+        },
+        {
+          "index": 14,
+          "key": 2519820647,
+          "offset": 3259302,
+          "size": 277732,
+          "name": "WOMS\\MAGIC\\3041006E.VQA",
+          "sha256": "5436f9d8e81334c7f567dcc08eb59b9493a8eebf7593c1a906d3fbdf43726b00",
+          "frames": 68,
+          "width": 208,
+          "height": 260,
+          "fps": 15,
+          "x": 192,
+          "y": 140
+        },
+        {
+          "index": 20,
+          "key": 2586929511,
+          "offset": 2122164,
+          "size": 213062,
+          "name": "WOMS\\MAGIC\\3041106E.VQA",
+          "sha256": "172c437ced04426487696f55243bf845307e196a3bb7439e3affee001a9765d4",
+          "frames": 50,
+          "width": 200,
+          "height": 260,
+          "fps": 15,
+          "x": 200,
+          "y": 140
+        },
+        {
+          "index": 25,
+          "key": 2654038375,
+          "offset": 2335226,
+          "size": 212156,
+          "name": "WOMS\\MAGIC\\3041206E.VQA",
+          "sha256": "13ab9cf8e4a65a62593da2f349205d6d2098951a04d35a56377ac9f29039f93f",
+          "frames": 50,
+          "width": 204,
+          "height": 260,
+          "fps": 15,
+          "x": 200,
+          "y": 140
+        },
+        {
+          "index": 31,
+          "key": 2721147239,
+          "offset": 3537034,
+          "size": 213626,
+          "name": "WOMS\\MAGIC\\3041306E.VQA",
+          "sha256": "fd543847f43e5b13ad114d77acba6b723e0355850a968e52bfa131cb0e1881cc",
+          "frames": 51,
+          "width": 204,
+          "height": 260,
+          "fps": 15,
+          "x": 200,
+          "y": 140
+        },
+        {
+          "index": 36,
+          "key": 2788256103,
+          "offset": 2547382,
+          "size": 289868,
+          "name": "WOMS\\MAGIC\\3041406E.VQA",
+          "sha256": "e262f13b8c2cb6ae031d3197498487c3a6f8b46c5e274b8661f34208ffae5b29",
+          "frames": 73,
+          "width": 212,
+          "height": 260,
+          "fps": 15,
+          "x": 192,
+          "y": 140
+        },
+        {
+          "index": 45,
+          "key": 2922473831,
+          "offset": 2837250,
+          "size": 187554,
+          "name": "WOMS\\MAGIC\\3041606E.VQA",
+          "sha256": "35d47ceb9bb90c144c1780779cf1692fc7b674db366fea73cf8ccc1ab919b043",
+          "frames": 39,
+          "width": 268,
+          "height": 264,
+          "fps": 15,
+          "x": 136,
+          "y": 136
+        },
+        {
+          "index": 48,
+          "key": 2989582695,
+          "offset": 3024804,
+          "size": 234498,
+          "name": "WOMS\\MAGIC\\3041706E.VQA",
+          "sha256": "ba5fab71a7b652d5bb485a68774b349f0607a9271a86444509996579959dd4d5",
+          "frames": 56,
+          "width": 220,
+          "height": 260,
+          "fps": 15,
+          "x": 184,
+          "y": 140
+        },
+        {
+          "index": 51,
+          "key": 3056691559,
+          "offset": 4621498,
+          "size": 311396,
+          "name": "WOMS\\MAGIC\\3041806E.VQA",
+          "sha256": "61a496c2f91fa6f245aa355fada7d92b6be05c26d84df3424198db4d63fdf79b",
+          "frames": 84,
+          "width": 200,
+          "height": 260,
+          "fps": 15,
+          "x": 200,
+          "y": 140
+        },
+        {
+          "index": 54,
+          "key": 3123800423,
+          "offset": 6978954,
+          "size": 310790,
+          "name": "WOMS\\MAGIC\\3041906E.VQA",
+          "sha256": "675216c671e4aedd9b8d2ec3b856deef81c41a0414dd5973dceb9487e1954cf0",
+          "frames": 82,
+          "width": 200,
+          "height": 256,
+          "fps": 15,
+          "x": 196,
+          "y": 144
+        },
+        {
+          "index": 15,
+          "key": 2520082791,
+          "offset": 404798,
+          "size": 223070,
+          "name": "WOMS\\MAGIC\\3042006E.VQA",
+          "sha256": "2878856d125e8cfab64080f21e24ca7216537a1b9dd020d06c55f7a1c933f564",
+          "frames": 52,
+          "width": 208,
+          "height": 256,
+          "fps": 15,
+          "x": 192,
+          "y": 144
+        },
+        {
+          "index": 21,
+          "key": 2587191655,
+          "offset": 7289744,
+          "size": 155668,
+          "name": "WOMS\\MAGIC\\3042106E.VQA",
+          "sha256": "86bc4bb4e2eb61f94feb1f8692a576445c802380c536899587831794d04600e9",
+          "frames": 30,
+          "width": 240,
+          "height": 260,
+          "fps": 15,
+          "x": 156,
+          "y": 140
+        },
+        {
+          "index": 27,
+          "key": 2654300519,
+          "offset": 8272806,
+          "size": 419482,
+          "name": "WOMS\\MAGIC\\3042206E.VQA",
+          "sha256": "b57caa853ede5e87c7aa0f353bcc073b58964ec81f2127657f136919f82f35d8",
+          "frames": 115,
+          "width": 212,
+          "height": 260,
+          "fps": 15,
+          "x": 188,
+          "y": 140
+        },
+        {
+          "index": 32,
+          "key": 2721409383,
+          "offset": 6819600,
+          "size": 159354,
+          "name": "WOMS\\MAGIC\\3042306E.VQA",
+          "sha256": "c13ed05aed8e77075c1d7b7b4a817b6f5392c1cd01d844f6630c93cad56ea842",
+          "frames": 30,
+          "width": 200,
+          "height": 260,
+          "fps": 15,
+          "x": 196,
+          "y": 140
+        },
+        {
+          "index": 37,
+          "key": 2788518247,
+          "offset": 5250372,
+          "size": 174190,
+          "name": "WOMS\\MAGIC\\3042406E.VQA",
+          "sha256": "bbbcfac2c013733b6dd3d8929dcbbe3079318c66e716bf131ab8c28adc526375",
+          "frames": 35,
+          "width": 196,
+          "height": 260,
+          "fps": 15,
+          "x": 196,
+          "y": 140
+        },
+        {
+          "index": 41,
+          "key": 2855627111,
+          "offset": 8692288,
+          "size": 265122,
+          "name": "WOMS\\MAGIC\\3042506E.VQA",
+          "sha256": "d405cd6d34693bf50dc04fd416dfe79853ee4528a15895eb065ba84530a7ed62",
+          "frames": 65,
+          "width": 200,
+          "height": 260,
+          "fps": 15,
+          "x": 196,
+          "y": 140
+        },
+        {
+          "index": 46,
+          "key": 2922735975,
+          "offset": 8957410,
+          "size": 217138,
+          "name": "WOMS\\MAGIC\\3042606E.VQA",
+          "sha256": "43ebeb6fe3e35366621e4a16e2593e577832af770cf29fd8d24d5e6787d6ff2f",
+          "frames": 51,
+          "width": 196,
+          "height": 256,
+          "fps": 15,
+          "x": 200,
+          "y": 144
+        },
+        {
+          "index": 49,
+          "key": 2989844839,
+          "offset": 9174548,
+          "size": 337570,
+          "name": "WOMS\\MAGIC\\3042706E.VQA",
+          "sha256": "fe09daf371a5960b633b92285229bb7d8c329457ff08f58c737fb356afecada3",
+          "frames": 91,
+          "width": 200,
+          "height": 256,
+          "fps": 15,
+          "x": 196,
+          "y": 144
+        },
+        {
+          "index": 52,
+          "key": 3056953703,
+          "offset": 9512118,
+          "size": 342220,
+          "name": "WOMS\\MAGIC\\3042806E.VQA",
+          "sha256": "dc65b3a1912f2423a406994dbc3fb7418e0549a288271e0b8b7d6359a76f212a",
+          "frames": 88,
+          "width": 220,
+          "height": 260,
+          "fps": 15,
+          "x": 176,
+          "y": 140
+        },
+        {
+          "index": 17,
+          "key": 2520607079,
+          "offset": 11154328,
+          "size": 120632,
+          "name": "WOMS\\MAGIC\\3044006E.VQA",
+          "sha256": "72d2dc205a27f584271e2e931e61e2aec9ce3fa854bb737fe5df861994334be0",
+          "frames": 19,
+          "width": 204,
+          "height": 264,
+          "fps": 15,
+          "x": 196,
+          "y": 136
+        },
+        {
+          "index": 23,
+          "key": 2587715943,
+          "offset": 5623852,
+          "size": 96414,
+          "name": "WOMS\\MAGIC\\3044106E.VQA",
+          "sha256": "b6c85cbf89e0b3697d528ea75032ef27b10186c77e33fda7216b3e9e26489471",
+          "frames": 11,
+          "width": 204,
+          "height": 264,
+          "fps": 15,
+          "x": 196,
+          "y": 136
+        }
+      ]
+    },
+    "WPN": {
+      "archive_sha256": "88fea12df000d0139802907408e0d91895b9589ec0165a61ec82f7d60ada12f9",
+      "dll": {
+        "index": 64,
+        "key": 1918514485,
+        "offset": 1302,
+        "size": 8058,
+        "name": "WOMS\\WPN_.WOM",
+        "sha256": "3492035c2e1dbe94d39989ad65d2039fbf589d319db2136c84afd4569a96738e"
+      },
+      "knowledge_writer": [
+        "81c cmp dword ptr [0x18e4], 0",
+        "823 je 0xbaa",
+        "829 cmp dword ptr [0x18ec], 0",
+        "830 jne 0x84e",
+        "832 push 4",
+        "834 push 0x20f",
+        "839 push 0x19",
+        "83b call dword ptr [0x17f0]",
+        "841 add esp, 0xc",
+        "844 mov dword ptr [0x18ec], 1",
+        "84e push 0xfe",
+        "853 call dword ptr [0x17ec]",
+        "859 add esp, 4",
+        "85c test eax, eax",
+        "85e jne 0xa58",
+        "864 push 0xfe",
+        "869 call dword ptr [0x17e4]",
+        "86f add esp, 4",
+        "872 push 0x1664",
+        "877 call dword ptr [0x1810]",
+        "87d add esp, 4",
+        "880 test eax, eax",
+        "882 jne 0xa58",
+        "888 push 1",
+        "88a push 0x1664",
+        "88f call dword ptr [0x183c]",
+        "895 add esp, 8",
+        "898 push 0x167e",
+        "89d call dword ptr [0x180c]",
+        "8a3 add esp, 4",
+        "8a6 test eax, eax",
+        "8a8 jne 0xa58"
+      ],
+      "loose_override_sha256": "946a6e1dda9ab51b70a11e42540f30089641d38fcb2776290d21e1fca41afe7f",
+      "limits": "Loose WPN differs from archive; both contain a knowledge writer. Runtime precedence and complete admission remain unverified."
+    },
+    "WPNEXT": {
+      "archive_sha256": "77d152aaa7d5de0a5e66fc99d19a4be559d7b628bba0970b36d8da26bf7c24aa",
+      "dll": {
+        "index": 3,
+        "key": 3752058850,
+        "offset": 66,
+        "size": 2728,
+        "name": "WOMS\\WPNEXT_.WOM",
+        "sha256": "7586a3ad38d895709a8f666ad2a74637eab6a2ba69286a64a99729e845412204"
+      },
+      "nested_entry": [
+        "633 push 0x70b",
+        "638 call dword ptr [0x79c]",
+        "63e add esp, 4",
+        "641 call dword ptr [0x77c]",
+        "647 mov eax, 1",
+        "64c pop ebx",
+        "64d ret "
+      ]
+    }
+  },
+  "entrances": [
+    {
+      "area": "L4_HJ",
+      "source": {
+        "file": "DAT/L4_HJ.MIX",
+        "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+        "geometry_key": 3710797084,
+        "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+      },
+      "room": "wpnext_",
+      "stream": 0,
+      "group": 3468,
+      "command": "0c03200a2b00",
+      "commands": [
+        "0c03200a2b00",
+        "1201000083eb770200008500bbbb000a0000"
+      ],
+      "owners": [
+        {
+          "stream": 0,
+          "group": 3468,
+          "owner_kind": "region",
+          "owner": 1722,
+          "descriptors": [
+            97
+          ],
+          "event": 2,
+          "value": 0,
+          "predicate": null,
+          "archive_offset": 13044526,
+          "polygon": [
+            [
+              -5362.0,
+              -689.0
+            ],
+            [
+              -5289.0,
+              -636.0
+            ],
+            [
+              -5272.0,
+              -567.0
+            ],
+            [
+              -5310.0,
+              -520.0
+            ]
+          ],
+          "floor_corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "area": "L4_HJ",
+      "source": {
+        "file": "DAT/L4_HJ.MIX",
+        "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+        "geometry_key": 3710797084,
+        "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+      },
+      "room": "wpnext_",
+      "stream": 0,
+      "group": 3498,
+      "command": "0c03200a2b00",
+      "commands": [
+        "0c03200a2b00",
+        "1201000083eb770200008500bbbb000a0000"
+      ],
+      "owners": [
+        {
+          "stream": 0,
+          "group": 3498,
+          "owner_kind": "region",
+          "owner": 1723,
+          "descriptors": [
+            97
+          ],
+          "event": 2,
+          "value": 0,
+          "predicate": null,
+          "archive_offset": 13044534,
+          "polygon": [
+            [
+              -5341.0,
+              -707.0
+            ],
+            [
+              -5294.0,
+              -653.0
+            ],
+            [
+              -5289.0,
+              -636.0
+            ],
+            [
+              -5362.0,
+              -689.0
+            ]
+          ],
+          "floor_corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "area": "L4_HJ",
+      "source": {
+        "file": "DAT/L4_HJ.MIX",
+        "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+        "geometry_key": 3710797084,
+        "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+      },
+      "room": "wpnext_",
+      "stream": 0,
+      "group": 3528,
+      "command": "0c03200a2b00",
+      "commands": [
+        "0c03200a2b00",
+        "1201000083eb770200008500bbbb000a0000"
+      ],
+      "owners": [
+        {
+          "stream": 0,
+          "group": 3528,
+          "owner_kind": "region",
+          "owner": 1753,
+          "descriptors": [
+            97
+          ],
+          "event": 2,
+          "value": 0,
+          "predicate": null,
+          "archive_offset": 13044542,
+          "polygon": [
+            [
+              -5310.0,
+              -520.0
+            ],
+            [
+              -5272.0,
+              -567.0
+            ],
+            [
+              -5260.0,
+              -563.0
+            ],
+            [
+              -5249.0,
+              -542.0
+            ]
+          ],
+          "floor_corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "area": "L4_HJ",
+      "source": {
+        "file": "DAT/L4_HJ.MIX",
+        "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+        "geometry_key": 3710797084,
+        "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+      },
+      "room": "wpnext_",
+      "stream": 0,
+      "group": 4020,
+      "command": "0c03200a2b00",
+      "commands": [
+        "0c03200a2b00",
+        "1201000083eb770200008500bbbb000a0000"
+      ],
+      "owners": [
+        {
+          "stream": 0,
+          "group": 4020,
+          "owner_kind": "region",
+          "owner": 2127,
+          "descriptors": [
+            109
+          ],
+          "event": 2,
+          "value": 0,
+          "predicate": null,
+          "archive_offset": 13044754,
+          "polygon": [
+            [
+              -5534.0,
+              -707.0
+            ],
+            [
+              -5362.0,
+              -689.0
+            ],
+            [
+              -5310.0,
+              -520.0
+            ],
+            [
+              -5493.0,
+              -436.0
+            ]
+          ],
+          "floor_corners": [
+            -30,
+            0,
+            0,
+            -30
+          ]
+        }
+      ]
+    },
+    {
+      "area": "L4_HJ",
+      "source": {
+        "file": "DAT/L4_HJ.MIX",
+        "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+        "geometry_key": 3710797084,
+        "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+      },
+      "room": "magic_",
+      "stream": 0,
+      "group": 4858,
+      "command": "0c03bc050f00",
+      "commands": [
+        "120100008bfb2f160000040000c0000a0000",
+        "0903e4010a00",
+        "0903e5010a00",
+        "0903ac010a00",
+        "091064000a00",
+        "0903ad010a00",
+        "0c03bc050f00"
+      ],
+      "owners": [
+        {
+          "stream": 0,
+          "group": 4858,
+          "owner_kind": "region",
+          "owner": 2636,
+          "descriptors": [
+            149
+          ],
+          "event": 2,
+          "value": 0,
+          "predicate": null,
+          "archive_offset": 13045380,
+          "polygon": [
+            [
+              -1131.0,
+              -5711.0
+            ],
+            [
+              -1001.0,
+              -5711.0
+            ],
+            [
+              -1000.0,
+              -5642.0
+            ],
+            [
+              -1131.0,
+              -5643.0
+            ]
+          ],
+          "floor_corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 0,
+        "56": 0,
+        "57": 0,
+        "58": 0
+      },
+      "result": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            58
+          ],
+          [
+            "movie",
+            30,
+            400,
+            6
+          ],
+          [
+            "movie",
+            30,
+            401,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            402,
+            6,
+            224
+          ],
+          [
+            "movie",
+            30,
+            403,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            404,
+            6,
+            128
+          ],
+          [
+            "set_flag",
+            53
+          ],
+          [
+            "movie_flags",
+            30,
+            405,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            406,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            407,
+            6,
+            160
+          ],
+          [
+            "movie",
+            30,
+            408,
+            6
+          ],
+          [
+            "movie",
+            30,
+            409,
+            6
+          ],
+          [
+            "set_flag",
+            54
+          ],
+          [
+            "movie_flags",
+            30,
+            410,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            411,
+            6
+          ],
+          [
+            "movie",
+            30,
+            412,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            413,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            414,
+            6
+          ],
+          [
+            "movie",
+            30,
+            416,
+            6
+          ],
+          [
+            "movie",
+            30,
+            417,
+            6
+          ],
+          [
+            "movie",
+            30,
+            418,
+            6
+          ],
+          [
+            "host_0x1214",
+            1000
+          ],
+          [
+            "movie",
+            30,
+            419,
+            6
+          ],
+          [
+            "movie",
+            30,
+            420,
+            6
+          ],
+          [
+            "movie",
+            30,
+            421,
+            6
+          ],
+          [
+            "movie",
+            30,
+            422,
+            6
+          ],
+          [
+            "host_0x1230",
+            600
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 0,
+        "56": 0,
+        "57": 0,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 0,
+        "56": 0,
+        "57": 1,
+        "58": 0
+      },
+      "result": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            58
+          ],
+          [
+            "movie",
+            30,
+            400,
+            6
+          ],
+          [
+            "movie",
+            30,
+            401,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            402,
+            6,
+            224
+          ],
+          [
+            "movie",
+            30,
+            403,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            404,
+            6,
+            128
+          ],
+          [
+            "set_flag",
+            53
+          ],
+          [
+            "movie_flags",
+            30,
+            405,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            406,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            407,
+            6,
+            160
+          ],
+          [
+            "movie",
+            30,
+            408,
+            6
+          ],
+          [
+            "movie",
+            30,
+            409,
+            6
+          ],
+          [
+            "set_flag",
+            54
+          ],
+          [
+            "movie_flags",
+            30,
+            410,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            411,
+            6
+          ],
+          [
+            "movie",
+            30,
+            412,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            413,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            414,
+            6
+          ],
+          [
+            "movie",
+            30,
+            416,
+            6
+          ],
+          [
+            "movie",
+            30,
+            417,
+            6
+          ],
+          [
+            "movie",
+            30,
+            418,
+            6
+          ],
+          [
+            "host_0x1214",
+            1000
+          ],
+          [
+            "movie",
+            30,
+            419,
+            6
+          ],
+          [
+            "movie",
+            30,
+            420,
+            6
+          ],
+          [
+            "movie",
+            30,
+            421,
+            6
+          ],
+          [
+            "movie",
+            30,
+            422,
+            6
+          ],
+          [
+            "host_0x1230",
+            600
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 0,
+        "56": 0,
+        "57": 1,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 0,
+        "56": 1,
+        "57": 0,
+        "58": 0
+      },
+      "result": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 0,
+        "56": 1,
+        "57": 0,
+        "58": 1
+      },
+      "result": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 0,
+        "56": 1,
+        "57": 1,
+        "58": 0
+      },
+      "result": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            58
+          ],
+          [
+            "movie",
+            30,
+            400,
+            6
+          ],
+          [
+            "movie",
+            30,
+            401,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            402,
+            6,
+            224
+          ],
+          [
+            "movie",
+            30,
+            403,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            404,
+            6,
+            128
+          ],
+          [
+            "set_flag",
+            53
+          ],
+          [
+            "movie_flags",
+            30,
+            405,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            406,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            407,
+            6,
+            160
+          ],
+          [
+            "movie",
+            30,
+            408,
+            6
+          ],
+          [
+            "movie",
+            30,
+            409,
+            6
+          ],
+          [
+            "set_flag",
+            54
+          ],
+          [
+            "movie_flags",
+            30,
+            410,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            411,
+            6
+          ],
+          [
+            "movie",
+            30,
+            412,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            413,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            414,
+            6
+          ],
+          [
+            "movie",
+            30,
+            416,
+            6
+          ],
+          [
+            "movie",
+            30,
+            417,
+            6
+          ],
+          [
+            "movie",
+            30,
+            418,
+            6
+          ],
+          [
+            "host_0x1214",
+            1000
+          ],
+          [
+            "movie",
+            30,
+            419,
+            6
+          ],
+          [
+            "movie",
+            30,
+            420,
+            6
+          ],
+          [
+            "movie",
+            30,
+            421,
+            6
+          ],
+          [
+            "movie",
+            30,
+            422,
+            6
+          ],
+          [
+            "host_0x1230",
+            600
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 0,
+        "56": 1,
+        "57": 1,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 1,
+        "56": 0,
+        "57": 0,
+        "58": 0
+      },
+      "result": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            30,
+            440,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            441,
+            6,
+            128
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 1,
+        "56": 0,
+        "57": 0,
+        "58": 1
+      },
+      "result": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            30,
+            440,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            441,
+            6,
+            128
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 1,
+        "56": 0,
+        "57": 1,
+        "58": 0
+      },
+      "result": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            30,
+            440,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            441,
+            6,
+            128
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 1,
+        "56": 0,
+        "57": 1,
+        "58": 1
+      },
+      "result": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            30,
+            440,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            441,
+            6,
+            128
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 1,
+        "56": 1,
+        "57": 0,
+        "58": 0
+      },
+      "result": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 1,
+        "56": 1,
+        "57": 0,
+        "58": 1
+      },
+      "result": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 1,
+        "56": 1,
+        "57": 1,
+        "58": 0
+      },
+      "result": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            58
+          ],
+          [
+            "movie",
+            30,
+            400,
+            6
+          ],
+          [
+            "movie",
+            30,
+            401,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            402,
+            6,
+            224
+          ],
+          [
+            "movie",
+            30,
+            403,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            404,
+            6,
+            128
+          ],
+          [
+            "set_flag",
+            53
+          ],
+          [
+            "movie_flags",
+            30,
+            405,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            406,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            407,
+            6,
+            160
+          ],
+          [
+            "movie",
+            30,
+            408,
+            6
+          ],
+          [
+            "movie",
+            30,
+            409,
+            6
+          ],
+          [
+            "set_flag",
+            54
+          ],
+          [
+            "movie_flags",
+            30,
+            410,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            411,
+            6
+          ],
+          [
+            "movie",
+            30,
+            412,
+            6
+          ],
+          [
+            "movie_flags",
+            30,
+            413,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            414,
+            6
+          ],
+          [
+            "movie",
+            30,
+            416,
+            6
+          ],
+          [
+            "movie",
+            30,
+            417,
+            6
+          ],
+          [
+            "movie",
+            30,
+            418,
+            6
+          ],
+          [
+            "host_0x1214",
+            1000
+          ],
+          [
+            "movie",
+            30,
+            419,
+            6
+          ],
+          [
+            "movie",
+            30,
+            420,
+            6
+          ],
+          [
+            "movie",
+            30,
+            421,
+            6
+          ],
+          [
+            "movie",
+            30,
+            422,
+            6
+          ],
+          [
+            "host_0x1230",
+            600
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 0,
+        "55": 1,
+        "56": 1,
+        "57": 1,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 0,
+        "56": 0,
+        "57": 0,
+        "58": 0
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 0,
+        "56": 0,
+        "57": 0,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 0,
+        "56": 0,
+        "57": 1,
+        "58": 0
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 0,
+        "56": 0,
+        "57": 1,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 0,
+        "56": 1,
+        "57": 0,
+        "58": 0
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 0,
+        "56": 1,
+        "57": 0,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 0,
+        "56": 1,
+        "57": 1,
+        "58": 0
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 0,
+        "56": 1,
+        "57": 1,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 1,
+        "56": 0,
+        "57": 0,
+        "58": 0
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 1,
+        "56": 0,
+        "57": 0,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 1,
+        "56": 0,
+        "57": 1,
+        "58": 0
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 1,
+        "56": 0,
+        "57": 1,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 1,
+        "56": 1,
+        "57": 0,
+        "58": 0
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 1,
+        "56": 1,
+        "57": 0,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 1,
+        "56": 1,
+        "57": 1,
+        "58": 0
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "entry",
+      "flags": {
+        "52": 1,
+        "55": 1,
+        "56": 1,
+        "57": 1,
+        "58": 1
+      },
+      "result": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "kind": "broken_item_knowledge_branch",
+      "held": "12-Tho Broken",
+      "result": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie_flags",
+            30,
+            423,
+            6,
+            160
+          ],
+          [
+            "movie_flags",
+            30,
+            424,
+            6,
+            128
+          ],
+          [
+            "movie",
+            30,
+            425,
+            6
+          ],
+          [
+            "movie",
+            30,
+            426,
+            6
+          ],
+          [
+            "movie",
+            30,
+            427,
+            6
+          ],
+          [
+            "set_global",
+            "GV_KNOWLEDGE_OF_POWER_ORB",
+            1
+          ],
+          [
+            "movie",
+            30,
+            428,
+            6
+          ]
+        ]
+      },
+      "limits": "Entered only after earlier dead/fixed-item checks; other offer branches not replayed."
+    },
+    {
+      "kind": "broken_item_knowledge_branch",
+      "held": "94-Iron flute",
+      "result": {
+        "boundary": "0xa98",
+        "effects": []
+      },
+      "limits": "Entered only after earlier dead/fixed-item checks; other offer branches not replayed."
+    },
+    {
+      "kind": "broken_item_knowledge_branch",
+      "held": "",
+      "result": {
+        "boundary": "0xa98",
+        "effects": []
+      },
+      "limits": "Entered only after earlier dead/fixed-item checks; other offer branches not replayed."
+    }
+  ],
+  "scope": "Pinned executable room-name relocations, all15 source-map command streams and direct owners;32 entry replays and3 bounded knowledge-branch replays with explicit host boundaries. This establishes missing Huline Jungle shop content, not live room integration, route admission or full required-content closure. Host1214(1000) binds a clamped player mana debit (seven native wrapper cases);1230(600) binds a timer deadline, whose cadence and hold integration remain open."
+}
