@@ -16,7 +16,8 @@ const SPEED:=42.0
 const DAMAGE:=7
 const IMPACT_SECONDS:=12.0/8.0
 const ATTACK_SECONDS:=16.0/8.0
-const RULES:={"alert":ALERT_RANGE,"reach":REACH,"damage":DAMAGE,"impact":IMPACT_SECONDS,"clip":ATTACK_SECONDS}
+## Playable damage = Live.playable_damage(DAMAGE) (asserted in cave_roach_live_state_test).
+const RULES:={"alert":ALERT_RANGE,"reach":REACH,"damage":3,"impact":IMPACT_SECONDS,"clip":ATTACK_SECONDS}
 static func initial() -> Dictionary:
 	var source: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(SOURCE))
 	var actors: Dictionary={}
@@ -73,6 +74,7 @@ static func canonical(state: Dictionary) -> Dictionary:
 	if result.has("live"):
 		for live in result.live.values():
 			live.mode=int(live.mode);live.elapsed=float(live.elapsed)
+			if live.has("cooldown"): live.cooldown=float(live.cooldown)
 			live.heading=int(live.heading)
 	return result
 
@@ -104,7 +106,8 @@ static func damage(state: Dictionary, id: String, amount: int) -> int:
 	if actor.health==0:
 		actor.a8=15;actor.a9=15;actor.aa=14;actor.ab=14
 		state.visuals[id]={"action":14,"elapsed":0.0}
-		if state.has("live"): state.live[id].merge({"mode":IDLE,"elapsed":0.0,"hit":false},true)
+		if state.has("live"):
+			state.live[id].merge({"mode":IDLE,"elapsed":0.0,"hit":false},true);state.live[id].erase("cooldown")
 	return loss
 static func first_contact(state: Dictionary, region: int) -> bool:
 	if region not in [1140,1358] or region in state.regions: return false

@@ -9,7 +9,7 @@ func _initialize() -> void:
 	assert(State.validate(s).is_empty() and s.actors["21"].health==150)
 	var r:=State.rules()
 	s.live["24"].merge({"mode":Live.ATTACK,"elapsed":0.0,"hit":false},true)
-	assert(Live.advance(s.live["24"],true,1.1,30,true,false,30,r)==0 and Live.advance(s.live["24"],true,0.05,30,true,false,30,r)==24)
+	assert(Live.advance(s.live["24"],true,1.1,30,true,false,30,r)==0 and Live.advance(s.live["24"],true,0.05,30,true,false,30,r)==10)
 	var mid: Dictionary=JSON.parse_string(JSON.stringify(s,"",false,true))
 	assert(State.validate(mid).is_empty() and State.canonical(mid)==State.canonical(s))
 	assert(State.damage(s,"24",999)==150 and s.live["24"].mode==Live.IDLE)

@@ -16,7 +16,7 @@ static func source() -> Dictionary:
 
 static func rules() -> Dictionary:
 	var s:=source()
-	return {"alert":ALERT_RANGE,"reach":REACH,"damage":int(s.damage),"impact":float(s.clips.bite.hit_frame)/FPS,"clip":float(s.clips.bite.frames)/FPS}
+	return {"alert":ALERT_RANGE,"reach":REACH,"damage":Live.playable_damage(int(s.damage)),"impact":float(s.clips.bite.hit_frame)/FPS,"clip":float(s.clips.bite.frames)/FPS}
 
 static func initial() -> Dictionary:
 	var actors: Dictionary={}
@@ -50,6 +50,7 @@ static func canonical(state: Dictionary) -> Dictionary:
 		actor.position=actor.position.map(func(n):return float(n))
 	for live in result.live.values():
 		live.mode=int(live.mode);live.elapsed=float(live.elapsed);live.heading=int(live.heading)
+		if live.has("cooldown"): live.cooldown=float(live.cooldown)
 	return result
 
 ## Returns actual health loss; defeat starts the source death clip once.
@@ -61,7 +62,7 @@ static func damage(state: Dictionary, id: String, amount: int) -> int:
 	actor.health-=loss
 	if actor.health==0:
 		actor.death=0.0
-		state.live[id].merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false},true)
+		state.live[id].merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false},true);state.live[id].erase("cooldown")
 	return loss
 
 static func advance_death(state: Dictionary, delta: float) -> void:

@@ -9,3 +9,11 @@ Static decode of L3_DH (`tools/audit_game_actor_scripts.py` groups/events, predi
 - Actor20 event9 handler: `op13` on itself then two `op3` grants of identity 0x7c5eb1bf (item drop lead). Actor21 has op2 global writes. Actor29 has extra handlers (event20, predicate206, op8/op13).
 
 Next: confirm op207/op210 semantics against the native command dispatcher, identify prop93 and its state3 effect, locate skeleton regions relative to the earned Museum route, then implement with the shared creature live rules if it is required content.
+
+## Control triggers (2026-10-03 decode)
+
+- Predicates (L3_DH table): 18/206 = owner state 0, 19 = owner state 1, 22/23/25/210 = owner state 2/3/4/4.
+- Control181 (Broken Thohan case) is used through event4 (value = held-item class) — the existing earned pickup path.
+- Control92 at (3049,-826), beside skeleton 20: event4 value0 with owner state 0 runs group7596 — sets control92 state1, actor20 operations 0x21/7/0x11, property 0x0a/0x400/0x102 writes, op18/op20 on the control. Reading: using the exhibit with any hand animates skeleton 20.
+- Control96 at (427,-1337), skeleton 30's exact spot: event5 value0 (producer unknown) starts control animation properties; event6 value0 sets state1 and activates prop 0xb3; event6 with owner state 1 (predicate19) deactivates control96 (op9 property2) and spawns skeleton 30 (op9 property3). Reading: the exhibit plays twice, then is replaced by the live skeleton.
+- Next: identify control96's event5 producer (likely proximity/timer) before implementing; control92 can use the existing Museum E-interaction path.
