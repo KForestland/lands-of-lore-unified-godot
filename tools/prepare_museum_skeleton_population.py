@@ -64,6 +64,8 @@ def main():
         defs[key]=dict(name=d['name'],clips=c)
     result=dict(version=1,source=area['source'],actors=actors,definitions=defs,native_bases=bases,regions=regions,
         neighbour_wake={'24':[25,26],'25':[26,24],'26':[25,24]},counted=[23,24,25,26,27,28,29,30,31,32],counter_target=10,scripted_dormant=[20,21,30],
+        controls=[dict(control=92,position=[3049,35,-826],group=7596,use=dict(owner_state=0,next_state=1,wake=[20]),
+            note='event4 value0 predicate206: control92 state1 and actor20 operations/properties (exact property semantics not replayed)')],
         counter_result=dict(prop=93,state=3,audio_level=0))
     (ROOT/'scripts/lol2/museum_skeleton_population_source.json').write_text(json.dumps(result,indent=1)+'\n')
     print(json.dumps(dict(actors=[(a['actor'],a['definition'],a['health'],a['behavior'],a['loot'],a['reward_scale']) for a in actors],defs={k:{'attacks':v['clips']['attacks'],'rise':v['clips']['rise'],'death':v['clips']['death']} for k,v in defs.items()},bases=bases)))

@@ -531,6 +531,25 @@
   21,
   30
  ],
+ "controls": [
+  {
+   "control": 92,
+   "position": [
+    3049,
+    35,
+    -826
+   ],
+   "group": 7596,
+   "use": {
+    "owner_state": 0,
+    "next_state": 1,
+    "wake": [
+     20
+    ]
+   },
+   "note": "event4 value0 predicate206: control92 state1 and actor20 operations/properties (exact property semantics not replayed)"
+  }
+ ],
  "counter_result": {
   "prop": 93,
   "state": 3,

@@ -44,7 +44,11 @@ static func initial(src: Dictionary) -> Dictionary:
 		var rise_full:=clip_seconds(int(src.definitions[str(int(row.definition))].clips.rise.frames))
 		actors[id]={"health":int(row.health),"position":row.position.map(func(n):return float(n)),"death":0.0,"woken":woken,"rise":-1.0 if not woken else rise_full,"present":bool(row.present)}
 		live[id]={"mode":Live.IDLE,"elapsed":0.0,"hit":false,"hits":0,"heading":int(row.heading),"attack":0}
-	return {"version":1,"actors":actors,"live":live,"regions":[],"counter":0,"prop93":0}
+	var result:={"version":1,"actors":actors,"live":live,"regions":[],"counter":0,"prop93":0}
+	if not src.get("controls",[]).is_empty():
+		result.controls={}
+		for control in src.controls: result.controls[str(int(control.control))]=0
+	return result
 
 static func validate(state: Variant, src: Dictionary) -> String:
 	if not state is Dictionary or not Values.integer(state.get("version"),1) or state.version!=1: return "Invalid creature population."
@@ -74,6 +78,11 @@ static func validate(state: Variant, src: Dictionary) -> String:
 	for region in state.regions:
 		if not Values.integer(region,2000) or int(region) not in src.regions.map(func(r):return int(r.region)) or int(region) in seen: return "Invalid creature region history."
 		seen.append(int(region))
+	if state.has("controls"):
+		var controls=state.controls
+		if not controls is Dictionary or controls.size()!=src.get("controls",[]).size(): return "Invalid creature control states."
+		for control in src.get("controls",[]):
+			if not Values.integer(controls.get(str(int(control.control)),0),255): return "Invalid creature control state."
 	if not Values.integer(state.get("counter"),10) or not Values.integer(state.get("prop93"),3) or int(state.prop93) not in [0,3]: return "Invalid creature counter."
 	if int(src.get("counter_target",0))>0 and (int(state.prop93)==3)!=(int(state.counter)>=int(src.counter_target)): return "Creature counter disagrees with its result."
 	return ""
@@ -82,6 +91,10 @@ static func canonical(state: Dictionary, src: Dictionary) -> Dictionary:
 	var result:=state.duplicate(true)
 	result.version=1;result.counter=int(result.counter);result.prop93=int(result.prop93)
 	result.regions=result.regions.map(func(n):return int(n))
+	if not src.get("controls",[]).is_empty():
+		var controls: Dictionary=result.get("controls",{})
+		result.controls={}
+		for control in src.controls: result.controls[str(int(control.control))]=int(controls.get(str(int(control.control)),0))
 	for id in result.actors:
 		var actor: Dictionary=result.actors[id]
 		# Packets saved before placement presence was modelled use the source flag.
@@ -175,3 +188,19 @@ static func advance_live(state: Dictionary, src: Dictionary, id: String, delta: 
 		var remaining:=player_health-damage
 		if sight and distance<=REACH and not protected and remaining>0: damage+=mini(int(rules.impacts[1][1]),remaining)
 	return damage
+
+## Source control use (event4 with the listed owner state): next state, then the
+## listed actors are spawned/woken. Returns the actors affected, or [] if inert.
+static func use_control(state: Dictionary, src: Dictionary, control_id: String) -> Array:
+	for control in src.get("controls",[]):
+		if str(int(control.control))!=control_id: continue
+		var use: Dictionary=control.use
+		if int(state.controls.get(control_id,0))!=int(use.owner_state): return []
+		state.controls[control_id]=int(use.next_state)
+		var touched: Array=[]
+		for id in use.get("spawn",[]):
+			if spawn(state,str(int(id))): touched.append(str(int(id)))
+		for id in use.get("wake",[]):
+			if wake(state,str(int(id))): touched.append(str(int(id)))
+		return touched
+	return []
