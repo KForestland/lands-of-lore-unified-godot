@@ -2,6 +2,14 @@ extends RefCounted
 ## Source identities and pending decisions. World perception/movement are separate.
 const Values=preload("res://scripts/lol2/save_value_rules.gd")
 const Choice=preload("res://scripts/lol2/hive_ai_action_choice.gd")
+const FPS:=8.0
+const Audio=preload("res://scripts/lol2/scripted_creature_audio_state.gd")
+static func audio_contract() -> Dictionary:
+	return JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/cave_roach_audio_source.json"))
+static func audio_actors() -> Array:
+	var rows: Array=JSON.parse_string(FileAccess.get_file_as_string(SOURCE)).actors
+	for row in rows: row.definition=4
+	return rows
 const SOURCE="res://scripts/lol2/cave_roach_population_source.json"
 ## Live behavior adapter (docs/cave-roach-population-live.md). Damage7 at selector6
 ## frame12 is native-derived (docs/cave-roach-attack.json); perception range, reach,
@@ -54,6 +62,9 @@ static func validate(state: Variant) -> String:
 		for id in expected:
 			var live_error:=Live.validate(state.live.get(id),state.actors[id].health>0,RULES)
 			if not live_error.is_empty(): return live_error
+	if state.has("audio"):
+		var error:=Audio.validate(state.audio,audio_actors(),audio_contract())
+		if not error.is_empty(): return error
 	if not state.get("regions") is Array or state.regions.size()>2: return "Invalid cave Roach region history."
 	var seen: Array=[]
 	for region in state.regions:
@@ -76,6 +87,7 @@ static func canonical(state: Dictionary) -> Dictionary:
 			live.mode=int(live.mode);live.elapsed=float(live.elapsed)
 			if live.has("cooldown"): live.cooldown=float(live.cooldown)
 			live.heading=int(live.heading)
+	if result.has("audio"): result.audio=Audio.canonical(result.audio)
 	return result
 
 static func initialize_visuals(state: Dictionary) -> void:
@@ -96,11 +108,19 @@ static func advance_visuals(state: Dictionary, delta: float) -> void:
 			if v.elapsed>=1.0: v.action=0;v.elapsed=0.0
 		elif v.action==14: v.elapsed=minf(2.5,v.elapsed+delta)
 
+## The twelve nest actors are the only ones addressed by source decision-enable
+## writes (regions1140/1358 property13/7 set B5 0x0C); until then they stay dormant.
+const NEST:=[25,26,27,28,29,30,31,32,33,34,35,43]
+static func dormant(state: Dictionary, id: String) -> bool:
+	return int(id) in NEST and (int(state.actors[id].b5)&12)==0
+
 static func damage(state: Dictionary, id: String, amount: int) -> int:
 	if amount<=0 or not state.actors.has(id): return 0
 	var actor: Dictionary=state.actors[id]
 	var loss:=mini(int(actor.health),amount)
 	if loss==0: return 0
+	# Being hit rouses a dormant nest actor (modern adapter, as for Museum skeletons).
+	if dormant(state,id): actor.b5=(int(actor.b5)|12)&254
 	initialize_visuals(state)
 	actor.health-=loss
 	if actor.health==0:
