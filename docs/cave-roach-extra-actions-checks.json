@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "entity": 4,
+  "name": "Roach",
+  "entrance_binding": {
+    "actor": 23,
+    "definition": 5,
+    "initial_goal": 14,
+    "initial_action": 9,
+    "shared_resources": [
+      830,
+      838
+    ]
+  },
+  "source_entry_sha256": "b3d6b8f528166aad4fe316033eed2bd8404a8f42bd5dadc63bcc15cf08b3cf5a",
+  "cache_sha256": "102410e0b69037da2bdf451dd4de9c7e30df2c9d1309b1d0a1c0224ab7218c97",
+  "lookup_cases": 3072,
+  "canvas_size": [
+    282,
+    158
+  ],
+  "crop_box": [
+    20,
+    6,
+    302,
+    164
+  ],
+  "world_units_per_pixel": 0.21818181818181817,
+  "centre_offset": [
+    1.7454545454545454,
+    11.345454545454546,
+    0
+  ],
+  "clips": [
+    {
+      "action": 9,
+      "selector": 7,
+      "resource": 830,
+      "frames": [
+        {
+          "descriptor": 830,
+          "file": "action_9_frame_830.png",
+          "payload_sha256": "a65d335df0dc61c73986db40c841c446ed8e91ce1f6d87cb11276795afc44f0d",
+          "indices_sha256": "9065d7349d274c7109d1f568d656f79e29f78cf788e9f2fe50a40b5f6c84218b",
+          "png_sha256": "ab9a6b304c20d028f3596fa34a56955a3ae5004eb9da0b1afdc05732130c0f46"
+        },
+        {
+          "descriptor": 831,
+          "file": "action_9_frame_831.png",
+          "payload_sha256": "7fa237e6fe798c1d4a7422ba996b712147e99fb87a489bd546293fa5bf26461e",
+          "indices_sha256": "519a6617627ced526c00d21d205d481d9886690bf1324a9362d3706491c22fc1",
+          "png_sha256": "46b99f9cb3f05341babdb22e621bcb68c7aee9ad1878e2bbc14e0dcfd56edaef"
+        },
+        {
+          "descriptor": 832,
+          "file": "action_9_frame_832.png",
+          "payload_sha256": "6808608e26fa99fc21c268be7ab441bd49da0aeefeaa038c2d7d93eec2e370a1",
+          "indices_sha256": "a5fb15d5c1bbdb0904cea89e39037ac8d393fc65b3e07d6c2806dbda6ad0d689",
+          "png_sha256": "e949f5108172913156155b0a10b29539b1ca899132059bf8731fdc712fdd8944"
+        },
+        {
+          "descriptor": 833,
+          "file": "action_9_frame_833.png",
+          "payload_sha256": "e8a16615ada32faa3dd3485360704d9f78ab3528ca495ce002f6cef5cbad8bef",
+          "indices_sha256": "65c4715717aa308fbe5132beb225ec22e34da11a9bb63408f729b6fa637f9fd3",
+          "png_sha256": "8901718e242e426b14e5ae4dc587046f305ecbf678bd863e51aa024ed028c887"
+        },
+        {
+          "descriptor": 834,
+          "file": "action_9_frame_834.png",
+          "payload_sha256": "45019de9199e97b10298fa22ce09cfe3da2eb1db7e52399a1098ba3f8dda72cd",
+          "indices_sha256": "7adf1081ab1f310a1209bf6dbc1d957855be275c0340a1716141d26bf236954e",
+          "png_sha256": "fdb7ba3efb577ffb510f3f190af44bc5e69536d4922d0020261caca02d9a2349"
+        },
+        {
+          "descriptor": 835,
+          "file": "action_9_frame_835.png",
+          "payload_sha256": "32818c741bb33b1159032e335eddcd9c58d3c2fbbda4239a69b97cc989b98803",
+          "indices_sha256": "c9159fdab39a947b61f0232bbf42a7c2b8387e4c637e529340e22ea2c7c00124",
+          "png_sha256": "5a3bcfa32f0c4039d6535cc63402461371a02d73f61f4065087dd2057d356dfc"
+        },
+        {
+          "descriptor": 836,
+          "file": "action_9_frame_836.png",
+          "payload_sha256": "fa40535a70b2bb0c23f259aed1f1a536f8c67a3d9c01e9ffdb3d10ba301c55cb",
+          "indices_sha256": "1ea5a4afb695769718c4f69fac4a73029156e2474e953affc449c36eba82c9a3",
+          "png_sha256": "53b0e059091e63f78a882b2e3c8ae5dff9de5001f02808f32a1dcd374047041f"
+        },
+        {
+          "descriptor": 837,
+          "file": "action_9_frame_837.png",
+          "payload_sha256": "240f6c1fd818c70d5df0d3e0899f482567a5972728ed88641b4cc1b9eca2313d",
+          "indices_sha256": "85c5d5b8cb29ea1ecc1946047a66e7b9575042541ade71f15b78d627aec67c34",
+          "png_sha256": "678b4937cc2bd855282e7cd4d74b3e297e6d11b509d9c0e407308057cc1b1474"
+        }
+      ],
+      "frame_events": [
+        {
+          "record": 91,
+          "source_offset": 34603,
+          "kind": 2,
+          "frame": 0,
+          "value_word": 820
+        }
+      ],
+      "state_offset": 30192
+    },
+    {
+      "action": 10,
+      "selector": 8,
+      "resource": 838,
+      "frames": [
+        {
+          "descriptor": 838,
+          "file": "action_10_frame_838.png",
+          "payload_sha256": "a65d335df0dc61c73986db40c841c446ed8e91ce1f6d87cb11276795afc44f0d",
+          "indices_sha256": "9065d7349d274c7109d1f568d656f79e29f78cf788e9f2fe50a40b5f6c84218b",
+          "png_sha256": "ab9a6b304c20d028f3596fa34a56955a3ae5004eb9da0b1afdc05732130c0f46"
+        },
+        {
+          "descriptor": 839,
+          "file": "action_10_frame_839.png",
+          "payload_sha256": "3fccc256c10fa4c705668f9bfbe5e1cc1f2b586551b3dbde8ae689629fa0030a",
+          "indices_sha256": "44928140cdccfd51fe883bf5375fbe8e9af21e6045fa58572c37937b21afc000",
+          "png_sha256": "a08adcfb349a27a41eee7215e8e65b2a6c8addfc901308df1c956fee532bafa0"
+        },
+        {
+          "descriptor": 840,
+          "file": "action_10_frame_840.png",
+          "payload_sha256": "d8dc0b5ede862e19cb5db4eb9770056ea7f4541c185789b3875fbd501c2ea4e5",
+          "indices_sha256": "d45c21094c0c887b215ce0b2c7ededb4dcb15de2b1fb588536057245a53b5d86",
+          "png_sha256": "5fac789f8bddb11cd66c1029c28b4498280e06b1a40e0d95a2b5d501a280e771"
+        },
+        {
+          "descriptor": 841,
+          "file": "action_10_frame_841.png",
+          "payload_sha256": "75496829e45b1a88b2e179c7447630cf7bd16bd9bb274bf55fe452d5125f82bb",
+          "indices_sha256": "fcd53049847d126806d35f7898bc43d8343c8801f96ff03d289703ebb25cdf05",
+          "png_sha256": "ba0d14bdc8a2af5ef7b46710f80cd4ec85374e131125ce236774389a43c934a9"
+        },
+        {
+          "descriptor": 842,
+          "file": "action_10_frame_842.png",
+          "payload_sha256": "fae190b14435d3fe61193cd487b7efa953b35a60caed44b6fab689978a03b7cf",
+          "indices_sha256": "94857e3c330d15f5bbf0d6b549964b6bfc29531e2f7a6fcd2bab8b8c327e232e",
+          "png_sha256": "4704b52da46ec9a11af59a11f0c1cf11e01704c47dde5aec8a74b18252df7686"
+        },
+        {
+          "descriptor": 843,
+          "file": "action_10_frame_843.png",
+          "payload_sha256": "fdc3b80de45bd5c43964ea7a6ad04da61e90cb8ca89474b40c7b83f6f931ff0a",
+          "indices_sha256": "98788913178e02befa7aa35c6bf09fb8c1f568daac6aaf4b99eedd92b6f54316",
+          "png_sha256": "33aad2fe05c11113f730d7e13b2914fe3160373b9d1d15f9c96d4ee0a9b032e7"
+        },
+        {
+          "descriptor": 844,
+          "file": "action_10_frame_844.png",
+          "payload_sha256": "ab2ec8fd1e4b89da2a27eb52c627bf9c5eb4bcc6b63220c8c19665e0e81eed71",
+          "indices_sha256": "ddd4b88dbd675c5e5523bd6609fb338fba1807fe726b76d1f14861ef4fc2aa35",
+          "png_sha256": "77d7fc33d2a11f0c893a660f61c2926882439f6d158ba5c5c43f08f51a507e6f"
+        },
+        {
+          "descriptor": 845,
+          "file": "action_10_frame_845.png",
+          "payload_sha256": "1a2698b009eb0d0b6ec8d0304a89db51d9183b52012e48ac82b78db425f0b477",
+          "indices_sha256": "836c0f3bb454c56aa09321ccc76dd01381078477df31bf0795987148841fe9d2",
+          "png_sha256": "6b063b2624c99e2666dadce987ccb22048212d12b9700ed33645c44d67ca4d80"
+        }
+      ],
+      "frame_events": [
+        {
+          "record": 93,
+          "source_offset": 34619,
+          "kind": 2,
+          "frame": 0,
+          "value_word": 821
+        }
+      ],
+      "state_offset": 30208
+    }
+  ],
+  "scope": "Source action9\u2192selector7/resource830 and action10\u2192selector8/resource838;16 frames decoded and losslessly reconstructed on existing shared indexed canvas. Lookup uses the previously verified selector implementation with actual Roach rows. Not a new native replay. Original sound-event IDs retained; playback, native clock, world scale, live AI and hostile admission remain unclaimed."
+}

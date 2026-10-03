@@ -63,6 +63,19 @@ static func apply_pending(state: Dictionary, id: String, goal: int, action: int)
 	if (int(actor.b5)&4)!=0: actor.a9=goal
 	if (int(actor.b5)&8)!=0: actor.ab=action
 	return true
+static func choose_pending(state: Dictionary, id: String, stats: Variant, goal_chooser: RefCounted, action_chooser: RefCounted) -> Dictionary:
+	if not state.actors.has(id): return {"error":"Unknown cave Roach identity."}
+	var actor: Dictionary=state.actors[id]
+	if actor.health==0: return {"error":"Defeated cave Roach cannot choose."}
+	if goal_chooser==null or action_chooser==null: return {"error":"Cave Roach choice profile unavailable."}
+	# Same supplied effective bank for both selections; action sees the new goal.
+	# Commit remains separate. Never save half a decision if action scoring fails.
+	var goal_result: Dictionary=goal_chooser.update_pending(actor,stats)
+	if goal_result.has("error"): return goal_result
+	var action_result: Dictionary=action_chooser.update_pending(goal_result.state,stats)
+	if action_result.has("error"): return action_result
+	state.actors[id]=action_result.state.duplicate(true)
+	return {"chosen":goal_result.chosen or action_result.chosen,"goal":goal_result,"action":action_result}
 static func commit(state: Dictionary, id: String, mode: int) -> bool:
 	if not state.actors.has(id): return false
 	var actor: Dictionary=state.actors[id]

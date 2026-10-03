@@ -1,0 +1,73 @@
+{
+  "suite": "core",
+  "project": "/home/bob/lol2_github_source_20260911",
+  "started_utc": "20261003T001622320818Z",
+  "godot": [
+    "flatpak",
+    "run",
+    "org.godotengine.Godot"
+  ],
+  "filtered": true,
+  "suite_test_count": 40,
+  "selected_tests": [
+    "cave_roach_population_state_test",
+    "cave_roach_population_choice_test",
+    "cave_roach_population_save_test",
+    "cave_roach_effective_stats_test",
+    "cave_roach_ai_choice_test"
+  ],
+  "complete": true,
+  "passed": true,
+  "tests": [
+    {
+      "name": "cave_roach_population_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "cave_roach_population_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_population_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "cave_roach_population_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_population_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.85,
+      "log": "cave_roach_population_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_effective_stats_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "cave_roach_effective_stats_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_ai_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "cave_roach_ai_choice_test.log",
+      "errors": []
+    }
+  ]
+}
