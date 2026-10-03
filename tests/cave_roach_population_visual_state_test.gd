@@ -4,6 +4,8 @@ func _initialize() -> void:
 	var state:=State.initial()
 	State.initialize_visuals(state)
 	assert(State.validate(state).is_empty())
+	assert(state.visuals["26"].action==0)
+	state.visuals["26"]={"action":9,"elapsed":0.0} # Old saved adapter remains readable.
 	State.advance_visuals(state,0.5)
 	assert(State.damage(state,"25",3)==3 and state.actors["25"].health==7)
 	var before:=state.duplicate(true)
@@ -22,7 +24,7 @@ func _initialize() -> void:
 	assert(state==before)
 	var dead_legacy:=state.duplicate(true);dead_legacy.erase("visuals")
 	State.initialize_visuals(dead_legacy)
-	assert(dead_legacy.visuals["25"].elapsed==2.5 and dead_legacy.visuals["26"].action==9)
+	assert(dead_legacy.visuals["25"].elapsed==2.5 and dead_legacy.visuals["26"].action==0)
 	for change in [{"action":14,"elapsed":0.0},{"action":9,"elapsed":1.0},{"action":0,"elapsed":0.5},{"action":9,"elapsed":true},{"action":1,"elapsed":0.0}]:
 		var bad:=state.duplicate(true);bad.visuals["26"]=change
 		assert(not State.validate(bad).is_empty())

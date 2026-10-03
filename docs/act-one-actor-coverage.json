@@ -2,7 +2,7 @@
   "source_inventory_sha256": "015ad7e0c79ce05fe598c3498e0c5b22bc618ede725569c122cf82f8e46c388e",
   "scope": "Four pre-departure map archives only. Positive implementation bindings are reviewed leads, not completion. Unmatched actors may be alternate states, script placeholders, cinematic actors or playable encounters; source reachability and live implementation classification remain required. L8_SJ acceptance ends at verified arrival/onward walk, not completion of Act Two content.",
   "placement_count": 194,
-  "reviewed_live_bindings": 17,
+  "reviewed_live_bindings": 40,
   "areas": [
     {
       "id": "L1_DC",
@@ -92,32 +92,124 @@
             50,
             51
           ],
-          "reviewed_live_bindings": {},
-          "classification_pending": [
-            25,
-            26,
-            27,
-            28,
-            29,
-            30,
-            31,
-            32,
-            33,
-            34,
-            35,
-            40,
-            41,
-            42,
-            43,
-            44,
-            45,
-            46,
-            47,
-            48,
-            49,
-            50,
-            51
-          ]
+          "reviewed_live_bindings": {
+            "25": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "26": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "27": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "28": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "29": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "30": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "31": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "32": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "33": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "34": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "35": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "40": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "41": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "42": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "43": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "44": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "45": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "46": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "47": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "48": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "49": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "50": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            },
+            "51": {
+              "path": "scripts/lol2/cave_roach_population.gd",
+              "sha256": "ac452b576312aa3ee8162c95ecf27a7a522aec076e1c3fbf690015acf7c32eb8",
+              "scope": "partial source-position body/animation/damage/save binding; scale1 Spark rewards; headless checks only; AI movement/admission/attacks, melee XP and rendered route remain OPEN"
+            }
+          },
+          "classification_pending": []
         },
         {
           "definition": 5,
@@ -129,7 +221,7 @@
           "reviewed_live_bindings": {
             "23": {
               "path": "scripts/lol2/cave_roach.gd",
-              "sha256": "5e8c112c7e9cf71a65c5727320758c56ac92f0f2e629cb3de034e505f91ccdd4",
+              "sha256": "e4dba6b80bb417285dff752ea5a50c6b2a3a5cfa22ec9b998a003ec2113b1b84",
               "scope": "live encounter; authored combat tuning"
             }
           },

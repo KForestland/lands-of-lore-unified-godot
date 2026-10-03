@@ -59,7 +59,8 @@ static func initialize_visuals(state: Dictionary) -> void:
 	for id in state.actors:
 		var dead: bool=state.actors[id].health==0
 		# Old defeated packets stay defeated and do not replay a collapse.
-		state.visuals[id]={"action":14 if dead else 9,"elapsed":2.5 if dead else 0.0}
+		# Behavior14 requests action0, despite retaining native current-action byte9.
+		state.visuals[id]={"action":14 if dead else 0,"elapsed":2.5 if dead else 0.0}
 
 static func advance_visuals(state: Dictionary, delta: float) -> void:
 	if not is_finite(delta) or delta<=0: return
