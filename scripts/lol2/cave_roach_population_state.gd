@@ -2,14 +2,6 @@ extends RefCounted
 ## Source identities and pending decisions. World perception/movement are separate.
 const Values=preload("res://scripts/lol2/save_value_rules.gd")
 const Choice=preload("res://scripts/lol2/hive_ai_action_choice.gd")
-const FPS:=8.0
-const Audio=preload("res://scripts/lol2/scripted_creature_audio_state.gd")
-static func audio_contract() -> Dictionary:
-	return JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/cave_roach_audio_source.json"))
-static func audio_actors() -> Array:
-	var rows: Array=JSON.parse_string(FileAccess.get_file_as_string(SOURCE)).actors
-	for row in rows: row.definition=4
-	return rows
 const SOURCE="res://scripts/lol2/cave_roach_population_source.json"
 ## Live behavior adapter (docs/cave-roach-population-live.md). Damage7 at selector6
 ## frame12 is native-derived (docs/cave-roach-attack.json); perception range, reach,
@@ -62,9 +54,6 @@ static func validate(state: Variant) -> String:
 		for id in expected:
 			var live_error:=Live.validate(state.live.get(id),state.actors[id].health>0,RULES)
 			if not live_error.is_empty(): return live_error
-	if state.has("audio"):
-		var error:=Audio.validate(state.audio,audio_actors(),audio_contract())
-		if not error.is_empty(): return error
 	if not state.get("regions") is Array or state.regions.size()>2: return "Invalid cave Roach region history."
 	var seen: Array=[]
 	for region in state.regions:
@@ -87,7 +76,6 @@ static func canonical(state: Dictionary) -> Dictionary:
 			live.mode=int(live.mode);live.elapsed=float(live.elapsed)
 			if live.has("cooldown"): live.cooldown=float(live.cooldown)
 			live.heading=int(live.heading)
-	if result.has("audio"): result.audio=Audio.canonical(result.audio)
 	return result
 
 static func initialize_visuals(state: Dictionary) -> void:
