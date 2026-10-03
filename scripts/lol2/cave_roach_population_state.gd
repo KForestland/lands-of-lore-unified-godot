@@ -24,6 +24,16 @@ static func validate(state: Variant) -> String:
 		if not Values.integer(actor.get("word7c"),65535): return "Invalid cave Roach counter."
 		if actor.a8>15 or actor.a9>15 or actor.aa>17 or actor.ab>17: return "Invalid cave Roach decision selector."
 		if (actor.health==0)!=(actor.a8==15): return "Cave Roach defeat disagrees with behavior."
+	if state.has("visuals"):
+		if not state.visuals is Dictionary or state.visuals.size()!=expected.size(): return "Incomplete cave Roach visuals."
+		for id in expected:
+			var v=state.visuals.get(id)
+			if not v is Dictionary or not Values.integer(v.get("action"),14) or int(v.action) not in [0,9,14]: return "Invalid cave Roach visual action."
+			var elapsed=v.get("elapsed")
+			var duration:=1.0 if v.action==9 else 2.5 if v.action==14 else 0.0
+			if not (elapsed is int or elapsed is float) or not is_finite(float(elapsed)) or elapsed<0 or elapsed>duration: return "Invalid cave Roach visual clock."
+			if v.action==9 and elapsed>=duration: return "Completed cave Roach startup remains active."
+			if (state.actors[id].health==0)!=(v.action==14): return "Cave Roach death presentation disagrees."
 	if not state.get("regions") is Array or state.regions.size()>2: return "Invalid cave Roach region history."
 	var seen: Array=[]
 	for region in state.regions:
@@ -38,7 +48,39 @@ static func canonical(state: Dictionary) -> Dictionary:
 		for field in ["health","a8","a9","aa","ab","b5","b8","b9","ba","bb","word7c"]:actor[field]=int(actor[field])
 		actor.stats=actor.stats.map(func(n):return int(n))
 		actor.position=actor.position.map(func(n):return float(n))
+	if result.has("visuals"):
+		for v in result.visuals.values():
+			v.action=int(v.action);v.elapsed=float(v.elapsed)
 	return result
+
+static func initialize_visuals(state: Dictionary) -> void:
+	if state.has("visuals"): return
+	state.visuals={}
+	for id in state.actors:
+		var dead: bool=state.actors[id].health==0
+		# Old defeated packets stay defeated and do not replay a collapse.
+		state.visuals[id]={"action":14 if dead else 9,"elapsed":2.5 if dead else 0.0}
+
+static func advance_visuals(state: Dictionary, delta: float) -> void:
+	if not is_finite(delta) or delta<=0: return
+	initialize_visuals(state)
+	for v in state.visuals.values():
+		if v.action==9:
+			v.elapsed=minf(1.0,v.elapsed+delta)
+			if v.elapsed>=1.0: v.action=0;v.elapsed=0.0
+		elif v.action==14: v.elapsed=minf(2.5,v.elapsed+delta)
+
+static func damage(state: Dictionary, id: String, amount: int) -> int:
+	if amount<=0 or not state.actors.has(id): return 0
+	var actor: Dictionary=state.actors[id]
+	var loss:=mini(int(actor.health),amount)
+	if loss==0: return 0
+	initialize_visuals(state)
+	actor.health-=loss
+	if actor.health==0:
+		actor.a8=15;actor.a9=15;actor.aa=14;actor.ab=14
+		state.visuals[id]={"action":14,"elapsed":0.0}
+	return loss
 static func first_contact(state: Dictionary, region: int) -> bool:
 	if region not in [1140,1358] or region in state.regions: return false
 	state.regions.append(region)
