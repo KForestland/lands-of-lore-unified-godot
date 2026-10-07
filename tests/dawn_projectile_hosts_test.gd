@@ -24,14 +24,33 @@ func run() -> void:
 
 		var event: Dictionary={"enabled":true,"collision":0,"target":1,"distance":65536,"movement_heading":int(result.heading),"collision_heading":int(result.heading)}
 		assert(dawn.projectiles.contact(birth.id,event).request)
+		# Supplied projectile starting inside the actual player capsule exercises
+		# the real overlap/RID boundary and actual host health setter.
+		var local: Vector3=scene.player.global_position-dawn.origin()
+		var player_point: Array=[roundi(local.x*65536),roundi(-local.z*65536),roundi(local.y*65536)]
+		var caster_point: Array=[player_point[0]-(100<<16),player_point[1],player_point[2]]
+		var damaging: Dictionary=dawn.projectiles.spawn(int(dawn.ID),player_point,player_point,caster_point,0)
+		var player_hit: Dictionary=dawn.move_projectile(damaging.id,1,1.0)
+		assert(not player_hit.has("error") and player_hit.blocked,str(player_hit))
+		var damage_context: Dictionary={"player_heading":32768,"guard":0,"mode":1,"scalar":0,"descriptors":[],"player_magic_level":10,"global223d4":0,"flags228":0}
+		var health_before: int=scene.starting_magic.health()
+		var damage: Dictionary=dawn.damage_projectile_player(damaging.id,player_hit,0,damage_context)
+		assert(not damage.has("error") and damage.loss==10,str(damage))
+		assert(scene.starting_magic.health()==health_before-10)
+		var health_after: int=scene.starting_magic.health()
 		var pending: Dictionary=dawn.projectiles.checkpoint()
 		var path: String="user://tests/projectiles_"+str(pair[1])+".json"
 		var save_error: String=scene.quicksave(path)
 		assert(save_error.is_empty(),save_error)
 		assert(dawn.projectiles.restore(dawn.projectiles.initial()).is_empty())
+		scene.starting_magic.set_health(health_before)
 		var load_error: String=scene.quickload(path)
 		assert(load_error.is_empty(),load_error)
 		assert(dawn.projectiles.checkpoint()==pending)
+		assert(scene.starting_magic.health()==health_after)
+		assert(not dawn.damage_projectile_player(damaging.id,player_hit,0,damage_context).requested)
+		assert(scene.starting_magic.health()==health_after)
+
 		assert(not dawn.projectiles.contact(birth.id,event).request)
 		var packet: Dictionary=dawn.checkpoint();var invalid:=packet.duplicate(true)
 		invalid.projectiles.effects[0].contact.counter=-1
@@ -42,5 +61,5 @@ func run() -> void:
 		DirAccess.remove_absolute(path)
 		print("HOST launch: %s region=%s accepted=%s world=%s"%[pair[1],result.regions,result.accepted,result.world_position])
 		scene.queue_free();for i in 3:await process_frame
-	print("PASS: both production Dawn hosts resolve launch regions and physics without query mutation; supplied allocations survive host disk saves, reject invalid restore, suppress repeated damage, and accept legacy packets. Explicit shared-delta motion entry tested; no AI cast creation.")
+	print("PASS: both production Dawn hosts resolve launch regions and physics without query mutation; supplied allocations survive host disk saves, reject invalid restore, suppress repeated damage, and accept legacy packets. Explicit motion and real player capsule/health damage survive disk reload without duplicate loss; native stats supplied, no AI cast creation.")
 	quit()

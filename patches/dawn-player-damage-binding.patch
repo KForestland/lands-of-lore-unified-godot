@@ -1,0 +1,44 @@
+--- a/scripts/lol2/jungle_dawn.gd
++++ b/scripts/lol2/jungle_dawn.gd
+@@ -109,6 +109,19 @@
+ 	return preload("res://scripts/lol2/dawn_projectile_world.gd").launch(
+ 		get_world_3d().direct_space_state,population.navigation,origin(),context,target,excluded)
+ 
++## Only a sweep naming the actual player RID can enter the live health path.
++## Difficulty/mitigation/gates and collision bearing still come from the owner.
++func damage_projectile_player(id: int, sweep: Dictionary, collision_heading: int, source_context: Dictionary) -> Dictionary:
++	if sweep.get("blocked")!=true or not sweep.get("contact") is Dictionary or sweep.contact.get("rid")!=host.player.get_rid():
++		return {"error":"Projectile did not collide with the live player."}
++	var found:=false
++	for effect in projectiles.checkpoint().effects:
++		if effect.id==id:
++			found=true
++			if effect.position!=sweep.get("position"):return {"error":"Stale projectile collision position."}
++	if not found:return {"error":"Unknown player collision projectile."}
++	return preload("res://scripts/lol2/dawn_player_damage.gd").direct(host.starting_magic,projectiles,id,collision_heading,source_context)
++
+ ## Explicit shared-clock entry; scheduler/collision dispatch remain caller-owned.
+ func move_projectile(id: int, world_delta: int, radius: float) -> Dictionary:
+ 	var motion: Dictionary=projectiles.motion(id,world_delta)
+--- a/scripts/lol2/hive_dawn20.gd
++++ b/scripts/lol2/hive_dawn20.gd
+@@ -113,6 +113,19 @@
+ 	return preload("res://scripts/lol2/dawn_projectile_world.gd").launch(
+ 		get_world_3d().direct_space_state,population.navigation,origin(),context,target,excluded)
+ 
++## Only a sweep naming the actual player RID can enter the live health path.
++## Difficulty/mitigation/gates and collision bearing still come from the owner.
++func damage_projectile_player(id: int, sweep: Dictionary, collision_heading: int, source_context: Dictionary) -> Dictionary:
++	if sweep.get("blocked")!=true or not sweep.get("contact") is Dictionary or sweep.contact.get("rid")!=host.player.get_rid():
++		return {"error":"Projectile did not collide with the live player."}
++	var found:=false
++	for effect in projectiles.checkpoint().effects:
++		if effect.id==id:
++			found=true
++			if effect.position!=sweep.get("position"):return {"error":"Stale projectile collision position."}
++	if not found:return {"error":"Unknown player collision projectile."}
++	return preload("res://scripts/lol2/dawn_player_damage.gd").direct(host.starting_magic,projectiles,id,collision_heading,source_context)
++
+ ## Explicit shared-clock entry; scheduler/collision dispatch remain caller-owned.
+ func move_projectile(id: int, world_delta: int, radius: float) -> Dictionary:
+ 	var motion: Dictionary=projectiles.motion(id,world_delta)

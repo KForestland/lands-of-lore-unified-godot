@@ -1,0 +1,13 @@
+# Dawn spell32 live player damage
+
+Both local Dawn hosts now expose `damage_projectile_player(id, sweep, collision_heading, source_context)`. Only a blocked sweep naming the actual player RID, at the projectile’s current saved position, can enter this boundary. It uses the existing host health getter/setter, so Jungle health and Hive Warriors health remain owned by their established save paths.
+
+`dawn_player_damage.gd` plans contact and damage on a private projectile checkpoint. It reads actual current health, binds attacker heading from the updated contact state, runs the original bounded spell calculation, and commits the contact marker before calling the health setter. Invalid/stale contexts leave health and projectile state unchanged. Setter reentrancy and later reloads see the consumed contact. The native entry gate precedes the zero-state continuation check. No additional generic0.4 scaling is applied.
+
+The existing native virtual84/surviving-health helper is reused. Lethal damage sets health0 for the modern host’s existing death flow after virtual84 processing; the native lethal continuation is not implemented by this adapter. Overall player health-scale reconciliation remains open.
+
+Four source-stable checks pass: transactional damage, both actual host capsule/health/disk-save paths, and the existing Hive/Jungle Dawn encounters. Rendered fixtures allocate a projectile inside the real player capsule, supply a prior launch origin and native damage stats, observe the real overlap, apply a10-point fixture hit, save/load actual health and consumed contact, and verify no duplicate loss. The portable test additionally covers malformed/stale context rejection, setter reentrancy, entry gating and lethal health0. [Evidence](dawn-player-damage-checks.json).
+
+Difficulty, player heading/guard, defense/mitigation descriptors, magic level, entry-gate snapshots and collision bearing still require production getters. Automatic casting and scheduling are not introduced here. Area-explosion health dispatch and presentation remain open. The [host patch](../patches/dawn-player-damage-binding.patch) targets the full local source; original media and full host dependencies remain outside this component PR.
+
+Asset-free check: `godot --headless --path . --script res://tests/dawn_player_damage_test.gd`.
