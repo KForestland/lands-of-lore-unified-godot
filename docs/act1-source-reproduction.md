@@ -129,3 +129,14 @@ python3 -S tools/lol2/map_materials.py batch --game-root /path/to/original-game 
 It exports texture blobs, palettes, remap rows, supported material images and rejection reports. Museum extraction always validates the decoded texture against the pinned hash of the verified runtime witness. When the historical local capture exists, it also compares bytes; without that capture the report explicitly records hash validation and leaves `byte_for_byte_match` unset (`null`). No external RE checkout or Pillow import is needed for material export. Existing unsupported descriptors and visual-fidelity limitations remain; scenery sprites and complete encounter assembly are separate work.
 
 [Material portability evidence](material-portability-checks.json) verifies all15 areas and58,804 byte-identical output files, ten existing regression tests and seven unchanged helper functions. A separate isolated run validates Museum extraction without the optional capture file. This is not yet a complete demo preparation recipe.
+
+## Scenery props and sprite export
+
+The scenery exporter uses repository-local row/block/LCW readers and the material exporter. It requires Pillow and system `liblzo2`. Pass explicit installation and output paths:
+
+```sh
+python3 tools/lol2/map_props.py export --game-root /path/to/original-game --area L1_DC --out /path/to/cave-props
+python3 tools/lol2/map_props.py batch --game-root /path/to/original-game --out-root /path/to/all-area-props
+```
+
+[Scenery portability evidence](scenery-portability-checks.json) verifies all15 areas and18,531 byte-identical files against the prior exporter. All19 distinct sprite/prop tests pass across the initial run and three corrected stale expectations. Placement accounting, movie fallback selectors, transparent/remap masks, block sprites and sequences remain covered. The isolated directory contains only repository helpers and installed dependencies. Historical default paths remain for existing callers; use explicit paths elsewhere. This does not complete encounter media assembly or certify native visual parity.
