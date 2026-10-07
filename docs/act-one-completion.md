@@ -8,19 +8,21 @@ Latest delivery checkpoint (2026-10-07, R4): Bob permits modern mechanics when b
 
 R4 completed the fresh eleven-leg cave-to-darker-jungle campaign with verified actual save handoffs, quest/reward outcomes and zero source drift ([campaign evidence](act1-r4-campaign-checks.json)). Its980-file recovery archive preserves source, saves, proofs and logs. Both exports completed with identical PCK hashes; actual Linux cave movement/save/load/restart and Jungle UI resume/save/load passed. All16853 packed assets match their staged hashes ([package evidence](act1-r4-package-checks.json)). These results establish the tested route and build, not every optional branch or Bob's acceptance.
 
+Current source update after R4: Bacatta65/prop553 Release L is integrated and published. Independent review and eight final main-tree checks passed with unchanged source, including hostile damage, pause and corpse persistence ([Bacatta65 evidence](jungle-bacatta65-checks.json)). There are now258 registered tests; the full258 suite, a fresh campaign and refreshed binaries after L remain pending. R4 remains the earlier playable candidate. Opus owns the isolated Bacatta57 village-entry slice.
+
 Current acceptance reconciliation:
 
 | Requirement | Current evidence / gap | Next owner and action |
 | --- | --- | --- |
 | Continuous route and retained continuation | R4 eleven linked legs pass through darker-jungle arrival; production demo controls used, with documented route-driver timing adapters | Lead: retain this baseline and revalidate affected behavior after integration |
 | Combat, quest items, forms and saves | Full256 and campaign pass; both Dawn hosts have focused hostile combat/in-flight save checks | Lead: address observed failures and remaining content below; do not treat route coverage as every branch |
-| Bacatta alert-before-first-meeting | Actor65/prop553 remains absent from R4 | Opus: implement isolated trigger, conversation, actor outcome and save/return slice; lead independently reviews |
+| Bacatta alert-before-first-meeting | Actor65/prop553 integrated in current source with focused review/checks; absent from R4 binaries | Lead: include in combined campaign verification and refreshed candidate |
 | Other original content | Bacatta57 role, general creature item/drop producers, prop93 grant producer and remaining optional room/offer outcomes remain unresolved or incomplete | Lead: reconcile each producer/outcome; keep explicit deferrals in candidate notes and full Classic scope |
 | Visual/audio acceptance | Packaged screenshots inspected on a private display; representative GPU and audible review missing | Bob: initial R4 playtest requested; lead reproduces and fixes findings |
 | Repeatable package | Prepared-asset staging verifier and both platform exports pass; original-media extraction from a clean machine remains unportable | Lead: finish portable preparation; native Windows runtime remains untested |
 | Owner acceptance | Not recorded | Bob: report playtest findings; final acceptance remains required after fixes |
 
-The current actor inventory has109 partial bindings,80 staging placements,3 unactivated by direct scripts and2 unbound Bacatta placements. Counts are not completion percentages. [Candidate notes](playtest-notes-20261007.md) retain known gaps. Dated checkpoints and the older area table below describe earlier revisions; the evidence above supersedes their campaign and spell-integration status.
+The current actor inventory has110 partial bindings,80 staging placements,3 unactivated by direct scripts and1 unbound Bacatta placement (actor57). Counts are not completion percentages. [Candidate notes](playtest-notes-20261007.md) retain known gaps. Dated checkpoints and the older area table below describe earlier revisions; the evidence above supersedes their campaign and spell-integration status.
 
 Bob confirmed on 2026-09-14: complete Act 1 through leaving the Huline Jungle for the darker jungle beyond. Jungle arrival is an intermediate milestone. Enhanced content remains deferred.
 

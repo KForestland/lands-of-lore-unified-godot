@@ -116,3 +116,16 @@ python3 -S tools/lol2/map_geometry.py --game-root /path/to/original-game --all -
 ```
 
 Use separate output directories to preserve earlier results. `--inventory` can select an explicit compatible profile JSON. The library API is unchanged. [Geometry portability evidence](geometry-portability-checks.json) verifies all15 areas and91 byte-identical output files, including diagnostics, against the old exporter; three structural tests pass. The isolated run uses Python's standard library and repository helpers, with no RE checkout imports. Original coordinates and generated meshes remain local. Existing subdivision/connector limitations are preserved; portability does not imply new geometry fidelity. Material/scenery preparation and assembling the entire demo still need a complete portable recipe.
+
+## Material export from original archives
+
+The material exporter uses repository-local descriptor, palette, pixel-layout and shade-table readers and the compact archive profiles. It requires Python's standard library and system `liblzo2`:
+
+```sh
+python3 -S tools/lol2/map_materials.py export --game-root /path/to/original-game --area L1_DC --out /path/to/cave-materials
+python3 -S tools/lol2/map_materials.py batch --game-root /path/to/original-game --out-root /path/to/all-area-materials
+```
+
+It exports texture blobs, palettes, remap rows, supported material images and rejection reports. Museum extraction always validates the decoded texture against the pinned hash of the verified runtime witness. When the historical local capture exists, it also compares bytes; without that capture the report explicitly records hash validation and leaves `byte_for_byte_match` unset (`null`). No external RE checkout or Pillow import is needed for material export. Existing unsupported descriptors and visual-fidelity limitations remain; scenery sprites and complete encounter assembly are separate work.
+
+[Material portability evidence](material-portability-checks.json) verifies all15 areas and58,804 byte-identical output files, ten existing regression tests and seven unchanged helper functions. A separate isolated run validates Museum extraction without the optional capture file. This is not yet a complete demo preparation recipe.

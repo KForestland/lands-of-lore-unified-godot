@@ -27,10 +27,10 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-INVENTORY = REPO_ROOT / 'docs' / 'game-source-inventory.json'
-RE_TOOLS = Path('/home/bob/lol2_re_publish_20260911/tools/draracle')
+INVENTORY = REPO_ROOT / 'docs' / 'game-geometry-profiles.json'
 MUSEUM_WITNESS = Path('/home/bob/lol2_out/museum_capture_20260913/museum_texture_blob.bin')
 MUSEUM_AREA_ID = 'L3_DH'
+MUSEUM_TEXTURE_SHA256 = '7e353789b4ca6ff8b5630f894e85ec1788d9c4713eaa537aded98b78ece21e07'
 
 TEXTURE_KEY_OFFSET = 984071
 METADATA_KEY_OFFSET = 654590
@@ -38,11 +38,9 @@ MAX_DECOMPRESSED = 64 * 1024 * 1024
 LZO_BLOCK = 1024 * 1024
 
 sys.path.insert(0, str(REPO_ROOT / 'tools'))
-sys.path.insert(0, str(RE_TOOLS))
-from lol2_extract_draracle_geometry import parse_mix  # noqa: E402
-from lol2_wall_material_checkpoint import sections, material_record  # noqa: E402
-from lol2_pixel_layout import column_major_to_rows  # noqa: E402
-from lol2_palette_png import rgb_palette, colorize, png_rgb  # noqa: E402
+from lol2_source_format import parse_mix  # noqa: E402
+from lol2_material_format import (sections, material_record, column_major_to_rows,
+                                 rgb_palette, colorize, png_rgb, initial_remap_row)
 
 
 def write_if_changed(path: Path, data: bytes) -> None:
@@ -427,10 +425,16 @@ def export_materials(game_root: Path, area_id: str, out: Path) -> dict:
 
     museum_validation = None
     if area_id == MUSEUM_AREA_ID:
-        witness = MUSEUM_WITNESS.read_bytes()
-        require(blob == witness, 'museum decoded blob differs from the pinned runtime witness byte-for-byte')
-        museum_validation = dict(witness=str(MUSEUM_WITNESS), witness_sha256=sha256_hex(witness),
-                                  byte_for_byte_match=True)
+        require(sha256_hex(blob) == MUSEUM_TEXTURE_SHA256, 'museum texture differs from pinned runtime witness hash')
+        if MUSEUM_WITNESS.is_file():
+            witness = MUSEUM_WITNESS.read_bytes()
+            require(blob == witness, 'museum decoded blob differs from the pinned runtime witness byte-for-byte')
+            museum_validation = dict(witness=str(MUSEUM_WITNESS), witness_sha256=sha256_hex(witness),
+                                     byte_for_byte_match=True)
+        else:
+            museum_validation = dict(witness=None, witness_sha256=MUSEUM_TEXTURE_SHA256,
+                                     byte_for_byte_match=None, pinned_sha256_match=True)
+
 
     s = sections(blob)
     palette_offset = struct.unpack_from('<I', blob, 4)[0]
@@ -449,8 +453,6 @@ def export_materials(game_root: Path, area_id: str, out: Path) -> dict:
     write_if_changed(out / 'palette_dac.bin', dac)
     write_if_changed(out / 'texture.bin', blob)
     write_if_changed(out / 'palette_rgb.png', png_rgb(256, 1, rgb))
-    sys.path.insert(0, str(REPO_ROOT / 'tools' / 'lol2'))
-    from map_sprite_rows import initial_remap_row
     shade64 = initial_remap_row(blob, decode_info['decoded_sha256'])
     write_if_changed(out / 'shade64_remap.png', _png_gray_bytes(256, 1, shade64))
 
