@@ -20,7 +20,7 @@ Evidence is in the candidate's `packaging_checks.json` and `source_asset_manifes
 
 ## Content still requiring closure
 
-- Bacatta65/prop553: missing alert-before-first-meeting branch; classified as optional original content in the actor reconciliation. Bacatta57's village-entry world role remains unresolved. Neither is silently counted as implemented.
+- Current source adds Bacatta65/prop553, Bacatta57 village re-entry, village alarm/archers, Kelsrick's inner gate and the drunk-villager encounter. Their focused integration checks pass, but R4 binaries do not contain them. Earned gate crossing and the water-gate/chief-hut puzzle remain pending; original prop-flag and struck-prop effects are explicitly limited in the encounter notes.
 - General creature loot and Museum prop93 treasure production remain incomplete or unverified. Ten skeleton deaths alone do not prove a treasure grant.
 - Remaining hostile/optional story outcomes need their inventory reconciled against the implemented route. A successful main route does not certify these branches.
 - Original HUD reconstruction, representative rendering/audio review, clean-machine asset preparation and remaining tool portability remain open. The GitHub review now includes the complete R3 runtime, scenes, Godot tests and numeric fixtures; see [source instructions](act1-source-reproduction.md).
