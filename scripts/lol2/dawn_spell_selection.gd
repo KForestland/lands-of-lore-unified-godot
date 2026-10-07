@@ -22,6 +22,7 @@ static func scan(context: Variant, scores: Variant, maximum: Variant, window: Va
 	var start:=candidates.find(int(previous))
 	if start>=0 and (int(owner.b8)&128)!=0: start=(start+1)%candidates.size()
 	owner.b8=int(owner.b8)&~128
+	var rng_requested:=start<0
 	if start<0: start=int(rng)>>5
 	var chosen:=start
 	var attempts: Array=[]
@@ -41,4 +42,4 @@ static func scan(context: Variant, scores: Variant, maximum: Variant, window: Va
 			chosen=index;accepted=true
 			break
 	# Native can store a nonzero choice when all admissions fail. This is not a cast.
-	return {"stored_choice":candidates[chosen],"accepted":accepted,"attempts":attempts,"candidates":candidates,"b8":owner.b8}
+	return {"stored_choice":candidates[chosen],"accepted":accepted,"attempts":attempts,"candidates":candidates,"b8":owner.b8,"rng_requested":rng_requested}

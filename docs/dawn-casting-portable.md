@@ -5,6 +5,7 @@ These components preserve the original admission, candidate scan, cast-completio
 Run these without original media, using `godot --headless --path . --script res://tests/NAME.gd`:
 
 - `dawn_admission_test`:240 native cases.
+- `dawn_ai_decision_test`:280 composed native decisions through goal/action/spell scoring and admission, including disabled-AI and zero-mana gates, preserved diagnostic fields, explicit RNG-consumption reporting and JSON-restored inputs. Effective stats/world context remain caller-supplied; no cast dispatch or AI commit.
 - `dawn_spell_scoring_test`:228 native comparisons using the original parsed Dawn profile plus synthetic signed-weight boundaries. Reuses goal/action arithmetic; returns all positive candidates in original order.
 - `dawn_selection_test`:588 six-candidate scans plus480 scans with changing candidate lists (three to six spells) and count-dependent RNG bounds. The six-spell default preserves the earlier Recover fixture; live callers must pass the scorer output.
 - `dawn_cast_completion_test`:3024 tails, including spell32 allocation/constructor failures. Original dispatch can still debit resources on those failures.
