@@ -35,3 +35,17 @@ static func prepare_with_heading(context: Variant) -> Dictionary:
 	if h.has("error"): return h
 	result.heading=h.word
 	return result
+
+## A83B6..A846B: targetless casts project forward from the caster. Quantized
+## table values are supplied by the caller; runtime table initialization unbound.
+static func without_target(context: Variant) -> Dictionary:
+	if not context is Dictionary: return {"error":"Invalid targetless cast context."}
+	var position=context.get("position")
+	if not position is Array or position.size()!=3: return {"error":"Invalid caster position."}
+	for v in position:
+		if not integer(v,-2147483648,2147483647): return {"error":"Invalid caster coordinate."}
+	for pair in [["heading",0,65535],["radius",0,255],["height",0,255],["sine",-65536,65536],["cosine",-65536,65536]]:
+		if not integer(context.get(pair[0]),pair[1],pair[2]): return {"error":"Invalid targetless field: "+pair[0]}
+	var radius:=int(context.radius)
+	return {"position":[signed32(int(position[0])+radius*int(context.sine)),signed32(int(position[1])+radius*int(context.cosine)),signed32(int(position[2])+(int(context.height)<<16))],
+		"direct_target":0,"alternate_binding":"local","heading":int(context.heading),"rng_requested":false}
