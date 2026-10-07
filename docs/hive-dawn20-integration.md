@@ -6,4 +6,8 @@ Independent main-worktree validation passed eight focused tests: the Dawn state 
 
 This GitHub checkpoint publishes the portable library planner, numeric native evidence and test. Run `godot --headless --path . --script res://tests/monastery_library_attack_portable_test.gd`. The rendered host, original movies and full local dependency tree are not included in this component PR.
 
-Open: hostile Dawn combat, region478 removal, kind5 producer, shared movie-decoder defects, fresh demo build, physical audio/graphics and Bob’s playtest acceptance. Opus owns isolated decoder/removal follow-ups; Codex owns combat and shared integration.
+Region478 unload is now integrated locally. Source group906 runs on entry when local31 equals1, unloads Dawn’s clip and records prop318 property10. A rendered test walks the 21-region route using grounded movement and verifies saved entry state prevents duplicate execution after save/load. Five focused checks passed with unchanged source throughout the run; see [evidence](hive-dawn20-region478-checks.json).
+
+The [reviewed source patch](../patches/hive-dawn20-region478.patch) targets the local post-F/G host, whose full dependencies are not yet in this component PR. Regenerate the numeric contract and local media binding, and register `hive_dawn20_region478_test` as a rendered regression when integrating it. The patch deliberately retains the unresolved decoder status.
+
+Open: hostile Dawn combat, kind5 producer, shared movie-decoder defects, fresh demo build, physical audio/graphics and Bob’s playtest acceptance. Opus owns isolated decoder/producer follow-ups; Codex owns combat and shared integration.

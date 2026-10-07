@@ -1,0 +1,376 @@
+--- a/tools/prepare_hive_dawn20.py
++++ b/tools/prepare_hive_dawn20.py
+@@ -11,8 +11,48 @@
+ Group10224 needs owner state10, which no pinned group writes; it is retained and reported as unreachable.
+ """
+ import json,struct
++from collections import deque
+ from pathlib import Path
+ ROOT=Path(__file__).resolve().parents[1]
++GEOMETRY=Path('/home/bob/lol2_out/all_maps_20260922/L5_HC/geometry/geometry.json')
++RETURN_REGION=679 # rune-room return pose region (hive_rune_entry support floor)
++
++def region_rows(ids):
++    g=json.loads(GEOMETRY.read_text());rows=[]
++    for i in ids:
++        reg=g['regions'][i];assert reg['id']==i
++        rows.append(dict(region=i,polygon=[[g['vertices_fixed'][v][0]/65536,-g['vertices_fixed'][v][1]/65536] for v in reg['vertex_indices']],
++            floor_min=min(reg['floor_corners']),floor_max=max(reg['floor_corners'])))
++    return rows,g
++
++def walk_route(g,start,goal,step=24):
++    """Grounded neighbour path (floor steps <= step) from the rune-room return region to goal; centroids for a walk fixture."""
++    R={r['id']:r for r in g['regions']};prev={start:None};q=deque([start])
++    while q:
++        a=q.popleft()
++        if a==goal: break
++        for b in R[a].get('neighbors') or []:
++            if b is None or b in prev or b not in R or abs(min(R[b]['floor_corners'])-min(R[a]['floor_corners']))>step: continue
++            prev[b]=a;q.append(b)
++    assert goal in prev,'region unreachable'
++    # Enter the goal across its longest open edge (region478 is a wall-side strip whose short open end is narrower than
++    # the player capsule): route to that edge's neighbour, then stop 10 units inside the edge midpoint (the strip is about 21 wide).
++    gv=[g['vertices_fixed'][v] for v in R[goal]['vertex_indices']];gv=[(v[0]/65536,-v[1]/65536) for v in gv]
++    edges=[(i,R[goal]['neighbors'][i]) for i in range(len(gv)) if R[goal]['neighbors'][i] is not None]
++    i,via=max(edges,key=lambda e:((gv[e[0]][0]-gv[(e[0]+1)%len(gv)][0])**2+(gv[e[0]][1]-gv[(e[0]+1)%len(gv)][1])**2))
++    assert via in prev,'entry neighbour unreachable'
++    path=[];x=via
++    while x is not None: path.append(x);x=prev[x]
++    path.reverse();path.append(goal)
++    pts=[]
++    for r in path[:-1]:
++        vs=[g['vertices_fixed'][v] for v in R[r]['vertex_indices']]
++        pts.append([sum(v[0] for v in vs)/len(vs)/65536,-sum(v[1] for v in vs)/len(vs)/65536])
++    a,b=gv[i],gv[(i+1)%len(gv)];mid=((a[0]+b[0])/2,(a[1]+b[1])/2)
++    cx,cz=sum(v[0] for v in gv)/len(gv),sum(v[1] for v in gv)/len(gv)
++    dx,dz=cx-mid[0],cz-mid[1];l=(dx*dx+dz*dz)**0.5
++    pts.append([mid[0]+dx/l*10,mid[1]+dz/l*10])
++    return path,pts
+ ACTOR,PROP,DEFINITION=20,71,3
+ def main():
+     d=json.loads((ROOT/'docs/hive-dawn20-source-audit.json').read_text())
+@@ -38,7 +78,13 @@
+     writes=[(int(c[8:10],16),int(c[10:12],16)) for g in groups for c in g['commands'] if c[:2]=='10' and c[2:8]=='021400']
+     states=sorted({s for s,_ in writes})
+     assert 10 not in states, 'state10 producer appeared'
+-    result=dict(version=1,source=d['source'],texture_sha256=d['texture_sha256'],
++    region_ids=sorted({int(g['owner']) for g in groups if g['owner_kind']=='region'})
++    assert region_ids==[478]
++    regions,geometry=region_rows(region_ids)
++    path,points=walk_route(geometry,RETURN_REGION,478)
++    route=dict(source='L5_HC geometry neighbours, floor steps <= 24, from rune-room return region679',regions=path,points=points)
++    (ROOT/'tests/fixtures/hive_dawn20_region478_route.json').write_text(json.dumps(route,indent=1)+'\n')
++    result=dict(version=1,source=d['source'],regions=regions,texture_sha256=d['texture_sha256'],
+         actor=dict(actor=ACTOR,definition=DEFINITION,position=[x,y,-z],heading=h,health=int.from_bytes(r[30:32],'little'),present=not bool(flags&0x1000),flags=flags,behavior=r[37]),
+         prop=dict(prop=PROP,position=[px,py,-pz]),
+         groups=groups,records=records,predicates=d['predicates'],shared_names=d['shared_names'] | {'0':'GV_LUTHERS_SOUL','12':'GV_DAWN_RELATIONSHIP'},
+--- a/scripts/lol2/hive_dawn20.gd
++++ b/scripts/lol2/hive_dawn20.gd
+@@ -8,7 +8,8 @@
+ ## GV_DAWN_RELATIONSHIP). Player properties 0x26/0x27 hold/release; actor properties 5/6 (talk focus: she is
+ ## faced while held) and other external commands are saved receipts.
+ ## After a hit she takes goals13/7 (hostile b5) but has no staged attacks: combat is owned by the lead.
+-## Adapters: her kind5 values 6/262 have no bound producer; region478's unload group is not installed (far room).
++## Grounded entry into source region478 (edge saved as state.region) runs group906 (pred192: unload her clip, prop318
++## property10 receipt). Adapter: her kind5 values 6/262 have no bound producer.
+ const State=preload("res://scripts/lol2/hive_dawn20_state.gd")
+ const Generic=preload("res://scripts/lol2/scripted_creature_state.gd")
+ const Live=preload("res://scripts/lol2/creature_live_rules.gd")
+@@ -166,12 +167,27 @@
+ 	if not is_finite(delta) or delta<=0 or not running: return
+ 	var ctx:=context()
+ 	if not state.sighted and visible_to_camera(): _apply(State.sight(state,src,ctx))
++	_regions(ctx)
+ 	_mirror_damage()
+ 	_apply(State.advance(state,src,media,delta,ctx))
+ 	_sync_body(delta)
+ 	_mirror_damage()
+ 	if hold and state.present: _face()
+ 	_present()
++
++## Kind2 region entry edges: inside a source polygon within its floor band (as Dawn63); the saved state.region holds
++## the current region, so leaving resets it and re-entry raises the event again.
++func _regions(ctx: Dictionary) -> void:
++	var p: Vector3=host.player.global_position-origin()
++	var foot: float=p.y-preload("res://scripts/lol2/player_form_body.gd").FOOT_OFFSET
++	var now:=-1
++	for region in src.regions:
++		if foot<float(region.floor_min)-1 or foot>float(region.floor_max)+3: continue
++		var polygon:=PackedVector2Array()
++		for v in region.polygon: polygon.append(Vector2(v[0],v[1]))
++		if Geometry2D.is_point_in_polygon(Vector2(p.x,p.z),polygon): now=int(region.region)
++	if now==-1: state.region=-1
++	elif int(state.region)!=now: _apply(State.enter_region(state,src,now,ctx))
+ 
+ func _face() -> void:
+ 	var at: Vector3=population.bodies[ID].global_position
+--- a/scripts/lol2/hive_dawn20_source.json
++++ b/scripts/lol2/hive_dawn20_source.json
+@@ -6,6 +6,31 @@
+   "geometry_key": 3776990464,
+   "geometry_sha256": "69a9c0dd739ad36691c6513d53cf007204aa3bd35d5762e8f8f4e8c6dbcb9e85"
+  },
++ "regions": [
++  {
++   "region": 478,
++   "polygon": [
++    [
++     -1671.0,
++     -6454.0
++    ],
++    [
++     -1677.0,
++     -6422.0
++    ],
++    [
++     -1766.0,
++     -6329.0
++    ],
++    [
++     -1783.0,
++     -6345.0
++    ]
++   ],
++   "floor_min": -1659,
++   "floor_max": -1659
++  }
++ ],
+  "texture_sha256": "c577f70d194cb25fa6b83818ae7e240486ac871b6915408eb2515ded5f1251ba",
+  "actor": {
+   "actor": 20,
+--- a/tests/hive_dawn20_state_test.gd
++++ b/tests/hive_dawn20_state_test.gd
+@@ -77,6 +77,13 @@
+ 	if not check(s.pending==[126],"Removal queue differs"):return
+ 	State.run_link(s,src,ctx)
+ 	if not check(not s.present and s.clip.is_empty(),"Removal differs"):return
++	# Region478 (group906, pred192 local31==1): inert before the link; afterwards unloads her clip (prop318 receipt).
++	var r:=State.initial(src)
++	if not check(State.enter_region(r,src,478,ctx).filter(func(x): return x.type=="group").is_empty(),"Region478 ran before the link"):return
++	State.link(r,src,ctx);State.run_link(r,src,ctx);r.region=-1
++	var u:=State.enter_region(r,src,478,ctx)
++	if not check(not r.loaded and r.clip.is_empty() and u.any(func(x): return x.type=="external" and str(x.raw)=="09033e010a00"),"Region478 unload differs"):return
++	if not check(State.enter_region(r,src,478,ctx).is_empty(),"Region478 repeated without leaving"):return
+ 	# Validation.
+ 	var b1:=mid.duplicate(true);b1.pending=[999]
+ 	var b2:=mid.duplicate(true);b2.owner_state=10
+@@ -85,5 +92,5 @@
+ 	for b in [b1,b2,b3,b4]:
+ 		if not check(not State.validate(b,src,m).is_empty(),"Accepted malformed state"):return
+ 	if failed: return
+-	print("PASS hive dawn20 state: pred184 at queue time (needs attacked+runes), link group84 (local31, GV_RUNES_TRANSLATED, item, hold), talk 1→2→3→idle, JSON continuation, offers 4/5/none, timer wait end 7, one-shot hit (soul/relationship −1, 8, goals13/7), later-entry removal, validation.")
++	print("PASS hive dawn20 state: pred184 at queue time (needs attacked+runes), link group84 (local31, GV_RUNES_TRANSLATED, item, hold), talk 1→2→3→idle, JSON continuation, offers 4/5/none, timer wait end 7, one-shot hit (soul/relationship −1, 8, goals13/7), later-entry removal, region478 unload (pred192, edge), validation.")
+ 	quit()
+--- /dev/null
++++ b/tests/hive_dawn20_region478_test.gd
+@@ -0,0 +1,79 @@
++extends SceneTree
++## Hive Dawn20 region478 unload (source group906, pred192 local31==1): after Dawn20 appears through the RUNES entry and
++## her talk ends, the player walks with the host's own grounded movement from the room's return point along the pinned
++## 20-region route (tests/fixtures/hive_dawn20_region478_route.json, floor steps <= 24) into region478. Entry unloads
++## her clip and records prop318 property10; the saved region edge survives disk save/load; no repeat without leaving.
++## Supplied: monastery precondition globals and the nearby control0 aim (as hive_dawn20_live_test).
++var scene
++var d
++var failed:=false
++func _initialize() -> void: run.call_deferred()
++func check(ok: bool, message: String) -> bool:
++	if not ok and not failed: failed=true;push_error(message);quit(1)
++	return ok
++
++## Steers toward a route point with the host's grounded movement. An intermediate point occupied by a body (Dawn stands
++## in the first route region) counts as passed once progress stalls for one second; the final point must be reached.
++func walk_to(target: Vector2, tolerance: float, final: bool=false) -> bool:
++	var best:=INF;var stalled:=0
++	for i in 1200:
++		await physics_frame
++		var offset:=target-Vector2(scene.player.position.x,scene.player.position.z)
++		if offset.length()<tolerance and scene.player.is_on_floor(): return true
++		if offset.length()<best-0.5: best=offset.length();stalled=0
++		else: stalled+=1
++		if stalled>120: return not final
++		var delta: float=scene.player.get_physics_process_delta_time()
++		var direction:=offset.normalized()*minf(1,offset.length()/(80*delta))
++		if offset.length()>1: scene.player.rotation.y=atan2(-offset.x,-offset.y)
++		scene.move_grounded(Vector3(direction.x,0,direction.y),delta)
++		d.advance(delta)
++	return false
++
++func run() -> void:
++	var path:="user://tests/hive_dawn20_region478.json"
++	Engine.physics_ticks_per_second=120
++	scene=load("res://scenes/lol2/hive_review.tscn").instantiate()
++	root.add_child(scene);current_scene=scene
++	await process_frame;await physics_frame
++	scene.set_development_mode(false);scene.set_physics_process(false);scene.get_node("Warriors").set_process(false)
++	root.grab_focus();await process_frame
++	d=scene.dawn20;d.set_physics_process(false)
++	scene.monastery_checkpoint=preload("res://scripts/lol2/monastery_quest_state.gd").initial()
++	scene.monastery_checkpoint.globals.merge({"GV_HAS_RUNES":1,"GV_DAWN_ATTACKED_IN_MONASTERY":1},true)
++	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
++	scene.player.position=Vector3(-3156,-1620,-6138)
++	var direction: Vector3=Vector3(-3156,-1657,-6178)-scene.camera.global_position
++	scene.player.rotation.y=atan2(-direction.x,-direction.z);scene.camera.rotation.x=atan2(direction.y,Vector2(direction.x,direction.z).length())
++	await physics_frame
++	if not check(scene.runes.interact(),"RUNES entry failed"):return
++	scene.runes.leave()
++	if not check(d.state.present and d.talking() and int(d.state.locals["31"])==1,"Dawn20 not linked"):return
++	for i in 120*80:
++		d.advance(1.0/120.0)
++		if int(d.state.owner_state)==5 and not d.hold: break
++		if i%60==0: await process_frame
++	if not check(int(d.state.owner_state)==5 and not d.hold and d.state.loaded,"Talk did not reach the wait"):return
++	var route: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/hive_dawn20_region478_route.json"))
++	if not check(int(route.regions[0])==679 and int(route.regions[-1])==478,"Route fixture differs"):return
++	for k in range(1,route.points.size()):
++		var target:=Vector2(route.points[k][0],route.points[k][1])
++		if not check(await walk_to(target,40.0 if k<route.points.size()-1 else 3.0,k==route.points.size()-1),"Walk blocked at route region %s %s"%[route.regions[k],scene.player.position]):return
++		if int(d.state.region)==478: break
++	for i in 10: await physics_frame;d.advance(1.0/120.0)
++	var foot: float=scene.player.global_position.y-d.origin().y-preload("res://scripts/lol2/player_form_body.gd").FOOT_OFFSET
++	if not check(int(d.state.region)==478 and not d.state.loaded and d.state.clip.is_empty() and "09033e010a00" in d.receipts,"Region478 did not unload Dawn: region=%s loaded=%s foot=%s pos=%s origin=%s"%[d.state.region,d.state.loaded,foot,scene.player.global_position,d.origin()]):return
++	if not check(d.effect_log.any(func(e): return e.type=="group" and int(e.group)==906),"Group906 not run"):return
++	# Edge: staying inside does not repeat; the saved region edge survives disk save/load.
++	var runs: int=d.effect_log.filter(func(e): return e.type=="group" and int(e.group)==906).size()
++	for i in 30: await physics_frame;d.advance(1.0/120.0)
++	var se: String=scene.quicksave(path);var le: String=scene.quickload(path) if se.is_empty() else "skipped"
++	scene.set_physics_process(false)
++	if not check(se.is_empty() and le.is_empty() and int(d.state.region)==478 and not d.state.loaded,"Region edge save/load differs: %s %s"%[se,le]):return
++	for i in 30: await physics_frame;d.advance(1.0/120.0)
++	if not check(d.effect_log.filter(func(e): return e.type=="group" and int(e.group)==906).size()==runs,"Group906 repeated without leaving"):return
++	scene.queue_free();for i in 3: await process_frame
++	DirAccess.remove_absolute(path)
++	if failed: return
++	print("PASS hive dawn20 region478: Dawn20 linked via RUNES entry, talk to wait, grounded walk along %d source regions from the return point into region478 → group906 unloads her clip + prop318 receipt; edge persists over disk save/load, no repeat inside. Supplied precondition and aim."%route.regions.size())
++	quit()
+--- /dev/null
++++ b/tests/fixtures/hive_dawn20_region478_route.json
+@@ -0,0 +1,112 @@
++{
++ "source": "L5_HC geometry neighbours, floor steps <= 24, from rune-room return region679",
++ "regions": [
++  679,
++  676,
++  680,
++  681,
++  505,
++  497,
++  496,
++  495,
++  494,
++  503,
++  689,
++  693,
++  688,
++  484,
++  482,
++  483,
++  487,
++  488,
++  489,
++  477,
++  478
++ ],
++ "points": [
++  [
++   -3103.5,
++   -6291.5
++  ],
++  [
++   -3053.57421875,
++   -6336.4171142578125
++  ],
++  [
++   -2976.973388671875,
++   -6405.9691162109375
++  ],
++  [
++   -2891.899169921875,
++   -6484.552001953125
++  ],
++  [
++   -2801.649169921875,
++   -6388.302001953125
++  ],
++  [
++   -2718.25,
++   -6306.0
++  ],
++  [
++   -2614.25,
++   -6205.0
++  ],
++  [
++   -2534.25,
++   -6124.0
++  ],
++  [
++   -2457.5,
++   -6043.5
++  ],
++  [
++   -2386.0,
++   -5970.25
++  ],
++  [
++   -2351.0,
++   -5934.5
++  ],
++  [
++   -2294.0,
++   -5924.75
++  ],
++  [
++   -2251.0,
++   -5948.25
++  ],
++  [
++   -2215.5,
++   -5982.25
++  ],
++  [
++   -2175.0,
++   -6021.5
++  ],
++  [
++   -2162.0,
++   -6075.5
++  ],
++  [
++   -2105.5,
++   -6090.75
++  ],
++  [
++   -2008.0,
++   -6189.0
++  ],
++  [
++   -1883.5,
++   -6314.75
++  ],
++  [
++   -1776.5,
++   -6421.5
++  ],
++  [
++   -1724.766238436706,
++   -6389.752676814717
++  ]
++ ]
++}
+--- a/docs/hive-dawn20.md
++++ b/docs/hive-dawn20.md
+@@ -36,9 +36,8 @@
+ - Library Use Weapon / Cast Spell now produce room messages7/6 through the live input path. The rendered test supplies library prerequisites and rune copying; it does not prove a fresh earned campaign.
+ - Her kind5 records (values 6/262) have no bound producer; the bound kind2 timer ends her wait.
+ - Group 10224 (owner state 10) has no producer in her script; it is retained and reported as unreachable.
+-- Region478's unload group (far room) is not installed.
++- Region478 (group906, pred192) is installed: grounded entry unloads her clip and records prop318 property10. The
++  rendered `hive_dawn20_region478_test` walks the pinned 21-region route (`tests/fixtures/hive_dawn20_region478_route.json`)
++  from the RUNES return point with the host's own movement.
+ - Hostile Dawn after a hit has no attacks: combat is owned by the integration lead.
+-- **Media decoder defect, shared with Dawn63:** the shared VQA decoder leaves runs of exactly 8 frames with interior
+-  key holes, a few frames after segment starts. That is about 4–5% of frames: 64 of 1431 here, 81 of 2021 in Dawn63's
+-  E065E. It is consistent with partial-codebook (CBP) groups being applied early. Evidence: `frame_holes.txt` in the
+-  hand-off.
++- Media decoder correction remains under independent review. Existing local media still has the previously documented partial-codebook frame defects; patch H2 is not integrated with this region change.
