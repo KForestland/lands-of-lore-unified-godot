@@ -2,7 +2,7 @@ extends SceneTree
 const Motion=preload("res://scripts/lol2/dawn_spell_motion.gd")
 func _initialize() -> void:
 	var rows=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/dawn_spell32_motion_native.json"))
-	assert(rows.size()==180)
+	assert(rows.size()==1029)
 	for row in rows:
 		var before: Dictionary=row.duplicate(true)
 		var actual:=Motion.request(row)
@@ -16,6 +16,9 @@ func _initialize() -> void:
 		for value in [true,-1,0.5,2147483648]:
 			var bad: Dictionary=rows[0].duplicate(true);bad[field]=value
 			assert(Motion.request(bad).has("error"))
+	for field in Motion.MOTION_LIMITS:
+		var bad: Dictionary=rows[0].duplicate(true);bad[field]=Motion.MOTION_LIMITS[field]+1
+		assert(Motion.request(bad).has("error"))
 	var targets=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/dawn_spell32_target_native.json"))
 	assert(targets.size()==90)
 	for row in targets:
@@ -31,5 +34,5 @@ func _initialize() -> void:
 	for field in ["position","player_height","player_offset","sprite_height"]:
 		var bad: Dictionary=targets[0].duplicate(true);bad.erase(field)
 		assert(Motion.target_snapshot(bad).has("error"))
-	print("PASS180 native spell32 movement requests and90 target snapshots; original sprite height; malformed input rejection")
+	print("PASS1029 native spell32 movement requests and90 target snapshots; original sprite height; arithmetic boundary rejection")
 	quit()

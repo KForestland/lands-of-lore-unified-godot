@@ -19,6 +19,28 @@ static func restore(saved: Variant) -> Dictionary:
 	for field in LIMITS: state[field]=int(state[field])
 	return {"state":state}
 
+## Original update prefix. The caller supplies the child-construction outcome:
+## null means allocation/construction failed, otherwise its state byte14 radius.
+## The caller must process events in order: spawn first, then retire.
+static func update(saved: Variant, cancelled: Variant, child_radius: Variant=null) -> Dictionary:
+	var result:=restore(saved)
+	if result.has("error"): return result
+	if not cancelled is bool or (child_radius!=null and not Numbers.integer(child_radius,255)): return {"error":"Invalid spell lifecycle input."}
+	var state: Dictionary=result.state
+	result.spawn_child=false;result.retired=false;result.events=[]
+	if cancelled:
+		result.retired=true
+		result.events.append("retire")
+		return result
+	if state.done:
+		result.spawn_child=true
+		result.events.append("spawn_child")
+		state.threshold=100 if child_radius==null else int(child_radius)
+		state.done=false
+	result.retired=state.counter==0
+	if result.retired: result.events.append("retire")
+	return result
+
 static func contact(saved: Variant, event: Variant) -> Dictionary:
 	var result:=restore(saved)
 	if result.has("error"): return result

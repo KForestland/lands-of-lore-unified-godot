@@ -20,5 +20,24 @@ func _initialize() -> void:
 	for field in ["collision","target","distance","movement_heading","collision_heading"]:
 		var bad: Dictionary=rows[0].event.duplicate(true);bad[field]=true
 		assert(Contact.contact(rows[0].state,bad).has("error"))
-	print("PASS864 native spell32 collision transitions; save roundtrips and repeated-contact suppression")
+	var lifecycle=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/dawn_spell32_lifecycle_native.json"))
+	assert(lifecycle.size()==108)
+	for row in lifecycle:
+		var before: Dictionary=row.state.duplicate(true)
+		var result:=Contact.update(row.state,row.cancelled,row.child_radius)
+		assert(not result.has("error"))
+		assert(result.retired==row.expected.retired and result.spawn_child==row.expected.spawn_child)
+		var events: Array=[]
+		if "allocate" in row.native_calls: events.append("spawn_child")
+		if row.expected.retired: events.append("retire")
+		assert(result.events==events)
+		assert(result.state.done==row.expected.done and result.state.threshold==row.expected.threshold)
+		assert(row.state==before)
+		var restored:=Contact.restore(JSON.parse_string(JSON.stringify(result.state)))
+		assert(restored.state==result.state)
+		if result.spawn_child and not result.retired:
+			var next:=Contact.update(restored.state,false,row.child_radius)
+			assert(not next.spawn_child and not next.retired)
+	for value in [-1,true,0.5,256]: assert(Contact.update(rows[0].state,false,value).has("error"))
+	print("PASS864 native collision and108 lifecycle cases; save continuation, spawn ordering and repeated-contact suppression")
 	quit()

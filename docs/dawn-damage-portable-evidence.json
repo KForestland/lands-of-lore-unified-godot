@@ -12,14 +12,15 @@
     "tests/fixtures/dawn_spell32_preparation_native.json": "68f6b67baabe0ca29527b751d1bc01558e25d5cfbb607e086e91b116627bbb7a",
     "tests/fixtures/hive_damage_calculation_native.json": "066022a522e793a2cdaec0ce8f95bf73ec1bf9471ad9d3996913139d9fb623d3",
     "tests/fixtures/hive_damage_preparation_native.json": "5fb84808fb9f6ff17a09e0c599d95addc3e390c34e2462f38018729baf4273c6",
-    "scripts/lol2/dawn_spell_motion.gd": "2e6e203f2d7cee0c3595be7aff87e479f3c63e9339a149e48c57c4f0d73ae926",
-    "tests/dawn_spell_motion_test.gd": "338bebdc1444327094c4d1a05e888f0f903da2c1aebd972350e7d2348063c401",
-    "tests/fixtures/dawn_spell32_motion_native.json": "42024f1f55a8aa90f2af11c9e5a88aebc471330212b31b582ba6b00dffafda12",
-    "scripts/lol2/dawn_spell_contact.gd": "d452926aa5deca884dcbc76915a4930aea326468d5acbdf685d80ed2aaf32920",
-    "tests/dawn_spell_contact_test.gd": "97bf3b58e5e98ce27f720e5631475d892be792fe6e73df8729f6766703f98bfb",
+    "scripts/lol2/dawn_spell_motion.gd": "ae10ace31b2425d81087939b460879841c8d198b2c8c95ddd01fee46e0112073",
+    "tests/dawn_spell_motion_test.gd": "4d7d6451ef63b40ca5980c94fc7600f6f1e9076687fbd906a1fd1a0ef80b0f8b",
+    "tests/fixtures/dawn_spell32_motion_native.json": "4d4800c721c40dc84c963d0b3c3cb922e2d8ba9e983b9dfe9c06d174eba1e9b1",
+    "scripts/lol2/dawn_spell_contact.gd": "8741ffb52e529a22fd7eaf21f0351e90fe4d974a297a2af8d1a474202cf564ab",
+    "tests/dawn_spell_contact_test.gd": "9e2ab567377fa7ce3085f85883b5a9e0075b4f4ff75929e173cc5484a55f59d2",
     "tests/fixtures/dawn_spell32_target_native.json": "57180fb4506817e638e92a71fc1d64699899d9e1ab64318049fb12b81e8d3006",
     "tests/fixtures/dawn_spell32_contact_native.json": "519bab791c32d6c62cb555703397b1c36b0c0ae66370ca50916ef3c440f3cbde",
-    "docs/dawn-spell-asset-binding.json": "a8bad23d07d5068f29110910f23c77cef2646279fefc3a6ad62e634140e99587"
+    "docs/dawn-spell-asset-binding.json": "a8bad23d07d5068f29110910f23c77cef2646279fefc3a6ad62e634140e99587",
+    "tests/fixtures/dawn_spell32_lifecycle_native.json": "36d5c3f83a5d1c15b185b0771e435953cea60f03f37dae2f932b0dcc39c21018"
   },
   "scope": "Numeric input/output fixtures from local native instruction replay. No executable instructions, archive payloads, images, audio or films included. Native preparation62728, damage62922, mitigation construction89E7C. Virtual calls and external field producers retain documented boundaries. No playable Dawn combat claim."
 }

@@ -4,6 +4,8 @@ extends RefCounted
 const Numbers=preload("res://scripts/lol2/save_value_rules.gd")
 ## Original GLOBAL effect definition0, selector1 (spell32 variant1).
 const SPRITE_HEIGHT := 20
+## Native signed32 delta*500 must remain positive before division by60.
+const MOTION_LIMITS := {"heading":65535,"delta":4294967,"planar_distance":2147483647}
 
 static func player_target(position: Array, height: int, offset: int) -> Dictionary:
 	return target_snapshot({"position":position,"player_height":height,"player_offset":offset,"sprite_height":SPRITE_HEIGHT})
@@ -24,10 +26,10 @@ static func target_snapshot(context: Variant) -> Dictionary:
 @warning_ignore("integer_division")
 static func request(context: Variant) -> Dictionary:
 	if not context is Dictionary: return {"error":"Invalid spell motion context."}
-	for field in {"heading":65535,"delta":131072,"planar_distance":6553600}:
-		if not Numbers.integer(context.get(field),int({"heading":65535,"delta":131072,"planar_distance":6553600}[field])): return {"error":"Unsupported spell motion input."}
+	for field in MOTION_LIMITS:
+		if not Numbers.integer(context.get(field),MOTION_LIMITS[field]): return {"error":"Unsupported spell motion input."}
 	var height=context.get("height_delta")
-	if not (height is int or height is float) or not is_finite(float(height)) or float(height)!=floorf(float(height)) or height < -1310720 or height > 1966080: return {"error":"Unsupported spell height difference."}
+	if not (height is int or height is float) or not is_finite(float(height)) or float(height)!=floorf(float(height)) or absf(float(height))>1073741823: return {"error":"Unsupported spell height difference."}
 	var distance: int=int(context.delta)*500/60
 	var vertical:=int(height)
 	if int(context.planar_distance)>distance:
