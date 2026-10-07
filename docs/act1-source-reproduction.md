@@ -172,3 +172,13 @@ python3 tools/prepare_jungle_bacatta65_media.py --game "$GAME" --texture "$TEXTU
 ```
 
 An isolated tool tree regenerated all 2,404 files byte-identically to the existing local pack, including dialogue movies, audio and creature sprites. See `bacatta65-media-portability-checks.json`. Original media stays local. This verifies this pack; the complete clean-machine asset pipeline remains unfinished.
+
+### Cave support cutscene media
+
+The four cave support movies now use repository-local movie lookup and VQA parsing, with explicit archive/source/output inputs:
+
+```sh
+python3 tools/prepare_cave_guard_controls_media.py --game "$GAME" --source scripts/lol2/cave_guard_controls_source.json --output-root "$OUTPUT"
+```
+
+Isolated regeneration reproduced all 285 files, including 280 keyed frames and four audio tracks, byte-identically. The original rotation and palette-matte rules are preserved. See `cave-controls-media-portability-checks.json`. The output directory must be fresh; original archives, Pillow and FFmpeg are required. Other encounter preparers and complete clean-machine assembly remain open.
