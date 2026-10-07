@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "scope": "Framing-reader equivalence on all15 original level archives and exact37-command size table. Not full asset preparation portability.",
+  "archives": [
+    {
+      "archive": "L10_DC.MIX",
+      "sha256": "543c86c4fdd425cac166d9a1d371aa856b7070d4fded983a8733c473e48341f9",
+      "entries": 3
+    },
+    {
+      "archive": "L12_CM.MIX",
+      "sha256": "53d7b166f7856049e20d734d10b013da4cea22e3aa746fb7f3cfe307b3c198cc",
+      "entries": 3
+    },
+    {
+      "archive": "L13_RC.MIX",
+      "sha256": "b9d79292e7dd6fc2eba972e55628ee05e671a4d814de8b291310d540b3f742b9",
+      "entries": 3
+    },
+    {
+      "archive": "L14_HT.MIX",
+      "sha256": "c294f9ab142b55c36fff545a1293c419c42353fedefbfe8b77b9c38a2d9a0719",
+      "entries": 3
+    },
+    {
+      "archive": "L16_CA.MIX",
+      "sha256": "810d39ae20a980c4b912fda9dbb05db7917b879fbfcc7cdf4a9f91d26707d2a4",
+      "entries": 3
+    },
+    {
+      "archive": "L17_HC.MIX",
+      "sha256": "23d7cecf44e83515934083ae101eb4b023dfb748d34e5e0b6eb3c8aca75cc793",
+      "entries": 3
+    },
+    {
+      "archive": "L19_BC.MIX",
+      "sha256": "59cd77a17e8fce0286281fdea17e134fc88436cbc0c77b1a5f4039e5edde3380",
+      "entries": 3
+    },
+    {
+      "archive": "L1_DC.MIX",
+      "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+      "entries": 3
+    },
+    {
+      "archive": "L20_BB.MIX",
+      "sha256": "ea3c167f95626dab4bb509429edae6fed903f80b3364757d0b951001de2f8490",
+      "entries": 3
+    },
+    {
+      "archive": "L3_DH.MIX",
+      "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+      "entries": 3
+    },
+    {
+      "archive": "L4_HJ.MIX",
+      "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+      "entries": 3
+    },
+    {
+      "archive": "L5_HC.MIX",
+      "sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+      "entries": 3
+    },
+    {
+      "archive": "L7_DH.MIX",
+      "sha256": "40b394ebb3cfcfd9f332c4707f2f9e9e7de76d89b82836cec211772ca456b8e7",
+      "entries": 3
+    },
+    {
+      "archive": "L8_SJ.MIX",
+      "sha256": "3eff07430a453d2c6f09133f869874e0530af1b6a3bfff7f4297761b96a28bc2",
+      "entries": 3
+    },
+    {
+      "archive": "L9_DR.MIX",
+      "sha256": "700300d0cdf7df0af9471f3476c4e6ba473a603fa89e3a6e1855037d70be09c7",
+      "entries": 3
+    }
+  ],
+  "command_sizes": 37,
+  "full_atlas": {
+    "passed": true,
+    "identical_outputs": 17,
+    "inventory_equal": true,
+    "clean_runtime": "python3 -S; external helper path replaced by nonexistent path; standard library only",
+    "review": "/home/bob/AI_COMMS/classic_review_20261007/lead/atlas_portability",
+    "limit": "Existing evidence documents supplied; not a full clean-machine asset build."
+  },
+  "boundary_tests": {
+    "passed": true,
+    "total": 6,
+    "command": "python3 -m unittest discover -s tests -p test_lol2_source_format.py -v"
+  },
+  "source_sha256": {
+    "tools/build_game_atlas.py": "c61db0bd7cc6093cde3c1e46cc05ea3855cba50a7ef1c5df859b2f1b108d7280",
+    "tools/lol2_source_format.py": "e66046e1ad87559706b75e21822440b7ebc2753e9321b3d9e042f6e9ff2f4791",
+    "tests/test_lol2_source_format.py": "c19adfe45714be45ed8095ddbfee045013a1c2d7809db3aa6a50a15f65415a76"
+  }
+}
