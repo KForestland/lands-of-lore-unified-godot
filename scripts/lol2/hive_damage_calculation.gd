@@ -1,5 +1,5 @@
 extends RefCounted
-## Native EXEC8, sword2, boulder256 and Dawn spell32; bounded signatures.
+## Native EXEC8, sword2, boulder256 and Dawn spells32/98; bounded signatures.
 ## Input amount is already adjusted by the upstream heading/difficulty stage.
 const Numbers = preload("res://scripts/lol2/save_value_rules.gd")
 
@@ -9,16 +9,17 @@ static func calculate(context: Variant) -> Dictionary:
 	if not Numbers.integer(context.get("amount"),278) or int(context.amount)<1: return {"error":"Unsupported adjusted attack amount."}
 	if not Numbers.integer(context.get("scalar"),65535) or not Numbers.integer(context.get("current"),1000000): return {"error":"Unsupported scalar/current value."}
 	var damage_mask: Variant = context.get("damage_mask",8)
-	if not Numbers.integer(damage_mask,256) or int(damage_mask) not in [2,8,256]: return {"error":"Unsupported damage mask."}
-	var signatures: Array = [4,12,28] if int(damage_mask)==256 else [4,12,36,44,68,76] if int(damage_mask)==2 else [36,68,44,76]
+	if not Numbers.integer(damage_mask,256) or int(damage_mask) not in [2,8,16,256]: return {"error":"Unsupported damage mask."}
+	var signatures: Array = [5,13] if int(damage_mask)==16 else [4,12,28] if int(damage_mask)==256 else [4,12,36,44,68,76] if int(damage_mask)==2 else [36,68,44,76]
 	if not Numbers.integer(context.get("signature"),76) or int(context.signature) not in signatures: return {"error":"Unsupported attack signature."}
-	var dawn_spell := int(damage_mask)==256 and int(context.signature) in [4,12]
+	var explosion := int(damage_mask)==16
+	var dawn_spell := explosion or (int(damage_mask)==256 and int(context.signature) in [4,12])
 	if dawn_spell:
-		# This entry is verified for Dawn's mode2/effect32 request only.
-		for pair in [["request_kind",2],["request_tag",32],["caster_factor",10]]:
+		# Dawn's mode2 direct projectile and secondary explosion requests.
+		for pair in [["request_kind",2],["request_tag",98 if explosion else 32],["caster_factor",10]]:
 			if not Numbers.integer(context.get(pair[0]),int(pair[1])) or int(context[pair[0]])!=int(pair[1]): return {"error":"Unsupported spell damage request."}
 		var amounts: Array = [3,10,20] if int(context.signature)==4 else [3,11,22]
-		if int(context.amount) not in amounts or int(context.scalar)>128: return {"error":"Unsupported spell scaling input."}
+		if (int(context.amount)>40 if explosion else int(context.amount) not in amounts) or int(context.scalar)>128: return {"error":"Unsupported spell scaling input."}
 		if not Numbers.integer(context.get("player_magic_level"),30) or int(context.player_magic_level)<1: return {"error":"Invalid spell target magic level."}
 	if not context.get("descriptors") is Array or context.descriptors.size()>8: return {"error":"Invalid mitigation list."}
 	for descriptor in context.descriptors:
@@ -31,7 +32,11 @@ static func calculate(context: Variant) -> Dictionary:
 	var component: int = amount*(65536 if (signature&8)!=0 else ratio)
 	if dawn_spell:
 		component=(amount*65536)*int(context.caster_factor)/int(context.player_magic_level)
-		if component>amount*65536: component-=(component-amount*65536)*scalar/256
+		if component>amount*65536:
+			# Original IMUL keeps the low signed 32 bits before division.
+			var reduction := ((component-amount*65536)*scalar)&0xffffffff
+			if reduction>=0x80000000: reduction-=0x100000000
+			component-=reduction/256
 	if (signature&~28)!=0: component/=2
 	if component==0: component=32768
 	var total := 0;var mask := int(damage_mask);var flags := signature;var calls: Array[int] = []
