@@ -2,6 +2,7 @@ extends SceneTree
 ## One continuous capsule walk. Only the initial source entrance is a spawn fixture.
 var scene
 var routes: Dictionary
+var inner_gate_route := "--kelsrick-inner-gate" in OS.get_cmdline_user_args()
 var population_route := "--return-population" in OS.get_cmdline_user_args()
 var broken_route := "--broken-sword" in OS.get_cmdline_user_args()
 var spell_route := "--starting-spells" in OS.get_cmdline_user_args()
@@ -193,6 +194,9 @@ func run() -> void:
 		await physics_frame
 		scene.move_grounded(Vector3.LEFT,scene.player.get_physics_process_delta_time())
 	if not check(scene.player.is_on_floor() and scene.player.position.x < -1420 and scene.resets == 0,"Continuous quest route did not cross village gate: %s" % scene.player.position): return
+	if inner_gate_route:
+		await kelsrick_inner_gate()
+		return
 	if not await walk("village_to_followup"): return
 	if not check(scene.followup_gate.state().local18 == 1,"Village path did not arm follow-up"): return
 	for i in range(150):
@@ -233,6 +237,40 @@ func run() -> void:
 
 	DirAccess.remove_absolute(save_path)
 	print("Hive continuous quest walk PASSED: source entrance, melee rock233, partial save/load, bridge, guardian/pillar, room/E conversation and grounded jungle return→village gate entry and follow-up speech/gate closure; no repositioning after spawn")
+	current_scene.queue_free()
+	await process_frame
+	quit()
+
+## Earned branch: from the crossed village gate, walk to Kelsrick. His talk1 (after the gate villager's speech) runs
+## at natural speed; its end (g30684, control98 selector1) opens the inner gate. Then walk south through the gate line
+## (region2750, where his g5084 shuts it behind) into region2752. No position or quest state is injected.
+func kelsrick_inner_gate() -> void:
+	routes.merge(JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/kelsrick_inner_gate_routes.json")),true)
+	var GateState=preload("res://scripts/lol2/jungle_inner_gate_state.gd")
+	var gate=scene.get("inner_gate");var kelsrick=scene.get("kelsrick")
+	if not check(gate!=null and kelsrick!=null and not GateState.open(gate.state,"74") and gate.pose["74"]==0,"Inner gate not installed shut on the earned route"): return
+	if not await walk("village_to_kelsrick"): return
+	for i in range(1200):
+		await physics_frame
+		if kelsrick.hold: break
+		var offset:=Vector2(-1804,-5508)-Vector2(scene.player.position.x,scene.player.position.z)
+		scene.move_grounded(Vector3(offset.normalized().x,0,offset.normalized().y),scene.player.get_physics_process_delta_time())
+	if not check(kelsrick.hold,"Kelsrick talk1 did not start on the earned approach"): return
+	for i in range(40000):
+		await physics_frame
+		if not kelsrick.hold and GateState.open(gate.state,"74") and GateState.open(gate.state,"75"): break
+	if not check(not kelsrick.hold and "051062000100" in kelsrick.receipts and GateState.open(gate.state,"75"),"Talk1 end did not open the inner gate"): return
+	for i in range(2400):
+		await physics_frame
+		if gate.pose["74"]==100 and gate.pose["75"]==100: break
+	if not check(gate.pose["74"]==100 and gate.pose["75"]==100,"Inner gate did not finish opening"): return
+	if not await walk("kelsrick_through_inner_gate"): return
+	var south: Dictionary=gate.src.regions[0]
+	var polygon:=PackedVector2Array()
+	for v in south.polygon: polygon.append(Vector2(v[0],v[1]))
+	if not check(Geometry2D.is_point_in_polygon(Vector2(scene.player.position.x,scene.player.position.z),polygon) and scene.resets==0,"Did not cross south into region2752: %s"%scene.player.position): return
+	if not check(gate.effect_log.any(func(e): return e.type=="group" and int(e.group)==21156) and gate.effect_log.any(func(e): return e.type=="group" and int(e.group)==21138),"Gate log lacks the talk1 open/g5084 shut"): return
+	print("Earned Kelsrick talk1 -> inner gate crossing PASSED: natural talk1 opened 74/75 (g30684/g21156), walk crossed region2750 (g5084 shut behind via g21138) into region2752; no position or quest-flag injection after initial Hive spawn")
 	current_scene.queue_free()
 	await process_frame
 	quit()

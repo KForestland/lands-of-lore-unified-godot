@@ -23,15 +23,25 @@ or owner acceptance.
   - Kelsrick's region2750 g5084 (local6==0, talk2 on the gate line): 74/75 → 0 directly and through control98 selector0
     (g21138).
   - The village alarm g27172: 74/75 → 0.
-- **Not bound:** g4442 (village gate branch p111: alert==0 AND local6==1) and prop561 g14086 have no port owner.
+- **Upstream-blocked (N3 classification):** g4442 (region2443, p111 alert==0 AND local6==1) and prop561 g14086 both
+  follow the unimplemented water-gate / chief's-hut smoke-out puzzle:
+  - control96 selector1 ends set local11 `Is_water_level_up`;
+  - prop566 g14260 then sets local6 `Has_Luther_smoked_the_Cheifs_hut` and links prop561.
+
+  No room DLL writes these locals. They stay reported, not stubbed.
+- **Unreachable:** g18864 (control82 value1: region3811/3805 op197 sub0, 78/79 → 100). No source command plays control82
+  selector1. Its region bits are covered in the port by leaf collision.
 
 ## Deliberate mechanics changes (modern)
 
-- 1.2 s swing per leaf. A pose whose sweep would hit the player waits; there is no native pushing.
+- 1.2 s swing per leaf. The leaves open south across the passage, so a leaf holds its whole remaining swing while
+  Luther stands anywhere in it. On the earned crossing, g5084 (stepping onto the gate line) therefore shuts the gate
+  behind Luther instead of stopping it half-closed in his path. Native pushing is not replayed.
+- **Masks.** The carved masks are exactly coplanar with the leaf faces (the native renderer paints them last). They are
+  drawn 0.3 units outward to remove z-fighting; collision keeps the source vertices.
 - E aimed at a leaf within 110 units triggers the use records. Only the source predicate (Kelsrick dead) makes them act.
 - Earlier the port had no gate here. Passing south now needs one of the producers above, typically Kelsrick's first
   conversation.
-- **For Bob's review:** one mask face on the right leaf shows a slight vertical texture stretch.
 
 ## Tests
 
@@ -46,3 +56,9 @@ or owner acceptance.
   - legacy receipt migration;
   - atomic malformed packet.
   - Capture: `inner_gate_shut.png`.
+- **Earned:** `hive_quest_walk_test.gd -- --kelsrick-inner-gate` (fixture `tests/fixtures/kelsrick_inner_gate_routes.json`,
+  source-neighbour BFS with portal widths ≥64 and clearance 127):
+  - from the original Hive spawn, through the village gate (gate villager speech completes naturally);
+  - to Kelsrick region3567: his talk1 runs at natural timing, and its end (g30684 → g21156) opens the gate;
+  - then the walk crosses region2750 (g5084 shuts it behind) via 2753 into region2752.
+  - No position or quest flag is injected after the spawn.

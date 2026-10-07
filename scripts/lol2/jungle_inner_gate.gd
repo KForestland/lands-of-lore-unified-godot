@@ -4,7 +4,7 @@ extends Node3D
 ## - Region2752 entry: grounded edge, saved.
 ## - Use: E aimed at a leaf, empty hand allowed (kind4 mode0), effective only once Kelsrick is dead.
 ## - Kelsrick's control98 selectors and op1 commands, and the alarm's op1 commands, arrive through external().
-## Modern: swing time and collision-safe stepping as the village gate (a pose whose sweep would hit the player waits).
+## Modern: swing time; a leaf holds its whole remaining swing while Luther stands anywhere in it (no native pushing).
 const State=preload("res://scripts/lol2/jungle_inner_gate_state.gd")
 const REACH:=110.0
 var host: Node3D
@@ -95,6 +95,13 @@ func use() -> bool:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_E and use(): get_viewport().set_input_as_handled()
 
+func _touches_player(points: PackedVector3Array) -> bool:
+	var hull:=ConvexPolygonShape3D.new();hull.points=points
+	var query:=PhysicsShapeQueryParameters3D.new();query.shape=hull;query.collision_mask=host.player.collision_layer;query.transform=Transform3D(Basis(),origin())
+	for hit in get_world_3d().direct_space_state.intersect_shape(query):
+		if hit.collider==host.player: return true
+	return false
+
 ## ---- presentation -----------------------------------------------------------------------------------------------
 func _leaf_data(k: String) -> Dictionary: return data.leaves.filter(func(l): return str(int(l.index))==k)[0]
 
@@ -102,7 +109,10 @@ func _prepare(k: String, percent: int) -> void:
 	var key:="%s:%d"%[k,percent]
 	if poses.has(key): return
 	var mesh:=ArrayMesh.new();var vertices:=PackedVector3Array()
-	for face in _leaf_data(k).frames[percent]:
+	var frame: Array=_leaf_data(k).frames[percent]
+	var lift:=_decal_offsets(frame)
+	for f in frame.size():
+		var face: Dictionary=frame[f]
 		if not materials.has(face.material):
 			var material:=StandardMaterial3D.new()
 			material.albedo_texture=ImageTexture.create_from_image(Image.load_from_file(State.LEAVES.get_base_dir()+"/"+str(face.material)))
@@ -112,10 +122,34 @@ func _prepare(k: String, percent: int) -> void:
 		var surface:=SurfaceTool.new();surface.begin(Mesh.PRIMITIVE_TRIANGLES);surface.set_material(materials[face.material])
 		for index in [0,1,2,0,2,3]:
 			var v: Array=face.vertices[index]
-			surface.set_uv(Vector2(face.uv[index][0],face.uv[index][1]));surface.add_vertex(Vector3(v[0],v[1],v[2]));vertices.append(Vector3(v[0],v[1],v[2]))
+			surface.set_uv(Vector2(face.uv[index][0],face.uv[index][1]));surface.add_vertex(Vector3(v[0],v[1],v[2])+lift[f]);vertices.append(Vector3(v[0],v[1],v[2]))
 		surface.commit(mesh)
 	var shape:=ConvexPolygonShape3D.new();shape.points=vertices
 	poses[key]=[mesh,shape]
+
+## The carved masks (template children) are exactly coplanar with the leaf faces; the native renderer paints them last.
+## Presentation only: a smaller face coplanar with a larger one is drawn 0.3 units outward to avoid z-fighting.
+## Collision keeps the source vertices.
+static func _decal_offsets(frame: Array) -> Array:
+	var centre:=Vector3.ZERO;var count:=0
+	for face in frame:
+		for v in face.vertices: centre+=Vector3(v[0],v[1],v[2]);count+=1
+	centre/=maxf(count,1)
+	var info: Array=[]
+	for face in frame:
+		var a:=Vector3(face.vertices[0][0],face.vertices[0][1],face.vertices[0][2]);var b:=Vector3(face.vertices[1][0],face.vertices[1][1],face.vertices[1][2]);var c:=Vector3(face.vertices[2][0],face.vertices[2][1],face.vertices[2][2])
+		var n:=(b-a).cross(c-a);info.append({"origin":a,"normal":n.normalized(),"area":n.length()})
+	var lift: Array=[]
+	for i in frame.size():
+		var offset:=Vector3.ZERO
+		for j in frame.size():
+			if i==j or float(info[j].area)<=float(info[i].area): continue
+			var nj: Vector3=info[j].normal
+			if absf(nj.dot(info[i].normal))>0.999 and absf((info[i].origin-info[j].origin).dot(nj))<0.01:
+				var out:=signf((info[i].origin-centre).dot(nj))
+				offset=nj*out*0.3
+		lift.append(offset)
+	return lift
 
 func _set_pose(k: String, percent: int) -> void:
 	if percent==int(pose[k]): return
@@ -128,6 +162,13 @@ func _step(k: String, delta: float) -> void:
 	var target:=State.percent(probe,k)
 	if target==int(pose[k]): state.leaves[k].elapsed=probe.leaves[k].elapsed;return
 	var step:=1 if target>int(pose[k]) else -1
+	# The leaves swing south across the passage: hold the whole remaining swing while Luther stands anywhere in it, so the
+	# gate shuts behind him instead of stopping half-closed in his path (native pushing is not replayed).
+	var final:=int(round(float(state.leaves[k].target)))
+	var sweep: PackedVector3Array=PackedVector3Array()
+	for at in range(int(pose[k]),final+step,step*10)+[final]:
+		_prepare(k,at);sweep.append_array(poses["%s:%d"%[k,at]][1].points)
+	if _touches_player(sweep): return
 	for next in range(int(pose[k])+step,target+step,step):
 		_prepare(k,next)
 		var hull:=ConvexPolygonShape3D.new();var points: PackedVector3Array=poses["%s:%d"%[k,int(pose[k])]][1].points
