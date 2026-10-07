@@ -1,6 +1,6 @@
 {
   "candidate": "/home/bob/lol2_act1_candidate_20261007_r3",
-  "updated_utc": "2026-10-07T05:29:12.101410+00:00",
+  "updated_utc": "2026-10-07T05:35:54.945378+00:00",
   "linux_export": {
     "exit_code": 0,
     "log": "export_linux.log"
@@ -53,12 +53,59 @@
   },
   "evidence_paths": {
     "packaged_save": "/home/bob/AI_COMMS/classic_review_20261007/lead/packaged_save_20261007T052826Z/report.json",
-    "asset_audit": "/home/bob/AI_COMMS/classic_review_20261007/lead/pack_asset_review_r3/report.json"
+    "asset_audit": "/home/bob/AI_COMMS/classic_review_20261007/lead/pack_asset_review_r3/report.json",
+    "jungle_resume": "/home/bob/AI_COMMS/classic_review_20261007/lead/packaged_jungle_review_r3/20261007T053459Z/report.json"
   },
-  "windows_export": "running: session77583",
+  "windows_export": {
+    "exit_code": 0,
+    "log": "export_windows.log",
+    "runtime": "not tested on native Windows"
+  },
   "campaign": "running: session68287; tmp/act1_modern_combat_chain_20261007",
   "full_suite": "not rerun on this revision",
   "bob_acceptance": "open",
-  "visual_review": "Lead inspected after_reload.png: cave terrain, vegetation and controls visible; private Xvfb capture only, not representative GPU/audio acceptance.",
-  "publication_scope": "R3 Linux package checks only; no complete campaign, full-suite, Windows runtime or accepted-demo claim."
+  "visual_review": "Lead inspected after_reload.png: cave terrain, vegetation and controls visible; private Xvfb capture only, not representative GPU/audio acceptance. Jungle launcher and after_reload.png also inspected: terrain, foliage and player UI visible.",
+  "artifacts": {
+    "Linux/LoL2-Cavern.x86_64": {
+      "sha256": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+      "bytes": 73519416
+    },
+    "Linux/LoL2-Cavern.pck": {
+      "sha256": "cc7b87ccf5c696fced8b03a5404e346a3d3c19211dc9346b948d1c64288ee6dc",
+      "bytes": 936236056
+    },
+    "Windows/LoL2-Cavern.exe": {
+      "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+      "bytes": 109268480
+    },
+    "Windows/LoL2-Cavern.pck": {
+      "sha256": "cc7b87ccf5c696fced8b03a5404e346a3d3c19211dc9346b948d1c64288ee6dc",
+      "bytes": 936236056
+    }
+  },
+  "linux_jungle_resume": {
+    "passed": true,
+    "exe_sha256": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+    "pack_sha256": "cc7b87ccf5c696fced8b03a5404e346a3d3c19211dc9346b948d1c64288ee6dc",
+    "input_sha256": "8bb1e9e7e6aa0920797ae4f802f74cf894ee202f2016e2f2b36b550e6934b271",
+    "scope": "Actual exported binary, existing earned Jungle arrival save copied unchanged to isolated user data. UI resume and ordinary F5/F9/movement. No external game script. Private display, not fresh campaign or representative GPU/audio acceptance.",
+    "restore_generation": {
+      "before": 3,
+      "after": 4,
+      "other_saved_fields_equal": true
+    },
+    "save_hashes": {
+      "input": "8bb1e9e7e6aa0920797ae4f802f74cf894ee202f2016e2f2b36b550e6934b271",
+      "resumed": "82bb1a5212a031d7ad85d1a5cfe0bc4f2f642f92507919920dd78220d603bb69",
+      "moved": "2bae31736d17f40bc7babe48d10809d65f46627d7805dd273c2ad6d2aed6f9c7",
+      "restored": "3cd479327cbd6a7642592e546760e6e33e3a7f722ce6fa241f7c74040acfd5e2"
+    },
+    "resumed_format": "lol2-restoration-jungle",
+    "movement_distance": 54.66135847289202
+  },
+  "jungle_probe_previous_failure": {
+    "path": "/home/bob/AI_COMMS/classic_review_20261007/lead/packaged_jungle_review_r3/20261007T053253Z/report.json",
+    "cause": "Old harness required byte-identical packet; only exit-woman callback generation changed3->4 as designed. Corrected harness requires that exact increment, empty playback tracks and equality of all remaining fields."
+  },
+  "publication_scope": "R3 exported package checks; full campaign, full suite, native Windows, GPU/audio and accepted-demo gates remain open."
 }
