@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "Dialogue movies only; creature sprite preparers remain separate",
+  "packs": {
+    "jungle": {
+      "generated_files": 2023,
+      "matching_files": 2023,
+      "manifest_references": 2022,
+      "explicit_extra_references": [],
+      "scope": "Dialogue movie frames/audio/manifest only. Creature sprites are required by POP_CONFIG and prepared separately; they are not stale and must be retained."
+    },
+    "hive": {
+      "generated_files": 1433,
+      "matching_files": 1433,
+      "manifest_references": 1432,
+      "explicit_extra_references": [],
+      "scope": "Dialogue movie frames/audio/manifest only. Creature sprites are required by POP_CONFIG and prepared separately; they are not stale and must be retained."
+    }
+  },
+  "full_receipt_sha256": "0233b61a22a0ab599e4fe370fee4378e2129c203a57ecd14cb5c65ba70429741",
+  "tool_hashes": {
+    "prepare_jungle_dawn_media.py": "405345ce832a6b75d5bfc9706a38167fc7d008c39359482f9536c420359ef088",
+    "prepare_hive_dawn20_media.py": "b21e4335e76603625333d434377855f59ef17f4895c8689b112e07ff79b60e28"
+  }
+}

@@ -182,3 +182,7 @@ python3 tools/prepare_cave_guard_controls_media.py --game "$GAME" --source scrip
 ```
 
 Isolated regeneration reproduced all 285 files, including 280 keyed frames and four audio tracks, byte-identically. The original rotation and palette-matte rules are preserved. See `cave-controls-media-portability-checks.json`. The output directory must be fresh; original archives, Pillow and FFmpeg are required. Other encounter preparers and complete clean-machine assembly remain open.
+
+### Dawn dialogue movies
+
+Both Dawn dialogue preparers accept `--game`, `--source` and `--output-root` (a fresh directory). Use `docs/jungle-dawn-source-audit.json` with `tools/prepare_jungle_dawn_media.py`, or `scripts/lol2/hive_dawn20_source.json` with `tools/prepare_hive_dawn20_media.py`. Isolated regeneration matched all 2,023 Jungle dialogue files and 1,433 Hive dialogue files, including audio and manifests. See `dawn-dialogue-portability-checks.json`. Each existing media directory also contains 233 separately generated creature files used by the live population; these dialogue commands do not replace them. Complete encounter assembly remains separate work.
