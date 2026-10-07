@@ -25,7 +25,7 @@ func play(s: Dictionary, seconds: float) -> Array:
 	return all
 
 func run() -> void:
-	src=State.source();t=State.timing("res://tests/fixtures/jungle_exit_woman_timing.json")
+	src=State.source();t=State.timing()
 	if not check(not t.is_empty() and src.records.size()==29 and src.regions.size()==5 and src.prop.selectors["6"]=="4040604E.VQA","Source/media contract differs"):return
 	var s:=State.initial(src)
 	if not check(State.validate(s,src).is_empty(),"Initial state invalid"):return

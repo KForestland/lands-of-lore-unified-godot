@@ -23,7 +23,7 @@ Evidence is in the candidate's `packaging_checks.json` and `source_asset_manifes
 - Bacatta65/prop553: missing alert-before-first-meeting branch; classified as optional original content in the actor reconciliation. Bacatta57's village-entry world role remains unresolved. Neither is silently counted as implemented.
 - General creature loot and Museum prop93 treasure production remain incomplete or unverified. Ten skeleton deaths alone do not prove a treasure grant.
 - Remaining hostile/optional story outcomes need their inventory reconciled against the implemented route. A successful main route does not certify these branches.
-- Original HUD reconstruction, representative rendering/audio review, clean-machine asset preparation and full source publication remain open. The GitHub review currently includes portable modules and explicit host patches; it is not yet the complete R3 host snapshot.
+- Original HUD reconstruction, representative rendering/audio review, clean-machine asset preparation and remaining tool portability remain open. The GitHub review now includes the complete R3 runtime, scenes, Godot tests and numeric fixtures; see [source instructions](act1-source-reproduction.md).
 
 ## Bob's playtest
 

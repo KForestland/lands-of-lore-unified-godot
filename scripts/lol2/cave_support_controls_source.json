@@ -1,0 +1,298 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "metadata_sha256": "b3d6b8f528166aad4fe316033eed2bd8404a8f42bd5dadc63bcc15cf08b3cf5a",
+  "rotation_sha256": "d7c7437da1c1be8f1d19e78433e8a976f19a90fe8004827a36dc383470294c53",
+  "plates": [
+    {
+      "id": 89,
+      "position": [
+        -1845,
+        41,
+        -4674
+      ],
+      "polygon": [
+        [
+          -1987.705078125,
+          -4785.369140625
+        ],
+        [
+          -1956.4915466308594,
+          -4532.287399291992
+        ],
+        [
+          -1703.4098052978516,
+          -4563.500930786133
+        ],
+        [
+          -1734.6233367919922,
+          -4816.582672119141
+        ]
+      ],
+      "height": 41,
+      "template": 21,
+      "raw_hex": "cbf84212053b290082040f036e1718830000000001000000000000001400630015",
+      "child_raw": "000000000000080000000000000008000000000000000000000000000000000000000000000000000000000000000000ffffffff807f807f00000000",
+      "records": [
+        {
+          "stream": 1,
+          "group": 9786,
+          "owner_kind": "control",
+          "owner": 89,
+          "event": 5,
+          "value": 4,
+          "predicate": 206,
+          "archive_offset": 7253531,
+          "commands": [
+            {
+              "archive_offset": 7242663,
+              "raw_hex": "060372010100"
+            },
+            {
+              "archive_offset": 7242669,
+              "raw_hex": "021078000501"
+            },
+            {
+              "archive_offset": 7242675,
+              "raw_hex": "120100008ff9751200008900c1b6001e0000"
+            },
+            {
+              "archive_offset": 7242693,
+              "raw_hex": "101059000100"
+            },
+            {
+              "archive_offset": 7242699,
+              "raw_hex": "020100000000"
+            },
+            {
+              "archive_offset": 7242705,
+              "raw_hex": "020100002000"
+            },
+            {
+              "archive_offset": 7242711,
+              "raw_hex": "0810780000000000"
+            },
+            {
+              "archive_offset": 7242719,
+              "raw_hex": "0810780002000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "position": [
+        -969,
+        1,
+        -5948
+      ],
+      "polygon": [
+        [
+          -956.376953125,
+          -6128.576171875
+        ],
+        [
+          -1148.8214874267578,
+          -5961.279113769531
+        ],
+        [
+          -981.5244293212891,
+          -5768.834579467773
+        ],
+        [
+          -789.0798950195312,
+          -5936.131637573242
+        ]
+      ],
+      "height": 1,
+      "template": 21,
+      "raw_hex": "37fc3c17d862010081048502f81718830000000001000000000000001400000015",
+      "child_raw": "000000000000080000000000000008000000000000000000000000000000000000000000000000000000000000000000ffffffff807f807f00000000",
+      "records": [
+        {
+          "stream": 1,
+          "group": 10114,
+          "owner_kind": "control",
+          "owner": 109,
+          "event": 5,
+          "value": 9,
+          "predicate": 4,
+          "archive_offset": 7253669,
+          "commands": [
+            {
+              "archive_offset": 7242991,
+              "raw_hex": "100335050100"
+            },
+            {
+              "archive_offset": 7242997,
+              "raw_hex": "090227000200"
+            },
+            {
+              "archive_offset": 7243003,
+              "raw_hex": "090315020300"
+            },
+            {
+              "archive_offset": 7243009,
+              "raw_hex": "060315020100"
+            },
+            {
+              "archive_offset": 7243015,
+              "raw_hex": "0803150200000000"
+            },
+            {
+              "archive_offset": 7243023,
+              "raw_hex": "0803150202000000"
+            },
+            {
+              "archive_offset": 7243031,
+              "raw_hex": "10106d000100"
+            },
+            {
+              "archive_offset": 7243037,
+              "raw_hex": "0d02270006000000"
+            },
+            {
+              "archive_offset": 7243045,
+              "raw_hex": "0d02270000070000"
+            },
+            {
+              "archive_offset": 7243053,
+              "raw_hex": "0d02270001010000"
+            },
+            {
+              "archive_offset": 7243061,
+              "raw_hex": "0d02270007000000"
+            }
+          ]
+        },
+        {
+          "stream": 1,
+          "group": 10198,
+          "owner_kind": "control",
+          "owner": 109,
+          "event": 5,
+          "value": 7,
+          "predicate": 4,
+          "archive_offset": 7253679,
+          "commands": [
+            {
+              "archive_offset": 7243075,
+              "raw_hex": "090227000200"
+            },
+            {
+              "archive_offset": 7243081,
+              "raw_hex": "090315020300"
+            },
+            {
+              "archive_offset": 7243087,
+              "raw_hex": "060315020100"
+            },
+            {
+              "archive_offset": 7243093,
+              "raw_hex": "050315020100"
+            },
+            {
+              "archive_offset": 7243099,
+              "raw_hex": "0803150200000000"
+            },
+            {
+              "archive_offset": 7243107,
+              "raw_hex": "0803150202000000"
+            },
+            {
+              "archive_offset": 7243115,
+              "raw_hex": "10106d000100"
+            },
+            {
+              "archive_offset": 7243121,
+              "raw_hex": "0d02270007000000"
+            },
+            {
+              "archive_offset": 7243129,
+              "raw_hex": "0d0227000d000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "position": [
+        -152,
+        -10,
+        -7650
+      ],
+      "polygon": [
+        [
+          -187.10726928710938,
+          -7603.444976806641
+        ],
+        [
+          -94.40097045898438,
+          -7640.931243896484
+        ],
+        [
+          -116.89273071289062,
+          -7696.555023193359
+        ],
+        [
+          -209.59902954101562,
+          -7659.068756103516
+        ]
+      ],
+      "height": -10,
+      "template": 30,
+      "raw_hex": "68ffe21d5bf0f6ff820453040e1818830000000001000000000000001400bc001e",
+      "child_raw": "0000000000000800a2010000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffce32e21e00000000",
+      "records": [
+        {
+          "stream": 1,
+          "group": 10266,
+          "owner_kind": "control",
+          "owner": 114,
+          "event": 5,
+          "value": 4,
+          "predicate": 4,
+          "archive_offset": 7253691,
+          "commands": [
+            {
+              "archive_offset": 7243143,
+              "raw_hex": "0d023400040a0000"
+            },
+            {
+              "archive_offset": 7243151,
+              "raw_hex": "0802340000000000"
+            },
+            {
+              "archive_offset": 7243159,
+              "raw_hex": "0802340002000000"
+            },
+            {
+              "archive_offset": 7243167,
+              "raw_hex": "101072000100"
+            },
+            {
+              "archive_offset": 7243173,
+              "raw_hex": "020100000000"
+            },
+            {
+              "archive_offset": 7243179,
+              "raw_hex": "020100002000"
+            },
+            {
+              "archive_offset": 7243185,
+              "raw_hex": "120100005effe41d000013029ff400280000"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Original zero-height support surfaces including textureless templates. Native contact-owner producer verified separately. Modern host supplies grounded foot contact; tolerance and polygon edge admission are explicit adapters."
+}

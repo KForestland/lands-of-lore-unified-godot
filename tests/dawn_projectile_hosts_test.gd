@@ -32,7 +32,12 @@ func run() -> void:
 		var damaging: Dictionary=dawn.projectiles.spawn(int(dawn.ID),player_point,player_point,caster_point,0)
 		var player_hit: Dictionary=dawn.move_projectile(damaging.id,1,1.0)
 		assert(not player_hit.has("error") and player_hit.blocked,str(player_hit))
-		var damage_context: Dictionary={"player_heading":(int(dawn.population.state.live[dawn.ID].heading)+32768)&65535,"guard":0,"mode":1,"scalar":0,"descriptors":[],"player_magic_level":10,"global223d4":0,"flags228":0}
+		var owned_heading: int=(int(dawn.population.state.live[dawn.ID].heading)+32768)&65535
+		scene.player.rotation.y=-float(owned_heading)*TAU/65536.0
+		var damage_context: Dictionary={"player_heading":999999,"guard":0,"mode":1,"scalar":999,"descriptors":[],"player_magic_level":999,"global223d4":0,"flags228":0}
+		var owned_magic: Dictionary=scene.starting_magic.magic_state().duplicate(true)
+		owned_magic.player.level=10
+		scene.starting_magic.commit(owned_magic)
 		var health_before: int=scene.starting_magic.health()
 		var damage: Dictionary=dawn.damage_projectile_player(damaging.id,player_hit,0,damage_context)
 		assert(not damage.has("error") and damage.loss==10,str(damage))
@@ -49,10 +54,13 @@ func run() -> void:
 		assert(save_error.is_empty(),save_error)
 		assert(dawn.projectiles.restore(dawn.projectiles.initial()).is_empty())
 		scene.starting_magic.set_health(health_before)
+		scene.player.rotation.y=0
 		var load_error: String=scene.quickload(path)
 		assert(load_error.is_empty(),load_error)
 		assert(dawn.projectiles.checkpoint()==pending)
 		assert(scene.starting_magic.health()==health_after)
+		assert(scene.starting_magic.magic_state().player.level==10)
+		assert((roundi(-scene.player.rotation.y*65536.0/TAU)&65535)==owned_heading)
 		assert(not dawn.damage_projectile_explosion(child,0x4000,[],damage_context).requested)
 		assert(not dawn.damage_projectile_player(damaging.id,player_hit,0,damage_context).requested)
 		assert(scene.starting_magic.health()==health_after)

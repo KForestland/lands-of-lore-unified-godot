@@ -1,0 +1,622 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L1_DC.MIX",
+  "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+  "geometry_key": 2971673856,
+  "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+ },
+ "groups": [
+  {
+   "stream": 1,
+   "group": 9786,
+   "owner_kind": "control",
+   "owner": 89,
+   "record": 5,
+   "value": 4,
+   "predicate": 206,
+   "commands": [
+    "060372010100",
+    "021078000501",
+    "120100008ff9751200008900c1b6001e0000",
+    "101059000100",
+    "020100000000",
+    "020100002000",
+    "0810780000000000",
+    "0810780002000000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 10374,
+   "owner_kind": "control",
+   "owner": 120,
+   "record": 6,
+   "value": 0,
+   "predicate": null,
+   "commands": [
+    "091059000200",
+    "0810780001000000",
+    "020100000100",
+    "061078000200",
+    "090238000300",
+    "100238000500",
+    "060238000100",
+    "0d0238000c000000",
+    "0d0238000b000000",
+    "0d02380007000000",
+    "021078000600",
+    "060238000100",
+    "060372010200",
+    "091078000200"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 10472,
+   "owner_kind": "control",
+   "owner": 120,
+   "record": 6,
+   "value": 0,
+   "predicate": null,
+   "commands": [
+    "091059000200",
+    "0810780001000000",
+    "020100000100",
+    "061078000200",
+    "090238000300",
+    "100238000500",
+    "060238000100",
+    "0d0238000c000000",
+    "0d0238000b000000",
+    "0d02380007000000",
+    "021078000600",
+    "060238000100",
+    "060372010200"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14442,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 6,
+   "value": 8,
+   "predicate": null,
+   "commands": [
+    "090238000200"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14448,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 9,
+   "value": 1,
+   "predicate": 4,
+   "commands": [
+    "090238001200",
+    "100238000100",
+    "020100000a08",
+    "0d02380012000000",
+    "050238000a00"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14486,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 6,
+   "value": 3,
+   "predicate": 5,
+   "commands": [
+    "100238000200",
+    "050238000b00"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14504,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 4,
+   "value": 0,
+   "predicate": 11,
+   "commands": [
+    "0301000026119ae201000000",
+    "050238000c00",
+    "100238000300"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14534,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 4,
+   "value": 0,
+   "predicate": 209,
+   "commands": [
+    "030100005744fe6501000000",
+    "100238000400",
+    "0e03520003000000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14566,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 10,
+   "value": 36864,
+   "predicate": null,
+   "commands": [
+    "100238000000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14572,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 10,
+   "value": 36864,
+   "predicate": null,
+   "commands": [
+    "100238000000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14578,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 10,
+   "value": 36864,
+   "predicate": null,
+   "commands": [
+    "100238000000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14584,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 10,
+   "value": 36864,
+   "predicate": null,
+   "commands": [
+    "100238000500"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14590,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 10,
+   "value": 36864,
+   "predicate": null,
+   "commands": [
+    "100238000500"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14596,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 10,
+   "value": 36864,
+   "predicate": null,
+   "commands": [
+    "100238000500"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14602,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 3,
+   "value": 12,
+   "predicate": 41,
+   "commands": [
+    "020100002900",
+    "c60000001001"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14620,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 5,
+   "value": 0,
+   "predicate": 43,
+   "commands": [
+    "020100002b00",
+    "c60000001201"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14638,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 6,
+   "value": 11,
+   "predicate": 211,
+   "commands": [
+    "0302380026119ae201000000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 14656,
+   "owner_kind": "actor",
+   "owner": 56,
+   "record": 6,
+   "value": 11,
+   "predicate": null,
+   "commands": [
+    "c6000000320a"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 62,
+   "owner_kind": "prop",
+   "owner": 82,
+   "record": 2,
+   "value": 304,
+   "predicate": null,
+   "commands": [
+    "0e03520004000000",
+    "180238000704ff3dfa00"
+   ]
+  }
+ ],
+ "records": {
+  "actor56": [
+   {
+    "kind": 1,
+    "raw": "0e01c1010000fa00322337063200",
+    "predicate": null
+   },
+   {
+    "kind": 6,
+    "raw": "06066a380800",
+    "predicate": null
+   },
+   {
+    "kind": 9,
+    "raw": "0a097038010001000101",
+    "predicate": 4
+   },
+   {
+    "kind": 19,
+    "raw": "04130400",
+    "predicate": null
+   },
+   {
+    "kind": 6,
+    "raw": "060696380300",
+    "predicate": 5
+   },
+   {
+    "kind": 19,
+    "raw": "04130500",
+    "predicate": null
+   },
+   {
+    "kind": 4,
+    "raw": "0a04a838000000000000",
+    "predicate": 11
+   },
+   {
+    "kind": 19,
+    "raw": "04130b00",
+    "predicate": null
+   },
+   {
+    "kind": 4,
+    "raw": "0a04c638000000000000",
+    "predicate": 209
+   },
+   {
+    "kind": 19,
+    "raw": "0413d100",
+    "predicate": null
+   },
+   {
+    "kind": 10,
+    "raw": "080ae6380090b903",
+    "predicate": null
+   },
+   {
+    "kind": 10,
+    "raw": "080aec380090ba03",
+    "predicate": null
+   },
+   {
+    "kind": 10,
+    "raw": "080af2380090b703",
+    "predicate": null
+   },
+   {
+    "kind": 10,
+    "raw": "080af83800909c03",
+    "predicate": null
+   },
+   {
+    "kind": 10,
+    "raw": "080afe3800909d03",
+    "predicate": null
+   },
+   {
+    "kind": 10,
+    "raw": "080a043900909a03",
+    "predicate": null
+   },
+   {
+    "kind": 3,
+    "raw": "06030a390c00",
+    "predicate": 41
+   },
+   {
+    "kind": 19,
+    "raw": "04132900",
+    "predicate": null
+   },
+   {
+    "kind": 5,
+    "raw": "06051c390000",
+    "predicate": 43
+   },
+   {
+    "kind": 19,
+    "raw": "04132b00",
+    "predicate": null
+   },
+   {
+    "kind": 6,
+    "raw": "06062e390b00",
+    "predicate": 211
+   },
+   {
+    "kind": 19,
+    "raw": "0413d300",
+    "predicate": null
+   },
+   {
+    "kind": 6,
+    "raw": "060640390b00",
+    "predicate": null
+   }
+  ],
+  "control89": [
+   {
+    "kind": 5,
+    "raw": "06053a260400",
+    "predicate": 206
+   },
+   {
+    "kind": 19,
+    "raw": "0413ce00",
+    "predicate": null
+   }
+  ],
+  "control120": [
+   {
+    "kind": 6,
+    "raw": "060686280000",
+    "predicate": null
+   },
+   {
+    "kind": 6,
+    "raw": "0606e8280000",
+    "predicate": null
+   }
+  ],
+  "prop82": [
+   {
+    "kind": 2,
+    "raw": "0a023e00300101003c00",
+    "predicate": null
+   }
+  ]
+ },
+ "predicates": {
+  "4": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0005000000"
+  },
+  "5": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0005000001"
+  },
+  "11": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 2
+   },
+   "raw": "0005000002"
+  },
+  "41": {
+   "op": "==",
+   "left": {
+    "local": 16
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003100000"
+  },
+  "43": {
+   "op": "==",
+   "left": {
+    "local": 18
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003120000"
+  },
+  "206": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0005000000"
+  },
+  "209": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 3
+   },
+   "raw": "0005000003"
+  },
+  "211": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 5
+   },
+   "raw": "0005000005"
+  }
+ },
+ "captain": {
+  "actor": 56,
+  "definition": 0,
+  "name": "GGCAPT",
+  "position": [
+   -2057,
+   63,
+   -4430
+  ],
+  "heading": 41324,
+  "health": 200,
+  "behavior": 14,
+  "flags": 30594,
+  "present": false
+ },
+ "kind9": {
+  "raw": "0a097038010001000101",
+  "mask0": 1,
+  "mask2": 1,
+  "threshold": 1,
+  "flags": 1,
+  "mode": 1,
+  "latched": false
+ },
+ "kind10": [
+  {
+   "group": 14566,
+   "value": 36864,
+   "word": 953
+  },
+  {
+   "group": 14572,
+   "value": 36864,
+   "word": 954
+  },
+  {
+   "group": 14578,
+   "value": 36864,
+   "word": 951
+  },
+  {
+   "group": 14584,
+   "value": 36864,
+   "word": 924
+  },
+  {
+   "group": 14590,
+   "value": 36864,
+   "word": 925
+  },
+  {
+   "group": 14596,
+   "value": 36864,
+   "word": 922
+  }
+ ],
+ "timer": {
+  "owner": 82,
+  "group": 62,
+  "flags": 1,
+  "range": [
+   0,
+   1
+  ],
+  "countdown": 60,
+  "raw": "0a023e00300101003c00"
+ },
+ "items": {
+  "3801747750": "5-Short swd",
+  "1711162455": "37-Brnt Chain"
+ },
+ "player_move": {
+  "position": [
+   -1649,
+   0,
+   -4725
+  ],
+  "raw": "120100008ff9751200008900c1b6001e0000"
+ },
+ "poses": {
+  "10": {
+   "frames": 35,
+   "resource": 1925
+  },
+  "11": {
+   "frames": 1,
+   "resource": 1960
+  },
+  "12": {
+   "frames": 1,
+   "resource": 1961
+  }
+ },
+ "tick_rate": 60,
+ "owned_locals": [
+  16,
+  18,
+  50
+ ],
+ "unresolved": [
+  "control120 animation media (template27 surface resource618 is an 8x8 type0x8F material; no frame sequence bound) \u2014 event0 completion supplied",
+  "captain event3 pose endpoint, event8, kind10 (value0x9000, words 953/954/951/924/925/922), kind3 value12 and kind5 value0 producers",
+  "kind9 hit-context masks (bit0 of words0/2) and damage field +0x1E: caller supplies them",
+  "op9 property18, op13 subcommand18 (A7544 mode2), op6, op2 object properties: reported as effects",
+  "op24 request1031 (prop82 timer expiry): E3D2C target table not verified",
+  "op3 kind2 grants to the captain are NOT proven drops (+0x78 binding open)"
+ ]
+}

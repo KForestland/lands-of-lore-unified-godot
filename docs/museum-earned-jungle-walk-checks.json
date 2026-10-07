@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "returncode": 0,
+  "seconds": 70.48213841899997,
+  "log": "tmp/regressions/museum_skel_route/walk7.log",
+  "input_proof": "docs/cave-earned-museum-walk-checks.json",
+  "input_save": "user://tests/act1_earned_museum_arrival.json",
+  "input_sha256": "f037cb29b731080f522036ec1e05e62bdfadbd955b80c6374ba87d683e9fa278",
+  "output_save": "user://tests/act1_earned_museum_jungle.json",
+  "output_sha256": "6fbd31c3e13e325d01c32925f2637e15cd31ae5af9a3dab7942c73a834e4d0f5",
+  "source_archive_sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "file_sha256": {
+    "tests/museum_earned_walk_test.gd": "2fe17e234e8b79141f3315c83e0673d777c9c173ea8f87098ad5852d64c5fd0c",
+    "tools/build_museum_earned_walk.py": "4790a9d8867e2b5f2bdb6c330718383bbdb87d6d9cd35229827d1ba4b4507a7c",
+    "tests/fixtures/museum_earned_walk_routes.json": "17ca25a3d095d8ccb455a55229eef58f19a92a487d2e9941e5ba0fb6e36b4279",
+    "tests/fixtures/museum_escape_dragon_walk_route.json": "5786c1e8ea9d2b1ce3b787abcdbdadf847b998b458582b6ef0dfc612a1293e4e",
+    "scripts/lol2/player_form_body.gd": "469f2fa119abb39fce83a09389a6a8a4da95bc255afbb028c579ab89fc0bc46c",
+    "scripts/lol2/museum_sword_table.gd": "089910bc5addef6e29a61377ee289a57f87f14735d4e4d423b8dcda40795a1a0",
+    "scripts/lol2/museum_walkthrough.gd": "44ef61295217ad8be9cb863695933e653942e1f3bc9d63a17af1d6be189a6ed1"
+  },
+  "checks": [
+    "Earned cave save validated and SHA matched before scene creation.",
+    "Saved beast curse expires naturally to human without changing position or forcing form.",
+    "Actual keyboard walking enters sword trigger; original skeleton sequence and moving gate finish naturally.",
+    "Walked sword pickup/equip;99-region route to painting and lever; human-width32-portal candidate to hourglass.",
+    "Actual hourglass trigger, timed wall decay, three strikes, walk through opening and dragon door.",
+    "Natural dragon playlist and actual Jungle transition; grounded arrival, zero resets, equipped sword and earned cave Stalagmite retained.",
+    "Destination disk save validates."
+  ],
+  "limits": [
+    "4x engine clock and240 physics ticks; no source timing parity claim.",
+    "Interactions/equipment use production callbacks; this does not certify all GUI/input bindings.",
+    "No player repositioning, supplied inventory, quest/form injection or completion signals after loading the earned cave save.",
+    "This connects cave\u2192Museum\u2192Jungle by earned checkpoint continuation; it does not prove all Act1 content or the remaining Jungle\u2192Hive connection."
+  ],
+  "fixes": [
+    "Grounded form-space queries tolerate only foot contact within0.05 safe margin; actual body size/top/side clearance retained.",
+    "Authored support shifted26.5 units away from the approach and narrowed from104 to84 units; all original item anchors remain fixed and normal pickup rays retain all obstacle checks. Sword and both stones are reachable from source-height human approaches.",
+    "Gallery route regenerated for human body; source walls unchanged."
+  ],
+  "visual_review": {
+    "image": "tmp/museum_source_height_table.png",
+    "scope": "Sword visible above the support from the source-height human camera; placeholder table/source scenery visual parity not claimed."
+  },
+  "history": [
+    {
+      "input_sha256": "90a1592284caa45c25e92db01c02ead993bde3c6e04ebb0fe490396edbd6200e",
+      "output_sha256": "41938bb206a0a465e3412aa2dadb345dd9e1ff582779383e09e5829196da4969",
+      "log": "tmp/regressions/earned_museum_followup_20260924T233714Z/museum_earned_walk_test.log",
+      "seconds": 70.48213841899997,
+      "superseded": "2026-10-03 live Roach/skeleton populations"
+    },
+    {
+      "input_sha256": "487dba1eb6f01a7f0d485d9cdd9916f907d55935b198fe7e80de4542ee35ce22",
+      "output_sha256": "f258327e3c58c1d35785850cf5afc34c398af01ce58577c6411832f38fe5200e",
+      "log": "tmp/regressions/museum_skel_route/walk5.log",
+      "superseded": "2026-10-03 fresh current-source rerun after cave guards"
+    },
+    {
+      "input_sha256": "04c279d141655d4525a66b043b377327516b4d3d27794c18dbf7df1e9ca43dc9",
+      "output_sha256": "b9d6dd769e36893109c6617ad8b124574cdb6758a82117d239342696fc311149",
+      "log": "tmp/regressions/museum_skel_route/walk6.log",
+      "superseded": "2026-10-03 creature navigation rerun"
+    }
+  ],
+  "date": "2026-10-03",
+  "museum_creatures_defeated": [
+    {
+      "actor": 28,
+      "player_health": 18
+    },
+    {
+      "actor": 27,
+      "player_health": 15
+    },
+    {
+      "actor": 32,
+      "player_health": 18
+    },
+    {
+      "actor": 31,
+      "player_health": 15
+    },
+    {
+      "actor": 29,
+      "player_health": 18
+    },
+    {
+      "actor": 20,
+      "player_health": 15
+    }
+  ],
+  "driver_changes": [
+    "fight_creatures: active, woken-adjacent or path-blocking Museum creatures are engaged through the production strike input",
+    "heals through production spell keys [2],[Q] when health<=12 and mana>=2; no health/mana injection"
+  ],
+  "note": "Fresh rendered (private Xvfb, gl_compatibility) run on current source; input is the route15 cave save. Codex in-progress Museum audio hooks were present in the wrapper at run time.",
+  "source_fingerprints": {
+    "tests/museum_earned_walk_test.gd": "e8b98b79e6c9f615976a2d1b98be15c4d7dd9aafdbcd117484ea70158801df58",
+    "scripts/lol2/museum_walkthrough.gd": "bb3830fd6b85ea9678d756ec46f3aed83ac67a59143b33b0caafbe228f478784",
+    "scripts/lol2/museum_skeleton_population.gd": "ab9f0f904501ccb3bde5b98aa2800322913fa0264769ec91e915b8180a3dae16",
+    "scripts/lol2/museum_skeleton_population_state.gd": "fb38a1a7afe342ec942c7292f100c93203c4fbb5485491dab812968071b5e953",
+    "scripts/lol2/scripted_creature_population.gd": "59e4ae0267f0259b63c7057ffd8bedc7b388143e54ede219fe8fa4b2fcb4e757",
+    "scripts/lol2/scripted_creature_state.gd": "5f863d3b7567135811cf76206003fde5f9adede657c99bdd4d613fb64464aac1",
+    "scripts/lol2/creature_navigation.gd": "405e5ed5e23c722431291918dcf0ebac114ee373476d5876d3c17c57ca798f9a",
+    "scripts/lol2/creature_live_rules.gd": "608f3b136279bfb54d97908d40ba18fa9035e3ed2ec75b7908f243b53d1e589f"
+  }
+}

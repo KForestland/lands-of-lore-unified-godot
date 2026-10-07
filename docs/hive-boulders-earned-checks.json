@@ -1,0 +1,62 @@
+{
+  "actors": {
+    "actors": {
+      "30": {
+        "active": true,
+        "fraction": 0.0,
+        "frame": 0,
+        "index": 6,
+        "position": [
+          -2222.008056640625,
+          -1684.9964599609375,
+          -6861.3359375
+        ],
+        "rolling": false,
+        "stopping": true,
+        "timer": 0,
+        "velocity_y": 0.0
+      },
+      "31": {
+        "active": true,
+        "fraction": 0.0,
+        "frame": 0,
+        "index": 7,
+        "position": [
+          -2210.651123046875,
+          -1700.0003662109375,
+          -6716.30859375
+        ],
+        "rolling": false,
+        "stopping": true,
+        "timer": 0,
+        "velocity_y": 0.0
+      }
+    },
+    "legacy_retired": false,
+    "version": 1
+  },
+  "health": 30,
+  "input_save": "user://tests/act1_unfold_earned_defeated.json",
+  "input_sha256": "29c972223478adc882bb97ef85f2a384ac26e8e4c058f1616ca5cc2dbee17013",
+  "natural_morphs": [
+    {
+      "from": 0,
+      "health": 30,
+      "to": 2
+    }
+  ],
+  "output_save": "user://tests/act1_boulders_earned_exit.json",
+  "output_sha256": "66126d0afac46454142ea715da8b9bf57e1c906476fcefb4c603b3cc19d329d5",
+  "passed": true,
+  "player_position": [
+    -2059.617431640625,
+    -1667.9990234375,
+    -6700.1875
+  ],
+  "scope": "SHA-verified earned lower-fight save, production lift stops5/6, ordinary jump/walk through13 source regions, live surface trigger/descent/exit. No pose/form/item/quest injection after load. Accelerated manually driven movement/curse ticks. Original boulder visuals and saved path/fall/stop motion are active. Player contact response/damage and sounds remain disabled, so this is not complete hazard acceptance. Earlier campaign legs reused.",
+  "surfaces": {
+    "elapsed": 2.0,
+    "phase": 3,
+    "version": 1
+  }
+}

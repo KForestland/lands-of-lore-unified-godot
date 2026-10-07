@@ -1,0 +1,970 @@
+{
+  "cases": [
+    {
+      "room": "MCEL",
+      "flags": {
+        "170": 0
+      },
+      "globals": {
+        "GV_RIX_DEAD": 0
+      },
+      "locals": {
+        "Met_Dawn": 0
+      },
+      "present": true,
+      "entry_effects": []
+    },
+    {
+      "room": "MCEL",
+      "flags": {
+        "170": 0
+      },
+      "globals": {
+        "GV_RIX_DEAD": 0
+      },
+      "locals": {
+        "Met_Dawn": 1
+      },
+      "present": true,
+      "entry_effects": [
+        [
+          "set_flag",
+          170
+        ],
+        [
+          "movie",
+          24,
+          100,
+          7,
+          0
+        ],
+        [
+          "movie",
+          24,
+          101,
+          7,
+          160
+        ],
+        [
+          "movie",
+          24,
+          102,
+          7,
+          0
+        ],
+        [
+          "movie",
+          24,
+          103,
+          7,
+          0
+        ],
+        [
+          "movie",
+          24,
+          104,
+          7,
+          0
+        ],
+        [
+          "movie",
+          24,
+          105,
+          7,
+          0
+        ],
+        [
+          "movie",
+          24,
+          106,
+          7,
+          128
+        ],
+        [
+          "movie",
+          24,
+          107,
+          7,
+          0
+        ],
+        [
+          "movie",
+          24,
+          108,
+          7,
+          0
+        ],
+        [
+          "movie",
+          24,
+          109,
+          7,
+          160
+        ],
+        [
+          "movie",
+          24,
+          110,
+          7,
+          0
+        ],
+        [
+          "movie",
+          24,
+          111,
+          7,
+          0
+        ],
+        [
+          "movie",
+          24,
+          112,
+          7,
+          0
+        ],
+        [
+          "host_80",
+          600
+        ]
+      ]
+    },
+    {
+      "room": "MCEL",
+      "flags": {
+        "170": 0
+      },
+      "globals": {
+        "GV_RIX_DEAD": 1
+      },
+      "locals": {
+        "Met_Dawn": 0
+      },
+      "present": false,
+      "entry_effects": []
+    },
+    {
+      "room": "MCEL",
+      "flags": {
+        "170": 0
+      },
+      "globals": {
+        "GV_RIX_DEAD": 1
+      },
+      "locals": {
+        "Met_Dawn": 1
+      },
+      "present": false,
+      "entry_effects": []
+    },
+    {
+      "room": "MCEL",
+      "flags": {
+        "170": 1
+      },
+      "globals": {
+        "GV_RIX_DEAD": 0
+      },
+      "locals": {
+        "Met_Dawn": 0
+      },
+      "present": false,
+      "entry_effects": []
+    },
+    {
+      "room": "MCEL",
+      "flags": {
+        "170": 1
+      },
+      "globals": {
+        "GV_RIX_DEAD": 0
+      },
+      "locals": {
+        "Met_Dawn": 1
+      },
+      "present": false,
+      "entry_effects": []
+    },
+    {
+      "room": "MCEL",
+      "flags": {
+        "170": 1
+      },
+      "globals": {
+        "GV_RIX_DEAD": 1
+      },
+      "locals": {
+        "Met_Dawn": 0
+      },
+      "present": false,
+      "entry_effects": []
+    },
+    {
+      "room": "MCEL",
+      "flags": {
+        "170": 1
+      },
+      "globals": {
+        "GV_RIX_DEAD": 1
+      },
+      "locals": {
+        "Met_Dawn": 1
+      },
+      "present": false,
+      "entry_effects": []
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 0,
+        "140": 0,
+        "259": 0,
+        "260": 0
+      },
+      "present": true,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ],
+        [
+          "set_flag",
+          258
+        ],
+        [
+          "movie",
+          23,
+          150,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          151,
+          7,
+          160
+        ],
+        [
+          "movie",
+          23,
+          152,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          153,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          154,
+          7,
+          160
+        ],
+        [
+          "movie",
+          23,
+          155,
+          7,
+          128
+        ],
+        [
+          "movie",
+          23,
+          156,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          157,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          158,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          159,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          160,
+          7,
+          160
+        ],
+        [
+          "movie",
+          23,
+          161,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          162,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          163,
+          7,
+          0
+        ],
+        [
+          "set_flag",
+          176
+        ],
+        [
+          "set_flag",
+          177
+        ],
+        [
+          "set_flag",
+          178
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 0,
+        "140": 0,
+        "259": 0,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 0,
+        "140": 0,
+        "259": 1,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 0,
+        "140": 0,
+        "259": 1,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 0,
+        "140": 1,
+        "259": 0,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 0,
+        "140": 1,
+        "259": 0,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 0,
+        "140": 1,
+        "259": 1,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 0,
+        "140": 1,
+        "259": 1,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 1,
+        "140": 0,
+        "259": 0,
+        "260": 0
+      },
+      "present": true,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ],
+        [
+          "movie",
+          23,
+          200,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          201,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          202,
+          7,
+          128
+        ],
+        [
+          "movie",
+          23,
+          203,
+          7,
+          0
+        ],
+        [
+          "set_flag",
+          260
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 1,
+        "140": 0,
+        "259": 0,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 1,
+        "140": 0,
+        "259": 1,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 1,
+        "140": 0,
+        "259": 1,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 1,
+        "140": 1,
+        "259": 0,
+        "260": 0
+      },
+      "present": true,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ],
+        [
+          "movie",
+          23,
+          200,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          201,
+          7,
+          0
+        ],
+        [
+          "movie",
+          23,
+          202,
+          7,
+          128
+        ],
+        [
+          "movie",
+          23,
+          203,
+          7,
+          0
+        ],
+        [
+          "set_flag",
+          260
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 1,
+        "140": 1,
+        "259": 0,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 1,
+        "140": 1,
+        "259": 1,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 0,
+        "258": 1,
+        "140": 1,
+        "259": 1,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 0,
+        "140": 0,
+        "259": 0,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 0,
+        "140": 0,
+        "259": 0,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 0,
+        "140": 0,
+        "259": 1,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 0,
+        "140": 0,
+        "259": 1,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 0,
+        "140": 1,
+        "259": 0,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 0,
+        "140": 1,
+        "259": 0,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 0,
+        "140": 1,
+        "259": 1,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 0,
+        "140": 1,
+        "259": 1,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 1,
+        "140": 0,
+        "259": 0,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 1,
+        "140": 0,
+        "259": 0,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 1,
+        "140": 0,
+        "259": 1,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 1,
+        "140": 0,
+        "259": 1,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 1,
+        "140": 1,
+        "259": 0,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 1,
+        "140": 1,
+        "259": 0,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 1,
+        "140": 1,
+        "259": 1,
+        "260": 0
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    },
+    {
+      "room": "MGAR",
+      "flags": {
+        "181": 1,
+        "258": 1,
+        "140": 1,
+        "259": 1,
+        "260": 1
+      },
+      "present": false,
+      "entry_effects": [
+        [
+          "ambient_timer",
+          351,
+          70
+        ]
+      ]
+    }
+  ]
+}

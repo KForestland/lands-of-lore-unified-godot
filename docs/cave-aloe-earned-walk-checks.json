@@ -1,0 +1,41 @@
+{
+  "aloe": {
+    "health_after": 30,
+    "health_before": 24,
+    "mana_after": 17,
+    "mana_before": 17,
+    "spent": [
+      "cave:prop791:harvest1:Cave_Aloe"
+    ]
+  },
+  "magic": {
+    "cooldown": 0.0,
+    "player": {
+      "experience": 0,
+      "level": 1,
+      "mana": 20,
+      "maximum": 20
+    },
+    "regen_elapsed": 0.0,
+    "spell": "spark",
+    "version": 1
+  },
+  "output_save": "user://tests/act1_aloe_museum_arrival.json",
+  "output_sha256": "bfb06d994baf78fd27348743eb48b4bfe30204be7af33d838b72c1266cbc6acb",
+  "passed": true,
+  "scope": "Original cave entrance, earned Stalagmite, actual ROACH injury, keyboard Healing and Spark, melee finish, doors/curse/bridge/story through real Museum arrival. No health, mana, inventory, position or form injection after source spawn. Automated steering and4x clock; combat/spell tuning remains provisional. Includes walked Aloe harvest and inventory use after real ROACH injury, consumed history carried into Museum.",
+  "spells": {
+    "healing": {
+      "health_after": 30,
+      "health_before": 24,
+      "mana_after": 18,
+      "mana_before": 20
+    },
+    "spark": {
+      "enemy_after": 16,
+      "enemy_before": 24,
+      "mana_after": 17,
+      "mana_before": 18
+    }
+  }
+}

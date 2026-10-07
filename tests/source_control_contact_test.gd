@@ -1,0 +1,21 @@
+extends SceneTree
+const State=preload("res://scripts/lol2/source_control_contact.gd")
+func _initialize() -> void:
+	var src: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/cave_support_controls_source.json"))
+	var saved:=State.initial()
+	assert(State.validate(saved,src).is_empty())
+	assert(State.update(saved,src,Vector2(-1845,-4674),41,false,0,{}).is_empty())
+	var result:=State.update(saved,src,Vector2(-1845,-4674),41,true,0,{})
+	assert(result==[{"owner":89,"value":4,"groups":[9786]}])
+	assert(State.update(saved,src,Vector2(-1845,-4674),41,true,2,{}).is_empty(),"Morph in place is not re-entry")
+	var restored:=State.canonical(JSON.parse_string(JSON.stringify(saved)))
+	assert(State.update(restored,src,Vector2(-1845,-4674),41,true,0,{}).is_empty(),"Reload is not re-entry")
+	assert(State.update(saved,src,Vector2.ZERO,0,true,0,{})==[{"owner":89,"value":5,"groups":[]}])
+	assert(State.update(saved,src,Vector2(-1845,-4674),41,true,0,{"89":1}).is_empty(),"State1 disarms original predicate")
+	for form in [0,1,2]:
+		saved=State.initial()
+		result=State.update(saved,src,Vector2(-969,-5948),1,true,form,{})
+		assert(result.is_empty() if form==0 else result[0].groups==[10114 if form==1 else 10198])
+	var bad:=State.initial();bad.owner=999;assert(not State.validate(bad,src).is_empty())
+	print("PASS original support polygons, captain/control109 forms, grounded admission, leave, disarm, saved re-entry suppression")
+	quit()

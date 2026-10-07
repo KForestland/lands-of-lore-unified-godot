@@ -1,0 +1,18 @@
+{
+  "input_sha256": "94d9e141b91012e3da247ac44e9506d0a5604690f96f8c5245398e53d80390d9",
+  "inventory": [
+    "museum:item11:Fine_Longsword",
+    "monastery:item94:Iron_Flute",
+    "hive:Wax_runes:0"
+  ],
+  "output_sha256": "b16764be02bdaa0bc2affc34ae6e7049f2b1b8d5c8573f93863cc5d74b94901b",
+  "passed": true,
+  "scope": "Earned rune save continuation, reverse48 corridor portals, lowest platform jump, ascent, upper landing jump,101 Hive and117 Jungle source-region routes through actual area transition into MENT. No test position/form/quest injection. Hive warriors disabled; movement and curse clocks driven manually. Monastery return conversation not yet implemented.",
+  "log": "tmp/act1_earned_rune_return.log",
+  "log_sha256": "19ec2abc77b6ab731791ef87b5fcfd47e757021a84749626777f8bb3ada36d3b",
+  "source_sha256": {
+    "tests/hive_earned_rune_return_test.gd": "f7929979f770c7cf75f7332e79a26554c6a4f022c28609f089e45adeab1bcfa3",
+    "tools/build_hive_rune_return.py": "e743ee3cd8ee23c221f2a8bc35286a221666729cccf94fdb9cfa9a616f0cef5b",
+    "tests/fixtures/hive_rune_return_routes.json": "4180533bbfa9cb6c06ebdbfdc7bdf364105b36fddc91c9b4715911ca16e577f9"
+  }
+}

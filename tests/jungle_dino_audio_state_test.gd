@@ -1,0 +1,43 @@
+extends SceneTree
+const Audio=preload("res://scripts/lol2/jungle_dino_audio_state.gd")
+const Population=preload("res://scripts/lol2/jungle_dino_population_state.gd")
+func _initialize() -> void:
+	var packet:=Audio.initial()
+	assert(Audio.validate(packet).is_empty())
+	var v: Dictionary=packet["21"]
+	Audio.sample(v,4,0.99,0.0)
+	assert(v.request==0)
+	Audio.sample(v,4,1.0,0.01)
+	assert(v.request==978 and v.elapsed==0)
+	Audio.sample(v,4,1.25,0.25)
+	assert(v.elapsed==5513)
+	Audio.sample(v,4,1.25,0.0)
+	assert(v.elapsed==5513)
+	Audio.sample(v,8,0.0,0.0)
+	assert(v.request==651 and v.elapsed==0)
+	Audio.sample(v,8,0.875,0.875)
+	assert(v.request==354 and v.elapsed==0)
+	Audio.sample(v,1,0.0,0.0)
+	assert(v.request==351)
+	Audio.sample(v,1,4.5,4.5)
+	assert(v.request==354 and v.elapsed==2756)
+	Audio.sample(v,2,0.875,0.0)
+	assert(v.request==353)
+	for pose in [6,7]:
+		Audio.sample(v,pose,0.125,0.0)
+		assert(v.request==979)
+	for i in range(1,601):
+		Audio.sample(v,1,float(i)/60.0,1.0/60.0)
+		var state:=Population.initial()
+		state.audio=packet.duplicate(true)
+		assert(Population.canonical(JSON.parse_string(JSON.stringify(state)))==state)
+		assert(Audio.validate(packet).is_empty())
+	var invalid:=packet.duplicate(true)
+	invalid["21"].elapsed=0.5
+	assert(not Audio.validate(invalid).is_empty())
+	invalid=packet.duplicate(true);invalid["21"].request=977
+	assert(not Audio.validate(invalid).is_empty())
+	invalid=packet.duplicate(true);invalid.erase("35")
+	assert(not Audio.validate(invalid).is_empty())
+	print("PASS: nine cue bindings, boundary/repeat/loop/interruption, 600 exact JSON round trips and malformed audio rejection")
+	quit()

@@ -1,0 +1,64 @@
+{
+  "ambush": {
+    "actors": {
+      "33": {
+        "active": false,
+        "cooldown": 0.0,
+        "elapsed": 0.0,
+        "health": 400,
+        "phase": 0,
+        "position": [
+          -4796.0,
+          -3000.0,
+          -6374.0
+        ],
+        "seed": 324508672,
+        "windup": 0.0
+      },
+      "35": {
+        "active": true,
+        "cooldown": 0.0,
+        "elapsed": 0.0,
+        "health": 300,
+        "phase": 3,
+        "position": [
+          -2562.00463867188,
+          -618.999572753906,
+          -8200.0830078125
+        ],
+        "seed": 324508674,
+        "windup": 0.0
+      }
+    },
+    "contact716": true,
+    "feeding_hit_disabled": false,
+    "local7": 0,
+    "version": 1
+  },
+  "health": 12,
+  "input_proof": "docs/population-earned-flute-return-walk-checks.json",
+  "input_save": "user://tests/act1_population_broken_flute_hive_return.json",
+  "input_sha256": "aacdc7125cc06264b7e1743f83c56441067c44b299ca933e0f8d4017cd1a59c8",
+  "lift": {
+    "armed": true,
+    "flute_signal": 0,
+    "height": -619.0,
+    "played_flute": false,
+    "poll_elapsed": 0.583333333333358,
+    "target": 2
+  },
+  "output_save": "user://tests/act1_feeding_earned_arrival.json",
+  "output_sha256": "8059a9b5b445a353d636bd7030a512ea74c6a9d94f37117fa36b81d81afa6345",
+  "passed": true,
+  "position": [
+    -2563.01123046875,
+    -586.958312988281,
+    -8001.1591796875
+  ],
+  "scope": "Earned flute return, source upper route, actual lift control to stop2, jumped lower landing and walked region716. No added position/inventory/quest/form injection. Manually driven movement/curse and accelerated clocks. Proves approach/activation, not encounter defeat or full Act One.",
+  "seconds": 5.512143390998972,
+  "runner_report": "tmp/act1_team_20260927/feeding_earned_single_clock_report.json",
+  "script_sha256": "79ea8ede421544bf26edc9753b6b11218d5a9b5baf2ec69a679b7c3a6bd16ee5",
+  "helper_sha256": "0d2601073600ba06ef87b76b64aeb5f68b4139aeec30901817355cca0c45b4e8",
+  "curse_clock": "Automatic curse callbacks disabled; inherited tick_curse drives one update per manually driven movement/wait tick. Engine time4x/physics240 remain adapters."
+}

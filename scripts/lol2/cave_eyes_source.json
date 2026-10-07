@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "actor": 24,
+  "position": [
+    -1993,
+    44,
+    -5677
+  ],
+  "prop": 1305,
+  "initial": {
+    "path": 1,
+    "index": 0,
+    "behavior": 14,
+    "action": 9
+  },
+  "constructor": {
+    "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+    "start": 664479,
+    "end": 664659,
+    "sha256": "9b71c71a018dd42601aa2b5c244b88488a58665bd414d3d3aacd4845586bf9bb"
+  },
+  "clips": {
+    "idle_frames": 10,
+    "moving_frames": 23,
+    "interval": 1024
+  },
+  "path": {
+    "index": 1,
+    "flags": 0,
+    "points": [
+      {
+        "position": [
+          -1939,
+          44,
+          -5708
+        ],
+        "region": 957,
+        "flags": 1024
+      },
+      {
+        "position": [
+          -1570,
+          44,
+          -5781
+        ],
+        "region": 966,
+        "flags": 0
+      },
+      {
+        "position": [
+          -1276,
+          44,
+          -5828
+        ],
+        "region": 961,
+        "flags": 0
+      },
+      {
+        "position": [
+          -1010,
+          44,
+          -5898
+        ],
+        "region": 640,
+        "flags": 0
+      },
+      {
+        "position": [
+          -670,
+          44,
+          -6202
+        ],
+        "region": 638,
+        "flags": 0
+      },
+      {
+        "position": [
+          -314,
+          44,
+          -5899
+        ],
+        "region": 629,
+        "flags": 0
+      },
+      {
+        "position": [
+          -202,
+          44,
+          -6060
+        ],
+        "region": 778,
+        "flags": 0
+      }
+    ]
+  },
+  "groups": {
+    "9432": {
+      "commands": [
+        {
+          "archive_offset": 7242309,
+          "raw_hex": "14031905e800ffd53e00"
+        },
+        {
+          "archive_offset": 7242319,
+          "raw_hex": "100319050100"
+        },
+        {
+          "archive_offset": 7242325,
+          "raw_hex": "100218000100"
+        }
+      ],
+      "handlers": [
+        {
+          "stream": 1,
+          "group": 9432,
+          "owner_kind": "prop",
+          "owner": 1305,
+          "event": 4,
+          "value": 0,
+          "predicate": 206,
+          "archive_offset": 7253255
+        },
+        {
+          "stream": 1,
+          "group": 9432,
+          "owner_kind": "prop",
+          "owner": 1305,
+          "event": 5,
+          "value": 1,
+          "predicate": 206,
+          "archive_offset": 7253269
+        },
+        {
+          "stream": 1,
+          "group": 9432,
+          "owner_kind": "prop",
+          "owner": 1305,
+          "event": 6,
+          "value": 20,
+          "predicate": 206,
+          "archive_offset": 7253279
+        },
+        {
+          "stream": 1,
+          "group": 9432,
+          "owner_kind": "prop",
+          "owner": 1305,
+          "event": 9,
+          "value": 0,
+          "predicate": 206,
+          "archive_offset": 7253289
+        }
+      ]
+    },
+    "14132": {
+      "commands": [
+        {
+          "archive_offset": 7247009,
+          "raw_hex": "0d02180000070000"
+        },
+        {
+          "archive_offset": 7247017,
+          "raw_hex": "0d02180001000000"
+        }
+      ],
+      "handlers": [
+        {
+          "stream": 1,
+          "group": 14132,
+          "owner_kind": "actor",
+          "owner": 24,
+          "event": 6,
+          "value": 3,
+          "predicate": 207,
+          "archive_offset": 7254785
+        }
+      ]
+    },
+    "14154": {
+      "commands": [
+        {
+          "archive_offset": 7247031,
+          "raw_hex": "0d02180001090000"
+        },
+        {
+          "archive_offset": 7247039,
+          "raw_hex": "060218000200"
+        },
+        {
+          "archive_offset": 7247045,
+          "raw_hex": "0e02180003000000"
+        }
+      ],
+      "handlers": [
+        {
+          "stream": 1,
+          "group": 14154,
+          "owner_kind": "actor",
+          "owner": 24,
+          "event": 6,
+          "value": 22,
+          "predicate": null,
+          "archive_offset": 7254795
+        }
+      ]
+    },
+    "14182": {
+      "commands": [
+        {
+          "archive_offset": 7247053,
+          "raw_hex": "090218000200"
+        }
+      ],
+      "handlers": [
+        {
+          "stream": 1,
+          "group": 14182,
+          "owner_kind": "actor",
+          "owner": 24,
+          "event": 2,
+          "value": 304,
+          "predicate": null,
+          "archive_offset": 7254801
+        }
+      ]
+    },
+    "14188": {
+      "commands": [
+        {
+          "archive_offset": 7247065,
+          "raw_hex": "090319051500"
+        },
+        {
+          "archive_offset": 7247071,
+          "raw_hex": "090218000e00"
+        }
+      ],
+      "handlers": [
+        {
+          "stream": 1,
+          "group": 14188,
+          "owner_kind": "actor",
+          "owner": 24,
+          "event": 4,
+          "value": 0,
+          "predicate": null,
+          "archive_offset": 7254811
+        }
+      ]
+    }
+  },
+  "timer": {
+    "raw": "0a026637300102007800",
+    "flags": 1,
+    "remaining": 120,
+    "rate": 60
+  },
+  "sound": {
+    "request": 232,
+    "samples": 36928,
+    "rate": 22050
+  },
+  "limits": [
+    "Native constructor slice executed; source events and ordered commands pinned.",
+    "Path speed/height grounding and scheduling of state1 event3 are modern presentation adapters; no combat or loot.",
+    "Timer enabled at path end via opcode14; source120ticks at60/s.",
+    "Use admits actor kind4; kind5/hit alternative producers are not assumed."
+  ]
+}
