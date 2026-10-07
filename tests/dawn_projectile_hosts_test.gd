@@ -14,7 +14,29 @@ func run() -> void:
 			push_error("Real host launch could not resolve caster region: %s %s"%[pair,result]);quit(1);return
 		if dawn.checkpoint()!=before:
 			push_error("Launch query changed encounter checkpoint");quit(1);return
+		# Supplied allocation: actual host save/load must retain effects and consumed
+		# damage state even after the in-memory owner is cleared.
+		var birth: Dictionary=dawn.projectiles.spawn(int(dawn.ID),result.position,result.position,result.position,int(result.heading))
+		assert(birth.allocated)
+		var event: Dictionary={"enabled":true,"collision":0,"target":1,"distance":65536,"movement_heading":int(result.heading),"collision_heading":int(result.heading)}
+		assert(dawn.projectiles.contact(birth.id,event).request)
+		var pending: Dictionary=dawn.projectiles.checkpoint()
+		var path: String="user://tests/projectiles_"+str(pair[1])+".json"
+		var save_error: String=scene.quicksave(path)
+		assert(save_error.is_empty(),save_error)
+		assert(dawn.projectiles.restore(dawn.projectiles.initial()).is_empty())
+		var load_error: String=scene.quickload(path)
+		assert(load_error.is_empty(),load_error)
+		assert(dawn.projectiles.checkpoint()==pending)
+		assert(not dawn.projectiles.contact(birth.id,event).request)
+		var packet: Dictionary=dawn.checkpoint();var invalid:=packet.duplicate(true)
+		invalid.projectiles.effects[0].contact.counter=-1
+		assert(not dawn.restore(invalid).is_empty() and dawn.checkpoint()==packet)
+		invalid=packet.duplicate(true);invalid.projectiles.effects[0].owner=999
+		assert(not dawn.restore(invalid).is_empty() and dawn.checkpoint()==packet)
+		assert(dawn.restore(before).is_empty() and dawn.projectiles.checkpoint()==dawn.projectiles.initial())
+		DirAccess.remove_absolute(path)
 		print("HOST launch: %s region=%s accepted=%s world=%s"%[pair[1],result.regions,result.accepted,result.world_position])
 		scene.queue_free();for i in 3:await process_frame
-	print("PASS: both production Dawn hosts resolve launch regions and physics without altering saved encounter state; supplied source height/radius, no cast creation.")
+	print("PASS: both production Dawn hosts resolve launch regions and physics without query mutation; supplied allocations survive host disk saves, reject invalid restore, suppress repeated damage, and accept legacy packets. No AI cast creation.")
 	quit()
