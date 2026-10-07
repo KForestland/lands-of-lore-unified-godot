@@ -9,6 +9,7 @@ Run without original-game assets:
 ```sh
 godot --headless --path . --script res://tests/dawn_damage_portable_test.gd
 godot --headless --path . --script res://tests/player_mitigation_test.gd
+godot --headless --path . --script res://tests/dawn_spell_motion_test.gd
 ```
 
 The tests compare 2,048 melee calculations, 5,760 spell calculations, 4,096 melee preparations, 294 spell preparations and 2,048 defense-list/spell compositions against numeric fixtures recovered through local native replay. The accompanying evidence manifest pins the executable used for that replay and the published files. Executable bytes and original media are excluded.
@@ -16,3 +17,5 @@ The tests compare 2,048 melee calculations, 5,760 spell calculations, 4,096 mele
 Spell inputs are deliberately validated within the verified domain: the six amount/signature pairs produced from the source request, scalar0..128 and magic levels1..30. Controller defense parts currently require nonnegative values. Stable and transitional UI modes must remain distinct; mapping a saved player form directly to a stable mode during a transition is not verified.
 
 These checks establish component behavior, not complete combat fidelity, a rebuilt demo, full Act1 acceptance or Bob's playtest acceptance.
+
+`dawn_spell_motion.gd` adds the original update-tail movement request, verified against180 numeric cases: native speed200 produces distance(delta×500)/60; signed vertical interpolation uses the original fixed-point floor. The caller supplies the native clock and planar distance. Constructor target binding and generic collision application remain separate; no live projectile is claimed.
