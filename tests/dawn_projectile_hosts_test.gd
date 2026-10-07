@@ -18,6 +18,10 @@ func run() -> void:
 		# damage state even after the in-memory owner is cleared.
 		var birth: Dictionary=dawn.projectiles.spawn(int(dawn.ID),result.position,result.position,result.position,int(result.heading))
 		assert(birth.allocated)
+		var moved: Dictionary=dawn.move_projectile(birth.id,7864,8.0)
+		assert(not moved.has("error"),str(moved))
+		assert(dawn.projectiles.checkpoint().effects[0].position==moved.position)
+
 		var event: Dictionary={"enabled":true,"collision":0,"target":1,"distance":65536,"movement_heading":int(result.heading),"collision_heading":int(result.heading)}
 		assert(dawn.projectiles.contact(birth.id,event).request)
 		var pending: Dictionary=dawn.projectiles.checkpoint()
@@ -38,5 +42,5 @@ func run() -> void:
 		DirAccess.remove_absolute(path)
 		print("HOST launch: %s region=%s accepted=%s world=%s"%[pair[1],result.regions,result.accepted,result.world_position])
 		scene.queue_free();for i in 3:await process_frame
-	print("PASS: both production Dawn hosts resolve launch regions and physics without query mutation; supplied allocations survive host disk saves, reject invalid restore, suppress repeated damage, and accept legacy packets. No AI cast creation.")
+	print("PASS: both production Dawn hosts resolve launch regions and physics without query mutation; supplied allocations survive host disk saves, reject invalid restore, suppress repeated damage, and accept legacy packets. Explicit shared-delta motion entry tested; no AI cast creation.")
 	quit()

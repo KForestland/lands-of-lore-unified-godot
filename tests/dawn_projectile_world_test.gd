@@ -37,6 +37,22 @@ func run() -> void:
 	if not check(result.accepted and result.heading==16384 and result.world_position==origin+Vector3(25,10,0),"Targeted launch coordinate/bearing conversion differs"):return
 	var bad:=context.duplicate(true);bad.height=INF
 	if not check(World.launch(space,nav,origin,bad).has("error"),"Accepted invalid world launch"):return
+	var start: Array=[0,0,10<<16];var finish: Array=[0,100<<16,10<<16]
+	var swept:=World.sweep(space,origin,start,finish,2)
+	if not check(swept.blocked and swept.fraction>0 and swept.fraction<0.3 and not swept.contact.is_empty(),"Swept sphere tunneled through blocker"):return
+	if not check(World.sweep(space,origin,start,finish,2,excluded).position==finish,"Sweep caster exclusion differs"):return
+	var overlapping: Array=[0,25<<16,10<<16]
+	if not check(World.sweep(space,origin,overlapping,finish,2).fraction==0,"Initial overlap was ignored"):return
+	if not check(not World.sweep(space,origin,start,start,2).blocked,"Zero motion changed free placement"):return
+	var Store=preload("res://scripts/lol2/dawn_projectile_store.gd")
+	var store:=Store.new();var birth:=store.spawn(63,start,finish,start,0)
+	var motion:=store.motion(birth.id,786432)
+	if not check(motion.to==finish,"Shared delta did not produce expected100-unit movement"):return
+	swept=World.sweep(space,origin,motion.from,motion.to,2)
+	if not check(store.moved(birth.id,motion.from,swept.position).is_empty(),"Sweep commit failed"):return
+	var checkpoint:=store.checkpoint();var restored:=Store.new()
+	if not check(restored.restore(JSON.parse_string(JSON.stringify(checkpoint))).is_empty() and restored.checkpoint()==checkpoint,"Moved position did not survive reload"):return
+	if not check(not restored.moved(birth.id,start,finish).is_empty() and restored.checkpoint()==checkpoint,"Stale movement overwrote restored position"):return
 	scene.queue_free();await process_frame
-	print("PASS: live physics launch collision, RID exclusion, layer mask, real region fallback/failure, targeted bearing and translated source coordinates; modern adapter.")
+	print("PASS: live physics launch collision, RID exclusion, layer mask, real region fallback/failure, targeted bearing and translated source coordinates, swept obstacle/initial overlap, saved motion and stale commit rejection; modern adapter.")
 	quit()

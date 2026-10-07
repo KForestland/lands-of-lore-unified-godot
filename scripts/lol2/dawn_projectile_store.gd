@@ -95,3 +95,30 @@ func retire(id: int) -> bool:
 	if i<0:return false
 	_saved.effects.remove_at(i)
 	return true
+
+## Shared world clock delta, never an independent projectile wall clock.
+func motion(id: int, delta: int) -> Dictionary:
+	var i:=_index(id)
+	if i<0 or _saved.effects[i].kind!=32:return {"error":"Unknown fireball."}
+	var effect: Dictionary=_saved.effects[i]
+	if effect.cancelled or effect.contact.counter==0:return {"error":"Inactive fireball motion."}
+	var distance:=preload("res://scripts/lol2/hive_condition_geometry.gd").distance_between_startup(effect.position.slice(0,2),effect.aim.slice(0,2))
+	if distance.has("error") or distance.integer_invalid:return {"error":"Unsupported fireball target distance."}
+	var request:=preload("res://scripts/lol2/dawn_spell_motion.gd").request({"heading":effect.contact.heading,"delta":delta,"planar_distance":distance.distance,
+		"height_delta":preload("res://scripts/lol2/dawn_projectile_launch.gd").signed32(int(effect.aim[2])-int(effect.position[2]))})
+	if request.has("error"):return request
+	var rotation=preload("res://scripts/lol2/hive_boulder_impulse.gd")
+	var wrap=preload("res://scripts/lol2/dawn_projectile_launch.gd")
+	var next: Array=[wrap.signed32(int(effect.position[0])+((request.distance*rotation.sine(request.heading))>>16)),
+		wrap.signed32(int(effect.position[1])+((request.distance*rotation.sine(request.heading+16384))>>16)),
+		wrap.signed32(int(effect.position[2])+request.vertical)]
+	return {"from":effect.position.duplicate(),"to":next,"request":request}
+
+## Commit a synchronous world sweep only if its starting position still matches.
+func moved(id: int, from: Array, to: Array) -> String:
+	var i:=_index(id)
+	if i<0 or _saved.effects[i].kind!=32 or not point(from) or not point(to):return "Invalid projectile motion commit."
+	for axis in 3:
+		if int(_saved.effects[i].position[axis])!=int(from[axis]):return "Stale projectile motion commit."
+	_saved.effects[i].position=to.map(func(n):return int(n))
+	return ""
