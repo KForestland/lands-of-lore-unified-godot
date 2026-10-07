@@ -3,6 +3,8 @@ const Store=preload("res://scripts/lol2/dawn_projectile_store.gd")
 const Damage=preload("res://scripts/lol2/dawn_player_damage.gd")
 class Magic extends Node:
 	var value:=200
+	var level: Variant=5
+	func magic_state() -> Dictionary:return {"player":{"level":level}}
 	var callback:=Callable()
 	func health() -> int:return value
 	func set_health(n: int) -> void:
@@ -12,6 +14,13 @@ func _initialize() -> void:
 	var magic:=Magic.new();root.add_child(magic)
 	var store:=Store.new()
 	var context: Dictionary={"attacker_heading":0,"player_heading":32768,"guard":0,"mode":1,"scalar":0,"descriptors":[],"player_magic_level":10,"global223d4":0,"flags228":0}
+	var owned:=Damage.live_context(magic,20,1234,context)
+	assert(owned.player_magic_level==5 and owned.scalar==20 and owned.attacker_heading==1234)
+	assert(context.player_magic_level==10 and context.scalar==0 and context.attacker_heading==0)
+	magic.level=0
+	assert(Damage.live_context(magic,20,1234,context).has("error"))
+	magic.level=5
+	assert(Damage.live_context(magic,129,1234,context).has("error"))
 	var birth:=store.spawn(63,[0,65536,0],[0,655360,0],[0,0,0],0)
 	var before:=store.checkpoint()
 	var bad:=context.duplicate(true);bad.player_magic_level=0

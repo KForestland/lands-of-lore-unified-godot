@@ -7,6 +7,20 @@ const Health=preload("res://scripts/lol2/hive_player_health_adjustment.gd")
 const Numbers=preload("res://scripts/lol2/dawn_cast_target.gd")
 const PLAYER:=0x22574 # Stable source-player identity, not a Godot instance ID.
 
+## Live callers bind owned progression and equipment; pure damage replay may
+## still supply a complete context. Never mutate the caller's snapshot.
+static func live_context(magic: Node, scalar: int, caster_heading: int, context: Dictionary) -> Dictionary:
+	if magic==null or not magic.has_method("magic_state"):return {"error":"Player magic owner unavailable."}
+	var saved: Variant=magic.magic_state()
+	if not saved is Dictionary or not saved.get("player") is Dictionary:return {"error":"Invalid owned magic state."}
+	if not Numbers.integer(saved.player.get("level"),1,30):return {"error":"Unsupported owned magic level."}
+	if not Numbers.integer(scalar,0,128) or not Numbers.integer(caster_heading,0,65535):return {"error":"Unsupported owned damage stats."}
+	var supplied:=context.duplicate(true)
+	supplied.player_magic_level=int(saved.player.level)
+	supplied.scalar=scalar
+	supplied.attacker_heading=caster_heading
+	return supplied
+
 ## Validate/calculate on a private checkpoint before touching either owner.
 static func direct(magic: Node, store: RefCounted, id: int, collision_heading: int, context: Dictionary) -> Dictionary:
 	if magic==null or not magic.has_method("health") or not magic.has_method("set_health") or store==null:return {"error":"Player damage owner unavailable."}

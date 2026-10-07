@@ -1,0 +1,32 @@
+{
+  "complete": true,
+  "passed": true,
+  "selected_tests": [
+    "dawn_player_damage_test",
+    "dawn_projectile_hosts_test"
+  ],
+  "tests": [
+    {
+      "name": "dawn_player_damage_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "dawn_player_damage_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_projectile_hosts_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.04,
+      "log": "dawn_projectile_hosts_test.log",
+      "errors": []
+    }
+  ],
+  "source_changed_files": [],
+  "scope": "Saved magic level and owned equipment scalar; remaining native context supplied; explicit allocations, no automatic combat."
+}
