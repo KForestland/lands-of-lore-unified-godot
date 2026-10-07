@@ -18,6 +18,7 @@ var actor62: Node3D
 var bacatta65: Node3D
 var bacatta57: Node3D
 var village_alarm: Node3D
+var drunk: Node3D
 var inner_gate: Node3D
 ## Item held on the cursor for an E-use offer (Kelsrick kind4 mode1); not consumed unless a source effect does.
 var hand_item := ""
@@ -190,6 +191,10 @@ func _ready() -> void:
 			add_child(village_alarm)
 			var alarm_error: String=village_alarm.setup(self,{"context":_alarm_context,"kelsrick":_alarm_kelsrick,"doors":func(): if is_instance_valid(bacatta57): bacatta57.shut_doors(),"inner_gate":func(raw): if is_instance_valid(inner_gate): inner_gate.external(raw)},quest_state.get("jungle_village_alarm"))
 			if not alarm_error.is_empty(): push_error(alarm_error)
+		if preload("res://scripts/lol2/jungle_drunk.gd").assets_ready() and is_instance_valid(village_alarm):
+			drunk=preload("res://scripts/lol2/jungle_drunk.gd").new();drunk.name="DrunkVillager";add_child(drunk)
+			var drunk_error: String=drunk.setup(self,quest_state.get("jungle_drunk"))
+			if not drunk_error.is_empty():push_error(drunk_error)
 		if preload("res://scripts/lol2/jungle_inner_gate.gd").assets_ready():
 			inner_gate=preload("res://scripts/lol2/jungle_inner_gate.gd").new()
 			inner_gate.name="JungleInnerGate"
@@ -356,6 +361,7 @@ func apply_save(state: Variant) -> String:
 	if is_instance_valid(bacatta65): bacatta65.restore(quest_state.get("jungle_bacatta65",bacatta65.initial()))
 	if is_instance_valid(bacatta57): bacatta57.restore(quest_state.get("jungle_bacatta57",bacatta57.initial()))
 	if is_instance_valid(village_alarm): village_alarm.restore(quest_state.get("jungle_village_alarm",village_alarm.initial()))
+	if is_instance_valid(drunk): drunk.restore(quest_state.get("jungle_drunk",drunk.initial()))
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
 	return ""
 
@@ -410,11 +416,12 @@ func apply_area_handoff(state: Variant) -> String:
 	if is_instance_valid(bacatta65): bacatta65.restore(quest_state.get("jungle_bacatta65",bacatta65.initial()))
 	if is_instance_valid(bacatta57): bacatta57.restore(quest_state.get("jungle_bacatta57",bacatta57.initial()))
 	if is_instance_valid(village_alarm): village_alarm.restore(quest_state.get("jungle_village_alarm",village_alarm.initial()))
+	if is_instance_valid(drunk): drunk.restore(quest_state.get("jungle_drunk",drunk.initial()))
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
 	return ""
 
 func move_grounded(direction: Vector3, delta: float, sprint: bool = false) -> void:
-	if (is_instance_valid(village_dialogue) and village_dialogue.active()) or (is_instance_valid(followup_dialogue) and followup_dialogue.active()) or (is_instance_valid(dawn) and dawn.movement_locked()) or (is_instance_valid(bacatta65) and bacatta65.movement_locked()):
+	if (is_instance_valid(village_dialogue) and village_dialogue.active()) or (is_instance_valid(followup_dialogue) and followup_dialogue.active()) or (is_instance_valid(dawn) and dawn.movement_locked()) or (is_instance_valid(bacatta65) and bacatta65.movement_locked()) or (is_instance_valid(drunk) and drunk.movement_locked()):
 		jump_requested = false
 		super.move_grounded(Vector3.ZERO,delta)
 		return
@@ -444,6 +451,7 @@ func _sync_exit_checkpoint() -> void:
 	if is_instance_valid(bacatta65): quest_state.jungle_bacatta65=bacatta65.checkpoint()
 	if is_instance_valid(bacatta57): quest_state.jungle_bacatta57=bacatta57.checkpoint()
 	if is_instance_valid(village_alarm): quest_state.jungle_village_alarm=village_alarm.checkpoint()
+	if is_instance_valid(drunk): quest_state.jungle_drunk=drunk.checkpoint()
 	if is_instance_valid(inner_gate): quest_state.jungle_inner_gate=inner_gate.checkpoint()
 	if is_instance_valid(exit_encounter): quest_state.jungle_exit_encounter=exit_encounter.checkpoint()
 
@@ -469,7 +477,7 @@ func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 
 func request_jump() -> bool:
-	if actor_input_locked() or (is_instance_valid(dawn) and dawn.movement_locked()) or (is_instance_valid(bacatta65) and bacatta65.movement_locked()): return false
+	if actor_input_locked() or (is_instance_valid(dawn) and dawn.movement_locked()) or (is_instance_valid(bacatta65) and bacatta65.movement_locked()) or (is_instance_valid(drunk) and drunk.movement_locked()): return false
 	if is_instance_valid(exit_encounter) and exit_encounter.active(): return false
 	return super.request_jump()
 
@@ -482,7 +490,7 @@ func _bacatta_context() -> Dictionary:
 	return ctx
 
 func actor_input_locked() -> bool:
-	return (is_instance_valid(bacatta) and bacatta.input_locked()) or (is_instance_valid(exit_woman) and exit_woman.input_locked()) or (is_instance_valid(kelsrick) and kelsrick.input_locked()) or (is_instance_valid(dawn) and dawn.input_locked())
+	return (is_instance_valid(drunk) and drunk.input_locked()) or (is_instance_valid(bacatta) and bacatta.input_locked()) or (is_instance_valid(exit_woman) and exit_woman.input_locked()) or (is_instance_valid(kelsrick) and kelsrick.input_locked()) or (is_instance_valid(dawn) and dawn.input_locked())
 
 ## Dawn reads the soul, runes, gift, relationship and monastery-attack globals by their source names.
 func _dawn_context() -> Dictionary:
