@@ -46,3 +46,15 @@ The R3 baseline had252 registered tests; current source has256 (143core and113Hi
 The eleven-leg campaign entrypoint is `tools/run_act1_fresh_chain.py --out <fresh-directory> --demo-interface`. It uses actual save handoffs and preserves per-leg logs. Its receipt auditors and numeric fixtures are published; generated receipts certify their recorded run only, and personal/earned save files are not distributed here.
 
 The atlas reader now uses repository-local `tools/lol2_source_format.py` for MIX framing and the37 command lengths. It no longer imports the external geometry/progression readers or their Capstone dependencies. [Parity evidence](atlas-portability-checks.json) covers all15 level archives, six malformed/boundary tests and17 byte-identical atlas outputs under standard-library-only Python. Full atlas generation still requires the coverage/evidence documents and local archives; this does not make all sprite/audio extractors portable. The legacy external helper search path is retained for other preparers importing the atlas module until those callers migrate.
+
+## Standalone creature audio preparation
+
+The shared AUD stager can now regenerate selected original cues using only Python's standard library, FFmpeg on PATH, and the installed `LOCALLNG.MIX`. It no longer imports wax/sprite preparers or native-analysis packages. From the checkout, select a fresh isolated output root:
+
+```sh
+python3 -S tools/prepare_creature_audio_clips.py --game /path/to/original-game --output-root /path/to/audio-stage --folder cave_captain_audio --request 1031
+```
+
+Repeat `--request` to decode additional sound-bank IDs. WAVs and `audio.json` are written below `assets/lol2/generated/<folder>`; extracted AUDs remain below `tmp/<folder>`. The original bank hash is required. This standalone manifest lists clips and provenance; encounter-specific generators still supply cue/event bindings. Existing Python callers retain `stage_clips(root, folder, requests, names)` and can pass keyword `game=` or set `LOL2_GAME_ROOT`; the historical local default remains for compatibility.
+
+[Audio portability evidence](audio-portability-checks.json) verifies58 distinct requests against69 existing WAVs, all byte-identical, with only the two repository Python files in the isolated tool directory and `python3 -S`. Five input tests cover missing/duplicate/wrong banks, request bounds and output-folder escape. Original media stays local. This closes shared AUD extraction portability, not sprite/movie extraction, the entire clean-machine build or audible playback acceptance.
