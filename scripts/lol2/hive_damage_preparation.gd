@@ -1,5 +1,5 @@
 extends RefCounted
-## Source EXEC/spell32→player heading and mode-byte preprocessing; globals supplied.
+## Source EXEC/spells32/98→player heading and mode-byte preprocessing; globals supplied.
 const Numbers = preload("res://scripts/lol2/hive_clock_runtime.gd")
 const Calculation = preload("res://scripts/lol2/hive_damage_calculation.gd")
 
@@ -10,8 +10,9 @@ static func prepare(context: Variant) -> Dictionary:
 		if not Numbers._integer(context.get(field),65535): return {"error":"Invalid heading: "+field}
 	if not Numbers._integer(context.get("guard"),4294967295) or not Numbers._integer(context.get("mode"),255): return {"error":"Invalid damage mode/guard."}
 	if not Numbers._integer(context.get("amount"),127) or int(context.amount)<1: return {"error":"Unsupported incoming attack amount."}
-	if not Numbers._integer(context.get("signature"),68) or int(context.signature) not in [4,36,68]: return {"error":"Unsupported incoming attack signature."}
+	if not Numbers._integer(context.get("signature"),68) or int(context.signature) not in [4,5,36,68]: return {"error":"Unsupported incoming attack signature."}
 	if int(context.signature)==4 and int(context.amount)!=10: return {"error":"Unsupported incoming spell amount."}
+	if int(context.signature)==5 and int(context.amount)>19: return {"error":"Unsupported explosion amount."}
 	var amount := int(context.amount);var signature := int(context.signature)
 	var attacker_heading := int(context.attacker_heading);var player_heading := int(context.player_heading)
 	var eligible := attacker_heading<=player_heading+8192 and attacker_heading>=((player_heading-8192)&0xffffffff) and int(context.guard)==0
@@ -41,6 +42,21 @@ static func resolve_dawn_spell(context: Variant) -> Dictionary:
 	# Original Dawn variant1 collision request, not caller-selectable spell data.
 	supplied.amount=10;supplied.signature=4;supplied.damage_mask=256
 	supplied.request_kind=2;supplied.request_tag=32;supplied.caster_factor=10
+	var prepared := prepare(supplied)
+	if prepared.has("error"): return prepared
+	supplied.amount=prepared.amount;supplied.signature=prepared.signature
+	var result := Calculation.calculate(supplied)
+	if result.has("error"): return result
+	result.prepared=prepared
+	return result
+
+static func resolve_dawn_explosion(event: Variant, context: Variant) -> Dictionary:
+	if not event is Dictionary or not context is Dictionary: return {"error":"Invalid explosion request/context."}
+	for pair in [["mask",16],["signature",5],["kind",2],["effect",98]]:
+		if not Numbers._integer(event.get(pair[0]),int(pair[1])) or int(event[pair[0]])!=int(pair[1]): return {"error":"Unsupported explosion request."}
+	var supplied: Dictionary = context.duplicate(true)
+	supplied.amount=event.get("amount");supplied.signature=5;supplied.damage_mask=16
+	supplied.request_kind=2;supplied.request_tag=98;supplied.caster_factor=10
 	var prepared := prepare(supplied)
 	if prepared.has("error"): return prepared
 	supplied.amount=prepared.amount;supplied.signature=prepared.signature

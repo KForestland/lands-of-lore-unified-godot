@@ -2,7 +2,7 @@
   "original_executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
   "files": {
     "scripts/lol2/hive_damage_calculation.gd": "99ed919896062170c757f5db4d67c638f22707aff1f2824e6d3d67db02437b3a",
-    "scripts/lol2/hive_damage_preparation.gd": "1417bf706c4c240414a7c8dccde6afbbe3508faed1de16e1a6ef34045dc7fe88",
+    "scripts/lol2/hive_damage_preparation.gd": "7d96550e0477c937f83dbc34eb5cdb8d60e5e061e07fb626234f4da5d283e8b3",
     "scripts/lol2/player_mitigation.gd": "bb31d99676b3af13fb62ecddeb35788c377feef7372c9457e3190860722cd6a0",
     "scripts/lol2/save_value_rules.gd": "8722c2d784b5edde3d4df73544ff37ae0ba5e542f09f192ee250a6b84000b73a",
     "scripts/lol2/hive_clock_runtime.gd": "fab0e08f62975c78be7bab310d353b1f220224686978b75f7163d0610c7f1a53",
@@ -22,7 +22,11 @@
     "docs/dawn-spell-asset-binding.json": "a8bad23d07d5068f29110910f23c77cef2646279fefc3a6ad62e634140e99587",
     "tests/fixtures/dawn_spell32_lifecycle_native.json": "36d5c3f83a5d1c15b185b0771e435953cea60f03f37dae2f932b0dcc39c21018",
     "tests/dawn_explosion_calculation_test.gd": "81dbfa1c8e66fdb5d387a314164cbb1e6bac005612083e60f5a2236d7f675aaa",
-    "tests/fixtures/dawn_explosion_calculation_native.json": "c57130cca5b26cc162c45e55222398345ed8fc102da44ad5aaee79ee132c6da9"
+    "tests/fixtures/dawn_explosion_calculation_native.json": "c57130cca5b26cc162c45e55222398345ed8fc102da44ad5aaee79ee132c6da9",
+    "scripts/lol2/dawn_explosion.gd": "007720082beca073d3007f986098c001d3790d1312a46082e1d8b4268e6d7642",
+    "tests/dawn_explosion_test.gd": "9123fa58cf0435e14a07f8f058a84f6d163c20a47babf0dc60ce29ecdbe33543",
+    "tests/fixtures/dawn_explosion_first_pass_native.json": "5d3f73a571f201913ed15938534a23327d9f10056d604601641a488dfe029bd5",
+    "tests/fixtures/dawn_explosion98_preparation_native.json": "4936f687b2f12febde373a4fa470b6b761c991b66d057f9c8a4b74f6ad7bd3df"
   },
   "scope": "Numeric input/output fixtures from local native instruction replay. No executable instructions, archive payloads, images, audio or films included. Native preparation62728, damage62922, mitigation construction89E7C. Virtual calls and external field producers retain documented boundaries. No playable Dawn combat claim."
 }
