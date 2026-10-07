@@ -1,0 +1,17 @@
+{
+  "original_executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "files": {
+    "scripts/lol2/hive_damage_calculation.gd": "44ed3faf44bdbe2c9dcb55e240189447114aeca01139a111196c37fbd626dfe2",
+    "scripts/lol2/hive_damage_preparation.gd": "1417bf706c4c240414a7c8dccde6afbbe3508faed1de16e1a6ef34045dc7fe88",
+    "scripts/lol2/player_mitigation.gd": "bb31d99676b3af13fb62ecddeb35788c377feef7372c9457e3190860722cd6a0",
+    "scripts/lol2/save_value_rules.gd": "8722c2d784b5edde3d4df73544ff37ae0ba5e542f09f192ee250a6b84000b73a",
+    "scripts/lol2/hive_clock_runtime.gd": "fab0e08f62975c78be7bab310d353b1f220224686978b75f7163d0610c7f1a53",
+    "tests/player_mitigation_test.gd": "6516e045f00fd98a677497c9b15b1fe78e5b9bc73d0a9e14bf64987de76a25b2",
+    "tests/fixtures/player_mitigation_native.json": "069b87c1f858fd4b5c8e35a9bbbbcfe02e65ab6213d44ae5f2b5393ad29970fb",
+    "tests/fixtures/dawn_spell32_calculation_native.json": "d87c5d1f5c7dfd346d5ddfc4148edceb1090ecf58db1df800545e1ece6a6e52e",
+    "tests/fixtures/dawn_spell32_preparation_native.json": "68f6b67baabe0ca29527b751d1bc01558e25d5cfbb607e086e91b116627bbb7a",
+    "tests/fixtures/hive_damage_calculation_native.json": "066022a522e793a2cdaec0ce8f95bf73ec1bf9471ad9d3996913139d9fb623d3",
+    "tests/fixtures/hive_damage_preparation_native.json": "5fb84808fb9f6ff17a09e0c599d95addc3e390c34e2462f38018729baf4273c6"
+  },
+  "scope": "Numeric input/output fixtures from local native instruction replay. No executable instructions, archive payloads, images, audio or films included. Native preparation62728, damage62922, mitigation construction89E7C. Virtual calls and external field producers retain documented boundaries. No playable Dawn combat claim."
+}
