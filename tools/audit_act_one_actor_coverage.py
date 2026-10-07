@@ -33,6 +33,8 @@ for actor in list(range(25,36))+list(range(40,52)):
     BINDINGS[('L1_DC',actor)] = ('scripts/lol2/cave_roach_population.gd','cave_population_actor','source-position population with pursuit/bite, melee/Spark rewards and saved movement; earned cave route passes; native scheduling, audio and loot remain open')
 # Data-driven populations are checked against their source identities below.
 POPULATIONS = [
+    ('L4_HJ', 'jungle_bacatta57', 'scripts/lol2/jungle_bacatta57.gd', 'jungle_bacatta57_population_source.json',
+     'relationship-zero village return seals threshold and closes doors, peaceful linked body, hostile-on-strike, removal and disk return; independent pause, actual damage and corpse persistence checks; supplied branch conditions, modern timing/combat; alarm effects separately owned'),
     ('L4_HJ', 'jungle_bacatta65', 'scripts/lol2/jungle_bacatta65.gd', 'jungle_bacatta65_population_source.json',
      'alert-before-first-meeting trigger, original conversation/media, idle offer/walk-away/hit, peaceful/hostile body, pause and disk persistence; independent actual damage and corpse check passes; supplied approach, modern combat/timing and no Bob acceptance'),
     ('L5_HC', 'hive_dawn20', 'scripts/lol2/hive_dawn20.gd', 'hive_dawn20_population_source.json',

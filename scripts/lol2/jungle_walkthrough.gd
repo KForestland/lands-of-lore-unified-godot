@@ -16,6 +16,7 @@ var kelsrick: Node3D
 var dawn: Node3D
 var actor62: Node3D
 var bacatta65: Node3D
+var bacatta57: Node3D
 ## Item held on the cursor for an E-use offer (Kelsrick kind4 mode1); not consumed unless a source effect does.
 var hand_item := ""
 var quest_state: Dictionary = Save.Quests.initial()
@@ -175,6 +176,12 @@ func _ready() -> void:
 			add_child(bacatta65)
 			var bacatta65_error: String=bacatta65.setup(self,{"context":_bacatta65_context,"shared":_bacatta65_shared,"held_item":func(): return hand_item if hand_item in carried_collected else ""},quest_state.get("jungle_bacatta65"))
 			if not bacatta65_error.is_empty(): push_error(bacatta65_error)
+		if preload("res://scripts/lol2/jungle_bacatta57.gd").assets_ready():
+			bacatta57=preload("res://scripts/lol2/jungle_bacatta57.gd").new()
+			bacatta57.name="JungleBacatta57"
+			add_child(bacatta57)
+			var bacatta57_error: String=bacatta57.setup(self,{"context":_bacatta57_context},quest_state.get("jungle_bacatta57"))
+			if not bacatta57_error.is_empty(): push_error(bacatta57_error)
 	get_window().title = "Lands of Lore II — "+area_name
 	if get_tree().has_meta("lol2_jungle_handoff"):
 		var handoff = get_tree().get_meta("lol2_jungle_handoff")
@@ -333,6 +340,7 @@ func apply_save(state: Variant) -> String:
 	if is_instance_valid(dawn): dawn.restore(quest_state.get("jungle_dawn",dawn.initial()))
 	if is_instance_valid(actor62): actor62.restore(quest_state.get("jungle_actor62",actor62.initial()))
 	if is_instance_valid(bacatta65): bacatta65.restore(quest_state.get("jungle_bacatta65",bacatta65.initial()))
+	if is_instance_valid(bacatta57): bacatta57.restore(quest_state.get("jungle_bacatta57",bacatta57.initial()))
 	return ""
 
 # Validated inventory and quest transport for the Hive route.
@@ -384,6 +392,7 @@ func apply_area_handoff(state: Variant) -> String:
 	if is_instance_valid(dawn): dawn.restore(quest_state.get("jungle_dawn",dawn.initial()))
 	if is_instance_valid(actor62): actor62.restore(quest_state.get("jungle_actor62",actor62.initial()))
 	if is_instance_valid(bacatta65): bacatta65.restore(quest_state.get("jungle_bacatta65",bacatta65.initial()))
+	if is_instance_valid(bacatta57): bacatta57.restore(quest_state.get("jungle_bacatta57",bacatta57.initial()))
 	return ""
 
 func move_grounded(direction: Vector3, delta: float, sprint: bool = false) -> void:
@@ -415,6 +424,7 @@ func _sync_exit_checkpoint() -> void:
 	if is_instance_valid(dawn): quest_state.jungle_dawn=dawn.checkpoint()
 	if is_instance_valid(actor62): quest_state.jungle_actor62=actor62.checkpoint()
 	if is_instance_valid(bacatta65): quest_state.jungle_bacatta65=bacatta65.checkpoint()
+	if is_instance_valid(bacatta57): quest_state.jungle_bacatta57=bacatta57.checkpoint()
 	if is_instance_valid(exit_encounter): quest_state.jungle_exit_encounter=exit_encounter.checkpoint()
 
 func _exit_context() -> Dictionary:
@@ -506,6 +516,12 @@ func _bacatta65_context() -> Dictionary:
 	var shared: Dictionary={}
 	for id in bacatta65.src.shared_names: shared[id]=int(globals.get(str(bacatta65.src.shared_names[id]),GlobalDefaults.initial_value(str(bacatta65.src.shared_names[id]))))
 	shared["29"]=int(village_gate.state().shared29) if is_instance_valid(village_gate) else 0
+	return {"shared":shared}
+
+## Bacatta57 (village entry) tests GV_BACATTA_RELATIONSHIP and GV_MET_BACATTA; it writes no globals.
+func _bacatta57_context() -> Dictionary:
+	var shared: Dictionary={}
+	for id in bacatta57.src.shared_names: shared[id]=GlobalDefaults.read(quest_state.get("monastery",{}).get("globals",{}),str(bacatta57.src.shared_names[id]))
 	return {"shared":shared}
 
 ## Opcode206/199 on the Bacatta65 globals (runtime caps: soul 10, Bacatta relationship 2).

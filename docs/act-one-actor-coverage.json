@@ -2,7 +2,7 @@
   "source_inventory_sha256": "015ad7e0c79ce05fe598c3498e0c5b22bc618ede725569c122cf82f8e46c388e",
   "scope": "Four pre-departure map archives only. Positive implementation bindings are reviewed leads, not completion. Unmatched actors may be alternate states, script placeholders, cinematic actors or playable encounters; source reachability and live implementation classification remain required. L8_SJ acceptance ends at verified arrival/onward walk, not completion of Act Two content.",
   "placement_count": 194,
-  "reviewed_live_bindings": 110,
+  "reviewed_live_bindings": 111,
   "inert_staging_at_load": 80,
   "staging_evidence": {
     "path": "docs/act-one-actor-staging.json",
@@ -16,6 +16,12 @@
     "scope": "Classify L4_HJ TIG_ROG actors 36-38 as unactivated by direct source scripts."
   },
   "population_contracts": {
+    "scripts/lol2/jungle_bacatta57_population_source.json": {
+      "sha256": "9ce8fa0062950cbd01a859bb993f290c1e1baea3a835b38d8ed1c631cc051ca9",
+      "actors": [
+        57
+      ]
+    },
     "scripts/lol2/jungle_bacatta65_population_source.json": {
       "sha256": "15ece3f40039869f392181aa78c6bdf801aa413ba0e13163f7a797cb22e19776",
       "actors": [
@@ -763,32 +769,32 @@
           "reviewed_live_bindings": {
             "51": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "52": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "53": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "54": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "55": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "56": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "62": {
@@ -814,27 +820,27 @@
           "reviewed_live_bindings": {
             "46": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "47": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "48": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "49": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "50": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             }
           },
@@ -857,37 +863,37 @@
           "reviewed_live_bindings": {
             "39": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "40": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "41": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "42": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "43": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "44": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             },
             "45": {
               "path": "scripts/lol2/jungle_walkthrough.gd",
-              "sha256": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+              "sha256": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
               "scope": "villagers bound to shared owner; idle/provocation/save adapter; native wandering and rendered acceptance remain open"
             }
           },
@@ -1005,22 +1011,25 @@
             65
           ],
           "reviewed_live_bindings": {
+            "57": {
+              "path": "scripts/lol2/jungle_bacatta57.gd",
+              "sha256": "fd0bfb7e5e5f5bc268ecac86514ed3ace594c65ba9008a8b2ea95cbb099ee124",
+              "scope": "relationship-zero village return seals threshold and closes doors, peaceful linked body, hostile-on-strike, removal and disk return; independent pause, actual damage and corpse persistence checks; supplied branch conditions, modern timing/combat; alarm effects separately owned"
+            },
             "61": {
               "path": "scripts/lol2/jungle_bacatta.gd",
-              "sha256": "3738db4f0ae5d562481528fbf380fcf5c233ab008c756a5b4402acde951b5b2c",
+              "sha256": "554b2cf9a4233fcf57394253748093f2890c7fe5fde6539ed5329187e16db0ba",
               "scope": "Bacatta61 prop552 conversation/approach/guard60/exit branch with original media and saved generic body; focused rendered fixture passes; hostile clips/outcomes and native timing remain partial"
             },
             "65": {
               "path": "scripts/lol2/jungle_bacatta65.gd",
-              "sha256": "166ca27d9a36b3d8f1bafd257edcac401611210c4327e82b89cb1da2f9b97ad3",
+              "sha256": "108a64953935b41c3a2a76a708e458e2fb456831761f436fe4fd002cfecab518",
               "scope": "alert-before-first-meeting trigger, original conversation/media, idle offer/walk-away/hit, peaceful/hostile body, pause and disk persistence; independent actual damage and corpse check passes; supplied approach, modern combat/timing and no Bob acceptance"
             }
           },
           "inert_staging_at_load": [],
           "unactivated_by_direct_scripts": [],
-          "classification_pending": [
-            57
-          ]
+          "classification_pending": []
         },
         {
           "definition": 6,
@@ -1329,7 +1338,7 @@
           "reviewed_live_bindings": {
             "20": {
               "path": "scripts/lol2/hive_dawn20.gd",
-              "sha256": "fdba8e9a0c89e4ea86f0e14bfbe98d0e40fbc80d9b62b42f1b4533d6bb086bf9",
+              "sha256": "3d112d1605e76cedd2f601a87449b0669ae2af394ba05e54ede0173bb1103e09",
               "scope": "alternate translation after library attack, queued RUNES admission, dialogue/offers/hit, saved body and removal on re-entry; eight focused checks pass; hostile attacks, region478 unload and kind5 producer remain open"
             }
           },

@@ -67,6 +67,8 @@ owner acceptance.
 - **Unbound producers.** actor65 kind10 value 0x9000 (re-run A7544) and kind6 value13 (prop2955 event20) have no
   producer, so they are not raised.
 - **Clocks.** Clip/segment durations come from the staged media. The timer runs at 60 ticks/s.
+- **Globals.** An absent soul or Bacatta relationship reads its native new-game value: 5 and 1, from GLOBAL.MIX (see
+  jungle-bacatta57.md). So the state-6 offer takes the relationship 1→2, and a late hit takes soul 5→4.
 
 ## Tests
 
@@ -97,5 +99,3 @@ owner acceptance.
   - armed strike → hostile actor65 persisting over save/load.
 
   The approach is supplied, not earned.
-
-Lead integration review: independent eight checks and final main eight checks pass on stable source. An additional real-host probe observes hostile damage30→24, frozen pause state and defeated-body disk persistence; these assertions are retained in the live regression. The defeat probe calls the combat receiver with lethal damage, not an earned melee kill. Numeric source regeneration matches the release. Conversation capture inspected; supplied approach and no representative GPU/audio or Bob acceptance. See [checks](jungle-bacatta65-checks.json). R4 binaries predate this integration.

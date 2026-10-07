@@ -2,7 +2,7 @@
 
 Four pre-departure map archives only. Positive implementation bindings are reviewed leads, not completion. Unmatched actors may be alternate states, script placeholders, cinematic actors or playable encounters; source reachability and live implementation classification remain required. L8_SJ acceptance ends at verified arrival/onward walk, not completion of Act Two content.
 
-194 source placements across four archives; 110 explicitly reviewed implementation bindings (including partial actors). These numbers are not a completion percentage.
+194 source placements across four archives; 111 explicitly reviewed implementation bindings (including partial actors). These numbers are not a completion percentage.
 
 | Area | Definition / label | Source actors | Reviewed live actors | Inert staging at load | Unactivated by direct scripts | Classification pending |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -27,7 +27,7 @@ Four pre-departure map archives only. Positive implementation bindings are revie
 | L4_HJ | 2 / TIG_FEM | 46, 47, 48, 49, 50 | 46, 47, 48, 49, 50 | none | none | none |
 | L4_HJ | 3 / TIG_CUB | 39, 40, 41, 42, 43, 44, 45 | 39, 40, 41, 42, 43, 44, 45 | none | none | none |
 | L4_HJ | 4 / DINO | 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 | 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 | none | none | none |
-| L4_HJ | 5 / BACL4 | 57, 61, 65 | 61, 65 | none | none | 57 |
+| L4_HJ | 5 / BACL4 | 57, 61, 65 | 57, 61, 65 | none | none | none |
 | L4_HJ | 6 / L4WW | 0, 66 | 0, 66 | none | none | none |
 | L4_HJ | 7 / Kelsrick | 64 | 64 | none | none | none |
 | L4_HJ | 8 / DawnL4 | 63 | 63 | none | none | none |

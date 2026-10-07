@@ -1,0 +1,254 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "actor": {
+  "id": 57,
+  "position": [
+   -1738,
+   0,
+   -3974
+  ],
+  "heading": 53339,
+  "flags": 29058,
+  "definition": 5,
+  "health": 200,
+  "behavior": 4,
+  "byte33": 32
+ },
+ "prop": 482,
+ "control": 216,
+ "doors": [
+  56,
+  57
+ ],
+ "threshold": 3501,
+ "removal_region": 3157,
+ "regions": [
+  {
+   "region": 3501,
+   "polygon": [
+    [
+     -1624.0,
+     -4037.0
+    ],
+    [
+     -1565.0,
+     -4021.0
+    ],
+    [
+     -1613.0,
+     -3732.0
+    ],
+    [
+     -1729.0,
+     -3790.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0,
+   "ceiling": 127
+  },
+  {
+   "region": 3157,
+   "polygon": [
+    [
+     3873.0,
+     2135.0
+    ],
+    [
+     3774.0,
+     1994.0
+    ],
+    [
+     3876.0,
+     1910.0
+    ],
+    [
+     4029.0,
+     2106.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0,
+   "ceiling": 175
+  },
+  {
+   "region": 3503,
+   "polygon": [
+    [
+     -1662.0,
+     -4075.0
+    ],
+    [
+     -1624.0,
+     -4037.0
+    ],
+    [
+     -1729.0,
+     -3790.0
+    ],
+    [
+     -1840.0,
+     -3938.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0,
+   "ceiling": 127
+  }
+ ],
+ "records": [
+  {
+   "owner_kind": "region",
+   "owner": 3501,
+   "kind": 2,
+   "value": 0,
+   "stream": 0,
+   "group": 7026,
+   "predicate": null,
+   "raw": "080c721bad0d0200",
+   "commands": [
+    "0903e4010a00",
+    "0903e5010a00",
+    "0903ad010a00",
+    "0903ac010a00",
+    "091064000a00",
+    "0c03e2010c00",
+    "0903e2011500",
+    "120100004af9790f000084005b50000a0000"
+   ]
+  },
+  {
+   "owner_kind": "prop",
+   "owner": 482,
+   "kind": 6,
+   "value": 20,
+   "stream": 1,
+   "group": 10162,
+   "predicate": 173,
+   "raw": "0606b2271400",
+   "commands": [
+    "0e10d80003000100",
+    "c590ad0d0200",
+    "012038006400",
+    "012039006400",
+    "090239000300"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 3157,
+   "kind": 2,
+   "value": 0,
+   "stream": 0,
+   "group": 5570,
+   "predicate": 167,
+   "raw": "080cc215550c0200",
+   "commands": [
+    "090241000200",
+    "090239000200"
+   ]
+  }
+ ],
+ "predicates": {
+  "173": {
+   "op": "==",
+   "left": {
+    "shared": 13
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "00020d0000"
+  },
+  "167": {
+   "op": "==",
+   "left": {
+    "shared": 18
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0002120001"
+  }
+ },
+ "alarm": {
+  "control": 216,
+  "record_index": 1,
+  "raw": "0a02246a300105002c01",
+  "group": 27172,
+  "countdown": 300,
+  "predicate": 192,
+  "note": "Started by g10162 (op14 operation3). On expiry g27172 runs only when GV_HULINE_ALERT==1 AND local32==0: the Huline alarm (gates 78/79 shut, 56/57 to 100, Kelsrick hostile). No port owner; reported, not run."
+ },
+ "return_point": [
+  -1718,
+  0,
+  -3961
+ ],
+ "native_initial": {
+  "GV_LUTHERS_SOUL": 5,
+  "GV_GAME_LEVEL_PROGRESSION": 0,
+  "GV_SUMMON_SCROLL_AQUIRED": 0,
+  "GV_DARK_HALLS_OPEN": 0,
+  "GV_DANIEL_KILLED": 0,
+  "GV_DANIEL_SPARED": 0,
+  "GV_LUTHER_SPARED": 0,
+  "GV_HIVE_CAVES_VISITED": 0,
+  "GV_ARENA_DONE": 0,
+  "GV_HAS_RUNES": 0,
+  "GV_GAVE_DAWN_RUNES": 0,
+  "GV_KELSRICK_DEAD": 0,
+  "GV_DAWN_RELATIONSHIP": 1,
+  "GV_BACATTA_RELATIONSHIP": 1,
+  "GV_RUNES_TRANSLATED": 0,
+  "GV_DREAMSTONE": 0,
+  "GV_SSAR_DESTROYED": 0,
+  "GV_KNOWLEDGE_OF_TEMPLE": 0,
+  "GV_MET_BACATTA": 0,
+  "GV_KNOWLEDGE_OF_POWER_ORB": 0,
+  "GV_LUTHER_HAS_WARBLADE": 0,
+  "GV_MET_DAWN": 0,
+  "GV_MET_KELSRICK": 0,
+  "GV_SHAMAN_DEAD": 0,
+  "GV_LARKHON_SEEN": 0,
+  "GV_KITYARA_DEAD": 0,
+  "GV_SERUM1": 0,
+  "GV_SERUM2": 0,
+  "GV_SERUM3": 0,
+  "GV_HULINE_ALERT": 0,
+  "GV_WILD_ONE_ALERT": 0,
+  "GV_MIST_OF_DOOM_SCROLL_AQUIRED": 0,
+  "GV_PRISM_SCROLL_AQUIRED": 0,
+  "GV_LUTHER_IS_TUANI": 0,
+  "GV_LUTHER_HAS_URN": 0,
+  "GV_LUTHER_HAS_PRIESTS_ASHES": 0,
+  "GV_IRON_FLUTE": 0,
+  "GV_BRACERS_OF_THE_DEAD": 0,
+  "GV_SHALLA_RESCUED": 0,
+  "GV_JULIAN_ATTACKED": 0,
+  "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+  "GV_EMPERORS_REMAINS": 0,
+  "GV_SILVERLEAF_BUSH_CREATED": 0,
+  "GV_LONG_ARM_AXE": 0,
+  "GV_DARK_HALLS_TRIGGERED": 0,
+  "GV_LUTHER_FORM": 0,
+  "GV_DAWN_TRANSLATED_RUNES": 0,
+  "GV_LUTHER_KNOWS_ABOUT_DANIEL": 0,
+  "GV_RIX_DEAD": 0,
+  "GV_LUTHER_HP": 0,
+  "GV_RUBY_OF_TRUTH": 0,
+  "GV_LUTHER_HAS_MANTLE": 0,
+  "Belial_Born": 0
+ },
+ "shared_names": {
+  "13": "GV_BACATTA_RELATIONSHIP",
+  "18": "GV_MET_BACATTA"
+ },
+ "doors_sha256": "e4519646150e719c1feeb36fa2d9a225fef995b0d5bb21fd72d8adcf7d73f2db"
+}

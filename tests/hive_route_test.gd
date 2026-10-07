@@ -65,6 +65,8 @@ func run() -> void:
 	expected.jungle_exit_woman.conversation.prop.generation=int(after.jungle_exit_woman.conversation.prop.generation)
 	expected.hive_dawn20=expected_hive_dawn
 	expected.jungle_bacatta=jungle.bacatta.initial()
+	if is_instance_valid(jungle.bacatta65): expected.jungle_bacatta65=jungle.bacatta65.initial()
+	if is_instance_valid(jungle.bacatta57): expected.jungle_bacatta57=jungle.bacatta57.initial()
 	expected.jungle_exit_encounter=jungle.exit_encounter.initial()
 	if is_instance_valid(jungle.kelsrick): expected.jungle_kelsrick=jungle.kelsrick.initial()
 	if is_instance_valid(jungle.dawn): expected.jungle_dawn=jungle.dawn.initial()
