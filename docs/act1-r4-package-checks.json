@@ -1,0 +1,73 @@
+{
+  "candidate": "/home/bob/lol2_act1_candidate_20261007_r4",
+  "updated_utc": "2026-10-07T06:13:40.145388+00:00",
+  "full_suite": {
+    "passed": true,
+    "total": 256,
+    "source_stable": true,
+    "source_changed_files": [],
+    "all_test_source_hashes_match_R4_manifest": true,
+    "archive": "/home/bob/AI_COMMS/classic_review_20261007/lead/act1_full256_20261007T061146Z",
+    "archive_manifest_sha256": "6dde6f425550cb37347dbbdd9c3142e80d5e95ef8c6e0e83acad911a9c926a94",
+    "report_sha256": "07ba8b21048af1534bf8c3772cafd122bde81ae9e915969cb8bd2999153601f8",
+    "scope": "Full registered256-test suite on the three-spell source, matching R4 staged provenance. Not a completed R4 campaign, packaged runtime, native Windows/GPU/audio or Bob acceptance."
+  },
+  "linux_export": {
+    "exit_code": 0,
+    "log": "export_linux.log"
+  },
+  "windows_export": "running:34954",
+  "linux_packaged_save": {
+    "artifacts": {
+      "/home/bob/lol2_act1_candidate_20261007_r4/Linux/LoL2-Cavern.x86_64": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+      "/home/bob/lol2_act1_candidate_20261007_r4/Linux/LoL2-Cavern.pck": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45"
+    },
+    "scope": "Exported executable, no injected script. F5/F9 plus ordinary movement in isolated user data. Not campaign or GPU/audio acceptance.",
+    "passed": true,
+    "command": [
+      "stdbuf",
+      "-oL",
+      "-eL",
+      "/home/bob/lol2_act1_candidate_20261007_r4/Linux/LoL2-Cavern.x86_64",
+      "--display-driver",
+      "x11",
+      "--rendering-method",
+      "gl_compatibility",
+      "--",
+      "--original-game-exe=/home/bob/lol2_runtime_root/LOLG.EXE"
+    ],
+    "restart_position_delta": 0.0,
+    "movement_distance": 32.00249997446736,
+    "reload_position_delta": 0.0,
+    "save_path": "/home/bob/AI_COMMS/classic_review_20261007/lead/packaged_save_20261007T061240Z/userdata/godot/app_userdata/LoL2 Cavern Walkthrough/saves/cavern_quicksave.json",
+    "save_hashes": {
+      "initial": "228232bdf61651b95d88f9517e9af508f9e87d993b11db728cc820fc9dc42c55",
+      "moved": "cde4c762d17fb50b8de09a51d60707962b6c33d0f21880af294bc7b74fadfbf4",
+      "restored": "724233d9b2c57d4f92449ec59ce4b74c233b90cb7c09dcbfe6563dfc444606fd",
+      "restarted": "c85c98aedf8f00216eeafa9d503d197f5ece2e1eb98bed01e435da32352ccef7"
+    }
+  },
+  "fresh_campaign": "running:73103, tmp/act1_modern_spells_chain_20261007",
+  "bob_acceptance": "open",
+  "asset_audit": {
+    "checked": 16853,
+    "image_probes": [
+      {
+        "decoded": true,
+        "height": 1040,
+        "path": "assets/lol2/generated/magic_shop/3041406E_004.png",
+        "width": 848
+      }
+    ],
+    "mismatched": [],
+    "missing": [],
+    "pack_sha256": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45",
+    "passed": true,
+    "scope": "Actual exported PCK mounted in an empty project with no loose asset fallback; hashes compared to candidate source-asset manifest. This is asset packaging proof, not packaged gameplay, audio-device or GPU acceptance."
+  },
+  "linux_artifacts": {
+    "LoL2-Cavern.x86_64": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+    "LoL2-Cavern.pck": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45"
+  },
+  "scope": "R4 source matches the passed256-test suite. Linux package/save/restart and all asset hashes verified. Fresh campaign, Windows export/runtime, representative GPU/audio and Bob acceptance are not yet complete."
+}

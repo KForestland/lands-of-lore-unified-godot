@@ -1,4 +1,4 @@
-# Act 1 candidate R3 — 2026-10-07
+# Act 1 candidates R3/R4 — 2026-10-07
 
 Technical QA candidate: `/home/bob/lol2_act1_candidate_20261007_r3`. Bob has not accepted the demo. The goal remains the complete cave → Museum → Jungle/Hive and connected quests → darker-jungle departure, with a retained continuation save. Bob permits modern mechanics where better or faster; missing story/content remains tracked.
 
@@ -10,7 +10,7 @@ Technical QA candidate: `/home/bob/lol2_act1_candidate_20261007_r3`. Bob has not
 - Automatic modern combat in both Dawn encounters: visible charge and bolts, wall blocking, equipment/protection-aware damage, pause and saved in-flight projectiles. Baseline damage is6 on the30-health player; charge0.65s and interval2.2s are deliberate tuning.
 - Corrected partial-codebook movie decoding; malformed-input handling and original local media checks.
 
-Chainbolt/Plasma variants are not in R3 binaries. K is now integrated into source after allthree independent defect probes and six focused main checks pass on stable source. Both Dawn hosts rotate orange bolt → Chainbolt → Plasma with matching telegraph colors, damage/protection and saved state. The full256-test source suite is running; a refreshed final package/campaign will follow the remaining integration work.
+Chainbolt/Plasma variants are not in R3 binaries. K is now integrated into source after allthree independent defect probes and six focused main checks pass on stable source. Both Dawn hosts rotate orange bolt → Chainbolt → Plasma with matching telegraph colors, damage/protection and saved state. The full256-test source suite passed with zero source drift ([archive](act1-full256-checks.json)). R4 at `/home/bob/lol2_act1_candidate_20261007_r4` matches every tested source hash; its Linux export and ordinary-key save/restart check passed. R4 Windows export and its fresh eleven-leg campaign are running.
 
 ## Verified and pending
 

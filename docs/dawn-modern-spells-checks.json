@@ -166,6 +166,11 @@
       "errors": []
     }
   ],
-  "full_suite": "running: tmp/regressions/act1_modern_spells_full_20261007, session3726,256 registered",
+  "full_suite": {
+    "passed": true,
+    "tests": 256,
+    "source_stable": true,
+    "evidence": "docs/act1-full256-checks.json"
+  },
   "visual_review": "Lead inspected actual test captures modern_chain_dawn.png and modern_plasma_dawn20.png: distinct blue-white/purple bolts visible beside original Dawn actors. Test fixtures use supplied hostile state and camera positioning; not an earned hostile playthrough or representative GPU/audio acceptance."
 }
