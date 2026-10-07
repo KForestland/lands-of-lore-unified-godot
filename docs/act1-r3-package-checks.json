@@ -1,6 +1,6 @@
 {
   "candidate": "/home/bob/lol2_act1_candidate_20261007_r3",
-  "updated_utc": "2026-10-07T05:35:54.945378+00:00",
+  "updated_utc": "2026-10-07T05:44:52.497890+00:00",
   "linux_export": {
     "exit_code": 0,
     "log": "export_linux.log"
@@ -61,7 +61,15 @@
     "log": "export_windows.log",
     "runtime": "not tested on native Windows"
   },
-  "campaign": "running: session68287; tmp/act1_modern_combat_chain_20261007",
+  "campaign": {
+    "complete": true,
+    "fresh_legs": 11,
+    "source_stable": true,
+    "archive": "/home/bob/AI_COMMS/classic_review_20261007/lead/act1_modern_combat_campaign_20261007T054414Z",
+    "audit_sha256": "212d07d5e55a377c899c687035a92e06d7d884c7ac663e639be0c499008e9890",
+    "source_publication_commit": "34873b5",
+    "scope": "Continuous production-demo-control earned campaign; actual linked saves, captain items, repaired sword, translation and darker-jungle arrival. Not all optional branches, full suite, native Windows/GPU/audio or Bob acceptance."
+  },
   "full_suite": "not rerun on this revision",
   "bob_acceptance": "open",
   "visual_review": "Lead inspected after_reload.png: cave terrain, vegetation and controls visible; private Xvfb capture only, not representative GPU/audio acceptance. Jungle launcher and after_reload.png also inspected: terrain, foliage and player UI visible.",
@@ -107,5 +115,5 @@
     "path": "/home/bob/AI_COMMS/classic_review_20261007/lead/packaged_jungle_review_r3/20261007T053253Z/report.json",
     "cause": "Old harness required byte-identical packet; only exit-woman callback generation changed3->4 as designed. Corrected harness requires that exact increment, empty playback tracks and equality of all remaining fields."
   },
-  "publication_scope": "R3 exported package checks; full campaign, full suite, native Windows, GPU/audio and accepted-demo gates remain open."
+  "publication_scope": "R3 package checks and archived complete eleven-leg campaign. Full suite, remaining content, native Windows/GPU/audio and accepted-demo gates remain open."
 }

@@ -971,7 +971,7 @@
     "docs/hive-rune-room-checks.json": "e96bbbf7a773a1aea3e085586ce07ce1a410e0747e89b49fc79f2b68f3eaa8b9",
     "docs/museum-earned-jungle-walk-checks.json": "6fffeaed45b04c51609469209e81c022df6f2f4c26aa781fcc12d94ccfb36454",
     "docs/broken-monastery-rune-offer-live-checks.json": "d8de6b11ea8b745d7fc912bb7b78110802f175c522b5b2fe8cc966f17b239435",
-    "docs/broken-repair-earned-walk-checks.json": "2d41aff3bce0b2bda1dba592d01e0808f70a93f0a510f506a7c6a312589afdb1",
+    "docs/broken-repair-earned-walk-checks.json": "e7e63197aee29b6b566316e662f670752c7bd8d0d6f418d08899614206e05864",
     "docs/shop-monastery-rune-offer-live-checks.json": "5cb6c850ce92e4bbf9d9c5dbea340ce3e6d7afcfdcdc428a691f44aa02993759",
     "docs/moff-orb-earned-walk-checks.json": "a0ab2767e32e382ae93eea72ccbc404a60ccce9e2dc05b5d73dd9a545d746c1a",
     "docs/hive-feeding-earned-fight-checks.json": "60b20be0354f2c54d806652b0cc0c12d0b044a5ea66132f68fabe9356630b5e0",
@@ -1040,5 +1040,6 @@
       "all": 252
     },
     "whitespace_review": "Four existing whitespace findings preserved to keep runtime byte-identical to R3: all_maps_review.gd trailing space; jungle_bacatta_packet.gd, jungle_exit_packet.gd and jungle_village_dialogue.gd trailing blank line."
-  }
+  },
+  "revision_scope": "Historical R3 runtime baseline at commit34873b5; campaign evidence refreshed from the sealed eleven-leg run. Future runtime changes must not be confused with this R3 baseline."
 }

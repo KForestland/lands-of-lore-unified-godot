@@ -1,8 +1,8 @@
 # Act 1 R3 source and reproduction
 
-The runtime scripts and scenes in this checkout match the inputs staged for the October 7 R3 candidate. [The source manifest](act1-r3-source-manifest.json) pins the published runtime, tests, numeric fixtures and selected tool entrypoints. The older files under `patches/` are historical review artifacts; do not apply them over this integrated tree.
+Commit34873b5 contains the runtime scripts and scenes staged for the October 7 R3 candidate. Current source also includes the subsequently reviewed [three-spell Dawn integration](dawn-modern-spells-checks.json), which is not in the R3 binaries. [The source manifest](act1-r3-source-manifest.json) pins the published runtime, tests, numeric fixtures and selected tool entrypoints. The older files under `patches/` are historical review artifacts; do not apply them over this integrated tree.
 
-R3 is a technical QA candidate, not an accepted Act 1 demo. [Package checks](act1-r3-package-checks.json) cover Linux movement, disk save/load, restart, Jungle resume and all16853 packed asset hashes. Linux and Windows exports have the same PCK hash; native Windows execution, representative GPU/audio review and Bob acceptance remain open. The continuous campaign is still being verified. [Current content gaps](playtest-notes-20261007.md) remain explicit.
+R3 is a technical QA candidate, not an accepted Act 1 demo. [Package checks](act1-r3-package-checks.json) cover Linux movement, disk save/load, restart, Jungle resume and all16853 packed asset hashes. Linux and Windows exports have the same PCK hash; native Windows execution, representative GPU/audio review and Bob acceptance remain open. The fresh continuous campaign passed all11 linked legs with no source drift ([archive](act1-r3-campaign-checks.json)). [Current content gaps](playtest-notes-20261007.md) remain explicit.
 
 ## Open the source checkout
 
@@ -36,6 +36,6 @@ The exact public checkout passed the three asset-free regressions below without 
 python3 tools/run_regressions.py --test dawn_ai_decision_test --test dawn_player_damage_test --test dawn_combined_damage_test
 ```
 
-The complete252-test all-suite registration (139core and113Hive), Godot test scripts and numeric fixtures are included. This does not mean all252 passed on this revision or that all tests run without assets. Rendered checks require the generated media and Xvfb; some older capture/launcher tests still refer to local paths. `run_isolated_regressions.py` accepts `--xvfb`; the fresh campaign currently uses Flatpak Godot and local save-audit paths. Those portability limitations are not hidden by the asset-free results.
+The R3 baseline had252 registered tests; current source has256 (143core and113Hive). The complete all-suite registration, Godot test scripts and numeric fixtures are included. This does not mean the full suite passed on this revision or that all tests run without assets. Rendered checks require the generated media and Xvfb; some older capture/launcher tests still refer to local paths. `run_isolated_regressions.py` accepts `--xvfb`; the fresh campaign currently uses Flatpak Godot and local save-audit paths. Those portability limitations are not hidden by the asset-free results.
 
 The eleven-leg campaign entrypoint is `tools/run_act1_fresh_chain.py --out <fresh-directory> --demo-interface`. It uses actual save handoffs and preserves per-leg logs. Its receipt auditors and numeric fixtures are published; generated receipts certify their recorded run only, and personal/earned save files are not distributed here.
