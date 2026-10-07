@@ -1,8 +1,10 @@
-# Act 1 R3 source and reproduction
+# Act 1 source and reproduction
 
 Commit34873b5 contains the runtime scripts and scenes staged for the October 7 R3 candidate. Current source also includes the subsequently reviewed [three-spell Dawn integration](dawn-modern-spells-checks.json), which is not in the R3 binaries. [The source manifest](act1-r3-source-manifest.json) pins the published runtime, tests, numeric fixtures and selected tool entrypoints. The older files under `patches/` are historical review artifacts; do not apply them over this integrated tree.
 
 R3 is a technical QA candidate, not an accepted Act 1 demo. [Package checks](act1-r3-package-checks.json) cover Linux movement, disk save/load, restart, Jungle resume and all16853 packed asset hashes. Linux and Windows exports have the same PCK hash; native Windows execution, representative GPU/audio review and Bob acceptance remain open. The fresh continuous campaign passed all11 linked legs with no source drift ([archive](act1-r3-campaign-checks.json)). [Current content gaps](playtest-notes-20261007.md) remain explicit.
+
+Current R4 adds the integrated three-spell source and has passed the full256 suite, all11 fresh campaign legs and packaged Linux cave/Jungle save checks. Both R4 exports completed; [R4 package evidence](act1-r4-package-checks.json) and [campaign archive](act1-r4-campaign-checks.json) identify the exact candidate. The R3 manifest above is historical and is not a hash manifest for subsequent source changes.
 
 ## Open the source checkout
 
