@@ -21,7 +21,7 @@ func _initialize() -> void:
 		var bad: Dictionary=rows[0].event.duplicate(true);bad[field]=true
 		assert(Contact.contact(rows[0].state,bad).has("error"))
 	var lifecycle=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/dawn_spell32_lifecycle_native.json"))
-	assert(lifecycle.size()==108)
+	assert(lifecycle.size()==144)
 	for row in lifecycle:
 		var before: Dictionary=row.state.duplicate(true)
 		var result:=Contact.update(row.state,row.cancelled,row.child_radius)
@@ -39,5 +39,5 @@ func _initialize() -> void:
 			var next:=Contact.update(restored.state,false,row.child_radius)
 			assert(not next.spawn_child and not next.retired)
 	for value in [-1,true,0.5,256]: assert(Contact.update(rows[0].state,false,value).has("error"))
-	print("PASS864 native collision and108 lifecycle cases; save continuation, spawn ordering and repeated-contact suppression")
+	print("PASS: 864 native collision and144 lifecycle cases; save continuation, spawn ordering and repeated-contact suppression")
 	quit()

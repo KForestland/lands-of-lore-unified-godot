@@ -34,5 +34,5 @@ func _initialize() -> void:
 	for field in ["position","player_height","player_offset","sprite_height"]:
 		var bad: Dictionary=targets[0].duplicate(true);bad.erase(field)
 		assert(Motion.target_snapshot(bad).has("error"))
-	print("PASS1029 native spell32 movement requests and90 target snapshots; original sprite height; arithmetic boundary rejection")
+	print("PASS: 1029 native spell32 movement requests and90 target snapshots; original sprite height; arithmetic boundary rejection")
 	quit()
