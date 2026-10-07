@@ -92,3 +92,16 @@ python3 tools/prepare_museum_creature_sprites.py --game /path/to/original-game -
 Explicit output directories must be fresh. Existing Python `stage(...)` calls are preserved; keyword `game=` can supply a different installation. The no-argument Museum command and `GAME` export retain historical defaults for compatibility. Older importing preparers still receive the historical RE helper search path for their own dependencies; the standalone command does not import those helpers.
 
 [Sprite evidence](sprite-portability-checks.json) records1397 regenerated indexed frames and1403 byte-identical files (including palettes and complete manifests) across Museum definitions0/1/2, Jungle Bacatta5 and guard9. Six asset-free boundary tests and five existing consumer imports pass. The isolated command used only three repository tools plus Pillow. This does not yet extract texture blobs or make the whole asset-generation pipeline portable.
+
+## Extract Act1 texture blobs from original archives
+
+Texture extraction now needs only three repository Python tools, the original area MIX and system `liblzo2`. The supported hash-pinned profiles are `L1_DC`, `L3_DH`, `L4_HJ` and `L5_HC`:
+
+```sh
+python3 -S tools/decode_level_texture.py --game /path/to/original-game --area L1_DC --output /path/to/fresh-cave-texture
+python3 tools/prepare_museum_creature_sprites.py --game /path/to/original-game --archive DAT/L1_DC.MIX --texture /path/to/fresh-cave-texture/texture.bin --definition 4 --definition 5 --output /path/to/fresh-roach-sprites
+```
+
+The texture command requires a fresh directory and writes `texture.bin` plus block/hash provenance in `texture_decode.json`. It validates the original archive hash, block extents, decoded lengths and trailer. No runtime-generated CDCACHE files are required. The library `decode(name, game=...)` retains the prior return structure. Unlike the historical script, direct CLI execution now requires explicit arguments.
+
+[Texture evidence](texture-portability-checks.json) verifies all four outputs against current texture inputs (58,080,772 bytes), four malformed-container cases, and a complete original-cave-MIX → newly extracted texture →98 Roach-frame regeneration with100 byte-identical files. The shared material exporter uses the same extracted decompression function; its broader result is recorded separately in the receipt. Geometry/world mesh generation, per-encounter assembly and the complete clean-machine demo recipe remain open.

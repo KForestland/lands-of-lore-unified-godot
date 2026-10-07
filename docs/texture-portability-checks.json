@@ -1,0 +1,375 @@
+{
+  "passed": true,
+  "areas": [
+    {
+      "archive_sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+      "entry": {
+        "index": 2,
+        "key": 2972657927,
+        "offset": 42,
+        "size": 7091936
+      },
+      "blocks": [
+        {
+          "offset": 8,
+          "compressed": 402135,
+          "decoded": 1048576
+        },
+        {
+          "offset": 402147,
+          "compressed": 446242,
+          "decoded": 1048576
+        },
+        {
+          "offset": 848393,
+          "compressed": 652548,
+          "decoded": 1048576
+        },
+        {
+          "offset": 1500945,
+          "compressed": 559870,
+          "decoded": 1048576
+        },
+        {
+          "offset": 2060819,
+          "compressed": 681700,
+          "decoded": 1048576
+        },
+        {
+          "offset": 2742523,
+          "compressed": 672357,
+          "decoded": 1048576
+        },
+        {
+          "offset": 3414884,
+          "compressed": 569676,
+          "decoded": 1048576
+        },
+        {
+          "offset": 3984564,
+          "compressed": 680017,
+          "decoded": 1048576
+        },
+        {
+          "offset": 4664585,
+          "compressed": 500775,
+          "decoded": 1048576
+        },
+        {
+          "offset": 5165364,
+          "compressed": 411668,
+          "decoded": 1048576
+        },
+        {
+          "offset": 5577036,
+          "compressed": 476839,
+          "decoded": 1048576
+        },
+        {
+          "offset": 6053879,
+          "compressed": 729286,
+          "decoded": 1048576
+        },
+        {
+          "offset": 6783169,
+          "compressed": 308763,
+          "decoded": 457492
+        }
+      ],
+      "decoded_sha256": "102410e0b69037da2bdf451dd4de9c7e30df2c9d1309b1d0a1c0224ab7218c97",
+      "size": 13040404,
+      "area": "L1_DC",
+      "scope": "Hash-pinned archive and bounded liblzo2 block decode; no rendered or gameplay acceptance."
+    },
+    {
+      "archive_sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+      "entry": {
+        "index": 2,
+        "key": 3107535131,
+        "offset": 42,
+        "size": 5716974
+      },
+      "blocks": [
+        {
+          "offset": 8,
+          "compressed": 378245,
+          "decoded": 1048576
+        },
+        {
+          "offset": 378257,
+          "compressed": 582501,
+          "decoded": 1048576
+        },
+        {
+          "offset": 960762,
+          "compressed": 540203,
+          "decoded": 1048576
+        },
+        {
+          "offset": 1500969,
+          "compressed": 575493,
+          "decoded": 1048576
+        },
+        {
+          "offset": 2076466,
+          "compressed": 582867,
+          "decoded": 1048576
+        },
+        {
+          "offset": 2659337,
+          "compressed": 518340,
+          "decoded": 1048576
+        },
+        {
+          "offset": 3177681,
+          "compressed": 420431,
+          "decoded": 1048576
+        },
+        {
+          "offset": 3598116,
+          "compressed": 692585,
+          "decoded": 1048576
+        },
+        {
+          "offset": 4290705,
+          "compressed": 547965,
+          "decoded": 1048576
+        },
+        {
+          "offset": 4838674,
+          "compressed": 667188,
+          "decoded": 1048576
+        },
+        {
+          "offset": 5505866,
+          "compressed": 211104,
+          "decoded": 313973
+        }
+      ],
+      "decoded_sha256": "7e353789b4ca6ff8b5630f894e85ec1788d9c4713eaa537aded98b78ece21e07",
+      "size": 10799733,
+      "area": "L3_DH",
+      "scope": "Hash-pinned archive and bounded liblzo2 block decode; no rendered or gameplay acceptance."
+    },
+    {
+      "archive_sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+      "entry": {
+        "index": 2,
+        "key": 3711781155,
+        "offset": 42,
+        "size": 12409536
+      },
+      "blocks": [
+        {
+          "offset": 8,
+          "compressed": 330749,
+          "decoded": 1048576
+        },
+        {
+          "offset": 330761,
+          "compressed": 374759,
+          "decoded": 1048576
+        },
+        {
+          "offset": 705524,
+          "compressed": 398791,
+          "decoded": 1048576
+        },
+        {
+          "offset": 1104319,
+          "compressed": 547224,
+          "decoded": 1048576
+        },
+        {
+          "offset": 1651547,
+          "compressed": 480601,
+          "decoded": 1048576
+        },
+        {
+          "offset": 2132152,
+          "compressed": 551356,
+          "decoded": 1048576
+        },
+        {
+          "offset": 2683512,
+          "compressed": 520120,
+          "decoded": 1048576
+        },
+        {
+          "offset": 3203636,
+          "compressed": 468151,
+          "decoded": 1048576
+        },
+        {
+          "offset": 3671791,
+          "compressed": 646522,
+          "decoded": 1048576
+        },
+        {
+          "offset": 4318317,
+          "compressed": 521040,
+          "decoded": 1048576
+        },
+        {
+          "offset": 4839361,
+          "compressed": 677560,
+          "decoded": 1048576
+        },
+        {
+          "offset": 5516925,
+          "compressed": 499163,
+          "decoded": 1048576
+        },
+        {
+          "offset": 6016092,
+          "compressed": 592515,
+          "decoded": 1048576
+        },
+        {
+          "offset": 6608611,
+          "compressed": 711464,
+          "decoded": 1048576
+        },
+        {
+          "offset": 7320079,
+          "compressed": 607081,
+          "decoded": 1048576
+        },
+        {
+          "offset": 7927164,
+          "compressed": 236247,
+          "decoded": 1048576
+        },
+        {
+          "offset": 8163415,
+          "compressed": 483411,
+          "decoded": 1048576
+        },
+        {
+          "offset": 8646830,
+          "compressed": 802290,
+          "decoded": 1048576
+        },
+        {
+          "offset": 9449124,
+          "compressed": 786724,
+          "decoded": 1048576
+        },
+        {
+          "offset": 10235852,
+          "compressed": 661549,
+          "decoded": 1048576
+        },
+        {
+          "offset": 10897405,
+          "compressed": 701873,
+          "decoded": 1048576
+        },
+        {
+          "offset": 11599282,
+          "compressed": 688795,
+          "decoded": 1048576
+        },
+        {
+          "offset": 12288081,
+          "compressed": 121451,
+          "decoded": 163562
+        }
+      ],
+      "decoded_sha256": "98c97fabb6fa8db7ca78a7c3626106ec850a6d5e37952292e15f32cb966a227b",
+      "size": 23232234,
+      "area": "L4_HJ",
+      "scope": "Hash-pinned archive and bounded liblzo2 block decode; no rendered or gameplay acceptance."
+    },
+    {
+      "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+      "entry": {
+        "index": 2,
+        "key": 3777974535,
+        "offset": 42,
+        "size": 5787703
+      },
+      "blocks": [
+        {
+          "offset": 8,
+          "compressed": 288067,
+          "decoded": 1048576
+        },
+        {
+          "offset": 288079,
+          "compressed": 542578,
+          "decoded": 1048576
+        },
+        {
+          "offset": 830661,
+          "compressed": 435273,
+          "decoded": 1048576
+        },
+        {
+          "offset": 1265938,
+          "compressed": 443100,
+          "decoded": 1048576
+        },
+        {
+          "offset": 1709042,
+          "compressed": 422157,
+          "decoded": 1048576
+        },
+        {
+          "offset": 2131203,
+          "compressed": 544340,
+          "decoded": 1048576
+        },
+        {
+          "offset": 2675547,
+          "compressed": 638912,
+          "decoded": 1048576
+        },
+        {
+          "offset": 3314463,
+          "compressed": 599013,
+          "decoded": 1048576
+        },
+        {
+          "offset": 3913480,
+          "compressed": 754172,
+          "decoded": 1048576
+        },
+        {
+          "offset": 4667656,
+          "compressed": 784564,
+          "decoded": 1048576
+        },
+        {
+          "offset": 5452224,
+          "compressed": 335475,
+          "decoded": 522641
+        }
+      ],
+      "decoded_sha256": "c577f70d194cb25fa6b83818ae7e240486ac871b6915408eb2515ded5f1251ba",
+      "size": 11008401,
+      "area": "L5_HC",
+      "scope": "Hash-pinned archive and bounded liblzo2 block decode; no rendered or gameplay acceptance."
+    }
+  ],
+  "scope": "All4 pinned Act1 level archives extracted using three isolated repository tools and python3 -S/system liblzo2; blobs byte-identical to current material inputs. Geometry, material rendering and complete build remain separate.",
+  "review": "/home/bob/AI_COMMS/classic_review_20261007/lead/texture_portability",
+  "archive_to_roach_sprites": {
+    "passed": true,
+    "frames": 98,
+    "files": 100,
+    "manifest_sha256": "89505b5c562a7da43d29d3e7f16f0ac0287849fe9a86b83e3550a7b9e4f5b6cc",
+    "scope": "Newly extracted L1_DC texture feeds the shared sprite CLI; every file equals existing Roach assets."
+  },
+  "boundary_tests": {
+    "passed": true,
+    "total": 4
+  },
+  "material_regression": "running session33520: python3 -m pytest tests/test_map_materials.py -q",
+  "source_sha256": {
+    "tools/decode_level_texture.py": "59962d4ffc63d31fd937b48aaef9dda627e86310a53cd117c54d4d324b9ce6f5",
+    "tools/lol2_texture_container.py": "782717823195d60430fc1dd89bf1f22ba58b941ca897c7603453612d6283b45e",
+    "tools/lol2/map_materials.py": "57daf2ec8f2f9fafd28e2584e33b604403edfc12ba4cdc32f27c520f632879d5",
+    "tests/test_texture_container.py": "76adea7bf22990254c9a1f5d55df29cbb4afe9260f04eb6d72a075850d91fabf"
+  }
+}
