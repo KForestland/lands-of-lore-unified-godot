@@ -2,6 +2,23 @@ extends SceneTree
 const Room = preload("res://scripts/lol2/monastery_quest_state.gd")
 const Quest = preload("res://scripts/lol2/act_one_quest_state.gd")
 func _initialize() -> void:
+	var defaults = preload("res://scripts/lol2/shared_global_defaults.gd")
+	var fresh := Room.initial()
+	assert(fresh.globals.GV_LUTHERS_SOUL == 5)
+	assert(fresh.globals.GV_DAWN_RELATIONSHIP == 1)
+	assert(fresh.globals.GV_BACATTA_RELATIONSHIP == 1)
+	assert(preload("res://scripts/lol2/magic_shop_state.gd").initial().globals.GV_LUTHERS_SOUL == 5)
+	for key in defaults.NONZERO:
+		assert(defaults.read({}, key) == defaults.NONZERO[key])
+		assert(defaults.read({key:0}, key) == 0)
+		assert(defaults.read({key:-1}, key) == -1)
+	assert(defaults.read({}, "GV_MET_BACATTA") == 0)
+	var legacy := fresh.duplicate(true)
+	for key in defaults.NONZERO: legacy.globals.erase(key)
+	assert(Room.validate(legacy).is_empty())
+	var explicit := fresh.duplicate(true)
+	for key in defaults.NONZERO: explicit.globals[key] = 0
+	assert(Room.validate(explicit).is_empty())
 	for left in [0,1,2,3,4]:
 		for departed in [0,1]:
 			var bacatta := Room.initial()

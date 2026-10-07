@@ -1,4 +1,5 @@
 extends RefCounted
+const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## Functional room admission from MENT/MLIB DLLs; no native VM required.
 ## Live first-visit rooms use this bank; Bacatta and later branches remain open.
 const SIDE_FLAGS := ["170","171","172","176","177","178","181","258","259","260"]
@@ -11,6 +12,7 @@ static func initial() -> Dictionary:
 	var state := {"room":"","conversation":preload("res://scripts/lol2/monastery_conversation.gd").initial(),"flags":{},"globals":{},"locals":{"Left_Village":0}}
 	for key in FLAGS + SIDE_FLAGS + OFFICE_FLAGS: state.flags[key] = 0
 	for key in GLOBALS: state.globals[key] = 0
+	for key in GlobalDefaults.NONZERO: state.globals[key] = GlobalDefaults.initial_value(key)
 	for key in LOCALS: state.locals[key] = 0
 	state.locals.Met_Morgan = 0
 	state.globals.GV_RIX_DEAD = 0
@@ -31,7 +33,7 @@ static func validate(state: Variant) -> String:
 	for pair in [["locals","Met_Morgan"],["globals","GV_RIX_DEAD"]]:
 		var value = state[pair[0]].get(pair[1],0)
 		if not (value is int or value is float) or not (value == 0 or value == 1): return "Invalid monastery side-room knowledge."
-	var soul = state.globals.get("GV_LUTHERS_SOUL",0)
+	var soul = state.globals.get("GV_LUTHERS_SOUL",GlobalDefaults.initial_value("GV_LUTHERS_SOUL"))
 	if not (soul is int or soul is float) or not is_finite(float(soul)) or soul != floorf(soul) or absf(soul) > 1000: return "Invalid Luther soul value."
 	if state.has("moff_load"):
 		var load = state.moff_load
@@ -44,7 +46,7 @@ static func validate(state: Variant) -> String:
 	for item in pending:
 		if item != preload("res://scripts/lol2/monastery_conversation.gd").ORB: return "Invalid pending monastery items."
 	if not state.get("room","") is String or not state.get("room","") in ["","MENT","MLIB","MOFF","VILLAGE","CAN","MCEL","MGAR"]: return "Invalid monastery room."
-	var relationship = state.globals.get("GV_BACATTA_RELATIONSHIP",0)
+	var relationship = state.globals.get("GV_BACATTA_RELATIONSHIP",GlobalDefaults.initial_value("GV_BACATTA_RELATIONSHIP"))
 	if not (relationship is int or relationship is float) or not is_finite(float(relationship)) or relationship != floorf(relationship) or relationship < -2147483648 or relationship > 2147483647: return "Invalid Bacatta relationship."
 	var left = state.locals.get("Left_Village",0)
 	if not (left is int or left is float) or not is_finite(float(left)) or left != floorf(left) or left < 0 or left > 255: return "Invalid village departure count."

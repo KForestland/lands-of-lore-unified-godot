@@ -1,4 +1,5 @@
 extends RefCounted
+const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## First-visit village, Bacatta and monastery DLL calls; modern saved playback clock.
 const FLUTE := "monastery:item94:Iron_Flute"
 const ORB := "monastery:item83:Power_Orb"
@@ -124,7 +125,7 @@ static func advance(state: Dictionary, delta: float) -> Array:
 			if finished == 2:
 				rewards.append(ORB)
 				state.globals.GV_KNOWLEDGE_OF_POWER_ORB = 1
-				state.globals.GV_LUTHERS_SOUL = int(state.globals.get("GV_LUTHERS_SOUL",0))+1
+				state.globals.GV_LUTHERS_SOUL = int(state.globals.get("GV_LUTHERS_SOUL",GlobalDefaults.initial_value("GV_LUTHERS_SOUL")))+1
 		elif s.sequence == "MOFF_EXIT_FLUTE":
 			if finished == 6:
 				rewards.append(FLUTE)
@@ -184,7 +185,7 @@ static func begin_moff_exit(state: Dictionary) -> bool:
 	# translation visit; an old silent post-translation revisit defers the gift one visit.
 	if not state.has("moff_load"): state.moff_load = {"translated":0,"dead":int(state.flags.get("144",0) != 0)}
 	var load: Dictionary = state.moff_load
-	var plan := moff_exit_plan(state.flags,int(load.translated),int(state.globals.GV_HAS_RUNES != 0),int(load.dead),int(state.globals.get("GV_LUTHERS_SOUL",0)))
+	var plan := moff_exit_plan(state.flags,int(load.translated),int(state.globals.GV_HAS_RUNES != 0),int(load.dead),int(state.globals.get("GV_LUTHERS_SOUL",GlobalDefaults.initial_value("GV_LUTHERS_SOUL"))))
 	var sequence := ""
 	for effect in plan.effects:
 		if effect[0] in ["movie","movie_flags"]: break

@@ -1,4 +1,5 @@
 extends "res://scripts/lol2/jungle_review.gd"
+const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## Playable jungle staging with the human-sized Hive route.
 const Save = preload("res://scripts/lol2/jungle_save.gd")
 const SWORD_ITEM_ID := "museum:item11:Fine_Longsword"
@@ -423,7 +424,7 @@ func _exit_context() -> Dictionary:
 	var shared: Dictionary={}
 	for id in exit_encounter.src.shared_names:
 		var key: String=exit_encounter.src.shared_names[id]
-		shared[id]=maxi(int(globals.get(key,0)),int(shop_globals.get(key,0)))
+		shared[id]=GlobalDefaults.read(globals,key) if GlobalDefaults.NONZERO.has(key) else maxi(int(globals.get(key,0)),int(shop_globals.get(key,0)))
 	# These Jungle-only locals start at zero; the Bacatta component will own their transitions.
 	return {"shared":shared,"locals":{"41":0,"49":0,"51":int(bacatta.state.locals["51"]) if is_instance_valid(bacatta) and not bacatta.state.is_empty() else 0}}
 
@@ -447,7 +448,7 @@ func _bacatta_context() -> Dictionary:
 	var globals: Dictionary=quest_state.get("monastery",{}).get("globals",{})
 	for id in bacatta.src.shared_names:
 		if not ctx.shared.has(id):
-			ctx.shared[id]=int(globals.get(str(bacatta.src.shared_names[id]),0))
+			ctx.shared[id]=int(globals.get(str(bacatta.src.shared_names[id]),GlobalDefaults.initial_value(str(bacatta.src.shared_names[id]))))
 	return ctx
 
 func actor_input_locked() -> bool:
@@ -457,7 +458,7 @@ func actor_input_locked() -> bool:
 func _dawn_context() -> Dictionary:
 	var globals: Dictionary=quest_state.get("monastery",{}).get("globals",{})
 	var shared: Dictionary={}
-	for id in dawn.src.shared_names: shared[id]=int(globals.get(str(dawn.src.shared_names[id]),0))
+	for id in dawn.src.shared_names: shared[id]=int(globals.get(str(dawn.src.shared_names[id]),GlobalDefaults.initial_value(str(dawn.src.shared_names[id]))))
 	return {"shared":shared,"locals":{}}
 
 ## Opcode206/199 on Dawn's named globals (0..255; Soul cap10 and Dawn relationship cap2 from the runtime index table).
@@ -467,7 +468,7 @@ func _named_shared(e: Dictionary) -> void:
 	if not quest_state.has("monastery"): quest_state.monastery=preload("res://scripts/lol2/monastery_quest_state.gd").initial()
 	var globals: Dictionary=quest_state.monastery.globals
 	var cap: int={"GV_LUTHERS_SOUL":10,"GV_DAWN_RELATIONSHIP":2}.get(name,255)
-	globals[name]=clampi(int(e.value) if str(e.op)=="set" else int(globals.get(name,0))+int(e.value),0,cap)
+	globals[name]=clampi(int(e.value) if str(e.op)=="set" else int(globals.get(name,GlobalDefaults.initial_value(name)))+int(e.value),0,cap)
 
 ## Player property 0x18: the offered (held) item leaves the inventory.
 func _consume_hand_item() -> void:
@@ -480,7 +481,7 @@ func _consume_hand_item() -> void:
 ## Shared29 (GV_HULINE_ALERT) already has one owner: the village gate state, whose admission requires it zero.
 func _kelsrick_context() -> Dictionary:
 	var globals: Dictionary=quest_state.get("monastery",{}).get("globals",{})
-	var shared:={"0":int(globals.get("GV_LUTHERS_SOUL",0)),"11":int(globals.get("GV_KELSRICK_DEAD",0)),"29":0}
+	var shared:={"0":int(globals.get("GV_LUTHERS_SOUL",GlobalDefaults.initial_value("GV_LUTHERS_SOUL"))),"11":int(globals.get("GV_KELSRICK_DEAD",0)),"29":0}
 	var local15:=0
 	if is_instance_valid(village_gate): shared["29"]=int(village_gate.state().shared29)
 	if is_instance_valid(village_dialogue): local15=int(village_dialogue.state().get("local15",0))
@@ -503,7 +504,7 @@ func _kelsrick_shared(e: Dictionary) -> void:
 func _bacatta65_context() -> Dictionary:
 	var globals: Dictionary=quest_state.get("monastery",{}).get("globals",{})
 	var shared: Dictionary={}
-	for id in bacatta65.src.shared_names: shared[id]=int(globals.get(str(bacatta65.src.shared_names[id]),0))
+	for id in bacatta65.src.shared_names: shared[id]=int(globals.get(str(bacatta65.src.shared_names[id]),GlobalDefaults.initial_value(str(bacatta65.src.shared_names[id]))))
 	shared["29"]=int(village_gate.state().shared29) if is_instance_valid(village_gate) else 0
 	return {"shared":shared}
 

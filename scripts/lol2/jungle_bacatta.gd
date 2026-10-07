@@ -1,4 +1,5 @@
 extends Node3D
+const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## Live Bacatta branch: prop552 → Bacatta61 → guard60 → exit prop4398 event20.
 ## Composes jungle_bacatta_state.gd (source groups) with the unchanged generic creature owner for
 ## Bacatta's body/combat, presents the original in-world VQA clips and sounds, and drives the
@@ -103,7 +104,7 @@ func context() -> Dictionary:
 	if not ctx.has("shared"):
 		var globals: Dictionary=host.quest_state.get("monastery",{}).get("globals",{}) if host.get("quest_state") is Dictionary else {}
 		var shared: Dictionary={}
-		for id in src.shared_names: shared[id]=int(globals.get(str(src.shared_names[id]),0))
+		for id in src.shared_names: shared[id]=int(globals.get(str(src.shared_names[id]),GlobalDefaults.initial_value(str(src.shared_names[id]))))
 		ctx.shared=shared
 	if not ctx.has("locals"): ctx.locals={"41":0}
 	ctx.guard60=_guard60()
@@ -282,7 +283,7 @@ func _write_shared(e: Dictionary) -> void:
 	if not monastery.get("globals") is Dictionary: return
 	var name: String=str(src.shared_names.get(str(int(e.index)),""))
 	if name.is_empty(): return
-	var value: int=int(monastery.globals.get(name,0))
+	var value: int=int(monastery.globals.get(name,GlobalDefaults.initial_value(name)))
 	value=int(e.value) if str(e.op)=="set" else value+int(e.value)
 	var caps: Dictionary={"GV_LUTHERS_SOUL":10,"GV_DAWN_RELATIONSHIP":2,"GV_BACATTA_RELATIONSHIP":2}
 	monastery.globals[name]=clampi(value,0,int(caps.get(name,255)))

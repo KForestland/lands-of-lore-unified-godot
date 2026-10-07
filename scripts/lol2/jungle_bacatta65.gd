@@ -1,4 +1,5 @@
 extends Node3D
+const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## Live Huline-alert-before-first-meeting Bacatta: prop553 (template84 talk movie) → actor65 (BACL4) on the Jungle host.
 ## Composes jungle_bacatta65_state.gd (pinned source groups, clocks) with the unchanged generic creature owner for
 ## actor65's body/combat, presents the original in-world VQA frames and voices, and repositions/faces the player.
@@ -96,7 +97,7 @@ func context() -> Dictionary:
 		if value is Dictionary: return value
 	var globals: Dictionary=host.quest_state.get("monastery",{}).get("globals",{}) if host.get("quest_state") is Dictionary else {}
 	var shared: Dictionary={}
-	for id in src.shared_names: shared[id]=int(globals.get(str(src.shared_names[id]),0))
+	for id in src.shared_names: shared[id]=int(globals.get(str(src.shared_names[id]),GlobalDefaults.initial_value(str(src.shared_names[id]))))
 	return {"shared":shared}
 
 func held_item() -> String:
@@ -223,7 +224,7 @@ func _write_shared(e: Dictionary) -> void:
 	var name: String=str(src.shared_names.get(str(int(e.index)),""))
 	if name.is_empty(): return
 	var globals: Dictionary=host.quest_state.monastery.globals
-	globals[name]=clampi(int(e.value) if str(e.op)=="set" else int(globals.get(name,0))+int(e.value),0,int(src.shared_caps.get(str(int(e.index)),255)))
+	globals[name]=clampi(int(e.value) if str(e.op)=="set" else int(globals.get(name,GlobalDefaults.initial_value(name)))+int(e.value),0,int(src.shared_caps.get(str(int(e.index)),255)))
 
 func _reposition(e: Dictionary) -> void:
 	var p: Array=e.position

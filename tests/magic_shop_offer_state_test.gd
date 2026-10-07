@@ -85,7 +85,7 @@ func _run() -> void:
 	check(knowledge_at == 7 and s.globals.GV_KNOWLEDGE_OF_POWER_ORB == 1,"knowledge global order")
 	# Power orb held with the broken Thohan carried: flag49, soul+1, orb consumed.
 	host = State.offer(s,"83-Power orb","test:orb",true)
-	check(host == [["consume_held","test:orb"],["set_global","GV_LUTHERS_SOUL",1]] and s.flags["49"] == 1,"orb offer")
+	check(host == [["consume_held","test:orb"],["set_global","GV_LUTHERS_SOUL",6]] and s.flags["49"] == 1,"orb offer")
 	finish_script(s)
 	# Now the broken Thohan is exchanged for the fixed one after 443/444.
 	host = State.offer(s,"12-Tho Broken","test:broken",false)

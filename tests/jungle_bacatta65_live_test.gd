@@ -101,6 +101,25 @@ func run() -> void:
 	# No alert: the sighting admits nothing.
 	await open_jungle(0)
 	if not check(b!=null and not b.state.prop.present,"Bacatta65 not installed on the Jungle host"): return
+	# Original new-game defaults and legacy absent fields reach real host adapters.
+	# Explicit zero remains a saved outcome, never an invitation to reset defaults.
+	var defaults = preload("res://scripts/lol2/shared_global_defaults.gd")
+	var fresh_globals: Dictionary=globals().duplicate(true)
+	for mode in ["fresh","missing","zero"]:
+		scene.quest_state.monastery.globals=fresh_globals.duplicate(true)
+		for key in defaults.NONZERO:
+			if mode=="missing": globals().erase(key)
+			elif mode=="zero": globals()[key]=0
+		if not check(scene.quicksave(path).is_empty() and scene.quickload(path).is_empty(),"Global defaults disk roundtrip failed: "+mode): return
+		for key in defaults.NONZERO:
+			var expected: int=0 if mode=="zero" else int(defaults.NONZERO[key])
+			if not check(defaults.read(globals(),key)==expected,"Saved global differs: "+mode+key): return
+			for pair in [[b.context(),b.src],[scene._bacatta_context(),scene.bacatta.src],[scene._dawn_context(),scene.dawn.src]]:
+				for id in pair[1].shared_names:
+					if str(pair[1].shared_names[id])==key:
+						if not check(int(pair[0].shared[id])==expected,"Live shared context differs: "+mode+key): return
+		if not check(int(scene._kelsrick_context().shared["0"])==(0 if mode=="zero" else 5),"Kelsrick soul default differs"): return
+	scene.quest_state.monastery.globals=fresh_globals.duplicate(true)
 	await sight();await step(0.3)
 	if not check(not b.state.sighted and not b.state.prop.present,"Sighting admitted without the Huline alert"): return
 	await close_jungle()
@@ -121,7 +140,7 @@ func run() -> void:
 	if not check(await run_until(func(): return int(b.state.prop.state)==6,60.0),"State6 wait not reached"): return
 	if not check(not b.movement_locked(),"Idle wait holds movement"): return
 	scene.hand_item=Save.Museum.SWORD
-	if not check(await aim_prop(func(): return b.can_offer()) and b.offer() and int(globals().get("GV_BACATTA_RELATIONSHIP",0))==1 and int(b.state.prop.state)==29,"Offer at the idle wait differs"): return
+	if not check(await aim_prop(func(): return b.can_offer()) and b.offer() and int(globals().get("GV_BACATTA_RELATIONSHIP",0))==2 and int(b.state.prop.state)==29,"Offer at the idle wait differs"): return
 	scene.hand_item=""
 	if not check(await run_until(func(): return int(b.state.prop.state)==16,150.0),"State16 not reached"): return
 	if not check(await run_until(func(): return b.state.actor.present,120.0),"Timer did not lead to actor65: %s"%[b.state]): return

@@ -63,7 +63,7 @@ func _run() -> void:
 	var saved := roundtrip(s) # Partial line566.
 	check(State.validate(saved).is_empty() and int(saved.conversation.cursor) == 2,"mid line566 save")
 	var grants := Speech.advance(s,Speech.duration("MOFF_EXIT_ORB",2))
-	check(grants == [Speech.ORB] and s.globals.GV_KNOWLEDGE_OF_POWER_ORB == 1 and int(s.globals.GV_LUTHERS_SOUL) == 1 and Speech.active(s.conversation),"grant after 566 before 567")
+	check(grants == [Speech.ORB] and s.globals.GV_KNOWLEDGE_OF_POWER_ORB == 1 and int(s.globals.GV_LUTHERS_SOUL) == 6 and Speech.active(s.conversation),"grant after 566 before 567")
 	check(finish(s) == [] and not Speech.active(s.conversation),"line567 and no second grant")
 	check(Speech.advance(saved,10000.0) == [Speech.ORB],"restored partial exit grants exactly once")
 	check(not Speech.begin_moff_exit(saved) or saved.conversation.sequence != "MOFF_EXIT_ORB","repeat exit gave another orb")

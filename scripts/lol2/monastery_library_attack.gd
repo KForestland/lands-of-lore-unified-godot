@@ -1,4 +1,5 @@
 extends RefCounted
+const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## Monastery library (WOMS\MLIB_.WOM) messages 6/7 → 0x98F → 0xF09: the player attacks Dawn in the library.
 ## Room-framework messages 6/7 come from the player action routines 8523C/84F92 (the same senders as Rashar's death in
 ## MAGIC); the exact input behind them is unbound, so this is a planner with native-verified effects
@@ -18,11 +19,11 @@ static func attacked(message: int, present: bool, guard: bool, flags: Dictionary
 	if not f190:
 		effects.append_array([["stop_timer"],["arm_timer",900],["set_flag",191],["set_global","GV_DAWN_ATTACKED_IN_MONASTERY",1]])
 		for name in ["GV_LUTHERS_SOUL","GV_DAWN_RELATIONSHIP"]:
-			g[name]=int(g.get(name,0))-1;effects.append(["set_global",name,g[name]])
+			g[name]=int(g.get(name,GlobalDefaults.initial_value(name)))-1;effects.append(["set_global",name,g[name]])
 	else:
 		effects.append_array([["stop_timer"],["set_flag",191],["set_global","GV_DAWN_ATTACKED_IN_MONASTERY",1]])
 	# 0xF09: Dawn leaves the library (attacked branch).
-	g.GV_DAWN_RELATIONSHIP=int(g.get("GV_DAWN_RELATIONSHIP",0))+1
+	g.GV_DAWN_RELATIONSHIP=int(g.get("GV_DAWN_RELATIONSHIP",GlobalDefaults.initial_value("GV_DAWN_RELATIONSHIP")))+1
 	effects.append_array([["stop_timer"],["movie",3,773,7],["set_global","GV_DAWN_RELATIONSHIP",g.GV_DAWN_RELATIONSHIP],
 		["stop_loop",3,999,7],["stop_npc",0],["npc",0,18,307,254,100,100],["start_loop",18,995,7],["set_flag",185]])
 	if not f190: effects.append(["set_flag",190])

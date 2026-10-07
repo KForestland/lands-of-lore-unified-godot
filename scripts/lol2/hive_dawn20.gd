@@ -1,4 +1,5 @@
 extends Node3D
+const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## Live Hive Dawn20: the prop71/actor20 source chain (hive_dawn20_state.gd) on the Hive host, presented with her
 ## original E075E segments and voice, plus the unchanged generic creature owner for her body (target, death).
 ## Producers: the existing RUNES room entry (hive_rune_entry: control0 group5244, opcode9 prop71 property21) queues
@@ -172,7 +173,7 @@ func hostile() -> bool: return set_up() and bool(state.present) and int(state.he
 func context() -> Dictionary:
 	var globals: Dictionary=host.monastery_checkpoint.get("globals",{}) if host.get("monastery_checkpoint") is Dictionary else {}
 	var shared: Dictionary={}
-	for index in src.shared_names: shared[index]=int(globals.get(str(src.shared_names[index]),0))
+	for index in src.shared_names: shared[index]=int(globals.get(str(src.shared_names[index]),GlobalDefaults.initial_value(str(src.shared_names[index]))))
 	return {"shared":shared,"locals":{}}
 
 func held_item() -> String:
@@ -309,7 +310,7 @@ func _write_shared(e: Dictionary) -> void:
 		_receipt({"raw":"%02x%02x%02x"%[int(e.index),1 if str(e.op)=="set" else 0,int(e.value)&255]});return
 	if not host.monastery_checkpoint.has("globals"): host.monastery_checkpoint.globals={}
 	var globals: Dictionary=host.monastery_checkpoint.globals
-	var value:=int(e.value) if str(e.op)=="set" else int(globals.get(name,0))+int(e.value)
+	var value:=int(e.value) if str(e.op)=="set" else int(globals.get(name,GlobalDefaults.initial_value(name)))+int(e.value)
 	globals[name]=value
 
 ## ---- presentation ----------------------------------------------------------------------------------

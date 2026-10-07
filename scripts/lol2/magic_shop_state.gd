@@ -1,4 +1,5 @@
 extends RefCounted
+const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## Rashar MAGIC_ room state: entry callbackC9F ordering with a saved modern clock.
 ## Boundary effects fire once, when the preceding line completes (source order).
 ## Other handlers (pickup, quip, offer, exit, timer, death) run as saved scripts:
@@ -42,7 +43,7 @@ static func normalize(state: Dictionary) -> Dictionary:
 	if not state.has("quip_mask"): state.quip_mask = 0
 	if not state.has("quip_seed"): state.quip_seed = 20260927
 	if not state.has("reward_seed"): state.reward_seed = 324508639
-	if not state.has("globals"): state.globals = {"GV_KNOWLEDGE_OF_POWER_ORB":0,"GV_LUTHERS_SOUL":0}
+	if not state.has("globals"): state.globals = {"GV_KNOWLEDGE_OF_POWER_ORB":0,"GV_LUTHERS_SOUL":GlobalDefaults.initial_value("GV_LUTHERS_SOUL")}
 	if not state.has("pending_items"): state.pending_items = []
 	return state
 static func idle_script() -> Dictionary:
@@ -141,7 +142,7 @@ static func validate(state: Variant) -> String:
 	if not _number(timer_left) or timer_left < 0 or timer_left > TIMER_SECONDS or (not state.timer_armed and timer_left != 0): return "Invalid magic shop timer."
 	for field in ["quip_mask","quip_seed","reward_seed"]:
 		if state.has(field) and not _integer(state[field],0,0x1fff if field == "quip_mask" else 0x7fffffff): return "Invalid magic shop history."
-	var globals = state.get("globals",{"GV_KNOWLEDGE_OF_POWER_ORB":0,"GV_LUTHERS_SOUL":0})
+	var globals = state.get("globals",{"GV_KNOWLEDGE_OF_POWER_ORB":0,"GV_LUTHERS_SOUL":GlobalDefaults.initial_value("GV_LUTHERS_SOUL")})
 	if not globals is Dictionary or globals.size() != 2 or not _integer(globals.get("GV_KNOWLEDGE_OF_POWER_ORB"),0,1) or not _integer(globals.get("GV_LUTHERS_SOUL"),-1000,1000): return "Invalid magic shop globals."
 	var pending = state.get("pending_items",[])
 	if not pending is Array or pending.size() > 8: return "Invalid magic shop items."
