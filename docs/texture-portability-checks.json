@@ -365,7 +365,13 @@
     "passed": true,
     "total": 4
   },
-  "material_regression": "running session33520: python3 -m pytest tests/test_map_materials.py -q",
+  "material_regression": {
+    "passed": true,
+    "tests": 10,
+    "seconds": 335.05,
+    "command": "python3 -m pytest tests/test_map_materials.py -q",
+    "includes": "All15 pinned areas batch export; no runtime changes."
+  },
   "source_sha256": {
     "tools/decode_level_texture.py": "59962d4ffc63d31fd937b48aaef9dda627e86310a53cd117c54d4d324b9ce6f5",
     "tools/lol2_texture_container.py": "782717823195d60430fc1dd89bf1f22ba58b941ca897c7603453612d6283b45e",
