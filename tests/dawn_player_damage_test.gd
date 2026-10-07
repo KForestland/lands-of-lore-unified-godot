@@ -14,13 +14,22 @@ func _initialize() -> void:
 	var magic:=Magic.new();root.add_child(magic)
 	var store:=Store.new()
 	var context: Dictionary={"attacker_heading":0,"player_heading":32768,"guard":0,"mode":1,"scalar":0,"descriptors":[],"player_magic_level":10,"global223d4":0,"flags228":0}
-	var owned:=Damage.live_context(magic,20,1234,context)
+	var owned:=Damage.live_context(magic,20,1234,0.0,context)
 	assert(owned.player_magic_level==5 and owned.scalar==20 and owned.attacker_heading==1234)
 	assert(context.player_magic_level==10 and context.scalar==0 and context.attacker_heading==0)
 	magic.level=0
-	assert(Damage.live_context(magic,20,1234,context).has("error"))
+	assert(Damage.live_context(magic,20,1234,0.0,context).has("error"))
 	magic.level=5
-	assert(Damage.live_context(magic,129,1234,context).has("error"))
+	assert(Damage.live_context(magic,129,1234,0.0,context).has("error"))
+	for pair in [[0.0,0],[-PI/2,16384],[PI,32768],[PI/2,49152],[TAU,0],[-TAU,0]]:
+		assert(Damage.live_context(magic,0,0,float(pair[0]),context).player_heading==pair[1])
+	assert(Damage.live_context(magic,0,0,NAN,context).has("error"))
+	# Facing changes the actual prepared damage; conflicting caller heading is ignored.
+	var facing:=Damage.live_context(magic,0,32768,PI,context)
+	facing.current=200
+	assert(preload("res://scripts/lol2/hive_damage_preparation.gd").resolve_dawn_spell(facing).prepared.heading_bonus)
+	facing=Damage.live_context(magic,0,32768,0.0,context);facing.current=200
+	assert(not preload("res://scripts/lol2/hive_damage_preparation.gd").resolve_dawn_spell(facing).prepared.heading_bonus)
 	var birth:=store.spawn(63,[0,65536,0],[0,655360,0],[0,0,0],0)
 	var before:=store.checkpoint()
 	var bad:=context.duplicate(true);bad.player_magic_level=0
