@@ -18,6 +18,26 @@ static func direct(magic: Node, store: RefCounted, id: int, collision_heading: i
 	if not impact.request:
 		store.restore(trial.checkpoint())
 		return {"requested":false,"loss":0}
+	return _apply(magic,store,prior,trial,context,{})
+
+## Do not consume an explosion pass while silently losing another target’s
+## request. Until other health owners are bound, reject such batches atomically.
+static func explosion(magic: Node, store: RefCounted, id: int, neighbors: Array, context: Dictionary) -> Dictionary:
+	if magic==null or not magic.has_method("health") or not magic.has_method("set_health") or store==null:return {"error":"Player damage owner unavailable."}
+	var prior: Dictionary=store.checkpoint()
+	var trial:=Store.new();var error:=trial.restore(prior)
+	if not error.is_empty():return {"error":error}
+	var pass_result:=trial.explosion(id,neighbors)
+	if pass_result.has("error"):return pass_result
+	if pass_result.requests.size()>1:return {"error":"Explosion batch requires additional target owners."}
+	if pass_result.requests.is_empty():
+		store.restore(trial.checkpoint())
+		return {"requested":false,"loss":0}
+	var event: Dictionary=pass_result.requests[0]
+	if int(event.target)!=PLAYER:return {"error":"Explosion target owner unavailable."}
+	return _apply(magic,store,prior,trial,context,event)
+
+static func _apply(magic: Node, store: RefCounted, prior: Dictionary, trial: RefCounted, context: Dictionary, event: Dictionary) -> Dictionary:
 	var supplied:=context.duplicate(true)
 	var current: int=magic.health()
 	if context.has("current") and context.current!=current:return {"error":"Stale player health snapshot."}
@@ -28,9 +48,7 @@ static func direct(magic: Node, store: RefCounted, id: int, collision_heading: i
 		store.restore(trial.checkpoint())
 		return {"requested":true,"blocked":true,"loss":0}
 	if (int(supplied.flags228)&8)!=0:return {"error":"Player zero-state continuation unavailable."}
-	for effect in trial.checkpoint().effects:
-		if effect.id==id:supplied.attacker_heading=int(effect.contact.heading)
-	var damage:=Damage.resolve_dawn_spell(supplied)
+	var damage:=Damage.resolve_dawn_spell(supplied) if event.is_empty() else Damage.resolve_dawn_explosion(event,supplied)
 	if damage.has("error"):return damage
 	# The modern host observes health0 for its existing death flow. Keep original
 	# virtual84 ordering; do not claim the native lethal continuation is executed.
@@ -42,7 +60,7 @@ static func direct(magic: Node, store: RefCounted, id: int, collision_heading: i
 	if lethal:health.current=0
 	# No callbacks occurred during planning. Guard a future reentrant owner too.
 	if store.checkpoint()!=prior or magic.health()!=current:return {"error":"Damage owners changed during preparation."}
-	error=store.restore(trial.checkpoint())
+	var error: String=store.restore(trial.checkpoint())
 	if not error.is_empty():return {"error":error}
 	magic.set_health(int(health.current))
 	return {"requested":true,"blocked":false,"loss":int(damage.loss),"health":int(health.current),"lethal":lethal,"calculation":damage,"displays":health.displays}

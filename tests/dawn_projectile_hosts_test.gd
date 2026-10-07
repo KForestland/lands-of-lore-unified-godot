@@ -32,11 +32,16 @@ func run() -> void:
 		var damaging: Dictionary=dawn.projectiles.spawn(int(dawn.ID),player_point,player_point,caster_point,0)
 		var player_hit: Dictionary=dawn.move_projectile(damaging.id,1,1.0)
 		assert(not player_hit.has("error") and player_hit.blocked,str(player_hit))
-		var damage_context: Dictionary={"player_heading":32768,"guard":0,"mode":1,"scalar":0,"descriptors":[],"player_magic_level":10,"global223d4":0,"flags228":0}
+		var damage_context: Dictionary={"player_heading":(int(dawn.population.state.live[dawn.ID].heading)+32768)&65535,"guard":0,"mode":1,"scalar":0,"descriptors":[],"player_magic_level":10,"global223d4":0,"flags228":0}
 		var health_before: int=scene.starting_magic.health()
 		var damage: Dictionary=dawn.damage_projectile_player(damaging.id,player_hit,0,damage_context)
 		assert(not damage.has("error") and damage.loss==10,str(damage))
 		assert(scene.starting_magic.health()==health_before-10)
+		var child: int=dawn.projectiles.update(damaging.id).child
+		assert(child>0)
+		var explosion: Dictionary=dawn.damage_projectile_explosion(child,0x4000,[],damage_context)
+		assert(not explosion.has("error") and explosion.loss==19,str(explosion))
+		assert(scene.starting_magic.health()==health_before-29)
 		var health_after: int=scene.starting_magic.health()
 		var pending: Dictionary=dawn.projectiles.checkpoint()
 		var path: String="user://tests/projectiles_"+str(pair[1])+".json"
@@ -48,6 +53,7 @@ func run() -> void:
 		assert(load_error.is_empty(),load_error)
 		assert(dawn.projectiles.checkpoint()==pending)
 		assert(scene.starting_magic.health()==health_after)
+		assert(not dawn.damage_projectile_explosion(child,0x4000,[],damage_context).requested)
 		assert(not dawn.damage_projectile_player(damaging.id,player_hit,0,damage_context).requested)
 		assert(scene.starting_magic.health()==health_after)
 

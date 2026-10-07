@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "tests": [
+    "dawn_player_damage_test",
+    "dawn_projectile_hosts_test",
+    "hive_dawn20_live_test",
+    "jungle_dawn_live_test"
+  ],
+  "source_stable": true,
+  "report_sha256": "4972506dbd47e14dd8786c6c806dfe8ca99572b90bfa405ba1c1e610e95423dc",
+  "files": {
+    "scripts/lol2/dawn_player_damage.gd": "feb9598426451e9794bcfeb44512c5b26feb857a68cd05864e6d5389bf474e55",
+    "tests/dawn_player_damage_test.gd": "618875d5da9083d0137f96e62535f420118fa694f44d0b66732fcf8d8e7765b2",
+    "tests/dawn_projectile_hosts_test.gd": "f5e03f91564d1fe8f352fbe859df99aeac2df17673cda09d4dd694604eac7009"
+  },
+  "correction": "Attacker heading comes from caster, not projectile. Original request+8 caster binding confirmed in verify_dawn_spell32_preparation.py.",
+  "limits": [
+    "Other world neighbors and player native flags/stats supplied",
+    "Unbound nonplayer damage batches rejected without consuming marker",
+    "No automatic casting/scheduling or original lethal continuation"
+  ]
+}
