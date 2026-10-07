@@ -58,6 +58,7 @@ func targets() -> Dictionary:
 	if host.get("bacatta")!=null and is_instance_valid(host.bacatta): result.merge(host.bacatta.targets())
 	if host.get("kelsrick")!=null and is_instance_valid(host.kelsrick): result.merge(host.kelsrick.targets())
 	if host.get("dawn")!=null and is_instance_valid(host.dawn): result.merge(host.dawn.targets())
+	if host.get("bacatta65")!=null and is_instance_valid(host.bacatta65): result.merge(host.bacatta65.targets())
 	if host.get("exit_encounter")!=null and is_instance_valid(host.exit_encounter): result.merge(host.exit_encounter.targets())
 	if host.get("villager_population")!=null and is_instance_valid(host.villager_population): result.merge(host.villager_population.targets())
 	if host.has_node("Warriors"):
