@@ -105,3 +105,14 @@ python3 tools/prepare_museum_creature_sprites.py --game /path/to/original-game -
 The texture command requires a fresh directory and writes `texture.bin` plus block/hash provenance in `texture_decode.json`. It validates the original archive hash, block extents, decoded lengths and trailer. No runtime-generated CDCACHE files are required. The library `decode(name, game=...)` retains the prior return structure. Unlike the historical script, direct CLI execution now requires explicit arguments.
 
 [Texture evidence](texture-portability-checks.json) verifies all four outputs against current texture inputs (58,080,772 bytes), four malformed-container cases, and a complete original-cave-MIX → newly extracted texture →98 Roach-frame regeneration with100 byte-identical files. The shared material exporter uses the same extracted decompression function; its broader result is recorded separately in the receipt. Geometry/world mesh generation, per-encounter assembly and the complete clean-machine demo recipe remain open.
+
+## Geometry export from original archives
+
+The geometry exporter now uses repository-local slope/subdivision/connector readers and `docs/game-geometry-profiles.json`, a compact set of pinned archive/geometry hashes, names and dimensions:
+
+```sh
+python3 -S tools/lol2/map_geometry.py --game-root /path/to/original-game --area L1_DC --out /path/to/cave-geometry
+python3 -S tools/lol2/map_geometry.py --game-root /path/to/original-game --all --out /path/to/all-area-geometry
+```
+
+Use separate output directories to preserve earlier results. `--inventory` can select an explicit compatible profile JSON. The library API is unchanged. [Geometry portability evidence](geometry-portability-checks.json) verifies all15 areas and91 byte-identical output files, including diagnostics, against the old exporter; three structural tests pass. The isolated run uses Python's standard library and repository helpers, with no RE checkout imports. Original coordinates and generated meshes remain local. Existing subdivision/connector limitations are preserved; portability does not imply new geometry fidelity. Material/scenery preparation and assembling the entire demo still need a complete portable recipe.
