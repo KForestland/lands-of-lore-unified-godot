@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "byte_identical_files": 2404,
+  "source_hashes": {
+    "lol2_movie_format.py": "27a50fe1ad1f8cc9b16c2b36abae0b00cd29635cf33ec9353da73e8f9f45f836",
+    "prepare_jungle_exit_movies.py": "c1a1c8e64cf6b29715399b1e848b67ae9b096cf7cfd257c58cce7de4675bdfb0",
+    "prepare_museum_creature_sprites.py": "18a442ff1ebe7bf9ceec118198567af1a575744a854d980b18c9d43bb4b79e2f",
+    "prepare_jungle_bacatta_media.py": "69a04f6df247db200237dea3c020ff83b16cc931d98d49c7f63b25a9525a483a",
+    "prepare_jungle_bacatta65_media.py": "91dad7e6913d43d3feb750182224a0470a732ee836d311b782aee7881bed142f",
+    "prepare_creature_audio_clips.py": "2d97788381c8add453e4d3339dffff186a1fc80217965b27fd8626c979b01c01",
+    "vqa_v2_decode.py": "b7b22ab37dc8bfd7992a4b84ce475547b4cb39e03ec491ba9e20a3e5aaaeb102",
+    "lol2_creature_sprite_format.py": "f50766f3a670ee55d82c69a72a1b63fd4e6b5668898efb434674ddd1e8a6f46d",
+    "lol2_source_format.py": "e66046e1ad87559706b75e21822440b7ebc2753e9321b3d9e042f6e9ff2f4791",
+    "lol2_material_format.py": "61332945f41c75828382ae08dfd25498a4a988466714e2bb7589b103a05653c3",
+    "lol2_movie_media.py": "8ba23ea7b2bf3f46d575f528a79b361e35ac842de17c9c2e6af95499935b5b06",
+    "__pycache__/prepare_jungle_exit_movies.cpython-312.pyc": "d531b6f27e74f64bd49c086a5c00774bfb20106c6fea41d820e4af2568619228",
+    "__pycache__/vqa_v2_decode.cpython-312.pyc": "e028a96df4c0159fdcbaf1db0b4707f7d565926317cbdd1b6021689498f30698",
+    "__pycache__/prepare_jungle_bacatta_media.cpython-312.pyc": "a7b568deb451d02ccfed8ba32998630c6718006f3faafffc8268bf58e6c9ded2",
+    "__pycache__/prepare_museum_creature_sprites.cpython-312.pyc": "d0c16a9843da9b9eea0e70193470e814f78ce3348f6610269b82031eee6dd2f0",
+    "__pycache__/lol2_creature_sprite_format.cpython-312.pyc": "87b0d05e61d9cde10a05f0a5247e99c25d0051e8e292d481b13e6a41c6269911",
+    "__pycache__/lol2_movie_format.cpython-312.pyc": "600fd243b9a707c724d721a955455985ba8b0892f2e857def2af673450013bc3",
+    "__pycache__/lol2_material_format.cpython-312.pyc": "9d06d78978d354226778c82f019d3c7bc3c21e2bb1ee79de327eb15185da51fc",
+    "__pycache__/lol2_source_format.cpython-312.pyc": "33fc9f0e991c0ded8d299e33a85102e8c973279dd7d7a12f98585b185cf1a927",
+    "__pycache__/lol2_movie_media.cpython-312.pyc": "3ac3120d2ee3d3381f3d8b215039ac97a42fa56f010dbd68dba78f9f5901d743",
+    "__pycache__/prepare_creature_audio_clips.cpython-312.pyc": "c1841876209fdd67403fa7657fe8b859f68ac8fcb9e9da1677dd40e44fda296f",
+    "lol2/map_video_inventory.py": "1c953e2e82642c3326458a6abaa0eda5272d510f262ff7690967b2b70a7247f9",
+    "lol2/__pycache__/map_video_inventory.cpython-312.pyc": "30b79ff9c693fe44cf5a3012c87c843ecb578bd34d074eeec0585f6763005880"
+  },
+  "limits": [
+    "Regeneration equality with existing local media; not native visual fidelity or full clean-machine build proof.",
+    "Original media remains local; explicit game, texture and source inputs required."
+  ],
+  "full_receipt_sha256": "6d361e467c0a862b74288249e6c0fc7b9f6386dbe0408447a4b966b0a5f50b9d"
+}

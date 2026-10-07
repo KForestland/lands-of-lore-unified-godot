@@ -162,3 +162,13 @@ python3 tools/prepare_jungle_bacatta_media.py --game /path/to/original-game --te
 ```
 
 It produces `assets/lol2/generated/jungle_bacatta_media` with dialogue frames, transparency, segment metadata, voices, creature sprites and sound cues; intermediate extracted movies/frames are under `tmp`. Requires Pillow, NumPy and FFmpeg. Existing importing helper APIs and historical no-argument invocation remain compatible. [Verification](bacatta-media-portability-checks.json) regenerated all1,930 files byte-for-byte and checked five consuming preparers. Source-contract and texture preparation remain prerequisites; other encounter-specific packers still need explicit-path entrypoints before the full clean-machine recipe is complete.
+
+### Bacatta65 complete media pack
+
+`prepare_jungle_bacatta65_media.py` accepts explicit inputs and a fresh output root, using the portable shared decoders:
+
+```sh
+python3 tools/prepare_jungle_bacatta65_media.py --game "$GAME" --texture "$TEXTURE" --source scripts/lol2/jungle_bacatta65_source.json --output-root "$OUTPUT"
+```
+
+An isolated tool tree regenerated all 2,404 files byte-identically to the existing local pack, including dialogue movies, audio and creature sprites. See `bacatta65-media-portability-checks.json`. Original media stays local. This verifies this pack; the complete clean-machine asset pipeline remains unfinished.
