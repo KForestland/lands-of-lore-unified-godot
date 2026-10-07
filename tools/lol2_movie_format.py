@@ -43,3 +43,22 @@ def ww_hash_v1(name: str) -> int:
         id_val = ((id_val << 1) | (id_val >> 31)) & 0xFFFFFFFF
         id_val = (id_val + a) & 0xFFFFFFFF
     return id_val
+
+
+def parse_vqa_chunks(edata):
+    """Parse all IFF chunks from a FORM/WVQA entry. Returns list of (chunk_id, chunk_data)."""
+    if len(edata) < 12 or edata[:4] != b'FORM' or edata[8:12] != b'WVQA':
+        return None
+
+    form_size = struct.unpack_from(">I", edata, 4)[0]
+    chunks = []
+    pos = 12
+    while pos + 8 <= len(edata):
+        chunk_id = edata[pos:pos+4]
+        chunk_size = struct.unpack_from(">I", edata, pos+4)[0]
+        chunk_data = edata[pos+8:pos+8+chunk_size]
+        chunks.append((chunk_id, chunk_data))
+        pos += 8 + chunk_size
+        if chunk_size % 2:
+            pos += 1  # IFF padding to even boundary
+    return chunks

@@ -8,21 +8,20 @@ payload names an in-world VQA (resource464 = 1790004E, resource461 = 1795004E). 
 and every SND2 sample is required. Pose frames keep the source's pure blue key as alpha0.
 Output: assets/lol2/generated/jungle_exit_movies/ (ignored; original media stays local).
 """
-import hashlib,json,struct,subprocess,sys,wave
+import argparse,hashlib,json,os,struct,subprocess,sys,wave
 from pathlib import Path
 from PIL import Image
 from lol2_movie_media import decode, audio
-sys.path.insert(0,'/home/bob')
-sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools')
-from audit_game_transition_owners import GAME
 from lol2.map_video_inventory import lookup_movie
-from lol2_vqa_decode import parse_vqa_chunks
-from lol2_wall_material_checkpoint import sections
+from lol2_movie_format import parse_vqa_chunks
+from lol2_material_format import sections
+GAME=Path(os.environ.get('LOL2_GAME_ROOT','/home/bob/lol2_out/museum_capture_20260913/game'))
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'assets/lol2/generated/jungle_exit_movies'
 CACHE=ROOT/'tmp/jungle_exit_movies'
 TEXTURE=Path('/home/bob/lol2_out/jungle_geometry_20260914/texture.bin')
 SPRITES=ROOT/'assets/lol2/generated/jungle_exit_guard_sprites/sprites.json'
+SOURCE=ROOT/'scripts/lol2/jungle_exit_encounter_source.json'
 POSES={8:(464,'1790004E.VQA'),12:(461,'1795004E.VQA')}
 KEY=(0,0,255)
 def sha(raw): return hashlib.sha256(raw).hexdigest()
@@ -36,7 +35,7 @@ def fetch(name):
     return found,path,head,sum(len(v)*2 for k,v in chunks if k==b'SND2')
 def main():
     CACHE.mkdir(parents=True,exist_ok=True);OUT.mkdir(parents=True,exist_ok=True)
-    source=json.loads((ROOT/'scripts/lol2/jungle_exit_encounter_source.json').read_text())
+    source=json.loads(SOURCE.read_text())
     endings=[]
     for e in source['endings']:
         found,path,head,samples=fetch(e['movie']);assert found['sha256']==e['movie_sha256']
@@ -79,4 +78,22 @@ def main():
         note='Original media, local only. Pose clip duration is frames/15fps; whether native opcode8 waits exactly for clip end is not claimed.')
     (OUT/'movies.json').write_text(json.dumps(result,indent=1)+'\n')
     print('PASS endings',[(e['movie'],e['frames'],e['audio_samples']) for e in endings],'poses',[(p['selector'],p['vqa'],p['frames'],p['audio_samples']) for p in poses])
-if __name__=='__main__':main()
+def cli():
+    global ROOT,OUT,CACHE,GAME,TEXTURE,SPRITES,SOURCE
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--game',type=Path,required=True)
+    parser.add_argument('--texture',type=Path,required=True)
+    parser.add_argument('--sprites',type=Path,required=True)
+    parser.add_argument('--source',type=Path,required=True)
+    parser.add_argument('--output-root',type=Path,required=True)
+    args=parser.parse_args()
+    if args.output_root.exists(): parser.error('--output-root must be a fresh directory')
+    for path in [args.texture,args.sprites,args.source]:
+        if not path.is_file(): parser.error('Missing input: '+str(path))
+    GAME=args.game.resolve();TEXTURE=args.texture.resolve();SPRITES=args.sprites.resolve();SOURCE=args.source.resolve()
+    ROOT=args.output_root.resolve();OUT=ROOT/'assets/lol2/generated/jungle_exit_movies';CACHE=ROOT/'tmp/jungle_exit_movies'
+    main()
+if __name__=='__main__':
+    if len(sys.argv)>1: cli()
+    else: main()
+

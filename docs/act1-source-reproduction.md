@@ -140,3 +140,15 @@ python3 tools/lol2/map_props.py batch --game-root /path/to/original-game --out-r
 ```
 
 [Scenery portability evidence](scenery-portability-checks.json) verifies all15 areas and18,531 byte-identical files against the prior exporter. All19 distinct sprite/prop tests pass across the initial run and three corrected stale expectations. Placement accounting, movie fallback selectors, transparent/remap masks, block sprites and sequences remain covered. The isolated directory contains only repository helpers and installed dependencies. Historical default paths remain for existing callers; use explicit paths elsewhere. This does not complete encounter media assembly or certify native visual parity.
+
+## Jungle exit movie pack preparation
+
+The exit-movie packer now uses repository-local movie lookup, container readers, material sections and frame/audio decoding. It requires Pillow, NumPy and FFmpeg and takes explicit paths:
+
+```sh
+python3 tools/prepare_jungle_exit_movies.py --game /path/to/original-game --texture /path/to/jungle/texture.bin --sprites /path/to/guard/sprites.json --source /path/to/jungle_exit_encounter_source.json --output-root /path/to/fresh-exit-stage
+```
+
+The output root must be fresh. It receives `assets/lol2/generated/jungle_exit_movies` and an intermediate movie/frame cache under `tmp/jungle_exit_movies`. The generated manifest retains stable `res://assets/...` references for copying into the source project. Existing imported helper names and the historical no-argument entrypoint remain compatible; other machines should use explicit CLI paths. `LOL2_GAME_ROOT` also selects the game installation for existing importing consumers.
+
+[Verification](exit-movie-portability-checks.json) reproduces all92 output files byte-for-byte across five movies (651frames), including keyed guard frames, atlases, WAVs and manifest. Seven movie-lookup tests pass in the isolated tool tree, and five existing encounter media preparers import the updated helper. Prepared source/texture/sprite inputs are still prerequisites; this is not yet a complete clean-machine demo recipe.
