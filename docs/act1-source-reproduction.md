@@ -20,9 +20,12 @@ This recipe requires the matching locally generated `assets/lol2/generated/` tre
 
 ```sh
 python3 tools/prepare_standalone_demo.py --output /path/to/candidate --templates /path/to/templates
+python3 tools/verify_demo_stage.py --output /path/to/candidate --templates /path/to/templates
 godot --headless --path /path/to/candidate/project --export-release Linux /path/to/candidate/Linux/LoL2-Cavern.x86_64
 godot --headless --path /path/to/candidate/project --export-release Windows /path/to/candidate/Windows/LoL2-Cavern.exe
 ```
+
+The verifier requires Python3.11+ and records source, asset, template, project and preset hashes in `source_asset_manifest.json`. It rejects changed/missing/extra staged inputs, incorrect raw media rules, missing original-game export gating and mismatched template paths. It refuses to replace an existing manifest; `--manifest` selects a fresh receipt path, and `--source` selects an explicit source checkout. [Verification evidence](demo-stage-verification-checks.json) covers eight targeted cases, the complete R3 inputs and rejection of mixed source revisions. This replaces the earlier machine-specific fingerprint script.
 
 Run exports sequentially because they share the import cache. Each executable requires its adjacent PCK. The packaged launcher asks for the supported installed original `LOLG.EXE` and verifies it locally. Source/editor scenes use the same runtime with the development gate bypass.
 
