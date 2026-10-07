@@ -10,6 +10,9 @@ static func admit(context: Variant) -> Dictionary:
 	if not context.get("active") is Array or context.active.size()>4: return {"error":"Invalid active spell list."}
 	for spell in context.active:
 		if not Validation._integer(spell,0,255): return {"error":"Invalid active spell."}
+	# Native A7E57 rejects the cleared choice before health/cost/descriptor gates.
+	if int(context.spell)==0:
+		return {"accepted":false,"reason":2,"stored_reason":2 if int(context.write_reason)!=0 else int(context.previous_reason),"b8":int(context.b8)}
 	if not DESCRIPTORS.has(int(context.spell)): return {"error":"Unsupported Dawn spell."}
 	var desc: Array=DESCRIPTORS[int(context.spell)]
 	var reason:=0

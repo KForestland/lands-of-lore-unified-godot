@@ -4,6 +4,7 @@ These components preserve the original admission, candidate scan, cast-completio
 
 Run these without original media, using `godot --headless --path . --script res://tests/NAME.gd`:
 
+- `dawn_cast_entry_test`:700 native frame-event/cast-entry boundaries. Rechecks admission silently, clears indirect-target state before admission, rejects zero choice immediately, and rotates the next selection after the event even when casting fails. Apply entry flags before effect dispatch, then call `finish_event` with the actual post-dispatch flags.
 - `dawn_admission_test`:240 native cases.
 - `dawn_ai_decision_test`:280 composed native decisions through goal/action/spell scoring and admission, including disabled-AI and zero-mana gates, preserved diagnostic fields, explicit RNG-consumption reporting and JSON-restored inputs. Effective stats/world context remain caller-supplied; no cast dispatch or AI commit.
 - `dawn_spell_scoring_test`:228 native comparisons using the original parsed Dawn profile plus synthetic signed-weight boundaries. Reuses goal/action arithmetic; returns all positive candidates in original order.
