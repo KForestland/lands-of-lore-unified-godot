@@ -68,3 +68,15 @@ python3 -S tools/lol2/map_video_inventory.py --game /path/to/original-game --pro
 ```
 
 The props root must already contain the area placement reports. Only unique area/sphere movie matches are extracted; ambiguous matches remain candidates. [Verification](movie-lookup-portability-checks.json) covers all30 current placements, exact old/new inventory equality,23 extracted movies with matching hashes, seven existing tests and shared media-preparer imports. The clean isolated CLI used only three local Python files and the standard library. Movie decoding and generating the prerequisite geometry/placement reports remain separate portability work. Historical no-argument paths remain for existing callers; use explicit paths elsewhere.
+
+## Standalone raw movie decoding
+
+The shared frame/audio helpers now live in `tools/lol2_movie_media.py`. They require NumPy, Pillow and FFmpeg; the recorded test versions are in [decode evidence](movie-decode-portability-checks.json). Given an extracted supported VQA, choose a fresh output directory:
+
+```sh
+python3 tools/lol2_movie_media.py --input /path/to/movie.vqa --output /path/to/decoded-movie
+```
+
+This writes raw numbered PNGs, mono `voice.wav` when SND2 audio is present, and `media.json` with input/output hashes, frame/header values and audio sample counts. It refuses an existing output directory. Non-SND2 audio is rejected. Transparency keys, atlas packing, segment metadata and encounter binding remain the consuming preparer's responsibility.
+
+Verification covers101 frames across a partial-codebook movie with audio, a FFmpeg-decoded movie with audio, and a silent partial-codebook movie. Every output PNG/WAV matches the prior helpers; eight decoder tests and existing exit/Bacatta/Dawn consumer imports pass. The isolated CLI contains only the shared helper and VQA decoder, plus installed dependencies. This preserves existing decoder support: for example, partial-codebook4x2 blocks are rejected, not silently claimed as supported. Full media preparation is still incomplete.
