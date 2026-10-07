@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "source_patch_sha256": "b0543bcfe88e67086687a87210ae50d20996ab7754c9e2d44545207329885bf9",
+  "stock_ffmpeg_intervention": {
+    "source_sha256": "6bcf0486d7cabee5ec48de9fde1335ec67cac7c548ff3a976776d5bdc664a9e4",
+    "removed_vqfl": 13,
+    "frames": 2021,
+    "exact_frames": 2021,
+    "mismatches": [],
+    "scope": "Independent intervention: remove only top-level VQFL, then compare stock FFmpeg RGB with replacement decoder of untouched original. Original asset remains local."
+  },
+  "synthetic_and_original_loader": {
+    "status": "PASS",
+    "synthetic_frames": 3,
+    "loader_flag_cases": 256,
+    "code_sha256": "81a822b7cb07546ad77563f60c3fc214aa2211629def4667fef597e1288f6ad6",
+    "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+    "scope": "Independent known RGB expectations despite injected VQFL full/partial data; actual loader branch reaches snapshot call iff bit20. Dispatch tag identity relies on reviewed surrounding original loader evidence."
+  },
+  "seek_replay": {
+    "consistent": 58,
+    "inconsistent": 0,
+    "clips": 12,
+    "log_sha256": "7366b125eb5f6e5edf19f54f98ac040eaed612cf04f65aa772465eea6000208f"
+  },
+  "regeneration": {
+    "preparers": [
+      {
+        "preparer": "jungle_dawn_media",
+        "returncode": 0
+      },
+      {
+        "preparer": "jungle_bacatta_media",
+        "returncode": 0
+      },
+      {
+        "preparer": "hive_dawn20_media",
+        "returncode": 0
+      },
+      {
+        "preparer": "jungle_village_dialogue",
+        "returncode": 0
+      },
+      {
+        "preparer": "jungle_followup_dialogue",
+        "returncode": 0
+      },
+      {
+        "preparer": "museum_control96",
+        "returncode": 0
+      }
+    ],
+    "files_before": 5963,
+    "files_after": 5963,
+    "changed_files": 330,
+    "removed_files": 0,
+    "changed_audio_files": 0,
+    "before_manifest_sha256": "8c945013b7e6aaa3028ddcdb08893faeaec77983f2165f138f102a09fed3d009",
+    "after_manifest_sha256": "e918324159574c3c97c9429fe76ba0e49609912e31eff71a56c6a7a72f60afa8"
+  },
+  "regressions": {
+    "tests": 12,
+    "passed": true,
+    "source_stable": true,
+    "report_sha256": "5d136eeb1b36c8d429e46b1c99f7f09c53e0be228f40848022e2aee57c353536"
+  },
+  "limits": [
+    "Python replacement decoder, not original decoder execution",
+    "Known original source media; malformed-input hardening assigned to Opus",
+    "No new demo build or physical playtest acceptance"
+  ]
+}

@@ -1,0 +1,11 @@
+# VQA linear playback correction
+
+The local Act1 media pipeline now uses the reviewed Python VQA v2 decoder for partial-codebook clips. It skips top-level VQFL seek snapshots during linear playback and activates assembled partial codebooks after their final contributing frame. The earlier FFmpeg path allowed seek-snapshot data to contaminate the next frame packet and subsequent partial codebook.
+
+Independent causal check: remove only13 VQFL chunks from Dawn’s E065E movie, decode the modified stream with stock FFmpeg, and compare it with the replacement decoder reading the untouched source. All2021 frames match exactly. This is stronger than judging temporal smoothness. Independent snapshot replay also matches linear output at58 seek points in12 affected clips; an explicit synthetic RGB case and256 executions of the original loader’s flag branch corroborate snapshot skipping. The Python decoder itself is not original-code execution.
+
+All six affected media groups were regenerated: Jungle Dawn, Bacatta, Hive Dawn20, village dialogue, follow-up dialogue and Museum control96. The before/after manifests cover5963 files:330 changed, none removed, no audio changes. Twelve source-stable media/state/rendered checks pass, including both Dawn encounters, region478 unload, Bacatta, village/follow-up and Museum control96. [Evidence](vqa-linear-playback-review.json).
+
+The [source patch](../patches/vqa-linear-playback.patch) targets the full local post-F/G source, independently of the region478 and combat patches. It includes local preparation and causal-review tools; those tools still depend on the existing extraction environment. Register `vqa_partial_codebook_media_test` in the headless regression suite and regenerate the six media groups after applying. Original movies and regenerated frames remain local.
+
+Malformed/unsupported-input hardening remains assigned to Opus. This correction is accepted for the verified original-media pipeline; it does not establish general decoder conformance. A fresh demo build and Bob’s physical visual/audio acceptance remain open.
