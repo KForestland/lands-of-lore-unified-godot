@@ -58,3 +58,13 @@ python3 -S tools/prepare_creature_audio_clips.py --game /path/to/original-game -
 Repeat `--request` to decode additional sound-bank IDs. WAVs and `audio.json` are written below `assets/lol2/generated/<folder>`; extracted AUDs remain below `tmp/<folder>`. The original bank hash is required. This standalone manifest lists clips and provenance; encounter-specific generators still supply cue/event bindings. Existing Python callers retain `stage_clips(root, folder, requests, names)` and can pass keyword `game=` or set `LOL2_GAME_ROOT`; the historical local default remains for compatibility.
 
 [Audio portability evidence](audio-portability-checks.json) verifies58 distinct requests against69 existing WAVs, all byte-identical, with only the two repository Python files in the isolated tool directory and `python3 -S`. Five input tests cover missing/duplicate/wrong banks, request bounds and output-folder escape. Original media stays local. This closes shared AUD extraction portability, not sprite/movie extraction, the entire clean-machine build or audible playback acceptance.
+
+## Movie lookup and extraction from existing placement reports
+
+`tools/lol2/map_video_inventory.py` now uses only repository-local MIX, name-hash and VQHD metadata helpers. It accepts explicit paths:
+
+```sh
+python3 -S tools/lol2/map_video_inventory.py --game /path/to/original-game --props /path/to/area-reports --resources /path/to/extracted-movies --inventory /path/to/movie-inventory.json
+```
+
+The props root must already contain the area placement reports. Only unique area/sphere movie matches are extracted; ambiguous matches remain candidates. [Verification](movie-lookup-portability-checks.json) covers all30 current placements, exact old/new inventory equality,23 extracted movies with matching hashes, seven existing tests and shared media-preparer imports. The clean isolated CLI used only three local Python files and the standard library. Movie decoding and generating the prerequisite geometry/placement reports remain separate portability work. Historical no-argument paths remain for existing callers; use explicit paths elsewhere.
