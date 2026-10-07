@@ -16,7 +16,11 @@
     "exit_code": 0,
     "log": "export_linux.log"
   },
-  "windows_export": "running:34954",
+  "windows_export": {
+    "exit_code": 0,
+    "log": "export_windows.log",
+    "runtime": "native Windows untested"
+  },
   "linux_packaged_save": {
     "artifacts": {
       "/home/bob/lol2_act1_candidate_20261007_r4/Linux/LoL2-Cavern.x86_64": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
@@ -69,5 +73,24 @@
     "LoL2-Cavern.x86_64": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
     "LoL2-Cavern.pck": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45"
   },
-  "scope": "R4 source matches the passed256-test suite. Linux package/save/restart and all asset hashes verified. Fresh campaign, Windows export/runtime, representative GPU/audio and Bob acceptance are not yet complete."
+  "scope": "R4 source matches passed256 suite. Both exports completed; Linux save/restart and all packed asset hashes verified. Fresh campaign, native Windows runtime, representative GPU/audio and Bob acceptance remain open.",
+  "artifacts": {
+    "Linux/LoL2-Cavern.x86_64": {
+      "sha256": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+      "bytes": 73519416
+    },
+    "Linux/LoL2-Cavern.pck": {
+      "sha256": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45",
+      "bytes": 936307488
+    },
+    "Windows/LoL2-Cavern.exe": {
+      "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+      "bytes": 109268480
+    },
+    "Windows/LoL2-Cavern.pck": {
+      "sha256": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45",
+      "bytes": 936307488
+    }
+  },
+  "identical_platform_packs": true
 }
