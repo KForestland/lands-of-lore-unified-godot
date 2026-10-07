@@ -24,5 +24,14 @@ func _initialize() -> void:
 		assert(result.stored_choice==row.stored_choice and result.b8==row.updated_flags and equivalent(result.attempts,row.attempts) and equivalent(result.candidates,row.candidates),str(row,result))
 		assert(result.accepted==row.attempts.any(func(a): return a.admitted))
 		assert(context==before)
-	print("PASS:588 native candidate scans, prior-choice rotation, rejected candidate clearing and no-admission fallback")
+	var dynamic=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/dawn_selection_dynamic_native.json"))
+	assert(dynamic.rows.size()==480)
+	for row in dynamic.rows:
+		var context={"w88":800,"mana":row.resource,"check_cost":1,"target":0x22574,"seen":1,"b7":0,"b8":row.flags,"distance":0,"exclusive":row.exclusive,"active":[],"write_reason":1,"previous_reason":0}
+		var result:=Selection.scan(context,row.scores,row.maximum,50,row.previous,row.rng,row.input_candidates)
+		assert(not result.has("error"),str(result))
+		assert(result.stored_choice==row.stored_choice and result.b8==row.updated_flags and equivalent(result.attempts,row.attempts) and equivalent(result.candidates,row.candidates),str(row,result))
+		assert(result.accepted==row.attempts.any(func(a): return a.admitted))
+		assert(Selection.scan(context,row.scores,row.maximum,50,row.previous,row.input_candidates.size()*32,row.input_candidates).has("error"))
+	print("PASS:588 six-candidate and480 dynamic native scans; changing candidate count and RNG range")
 	quit()

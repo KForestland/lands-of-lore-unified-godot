@@ -1,0 +1,17 @@
+{
+  "scope": "Native spell scoring and variable-candidate scan; live AI integration remains open.",
+  "native_scoring_cases": 228,
+  "native_dynamic_scan_cases": 480,
+  "main_report": "/home/bob/lol2_github_source_20260911/tmp/regressions/dawn_scoring_dynamic_20261007/report.json",
+  "source_stable": true,
+  "sha256": {
+    "scripts/lol2/hive_ai_action_choice.gd": "f9c3a32e5c36f63969fcc61a3fe48ae725a77a59bcd16a838ca2d57ac01a179c",
+    "scripts/lol2/hive_ai_spell_choice.gd": "a463b76aa6cf21cdbea666a7c0ece012716d8cf5733199b1c01e7087dcefe5c6",
+    "scripts/lol2/dawn_spell_selection.gd": "61fde31ab1075d02c1071df051335ca6b9953f054120cabe94056b5524b01ac4",
+    "tests/dawn_spell_scoring_test.gd": "b129b331d8b89b0b5865faa453b1dfec57510f9e344e3caf08ab499747f8a82d",
+    "tests/dawn_selection_test.gd": "0f1bfe0d8d6ca7919b5f8eeb0778a6c1af8abc4fd391a3434ab4704c7960e6bc",
+    "tests/fixtures/dawn_spell_scores_native.json": "d387c0f98572621b1ac34dc0900fa198551249a3fe0b10c6d22d07b011d2eac3",
+    "tests/fixtures/dawn_selection_dynamic_native.json": "d9ea3620fd4e71c210bcf0a4b36f8408a7da913fd2fd72d94baa4ccec5968c10",
+    "docs/dawn-casting-portable.md": "5fd5f21da8f6c02dc560acc722ab65b3da809786a1b63efd870b53ced7ca6f6f"
+  }
+}
