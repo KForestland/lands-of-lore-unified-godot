@@ -102,6 +102,8 @@ func _apply(effects: Array) -> void:
 			"kelsrick": _kelsrick(e)
 			"movable":
 				if int(e.movable) in [56,57] and int(e.target)==100: _shut_doors()
+				elif int(e.movable) in [74,75] and hooks.has("inner_gate") and hooks.inner_gate is Callable and hooks.inner_gate.is_valid():
+					hooks.inner_gate.call("0120%02x%02x%02x%02x"%[int(e.movable)&255,int(e.movable)>>8,int(e.target)&255,int(e.target)>>8])
 			"sound": _bells()
 			"arrow": _fire(int(e.control))
 		if hooks.has("effects") and hooks.effects is Callable and hooks.effects.is_valid() and str(e.type) not in ["group","sound"]: hooks.effects.call(e)

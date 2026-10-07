@@ -1,6 +1,7 @@
 extends SceneTree
 ## Village alarm source chain on the pure state.
 ## - Region3805 starts control216 timer1; without the alert its expiry runs nothing.
+## - Control82 op5 selector0 runs g18846.
 ## - With the alert: g27172 (once, local32 latch) gives:
 ##   - the Kelsrick bundle in source order (locals 52/8/32, soul −2, sub13/sub7), plus g21418 (local52==1 overlay);
 ##   - movables 74/75/78/79 → 0 and 56/57 → 100; local7=2;
@@ -52,7 +53,8 @@ func run() -> void:
 	if not check(s.movables=={"56":100,"57":100,"74":0,"75":0,"78":0,"79":0} and int(s.locals["7"])==2,"Movables/local7 %s %s"%[s.movables,s.locals]): return
 	for key in [["77",0],["216",0],["216",2],["217",0]]:
 		if not check((int(s.timers[key[0]][key[1]].flags)&1)==0,"Timer %s not started"%[key]): return
-	if not check(log.any(func(e): return e.type=="external" and e.raw=="051052000000") and log.any(func(e): return e.type=="external" and e.raw=="09204f001100"),"g27172 receipts"): return
+	# Control82 selector0 ends at once into g18846 (78/79 → 0 again); property17 on 78/79 stays a receipt.
+	if not check(groups.has(18846) and not groups.has(18864) and not log.any(func(e): return e.type=="external" and e.raw=="051052000000") and log.any(func(e): return e.type=="external" and e.raw=="09204f001100"),"g27172 control82/receipts"): return
 	# Bells and arrows keep coming; g27172 never repeats (local32==1).
 	log=[]
 	step(s,20.0,c,log)

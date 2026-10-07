@@ -38,10 +38,14 @@ EXPECTED_GROUPS = {
     (1, 21372): ['c60000003401', 'c70000001d01', 'c6000000081e', '090240000300', '0d0240000d000000', '0d02400007000000'],
     (1, 21418): ['090240001100', '0802400001000000', '0d0240000d000000', '0d02400007000000', 'c70000001d01'],
     (1, 28168): ['0e104d0003000000', '0e10d80003020000', '0e10d90003000000'],
+    (1, 18846): ['01204e000000', '01204f000000'],
+    (1, 18864): ['c590e30e0000', 'c590dd0e0000', '01204e006400', '01204f006400'],
 }
 # Records this owner runs: (owner_kind, owner, kind, value, group).
 OWNED = [('region', 3805, 2, 0, 7956), ('control', 216, 2, 304, 27162), ('control', 216, 2, 304, 27172), ('control', 216, 2, 272, 27316),
-         ('control', 77, 2, 272, 18758), ('control', 217, 2, 272, 27324), ('control', 100, 6, 20, 21372), ('control', 100, 6, 20, 21418)]
+         ('control', 77, 2, 272, 18758), ('control', 217, 2, 272, 27324), ('control', 100, 6, 20, 21372), ('control', 100, 6, 20, 21418),
+         # Control82 is an invisible logic marker (assembly template36, resource 0/type 0, no movie): an op5 selector ends at once into kind3 value=selector.
+         ('control', 82, 3, 0, 18846), ('control', 82, 3, 1, 18864)]
 # Records naming these objects that belong to other owners, or that are reported without a producer.
 OTHER = {('prop', 482, 6, 20, 10162): 'Bacatta57 (arms control216 index1 through its effects hook)',
          ('movable', 79, 6, 16, 28168): 'reported: re-arms the timers g27172 already starts; no separate producer',

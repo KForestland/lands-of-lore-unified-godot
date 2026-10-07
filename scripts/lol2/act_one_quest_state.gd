@@ -98,6 +98,9 @@ static func validate(state: Variant) -> String:
 	if state.has("jungle_bacatta65"):
 		var bacatta65_error:=preload("res://scripts/lol2/jungle_bacatta65_packet.gd").validate(state.jungle_bacatta65)
 		if not bacatta65_error.is_empty(): return bacatta65_error
+	if state.has("jungle_inner_gate"):
+		var inner_error:=preload("res://scripts/lol2/jungle_inner_gate.gd").validate(state.jungle_inner_gate)
+		if not inner_error.is_empty(): return inner_error
 	if state.has("jungle_village_alarm"):
 		var alarm_error:=preload("res://scripts/lol2/jungle_village_alarm_packet.gd").validate(state.jungle_village_alarm)
 		if not alarm_error.is_empty(): return alarm_error

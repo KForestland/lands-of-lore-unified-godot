@@ -172,6 +172,38 @@
     "0d02400007000000",
     "c70000001d01"
    ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 82,
+   "kind": 3,
+   "value": 0,
+   "stream": 1,
+   "group": 18846,
+   "predicate": null,
+   "archive_offset": 12767166,
+   "raw": "06039e490000",
+   "commands": [
+    "01204e000000",
+    "01204f000000"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 82,
+   "kind": 3,
+   "value": 1,
+   "stream": 1,
+   "group": 18864,
+   "predicate": null,
+   "archive_offset": 12767172,
+   "raw": "0603b0490100",
+   "commands": [
+    "c590e30e0000",
+    "c590dd0e0000",
+    "01204e006400",
+    "01204f006400"
+   ]
   }
  ],
  "predicates": {

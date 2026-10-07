@@ -11,7 +11,8 @@ extends RefCounted
 ## - Control216 index0 → g27162: sound 403 (bells1) at prop510 while the alert holds.
 ## - Controls 77/216 index2/217 → op15 sub-op93: an Arrow (SPELL.ODF 12) from the control at Luther. Every kind2 row
 ##   reloads by a random draw over its range × 60 ticks. No source command stops these timers.
-## Unbound commands (op9 property17 on 78/79, op5 control82, op2 player 0x25, op210 music) are kept as receipts.
+## - Op5 control82 selector0 ends at once into g18846 (78/79 → 0 again).
+## Unbound commands (op9 property17 on 78/79, op2 player 0x25, op210 music, region bits in g18864) are kept as receipts.
 const SOURCE:="res://scripts/lol2/jungle_village_alarm_source.json"
 const EventTimer=preload("res://scripts/lol2/hive_event_timer.gd")
 const TICKS:=60
@@ -167,5 +168,10 @@ static func _run(s: Dictionary, src: Dictionary, record: Dictionary, ctx: Dictio
 				if b[1]==0x10 and b[4]==0x5d and b[5]==1: effects.append({"type":"arrow","control":target})
 				else: _receipt(s,raw,effects)
 			20: effects.append({"type":"sound","request":int(b.decode_u16(4)),"object":target})
+			5:
+				# Control82 (invisible logic marker): the selector "clip" ends at once into kind3 value=selector.
+				if b[1]==0x10 and target==82:
+					for q in _records(s,src,"control",82,3,int(b[4]),overlay): _run(s,src,q,overlay,effects)
+				else: _receipt(s,raw,effects)
 			_: _receipt(s,raw,effects)
 	if not bundle.is_empty(): effects.append({"type":"kelsrick","group":int(record.group),"commands":bundle})

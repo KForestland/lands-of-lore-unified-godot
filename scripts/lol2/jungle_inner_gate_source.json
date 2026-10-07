@@ -1,0 +1,147 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "leaves": [
+  74,
+  75
+ ],
+ "records": [
+  {
+   "owner_kind": "region",
+   "owner": 2752,
+   "kind": 2,
+   "value": 0,
+   "group": 5160,
+   "predicate": null,
+   "raw": "080c2814c00a0200",
+   "commands": [
+    "01204a006400",
+    "01204b006400"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 98,
+   "kind": 3,
+   "value": 0,
+   "group": 21138,
+   "predicate": null,
+   "raw": "060392520000",
+   "commands": [
+    "01204b000000",
+    "01204a000000"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 98,
+   "kind": 3,
+   "value": 1,
+   "group": 21156,
+   "predicate": null,
+   "raw": "0603a4520100",
+   "commands": [
+    "01204b006400",
+    "01204a006400"
+   ]
+  },
+  {
+   "owner_kind": "movable",
+   "owner": 74,
+   "kind": 4,
+   "value": 0,
+   "group": 27916,
+   "predicate": 191,
+   "raw": "0a040c6d000000000000",
+   "commands": [
+    "01204a006400",
+    "01204a006400"
+   ]
+  },
+  {
+   "owner_kind": "movable",
+   "owner": 75,
+   "kind": 4,
+   "value": 0,
+   "group": 27934,
+   "predicate": 191,
+   "raw": "0a041e6d000000000000",
+   "commands": [
+    "01204a006400",
+    "01204b006400"
+   ]
+  }
+ ],
+ "predicates": {
+  "191": {
+   "op": "==",
+   "left": {
+    "shared": 11
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "00020b0001"
+  }
+ },
+ "regions": [
+  {
+   "region": 2752,
+   "polygon": [
+    [
+     -1955.0,
+     -5650.0
+    ],
+    [
+     -1828.0,
+     -5723.0
+    ],
+    [
+     -1797.0,
+     -5658.0
+    ],
+    [
+     -1921.0,
+     -5592.0
+    ]
+   ],
+   "floor_min": -20,
+   "floor_max": -20
+  },
+  {
+   "region": 2750,
+   "polygon": [
+    [
+     -1740.0,
+     -5577.0
+    ],
+    [
+     -1900.0,
+     -5529.0
+    ],
+    [
+     -1899.0,
+     -5549.0
+    ],
+    [
+     -1766.0,
+     -5597.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  }
+ ],
+ "other_records": {
+  "region2750/2/0/g5084": "Kelsrick owner (talk2 region; local6==0): 74/75 \u2192 0 and op5 control98 selector0, emitted through its effects hook",
+  "control216/2/304/g27172": "village alarm: 74/75 \u2192 0",
+  "region2443/2/0/g4442": "unowned (village gate branch p111 alert==0 AND local6==1); reported",
+  "prop561/6/2/g14086": "unowned (prop561 event2); reported"
+ },
+ "leaves_sha256": "883dc0280baebde0db1ce3f900c96031068205c9b06e5115e97d449e2e7009bb"
+}

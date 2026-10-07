@@ -61,10 +61,14 @@ This is a fixture-tested slice on the real Jungle host. It is not earned-route o
   Luther is within 1400 with a clear line; otherwise that shot is held. Damage is 3. The native speed (0xFA00000),
   damage table and arrow presentation are not replayed. Arrows in flight are not saved.
 - **Bells.** Not restarted while still playing (the reload may be 0 ticks).
-- **Gates.** The village gate keeps its own collision-safe stepping when closing. 74/75 have no port presentation, so
-  their targets are only tracked.
-- **Receipts.** op2 player 0x25, op210 music, op9 property17 on 78/79 and op5 control82 are kept as saved receipts.
-  The control82 clip (whose end, g18846, would close 78/79 again) is not played.
+- **Gates.** The village gate keeps its own collision-safe stepping when closing. 74/75 go to Kelsrick's inner gate
+  owner (`jungle-inner-gate.md`).
+- **Receipts.** op2 player 0x25, op210 music, op9 property17 on 78/79, and the region bits in g18864 are kept as
+  saved receipts.
+- **Control82.** An invisible logic marker (assembly template36: direct resource 0, type 0, no movie; lead control_movies.json), so op5 selector0 ends at once into g18846
+  (78/79 → 0 again; nothing new to see).
+- **local7=2.** Retires the separate, unimplemented drunken-villager encounter (control110, assembly template53 movie E105E.VQA, owned by the lead; props 484/485 sightings,
+  region3355 block). No port consequence until that encounter exists.
 
 ## Tests
 
