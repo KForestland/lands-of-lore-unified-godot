@@ -80,3 +80,15 @@ python3 tools/lol2_movie_media.py --input /path/to/movie.vqa --output /path/to/d
 This writes raw numbered PNGs, mono `voice.wav` when SND2 audio is present, and `media.json` with input/output hashes, frame/header values and audio sample counts. It refuses an existing output directory. Non-SND2 audio is rejected. Transparency keys, atlas packing, segment metadata and encounter binding remain the consuming preparer's responsibility.
 
 Verification covers101 frames across a partial-codebook movie with audio, a FFmpeg-decoded movie with audio, and a silent partial-codebook movie. Every output PNG/WAV matches the prior helpers; eight decoder tests and existing exit/Bacatta/Dawn consumer imports pass. The isolated CLI contains only the shared helper and VQA decoder, plus installed dependencies. This preserves existing decoder support: for example, partial-codebook4x2 blocks are rejected, not silently claimed as supported. Full media preparation is still incomplete.
+
+## Shared creature sprite preparation
+
+The shared creature preparer now uses repository-local readers for entity/state/view partitions, frame events, LCW/block/row sprites, descriptor groups and palettes. It needs Python and Pillow plus the original area MIX and an already extracted texture blob:
+
+```sh
+python3 tools/prepare_museum_creature_sprites.py --game /path/to/original-game --archive DAT/L3_DH.MIX --texture /path/to/museum_texture_blob.bin --definition 0 --definition 1 --definition 2 --output /path/to/fresh-museum-sprites
+```
+
+Explicit output directories must be fresh. Existing Python `stage(...)` calls are preserved; keyword `game=` can supply a different installation. The no-argument Museum command and `GAME` export retain historical defaults for compatibility. Older importing preparers still receive the historical RE helper search path for their own dependencies; the standalone command does not import those helpers.
+
+[Sprite evidence](sprite-portability-checks.json) records1397 regenerated indexed frames and1403 byte-identical files (including palettes and complete manifests) across Museum definitions0/1/2, Jungle Bacatta5 and guard9. Six asset-free boundary tests and five existing consumer imports pass. The isolated command used only three repository tools plus Pillow. This does not yet extract texture blobs or make the whole asset-generation pipeline portable.
