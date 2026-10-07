@@ -1,11 +1,26 @@
 extends RefCounted
 ## AF4A8 launch placement with a supplied bearing and world-query outcomes.
 ## The world owner must resolve placement at each requested point in order.
-## Original non-null-point atan bearing is not the integer cast-heading helper.
+## Targeted launch uses the source atan formula, distinct from integer cast heading.
 const Target=preload("res://scripts/lol2/dawn_cast_target.gd")
 static func signed32(value: int) -> int:
 	value&=0xffffffff
 	return value-0x100000000 if value>=0x80000000 else value
+
+## AF50B..AF596. Original constants and signed32 endpoint differences.
+## Native x87 and host double agree on the checked fixture; universal last-bit
+## equivalence is not asserted across every input/platform.
+static func bearing(first: Variant, second: Variant) -> Dictionary:
+	for point in [first,second]:
+		if not point is Array or point.size()!=2: return {"error":"Invalid bearing point."}
+		for coordinate in point:
+			if not Target.integer(coordinate,-2147483648,2147483647): return {"error":"Invalid bearing coordinate."}
+	var dx:=signed32(int(first[0])-int(second[0]))
+	var dy:=signed32(int(first[1])-int(second[1]))
+	var angle:=0
+	if dx!=0 or dy!=0:
+		angle=int((atan2(float(dx),float(dy))+3.1415926536)*32768.0/3.1415926536)
+	return {"bearing":angle,"word":angle&65535}
 
 static func plan(context: Variant) -> Dictionary:
 	if not context is Dictionary: return {"error":"Invalid projectile launch context."}

@@ -6,8 +6,14 @@ func _initialize() -> void:
 		var actual:=Launch.plan(row.context)
 		if JSON.parse_string(JSON.stringify(actual))!=row.expected:
 			push_error("Launch differs: %s expected %s actual %s"%[row.context,row.expected,actual]);quit(1);return
+	var bearings: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/dawn_launch_bearing_native.json"))
+	for row in bearings.rows:
+		var result:=Launch.bearing(row.first,row.second)
+		if result.has("error") or result.bearing!=row.bearing or result.word!=row.word:
+			push_error("Target bearing differs: %s actual %s"%[row,result]);quit(1);return
+	if not Launch.bearing([0,0],[0,INF]).has("error"):push_error("Accepted infinite target");quit(1);return
 	var bad: Dictionary=fixture.rows[0].context.duplicate(true)
 	bad.placements=[true,1]
 	if not Launch.plan(bad).has("error"):push_error("Accepted nonboolean placement");quit(1);return
-	print("PASS: %d original projectile launch comparisons, projected placement, origin fallback, rejection, signed wrap and collision flags. World queries supplied; atan bearing unbound."%fixture.rows.size())
+	print("PASS: %d original projectile launch comparisons, projected placement, origin fallback, rejection, signed wrap and collision flags. Plus1073 native targeted bearings. World queries supplied."%fixture.rows.size())
 	quit()
