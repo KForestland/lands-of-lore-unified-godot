@@ -152,3 +152,13 @@ python3 tools/prepare_jungle_exit_movies.py --game /path/to/original-game --text
 The output root must be fresh. It receives `assets/lol2/generated/jungle_exit_movies` and an intermediate movie/frame cache under `tmp/jungle_exit_movies`. The generated manifest retains stable `res://assets/...` references for copying into the source project. Existing imported helper names and the historical no-argument entrypoint remain compatible; other machines should use explicit CLI paths. `LOL2_GAME_ROOT` also selects the game installation for existing importing consumers.
 
 [Verification](exit-movie-portability-checks.json) reproduces all92 output files byte-for-byte across five movies (651frames), including keyed guard frames, atlases, WAVs and manifest. Seven movie-lookup tests pass in the isolated tool tree, and five existing encounter media preparers import the updated helper. Prepared source/texture/sprite inputs are still prerequisites; this is not yet a complete clean-machine demo recipe.
+
+## Bacatta encounter media preparation
+
+The Bacatta61 media preparer accepts explicit installation, texture, source-contract and fresh output paths, using the repository movie, sprite and audio helpers:
+
+```sh
+python3 tools/prepare_jungle_bacatta_media.py --game /path/to/original-game --texture /path/to/jungle/texture.bin --source /path/to/jungle_bacatta_source.json --output-root /path/to/fresh-bacatta-stage
+```
+
+It produces `assets/lol2/generated/jungle_bacatta_media` with dialogue frames, transparency, segment metadata, voices, creature sprites and sound cues; intermediate extracted movies/frames are under `tmp`. Requires Pillow, NumPy and FFmpeg. Existing importing helper APIs and historical no-argument invocation remain compatible. [Verification](bacatta-media-portability-checks.json) regenerated all1,930 files byte-for-byte and checked five consuming preparers. Source-contract and texture preparation remain prerequisites; other encounter-specific packers still need explicit-path entrypoints before the full clean-machine recipe is complete.
