@@ -1,0 +1,405 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "region": {
+  "region": 3805,
+  "polygon": [
+   [
+    -1447.0,
+    -5329.0
+   ],
+   [
+    -1376.0,
+    -5329.0
+   ],
+   [
+    -1376.0,
+    -5169.0
+   ],
+   [
+    -1448.0,
+    -5169.0
+   ]
+  ],
+  "floor_min": 0,
+  "floor_max": 0
+ },
+ "records": [
+  {
+   "owner_kind": "region",
+   "owner": 3805,
+   "kind": 2,
+   "value": 0,
+   "stream": 0,
+   "group": 7956,
+   "predicate": null,
+   "archive_offset": 13047084,
+   "raw": "080c141fdd0e0200",
+   "commands": [
+    "020100002500",
+    "0e10d80003000100",
+    "d20000000012"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 216,
+   "kind": 2,
+   "value": 304,
+   "stream": 1,
+   "group": 27162,
+   "predicate": 85,
+   "archive_offset": 12769152,
+   "raw": "0a021a6a300105002c01",
+   "commands": [
+    "1403fe01930180003225"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 216,
+   "kind": 2,
+   "value": 304,
+   "stream": 1,
+   "group": 27172,
+   "predicate": 192,
+   "archive_offset": 12769166,
+   "raw": "0a02246a300105002c01",
+   "commands": [
+    "c60000003401",
+    "091064001500",
+    "ce00000000fe",
+    "09204f001100",
+    "09204e001100",
+    "01204b000000",
+    "01204a000000",
+    "0e10d80003000000",
+    "012038006400",
+    "012039006400",
+    "01204e000000",
+    "01204f000000",
+    "c60000000702",
+    "c6000000081e",
+    "0d0240000d000000",
+    "0d02400007000000",
+    "0e104d0003000000",
+    "0e10d90003000000",
+    "0e10d80003000200",
+    "c60000002001",
+    "051052000000"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 216,
+   "kind": 2,
+   "value": 272,
+   "stream": 1,
+   "group": 27316,
+   "predicate": null,
+   "archive_offset": 12769180,
+   "raw": "0a02b46a10010502f000",
+   "commands": [
+    "0f10d8005d010000"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 77,
+   "kind": 2,
+   "value": 272,
+   "stream": 1,
+   "group": 18758,
+   "predicate": null,
+   "archive_offset": 12767112,
+   "raw": "0a024649100105022c01",
+   "commands": [
+    "0f104d005d010000"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 217,
+   "kind": 2,
+   "value": 272,
+   "stream": 1,
+   "group": 27324,
+   "predicate": null,
+   "archive_offset": 12769192,
+   "raw": "0a02bc6a100105027800",
+   "commands": [
+    "0f10d9005d010000"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 100,
+   "kind": 6,
+   "value": 20,
+   "stream": 1,
+   "group": 21372,
+   "predicate": 166,
+   "archive_offset": 12767504,
+   "raw": "06067c531400",
+   "commands": [
+    "c60000003401",
+    "c70000001d01",
+    "c6000000081e",
+    "090240000300",
+    "0d0240000d000000",
+    "0d02400007000000"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 100,
+   "kind": 6,
+   "value": 20,
+   "stream": 1,
+   "group": 21418,
+   "predicate": 49,
+   "archive_offset": 12767514,
+   "raw": "0606aa531400",
+   "commands": [
+    "090240001100",
+    "0802400001000000",
+    "0d0240000d000000",
+    "0d02400007000000",
+    "c70000001d01"
+   ]
+  }
+ ],
+ "predicates": {
+  "85": {
+   "op": "==",
+   "left": {
+    "shared": 29
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "00021d0001"
+  },
+  "192": {
+   "op": "AND",
+   "left": {
+    "predicate": 85,
+    "expression": {
+     "op": "==",
+     "left": {
+      "shared": 29
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "00021d0001"
+    }
+   },
+   "right": {
+    "predicate": 183,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 32
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003200000"
+    }
+   },
+   "raw": "06045504b7"
+  },
+  "183": {
+   "op": "==",
+   "left": {
+    "local": 32
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003200000"
+  },
+  "166": {
+   "op": "==",
+   "left": {
+    "local": 33
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0003210001"
+  },
+  "49": {
+   "op": "==",
+   "left": {
+    "local": 52
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0003340001"
+  }
+ },
+ "timers": {
+  "77": [
+   {
+    "ordinal": 0,
+    "group": 18758,
+    "flags": 1,
+    "range": [
+     2,
+     5
+    ],
+    "remaining": 300,
+    "predicate": null,
+    "raw": "0a024649100105022c01"
+   }
+  ],
+  "216": [
+   {
+    "ordinal": 0,
+    "group": 27162,
+    "flags": 1,
+    "range": [
+     0,
+     5
+    ],
+    "remaining": 300,
+    "predicate": 85,
+    "raw": "0a021a6a300105002c01"
+   },
+   {
+    "ordinal": 1,
+    "group": 27172,
+    "flags": 1,
+    "range": [
+     0,
+     5
+    ],
+    "remaining": 300,
+    "predicate": 192,
+    "raw": "0a02246a300105002c01"
+   },
+   {
+    "ordinal": 2,
+    "group": 27316,
+    "flags": 1,
+    "range": [
+     2,
+     5
+    ],
+    "remaining": 240,
+    "predicate": null,
+    "raw": "0a02b46a10010502f000"
+   }
+  ],
+  "217": [
+   {
+    "ordinal": 0,
+    "group": 27324,
+    "flags": 1,
+    "range": [
+     2,
+     5
+    ],
+    "remaining": 120,
+    "predicate": null,
+    "raw": "0a02bc6a100105027800"
+   }
+  ]
+ },
+ "archers": {
+  "77": {
+   "id": 77,
+   "position": [
+    -1668,
+    0,
+    -4300
+   ],
+   "heading": 0,
+   "flags": 1154
+  },
+  "216": {
+   "id": 216,
+   "position": [
+    -1414,
+    0,
+    -5369
+   ],
+   "heading": 0,
+   "flags": 1154
+  },
+  "217": {
+   "id": 217,
+   "position": [
+    -1416,
+    0,
+    -5129
+   ],
+   "heading": 0,
+   "flags": 1154
+  }
+ },
+ "sound_object": {
+  "id": 510,
+  "position": [
+   -2024,
+   10,
+   -4881
+  ],
+  "heading": 0,
+  "flags": 130
+ },
+ "sound": {
+  "request": 403,
+  "name": "bells1.aud",
+  "wav_sha256": "0d89c631830d7b72cd3373ae3befbd03e7b5d40322936a04bc9e101c2830b648"
+ },
+ "arrow": {
+  "definition": 12,
+  "name": "Arrow",
+  "raw": "000000000000000000000000000000000000000000000000f9e4e4de1900000000000000010000000019280800090700000f09000a0000004cf659000c927f000000000001000000000000000c927f00a9fd59000c927f",
+  "constructor": "F7030 mode7: +0x58=3, speed 0xFA00000"
+ },
+ "local_names": {
+  "7": "Has_Luther_had_drunken_encounter",
+  "8": "Kelsrick_trigger",
+  "32": "Close_Gates_when_Huline_Alert_triggered",
+  "33": "Anyar_Attacked",
+  "52": "Kelsrick_Attacked"
+ },
+ "owned_locals": [
+  7
+ ],
+ "kelsrick_locals": [
+  8,
+  32,
+  33,
+  52
+ ],
+ "movables": {
+  "gates": [
+   78,
+   79
+  ],
+  "inner": [
+   74,
+   75
+  ],
+  "doors": [
+   56,
+   57
+  ]
+ },
+ "other_records": {
+  "prop482/6/20/g10162": "Bacatta57 (arms control216 index1 through its effects hook)",
+  "movable79/6/16/g28168": "reported: re-arms the timers g27172 already starts; no separate producer",
+  "region3805/2/0/g7950": "Left_Village local36 2->3 (monastery room bank; not run here)"
+ }
+}

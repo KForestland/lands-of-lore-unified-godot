@@ -22,7 +22,8 @@ static func initial(_src: Dictionary={}) -> Dictionary:
 static func _int(v: Variant, lo: int, hi: int) -> bool:
 	return (v is int or v is float) and is_finite(float(v)) and float(v)==floorf(float(v)) and v>=lo and v<=hi
 
-## Reachable: untouched, or after g10162 (sealed, doors target100). B5 is 0 or the struck mask 0x0C.
+## Reachable: untouched; doors shut by the village alarm (unsealed, target100); or after g10162 (sealed, doors target100).
+## B5 is 0 or the struck mask 0x0C.
 static func validate(s: Variant, _src: Dictionary={}) -> String:
 	if not s is Dictionary or s.size()!=4 or not _int(s.get("version"),1,1): return "Invalid Bacatta57 version."
 	if not s.get("sealed") is bool: return "Invalid Bacatta57 seal."
@@ -32,7 +33,8 @@ static func validate(s: Variant, _src: Dictionary={}) -> String:
 	if not (e is int or e is float) or not is_finite(float(e)) or e<0 or e>DOOR_SECONDS: return "Invalid Bacatta57 door clock."
 	var a=s.get("actor")
 	if not a is Dictionary or a.size()!=2 or not a.get("present") is bool or not _int(a.get("b5"),0,255) or int(a.b5) not in [0,12]: return "Invalid Bacatta57 actor."
-	if not s.sealed and (int(d.target)!=0 or float(e)!=0 or a.present or int(a.b5)!=0): return "Bacatta57 state is unreachable before the village is sealed."
+	# Unsealed: the doors are open at rest, or shut by the village alarm (g27172 drives 56/57 to 100); no Bacatta57.
+	if not s.sealed and (a.present or int(a.b5)!=0 or (int(d.target)==0 and float(e)!=0)): return "Bacatta57 state is unreachable before the village is sealed."
 	if s.sealed and int(d.target)!=100: return "Sealed Bacatta57 doors must be shutting."
 	return ""
 
@@ -65,6 +67,12 @@ static func struck(s: Dictionary) -> Array:
 	if not s.actor.present or hostile(s): return []
 	s.actor.b5=(int(s.actor.b5)&243)|12;s.actor.b5=int(s.actor.b5)&254
 	return [{"type":"hostile","actor":ACTOR}]
+
+## The village alarm (g27172 op1 kind32 56/57 → 100) shuts the same double door.
+static func shut(s: Dictionary) -> Array:
+	if int(s.doors.target)==100: return []
+	s.doors.target=100
+	return [{"type":"doors","movable":56,"target":100},{"type":"doors","movable":57,"target":100}]
 
 static func advance(s: Dictionary, delta: float) -> void:
 	if not is_finite(delta) or delta<=0: return

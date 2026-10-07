@@ -188,6 +188,19 @@ func _sync_body(delta: float) -> void:
 	population.state.live["64"].mode=Live.IDLE
 	population.present()
 
+## Village alarm bundles (jungle_village_alarm.gd): source commands on Kelsrick's own locals, his B5/flags and the shared
+## globals. They run through this owner's interpreter, so the alarm never writes them directly. Returns what Kelsrick
+## does not own.
+func run_external(group: int, commands: Array) -> Array:
+	if state==null or state.is_empty(): return []
+	var effects:=State.run(state,src,[{"group":group,"commands":commands.map(func(c): return {"raw_hex":str(c)})}],context())
+	_apply(effects.filter(func(e): return str(e.type) in ["shared","group"]))
+	_sync_body(0.0);_present()
+	return effects.filter(func(e): return str(e.type) in ["external","local"])
+
+## Locals the alarm's predicates read (Kelsrick owns them).
+func local_value(index: int) -> int: return int(state.locals.get(str(index),0)) if state!=null and not state.is_empty() else 0
+
 ## ---- effects ---------------------------------------------------------------------------------------
 func _apply(effects: Array) -> void:
 	for e in effects:

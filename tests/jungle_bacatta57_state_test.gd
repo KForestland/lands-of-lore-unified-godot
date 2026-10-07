@@ -50,12 +50,15 @@ func run() -> void:
 	if not check(not s.actor.present and fx.any(func(e): return e.type=="external" and e.raw=="090241000200"),"Region3157 removal %s"%[fx]): return
 	# Unknown regions are inert.
 	if not check(State.enter_region(s,src,3503,ctx(0,1)).is_empty(),"Region3503 has no records"): return
+	# The village alarm shuts the doors without sealing the threshold or linking Bacatta57.
+	var alarm:=State.initial(src)
+	if not check(State.shut(alarm).size()==2 and int(alarm.doors.target)==100 and not alarm.sealed and State.validate(alarm,src).is_empty() and State.shut(alarm).is_empty(),"Alarm shut differs"): return
 	# JSON round trip and validation.
 	var saved=JSON.parse_string(JSON.stringify(s))
 	if not check(State.validate(saved,src).is_empty() and State.canonical(saved)==s,"Round trip"): return
 	for bad in [
 		{"version":2,"sealed":false,"doors":{"target":0,"elapsed":0.0},"actor":{"present":false,"b5":0}},
-		{"version":1,"sealed":false,"doors":{"target":100,"elapsed":0.0},"actor":{"present":false,"b5":0}},
+		{"version":1,"sealed":false,"doors":{"target":0,"elapsed":0.5},"actor":{"present":false,"b5":0}},
 		{"version":1,"sealed":false,"doors":{"target":0,"elapsed":0.0},"actor":{"present":true,"b5":0}},
 		{"version":1,"sealed":true,"doors":{"target":0,"elapsed":0.0},"actor":{"present":true,"b5":0}},
 		{"version":1,"sealed":true,"doors":{"target":50,"elapsed":0.0},"actor":{"present":true,"b5":0}},

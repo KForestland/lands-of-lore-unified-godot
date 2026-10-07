@@ -17,6 +17,7 @@ var dawn: Node3D
 var actor62: Node3D
 var bacatta65: Node3D
 var bacatta57: Node3D
+var village_alarm: Node3D
 ## Item held on the cursor for an E-use offer (Kelsrick kind4 mode1); not consumed unless a source effect does.
 var hand_item := ""
 var quest_state: Dictionary = Save.Quests.initial()
@@ -180,8 +181,14 @@ func _ready() -> void:
 			bacatta57=preload("res://scripts/lol2/jungle_bacatta57.gd").new()
 			bacatta57.name="JungleBacatta57"
 			add_child(bacatta57)
-			var bacatta57_error: String=bacatta57.setup(self,{"context":_bacatta57_context},quest_state.get("jungle_bacatta57"))
+			var bacatta57_error: String=bacatta57.setup(self,{"context":_bacatta57_context,"effects":_bacatta57_effects},quest_state.get("jungle_bacatta57"))
 			if not bacatta57_error.is_empty(): push_error(bacatta57_error)
+		if preload("res://scripts/lol2/jungle_village_alarm.gd").assets_ready():
+			village_alarm=preload("res://scripts/lol2/jungle_village_alarm.gd").new()
+			village_alarm.name="JungleVillageAlarm"
+			add_child(village_alarm)
+			var alarm_error: String=village_alarm.setup(self,{"context":_alarm_context,"kelsrick":_alarm_kelsrick,"doors":func(): if is_instance_valid(bacatta57): bacatta57.shut_doors()},quest_state.get("jungle_village_alarm"))
+			if not alarm_error.is_empty(): push_error(alarm_error)
 	get_window().title = "Lands of Lore II — "+area_name
 	if get_tree().has_meta("lol2_jungle_handoff"):
 		var handoff = get_tree().get_meta("lol2_jungle_handoff")
@@ -341,6 +348,7 @@ func apply_save(state: Variant) -> String:
 	if is_instance_valid(actor62): actor62.restore(quest_state.get("jungle_actor62",actor62.initial()))
 	if is_instance_valid(bacatta65): bacatta65.restore(quest_state.get("jungle_bacatta65",bacatta65.initial()))
 	if is_instance_valid(bacatta57): bacatta57.restore(quest_state.get("jungle_bacatta57",bacatta57.initial()))
+	if is_instance_valid(village_alarm): village_alarm.restore(quest_state.get("jungle_village_alarm",village_alarm.initial()))
 	return ""
 
 # Validated inventory and quest transport for the Hive route.
@@ -393,6 +401,7 @@ func apply_area_handoff(state: Variant) -> String:
 	if is_instance_valid(actor62): actor62.restore(quest_state.get("jungle_actor62",actor62.initial()))
 	if is_instance_valid(bacatta65): bacatta65.restore(quest_state.get("jungle_bacatta65",bacatta65.initial()))
 	if is_instance_valid(bacatta57): bacatta57.restore(quest_state.get("jungle_bacatta57",bacatta57.initial()))
+	if is_instance_valid(village_alarm): village_alarm.restore(quest_state.get("jungle_village_alarm",village_alarm.initial()))
 	return ""
 
 func move_grounded(direction: Vector3, delta: float, sprint: bool = false) -> void:
@@ -425,6 +434,7 @@ func _sync_exit_checkpoint() -> void:
 	if is_instance_valid(actor62): quest_state.jungle_actor62=actor62.checkpoint()
 	if is_instance_valid(bacatta65): quest_state.jungle_bacatta65=bacatta65.checkpoint()
 	if is_instance_valid(bacatta57): quest_state.jungle_bacatta57=bacatta57.checkpoint()
+	if is_instance_valid(village_alarm): quest_state.jungle_village_alarm=village_alarm.checkpoint()
 	if is_instance_valid(exit_encounter): quest_state.jungle_exit_encounter=exit_encounter.checkpoint()
 
 func _exit_context() -> Dictionary:
@@ -519,6 +529,20 @@ func _bacatta65_context() -> Dictionary:
 	return {"shared":shared}
 
 ## Bacatta57 (village entry) tests GV_BACATTA_RELATIONSHIP and GV_MET_BACATTA; it writes no globals.
+## Bacatta57's g10162 starts control216 timer1; the village alarm owns that timer.
+func _bacatta57_effects(e: Dictionary) -> void:
+	if str(e.type)=="external" and is_instance_valid(village_alarm): village_alarm.arm(str(e.raw))
+
+## Village alarm predicates: shared29 from the village gate (sole owner), locals 32/33/52 from the Kelsrick owner.
+func _alarm_context() -> Dictionary:
+	var locals:={}
+	for n in [32,33,52]: locals[str(n)]=kelsrick.local_value(n) if is_instance_valid(kelsrick) else 0
+	return {"shared":{"29":int(village_gate.state().shared29) if is_instance_valid(village_gate) else 0},"locals":locals}
+
+## Alarm commands on Kelsrick's locals, B5/flags and the shared globals run through the Kelsrick owner.
+func _alarm_kelsrick(group: int, commands: Array) -> Array:
+	return kelsrick.run_external(group,commands) if is_instance_valid(kelsrick) else []
+
 func _bacatta57_context() -> Dictionary:
 	var shared: Dictionary={}
 	for id in bacatta57.src.shared_names: shared[id]=GlobalDefaults.read(quest_state.get("monastery",{}).get("globals",{}),str(bacatta57.src.shared_names[id]))

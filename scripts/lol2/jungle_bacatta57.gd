@@ -251,5 +251,9 @@ func _present() -> void:
 	barrier.collision_layer=1 if seal_on else 0
 	barrier.global_position=origin()
 
+## Village alarm entry point: the door owner stays here.
+func shut_doors() -> void:
+	if state!=null and not state.is_empty(): _apply(State.shut(state))
+
 func targets() -> Dictionary:
 	return population.targets() if state!=null and not state.is_empty() and state.actor.present and int(population.state.actors[ID].health)>0 else {}

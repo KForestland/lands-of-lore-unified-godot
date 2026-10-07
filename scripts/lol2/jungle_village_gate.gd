@@ -110,8 +110,15 @@ func _physics_process(delta: float) -> void:
 	advance(delta)
 
 func advance(delta: float) -> void:
-	if not available or get_tree().paused or state().local24 == 0: return
+	if not available or get_tree().paused: return
+	# Village alarm g27172 sends movables78/79 to target0: the leaves swing shut (the alarm owner persists it).
+	if alarm_closed(): advance_toward(0.0,delta);return
+	if state().local24 == 0: return
 	advance_toward(State.DURATION,delta)
+
+func alarm_closed() -> bool:
+	var alarm = get_parent().get("village_alarm")
+	return alarm != null and is_instance_valid(alarm) and alarm.has_method("movable_target") and alarm.movable_target(78) == 0
 
 func advance_toward(destination: float, delta: float) -> void:
 	if not available or get_tree().paused: return
