@@ -53,6 +53,21 @@ func run() -> void:
 	var checkpoint:=store.checkpoint();var restored:=Store.new()
 	if not check(restored.restore(JSON.parse_string(JSON.stringify(checkpoint))).is_empty() and restored.checkpoint()==checkpoint,"Moved position did not survive reload"):return
 	if not check(not restored.moved(birth.id,start,finish).is_empty() and restored.checkpoint()==checkpoint,"Stale movement overwrote restored position"):return
+	# Actual swept wall contact, measured from the persisted launch origin.
+	var impact:=restored.impact(birth.id,128,0,0)
+	if not check(not impact.has("error") and not impact.request and impact.distance>0,"Wall impact mapping/travel failed"):return
+	var lifecycle:=restored.update(birth.id)
+	if not check(lifecycle.retired and lifecycle.child>0 and lifecycle.events==["spawn_child","retire"],"Swept wall did not spawn child before retirement"):return
+	# The same physical hit mapped by an actor registry requests direct damage
+	# once. Identity and collision bearing are explicit supplied boundaries.
+	var actor_store:=Store.new();var actor_birth:=actor_store.spawn(63,start,finish,start,0)
+	if not check(actor_store.moved(actor_birth.id,start,swept.position).is_empty(),"Actor sweep commit failed"):return
+	impact=actor_store.impact(actor_birth.id,0,65536,0)
+	if not check(impact.request and impact.target==65536,"Swept actor contact did not request damage"):return
+	var actor_saved:=actor_store.checkpoint();var actor_restored:=Store.new()
+	if not check(actor_restored.restore(JSON.parse_string(JSON.stringify(actor_saved))).is_empty() and not actor_restored.impact(actor_birth.id,0,65536,0).request,"Mapped impact duplicated damage after reload"):return
+	var unchanged:=actor_restored.checkpoint()
+	if not check(actor_restored.impact(actor_birth.id,128,65536,0).has("error") and actor_restored.checkpoint()==unchanged,"Contradictory mapped collision mutated state"):return
 	scene.queue_free();await process_frame
-	print("PASS: live physics launch collision, RID exclusion, layer mask, real region fallback/failure, targeted bearing and translated source coordinates, swept obstacle/initial overlap, saved motion and stale commit rejection; modern adapter.")
+	print("PASS: live physics launch collision, RID exclusion, layer mask, real region fallback/failure, targeted bearing and translated source coordinates, swept obstacle/initial overlap, saved motion and stale commit rejection, measured wall/actor impacts and reload-safe requests; modern adapter.")
 	quit()

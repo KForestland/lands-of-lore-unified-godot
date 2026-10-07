@@ -122,3 +122,20 @@ func moved(id: int, from: Array, to: Array) -> String:
 		if int(_saved.effects[i].position[axis])!=int(from[axis]):return "Stale projectile motion commit."
 	_saved.effects[i].position=to.map(func(n):return int(n))
 	return ""
+
+## Collision producer supplies native collision kind, stable target identity and
+## collision bearing. Travel is measured from the saved constructor origin to
+## the actual committed sweep position, never supplied by the damage caller.
+func impact(id: int, collision: int, target: int, collision_heading: int) -> Dictionary:
+	var i:=_index(id)
+	if i<0 or _saved.effects[i].kind!=32:return {"error":"Unknown fireball."}
+	if collision not in [0,128] or not Values.integer(target,0,0x7fffffff) or not Values.integer(collision_heading,0,65535):return {"error":"Invalid mapped projectile collision."}
+	if collision==0 and target==0:return {"error":"Actor collision requires a stable target."}
+	if collision==128 and target!=0:return {"error":"Wall collision cannot name an actor."}
+	var effect: Dictionary=_saved.effects[i]
+	var distance:=preload("res://scripts/lol2/hive_condition_geometry.gd").distance_between_startup(effect.start.slice(0,2),effect.position.slice(0,2))
+	if distance.has("error") or distance.integer_invalid:return {"error":"Unsupported projectile travel distance."}
+	var result:=contact(id,{"enabled":true,"collision":collision,"target":target,"distance":distance.distance,
+		"movement_heading":effect.contact.heading,"collision_heading":collision_heading})
+	if not result.has("error"):result.distance=distance.distance
+	return result
