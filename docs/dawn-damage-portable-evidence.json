@@ -12,9 +12,14 @@
     "tests/fixtures/dawn_spell32_preparation_native.json": "68f6b67baabe0ca29527b751d1bc01558e25d5cfbb607e086e91b116627bbb7a",
     "tests/fixtures/hive_damage_calculation_native.json": "066022a522e793a2cdaec0ce8f95bf73ec1bf9471ad9d3996913139d9fb623d3",
     "tests/fixtures/hive_damage_preparation_native.json": "5fb84808fb9f6ff17a09e0c599d95addc3e390c34e2462f38018729baf4273c6",
-    "scripts/lol2/dawn_spell_motion.gd": "83986bed3067df64cfc23367b81d94cc62af504f054671a79838c6a458793eb7",
-    "tests/dawn_spell_motion_test.gd": "af2ad79b8586f3e9cf24443771488f4b0971635885abfef1e6235f36dae8b131",
-    "tests/fixtures/dawn_spell32_motion_native.json": "42024f1f55a8aa90f2af11c9e5a88aebc471330212b31b582ba6b00dffafda12"
+    "scripts/lol2/dawn_spell_motion.gd": "2e6e203f2d7cee0c3595be7aff87e479f3c63e9339a149e48c57c4f0d73ae926",
+    "tests/dawn_spell_motion_test.gd": "338bebdc1444327094c4d1a05e888f0f903da2c1aebd972350e7d2348063c401",
+    "tests/fixtures/dawn_spell32_motion_native.json": "42024f1f55a8aa90f2af11c9e5a88aebc471330212b31b582ba6b00dffafda12",
+    "scripts/lol2/dawn_spell_contact.gd": "d452926aa5deca884dcbc76915a4930aea326468d5acbdf685d80ed2aaf32920",
+    "tests/dawn_spell_contact_test.gd": "97bf3b58e5e98ce27f720e5631475d892be792fe6e73df8729f6766703f98bfb",
+    "tests/fixtures/dawn_spell32_target_native.json": "57180fb4506817e638e92a71fc1d64699899d9e1ab64318049fb12b81e8d3006",
+    "tests/fixtures/dawn_spell32_contact_native.json": "519bab791c32d6c62cb555703397b1c36b0c0ae66370ca50916ef3c440f3cbde",
+    "docs/dawn-spell-asset-binding.json": "a8bad23d07d5068f29110910f23c77cef2646279fefc3a6ad62e634140e99587"
   },
   "scope": "Numeric input/output fixtures from local native instruction replay. No executable instructions, archive payloads, images, audio or films included. Native preparation62728, damage62922, mitigation construction89E7C. Virtual calls and external field producers retain documented boundaries. No playable Dawn combat claim."
 }

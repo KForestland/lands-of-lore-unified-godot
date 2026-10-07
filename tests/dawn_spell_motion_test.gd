@@ -16,5 +16,20 @@ func _initialize() -> void:
 		for value in [true,-1,0.5,2147483648]:
 			var bad: Dictionary=rows[0].duplicate(true);bad[field]=value
 			assert(Motion.request(bad).has("error"))
-	print("PASS180 native spell32 movement requests; malformed input rejection")
+	var targets=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/dawn_spell32_target_native.json"))
+	assert(targets.size()==90)
+	for row in targets:
+		var before: Dictionary=row.duplicate(true)
+		var result:=Motion.target_snapshot(row)
+		assert(not result.has("error"))
+		for i in range(3): assert(result.position[i]==row.expected[i])
+		if int(row.sprite_height)==Motion.SPRITE_HEIGHT:
+			var source_target:=Motion.player_target(row.position,int(row.player_height),int(row.player_offset))
+			for i in range(3): assert(source_target.position[i]==row.expected[i])
+		result.position[0]+=1
+		assert(row==before)
+	for field in ["position","player_height","player_offset","sprite_height"]:
+		var bad: Dictionary=targets[0].duplicate(true);bad.erase(field)
+		assert(Motion.target_snapshot(bad).has("error"))
+	print("PASS180 native spell32 movement requests and90 target snapshots; original sprite height; malformed input rejection")
 	quit()
