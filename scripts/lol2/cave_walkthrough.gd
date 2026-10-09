@@ -12,6 +12,7 @@ var collectible := Collectible.new()
 var aloe: Node3D
 var stalagmites: Node3D
 var stone_manafoil: Node3D
+var prop83_lift: Node3D
 var equipped_item := ""
 var equipped_armor := ""
 var source_combat_enabled := true
@@ -161,6 +162,11 @@ func _ready() -> void:
 		stone_manafoil = preload("res://scripts/lol2/cave_stone_manafoil.gd").new()
 		add_child(stone_manafoil)
 		stone_manafoil.setup(self)
+	# Source prop83 hit -> sound956 -> g146 -> g264: shaft floor lift and wall opening.
+	if preload("res://scripts/lol2/cave_prop83_lift.gd").assets_ready():
+		prop83_lift = preload("res://scripts/lol2/cave_prop83_lift.gd").new()
+		add_child(prop83_lift)
+		prop83_lift.setup(self)
 	if source_combat_enabled:
 		roach = preload("res://scripts/lol2/cave_roach.gd").new()
 		add_child(roach)
@@ -404,6 +410,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventKey and event.pressed and not event.echo:
 			if event.keycode == KEY_R: _reset()
 			elif event.keycode == KEY_F9: _quickload()
+		return
+	if prop83_lift != null and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and prop83_lift.strike():
+		get_viewport().set_input_as_handled()
 		return
 	if roach != null and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if roach_population_live==null or not roach_population_live.strike(): roach.strike()
@@ -719,6 +728,7 @@ func _save_state() -> Dictionary:
 	if aloe != null: result.aloe = aloe.collected.duplicate()
 	if stalagmites != null: result.stalagmites = stalagmites.collected.duplicate()
 	if stone_manafoil != null: result.stone_manafoil = stone_manafoil.collected.duplicate()
+	if prop83_lift != null: result.prop83_lift = prop83_lift.checkpoint()
 	result.equipped_item = equipped_item
 	result.equipped_armor = equipped_armor
 	if roach != null: result.roach = roach.snapshot()
@@ -815,6 +825,7 @@ func _quickload(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
 	aloe.restore(state.get("aloe", []))
 	stalagmites.restore(state.get("stalagmites", []))
 	if stone_manafoil != null: stone_manafoil.restore(state.get("stone_manafoil", []))
+	if prop83_lift != null: prop83_lift.restore(state.get("prop83_lift", null))
 	equipped_item = state.get("equipped_item", "")
 	equipped_armor = state.get("equipped_armor", "")
 	roach_population=RoachPopulation.canonical(state.get("roach_population",RoachPopulation.initial()))

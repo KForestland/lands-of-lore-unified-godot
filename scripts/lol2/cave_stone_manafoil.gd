@@ -13,9 +13,13 @@ const REACH := 96.0
 var host: Node3D
 var source: Dictionary
 var collected: Array = []
-var stone: Sprite3D
-var foil_marker: Sprite3D
+var stone: MeshInstance3D
+var foil_marker: MeshInstance3D
+var stone_size := Vector2.ZERO
+## Layer-2 meshes mirrored into the cave's mask pass (host.occluder_pairs).
+var mirrored: Array = []
 var box: Node3D
+var foil_base := Vector3.ZERO
 
 static func assets_ready() -> bool:
 	return FileAccess.file_exists(SOURCE) and FileAccess.file_exists(ROOT + "stone.png") and FileAccess.file_exists(ROOT + "foil_icon.png") and FileAccess.file_exists(ROOT + "m0086.png")
@@ -28,18 +32,34 @@ static func validate_ids(ids: Variant) -> bool:
 		seen.append(id)
 	return true
 
-func _sprite(path: String, position: Vector3, width: float) -> Sprite3D:
+## An indexed billboard quad on the cave's layer-2 index viewport (the cave Aloe/stalagmite convention): the image
+## holds palette indices; index0 is transparent. Mirrored into the mask pass like the cave's own sprites.
+func _indexed_sprite(path: String, position: Vector3, width: float) -> MeshInstance3D:
 	var image := Image.load_from_file(path)
-	var s := Sprite3D.new()
-	s.texture = ImageTexture.create_from_image(image)
-	s.pixel_size = width / float(image.get_width())
-	s.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
-	s.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
-	s.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
-	s.offset.y = image.get_height() / 2.0
-	s.position = position
-	add_child(s)
-	return s
+	var quad := QuadMesh.new()
+	var height: float = width * float(image.get_height()) / float(image.get_width())
+	quad.size = Vector2(width, height)
+	quad.center_offset = Vector3(0, height / 2.0, 0)
+	var mesh := MeshInstance3D.new()
+	mesh.mesh = quad
+	mesh.layers = 2
+	mesh.material_override = host._indexed_material(path)
+	mesh.material_override.set_shader_parameter("sprite", true)
+	mesh.position = position
+	add_child(mesh)
+	_mirror(mesh)
+	return mesh
+
+func _mirror(mesh: MeshInstance3D) -> void:
+	var before: int = host.occluder_pairs.size()
+	host._copy_occluders(mesh)
+	if host.occluder_pairs.size() > before: mirrored.append(host.occluder_pairs.back())
+
+func _sync_mirrors() -> void:
+	for pair in mirrored:
+		if is_instance_valid(pair[0]) and is_instance_valid(pair[1]):
+			pair[1].global_transform = pair[0].global_transform
+			pair[1].visible = pair[0].is_visible_in_tree()
 
 func setup(walkthrough: Node3D) -> void:
 	name = "CaveStoneManafoil"
@@ -47,12 +67,10 @@ func setup(walkthrough: Node3D) -> void:
 	source = JSON.parse_string(FileAccess.get_file_as_string(SOURCE))
 	var offset: Vector3 = host.native_translation
 	var st: Dictionary = source.stone
-	stone = _sprite(ROOT + "stone.png", host.point(st.position) + offset, float(st.sprite.right) - float(st.sprite.left))
-	var mat := StandardMaterial3D.new()
-	mat.albedo_texture = ImageTexture.create_from_image(Image.load_from_file(ROOT + str(source.foil.box_material)))
-	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
-	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
+	stone = _indexed_sprite(ROOT + "stone_index.png", host.point(st.position) + offset, float(st.sprite.right) - float(st.sprite.left))
+	stone_size = (stone.mesh as QuadMesh).size
+	# Box faces: the cave's indexed wall surface for resource86 (wall_indices/material_86.png).
+	var mat: Material = host._indexed_material(host.INDEX_ROOT + "material_86.png")
 	box = Node3D.new(); add_child(box)
 	var top := -INF
 	for face in source.foil.faces:
@@ -62,18 +80,26 @@ func setup(walkthrough: Node3D) -> void:
 			stool.set_uv(Vector2(face.uv[index][0], face.uv[index][1])); stool.add_vertex(Vector3(p[0], p[1], p[2]) + offset)
 			top = maxf(top, float(p[1]))
 		stool.generate_normals()
-		var mesh := MeshInstance3D.new(); mesh.mesh = stool.commit(); box.add_child(mesh)
+		var mesh := MeshInstance3D.new(); mesh.mesh = stool.commit(); mesh.layers = 2; box.add_child(mesh); _mirror(mesh)
 	var fp: Array = source.foil.position
-	foil_marker = _sprite(ROOT + "foil_icon.png", Vector3(float(fp[0]), top, float(fp[2])) + offset, 24.0)
+	foil_marker = _indexed_sprite(ROOT + "foil_index.png", Vector3(float(fp[0]), top, float(fp[2])) + offset, 24.0)
+	foil_base = foil_marker.position
 	restore([])
+
+## control75 stands on shaft region506; it rides that floor when prop83's chain lifts it (cave_prop83_lift.gd).
+func set_lift(offset: float) -> void:
+	box.position.y = offset
+	foil_marker.position = foil_base + Vector3.UP * offset
+	_sync_mirrors()
 
 func restore(ids: Variant) -> void:
 	collected = (ids as Array).duplicate() if validate_ids(ids) else []
 	stone.visible = not STONE in collected
 	foil_marker.visible = not FOIL in collected
+	_sync_mirrors()
 
 func aim_point(id: String) -> Vector3:
-	if id == STONE: return stone.global_position + Vector3.UP * (stone.texture.get_height() * stone.pixel_size * 0.5)
+	if id == STONE: return stone.global_position + Vector3.UP * (stone_size.y * 0.5)
 	return foil_marker.global_position + Vector3.UP * 4.0
 
 func target() -> String:

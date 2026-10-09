@@ -1,6 +1,6 @@
 # Classic Act 1 completion
 
-Latest verified delivery: [R11](act-one-r11-verification.md), with 296 passing regressions, all 11 fresh campaign legs, both exports, 21,169 matching packed assets and actual Linux package checks. Later Prism/Reaver/Amber/Net and Cave Stone/Manafoil work is separate. The Manafoil shaft is a confirmed dead end until its floor-lift mechanism is implemented; this is an open content defect, not a passed pickup route.
+Latest verified delivery: [R11](act-one-r11-verification.md), with 296 passing regressions, all 11 fresh campaign legs, both exports, 21,169 matching packed assets and actual Linux package checks. Later Prism/Reaver/Amber/Net and Cave Stone/Manafoil work is separate. Later source now restores the Manafoil shaft lift, indexed visuals, pause/save behavior and removal of the trigger collider. Grounded pickup/escape and focused integration checks pass; the next candidate/full campaign remains pending.
 
 Scope clarification (2026-09-15): this is an intermediate milestone within the
 [complete Classic Edition](classic-edition.md), not the final product endpoint.

@@ -84,6 +84,10 @@ static func validate(value: Variant, checkpoint_count: int) -> String:
 		return "Save chain and door state is invalid."
 	if value.has("aloe") and not preload("res://scripts/lol2/cave_aloe.gd").validate_ids(value.aloe):
 		return "Save Aloe state is invalid."
+	if value.has("prop83_lift"):
+		var lift_source: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/cave_prop83_lift_source.json"))
+		var lift_error: String = preload("res://scripts/lol2/cave_prop83_lift_state.gd").validate(value.prop83_lift, float(lift_source.sound.seconds) if lift_source is Dictionary else 0.0)
+		if not lift_error.is_empty(): return lift_error
 	if value.has("stone_manafoil") and not preload("res://scripts/lol2/cave_stone_manafoil.gd").validate_ids(value.stone_manafoil):
 		return "Save Ancient Stone/Mana foil state is invalid."
 	if value.has("item_effects"):

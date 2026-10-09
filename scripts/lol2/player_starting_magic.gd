@@ -140,6 +140,7 @@ func spark() -> void:
 		elif hit.collider.has_meta("hive_return_actor"): hit.collider.get_meta("hive_population_owner").receive_damage(str(hit.collider.get_meta("hive_return_actor")),8,false,20)
 		elif hit.collider.has_meta("hive_executioner_live"): host.executioner_live.receive_strike(8,false,20)
 		elif hit.collider.has_meta("chief_hut_rock"): hit.collider.get_meta("chief_hut_rock").receive_spark()
+		elif hit.collider.has_meta("spark_receiver"): hit.collider.get_meta("spark_receiver").receive_spark()
 	var mesh:=ImmediateMesh.new()
 	mesh.surface_begin(Mesh.PRIMITIVE_LINES)
 	mesh.surface_add_vertex(origin+host.camera.global_basis.x*4-Vector3(0,4,0))

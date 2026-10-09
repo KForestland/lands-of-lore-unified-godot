@@ -64,6 +64,20 @@ def main():
     props = {q['record']: q for q in json.loads((ALLMAP / 'props/props.json').read_text())['props']}
     q = props[1050]; assert q['template'] == 53 and q['selector'] == 0 and q['material'] == 'prop_477' and q['region'] == 751
     shutil.copyfile(ALLMAP / 'props/sprites/prop_477.png', a.asset_dir / 'stone.png')
+    # The cave draws its final image from palette indices (layer-2 index viewport): stone index sprite, and a foil
+    # icon index image by nearest colour in the L1_DC DAC palette (index0 = transparent).
+    shutil.copyfile(ALLMAP / 'props/sprites/prop_477_index.png', a.asset_dir / 'stone_index.png')
+    from PIL import Image
+    dac = (ALLMAP / 'palette_dac.bin').read_bytes(); assert len(dac) == 768
+    pal = [(dac[i * 3] * 4, dac[i * 3 + 1] * 4, dac[i * 3 + 2] * 4) for i in range(256)]
+    foil_rgba = Image.open(a.asset_dir / 'foil_icon.png').convert('RGBA')
+    out = Image.new('L', foil_rgba.size, 0)
+    for y in range(foil_rgba.height):
+        for x in range(foil_rgba.width):
+            r, g, b_, alpha = foil_rgba.getpixel((x, y))
+            if alpha < 128: continue
+            out.putpixel((x, y), min(range(2, 256), key=lambda i: (pal[i][0] - r) ** 2 + (pal[i][1] - g) ** 2 + (pal[i][2] - b_) ** 2))
+    out.save(a.asset_dir / 'foil_index.png')
     assemblies = json.loads((ALLMAP / 'static_assemblies/movables.json').read_text())
     assert assemblies['source']['sha256'] == area['source']['sha256']
     place = next(x for x in assemblies['placements'] if x['source_index'] == 75); assert place['template'] == 46

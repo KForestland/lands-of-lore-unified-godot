@@ -37,6 +37,15 @@ Nothing in the port owned prop1050 or control75. The same items existed only fro
 - **Ancient Stone use:** generalised from the Hive id to every `ancient` use (`player_item_controller.gd`, the charge-history check in `player_item_state.gd`). Both stones are definition68/handler6 and share the player counter byte.
 - **Catalog:** both items have origin `cave`, plus names and shop info.
 
+## Rendering fix (lift patch)
+
+The released owner drew the stone sprite, the foil marker and the box with RGB materials on the default layer 1. The cave's final image is its layer-2 palette-index viewport, so they were not visible.
+
+They are now indexed layer-2 meshes mirrored into the mask pass:
+- the stone as `prop_477_index.png`;
+- the foil marker as an index image mapped to the L1_DC DAC palette by nearest colour;
+- the box as `wall_indices/material_86.png`.
+
 ## Adapters
 
 - **Pickup:** E at the aimed pickup in reach.
