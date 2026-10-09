@@ -14,5 +14,6 @@ static func source_name(id: String) -> String:
 	if id=="museum:prop153:Long_arm": return "7-Long arm"
 	if id=="jungle:item51:Th_Dagger": return "10-Th Dagger"
 	if preload("res://scripts/lol2/jungle_beehive_wax.gd").valid(id): return "71-Wax"
+	if preload("res://scripts/lol2/jungle_harvest_items.gd").valid(id): return preload("res://scripts/lol2/jungle_harvest_items.gd").source_name(id)
 	if preload("res://scripts/lol2/jungle_world_items_catalog.gd").valid(id): return preload("res://scripts/lol2/jungle_world_items_catalog.gd").source_name(id)
 	return id

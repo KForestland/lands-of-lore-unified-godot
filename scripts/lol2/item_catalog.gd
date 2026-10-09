@@ -15,6 +15,7 @@ const WorldItems = preload("res://scripts/lol2/jungle_world_items_catalog.gd")
 const Runes = preload("res://scripts/lol2/hive_rune_items.gd")
 const Wax = preload("res://scripts/lol2/hive_wax.gd")
 const BeeWax = preload("res://scripts/lol2/jungle_beehive_wax.gd")
+const Harvest = preload("res://scripts/lol2/jungle_harvest_items.gd")
 const Monastery = preload("res://scripts/lol2/monastery_conversation.gd")
 ## Jungle covers every later Act 1 area (Hive, monastery, shops, darker jungle).
 const SCOPES := ["cave","museum","jungle"]
@@ -77,6 +78,11 @@ static func entry(id: Variant) -> Dictionary:
 	if id == Wax.ITEM: return {"slot":"","label":"Wax","icon":GENERATED+"hive_wax/wax.png","origin":"jungle"}
 	# Renewable beehive wax pool (jungle_beehive_wax.gd): original "71-Wax", Jungle scope.
 	if BeeWax.valid(id): return {"slot":"","label":"Wax","icon":BeeWax.ICON,"origin":"jungle"}
+	# Renewable plant/tree pools (jungle_harvest_items.gd): "107-Aloe" (handler9, the same fixed +5 pending heal as
+	# "108-Cave aloe") and "109-Ironwod sap" (handler98).
+	if Harvest.valid(id):
+		var info := Harvest.info(id)
+		return {"slot":"","label":str(info.label),"icon":str(info.icon),"origin":"jungle","use":"aloe" if Harvest.kind(id) == "aloe" else "ironwood_sap"}
 	if Runes.valid(id): return {"slot":"","label":"Wax runes","icon":GENERATED+"hive_wax_runes/runes.png","origin":"jungle"}
 	# Power Orb, magic-shop and jungle world items share the existing shop presentation.
 	if id == Monastery.ORB or id in MagicShop.all_item_ids() or WorldItems.valid(id):
@@ -115,7 +121,7 @@ static func ids(scope: String = "jungle") -> Array:
 	for record in Aloe.RECORDS:
 		for harvest in range(1,4): all.append(Aloe.item_id(record,harvest))
 	all += WeaponShop.ITEMS.values().filter(func(id): return id not in FIXED)
-	all += [Monastery.FLUTE,Monastery.ORB,Wax.ITEM,KITYARA_KNIFE] + MagicShop.all_item_ids() + WorldItems.ITEMS.keys() + BeeWax.POOL
+	all += [Monastery.FLUTE,Monastery.ORB,Wax.ITEM,KITYARA_KNIFE] + MagicShop.all_item_ids() + WorldItems.ITEMS.keys() + BeeWax.POOL + Harvest.all()
 	for index in range(23): all.append(Runes.PREFIX+str(index))
 	return all.filter(func(id): return admitted(id,scope))
 

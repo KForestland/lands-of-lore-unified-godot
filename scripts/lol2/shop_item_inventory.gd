@@ -9,6 +9,7 @@ static func info(id: String) -> Dictionary:
 	if id == "monastery:item70:Dampen_charm": return {"label":"Dampen charm","icon":"res://assets/lol2/generated/monastery_dampen/dampen.png"}
 	if id == "monastery:item83:Power_Orb": return {"label":"Power Orb","icon":"res://assets/lol2/generated/monastery_moff/Power_Orb.png"}
 	if preload("res://scripts/lol2/jungle_beehive_wax.gd").valid(id): return {"label":"Wax","icon":preload("res://scripts/lol2/jungle_beehive_wax.gd").ICON}
+	if preload("res://scripts/lol2/jungle_harvest_items.gd").valid(id): return preload("res://scripts/lol2/jungle_harvest_items.gd").info(id)
 	if id == "jungle:item51:Th_Dagger": return {"label":"Th Dagger","icon":"res://assets/lol2/generated/jungle_source_pickups/th_dagger.png"}
 	if preload("res://scripts/lol2/jungle_world_items_catalog.gd").valid(id): return preload("res://scripts/lol2/jungle_world_items_catalog.gd").info(id)
 	if id not in preload("res://scripts/lol2/magic_shop_state.gd").all_item_ids(): return {}

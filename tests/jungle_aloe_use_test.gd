@@ -65,8 +65,11 @@ func run() -> void:
 	for row in source.items:
 		var kind: String={110:"aloe",111:"ironwood_sap",84:"vels_fruit"}.get(int(row.definition),"")
 		if kind!="": jungle_rows[kind]=int(jungle_rows.get(kind,0))+1
-	# Aloe also counts the nine cave harvest ids; sap and fruit exist only as Jungle rows.
-	if not check(int(kinds.get("aloe",0))==9+int(jungle_rows.aloe) and int(kinds.get("ironwood_sap",0))==int(jungle_rows.ironwood_sap) and int(kinds.get("vels_fruit",0))==int(jungle_rows.vels_fruit) and int(kinds.vels_fruit)==4,"Consumable registry differs: %s"%[kinds]):return
+	# Aloe also counts the nine cave harvest ids; renewable plant/tree pools are sized from their source (jungle_harvest).
+	var pools: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/jungle_harvest_source.json")).pools
+	var Harvest=preload("res://scripts/lol2/jungle_harvest_items.gd")
+	if not check(int(pools.aloe)==Harvest.pool("aloe").size() and int(pools.sap)==Harvest.pool("sap").size(),"Harvest pools differ from source"):return
+	if not check(int(kinds.get("aloe",0))==9+int(jungle_rows.aloe)+int(pools.aloe) and int(kinds.get("ironwood_sap",0))==int(jungle_rows.ironwood_sap)+int(pools.sap) and int(kinds.get("vels_fruit",0))==int(jungle_rows.vels_fruit) and int(kinds.vels_fruit)==4,"Consumable registry differs: %s"%[kinds]):return
 	# Real Jungle host and real E pickups.
 	set_meta("lol2_jungle_handoff",{"collected":[Save.Museum.SWORD],"equipped_item":Save.Museum.SWORD,"equipped_armor":""})
 	scene=load("res://scenes/lol2/jungle_walkthrough.tscn").instantiate()
@@ -143,5 +146,5 @@ func run() -> void:
 	if not check(darker.quicksave(path).is_empty() and darker.quickload(path).is_empty() and World.id_of(67) in darker.carried_collected,"Darker jungle use/disk differs"):return
 	await finish(darker)
 	DirAccess.remove_absolute(path)
-	print("PASS Jungle Aloe rows63-67: source identity110/9, E pickups, UI Use Aloe, form gate, pending+5 gradual heal, full-health consumption, disk rollback, no respawn, history-backed/duplicate/unverified/cap validation (19 registered consumables), Jungle→Hive→darker uses and saves. Supplied approach; not earned.")
+	print("PASS Jungle Aloe rows63-67: source identity110/9, E pickups, UI Use Aloe, form gate, pending+5 gradual heal, full-health consumption, disk rollback, no respawn, history-backed/duplicate/unverified/cap validation (registered consumables including renewable harvest pools), Jungle→Hive→darker uses and saves. Supplied approach; not earned.")
 	quit()

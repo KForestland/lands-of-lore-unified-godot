@@ -22,6 +22,7 @@ var drunk: Node3D
 var inner_gate: Node3D
 var chief_hut: Node3D
 var beehives: Node3D
+var harvest: Node3D
 var kityara: Node3D
 ## Item held on the cursor for an E-use offer (Kelsrick kind4 mode1); not consumed unless a source effect does.
 var hand_item := ""
@@ -214,6 +215,10 @@ func _ready() -> void:
 			beehives=preload("res://scripts/lol2/jungle_beehives.gd").new();add_child(beehives)
 			var hive_error: String=beehives.setup(self,quest_state.get("jungle_beehives"))
 			if not hive_error.is_empty(): push_error(hive_error)
+		if preload("res://scripts/lol2/jungle_harvest.gd").assets_ready():
+			harvest=preload("res://scripts/lol2/jungle_harvest.gd").new();add_child(harvest)
+			var harvest_error: String=harvest.setup(self,quest_state.get("jungle_harvest"))
+			if not harvest_error.is_empty(): push_error(harvest_error)
 		if preload("res://scripts/lol2/jungle_kityara.gd").assets_ready():
 			kityara=preload("res://scripts/lol2/jungle_kityara.gd").new();kityara.name="JungleKityara";add_child(kityara)
 			var kityara_error: String=kityara.setup(self,{"context":_kityara_context,"shop_local":_kityara_shop_local,"shared":_kityara_shared,"grant":_kityara_grant,"consume_held":_consume_hand_item,"held_identity":_kityara_held_identity},quest_state.get("jungle_kityara"))
@@ -382,6 +387,7 @@ func apply_save(state: Variant) -> String:
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
 	if is_instance_valid(chief_hut): chief_hut.restore(quest_state.get("jungle_chief_hut",chief_hut.initial()))
 	if is_instance_valid(beehives): beehives.restore(quest_state.get("jungle_beehives",beehives.initial()))
+	if is_instance_valid(harvest): harvest.restore(quest_state.get("jungle_harvest",harvest.initial()))
 	if is_instance_valid(kityara): kityara.restore(quest_state.get("jungle_kityara",kityara.initial()))
 	return ""
 
@@ -442,6 +448,7 @@ func apply_area_handoff(state: Variant) -> String:
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
 	if is_instance_valid(chief_hut): chief_hut.restore(quest_state.get("jungle_chief_hut",chief_hut.initial()))
 	if is_instance_valid(beehives): beehives.restore(quest_state.get("jungle_beehives",beehives.initial()))
+	if is_instance_valid(harvest): harvest.restore(quest_state.get("jungle_harvest",harvest.initial()))
 	if is_instance_valid(kityara): kityara.restore(quest_state.get("jungle_kityara",kityara.initial()))
 	return ""
 
@@ -482,6 +489,7 @@ func _sync_exit_checkpoint() -> void:
 	if is_instance_valid(inner_gate): quest_state.jungle_inner_gate=inner_gate.checkpoint()
 	if is_instance_valid(chief_hut): quest_state.jungle_chief_hut=chief_hut.checkpoint()
 	if is_instance_valid(beehives): quest_state.jungle_beehives=beehives.checkpoint()
+	if is_instance_valid(harvest): quest_state.jungle_harvest=harvest.checkpoint()
 	if is_instance_valid(kityara): quest_state.jungle_kityara=kityara.checkpoint()
 	if is_instance_valid(exit_encounter): quest_state.jungle_exit_encounter=exit_encounter.checkpoint()
 

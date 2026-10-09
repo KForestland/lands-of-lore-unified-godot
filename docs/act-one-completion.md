@@ -1,6 +1,6 @@
 # Classic Act 1 completion
 
-Latest verified delivery: [R9](act-one-r9-verification.md), with292 passing regressions, a fresh11-leg campaign and actual Linux package checks. New source after R9 adds five Museum Dragon Blood vials and usable saved explosives, renewable Jungle beehive wax, and Dawn’s library translation/Dampen reward. These additions passed six blood/beehive integration checks and eight combined Dampen integration checks. Full295/campaign/package verification is pending; R9 binaries remain the verified baseline.
+Latest verified delivery: [R9](act-one-r9-verification.md), with292 passing regressions, a fresh11-leg campaign and actual Linux package checks. Source after R9 adds Museum Dragon Blood explosives, renewable beehive wax, Dawn’s library translation/Dampen reward, Aloe plants, tapped sap trees and a breakable Aloe barrel. Main integration checks pass, including exact regrowth-timer boundaries and inventory-capacity cases. R10’s full run passed293/295; both failures were outdated route expectations for the initialized beehive packet. The failed source/run is preserved, and corrected route checks pass. R11 full296/campaign/package verification is starting; R9 binaries remain the verified delivery baseline.
 
 Scope clarification (2026-09-15): this is an intermediate milestone within the
 [complete Classic Edition](classic-edition.md), not the final product endpoint.

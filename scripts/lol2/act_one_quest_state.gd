@@ -110,6 +110,9 @@ static func validate(state: Variant) -> String:
 	if state.has("jungle_beehives"):
 		var hive_error:=preload("res://scripts/lol2/jungle_beehives_state.gd").validate(state.jungle_beehives)
 		if not hive_error.is_empty(): return hive_error
+	if state.has("jungle_harvest"):
+		var harvest_error:=preload("res://scripts/lol2/jungle_harvest_state.gd").validate(state.jungle_harvest)
+		if not harvest_error.is_empty(): return harvest_error
 	if state.has("jungle_chief_hut"):
 		var puzzle_error:=preload("res://scripts/lol2/jungle_chief_hut_state.gd").validate(state.jungle_chief_hut)
 		if not puzzle_error.is_empty(): return puzzle_error
