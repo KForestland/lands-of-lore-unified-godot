@@ -20,6 +20,15 @@ func lit() -> Dictionary:
 func inv(items: Array) -> Dictionary: return {"collected":items,"equipped_item":"","equipped_armor":"","health":30}
 func run() -> void:
 	if not check(T.is_wax(T.WAX) and T.is_wax(JW) and not T.is_wax(SAP) and not T.is_wax("") and not T.is_wax(Items.PREFIX+"0") and not T.is_wax("jungle:item999:Wax") and not T.is_wax(7),"is_wax identity"): return
+	# Renewable hive wax: consume the exact held pool item and reuse only its freed identity.
+	var Bee=preload("res://scripts/lol2/jungle_beehive_wax.gd")
+	var Harvest=preload("res://scripts/lol2/jungle_beehives_state.gd")
+	var pool_inventory:=inv(Bee.POOL.duplicate())
+	var exchanged:=T.copy_wax(lit(),pool_inventory,Bee.POOL[2])
+	if not check(not exchanged.has("error") and exchanged.consumed==Bee.POOL[2] and Bee.POOL[2] not in exchanged.inventory.collected and pool_inventory.collected==Bee.POOL,"Bee wax exact consumption / immutable input"):return
+	var renewed_inventory: Dictionary={"collected":exchanged.inventory.collected.duplicate(),"hand":""}
+	var renewed_state: Dictionary=Harvest.initial()
+	if not check(Harvest.harvest(renewed_state,"251",renewed_inventory)==Bee.POOL[2] and renewed_inventory.collected.count(Bee.POOL[2])==1 and exchanged.item in renewed_inventory.collected,"Consumed bee wax pool identity not reusable"):return
 	# Jungle wax alone, held.
 	var q:=lit();var i:=inv([JW]);var qb:=q.duplicate(true);var ib:=i.duplicate(true)
 	var r:=T.copy_wax(q,i,JW)

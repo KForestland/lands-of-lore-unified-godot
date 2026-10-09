@@ -1,0 +1,496 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "wax": {
+  "identity": 2925189839,
+  "name": "71-Wax"
+ },
+ "hives": {
+  "251": {
+   "records": [
+    {
+     "kind": 5,
+     "value": 2,
+     "group": 4230,
+     "predicate": null,
+     "predicate_expression": null,
+     "commands": [
+      "0903fb001000",
+      "1403fb00450280020a14",
+      "0f03fb006c010000",
+      "0e03fb0003000000",
+      "0e03fb0003000100",
+      "0503fb000200",
+      "1003fb000200"
+     ],
+     "raw": "060586100200"
+    },
+    {
+     "kind": 4,
+     "value": 0,
+     "group": 4288,
+     "predicate": 206,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 0
+      },
+      "raw": "0005000000"
+     },
+     "commands": [
+      "0903fb001000",
+      "1403fb00450232020a14",
+      "0e03fb0003000000",
+      "1003fb000100",
+      "0503fb000100",
+      "03010000cfda5aae04000000"
+     ],
+     "raw": "0a04c010000000000000"
+    },
+    {
+     "kind": 4,
+     "value": 0,
+     "group": 4342,
+     "predicate": 207,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 1
+      },
+      "raw": "0005000001"
+     },
+     "commands": [
+      "0903fb001000",
+      "1403fb00450280020a14",
+      "0e03fb0003000000",
+      "0e03fb0003000100",
+      "0503fb000200",
+      "03010000cfda5aae04000000",
+      "1003fb000200"
+     ],
+     "raw": "0a04f610000000000000"
+    },
+    {
+     "kind": 4,
+     "value": 0,
+     "group": 4404,
+     "predicate": 208,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 2
+      },
+      "raw": "0005000002"
+     },
+     "commands": [
+      "0f03fb006c010000"
+     ],
+     "raw": "0a043411000000000000"
+    },
+    {
+     "kind": 2,
+     "value": 272,
+     "group": 4418,
+     "predicate": 207,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 1
+      },
+      "raw": "0005000001"
+     },
+     "commands": [
+      "0903fb001000",
+      "1003fb000000",
+      "0503fb000000"
+     ],
+     "raw": "0a0242111001f4fa3039"
+    },
+    {
+     "kind": 2,
+     "value": 272,
+     "group": 4442,
+     "predicate": 208,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 2
+      },
+      "raw": "0005000002"
+     },
+     "commands": [
+      "0903fb001000",
+      "1403fb00450232020a14",
+      "1003fb000100",
+      "0503fb000100"
+     ],
+     "raw": "0a025a111001f4fa983a"
+    }
+   ],
+   "timer_range": [
+    244,
+    250
+   ],
+   "position": [
+    2648,
+    0,
+    -4316
+   ],
+   "region": 1918
+  },
+  "252": {
+   "records": [
+    {
+     "kind": 5,
+     "value": 2,
+     "group": 4476,
+     "predicate": null,
+     "predicate_expression": null,
+     "commands": [
+      "0903fc001000",
+      "1403fc00450280020a14",
+      "0f03fc006c010000",
+      "0e03fc0003000000",
+      "0e03fc0003000100",
+      "0503fc000200",
+      "1003fc000200"
+     ],
+     "raw": "06057c110200"
+    },
+    {
+     "kind": 4,
+     "value": 0,
+     "group": 4534,
+     "predicate": 206,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 0
+      },
+      "raw": "0005000000"
+     },
+     "commands": [
+      "0903fc001000",
+      "1403fc00450232020a14",
+      "0e03fc0003000000",
+      "1003fc000100",
+      "0503fc000100",
+      "03010000cfda5aae04000000"
+     ],
+     "raw": "0a04b611000000000000"
+    },
+    {
+     "kind": 4,
+     "value": 0,
+     "group": 4588,
+     "predicate": 207,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 1
+      },
+      "raw": "0005000001"
+     },
+     "commands": [
+      "0903fc001000",
+      "1403fc00450280020a14",
+      "0e03fc0003000000",
+      "0e03fc0003000100",
+      "0503fc000200",
+      "03010000cfda5aae04000000",
+      "1003fc000200"
+     ],
+     "raw": "0a04ec11000000000000"
+    },
+    {
+     "kind": 4,
+     "value": 0,
+     "group": 4650,
+     "predicate": 208,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 2
+      },
+      "raw": "0005000002"
+     },
+     "commands": [
+      "0f03fc006c010000"
+     ],
+     "raw": "0a042a12000000000000"
+    },
+    {
+     "kind": 2,
+     "value": 272,
+     "group": 4664,
+     "predicate": 207,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 1
+      },
+      "raw": "0005000001"
+     },
+     "commands": [
+      "0903fc001000",
+      "1003fc000000",
+      "0503fc000000"
+     ],
+     "raw": "0a0238121001f4fa3039"
+    },
+    {
+     "kind": 2,
+     "value": 272,
+     "group": 4688,
+     "predicate": 208,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 2
+      },
+      "raw": "0005000002"
+     },
+     "commands": [
+      "0903fc001000",
+      "1403fc00450232020a14",
+      "1003fc000100",
+      "0503fc000100"
+     ],
+     "raw": "0a0250121001f4fa3039"
+    }
+   ],
+   "timer_range": [
+    244,
+    250
+   ],
+   "position": [
+    -1816,
+    0,
+    -2660
+   ],
+   "region": 1640
+  },
+  "253": {
+   "records": [
+    {
+     "kind": 5,
+     "value": 2,
+     "group": 4722,
+     "predicate": null,
+     "predicate_expression": null,
+     "commands": [
+      "0903fd001000",
+      "1403fd00450280020a14",
+      "0f03fd006c010000",
+      "0e03fd0003000000",
+      "0e03fd0003000100",
+      "0503fd000200",
+      "1003fd000200"
+     ],
+     "raw": "060572120200"
+    },
+    {
+     "kind": 4,
+     "value": 0,
+     "group": 4780,
+     "predicate": 206,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 0
+      },
+      "raw": "0005000000"
+     },
+     "commands": [
+      "0903fd001000",
+      "1403fd00450232020a14",
+      "0e03fd0003000000",
+      "1003fd000100",
+      "0503fd000100",
+      "03010000cfda5aae04000000"
+     ],
+     "raw": "0a04ac12000000000000"
+    },
+    {
+     "kind": 4,
+     "value": 0,
+     "group": 4834,
+     "predicate": 207,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 1
+      },
+      "raw": "0005000001"
+     },
+     "commands": [
+      "0903fd001000",
+      "1403fd00450280020a14",
+      "0e03fd0003000000",
+      "0e03fd0003000100",
+      "0503fd000200",
+      "03010000cfda5aae04000000",
+      "1003fd000200"
+     ],
+     "raw": "0a04e212000000000000"
+    },
+    {
+     "kind": 4,
+     "value": 0,
+     "group": 4896,
+     "predicate": 208,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 2
+      },
+      "raw": "0005000002"
+     },
+     "commands": [
+      "0f03fd006c010000"
+     ],
+     "raw": "0a042013000000000000"
+    },
+    {
+     "kind": 2,
+     "value": 272,
+     "group": 4910,
+     "predicate": 207,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 1
+      },
+      "raw": "0005000001"
+     },
+     "commands": [
+      "0903fd001000",
+      "1003fd000000",
+      "0503fd000000"
+     ],
+     "raw": "0a022e131001f4fa5c3a"
+    },
+    {
+     "kind": 2,
+     "value": 272,
+     "group": 4934,
+     "predicate": 208,
+     "predicate_expression": {
+      "op": "==",
+      "left": {
+       "owner_state": true
+      },
+      "right": {
+       "immediate": 2
+      },
+      "raw": "0005000002"
+     },
+     "commands": [
+      "0903fd001000",
+      "1403fd00450232020a14",
+      "1003fd000100",
+      "0503fd000100"
+     ],
+     "raw": "0a0246131001f4fa6c39"
+    }
+   ],
+   "timer_range": [
+    244,
+    250
+   ],
+   "position": [
+    862,
+    20,
+    2269
+   ],
+   "region": 55
+  }
+ },
+ "selectors": [
+  {
+   "selector": 0,
+   "descriptor": 806,
+   "image": "hive_0.png",
+   "left": -71.0,
+   "right": 71.0,
+   "bottom": 0,
+   "top": 99,
+   "sha256": "92aaeea60e45ea3e7943b120af92af80dbc8a93aaa86372aa61bb535250dba29"
+  },
+  {
+   "selector": 1,
+   "descriptor": 831,
+   "image": "hive_1.png",
+   "left": -71.0,
+   "right": 71.0,
+   "bottom": 0,
+   "top": 99,
+   "sha256": "6cef70002d7829757900cea01d0257223fceed7d556b8efbed7a6a2ab4bdca26"
+  },
+  {
+   "selector": 2,
+   "descriptor": 840,
+   "image": "hive_2.png",
+   "left": -71.0,
+   "right": 71.0,
+   "bottom": 0,
+   "top": 99,
+   "sha256": "8c64d47a658e5fd2cc774dcb83b70f66d4104649de57a0dda634fefe5925786b"
+  }
+ ],
+ "wax_icon": "wax.png",
+ "timer_adapter_seconds": 247.0,
+ "not_hosted": [
+  "state2 empty-hand op15 sub108 (B6AB5 -> DD104 player status 0x27 + sound): gameplay effect unestablished",
+  "kind5 value2 hit record (forces empty state, op15 sub108, starts both timers)",
+  "op20 sounds"
+ ],
+ "scope": "Direct source records. Aim/E, fixed 247 s regrow per stage (source range 244..250 timer units with flag 0x10; unit rate unproved) and the six-item Wax pool are modern adapters."
+}

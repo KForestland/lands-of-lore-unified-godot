@@ -14,6 +14,7 @@ const ShopItems = preload("res://scripts/lol2/shop_item_inventory.gd")
 const WorldItems = preload("res://scripts/lol2/jungle_world_items_catalog.gd")
 const Runes = preload("res://scripts/lol2/hive_rune_items.gd")
 const Wax = preload("res://scripts/lol2/hive_wax.gd")
+const BeeWax = preload("res://scripts/lol2/jungle_beehive_wax.gd")
 const Monastery = preload("res://scripts/lol2/monastery_conversation.gd")
 ## Jungle covers every later Act 1 area (Hive, monastery, shops, darker jungle).
 const SCOPES := ["cave","museum","jungle"]
@@ -22,6 +23,11 @@ const SCOPES := ["cave","museum","jungle"]
 const MAX_CARRIED := 64
 const GENERATED := "res://assets/lol2/generated/"
 const FIXED := {
+	"museum:item1:Dragon_Blood":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
+	"museum:item2:Dragon_Blood":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
+	"museum:item3:Dragon_Blood":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
+	"museum:skeleton20:Dragon_Blood_1":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
+	"museum:skeleton20:Dragon_Blood_2":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
 	"cave:guard38:Short_Sword":{"slot":"weapon","label":"Short Sword","icon":GENERATED+"cave_captain_items/Short_Sword.png","origin":"cave"},
 	"cave:guard39:Short_Sword":{"slot":"weapon","label":"Short Sword","icon":GENERATED+"cave_captain_items/Short_Sword.png","origin":"cave"},
 	# Guards52/53 arrival grants (prop699/g7878, prop1067/g8908): one Short Sword and one Guard Shield each.
@@ -46,6 +52,8 @@ const FIXED := {
 	"museum:movable55:SS1":{"slot":"","label":"SS1","icon":GENERATED+"museum_key_locks/ss1.png","origin":"museum"},
 	"jungle:item51:Th_Dagger":{"slot":"weapon","label":"Th Dagger","icon":GENERATED+"jungle_source_pickups/th_dagger.png","origin":"jungle"},
 	"jungle:weapon_shop:Gargoyle_Bracers":{"slot":"offhand","label":"Gargoyle Bracers","icon":GENERATED+"weapon_shop/Gargoyle_Bracers.png","origin":"jungle","defense":5},
+	# MLIB message8 Dawn rune-translation gift (monastery_conversation.DAMPEN), GLOBAL definition72 handler27.
+	"monastery:item70:Dampen_charm":{"slot":"","label":"Dampen charm","icon":GENERATED+"monastery_dampen/dampen.png","origin":"jungle","use":"dampen_charm"},
 	"hive:runes:Ancients_Stone":{"slot":"","label":"Ancients’ Stone","icon":GENERATED+"hive_ancient_stone/stone.png","origin":"jungle","use":"ancient"},
 }
 ## Original definition name shared by cave and Jungle Aloe (definition110, handler9).
@@ -67,6 +75,8 @@ static func entry(id: Variant) -> Dictionary:
 	# Kityara's knife: GLOBAL definition29 "30-Empty hand", identity3959297008 (jungle_kityara_source.json item).
 	if id == KITYARA_KNIFE: return {"slot":"weapon","label":"Kityara's blade","icon":GENERATED+"jungle_kityara/empty_hand.png","origin":"jungle"}
 	if id == Wax.ITEM: return {"slot":"","label":"Wax","icon":GENERATED+"hive_wax/wax.png","origin":"jungle"}
+	# Renewable beehive wax pool (jungle_beehive_wax.gd): original "71-Wax", Jungle scope.
+	if BeeWax.valid(id): return {"slot":"","label":"Wax","icon":BeeWax.ICON,"origin":"jungle"}
 	if Runes.valid(id): return {"slot":"","label":"Wax runes","icon":GENERATED+"hive_wax_runes/runes.png","origin":"jungle"}
 	# Power Orb, magic-shop and jungle world items share the existing shop presentation.
 	if id == Monastery.ORB or id in MagicShop.all_item_ids() or WorldItems.valid(id):
@@ -105,7 +115,7 @@ static func ids(scope: String = "jungle") -> Array:
 	for record in Aloe.RECORDS:
 		for harvest in range(1,4): all.append(Aloe.item_id(record,harvest))
 	all += WeaponShop.ITEMS.values().filter(func(id): return id not in FIXED)
-	all += [Monastery.FLUTE,Monastery.ORB,Wax.ITEM,KITYARA_KNIFE] + MagicShop.all_item_ids() + WorldItems.ITEMS.keys()
+	all += [Monastery.FLUTE,Monastery.ORB,Wax.ITEM,KITYARA_KNIFE] + MagicShop.all_item_ids() + WorldItems.ITEMS.keys() + BeeWax.POOL
 	for index in range(23): all.append(Runes.PREFIX+str(index))
 	return all.filter(func(id): return admitted(id,scope))
 

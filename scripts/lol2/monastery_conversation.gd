@@ -3,8 +3,10 @@ const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## First-visit village, Bacatta and monastery DLL calls; modern saved playback clock.
 const FLUTE := "monastery:item94:Iron_Flute"
 const ORB := "monastery:item83:Power_Orb"
+## MLIB message8 grant (image 0x766): GLOBAL definition72 "70-Dampen ch" (docs/monastery-dawn-runes-source.json).
+const DAMPEN := "monastery:item70:Dampen_charm"
 ## Original item names (as compared by room DLLs) for items this layer grants.
-const SOURCE_ITEMS := {"94-Iron flute":FLUTE,"83-Power orb":ORB}
+const SOURCE_ITEMS := {"94-Iron flute":FLUTE,"83-Power orb":ORB,"70-Dampen ch":DAMPEN}
 ## MOFF message9/message8 branches beyond the first visit (docs/moff-revisit-checks.json).
 const MOFF_LINES := {"MOFF_REVISIT":[400,401,402,403,404,406],"MOFF_REVISIT_LATE":[450,451,452,453],"MOFF_HELD_RUNES":[500,501,502,503,504,505],
 	"MOFF_TRANSLATED":[600,601,602,603,604],"MOFF_EXIT_FIRST":[384,385],"MOFF_EXIT_SECOND":[407,408,409,410,411,412],"MOFF_EXIT_LATER":[407],
@@ -12,6 +14,7 @@ const MOFF_LINES := {"MOFF_REVISIT":[400,401,402,403,404,406],"MOFF_REVISIT_LATE
 const MOFF_EXITS := ["MOFF_EXIT_FIRST","MOFF_EXIT_SECOND","MOFF_EXIT_LATER","MOFF_EXIT_RUNES","MOFF_EXIT_ORB","MOFF_EXIT_DEAD","MOFF_EXIT_FLUTE"]
 const FRAMES := {
 	"MLIB_ATTACK":[97],
+	"MLIB_EXIT_RUNES":[20,36,32,63,21,111],
 	"MGAR_ORB":[151,358],"MGAR_ORB_REFUSE":[99],
 	"MCEL":[53, 31, 40, 57, 51, 55, 23, 61, 44, 54, 31, 70, 64],
 	"MGAR":[69, 76, 68, 69, 35, 35, 117, 101, 84, 220, 55, 180, 34, 148],
@@ -28,7 +31,7 @@ const FRAMES := {
 	"MOFF_REVISIT":[59,45,50,29,123,123],"MOFF_REVISIT_LATE":[43,26,71,22],"MOFF_HELD_RUNES":[50,63,42,48,28,62],"MOFF_TRANSLATED":[35,20,63,31,78],
 	"MOFF_EXIT_FIRST":[68,166],"MOFF_EXIT_SECOND":[38,14,35,59,35,62],"MOFF_EXIT_LATER":[38],"MOFF_EXIT_RUNES":[39,75],"MOFF_EXIT_ORB":[41,40,49,82],"MOFF_EXIT_DEAD":[0,0],
 	"MOFF_EXIT_FLUTE":[41,63,51,36,72,40,42,47,32]}
-const SAMPLES := {"MLIB_ATTACK":[153614],"MGAR_ORB":[232994,537284],"MGAR_ORB_REFUSE":[156554],"MCEL":[88934, 56594, 69824, 94814, 85994, 91874, 44834, 100694, 75704, 90404, 56594, 113924, 105104],"MGAR":[112454, 122744, 110984, 112454, 62474, 62474, 183014, 159494, 134504, 334424, 91874, 275624, 61004, 228584],"MGAR_REPEAT":[102164, 99224, 108044, 160964],"MOFF_REFUSE":[87464,165374],"MOFF_ORB":[121274,33074,194774],"MOFF_RUNES":[97754, 52184, 128624, 37484, 34544, 440264, 78644, 109514, 85994, 49244, 243284, 146264, 124214],"CAN_EXIT":[15872,41984,78644,41894],"VILLAGE":[228584],"CAN":[197714,209474,91264,86272,100694,115394,149204,188894,48000,72128,184484,75704],"MLIB": [128624, 28664, 88934, 52184, 121274, 72764, 50714, 58064, 87464, 47774, 90404, 215354, 103634, 93344, 113924], "MOFF": [66884, 65414, 90404, 109514, 83054, 53654, 106574, 88934, 188894, 131564, 85994, 94814, 133034, 312374, 71294, 103634, 85994, 63944, 116864, 69824, 72764, 80114, 58064],"MOFF_REVISIT":[97754,77174,84524,53654,191834,191834],"MOFF_REVISIT_LATE":[74234,49244,115394,43364],"MOFF_HELD_RUNES":[84524,103634,72764,81584,52184,102164],"MOFF_TRANSLATED":[62474,40424,103634,56594,125684],"MOFF_EXIT_FIRST":[110984,255044],"MOFF_EXIT_SECOND":[66884,31604,62474,97754,62474,102164],"MOFF_EXIT_LATER":[66884],"MOFF_EXIT_RUNES":[68354,121274],"MOFF_EXIT_ORB":[71294,69824,83054,131564],"MOFF_EXIT_DEAD":[39168,41344]}
+const SAMPLES := {"MLIB_ATTACK":[153614],"MLIB_EXIT_RUNES":[40424,63944,58064,103634,41894,174194],"MGAR_ORB":[232994,537284],"MGAR_ORB_REFUSE":[156554],"MCEL":[88934, 56594, 69824, 94814, 85994, 91874, 44834, 100694, 75704, 90404, 56594, 113924, 105104],"MGAR":[112454, 122744, 110984, 112454, 62474, 62474, 183014, 159494, 134504, 334424, 91874, 275624, 61004, 228584],"MGAR_REPEAT":[102164, 99224, 108044, 160964],"MOFF_REFUSE":[87464,165374],"MOFF_ORB":[121274,33074,194774],"MOFF_RUNES":[97754, 52184, 128624, 37484, 34544, 440264, 78644, 109514, 85994, 49244, 243284, 146264, 124214],"CAN_EXIT":[15872,41984,78644,41894],"VILLAGE":[228584],"CAN":[197714,209474,91264,86272,100694,115394,149204,188894,48000,72128,184484,75704],"MLIB": [128624, 28664, 88934, 52184, 121274, 72764, 50714, 58064, 87464, 47774, 90404, 215354, 103634, 93344, 113924], "MOFF": [66884, 65414, 90404, 109514, 83054, 53654, 106574, 88934, 188894, 131564, 85994, 94814, 133034, 312374, 71294, 103634, 85994, 63944, 116864, 69824, 72764, 80114, 58064],"MOFF_REVISIT":[97754,77174,84524,53654,191834,191834],"MOFF_REVISIT_LATE":[74234,49244,115394,43364],"MOFF_HELD_RUNES":[84524,103634,72764,81584,52184,102164],"MOFF_TRANSLATED":[62474,40424,103634,56594,125684],"MOFF_EXIT_FIRST":[110984,255044],"MOFF_EXIT_SECOND":[66884,31604,62474,97754,62474,102164],"MOFF_EXIT_LATER":[66884],"MOFF_EXIT_RUNES":[68354,121274],"MOFF_EXIT_ORB":[71294,69824,83054,131564],"MOFF_EXIT_DEAD":[39168,41344]}
 static func duration(sequence: String, index: int) -> float:
 	if sequence == "MOFF_EXIT_FLUTE": return duration("MOFF",index+14)
 	return maxf(float(FRAMES[sequence][index])/15.0,float(SAMPLES[sequence][index])/22050.0)
@@ -36,7 +39,7 @@ const FLAGS := ["134","135","136","138","182","183","184"]
 static func initial() -> Dictionary:
 	return {"sequence":"","cursor":0,"elapsed":0.0}
 static func validate(s: Variant) -> String:
-	if not s is Dictionary or not s.get("sequence") is String or not s.sequence in ["","MCEL","MGAR","MGAR_REPEAT","MGAR_ORB","MGAR_ORB_REFUSE","MLIB","MLIB_ATTACK","MOFF","MOFF_RUNES","MOFF_REFUSE","MOFF_ORB","VILLAGE","CAN","CAN_EXIT"] + MOFF_LINES.keys(): return "Invalid monastery conversation."
+	if not s is Dictionary or not s.get("sequence") is String or not s.sequence in ["","MCEL","MGAR","MGAR_REPEAT","MGAR_ORB","MGAR_ORB_REFUSE","MLIB","MLIB_ATTACK","MLIB_EXIT_RUNES","MOFF","MOFF_RUNES","MOFF_REFUSE","MOFF_ORB","VILLAGE","CAN","CAN_EXIT"] + MOFF_LINES.keys(): return "Invalid monastery conversation."
 	var cursor = s.get("cursor")
 	var elapsed = s.get("elapsed")
 	if not (cursor is int or cursor is float) or not is_finite(float(cursor)) or cursor != floorf(cursor) or cursor < 0: return "Invalid monastery movie index."
@@ -112,6 +115,13 @@ static func advance(state: Dictionary, delta: float) -> Array:
 		elif s.sequence == "MLIB":
 			if finished == 4: state.flags["182"] = 1
 			if finished == 11: state.flags["183"] = 1
+		elif s.sequence == "MLIB_EXIT_RUNES":
+			# 0x766: the charm is given after movie 666; the globals and flag266 follow movie 668.
+			if finished == 3: rewards.append(DAMPEN)
+			if finished == 5:
+				state.globals.GV_RUNES_TRANSLATED = 1
+				state.globals.GV_DAWN_TRANSLATED_RUNES = 1
+				state.flags["266"] = 1
 		elif s.sequence == "MOFF_RUNES":
 			if finished == 5: state.flags["141"] = 1
 			if finished == 7: state.flags["142"] = 1
@@ -139,7 +149,7 @@ static func advance(state: Dictionary, delta: float) -> Array:
 	return rewards
 
 static func room_for(sequence: String) -> String:
-	if sequence == "MLIB_ATTACK": return "MLIB"
+	if sequence in ["MLIB_ATTACK","MLIB_EXIT_RUNES"]: return "MLIB"
 	if sequence in ["MGAR_REPEAT","MGAR_ORB","MGAR_ORB_REFUSE"]: return "MGAR"
 	return "CAN" if sequence == "CAN_EXIT" else ("MOFF" if sequence in ["MOFF_RUNES","MOFF_REFUSE","MOFF_ORB"] or MOFF_LINES.has(sequence) else sequence)
 ## Library messages6/7 (player Use Weapon / Cast Spell inside the room): native MLIB 0x98F/0xF09 effects applied, then
@@ -202,6 +212,17 @@ static func _plan_lines(plan: Dictionary) -> Array:
 	for effect in plan.effects:
 		if effect[0] in ["movie","movie_flags"]: lines.append(int(effect[2]))
 	return lines
+## MLIB message8 (exit request, image 0x6C0): Dawn translates the runes and gives the Dampen charm once the player has
+## given her the wax runes (Gave_Dawn_Runes), flag192 is clear and she is installed (dawn_present). Returns true while
+## the sequence holds the room; false when the player leaves to MENT immediately (the 774/775 branch is not staged).
+static func begin_mlib_exit(state: Dictionary) -> bool:
+	if active(state.get("conversation",initial())) or state.get("room","") != "MLIB": return false
+	var Room = load("res://scripts/lol2/monastery_quest_state.gd")
+	if int(state.locals.get("Gave_Dawn_Runes",0)) != 1 or int(state.flags.get("192",0)) != 0 or not Room.dawn_present(state): return false
+	state.flags["192"] = 1
+	state.conversation = {"sequence":"MLIB_EXIT_RUNES","cursor":0,"elapsed":0.0}
+	return true
+
 static func is_moff_exit(sequence: String) -> bool:
 	return sequence in MOFF_EXITS
 

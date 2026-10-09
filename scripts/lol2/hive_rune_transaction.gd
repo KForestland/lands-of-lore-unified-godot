@@ -12,7 +12,7 @@ const WAX := "hive:item0:Wax"
 ## item_catalog.gd's source-name uses).
 const WAX_SOURCE_NAME := "71-Wax"
 static func is_wax(id: Variant) -> bool:
-	return id is String and (id == WAX or (WorldItems.valid(id) and WorldItems.source_name(id) == WAX_SOURCE_NAME))
+	return id is String and (id == WAX or (WorldItems.valid(id) and WorldItems.source_name(id) == WAX_SOURCE_NAME) or preload("res://scripts/lol2/jungle_beehive_wax.gd").valid(id))
 static func draws(seed: int, maxima: Array) -> Dictionary:
 	var values: Array = []
 	var seeds: Array = [seed]

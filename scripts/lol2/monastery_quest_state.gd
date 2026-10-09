@@ -4,7 +4,7 @@ const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## Live first-visit rooms use this bank; Bacatta and later branches remain open.
 const SIDE_FLAGS := ["170","171","172","176","177","178","181","258","259","260"]
 ## MOFF exit visit counters and the one-shot orb gift; absent in older saves (0).
-const OFFICE_FLAGS := ["145","146","148"]
+const OFFICE_FLAGS := ["145","146","148","192"]
 const FLAGS := ["143","140","141","142","265","283","32","33","34","37","41","45","267","134", "135", "136", "138", "182", "183", "184", "144", "191", "264", "266", "269", "288"]
 const GLOBALS := ["GV_KNOWLEDGE_OF_POWER_ORB","GV_MET_BACATTA", "GV_HAS_RUNES", "GV_RUNES_TRANSLATED"]
 const LOCALS := ["Met_Dawn", "Dawn_dam_out_cave", "Gave_Dawn_Runes"]
@@ -30,7 +30,7 @@ static func validate(state: Variant) -> String:
 		var value = state.flags.get(key,0)
 		if not (value is int or value is float) or not (value == 0 or value == 1): return "Invalid monastery side-room flag."
 	if not state.get("side_actor_present",false) is bool: return "Invalid monastery side-room actor."
-	for pair in [["locals","Met_Morgan"],["globals","GV_RIX_DEAD"]]:
+	for pair in [["locals","Met_Morgan"],["globals","GV_RIX_DEAD"],["globals","GV_DAWN_TRANSLATED_RUNES"]]:
 		var value = state[pair[0]].get(pair[1],0)
 		if not (value is int or value is float) or not (value == 0 or value == 1): return "Invalid monastery side-room knowledge."
 	var soul = state.globals.get("GV_LUTHERS_SOUL",GlobalDefaults.initial_value("GV_LUTHERS_SOUL"))
@@ -42,9 +42,9 @@ static func validate(state: Variant) -> String:
 			var value = load.get(key)
 			if not (value is int or value is float) or not (value == 0 or value == 1): return "Invalid office load snapshot."
 	var pending = state.get("pending_items",[])
-	if not pending is Array or pending.size() > 1: return "Invalid pending monastery items."
+	if not pending is Array or pending.size() > 2: return "Invalid pending monastery items."
 	for item in pending:
-		if item != preload("res://scripts/lol2/monastery_conversation.gd").ORB: return "Invalid pending monastery items."
+		if item not in [preload("res://scripts/lol2/monastery_conversation.gd").ORB,preload("res://scripts/lol2/monastery_conversation.gd").DAMPEN] or pending.count(item) != 1: return "Invalid pending monastery items."
 	if not state.get("room","") is String or not state.get("room","") in ["","MENT","MLIB","MOFF","VILLAGE","CAN","MCEL","MGAR"]: return "Invalid monastery room."
 	var relationship = state.globals.get("GV_BACATTA_RELATIONSHIP",GlobalDefaults.initial_value("GV_BACATTA_RELATIONSHIP"))
 	if not (relationship is int or relationship is float) or not is_finite(float(relationship)) or relationship != floorf(relationship) or relationship < -2147483648 or relationship > 2147483647: return "Invalid Bacatta relationship."
@@ -65,7 +65,7 @@ static func validate(state: Variant) -> String:
 				if not state.get("side_actor_present",false): return "Morgan offer lacks its actor."
 				if state.conversation.sequence == "MGAR_ORB" and (state.flags.get("144",0) != 0 or state.flags.get("259",0) != 0): return "Invalid Morgan blessing admission."
 				return ""
-			var started_flag: String = {"MCEL":"170","MGAR":"258","MGAR_REPEAT":"258","MOFF_REFUSE":"140","MOFF_ORB":"143","MOFF_RUNES":"140","MLIB":"184","MLIB_ATTACK":"191","MOFF":"134","CAN":"45","VILLAGE":"41","CAN_EXIT":"34"}[state.conversation.sequence]
+			var started_flag: String = {"MCEL":"170","MGAR":"258","MGAR_REPEAT":"258","MOFF_REFUSE":"140","MOFF_ORB":"143","MOFF_RUNES":"140","MLIB":"184","MLIB_ATTACK":"191","MLIB_EXIT_RUNES":"192","MOFF":"134","CAN":"45","VILLAGE":"41","CAN_EXIT":"34"}[state.conversation.sequence]
 			var expected := 0 if state.conversation.sequence in ["VILLAGE","MOFF_REFUSE"] else 1
 			if state.flags.get(started_flag,0) != expected: return "Monastery speech lacks its start flag."
 	return ""

@@ -64,6 +64,7 @@ func active() -> bool:
 	return available and not str(state().get("room","")).is_empty()
 func enter_room(destination: String) -> bool:
 	var s := state()
+	_sync_dawn_locals(s)
 	var current: String = s.get("room","")
 	if Speech.active(s.get("conversation",Speech.initial())): return false
 	if destination in ["MENT","VILLAGE"]:
@@ -84,6 +85,14 @@ func enter_room(destination: String) -> bool:
 	if destination != "MENT": Speech.begin(s,destination)
 	restore()
 	return true
+## Jungle local17 "Gave_Dawn_Runes" is written by Dawn actor63's wax-runes offer (jungle_dawn owns it); the library
+## DLL reads the same native local by name, so the monastery bank follows Dawn's copy.
+func _sync_dawn_locals(s: Dictionary) -> void:
+	var dawn = get_parent().get("dawn")
+	var given := 0
+	if dawn != null and is_instance_valid(dawn) and dawn.get("state") is Dictionary: given = int(dawn.state.get("locals",{}).get("17",0))
+	else: given = int(get_parent().quest_state.get("jungle_dawn",{}).get("locals",{}).get("17",0))
+	if given != 0: s.locals.Gave_Dawn_Runes = 1
 func leave_room() -> void:
 	var s := state()
 	if not active() or Speech.active(s.get("conversation",Speech.initial())): return
@@ -101,6 +110,13 @@ func leave_room() -> void:
 			refresh_speech()
 			return
 		s.room = "VILLAGE"
+	elif s.room == "MLIB":
+		# Source message8 (0x6C0): Dawn's rune translation and Dampen charm, else straight to the hall.
+		_sync_dawn_locals(s)
+		if Speech.begin_mlib_exit(s):
+			refresh_speech()
+			return
+		s.room = "MENT"
 	elif s.room == "MOFF":
 		# Source message8: visit counter first, then Julian's exit lines (or none).
 		if Speech.begin_moff_exit(s):
@@ -115,7 +131,7 @@ func grant(item: String) -> void:
 	var carried: Array = get_parent().carried_collected
 	if item in carried: return
 	var s := state()
-	if item == Speech.ORB and not preload("res://scripts/lol2/jungle_save.gd").validate_inventory({"collected":carried+[item],"equipped_item":"","equipped_armor":""}).is_empty():
+	if item in [Speech.ORB,Speech.DAMPEN] and not preload("res://scripts/lol2/jungle_save.gd").validate_inventory({"collected":carried+[item],"equipped_item":"","equipped_armor":""}).is_empty():
 		if not s.has("pending_items"): s.pending_items = []
 		if not item in s.pending_items: s.pending_items.append(item)
 		return
@@ -200,6 +216,10 @@ func advance(delta: float) -> void:
 	if not rewards.is_empty(): restore()
 	var speech: Dictionary = state().get("conversation",Speech.initial())
 	if state().room == "MOFF" and Speech.is_moff_exit(speech.sequence) and not Speech.active(speech):
+		state().room = "MENT"
+		restore()
+		return
+	if state().room == "MLIB" and speech.sequence == "MLIB_EXIT_RUNES" and not Speech.active(speech):
 		state().room = "MENT"
 		restore()
 		return

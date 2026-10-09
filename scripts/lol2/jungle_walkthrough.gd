@@ -21,6 +21,7 @@ var village_alarm: Node3D
 var drunk: Node3D
 var inner_gate: Node3D
 var chief_hut: Node3D
+var beehives: Node3D
 var kityara: Node3D
 ## Item held on the cursor for an E-use offer (Kelsrick kind4 mode1); not consumed unless a source effect does.
 var hand_item := ""
@@ -209,6 +210,10 @@ func _ready() -> void:
 			chief_hut=preload("res://scripts/lol2/jungle_chief_hut.gd").new();chief_hut.name="ChiefHutPuzzle";add_child(chief_hut)
 			var puzzle_error: String=chief_hut.setup(self,quest_state.get("jungle_chief_hut"))
 			if not puzzle_error.is_empty(): push_error(puzzle_error)
+		if preload("res://scripts/lol2/jungle_beehives.gd").assets_ready():
+			beehives=preload("res://scripts/lol2/jungle_beehives.gd").new();add_child(beehives)
+			var hive_error: String=beehives.setup(self,quest_state.get("jungle_beehives"))
+			if not hive_error.is_empty(): push_error(hive_error)
 		if preload("res://scripts/lol2/jungle_kityara.gd").assets_ready():
 			kityara=preload("res://scripts/lol2/jungle_kityara.gd").new();kityara.name="JungleKityara";add_child(kityara)
 			var kityara_error: String=kityara.setup(self,{"context":_kityara_context,"shop_local":_kityara_shop_local,"shared":_kityara_shared,"grant":_kityara_grant,"consume_held":_consume_hand_item,"held_identity":_kityara_held_identity},quest_state.get("jungle_kityara"))
@@ -376,6 +381,7 @@ func apply_save(state: Variant) -> String:
 	if is_instance_valid(drunk): drunk.restore(quest_state.get("jungle_drunk",drunk.initial()))
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
 	if is_instance_valid(chief_hut): chief_hut.restore(quest_state.get("jungle_chief_hut",chief_hut.initial()))
+	if is_instance_valid(beehives): beehives.restore(quest_state.get("jungle_beehives",beehives.initial()))
 	if is_instance_valid(kityara): kityara.restore(quest_state.get("jungle_kityara",kityara.initial()))
 	return ""
 
@@ -435,6 +441,7 @@ func apply_area_handoff(state: Variant) -> String:
 	if is_instance_valid(drunk): drunk.restore(quest_state.get("jungle_drunk",drunk.initial()))
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
 	if is_instance_valid(chief_hut): chief_hut.restore(quest_state.get("jungle_chief_hut",chief_hut.initial()))
+	if is_instance_valid(beehives): beehives.restore(quest_state.get("jungle_beehives",beehives.initial()))
 	if is_instance_valid(kityara): kityara.restore(quest_state.get("jungle_kityara",kityara.initial()))
 	return ""
 
@@ -474,6 +481,7 @@ func _sync_exit_checkpoint() -> void:
 	if is_instance_valid(drunk): quest_state.jungle_drunk=drunk.checkpoint()
 	if is_instance_valid(inner_gate): quest_state.jungle_inner_gate=inner_gate.checkpoint()
 	if is_instance_valid(chief_hut): quest_state.jungle_chief_hut=chief_hut.checkpoint()
+	if is_instance_valid(beehives): quest_state.jungle_beehives=beehives.checkpoint()
 	if is_instance_valid(kityara): quest_state.jungle_kityara=kityara.checkpoint()
 	if is_instance_valid(exit_encounter): quest_state.jungle_exit_encounter=exit_encounter.checkpoint()
 

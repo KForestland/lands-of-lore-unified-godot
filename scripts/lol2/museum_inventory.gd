@@ -198,6 +198,8 @@ func select_item(index: int) -> void:
 	use_button.text = "Use Aloe" if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "aloe" else "Use stone" if id == preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM or preload("res://scripts/lol2/player_item_effects.gd").is_champion_stone(id) else "Play flute"
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "ironwood_sap": use_button.text = "Use sap"
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "vels_fruit": use_button.text = "Eat fruit"
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "dampen_charm":
+		use_button.text = "Use charm"
 	var is_armor := preload("res://scripts/lol2/player_equipment.gd").armor(id)
 	var selected := equipped_armor if is_armor else equipped_item
 	var supported := (is_armor and change_armor.is_valid()) or (preload("res://scripts/lol2/player_equipment.gd").weapon(id) and change_equipment.is_valid())
@@ -229,9 +231,11 @@ func select_item(index: int) -> void:
 
 	if preload("res://scripts/lol2/cave_captain_items.gd").valid(id):detail_text.text="Given by the surrendered captain."
 	if id == preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM: detail_text.text = "Grants one free highest-charge attack spell."
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "dampen_charm": detail_text.text = "Given by Dawn after she translated the runes. Using it consumes the charm and calms a stirring curse."
 	if preload("res://scripts/lol2/hive_rune_items.gd").valid(id): detail_text.text = "An impression of the Hive inscription in wax."
 	if preload("res://scripts/lol2/cave_stalagmite.gd").valid_item(id): detail_text.text = "Taken from a crystal formation in Draracle’s caves. Select it as your weapon."
 	if preload("res://scripts/lol2/player_equipment.gd").offhand(id): detail_text.text = "Equip in your offhand. Defense +%d. Stored while transformed." % preload("res://scripts/lol2/item_catalog.gd").defense(id)
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id)=="dragon_blood":detail_text.text="Place an explosive ahead of you. Six-second fuse; blast harms nearby creatures and you. Move away after use."
 	if id.begins_with("cave:guard"): detail_text.text = "Dropped by a defeated cave guard. " + ("Equip in your offhand. Defense +%d. Stored while transformed." % preload("res://scripts/lol2/item_catalog.gd").defense(id) if preload("res://scripts/lol2/player_equipment.gd").offhand(id) else "Select it as your weapon.")
 
 func toggle_equipment() -> void:

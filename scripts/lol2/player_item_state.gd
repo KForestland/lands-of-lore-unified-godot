@@ -13,7 +13,9 @@ static func canonical(saved: Dictionary) -> Dictionary:
 	for key in ["pending","base","clock"]: aloe[key] = int(aloe[key])
 	aloe.fraction = float(aloe.fraction)
 	var result := {"version":1,"champion":Effects.restore(saved.champion).state,"spent":saved.spent.duplicate(),"fraction":float(saved.fraction),"aloe":aloe,"ancient_charges":int(saved.get("ancient_charges",0))}
+	if saved.has("dragon_blood"): result.dragon_blood=saved.dragon_blood.duplicate(true)
 	if saved.has("offhand"): result.offhand = saved.offhand
+	if saved.has("dampened"): result.dampened = bool(saved.dampened)
 	return result
 static func validate(saved: Variant, collected: Array = []) -> String:
 	if not saved is Dictionary or saved.get("version")!=1: return "Invalid item effects."
@@ -26,9 +28,14 @@ static func validate(saved: Variant, collected: Array = []) -> String:
 	for id in saved.spent:
 		if Catalog.use_kind(id) == "" or id in seen or id in collected: return "Inconsistent consumed item."
 		seen.append(id)
+	var blood_error:=preload("res://scripts/lol2/dragon_blood_state.gd").validate(saved.get("dragon_blood",[]),saved.spent)
+	if not blood_error.is_empty():return blood_error
 	var charges = saved.get("ancient_charges",0)
 	if not (charges is int or charges is float) or not is_finite(float(charges)) or charges != floorf(float(charges)) or charges < 0 or charges > 9: return "Invalid Ancient Stone charges."
 	if charges > 0 and Effects.Ancient.ITEM not in saved.spent: return "Ancient charges lack consumed item history."
+	# Dampen charm (handler27): the dampened flag (native player byte 0x23ABD bit0) only follows its consumption.
+	var dampened = saved.get("dampened",false)
+	if not dampened is bool or (dampened and preload("res://scripts/lol2/monastery_conversation.gd").DAMPEN not in saved.spent): return "Invalid Dampen charm state."
 	var fraction = saved.get("fraction")
 	if not (fraction is int or fraction is float) or not is_finite(float(fraction)) or fraction<0 or fraction>=1: return "Invalid item timer fraction."
 	if saved.has("aloe"):

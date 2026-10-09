@@ -43,6 +43,7 @@ var player_magic_checkpoint := preload("res://scripts/lol2/player_magic_state.gd
 ## Cave fighting progression carried unchanged to Jungle quests.
 var fighting_checkpoint: Dictionary = {}
 var control96: Node3D
+var blood_loot: Node3D
 var skeleton_population: Node3D
 const FormBody = preload("res://scripts/lol2/player_form_body.gd")
 var player_form := 0
@@ -200,6 +201,8 @@ func _ready() -> void:
 		var creature_error: String = skeleton_population.setup(self, saved_creatures)
 		if not creature_error.is_empty(): push_error(creature_error)
 		sword_transfer.replaced_by_actor.connect(spawn_sword_skeleton)
+		blood_loot=preload("res://scripts/lol2/museum_blood_loot.gd").new();add_child(blood_loot)
+		blood_loot.setup(self,checkpoint.get("museum_blood_loot") if checkpoint is Dictionary else null)
 	if preload("res://scripts/lol2/museum_control96.gd").assets_ready():
 		control96=preload("res://scripts/lol2/museum_control96.gd").new()
 		control96.name="MuseumControl96"
@@ -274,6 +277,7 @@ func checkpoint_state() -> Dictionary:
 		"gallery": gallery.checkpoint() if is_instance_valid(gallery) else {},
 		"museum_key_locks": key_locks.checkpoint() if is_instance_valid(key_locks) else KeyLockState.initial(),
 		"museum_long_arm": long_arm.checkpoint() if is_instance_valid(long_arm) else LongArmState.initial(),
+		"museum_blood_loot": blood_loot.checkpoint() if is_instance_valid(blood_loot) else null,
 		"skeletons": skeleton_population.checkpoint() if is_instance_valid(skeleton_population) else preload("res://scripts/lol2/museum_skeleton_population_state.gd").initial(),
 		"dragon_door": dragon_door.checkpoint() if is_instance_valid(dragon_door) else {}
 	}
@@ -434,7 +438,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if open_inventory(): get_viewport().set_input_as_handled()
 		return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
-		if (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
+		if (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(blood_loot) and blood_loot.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
 		return
 	super._unhandled_input(event)
 
@@ -459,6 +463,9 @@ func _physics_process(delta: float) -> void:
 		interaction_label.text = arm_hint
 		interaction_label.show()
 		return
+	var blood_hint: String=blood_loot.interaction_hint() if is_instance_valid(blood_loot) else ""
+	if not blood_hint.is_empty():
+		interaction_label.text=blood_hint;interaction_label.show();return
 	var control_hint: String = skeleton_population.control_hint() if is_instance_valid(skeleton_population) else ""
 	if not control_hint.is_empty():
 		interaction_label.text = control_hint
@@ -545,6 +552,7 @@ func apply_save(state: Dictionary) -> void:
 	player_magic_checkpoint = preload("res://scripts/lol2/player_magic_state.gd").restore(saved.get("magic",preload("res://scripts/lol2/player_magic_state.gd").initial())).checkpoint
 	fighting_checkpoint = preload("res://scripts/lol2/player_fighting_transport.gd").restore(saved.get("fighting",{})).get("checkpoint",{})
 	if is_instance_valid(skeleton_population): skeleton_population.restore(saved.get("skeletons",preload("res://scripts/lol2/museum_skeleton_population_state.gd").initial()))
+	if is_instance_valid(blood_loot):blood_loot.restore(saved.get("museum_blood_loot"))
 	if is_instance_valid(control96): control96.restore_checkpoint(saved.get("museum_control96",preload("res://scripts/lol2/museum_control96_state.gd").initial()))
 	health = int(saved.get("health",30))
 	player_form = int(saved.get("player_form",0))

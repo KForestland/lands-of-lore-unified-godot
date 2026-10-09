@@ -9,7 +9,11 @@ const AloeEffect = preload("res://scripts/lol2/cave_aloe_effect.gd")
 # Explicit modern cadence: 60 fixed updates/sec, 27 native clock units/update.
 const ALOE_TICK_UNITS := 27
 var host: Node
-func _ready() -> void: host=get_parent()
+var dragon_blood: Node3D
+func _ready() -> void:
+	host=get_parent()
+	dragon_blood=preload("res://scripts/lol2/player_dragon_blood.gd").new()
+	add_child(dragon_blood);dragon_blood.setup(self)
 func state() -> Dictionary:
 	if host.get("carried_inventory")!=null:
 		if not host.carried_inventory.has("item_effects"): host.carried_inventory.item_effects=State.initial()
@@ -27,12 +31,24 @@ func use(id: String) -> bool:
 	if host.player_form!=0 or Catalog.use_kind(id) == "" or id not in carried(): return false
 	if not is_instance_valid(host.inventory): return false
 	var current:=state()
+	if Catalog.use_kind(id)=="dragon_blood":return dragon_blood.place(id)
 	# Sap (handler98) and Vels fruit (handler20) consume the held item. Fruit also clears player status +1B5 and
 	# turns its indicator off; the port has no status model, so that cure has nothing to clear (docs/vels-fruit-use.md).
 	if Catalog.use_kind(id) in ["ironwood_sap","vels_fruit"]:
 		if not is_instance_valid(host.starting_magic) or host.starting_magic.health() <= 0: return false
 		current.spent.append(id)
 		carried().erase(id)
+		return true
+	# Dampen charm (definition72, handler27 0x979A8): consumes the held charm and sets player byte 0x23ABD bit0. No
+	# native reader of that bit is established; modern adapter (lead-authorised): a pending curse warning is cancelled.
+	if Catalog.use_kind(id) == "dampen_charm":
+		if not is_instance_valid(host.starting_magic) or host.starting_magic.health() <= 0: return false
+		current.spent.append(id)
+		carried().erase(id)
+		current.dampened = true
+		var curse = host.get("curse")
+		if curse != null and int(curse.state.get("phase",0)) == 1:
+			curse.state.merge({"phase":0,"target":int(host.player_form),"remaining":0.0,"duration":0.0},true)
 		return true
 	if id == Ancient.ITEM:
 		if not is_instance_valid(host.starting_magic) or host.starting_magic.health() <= 0: return false
@@ -60,6 +76,7 @@ func use(id: String) -> bool:
 	return true
 func advance(delta: float) -> void:
 	if not is_instance_valid(host.starting_magic) or not host.starting_magic.world_active(): return
+	dragon_blood.advance(delta)
 	State.advance(state(),delta)
 	if not is_finite(delta) or delta <= 0: return
 	var current := state()
@@ -89,4 +106,5 @@ func status() -> String:
 		lines.append("%s · Defense +%d" % [Catalog.label(offhand), Catalog.defense(offhand)] if host.player_form == 0 else Catalog.label(offhand) + " · Stored")
 	if s.champion.active: lines.append("Champion Stone · %ds" % ceili(float(s.champion.timer)/65536.0/State.TICKS_PER_SECOND))
 	if int(s.get("ancient_charges",0)) > 0: lines.append("Ancient Stone · %d charges" % int(s.ancient_charges))
+	if s.get("dampened",false): lines.append("Dampen charm · used")
 	return "\n".join(lines)
