@@ -90,7 +90,10 @@ static func validate(value: Variant, checkpoint_count: int) -> String:
 			for id in value.item_effects.spent:
 				if not id in carried: return "Consumed Aloe was not harvested."
 				carried.erase(id)
-		var effect_error := preload("res://scripts/lol2/player_item_state.gd").validate(value.item_effects,carried)
+		# The offhand slot is owned by guard loot, so it is checked below against those items.
+		var effects: Variant = value.item_effects.duplicate() if value.item_effects is Dictionary else value.item_effects
+		if effects is Dictionary: effects.erase("offhand")
+		var effect_error := preload("res://scripts/lol2/player_item_state.gd").validate(effects,carried)
 		if not effect_error.is_empty(): return effect_error
 	if value.has("stalagmites") and not preload("res://scripts/lol2/cave_stalagmite.gd").validate_ids(value.stalagmites):
 		return "Save Stalagmite state is invalid."
@@ -101,9 +104,30 @@ static func validate(value: Variant, checkpoint_count: int) -> String:
 		if not population_error.is_empty(): return population_error
 	if value.has("roach") and not preload("res://scripts/lol2/cave_roach.gd").validate(value.roach):
 		return "Save cave creature state is invalid."
+	var GuardLoot = preload("res://scripts/lol2/cave_guard38_loot.gd")
+	var loot_error: String = GuardLoot.validate(value.get("guard38_loot"),value.get("guards"))
+	if not loot_error.is_empty():return loot_error
+	var Guard39Loot = preload("res://scripts/lol2/cave_guard39_loot.gd")
+	loot_error = Guard39Loot.validate(value.get("guard39_loot"),value.get("guards"),value.get("guard_controls"))
+	if not loot_error.is_empty():return loot_error
+	var Guard54Loot = preload("res://scripts/lol2/cave_guard54_loot.gd")
+	loot_error = Guard54Loot.validate(value.get("guard54_loot"),value.get("guards"))
+	if not loot_error.is_empty():return loot_error
+	var PairLoot = preload("res://scripts/lol2/cave_guard_pair_loot.gd")
+	for actor in ["52","53"]:
+		loot_error = PairLoot.validate(value.get("guard%s_loot" % actor),value.get("guards"),actor)
+		if not loot_error.is_empty():return loot_error
 	var captain_items: Array = []
 	if value.has("captain"):
 		captain_items = preload("res://scripts/lol2/cave_captain_items.gd").from_checkpoint(value.captain)
+	if value.has("guard38_loot"): captain_items += GuardLoot.carried(value.guard38_loot)
+	if value.has("guard39_loot"): captain_items += Guard39Loot.carried(value.guard39_loot)
+	if value.has("guard54_loot"): captain_items += Guard54Loot.carried(value.guard54_loot)
+	for actor in ["52","53"]:
+		if value.has("guard%s_loot" % actor): captain_items += PairLoot.carried(value["guard%s_loot" % actor],actor)
+	var offhand = value.get("item_effects",{}).get("offhand","") if value.get("item_effects") is Dictionary else ""
+	if not offhand is String or (offhand != "" and (Catalog.slot(offhand) != "offhand" or not Catalog.admitted(offhand,"cave") or offhand not in captain_items)):
+		return "Save offhand selection is invalid."
 	var equipped = value.get("equipped_item", "")
 	if not equipped is String or (equipped != "" and (Catalog.slot(equipped) != "weapon" or not Catalog.admitted(equipped,"cave") or equipped not in value.get("stalagmites", []) + captain_items)):
 		return "Save weapon selection is invalid."

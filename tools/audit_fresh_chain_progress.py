@@ -15,6 +15,16 @@ NAMES = ['01_cave', '02_museum', '03_jungle_hive', '04_flute', '05_wax',
 
 
 
+def baseline_within_start_time(mtime, started):
+    """Compare file time at the receipt's whole-second precision.
+
+    The runner writes the baseline before launch, but its start receipt omits
+    fractions. A baseline from that same second must not fail solely for having
+    sub-second precision. A timestamp in the next second still fails.
+    """
+    return mtime < started + 1.0
+
+
 def check_contents(index, state, require_kityara=False):
     """Carry forward the established broken-sword branch acceptance checks."""
     inventory = state['checkpoint']['collected'] if index == 0 else state['inventory']['collected']
@@ -106,7 +116,7 @@ def audit(run, baseline, day, require_kityara=False):
                    and source.get('source_stable') is True and first is not None)
     if first:
         started = dt.datetime.fromisoformat(f'{day}T{first[1]}').replace(tzinfo=ZoneInfo('Europe/Berlin')).timestamp()
-        baseline_ok = baseline_ok and baseline.stat().st_mtime <= started
+        baseline_ok = baseline_ok and baseline_within_start_time(baseline.stat().st_mtime, started)
     return dict(verified_fresh_prefix=prefix, total_legs=len(legs),
                 complete=prefix == len(legs) and baseline_ok and not drift and 'CHAIN COMPLETE' in receipts,
                 source_baseline=str(baseline.relative_to(ROOT)), source_changed_files=drift,

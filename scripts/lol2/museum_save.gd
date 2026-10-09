@@ -50,6 +50,8 @@ static func validate(state: Variant) -> String:
 	var locks = checkpoint.get("museum_key_locks",KeyLocks.initial())
 	var lock_error: String = KeyLocks.validate(locks,ids)
 	if not lock_error.is_empty(): return lock_error
+	var arm_error: String = preload("res://scripts/lol2/museum_long_arm_state.gd").validate(checkpoint.get("museum_long_arm",preload("res://scripts/lol2/museum_long_arm_state.gd").initial()),ids)
+	if not arm_error.is_empty(): return arm_error
 	var carried_error := Catalog.validate_carried(ids,"museum")
 	if not carried_error.is_empty(): return carried_error
 	var equipment_error := Catalog.validate_slots(ids,"museum",checkpoint.get("equipped_item"),checkpoint.get("equipped_armor",""))

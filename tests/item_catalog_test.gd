@@ -1,7 +1,7 @@
 extends SceneTree
 ## Shared item catalog pilot: identity, slot, scope and capacity against the existing
 ## per-area predicates (player_equipment, museum_save, jungle_save). Static/headless;
-## the 26-item Museum case is an inventory fixture, not an earned-reachability claim.
+## the 27-item Museum case is an inventory fixture, not an earned-reachability claim.
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 const Equipment = preload("res://scripts/lol2/player_equipment.gd")
 const MuseumSave = preload("res://scripts/lol2/museum_save.gd")
@@ -562,11 +562,15 @@ func museum_state(ids: Array, weapon: String = "", armor: String = "") -> Dictio
 	return {"format":MuseumSave.FORMAT,"version":1,"player":{"position":[0,0,0],"yaw":0,"pitch":0},
 		"checkpoint":{"version":1,"introduction_complete":true,"collected":ids,"equipped_item":weapon,"equipped_armor":armor,
 		"sword":{"started":MuseumSave.SWORD in ids,"collected":MuseumSave.SWORD in ids,"elapsed":7.625 if MuseumSave.SWORD in ids else 0},"gate":{"target_open":false,"progress":0}}}
-func old_museum(id: String) -> bool:
-	var state: Dictionary = museum_state([id])
-	# The single Sk key / SS1 must agree with the key-lock state (museum_key_locks_state.gd conservation).
+## Owner states that agree with carrying a single conserved Museum item.
+func with_owner_state(state: Dictionary, id: String) -> Dictionary:
 	if id == "museum:control87:Sk_key": state.checkpoint.museum_key_locks = {"version":1,"loaded":[],"panel_state":0}
 	if id == "museum:movable55:SS1": state.checkpoint.museum_key_locks = {"version":1,"loaded":[87],"panel_state":1}
+	if id == "museum:prop153:Long_arm": state.checkpoint.museum_long_arm = {"version":1,"stage":2,"elapsed":0,"walkway":true,"pending":false}
+	return state
+func old_museum(id: String) -> bool:
+	var state: Dictionary = with_owner_state(museum_state([id]), id)
+	# The single Sk key / SS1 must agree with the key-lock state (museum_key_locks_state.gd conservation).
 	return MuseumSave.validate(state) == ""
 func old_jungle(id: String) -> bool: return JungleSave.validate_inventory({"collected":[id],"equipped_item":"","equipped_armor":""}) == ""
 
@@ -591,7 +595,7 @@ func run() -> void:
 		if not check(Equipment.weapon(id) == (Catalog.slot(id)=="weapon") and Equipment.armor(id) == (Catalog.slot(id)=="armor") and Equipment.offhand(id) == (Catalog.slot(id)=="offhand"),"player_equipment slot differs: "+id):return
 		if not check(old_museum(id) == Catalog.admitted(id,"museum"),"museum_save collected admission differs: "+id):return
 		if not check(old_jungle(id) == Catalog.admitted(id,"jungle"),"jungle_save collected admission differs: "+id):return
-		var old_weapon := MuseumSave.validate(museum_state([id],id)) == ""
+		var old_weapon := MuseumSave.validate(with_owner_state(museum_state([id],id),id)) == ""
 		if not check(old_weapon == (Catalog.slot(id)=="weapon" and Catalog.admitted(id,"museum")),"museum_save weapon slot differs: "+id):return
 		if Catalog.slot(id) in ["weapon","armor"]:
 			var old_label: String = Equipment.label(id) if Catalog.slot(id)=="weapon" else Equipment.armor_label(id)
@@ -613,18 +617,18 @@ func run() -> void:
 		entries.append([7,0,4])
 		if not check(Catalog.mitigation(id).size()==defense_source[id].descriptors.size(),"Mitigation aliases catalog data"):return
 	if not check(Catalog.defense(Captain.ARMOR) == int(scalars.Burnt_Chain) and Catalog.defense(MuseumSave.MAIL) == int(scalars.Mail_Shirt) and Catalog.defense("jungle:weapon_shop:Gargoyle_Bracers") == int(scalars.Gargoyle_Bracers) and Catalog.defense(Captain.SWORD) == 0,"Defense values differ from source checks"):return
-	# Cave scope = current cave predicates: stalagmite/captain sword weapons, captain chain armor.
+	# Cave scope = current cave predicates: stalagmite/captain/guard38/guard39/guard52/guard53/guard54 sword weapons, captain chain armor.
 	for id in Catalog.ids("cave"):
 		var cave_weapon: bool = Catalog.slot(id)=="weapon"
-		if not check(cave_weapon == (preload("res://scripts/lol2/cave_stalagmite.gd").valid_item(id) or id == Captain.SWORD) and (Catalog.slot(id)=="armor") == (id == Captain.ARMOR),"Cave slot scope differs: "+id):return
-	# Capacity: the Museum universe is 26; old cap 22 rejected it (inventory fixture only).
+		if not check(cave_weapon == (preload("res://scripts/lol2/cave_stalagmite.gd").valid_item(id) or id in [Captain.SWORD,"cave:guard38:Short_Sword","cave:guard39:Short_Sword","cave:guard54:prop1013:Short_Sword","cave:guard54:actor54:Short_Sword","cave:guard52:Short_Sword","cave:guard53:Short_Sword"]) and (Catalog.slot(id)=="armor") == (id == Captain.ARMOR),"Cave slot scope differs: "+id):return
+	# Capacity: the Museum universe is 28; old cap 22 rejected it (inventory fixture only).
 	var museum_ids := Catalog.ids("museum")
-	if not check(museum_ids.size() == 26 and Catalog.ids("cave").size() == 19,"Museum/cave universe sizes changed: %d/%d" % [museum_ids.size(),Catalog.ids("cave").size()]):return
+	if not check(museum_ids.size() == 35 and Catalog.ids("cave").size() == 27,"Museum/cave universe sizes changed: %d/%d" % [museum_ids.size(),Catalog.ids("cave").size()]):return
 	if not check(Catalog.validate_carried(museum_ids,"museum").is_empty() and Catalog.validate_slots(museum_ids,"museum",Captain.SWORD,Captain.ARMOR).is_empty(),"Catalog rejects maximum Museum carry"):return
 	var without_captain := museum_ids.filter(func(id): return not Captain.valid(id))
 	# Carrying the Sk key and SS1 means no lock holds the key and the SS1 panel is empty.
-	var full: Dictionary = museum_state(museum_ids,Captain.SWORD,Captain.ARMOR); full.checkpoint.museum_key_locks = {"version":1,"loaded":[],"panel_state":1}
-	var partial: Dictionary = museum_state(without_captain); partial.checkpoint.museum_key_locks = {"version":1,"loaded":[],"panel_state":1}
+	var full: Dictionary = museum_state(museum_ids,Captain.SWORD,Captain.ARMOR); full.checkpoint.museum_key_locks = {"version":1,"loaded":[],"panel_state":1}; full.checkpoint.museum_long_arm = {"version":1,"stage":2,"elapsed":0,"walkway":true,"pending":false}
+	var partial: Dictionary = museum_state(without_captain); partial.checkpoint.museum_key_locks = {"version":1,"loaded":[],"panel_state":1}; partial.checkpoint.museum_long_arm = {"version":1,"stage":2,"elapsed":0,"walkway":true,"pending":false}
 	if not check(MuseumSave.validate(full).is_empty() and MuseumSave.validate(partial).is_empty(),"Museum rejects full inventory with owned captain equipment"):return
 	# Negative cases must still fail.
 	var bad_lists := [null,"x",[1],["unknown:item"],[MuseumSave.SWORD,MuseumSave.SWORD],["jungle:item51:Th_Dagger"],[Captain.SWORD,"jungle:weapon_shop:Gargoyle_Bracers"]]
@@ -640,5 +644,5 @@ func run() -> void:
 			[owned,"museum","jungle:item51:Th_Dagger","",""],[owned,"museum","","","jungle:weapon_shop:Gargoyle_Bracers"],[owned,"jungle",7,"",""],[owned,"jungle","",null,""],[owned,"jungle","unknown:item","",""]]:
 		if not check(not Catalog.validate_slots(case[0],case[1],case[2],case[3],case[4]).is_empty(),"Bad equipment accepted: "+str(case.slice(1))):return
 	if failed: return
-	print("PASS item catalog: %d ids enumerated (cave19/museum26/jungle%d), 77-row before-matrix + live player_equipment/museum_save/jungle_save equivalence, labels/icons, defense8/20/5, Museum 26 accepted with captain equipment (fixture, not earned), negatives." % [all.size(),all.size()])
+	print("PASS item catalog: %d ids enumerated (cave27/museum35/jungle%d), 77-row before-matrix + live player_equipment/museum_save/jungle_save equivalence, labels/icons, defense8/20/5, Museum 35 accepted with captain equipment (fixture, not earned), negatives." % [all.size(),all.size()])
 	quit()

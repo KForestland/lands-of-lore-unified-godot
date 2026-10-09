@@ -8,7 +8,7 @@ static func media() -> Dictionary:return JSON.parse_string(FileAccess.get_file_a
 static func initial(src: Dictionary) -> Dictionary:
 	var locals: Dictionary={}
 	for n in src.owned_locals:locals[str(int(n))]=0
-	# Event9 group31170 grants a sword to actor64 and selects pose9. Not player loot.
+	# Event9 group31170 grants one sword to actor64 and selects pose9; corpse pickup is a modern adapter.
 	return {"version":1,"locals":locals,"owner_state":0,"health":int(src.actor.health),"flags":int(src.actor.flags),"b5":0,"selector":9,"present":true,"items":["6-Fine longswd"],"clip":{},"hit_latches":[],"region":-1,"village_admitted":false,"death":0.0}
 static func integer(v: Variant,lo: int,hi: int) -> bool:return (v is int or v is float) and is_finite(float(v)) and v==floor(float(v)) and v>=lo and v<=hi
 ## Values the pinned source can write to actor64: op16 owner states and op13 sub4 poses (plus initial 0/9,
@@ -23,7 +23,7 @@ static func reachable(src: Dictionary) -> Dictionary:
 			if b[0]==13 and b[4]==4 and int(b[5]) not in poses:poses.append(int(b[5]))
 	return {"states":states,"poses":poses}
 static func validate(s: Variant,src: Dictionary,m: Dictionary) -> String:
-	if not s is Dictionary or s.size()!=14 or not integer(s.get("version"),1,1):return "Invalid Kelsrick version."
+	if not s is Dictionary or s.size()!=14+int(s.has("loot_taken")) or not integer(s.get("version"),1,1):return "Invalid Kelsrick version."
 	for k in ["owner_state","b5"]:
 		if not integer(s.get(k),0,255):return "Invalid Kelsrick byte."
 	var reach:=reachable(src)
@@ -44,6 +44,7 @@ static func validate(s: Variant,src: Dictionary,m: Dictionary) -> String:
 		seen.append(int(n))
 	var death=s.get("death")
 	if not (death is float or death is int) or not is_finite(float(death)) or death<0 or death>10 or (s.health>0 and death!=0):return "Invalid Kelsrick death clock."
+	if s.has("loot_taken") and (not s.loot_taken is bool or (s.loot_taken and (s.health!=0 or not s.present or death<5.0))):return "Invalid Kelsrick loot receipt."
 	var c=s.get("clip")
 	if not c is Dictionary:return "Invalid Kelsrick clip."
 	if not c.is_empty():
@@ -183,3 +184,7 @@ static func run(s: Dictionary,src: Dictionary,queue: Array,ctx: Dictionary) -> A
 					else:effects.append({"type":"external","raw":row.raw_hex})
 				_:effects.append({"type":"external","raw":row.raw_hex})
 	return effects
+
+static func transport_error(inventory: Dictionary, quests: Dictionary) -> String:
+	var taken: bool=quests.get("jungle_kelsrick",{}).get("state",{}).get("loot_taken",false)
+	return "Kelsrick loot and inventory disagree." if taken != ("jungle:kelsrick:Fine_Longsword" in inventory.get("collected",[])) else ""

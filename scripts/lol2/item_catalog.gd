@@ -18,11 +18,22 @@ const Monastery = preload("res://scripts/lol2/monastery_conversation.gd")
 ## Jungle covers every later Act 1 area (Hive, monastery, shops, darker jungle).
 const SCOPES := ["cave","museum","jungle"]
 ## Shared hand-held limit; jungle_save already uses 64. Museum's old 22 is below its
-## admitted universe of 26 (cave 19 + museum 7).
+## admitted universe of 28 (cave 20 + museum 8).
 const MAX_CARRIED := 64
 const GENERATED := "res://assets/lol2/generated/"
 const FIXED := {
+	"cave:guard38:Short_Sword":{"slot":"weapon","label":"Short Sword","icon":GENERATED+"cave_captain_items/Short_Sword.png","origin":"cave"},
+	"cave:guard39:Short_Sword":{"slot":"weapon","label":"Short Sword","icon":GENERATED+"cave_captain_items/Short_Sword.png","origin":"cave"},
+	# Guards52/53 arrival grants (prop699/g7878, prop1067/g8908): one Short Sword and one Guard Shield each.
+	"cave:guard52:Short_Sword":{"slot":"weapon","label":"Short Sword","icon":GENERATED+"cave_captain_items/Short_Sword.png","origin":"cave"},
+	"cave:guard52:Guard_Shield":{"slot":"offhand","label":"Guard Shield","icon":GENERATED+"cave_guard_shield/Guard_Shield.png","origin":"cave"},
+	"cave:guard53:Short_Sword":{"slot":"weapon","label":"Short Sword","icon":GENERATED+"cave_captain_items/Short_Sword.png","origin":"cave"},
+	"cave:guard53:Guard_Shield":{"slot":"offhand","label":"Guard Shield","icon":GENERATED+"cave_guard_shield/Guard_Shield.png","origin":"cave"},
+	# Guard54's two separate arrival grants (prop1013 property4, actor54 property1; cave_guard54_loot.gd).
+	"cave:guard54:prop1013:Short_Sword":{"slot":"weapon","label":"Short Sword","icon":GENERATED+"cave_captain_items/Short_Sword.png","origin":"cave"},
+	"cave:guard54:actor54:Short_Sword":{"slot":"weapon","label":"Short Sword","icon":GENERATED+"cave_captain_items/Short_Sword.png","origin":"cave"},
 	"draracle/prop/1108/sample":{"slot":"","label":"Cavern find (unidentified)","icon":"","origin":"cave"},
+	"jungle:kelsrick:Fine_Longsword":{"slot":"weapon","label":"Fine Longsword","icon":GENERATED+"museum_sword_transfer/sword.png","origin":"jungle"},
 	"museum:item11:Fine_Longsword":{"slot":"weapon","label":"Fine Longsword","icon":GENERATED+"museum_sword_transfer/sword.png","origin":"museum"},
 	"museum:item10:Mail_Shirt":{"slot":"armor","label":"Mail Shirt","icon":GENERATED+"museum_mail/mail.png","origin":"museum","defense":20},
 	"museum:item8:Champion_Stone":{"slot":"","label":"Champion Stone","icon":GENERATED+"museum_stones/stone.png","origin":"museum","use":"champion_stone"},
@@ -30,6 +41,8 @@ const FIXED := {
 	"museum:control181:Tho_Broken":{"slot":"","label":"Broken Thohan","icon":GENERATED+"museum_broken_thohan/icon.png","origin":"museum"},
 	# The single original "92-Sk key" (preloaded in control87) and movable55's "68-SS1" (museum_key_locks_source.json).
 	"museum:control87:Sk_key":{"slot":"","label":"Sk key","icon":GENERATED+"museum_key_locks/sk_key.png","origin":"museum"},
+	# Prop153 pedestal grant "7-Long arm" (museum_long_arm_source.json); same modern weapon slot as the shop Long arm.
+	"museum:prop153:Long_arm":{"slot":"weapon","label":"Long arm","icon":GENERATED+"museum_long_arm/icon.png","origin":"museum"},
 	"museum:movable55:SS1":{"slot":"","label":"SS1","icon":GENERATED+"museum_key_locks/ss1.png","origin":"museum"},
 	"jungle:item51:Th_Dagger":{"slot":"weapon","label":"Th Dagger","icon":GENERATED+"jungle_source_pickups/th_dagger.png","origin":"jungle"},
 	"jungle:weapon_shop:Gargoyle_Bracers":{"slot":"offhand","label":"Gargoyle Bracers","icon":GENERATED+"weapon_shop/Gargoyle_Bracers.png","origin":"jungle","defense":5},

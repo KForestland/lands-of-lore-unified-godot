@@ -390,6 +390,8 @@ func apply_area_handoff(state: Variant) -> String:
 	if not error.is_empty(): return error
 	error = Save.Quests.validate(state.get("quests"))
 	if not error.is_empty(): return error
+	error = preload("res://scripts/lol2/jungle_kelsrick_state.gd").transport_error(state.inventory,state.quests)
+	if not error.is_empty(): return error
 	error = preload("res://scripts/lol2/player_item_state.gd").transport_error(state.inventory,state.quests)
 	if not error.is_empty(): return error
 	error = preload("res://scripts/lol2/player_magic_state.gd").transport_error(state.inventory,state.quests)

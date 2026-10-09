@@ -11,10 +11,11 @@ def main():
     assert digest=='b399b5c8bfea3597293a3237f30f45985efa2dd88d2dc29d5d18ca7488f60891'
     base,n=u32(raw,4),u32(raw,0x34)
     states=base+n*91+4;frames=states+u32(raw,states-4)*16+4;names=frames+u32(raw,frames-4)*12
-    mapping={'cave:captain:Short_Sword':(4,'5-Short swd'),'cave:captain:Burnt_Chain':(36,'37-Brnt Chain'),
+    mapping={'jungle:kelsrick:Fine_Longsword':(5,'6-Fine longswd'),'cave:guard38:Short_Sword':(4,'5-Short swd'),'cave:guard39:Short_Sword':(4,'5-Short swd'),'cave:guard52:Short_Sword':(4,'5-Short swd'),'cave:guard53:Short_Sword':(4,'5-Short swd'),'cave:guard52:Guard_Shield':(37,'38-Guard shield'),'cave:guard53:Guard_Shield':(37,'38-Guard shield'),'cave:guard54:prop1013:Short_Sword':(4,'5-Short swd'),'cave:guard54:actor54:Short_Sword':(4,'5-Short swd'),
+    'cave:captain:Short_Sword':(4,'5-Short swd'),'cave:captain:Burnt_Chain':(36,'37-Brnt Chain'),
         'museum:item11:Fine_Longsword':(5,'6-Fine longswd'),'museum:item10:Mail_Shirt':(40,'41-Mail shirt'),
         'jungle:item51:Th_Dagger':(9,'10-Th Dagger'),'jungle:weapon_shop:Short_Sword':(4,'5-Short swd'),
-        'jungle:weapon_shop:Long_Arm':(6,'7-Long arm'),'jungle:weapon_shop:Firestorm':(8,'9-Firestorm'),
+        'jungle:weapon_shop:Long_Arm':(6,'7-Long arm'),'museum:prop153:Long_arm':(6,'7-Long arm'),'jungle:weapon_shop:Firestorm':(8,'9-Firestorm'),
         'jungle:weapon_shop:Gargoyle_Bracers':(41,'42-Gargoyle br'),
         'jungle:kityara:Empty_hand':(29,'30-Empty hand'),
         'jungle:magic_shop:Dag_Light':(27,'28-Dag Light'),'jungle:magic_shop:Tho_fixed':(20,'21-Tho fixed')}

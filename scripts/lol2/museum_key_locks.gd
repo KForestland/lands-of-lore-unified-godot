@@ -8,6 +8,7 @@ const State = preload("res://scripts/lol2/museum_key_locks_state.gd")
 const SOURCE := "res://scripts/lol2/museum_key_locks_source.json"
 const ROOT := "res://assets/lol2/generated/museum_key_locks/"
 const AIM_LIFT := 5.0
+const BURN := 5 # Sconce empty-hand op19 byte8.
 const PANEL_HEIGHT := 40.0 # Adapter: movable55 lowered pose is not replayed; x/z are the source placement.
 var host: Node3D
 var source: Dictionary
@@ -133,11 +134,37 @@ func target() -> Dictionary:
 		if kind == "" or not host.can_reach_item(point): continue
 		var distance: float = point.distance_to(host.camera.global_position)
 		if distance < best_distance: best = {"lock":id,"group":kind}; best_distance = distance
+	# Lit sconces (control113 selector1): the empty-hand record runs op19 on the player (control134 has none).
+	# Lock/panel actions take precedence over touching a flame in the same view.
+	if best.is_empty() and State.sconces_lit(state) and host.hand_item == "" and panel_kind_for_view() == "":
+		for id in source.sconces:
+			if source.sconces[id].empty_hand == null: continue
+			var flame_point := sconce_point(id)
+			if not host.can_reach_item(flame_point): continue
+			var d: float = flame_point.distance_to(host.camera.global_position)
+			if d < best_distance: best = {"sconce":int(id),"group":"burn"}; best_distance = d
 	var panel_kind := State.panel_group(state, host.hand_item)
 	if panel_kind != "" and host.can_reach_item(panel.global_position):
 		var distance: float = panel.global_position.distance_to(host.camera.global_position)
 		if distance < best_distance: best = {"panel":55,"group":panel_kind}
 	return best
+
+func panel_kind_for_view() -> String:
+	var kind := State.panel_group(state, host.hand_item)
+	return kind if kind != "" and host.can_reach_item(panel.global_position) else ""
+
+func sconce_point(id: Variant) -> Vector3:
+	var p: Array = source.sconces[str(id)].position
+	return Vector3(float(p[0]), float(p[1]) + 9.0, float(p[2]))
+
+## op19 (B6B5F -> 66130) sends a hit with word0x10 to the player. Source mode byte 0xEC leaves the native amount
+## ambiguous; the modern adapter applies byte8 (5) like mode0, through the shared Museum player health.
+func burn() -> bool:
+	if host.starting_magic == null: return false
+	var health: int = host.starting_magic.health()
+	host.starting_magic.set_health(maxi(0, health - BURN))
+	if host.has_method("save_feedback"): host.save_feedback("You fell. R: recover here · F9: load save" if host.starting_magic.health() == 0 else "The sconce flame burns you.")
+	return true
 
 func interaction_hint() -> String:
 	var t := target()
@@ -146,12 +173,14 @@ func interaction_hint() -> String:
 		"take": return "E — Take Sk key"
 		"give": return "E — Take SS1"
 		"put_back": return "E — Return SS1"
+		"burn": return "E — Touch the burning sconce"
 	return ""
 
 func use() -> bool:
 	var t := target()
 	if t.is_empty(): return false
 	var inventory := {"collected":host.carried_collected,"hand":host.hand_item}
+	if t.has("sconce"): return burn()
 	if t.has("panel"):
 		if State.run_panel(state, inventory).is_empty(): return false
 	else:

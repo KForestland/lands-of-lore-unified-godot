@@ -57,6 +57,9 @@ var failure_overlay: CanvasLayer
 var dragon_door: AnimatableBody3D
 var gallery: Node3D
 var key_locks: Node3D
+var long_arm: Node3D
+const LongArm = preload("res://scripts/lol2/museum_long_arm.gd")
+const LongArmState = preload("res://scripts/lol2/museum_long_arm_state.gd")
 const KeyLocks = preload("res://scripts/lol2/museum_key_locks.gd")
 const KeyLockState = preload("res://scripts/lol2/museum_key_locks_state.gd")
 var escape_regions: Array = []
@@ -212,6 +215,11 @@ func _ready() -> void:
 		add_child(key_locks)
 		var lock_error: String = key_locks.setup(self, checkpoint.get("museum_key_locks") if checkpoint is Dictionary else null)
 		if not lock_error.is_empty(): push_error(lock_error)
+	if LongArm.assets_ready():
+		long_arm = LongArm.new()
+		add_child(long_arm)
+		var arm_error: String = long_arm.setup(self, checkpoint.get("museum_long_arm") if checkpoint is Dictionary else null)
+		if not arm_error.is_empty(): push_error(arm_error)
 	dragon_door = preload("res://scripts/lol2/museum_dragon_door.gd").new()
 	add_child(dragon_door)
 	if checkpoint is Dictionary: dragon_door.restore_checkpoint(checkpoint.get("dragon_door", {}))
@@ -227,6 +235,9 @@ func excluded_faces() -> Dictionary:
 	var result := {}
 	if KeyLocks.assets_ready():
 		for index in KeyLocks.passage_data().closed_face_indices: result[int(index)] = true
+	# Prop153's floor trap regions are built by the Long arm owner.
+	if LongArm.assets_ready():
+		for index in LongArm.floor_data().closed_face_indices: result[int(index)] = true
 	return result
 
 func start_introduction() -> bool:
@@ -262,6 +273,7 @@ func checkpoint_state() -> Dictionary:
 		"escape_wall": escape_wall.checkpoint() if is_instance_valid(escape_wall) else {},
 		"gallery": gallery.checkpoint() if is_instance_valid(gallery) else {},
 		"museum_key_locks": key_locks.checkpoint() if is_instance_valid(key_locks) else KeyLockState.initial(),
+		"museum_long_arm": long_arm.checkpoint() if is_instance_valid(long_arm) else LongArmState.initial(),
 		"skeletons": skeleton_population.checkpoint() if is_instance_valid(skeleton_population) else preload("res://scripts/lol2/museum_skeleton_population_state.gd").initial(),
 		"dragon_door": dragon_door.checkpoint() if is_instance_valid(dragon_door) else {}
 	}
@@ -422,7 +434,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if open_inventory(): get_viewport().set_input_as_handled()
 		return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
-		if (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
+		if (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
 		return
 	super._unhandled_input(event)
 
@@ -440,6 +452,11 @@ func _physics_process(delta: float) -> void:
 	var lock_hint: String = key_locks.interaction_hint() if is_instance_valid(key_locks) else ""
 	if not lock_hint.is_empty():
 		interaction_label.text = lock_hint
+		interaction_label.show()
+		return
+	var arm_hint: String = long_arm.interaction_hint() if is_instance_valid(long_arm) else ""
+	if not arm_hint.is_empty():
+		interaction_label.text = arm_hint
 		interaction_label.show()
 		return
 	var control_hint: String = skeleton_population.control_hint() if is_instance_valid(skeleton_population) else ""
@@ -520,6 +537,9 @@ func apply_save(state: Dictionary) -> void:
 	if is_instance_valid(key_locks):
 		var lock_error: String = key_locks.restore_checkpoint(saved.get("museum_key_locks",KeyLockState.initial()))
 		if not lock_error.is_empty(): push_error(lock_error)
+	if is_instance_valid(long_arm):
+		var arm_error: String = long_arm.restore_checkpoint(saved.get("museum_long_arm",LongArmState.initial()))
+		if not arm_error.is_empty(): push_error(arm_error)
 	champion_stones.restore_collected(carried_collected+item_effect_checkpoint.spent)
 	mail_shirt.visible = not MAIL_ITEM_ID in carried_collected
 	player_magic_checkpoint = preload("res://scripts/lol2/player_magic_state.gd").restore(saved.get("magic",preload("res://scripts/lol2/player_magic_state.gd").initial())).checkpoint

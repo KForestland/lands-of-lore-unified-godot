@@ -31,6 +31,11 @@ var lurking_roach_population: Node3D
 var scenic_guard: Node3D
 var eyes: Node3D
 var captain: Node3D
+var guard38_loot: Node3D
+var guard39_loot: Node3D
+var guard54_loot: Node3D
+var guard52_loot: Node3D
+var guard53_loot: Node3D
 var guard_controls: Node3D
 ## Fighting progression subset; becomes Jungle quests on arrival (player_fighting_transport.gd).
 var quest_state: Dictionary={}
@@ -191,6 +196,11 @@ func _ready() -> void:
 		captain=preload("res://scripts/lol2/cave_captain.gd").new();captain.name="CaveCaptain56";add_child(captain)
 		var captain_error: String=captain.setup(self)
 		if not captain_error.is_empty():push_error(captain_error)
+		guard38_loot=preload("res://scripts/lol2/cave_guard38_loot.gd").new();add_child(guard38_loot);guard38_loot.setup(self)
+		guard39_loot=preload("res://scripts/lol2/cave_guard39_loot.gd").new();add_child(guard39_loot);guard39_loot.setup(self)
+		guard54_loot=preload("res://scripts/lol2/cave_guard54_loot.gd").new();add_child(guard54_loot);guard54_loot.setup(self)
+		guard52_loot=preload("res://scripts/lol2/cave_guard_pair_loot.gd").new().configure("52");add_child(guard52_loot);guard52_loot.setup(self)
+		guard53_loot=preload("res://scripts/lol2/cave_guard_pair_loot.gd").new().configure("53");add_child(guard53_loot);guard53_loot.setup(self)
 		guard_controls=preload("res://scripts/lol2/cave_guard_controls.gd").new()
 		guard_controls.name="CaveGuardControls"
 		add_child(guard_controls)
@@ -421,6 +431,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			return
 		if event.keycode == KEY_E:
+			if guard38_loot!=null and guard38_loot.collect():
+				get_viewport().set_input_as_handled();return
+			if guard39_loot!=null and guard39_loot.collect():
+				get_viewport().set_input_as_handled();return
+			if guard54_loot!=null and guard54_loot.collect():
+				get_viewport().set_input_as_handled();return
+			for pair_loot in [guard52_loot,guard53_loot]:
+				if pair_loot!=null and pair_loot.collect():
+					get_viewport().set_input_as_handled();return
 			if captain!=null and captain.loot!=null and captain.loot.collect():
 				get_viewport().set_input_as_handled();return
 			interaction_requested = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
@@ -494,6 +513,11 @@ func _enter_museum() -> void:
 func carried_items() -> Array:
 	var items: Array = collectible.saved_ids()+aloe.collected+stalagmites.collected
 	if captain!=null:items+=preload("res://scripts/lol2/cave_captain_items.gd").from_checkpoint(captain.state)
+	if guard38_loot!=null:items+=guard38_loot.carried(guard38_loot.state)
+	if guard39_loot!=null:items+=guard39_loot.carried(guard39_loot.state)
+	if guard54_loot!=null:items+=guard54_loot.carried(guard54_loot.state)
+	for pair_loot in [guard52_loot,guard53_loot]:
+		if pair_loot!=null:items+=pair_loot.carried(pair_loot.state,pair_loot.actor)
 	return items.filter(func(id): return id not in item_effect_checkpoint.spent)
 
 func _completion_state() -> Dictionary:
@@ -528,6 +552,11 @@ func _process(_delta: float) -> void:
 		hud.text = "Draracle’s Caverns\nWASD + mouse · Space jump · E interact · I inventory\nLeft click strike · 1 Spark · 2 Healing · Q cast · F5 save · F9 load"
 	hud.text += "\n" + curse.message()
 	if captain!=null and captain.loot!=null and captain.loot.aimed(): hud.text += "\nE — Take Short Sword"
+	if guard38_loot!=null and guard38_loot.aimed(): hud.text += "\nE — Take Short Sword"
+	if guard39_loot!=null and guard39_loot.aimed(): hud.text += "\nE — Take Short Sword"
+	if guard54_loot!=null and not guard54_loot.aimed().is_empty(): hud.text += "\nE — Take Short Sword"
+	for pair_loot in [guard52_loot,guard53_loot]:
+		if pair_loot!=null and not pair_loot.aimed().is_empty(): hud.text += "\nE — Take " + ("Short Sword" if pair_loot.aimed() == "sword" else "Guard Shield")
 	if Time.get_ticks_msec() < save_notice_until:
 		hud.text += "\n" + save_notice
 	if collectible.collected:
@@ -685,6 +714,11 @@ func _save_state() -> Dictionary:
 	if lurking_roach_population!=null: result.lurking_roach=lurking_roach_population.checkpoint()
 	if eyes!=null:result.eyes=eyes.checkpoint()
 	if captain!=null:result.captain=captain.checkpoint()
+	if guard38_loot!=null and guard38_loot.checkpoint()!=null:result.guard38_loot=guard38_loot.checkpoint()
+	if guard39_loot!=null and guard39_loot.checkpoint()!=null:result.guard39_loot=guard39_loot.checkpoint()
+	if guard54_loot!=null and guard54_loot.checkpoint()!=null:result.guard54_loot=guard54_loot.checkpoint()
+	if guard52_loot!=null and guard52_loot.checkpoint()!=null:result.guard52_loot=guard52_loot.checkpoint()
+	if guard53_loot!=null and guard53_loot.checkpoint()!=null:result.guard53_loot=guard53_loot.checkpoint()
 	if guard_controls!=null:result.guard_controls=guard_controls.checkpoint()
 	result.player_form = player_form
 	result.curse = curse.snapshot()
@@ -779,6 +813,11 @@ func _quickload(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
 		lurking_roach_population.restore(state.get("lurking_roach",preload("res://scripts/lol2/cave_lurking_roach_state.gd").initial()))
 	if eyes!=null:eyes.restore(state.get("eyes",eyes.State.initial(eyes.src)))
 	if captain!=null:captain.restore(state.get("captain",captain.initial()))
+	if guard38_loot!=null:guard38_loot.restore(state.get("guard38_loot"))
+	if guard39_loot!=null:guard39_loot.restore(state.get("guard39_loot"))
+	if guard54_loot!=null:guard54_loot.restore(state.get("guard54_loot"))
+	if guard52_loot!=null:guard52_loot.restore(state.get("guard52_loot"))
+	if guard53_loot!=null:guard53_loot.restore(state.get("guard53_loot"))
 	if guard_controls!=null:guard_controls.restore(state.get("guard_controls",guard_controls.State.initial()),not state.has("guard_controls"))
 	if roach != null:
 		if state.has("roach"): roach.restore(state.roach)

@@ -1,5 +1,6 @@
 extends RefCounted
-## Bracers definition41 contributes5 to the native defense scalar. Existing
+## Bracers definition41 contributes5 to the native defense scalar; any equipped offhand-slot item contributes its own
+## pinned definition byte41 (Guard Shield definition37 = 5) through the same native six-slot sum. Existing
 ## playable health uses request*0.4; baseline defense0 and absent heading/mode
 ## modifiers remain explicit adapters. Evidence: gargoyle-bracers-checks.json.
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
@@ -9,7 +10,8 @@ static func scalar(host: Node) -> int:
 	var controller = host.get("item_effects")
 	if controller == null: return 0
 	var carried: Array=controller.carried()
-	var value:=Catalog.defense(BRACERS) if controller.state().get("offhand", "") == BRACERS and BRACERS in carried else 0
+	var offhand=controller.state().get("offhand", "")
+	var value:=Catalog.defense(offhand) if offhand is String and Catalog.slot(offhand)=="offhand" and offhand in carried else 0
 	var armor=host.get("equipped_armor")
 	if armor is String and armor in carried:
 		if Catalog.slot(armor)=="armor":value+=Catalog.defense(armor)

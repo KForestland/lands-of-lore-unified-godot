@@ -127,7 +127,7 @@ def main():
                   gallery=dict(lever=53, grate=51, lever_position=place(movables[53])['position'], grate_position=place(movables[51])['position']),
                   initial_loaded=[87],
                   not_hosted={'78': 'control106 panel texture/animated motion (pose swap only); opcode204 region1237 material select; command sound',
-                              '113': 'props276-279 event1/2, prop297 property16, prop126 effect; sconce recharge (57b-Fire brnt to 57a-Fire crstl) and empty-hand op19',
+                              '113': 'props276-279 event1/2, prop297 property16, prop126 effect; sconce recharge (held 57b-Fire brnt consumed, one 57a-Fire crstl granted) UNRESOLVED: no known pre-exit 57b producer found in the L1/L3/L4/L5 grant census and the current port has none (original reachability not proven either way; a future 57a use/burn producer would need this transform). Empty-hand op19 is hosted as a modern 5-point burn (native mode byte 0xEC amount ambiguous)',
                               '114': 'opcode197 region504 marker3/5, locals1/2/27 bookkeeping, movables80/81 flank motion, movable55 animated travel',
                               '140': 'movable78 reset, prop125 effect',
                               'kind8': 'own animation endpoint chains (op 0x18), controls159-161 events without observable records',

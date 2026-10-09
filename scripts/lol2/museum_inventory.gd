@@ -103,6 +103,11 @@ func _ready() -> void:
 		elif preload("res://scripts/lol2/cave_stalagmite.gd").valid_item(id):
 			name_text = "Stalagmite"
 			icon = ImageTexture.create_from_image(Image.load_from_file("res://assets/lol2/generated/cave_stalagmite/icon.png"))
+		# Generic catalog presentation for identities without a dedicated branch (e.g. cave guard drops).
+		if name_text == "Unidentified item" and preload("res://scripts/lol2/item_catalog.gd").known(id):
+			name_text = preload("res://scripts/lol2/item_catalog.gd").label(id)
+			var path := preload("res://scripts/lol2/item_catalog.gd").icon(id)
+			if icon == null and not path.is_empty() and FileAccess.file_exists(path): icon = ImageTexture.create_from_image(Image.load_from_file(path))
 		item_list.add_item(name_text,icon)
 		item_list.set_item_metadata(item_list.item_count - 1, id)
 	var details := HBoxContainer.new()
@@ -226,7 +231,8 @@ func select_item(index: int) -> void:
 	if id == preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM: detail_text.text = "Grants one free highest-charge attack spell."
 	if preload("res://scripts/lol2/hive_rune_items.gd").valid(id): detail_text.text = "An impression of the Hive inscription in wax."
 	if preload("res://scripts/lol2/cave_stalagmite.gd").valid_item(id): detail_text.text = "Taken from a crystal formation in Draracle’s caves. Select it as your weapon."
-	if preload("res://scripts/lol2/player_equipment.gd").offhand(id): detail_text.text = "Equip in your offhand. Defense +5. Stored while transformed."
+	if preload("res://scripts/lol2/player_equipment.gd").offhand(id): detail_text.text = "Equip in your offhand. Defense +%d. Stored while transformed." % preload("res://scripts/lol2/item_catalog.gd").defense(id)
+	if id.begins_with("cave:guard"): detail_text.text = "Dropped by a defeated cave guard. " + ("Equip in your offhand. Defense +%d. Stored while transformed." % preload("res://scripts/lol2/item_catalog.gd").defense(id) if preload("res://scripts/lol2/player_equipment.gd").offhand(id) else "Select it as your weapon.")
 
 func toggle_equipment() -> void:
 	if equip_button.disabled or selected_index < 0: return

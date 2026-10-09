@@ -13,6 +13,8 @@ const Packet=preload("res://scripts/lol2/jungle_kelsrick_packet.gd")
 const POP_CONFIG:={"root":"res://assets/lol2/generated/jungle_kelsrick/sprites/","source":"res://scripts/lol2/jungle_kelsrick_population_source.json",
 	"target_prefix":"junglekelsrick","fighting_owner":"quest_state","nav":"res://assets/lol2/generated/creature_nav/L4_HJ.json",
 	"names":{"7":"Kelsrick"},"look":{"7":{"canvas":[320,200],"scale":0.47,"floor_row":187,"radius":16,"height":56}}}
+const LOOT_ITEM := "jungle:kelsrick:Fine_Longsword"
+const LOOT_DELAY := 5.0 # Modern corpse retirement, measured in active world seconds.
 const CLIP_SCALE:=0.47
 const REACH:=110.0
 const MAX_RECEIPTS:=Packet.MAX_RECEIPTS
@@ -39,6 +41,7 @@ var effect_log: Array=[]
 var mesh: MeshInstance3D
 var voice: AudioStreamPlayer3D
 var textures: Dictionary={}
+var loot_sprite: Sprite3D
 
 func setup(owner_host: Node3D, supplied_hooks: Dictionary={}, saved: Variant=null) -> String:
 	host=owner_host;hooks=supplied_hooks
@@ -56,6 +59,13 @@ func setup(owner_host: Node3D, supplied_hooks: Dictionary={}, saved: Variant=nul
 	var material:=ShaderMaterial.new();material.shader=shader;mesh.material_override=material
 	mesh.visible=false;add_child(mesh)
 	voice=AudioStreamPlayer3D.new();add_child(voice)
+	loot_sprite=Sprite3D.new()
+	loot_sprite.texture=_texture("res://assets/lol2/generated/museum_sword_transfer/sword.png")
+	loot_sprite.pixel_size=0.5
+	loot_sprite.billboard=BaseMaterial3D.BILLBOARD_FIXED_Y
+	loot_sprite.texture_filter=BaseMaterial3D.TEXTURE_FILTER_NEAREST
+	loot_sprite.no_depth_test=false
+	add_child(loot_sprite)
 	return restore(saved if saved!=null else initial())
 
 ## ---- saved packet ---------------------------------------------------------------------------
@@ -117,7 +127,7 @@ func use() -> bool:
 	return not effects.is_empty()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_E and use():
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_E and (collect_loot() or use()):
 		get_viewport().set_input_as_handled()
 
 ## Generic health loss (player melee/spell) enters the source as the kind9 hit records.
@@ -267,10 +277,38 @@ func _texture(path: String) -> Texture2D:
 		textures[path]=ImageTexture.create_from_image(Image.load_from_file(path))
 	return textures[path]
 
+func loot_target() -> bool:
+	if loot_sprite==null or not loot_sprite.visible or not world_active() or get_tree().paused or host.flying: return false
+	if Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED or hold: return false
+	if is_instance_valid(host.interface_hud) and host.interface_hud.cursor_active: return false
+	var offset: Vector3=loot_sprite.global_position-host.camera.global_position
+	if offset.length()<0.01 or offset.length()>96.0 or (-host.camera.global_basis.z).dot(offset.normalized())<0.97: return false
+	var ray:=PhysicsRayQueryParameters3D.create(host.camera.global_position,loot_sprite.global_position,1,[host.player.get_rid()])
+	ray.hit_from_inside=true
+	return get_world_3d().direct_space_state.intersect_ray(ray).is_empty()
+
+func collect_loot() -> bool:
+	if not loot_target() or LOOT_ITEM in host.carried_collected: return false
+	if host.carried_collected.size()>=preload("res://scripts/lol2/item_catalog.gd").MAX_CARRIED:
+		host.save_feedback("Your inventory is full.");return false
+	state.loot_taken=true
+	host.carried_collected.append(LOOT_ITEM)
+	host._sync_exit_checkpoint()
+	if is_instance_valid(host.interface_hud): host.interface_hud.refresh_equipment()
+	host.save_feedback("Fine Longsword taken.")
+	_present()
+	return true
+
 func _present() -> void:
+	var retired: bool=state.present and int(state.health)==0 and float(state.death)>=LOOT_DELAY
+	loot_sprite.visible=retired and not state.get("loot_taken",false)
+	loot_sprite.global_position=population.bodies["64"].global_position+Vector3.UP*8
+	if loot_target() and is_instance_valid(host.interface_hud):
+		host.interface_hud.hint.text="E — Take Fine Longsword"
+		host.interface_hud.save_notice_remaining=0.2
 	var showing: bool=state.present and not state.clip.is_empty()
 	mesh.visible=showing
-	if population.meshes.has("64"): population.meshes["64"].visible=bool(state.present) and not showing
+	if population.meshes.has("64"): population.meshes["64"].visible=bool(state.present) and not showing and not retired
 	if not showing:
 		if voice.playing and state.clip.is_empty(): voice.stop()
 		return

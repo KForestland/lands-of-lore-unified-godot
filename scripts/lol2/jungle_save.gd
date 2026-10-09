@@ -46,6 +46,8 @@ static func validate(state: Variant, expected_format: String = FORMAT) -> String
 	if not error.is_empty(): return error
 	error = preload("res://scripts/lol2/player_fighting_transport.gd").transport_error(state.inventory,state.get("quests",{}))
 	if not error.is_empty(): return error
+	error = preload("res://scripts/lol2/jungle_kelsrick_state.gd").transport_error(state.inventory,state.get("quests",{}))
+	if not error.is_empty(): return error
 	var player = state.get("player")
 	if not player is Dictionary: return "Invalid player."
 	var position = player.get("position")

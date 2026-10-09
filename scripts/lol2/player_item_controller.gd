@@ -84,7 +84,9 @@ func melee_damage(base: int) -> int:
 func status() -> String:
 	var s:=state()
 	var lines: Array[String] = []
-	if s.get("offhand", "") != "": lines.append("Gargoyle Bracers · Defense +5" if host.player_form == 0 else "Gargoyle Bracers · Stored")
+	if s.get("offhand", "") != "":
+		var offhand: String = str(s.offhand)
+		lines.append("%s · Defense +%d" % [Catalog.label(offhand), Catalog.defense(offhand)] if host.player_form == 0 else Catalog.label(offhand) + " · Stored")
 	if s.champion.active: lines.append("Champion Stone · %ds" % ceili(float(s.champion.timer)/65536.0/State.TICKS_PER_SECOND))
 	if int(s.get("ancient_charges",0)) > 0: lines.append("Ancient Stone · %d charges" % int(s.ancient_charges))
 	return "\n".join(lines)
