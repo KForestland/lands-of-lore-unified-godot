@@ -120,7 +120,7 @@ CORE = PORTABLE + [(name, 'headless') for name in [
     'hive_marker_checkpoint_test', 'hive_actor_marker_test', 'hive_marker_runtime_test', 'hive_startup_geometry_test',
     'hive_fixed_geometry_test', 'hive_condition_geometry_test', 'hive_condition_runtime_test', 'hive_remaining_conditions_test', 'hive_player_conditions_test', 'hive_actor_conditions_test', 'hive_effective_stats_test', 'hive_clock_runtime_test', 'hive_initial_stats_test', 'hive_attack_runtime_test', 'hive_attack_feedback_test',
     'hive_stat_adjustments_test', 'hive_source_adjustments_test']]
-CORE += [('cave_prop83_collision_rewind_test','rendered'), ('cave_prop83_lift_live_test','rendered'), ('cave_prop83_lift_state_test','headless'), ('cave_stone_manafoil_live_test','rendered'), ('hive_net_exile_live_test','rendered'), ('hive_reaver_escape_test','rendered'), ('hive_reaver_amber_live_test','rendered'), ('museum_prism_test', 'rendered'), ('museum_long_arm_live_test','rendered'),('museum_long_arm_escape_test','rendered')]
+CORE += [('fire_crystal_live_test','rendered'), ('museum_sconce_recharge_test','rendered'), ('cave_splash_timer_boundary_test','headless'), ('cave_side_chamber_live_test','rendered'), ('cave_prop83_collision_rewind_test','rendered'), ('cave_prop83_lift_live_test','rendered'), ('cave_prop83_lift_state_test','headless'), ('cave_stone_manafoil_live_test','rendered'), ('hive_net_exile_live_test','rendered'), ('hive_reaver_escape_test','rendered'), ('hive_reaver_amber_live_test','rendered'), ('museum_prism_test', 'rendered'), ('museum_long_arm_live_test','rendered'),('museum_long_arm_escape_test','rendered')]
 CORE += [('museum_sconce_burn_test', 'rendered')]
 CORE += [('cave_guard38_loot_test', 'rendered')]
 CORE += [('cave_guard39_loot_test', 'rendered')]

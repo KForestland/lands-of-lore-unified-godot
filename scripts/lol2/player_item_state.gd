@@ -4,6 +4,10 @@ const Effects = preload("res://scripts/lol2/player_item_effects.gd")
 const Aloe = preload("res://scripts/lol2/cave_aloe.gd")
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 const TICKS_PER_SECOND := 60.0
+## Fire crystal charges (item byte +4, the op3/give_item property): magic shop give_item("57a-Fire crstl", 4); a lit
+## Museum sconce rekindles a burnt crystal with property 1. 0 = burnt ("57b-Fire brnt", same carried id).
+const CRYSTAL_SHOP_CHARGES := 4
+const CRYSTAL_RECHARGE_CHARGES := 1
 static func aloe_initial() -> Dictionary:
 	return {"pending":0,"base":0,"clock":0,"fraction":0.0}
 static func initial() -> Dictionary:
@@ -16,6 +20,9 @@ static func canonical(saved: Dictionary) -> Dictionary:
 	if saved.has("dragon_blood"): result.dragon_blood=saved.dragon_blood.duplicate(true)
 	if saved.has("offhand"): result.offhand = saved.offhand
 	if saved.has("dampened"): result.dampened = bool(saved.dampened)
+	if saved.has("fire_crystals"):
+		result.fire_crystals = {}
+		for id in saved.fire_crystals: result.fire_crystals[id] = int(saved.fire_crystals[id])
 	return result
 static func validate(saved: Variant, collected: Array = []) -> String:
 	if not saved is Dictionary or saved.get("version")!=1: return "Invalid item effects."
@@ -36,6 +43,13 @@ static func validate(saved: Variant, collected: Array = []) -> String:
 	# Dampen charm (handler27): the dampened flag (native player byte 0x23ABD bit0) only follows its consumption.
 	var dampened = saved.get("dampened",false)
 	if not dampened is bool or (dampened and preload("res://scripts/lol2/monastery_conversation.gd").DAMPEN not in saved.spent): return "Invalid Dampen charm state."
+	if saved.has("fire_crystals"):
+		var crystals = saved.fire_crystals
+		if not crystals is Dictionary: return "Invalid fire crystal charges."
+		for id in crystals:
+			var n = crystals[id]
+			if Catalog.use_kind(id) != "fire_crystal" or not (n is int or n is float) or float(n) != floorf(float(n)) or n < 0 or n > CRYSTAL_SHOP_CHARGES: return "Invalid fire crystal charges."
+			if not collected.is_empty() and id not in collected: return "Fire crystal charges for an item not carried."
 	var fraction = saved.get("fraction")
 	if not (fraction is int or fraction is float) or not is_finite(float(fraction)) or fraction<0 or fraction>=1: return "Invalid item timer fraction."
 	if saved.has("aloe"):

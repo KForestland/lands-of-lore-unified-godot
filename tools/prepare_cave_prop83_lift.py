@@ -64,7 +64,18 @@ def main():
         regions[str(r)] = dict(polygon=poly(r), floor=-1000, ceiling=5, neighbors=R[r]['neighbors'])
     for r in WALL:
         assert R[r]['floor_base'] == -32 and R[r]['ceiling_base'] == -32
-        regions[str(r)] = dict(polygon=poly(r), floor=-32, ceiling=-32, neighbors=R[r]['neighbors'],
+        # Per edge i (vertex i -> i+1): the neighbour's floor and ceiling at those two shared vertices (per-vertex
+        # source corners). After the opening the passage floor is -192: an edge needs wall where the neighbour floor
+        # stands higher (the chamber edge slopes 1026/1027/1028 top out at -32 there) or has no neighbour.
+        vi = R[r]['vertex_indices']; edges = []
+        for i, nb in enumerate(R[r]['neighbors']):
+            a_v, b_v = vi[i], vi[(i + 1) % len(vi)]
+            if nb is None or nb in WALL: edges.append(dict(neighbor=nb, floor=None, ceiling=None)); continue
+            nv = R[nb]['vertex_indices']
+            fc = R[nb]['floor_corners'] or [R[nb]['floor_base']] * len(nv); cc = R[nb]['ceiling_corners'] or [R[nb]['ceiling_base']] * len(nv)
+            assert a_v in nv and b_v in nv, (r, nb)
+            edges.append(dict(neighbor=nb, floor=[fc[nv.index(a_v)], fc[nv.index(b_v)]], ceiling=[cc[nv.index(a_v)], cc[nv.index(b_v)]]))
+        regions[str(r)] = dict(polygon=poly(r), floor=-32, ceiling=-32, neighbors=R[r]['neighbors'], edges=edges,
                                neighbor_spans={str(n): [R[n]['floor_base'], R[n]['ceiling_base']] for n in R[r]['neighbors'] if n is not None})
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from prepare_creature_audio_clips import stage_clips

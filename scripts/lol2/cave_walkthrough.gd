@@ -13,6 +13,7 @@ var aloe: Node3D
 var stalagmites: Node3D
 var stone_manafoil: Node3D
 var prop83_lift: Node3D
+var side_chamber: Node3D
 var equipped_item := ""
 var equipped_armor := ""
 var source_combat_enabled := true
@@ -167,6 +168,11 @@ func _ready() -> void:
 		prop83_lift = preload("res://scripts/lol2/cave_prop83_lift.gd").new()
 		add_child(prop83_lift)
 		prop83_lift.setup(self)
+	# Animated ambient props of the prop83 side chamber and the prop1362 splash sequencer.
+	if preload("res://scripts/lol2/cave_side_chamber.gd").assets_ready():
+		side_chamber = preload("res://scripts/lol2/cave_side_chamber.gd").new()
+		add_child(side_chamber)
+		side_chamber.setup(self)
 	if source_combat_enabled:
 		roach = preload("res://scripts/lol2/cave_roach.gd").new()
 		add_child(roach)

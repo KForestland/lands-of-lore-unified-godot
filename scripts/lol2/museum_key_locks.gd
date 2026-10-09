@@ -143,11 +143,24 @@ func target() -> Dictionary:
 			if not host.can_reach_item(flame_point): continue
 			var d: float = flame_point.distance_to(host.camera.global_position)
 			if d < best_distance: best = {"sconce":int(id),"group":"burn"}; best_distance = d
+	# Lit sconces with a burnt fire crystal in hand: every sconce's kind4 mode3 record (owner state1, held
+	# "57b-Fire brnt") takes the crystal and grants "57a-Fire crstl" property1 (cave/Museum supply: none in Act 1).
+	if best.is_empty() and State.sconces_lit(state) and _hand_crystal_burnt() and panel_kind_for_view() == "":
+		for id in source.sconces:
+			if source.sconces[id].get("recharge") == null: continue
+			var flame_point := sconce_point(id)
+			if not host.can_reach_item(flame_point): continue
+			var d: float = flame_point.distance_to(host.camera.global_position)
+			if d < best_distance: best = {"sconce":int(id),"group":"recharge"}; best_distance = d
 	var panel_kind := State.panel_group(state, host.hand_item)
 	if panel_kind != "" and host.can_reach_item(panel.global_position):
 		var distance: float = panel.global_position.distance_to(host.camera.global_position)
 		if distance < best_distance: best = {"panel":55,"group":panel_kind}
 	return best
+
+func _hand_crystal_burnt() -> bool:
+	var effects = host.get("item_effects")
+	return host.hand_item != "" and effects != null and is_instance_valid(effects) and effects.crystal_burnt(host.hand_item)
 
 func panel_kind_for_view() -> String:
 	var kind := State.panel_group(state, host.hand_item)
@@ -174,12 +187,19 @@ func interaction_hint() -> String:
 		"give": return "E — Take SS1"
 		"put_back": return "E — Return SS1"
 		"burn": return "E — Touch the burning sconce"
+		"recharge": return "E — Rekindle the fire crystal"
 	return ""
 
 func use() -> bool:
 	var t := target()
 	if t.is_empty(): return false
 	var inventory := {"collected":host.carried_collected,"hand":host.hand_item}
+	if t.has("sconce") and t.group == "recharge":
+		# op2 0x18 takes the held crystal; op3 gives it back rekindled (same carried id, 1 charge).
+		if not host.item_effects.recharge_crystal(host.hand_item): return false
+		host.hand_item = ""
+		if host.has_method("save_feedback"): host.save_feedback("The fire crystal glows again.")
+		return true
 	if t.has("sconce"): return burn()
 	if t.has("panel"):
 		if State.run_panel(state, inventory).is_empty(): return false

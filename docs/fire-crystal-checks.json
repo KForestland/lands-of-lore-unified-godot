@@ -1,0 +1,37 @@
+{
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "handler": {
+  "index": 2,
+  "address": "0x96080",
+  "spans": {
+   "0x96080": "fd892d548f95d04a097b301c56f151c2893447a7c886acaf414e05140439a09b",
+   "0x960e4": "edb407e05731d20b7dff8b6db01f981bedeb3578a105cf8238178a5ce8fe5b25"
+  }
+ },
+ "definitions": {
+  "57": {
+   "name": "57a-Fire crstl",
+   "identity": "0xe7b89177",
+   "handler": 2
+  },
+  "58": {
+   "name": "57b-Fire brnt",
+   "identity": "0xddc02377",
+   "handler": 0
+  }
+ },
+ "sconce_recharge": {
+  "controls": "117..139",
+  "records": 23,
+  "held": "57b-Fire brnt",
+  "grant": "57a-Fire crstl",
+  "property": 1
+ },
+ "shop": {
+  "grants": 3,
+  "property": 4
+ },
+ "burnout_definition": "runtime entry ([0x96904]->+0x88+4 -> 91-byte record identity); 57b by the 57a/57b pairing (inference)",
+ "act1_reachability": "no 57b grant; 57a from the Museum sconces and the Jungle shop; L3_DH entered only from L1_DC: recharge unreachable in normal Act 1 play",
+ "passed": true
+}

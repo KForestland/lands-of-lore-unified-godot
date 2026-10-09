@@ -156,6 +156,10 @@ func present() -> void:
 	for child in body.get_children():
 		if child is CollisionShape3D: child.disabled = int(state.state) != 0
 	if is_instance_valid(prop_instance): prop_instance.visible = int(state.state) == 0
+	# Prop83 leaves the world with property16 (g264): its collider (layer 2, which the player also collides with)
+	# must not keep blocking the approach through region1040 to the opened wall regions.
+	for child in body.get_children():
+		if child is CollisionShape3D: child.disabled = int(state.state) != 0
 	var h: float = float(state.shaft)
 	var raised := h > State.SHAFT_START + 0.5
 	for key in blocks:
@@ -168,11 +172,12 @@ func present() -> void:
 	if host.get("stone_manafoil") != null: host.stone_manafoil.set_lift(h - State.SHAFT_START)
 	_sync_mirrors()
 
-func _in_wall(polys: Array, p: Vector2) -> bool:
+func _in_wall(polys: Array, p: Vector2, margin: float = 1.5) -> bool:
 	for poly in polys:
 		if Geometry2D.is_point_in_polygon(p, poly): return true
+		if margin <= 0.0: continue
 		for i in poly.size():
-			if Geometry2D.get_closest_point_to_segment(p, poly[i], poly[(i + 1) % poly.size()]).distance_to(p) < 1.5: return true
+			if Geometry2D.get_closest_point_to_segment(p, poly[i], poly[(i + 1) % poly.size()]).distance_to(p) < margin: return true
 	return false
 
 ## Removes the vertical faces of the solid wall block (regions 1029..1033, -192..-32) from every host mesh and the
@@ -183,11 +188,16 @@ func _apply_opening() -> void:
 	var polys: Array = []
 	for key in ["1029","1030","1031","1032","1033"]: polys.append(_polygon(key))
 	var lo := -192.0 + t.y - 1.0; var hi := -32.0 + t.y + 1.0
+	var top := -32.0 + t.y
+	# Drops the block's vertical faces and its old top faces at -32 (floor surfaces of the zero-height regions,
+	# replaced below by a rock ceiling) inside the wall polygons.
 	var drop := func(a: Vector3, b: Vector3, c: Vector3) -> bool:
 		var cen := (a + b + c) / 3.0
 		if cen.y < lo or cen.y > hi: return false
-		if absf((b - a).cross(c - a).normalized().y) >= 0.2: return false
-		return _in_wall(polys, Vector2(cen.x, cen.z))
+		var ny := absf((b - a).cross(c - a).normalized().y)
+		if ny < 0.2: return _in_wall(polys, Vector2(cen.x, cen.z))
+		if ny > 0.999 and absf(cen.y - top) < 0.5: return _in_wall(polys, Vector2(cen.x, cen.z), 0.0)
+		return false
 	var stack: Array = [host]
 	while not stack.is_empty():
 		var n: Node = stack.pop_back()
@@ -213,12 +223,23 @@ func _apply_opening() -> void:
 		for i in range(1, poly.size() - 1):
 			for p in [poly[0], poly[i], poly[i + 1]]:
 				floors.set_uv(p / 128.0); floors.add_vertex(Vector3(p.x, -192.0 + t.y, p.y)); collision.append(Vector3(p.x, -192.0 + t.y, p.y))
-		var neighbors: Array = source.regions[key].neighbors
+		# Ceiling at -32 (the source ceiling of the opened regions).
+		for i in range(1, poly.size() - 1):
+			for p in [poly[0], poly[i], poly[i + 1]]:
+				walls.set_uv(p / 128.0); walls.add_vertex(Vector3(p.x, top, p.y)); collision.append(Vector3(p.x, top, p.y))
+		any_wall = true
+		# Edge walls: no neighbour, or a neighbour whose floor at the shared vertices stands above -192 (the chamber
+		# edge slopes 1026/1027/1028 meet this edge at -32, so the main chamber stays sealed as in the source).
+		var edges: Array = source.regions[key].edges
 		for i in poly.size():
-			if neighbors[i] != null: continue
-			any_wall = true
+			var e: Dictionary = edges[i]
+			var ha := -32.0; var hb := -32.0
+			if e.neighbor != null:
+				if e.floor == null: continue
+				ha = minf(float(e.floor[0]), -32.0); hb = minf(float(e.floor[1]), -32.0)
+				if ha <= -191.5 and hb <= -191.5: continue
 			var a: Vector2 = poly[i]; var b: Vector2 = poly[(i + 1) % poly.size()]
-			var quad := [Vector3(a.x, -192.0 + t.y, a.y), Vector3(b.x, -192.0 + t.y, b.y), Vector3(b.x, -32.0 + t.y, b.y), Vector3(a.x, -32.0 + t.y, a.y)]
+			var quad := [Vector3(a.x, -192.0 + t.y, a.y), Vector3(b.x, -192.0 + t.y, b.y), Vector3(b.x, hb + t.y, b.y), Vector3(a.x, ha + t.y, a.y)]
 			for k in [0,1,2,0,2,3]:
 				walls.set_uv(Vector2(quad[k].x + quad[k].z, -quad[k].y) / 128.0); walls.add_vertex(quad[k]); collision.append(quad[k])
 	floors.generate_normals()

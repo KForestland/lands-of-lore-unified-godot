@@ -17,7 +17,7 @@
 3. **Selector2 reached.** kind3 value2 runs g264:
    - op9 self property16;
    - op196 lifts the floors of shaft regions 397/434/436/451/452/503/505/506 from −1000 to −290 (absolute, speed5);
-   - op196 drops the floors of regions 1029..1033 by 160 (relative, speed0, so immediately). These are solid zero-height wall regions (floor = ceiling = −32), so this opens a 160-unit passage. A stricter shared-edge audit shows it reaches corridor1820..1822; source slopes at1026..1028 still seal the larger chamber. No slopes were flattened.
+   - op196 drops the floors of regions 1029..1033 by 160 (relative, speed0, so immediately). These are solid zero-height wall regions (floor = ceiling = −32), so this opens the five wall regions into a 160-unit alcove beside regions 1037..1041. A strict shared-edge check shows the main chamber 1020..1028/1815..1819 stays sealed by its source edge slopes, while corridor 1820..1822 connects through region1033; see `cave-side-chamber.md`.
 4. **Result.** The raised shaft floor sits a 5-unit step below the −285 rim.
 
 ## Port

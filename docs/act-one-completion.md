@@ -1,30 +1,26 @@
 # Classic Act 1 completion
 
-Latest verified delivery: [R11](act-one-r11-verification.md), with 296 passing regressions, all 11 fresh campaign legs, both exports, 21,169 matching packed assets and actual Linux package checks. Later Prism/Reaver/Amber/Net and Cave Stone/Manafoil work is separate. Later source now restores the Manafoil shaft lift, indexed visuals, pause/save behavior and removal of the trigger collider. Grounded pickup/escape and focused integration checks pass; the next candidate/full campaign remains pending.
+Latest verified delivery: [R9](act-one-r9-verification.md), with292 passing regressions, a fresh11-leg campaign and actual Linux package checks. Source after R9 adds Museum Dragon Blood explosives, renewable beehive wax, Dawn’s library translation/Dampen reward, Aloe plants, tapped sap trees and a breakable Aloe barrel. Main integration checks pass, including exact regrowth-timer boundaries and inventory-capacity cases. R10’s full run passed293/295; both failures were outdated route expectations for the initialized beehive packet. The failed source/run is preserved, and corrected route checks pass. R11 full296/campaign/package verification is starting; R9 binaries remain the verified delivery baseline.
 
 Scope clarification (2026-09-15): this is an intermediate milestone within the
 [complete Classic Edition](classic-edition.md), not the final product endpoint.
 Current priority is in [the active plan](restoration-plan.md).
 
-Earlier delivery checkpoint (2026-10-09, R7): all284 regressions passed on unchanged source; all eleven fresh cave-to-departure gameplay legs passed, including Kityara. The original audit wrapper rejected a fractional-second baseline timestamp against a whole-second start receipt. Its failure is preserved; six timestamp-boundary checks and the corrected audit pass with zero source drift. The sealed archive independently matches all997 tested source files and the candidate. Linux/Windows exports share the same game pack; all21107 packed assets match. Actual Linux movement/save/load/restart, captain sword pickup/save and archived Jungle UI resume/save/load passed. [Evidence](act-one-r7-checks.json). This verifies the route candidate, not all optional content or owner acceptance.
+Current acceptance reconciliation (2026-10-09): modern implementations are preferred when they save time and preserve the intended gameplay. Native instruction/timing parity is supporting evidence, not a release requirement.
 
-R7 adds all17 Museum key insert/return interactions, preserving the single initial control87 key. Lock78 opens/closes its source-derived passage and collision;113 lights sconces;114 exposes the SS1 panel;140 controls the gallery grate. The fighting captain's original sword becomes a visible, one-time pickup after a documented modern retirement delay, with equipment and saves preserved. The shared source auditor now expects initial Soul5 + Julian1 + repair1 =7, and supported preparation tools accept an explicit RE helper root. Lock interaction checks supply camera vantages; earned access to every lock is unverified. Remaining rewards/traps, sconce recharge and source.not_hosted effects remain open in R7.
-
-Chief-hut puzzle/movie, Kelsrick media, Bacatta57/65, village alarm/drunk, sap/fruit use and Kityara meeting/blade are included in verified R7. General creature loot, renewable harvest/beehives, remaining Museum rewards/traps and some hostile/late-room outcomes remain incomplete. Clean-machine asset preparation, native Windows, representative GPU/audio review and Bob acceptance remain open.
-
-Current acceptance reconciliation:
-
-| Requirement | Current evidence / gap | Next owner and action |
+| Requirement | Verified state | Remaining action |
 | --- | --- | --- |
-| Continuous route and retained continuation | R7 eleven linked legs pass through darker-jungle arrival; production demo controls used, with documented route-driver timing adapters | Lead: retain this baseline and revalidate affected behavior after integration |
-| Combat, quest items, forms and saves | R7 full284 and campaign pass; both Dawn hosts have focused hostile combat/in-flight save checks | Lead: address observed failures and remaining content below; do not treat route coverage as every branch |
-| Bacatta alert-before-first-meeting | Actor65/prop553 integrated in current source with focused review/checks; included in R7 binaries | Lead: include in combined campaign verification and refreshed candidate |
-| Other original content | Chief-hut continuous branch passes from its documented supplied checkpoint; optional pickups/traps, general creature item/drop producers, prop93 event producer and optional room/offer outcomes remain unresolved or incomplete | Lead: reconcile each producer/outcome; keep explicit deferrals in candidate notes and full Classic scope |
-| Visual/audio acceptance | Packaged screenshots inspected on a private display; representative GPU and audible review missing | Bob: initial R4 playtest requested; lead reproduces and fixes findings |
-| Repeatable package | Prepared-asset staging verifier and both platform exports pass; original-media extraction from a clean machine remains unportable | Lead: finish portable preparation; native Windows runtime remains untested |
-| Owner acceptance | Not recorded | Bob: report playtest findings; final acceptance remains required after fixes |
+| Continuous route and saved continuation | R11 has 11 fresh linked legs through darker-jungle arrival, including Kityara; full296 and packaged Linux continuation passed | Finish R12 full304/fresh11/package verification on its frozen revision |
+| Combat, items, forms and saves | Source includes the shaft lift, later pickups and their focused integration checks | Preserve state and ordinary gameplay as new effects are integrated |
+| Loot and harvesting | Captain and guards38/39/52/53/54, Kelsrick loot, renewable Aloe/sap/wax and barrel behavior are implemented; see their feature reports | Do not classify all loot or harvesting as absent; assess any remaining producer individually |
+| Museum and Hive optional items | Long Arm reward/trap, Prism pickup, Reaver/Amber, Net pickup, Cave Stone and Manafoil are implemented with documented adapters | Prism blindness/material effects, Net hit effect and listed secondary Reaver triggers remain separate work |
+| Private reviewed additions | Cave ambient splash/passage fixes and Fire crystal use/recharge passed independent focused checks | Await R12 freeze completion before integrating; Museum recharge currently requires a supplied crystal because normal Act1 offers no return path |
+| Unresolved original content | Museum prop93 treasure producer and some optional room/offer outcomes remain unverified; source.not_hosted lists identify specific secondary effects | Resolve gameplay-relevant outcomes with bounded investigation and modern implementations; ten skeleton deaths do not establish a treasure grant |
+| Visual/audio acceptance | Local packaged screenshots and targeted shaft/splash visuals reviewed | Representative GPU and audible playback review remain open |
+| Repeatable package | Both R12 exports, all21,205 prepared assets and actual Linux save/restart/captain checks passed | Complete fresh-campaign package verification; clean-machine original-media preparation and native Windows execution remain open |
+| Owner acceptance | Not recorded | Review a certified candidate after remaining fixes |
 
-The current actor inventory has111 partial bindings,80 staging placements,3 unactivated by direct scripts and0 unbound placements. A binding is not proof of complete behavior. This actor inventory does not count control-backed encounters or puzzle mechanisms. Counts are not completion percentages. [Candidate notes](playtest-notes-20261007.md) retain known gaps. Dated checkpoints and the older area table below describe earlier revisions; the evidence above supersedes their campaign and spell-integration status.
+The actor inventory records111 partial bindings,80 staging placements and3 unactivated by direct scripts. A binding is not proof of complete behavior, and these counts are not completion percentages. Historical notes below describe earlier revisions; their old missing-feature and campaign claims do not override the current evidence above.
 
 Bob confirmed on 2026-09-14: complete Act 1 through leaving the Huline Jungle for the darker jungle beyond. Jungle arrival is an intermediate milestone. Enhanced content remains deferred.
 

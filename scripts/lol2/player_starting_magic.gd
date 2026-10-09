@@ -154,6 +154,38 @@ func spark() -> void:
 	visual.material_override=material
 	host.add_child(visual)
 	get_tree().create_timer(0.12).timeout.connect(visual.queue_free)
+## Fire crystal (handler2) fire effect, pool object 0x6E: modern adapter through the shared Spark ray and creature
+## damage path (8 damage, non-melee reward path), without Spark-only receivers. Returns what the ray struck.
+func crystal_fire() -> String:
+	var origin: Vector3=host.camera.global_position
+	var end: Vector3=origin-host.camera.global_basis.z*384
+	var query:=PhysicsRayQueryParameters3D.create(origin,end,11 if host.get("ambush_population")!=null else 3,[host.player.get_rid()])
+	var hit: Dictionary=host.get_world_3d().direct_space_state.intersect_ray(query)
+	var struck := ""
+	if not hit.is_empty():
+		end=hit.position
+		if host.get("roach")!=null and hit.collider==host.roach.body: host.roach.receive_magic(8); struck="roach"
+		elif hit.collider.has_meta("population_actor"): hit.collider.get_meta("population_owner").receive_damage(str(hit.collider.get_meta("population_actor")),8,false,20); struck=str(hit.collider.get_meta("population_actor"))
+		elif hit.collider.has_meta("cave_population_actor"): hit.collider.get_meta("cave_population_owner").receive_damage(str(hit.collider.get_meta("cave_population_actor")),8,false,20); struck=str(hit.collider.get_meta("cave_population_actor"))
+		elif hit.collider.has_meta("hive_guardian"): host.get_node("Warriors").damage_guardian(int(hit.collider.get_meta("hive_guardian")),8,20); struck="guardian"
+		elif hit.collider.has_meta("hive_return_actor"): hit.collider.get_meta("hive_population_owner").receive_damage(str(hit.collider.get_meta("hive_return_actor")),8,false,20); struck=str(hit.collider.get_meta("hive_return_actor"))
+		elif hit.collider.has_meta("hive_executioner_live"): host.executioner_live.receive_strike(8,false,20); struck="executioner"
+	var mesh:=ImmediateMesh.new()
+	mesh.surface_begin(Mesh.PRIMITIVE_LINES)
+	mesh.surface_add_vertex(origin+host.camera.global_basis.x*4-Vector3(0,4,0))
+	mesh.surface_add_vertex(end)
+	mesh.surface_end()
+	var visual:=MeshInstance3D.new()
+	visual.mesh=mesh
+	var material:=StandardMaterial3D.new()
+	material.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.albedo_color=Color(1,0.45,0.1)
+	visual.material_override=material
+	host.add_child(visual)
+	get_tree().create_timer(0.12).timeout.connect(visual.queue_free)
+	notice="Fire crystal"
+	notice_time=0.8
+	return struck
 func _unhandled_input(event: InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	if event.keycode==KEY_1: select_spell("spark")

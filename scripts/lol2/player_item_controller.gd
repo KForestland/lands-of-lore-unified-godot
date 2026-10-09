@@ -50,6 +50,14 @@ func use(id: String) -> bool:
 		if curse != null and int(curse.state.get("phase",0)) == 1:
 			curse.state.merge({"phase":0,"target":int(host.player_form),"remaining":0.0,"duration":0.0},true)
 		return true
+	if Catalog.use_kind(id) == "fire_crystal":
+		# Handler2: the charge is spent first, then the fire effect looks for a target; at 0 the crystal burns out.
+		var charges := crystal_charges(id)
+		if charges <= 0 or not is_instance_valid(host.starting_magic) or host.starting_magic.health() <= 0: return false
+		if not current.has("fire_crystals"): current.fire_crystals = {}
+		current.fire_crystals[id] = charges - 1
+		host.starting_magic.crystal_fire()
+		return true
 	# Every Ancient Stone (Hive rune room, Cave prop1050) is definition68/handler6 and shares the player counter byte.
 	if Catalog.use_kind(id) == "ancient":
 		if not is_instance_valid(host.starting_magic) or host.starting_magic.health() <= 0: return false
@@ -74,6 +82,19 @@ func use(id: String) -> bool:
 	current.spent.append(id)
 	if host.get("carried_inventory")!=null: host.carried_inventory.collected=result.inventory
 	else: host.carried_collected=result.inventory
+	return true
+## Remaining fire crystal charges (shop crystals start at 4; 0 = burnt out).
+func crystal_charges(id: String) -> int:
+	return int(state().get("fire_crystals", {}).get(id, State.CRYSTAL_SHOP_CHARGES))
+func crystal_burnt(id: String) -> bool:
+	return Catalog.use_kind(id) == "fire_crystal" and crystal_charges(id) <= 0
+## Lit-sconce kind4 mode3 (held "57b-Fire brnt"): op2 0x18 takes the held crystal, op3 grants "57a-Fire crstl"
+## property1. Same carried id adapter: the crystal returns to 1 charge.
+func recharge_crystal(id: String) -> bool:
+	if not crystal_burnt(id) or id not in carried(): return false
+	var current := state()
+	if not current.has("fire_crystals"): current.fire_crystals = {}
+	current.fire_crystals[id] = State.CRYSTAL_RECHARGE_CHARGES
 	return true
 func advance(delta: float) -> void:
 	if not is_instance_valid(host.starting_magic) or not host.starting_magic.world_active(): return
@@ -108,4 +129,6 @@ func status() -> String:
 	if s.champion.active: lines.append("Champion Stone · %ds" % ceili(float(s.champion.timer)/65536.0/State.TICKS_PER_SECOND))
 	if int(s.get("ancient_charges",0)) > 0: lines.append("Ancient Stone · %d charges" % int(s.ancient_charges))
 	if s.get("dampened",false): lines.append("Dampen charm · used")
+	for id in s.get("fire_crystals", {}):
+		if id in carried(): lines.append("Fire crystal · burnt out" if int(s.fire_crystals[id]) <= 0 else "Fire crystal · %d charges" % int(s.fire_crystals[id]))
 	return "\n".join(lines)

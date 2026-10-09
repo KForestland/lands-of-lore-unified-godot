@@ -519,6 +519,34 @@
     1030,
     1037
    ],
+   "edges": [
+    {
+     "neighbor": null,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": null,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1030,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1037,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    }
+   ],
    "neighbor_spans": {
     "1030": [
      -32,
@@ -556,6 +584,40 @@
     1037,
     1029,
     1027
+   ],
+   "edges": [
+    {
+     "neighbor": 1031,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1037,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1029,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1027,
+     "floor": [
+      -32,
+      -32
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    }
    ],
    "neighbor_spans": {
     "1031": [
@@ -603,6 +665,40 @@
     1026,
     1032
    ],
+   "edges": [
+    {
+     "neighbor": 1039,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1030,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1026,
+     "floor": [
+      -32,
+      -32
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1032,
+     "floor": null,
+     "ceiling": null
+    }
+   ],
    "neighbor_spans": {
     "1039": [
      -192,
@@ -649,6 +745,40 @@
     1028,
     1033
    ],
+   "edges": [
+    {
+     "neighbor": 1041,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1031,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1028,
+     "floor": [
+      -32,
+      -32
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1033,
+     "floor": null,
+     "ceiling": null
+    }
+   ],
    "neighbor_spans": {
     "1041": [
      -192,
@@ -694,6 +824,40 @@
     1032,
     1822,
     null
+   ],
+   "edges": [
+    {
+     "neighbor": 1041,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1032,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1822,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": null,
+     "floor": null,
+     "ceiling": null
+    }
    ],
    "neighbor_spans": {
     "1041": [

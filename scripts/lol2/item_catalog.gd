@@ -104,6 +104,8 @@ static func entry(id: Variant) -> Dictionary:
 		if WorldItems.valid(id) and WorldItems.source_name(id) == ALOE_SOURCE_NAME: result.use = "aloe"
 		# Definition111/handler98 consumes the held sap without a stat effect.
 		if WorldItems.valid(id) and WorldItems.source_name(id) == "109-Ironwod sap": result.use = "ironwood_sap"
+		# Magic-shop "57a-Fire crstl" (definition57/handler2): charges spent per use; burns out to "57b-Fire brnt".
+		if MagicShop.source_name(id) == "57a-Fire crstl": result.use = "fire_crystal"
 		# Rows54-57: definition84/handler20 consumes the held fruit and clears player status +1B5 (no heal/bonus).
 		if WorldItems.valid(id) and WorldItems.source_name(id) == "82-Vels fruit": result.use = "vels_fruit"
 		return result
