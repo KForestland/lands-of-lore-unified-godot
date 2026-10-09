@@ -82,11 +82,14 @@ func run() -> void:
 		return
 	scene.set_physics_process(false)
 	if not await walk_shop(routes.to_monastery,"MENT"): return
+	if scene.weapon_shop.state().locals.get("Met_Kityara",0) != 1 or scene.weapon_shop.state().locals.get("kityara_gave_knife",0) != 1 or scene.quest_state.monastery.globals.get("GV_LUTHER_HAS_WARBLADE",0) != 1 or scene.carried_collected.count("jungle:kityara:Empty_hand") != 1:
+		fail("Translated repair trip did not complete earned Kityara knife follow-up")
+		return
 	var output_path = "user://tests/act1_broken_repaired_monastery.json"
 	if not scene.quicksave(output_path).is_empty():
 		fail("Earned Thohan repair checkpoint invalid")
 		return
-	var report = {"passed":true,"input_sha256":FileAccess.get_sha256(input_path),"output_sha256":FileAccess.get_sha256(output_path),"scope":"Earlier earned translation checkpoint, original translation-visit exit, translated revisit, delayed orb grant, original Morgan blessing/returned orb, normal grounded shop walk and orb and broken sword repair exchange, walk back to monastery. No position/form/quest injection. Modern movement/curse ticks manually driven and time/audio4x. Earlier legs reused; not full Act One acceptance."}
+	var report = {"passed":true,"input_sha256":FileAccess.get_sha256(input_path),"output_sha256":FileAccess.get_sha256(output_path),"scope":"Earlier earned translation checkpoint, original translation-visit exit, translated revisit, delayed orb grant, original Morgan blessing/returned orb, normal grounded shop walk with earned Kityara knife follow-up and orb and broken sword repair exchange, walk back to monastery. No position/form/quest injection. Modern movement/curse ticks manually driven and time/audio4x. Earlier legs reused; not full Act One acceptance."}
 	FileAccess.open("res://docs/broken-repair-earned-walk-checks.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  ")+"\n")
 	print("PASS: earned Julian orb, normal MAGIC walk, Thohan repair exchange and monastery return")
 	scene.queue_free()

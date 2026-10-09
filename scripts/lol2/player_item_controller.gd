@@ -27,6 +27,13 @@ func use(id: String) -> bool:
 	if host.player_form!=0 or Catalog.use_kind(id) == "" or id not in carried(): return false
 	if not is_instance_valid(host.inventory): return false
 	var current:=state()
+	# Sap (handler98) and Vels fruit (handler20) consume the held item. Fruit also clears player status +1B5 and
+	# turns its indicator off; the port has no status model, so that cure has nothing to clear (docs/vels-fruit-use.md).
+	if Catalog.use_kind(id) in ["ironwood_sap","vels_fruit"]:
+		if not is_instance_valid(host.starting_magic) or host.starting_magic.health() <= 0: return false
+		current.spent.append(id)
+		carried().erase(id)
+		return true
 	if id == Ancient.ITEM:
 		if not is_instance_valid(host.starting_magic) or host.starting_magic.health() <= 0: return false
 		var use := AncientEffect.use(1,int(current.get("ancient_charges",0)),0)

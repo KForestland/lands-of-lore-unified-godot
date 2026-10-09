@@ -104,6 +104,12 @@ static func validate(state: Variant) -> String:
 	if state.has("jungle_drunk"):
 		var drunk_error:=preload("res://scripts/lol2/jungle_drunk_packet.gd").validate(state.jungle_drunk)
 		if not drunk_error.is_empty(): return drunk_error
+	if state.has("jungle_kityara"):
+		var kityara_error:=preload("res://scripts/lol2/jungle_kityara_packet.gd").validate(state.jungle_kityara)
+		if not kityara_error.is_empty(): return kityara_error
+	if state.has("jungle_chief_hut"):
+		var puzzle_error:=preload("res://scripts/lol2/jungle_chief_hut_state.gd").validate(state.jungle_chief_hut)
+		if not puzzle_error.is_empty(): return puzzle_error
 	if state.has("jungle_village_alarm"):
 		var alarm_error:=preload("res://scripts/lol2/jungle_village_alarm_packet.gd").validate(state.jungle_village_alarm)
 		if not alarm_error.is_empty(): return alarm_error

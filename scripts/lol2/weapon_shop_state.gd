@@ -43,6 +43,12 @@ static func enter_exterior(state: Dictionary) -> bool:
 	state.room = "WPNEXT"
 	state.flags["256"] = 0 # WPNEXT setup clears this flag.
 	return true
+## Entering WPN. Original room initialization (callback1, WPN_.WOM 0x672..0x67F) ends with set_local Met_Kityara=1 on
+## every path: the first meeting is earned by entering her shop (read by the Jungle Kityara follow-up, local35).
+static func enter_room(state: Dictionary) -> void:
+	state.room = "WPN"
+	state.orb_seen = false
+	state.locals["Met_Kityara"] = 1
 static func admitted(state: Dictionary, power_orb_owned: bool = false) -> bool:
 	var blocked := flag(state,71) and not power_orb_owned
 	blocked = blocked or state.locals.get("Kityara_No_Home",0) != 0 or state.locals.get("kityara_gave_knife",0) != 0
@@ -76,7 +82,7 @@ static func advance(state: Dictionary, delta: float) -> Array:
 		state.cursor = int(state.cursor)+1
 	return host_effects
 static func action(state: Dictionary, name: String) -> Array:
-	if state.room != "WPN" or active(state): return []
+	if state.room != "WPN" or active(state) or state.globals.get("GV_KITYARA_DEAD",0) != 0: return []
 	match name:
 		"longarm":
 			if flag(state,60): return []
@@ -93,7 +99,7 @@ static func action(state: Dictionary, name: String) -> Array:
 		_: return []
 	return begin(state,name)
 static func offer(state: Dictionary, source_name: String) -> Array:
-	if state.room!="WPN" or active(state): return []
+	if state.room!="WPN" or active(state) or state.globals.get("GV_KITYARA_DEAD",0) != 0: return []
 	if source_name=="83-Power orb": return begin(state,"offer_orb_repeat" if flag(state,63) else "offer_orb")
 	if source_name=="10-Th Dagger": return begin(state,"offer_dagger")
 	return []

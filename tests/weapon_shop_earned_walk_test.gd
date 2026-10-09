@@ -10,6 +10,13 @@ func walk_shop(route: Dictionary, target_room: String) -> bool:
 			if target_room == "WPNEXT" and scene.weapon_shop.active(): return true
 			if target_room == "MENT" and scene.monastery.active(): return scene.monastery.state().room == "MENT"
 			if scene.magic_shop.active(): return fail("Shop walk entered unexpected MAGIC room")
+			# Let production conversation holds finish before issuing another movement
+			# request. The owner advances its own clock and releases the player.
+			if scene.actor_input_locked():
+				for wait_tick in range(6000):
+					await process_frame
+					if not scene.actor_input_locked(): break
+				if scene.actor_input_locked(): return fail("Shop walk story hold did not finish")
 			var offset := target-Vector2(scene.player.position.x,scene.player.position.z)
 			if offset.length()<2 and scene.player.is_on_floor():
 				reached = true

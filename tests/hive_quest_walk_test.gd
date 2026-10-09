@@ -47,6 +47,9 @@ func fight_executioner() -> bool:
 		if not check(scene.resets==0 and not scene.flying,"Executioner fight left walkable route"): return false
 	return check(false,"Executioner duel exceeded traversal budget")
 
+func before_walk_step(_name: String, _waypoint: int, _step: int) -> void:
+	pass
+
 func walk(name: String, allow_exit: bool = false, destination_room: String = "") -> bool:
 	var route: Dictionary = routes[name]
 	for i in route.points.size():
@@ -71,6 +74,7 @@ func walk(name: String, allow_exit: bool = false, destination_room: String = "")
 				break
 			var delta: float = scene.player.get_physics_process_delta_time()
 			var direction := offset.normalized()*minf(1,offset.length()/(80*delta))
+			before_walk_step(name,i,step)
 			scene.move_grounded(Vector3(direction.x,0,direction.y),delta)
 			if not check(scene.resets == 0 and not scene.flying,"Walk reset or entered flight"): return false
 			if scene.has_node("Warriors"):
@@ -271,6 +275,9 @@ func kelsrick_inner_gate() -> void:
 	if not check(Geometry2D.is_point_in_polygon(Vector2(scene.player.position.x,scene.player.position.z),polygon) and scene.resets==0,"Did not cross south into region2752: %s"%scene.player.position): return
 	if not check(gate.effect_log.any(func(e): return e.type=="group" and int(e.group)==21156) and gate.effect_log.any(func(e): return e.type=="group" and int(e.group)==21138),"Gate log lacks the talk1 open/g5084 shut"): return
 	print("Earned Kelsrick talk1 -> inner gate crossing PASSED: natural talk1 opened 74/75 (g30684/g21156), walk crossed region2750 (g5084 shut behind via g21138) into region2752; no position or quest-flag injection after initial Hive spawn")
+	await finish_inner_gate_route()
+
+func finish_inner_gate_route() -> void:
 	current_scene.queue_free()
 	await process_frame
 	quit()

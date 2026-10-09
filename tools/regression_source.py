@@ -2,7 +2,7 @@
 import hashlib
 from pathlib import Path
 
-SUFFIXES = {'.gd', '.gdshader', '.tscn', '.tres', '.json'}
+SUFFIXES = {'.gd', '.gdshader', '.gdshaderinc', '.tscn', '.tres', '.json'}
 
 
 def snapshot(root: Path) -> dict:

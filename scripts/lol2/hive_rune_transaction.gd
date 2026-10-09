@@ -5,7 +5,14 @@ const Items = preload("res://scripts/lol2/hive_rune_items.gd")
 const Fighting = preload("res://scripts/lol2/hive_reward_application.gd")
 const Magic = preload("res://scripts/lol2/hive_magic_reward.gd")
 const Monastery = preload("res://scripts/lol2/monastery_quest_state.gd")
+const WorldItems = preload("res://scripts/lol2/jungle_world_items_catalog.gd")
 const WAX := "hive:item0:Wax"
+## Source RUNECL hotspot0 admits the held item by its GLOBAL definition name "71-Wax" (identity 2925189839). Hive wax and
+## the Jungle wax rows carry that same definition, so any carried wax of it is accepted (same catalog semantics as
+## item_catalog.gd's source-name uses).
+const WAX_SOURCE_NAME := "71-Wax"
+static func is_wax(id: Variant) -> bool:
+	return id is String and (id == WAX or (WorldItems.valid(id) and WorldItems.source_name(id) == WAX_SOURCE_NAME))
 static func draws(seed: int, maxima: Array) -> Dictionary:
 	var values: Array = []
 	var seeds: Array = [seed]
@@ -14,13 +21,18 @@ static func draws(seed: int, maxima: Array) -> Dictionary:
 		values.append(seed%(int(maximum)+1))
 		seeds.append(seed)
 	return {"values":values,"seeds":seeds}
-static func copy_wax(quests: Dictionary, inventory: Dictionary) -> Dictionary:
+## held: the exact wax on the cursor (consumed). Empty: the first carried wax, for callers without a held item.
+static func copy_wax(quests: Dictionary, inventory: Dictionary, held: String = "") -> Dictionary:
 	var error := Save.Quests.validate(quests)
 	if error.is_empty(): error = Save.validate_inventory(inventory)
 	if not error.is_empty(): return {"error":error}
 	var entry: Dictionary = quests.get("hive_rune_entry",{})
 	if entry.get("room","") != "RUNECL" or not entry.get("lights",false): return {"error":"The inscription is not available."}
-	if WAX not in inventory.collected: return {"error":"Wax is required."}
+	var wax := held
+	if wax.is_empty():
+		for item in inventory.collected:
+			if is_wax(item): wax = item; break
+	if not is_wax(wax) or wax not in inventory.collected: return {"error":"Wax is required."}
 	var id := Items.next_id(inventory.collected)
 	if id.is_empty(): return {"error":"No room for another rune copy."}
 	var next: Dictionary = quests.duplicate(true)
@@ -44,7 +56,7 @@ static func copy_wax(quests: Dictionary, inventory: Dictionary) -> Dictionary:
 		next.player_reward_state = fight.checkpoint
 		next.player_magic_reward_state = magic.checkpoint
 		next.hive_rune_entry.reward_seed = int(random.seeds[magic.draws_used])
-	carried.collected.erase(WAX)
+	carried.collected.erase(wax)
 	carried.collected.append(id)
 	next.monastery.globals.GV_HAS_RUNES = 1
-	return {"quests":next,"inventory":carried,"item":id,"first_copy":first}
+	return {"quests":next,"inventory":carried,"item":id,"first_copy":first,"consumed":wax}

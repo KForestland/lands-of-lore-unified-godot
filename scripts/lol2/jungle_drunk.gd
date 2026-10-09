@@ -45,7 +45,10 @@ func context() -> Dictionary:
 	return {"locals":{"7":int(host.village_alarm.state.locals["7"])},"shared":{"29":int(host.village_gate.state().shared29)}}
 func movement_locked() -> bool: return not state.is_empty() and bool(state.hold)
 func input_locked() -> bool: return movement_locked()
-func live() -> bool: return host.starting_magic.world_active() and not get_tree().paused
+## Chief-hut g4442: op8 control110 property1 stops its current playback.
+func stop_external() -> void:
+	State.stop(state);state.blocked=false;present()
+func live() -> bool: return is_instance_valid(host.starting_magic) and host.starting_magic.world_active() and not get_tree().paused
 func dispatch(kind: String, owner: int, code: int, value: int=0) -> void:
 	apply(State.event(state,src,kind,owner,code,value,context()));present()
 func apply(effects: Array) -> void:

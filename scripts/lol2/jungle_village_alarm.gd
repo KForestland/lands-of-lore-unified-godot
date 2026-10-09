@@ -60,6 +60,9 @@ func origin() -> Vector3:
 	return value if value is Vector3 else Vector3.ZERO
 func world_active() -> bool: return host.starting_magic!=null and host.starting_magic.world_active()
 func movable_target(index: int) -> int: return int(state.movables.get(str(index),-1)) if state!=null and not state.is_empty() else -1
+## Source commands from the chief-hut branch share the existing gate target owner.
+func request_movable(index: int, target: int) -> void:
+	if str(index) in state.movables and target in [0,100]: state.movables[str(index)]=target
 func running(index: int) -> bool:
 	var timers: Array=state.timers.get(str(index),[])
 	return timers.any(func(t): return (int(t.flags)&1)==0)

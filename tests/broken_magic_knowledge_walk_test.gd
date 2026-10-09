@@ -22,6 +22,26 @@ func run() -> void:
 	scene.monastery.leave_room()
 	scene.set_physics_process(false)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# Earn the missing story prerequisite through the actual shop entrance and
+	# complete its introduction before the later translated-runes follow-up.
+	var weapon_routes: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/weapon_shop_walk.json"))
+	if not await walk_shop(weapon_routes.to_shop,"WPNEXT"): return
+	if not scene.weapon_shop.interact("enter"):
+		fail("Earned Kityara first meeting could not enter WPN")
+		return
+	for tick in range(6000):
+		await process_frame
+		if not Wpn.active(scene.weapon_shop.state()): break
+	if Wpn.active(scene.weapon_shop.state()) or scene.weapon_shop.state().locals.get("Met_Kityara",0) != 1 or scene.weapon_shop.state().globals.get("GV_LUTHER_KNOWS_ABOUT_DANIEL",0) != 1:
+		fail("Earned Kityara introduction did not retain meeting and Daniel knowledge")
+		return
+	scene.weapon_shop.leave_room()
+	scene.weapon_shop.leave_room()
+	scene.set_physics_process(false)
+	if not await walk_shop(weapon_routes.to_monastery,"MENT"): return
+	scene.monastery.leave_room()
+	scene.set_physics_process(false)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var routes: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/magic_shop_walk.json"))
 	if not await walk_shop(routes.to_shop,"MAGIC"): return
 	for tick in range(9000):
@@ -82,7 +102,9 @@ func run() -> void:
 	if not scene.quicksave(output_path).is_empty():
 		fail("Shop knowledge output could not save")
 		return
-	var report := {"passed":true,"input_path":input_path,"input_sha256":FileAccess.get_sha256(input_path),"input_proof":"docs/broken-hive-earned-rune-return-checks.json","output_path":output_path,"output_sha256":FileAccess.get_sha256(output_path),"inventory":original,"scope":"Cave-derived earned rune-return checkpoint; continuous source-portal walk from monastery to MAGIC, original Rashar introduction, earned broken sword offer and power-orb knowledge, return walk, original garden/cellar conversations and Julian empty-hand response. No position/form/quest injection after load. Movement/curse ticks manually driven, time/audio4x. Shop item and other content acceptance remain separate."}
+	var report := {"passed":true,"input_path":input_path,"input_sha256":FileAccess.get_sha256(input_path),"input_proof":"docs/broken-hive-earned-rune-return-checks.json","output_path":output_path,"output_sha256":FileAccess.get_sha256(output_path),"inventory":original,"scope":"Cave-derived earned rune-return checkpoint; continuous source-portal walk from monastery through WPN first meeting and Daniel knowledge, return, then MAGIC, original Rashar introduction, earned broken sword offer and power-orb knowledge, return walk, original garden/cellar conversations and Julian empty-hand response. No position/form/quest injection after load. Movement/curse ticks manually driven, time/audio4x. Shop item and other content acceptance remain separate."}
+	report.kityara_met = scene.weapon_shop.state().locals.get("Met_Kityara",0)
+	report.daniel_known = scene.weapon_shop.state().globals.get("GV_LUTHER_KNOWS_ABOUT_DANIEL",0)
 	FileAccess.open("res://docs/broken-magic-knowledge-walk-checks.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  ")+"\n")
 	scene.queue_free()
 	await process_frame

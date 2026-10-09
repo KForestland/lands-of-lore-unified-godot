@@ -20,6 +20,8 @@ var bacatta57: Node3D
 var village_alarm: Node3D
 var drunk: Node3D
 var inner_gate: Node3D
+var chief_hut: Node3D
+var kityara: Node3D
 ## Item held on the cursor for an E-use offer (Kelsrick kind4 mode1); not consumed unless a source effect does.
 var hand_item := ""
 var quest_state: Dictionary = Save.Quests.initial()
@@ -84,6 +86,8 @@ func _init() -> void:
 	draw_unbound_walls = false
 
 func _ready() -> void:
+	if huline_content and preload("res://scripts/lol2/jungle_chief_hut.gd").assets_ready():
+		for id in preload("res://scripts/lol2/jungle_chief_hut_state.gd").source().dynamic_regions: dynamic_floor_regions.append(int(id))
 	super._ready()
 	add_child(curse)
 	attach_starting_magic.call_deferred()
@@ -201,6 +205,14 @@ func _ready() -> void:
 			add_child(inner_gate)
 			var inner_error: String=inner_gate.setup(self,{"context":_inner_gate_context},_inner_gate_packet())
 			if not inner_error.is_empty(): push_error(inner_error)
+		if preload("res://scripts/lol2/jungle_chief_hut.gd").assets_ready():
+			chief_hut=preload("res://scripts/lol2/jungle_chief_hut.gd").new();chief_hut.name="ChiefHutPuzzle";add_child(chief_hut)
+			var puzzle_error: String=chief_hut.setup(self,quest_state.get("jungle_chief_hut"))
+			if not puzzle_error.is_empty(): push_error(puzzle_error)
+		if preload("res://scripts/lol2/jungle_kityara.gd").assets_ready():
+			kityara=preload("res://scripts/lol2/jungle_kityara.gd").new();kityara.name="JungleKityara";add_child(kityara)
+			var kityara_error: String=kityara.setup(self,{"context":_kityara_context,"shop_local":_kityara_shop_local,"shared":_kityara_shared,"grant":_kityara_grant,"consume_held":_consume_hand_item,"held_identity":_kityara_held_identity},quest_state.get("jungle_kityara"))
+			if not kityara_error.is_empty(): push_error(kityara_error)
 	get_window().title = "Lands of Lore II — "+area_name
 	if get_tree().has_meta("lol2_jungle_handoff"):
 		var handoff = get_tree().get_meta("lol2_jungle_handoff")
@@ -363,6 +375,8 @@ func apply_save(state: Variant) -> String:
 	if is_instance_valid(village_alarm): village_alarm.restore(quest_state.get("jungle_village_alarm",village_alarm.initial()))
 	if is_instance_valid(drunk): drunk.restore(quest_state.get("jungle_drunk",drunk.initial()))
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
+	if is_instance_valid(chief_hut): chief_hut.restore(quest_state.get("jungle_chief_hut",chief_hut.initial()))
+	if is_instance_valid(kityara): kityara.restore(quest_state.get("jungle_kityara",kityara.initial()))
 	return ""
 
 # Validated inventory and quest transport for the Hive route.
@@ -418,9 +432,13 @@ func apply_area_handoff(state: Variant) -> String:
 	if is_instance_valid(village_alarm): village_alarm.restore(quest_state.get("jungle_village_alarm",village_alarm.initial()))
 	if is_instance_valid(drunk): drunk.restore(quest_state.get("jungle_drunk",drunk.initial()))
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
+	if is_instance_valid(chief_hut): chief_hut.restore(quest_state.get("jungle_chief_hut",chief_hut.initial()))
+	if is_instance_valid(kityara): kityara.restore(quest_state.get("jungle_kityara",kityara.initial()))
 	return ""
 
 func move_grounded(direction: Vector3, delta: float, sprint: bool = false) -> void:
+	if (is_instance_valid(chief_hut) and chief_hut.movement_locked()) or (is_instance_valid(kityara) and kityara.movement_locked()):
+		jump_requested=false;super.move_grounded(Vector3.ZERO,delta);return
 	if (is_instance_valid(village_dialogue) and village_dialogue.active()) or (is_instance_valid(followup_dialogue) and followup_dialogue.active()) or (is_instance_valid(dawn) and dawn.movement_locked()) or (is_instance_valid(bacatta65) and bacatta65.movement_locked()) or (is_instance_valid(drunk) and drunk.movement_locked()):
 		jump_requested = false
 		super.move_grounded(Vector3.ZERO,delta)
@@ -453,6 +471,8 @@ func _sync_exit_checkpoint() -> void:
 	if is_instance_valid(village_alarm): quest_state.jungle_village_alarm=village_alarm.checkpoint()
 	if is_instance_valid(drunk): quest_state.jungle_drunk=drunk.checkpoint()
 	if is_instance_valid(inner_gate): quest_state.jungle_inner_gate=inner_gate.checkpoint()
+	if is_instance_valid(chief_hut): quest_state.jungle_chief_hut=chief_hut.checkpoint()
+	if is_instance_valid(kityara): quest_state.jungle_kityara=kityara.checkpoint()
 	if is_instance_valid(exit_encounter): quest_state.jungle_exit_encounter=exit_encounter.checkpoint()
 
 func _exit_context() -> Dictionary:
@@ -464,7 +484,8 @@ func _exit_context() -> Dictionary:
 		var key: String=exit_encounter.src.shared_names[id]
 		shared[id]=GlobalDefaults.read(globals,key) if GlobalDefaults.NONZERO.has(key) else maxi(int(globals.get(key,0)),int(shop_globals.get(key,0)))
 	# These Jungle-only locals start at zero; the Bacatta component will own their transitions.
-	return {"shared":shared,"locals":{"41":0,"49":0,"51":int(bacatta.state.locals["51"]) if is_instance_valid(bacatta) and not bacatta.state.is_empty() else 0}}
+	# local41 kityara_gave_knife lives in the weapon-shop room bank; the Kityara owner writes it (jungle_kityara.gd).
+	return {"shared":shared,"locals":{"41":_shop_local("kityara_gave_knife"),"49":0,"51":int(bacatta.state.locals["51"]) if is_instance_valid(bacatta) and not bacatta.state.is_empty() else 0}}
 
 func _physics_process(delta: float) -> void:
 	if actor_input_locked():
@@ -490,6 +511,8 @@ func _bacatta_context() -> Dictionary:
 	return ctx
 
 func actor_input_locked() -> bool:
+	if is_instance_valid(chief_hut) and chief_hut.input_locked(): return true
+	if is_instance_valid(kityara) and kityara.input_locked(): return true
 	return (is_instance_valid(drunk) and drunk.input_locked()) or (is_instance_valid(bacatta) and bacatta.input_locked()) or (is_instance_valid(exit_woman) and exit_woman.input_locked()) or (is_instance_valid(kelsrick) and kelsrick.input_locked()) or (is_instance_valid(dawn) and dawn.input_locked())
 
 ## Dawn reads the soul, runes, gift, relationship and monastery-attack globals by their source names.
@@ -598,3 +621,53 @@ func _input(event: InputEvent) -> void:
 	if not actor_input_locked(): return
 	if event is InputEventKey and event.keycode in [KEY_F5,KEY_F9,KEY_ESCAPE]: return
 	get_viewport().set_input_as_handled()
+
+## ---- Kityara follow-up (jungle_kityara.gd) -----------------------------------------------------------------------
+## Locals 23/35/41/54 are the weapon-shop room bank's by source name (WPN reads/writes the same names).
+func _shop_local(name: String) -> int:
+	return int(quest_state.get("weapon_shop",{}).get("locals",{}).get(name,0))
+
+func _kityara_shop_local(name: String, value: int) -> void:
+	if not quest_state.has("weapon_shop"): quest_state.weapon_shop=preload("res://scripts/lol2/weapon_shop_state.gd").initial()
+	quest_state.weapon_shop.locals[name]=clampi(value,0,1)
+
+func _kityara_context() -> Dictionary:
+	var globals: Dictionary=quest_state.get("monastery",{}).get("globals",{})
+	var shop_globals: Dictionary=quest_state.get("weapon_shop",{}).get("globals",{})
+	var shared: Dictionary={}
+	for id in kityara.src.shared_names:
+		var key: String=kityara.src.shared_names[id]
+		shared[id]=GlobalDefaults.read(globals,key) if GlobalDefaults.NONZERO.has(key) else maxi(int(globals.get(key,0)),int(shop_globals.get(key,0)))
+	var locals: Dictionary={}
+	for id in kityara.src.shop_bank_locals: locals[str(int(id))]=_shop_local(str(kityara.src.local_names[str(int(id))]))
+	return {"shared":shared,"locals":locals}
+
+## Opcode199/206 on her named globals (soul capped at 10 like the other Jungle owners).
+func _kityara_shared(e: Dictionary) -> void:
+	var name: String=str(e.name)
+	if name.is_empty(): return
+	if not quest_state.has("monastery"): quest_state.monastery=preload("res://scripts/lol2/monastery_quest_state.gd").initial()
+	var bank: Dictionary=quest_state.monastery.globals
+	var cap: int=10 if name=="GV_LUTHERS_SOUL" else 255
+	bank[name]=clampi(int(e.value) if str(e.op)=="set" else GlobalDefaults.read(bank,name)+int(e.value),0,cap)
+	# These are shared binary globals, also read by the existing shop state.
+	# Soul is not copied: the shop bank deliberately validates binary values only.
+	if name in ["GV_KITYARA_DEAD","GV_LUTHER_HAS_WARBLADE"]:
+		if not quest_state.has("weapon_shop"): quest_state.weapon_shop=preload("res://scripts/lol2/weapon_shop_state.gd").initial()
+		quest_state.weapon_shop.globals[name]=bank[name]
+
+## Player grant (op3 kind1): definition29 "30-Empty hand", her knife, under its catalog identity; one copy.
+func _kityara_grant(identity: int) -> void:
+	if identity!=int(kityara.src.item.identity): return
+	var id: String=str(kityara.src.item.catalog_id)
+	if id not in carried_collected: carried_collected.append(id)
+	if is_instance_valid(interface_hud): interface_hud.refresh_equipment()
+
+## Held-item source identity for her kind4 mode3 offers (Power orb, Amber, Ironwood sap).
+func _kityara_held_identity() -> int:
+	if hand_item.is_empty() or hand_item not in carried_collected: return 0
+	var name:=""
+	if hand_item==preload("res://scripts/lol2/monastery_conversation.gd").ORB: name="83-Power orb"
+	elif preload("res://scripts/lol2/jungle_world_items_catalog.gd").valid(hand_item): name=preload("res://scripts/lol2/jungle_world_items_catalog.gd").source_name(hand_item)
+	return int({"83-Power orb":2280794846,"110-Amber":2139463609,"109-Ironwod sap":1690340112}.get(name,0))
+

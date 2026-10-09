@@ -191,6 +191,8 @@ func select_item(index: int) -> void:
 	hold_button.text = "Put away" if id == held_item_id else hold_label
 	use_button.visible = (id == preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM or id == preload("res://scripts/lol2/monastery_conversation.gd").FLUTE or preload("res://scripts/lol2/item_catalog.gd").use_kind(id) != "") and use_item.is_valid()
 	use_button.text = "Use Aloe" if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "aloe" else "Use stone" if id == preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM or preload("res://scripts/lol2/player_item_effects.gd").is_champion_stone(id) else "Play flute"
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "ironwood_sap": use_button.text = "Use sap"
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "vels_fruit": use_button.text = "Eat fruit"
 	var is_armor := preload("res://scripts/lol2/player_equipment.gd").armor(id)
 	var selected := equipped_armor if is_armor else equipped_item
 	var supported := (is_armor and change_armor.is_valid()) or (preload("res://scripts/lol2/player_equipment.gd").weapon(id) and change_equipment.is_valid())

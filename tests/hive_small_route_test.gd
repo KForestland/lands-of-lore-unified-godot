@@ -78,6 +78,8 @@ func run() -> void:
 	if is_instance_valid(jungle.bacatta57): expected.jungle_bacatta57=jungle.bacatta57.initial()
 	if is_instance_valid(jungle.village_alarm): expected.jungle_village_alarm=jungle.village_alarm.initial()
 	if is_instance_valid(jungle.inner_gate): expected.jungle_inner_gate=jungle.inner_gate.initial()
+	if is_instance_valid(jungle.chief_hut): expected.jungle_chief_hut=jungle.chief_hut.initial()
+	if is_instance_valid(jungle.kityara): expected.jungle_kityara=jungle.kityara.initial()
 	if is_instance_valid(jungle.drunk): expected.jungle_drunk=jungle.drunk.initial()
 	expected.jungle_exit_encounter=jungle.exit_encounter.initial()
 	if is_instance_valid(jungle.kelsrick): expected.jungle_kelsrick=jungle.kelsrick.initial()

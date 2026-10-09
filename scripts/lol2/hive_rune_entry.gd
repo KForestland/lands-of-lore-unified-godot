@@ -151,7 +151,7 @@ func refresh() -> void:
 		held.add_item("Empty hand")
 		held.set_item_metadata(0,"")
 		for item in host.carried_inventory.collected:
-			held.add_item("Wax" if item == "hive:item0:Wax" else ("Wax runes" if preload("res://scripts/lol2/hive_rune_items.gd").valid(item) else str(item).get_slice(":",2).replace("_"," ")))
+			held.add_item("Wax" if preload("res://scripts/lol2/hive_rune_transaction.gd").is_wax(item) else ("Wax runes" if preload("res://scripts/lol2/hive_rune_items.gd").valid(item) else str(item).get_slice(":",2).replace("_"," ")))
 			held.set_item_metadata(held.item_count-1,item)
 		notice.text = "" if busy() else ("Escape — Back" if checkpoint.room == "RUNECL" else "Escape — Return to the cavern")
 		if Speech.active(checkpoint):
@@ -206,10 +206,11 @@ func activate_hotspot(index: int) -> bool:
 		return false # Native RUNECL hotspot1 still returns zero.
 	if index != 0: return false
 	var selected: String = held.get_item_metadata(held.selected)
-	if selected != "hive:item0:Wax":
+	var transaction := preload("res://scripts/lol2/hive_rune_transaction.gd")
+	if not transaction.is_wax(selected):
 		start_speech("2:51" if selected.is_empty() else "2:35")
 		return true
-	var result := preload("res://scripts/lol2/hive_rune_transaction.gd").copy_wax(host.area_handoff().quests,host.carried_inventory)
+	var result: Dictionary = transaction.copy_wax(host.area_handoff().quests,host.carried_inventory,selected)
 	if result.has("error"):
 		notice.text = result.error
 		return false

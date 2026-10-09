@@ -34,6 +34,7 @@ const FIXED := {
 }
 ## Original definition name shared by cave and Jungle Aloe (definition110, handler9).
 const ALOE_SOURCE_NAME := "108-Cave aloe"
+const KITYARA_KNIFE := "jungle:kityara:Empty_hand"
 ## Magic-shop weapons; the remaining shop/world ids are carried, not equipped.
 const MAGIC_WEAPONS := ["jungle:magic_shop:Dag_Light","jungle:magic_shop:Tho_fixed"]
 
@@ -47,6 +48,8 @@ static func entry(id: Variant) -> Dictionary:
 	if id in WeaponShop.ITEMS.values():
 		return {"slot":"weapon","label":id.get_slice(":",2).replace("_"," "),"icon":GENERATED+"weapon_shop/"+id.get_slice(":",2)+".png","origin":"jungle"}
 	if id == Monastery.FLUTE: return {"slot":"","label":"Iron Flute","icon":"","origin":"jungle"}
+	# Kityara's knife: GLOBAL definition29 "30-Empty hand", identity3959297008 (jungle_kityara_source.json item).
+	if id == KITYARA_KNIFE: return {"slot":"weapon","label":"Kityara's blade","icon":GENERATED+"jungle_kityara/empty_hand.png","origin":"jungle"}
 	if id == Wax.ITEM: return {"slot":"","label":"Wax","icon":GENERATED+"hive_wax/wax.png","origin":"jungle"}
 	if Runes.valid(id): return {"slot":"","label":"Wax runes","icon":GENERATED+"hive_wax_runes/runes.png","origin":"jungle"}
 	# Power Orb, magic-shop and jungle world items share the existing shop presentation.
@@ -55,6 +58,10 @@ static func entry(id: Variant) -> Dictionary:
 		var result := {"slot":"weapon" if id in MAGIC_WEAPONS else "","label":str(info.label),"icon":str(info.icon),"origin":"jungle"}
 		# Jungle rows63-67 are the cave Aloe's own definition110/identity3732130108/handler9.
 		if WorldItems.valid(id) and WorldItems.source_name(id) == ALOE_SOURCE_NAME: result.use = "aloe"
+		# Definition111/handler98 consumes the held sap without a stat effect.
+		if WorldItems.valid(id) and WorldItems.source_name(id) == "109-Ironwod sap": result.use = "ironwood_sap"
+		# Rows54-57: definition84/handler20 consumes the held fruit and clears player status +1B5 (no heal/bonus).
+		if WorldItems.valid(id) and WorldItems.source_name(id) == "82-Vels fruit": result.use = "vels_fruit"
 		return result
 	return {}
 
@@ -65,7 +72,7 @@ static func icon(id: Variant) -> String: return str(entry(id).get("icon",""))
 static func defense(id: Variant) -> int: return int(Defenses.ITEMS.get(id,{}).get("defense",0)) if id is String else 0
 static func mitigation(id: Variant) -> Array:
 	return Defenses.ITEMS.get(id,{}).get("descriptors",[]).duplicate(true) if id is String else []
-## Implemented inventory use: "champion_stone", "ancient", "aloe" or "" (no verified use).
+## Implemented inventory use; empty means no verified use.
 static func use_kind(id: Variant) -> String: return str(entry(id).get("use",""))
 ## Every identity with an implemented use; bounds the saved consumed-item history.
 static func consumables() -> Array: return ids("jungle").filter(func(id): return use_kind(id) != "")
@@ -82,7 +89,7 @@ static func ids(scope: String = "jungle") -> Array:
 	for record in Aloe.RECORDS:
 		for harvest in range(1,4): all.append(Aloe.item_id(record,harvest))
 	all += WeaponShop.ITEMS.values().filter(func(id): return id not in FIXED)
-	all += [Monastery.FLUTE,Monastery.ORB,Wax.ITEM] + MagicShop.all_item_ids() + WorldItems.ITEMS.keys()
+	all += [Monastery.FLUTE,Monastery.ORB,Wax.ITEM,KITYARA_KNIFE] + MagicShop.all_item_ids() + WorldItems.ITEMS.keys()
 	for index in range(23): all.append(Runes.PREFIX+str(index))
 	return all.filter(func(id): return admitted(id,scope))
 

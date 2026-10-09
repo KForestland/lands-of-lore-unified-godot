@@ -88,6 +88,7 @@ func offer_item(id: String) -> bool:
 	refresh()
 	return true
 func enter_exterior() -> bool:
+	sync_shared_flags()
 	if not available or other_room_active() or not State.enter_exterior(state()): return false
 	restore()
 	return true
@@ -95,12 +96,11 @@ func interact(action_name: String) -> bool:
 	if not active() or State.active(state()): return false
 	if action_name == "enter":
 		if state().room != "WPNEXT" or not State.admitted(state()): return false
-		state().room = "WPN"
-		state().orb_seen = false
-		if not State.flag(state(),69): apply_effects(State.begin(state(),"intro"))
+		State.enter_room(state())
+		if not State.flag(state(),69) and state().globals.get("GV_KITYARA_DEAD",0)==0: apply_effects(State.begin(state(),"intro"))
 		restore()
 		return true
-	if state().room != "WPN": return false
+	if state().room != "WPN" or state().globals.get("GV_KITYARA_DEAD",0)!=0: return false
 	if get_parent().quest_state.monastery.globals.get("GV_KNOWLEDGE_OF_POWER_ORB",0) != 0:
 		state().globals["GV_KNOWLEDGE_OF_POWER_ORB"] = 1
 	apply_effects(State.action(state(),action_name))
@@ -128,8 +128,15 @@ func leave_room() -> void:
 		player.velocity = Vector3.ZERO
 		was_inside = true
 	restore()
+func sync_shared_flags() -> void:
+	var globals: Dictionary=get_parent().quest_state.get("monastery",{}).get("globals",{})
+	for key in ["GV_KITYARA_DEAD","GV_LUTHER_HAS_WARBLADE"]:
+		if not globals.has(key) and not state().globals.has(key): continue
+		state().globals[key]=maxi(int(globals.get(key,0)),int(state().globals.get(key,0)))
+
 func restore() -> void:
 	if not available: return
+	sync_shared_flags()
 	refresh_hand()
 	visible = active()
 	shown_cursor = -1
@@ -150,6 +157,8 @@ func restore() -> void:
 	refresh()
 func refresh() -> void:
 	var speaking := State.active(state())
+	var absent: bool=state().room=="WPN" and state().globals.get("GV_KITYARA_DEAD",0)!=0
+	view.patch.visible=not absent
 	held.visible=state().room=="WPN"
 	offer_button.visible=held.visible
 	held.disabled=speaking
@@ -158,6 +167,11 @@ func refresh() -> void:
 	for name in actions:
 		actions[name].visible = (name == "enter") == (state().room == "WPNEXT")
 		actions[name].disabled = speaking
+	if absent:
+		held.visible=false;offer_button.visible=false;back.disabled=false
+		for button in actions.values(): button.visible=false
+		view.voice.stop();view.clip={};view.patch.texture=null
+		return
 	if state().room == "WPNEXT": return
 	if not speaking:
 		if not view.clip.get("idle",false): view.play_idle()

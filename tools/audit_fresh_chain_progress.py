@@ -15,7 +15,7 @@ NAMES = ['01_cave', '02_museum', '03_jungle_hive', '04_flute', '05_wax',
 
 
 
-def check_contents(index, state):
+def check_contents(index, state, require_kityara=False):
     """Carry forward the established broken-sword branch acceptance checks."""
     inventory = state['checkpoint']['collected'] if index == 0 else state['inventory']['collected']
     for item in ['cave:captain:Short_Sword', 'cave:captain:Burnt_Chain']:
@@ -33,6 +33,17 @@ def check_contents(index, state):
     else:
         assert items.count('museum:control181:Tho_Broken') == 1, 'Earned broken sword missing or duplicated'
     checks = ['Both earned captain rewards retained', 'Cave weapon retained', 'Museum sword retained', 'Broken-sword branch inventory and exhibit history']
+    if require_kityara and index >= 7:
+        shop = quests['weapon_shop']
+        assert shop['locals'].get('Met_Kityara') == 1, 'Kityara first meeting not earned'
+        assert shop['globals'].get('GV_LUTHER_KNOWS_ABOUT_DANIEL') == 1, 'Shop introduction not completed'
+        checks.append('Earned Kityara shop entry and Daniel introduction retained')
+        if index >= 9:
+            assert shop['locals'].get('kityara_gave_knife') == 1, 'Kityara knife follow-up not completed'
+            assert quests['monastery']['globals'].get('GV_LUTHER_HAS_WARBLADE') == 1, 'Kityara clip completion flag missing'
+            assert items.count('jungle:kityara:Empty_hand') == 1, 'Kityara original grant missing or duplicated'
+            checks.append('Kityara knife, original completion flag and one-time grant retained')
+
     if index == 10:
         assert state['format'] == 'lol2-restoration-darker-jungle', 'Wrong destination save format'
         assert quests['act_one_departure']['phase'] == 'arrived', 'Departure not complete'
@@ -45,7 +56,7 @@ def check_contents(index, state):
     return checks
 
 
-def audit(run, baseline, day):
+def audit(run, baseline, day, require_kityara=False):
     receipts = (run / 'chain.out').read_text()
     source = json.loads(baseline.read_text())
     drift = changes(source['source_end'], snapshot(ROOT))
@@ -79,7 +90,7 @@ def audit(run, baseline, day):
                         assert previous and data.get('input_sha256') == previous, 'Previous actual save does not link'
                     start = dt.datetime.fromisoformat(f'{day}T{starts[0]}').replace(tzinfo=ZoneInfo('Europe/Berlin')).timestamp()
                     assert proof.stat().st_mtime >= start and save.stat().st_mtime >= start, 'Proof/save predates fresh leg'
-                    row['content_checks'] = check_contents(NAMES.index(name), state)
+                    row['content_checks'] = check_contents(NAMES.index(name), state, require_kityara)
                     row.update(proof_sha256=digest(proof), output_sha256=actual, log_sha256=digest(log))
                     previous = actual
                 except (OSError, ValueError, KeyError, TypeError, AssertionError) as error:
@@ -99,7 +110,7 @@ def audit(run, baseline, day):
     return dict(verified_fresh_prefix=prefix, total_legs=len(legs),
                 complete=prefix == len(legs) and baseline_ok and not drift and 'CHAIN COMPLETE' in receipts,
                 source_baseline=str(baseline.relative_to(ROOT)), source_changed_files=drift,
-                baseline_verified=baseline_ok,
+                baseline_verified=baseline_ok, kityara_required=require_kityara,
                 checked_utc=dt.datetime.now(dt.timezone.utc).isoformat(), legs=legs,
                 scope='Fresh single-day Europe/Berlin receipts, clean PASS logs, proof/save timestamps, actual linked hashes, branch inventory/quest checks and source endpoint comparison. Media excluded. Endpoint equality cannot exclude intervening edits. Content completeness, rendering quality and original-game parity require separate acceptance.')
 
@@ -109,9 +120,10 @@ def main():
     parser.add_argument('--date', required=True, help='Receipt date YYYY-MM-DD, Europe/Berlin; one-day runs only')
     parser.add_argument('--run', type=Path, default=ROOT/'tmp/regressions/broken_chain_fresh')
     parser.add_argument('--baseline', type=Path, default=ROOT/'tmp/regressions/aura_area_fix/report.json')
+    parser.add_argument('--require-kityara', action='store_true', help='Require earned shop meeting, knife follow-up and retained grant')
     args = parser.parse_args()
     dt.date.fromisoformat(args.date)
-    report = audit(args.run.resolve(), args.baseline.resolve(), args.date)
+    report = audit(args.run.resolve(), args.baseline.resolve(), args.date, args.require_kityara)
     (ROOT/'docs/fresh-rendered-chain-progress.json').write_text(json.dumps(report, indent=2)+'\n')
     print(f"Verified fresh prefix {report['verified_fresh_prefix']}/{report['total_legs']}; source changes {len(report['source_changed_files'])}; complete={report['complete']}")
     for leg in report['legs']:

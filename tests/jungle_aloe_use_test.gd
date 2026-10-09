@@ -55,9 +55,18 @@ func run() -> void:
 	var source: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://assets/lol2/generated/jungle_world_items/items.json"))
 	for row in source.items:
 		if int(row.row) in ROWS and not check(int(row.identity)==preload("res://scripts/lol2/player_item_effects.gd").ALOE_IDENTITY and int(row.definition)==110 and int(row.handler)==9 and Catalog.use_kind(World.id_of(int(row.row)))=="aloe","Row %d is not source Aloe"%int(row.row)):return
-		if int(row.row) not in ROWS and not check(Catalog.use_kind(World.id_of(int(row.row)))=="","Row %d gained an unverified use"%int(row.row)):return
+		# Verified uses by source definition: sap111/handler98, Vels fruit84/handler20.
+		var verified: String={111:"ironwood_sap",84:"vels_fruit"}.get(int(row.definition),"")
+		if int(row.row) not in ROWS and not check(Catalog.use_kind(World.id_of(int(row.row)))==verified,"Row %d use differs from its source handler"%int(row.row)):return
 	var consumables:=Catalog.consumables()
-	if not check(consumables.size()==17 and consumables.filter(func(id): return Catalog.use_kind(id)=="aloe").size()==14,"Consumable registry differs: %d"%consumables.size()):return
+	var kinds:={}
+	for id in consumables: kinds[Catalog.use_kind(id)]=int(kinds.get(Catalog.use_kind(id),0))+1
+	var jungle_rows:={}
+	for row in source.items:
+		var kind: String={110:"aloe",111:"ironwood_sap",84:"vels_fruit"}.get(int(row.definition),"")
+		if kind!="": jungle_rows[kind]=int(jungle_rows.get(kind,0))+1
+	# Aloe also counts the nine cave harvest ids; sap and fruit exist only as Jungle rows.
+	if not check(int(kinds.get("aloe",0))==9+int(jungle_rows.aloe) and int(kinds.get("ironwood_sap",0))==int(jungle_rows.ironwood_sap) and int(kinds.get("vels_fruit",0))==int(jungle_rows.vels_fruit) and int(kinds.vels_fruit)==4,"Consumable registry differs: %s"%[kinds]):return
 	# Real Jungle host and real E pickups.
 	set_meta("lol2_jungle_handoff",{"collected":[Save.Museum.SWORD],"equipped_item":Save.Museum.SWORD,"equipped_armor":""})
 	scene=load("res://scenes/lol2/jungle_walkthrough.tscn").instantiate()
@@ -102,7 +111,7 @@ func run() -> void:
 	bad=saved.duplicate(true);bad.inventory.item_effects.spent.append(first)
 	if not check(not Save.validate(bad).is_empty(),"Duplicate consumption accepted"):return
 	bad=saved.duplicate(true);bad.inventory.item_effects.spent.append(World.id_of(52))
-	if not check(not Save.validate(bad).is_empty(),"Unverified Ironwod sap consumption accepted"):return
+	if not check(not Save.validate(bad).is_empty(),"Sap consumption without pickup history accepted"):return
 	var State=preload("res://scripts/lol2/player_item_state.gd")
 	var full: Dictionary=State.initial();full.spent=consumables.duplicate()
 	if not check(State.validate(full,[]).is_empty(),"All registered consumables rejected"):return
@@ -134,5 +143,5 @@ func run() -> void:
 	if not check(darker.quicksave(path).is_empty() and darker.quickload(path).is_empty() and World.id_of(67) in darker.carried_collected,"Darker jungle use/disk differs"):return
 	await finish(darker)
 	DirAccess.remove_absolute(path)
-	print("PASS Jungle Aloe rows63-67: source identity110/9, E pickups, UI Use Aloe, form gate, pending+5 gradual heal, full-health consumption, disk rollback, no respawn, history-backed/duplicate/unverified/cap validation (17 registered consumables), Jungle→Hive→darker uses and saves. Supplied approach; not earned.")
+	print("PASS Jungle Aloe rows63-67: source identity110/9, E pickups, UI Use Aloe, form gate, pending+5 gradual heal, full-health consumption, disk rollback, no respawn, history-backed/duplicate/unverified/cap validation (19 registered consumables), Jungle→Hive→darker uses and saves. Supplied approach; not earned.")
 	quit()

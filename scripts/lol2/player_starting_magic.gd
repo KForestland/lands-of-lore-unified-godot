@@ -59,7 +59,14 @@ func set_health(value: int) -> void:
 	if host.get("roach") != null: host.roach.model.player_health=value
 	elif host.has_node("Warriors"): host.get_node("Warriors").health=value
 	else: host.health=value
+## The locked fullscreen hut movie freezes every world consumer; only its owner keeps a clock (movie_world_active()).
 func world_active() -> bool:
+	if host.get("chief_hut")!=null and is_instance_valid(host.chief_hut) and host.chief_hut.input_locked(): return false
+	# Kityara's conversation hold freezes the world the same way; only her owner keeps its clip clock.
+	if host.get("kityara")!=null and is_instance_valid(host.kityara) and host.kityara.movement_locked(): return false
+	return movie_world_active()
+## world_active() without the hut-movie lock: the chief-hut owner's movie clock only.
+func movie_world_active() -> bool:
 	if get_tree().paused or host.flying or health()<=0 or Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED: return false
 	if get_tree().current_scene!=null and get_tree().current_scene!=host: return false
 	if host.get("drowning") != null and host.drowning.dead: return false
@@ -79,6 +86,7 @@ func world_active() -> bool:
 		if actor.started and not actor.completed: return false
 	return true
 func available() -> bool:
+	if host.get("chief_hut")!=null and is_instance_valid(host.chief_hut) and host.chief_hut.input_locked(): return false
 	if host.get("bacatta")!=null and is_instance_valid(host.bacatta) and host.bacatta.input_locked(): return false
 	return world_active() and Forms.can_cast(host.player_form)
 func select_spell(spell: String) -> void:
@@ -131,6 +139,7 @@ func spark() -> void:
 		elif hit.collider.has_meta("hive_guardian"): host.get_node("Warriors").damage_guardian(int(hit.collider.get_meta("hive_guardian")),8,20)
 		elif hit.collider.has_meta("hive_return_actor"): hit.collider.get_meta("hive_population_owner").receive_damage(str(hit.collider.get_meta("hive_return_actor")),8,false,20)
 		elif hit.collider.has_meta("hive_executioner_live"): host.executioner_live.receive_strike(8,false,20)
+		elif hit.collider.has_meta("chief_hut_rock"): hit.collider.get_meta("chief_hut_rock").receive_spark()
 	var mesh:=ImmediateMesh.new()
 	mesh.surface_begin(Mesh.PRIMITIVE_LINES)
 	mesh.surface_add_vertex(origin+host.camera.global_basis.x*4-Vector3(0,4,0))
