@@ -16,8 +16,10 @@ import sys
 
 # Legacy importing preparers still use external helpers; the atlas itself needs
 # only lol2_source_format. Retain this path until those callers are migrated.
-RE_TOOLS = Path('/home/bob/lol2_re_publish_20260911/tools/draracle')
-sys.path.insert(0, str(RE_TOOLS))
+import re_helper_root
+# LOL2_RE_ROOT (see re_helper_root.py); optional here because most callers only need lol2_source_format.
+RE_TOOLS = re_helper_root.path('draracle', required=False)
+re_helper_root.insert('draracle', required=False)
 from lol2_source_format import parse_mix, u32, SIZES
 
 ROOT = Path(__file__).resolve().parents[1]

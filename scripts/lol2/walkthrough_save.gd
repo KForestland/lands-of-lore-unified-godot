@@ -103,7 +103,7 @@ static func validate(value: Variant, checkpoint_count: int) -> String:
 		return "Save cave creature state is invalid."
 	var captain_items: Array = []
 	if value.has("captain"):
-		captain_items = preload("res://scripts/lol2/cave_captain_items.gd").from_grants(value.captain.source.granted)
+		captain_items = preload("res://scripts/lol2/cave_captain_items.gd").from_checkpoint(value.captain)
 	var equipped = value.get("equipped_item", "")
 	if not equipped is String or (equipped != "" and (Catalog.slot(equipped) != "weapon" or not Catalog.admitted(equipped,"cave") or equipped not in value.get("stalagmites", []) + captain_items)):
 		return "Save weapon selection is invalid."

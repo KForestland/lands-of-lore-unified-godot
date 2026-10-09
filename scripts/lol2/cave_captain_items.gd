@@ -12,3 +12,9 @@ static func from_grants(grants: Array) -> Array:
 static func label(id: String) -> String:return "Short Sword" if id==SWORD else "Burnt Chain"
 static func icon(id: String) -> String:
 	return "res://assets/lol2/generated/cave_captain_items/"+("Short_Sword" if id==SWORD else "Burnt_Chain")+".png"
+
+## Source grants and the separately saved fighting-death pickup share one captain item identity.
+static func from_checkpoint(saved: Dictionary) -> Array:
+	var result := from_grants(saved.source.granted)
+	if saved.get("loot",{}).get("taken",false) and SWORD not in result: result.append(SWORD)
+	return result

@@ -215,7 +215,7 @@ static func _command(state: Dictionary, src: Dictionary, b: PackedByteArray, eff
 			if b[1]==1:
 				state.granted.append(name);effects.append({"type":"grant_player","item":name,"identity":ident})
 			elif captain:
-				c.items.append(name);effects.append({"type":"grant_actor","item":name,"identity":ident,"note":"not a proven drop"})
+				c.items.append(name);effects.append({"type":"grant_actor","item":name,"identity":ident,"note":"actor inventory; retirement drop presented by cave_captain_loot"})
 		14:
 			if b[1]==3 and target==int(src.timer.owner):
 				if b[4]==3 and (int(state.timer.flags)&1)!=0: state.timer.flags=int(state.timer.flags)&254

@@ -45,6 +45,11 @@ static func validate(state: Variant) -> String:
 	if checkpoint.has("museum_control181"):
 		var control_error := preload("res://scripts/lol2/museum_broken_thohan.gd").validate_checkpoint(checkpoint.museum_control181)
 		if not control_error.is_empty(): return control_error
+	# Saves without the field predate the locks: the key is still in control87, so neither item may be carried.
+	var KeyLocks := preload("res://scripts/lol2/museum_key_locks_state.gd")
+	var locks = checkpoint.get("museum_key_locks",KeyLocks.initial())
+	var lock_error: String = KeyLocks.validate(locks,ids)
+	if not lock_error.is_empty(): return lock_error
 	var carried_error := Catalog.validate_carried(ids,"museum")
 	if not carried_error.is_empty(): return carried_error
 	var equipment_error := Catalog.validate_slots(ids,"museum",checkpoint.get("equipped_item"),checkpoint.get("equipped_armor",""))
@@ -93,7 +98,11 @@ static func validate(state: Variant) -> String:
 			return "Invalid gallery state."
 		var pulled = gallery.get("lever_pulled",gallery.gate_open)
 		if not pulled is bool: return "Invalid gallery lever state."
-		if (pulled and not gallery.painting_moved) or (gallery.gate_open and not pulled) or (gallery.progress != 0 and not pulled): return "Inconsistent gallery state."
+		# Lock140 opens grate51 without the visible lever (painting still in place); its take group closes the grate
+		# and resets the lever while the grate may still be moving.
+		var lock_open := false
+		for id in locks.loaded: lock_open = lock_open or int(id) == 140
+		if (pulled and not gallery.painting_moved) or (gallery.gate_open and not pulled and not lock_open) or (gallery.progress != 0 and not pulled and not checkpoint.has("museum_key_locks")): return "Inconsistent gallery state."
 	if checkpoint.has("dragon_door"):
 		var door = checkpoint.dragon_door
 		if not door is Dictionary or not door.get("opened") is bool or not within(door.get("progress"),0,1): return "Invalid dragon door state."

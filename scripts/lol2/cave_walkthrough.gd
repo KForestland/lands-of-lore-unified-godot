@@ -421,6 +421,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			return
 		if event.keycode == KEY_E:
+			if captain!=null and captain.loot!=null and captain.loot.collect():
+				get_viewport().set_input_as_handled();return
 			interaction_requested = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
 			get_viewport().set_input_as_handled()
 			return
@@ -491,7 +493,7 @@ func _enter_museum() -> void:
 
 func carried_items() -> Array:
 	var items: Array = collectible.saved_ids()+aloe.collected+stalagmites.collected
-	if captain!=null:items+=preload("res://scripts/lol2/cave_captain_items.gd").from_grants(captain.state.source.granted)
+	if captain!=null:items+=preload("res://scripts/lol2/cave_captain_items.gd").from_checkpoint(captain.state)
 	return items.filter(func(id): return id not in item_effect_checkpoint.spent)
 
 func _completion_state() -> Dictionary:
@@ -525,6 +527,7 @@ func _process(_delta: float) -> void:
 	else:
 		hud.text = "Draracle’s Caverns\nWASD + mouse · Space jump · E interact · I inventory\nLeft click strike · 1 Spark · 2 Healing · Q cast · F5 save · F9 load"
 	hud.text += "\n" + curse.message()
+	if captain!=null and captain.loot!=null and captain.loot.aimed(): hud.text += "\nE — Take Short Sword"
 	if Time.get_ticks_msec() < save_notice_until:
 		hud.text += "\n" + save_notice
 	if collectible.collected:

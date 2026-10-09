@@ -11,7 +11,7 @@ from pathlib import Path
 
 import capstone
 
-sys.path[:0] = ['/home/bob/lol2_re_publish_20260911/tools', '/home/bob/lol2_re_publish_20260911/tools/draracle']
+import re_helper_root; re_helper_root.insert('draracle', 'tools')  # LOL2_RE_ROOT; same order as the former sys.path[:0] list
 from lol2_extract_draracle_geometry import parse_mix, u32
 from lol2_verify_draracle_slopes import EXE_HASH
 from lol2_wall_material_checkpoint import sections

@@ -17,12 +17,19 @@ var development_overlay: CanvasLayer
 var materials: Dictionary = {}
 var surface_animation: Node
 
+## Face indices owned by a dynamic owner instead of the static mesh/collision (none in the review scene).
+func excluded_faces() -> Dictionary: return {}
+
 func _ready() -> void:
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(ROOT + "museum.json"))
 	start = Vector3(data.start[0], data.start[1], data.start[2])
 	var groups: Dictionary = {}
 	var collision := PackedVector3Array()
+	var excluded := excluded_faces()
+	var face_index := -1
 	for face in data.faces:
+		face_index += 1
+		if excluded.has(face_index): continue
 		var key: String = face.material
 		if not groups.has(key):
 			var mat := StandardMaterial3D.new()

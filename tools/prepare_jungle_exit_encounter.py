@@ -14,8 +14,7 @@ from pathlib import Path
 from build_game_atlas import parse_mix,section,u32
 from audit_game_actor_scripts import groups
 from audit_game_transition_owners import GAME,collect_owners
-sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools/draracle')
-sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools')
+import re_helper_root; re_helper_root.insert('draracle', 'tools')  # LOL2_RE_ROOT
 from verify_special_pixel_table_binding import fixups
 from lol2.map_video_inventory import lookup_movie
 ROOT=Path(__file__).resolve().parents[1]

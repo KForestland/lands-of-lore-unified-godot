@@ -18,7 +18,7 @@ from pathlib import Path
 from build_game_atlas import parse_mix,section,u32
 from audit_game_actor_scripts import groups
 from audit_game_transition_owners import GAME,collect_owners,events
-sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools/draracle')
+import re_helper_root; re_helper_root.insert('draracle')  # LOL2_RE_ROOT
 from lol2_wall_material_checkpoint import sections
 from prepare_hive_wax import entry
 ROOT=Path(__file__).resolve().parents[1]

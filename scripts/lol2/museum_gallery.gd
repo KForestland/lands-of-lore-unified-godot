@@ -76,6 +76,17 @@ func pull_lever() -> bool:
 	lever_pulled = true
 	lever.rotation.z = -PI/4
 	return true
+## Sk-key lock control140: its insert group moves movables53/51 to 100 and sets lever53 state1; its take group
+## returns both to 0 and lever53 to state0 (the lever can be pulled again). The lever pose is shown only once the
+## painting no longer hides it.
+func lock_insert() -> void:
+	gate_open = true
+	lever_pulled = painting_moved
+	lever.rotation.z = -PI/4 if lever_pulled else 0.0
+func lock_take() -> void:
+	gate_open = false
+	lever_pulled = false
+	lever.rotation.z = 0
 func close_for_hourglass() -> void:
 	# Source group4620 targets grate51 only; retain the lever position.
 	gate_open = false

@@ -18,7 +18,7 @@ const Monastery = preload("res://scripts/lol2/monastery_conversation.gd")
 ## Jungle covers every later Act 1 area (Hive, monastery, shops, darker jungle).
 const SCOPES := ["cave","museum","jungle"]
 ## Shared hand-held limit; jungle_save already uses 64. Museum's old 22 is below its
-## admitted universe of 24 (cave 19 + museum 5).
+## admitted universe of 26 (cave 19 + museum 7).
 const MAX_CARRIED := 64
 const GENERATED := "res://assets/lol2/generated/"
 const FIXED := {
@@ -28,6 +28,9 @@ const FIXED := {
 	"museum:item8:Champion_Stone":{"slot":"","label":"Champion Stone","icon":GENERATED+"museum_stones/stone.png","origin":"museum","use":"champion_stone"},
 	"museum:item9:Champion_Stone":{"slot":"","label":"Champion Stone","icon":GENERATED+"museum_stones/stone.png","origin":"museum","use":"champion_stone"},
 	"museum:control181:Tho_Broken":{"slot":"","label":"Broken Thohan","icon":GENERATED+"museum_broken_thohan/icon.png","origin":"museum"},
+	# The single original "92-Sk key" (preloaded in control87) and movable55's "68-SS1" (museum_key_locks_source.json).
+	"museum:control87:Sk_key":{"slot":"","label":"Sk key","icon":GENERATED+"museum_key_locks/sk_key.png","origin":"museum"},
+	"museum:movable55:SS1":{"slot":"","label":"SS1","icon":GENERATED+"museum_key_locks/ss1.png","origin":"museum"},
 	"jungle:item51:Th_Dagger":{"slot":"weapon","label":"Th Dagger","icon":GENERATED+"jungle_source_pickups/th_dagger.png","origin":"jungle"},
 	"jungle:weapon_shop:Gargoyle_Bracers":{"slot":"offhand","label":"Gargoyle Bracers","icon":GENERATED+"weapon_shop/Gargoyle_Bracers.png","origin":"jungle","defense":5},
 	"hive:runes:Ancients_Stone":{"slot":"","label":"Ancients’ Stone","icon":GENERATED+"hive_ancient_stone/stone.png","origin":"jungle","use":"ancient"},

@@ -13,7 +13,11 @@ import struct
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
-RE_TOOLS = Path('/home/bob/lol2_re_publish_20260911/tools/draracle')
+try:
+    import re_helper_root
+except ImportError:  # imported with only tools/lol2 on sys.path
+    sys.path.append(str(Path(__file__).resolve().parents[1])); import re_helper_root
+RE_TOOLS = re_helper_root.path('draracle')  # LOL2_RE_ROOT (see tools/re_helper_root.py)
 sys.path.insert(0, str(RE_TOOLS))
 from lol2_extract_draracle_geometry import parse_mix, u32
 

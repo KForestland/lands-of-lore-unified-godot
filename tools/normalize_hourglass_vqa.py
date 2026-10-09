@@ -2,7 +2,7 @@
 """Normalize hourglass checkpoints and native solid vectors for FFmpeg."""
 import hashlib,json,struct,sys
 from pathlib import Path
-sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools/draracle')
+import re_helper_root; re_helper_root.insert('draracle')  # LOL2_RE_ROOT
 from extract_block_sprite_frames import lcw
 SOURCE_SHA='f7d8ee9632870b9b8fd8e82f4ebb78868c531630908dc704d3ef947b5bd5738a'
 def chunks(data,start=0):

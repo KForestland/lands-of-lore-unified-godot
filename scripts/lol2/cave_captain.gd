@@ -15,11 +15,14 @@ var picture: TextureRect
 var voice: AudioStreamPlayer
 var speech: AudioStreamPlayer3D
 var effects: Array=[]
+var loot: Node3D
 static func initial() -> Dictionary:
 	return {"version":1,"source":State.initial(State.source()),"contact":Contact.initial(),"region":-1,"movie":-1.0,"movie_done":false,"pose":0.0,"speech":-1.0,"receipts":[]}
 static func validate(saved: Variant) -> String:
 	if not saved is Dictionary or saved.get("version")!=1:return "Invalid captain scene version."
 	var error:=State.validate(saved.get("source"),State.source())
+	if not error.is_empty():return error
+	error=preload("res://scripts/lol2/cave_captain_loot.gd").validate(saved.get("loot"),saved.source)
 	if not error.is_empty():return error
 	var m=JSON.parse_string(FileAccess.get_file_as_string(MEDIA))
 	if not m is Dictionary:return "Missing captain media."
@@ -35,7 +38,7 @@ static func validate(saved: Variant) -> String:
 		if not receipt is Dictionary or not receipt.get("type") is String:return "Invalid captain source receipt."
 		for key in receipt:
 			var value=receipt[key]
-			if not key is String or not (value is String or State._integer(value,65535)):return "Invalid captain source receipt value."
+			if not key is String or not (value is String or State._integer(value,4294967295 if key=="identity" else 65535)):return "Invalid captain source receipt value."
 	return ""
 func setup(owner_host: Node3D, saved: Variant=null) -> String:
 	host=owner_host;population=host.guard_population;process_mode=Node.PROCESS_MODE_ALWAYS
@@ -51,6 +54,7 @@ func setup(owner_host: Node3D, saved: Variant=null) -> String:
 	population.creature_audio=preload("res://scripts/lol2/cave_captain_audio.gd").new();population.add_child(population.creature_audio)
 	var audio_error: String=population.creature_audio.setup(population,population.audio_contract,str(population.config.audio_manifest))
 	if not audio_error.is_empty():return audio_error
+	loot=preload("res://scripts/lol2/cave_captain_loot.gd").new();add_child(loot);loot.setup(self)
 	return restore(saved if saved!=null else initial())
 func checkpoint() -> Dictionary:return state.duplicate(true)
 func restore(saved: Variant) -> String:
@@ -83,6 +87,7 @@ func advance(delta: float) -> void:
 			state.pose=minf(35.0/8.0,snappedf(state.pose+delta,1.0/1024))
 			if state.pose>=35.0/8.0:apply(State.pose_finished(state.source,src))
 		apply(State.advance(state.source,src,delta))
+	loot.advance(delta)
 	present()
 func own_region() -> void:
 	if not state.source.captain.present:return
@@ -138,6 +143,7 @@ func apply(rows: Array) -> void:
 			_:
 				record_receipt(e)
 func present(restoring: bool=false) -> void:
+	if loot!=null:loot.present()
 	if picture==null:return
 	picture.visible=intro_active()
 	if intro_active():
@@ -176,6 +182,7 @@ func award_magic(amount: int) -> void:
 	if result.has("error"):push_error(result.error);return
 	result.checkpoint.spark_reward_seed=int(rng.seeds[result.draws_used]);host.starting_magic.commit(result.checkpoint)
 func use() -> bool:
+	if loot!=null and loot.collect():return true
 	if not aimed():return false
 	var rows:=State.use(state.source,src)
 	if rows.is_empty():return false

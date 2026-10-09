@@ -8,8 +8,8 @@ from pathlib import Path
 from build_game_atlas import ROOT, parse_mix, section
 from audit_game_transition_owners import GAME, collect_owners
 from audit_game_actor_scripts import groups
-sys.path.insert(0, '/home/bob/lol2_re_publish_20260911/tools')
-sys.path.insert(0, '/home/bob/lol2_re_publish_20260911/tools/draracle')
+import re_helper_root
+re_helper_root.insert('tools', 'draracle')  # LOL2_RE_ROOT (see re_helper_root.py)
 from lol2_westwood_hash import ww_hash_v1
 import capstone
 

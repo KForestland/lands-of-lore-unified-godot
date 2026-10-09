@@ -56,6 +56,9 @@ var exhibit_retry: Dictionary = {}
 var failure_overlay: CanvasLayer
 var dragon_door: AnimatableBody3D
 var gallery: Node3D
+var key_locks: Node3D
+const KeyLocks = preload("res://scripts/lol2/museum_key_locks.gd")
+const KeyLockState = preload("res://scripts/lol2/museum_key_locks_state.gd")
 var escape_regions: Array = []
 var escape_wall: MeshInstance3D
 var hourglass: MeshInstance3D
@@ -204,6 +207,11 @@ func _ready() -> void:
 	gallery = preload("res://scripts/lol2/museum_gallery.gd").new()
 	add_child(gallery)
 	if checkpoint is Dictionary: gallery.restore_checkpoint(checkpoint.get("gallery", {}))
+	if KeyLocks.assets_ready():
+		key_locks = KeyLocks.new()
+		add_child(key_locks)
+		var lock_error: String = key_locks.setup(self, checkpoint.get("museum_key_locks") if checkpoint is Dictionary else null)
+		if not lock_error.is_empty(): push_error(lock_error)
 	dragon_door = preload("res://scripts/lol2/museum_dragon_door.gd").new()
 	add_child(dragon_door)
 	if checkpoint is Dictionary: dragon_door.restore_checkpoint(checkpoint.get("dragon_door", {}))
@@ -213,6 +221,13 @@ func _ready() -> void:
 		get_tree().remove_meta("lol2_museum_resume")
 		if Save.validate(resume).is_empty(): apply_save(resume)
 	start_introduction()
+
+## Lock78's passage faces (regions1237/1477 closed floors and walls) are built by the key-lock owner.
+func excluded_faces() -> Dictionary:
+	var result := {}
+	if KeyLocks.assets_ready():
+		for index in KeyLocks.passage_data().closed_face_indices: result[int(index)] = true
+	return result
 
 func start_introduction() -> bool:
 	if introduction_state != "not_started" or is_instance_valid(introduction): return false
@@ -246,6 +261,7 @@ func checkpoint_state() -> Dictionary:
 		"hourglass": hourglass.checkpoint() if is_instance_valid(hourglass) else {},
 		"escape_wall": escape_wall.checkpoint() if is_instance_valid(escape_wall) else {},
 		"gallery": gallery.checkpoint() if is_instance_valid(gallery) else {},
+		"museum_key_locks": key_locks.checkpoint() if is_instance_valid(key_locks) else KeyLockState.initial(),
 		"skeletons": skeleton_population.checkpoint() if is_instance_valid(skeleton_population) else preload("res://scripts/lol2/museum_skeleton_population_state.gd").initial(),
 		"dragon_door": dragon_door.checkpoint() if is_instance_valid(dragon_door) else {}
 	}
@@ -406,7 +422,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if open_inventory(): get_viewport().set_input_as_handled()
 		return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
-		if (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
+		if (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
 		return
 	super._unhandled_input(event)
 
@@ -419,6 +435,11 @@ func _physics_process(delta: float) -> void:
 	var broken_hint: String = broken_thohan.interaction_hint() if introduction_state == "complete" else ""
 	if not broken_hint.is_empty():
 		interaction_label.text = broken_hint
+		interaction_label.show()
+		return
+	var lock_hint: String = key_locks.interaction_hint() if is_instance_valid(key_locks) else ""
+	if not lock_hint.is_empty():
+		interaction_label.text = lock_hint
 		interaction_label.show()
 		return
 	var control_hint: String = skeleton_population.control_hint() if is_instance_valid(skeleton_population) else ""
@@ -496,6 +517,9 @@ func apply_save(state: Dictionary) -> void:
 	if saved.has("museum_control181"): quest_state["museum_control181"] = saved.museum_control181.duplicate(true)
 	hand_item = saved.get("hand_item","")
 	broken_thohan.restore()
+	if is_instance_valid(key_locks):
+		var lock_error: String = key_locks.restore_checkpoint(saved.get("museum_key_locks",KeyLockState.initial()))
+		if not lock_error.is_empty(): push_error(lock_error)
 	champion_stones.restore_collected(carried_collected+item_effect_checkpoint.spent)
 	mail_shirt.visible = not MAIL_ITEM_ID in carried_collected
 	player_magic_checkpoint = preload("res://scripts/lol2/player_magic_state.gd").restore(saved.get("magic",preload("res://scripts/lol2/player_magic_state.gd").initial())).checkpoint

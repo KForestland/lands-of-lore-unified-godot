@@ -5,7 +5,7 @@ from pathlib import Path
 from PIL import Image
 from audit_monastery_rooms import ROOT, GAME, digest
 from build_game_atlas import parse_mix, u32
-sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools/draracle')
+import re_helper_root; re_helper_root.insert('draracle')  # LOL2_RE_ROOT
 from lol2_wall_material_checkpoint import sections
 from lol2_palette_png import rgb_palette
 from extract_prop_sprite_previews import decode_rows

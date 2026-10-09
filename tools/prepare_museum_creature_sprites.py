@@ -15,7 +15,7 @@ import argparse, os, sys
 # Keep their historical search path during migration; this standalone CLI does
 # not import anything from it.
 if __name__ != '__main__':
-    sys.path.insert(0, '/home/bob/lol2_re_publish_20260911/tools/draracle')
+    import re_helper_root; re_helper_root.insert('draracle')  # LOL2_RE_ROOT
 GAME=Path(os.environ.get('LOL2_GAME_ROOT', '/home/bob/lol2_out/museum_capture_20260913/game'))
 ROOT=Path(__file__).resolve().parents[1]
 TEXTURE=Path('/home/bob/lol2_out/museum_capture_20260913/museum_texture_blob.bin')

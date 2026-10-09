@@ -3,6 +3,8 @@ extends RefCounted
 const LABELS := {"War_cluster":"War Cluster","Mana_foil":"Mana Foil","SS5":"Spell Scroll","Fire_crystals":"Fire Crystal","Dag_Light":"Dagger of Light","Tho_fixed":"Thohan's Great Sword"}
 static func info(id: String) -> Dictionary:
 	if id == "museum:control181:Tho_Broken": return {"label":"Broken Thohan","icon":"res://assets/lol2/generated/museum_broken_thohan/icon.png"}
+	if id == "museum:control87:Sk_key": return {"label":"Sk key","icon":"res://assets/lol2/generated/museum_key_locks/sk_key.png"}
+	if id == "museum:movable55:SS1": return {"label":"SS1","icon":"res://assets/lol2/generated/museum_key_locks/ss1.png"}
 	if id == "monastery:item83:Power_Orb": return {"label":"Power Orb","icon":"res://assets/lol2/generated/monastery_moff/Power_Orb.png"}
 	if id == "jungle:item51:Th_Dagger": return {"label":"Th Dagger","icon":"res://assets/lol2/generated/jungle_source_pickups/th_dagger.png"}
 	if preload("res://scripts/lol2/jungle_world_items_catalog.gd").valid(id): return preload("res://scripts/lol2/jungle_world_items_catalog.gd").info(id)

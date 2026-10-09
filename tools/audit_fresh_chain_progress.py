@@ -49,7 +49,7 @@ def check_contents(index, state, require_kityara=False):
         assert quests['act_one_departure']['phase'] == 'arrived', 'Departure not complete'
         assert quests['magic_shop']['flags']['49'] == 1, 'Repair exchange flag absent'
         assert quests['monastery']['globals']['GV_RUNES_TRANSLATED'] == 1, 'Runes not translated'
-        assert quests['monastery']['globals']['GV_LUTHERS_SOUL'] == 2, 'Soul state differs'
+        assert quests['monastery']['globals']['GV_LUTHERS_SOUL'] == 7, 'Soul state differs (initial5 + Julian1 + repair1)'
         for flag in ['148', '288', '259']:
             assert quests['monastery']['flags'][flag] == 1, f'Monastery flag {flag} absent'
         checks.append('Darker-jungle arrival, translation, orb, blessing and repair flags')
