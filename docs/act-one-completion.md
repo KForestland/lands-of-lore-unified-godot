@@ -1,6 +1,6 @@
 # Classic Act 1 completion
 
-Latest verified delivery: [R9](act-one-r9-verification.md), with292 passing regressions, a fresh11-leg campaign and actual Linux package checks. Source after R9 adds Museum Dragon Blood explosives, renewable beehive wax, Dawn’s library translation/Dampen reward, Aloe plants, tapped sap trees and a breakable Aloe barrel. Main integration checks pass, including exact regrowth-timer boundaries and inventory-capacity cases. R10’s full run passed293/295; both failures were outdated route expectations for the initialized beehive packet. The failed source/run is preserved, and corrected route checks pass. R11 full296/campaign/package verification is starting; R9 binaries remain the verified delivery baseline.
+Latest verified delivery: [R11](act-one-r11-verification.md), with 296 passing regressions, all 11 fresh campaign legs, both exports, 21,169 matching packed assets and actual Linux package checks. Later Prism/Reaver/Amber/Net and Cave Stone/Manafoil work is separate. The Manafoil shaft is a confirmed dead end until its floor-lift mechanism is implemented; this is an open content defect, not a passed pickup route.
 
 Scope clarification (2026-09-15): this is an intermediate milestone within the
 [complete Classic Edition](classic-edition.md), not the final product endpoint.

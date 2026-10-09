@@ -11,6 +11,7 @@ var curse := Curse.new()
 var collectible := Collectible.new()
 var aloe: Node3D
 var stalagmites: Node3D
+var stone_manafoil: Node3D
 var equipped_item := ""
 var equipped_armor := ""
 var source_combat_enabled := true
@@ -155,6 +156,11 @@ func _ready() -> void:
 	stalagmites = preload("res://scripts/lol2/cave_stalagmite.gd").new()
 	add_child(stalagmites)
 	stalagmites.setup(self)
+	# Source prop1050 Ancient Stone and control75 Mana foil pickups.
+	if preload("res://scripts/lol2/cave_stone_manafoil.gd").assets_ready():
+		stone_manafoil = preload("res://scripts/lol2/cave_stone_manafoil.gd").new()
+		add_child(stone_manafoil)
+		stone_manafoil.setup(self)
 	if source_combat_enabled:
 		roach = preload("res://scripts/lol2/cave_roach.gd").new()
 		add_child(roach)
@@ -512,6 +518,7 @@ func _enter_museum() -> void:
 
 func carried_items() -> Array:
 	var items: Array = collectible.saved_ids()+aloe.collected+stalagmites.collected
+	if stone_manafoil!=null:items+=stone_manafoil.collected
 	if captain!=null:items+=preload("res://scripts/lol2/cave_captain_items.gd").from_checkpoint(captain.state)
 	if guard38_loot!=null:items+=guard38_loot.carried(guard38_loot.state)
 	if guard39_loot!=null:items+=guard39_loot.carried(guard39_loot.state)
@@ -570,6 +577,7 @@ func _process(_delta: float) -> void:
 	interaction_prompt.text = "E · Strike chain" if (indexed_chain != null and indexed_chain.can_strike()) or (river_chains != null and river_chains.target_chain() >= 0) else "E · Collect cavern sample"
 	if aloe != null and aloe.target() >= 0: interaction_prompt.text = "E · Pick Cave Aloe"
 	if stalagmites != null and stalagmites.target() >= 0: interaction_prompt.text = "E · Take Stalagmite"
+	if stone_manafoil != null and not stone_manafoil.prompt().is_empty(): interaction_prompt.text = stone_manafoil.prompt()
 	if indexed_chain != null:
 		if development_mode:
 			hud.text += "\nV: video review"
@@ -649,6 +657,13 @@ func _physics_process(delta: float) -> void:
 		_check_chamber_arrival()
 
 func _update_interaction() -> void:
+	if stone_manafoil != null and not stone_manafoil.target().is_empty():
+		interaction_available = true
+		if interaction_requested:
+			var taken: String = stone_manafoil.take()
+			_save_feedback(("Ancients' Stone" if taken == stone_manafoil.STONE else "Mana Foil") + " added to inventory." if not taken.is_empty() else "You cannot carry more.")
+		interaction_requested = false
+		return
 	if stalagmites != null and stalagmites.target() >= 0:
 		interaction_available = true
 		if interaction_requested and stalagmites.harvest(): _save_feedback("Stalagmite added to inventory.")
@@ -703,6 +718,7 @@ func _save_state() -> Dictionary:
 	if indexed_chain != null: result.chain_doors = indexed_chain.saved_state()
 	if aloe != null: result.aloe = aloe.collected.duplicate()
 	if stalagmites != null: result.stalagmites = stalagmites.collected.duplicate()
+	if stone_manafoil != null: result.stone_manafoil = stone_manafoil.collected.duplicate()
 	result.equipped_item = equipped_item
 	result.equipped_armor = equipped_armor
 	if roach != null: result.roach = roach.snapshot()
@@ -798,6 +814,7 @@ func _quickload(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
 	collectible.restore(state.collected)
 	aloe.restore(state.get("aloe", []))
 	stalagmites.restore(state.get("stalagmites", []))
+	if stone_manafoil != null: stone_manafoil.restore(state.get("stone_manafoil", []))
 	equipped_item = state.get("equipped_item", "")
 	equipped_armor = state.get("equipped_armor", "")
 	roach_population=RoachPopulation.canonical(state.get("roach_population",RoachPopulation.initial()))

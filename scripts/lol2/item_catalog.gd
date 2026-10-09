@@ -14,6 +14,7 @@ const ShopItems = preload("res://scripts/lol2/shop_item_inventory.gd")
 const WorldItems = preload("res://scripts/lol2/jungle_world_items_catalog.gd")
 const Runes = preload("res://scripts/lol2/hive_rune_items.gd")
 const Wax = preload("res://scripts/lol2/hive_wax.gd")
+const Amber = preload("res://scripts/lol2/hive_amber_items.gd")
 const BeeWax = preload("res://scripts/lol2/jungle_beehive_wax.gd")
 const Harvest = preload("res://scripts/lol2/jungle_harvest_items.gd")
 const Monastery = preload("res://scripts/lol2/monastery_conversation.gd")
@@ -24,6 +25,7 @@ const SCOPES := ["cave","museum","jungle"]
 const MAX_CARRIED := 64
 const GENERATED := "res://assets/lol2/generated/"
 const FIXED := {
+	"museum:prop280:Prism":{"slot":"weapon","label":"Prism","icon":GENERATED+"museum_prism/icon.png","origin":"museum"},
 	"museum:item1:Dragon_Blood":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
 	"museum:item2:Dragon_Blood":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
 	"museum:item3:Dragon_Blood":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
@@ -51,6 +53,14 @@ const FIXED := {
 	# Prop153 pedestal grant "7-Long arm" (museum_long_arm_source.json); same modern weapon slot as the shop Long arm.
 	"museum:prop153:Long_arm":{"slot":"weapon","label":"Long arm","icon":GENERATED+"museum_long_arm/icon.png","origin":"museum"},
 	"museum:movable55:SS1":{"slot":"","label":"SS1","icon":GENERATED+"museum_key_locks/ss1.png","origin":"museum"},
+	# Hive control121 grant "18-Reaver of GO" (hive_reaver_amber_source.json; handler18 equip flag only): a weapon.
+	"hive:control121:Reaver_of_GO":{"slot":"weapon","label":"Reaver of GO","icon":GENERATED+"hive_reaver_amber/reaver.png","origin":"jungle"},
+	# Hive prop214 pile grant "26-Net of Exile" (hive_net_exile_source.json); handler104 on-hit effect not hosted.
+	"hive:prop214:Net_of_Exile":{"slot":"weapon","label":"Net of Exile","icon":GENERATED+"hive_net_exile/net.png","origin":"jungle"},
+	# Cave prop1050 "66-Ancients stn" (definition68/handler6, as the Hive stone) and control75 "131-Mana foil"
+	# (definition133/handler43, no verified use) (cave_stone_manafoil_source.json).
+	"cave:prop1050:Ancients_Stone":{"slot":"","label":"Ancients’ Stone","icon":GENERATED+"cave_stone_manafoil/stone_icon.png","origin":"cave","use":"ancient"},
+	"cave:control75:Mana_foil":{"slot":"","label":"Mana Foil","icon":GENERATED+"cave_stone_manafoil/foil_icon.png","origin":"cave"},
 	"jungle:item51:Th_Dagger":{"slot":"weapon","label":"Th Dagger","icon":GENERATED+"jungle_source_pickups/th_dagger.png","origin":"jungle"},
 	"jungle:weapon_shop:Gargoyle_Bracers":{"slot":"offhand","label":"Gargoyle Bracers","icon":GENERATED+"weapon_shop/Gargoyle_Bracers.png","origin":"jungle","defense":5},
 	# MLIB message8 Dawn rune-translation gift (monastery_conversation.DAMPEN), GLOBAL definition72 handler27.
@@ -83,6 +93,8 @@ static func entry(id: Variant) -> Dictionary:
 	if Harvest.valid(id):
 		var info := Harvest.info(id)
 		return {"slot":"","label":str(info.label),"icon":str(info.icon),"origin":"jungle","use":"aloe" if Harvest.kind(id) == "aloe" else "ironwood_sap"}
+	# Renewable Hive Amber pool (hive_amber_items.gd): original "110-Amber" (handler0, no use).
+	if Amber.valid(id): return {"slot":"","label":"Amber","icon":Amber.ICON,"origin":"jungle"}
 	if Runes.valid(id): return {"slot":"","label":"Wax runes","icon":GENERATED+"hive_wax_runes/runes.png","origin":"jungle"}
 	# Power Orb, magic-shop and jungle world items share the existing shop presentation.
 	if id == Monastery.ORB or id in MagicShop.all_item_ids() or WorldItems.valid(id):
@@ -121,7 +133,7 @@ static func ids(scope: String = "jungle") -> Array:
 	for record in Aloe.RECORDS:
 		for harvest in range(1,4): all.append(Aloe.item_id(record,harvest))
 	all += WeaponShop.ITEMS.values().filter(func(id): return id not in FIXED)
-	all += [Monastery.FLUTE,Monastery.ORB,Wax.ITEM,KITYARA_KNIFE] + MagicShop.all_item_ids() + WorldItems.ITEMS.keys() + BeeWax.POOL + Harvest.all()
+	all += [Monastery.FLUTE,Monastery.ORB,Wax.ITEM,KITYARA_KNIFE] + MagicShop.all_item_ids() + WorldItems.ITEMS.keys() + BeeWax.POOL + Harvest.all() + Amber.pool()
 	for index in range(23): all.append(Runes.PREFIX+str(index))
 	return all.filter(func(id): return admitted(id,scope))
 

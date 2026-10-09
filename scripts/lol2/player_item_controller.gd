@@ -50,7 +50,8 @@ func use(id: String) -> bool:
 		if curse != null and int(curse.state.get("phase",0)) == 1:
 			curse.state.merge({"phase":0,"target":int(host.player_form),"remaining":0.0,"duration":0.0},true)
 		return true
-	if id == Ancient.ITEM:
+	# Every Ancient Stone (Hive rune room, Cave prop1050) is definition68/handler6 and shares the player counter byte.
+	if Catalog.use_kind(id) == "ancient":
 		if not is_instance_valid(host.starting_magic) or host.starting_magic.health() <= 0: return false
 		var use := AncientEffect.use(1,int(current.get("ancient_charges",0)),0)
 		if use.result != 1: return false

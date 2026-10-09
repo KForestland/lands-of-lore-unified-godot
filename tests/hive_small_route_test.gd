@@ -88,6 +88,8 @@ func run() -> void:
 	# Entering Hive materializes the optional legacy rune-room checkpoint.
 	expected.jungle_harvest = preload("res://scripts/lol2/jungle_harvest_state.gd").initial()
 	expected.jungle_beehives = preload("res://scripts/lol2/jungle_beehives_state.gd").initial()
+	expected.hive_reaver_amber = preload("res://scripts/lol2/hive_reaver_amber_state.gd").initial()
+	expected.hive_net_exile = preload("res://scripts/lol2/hive_net_exile.gd").initial()
 	expected.hive_executioner_live = preload("res://scripts/lol2/hive_executioner_live.gd").initial()
 	expected.hive_rune_entry = preload("res://scripts/lol2/hive_rune_entry_state.gd").initial()
 	var ambush=preload("res://scripts/lol2/hive_ambush_state.gd")

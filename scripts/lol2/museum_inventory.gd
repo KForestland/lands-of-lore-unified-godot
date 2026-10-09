@@ -236,6 +236,7 @@ func select_item(index: int) -> void:
 	if preload("res://scripts/lol2/cave_stalagmite.gd").valid_item(id): detail_text.text = "Taken from a crystal formation in Draracle’s caves. Select it as your weapon."
 	if preload("res://scripts/lol2/player_equipment.gd").offhand(id): detail_text.text = "Equip in your offhand. Defense +%d. Stored while transformed." % preload("res://scripts/lol2/item_catalog.gd").defense(id)
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id)=="dragon_blood":detail_text.text="Place an explosive ahead of you. Six-second fuse; blast harms nearby creatures and you. Move away after use."
+	if id=="hive:control121:Reaver_of_GO":detail_text.text="Equip as a weapon. Reduces total defense by 50 while equipped."
 	if id.begins_with("cave:guard"): detail_text.text = "Dropped by a defeated cave guard. " + ("Equip in your offhand. Defense +%d. Stored while transformed." % preload("res://scripts/lol2/item_catalog.gd").defense(id) if preload("res://scripts/lol2/player_equipment.gd").offhand(id) else "Select it as your weapon.")
 
 func toggle_equipment() -> void:

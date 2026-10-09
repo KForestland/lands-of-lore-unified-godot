@@ -84,11 +84,14 @@ static func validate(value: Variant, checkpoint_count: int) -> String:
 		return "Save chain and door state is invalid."
 	if value.has("aloe") and not preload("res://scripts/lol2/cave_aloe.gd").validate_ids(value.aloe):
 		return "Save Aloe state is invalid."
+	if value.has("stone_manafoil") and not preload("res://scripts/lol2/cave_stone_manafoil.gd").validate_ids(value.stone_manafoil):
+		return "Save Ancient Stone/Mana foil state is invalid."
 	if value.has("item_effects"):
-		var carried: Array = value.get("aloe",[]).duplicate()
+		# Consumables carried in the cave: harvested Aloe and the prop1050 Ancient Stone.
+		var carried: Array = value.get("aloe",[]).duplicate() + value.get("stone_manafoil",[]).filter(func(id): return id == preload("res://scripts/lol2/cave_stone_manafoil.gd").STONE)
 		if value.item_effects is Dictionary and value.item_effects.get("spent") is Array:
 			for id in value.item_effects.spent:
-				if not id in carried: return "Consumed Aloe was not harvested."
+				if not id in carried: return "Consumed item was not picked up."
 				carried.erase(id)
 		# The offhand slot is owned by guard loot, so it is checked below against those items.
 		var effects: Variant = value.item_effects.duplicate() if value.item_effects is Dictionary else value.item_effects

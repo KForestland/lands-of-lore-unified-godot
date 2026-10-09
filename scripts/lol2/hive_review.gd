@@ -31,6 +31,8 @@ var wax: Node3D
 var runes: Node3D
 var rune_light: Node3D
 var dawn20: Node3D
+var reaver_amber: Node3D
+var net_exile: Node3D
 var inventory: CanvasLayer
 var interface_hud: CanvasLayer
 ## Empty until the encounter supplies a complete initialized marker checkpoint.
@@ -108,6 +110,18 @@ func _ready() -> void:
 		add_child(dawn20)
 		var dawn_error: String=dawn20.setup(self)
 		if not dawn_error.is_empty(): push_error(dawn_error)
+	# Source Reaver alcove (control121) with its ceiling-collapse chain, and the Amber vein (control123).
+	if preload("res://scripts/lol2/hive_reaver_amber.gd").assets_ready():
+		reaver_amber=preload("res://scripts/lol2/hive_reaver_amber.gd").new()
+		add_child(reaver_amber)
+		var reaver_error: String=reaver_amber.setup(self)
+		if not reaver_error.is_empty(): push_error(reaver_error)
+	# Source prop214 pile: one "26-Net of Exile".
+	if preload("res://scripts/lol2/hive_net_exile.gd").assets_ready():
+		net_exile=preload("res://scripts/lol2/hive_net_exile.gd").new()
+		add_child(net_exile)
+		var net_error: String=net_exile.setup(self)
+		if not net_error.is_empty(): push_error(net_error)
 	get_window().title = "Lands of Lore II — Hive Caves"
 	if get_tree().has_meta("lol2_hive_resume"):
 		var error := apply_save(get_tree().get_meta("lol2_hive_resume"))
@@ -141,7 +155,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			return
 		if get_node("Warriors").health == 0 and event.keycode == KEY_F: return
-		if event.keycode == KEY_E and (wax.collect() or elevator.interact() or runes.interact() or (is_instance_valid(dawn20) and dawn20.use())):
+		if event.keycode == KEY_E and (wax.collect() or elevator.interact() or runes.interact() or (is_instance_valid(dawn20) and dawn20.use()) or (is_instance_valid(reaver_amber) and reaver_amber.use()) or (is_instance_valid(net_exile) and net_exile.use())):
 			get_viewport().set_input_as_handled()
 			return
 		if event.keycode == KEY_G and rune_light.cast():
@@ -174,6 +188,8 @@ func area_handoff() -> Dictionary:
 	quests.hive_nest = get_node("Nest").checkpoint()
 	quests.hive_executioner_live = executioner_live.checkpoint()
 	if is_instance_valid(dawn20) and dawn20.set_up(): quests.hive_dawn20 = dawn20.checkpoint()
+	if is_instance_valid(reaver_amber): quests.hive_reaver_amber = reaver_amber.checkpoint()
+	if is_instance_valid(net_exile): quests.hive_net_exile = net_exile.checkpoint()
 	if not executioner_marker_checkpoint.is_empty():
 		quests.hive_executioner_markers = executioner_marker_checkpoint.duplicate(true)
 	if not runtime_timing_checkpoint.is_empty():
@@ -217,6 +233,8 @@ func apply_area_handoff(state: Variant, entering: bool = true) -> String:
 	error = preload("res://scripts/lol2/jungle_kelsrick_state.gd").transport_error(state.inventory,state.quests)
 	if not error.is_empty(): return error
 	error = preload("res://scripts/lol2/player_item_state.gd").transport_error(state.inventory,state.quests)
+	if not error.is_empty(): return error
+	error = preload("res://scripts/lol2/hive_net_exile.gd").transport_error(state.inventory,state.quests)
 	if not error.is_empty(): return error
 	error = preload("res://scripts/lol2/player_magic_state.gd").transport_error(state.inventory,state.quests)
 	if not error.is_empty(): return error
@@ -307,6 +325,12 @@ func apply_area_handoff(state: Variant, entering: bool = true) -> String:
 	if is_instance_valid(dawn20) and dawn20.set_up():
 		var dawn_error: String=dawn20.restore(state.quests.get("hive_dawn20",dawn20.initial()))
 		if not dawn_error.is_empty(): return dawn_error
+	if is_instance_valid(reaver_amber):
+		var reaver_error: String=reaver_amber.restore(state.quests.get("hive_reaver_amber",reaver_amber.initial()))
+		if not reaver_error.is_empty(): return reaver_error
+	if is_instance_valid(net_exile):
+		var net_error: String=net_exile.restore(state.quests.get("hive_net_exile",net_exile.initial()))
+		if not net_error.is_empty(): return net_error
 	return_population.restore(state.quests.get("hive_return_population",return_population.State.initial()))
 	ambush_population.restore(state.quests.get("hive_ambush",ambush_population.Ambush.initial()))
 	rune_population.restore(state.quests.get("hive_rune_population",rune_population.RuneState.initial()))

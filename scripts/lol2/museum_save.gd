@@ -38,6 +38,8 @@ static func validate(state: Variant) -> String:
 	if checkpoint.has("skeletons"):
 		var creature_error := preload("res://scripts/lol2/museum_skeleton_population_state.gd").validate(checkpoint.skeletons)
 		if not creature_error.is_empty(): return creature_error
+	var prism_error:=preload("res://scripts/lol2/museum_prism.gd").validate(checkpoint.get("museum_prism",false),ids)
+	if not prism_error.is_empty():return prism_error
 	var blood_error:=preload("res://scripts/lol2/museum_blood_loot.gd").validate(checkpoint.get("museum_blood_loot"),checkpoint.get("skeletons",{}),ids,checkpoint.get("item_effects",{}).get("spent",[]))
 	if not blood_error.is_empty():return blood_error
 	if checkpoint.has("museum_control96"):

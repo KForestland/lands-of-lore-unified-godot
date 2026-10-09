@@ -32,7 +32,7 @@ static func validate(saved: Variant, collected: Array = []) -> String:
 	if not blood_error.is_empty():return blood_error
 	var charges = saved.get("ancient_charges",0)
 	if not (charges is int or charges is float) or not is_finite(float(charges)) or charges != floorf(float(charges)) or charges < 0 or charges > 9: return "Invalid Ancient Stone charges."
-	if charges > 0 and Effects.Ancient.ITEM not in saved.spent: return "Ancient charges lack consumed item history."
+	if charges > 0 and not saved.spent.any(func(id): return Catalog.use_kind(id) == "ancient"): return "Ancient charges lack consumed item history."
 	# Dampen charm (handler27): the dampened flag (native player byte 0x23ABD bit0) only follows its consumption.
 	var dampened = saved.get("dampened",false)
 	if not dampened is bool or (dampened and preload("res://scripts/lol2/monastery_conversation.gd").DAMPEN not in saved.spent): return "Invalid Dampen charm state."

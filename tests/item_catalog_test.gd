@@ -562,6 +562,7 @@ func museum_state(ids: Array, weapon: String = "", armor: String = "") -> Dictio
 	var state: Dictionary = {"format":MuseumSave.FORMAT,"version":1,"player":{"position":[0,0,0],"yaw":0,"pitch":0},
 		"checkpoint":{"version":1,"introduction_complete":true,"collected":ids,"equipped_item":weapon,"equipped_armor":armor,
 		"sword":{"started":MuseumSave.SWORD in ids,"collected":MuseumSave.SWORD in ids,"elapsed":7.625 if MuseumSave.SWORD in ids else 0},"gate":{"target_open":false,"progress":0}}}
+	state.checkpoint.museum_prism = "museum:prop280:Prism" in ids
 	var blood_ids=preload("res://scripts/lol2/dragon_blood_state.gd").ITEMS
 	if ids.any(func(id):return id in blood_ids):
 		var population=preload("res://scripts/lol2/museum_skeleton_population_state.gd")
@@ -630,7 +631,8 @@ func run() -> void:
 		if not check(cave_weapon == (preload("res://scripts/lol2/cave_stalagmite.gd").valid_item(id) or id in [Captain.SWORD,"cave:guard38:Short_Sword","cave:guard39:Short_Sword","cave:guard54:prop1013:Short_Sword","cave:guard54:actor54:Short_Sword","cave:guard52:Short_Sword","cave:guard53:Short_Sword"]) and (Catalog.slot(id)=="armor") == (id == Captain.ARMOR),"Cave slot scope differs: "+id):return
 	# Capacity: the Museum universe is 28; old cap 22 rejected it (inventory fixture only).
 	var museum_ids := Catalog.ids("museum")
-	if not check(museum_ids.size() == 40 and Catalog.ids("cave").size() == 27,"Museum/cave universe sizes changed: %d/%d" % [museum_ids.size(),Catalog.ids("cave").size()]):return
+	# +2 cave-origin ids: prop1050 Ancients' Stone and control75 Mana foil (cave_stone_manafoil.gd).
+	if not check(museum_ids.size() == 43 and Catalog.ids("cave").size() == 29,"Museum/cave universe sizes changed: %d/%d" % [museum_ids.size(),Catalog.ids("cave").size()]):return
 	if not check(Catalog.validate_carried(museum_ids,"museum").is_empty() and Catalog.validate_slots(museum_ids,"museum",Captain.SWORD,Captain.ARMOR).is_empty(),"Catalog rejects maximum Museum carry"):return
 	var without_captain := museum_ids.filter(func(id): return not Captain.valid(id))
 	# Carrying the Sk key and SS1 means no lock holds the key and the SS1 panel is empty.
