@@ -107,5 +107,38 @@ func run() -> void:
 	assert(Owner.FOIL in museum.carried_inventory.collected if museum.get("carried_inventory") != null else Owner.FOIL in museum.carried_collected)
 	assert(Owner.STONE in museum.item_effects.state().spent and int(museum.item_effects.state().ancient_charges) == charges + 1)
 	assert(museum.quicksave(path).is_empty() and museum.quickload(path).is_empty())
+	# Supplied lit-room reward fixture checks the second origin against the earned cave consumption above.
+	var carried: Dictionary = museum.inventory_state()
+	await finish(museum)
+	var hive = load("res://scenes/lol2/hive_review.tscn").instantiate()
+	root.add_child(hive); current_scene = hive
+	for i in 3: await process_frame
+	hive.set_physics_process(false)
+	var transfer: Dictionary = hive.area_handoff()
+	transfer.inventory = carried
+	transfer.inventory.collected.append(preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM)
+	transfer.quests.hive_rune_entry.flag7 = true
+	assert(hive.apply_area_handoff(transfer).is_empty())
+	var second: String = preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM
+	assert(hive.open_inventory())
+	hive.inventory.select_item(hive.carried_inventory.collected.find(second))
+	hive.inventory.use_button.pressed.emit()
+	await process_frame
+	assert(int(hive.item_effects.state().ancient_charges) == charges + 2)
+	assert(Owner.STONE in hive.item_effects.state().spent and second in hive.item_effects.state().spent)
+	assert(not hive.item_effects.use(second))
+	if is_instance_valid(hive.inventory): hive.inventory.close()	# Use may already close the panel.
+	await process_frame
+	assert(hive.quicksave(path).is_empty() and hive.quickload(path).is_empty())
+	assert(int(hive.item_effects.state().ancient_charges) == charges + 2)
+	var onward: Dictionary = hive.area_handoff()
+	await finish(hive)
+	var jungle = load("res://scenes/lol2/jungle_walkthrough.tscn").instantiate()
+	root.add_child(jungle); current_scene = jungle
+	for i in 3: await process_frame
+	assert(jungle.apply_area_handoff(onward).is_empty())
+	assert(int(jungle.item_effects.state().ancient_charges) == charges + 2)
+	assert(jungle.quicksave(path).is_empty() and jungle.quickload(path).is_empty())
+	print("PASS dual-origin Ancient Stones: cave inventory use + supplied Hive reward, two charges, no repeated consumption, Hive/Jungle disk saves.")
 	print("PASS cave_stone_manafoil_live: prop1050 stone and control75 foil via host E (once each, stone hidden, marker hidden), capacity guard, save/load and validation, Ancient Stone inventory use (shared counter, pickup history), Cave->Museum transfer.")
 	quit()
