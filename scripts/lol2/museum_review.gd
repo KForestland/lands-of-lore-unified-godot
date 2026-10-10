@@ -7,6 +7,7 @@ var start := Vector3.ZERO
 var ready_for_review := false
 var face_count := 0
 var flying := false
+var jump_requested := false
 var resets := 0
 var museum_props: Node3D
 var sword_transfer: Node3D
@@ -124,6 +125,7 @@ func set_development_mode(enabled: bool) -> void:
 		museum_props.visible = true
 
 func reset_position() -> void:
+	jump_requested = false
 	player.position = start
 	player.velocity = Vector3.ZERO
 	# Diagnostic direction along +native X toward the adjacent passage; saved heading unverified.
@@ -138,6 +140,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clampf(camera.rotation.x - event.relative.y * 0.003, -1.4, 1.4)
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT: Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_SPACE and not flying:
+			request_jump()
 		if event.keycode == KEY_ESCAPE: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		if event.keycode == KEY_F3:
 			set_development_mode(not development_mode)
@@ -149,6 +153,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.keycode == KEY_F:
 			flying = not flying
 			player.velocity = Vector3.ZERO
+
+func request_jump() -> bool:
+	if jump_requested or flying or get_tree().paused or Input.mouse_mode != Input.MOUSE_MODE_CAPTURED or not player.is_on_floor(): return false
+	if get("health") != null and int(get("health")) <= 0: return false
+	if get("introduction_state") != null and get("introduction_state") != "complete": return false
+	if get("mirror_transition_pending") == true: return false
+	jump_requested = true
+	return true
 
 func _physics_process(delta: float) -> void:
 	if not ready_for_review: return
@@ -162,8 +174,10 @@ func _physics_process(delta: float) -> void:
 		return
 	player.velocity.x = direction.x * 80
 	player.velocity.z = direction.z * 80
-	player.velocity.y = 0 if player.is_on_floor() else player.velocity.y - 320 * delta
-	if preload("res://scripts/lol2/walk_step.gd").try_step(player,Vector3(player.velocity.x,0,player.velocity.z)*delta):
+	var jumping := jump_requested and player.is_on_floor() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	jump_requested = false
+	player.velocity.y = 200.0 if jumping else (0.0 if player.is_on_floor() else player.velocity.y - 320 * delta)
+	if not jumping and player.velocity.y <= 0 and preload("res://scripts/lol2/walk_step.gd").try_step(player,Vector3(player.velocity.x,0,player.velocity.z)*delta):
 		player.velocity.x = 0
 		player.velocity.z = 0
 	player.move_and_slide()
