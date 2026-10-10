@@ -1,0 +1,3255 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L3_DH.MIX",
+  "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "geometry_key": 3106551060,
+  "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+ },
+ "key": {
+  "identity": 394988083,
+  "definition": 94,
+  "name": "92-Sk key",
+  "catalog_id": "museum:control87:Sk_key",
+  "icon": "sk_key.png"
+ },
+ "ss1": {
+  "identity": 2790957503,
+  "name": "68-SS1",
+  "catalog_id": "museum:movable55:SS1",
+  "icon": "ss1.png",
+  "definition": 70
+ },
+ "locks": {
+  "78": {
+   "position": [
+    -2104,
+    20,
+    -1085
+   ],
+   "heading": 16384,
+   "template": 36,
+   "placement_hex": "c8f73d04004014000114e004800d7f000000000001000000000000001400000024",
+   "storage": {
+    "kind": "local",
+    "index": 18
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 6884,
+    "predicate": 46,
+    "raw": "0a04e41a0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 18
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003120000"
+    },
+    "commands": [
+     "09104e000e00",
+     "090351001500",
+     "05104e000100",
+     "020100001800",
+     "14104e00a40280000a14",
+     "c60000001201"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 6930,
+    "predicate": 52,
+    "raw": "0a04121b000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 18
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0003120001"
+    },
+    "commands": [
+     "090351001500",
+     "14104e00a50280000a14",
+     "05104e000000",
+     "c60000001200",
+     "03010000330a8b1704000000"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": []
+  },
+  "87": {
+   "position": [
+    -2288,
+    45,
+    -1016
+   ],
+   "heading": 32768,
+   "template": 36,
+   "placement_hex": "10f7f80300802d00020451012e0e7f000000000001000000000000001400000024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 0,
+   "initial_loaded": true,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 7370,
+    "predicate": 19,
+    "raw": "0a04ca1c0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "051057000100",
+     "101057000000",
+     "020100001800",
+     "14105700a40280000a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 7330,
+    "predicate": 18,
+    "raw": "0a04a21c000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "051057000000",
+     "101057000100",
+     "03010000330a8b1700000000",
+     "14105700a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 6,
+     "value": 9,
+     "group": 7324,
+     "predicate": null,
+     "raw": "06069c1c0900",
+     "predicate_expression": null,
+     "commands": [
+      "051057000100"
+     ]
+    }
+   ]
+  },
+  "88": {
+   "position": [
+    -1703,
+    24,
+    -1887
+   ],
+   "heading": 32768,
+   "template": 36,
+   "placement_hex": "59f95f070080180002043c04520e7f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 7404,
+    "predicate": 14,
+    "raw": "0a04ec1c0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "091058000e00",
+     "09036e000300",
+     "06036e000100",
+     "051058000100",
+     "101058000100",
+     "020100001800",
+     "14105800a40280000a14",
+     "181058001100fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 7466,
+    "predicate": 15,
+    "raw": "0a042a1d000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "06036e000200",
+     "09036e000200",
+     "091058001000",
+     "051058000000",
+     "101058000000",
+     "03010000330a8b1701000000",
+     "14105800a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 17,
+     "group": 7524,
+     "predicate": null,
+     "raw": "0608641d1100",
+     "predicate_expression": null,
+     "commands": [
+      "181058001200fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 18,
+     "group": 7534,
+     "predicate": null,
+     "raw": "06086e1d1200",
+     "predicate_expression": null,
+     "commands": [
+      "181058001300fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 19,
+     "group": 7544,
+     "predicate": null,
+     "raw": "0608781d1300",
+     "predicate_expression": null,
+     "commands": [
+      "181058001400fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 20,
+     "group": 7554,
+     "predicate": null,
+     "raw": "0608821d1400",
+     "predicate_expression": null,
+     "commands": [
+      "091058000d00",
+      "06036e000200",
+      "09036e000200"
+     ]
+    }
+   ]
+  },
+  "113": {
+   "position": [
+    -1249,
+    34,
+    -631
+   ],
+   "heading": 0,
+   "template": 36,
+   "placement_hex": "1ffb77020000220002042e032a0f7f000000000001000000000000001400000024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 7976,
+    "predicate": 14,
+    "raw": "0a04281f0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "091071000e00",
+     "05108b000100",
+     "05108a000100",
+     "051089000100",
+     "051088000100",
+     "051087000100",
+     "051086000100",
+     "051085000100",
+     "051084000100",
+     "051083000100",
+     "051082000100",
+     "051081000100",
+     "051080000100",
+     "05107f000100",
+     "05107e000100",
+     "05107d000100",
+     "05107c000100",
+     "05107b000100",
+     "05107a000100",
+     "051079000100",
+     "051078000100",
+     "051077000100",
+     "051076000100",
+     "051075000100",
+     "060317010100",
+     "060316010100",
+     "060315010100",
+     "060314010100",
+     "09037e000300",
+     "06037e000100",
+     "101071000100",
+     "051071000100",
+     "020100001800",
+     "14107100a40280000a14",
+     "181071001500fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 8200,
+    "predicate": 15,
+    "raw": "0a040820000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "05108b000000",
+     "05108a000000",
+     "051089000000",
+     "051088000000",
+     "051087000000",
+     "051086000000",
+     "051085000000",
+     "051084000000",
+     "051083000000",
+     "051082000000",
+     "051081000000",
+     "051080000000",
+     "05107f000000",
+     "05107e000000",
+     "05107d000000",
+     "05107c000000",
+     "05107b000000",
+     "05107a000000",
+     "051079000000",
+     "051078000000",
+     "051077000000",
+     "051076000000",
+     "051075000000",
+     "090329011000",
+     "060317010200",
+     "060316010200",
+     "060315010200",
+     "060314010200",
+     "06037e000200",
+     "09037e000200",
+     "091071001000",
+     "051071000000",
+     "101071000000",
+     "03010000330a8b1700000000",
+     "14107100a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 21,
+     "group": 8426,
+     "predicate": null,
+     "raw": "0608ea201500",
+     "predicate_expression": null,
+     "commands": [
+      "181071001600fa000a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 22,
+     "group": 8436,
+     "predicate": null,
+     "raw": "0608f4201600",
+     "predicate_expression": null,
+     "commands": [
+      "181071001700fa000a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 23,
+     "group": 8446,
+     "predicate": null,
+     "raw": "0608fe201700",
+     "predicate_expression": null,
+     "commands": [
+      "181071001800fa000a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 24,
+     "group": 8456,
+     "predicate": null,
+     "raw": "060808211800",
+     "predicate_expression": null,
+     "commands": [
+      "091071000d00",
+      "06037e000200",
+      "09037e000200"
+     ]
+    }
+   ]
+  },
+  "114": {
+   "position": [
+    1004,
+    24,
+    -1983
+   ],
+   "heading": 49152,
+   "template": 36,
+   "placement_hex": "ec03bf0700c018000204f901600f7f0000000000010000000000000014002d0024",
+   "storage": {
+    "kind": "local",
+    "index": 2
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 8480,
+    "predicate": 1,
+    "raw": "0a0420210300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 2
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003020000"
+    },
+    "commands": [
+     "c590f8010300",
+     "091072000e00",
+     "090375000300",
+     "060375000000",
+     "051072000100",
+     "012050006400",
+     "012051006400",
+     "c60000000101",
+     "c60000000201",
+     "012037006400",
+     "062037000100",
+     "020100001800",
+     "14107200a40280000a14",
+     "181072000b00fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 8578,
+    "predicate": 3,
+    "raw": "0a048221000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 2
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0003020001"
+    },
+    "commands": [
+     "c60000001b01",
+     "060375000200",
+     "090375000200",
+     "c60000000100",
+     "c60000000200",
+     "051072000000",
+     "012050006400",
+     "012051006400",
+     "012037000000",
+     "03010000330a8b1701000000",
+     "062037000200",
+     "14107200a50280000a14",
+     "091072001000"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 11,
+     "group": 8672,
+     "predicate": null,
+     "raw": "0608e0210b00",
+     "predicate_expression": null,
+     "commands": [
+      "181072000c00fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 12,
+     "group": 8682,
+     "predicate": null,
+     "raw": "0608ea210c00",
+     "predicate_expression": null,
+     "commands": [
+      "181072000e00fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 14,
+     "group": 8692,
+     "predicate": null,
+     "raw": "0608f4210e00",
+     "predicate_expression": null,
+     "commands": [
+      "091072000d00",
+      "060375000200",
+      "090375000200"
+     ]
+    }
+   ]
+  },
+  "140": {
+   "position": [
+    1205,
+    25,
+    -965
+   ],
+   "heading": 32768,
+   "template": 36,
+   "placement_hex": "b504c5030080190001043b014e137f000000000001000000000000001400000024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 9774,
+    "predicate": 14,
+    "raw": "0a042e260300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "012035006400",
+     "102035000100",
+     "09108c000e00",
+     "012033006400",
+     "09037d000300",
+     "06037d000100",
+     "05108c000100",
+     "10108c000100",
+     "020100001800",
+     "14108c00a40280000a14",
+     "18108c002000fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 9854,
+    "predicate": 15,
+    "raw": "0a047e26000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "012035000000",
+     "102035000000",
+     "01204e000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "012033000000",
+     "01203e000000",
+     "06037d000200",
+     "09037d000200",
+     "09108c001000",
+     "05108c000000",
+     "10108c000000",
+     "03010000330a8b1701000000",
+     "14108c00a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 32,
+     "group": 10026,
+     "predicate": null,
+     "raw": "06082a272000",
+     "predicate_expression": null,
+     "commands": [
+      "18108c002100fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 33,
+     "group": 10036,
+     "predicate": null,
+     "raw": "060834272100",
+     "predicate_expression": null,
+     "commands": [
+      "18108c002200fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 34,
+     "group": 10046,
+     "predicate": null,
+     "raw": "06083e272200",
+     "predicate_expression": null,
+     "commands": [
+      "18108c002400fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 36,
+     "group": 10056,
+     "predicate": null,
+     "raw": "060848272400",
+     "predicate_expression": null,
+     "commands": [
+      "09108c000d00",
+      "06037d000200",
+      "09037d000200"
+     ]
+    }
+   ]
+  },
+  "141": {
+   "position": [
+    373,
+    25,
+    -2720
+   ],
+   "heading": 0,
+   "template": 36,
+   "placement_hex": "7501a00a000019000104990384137f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "local",
+    "index": 4
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 10080,
+    "predicate": 8,
+    "raw": "0a0460270300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 4
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003040000"
+    },
+    "commands": [
+     "09108d000e00",
+     "09036f000300",
+     "06036f000100",
+     "05108d000100",
+     "c60000000401",
+     "020100001800",
+     "14108d00a40280000a14",
+     "18108d000d00fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 10142,
+    "predicate": 9,
+    "raw": "0a049e27000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 4
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0003040001"
+    },
+    "commands": [
+     "06036f000200",
+     "09036f000200",
+     "09108d001000",
+     "05108d000000",
+     "c60000000400",
+     "03010000330a8b1701000000",
+     "14108d00a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 13,
+     "group": 10200,
+     "predicate": null,
+     "raw": "0608d8270d00",
+     "predicate_expression": null,
+     "commands": [
+      "18108d000f00fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 15,
+     "group": 10210,
+     "predicate": null,
+     "raw": "0608e2270f00",
+     "predicate_expression": null,
+     "commands": [
+      "18108d001000fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 16,
+     "group": 10220,
+     "predicate": null,
+     "raw": "0608ec271000",
+     "predicate_expression": null,
+     "commands": [
+      "09108d000d00",
+      "06036f000200",
+      "09036f000200"
+     ]
+    }
+   ]
+  },
+  "142": {
+   "position": [
+    -763,
+    25,
+    -1420
+   ],
+   "heading": 32768,
+   "template": 36,
+   "placement_hex": "05fd8c050080190002048502b4137f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "local",
+    "index": 3
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 10244,
+    "predicate": 4,
+    "raw": "0a0404280300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 3
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003030000"
+    },
+    "commands": [
+     "09108e000e00",
+     "09036d000300",
+     "06036d000100",
+     "05108e000100",
+     "c60000000301",
+     "14108e00a40280000a14",
+     "020100001800",
+     "18108e001c00fa000a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 10306,
+    "predicate": 5,
+    "raw": "0a044228000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 3
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0003030001"
+    },
+    "commands": [
+     "06036d000200",
+     "09036d000200",
+     "09108e001000",
+     "05108e000000",
+     "c60000000300",
+     "03010000330a8b1701000000",
+     "14108e00a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 28,
+     "group": 10364,
+     "predicate": null,
+     "raw": "06087c281c00",
+     "predicate_expression": null,
+     "commands": [
+      "18108e001d00fa000a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 29,
+     "group": 10374,
+     "predicate": null,
+     "raw": "060886281d00",
+     "predicate_expression": null,
+     "commands": [
+      "09108e000d00",
+      "06036d000200",
+      "09036d000200"
+     ]
+    }
+   ]
+  },
+  "143": {
+   "position": [
+    1028,
+    31,
+    -2383
+   ],
+   "heading": 0,
+   "template": 36,
+   "placement_hex": "04044f0900001f0002044705de137f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 10398,
+    "predicate": 14,
+    "raw": "0a049e280300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "09108f000e00",
+     "090371000300",
+     "060371000100",
+     "05108f000100",
+     "10108f000100",
+     "020100001800",
+     "14108f00a40280000a14",
+     "18108f001b00fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 10460,
+    "predicate": 15,
+    "raw": "0a04dc28000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "060371000200",
+     "090371000200",
+     "09108f001000",
+     "05108f000000",
+     "03010000330a8b1701000000",
+     "10108f000000",
+     "14108f00a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 27,
+     "group": 10518,
+     "predicate": null,
+     "raw": "060816291b00",
+     "predicate_expression": null,
+     "commands": [
+      "09108f000d00",
+      "060371000200",
+      "090371000200"
+     ]
+    }
+   ]
+  },
+  "144": {
+   "position": [
+    2339,
+    -46,
+    -2872
+   ],
+   "heading": 0,
+   "template": 36,
+   "placement_hex": "2309380b0000d2ff0204510202147f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "local",
+    "index": 5
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 10542,
+    "predicate": 10,
+    "raw": "0a042e290300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 5
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003050000"
+    },
+    "commands": [
+     "091090000e00",
+     "090370000300",
+     "060370000100",
+     "051090000100",
+     "c60000000501",
+     "14109000a40280000a14",
+     "020100001800",
+     "181090001900fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 10604,
+    "predicate": 11,
+    "raw": "0a046c29000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "local": 5
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0003050001"
+    },
+    "commands": [
+     "060370000200",
+     "090370000200",
+     "091090001000",
+     "051090000000",
+     "c60000000500",
+     "03010000330a8b1701000000",
+     "14109000a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 25,
+     "group": 10662,
+     "predicate": null,
+     "raw": "0608a6291900",
+     "predicate_expression": null,
+     "commands": [
+      "181090001a00fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 26,
+     "group": 10672,
+     "predicate": null,
+     "raw": "0608b0291a00",
+     "predicate_expression": null,
+     "commands": [
+      "091090000d00",
+      "060370000200",
+      "090370000200"
+     ]
+    }
+   ]
+  },
+  "145": {
+   "position": [
+    1866,
+    21,
+    -1367
+   ],
+   "heading": 32768,
+   "template": 36,
+   "placement_hex": "4a0757050080150002047c002c147f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 10696,
+    "predicate": 14,
+    "raw": "0a04c8290300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "091091000e00",
+     "090377000300",
+     "060377000100",
+     "051091000100",
+     "101091000100",
+     "020100001800",
+     "14109100a40280000a14",
+     "181091003700fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 10758,
+    "predicate": 15,
+    "raw": "0a04062a000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "060377000200",
+     "090377000200",
+     "091091001000",
+     "051091000000",
+     "101091000000",
+     "03010000330a8b1701000000",
+     "14109100a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 55,
+     "group": 10816,
+     "predicate": null,
+     "raw": "0608402a3700",
+     "predicate_expression": null,
+     "commands": [
+      "181091003800fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 56,
+     "group": 10826,
+     "predicate": null,
+     "raw": "06084a2a3800",
+     "predicate_expression": null,
+     "commands": [
+      "18109f004801ff5dfa00"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 56,
+     "group": 10836,
+     "predicate": null,
+     "raw": "0608542a3800",
+     "predicate_expression": null,
+     "commands": [
+      "091091000d00",
+      "060377000200",
+      "090377000200"
+     ]
+    }
+   ]
+  },
+  "146": {
+   "position": [
+    1507,
+    21,
+    -1367
+   ],
+   "heading": 32768,
+   "template": 36,
+   "placement_hex": "e305570500801500020478005c147f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 10860,
+    "predicate": 14,
+    "raw": "0a046c2a0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "091092000e00",
+     "09037b000300",
+     "06037b000100",
+     "051092000100",
+     "101092000100",
+     "020100001800",
+     "14109200a40280000a14",
+     "181092003100fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 10922,
+    "predicate": 15,
+    "raw": "0a04aa2a000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "06037b000200",
+     "09037b000200",
+     "091092001000",
+     "051092000000",
+     "101092000000",
+     "03010000330a8b1701000000",
+     "14109200a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 49,
+     "group": 10980,
+     "predicate": null,
+     "raw": "0608e42a3100",
+     "predicate_expression": null,
+     "commands": [
+      "091092000d00",
+      "06037b000200",
+      "09037b000200"
+     ]
+    }
+   ]
+  },
+  "147": {
+   "position": [
+    1694,
+    21,
+    -1367
+   ],
+   "heading": 32768,
+   "template": 36,
+   "placement_hex": "9e065705008015000204790080147f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 11004,
+    "predicate": 14,
+    "raw": "0a04fc2a0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "091093000e00",
+     "09037a000300",
+     "06037a000100",
+     "051093000100",
+     "101093000100",
+     "020100001800",
+     "14109300a40280000a14",
+     "181093002c00fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 11066,
+    "predicate": 15,
+    "raw": "0a043a2b000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "06037a000200",
+     "09037a000200",
+     "091093001000",
+     "051093000000",
+     "101093000000",
+     "03010000330a8b1701000000",
+     "14109300a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 44,
+     "group": 11124,
+     "predicate": null,
+     "raw": "0608742b2c00",
+     "predicate_expression": null,
+     "commands": [
+      "181093002d00fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 45,
+     "group": 11134,
+     "predicate": null,
+     "raw": "06087e2b2d00",
+     "predicate_expression": null,
+     "commands": [
+      "181093002e00fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 46,
+     "group": 11144,
+     "predicate": null,
+     "raw": "0608882b2e00",
+     "predicate_expression": null,
+     "commands": [
+      "1810a1002d01ff5dff7d"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 46,
+     "group": 11154,
+     "predicate": null,
+     "raw": "0608922b2e00",
+     "predicate_expression": null,
+     "commands": [
+      "091093000d00",
+      "06037a000200",
+      "09037a000200"
+     ]
+    }
+   ]
+  },
+  "148": {
+   "position": [
+    1956,
+    22,
+    -1454
+   ],
+   "heading": 16384,
+   "template": 36,
+   "placement_hex": "a407ae050040160002047300b6147f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 11178,
+    "predicate": 14,
+    "raw": "0a04aa2b0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "091094000e00",
+     "090376000300",
+     "060376000100",
+     "051094000100",
+     "101094000100",
+     "020100001800",
+     "14109400a40280000a14",
+     "181094002f00fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 11240,
+    "predicate": 15,
+    "raw": "0a04e82b000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "060376000200",
+     "090376000200",
+     "091094001000",
+     "051094000000",
+     "101094000000",
+     "03010000330a8b1701000000",
+     "14109400a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 47,
+     "group": 11298,
+     "predicate": null,
+     "raw": "0608222c2f00",
+     "predicate_expression": null,
+     "commands": [
+      "181094003000fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 48,
+     "group": 11308,
+     "predicate": null,
+     "raw": "06082c2c3000",
+     "predicate_expression": null,
+     "commands": [
+      "091094000d00",
+      "060376000200",
+      "090376000200"
+     ]
+    }
+   ]
+  },
+  "149": {
+   "position": [
+    1691,
+    21,
+    -1540
+   ],
+   "heading": 0,
+   "template": 36,
+   "placement_hex": "9b0604060000150002047a00e0147f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 11332,
+    "predicate": 14,
+    "raw": "0a04442c0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "091095000e00",
+     "060379000100",
+     "090379000300",
+     "051095000100",
+     "101095000100",
+     "020100001800",
+     "14109500a40280000a14",
+     "020100001800",
+     "18109500320096050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 11400,
+    "predicate": 15,
+    "raw": "0a04882c000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "060379000200",
+     "090379000200",
+     "091095001000",
+     "051095000000",
+     "101095000000",
+     "03010000330a8b1701000000",
+     "14109500a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 50,
+     "group": 11458,
+     "predicate": null,
+     "raw": "0608c22c3200",
+     "predicate_expression": null,
+     "commands": [
+      "181095003300fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 51,
+     "group": 11468,
+     "predicate": null,
+     "raw": "0608cc2c3300",
+     "predicate_expression": null,
+     "commands": [
+      "181095003400fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 52,
+     "group": 11478,
+     "predicate": null,
+     "raw": "0608d62c3400",
+     "predicate_expression": null,
+     "commands": [
+      "091095000d00",
+      "060379000200",
+      "090379000200"
+     ]
+    }
+   ]
+  },
+  "150": {
+   "position": [
+    1868,
+    21,
+    -1540
+   ],
+   "heading": 0,
+   "template": 36,
+   "placement_hex": "4c0704060000150002047d0010157f000000000001000000000000001400050024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 11502,
+    "predicate": 14,
+    "raw": "0a04ee2c0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "091096000e00",
+     "090378000300",
+     "060378000100",
+     "051096000100",
+     "101096000100",
+     "020100001800",
+     "14109600a40280000a14",
+     "181096002500fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 11564,
+    "predicate": 15,
+    "raw": "0a042c2d000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "060378000200",
+     "090378000200",
+     "091096001000",
+     "051096000000",
+     "101096000000",
+     "03010000330a8b1701000000",
+     "14109600a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 37,
+     "group": 11622,
+     "predicate": null,
+     "raw": "0608662d2500",
+     "predicate_expression": null,
+     "commands": [
+      "181096002600fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 38,
+     "group": 11632,
+     "predicate": null,
+     "raw": "0608702d2600",
+     "predicate_expression": null,
+     "commands": [
+      "181096002700fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 39,
+     "group": 11642,
+     "predicate": null,
+     "raw": "06087a2d2700",
+     "predicate_expression": null,
+     "commands": [
+      "181096002800fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 40,
+     "group": 11652,
+     "predicate": null,
+     "raw": "0608842d2800",
+     "predicate_expression": null,
+     "commands": [
+      "1810a0000601ff5dfa00"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 40,
+     "group": 11662,
+     "predicate": null,
+     "raw": "06088e2d2800",
+     "predicate_expression": null,
+     "commands": [
+      "091096000d00",
+      "060378000200",
+      "090378000200"
+     ]
+    }
+   ]
+  },
+  "151": {
+   "position": [
+    1507,
+    21,
+    -1540
+   ],
+   "heading": 0,
+   "template": 36,
+   "placement_hex": "e305040600001500020476004c157f000000000001000000000000001400000024",
+   "storage": {
+    "kind": "owner_state"
+   },
+   "loaded_value": 1,
+   "initial_loaded": false,
+   "insert": {
+    "kind": 4,
+    "value": 3,
+    "group": 11686,
+    "predicate": 14,
+    "raw": "0a04a62d0300330a8b17",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "091097000e00",
+     "09037c000300",
+     "06037c000100",
+     "051097000100",
+     "101097000100",
+     "020100001800",
+     "14109700a40280000a14",
+     "181097002900fa050a14"
+    ],
+    "mode": 3,
+    "held_identity": 394988083
+   },
+   "take": {
+    "kind": 4,
+    "value": 0,
+    "group": 11748,
+    "predicate": 15,
+    "raw": "0a04e42d000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "06037c000200",
+     "09037c000200",
+     "091097001000",
+     "051097000000",
+     "101097000000",
+     "03010000330a8b1701000000",
+     "14109700a50280000a14"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   },
+   "other_records": [
+    {
+     "kind": 8,
+     "value": 41,
+     "group": 11806,
+     "predicate": null,
+     "raw": "06081e2e2900",
+     "predicate_expression": null,
+     "commands": [
+      "181097002a00fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 42,
+     "group": 11816,
+     "predicate": null,
+     "raw": "0608282e2a00",
+     "predicate_expression": null,
+     "commands": [
+      "181097002b00fa050a14"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 43,
+     "group": 11826,
+     "predicate": null,
+     "raw": "0608322e2b00",
+     "predicate_expression": null,
+     "commands": [
+      "1810a4003901ff5dfa00"
+     ]
+    },
+    {
+     "kind": 8,
+     "value": 43,
+     "group": 11836,
+     "predicate": null,
+     "raw": "06083c2e2b00",
+     "predicate_expression": null,
+     "commands": [
+      "091097000d00",
+      "06037c000200",
+      "09037c000200"
+     ]
+    }
+   ]
+  }
+ },
+ "sconces": {
+  "117": {
+   "position": [
+    -1433,
+    32,
+    -432
+   ],
+   "heading": 2912,
+   "template": 37,
+   "placement_hex": "67fab001600b200001043a03900f7f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 8728,
+    "predicate": 207,
+    "raw": "0a04182203007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 8752,
+    "predicate": 207,
+    "raw": "0a043022000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "118": {
+   "position": [
+    -1487,
+    32,
+    -452
+   ],
+   "heading": 2912,
+   "template": 37,
+   "placement_hex": "31fac401600b200001043a03ba0f7f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 8774,
+    "predicate": 207,
+    "raw": "0a04462203007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 8798,
+    "predicate": 207,
+    "raw": "0a045e22000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "119": {
+   "position": [
+    -1555,
+    32,
+    -505
+   ],
+   "heading": 12014,
+   "template": 37,
+   "placement_hex": "edf9f901ee2e200001043b03e40f7f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 8820,
+    "predicate": 207,
+    "raw": "0a04742203007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 8844,
+    "predicate": 207,
+    "raw": "0a048c22000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "120": {
+   "position": [
+    -1597,
+    32,
+    -587
+   ],
+   "heading": 11650,
+   "template": 37,
+   "placement_hex": "c3f94b02822d200001043b030e107f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 8866,
+    "predicate": 207,
+    "raw": "0a04a22203007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 8890,
+    "predicate": 207,
+    "raw": "0a04ba22000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "121": {
+   "position": [
+    -1613,
+    32,
+    -678
+   ],
+   "heading": 16384,
+   "template": 37,
+   "placement_hex": "b3f9a6020040200001043f0338107f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 8912,
+    "predicate": 207,
+    "raw": "0a04d02203007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 8936,
+    "predicate": 207,
+    "raw": "0a04e822000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "122": {
+   "position": [
+    -1617,
+    32,
+    -775
+   ],
+   "heading": 16384,
+   "template": 37,
+   "placement_hex": "aff907030040200001043f0362107f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 8958,
+    "predicate": 207,
+    "raw": "0a04fe2203007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 8982,
+    "predicate": 207,
+    "raw": "0a041623000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "123": {
+   "position": [
+    -1589,
+    32,
+    -862
+   ],
+   "heading": 21117,
+   "template": 37,
+   "placement_hex": "cbf95e037d522000010448038c107f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9004,
+    "predicate": 207,
+    "raw": "0a042c2303007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9028,
+    "predicate": 207,
+    "raw": "0a044423000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "124": {
+   "position": [
+    -1567,
+    32,
+    -919
+   ],
+   "heading": 21117,
+   "template": 37,
+   "placement_hex": "e1f997037d52200001044803b6107f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9050,
+    "predicate": 207,
+    "raw": "0a045a2303007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9074,
+    "predicate": 207,
+    "raw": "0a047223000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "125": {
+   "position": [
+    -1503,
+    32,
+    -984
+   ],
+   "heading": 28763,
+   "template": 37,
+   "placement_hex": "21fad8035b70200001044603e0107f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9096,
+    "predicate": 207,
+    "raw": "0a04882303007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9120,
+    "predicate": 207,
+    "raw": "0a04a023000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "126": {
+   "position": [
+    -1447,
+    32,
+    -1001
+   ],
+   "heading": 28763,
+   "template": 37,
+   "placement_hex": "59fae9035b702000010446030a117f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9142,
+    "predicate": 207,
+    "raw": "0a04b62303007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9166,
+    "predicate": 207,
+    "raw": "0a04ce23000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "127": {
+   "position": [
+    -1357,
+    32,
+    -1024
+   ],
+   "heading": 0,
+   "template": 37,
+   "placement_hex": "b3fa00040000200001045e0334117f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9188,
+    "predicate": 207,
+    "raw": "0a04e42303007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9212,
+    "predicate": 207,
+    "raw": "0a04fc23000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "128": {
+   "position": [
+    -1311,
+    32,
+    -1020
+   ],
+   "heading": 0,
+   "template": 37,
+   "placement_hex": "e1fafc030000200001045e035e117f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9234,
+    "predicate": 207,
+    "raw": "0a04122403007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9258,
+    "predicate": 207,
+    "raw": "0a042a24000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "129": {
+   "position": [
+    -1239,
+    32,
+    -1024
+   ],
+   "heading": 0,
+   "template": 37,
+   "placement_hex": "29fb00040000200001045e0388117f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9280,
+    "predicate": 207,
+    "raw": "0a04402403007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9304,
+    "predicate": 207,
+    "raw": "0a045824000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "130": {
+   "position": [
+    -1149,
+    32,
+    -1003
+   ],
+   "heading": 4004,
+   "template": 37,
+   "placement_hex": "83fbeb03a40f200001045d03b2117f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9326,
+    "predicate": 207,
+    "raw": "0a046e2403007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9350,
+    "predicate": 207,
+    "raw": "0a048624000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "131": {
+   "position": [
+    -1103,
+    32,
+    -989
+   ],
+   "heading": 4004,
+   "template": 37,
+   "placement_hex": "b1fbdd03a40f200001045d03dc117f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9372,
+    "predicate": 207,
+    "raw": "0a049c2403007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9396,
+    "predicate": 207,
+    "raw": "0a04b424000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "132": {
+   "position": [
+    -1039,
+    32,
+    -926
+   ],
+   "heading": 10922,
+   "template": 37,
+   "placement_hex": "f1fb9e03aa2a200001045a0306127f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9418,
+    "predicate": 207,
+    "raw": "0a04ca2403007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9442,
+    "predicate": 207,
+    "raw": "0a04e224000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "133": {
+   "position": [
+    -1007,
+    32,
+    -864
+   ],
+   "heading": 10922,
+   "template": 37,
+   "placement_hex": "11fc6003aa2a200001045a0330127f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9464,
+    "predicate": 207,
+    "raw": "0a04f82403007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9488,
+    "predicate": 207,
+    "raw": "0a041025000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "134": {
+   "position": [
+    -981,
+    32,
+    -771
+   ],
+   "heading": 16384,
+   "template": 37,
+   "placement_hex": "2bfc030300402000010454035a127f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9510,
+    "predicate": 207,
+    "raw": "0a04262503007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": null
+  },
+  "135": {
+   "position": [
+    -985,
+    32,
+    -673
+   ],
+   "heading": 16384,
+   "template": 37,
+   "placement_hex": "27fca102004020000104540376127f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9546,
+    "predicate": 207,
+    "raw": "0a044a2503007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9570,
+    "predicate": 207,
+    "raw": "0a046225000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "136": {
+   "position": [
+    -1003,
+    32,
+    -575
+   ],
+   "heading": 20753,
+   "template": 37,
+   "placement_hex": "15fc3f021151200001044f03a0127f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9592,
+    "predicate": 207,
+    "raw": "0a04782503007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9616,
+    "predicate": 207,
+    "raw": "0a049025000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "137": {
+   "position": [
+    -1031,
+    32,
+    -505
+   ],
+   "heading": 53339,
+   "template": 37,
+   "placement_hex": "f9fbf9015bd0200001044f03ca127f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9638,
+    "predicate": 207,
+    "raw": "0a04a62503007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9662,
+    "predicate": 207,
+    "raw": "0a04be25000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "138": {
+   "position": [
+    -1102,
+    32,
+    -451
+   ],
+   "heading": 63351,
+   "template": 37,
+   "placement_hex": "b2fbc30177f7200001044a03f4127f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9694,
+    "predicate": 207,
+    "raw": "0a04de2503007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9718,
+    "predicate": 207,
+    "raw": "0a04f625000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  },
+  "139": {
+   "position": [
+    -1171,
+    32,
+    -432
+   ],
+   "heading": 63533,
+   "template": 37,
+   "placement_hex": "6dfbb0012df8200001044a0324137f000000000001000000000000001400000025",
+   "recharge": {
+    "kind": 4,
+    "value": 3,
+    "group": 9740,
+    "predicate": 207,
+    "raw": "0a040c2603007723c0dd",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "020100001800",
+     "030100007791b8e701000000"
+    ],
+    "mode": 3,
+    "held_identity": 3720356727
+   },
+   "empty_hand": {
+    "kind": 4,
+    "value": 0,
+    "group": 9764,
+    "predicate": 207,
+    "raw": "0a042426000000000000",
+    "predicate_expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "130100001000010005ec"
+    ],
+    "mode": 0,
+    "held_identity": 0
+   }
+  }
+ },
+ "panel": {
+  "movable": 55,
+  "position": [
+   853,
+   255,
+   -1919
+  ],
+  "heading": 16384,
+  "template": 40,
+  "placement_hex": "55037f070040ff008207f801a81700007c745a0014747f00000000000100640028010101ff14000000",
+  "give": {
+   "kind": 4,
+   "value": 0,
+   "group": 12164,
+   "predicate": 18,
+   "raw": "0a04842f000000000000",
+   "predicate_expression": {
+    "op": "==",
+    "left": {
+     "owner_state": true
+    },
+    "right": {
+     "immediate": 0
+    },
+    "raw": "0005000000"
+   },
+   "commands": [
+    "03010000bfa15aa601000000",
+    "052037000100",
+    "102037000100"
+   ],
+   "mode": 0,
+   "held_identity": 0
+  },
+  "put_back": {
+   "kind": 4,
+   "value": 3,
+   "group": 12194,
+   "predicate": 19,
+   "raw": "0a04a22f0300bfa15aa6",
+   "predicate_expression": {
+    "op": "==",
+    "left": {
+     "owner_state": true
+    },
+    "right": {
+     "immediate": 1
+    },
+    "raw": "0005000001"
+   },
+   "commands": [
+    "052037000000",
+    "102037000000",
+    "020100001800"
+   ],
+   "mode": 3,
+   "held_identity": 2790957503
+  },
+  "flanks": {
+   "80": {
+    "position": [
+     853,
+     120,
+     -1944
+    ],
+    "heading": 0,
+    "template": 39,
+    "placement_hex": "55039807000078000101f801000000007c745a0014747f000000000001000000270102012f0a000000"
+   },
+   "81": {
+    "position": [
+     853,
+     120,
+     -1894
+    ],
+    "heading": 0,
+    "template": 39,
+    "placement_hex": "55036607000078000101f801000000007c745a0014747f000000000001001c00270103012f0a000000"
+   }
+  }
+ },
+ "gallery": {
+  "lever": 53,
+  "grate": 51,
+  "lever_position": [
+   1972,
+   65,
+   -1457
+  ],
+  "grate_position": [
+   1128,
+   0,
+   -948
+  ]
+ },
+ "initial_loaded": [
+  87
+ ],
+ "not_hosted": {
+  "78": "control106 panel texture/animated motion (pose swap only); opcode204 region1237 material select; command sound",
+  "113": "props276-279 event1/2, prop297 property16, prop126 effect; sconce recharge (held 57b-Fire brnt consumed, one 57a-Fire crstl granted) UNRESOLVED: no known pre-exit 57b producer found in the L1/L3/L4/L5 grant census and the current port has none (original reachability not proven either way; a future 57a use/burn producer would need this transform). Empty-hand op19 is hosted as a modern 5-point burn (native mode byte 0xEC amount ambiguous)",
+  "114": "opcode197 region504 marker3/5, locals1/2/27 bookkeeping, movables80/81 flank motion, movable55 animated travel",
+  "140": "movable78 reset, prop125 effect",
+  "kind8": "own animation endpoint chains (op 0x18), controls159-161 events without observable records",
+  "effect_props": "transient effect props109-125 (op9 property3 on insert, property2 at the animation end/take)"
+ },
+ "scope": "Direct source records. Reach/aim, presentation, effect pulse and immediate (untimed) animation endpoints are modern adapters."
+}

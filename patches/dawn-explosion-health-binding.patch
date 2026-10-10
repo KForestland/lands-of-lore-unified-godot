@@ -1,0 +1,60 @@
+--- a/scripts/lol2/jungle_dawn.gd
++++ b/scripts/lol2/jungle_dawn.gd
+@@ -120,7 +120,26 @@
+ 			found=true
+ 			if effect.position!=sweep.get("position"):return {"error":"Stale projectile collision position."}
+ 	if not found:return {"error":"Unknown player collision projectile."}
+-	return preload("res://scripts/lol2/dawn_player_damage.gd").direct(host.starting_magic,projectiles,id,collision_heading,source_context)
++	var supplied:=source_context.duplicate(true)
++	supplied.attacker_heading=int(population.state.live[ID].heading)
++	return preload("res://scripts/lol2/dawn_player_damage.gd").direct(host.starting_magic,projectiles,id,collision_heading,supplied)
++
++## Player distance comes from the actual host position. Other world neighbors
++## remain supplied; an unbound damage recipient prevents consuming the pass.
++func damage_projectile_explosion(id: int, player_flags: int, other_neighbors: Array, source_context: Dictionary) -> Dictionary:
++	var effect: Dictionary={}
++	for row in projectiles.checkpoint().effects:
++		if row.id==id:effect=row
++	if effect.is_empty() or effect.kind!=98:return {"error":"Unknown explosion."}
++	var point: Vector3=host.player.global_position-origin()
++	var distance:=preload("res://scripts/lol2/hive_condition_geometry.gd").distance_between_startup(effect.position.slice(0,2),[roundi(point.x*65536),roundi(-point.z*65536)])
++	if distance.has("error") or distance.integer_invalid:return {"error":"Unsupported explosion player distance."}
++	var Damage=preload("res://scripts/lol2/dawn_player_damage.gd")
++	var neighbors:=other_neighbors.duplicate(true)
++	neighbors.append({"id":Damage.PLAYER,"kind":1,"flags":player_flags,"distance":distance.distance,"direct":false})
++	var supplied:=source_context.duplicate(true)
++	supplied.attacker_heading=int(population.state.live[ID].heading)
++	return Damage.explosion(host.starting_magic,projectiles,id,neighbors,supplied)
+ 
+ ## Explicit shared-clock entry; scheduler/collision dispatch remain caller-owned.
+ func move_projectile(id: int, world_delta: int, radius: float) -> Dictionary:
+--- a/scripts/lol2/hive_dawn20.gd
++++ b/scripts/lol2/hive_dawn20.gd
+@@ -124,7 +124,26 @@
+ 			found=true
+ 			if effect.position!=sweep.get("position"):return {"error":"Stale projectile collision position."}
+ 	if not found:return {"error":"Unknown player collision projectile."}
+-	return preload("res://scripts/lol2/dawn_player_damage.gd").direct(host.starting_magic,projectiles,id,collision_heading,source_context)
++	var supplied:=source_context.duplicate(true)
++	supplied.attacker_heading=int(population.state.live[ID].heading)
++	return preload("res://scripts/lol2/dawn_player_damage.gd").direct(host.starting_magic,projectiles,id,collision_heading,supplied)
++
++## Player distance comes from the actual host position. Other world neighbors
++## remain supplied; an unbound damage recipient prevents consuming the pass.
++func damage_projectile_explosion(id: int, player_flags: int, other_neighbors: Array, source_context: Dictionary) -> Dictionary:
++	var effect: Dictionary={}
++	for row in projectiles.checkpoint().effects:
++		if row.id==id:effect=row
++	if effect.is_empty() or effect.kind!=98:return {"error":"Unknown explosion."}
++	var point: Vector3=host.player.global_position-origin()
++	var distance:=preload("res://scripts/lol2/hive_condition_geometry.gd").distance_between_startup(effect.position.slice(0,2),[roundi(point.x*65536),roundi(-point.z*65536)])
++	if distance.has("error") or distance.integer_invalid:return {"error":"Unsupported explosion player distance."}
++	var Damage=preload("res://scripts/lol2/dawn_player_damage.gd")
++	var neighbors:=other_neighbors.duplicate(true)
++	neighbors.append({"id":Damage.PLAYER,"kind":1,"flags":player_flags,"distance":distance.distance,"direct":false})
++	var supplied:=source_context.duplicate(true)
++	supplied.attacker_heading=int(population.state.live[ID].heading)
++	return Damage.explosion(host.starting_magic,projectiles,id,neighbors,supplied)
+ 
+ ## Explicit shared-clock entry; scheduler/collision dispatch remain caller-owned.
+ func move_projectile(id: int, world_delta: int, radius: float) -> Dictionary:

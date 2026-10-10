@@ -1,0 +1,30 @@
+{
+  "regions": [
+    669,
+    668,
+    671,
+    677
+  ],
+  "points": [
+    [
+      1361.0,
+      -595.5
+    ],
+    [
+      1391.5,
+      -581.0
+    ],
+    [
+      1391.5,
+      -515.0
+    ],
+    [
+      1350,
+      -492
+    ]
+  ],
+  "source_sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "minimum_clearance": 65,
+  "minimum_portal_width": 17,
+  "scope": "Source neighbor BFS with standing-clearance and portal-width filters; capsule traversal, special connectors and native progression not established."
+}

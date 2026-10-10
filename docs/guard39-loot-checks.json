@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "reviewed_patch_sha256": "aafeb391abf855804e26f89e5416865fc5ffaddf4dc2a823924ed88a28159a2f",
+  "native_grant_replay": {
+    "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+    "area": {
+      "file": "DAT/L1_DC.MIX",
+      "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+      "geometry_key": 2971673856,
+      "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+    },
+    "prop": 1235,
+    "listing": "0606cc2409000200",
+    "group9420": [
+      "0302270026119ae201000000"
+    ],
+    "cases": [
+      {
+        "sel": 0,
+        "any": 1,
+        "groups": [
+          9420
+        ],
+        "predicates": []
+      },
+      {
+        "sel": 3,
+        "any": 1,
+        "groups": [
+          9420
+        ],
+        "predicates": []
+      },
+      {
+        "sel": 0,
+        "any": 0,
+        "groups": [
+          9420
+        ],
+        "predicates": []
+      },
+      {
+        "sel": 3,
+        "any": 0,
+        "groups": [],
+        "predicates": []
+      }
+    ]
+  },
+  "initial_bug": "A collected sword invalidated saves after control109 retained the dead actor and reset its population entry. Reproduced through the production control handler.",
+  "fix": "Validate death and place the drop using the actual dead population or retained control actor; living removed actors remain ineligible.",
+  "independent_checks": {
+    "fixed_release_passed": 5,
+    "fixed_release_total": 6,
+    "remaining_failure": "Missing private tmp directory for three screenshots; gameplay assertions passed.",
+    "controls_retry_passed": true,
+    "combined_batch_passed": 8,
+    "combined_batch_total": 8,
+    "source_stable": true
+  },
+  "scope": "Supplied source-region contact/camera; production damage/E, pending and taken loot across scripted removal, disk reload/equipment and Museum transfer. No earned-walk claim."
+}

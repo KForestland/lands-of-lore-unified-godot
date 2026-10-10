@@ -1,0 +1,181 @@
+{
+  "audit": {
+    "verified_fresh_prefix": 11,
+    "total_legs": 11,
+    "complete": true,
+    "source_baseline": "tmp/act1_modern_combat_chain_20261007/focused_baseline_report.json",
+    "source_changed_files": [],
+    "baseline_verified": true,
+    "checked_utc": "2026-10-07T05:44:14.052112+00:00",
+    "legs": [
+      {
+        "name": "01_cave",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained at Museum arrival"
+        ],
+        "proof_sha256": "787eedb5797a283547442961ffc89bc7eb53ec005aed3ad601335ffb05126c8f",
+        "output_sha256": "b64fb743413ff59bd6112c10d0faeeff3f35456cdf0a644daa84da661b1d31f1",
+        "log_sha256": "f7a208c893fa31beb0b8d7bd53062eb838058b388a2beac80d8ce503b76dbcdf"
+      },
+      {
+        "name": "02_museum",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history"
+        ],
+        "proof_sha256": "a7e1478897227c76607f6924090bd6138dc5a4c7f97f4b76c91f37fca69bbe6f",
+        "output_sha256": "8bb1e9e7e6aa0920797ae4f802f74cf894ee202f2016e2f2b36b550e6934b271",
+        "log_sha256": "80e597a4792a45aef1a8e64333636244a4c45c9aa3ea718936d8b00bc585bc79"
+      },
+      {
+        "name": "03_jungle_hive",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history"
+        ],
+        "proof_sha256": "607632f49fafd68bacfd98695f8742af531914dc046217bc14302c09233050b6",
+        "output_sha256": "3afc32a667d63c354c728396410c3ceafebaed23d34e16be830346401462af25",
+        "log_sha256": "ba956316a54584703e048710186e96df48f0873bcf8b80e052d6d46c61808482"
+      },
+      {
+        "name": "04_flute",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history"
+        ],
+        "proof_sha256": "6bbc5d748dbb4907158c05d9d6f392192a4c166b08accc9bfc91826be663c97c",
+        "output_sha256": "1c3011db3041b7b3e147dd401564977a7d83a953ef91ffdc4d1b4e70086d09b6",
+        "log_sha256": "4fcffa07b602d897a4d77bb3bf06704dd10c242b065b08575c131c287759a323"
+      },
+      {
+        "name": "05_wax",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history"
+        ],
+        "proof_sha256": "01506201b5310fac89ee4c3425c67ea4156ac195af097d1ffe23745ce611776b",
+        "output_sha256": "c08cf87c683b001e2a10a5f8c55153c1473a6505da6194d77e01397b0d64235c",
+        "log_sha256": "433f7b0fe58b27acb8ed1dfb3c42c0a2ab8f96392af05278467080c1a3c65174"
+      },
+      {
+        "name": "06_runes",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history"
+        ],
+        "proof_sha256": "728051ca2a2ce78cb9211376c01562f1455c1e86fac51b8ae8dde707ddb3535c",
+        "output_sha256": "710723c35fec07b49940c8df45b929ce02a760773525b17d25f33f8f1751f433",
+        "log_sha256": "b4369e6880a8a297ec6db47c5409d1070eb5f6a0a81c48647c93bdf9ca05ab28"
+      },
+      {
+        "name": "07_rune_return",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history"
+        ],
+        "proof_sha256": "d67c5c35bba4aff43ec2b9b4a91b0701b9405d121edabf92f2e616e20fc96e96",
+        "output_sha256": "ac37b1a9b325d52c17d72d80a77bfd1901fa6fb6f5dc0c930e6ef2856d1f51ef",
+        "log_sha256": "4a34a077063037b3ac337a018ab5eda992b69a9e3225547c066cf8106cdee071"
+      },
+      {
+        "name": "08_knowledge",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history"
+        ],
+        "proof_sha256": "fc290232e1e46231e0c2d66da3c13951cd07a6234a7ff33e705eae849ec898f7",
+        "output_sha256": "1b6472e280b24518d06cfb1e18c6a8c4ce117f1a3b1faff74f870179c9a3abbc",
+        "log_sha256": "851be382016b73986f5c7cf651f18198b87f260b75c7020cedcc73762b72643c"
+      },
+      {
+        "name": "09_translation",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history"
+        ],
+        "proof_sha256": "d8de6b11ea8b745d7fc912bb7b78110802f175c522b5b2fe8cc966f17b239435",
+        "output_sha256": "cfb588869359bbcf4a79fecd074ba337f65b0f040cedfac38ea04362f45a99d5",
+        "log_sha256": "ef6710b099f5ef870760b50d5840fd76cdcc68d7e37a68c4eacd40f2b311dce2"
+      },
+      {
+        "name": "10_repair",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history"
+        ],
+        "proof_sha256": "e7e63197aee29b6b566316e662f670752c7bd8d0d6f418d08899614206e05864",
+        "output_sha256": "48593390f30bd50121510d550e4996af24b8482f1c8b4cb0580acf4fd6d32d33",
+        "log_sha256": "341e1f849581a731f1fb51d678e0481eb6864f887b1d21919c5e22e430725183"
+      },
+      {
+        "name": "11_departure",
+        "status": "verified",
+        "errors": [],
+        "exit_code": 0,
+        "content_checks": [
+          "Both earned captain rewards retained",
+          "Cave weapon retained",
+          "Museum sword retained",
+          "Broken-sword branch inventory and exhibit history",
+          "Darker-jungle arrival, translation, orb, blessing and repair flags"
+        ],
+        "proof_sha256": "cffb1b98f7841ae3e151c1b483b83a6a02ace89d9c5a9dedf0b99bab96c2a0ad",
+        "output_sha256": "105202b1d44d53a14ff77bd93ccc4e80b12cc55244f572953ba050606a223f5a",
+        "log_sha256": "d9103da289fde60ede172f3a912a3303dad41254607b497281cc5669c8e99966"
+      }
+    ],
+    "scope": "Fresh single-day Europe/Berlin receipts, clean PASS logs, proof/save timestamps, actual linked hashes, branch inventory/quest checks and source endpoint comparison. Media excluded. Endpoint equality cannot exclude intervening edits. Content completeness, rendering quality and original-game parity require separate acceptance."
+  },
+  "archive": "/home/bob/AI_COMMS/classic_review_20261007/lead/act1_modern_combat_campaign_20261007T054414Z",
+  "archive_files": 971,
+  "archive_manifest_sha256": "1ea94538297c02b9b43a8f0e221c635fb550ff8e0cf4a1155905fe990e7b9fad",
+  "scope": "Continuous production-demo-control earned campaign; actual linked saves, captain items, repaired sword, translation and darker-jungle arrival. Not all optional branches, full suite, native Windows/GPU/audio or Bob acceptance."
+}

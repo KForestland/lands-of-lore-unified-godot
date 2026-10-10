@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "run": "dawn_projectile_motion_20261007",
+      "sha256": "532fe5058754aaebcb55eb913b1fc10a8c6d6584e713c8f87c0a9a436d4e8717",
+      "tests": [
+        "dawn_spell_motion_test",
+        "dawn_projectile_store_test",
+        "dawn_projectile_world_test"
+      ],
+      "source_stable": true,
+      "passed": true
+    },
+    {
+      "run": "dawn_projectile_motion_hosts_20261007",
+      "sha256": "5b58ffaed3d69e720cc20fb94603059bae16841a026763f6cb63e41febc82dfd",
+      "tests": [
+        "dawn_projectile_hosts_test",
+        "hive_dawn20_live_test",
+        "jungle_dawn_live_test"
+      ],
+      "source_stable": true,
+      "passed": true
+    }
+  ],
+  "files": {
+    "scripts/lol2/dawn_projectile_store.gd": "a16a520f18b84ad7bfcaeb927e295d7de3ac0b34eb5fe77a59a7ebef02ff69ee",
+    "scripts/lol2/dawn_projectile_world.gd": "ddb55e4589c4cffe08ca787d0c4b383f76e836fb2f23649be7042d698869756d",
+    "tests/dawn_projectile_world_test.gd": "88dfcf471edd3a744433ad2c9fc3fd9e56ff327af7b5fd8b57cfa33b9a32b042",
+    "tests/dawn_projectile_hosts_test.gd": "5e19711fede20d9b31bcf43a4ed63d9ddf742aefe0106e4a61445104c6c6732d"
+  },
+  "automatic_scheduler": false,
+  "native_collision_parity": false,
+  "health_dispatch": false
+}

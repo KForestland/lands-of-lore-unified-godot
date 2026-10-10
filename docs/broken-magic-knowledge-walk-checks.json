@@ -1,0 +1,18 @@
+{
+  "input_path": "user://tests/act1_broken_runes_monastery_return.json",
+  "input_proof": "docs/broken-hive-earned-rune-return-checks.json",
+  "input_sha256": "ac37b1a9b325d52c17d72d80a77bfd1901fa6fb6f5dc0c930e6ef2856d1f51ef",
+  "inventory": [
+    "cave:prop641:harvest1:Stalagmite",
+    "cave:captain:Short_Sword",
+    "cave:captain:Burnt_Chain",
+    "museum:item11:Fine_Longsword",
+    "museum:control181:Tho_Broken",
+    "monastery:item94:Iron_Flute",
+    "hive:Wax_runes:0"
+  ],
+  "output_path": "user://tests/act1_broken_orb_monastery.json",
+  "output_sha256": "1b6472e280b24518d06cfb1e18c6a8c4ce117f1a3b1faff74f870179c9a3abbc",
+  "passed": true,
+  "scope": "Cave-derived earned rune-return checkpoint; continuous source-portal walk from monastery to MAGIC, original Rashar introduction, earned broken sword offer and power-orb knowledge, return walk, original garden/cellar conversations and Julian empty-hand response. No position/form/quest injection after load. Movement/curse ticks manually driven, time/audio4x. Shop item and other content acceptance remain separate."
+}

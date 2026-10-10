@@ -1,0 +1,152 @@
+{
+  "passed": true,
+  "reviewed_patch_sha256": "6500dc3d01d6820f6ac8f6e20d461fc00fa1952cf04b949427d8f622f5b45d58",
+  "base_result_files": 11,
+  "source_replay": {
+    "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+    "area": {
+      "file": "DAT/L1_DC.MIX",
+      "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+      "geometry_key": 2971673856,
+      "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+    },
+    "producers": {
+      "prop1013": {
+        "listing": "0606642209000200",
+        "group": 8804,
+        "commands": [
+          "0302360026119ae204000000"
+        ],
+        "adf34": [
+          {
+            "sel": 0,
+            "any": 1,
+            "groups": [
+              8804
+            ],
+            "predicates": []
+          },
+          {
+            "sel": 3,
+            "any": 1,
+            "groups": [
+              8804
+            ],
+            "predicates": []
+          },
+          {
+            "sel": 0,
+            "any": 0,
+            "groups": [
+              8804
+            ],
+            "predicates": []
+          },
+          {
+            "sel": 3,
+            "any": 0,
+            "groups": [],
+            "predicates": []
+          }
+        ]
+      },
+      "actor54": {
+        "listing": "0e0141010000fa00641e3c06000006063e3809000200",
+        "group": 14398,
+        "commands": [
+          "0302360026119ae201000000"
+        ],
+        "adf34": [
+          {
+            "sel": 0,
+            "any": 1,
+            "groups": [
+              14398
+            ],
+            "predicates": []
+          },
+          {
+            "sel": 3,
+            "any": 1,
+            "groups": [
+              14398
+            ],
+            "predicates": []
+          },
+          {
+            "sel": 0,
+            "any": 0,
+            "groups": [
+              14398
+            ],
+            "predicates": []
+          },
+          {
+            "sel": 3,
+            "any": 0,
+            "groups": [],
+            "predicates": []
+          }
+        ]
+      }
+    },
+    "groups_targeting_actor54": [
+      "s1g8804",
+      "s1g14398",
+      "s0g560"
+    ],
+    "spawn_group560": [
+      "090236000300",
+      "0903df000300",
+      "090237000200",
+      "09033e020200",
+      "090341021100",
+      "090340021100",
+      "090346021100",
+      "090349021100",
+      "090348021100",
+      "090344021100",
+      "090345021100",
+      "09033f021100",
+      "09034a021100",
+      "090351021100",
+      "090343021100",
+      "090342021100",
+      "090347021100"
+    ],
+    "construction": {
+      "placement_constructor_links": "AE990 AEA0B..AEA2E unconditional (player excluded)",
+      "actor_loop": "A2283..A22CD no presence test",
+      "arrival_scan": "AEC74 list 0xB7D6C any=1; AEEBC lists 0xB7D6C/0xB7D70 any=0"
+    },
+    "conclusion": "Both kind6 event9 records are selected on arrival for scanned owners; actor54 (absent until region969) is constructed and linked, so it receives two separate Short Sword items (properties 4 and 1). Native scan order (LIFO list) and save-list parity across reload are not replayed."
+  },
+  "focused_checks": [
+    {
+      "name": "item_catalog_test",
+      "passed": true
+    },
+    {
+      "name": "museum_long_arm_escape_test",
+      "passed": true
+    },
+    {
+      "name": "cave_guard39_loot_test",
+      "passed": true
+    },
+    {
+      "name": "cave_guard54_loot_test",
+      "passed": true
+    },
+    {
+      "name": "cave_museum_transfer_test",
+      "passed": true
+    },
+    {
+      "name": "cave_guard_controls_live_test",
+      "passed": true
+    }
+  ],
+  "source_stable": true,
+  "scope": "Supplied region969 contact and camera; production death, individual E pickups, partial/taken saves and Museum transfer. Original grant-list/drop order and native save-list parity remain unverified."
+}

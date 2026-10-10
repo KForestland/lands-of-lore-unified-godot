@@ -1,0 +1,13 @@
+{
+  "cases": 700,
+  "source_stable": true,
+  "scope": "Native A583E event consumer and A821C admission. Effect body/positioning/epilogue excluded; post-event API accepts actual effect-mutated flags. No live combat claim.",
+  "main_report": "tmp/regressions/dawn_cast_entry_final_20261007/report.json",
+  "files": {
+    "scripts/lol2/dawn_cast_entry.gd": "2c817e55c8b1336f2b26fa1ab2910aa7c54a3b8b07c48066328b0f0002ae97a9",
+    "scripts/lol2/dawn_spell_admission.gd": "f44b279c9f1b22d068c040a3f14a5e4c48c0f71544e97c96cec96c55d97dd125",
+    "tests/dawn_cast_entry_test.gd": "5953750b7cf980bdbba79ade3112616591161988c094632e62a169c931b20a75",
+    "tests/fixtures/dawn_cast_entry_native.json": "c3ad1397c89d3ed3815b83f2b32c116ebb46062c0ff8917182080d262f8cac97",
+    "docs/dawn-casting-portable.md": "3d3daab61c26994c7b3d882e9592ab740d1cfe14b46ae9714ebfc396c84c05bf"
+  }
+}

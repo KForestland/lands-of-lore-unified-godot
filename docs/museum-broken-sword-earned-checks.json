@@ -1,0 +1,28 @@
+{
+  "broken_sword": {
+    "control": {
+      "owner_state": 1,
+      "sprite_mode": 1
+    },
+    "owned": true
+  },
+  "input_save": "user://tests/act1_magic_museum_arrival.json",
+  "input_sha256": "b64fb743413ff59bd6112c10d0faeeff3f35456cdf0a644daa84da661b1d31f1",
+  "magic": {
+    "cooldown": 0.0,
+    "player": {
+      "experience": 197,
+      "level": 1,
+      "mana": 19,
+      "maximum": 20
+    },
+    "regen_elapsed": 2.80000000000001,
+    "spark_reward_seed": 324508639,
+    "spell": "heal",
+    "version": 1
+  },
+  "output_save": "user://tests/act1_broken_museum_jungle.json",
+  "output_sha256": "8bb1e9e7e6aa0920797ae4f802f74cf894ee202f2016e2f2b36b550e6934b271",
+  "passed": true,
+  "scope": "Earned spell-using cave save through natural curse expiry, Museum puzzles and original dragon movie to grounded Jungle. Automated walking/4x clock, no injected position, inventory, quest or magic state. Includes walked sword-to-case-to-gallery detour and earned Broken Thohan pickup; no orb or repair is claimed."
+}

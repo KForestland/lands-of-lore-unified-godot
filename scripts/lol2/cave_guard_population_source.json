@@ -1,0 +1,586 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L1_DC.MIX",
+  "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+  "geometry_key": 2971673856,
+  "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+ },
+ "actors": [
+  {
+   "actor": 1,
+   "definition": 2,
+   "position": [
+    17,
+    -285,
+    -16493
+   ],
+   "heading": 0,
+   "health": 140,
+   "behavior": 6,
+   "flags": 30082,
+   "present": false,
+   "loot": 552,
+   "reward_scale": 3
+  },
+  {
+   "actor": 2,
+   "definition": 1,
+   "position": [
+    -48,
+    -285,
+    -16609
+   ],
+   "heading": 0,
+   "health": 140,
+   "behavior": 6,
+   "flags": 30082,
+   "present": false,
+   "loot": 552,
+   "reward_scale": 3
+  },
+  {
+   "actor": 38,
+   "definition": 1,
+   "position": [
+    -532,
+    -200,
+    -10347
+   ],
+   "heading": 4187,
+   "health": 150,
+   "behavior": 4,
+   "flags": 30594,
+   "present": false,
+   "loot": null,
+   "reward_scale": 3
+  },
+  {
+   "actor": 39,
+   "definition": 1,
+   "position": [
+    -1051,
+    0,
+    -5871
+   ],
+   "heading": 9466,
+   "health": 150,
+   "behavior": 14,
+   "flags": 30594,
+   "present": false,
+   "loot": null,
+   "reward_scale": 3
+  },
+  {
+   "actor": 52,
+   "definition": 2,
+   "position": [
+    -163,
+    -10,
+    -7834
+   ],
+   "heading": 32039,
+   "health": 150,
+   "behavior": 14,
+   "flags": 25986,
+   "present": true,
+   "loot": 92534515,
+   "reward_scale": 3
+  },
+  {
+   "actor": 53,
+   "definition": 2,
+   "position": [
+    159,
+    -215,
+    -12009
+   ],
+   "heading": 39685,
+   "health": 150,
+   "behavior": 4,
+   "flags": 29570,
+   "present": false,
+   "loot": 19202577,
+   "reward_scale": 3
+  },
+  {
+   "actor": 54,
+   "definition": 1,
+   "position": [
+    -264,
+    -270,
+    -15435
+   ],
+   "heading": 11832,
+   "health": 150,
+   "behavior": 14,
+   "flags": 30594,
+   "present": false,
+   "loot": 6160913,
+   "reward_scale": 3
+  },
+  {
+   "actor": 56,
+   "definition": 0,
+   "position": [
+    -2057,
+    63,
+    -4430
+   ],
+   "heading": 41324,
+   "health": 200,
+   "behavior": 14,
+   "flags": 30594,
+   "present": false,
+   "loot": 15906148,
+   "reward_scale": 5
+  }
+ ],
+ "definitions": {
+  "0": {
+   "name": "GGCAPT",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 10
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 14
+    },
+    "rise": {
+     "selector": 5,
+     "frames": 9
+    },
+    "death": {
+     "selector": 8,
+     "frames": 22
+    },
+    "corpse": {
+     "selector": 9,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 4,
+      "frames": 13,
+      "hits": [
+       [
+        6,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   }
+  },
+  "1": {
+   "name": "GGUARD",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 10
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 14
+    },
+    "rise": {
+     "selector": 5,
+     "frames": 9
+    },
+    "death": {
+     "selector": 8,
+     "frames": 20
+    },
+    "corpse": {
+     "selector": 9,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 4,
+      "frames": 13,
+      "hits": [
+       [
+        7,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   }
+  },
+  "2": {
+   "name": "GGUARD",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 10
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 14
+    },
+    "rise": {
+     "selector": 5,
+     "frames": 9
+    },
+    "death": {
+     "selector": 8,
+     "frames": 20
+    },
+    "corpse": {
+     "selector": 9,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 4,
+      "frames": 13,
+      "hits": [
+       [
+        7,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "native_bases": {
+  "GGUARD": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "74fc6beef0cfe7625a8a4661330786b4f758d533180e82cec624f6ac9e4a56c3"
+  },
+  "GGCAPT": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "e737ecb733da98913413a28c577bd421175619d7a81a2d13693b5e4827d223ed"
+  }
+ },
+ "regions": [
+  {
+   "region": 631,
+   "spawn": [
+    39
+   ],
+   "wake": [],
+   "control_states": {},
+   "polygon": [
+    [
+     -588.0,
+     -6068.0
+    ],
+    [
+     -493.0,
+     -6161.0
+    ],
+    [
+     -452.0,
+     -6113.0
+    ],
+    [
+     -551.0,
+     -6030.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "region": 769,
+   "spawn": [],
+   "wake": [],
+   "control_states": {
+    "109": 1
+   },
+   "polygon": [
+    [
+     -1386.0,
+     -6648.0
+    ],
+    [
+     -1355.0,
+     -6648.0
+    ],
+    [
+     -1328.0,
+     -6434.0
+    ],
+    [
+     -1363.0,
+     -6413.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0,
+   "conditional_wake": "local34"
+  },
+  {
+   "region": 772,
+   "spawn": [],
+   "wake": [],
+   "control_states": {
+    "109": 1
+   },
+   "polygon": [
+    [
+     -1128.0,
+     -6254.0
+    ],
+    [
+     -1090.0,
+     -6303.0
+    ],
+    [
+     -1066.0,
+     -6268.0
+    ],
+    [
+     -1129.0,
+     -6218.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0,
+   "conditional_wake": "local34"
+  },
+  {
+   "region": 775,
+   "spawn": [],
+   "wake": [],
+   "control_states": {
+    "109": 1
+   },
+   "polygon": [
+    [
+     -1355.0,
+     -6648.0
+    ],
+    [
+     -1090.0,
+     -6303.0
+    ],
+    [
+     -1128.0,
+     -6254.0
+    ],
+    [
+     -1328.0,
+     -6434.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0,
+   "conditional_wake": "local34"
+  },
+  {
+   "region": 1104,
+   "spawn": [],
+   "wake": [
+    52
+   ],
+   "control_states": {
+    "114": 1
+   },
+   "polygon": [
+    [
+     67.0,
+     -7786.0
+    ],
+    [
+     207.0,
+     -7771.0
+    ],
+    [
+     111.0,
+     -7642.0
+    ],
+    [
+     21.0,
+     -7736.0
+    ]
+   ],
+   "floor_min": -10,
+   "floor_max": -10
+  },
+  {
+   "region": 1941,
+   "spawn": [
+    38
+   ],
+   "wake": [],
+   "control_states": {},
+   "polygon": [
+    [
+     -544.0,
+     -11097.0
+    ],
+    [
+     -543.0015869140625,
+     -11189.205078125
+    ],
+    [
+     -407.0056457519531,
+     -11192.716796875
+    ],
+    [
+     -407.76922607421875,
+     -11099.0
+    ]
+   ],
+   "floor_min": -220,
+   "floor_max": -220
+  },
+  {
+   "region": 106,
+   "spawn": [
+    53
+   ],
+   "wake": [],
+   "control_states": {},
+   "polygon": [
+    [
+     374.0,
+     -11681.0
+    ],
+    [
+     395.0,
+     -11635.0
+    ],
+    [
+     332.0,
+     -11554.0
+    ],
+    [
+     280.0,
+     -11618.0
+    ]
+   ],
+   "floor_min": -215,
+   "floor_max": -215
+  },
+  {
+   "region": 121,
+   "spawn": [
+    53
+   ],
+   "wake": [],
+   "control_states": {},
+   "polygon": [
+    [
+     -334.0,
+     -11672.0
+    ],
+    [
+     -186.0,
+     -11654.0
+    ],
+    [
+     -231.0,
+     -11598.0
+    ],
+    [
+     -384.0,
+     -11628.0
+    ]
+   ],
+   "floor_min": -215,
+   "floor_max": -215
+  },
+  {
+   "region": 969,
+   "spawn": [
+    54
+   ],
+   "wake": [],
+   "control_states": {},
+   "polygon": [
+    [
+     -40.0,
+     -15405.0
+    ],
+    [
+     66.0,
+     -15477.0
+    ],
+    [
+     94.0,
+     -15360.0
+    ],
+    [
+     -15.0,
+     -15344.0
+    ]
+   ],
+   "floor_min": -265,
+   "floor_max": -265
+  },
+  {
+   "region": 23,
+   "spawn": [
+    1,
+    2
+   ],
+   "wake": [],
+   "control_states": {},
+   "polygon": [
+    [
+     -142.0,
+     -17718.0
+    ],
+    [
+     8.0,
+     -17715.0
+    ],
+    [
+     -30.0,
+     -17634.0
+    ],
+    [
+     -97.0,
+     -17634.0
+    ]
+   ],
+   "floor_min": -295,
+   "floor_max": -295
+  }
+ ],
+ "neighbour_wake": {},
+ "counted": [],
+ "counter_target": 0,
+ "scripted_dormant": [
+  39,
+  56
+ ],
+ "controls": [
+  {
+   "control": 109
+  },
+  {
+   "control": 114
+  }
+ ],
+ "conditional_wakes": {
+  "local34": {
+   "form": 0,
+   "wake": [
+    39
+   ]
+  }
+ }
+}

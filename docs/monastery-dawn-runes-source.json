@@ -1,0 +1,203 @@
+{
+ "dll": {
+  "index": 78,
+  "key": 1845017597,
+  "offset": 954,
+  "size": 6000,
+  "name": "WOMS\\MLIB_.WOM",
+  "sha256": "4489d2ad3b866f7eaadec1e811f3b003d10f57a7f40f54ee9eb7a64e2a8d6696"
+ },
+ "message8": "0x6c0",
+ "calls": [
+  {
+   "slot": "dword ptr [0x11d4]",
+   "args": [
+    "0x1044"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x1168]",
+   "args": [
+    "0xc0"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x11a0]",
+   "args": []
+  },
+  {
+   "slot": "dword ptr [0x1160]",
+   "args": [
+    "0xc0"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x1234]",
+   "args": []
+  },
+  {
+   "slot": "dword ptr [0x1238]",
+   "args": [
+    "3",
+    "0x297",
+    "7",
+    "0x80"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x1238]",
+   "args": [
+    "3",
+    "0x298",
+    "7",
+    "0x80"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x116c]",
+   "args": [
+    "3",
+    "0x299",
+    "7"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x116c]",
+   "args": [
+    "3",
+    "0x29a",
+    "7"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x1158]",
+   "args": [
+    "0x1079",
+    "0"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x116c]",
+   "args": [
+    "3",
+    "0x29b",
+    "7"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x116c]",
+   "args": [
+    "3",
+    "0x29c",
+    "7"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x11b8]",
+   "args": [
+    "0x101e",
+    "1"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x11b8]",
+   "args": [
+    "0x1086",
+    "1"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x1160]",
+   "args": [
+    "0x10a"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x1230]",
+   "args": []
+  },
+  {
+   "slot": "dword ptr [0x1168]",
+   "args": [
+    "0xbe"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x11a0]",
+   "args": []
+  },
+  {
+   "slot": "dword ptr [0x116c]",
+   "args": [
+    "3",
+    "0x306",
+    "7"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x1238]",
+   "args": [
+    "3",
+    "0x307",
+    "7",
+    "0x80"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x11a4]",
+   "args": [
+    "0x109f"
+   ]
+  },
+  {
+   "slot": "dword ptr [0x1184]",
+   "args": []
+  }
+ ],
+ "movies": [
+  {
+   "line": 663,
+   "frames": 20,
+   "samples": 40424
+  },
+  {
+   "line": 664,
+   "frames": 36,
+   "samples": 63944
+  },
+  {
+   "line": 665,
+   "frames": 32,
+   "samples": 58064
+  },
+  {
+   "line": 666,
+   "frames": 63,
+   "samples": 103634
+  },
+  {
+   "line": 667,
+   "frames": 21,
+   "samples": 41894
+  },
+  {
+   "line": 668,
+   "frames": 111,
+   "samples": 174194
+  }
+ ],
+ "dampen": {
+  "definition": 72,
+  "identity": 1140374541,
+  "handler": 27,
+  "handler_address": "0x979A8",
+  "effect": "consumes held item (77ACC), sets player byte 0x23ABD bit0, calls 8619C(0x2375D,5)",
+  "siblings": {
+   "28": "74-Control tokn bit2",
+   "29": "77-Lizard seal bit4",
+   "30": "78-Bestial disk bit8"
+  },
+  "reader": "no static reader found by a full linear code sweep"
+ },
+ "setter": "L4_HJ actor63 kind4 mode3 g29704 (held 72-Wax runes) writes local17 Gave_Dawn_Runes = 1"
+}

@@ -1,0 +1,294 @@
+{
+  "candidate": "/home/bob/lol2_act1_candidate_20261007_r4",
+  "updated_utc": "2026-10-07T06:56:04.264271+00:00",
+  "full_suite": {
+    "passed": true,
+    "total": 256,
+    "source_stable": true,
+    "source_changed_files": [],
+    "all_test_source_hashes_match_R4_manifest": true,
+    "archive": "/home/bob/AI_COMMS/classic_review_20261007/lead/act1_full256_20261007T061146Z",
+    "archive_manifest_sha256": "6dde6f425550cb37347dbbdd9c3142e80d5e95ef8c6e0e83acad911a9c926a94",
+    "report_sha256": "07ba8b21048af1534bf8c3772cafd122bde81ae9e915969cb8bd2999153601f8",
+    "scope": "Full registered256-test suite on the three-spell source, matching R4 staged provenance. Not a completed R4 campaign, packaged runtime, native Windows/GPU/audio or Bob acceptance."
+  },
+  "linux_export": {
+    "exit_code": 0,
+    "log": "export_linux.log"
+  },
+  "windows_export": {
+    "exit_code": 0,
+    "log": "export_windows.log",
+    "runtime": "native Windows untested"
+  },
+  "linux_packaged_save": {
+    "artifacts": {
+      "/home/bob/lol2_act1_candidate_20261007_r4/Linux/LoL2-Cavern.x86_64": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+      "/home/bob/lol2_act1_candidate_20261007_r4/Linux/LoL2-Cavern.pck": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45"
+    },
+    "scope": "Exported executable, no injected script. F5/F9 plus ordinary movement in isolated user data. Not campaign or GPU/audio acceptance.",
+    "passed": true,
+    "command": [
+      "stdbuf",
+      "-oL",
+      "-eL",
+      "/home/bob/lol2_act1_candidate_20261007_r4/Linux/LoL2-Cavern.x86_64",
+      "--display-driver",
+      "x11",
+      "--rendering-method",
+      "gl_compatibility",
+      "--",
+      "--original-game-exe=/home/bob/lol2_runtime_root/LOLG.EXE"
+    ],
+    "restart_position_delta": 0.0,
+    "movement_distance": 32.00249997446736,
+    "reload_position_delta": 0.0,
+    "save_path": "/home/bob/AI_COMMS/classic_review_20261007/lead/packaged_save_20261007T061240Z/userdata/godot/app_userdata/LoL2 Cavern Walkthrough/saves/cavern_quicksave.json",
+    "save_hashes": {
+      "initial": "228232bdf61651b95d88f9517e9af508f9e87d993b11db728cc820fc9dc42c55",
+      "moved": "cde4c762d17fb50b8de09a51d60707962b6c33d0f21880af294bc7b74fadfbf4",
+      "restored": "724233d9b2c57d4f92449ec59ce4b74c233b90cb7c09dcbfe6563dfc444606fd",
+      "restarted": "c85c98aedf8f00216eeafa9d503d197f5ece2e1eb98bed01e435da32352ccef7"
+    }
+  },
+  "fresh_campaign": {
+    "archive": "/home/bob/AI_COMMS/classic_review_20261007/lead/act1_modern_spells_campaign_20261007T065524Z",
+    "manifest_sha256": "ae60bcb4746042e8f3b818bab132dd5380f2c744545d9731335da6403d73e434",
+    "audit": {
+      "verified_fresh_prefix": 11,
+      "total_legs": 11,
+      "complete": true,
+      "source_baseline": "tmp/act1_modern_spells_chain_20261007/focused_baseline_report.json",
+      "source_changed_files": [],
+      "baseline_verified": true,
+      "checked_utc": "2026-10-07T06:55:24.218611+00:00",
+      "legs": [
+        {
+          "name": "01_cave",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained at Museum arrival"
+          ],
+          "proof_sha256": "337cd110aaa6e6eed65eff5e61495eeb3be4e7453dae9b5e0f283f4f992afe04",
+          "output_sha256": "536e953ab5b0f4382e52439532e0a16515c8b2e1306207fea1d79f0e2d010919",
+          "log_sha256": "97fc053c4ba14bd41914fe4e7dde1942fa7c1d90f1eeddf96f026afa9c738d29"
+        },
+        {
+          "name": "02_museum",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history"
+          ],
+          "proof_sha256": "68d2f36ec0ac39baf15781e37dd869f7d3fda679b46cb0a015bd6d9e550a74d7",
+          "output_sha256": "25a093a98945ad76cdfe73275a15f0334a9d5d2fa18b2c112b3991a7b44e72b2",
+          "log_sha256": "b1606d728eae33337db4f6b3154bf7a3a7c19e1a9b494c4bbd733e967743efa7"
+        },
+        {
+          "name": "03_jungle_hive",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history"
+          ],
+          "proof_sha256": "53a577c26f0940b236be993e6501d0c07cb3db3dd1588b10d3e0e0d63b2b5e8e",
+          "output_sha256": "9fa7421fab111a4a2daad8c1cfc1b2aa886ac2362a16a667d49d0e34cde5f62e",
+          "log_sha256": "ba956316a54584703e048710186e96df48f0873bcf8b80e052d6d46c61808482"
+        },
+        {
+          "name": "04_flute",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history"
+          ],
+          "proof_sha256": "7f69f2ce78eb3ad7f2fd7cdb7775f835ec36c3cee550531613d0adf182a9b434",
+          "output_sha256": "59c308e9e5afc0d05636246d307ca16202d4aa3e2a6e3de1af3f3b3aebb2cbad",
+          "log_sha256": "4fcffa07b602d897a4d77bb3bf06704dd10c242b065b08575c131c287759a323"
+        },
+        {
+          "name": "05_wax",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history"
+          ],
+          "proof_sha256": "eea672377624ea01777a98000e07949e22cc44d0e09ce321d979d623a29dc435",
+          "output_sha256": "6ea6cd0792a66184affdfbd392a5660fc2b7aae1b1427577ebc19713e6d288f7",
+          "log_sha256": "433f7b0fe58b27acb8ed1dfb3c42c0a2ab8f96392af05278467080c1a3c65174"
+        },
+        {
+          "name": "06_runes",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history"
+          ],
+          "proof_sha256": "420ae469918252122a7b784666bce6b1dc8c6b4c1cfb113a00cbeabbf092afcd",
+          "output_sha256": "5786c3fd692830fedc11cc5f37d66924d0c5642fa77b12fb76968cec87ddea12",
+          "log_sha256": "b4369e6880a8a297ec6db47c5409d1070eb5f6a0a81c48647c93bdf9ca05ab28"
+        },
+        {
+          "name": "07_rune_return",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history"
+          ],
+          "proof_sha256": "c57afa07b21a430deba9af3d53f8376088e2b05e26b6bfa447bd7e5ab23fb3d4",
+          "output_sha256": "b1037b1e85adbfd3949284ea0d1d0d56a4a9355a140f497e730cea3fbe85d0ff",
+          "log_sha256": "4a34a077063037b3ac337a018ab5eda992b69a9e3225547c066cf8106cdee071"
+        },
+        {
+          "name": "08_knowledge",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history"
+          ],
+          "proof_sha256": "52032a24c94273a6c9940b0f60e206e95423c0219849d6ac02f5e62a4ce78fbb",
+          "output_sha256": "a7ccdb850749dffd461151ba93d806ad28e2896d29f8654ed533b6806a4b03b5",
+          "log_sha256": "851be382016b73986f5c7cf651f18198b87f260b75c7020cedcc73762b72643c"
+        },
+        {
+          "name": "09_translation",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history"
+          ],
+          "proof_sha256": "aab7701fb40bb5e81771f8f6c08cc759317b4de5653bb5548964a3c75b7f6af5",
+          "output_sha256": "3e5376124848f313ed6ed3249f186812bcb42d2b95f72e3c987b9734042e68df",
+          "log_sha256": "ef6710b099f5ef870760b50d5840fd76cdcc68d7e37a68c4eacd40f2b311dce2"
+        },
+        {
+          "name": "10_repair",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history"
+          ],
+          "proof_sha256": "8996839238d1ffaa4e664f2b2142dcdf64e1db8b220417dea60be3c7fab81549",
+          "output_sha256": "3c7995badb883c813b623022b6a45131a92d3f642ba900bfeac1dcbb61ca4781",
+          "log_sha256": "341e1f849581a731f1fb51d678e0481eb6864f887b1d21919c5e22e430725183"
+        },
+        {
+          "name": "11_departure",
+          "status": "verified",
+          "errors": [],
+          "exit_code": 0,
+          "content_checks": [
+            "Both earned captain rewards retained",
+            "Cave weapon retained",
+            "Museum sword retained",
+            "Broken-sword branch inventory and exhibit history",
+            "Darker-jungle arrival, translation, orb, blessing and repair flags"
+          ],
+          "proof_sha256": "c72b663f55c20f4317e89e863c209ab450ce53449466f649a6cff90971689631",
+          "output_sha256": "14fc61802b853d166ef36f765433835f0d7f0a20431babfceeabc60c2c7db62d",
+          "log_sha256": "d9103da289fde60ede172f3a912a3303dad41254607b497281cc5669c8e99966"
+        }
+      ],
+      "scope": "Fresh single-day Europe/Berlin receipts, clean PASS logs, proof/save timestamps, actual linked hashes, branch inventory/quest checks and source endpoint comparison. Media excluded. Endpoint equality cannot exclude intervening edits. Content completeness, rendering quality and original-game parity require separate acceptance."
+    },
+    "scope": "R4 three-spell source: eleven fresh linked campaign legs with zero source drift. Content completeness and Bob acceptance remain open."
+  },
+  "bob_acceptance": "open",
+  "asset_audit": {
+    "checked": 16853,
+    "image_probes": [
+      {
+        "decoded": true,
+        "height": 1040,
+        "path": "assets/lol2/generated/magic_shop/3041406E_004.png",
+        "width": 848
+      }
+    ],
+    "mismatched": [],
+    "missing": [],
+    "pack_sha256": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45",
+    "passed": true,
+    "scope": "Actual exported PCK mounted in an empty project with no loose asset fallback; hashes compared to candidate source-asset manifest. This is asset packaging proof, not packaged gameplay, audio-device or GPU acceptance."
+  },
+  "linux_artifacts": {
+    "LoL2-Cavern.x86_64": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+    "LoL2-Cavern.pck": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45"
+  },
+  "scope": "R4 full256, fresh eleven-leg campaign, both exports, Linux cave/restart and Jungle resume/save checks, and all packed asset hashes passed. Remaining content, native Windows/GPU/audio and Bob acceptance remain open.",
+  "artifacts": {
+    "Linux/LoL2-Cavern.x86_64": {
+      "sha256": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+      "bytes": 73519416
+    },
+    "Linux/LoL2-Cavern.pck": {
+      "sha256": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45",
+      "bytes": 936307488
+    },
+    "Windows/LoL2-Cavern.exe": {
+      "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+      "bytes": 109268480
+    },
+    "Windows/LoL2-Cavern.pck": {
+      "sha256": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45",
+      "bytes": 936307488
+    }
+  },
+  "identical_platform_packs": true,
+  "linux_packaged_jungle": {
+    "passed": true,
+    "exe_sha256": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+    "pack_sha256": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45",
+    "input_sha256": "25a093a98945ad76cdfe73275a15f0334a9d5d2fa18b2c112b3991a7b44e72b2",
+    "scope": "Actual exported binary, existing earned Jungle arrival save copied unchanged to isolated user data. UI resume and ordinary F5/F9/movement. No external game script. Private display, not fresh campaign or representative GPU/audio acceptance.",
+    "restore_generation": {
+      "before": 3,
+      "after": 4,
+      "other_saved_fields_equal": true
+    },
+    "save_hashes": {
+      "input": "25a093a98945ad76cdfe73275a15f0334a9d5d2fa18b2c112b3991a7b44e72b2",
+      "resumed": "cb6f521039bbfbd205476c8e105c7d4fe512734f3478316565015222ffa733ab",
+      "moved": "7434e2140ac2f13d2110db8961a2f7f7d98a9b22fcee3caeffb73ecfc9399566",
+      "restored": "7c4b4b2b2bd141f0998d01b45fe092517efd224016a5187a15f73d3191d2b782"
+    },
+    "resumed_format": "lol2-restoration-jungle"
+  }
+}

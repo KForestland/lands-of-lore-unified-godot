@@ -1,0 +1,497 @@
+{
+  "source_initials": {
+    "status": "PASS",
+    "archive_sha256": "1e3e2a46340d714aaf4d583e5aff7e58dc11005bac6c694fac49c07d13e01edd",
+    "entry_key": 3984507021,
+    "entry_sha256": "b399b5c8bfea3597293a3237f30f45985efa2dd88d2dc29d5d18ca7488f60891",
+    "count": 53,
+    "initial_bytes_offset": 722154,
+    "names_offset": 722207,
+    "globals": [
+      {
+        "index": 0,
+        "name": "GV_LUTHERS_SOUL",
+        "initial": 5
+      },
+      {
+        "index": 1,
+        "name": "GV_GAME_LEVEL_PROGRESSION",
+        "initial": 0
+      },
+      {
+        "index": 2,
+        "name": "GV_SUMMON_SCROLL_AQUIRED",
+        "initial": 0
+      },
+      {
+        "index": 3,
+        "name": "GV_DARK_HALLS_OPEN",
+        "initial": 0
+      },
+      {
+        "index": 4,
+        "name": "GV_DANIEL_KILLED",
+        "initial": 0
+      },
+      {
+        "index": 5,
+        "name": "GV_DANIEL_SPARED",
+        "initial": 0
+      },
+      {
+        "index": 6,
+        "name": "GV_LUTHER_SPARED",
+        "initial": 0
+      },
+      {
+        "index": 7,
+        "name": "GV_HIVE_CAVES_VISITED",
+        "initial": 0
+      },
+      {
+        "index": 8,
+        "name": "GV_ARENA_DONE",
+        "initial": 0
+      },
+      {
+        "index": 9,
+        "name": "GV_HAS_RUNES",
+        "initial": 0
+      },
+      {
+        "index": 10,
+        "name": "GV_GAVE_DAWN_RUNES",
+        "initial": 0
+      },
+      {
+        "index": 11,
+        "name": "GV_KELSRICK_DEAD",
+        "initial": 0
+      },
+      {
+        "index": 12,
+        "name": "GV_DAWN_RELATIONSHIP",
+        "initial": 1
+      },
+      {
+        "index": 13,
+        "name": "GV_BACATTA_RELATIONSHIP",
+        "initial": 1
+      },
+      {
+        "index": 14,
+        "name": "GV_RUNES_TRANSLATED",
+        "initial": 0
+      },
+      {
+        "index": 15,
+        "name": "GV_DREAMSTONE",
+        "initial": 0
+      },
+      {
+        "index": 16,
+        "name": "GV_SSAR_DESTROYED",
+        "initial": 0
+      },
+      {
+        "index": 17,
+        "name": "GV_KNOWLEDGE_OF_TEMPLE",
+        "initial": 0
+      },
+      {
+        "index": 18,
+        "name": "GV_MET_BACATTA",
+        "initial": 0
+      },
+      {
+        "index": 19,
+        "name": "GV_KNOWLEDGE_OF_POWER_ORB",
+        "initial": 0
+      },
+      {
+        "index": 20,
+        "name": "GV_LUTHER_HAS_WARBLADE",
+        "initial": 0
+      },
+      {
+        "index": 21,
+        "name": "GV_MET_DAWN",
+        "initial": 0
+      },
+      {
+        "index": 22,
+        "name": "GV_MET_KELSRICK",
+        "initial": 0
+      },
+      {
+        "index": 23,
+        "name": "GV_SHAMAN_DEAD",
+        "initial": 0
+      },
+      {
+        "index": 24,
+        "name": "GV_LARKHON_SEEN",
+        "initial": 0
+      },
+      {
+        "index": 25,
+        "name": "GV_KITYARA_DEAD",
+        "initial": 0
+      },
+      {
+        "index": 26,
+        "name": "GV_SERUM1",
+        "initial": 0
+      },
+      {
+        "index": 27,
+        "name": "GV_SERUM2",
+        "initial": 0
+      },
+      {
+        "index": 28,
+        "name": "GV_SERUM3",
+        "initial": 0
+      },
+      {
+        "index": 29,
+        "name": "GV_HULINE_ALERT",
+        "initial": 0
+      },
+      {
+        "index": 30,
+        "name": "GV_WILD_ONE_ALERT",
+        "initial": 0
+      },
+      {
+        "index": 31,
+        "name": "GV_MIST_OF_DOOM_SCROLL_AQUIRED",
+        "initial": 0
+      },
+      {
+        "index": 32,
+        "name": "GV_PRISM_SCROLL_AQUIRED",
+        "initial": 0
+      },
+      {
+        "index": 33,
+        "name": "GV_LUTHER_IS_TUANI",
+        "initial": 0
+      },
+      {
+        "index": 34,
+        "name": "GV_LUTHER_HAS_URN",
+        "initial": 0
+      },
+      {
+        "index": 35,
+        "name": "GV_LUTHER_HAS_PRIESTS_ASHES",
+        "initial": 0
+      },
+      {
+        "index": 36,
+        "name": "GV_IRON_FLUTE",
+        "initial": 0
+      },
+      {
+        "index": 37,
+        "name": "GV_BRACERS_OF_THE_DEAD",
+        "initial": 0
+      },
+      {
+        "index": 38,
+        "name": "GV_SHALLA_RESCUED",
+        "initial": 0
+      },
+      {
+        "index": 39,
+        "name": "GV_JULIAN_ATTACKED",
+        "initial": 0
+      },
+      {
+        "index": 40,
+        "name": "GV_DAWN_ATTACKED_IN_MONASTERY",
+        "initial": 0
+      },
+      {
+        "index": 41,
+        "name": "GV_EMPERORS_REMAINS",
+        "initial": 0
+      },
+      {
+        "index": 42,
+        "name": "GV_SILVERLEAF_BUSH_CREATED",
+        "initial": 0
+      },
+      {
+        "index": 43,
+        "name": "GV_LONG_ARM_AXE",
+        "initial": 0
+      },
+      {
+        "index": 44,
+        "name": "GV_DARK_HALLS_TRIGGERED",
+        "initial": 0
+      },
+      {
+        "index": 45,
+        "name": "GV_LUTHER_FORM",
+        "initial": 0
+      },
+      {
+        "index": 46,
+        "name": "GV_DAWN_TRANSLATED_RUNES",
+        "initial": 0
+      },
+      {
+        "index": 47,
+        "name": "GV_LUTHER_KNOWS_ABOUT_DANIEL",
+        "initial": 0
+      },
+      {
+        "index": 48,
+        "name": "GV_RIX_DEAD",
+        "initial": 0
+      },
+      {
+        "index": 49,
+        "name": "GV_LUTHER_HP",
+        "initial": 0
+      },
+      {
+        "index": 50,
+        "name": "GV_RUBY_OF_TRUTH",
+        "initial": 0
+      },
+      {
+        "index": 51,
+        "name": "GV_LUTHER_HAS_MANTLE",
+        "initial": 0
+      },
+      {
+        "index": 52,
+        "name": "Belial_Born",
+        "initial": 0
+      }
+    ],
+    "scope": "Independent archive extraction; runtime startup consumer still based on Opus static finding."
+  },
+  "status": "PASS focused scope",
+  "runs": [
+    {
+      "report": "/home/bob/lol2_github_source_20260911/tmp/regressions/global_defaults_initial_20261007/report.json",
+      "sha256": "2995e6d6ea848bd6967f2d8a438544c69f706e338182b4299717fc1dde72bb51",
+      "passed": false,
+      "tests": [
+        {
+          "name": "monastery_library_attack_test",
+          "mode": "headless",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 0.6,
+          "log": "monastery_library_attack_test.log",
+          "errors": []
+        },
+        {
+          "name": "hive_dawn20_live_test",
+          "mode": "rendered",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 8.5,
+          "log": "hive_dawn20_live_test.log",
+          "errors": []
+        },
+        {
+          "name": "jungle_bacatta_live_test",
+          "mode": "rendered",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 7.13,
+          "log": "jungle_bacatta_live_test.log",
+          "errors": []
+        },
+        {
+          "name": "jungle_kelsrick_live_test",
+          "mode": "rendered",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 6.69,
+          "log": "jungle_kelsrick_live_test.log",
+          "errors": []
+        },
+        {
+          "name": "jungle_bacatta65_live_test",
+          "mode": "rendered",
+          "passed": false,
+          "returncode": 1,
+          "timed_out": false,
+          "seconds": 8.36,
+          "log": "jungle_bacatta65_live_test.log",
+          "errors": [
+            "ERROR: Offer at the idle wait differs"
+          ]
+        },
+        {
+          "name": "moff_revisit_state_test",
+          "mode": "headless",
+          "passed": false,
+          "returncode": 1,
+          "timed_out": false,
+          "seconds": 0.57,
+          "log": "moff_revisit_state_test.log",
+          "errors": [
+            "ERROR: FAIL: grant after 566 before 567",
+            "ERROR: FAIL: 1 MOFF lifecycle checks"
+          ]
+        },
+        {
+          "name": "magic_shop_offer_state_test",
+          "mode": "headless",
+          "passed": false,
+          "returncode": 1,
+          "timed_out": false,
+          "seconds": 0.56,
+          "log": "magic_shop_offer_state_test.log",
+          "errors": [
+            "ERROR: FAIL: orb offer",
+            "ERROR: FAIL: 1 Rashar state checks"
+          ]
+        },
+        {
+          "name": "monastery_quest_state_test",
+          "mode": "headless",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 1.13,
+          "log": "monastery_quest_state_test.log",
+          "errors": []
+        }
+      ],
+      "source_stable": true
+    },
+    {
+      "report": "/home/bob/lol2_github_source_20260911/tmp/regressions/global_defaults_corrected_20261007/report.json",
+      "sha256": "bc555af5d0c36bbd5c67e7ef2162221245ce0ded449e85cefe328783040f716b",
+      "passed": true,
+      "tests": [
+        {
+          "name": "jungle_bacatta65_live_test",
+          "mode": "rendered",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 19.28,
+          "log": "jungle_bacatta65_live_test.log",
+          "errors": []
+        },
+        {
+          "name": "moff_revisit_state_test",
+          "mode": "headless",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 0.58,
+          "log": "moff_revisit_state_test.log",
+          "errors": []
+        },
+        {
+          "name": "magic_shop_offer_state_test",
+          "mode": "headless",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 0.58,
+          "log": "magic_shop_offer_state_test.log",
+          "errors": []
+        }
+      ],
+      "source_stable": true
+    },
+    {
+      "report": "/home/bob/lol2_github_source_20260911/tmp/regressions/global_defaults_host_20261007/report.json",
+      "sha256": "23e920848678519f52902c0355b23a00364929190a5c0e7bf622fc191a741633",
+      "passed": false,
+      "tests": [
+        {
+          "name": "jungle_bacatta65_live_test",
+          "mode": "rendered",
+          "passed": false,
+          "returncode": 1,
+          "timed_out": false,
+          "seconds": 5.11,
+          "log": "jungle_bacatta65_live_test.log",
+          "errors": [
+            "ERROR: Live shared context differs: missingGV_BACATTA_RELATIONSHIP"
+          ]
+        }
+      ],
+      "source_stable": true
+    },
+    {
+      "report": "/home/bob/lol2_github_source_20260911/tmp/regressions/global_defaults_host_fixed_20261007/report.json",
+      "sha256": "5bb39757654f6b5653156b45816570101bf600ccd0535d7d8e25af9fb4a6aa9c",
+      "passed": true,
+      "tests": [
+        {
+          "name": "jungle_bacatta_live_test",
+          "mode": "rendered",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 7.05,
+          "log": "jungle_bacatta_live_test.log",
+          "errors": []
+        },
+        {
+          "name": "jungle_bacatta65_live_test",
+          "mode": "rendered",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 21.23,
+          "log": "jungle_bacatta65_live_test.log",
+          "errors": []
+        },
+        {
+          "name": "jungle_exit_scene_test",
+          "mode": "rendered",
+          "passed": true,
+          "returncode": 0,
+          "timed_out": false,
+          "seconds": 6.03,
+          "log": "jungle_exit_scene_test.log",
+          "errors": []
+        }
+      ],
+      "source_stable": true
+    }
+  ],
+  "source_hashes": {
+    "scripts/lol2/monastery_quest_state.gd": "c6b718e84022d2c0613a15d624d697ccda363850d1c717f43a9a4cdeaaa9d4bc",
+    "scripts/lol2/monastery_conversation.gd": "defa7a087f4e618514c0ddfaed9aa17616fa77d4abe7e2c7c0b8f6469dd305f5",
+    "scripts/lol2/monastery_library_attack.gd": "11b5e17420e922bc84edbd6ff1ca0fb54fc5e68dba5c3390e9018308f2d0dda1",
+    "scripts/lol2/magic_shop_state.gd": "0bfdfaaddf9284a35e6c8f838f0e8973dc655c703aa36607f73c4040ae6c0e08",
+    "scripts/lol2/jungle_walkthrough.gd": "a31b2b3022d2c03b39a9032f94e46bf6df742a8808a704b4f076290b4fc7926d",
+    "scripts/lol2/jungle_bacatta.gd": "554b2cf9a4233fcf57394253748093f2890c7fe5fde6539ed5329187e16db0ba",
+    "scripts/lol2/jungle_bacatta65.gd": "108a64953935b41c3a2a76a708e458e2fb456831761f436fe4fd002cfecab518",
+    "scripts/lol2/hive_dawn20.gd": "3d112d1605e76cedd2f601a87449b0669ae2af394ba05e54ede0173bb1103e09",
+    "scripts/lol2/shared_global_defaults.gd": "ed480a694aab7020ac1fd5ed32a495613c3effefd1cdba0a43365a9548729e0d",
+    "tests/monastery_quest_state_test.gd": "873efe05e7a3a6121f2ec20b98d5dc48fac0b8d73d86c04157395fa1557986f4",
+    "tests/moff_revisit_state_test.gd": "25a2643fe4e812ffbb6da12684474d11a6907953c04269e9ffec39a0a080d239",
+    "tests/magic_shop_offer_state_test.gd": "46f13ac6ff30113288588c4f2fcb728e74b5b1cb0665ee7e020df40953d0ef71",
+    "tests/jungle_bacatta65_live_test.gd": "28a81d191334300d8285952cf0cef3cb38fb8d251eb173f7007320918bd015da"
+  },
+  "review": "Initial three failures were changed original starting totals; first host probe reproduced missed inherited exit-context default, fixed and final3/3 passed. Prior focused five plus corrected three cover eight distinct tests; exit scene adds a ninth.",
+  "limits": [
+    "No full258 suite/campaign/build after this change.",
+    "R4 binaries retain prior defaults.",
+    "Missing legacy values cannot reconstruct unrecorded historical actions.",
+    "Native startup consumer based on Opus static finding; initial byte/name extraction independently reproduced.",
+    "Kelsrick live host uses corrected context/shared hooks; its unused standalone no-hook write path retains historical defaults."
+  ]
+}

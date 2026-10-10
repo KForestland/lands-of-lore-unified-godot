@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "placement_hex": "b1002a28faa406ff826120020000000000000000000000000000000000006400051400000006004f00ff050800000000000000003cc973de",
+  "actors": [
+    {
+      "actor": 0,
+      "definition": 5,
+      "position": [
+        177,
+        -250,
+        -10282
+      ],
+      "heading": 42234,
+      "health": 100,
+      "behavior": 6,
+      "flags": 24962,
+      "present": true,
+      "reward_scale": 2
+    }
+  ],
+  "definitions": {
+    "5": {
+      "name": "ROACH",
+      "clips": {
+        "idle": {
+          "selector": 1,
+          "frames": 9
+        },
+        "walk": {
+          "selector": 2,
+          "frames": 9
+        },
+        "rise": {
+          "selector": 7,
+          "frames": 8
+        },
+        "death": {
+          "selector": 9,
+          "frames": 20
+        },
+        "corpse": {
+          "selector": 10,
+          "frames": 1
+        },
+        "attacks": [
+          {
+            "selector": 6,
+            "frames": 16,
+            "hits": [
+              [
+                12,
+                10
+              ]
+            ],
+            "damage": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "regions": [],
+  "neighbour_wake": {},
+  "counted": [],
+  "counter_target": 0,
+  "controls": [],
+  "native_base": 15,
+  "stat_sha256": "4961ae57033d1575d6b4fb3302df9815e14bbdceca0b4de6e73730418b071020",
+  "scope": "Source actor0 position/presence/health/behavior/action hits/reward scale. Shared pursuit is an adapter; goal6 A9720 helper scheduling unresolved. No script trigger or loot inferred."
+}

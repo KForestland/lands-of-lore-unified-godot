@@ -1,0 +1,34 @@
+{
+  "input_sha256": "2c19b4cf670769e60726d32440a9b88e74fad76bb2ff4fc51c755517217802bd",
+  "output_sha256": "3fde5a596b215ba835cc37f1f5b73f6f33005783dcdbc0d4eb69fe85ec21ae6a",
+  "passed": true,
+  "position": [
+    -4577.0,
+    32.0,
+    1168.0
+  ],
+  "scope": "Earned departure-ready save, original polygon admission, first-use source movie/PCM audio, input lock, partial frame/clock disk rollback, malformed rollback, natural finish, real scene transition, original L8_SJ entry1 grounding/bearing, inventory/quests/forms carry and destination-specific saves. Original start-to-finish Act1 and full Act2 content not established.",
+  "walked_position": [
+    -4496.990234375,
+    32.0,
+    1168.0
+  ],
+  "input_proof": "docs/act-one-departure-walk-checks.json",
+  "log": "tmp/act_one_departure_test.log",
+  "log_sha256": "e77b21247777f92867d639f3a0f2082edd8a56e35fcef6209043401c849949ee",
+  "source_sha256": {
+    "scripts/lol2/act_one_departure.gd": "4aeb7abbc278a87a7c709b39af87960e0ac6b726f74456c8063f19859b940cf0",
+    "scripts/lol2/act_one_departure_state.gd": "3dbf7c71e6fa1576db20b1f71348b85959b0eec97a2e06ff37def83c5e6d7bf3",
+    "scripts/lol2/darker_jungle.gd": "6865200ba71111ec13c4a75301955e06475061dbc114da2be88f7c02d86842d3",
+    "scripts/lol2/jungle_walkthrough.gd": "10fd4e9aa1f5ddd91e240ce90d30950a09b26fe846ca27403892697eec6769bf",
+    "scripts/lol2/act_one_quest_state.gd": "ba3746817bbd0d77f70c11a735036dfbe51852a156ed1a647e1714229d0a6dc2",
+    "scripts/lol2/hive_review.gd": "10c475c031fc034db3539e2374dcab5796f670a857df9f1db6a63be4e058a722",
+    "scripts/lol2/original_game_gate.gd": "71e6ca762f2db5607c6b966afb01e20cad56e545bacdb0a02b7b7c20a1e07401",
+    "tests/act_one_departure_test.gd": "4149a27f88d93b6efc3d1928bbb4e5ac48064c73eff345246dcf2218f15e300b"
+  },
+  "visual_inspection": [
+    "tmp/act1_departure_movie.png",
+    "tmp/act1_darker_jungle_arrival.png"
+  ],
+  "followups": "docs/act-one-departure-regression-checks.json"
+}

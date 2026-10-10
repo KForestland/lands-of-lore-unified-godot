@@ -1,0 +1,101 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "actors": [
+  {
+   "actor": 64,
+   "definition": 7,
+   "position": [
+    -1892,
+    0,
+    -5475
+   ],
+   "heading": 11468,
+   "health": 200,
+   "behavior": 14,
+   "flags": 9602,
+   "present": true,
+   "loot": null,
+   "reward_scale": 12
+  }
+ ],
+ "definitions": {
+  "7": {
+   "name": "Kelsrick",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 16
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 24
+    },
+    "rise": {
+     "selector": 6,
+     "frames": 13
+    },
+    "death": {
+     "selector": 16,
+     "frames": 73
+    },
+    "corpse": {
+     "selector": 17,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 4,
+      "frames": 31,
+      "hits": [
+       [
+        14,
+        100
+       ]
+      ],
+      "damage": [
+       30
+      ]
+     },
+     {
+      "selector": 5,
+      "frames": 19,
+      "hits": [
+       [
+        8,
+        100
+       ]
+      ],
+      "damage": [
+       30
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "native_bases": {
+  "Kelsrick": {
+   "base": 30,
+   "defense": 0,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "46624b07d37f5290168938c9cc42fad07ec8887e026044d525328c0854516cdf",
+   "note": "A1F57 early-return path (corrected replay)"
+  }
+ },
+ "regions": [],
+ "neighbour_wake": {},
+ "counted": [],
+ "counter_target": 0,
+ "scripted_dormant": [
+  64
+ ],
+ "dormant_pose": "idle",
+ "note": "Hostile-branch combat/presentation owner only; dialogue, use and hit admission are the source state."
+}

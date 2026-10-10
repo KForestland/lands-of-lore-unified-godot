@@ -1,0 +1,186 @@
+{
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "definition": {
+  "index": 7,
+  "name": "8-Prism",
+  "identity": "0xe50dcdd9",
+  "handler": 7,
+  "failure_message_word": 670
+ },
+ "handler": {
+  "address": "0x965DC",
+  "event": 5,
+  "event5_items": [
+   "16-Ax Traitor",
+   "17-Drac dagger",
+   "19-Blizzard",
+   "22-Darkstorm",
+   "8-Prism",
+   "9-Firestorm"
+  ],
+  "draw": "12415C(221D8,1,1000)",
+  "region_flag": "player region word +0x1C bit 0x200",
+  "enclosed_success": "draw > 749",
+  "open_success": "draw > 249",
+  "success": "pool 0x5E, 107498(obj, attacker, target+0x46, target+0x36, 3)",
+  "failure": "E3924 definition word +0x37"
+ },
+ "effect": {
+  "constructor": "0x107498",
+  "vtable": "0x7278",
+  "tick": "0x107A84",
+  "remove": "0x1079C8",
+  "frame1": "message slot 0x134; target +0x14 bit 0x4000 -> vt+0x80 packet",
+  "packet_mode3": {
+   "word0": "0x1040",
+   "word2": 1,
+   "kind": "2/0xF",
+   "duration": "0xA (read as 10 s, inference)"
+  }
+ },
+ "spans": {
+  "0x965dc": "442ec64935d68f3e414b110e33267533bd8b74b4adb6c1c05ba0c93db5ebff24",
+  "0x107498": "315f34b8f42b5aeeeb6c58f48e966f58cd8a199705fdf4c87b98a2dd900a55e3",
+  "0x107a84": "67d4e73f65d9d03ae3598aac9c91989900bdb0d21bd0599109ea272eb40af75b",
+  "0x647b3": "7b94a53e36eb60ef137518b9998715006ca2b28d89a08601b3ca7690100310d4"
+ },
+ "facts": {
+  "0x965e7": "event 5 only",
+  "0x965f2": "draw = 12415C(221D8, 1, 1000)",
+  "0x96612": "region helper: player class 0x22574 special case",
+  "0x96625": "region helper: player +0x15 bit 0x10",
+  "0x9664e": "region word +0x1C",
+  "0x96657": "region flag bit 0x200",
+  "0x96664": "flag clear: success when draw > 249",
+  "0x96670": "flag set: success when draw > 749",
+  "0x96682": "pool object 0x5E",
+  "0x9669d": "effect mode 3",
+  "0x966ac": "call 107498 effect constructor",
+  "0x966c6": "failure message: definition word +0x37",
+  "0x966d5": "failure: E3924 message",
+  "0x1074bc": "effect vtable 0x7278",
+  "0x1074c3": "mode byte +0x58 from argument",
+  "0x107adf": "tick: frame 1",
+  "0x107b1d": "message slot 0x134 (mode != 2)",
+  "0x107b47": "target +0x14 bit 0x4000 required",
+  "0x107bcc": "mode 3 packet",
+  "0x107bd1": "packet word0 0x1040",
+  "0x107bd6": "packet word2 1",
+  "0x107bdf": "packet duration 0xA",
+  "0x107bf7": "target vt+0x80 status packet",
+  "0x647b3": "op204: word+4 == -1 region material",
+  "0x647ee": "op204: word+4 == -2 region byte",
+  "0x64821": "op204 otherwise: record [22D08]+8*word4: word0 = word6, byte5 |= 0x40"
+ },
+ "panorama": {
+  "commands": [
+   "cc90e101cf066703",
+   "cc90e201d0066703",
+   "cc90e301eb066703",
+   "cc90bf01d1066703",
+   "cc90e401ec066703",
+   "cc90e501d2066703",
+   "cc90e601d3066703"
+  ],
+  "records": [
+   {
+    "region": 481,
+    "wall_record": 1743,
+    "edge_code": 5,
+    "initial_descriptor": 430,
+    "new_descriptor": 871,
+    "raw_hex": "ae01000080050400"
+   },
+   {
+    "region": 482,
+    "wall_record": 1744,
+    "edge_code": 5,
+    "initial_descriptor": 429,
+    "new_descriptor": 871,
+    "raw_hex": "ad01000080050400"
+   },
+   {
+    "region": 483,
+    "wall_record": 1771,
+    "edge_code": 5,
+    "initial_descriptor": 428,
+    "new_descriptor": 871,
+    "raw_hex": "ac01000080050400"
+   },
+   {
+    "region": 447,
+    "wall_record": 1745,
+    "edge_code": 6,
+    "initial_descriptor": 427,
+    "new_descriptor": 871,
+    "raw_hex": "ab01000080060400"
+   },
+   {
+    "region": 484,
+    "wall_record": 1772,
+    "edge_code": 5,
+    "initial_descriptor": 426,
+    "new_descriptor": 871,
+    "raw_hex": "aa01000080050400"
+   },
+   {
+    "region": 485,
+    "wall_record": 1746,
+    "edge_code": 5,
+    "initial_descriptor": 425,
+    "new_descriptor": 871,
+    "raw_hex": "a901000080050400"
+   },
+   {
+    "region": 486,
+    "wall_record": 1747,
+    "edge_code": 4,
+    "initial_descriptor": 424,
+    "new_descriptor": 871,
+    "raw_hex": "a801000080040400"
+   }
+  ]
+ },
+ "region_flags": {
+  "museum": {
+   "archive": "DAT/L3_DH.MIX",
+   "archive_sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+   "regions": 1499,
+   "flag_set": 1499,
+   "default_enclosed": true,
+   "exceptions": 0
+  },
+  "jungle": {
+   "archive": "DAT/L4_HJ.MIX",
+   "archive_sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+   "regions": 4787,
+   "flag_set": 442,
+   "default_enclosed": false,
+   "exceptions": 442
+  },
+  "hive": {
+   "archive": "DAT/L5_HC.MIX",
+   "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+   "regions": 1292,
+   "flag_set": 1289,
+   "default_enclosed": true,
+   "exceptions": 3
+  },
+  "cave": {
+   "archive": "/media/bob/Arikv/REFERENCE/game_files/lol2/DAT/L1_DC.MIX",
+   "archive_sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+   "regions": 1954,
+   "flag_set": 1900,
+   "default_enclosed": true,
+   "exceptions": 54
+  }
+ },
+ "not_traced": [
+  "creature-side handling of packet 0x1040 (exact native blind behaviour)",
+  "duration unit of 0xA",
+  "message texts (slot 0x134, definition word +0x37)",
+  "pool 0x5E effect visual",
+  "12415C distribution (assumed uniform)"
+ ],
+ "passed": true
+}

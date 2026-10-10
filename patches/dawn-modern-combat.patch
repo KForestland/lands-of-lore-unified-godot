@@ -1,0 +1,313 @@
+--- a/scripts/lol2/jungle_dawn.gd
++++ b/scripts/lol2/jungle_dawn.gd
+@@ -8,8 +8,7 @@
+ ## Player properties: 0x26/0x27 hold/release, 0x0B/0x0C value×100 fighting/magic experience, 0x18 takes the held
+ ## item, 0x3C requests human form, and 0x24/0x25 enable/disable new transformation requests.
+ ## Actor properties 5/6 (talk focus) and external prop/sound/timer commands remain saved receipts.
+-## Hostile Dawn (state50, after 30324) is targetable and killable but does not attack: her def8 attack rows carry
+-## the unresolved native frame-event kind5, so no damage is invented.
++## Hostile Dawn uses the shared modern combat controller; original native cast timing is not a release gate.
+ const State=preload("res://scripts/lol2/jungle_dawn_state.gd")
+ const Generic=preload("res://scripts/lol2/scripted_creature_state.gd")
+ const Live=preload("res://scripts/lol2/creature_live_rules.gd")
+@@ -36,6 +35,7 @@
+ 		if host.has_method("actor_input_locked") and host.actor_input_locked(): return false
+ 		return super.strike()
+ const SHADER:="shader_type spatial;\nrender_mode unshaded, cull_disabled;\nuniform sampler2D frame : source_color, filter_nearest, repeat_disable;\nvoid vertex() {\n\tvec3 up = vec3(0.0, 1.0, 0.0);\n\tvec3 right = normalize(cross(up, INV_VIEW_MATRIX[2].xyz));\n\tMODELVIEW_MATRIX = VIEW_MATRIX * mat4(vec4(right, 0.0), vec4(up, 0.0), vec4(cross(right, up), 0.0), MODEL_MATRIX[3]);\n}\nvoid fragment() {\n\tvec4 c = texture(frame, UV);\n\tif (c.a < 0.5) { discard; }\n\tALBEDO = c.rgb;\n}\n"
++var combat: Node3D
+ var host: Node3D
+ var hooks: Dictionary={}
+ var src: Dictionary
+@@ -69,6 +69,7 @@
+ 	mesh.visible=false;add_child(mesh)
+ 	voice=AudioStreamPlayer3D.new();add_child(voice)
+ 	if media.clip.get("audio")!=null: voice_stream=AudioStreamWAV.load_from_file(str(media.clip.audio))
++	combat=preload("res://scripts/lol2/dawn_modern_combat.gd").new();combat.dawn=self;combat.name="Combat";add_child(combat)
+ 	return restore(saved if saved!=null else initial())
+ 
+ ## ---- saved packet ---------------------------------------------------------------------------
+@@ -82,6 +83,8 @@
+ 	var packet: Dictionary={"version":1,"state":state.duplicate(true),"body":population.checkpoint(),"inside":inside.duplicate(),"hold":hold,"receipts":receipts.duplicate()}
+ 	var effects: Dictionary=projectiles.checkpoint()
+ 	if effects!=projectiles.initial():packet.projectiles=effects
++	var fighting: Dictionary=combat.checkpoint()
++	if fighting!=combat.initial():packet.combat=fighting
+ 	return packet
+ 
+ ## Atomic: an invalid packet changes nothing.
+@@ -92,6 +95,7 @@
+ 	if not error.is_empty(): return error
+ 	projectiles.restore(packet.get("projectiles",projectiles.initial()))
+ 	state=State.canonical(packet.state)
++	combat.restore(packet.get("combat",combat.initial()))
+ 	inside=packet.inside.map(func(r):return int(r));hold=bool(packet.hold);receipts=packet.receipts.duplicate()
+ 	host.curse.restore_legacy_dawn_admission(receipts)
+ 	_start_voice();_sync_body(0.0);_present()
+@@ -234,6 +238,7 @@
+ 	_mirror_damage()
+ 	_apply(State.advance(state,src,media,delta,ctx))
+ 	_sync_body(delta)
++	combat.advance(delta)
+ 	_mirror_damage()
+ 	_present()
+ 
+@@ -269,7 +274,7 @@
+ 	population.set_process_unhandled_input(strikeable);population.set_process(strikeable)
+ 	population.state.live[ID].mode=Live.IDLE
+ 	if hostile() and not body.woken: Generic.wake(population.state,ID)
+-	# No AI step: hostile Dawn has no staged attacks (kind5 pending); rise/death/corpse run on the generic clocks.
++	# Body rise/death/corpse use generic clocks; modern attacks run in combat.advance.
+ 	if delta>0 and (body.woken or int(state.health)==0): Generic.advance_clocks(population.state,population.src,delta)
+ 	population.present()
+ 
+--- a/scripts/lol2/hive_dawn20.gd
++++ b/scripts/lol2/hive_dawn20.gd
+@@ -7,7 +7,7 @@
+ ## Shared writes go to the carried monastery globals by source name (GV_RUNES_TRANSLATED, GV_LUTHERS_SOUL,
+ ## GV_DAWN_RELATIONSHIP). Player properties 0x26/0x27 hold/release; actor properties 5/6 (talk focus: she is
+ ## faced while held) and other external commands are saved receipts.
+-## After a hit she takes goals13/7 (hostile b5) but has no staged attacks: combat is owned by the lead.
++## After a hit she takes goals13/7 (hostile b5); the shared modern combat controller then attacks.
+ ## Grounded entry into source region478 (edge saved as state.region) runs group906 (pred192: unload her clip, prop318
+ ## property10 receipt). Adapter: her kind5 values 6/262 have no bound producer.
+ const State=preload("res://scripts/lol2/hive_dawn20_state.gd")
+@@ -39,6 +39,7 @@
+ 		if host.has_method("actor_input_locked") and host.actor_input_locked(): return false
+ 		return super.strike()
+ const SHADER:="shader_type spatial;\nrender_mode unshaded, cull_disabled;\nuniform sampler2D frame : source_color, filter_nearest, repeat_disable;\nvoid vertex() {\n\tvec3 up = vec3(0.0, 1.0, 0.0);\n\tvec3 right = normalize(cross(up, INV_VIEW_MATRIX[2].xyz));\n\tMODELVIEW_MATRIX = VIEW_MATRIX * mat4(vec4(right, 0.0), vec4(up, 0.0), vec4(cross(right, up), 0.0), MODEL_MATRIX[3]);\n}\nvoid fragment() {\n\tvec4 c = texture(frame, UV);\n\tif (c.a < 0.5) { discard; }\n\tALBEDO = c.rgb;\n}\n"
++var combat: Node3D
+ var host: Node3D
+ var hooks: Dictionary={}
+ var src: Dictionary
+@@ -75,6 +76,7 @@
+ 	mesh.visible=false;add_child(mesh)
+ 	voice=AudioStreamPlayer3D.new();add_child(voice)
+ 	if media.clip.get("audio")!=null: voice_stream=AudioStreamWAV.load_from_file(str(media.clip.audio))
++	combat=preload("res://scripts/lol2/dawn_modern_combat.gd").new();combat.dawn=self;combat.name="Combat";add_child(combat)
+ 	return restore(saved if saved!=null else initial())
+ 
+ ## ---- saved packet ---------------------------------------------------------------------------
+@@ -86,6 +88,8 @@
+ 	var packet: Dictionary={"version":1,"state":state.duplicate(true),"body":population.checkpoint(),"hold":hold,"receipts":receipts.duplicate()}
+ 	var effects: Dictionary=projectiles.checkpoint()
+ 	if effects!=projectiles.initial():packet.projectiles=effects
++	var fighting: Dictionary=combat.checkpoint()
++	if fighting!=combat.initial():packet.combat=fighting
+ 	return packet
+ 
+ ## Atomic: an invalid packet changes nothing.
+@@ -96,6 +100,7 @@
+ 	if not error.is_empty(): return error
+ 	projectiles.restore(packet.get("projectiles",projectiles.initial()))
+ 	state=State.canonical(packet.state)
++	combat.restore(packet.get("combat",combat.initial()))
+ 	hold=bool(packet.hold);receipts=packet.receipts.duplicate()
+ 	_start_voice();_sync_body(0.0);_present()
+ 	return ""
+@@ -229,6 +234,7 @@
+ 	_mirror_damage()
+ 	_apply(State.advance(state,src,media,delta,ctx))
+ 	_sync_body(delta)
++	combat.advance(delta)
+ 	_mirror_damage()
+ 	if hold and state.present: _face()
+ 	_present()
+--- a/scripts/lol2/jungle_dawn_packet.gd
++++ b/scripts/lol2/jungle_dawn_packet.gd
+@@ -6,8 +6,10 @@
+ const MAX_RECEIPTS:=64
+ const Projectiles=preload("res://scripts/lol2/dawn_projectile_store.gd")
+ static func validate(packet: Variant) -> String:
+-	if not packet is Dictionary or packet.size()!=6+int(packet.has("projectiles")) or packet.get("version")!=1: return "Invalid Dawn packet."
++	if not packet is Dictionary or packet.size()!=6+int(packet.has("projectiles"))+int(packet.has("combat")) or packet.get("version")!=1: return "Invalid Dawn packet."
+ 	if not FileAccess.file_exists(State.MEDIA) or not FileAccess.file_exists(POPULATION): return "Dawn media missing (run tools/prepare_jungle_dawn_media.py and prepare_jungle_dawn_population.py)."
++	var combat_error:=preload("res://scripts/lol2/dawn_modern_combat.gd").validate(packet.get("combat",preload("res://scripts/lol2/dawn_modern_combat.gd").initial()))
++	if not combat_error.is_empty():return combat_error
+ 	var projectile_error:=Projectiles.validate(packet.get("projectiles",Projectiles.initial()))
+ 	if not projectile_error.is_empty():return projectile_error
+ 	for effect in packet.get("projectiles",Projectiles.initial()).effects:
+--- a/scripts/lol2/hive_dawn20_packet.gd
++++ b/scripts/lol2/hive_dawn20_packet.gd
+@@ -6,8 +6,10 @@
+ const MAX_RECEIPTS:=64
+ const Projectiles=preload("res://scripts/lol2/dawn_projectile_store.gd")
+ static func validate(packet: Variant) -> String:
+-	if not packet is Dictionary or packet.size()!=5+int(packet.has("projectiles")) or packet.get("version")!=1: return "Invalid Hive Dawn packet."
++	if not packet is Dictionary or packet.size()!=5+int(packet.has("projectiles"))+int(packet.has("combat")) or packet.get("version")!=1: return "Invalid Hive Dawn packet."
+ 	if not FileAccess.file_exists(State.MEDIA) or not FileAccess.file_exists(POPULATION): return "Hive Dawn media missing (run tools/prepare_hive_dawn20_media.py and prepare_hive_dawn20_population.py)."
++	var combat_error:=preload("res://scripts/lol2/dawn_modern_combat.gd").validate(packet.get("combat",preload("res://scripts/lol2/dawn_modern_combat.gd").initial()))
++	if not combat_error.is_empty():return combat_error
+ 	var projectile_error:=Projectiles.validate(packet.get("projectiles",Projectiles.initial()))
+ 	if not projectile_error.is_empty():return projectile_error
+ 	for effect in packet.get("projectiles",Projectiles.initial()).effects:
+--- /dev/null
++++ b/scripts/lol2/dawn_modern_combat.gd
+@@ -0,0 +1,96 @@
++extends Node3D
++## Modern demo combat, driven by the encounter's existing world update.
++## Deliberate tuning for the playable 30-health scale; not native timing parity.
++const SPEED:=340.0
++const RANGE:=1200.0
++const INTERVAL:=2.2
++const WINDUP:=0.65
++const LIFETIME:=5.0
++const REQUEST_DAMAGE:=15
++const Defense=preload("res://scripts/lol2/player_defense.gd")
++const Numbers=preload("res://scripts/lol2/save_value_rules.gd")
++var dawn: Node3D
++var saved: Dictionary=initial()
++var visuals: Dictionary={}
++var charge: MeshInstance3D
++static func initial() -> Dictionary:return {"version":1,"cooldown":0.8,"windup":0.0,"shots":0,"bolts":[]}
++static func finite_number(v: Variant, lo: float, hi: float) -> bool:
++	return (v is int or v is float) and is_finite(float(v)) and v>=lo and v<=hi
++static func validate(s: Variant) -> String:
++	if not s is Dictionary or s.size()!=5 or s.get("version")!=1:return "Invalid Dawn combat state."
++	if not finite_number(s.get("cooldown"),0,INTERVAL) or not finite_number(s.get("windup"),0,WINDUP):return "Invalid Dawn cast timer."
++	if not Numbers.integer(s.get("shots"),0x7fffffff) or not s.get("bolts") is Array or s.bolts.size()>8:return "Invalid Dawn projectile list."
++	var ids: Array=[]
++	for b in s.bolts:
++		if not b is Dictionary or b.size()!=4 or not Numbers.integer(b.get("id"),int(s.shots)) or int(b.id)<1 or int(b.id) in ids:return "Invalid Dawn projectile identity."
++		ids.append(int(b.id))
++		if not finite_number(b.get("life"),0,LIFETIME):return "Invalid Dawn projectile lifetime."
++		for key in ["position","velocity"]:
++			if not b.get(key) is Array or b[key].size()!=3:return "Invalid Dawn projectile vector."
++			for v in b[key]:
++				if not finite_number(v,-1000000,1000000):return "Invalid Dawn projectile coordinate."
++		if Vector3(b.velocity[0],b.velocity[1],b.velocity[2]).length()>SPEED+0.01:return "Invalid Dawn projectile speed."
++	return ""
++func checkpoint() -> Dictionary:return saved.duplicate(true)
++func restore(s: Dictionary) -> void:
++	saved=s.duplicate(true);saved.version=1;saved.shots=int(saved.shots)
++	saved.cooldown=float(saved.cooldown);saved.windup=float(saved.windup)
++	for b in saved.bolts:
++		b.id=int(b.id);b.life=float(b.life)
++		b.position=b.position.map(func(v):return float(v))
++		b.velocity=b.velocity.map(func(v):return float(v))
++	present()
++func point(a: Array) -> Vector3:return Vector3(a[0],a[1],a[2])
++func array(v: Vector3) -> Array:return [snappedf(v.x,1.0/1024),snappedf(v.y,1.0/1024),snappedf(v.z,1.0/1024)]
++func sphere(radius: float) -> MeshInstance3D:
++	var node:=MeshInstance3D.new();var mesh:=SphereMesh.new();mesh.radius=radius;mesh.height=radius*2;node.mesh=mesh
++	var material:=StandardMaterial3D.new();material.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED;material.albedo_color=Color(1,0.35,0.06);node.material_override=material
++	add_child(node);return node
++func present() -> void:
++	if dawn==null:return
++	var active: Array=[]
++	for b in saved.bolts:
++		active.append(int(b.id))
++		if not visuals.has(int(b.id)):visuals[int(b.id)]=sphere(7)
++		visuals[int(b.id)].global_position=point(b.position)
++	for id in visuals.keys():
++		if id not in active:visuals[id].queue_free();visuals.erase(id)
++	if charge==null:charge=sphere(10)
++	charge.visible=float(saved.windup)>0
++	if dawn.population!=null:charge.global_position=dawn.population.bodies[dawn.ID].global_position+Vector3.UP*40
++func advance(delta: float) -> void:
++	if not is_finite(delta) or delta<=0 or dawn==null or not dawn.world_active() or get_tree().paused:return
++	if not dawn.hostile():
++		saved.bolts.clear();saved.windup=0.0;present();return
++	var host=dawn.host
++	var body: Node3D=dawn.population.bodies[dawn.ID]
++	var space:=get_world_3d().direct_space_state
++	var excluded: Array[RID]=[body.get_rid()]
++	# Swept segments cannot skip walls/player at normal or large frame deltas.
++	for bolt in saved.bolts.duplicate():
++		var from:=point(bolt.position);var to:=from+point(bolt.velocity)*minf(delta,float(bolt.life))
++		var hit:=space.intersect_ray(PhysicsRayQueryParameters3D.create(from,to,3,excluded))
++		bolt.life=maxf(0,snappedf(float(bolt.life)-delta,1.0/1024));bolt.position=array(to)
++		if not hit.is_empty() or float(bolt.life)<=0:
++			saved.bolts.erase(bolt) # Consume before callbacks or save observers.
++			if not hit.is_empty() and hit.get("rid")==host.player.get_rid():
++				var loss: int=0 if host.starting_magic.protected() else Defense.incoming(host,REQUEST_DAMAGE,4)
++				host.starting_magic.set_health(maxi(0,host.starting_magic.health()-loss))
++		if host.starting_magic.health()<=0:break
++	if host.starting_magic.health()<=0:present();return
++	if dawn.talking() or dawn.movement_locked():saved.windup=0.0;present();return
++	var muzzle: Vector3=body.global_position+Vector3.UP*40
++	var target: Vector3=host.player.global_position
++	var ray:=space.intersect_ray(PhysicsRayQueryParameters3D.create(muzzle,target,3,excluded))
++	var visible: bool=muzzle.distance_to(target)<=RANGE and not ray.is_empty() and ray.get("rid")==host.player.get_rid()
++	if not visible:saved.windup=0.0;present();return
++	if float(saved.windup)>0:
++		saved.windup=maxf(0,snappedf(float(saved.windup)-delta,1.0/1024))
++		if float(saved.windup)==0 and saved.bolts.size()<8 and int(saved.shots)<0x7fffffff:
++			saved.shots+=1
++			saved.bolts.append({"id":saved.shots,"position":array(muzzle),"velocity":array(muzzle.direction_to(target)*SPEED),"life":LIFETIME})
++			saved.cooldown=INTERVAL
++	else:
++		saved.cooldown=maxf(0,snappedf(float(saved.cooldown)-delta,1.0/1024))
++		if float(saved.cooldown)==0:saved.windup=WINDUP
++	present()
+--- /dev/null
++++ b/tests/dawn_modern_combat_test.gd
+@@ -0,0 +1,69 @@
++extends SceneTree
++class TestMagic extends "res://scripts/lol2/player_starting_magic.gd":
++	var on:=true
++	func world_active() -> bool:return on and health()>0
++func _initialize() -> void:run.call_deferred()
++func freeze(node: Node) -> void:
++	node.set_physics_process(false);node.set_process(false)
++	for child in node.get_children():freeze(child)
++func run() -> void:
++	for pair in [["res://scenes/lol2/jungle_walkthrough.tscn","dawn"],["res://scenes/lol2/hive_review.tscn","dawn20"]]:
++		var scene=load(pair[0]).instantiate();root.add_child(scene);current_scene=scene
++		await process_frame;await physics_frame
++		freeze(scene)
++		var d=scene.get(pair[1]);d.set_physics_process(false)
++		scene.starting_magic.set_process(false)
++		var magic:=TestMagic.new();magic.host=scene;scene.add_child(magic);magic.set_process(false);scene.starting_magic=magic
++		# Supplied hostile story state; attacks themselves must be produced by the
++		# real encounter advance, with actual space queries and player health.
++		d.state.present=true;d.state.b5=12;d.state.owner_state=50 if pair[1]=="dawn" else 20
++		d.state.sighted=true;d.state.clip={};d.hold=false;d._sync_body(0.0)
++		var caster: Vector3=d.population.bodies[d.ID].global_position
++		var found:=false
++		for i in 16:
++			var angle:=TAU*i/16
++			scene.player.global_position=caster+Vector3(sin(angle)*150,40,cos(angle)*150)
++			await physics_frame
++			var ray: Dictionary=d.get_world_3d().direct_space_state.intersect_ray(PhysicsRayQueryParameters3D.create(caster+Vector3.UP*40,scene.player.global_position,3,[d.population.bodies[d.ID].get_rid()]))
++			if not ray.is_empty() and ray.get("rid")==scene.player.get_rid():found=true;break
++		assert(found,"No clear attack lane")
++		# A real collision body between caster and player must prevent casting.
++		var wall:=StaticBody3D.new();var shape:=CollisionShape3D.new();var box:=BoxShape3D.new()
++		box.size=Vector3(35,100,35);shape.shape=box;wall.add_child(shape);scene.add_child(wall)
++		wall.global_position=(caster+Vector3.UP*40+scene.player.global_position)/2
++		await physics_frame
++		for i in 180:d.advance(1.0/60)
++		assert(d.combat.saved.shots==0,"Cast through an obstructed lane")
++		wall.queue_free();await physics_frame;await physics_frame
++		var hp: int=magic.health()
++		for i in 180:
++			d.advance(1.0/60)
++			if not d.combat.saved.bolts.is_empty():break
++		assert(d.combat.saved.shots==1 and d.combat.saved.bolts.size()==1,"No automatic projectile")
++		assert(d.combat.visuals.size()==1,"Projectile not presented")
++		var pending: Dictionary=d.combat.checkpoint()
++		magic.on=false;d.advance(1.0);assert(d.combat.checkpoint()==pending);magic.on=true
++		paused=true;d.advance(1.0);assert(d.combat.checkpoint()==pending);paused=false
++		var path: String="user://tests/modern_"+pair[1]+".json"
++		assert(scene.quicksave(path).is_empty())
++		d.combat.restore(d.combat.initial())
++		assert(scene.quickload(path).is_empty())
++		freeze(scene)
++		await physics_frame
++		assert(d.combat.checkpoint()==pending,"In-flight state changed on disk reload: "+str(pending)+" -> "+str(d.combat.checkpoint()))
++		for i in 120:
++			d.advance(1.0/60)
++			if magic.health()<hp:break
++		assert(magic.health()<hp and d.combat.saved.bolts.is_empty(),"Automatic hit missing or unconsumed: hp="+str(hp)+" now="+str(magic.health())+" player="+str(scene.player.global_position)+" combat="+str(d.combat.checkpoint()))
++		var after: int=magic.health()
++		assert(scene.quicksave(path).is_empty() and scene.quickload(path).is_empty())
++		d.advance(0.01);assert(magic.health()==after,"Consumed hit repeated after reload")
++		var before: Dictionary=d.checkpoint();var bad:=before.duplicate(true);bad.combat.cooldown=-1
++		assert(not d.restore(bad).is_empty() and d.checkpoint()==before)
++		d.state.b5=0;d.combat.saved.windup=0.5;d.advance(0.01)
++		assert(d.combat.saved.windup==0 and d.combat.saved.bolts.is_empty())
++		DirAccess.remove_absolute(path)
++		print("HOST automatic combat PASS ",pair[1]," health ",hp," -> ",after)
++		scene.queue_free();for i in 3:await process_frame
++	print("PASS: both real Dawn hosts automatically charge/fire/hit; world gating, visible bolts, in-flight disk restore, consumed-hit persistence, atomic invalid restore and hostility cancellation.")
++	quit()

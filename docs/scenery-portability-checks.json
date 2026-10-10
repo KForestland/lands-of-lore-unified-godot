@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "areas": 15,
+  "byte_identical_files": 18531,
+  "source_hashes": {
+    "tools/lol2_texture_container.py": "782717823195d60430fc1dd89bf1f22ba58b941ca897c7603453612d6283b45e",
+    "tools/lol2_creature_sprite_format.py": "f50766f3a670ee55d82c69a72a1b63fd4e6b5668898efb434674ddd1e8a6f46d",
+    "tools/lol2_source_format.py": "e66046e1ad87559706b75e21822440b7ebc2753e9321b3d9e042f6e9ff2f4791",
+    "tools/lol2_material_format.py": "61332945f41c75828382ae08dfd25498a4a988466714e2bb7589b103a05653c3",
+    "tools/lol2/map_materials.py": "95547a37263bb49b54b563ce39067ea31fb41cfa0ffea1b3cb02289171a66fe3",
+    "tools/lol2/map_sprite_rows.py": "ec44bc8f353ee0d1c6850166d418d9969419e90ef9f46cc88c89de8721cd3d32",
+    "tools/lol2/map_props.py": "d2d2fb7f1f52f4dd241025ec954c49ed485bf94ced057b6b75ee59250168adce"
+  },
+  "limits": [
+    "Existing unresolved placements and visual limitations unchanged; not complete encounter media preparation."
+  ],
+  "full_local_receipt": "/home/bob/AI_COMMS/classic_review_20261007/lead/scenery_portability/report.json",
+  "full_receipt_sha256": "470ce98470ad2477ed6a9f113ee2dae912311d7fcc7e54cfde7bac257f416713",
+  "tests": {
+    "initial": {
+      "passed": 16,
+      "failed": 3
+    },
+    "corrections": "Three stale assertions disagreed with unchanged baseline: Museum zero deferred placements, original movie fallback selectors now resolved, all-area nonvisual count1276.",
+    "corrected_reruns": {
+      "passed": 3,
+      "sessions": [
+        96048,
+        83943
+      ]
+    },
+    "all_19_distinct_tests_pass": true
+  }
+}

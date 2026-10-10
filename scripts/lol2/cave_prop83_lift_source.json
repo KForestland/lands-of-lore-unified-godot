@@ -1,0 +1,889 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L1_DC.MIX",
+  "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+  "geometry_key": 2971673856,
+  "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+ },
+ "prop": 83,
+ "position": [
+  387,
+  -192,
+  -11066
+ ],
+ "durability": 2,
+ "sprite": {
+  "frames": [
+   "prop83_0.png",
+   "prop83_1.png",
+   "prop83_2.png",
+   "prop83_3.png",
+   "prop83_4.png",
+   "prop83_5.png",
+   "prop83_6.png",
+   "prop83_7.png"
+  ],
+  "index_frames": [
+   "prop83_0_index.png",
+   "prop83_1_index.png",
+   "prop83_2_index.png",
+   "prop83_3_index.png",
+   "prop83_4_index.png",
+   "prop83_5_index.png",
+   "prop83_6_index.png",
+   "prop83_7_index.png"
+  ],
+  "left": -40.0,
+  "right": 28.0,
+  "bottom": 0,
+  "top": 160,
+  "frame_seconds": 0.1
+ },
+ "hits": {
+  "108": {
+   "mask0": 2310,
+   "mask2": 4,
+   "mode": 4,
+   "threshold": 9,
+   "local25": false
+  },
+  "124": {
+   "mask0": 17,
+   "mask2": 1,
+   "mode": 4,
+   "threshold": 9,
+   "local25": true
+  }
+ },
+ "sound": {
+  "request": 956,
+  "file": "956.wav",
+  "seconds": 0.5573
+ },
+ "groups": {
+  "108": {
+   "kind": 9,
+   "value": 2310,
+   "predicate": "0005000000",
+   "raw": "0a096c00060904000904",
+   "commands": [
+    "14035300bc03ff010f00"
+   ]
+  },
+  "124": {
+   "kind": 9,
+   "value": 17,
+   "predicate": "0005000000",
+   "raw": "0a097c00110001000904",
+   "commands": [
+    "c60000001901",
+    "14035300bc03ff010f00"
+   ]
+  },
+  "146": {
+   "kind": 8,
+   "value": 956,
+   "predicate": "0005000000",
+   "raw": "06089200bc03",
+   "commands": [
+    "090353000800",
+    "150366021d00",
+    "120100006801d62a00000508388e000a0000",
+    "050353000200",
+    "100353000100",
+    "0903be000200",
+    "0903d9010200",
+    "cc901104f6056a02",
+    "cc901104f5056a02",
+    "cc900f0413036a02",
+    "cc900d04f4056a02",
+    "cc900d04f3056a02",
+    "060366020100",
+    "100353000100",
+    "090353001500"
+   ]
+  },
+  "264": {
+   "kind": 3,
+   "value": 2,
+   "predicate": null,
+   "raw": "060308010200",
+   "commands": [
+    "090353001000",
+    "c4908d01defe100500000000",
+    "c490b201defe100500000000",
+    "c490b401defe100500000000",
+    "c490fa01defe100500000000",
+    "c490f701defe100500000000",
+    "c490c301defe100500000000",
+    "c490c401defe100500000000",
+    "c490f901defe100500000000",
+    "14036602f80296070a14",
+    "090419000300",
+    "090418000300",
+    "090417000300",
+    "c490050460ff080000000000",
+    "c490060460ff080000000000",
+    "c490070460ff080000000000",
+    "c490080460ff080000000000",
+    "c490090460ff080000000000"
+   ]
+  }
+ },
+ "shaft_movers": [
+  {
+   "region": 397,
+   "surface": "floor",
+   "target": -290,
+   "relative": false,
+   "speed": 5,
+   "flags": 16
+  },
+  {
+   "region": 434,
+   "surface": "floor",
+   "target": -290,
+   "relative": false,
+   "speed": 5,
+   "flags": 16
+  },
+  {
+   "region": 436,
+   "surface": "floor",
+   "target": -290,
+   "relative": false,
+   "speed": 5,
+   "flags": 16
+  },
+  {
+   "region": 506,
+   "surface": "floor",
+   "target": -290,
+   "relative": false,
+   "speed": 5,
+   "flags": 16
+  },
+  {
+   "region": 503,
+   "surface": "floor",
+   "target": -290,
+   "relative": false,
+   "speed": 5,
+   "flags": 16
+  },
+  {
+   "region": 451,
+   "surface": "floor",
+   "target": -290,
+   "relative": false,
+   "speed": 5,
+   "flags": 16
+  },
+  {
+   "region": 452,
+   "surface": "floor",
+   "target": -290,
+   "relative": false,
+   "speed": 5,
+   "flags": 16
+  },
+  {
+   "region": 505,
+   "surface": "floor",
+   "target": -290,
+   "relative": false,
+   "speed": 5,
+   "flags": 16
+  }
+ ],
+ "wall_movers": [
+  {
+   "region": 1029,
+   "surface": "floor",
+   "target": -160,
+   "relative": true,
+   "speed": 0,
+   "flags": 8
+  },
+  {
+   "region": 1030,
+   "surface": "floor",
+   "target": -160,
+   "relative": true,
+   "speed": 0,
+   "flags": 8
+  },
+  {
+   "region": 1031,
+   "surface": "floor",
+   "target": -160,
+   "relative": true,
+   "speed": 0,
+   "flags": 8
+  },
+  {
+   "region": 1032,
+   "surface": "floor",
+   "target": -160,
+   "relative": true,
+   "speed": 0,
+   "flags": 8
+  },
+  {
+   "region": 1033,
+   "surface": "floor",
+   "target": -160,
+   "relative": true,
+   "speed": 0,
+   "flags": 8
+  }
+ ],
+ "regions": {
+  "397": {
+   "polygon": [
+    [
+     239.0,
+     -10710.0
+    ],
+    [
+     206.0,
+     -10730.0
+    ],
+    [
+     218.0,
+     -10735.0
+    ],
+    [
+     239.0,
+     -10719.0
+    ]
+   ],
+   "floor": -1000,
+   "ceiling": 5,
+   "neighbors": [
+    436,
+    388,
+    389,
+    392
+   ]
+  },
+  "431": {
+   "polygon": [
+    [
+     250.0,
+     -10699.0
+    ],
+    [
+     257.0,
+     -10694.0
+    ],
+    [
+     256.0,
+     -10681.0
+    ],
+    [
+     248.0,
+     -10680.0
+    ]
+   ],
+   "floor": -1000,
+   "ceiling": 5,
+   "neighbors": [
+    394,
+    432,
+    395,
+    434
+   ]
+  },
+  "434": {
+   "polygon": [
+    [
+     239.0,
+     -10710.0
+    ],
+    [
+     250.0,
+     -10699.0
+    ],
+    [
+     248.0,
+     -10680.0
+    ],
+    [
+     234.0,
+     -10670.0
+    ]
+   ],
+   "floor": -1000,
+   "ceiling": 5,
+   "neighbors": [
+    390,
+    431,
+    433,
+    436
+   ]
+  },
+  "436": {
+   "polygon": [
+    [
+     191.0,
+     -10727.0
+    ],
+    [
+     206.0,
+     -10730.0
+    ],
+    [
+     239.0,
+     -10710.0
+    ],
+    [
+     234.0,
+     -10670.0
+    ]
+   ],
+   "floor": -1000,
+   "ceiling": 5,
+   "neighbors": [
+    383,
+    397,
+    434,
+    506
+   ]
+  },
+  "451": {
+   "polygon": [
+    [
+     133.0,
+     -10677.0
+    ],
+    [
+     140.0,
+     -10691.0
+    ],
+    [
+     202.0,
+     -10629.0
+    ],
+    [
+     190.0,
+     -10625.0
+    ]
+   ],
+   "floor": -1000,
+   "ceiling": 5,
+   "neighbors": [
+    407,
+    503,
+    446,
+    452
+   ]
+  },
+  "452": {
+   "polygon": [
+    [
+     127.0,
+     -10667.0
+    ],
+    [
+     133.0,
+     -10677.0
+    ],
+    [
+     190.0,
+     -10625.0
+    ],
+    [
+     164.0,
+     -10631.0
+    ]
+   ],
+   "floor": -1000,
+   "ceiling": 5,
+   "neighbors": [
+    405,
+    451,
+    445,
+    505
+   ]
+  },
+  "503": {
+   "polygon": [
+    [
+     140.0,
+     -10691.0
+    ],
+    [
+     155.0,
+     -10704.0
+    ],
+    [
+     222.0,
+     -10659.0
+    ],
+    [
+     202.0,
+     -10629.0
+    ]
+   ],
+   "floor": -1000,
+   "ceiling": 5,
+   "neighbors": [
+    399,
+    506,
+    444,
+    451
+   ]
+  },
+  "505": {
+   "polygon": [
+    [
+     127.0,
+     -10667.0
+    ],
+    [
+     164.0,
+     -10631.0
+    ],
+    [
+     140.0,
+     -10634.0
+    ],
+    [
+     128.0,
+     -10646.0
+    ]
+   ],
+   "floor": -1000,
+   "ceiling": 5,
+   "neighbors": [
+    452,
+    447,
+    504,
+    408
+   ]
+  },
+  "506": {
+   "polygon": [
+    [
+     155.0,
+     -10704.0
+    ],
+    [
+     191.0,
+     -10727.0
+    ],
+    [
+     234.0,
+     -10670.0
+    ],
+    [
+     222.0,
+     -10659.0
+    ]
+   ],
+   "floor": -1000,
+   "ceiling": 5,
+   "neighbors": [
+    398,
+    436,
+    441,
+    503
+   ]
+  },
+  "1029": {
+   "polygon": [
+    [
+     306.0,
+     -11088.0
+    ],
+    [
+     321.0,
+     -11163.0
+    ],
+    [
+     335.0,
+     -11229.0
+    ],
+    [
+     327.0,
+     -11118.0
+    ]
+   ],
+   "floor": -32,
+   "ceiling": -32,
+   "neighbors": [
+    null,
+    null,
+    1030,
+    1037
+   ],
+   "edges": [
+    {
+     "neighbor": null,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": null,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1030,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1037,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    }
+   ],
+   "neighbor_spans": {
+    "1030": [
+     -32,
+     -32
+    ],
+    "1037": [
+     -192,
+     -32
+    ]
+   }
+  },
+  "1030": {
+   "polygon": [
+    [
+     370.0,
+     -11229.0
+    ],
+    [
+     361.0,
+     -11141.0
+    ],
+    [
+     327.0,
+     -11118.0
+    ],
+    [
+     335.0,
+     -11229.0
+    ]
+   ],
+   "floor": -32,
+   "ceiling": -32,
+   "neighbors": [
+    1031,
+    1037,
+    1029,
+    1027
+   ],
+   "edges": [
+    {
+     "neighbor": 1031,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1037,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1029,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1027,
+     "floor": [
+      -32,
+      -32
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    }
+   ],
+   "neighbor_spans": {
+    "1031": [
+     -32,
+     -32
+    ],
+    "1037": [
+     -192,
+     -32
+    ],
+    "1029": [
+     -32,
+     -32
+    ],
+    "1027": [
+     -192,
+     -32
+    ]
+   }
+  },
+  "1031": {
+   "polygon": [
+    [
+     418.0,
+     -11140.0
+    ],
+    [
+     361.0,
+     -11141.0
+    ],
+    [
+     370.0,
+     -11229.0
+    ],
+    [
+     419.0,
+     -11229.0
+    ]
+   ],
+   "floor": -32,
+   "ceiling": -32,
+   "neighbors": [
+    1039,
+    1030,
+    1026,
+    1032
+   ],
+   "edges": [
+    {
+     "neighbor": 1039,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1030,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1026,
+     "floor": [
+      -32,
+      -32
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1032,
+     "floor": null,
+     "ceiling": null
+    }
+   ],
+   "neighbor_spans": {
+    "1039": [
+     -192,
+     -32
+    ],
+    "1030": [
+     -32,
+     -32
+    ],
+    "1026": [
+     -192,
+     -32
+    ],
+    "1032": [
+     -32,
+     -32
+    ]
+   }
+  },
+  "1032": {
+   "polygon": [
+    [
+     450.0,
+     -11108.0
+    ],
+    [
+     418.0,
+     -11140.0
+    ],
+    [
+     419.0,
+     -11229.0
+    ],
+    [
+     462.0,
+     -11229.0
+    ]
+   ],
+   "floor": -32,
+   "ceiling": -32,
+   "neighbors": [
+    1041,
+    1031,
+    1028,
+    1033
+   ],
+   "edges": [
+    {
+     "neighbor": 1041,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1031,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1028,
+     "floor": [
+      -32,
+      -32
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1033,
+     "floor": null,
+     "ceiling": null
+    }
+   ],
+   "neighbor_spans": {
+    "1041": [
+     -192,
+     -32
+    ],
+    "1031": [
+     -32,
+     -32
+    ],
+    "1028": [
+     -192,
+     -32
+    ],
+    "1033": [
+     -32,
+     -32
+    ]
+   }
+  },
+  "1033": {
+   "polygon": [
+    [
+     466.0,
+     -11056.0
+    ],
+    [
+     450.0,
+     -11108.0
+    ],
+    [
+     462.0,
+     -11229.0
+    ],
+    [
+     468.0,
+     -11122.0
+    ]
+   ],
+   "floor": -32,
+   "ceiling": -32,
+   "neighbors": [
+    1041,
+    1032,
+    1822,
+    null
+   ],
+   "edges": [
+    {
+     "neighbor": 1041,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": 1032,
+     "floor": null,
+     "ceiling": null
+    },
+    {
+     "neighbor": 1822,
+     "floor": [
+      -192,
+      -192
+     ],
+     "ceiling": [
+      -32,
+      -32
+     ]
+    },
+    {
+     "neighbor": null,
+     "floor": null,
+     "ceiling": null
+    }
+   ],
+   "neighbor_spans": {
+    "1041": [
+     -192,
+     -32
+    ],
+    "1032": [
+     -32,
+     -32
+    ],
+    "1822": [
+     -192,
+     -32
+    ]
+   }
+  }
+ },
+ "speed_units_per_second_per_byte": 2.5,
+ "adapters": [
+  "an armed melee strike aimed at prop83 in reach is the g108 producer (context 2/4); a Spark ray hitting prop83 is g124 (1/1)",
+  "the kind8 sound-finished event fires when the staged 956 clip ends (its sample length)",
+  "op196 speed = byte7 x 2.5 units/s (assumed [0x22C54] = 16.16 ticks at 60/s); speed0 moves at once",
+  "a rising shaft floor carries a player standing on it",
+  "the opened wall regions replace their solid-block wall faces by a floor at -192 and walls on open edges",
+  "prop83 is drawn from its 8 exported frames at 10 frames/s (native animation clock not replayed)",
+  "op9 property effects (other than property16 hiding prop83), op204 materials, op21 and op6 event1 on prop614 are not hosted"
+ ],
+ "scope": "Direct source records; the region and mover sets are asserted byte for byte."
+}

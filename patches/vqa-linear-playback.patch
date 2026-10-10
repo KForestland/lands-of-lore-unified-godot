@@ -1,0 +1,443 @@
+--- /dev/null
++++ b/tools/vqa_v2_decode.py
+@@ -0,0 +1,76 @@
++#!/usr/bin/env python3
++"""Westwood VQA v2 (palette, 4x4 blocks, two-plane VPTZ pointers, 8-part CBPZ partial codebooks) frame decoder.
++
++Swap rule: the codebook assembled from N partial parts (N = VQHD byte 13; byte 12 is fps) replaces the current one after the frame
++carrying the N-th part, i.e. from the next frame on. Pointer hi byte 0xFF = solid block of colour lo; otherwise vector
++(hi*256+lo). Palette CPL0 6-bit, expanded (v<<2)|(v>>4) like FFmpeg so outputs match it wherever FFmpeg is right.
++
++Top-level VQFL chunks are seek snapshots (full CBFZ codebook + the partial parts of the group in progress) for jumping to
++loop/segment starts; the original loader only takes them with load flag 0x20 (LOLG 0x16E2B9). Linear playback ignores
++them. FFmpeg's demuxer instead appends each VQFL to the next VQFR packet and its decoder keeps the last CBPZ per packet,
++replacing that frame's own part: the next codebook group is corrupted (tools/verify_vqa_vqfl_cause.py)."""
++import sys
++sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools'); sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools/draracle')
++from lol2_vqa_decode import parse_vqa_chunks
++from extract_block_sprite_frames import lcw
++import numpy as np
++
++def partial_v2(blob: bytes) -> bool:
++    """True for VQA v2, 4x4 blocks, whose frames carry partial codebooks (CBPZ/CBP0)."""
++    try:
++        ch=parse_vqa_chunks(blob);hd=dict(ch).get(b'VQHD')
++    except Exception: return False
++    if not hd or int.from_bytes(hd[0:2],'little')!=2 or (hd[10],hd[11])!=(4,4): return False
++    for t,pl in ch:
++        if t==b'VQFR' and any(k in (b'CBPZ',b'CBP0') for k,_ in parse_vqa_chunks(b'FORM'+bytes(4)+b'WVQA'+pl)): return True
++    return False
++
++def frames(blob: bytes, scale='ffmpeg'):
++    ch=parse_vqa_chunks(blob);hd=dict(ch)[b'VQHD']
++    assert int.from_bytes(hd[0:2],'little')==2,'VQA v2 only'
++    w,h=int.from_bytes(hd[6:8],'little'),int.from_bytes(hd[8:10],'little');bw,bh=hd[10],hd[11];per=hd[13]
++    assert (bw,bh)==(4,4)
++    gx,gy=w//4,h//4;n=gx*gy
++    cb=None;pal=None;pending=b'';k=0
++    for t,pl in ch:
++        if t!=b'VQFR': continue
++        parts=dict(parse_vqa_chunks(b'FORM'+bytes(4)+b'WVQA'+pl))
++        if b'CPL0' in parts:
++            p=np.frombuffer(parts[b'CPL0'],np.uint8).astype(np.uint16)&63
++            pal=((p<<2)|(p>>4)).astype(np.uint8).reshape(-1,3) if scale=='ffmpeg' else (p*4).astype(np.uint8).reshape(-1,3)
++        if b'CBFZ' in parts: cb=np.frombuffer(lcw(parts[b'CBFZ']),np.uint8)
++        if b'CBF0' in parts: cb=np.frombuffer(parts[b'CBF0'],np.uint8)
++        v=lcw(parts[b'VPTZ']) if b'VPTZ' in parts else parts[b'VPT0']
++        lo=np.frombuffer(v[:n],np.uint8).astype(np.int64);hi=np.frombuffer(v[n:2*n],np.uint8).astype(np.int64)
++        solid=hi==0xff
++        idx=np.where(solid,0,(hi*256+lo)*16)
++        nvec=len(cb)//16
++        assert ((hi*256+lo)[~solid]<nvec).all(),'vector outside codebook'
++        table=cb[:nvec*16].reshape(nvec,4,4)
++        blocks=np.where(solid[:,None,None],lo[:,None,None].astype(np.uint8),table[np.where(solid,0,hi*256+lo)])
++        img=blocks.reshape(gy,gx,4,4).transpose(0,2,1,3).reshape(h,w)
++        yield pal[img]
++        for tag in (b'CBPZ',b'CBP0'):
++            if tag in parts:
++                pending+=parts[tag];k+=1
++                if k==per:
++                    cb=np.frombuffer(lcw(pending) if tag==b'CBPZ' else pending,np.uint8);pending=b'';k=0
++
++def frames_to_dir(path, folder) -> bool:
++    """Write %04d.png frames (1-based, like FFmpeg -vsync 0) natively for partial-codebook VQA v2; False otherwise."""
++    from PIL import Image
++    blob=path.read_bytes()
++    if not partial_v2(blob): return False
++    for i,rgb in enumerate(frames(blob)): Image.fromarray(rgb).save(folder/f'{i+1:04d}.png')
++    return True
++
++def rgba_raw(path, raw, transpose_cw=False) -> bool:
++    """Native equivalent of `ffmpeg -an [-vf transpose=1,]format=rgba -f rawvideo` for partial-codebook VQA v2."""
++    blob=path.read_bytes()
++    if not partial_v2(blob): return False
++    with open(raw,'wb') as out:
++        for rgb in frames(blob):
++            img=np.rot90(rgb,k=-1) if transpose_cw else rgb
++            a=np.full(img.shape[:2]+(1,),255,np.uint8)
++            out.write(np.ascontiguousarray(np.concatenate([img,a],2)).tobytes())
++    return True
+--- a/tools/prepare_jungle_exit_movies.py
++++ b/tools/prepare_jungle_exit_movies.py
+@@ -36,8 +36,13 @@
+ def decode(path,folder,count,size):
+     folder.mkdir(parents=True,exist_ok=True)
+     for old in folder.glob('*.png'): old.unlink()
++    # VQA v2 with partial codebooks: FFmpeg's partial-codebook decompression stops early in some groups (every vector at
++    # or above a cut-off index decodes wrong, leaving key-colour holes). Decode those files natively (tools/vqa_v2_decode.py,
++    # pixel-identical to FFmpeg on every unaffected frame); everything else still goes through FFmpeg.
++    from vqa_v2_decode import frames_to_dir
++    if frames_to_dir(path,folder): pass
+     # FFmpeg reports a terminal demuxer diagnostic on these files; frame/sample totals are asserted.
+-    subprocess.run(['ffmpeg','-v','quiet','-y','-i',str(path),'-vsync','0',str(folder/'%04d.png')],check=False)
++    else: subprocess.run(['ffmpeg','-v','quiet','-y','-i',str(path),'-vsync','0',str(folder/'%04d.png')],check=False)
+     frames=sorted(folder.glob('*.png'));assert len(frames)==count,(path,len(frames))
+     for p in frames: assert Image.open(p).size==size
+     return frames
+--- a/tools/prepare_departure_playback.py
++++ b/tools/prepare_departure_playback.py
+@@ -5,7 +5,9 @@
+ from PIL import Image
+ ROOT=Path(__file__).resolve().parents[1];out=ROOT/'assets/lol2/generated/act_one_departure';cache=ROOT/'tmp/departure_frames';cache.mkdir(exist_ok=True)
+ source=ROOT/'tmp/E125E.VQA'
+-subprocess.run(['ffmpeg','-v','error','-y','-i',str(source),'-vsync','0',str(cache/'%04d.png')],check=True)
++# Partial-codebook VQA v2 decodes natively (FFmpeg mis-decodes some codebook groups; see tools/vqa_v2_decode.py).
++from vqa_v2_decode import frames_to_dir
++if not frames_to_dir(source,cache): subprocess.run(['ffmpeg','-v','error','-y','-i',str(source),'-vsync','0',str(cache/'%04d.png')],check=True)
+ frames=sorted(cache.glob('*.png'));assert len(frames)==318
+ atlases=[]
+ for first in range(0,len(frames),16):
+--- a/tools/prepare_hive_ancient_stone.py
++++ b/tools/prepare_hive_ancient_stone.py
+@@ -27,7 +27,9 @@
+  archive=(GAME/'DAT/RUNES.MIX').read_bytes();audit=json.loads((ROOT/'docs/hive-rune-room-source.json').read_text());assert digest(archive)==audit['rooms']['RUNES']['archive_sha256']
+  payload,binding=extract(archive,'WOMS\\RUNES\\RUNES3_.VQA');record=movie(archive,'WOMS\\RUNES\\RUNES3_.VQA');assert digest(payload)=='8633ff784e9457a0dcf3a3658fdcd328704cc729a5cd6e7ce5361bb0f28a07d2'
+  cache=ROOT/'tmp/ancient_stone_frames';cache.mkdir(parents=True,exist_ok=True);source=cache/'RUNES3_.VQA';source.write_bytes(payload)
+- subprocess.run(['ffmpeg','-v','error','-y','-i',str(source),'-vsync','0',str(cache/'%04d.png')],check=True)
++ # Partial-codebook VQA v2 decodes natively (FFmpeg mis-decodes some codebook groups; see tools/vqa_v2_decode.py).
++ from vqa_v2_decode import frames_to_dir
++ if not frames_to_dir(source,cache): subprocess.run(['ffmpeg','-v','error','-y','-i',str(source),'-vsync','0',str(cache/'%04d.png')],check=True)
+  frames=sorted(cache.glob('*.png'));assert len(frames)==record['frames']==55
+  atlases=[]
+  for first in range(0,55,16):
+--- a/tools/prepare_jungle_village_dialogue.py
++++ b/tools/prepare_jungle_village_dialogue.py
+@@ -38,7 +38,9 @@
+ out=Path(__file__).resolve().parents[1]/'assets/lol2/generated/jungle_village_dialogue';out.mkdir(parents=True,exist_ok=True)
+ with tempfile.TemporaryDirectory(prefix='lol2_village_frames_') as temporary:
+  raw=Path(temporary)/'frames.rgba'
+- subprocess.run(['ffmpeg','-v','error','-y','-i',str(source),'-an','-vf','transpose=1,format=rgba','-f','rawvideo',str(raw)],check=True)
++ # Partial-codebook VQA v2 decodes natively (FFmpeg mis-decodes some codebook groups; see tools/vqa_v2_decode.py).
++ from vqa_v2_decode import rgba_raw
++ if not rgba_raw(source,raw,transpose_cw=True): subprocess.run(['ffmpeg','-v','error','-y','-i',str(source),'-an','-vf','transpose=1,format=rgba','-f','rawvideo',str(raw)],check=True)
+  assert raw.stat().st_size==count*w*h*4
+  frames=np.memmap(raw,dtype=np.uint8,mode='r',shape=(count,w,h,4))
+  bounds=[h,w,0,0]
+--- a/tools/prepare_jungle_followup_dialogue.py
++++ b/tools/prepare_jungle_followup_dialogue.py
+@@ -38,7 +38,9 @@
+ out=Path(__file__).resolve().parents[1]/'assets/lol2/generated/jungle_followup_dialogue';out.mkdir(parents=True,exist_ok=True)
+ with tempfile.TemporaryDirectory(prefix='lol2_village_frames_') as temporary:
+  raw=Path(temporary)/'frames.rgba'
+- subprocess.run(['ffmpeg','-v','error','-y','-i',str(source),'-an','-vf','transpose=1,format=rgba','-f','rawvideo',str(raw)],check=True)
++ # Partial-codebook VQA v2 decodes natively (FFmpeg mis-decodes some codebook groups; see tools/vqa_v2_decode.py).
++ from vqa_v2_decode import rgba_raw
++ if not rgba_raw(source,raw,transpose_cw=True): subprocess.run(['ffmpeg','-v','error','-y','-i',str(source),'-an','-vf','transpose=1,format=rgba','-f','rawvideo',str(raw)],check=True)
+  assert raw.stat().st_size==count*w*h*4
+  frames=np.memmap(raw,dtype=np.uint8,mode='r',shape=(count,w,h,4))
+  bounds=[h,w,0,0]
+--- /dev/null
++++ b/tests/vqa_partial_codebook_media_test.gd
+@@ -0,0 +1,28 @@
++extends SceneTree
++## Regression for the VQA v2 partial-codebook decode (tools/vqa_v2_decode.py): staged frames from codebook groups that
++## FFmpeg mis-decoded must not contain interior key-colour holes. Interior holes = transparent pixels with opaque
++## pixels 3 columns left and right. FFmpeg-staged media scored 250–530 on these frames; native decoding scores < 60.
++## Frames whose holes are genuine source dissolves (identical in both decoders) are deliberately not pinned.
++const LIMIT:=120
++const CASES:=[
++	["res://assets/lol2/generated/jungle_dawn_media/media.json",["clip"],[64,71,380,872,875]],
++	["res://assets/lol2/generated/jungle_bacatta_media/media.json",["clips","prop552","1"],[24,25,26,27,28,29,30,31,72]],
++	["res://assets/lol2/generated/hive_dawn20_media/media.json",["clip"],[64,67,71,568,960]]]
++func _initialize() -> void:
++	var checked:=0
++	for c in CASES:
++		if not FileAccess.file_exists(c[0]): push_error("Missing staged media "+c[0]);quit(1);return
++		var node=JSON.parse_string(FileAccess.get_file_as_string(c[0]))
++		for key in c[1]: node=node[key]
++		for i in c[2]:
++			var path:=str(node.frame_files[i])
++			var img:=Image.load_from_file(path)
++			var holes:=0
++			for y in img.get_height():
++				for x in range(3,img.get_width()-3):
++					if img.get_pixel(x,y).a<0.5 and img.get_pixel(x-3,y).a>=0.5 and img.get_pixel(x+3,y).a>=0.5: holes+=1
++			if holes>LIMIT:
++				push_error("Partial-codebook frame decoded with holes: %s (%d)"%[path,holes]);quit(1);return
++			checked+=1
++	print("PASS vqa partial codebook media: %d previously mis-decoded frames (Dawn63 E065E, Bacatta BC07, Dawn20 E075E) have no interior key holes."%checked)
++	quit()
+--- /dev/null
++++ b/tools/verify_vqa_partial_codebooks.py
+@@ -0,0 +1,56 @@
++#!/usr/bin/env python3
++"""Original-decoder timing and FFmpeg comparison for partial-codebook VQA v2 (tools/vqa_v2_decode.py).
++
++Original loader evidence (LOLG.DAT 0x171168, CBPZ handler): parts are appended to one buffer and counted; the group is
++complete when the count reaches VQHD byte 13, then the buffer is flagged 0xA and published as the pending codebook.
++Swap-timing evidence: 'next' = codebook from the N-th part is used from the following frame (native decoder);
++'same' = used already for the frame carrying the N-th part. Counts out-of-range vector references and frames where
++the decoder agrees with FFmpeg (FFmpeg is exact on all unaffected groups) for each timing, over all cached clips."""
++import sys,json,hashlib,subprocess,tempfile
++sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools'); sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools/draracle')
++from lol2_vqa_decode import parse_vqa_chunks
++from extract_block_sprite_frames import lcw
++from pathlib import Path
++import numpy as np
++from PIL import Image
++from vqa_v2_decode import partial_v2
++ROOT=Path(__file__).resolve().parents[1]
++def decode(blob,timing):
++    ch=parse_vqa_chunks(blob);hd=dict(ch)[b'VQHD'];w,h=int.from_bytes(hd[6:8],'little'),int.from_bytes(hd[8:10],'little');per=hd[13]
++    gx,gy=w//4,h//4;n=gx*gy;cb=None;pal=None;pend=b'';k=0;out=[];oob=0
++    for t,pl in ch:
++        if t!=b'VQFR':continue
++        parts=dict(parse_vqa_chunks(b'FORM'+bytes(4)+b'WVQA'+pl))
++        if b'CPL0' in parts:
++            p=np.frombuffer(parts[b'CPL0'],np.uint8).astype(np.uint16)&63;pal=((p<<2)|(p>>4)).astype(np.uint8).reshape(-1,3)
++        if b'CBFZ' in parts: cb=np.frombuffer(lcw(parts[b'CBFZ']),np.uint8)
++        swap=None
++        if b'CBPZ' in parts:
++            pend+=parts[b'CBPZ'];k+=1
++            if k==per: swap=np.frombuffer(lcw(pend),np.uint8);pend=b'';k=0
++        if timing=='same' and swap is not None: cb=swap;swap_done=True
++        v=lcw(parts[b'VPTZ']);lo=np.frombuffer(v[:n],np.uint8).astype(np.int64);hi=np.frombuffer(v[n:2*n],np.uint8).astype(np.int64)
++        s=hi==0xff;idx=np.where(s,0,hi*256+lo);nv=len(cb)//16
++        oob+=int((idx[~s]>=nv).sum());idx=np.minimum(idx,nv-1)
++        tab=cb[:nv*16].reshape(nv,4,4)
++        blk=np.where(s[:,None,None],lo[:,None,None].astype(np.uint8),tab[idx])
++        out.append(pal[blk.reshape(gy,gx,4,4).transpose(0,2,1,3).reshape(h,w)])
++        if timing=='next' and swap is not None: cb=swap
++    return out,oob
++seen=set();tot={'next':[0,0,0],'same':[0,0,0]}
++for p in sorted((ROOT/'tmp').rglob('*')):
++    if p.suffix.lower()!='.vqa' or not p.is_file():continue
++    b=p.read_bytes();hh=hashlib.sha256(b).hexdigest()
++    if hh in seen or not partial_v2(b):continue
++    seen.add(hh)
++    d=tempfile.mkdtemp();subprocess.run(['ffmpeg','-v','quiet','-y','-i',str(p),'-vsync','0',d+'/%04d.png'],check=False)
++    ff=[np.array(Image.open(x).convert('RGB')) for x in sorted(Path(d).glob('*.png'))]
++    row=[p.name]
++    for timing in ('next','same'):
++        fr,oob=decode(b,timing);agree=sum((a==f).all() for a,f in zip(fr,ff))
++        tot[timing][0]+=oob;tot[timing][1]+=agree;tot[timing][2]+=len(fr);row+= [timing,oob,agree]
++    print(row,flush=True)
++tot={k:dict(out_of_range_refs=int(v[0]),frames_equal_ffmpeg=int(v[1]),frames=int(v[2])) for k,v in tot.items()}
++assert tot['next']['out_of_range_refs']==0 and tot['same']['out_of_range_refs']>0 and tot['next']['frames_equal_ffmpeg']>tot['same']['frames_equal_ffmpeg']
++(ROOT/'docs/vqa-partial-codebooks-checks.json').write_text(json.dumps(dict(clips=len(seen),timing=tot,loader='LOLG.DAT 0x171168 counts CBPZ parts to VQHD byte13, then publishes the pending codebook (flags 0xA)'),indent=1)+'\n')
++print('PASS',json.dumps(tot))
+--- /dev/null
++++ b/docs/vqa-partial-codebooks-checks.json
+@@ -0,0 +1,16 @@
++{
++ "clips": 25,
++ "timing": {
++  "next": {
++   "out_of_range_refs": 0,
++   "frames_equal_ffmpeg": 5948,
++   "frames": 6302
++  },
++  "same": {
++   "out_of_range_refs": 9339,
++   "frames_equal_ffmpeg": 5216,
++   "frames": 6302
++  }
++ },
++ "loader": "LOLG.DAT 0x171168 counts CBPZ parts to VQHD byte13, then publishes the pending codebook (flags 0xA)"
++}
+--- /dev/null
++++ b/tools/verify_vqa_vqfl_cause.py
+@@ -0,0 +1,24 @@
++#!/usr/bin/env python3
++"""Causal reduction of the FFmpeg VQA v2 frame damage (patch H3, tools/vqa_v2_decode.py).
++
++1. FFmpeg model: libavformat westwood_vqa.c (n6.1.1) appends each top-level VQFL payload to the next VQFR packet;
++   libavcodec vqavideo.c keeps the last sub-chunk index per tag, decodes CBFZ before rendering, renders VPTZ, then adds
++   that single (VQFL's last) CBPZ part and decodes completed groups in place over the old codebook. Reproduces FFmpeg's
++   frames pixel-exactly (all but 11 pixels in two frames, over the cached clips).
++2. Native equivalence: decoding from every VQFL snapshot (CBFZ codebook + its CBPZ parts pending) reproduces the native
++   linear decode exactly, so linear playback that ignores VQFL is the original's own result.
++Run from the project root; uses cached VQA files under tmp/ and FFmpeg. Writes docs/vqa-vqfl-cause-checks.json."""
++import json,runpy,subprocess,sys
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[1];HERE=Path(__file__).resolve().parent
++def run(script):
++    r=subprocess.run([sys.executable,str(HERE/script)],capture_output=True,text=True,cwd=HERE);assert r.returncode==0,r.stderr[-2000:]
++    return [l for l in r.stdout.splitlines() if l.startswith('TOTAL')][-1]
++def main():
++    model=run('_vqfl_ffmpeg_model.py');seek=run('_vqfl_seek_check.py')
++    m=eval(model.split('TOTAL ',1)[1]);s=[int(x) for x in seek.split()[2:7:2]]
++    assert m['ffmpeg_model_exact']>=m['frames']-2 and m['native_differs_explained']>=m['native_differs']-2, model
++    assert s[1]==0 and s[0]>0, seek
++    (ROOT/'docs/vqa-vqfl-cause-checks.json').write_text(json.dumps(dict(ffmpeg_model=m,vqfl_seek_snapshots=dict(consistent=s[0],inconsistent=s[1],clips=s[2])),indent=1)+'\n')
++    print('PASS',model,'|',seek)
++if __name__=='__main__':main()
+--- /dev/null
++++ b/tools/_vqfl_ffmpeg_model.py
+@@ -0,0 +1,87 @@
++"""Causal reduction: FFmpeg's wsvqa demuxer prepends each top-level VQFL (frame-loop: CBFZ + CBPZ parts) payload to the
++next VQFR packet. Its decoder scans the packet's sub-chunks (last CBPZ index wins), decodes CBFZ into the codebook before
++rendering, renders VPTZ, then accumulates that one CBPZ. Native linear playback ignores VQFL. This script implements both
++and checks that the FFmpeg model reproduces every FFmpeg frame pixel-exactly while the native model is vqa_v2_decode."""
++import sys,hashlib,subprocess,tempfile,json
++sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools'); sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools/draracle')
++from lol2_vqa_decode import parse_vqa_chunks
++from extract_block_sprite_frames import lcw
++from vqa_v2_decode import partial_v2,frames
++from pathlib import Path
++import numpy as np
++from PIL import Image
++MAXCB=(0xFF00+256)*16*2
++def ff_lcw(src,dest):
++    """FFmpeg decode_format80 into an existing buffer: in place, bytestream2 reads return 0 past the end, CHECK_COUNT /
++    CHECK_COPY abort (returning an error after the bytes already written)."""
++    n=len(src);g=lambda j: src[j] if j<n else 0
++    i=0;di=0;rel=False;size=len(dest)
++    if g(0)==0: rel=True;i=1
++    while i<n:
++        op=g(i);i+=1
++        if op==0x80: break
++        if di>=size: return -1
++        if op in (0xFF,) or op&0xC0==0xC0 and op!=0xFE:
++            if op==0xFF: c=g(i)|g(i+1)<<8;s=g(i+2)|g(i+3)<<8;i+=4
++            else: c=(op&0x3F)+3;s=g(i)|g(i+1)<<8;i+=2
++            if rel: s=di-s
++            if di+c>size or s<0 or s+c>size: return -1
++            for k in range(c): dest[di+k]=dest[s+k]
++            di+=c
++        elif op==0xFE:
++            c=g(i)|g(i+1)<<8;v=g(i+2);i+=3
++            if di+c>size: return -1
++            dest[di:di+c]=bytes([v])*c;di+=c
++        elif op>0x80:
++            c=op&0x3F
++            if di+c>size: return -1
++            for k in range(c): dest[di+k]=g(i+k)
++            i+=c;di+=c
++        else:
++            c=((op&0x70)>>4)+3;s=di-(((op&0x0F)<<8)|g(i));i+=1
++            if di+c>size or s<0 or s+c>size: return -1
++            for k in range(c): dest[di+k]=dest[s+k]
++            di+=c
++    return di
++def ffmpeg_model(blob):
++    ch=parse_vqa_chunks(blob);hd=dict(ch)[b'VQHD'];per=hd[13]
++    w,h=int.from_bytes(hd[6:8],'little'),int.from_bytes(hd[8:10],'little');gx,gy=w//4,h//4;n=gx*gy
++    book=bytearray(MAXCB);cb=None;pal=None;pend=b'';left=per;carry=[]
++    for t,pl in ch:
++        if t==b'VQFL': carry=parse_vqa_chunks(b'FORM'+bytes(4)+b'WVQA'+pl);continue
++        if t!=b'VQFR': continue
++        sub=parse_vqa_chunks(b"FORM"+bytes(4)+b"WVQA"+pl)+carry;carry=[]   # demuxer appends the stashed VQFL after the VQFR
++        last={}
++        for k,v in sub: last[k]=v      # FFmpeg keeps the last index per tag
++        if b'CPL0' in last:
++            q=np.frombuffer(last[b'CPL0'],np.uint8).astype(np.uint16)&63;pal=((q<<2)|(q>>4)).astype(np.uint8).reshape(-1,3)
++        if b'CBFZ' in last: ff_lcw(last[b'CBFZ'],book)
++        cb=np.frombuffer(bytes(book),np.uint8)
++        v=lcw(last[b'VPTZ']);lo=np.frombuffer(v[:n],np.uint8).astype(np.int64);hi=np.frombuffer(v[n:2*n],np.uint8).astype(np.int64)
++        s=hi==0xff;nv=len(cb)//16;tab=cb[:nv*16].reshape(nv,4,4)
++        blk=np.where(s[:,None,None],lo[:,None,None].astype(np.uint8),tab[np.minimum(np.where(s,0,hi*256+lo),nv-1)])
++        yield pal[blk.reshape(gy,gx,4,4).transpose(0,2,1,3).reshape(h,w)]
++        if b'CBPZ' in last:
++            pend+=last[b'CBPZ'];left-=1
++            if left<=0:
++                ff_lcw(pend,book)   # in place over the old codebook
++                pend=b'';left=per
++seen=set();rows=[];tot=dict(clips=0,frames=0,ffmpeg_model_exact=0,native_differs=0,native_differs_explained=0,clips_with_vqfl=0)
++for p in sorted(Path(sys.argv[1] if len(sys.argv)>1 else str(Path(__file__).resolve().parents[1]/'tmp')).rglob('*')):
++    if p.suffix.lower()!='.vqa' or not p.is_file(): continue
++    b=p.read_bytes();hh=hashlib.sha256(b).hexdigest()
++    if hh in seen or not partial_v2(b): continue
++    seen.add(hh)
++    d=tempfile.mkdtemp();subprocess.run(['ffmpeg','-v','quiet','-y','-i',str(p),'-vsync','0',d+'/%04d.png'],check=False)
++    ff=sorted(Path(d).glob('*.png'))
++    vqfl=sum(1 for t,_ in parse_vqa_chunks(b) if t==b'VQFL')
++    exact=nd=expl=0
++    for i,(m,nat) in enumerate(zip(ffmpeg_model(b),frames(b))):
++        f=np.array(Image.open(ff[i]).convert('RGB'))
++        e=bool((m==f).all());exact+=e
++        if not bool((nat==f).all()): nd+=1;expl+=e
++    tot['clips']+=1;tot['frames']+=len(ff);tot['ffmpeg_model_exact']+=exact;tot['native_differs']+=nd;tot['native_differs_explained']+=expl;tot['clips_with_vqfl']+=vqfl>0
++    rows.append(dict(file=p.name,frames=len(ff),vqfl_chunks=vqfl,ffmpeg_model_exact=exact,native_differs=nd))
++    print(rows[-1],flush=True)
++print('TOTAL',tot)
++json.dump(dict(total=tot,clips=rows),open(str(Path(__file__).resolve().parents[1]/'tmp/vqfl_ffmpeg_model.json'),'w'),indent=1)
+--- /dev/null
++++ b/tools/_vqfl_seek_check.py
+@@ -0,0 +1,48 @@
++"""VQFL = seek snapshot: decoding from each VQFL (its CBFZ as codebook, its CBPZ parts as the pending partial group)
++must reproduce the native linear decode from that frame on. Checks the next 24 frames after every VQFL."""
++import sys,hashlib
++sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools'); sys.path.insert(0,'/home/bob/lol2_re_publish_20260911/tools/draracle')
++from lol2_vqa_decode import parse_vqa_chunks
++from extract_block_sprite_frames import lcw
++from vqa_v2_decode import partial_v2,frames
++from pathlib import Path
++import numpy as np
++def decode_from(ch,start_chunk,per,pal,w,h):
++    gx,gy=w//4,h//4;n=gx*gy
++    vq=dict(parse_vqa_chunks(b'FORM'+bytes(4)+b'WVQA'+ch[start_chunk][1]))
++    sub=parse_vqa_chunks(b'FORM'+bytes(4)+b'WVQA'+ch[start_chunk][1])
++    cb=np.frombuffer(lcw(vq[b'CBFZ']),np.uint8);parts=[v for k,v in sub if k==b'CBPZ'];pend=b''.join(parts);k=len(parts)
++    out=[]
++    for t,pl in ch[start_chunk+1:]:
++        if t!=b'VQFR':continue
++        p=dict(parse_vqa_chunks(b'FORM'+bytes(4)+b'WVQA'+pl))
++        v=lcw(p[b'VPTZ']);lo=np.frombuffer(v[:n],np.uint8).astype(np.int64);hi=np.frombuffer(v[n:2*n],np.uint8).astype(np.int64)
++        s=hi==0xff;nv=len(cb)//16;tab=cb[:nv*16].reshape(nv,4,4)
++        assert ((hi*256+lo)[~s]<nv).all()
++        blk=np.where(s[:,None,None],lo[:,None,None].astype(np.uint8),tab[np.where(s,0,hi*256+lo)])
++        out.append(pal[blk.reshape(gy,gx,4,4).transpose(0,2,1,3).reshape(h,w)])
++        if b'CBPZ' in p:
++            pend+=p[b'CBPZ'];k+=1
++            if k==per: cb=np.frombuffer(lcw(pend),np.uint8);pend=b'';k=0
++        if len(out)==24: break
++    return out
++seen=set();tot=[0,0,0]
++for p in sorted((Path(__file__).resolve().parents[1]/'tmp').rglob('*')):
++    if p.suffix.lower()!='.vqa' or not p.is_file():continue
++    b=p.read_bytes();hh=hashlib.sha256(b).hexdigest()
++    if hh in seen or not partial_v2(b):continue
++    seen.add(hh);ch=parse_vqa_chunks(b)
++    if not any(t==b'VQFL' for t,_ in ch):continue
++    hd=dict(ch)[b'VQHD'];per=hd[13];w,h=int.from_bytes(hd[6:8],'little'),int.from_bytes(hd[8:10],'little')
++    lin=list(frames(b));pal_frame0=dict(parse_vqa_chunks(b'FORM'+bytes(4)+b'WVQA'+[pl for t,pl in ch if t==b'VQFR'][0]))[b'CPL0']
++    q=np.frombuffer(pal_frame0,np.uint8).astype(np.uint16)&63;pal=((q<<2)|(q>>4)).astype(np.uint8).reshape(-1,3)
++    fi=0;ok=bad=0
++    for j,(t,pl) in enumerate(ch):
++        if t==b'VQFR': fi+=1
++        if t==b'VQFL':
++            seg=decode_from(ch,j,per,pal,w,h)
++            same=all((a==lin[fi+i]).all() for i,a in enumerate(seg))
++            ok+=same;bad+=not same
++    tot[0]+=ok;tot[1]+=bad;tot[2]+=1
++    print(p.name,'VQFL snapshots consistent with linear decode',ok,'inconsistent',bad,flush=True)
++print('TOTAL consistent',tot[0],'inconsistent',tot[1],'clips',tot[2])
+--- /dev/null
++++ b/docs/vqa-vqfl-cause-checks.json
+@@ -0,0 +1,15 @@
++{
++ "ffmpeg_model": {
++  "clips": 25,
++  "frames": 6302,
++  "ffmpeg_model_exact": 6300,
++  "native_differs": 354,
++  "native_differs_explained": 352,
++  "clips_with_vqfl": 6
++ },
++ "vqfl_seek_snapshots": {
++  "consistent": 49,
++  "inconsistent": 0,
++  "clips": 6
++ }
++}

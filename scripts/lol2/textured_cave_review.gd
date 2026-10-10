@@ -156,6 +156,7 @@ func _build_props(translation: Vector3) -> void:
 		var instance := MeshInstance3D.new()
 		instance.mesh = quad
 		instance.position = point(prop.position_native) + translation
+		instance.set_meta("original_record", int(prop.record))
 		props_root.add_child(instance)
 		prop_centers[int(prop.record)] = instance.position + quad.center_offset
 		prop_count += 1

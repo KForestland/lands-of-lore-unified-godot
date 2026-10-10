@@ -1,0 +1,176 @@
+{
+  "status": "integrated; main6/6 focused checks PASS/source-stable",
+  "release": "Opus K",
+  "source_hashes": {
+    "scripts/lol2/dawn_modern_combat.gd": "7c8cdc485c7be1225f35086f4676b9ce7169a37d93b39947f775718d1cf71bde",
+    "tools/run_regressions.py": "8126cd6483e22dc87d30a01984af193f768a6eaba5b6b6b800c5848f35bd8a33",
+    "scripts/lol2/dawn_spell_bolts.gd": "840d2d9f3d16447950afdfe8ee058ee8573cc570f22fde160c94fca62aac5238",
+    "scripts/lol2/dawn_spell7_chain.gd": "686c548ea71331a01b8665d3dbf69ac0104fe05f7390202c272193ad2cdb32d2",
+    "scripts/lol2/dawn_spell58_plasma.gd": "5ed01c494a5f51a5605fe6b9c2dd7dcd4a6ab28076b2eb9051b38625f308509e",
+    "tests/dawn_modern_spells_test.gd": "3bc4a35d5c0f45a5e7289a4bb1c56ec374975dea9ee6ca84d43ade28d98ca505",
+    "tests/dawn_spell_bolts_test.gd": "f5ccd33450c8553e4a4e73d9325cf29ffc7cdc4ecd3220c1c5c94039168c2696",
+    "tests/dawn_spell7_chain_test.gd": "670eca09fb0ca268e66b3214077411f6d8ca80532c514da2bfff95c145767350",
+    "tests/dawn_spell58_plasma_test.gd": "45504e7221fe3ce90f82ed86bc35744ef7bcbc10f97b3b741a2009f7165bc796",
+    "tests/fixtures/dawn_spell7_targets_native.json": "360c17cfd86bc30a62fcec8dd7da293bd18b5ff05b651cbe0cc0721528645438",
+    "tests/fixtures/dawn_spell7_58_requests_native.json": "a584adb1adfcf5576f65a708723f8b911cdaa771d5054de57c0c276703b1cc08",
+    "docs/dawn-spell-bolts.md": "1f200b49daf8601865dc8337ddb03d6eeb8709431831446181ed2a84ae43cd1e"
+  },
+  "independent_tests": [
+    {
+      "name": "dawn_spell_bolts_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 33.45,
+      "log": "dawn_spell_bolts_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_modern_combat_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.55,
+      "log": "dawn_modern_combat_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_modern_spells_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 20.01,
+      "log": "dawn_modern_spells_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_projectile_hosts_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.29,
+      "log": "dawn_projectile_hosts_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_dawn20_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 8.15,
+      "log": "hive_dawn20_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dawn_live_test",
+      "mode": "rendered",
+      "passed": false,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.32,
+      "log": "jungle_dawn_live_test.log",
+      "errors": [
+        "ERROR: Can't save PNG at path: 'res://tmp/dawn_waiting_live.png'."
+      ]
+    }
+  ],
+  "isolated_capture_directory_retry": [
+    {
+      "name": "jungle_dawn_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.23,
+      "log": "jungle_dawn_live_test.log",
+      "errors": []
+    }
+  ],
+  "source_stable": true,
+  "boundary_probes": {
+    "arrival_hits_through_near_target_wall": false,
+    "callback_checkpoint_repeats_damage": false,
+    "fractional_identity_accepted": false
+  },
+  "patch_repair": {
+    "supplied_patch_valid": false,
+    "reason": "Missing newline after JSON fixture concatenates the next --- /dev/null header into the added line; git apply --check rejects line965.",
+    "corrected_patch_sha256": "aedba92cd6a00aeccc889b483bfc614ba84727d9811240847f4cce3895bbb6dc",
+    "applied_files_equal_release_hashes": true
+  },
+  "scope": "Modern three-spell rotation on both actual Dawn hosts with saved state and defense/aura damage. Preserved successful R3 campaign predates this integration; fresh final campaign/full-suite remain required.",
+  "main_tests": [
+    {
+      "name": "dawn_spell_bolts_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 33.44,
+      "log": "dawn_spell_bolts_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_modern_combat_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.47,
+      "log": "dawn_modern_combat_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_modern_spells_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 19.74,
+      "log": "dawn_modern_spells_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_projectile_hosts_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.21,
+      "log": "dawn_projectile_hosts_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_dawn20_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 8.08,
+      "log": "hive_dawn20_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dawn_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.22,
+      "log": "jungle_dawn_live_test.log",
+      "errors": []
+    }
+  ],
+  "full_suite": {
+    "passed": true,
+    "tests": 256,
+    "source_stable": true,
+    "evidence": "docs/act1-full256-checks.json"
+  },
+  "visual_review": "Lead inspected actual test captures modern_chain_dawn.png and modern_plasma_dawn20.png: distinct blue-white/purple bolts visible beside original Dawn actors. Test fixtures use supplied hostile state and camera positioning; not an earned hostile playthrough or representative GPU/audio acceptance."
+}

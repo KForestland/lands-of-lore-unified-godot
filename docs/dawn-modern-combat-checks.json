@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "complete": true,
+  "tests": [
+    {
+      "name": "dawn_modern_combat_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.38,
+      "log": "dawn_modern_combat_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_projectile_hosts_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.13,
+      "log": "dawn_projectile_hosts_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_dawn20_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 8.13,
+      "log": "hive_dawn20_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dawn_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.02,
+      "log": "jungle_dawn_live_test.log",
+      "errors": []
+    }
+  ],
+  "source_changed_files": [],
+  "source": {
+    "scripts/lol2/dawn_modern_combat.gd": "bcdee2fa3c224eb22fc5f9f33338502793a13550f21db02000e1583fbd332d58",
+    "tests/dawn_modern_combat_test.gd": "b49375bb2a6f11ecdc2601ca0a6f88bd4817e1ad038befae06cbaeb0668ccef1",
+    "scripts/lol2/jungle_dawn.gd": "4232dd687923bfb3281b15a7139dcd131f8ac437c5042a79053b9c5c248b90ba",
+    "scripts/lol2/hive_dawn20.gd": "fdba8e9a0c89e4ea86f0e14bfbe98d0e40fbc80d9b62b42f1b4533d6bb086bf9",
+    "scripts/lol2/jungle_dawn_packet.gd": "fda2f6c0bdc5e9d3ba0257c5b8853a2ce8a0d11fc4a5468ad458460fd7ec6a65",
+    "scripts/lol2/hive_dawn20_packet.gd": "ab01a50f37bea8a9c190c8e930d59e08601c38f8bc97975c16d16a4f6cef111c"
+  },
+  "limits": [
+    "Hostile story state supplied in new combat fixture; automatic attacks use real encounter advance and actual scene collision/health.",
+    "Existing Jungle/Hive tests separately cover their story-produced hostile transitions.",
+    "Unrelated scene processes frozen during the focused combat fixture; campaign currently running separately.",
+    "Simple orange projectile presentation and one ranged attack; Chain/Plasma variants assigned to Opus.",
+    "Prior failed runs retained: canonical JSON packet fields and fixture physics interference corrected."
+  ]
+}

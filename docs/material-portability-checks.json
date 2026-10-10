@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "areas": 15,
+  "byte_identical_files": 58804,
+  "stdlib_only_python": true,
+  "system_dependency": "liblzo2",
+  "missing_optional_witness_hash_validation": "PASS",
+  "source_hashes": {
+    "tools/lol2/map_materials.py": "95547a37263bb49b54b563ce39067ea31fb41cfa0ffea1b3cb02289171a66fe3",
+    "tools/lol2_source_format.py": "e66046e1ad87559706b75e21822440b7ebc2753e9321b3d9e042f6e9ff2f4791",
+    "tools/lol2_material_format.py": "61332945f41c75828382ae08dfd25498a4a988466714e2bb7589b103a05653c3",
+    "tools/lol2_texture_container.py": "782717823195d60430fc1dd89bf1f22ba58b941ca897c7603453612d6283b45e",
+    "docs/game-geometry-profiles.json": "16558f5a76bff48f6a6a3ddf9dffcdcf45fc749a5b7af9fb8380371a6f43472e"
+  },
+  "limits": [
+    "Existing descriptor rejections and visual-parity limits unchanged; not complete game asset preparation."
+  ],
+  "local_full_hash_receipt": "/home/bob/AI_COMMS/classic_review_20261007/lead/material_portability/report.json",
+  "full_receipt_sha256": "6d0dab560cd1c025f215b4c93f898354a203df47c043bebc9e5628de771e70c3",
+  "regression_suite": {
+    "status": "PASS",
+    "passed": 10,
+    "seconds": 346.67,
+    "session": 58776,
+    "scope": "Existing material regression suite; imported before optional missing-witness reporting refinement. Present-witness behavior unchanged; final source independently covered by isolated comparison."
+  },
+  "helper_equivalence": {
+    "status": "PASS",
+    "functions": [
+      "sections",
+      "material_record",
+      "rgb_palette",
+      "colorize",
+      "png_rgb",
+      "column_major_to_rows",
+      "initial_remap_row"
+    ],
+    "normalizations": [
+      "cache.require -> require",
+      "cache.sha -> sha",
+      "_require -> require"
+    ]
+  }
+}

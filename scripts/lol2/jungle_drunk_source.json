@@ -1,0 +1,1837 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L4_HJ.MIX",
+    "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+    "geometry_key": 3710797084,
+    "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+  },
+  "control": {
+    "id": 110,
+    "position": [
+      -2296,
+      -3,
+      -5086
+    ],
+    "heading": 60249,
+    "raw": "08f7de1359ebfdff82441b0d76237f000000000001000000000000002400ff0035",
+    "template": 53,
+    "dimensions": [
+      105,
+      1,
+      75
+    ],
+    "movie_resource": 496,
+    "movie": "E105E.VQA",
+    "template_raw": "000000000000000000000000000000000000000000000000fffffffff3e4eadc44000000f00100000000000050220069014b01000000505000320000"
+  },
+  "starters": [
+    {
+      "id": 484,
+      "position": [
+        -2320,
+        -2,
+        -5034
+      ],
+      "heading": 1454,
+      "raw": "f0f6aa13ae05feff82441b0dde10b413d813591300007f001500ffff0000c8003400000003"
+    },
+    {
+      "id": 485,
+      "position": [
+        -2216,
+        0,
+        -5089
+      ],
+      "heading": 0,
+      "raw": "58f7e1130000000082441c0df810019a016f0171135913d813d913000000c8003400000003"
+    }
+  ],
+  "blocked_region": {
+    "id": 3355,
+    "polygon": [
+      [
+        -2213.895263671875,
+        -5112.34521484375
+      ],
+      [
+        -2335.0,
+        -4973.0
+      ],
+      [
+        -2342.0,
+        -5146.0
+      ],
+      [
+        -2282.0,
+        -5133.0
+      ]
+    ],
+    "floor_min": 0,
+    "floor_max": 10
+  },
+  "regions": [
+    {
+      "id": 378,
+      "polygon": [
+        [
+          -2620.0,
+          -5169.0
+        ],
+        [
+          -2634.0,
+          -5235.0
+        ],
+        [
+          -2603.0,
+          -5216.0
+        ],
+        [
+          -2602.0,
+          -5199.0
+        ]
+      ],
+      "floor_min": -30,
+      "floor_max": -30
+    },
+    {
+      "id": 379,
+      "polygon": [
+        [
+          -2550.0,
+          -5170.0
+        ],
+        [
+          -2620.0,
+          -5169.0
+        ],
+        [
+          -2602.0,
+          -5199.0
+        ],
+        [
+          -2586.0,
+          -5198.0
+        ]
+      ],
+      "floor_min": -30,
+      "floor_max": -30
+    },
+    {
+      "id": 380,
+      "polygon": [
+        [
+          -2517.0,
+          -5218.0
+        ],
+        [
+          -2550.0,
+          -5170.0
+        ],
+        [
+          -2586.0,
+          -5198.0
+        ],
+        [
+          -2577.0,
+          -5214.0
+        ]
+      ],
+      "floor_min": -30,
+      "floor_max": -30
+    },
+    {
+      "id": 381,
+      "polygon": [
+        [
+          -2634.0,
+          -5235.0
+        ],
+        [
+          -2517.0,
+          -5218.0
+        ],
+        [
+          -2577.0,
+          -5214.0
+        ],
+        [
+          -2603.0,
+          -5216.0
+        ]
+      ],
+      "floor_min": -30,
+      "floor_max": -30
+    },
+    {
+      "id": 382,
+      "polygon": [
+        [
+          -2603.0,
+          -5216.0
+        ],
+        [
+          -2577.0,
+          -5214.0
+        ],
+        [
+          -2586.0,
+          -5198.0
+        ],
+        [
+          -2602.0,
+          -5199.0
+        ]
+      ],
+      "floor_min": -30,
+      "floor_max": -30
+    },
+    {
+      "id": 386,
+      "polygon": [
+        [
+          -2620.0,
+          -5169.0
+        ],
+        [
+          -2550.0,
+          -5170.0
+        ],
+        [
+          -2584.0,
+          -5097.0
+        ],
+        [
+          -2614.0,
+          -5097.0
+        ]
+      ],
+      "floor_min": -30,
+      "floor_max": -30
+    },
+    {
+      "id": 2443,
+      "polygon": [
+        [
+          -1242.0,
+          -5047.0
+        ],
+        [
+          -1376.0,
+          -5169.0
+        ],
+        [
+          -1376.0,
+          -5329.0
+        ],
+        [
+          -1216.0,
+          -5438.0
+        ]
+      ],
+      "floor_min": 0,
+      "floor_max": 0
+    },
+    {
+      "id": 3651,
+      "polygon": [
+        [
+          -2013.0,
+          -4782.0
+        ],
+        [
+          -1984.0,
+          -4789.0
+        ],
+        [
+          -1964.0,
+          -4707.0
+        ],
+        [
+          -2041.99609375,
+          -4707.24658203125
+        ]
+      ],
+      "floor_min": 0,
+      "floor_max": 0
+    },
+    {
+      "id": 3658,
+      "polygon": [
+        [
+          -2131.0,
+          -5174.0
+        ],
+        [
+          -2060.0,
+          -4973.0
+        ],
+        [
+          -2085.0,
+          -4959.0
+        ],
+        [
+          -2146.0,
+          -5108.0
+        ]
+      ],
+      "floor_min": 0,
+      "floor_max": 0
+    },
+    {
+      "id": 3659,
+      "polygon": [
+        [
+          -2060.0,
+          -4973.0
+        ],
+        [
+          -2039.0,
+          -4979.0
+        ],
+        [
+          -2053.0,
+          -4950.0
+        ],
+        [
+          -2085.0,
+          -4959.0
+        ]
+      ],
+      "floor_min": 27,
+      "floor_max": 27
+    },
+    {
+      "id": 3661,
+      "polygon": [
+        [
+          -2039.0,
+          -4979.0
+        ],
+        [
+          -2011.0,
+          -4980.0
+        ],
+        [
+          -2020.0,
+          -4955.0
+        ],
+        [
+          -2053.0,
+          -4950.0
+        ]
+      ],
+      "floor_min": 27,
+      "floor_max": 27
+    },
+    {
+      "id": 3666,
+      "polygon": [
+        [
+          -2053.0,
+          -4950.0
+        ],
+        [
+          -2020.0,
+          -4955.0
+        ],
+        [
+          -1985.0,
+          -4945.0
+        ],
+        [
+          -2083.0,
+          -4925.0
+        ]
+      ],
+      "floor_min": 10,
+      "floor_max": 10
+    },
+    {
+      "id": 3671,
+      "polygon": [
+        [
+          -2083.0,
+          -4925.0
+        ],
+        [
+          -1985.0,
+          -4945.0
+        ],
+        [
+          -1959.0,
+          -4920.0
+        ],
+        [
+          -2097.0,
+          -4892.0
+        ]
+      ],
+      "floor_min": 10,
+      "floor_max": 10
+    },
+    {
+      "id": 3673,
+      "polygon": [
+        [
+          -2092.0,
+          -4853.0
+        ],
+        [
+          -1948.0,
+          -4884.0
+        ],
+        [
+          -1958.0,
+          -4843.0
+        ],
+        [
+          -2068.0,
+          -4822.0
+        ]
+      ],
+      "floor_min": 10,
+      "floor_max": 10
+    },
+    {
+      "id": 3679,
+      "polygon": [
+        [
+          -2097.0,
+          -4892.0
+        ],
+        [
+          -1959.0,
+          -4920.0
+        ],
+        [
+          -1948.0,
+          -4884.0
+        ],
+        [
+          -2092.0,
+          -4853.0
+        ]
+      ],
+      "floor_min": 10,
+      "floor_max": 10
+    },
+    {
+      "id": 3680,
+      "polygon": [
+        [
+          -2030.0,
+          -4807.0
+        ],
+        [
+          -1992.0,
+          -4813.0
+        ],
+        [
+          -1984.0,
+          -4789.0
+        ],
+        [
+          -2013.0,
+          -4782.0
+        ]
+      ],
+      "floor_min": 27,
+      "floor_max": 27
+    },
+    {
+      "id": 3689,
+      "polygon": [
+        [
+          -2068.0,
+          -4822.0
+        ],
+        [
+          -1958.0,
+          -4843.0
+        ],
+        [
+          -1992.0,
+          -4813.0
+        ],
+        [
+          -2030.0,
+          -4807.0
+        ]
+      ],
+      "floor_min": 10,
+      "floor_max": 10
+    }
+  ],
+  "records": [
+    {
+      "stream": 0,
+      "group": 276,
+      "owner_kind": "region",
+      "owner": 378,
+      "descriptors": [
+        21
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 13042724,
+      "predicate_expression": null,
+      "commands": [
+        {
+          "archive_offset": 13023260,
+          "raw_hex": "08106e0001000000"
+        },
+        {
+          "archive_offset": 13023268,
+          "raw_hex": "020100002400"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13023260,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 296,
+      "owner_kind": "region",
+      "owner": 379,
+      "descriptors": [
+        21
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 13042732,
+      "predicate_expression": null,
+      "commands": [
+        {
+          "archive_offset": 13023280,
+          "raw_hex": "08106e0001000000"
+        },
+        {
+          "archive_offset": 13023288,
+          "raw_hex": "020100002400"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13023280,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 316,
+      "owner_kind": "region",
+      "owner": 380,
+      "descriptors": [
+        21
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 13042740,
+      "predicate_expression": null,
+      "commands": [
+        {
+          "archive_offset": 13023300,
+          "raw_hex": "08106e0001000000"
+        },
+        {
+          "archive_offset": 13023308,
+          "raw_hex": "020100002400"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13023300,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 336,
+      "owner_kind": "region",
+      "owner": 381,
+      "descriptors": [
+        21
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 13042748,
+      "predicate_expression": null,
+      "commands": [
+        {
+          "archive_offset": 13023320,
+          "raw_hex": "08106e0001000000"
+        },
+        {
+          "archive_offset": 13023328,
+          "raw_hex": "020100002400"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13023320,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 356,
+      "owner_kind": "region",
+      "owner": 382,
+      "descriptors": [
+        21
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 13042756,
+      "predicate_expression": null,
+      "commands": [
+        {
+          "archive_offset": 13023340,
+          "raw_hex": "08106e0001000000"
+        },
+        {
+          "archive_offset": 13023348,
+          "raw_hex": "020100002400"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13023340,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 376,
+      "owner_kind": "region",
+      "owner": 386,
+      "descriptors": [
+        21
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 13042764,
+      "predicate_expression": null,
+      "commands": [
+        {
+          "archive_offset": 13023360,
+          "raw_hex": "08106e0001000000"
+        },
+        {
+          "archive_offset": 13023368,
+          "raw_hex": "020100002400"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13023360,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 4354,
+      "owner_kind": "region",
+      "owner": 2443,
+      "descriptors": [
+        131
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 154,
+      "archive_offset": 13045084,
+      "predicate_expression": {
+        "op": "AND",
+        "left": {
+          "predicate": 99,
+          "expression": {
+            "op": "AND",
+            "left": {
+              "predicate": 97,
+              "expression": {
+                "op": "==",
+                "left": {
+                  "shared": 38
+                },
+                "right": {
+                  "immediate": 1
+                },
+                "raw": "0002260001"
+              }
+            },
+            "right": {
+              "predicate": 98,
+              "expression": {
+                "op": "==",
+                "left": {
+                  "shared": 29
+                },
+                "right": {
+                  "immediate": 0
+                },
+                "raw": "00021d0000"
+              }
+            },
+            "raw": "0604610462"
+          }
+        },
+        "right": {
+          "predicate": 153,
+          "expression": {
+            "op": "==",
+            "left": {
+              "local": 24
+            },
+            "right": {
+              "immediate": 0
+            },
+            "raw": "0003180000"
+          }
+        },
+        "raw": "0604630499"
+      },
+      "commands": [
+        {
+          "archive_offset": 13027338,
+          "raw_hex": "08106e0001000000"
+        },
+        {
+          "archive_offset": 13027346,
+          "raw_hex": "c590dd0e0000"
+        },
+        {
+          "archive_offset": 13027352,
+          "raw_hex": "0e034c0004000000"
+        },
+        {
+          "archive_offset": 13027360,
+          "raw_hex": "090240001100"
+        },
+        {
+          "archive_offset": 13027366,
+          "raw_hex": "0903e6001500"
+        },
+        {
+          "archive_offset": 13027372,
+          "raw_hex": "020100000f01"
+        },
+        {
+          "archive_offset": 13027378,
+          "raw_hex": "020100001001"
+        },
+        {
+          "archive_offset": 13027384,
+          "raw_hex": "c60000001801"
+        },
+        {
+          "archive_offset": 13027390,
+          "raw_hex": "12010000b3fa82140000120000c000230000"
+        },
+        {
+          "archive_offset": 13027408,
+          "raw_hex": "01204f006400"
+        },
+        {
+          "archive_offset": 13027414,
+          "raw_hex": "01204e006400"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13027338,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 4442,
+      "owner_kind": "region",
+      "owner": 2443,
+      "descriptors": [
+        131
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 111,
+      "archive_offset": 13045096,
+      "predicate_expression": {
+        "op": "AND",
+        "left": {
+          "predicate": 98,
+          "expression": {
+            "op": "==",
+            "left": {
+              "shared": 29
+            },
+            "right": {
+              "immediate": 0
+            },
+            "raw": "00021d0000"
+          }
+        },
+        "right": {
+          "predicate": 15,
+          "expression": {
+            "op": "==",
+            "left": {
+              "local": 6
+            },
+            "right": {
+              "immediate": 1
+            },
+            "raw": "0003060001"
+          }
+        },
+        "raw": "060462040f"
+      },
+      "commands": [
+        {
+          "archive_offset": 13027426,
+          "raw_hex": "08106e0001000000"
+        },
+        {
+          "archive_offset": 13027434,
+          "raw_hex": "0e034c0004000000"
+        },
+        {
+          "archive_offset": 13027442,
+          "raw_hex": "01204a006400"
+        },
+        {
+          "archive_offset": 13027448,
+          "raw_hex": "01204b006400"
+        },
+        {
+          "archive_offset": 13027454,
+          "raw_hex": "01204f006400"
+        },
+        {
+          "archive_offset": 13027460,
+          "raw_hex": "01204e006400"
+        },
+        {
+          "archive_offset": 13027466,
+          "raw_hex": "100240000500"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13027426,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 4494,
+      "owner_kind": "region",
+      "owner": 2443,
+      "descriptors": [
+        131
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 13045108,
+      "predicate_expression": null,
+      "commands": [
+        {
+          "archive_offset": 13027472,
+          "raw_hex": "08106e0001000000"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13027472,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 7380,
+      "owner_kind": "region",
+      "owner": 3651,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046664,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030364,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": []
+    },
+    {
+      "stream": 0,
+      "group": 7434,
+      "owner_kind": "region",
+      "owner": 3658,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046704,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030418,
+          "raw_hex": "09106e000200"
+        },
+        {
+          "archive_offset": 13030424,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13030418,
+          "raw_hex": "09106e000200"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 7470,
+      "owner_kind": "region",
+      "owner": 3659,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046724,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030454,
+          "raw_hex": "09106e000200"
+        },
+        {
+          "archive_offset": 13030460,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13030454,
+          "raw_hex": "09106e000200"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 7506,
+      "owner_kind": "region",
+      "owner": 3661,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046744,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030484,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": []
+    },
+    {
+      "stream": 0,
+      "group": 7530,
+      "owner_kind": "region",
+      "owner": 3666,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046764,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030514,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": []
+    },
+    {
+      "stream": 0,
+      "group": 7560,
+      "owner_kind": "region",
+      "owner": 3671,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046784,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030544,
+          "raw_hex": "09106e000200"
+        },
+        {
+          "archive_offset": 13030550,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 13030544,
+          "raw_hex": "09106e000200"
+        }
+      ]
+    },
+    {
+      "stream": 0,
+      "group": 7596,
+      "owner_kind": "region",
+      "owner": 3673,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046804,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030580,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": []
+    },
+    {
+      "stream": 0,
+      "group": 7626,
+      "owner_kind": "region",
+      "owner": 3679,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046824,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030610,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": []
+    },
+    {
+      "stream": 0,
+      "group": 7656,
+      "owner_kind": "region",
+      "owner": 3680,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046844,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030640,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": []
+    },
+    {
+      "stream": 0,
+      "group": 7686,
+      "owner_kind": "region",
+      "owner": 3689,
+      "descriptors": [
+        278
+      ],
+      "event": 2,
+      "value": 0,
+      "predicate": 17,
+      "archive_offset": 13046864,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0003070001"
+      },
+      "commands": [
+        {
+          "archive_offset": 13030670,
+          "raw_hex": "c60000000702"
+        }
+      ],
+      "incoming_control_commands": []
+    },
+    {
+      "stream": 1,
+      "group": 10228,
+      "owner_kind": "prop",
+      "owner": 484,
+      "event": 5,
+      "value": 0,
+      "predicate": 95,
+      "archive_offset": 12763862,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0003070000"
+      },
+      "commands": [
+        {
+          "archive_offset": 12738538,
+          "raw_hex": "0903e5010900"
+        },
+        {
+          "archive_offset": 12738544,
+          "raw_hex": "091064000a00"
+        },
+        {
+          "archive_offset": 12738550,
+          "raw_hex": "c5901b0d0400"
+        },
+        {
+          "archive_offset": 12738556,
+          "raw_hex": "08106e0000000000"
+        },
+        {
+          "archive_offset": 12738564,
+          "raw_hex": "08106e000700ff00"
+        },
+        {
+          "archive_offset": 12738572,
+          "raw_hex": "08106e000a000100"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 12738556,
+          "raw_hex": "08106e0000000000"
+        },
+        {
+          "archive_offset": 12738564,
+          "raw_hex": "08106e000700ff00"
+        },
+        {
+          "archive_offset": 12738572,
+          "raw_hex": "08106e000a000100"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10276,
+      "owner_kind": "prop",
+      "owner": 484,
+      "event": 9,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 12763872,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      },
+      "commands": [
+        {
+          "archive_offset": 12738586,
+          "raw_hex": "1403e4019f023c000a14"
+        },
+        {
+          "archive_offset": 12738596,
+          "raw_hex": "1003e4010100"
+        },
+        {
+          "archive_offset": 12738602,
+          "raw_hex": "0503e4010100"
+        }
+      ],
+      "incoming_control_commands": []
+    },
+    {
+      "stream": 1,
+      "group": 10304,
+      "owner_kind": "prop",
+      "owner": 485,
+      "event": 5,
+      "value": 0,
+      "predicate": 95,
+      "archive_offset": 12763888,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0003070000"
+      },
+      "commands": [
+        {
+          "archive_offset": 12738614,
+          "raw_hex": "0903e4010900"
+        },
+        {
+          "archive_offset": 12738620,
+          "raw_hex": "091064000a00"
+        },
+        {
+          "archive_offset": 12738626,
+          "raw_hex": "c5901b0d0400"
+        },
+        {
+          "archive_offset": 12738632,
+          "raw_hex": "08106e0000000000"
+        },
+        {
+          "archive_offset": 12738640,
+          "raw_hex": "08106e000700ff00"
+        },
+        {
+          "archive_offset": 12738648,
+          "raw_hex": "08106e000a000100"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 12738632,
+          "raw_hex": "08106e0000000000"
+        },
+        {
+          "archive_offset": 12738640,
+          "raw_hex": "08106e000700ff00"
+        },
+        {
+          "archive_offset": 12738648,
+          "raw_hex": "08106e000a000100"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 10352,
+      "owner_kind": "prop",
+      "owner": 485,
+      "event": 9,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 12763898,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      },
+      "commands": [
+        {
+          "archive_offset": 12738662,
+          "raw_hex": "1403e5019f023c000a14"
+        },
+        {
+          "archive_offset": 12738672,
+          "raw_hex": "1003e5010100"
+        },
+        {
+          "archive_offset": 12738678,
+          "raw_hex": "0503e5010100"
+        }
+      ],
+      "incoming_control_commands": []
+    },
+    {
+      "stream": 1,
+      "group": 21322,
+      "owner_kind": "control",
+      "owner": 100,
+      "event": 5,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 12767498,
+      "predicate_expression": null,
+      "commands": [
+        {
+          "archive_offset": 12749632,
+          "raw_hex": "0810550001000000"
+        },
+        {
+          "archive_offset": 12749640,
+          "raw_hex": "08107b0001000000"
+        },
+        {
+          "archive_offset": 12749648,
+          "raw_hex": "0810700001000000"
+        },
+        {
+          "archive_offset": 12749656,
+          "raw_hex": "08106e0001000000"
+        },
+        {
+          "archive_offset": 12749664,
+          "raw_hex": "0903e5010a00"
+        },
+        {
+          "archive_offset": 12749670,
+          "raw_hex": "0903e4010a00"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 12749656,
+          "raw_hex": "08106e0001000000"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 25370,
+      "owner_kind": "control",
+      "owner": 110,
+      "event": 6,
+      "value": 1,
+      "predicate": 18,
+      "archive_offset": 12768622,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 2
+        },
+        "raw": "0003070002"
+      },
+      "commands": [
+        {
+          "archive_offset": 12753680,
+          "raw_hex": "09106e000200"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 12753680,
+          "raw_hex": "09106e000200"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 25382,
+      "owner_kind": "control",
+      "owner": 110,
+      "event": 9,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 12768632,
+      "predicate_expression": null,
+      "commands": [
+        {
+          "archive_offset": 12753692,
+          "raw_hex": "02106e000600"
+        },
+        {
+          "archive_offset": 12753698,
+          "raw_hex": "c60000000701"
+        },
+        {
+          "archive_offset": 12753704,
+          "raw_hex": "ce00000000ff"
+        },
+        {
+          "archive_offset": 12753710,
+          "raw_hex": "020100002700"
+        },
+        {
+          "archive_offset": 12753716,
+          "raw_hex": "10106e000100"
+        },
+        {
+          "archive_offset": 12753722,
+          "raw_hex": "08106e0007000000"
+        },
+        {
+          "archive_offset": 12753730,
+          "raw_hex": "08106e000a000200"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 12753692,
+          "raw_hex": "02106e000600"
+        },
+        {
+          "archive_offset": 12753716,
+          "raw_hex": "10106e000100"
+        },
+        {
+          "archive_offset": 12753722,
+          "raw_hex": "08106e0007000000"
+        },
+        {
+          "archive_offset": 12753730,
+          "raw_hex": "08106e000a000200"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 25434,
+      "owner_kind": "control",
+      "owner": 110,
+      "event": 5,
+      "value": 0,
+      "predicate": 18,
+      "archive_offset": 12768642,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 2
+        },
+        "raw": "0003070002"
+      },
+      "commands": [
+        {
+          "archive_offset": 12753744,
+          "raw_hex": "09106e000200"
+        },
+        {
+          "archive_offset": 12753750,
+          "raw_hex": "c5901b0d0500"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 12753744,
+          "raw_hex": "09106e000200"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 25452,
+      "owner_kind": "control",
+      "owner": 110,
+      "event": 6,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 12768652,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      },
+      "commands": [
+        {
+          "archive_offset": 12753762,
+          "raw_hex": "02106e000600"
+        },
+        {
+          "archive_offset": 12753768,
+          "raw_hex": "020100002700"
+        },
+        {
+          "archive_offset": 12753774,
+          "raw_hex": "08106e000700ff00"
+        },
+        {
+          "archive_offset": 12753782,
+          "raw_hex": "08106e000a000100"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 12753762,
+          "raw_hex": "02106e000600"
+        },
+        {
+          "archive_offset": 12753774,
+          "raw_hex": "08106e000700ff00"
+        },
+        {
+          "archive_offset": 12753782,
+          "raw_hex": "08106e000a000100"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 25486,
+      "owner_kind": "control",
+      "owner": 110,
+      "event": 4,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 12768662,
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      },
+      "commands": [
+        {
+          "archive_offset": 12753796,
+          "raw_hex": "02106e000501"
+        },
+        {
+          "archive_offset": 12753802,
+          "raw_hex": "0903ab011000"
+        },
+        {
+          "archive_offset": 12753808,
+          "raw_hex": "09106e000e00"
+        },
+        {
+          "archive_offset": 12753814,
+          "raw_hex": "c60000000701"
+        },
+        {
+          "archive_offset": 12753820,
+          "raw_hex": "020100002600"
+        },
+        {
+          "archive_offset": 12753826,
+          "raw_hex": "1201000031f7a61300000008f4e9000a0000"
+        },
+        {
+          "archive_offset": 12753844,
+          "raw_hex": "08106e0007000000"
+        },
+        {
+          "archive_offset": 12753852,
+          "raw_hex": "08106e000a000000"
+        }
+      ],
+      "incoming_control_commands": [
+        {
+          "archive_offset": 12753796,
+          "raw_hex": "02106e000501"
+        },
+        {
+          "archive_offset": 12753808,
+          "raw_hex": "09106e000e00"
+        },
+        {
+          "archive_offset": 12753844,
+          "raw_hex": "08106e0007000000"
+        },
+        {
+          "archive_offset": 12753852,
+          "raw_hex": "08106e000a000000"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 27172,
+      "owner_kind": "control",
+      "owner": 216,
+      "event": 2,
+      "value": 304,
+      "predicate": 192,
+      "archive_offset": 12769166,
+      "predicate_expression": {
+        "op": "AND",
+        "left": {
+          "predicate": 85,
+          "expression": {
+            "op": "==",
+            "left": {
+              "shared": 29
+            },
+            "right": {
+              "immediate": 1
+            },
+            "raw": "00021d0001"
+          }
+        },
+        "right": {
+          "predicate": 183,
+          "expression": {
+            "op": "==",
+            "left": {
+              "local": 32
+            },
+            "right": {
+              "immediate": 0
+            },
+            "raw": "0003200000"
+          }
+        },
+        "raw": "06045504b7"
+      },
+      "commands": [
+        {
+          "archive_offset": 12755482,
+          "raw_hex": "c60000003401"
+        },
+        {
+          "archive_offset": 12755488,
+          "raw_hex": "091064001500"
+        },
+        {
+          "archive_offset": 12755494,
+          "raw_hex": "ce00000000fe"
+        },
+        {
+          "archive_offset": 12755500,
+          "raw_hex": "09204f001100"
+        },
+        {
+          "archive_offset": 12755506,
+          "raw_hex": "09204e001100"
+        },
+        {
+          "archive_offset": 12755512,
+          "raw_hex": "01204b000000"
+        },
+        {
+          "archive_offset": 12755518,
+          "raw_hex": "01204a000000"
+        },
+        {
+          "archive_offset": 12755524,
+          "raw_hex": "0e10d80003000000"
+        },
+        {
+          "archive_offset": 12755532,
+          "raw_hex": "012038006400"
+        },
+        {
+          "archive_offset": 12755538,
+          "raw_hex": "012039006400"
+        },
+        {
+          "archive_offset": 12755544,
+          "raw_hex": "01204e000000"
+        },
+        {
+          "archive_offset": 12755550,
+          "raw_hex": "01204f000000"
+        },
+        {
+          "archive_offset": 12755556,
+          "raw_hex": "c60000000702"
+        },
+        {
+          "archive_offset": 12755562,
+          "raw_hex": "c6000000081e"
+        },
+        {
+          "archive_offset": 12755568,
+          "raw_hex": "0d0240000d000000"
+        },
+        {
+          "archive_offset": 12755576,
+          "raw_hex": "0d02400007000000"
+        },
+        {
+          "archive_offset": 12755584,
+          "raw_hex": "0e104d0003000000"
+        },
+        {
+          "archive_offset": 12755592,
+          "raw_hex": "0e10d90003000000"
+        },
+        {
+          "archive_offset": 12755600,
+          "raw_hex": "0e10d80003000200"
+        },
+        {
+          "archive_offset": 12755608,
+          "raw_hex": "c60000002001"
+        },
+        {
+          "archive_offset": 12755614,
+          "raw_hex": "051052000000"
+        }
+      ],
+      "incoming_control_commands": []
+    }
+  ],
+  "movie": {
+    "sha256": "eb14f0f7bc6309dc6ebf15e17f0332c8540742c5c53b9f13fe3159683e0064a7",
+    "segments": [
+      {
+        "index": 0,
+        "first": 0,
+        "last": 448,
+        "frames": 449,
+        "duration": 29.933333333333334,
+        "name": "HOthr000HU825-829"
+      },
+      {
+        "index": 1,
+        "first": 449,
+        "last": 514,
+        "frames": 66,
+        "duration": 4.4,
+        "name": "HLoit000HUDrunk"
+      },
+      {
+        "index": 2,
+        "first": 515,
+        "last": 581,
+        "frames": 67,
+        "duration": 4.466666666666667,
+        "name": "HDdie000HUDrunk"
+      }
+    ]
+  },
+  "shared_local_owner": "jungle_village_alarm.state.locals[7]",
+  "scope": "Direct source events; modern visibility, collision and presentation clocks are supplied by live owner."
+}

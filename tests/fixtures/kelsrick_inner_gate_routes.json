@@ -1,0 +1,104 @@
+{
+ "village_to_kelsrick": {
+  "regions": [
+   3813,
+   3812,
+   3796,
+   3797,
+   3792,
+   3793,
+   3794,
+   3795,
+   3791,
+   3568,
+   3567
+  ],
+  "points": [
+   [
+    -1479.0,
+    -5330.5
+   ],
+   [
+    -1479.0,
+    -5404.5
+   ],
+   [
+    -1514.0,
+    -5442.5
+   ],
+   [
+    -1598.5,
+    -5301.5
+   ],
+   [
+    -1611.1422729492188,
+    -5299.33837890625
+   ],
+   [
+    -1675.6493530273438,
+    -5308.35546875
+   ],
+   [
+    -1706.3248291015625,
+    -5295.272705078125
+   ],
+   [
+    -1749.1851806640625,
+    -5276.718017578125
+   ],
+   [
+    -1767.5469360351562,
+    -5268.301025390625
+   ],
+   [
+    -1785.8460083007812,
+    -5458.8984375
+   ],
+   [
+    -1790.4006958007812,
+    -5467.2373046875
+   ]
+  ],
+  "minimum_portal_width": 64,
+  "minimum_clearance": 127,
+  "source_sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "scope": "Source neighbor BFS (natively blocked regions and >24 floor steps excluded) with portal midpoints; capsule traversal and native progression not established.",
+  "portal_adjustments": []
+ },
+ "kelsrick_through_inner_gate": {
+  "regions": [
+   2748,
+   2750,
+   2753,
+   2752,
+   2752
+  ],
+  "points": [
+   [
+    -1818.0,
+    -5549.0
+   ],
+   [
+    -1817.0,
+    -5554.0
+   ],
+   [
+    -1832.0,
+    -5573.0
+   ],
+   [
+    -1859.0,
+    -5625.0
+   ],
+   [
+    -1875.0,
+    -5656.0
+   ]
+  ],
+  "minimum_portal_width": 140,
+  "minimum_clearance": 127,
+  "source_sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "scope": "Source neighbor BFS (natively blocked regions and >24 floor steps excluded) with portal midpoints; capsule traversal and native progression not established.",
+  "portal_adjustments": []
+ }
+}

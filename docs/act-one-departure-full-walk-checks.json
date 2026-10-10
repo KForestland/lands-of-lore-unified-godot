@@ -1,0 +1,27 @@
+{
+  "departure": {
+    "elapsed": 0.0,
+    "local55": 1,
+    "phase": "arrived"
+  },
+  "input_sha256": "71e9d64815062c4bccf8636cfb4accee1468a649c05e973b0275863a95b4488d",
+  "output_sha256": "bbb09c3f331dadf0cc11bfc2462a3b93656d417adc635d6b2c671004f28ccb3d",
+  "passed": true,
+  "position": [
+    -4577.0,
+    32.0,
+    1168.0
+  ],
+  "regions": 174,
+  "scope": "Earned translated-runes office checkpoint through normal room exits, source174-region route, first-use exit movie, actual darker-jungle transition and grounded arrival with earned inventory/global retained. No test position/form/quest injection. Movement/curse ticks driven manually; time and audio accelerated4x for this route check. Full earlier cave/Museum continuity and remaining Act1 content not proved.",
+  "input_proof": "docs/monastery-rune-offer-live-checks.json",
+  "log": "tmp/act1_departure_full_walk.log",
+  "log_sha256": "4e56e89502f216cfbd35d19437846f5f32a3173bdfe6a3f22eccc84357bbcc0c",
+  "source_sha256": {
+    "scripts/lol2/act_one_departure.gd": "4aeb7abbc278a87a7c709b39af87960e0ac6b726f74456c8063f19859b940cf0",
+    "scripts/lol2/act_one_departure_state.gd": "3dbf7c71e6fa1576db20b1f71348b85959b0eec97a2e06ff37def83c5e6d7bf3",
+    "scripts/lol2/darker_jungle.gd": "6865200ba71111ec13c4a75301955e06475061dbc114da2be88f7c02d86842d3",
+    "tests/act_one_departure_walk_test.gd": "b963b842dd2e2869d3723c6746e627a17b435469495485df72dd37b3074c1507",
+    "tests/hive_earned_rune_return_test.gd": "88a8a2fff462cc9f7fd305a9bc552546cfc77fb2ba55ff45b944cca3a22db6e7"
+  }
+}

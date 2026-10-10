@@ -1,0 +1,20 @@
+{
+  "input_sha256": "71e9d64815062c4bccf8636cfb4accee1468a649c05e973b0275863a95b4488d",
+  "output_sha256": "2c19b4cf670769e60726d32440a9b88e74fad76bb2ff4fc51c755517217802bd",
+  "passed": true,
+  "position": [
+    6912.59521484375,
+    -181.955444335938,
+    -3177.06469726562
+  ],
+  "regions": 174,
+  "scope": "Earned translated-runes office checkpoint, actual office/hall exits,174-region grounded walk to source outbound region3188, inventory/translated state preserved. No test reposition/form/quest injection. Movement/curse ticks driven manually. Exit movie/transition/arrival not yet implemented; this verifies approach only.",
+  "input_proof": "docs/monastery-rune-offer-live-checks.json",
+  "log": "tmp/act1_departure_walk.log",
+  "log_sha256": "8cfc1e6c9a7b7e9749e37ba9cba1c83836d5233c161193354f2611cdf8c57ebf",
+  "source_sha256": {
+    "tests/act_one_departure_walk_test.gd": "aec905f429c11a1b53c5969f05c74e4f1afa9f02b4612f3d0c04d9946f828d08",
+    "tools/build_act_one_departure_walk.py": "9126e46ae8bcdd2c8a937bbe453d077b92cb6166730b0a9810a468914776bf91",
+    "tests/fixtures/act_one_departure_route.json": "ef603dab5eee03c9590fbe31a208ba206dadc47b5c02b1dee71ebf036e00c725"
+  }
+}

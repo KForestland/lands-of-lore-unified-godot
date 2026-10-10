@@ -1,0 +1,1955 @@
+{
+  "archive_sha256": "642956adf4ee24c7bf3230ef7521ebcc419a9a076e4674692c8ba3bf63fc2a45",
+  "dll": {
+    "index": 120,
+    "key": 1644477445,
+    "offset": 1458,
+    "size": 6759,
+    "name": "WOMS\\MOFF_.WOM",
+    "sha256": "714989b149d3c0e8b8a477b93e8694aa04a1b9e720c5c23c3e5d943f166eacd3"
+  },
+  "cases": [
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            143
+          ],
+          [
+            "movie_flags",
+            22,
+            375,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            376,
+            7
+          ],
+          [
+            "movie",
+            22,
+            377,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            143
+          ],
+          [
+            "movie_flags",
+            22,
+            375,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            376,
+            7
+          ],
+          [
+            "movie",
+            22,
+            377,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ],
+          [
+            "set_flag",
+            140
+          ],
+          [
+            "consume_held"
+          ],
+          [
+            "movie_flags",
+            22,
+            550,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            552,
+            7
+          ],
+          [
+            "movie",
+            22,
+            553,
+            7
+          ],
+          [
+            "movie_flags",
+            22,
+            554,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            555,
+            7
+          ],
+          [
+            "movie",
+            22,
+            556,
+            7
+          ],
+          [
+            "set_flag",
+            141
+          ],
+          [
+            "movie_flags",
+            22,
+            557,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            558,
+            7
+          ],
+          [
+            "set_flag",
+            142
+          ],
+          [
+            "movie_flags",
+            22,
+            559,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            560,
+            7
+          ],
+          [
+            "movie",
+            22,
+            561,
+            7
+          ],
+          [
+            "movie",
+            22,
+            562,
+            7
+          ],
+          [
+            "movie",
+            22,
+            563,
+            7
+          ],
+          [
+            "set_global",
+            "GV_RUNES_TRANSLATED",
+            1
+          ],
+          [
+            "set_flag",
+            283
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ],
+          [
+            "set_flag",
+            140
+          ],
+          [
+            "consume_held"
+          ],
+          [
+            "movie_flags",
+            22,
+            550,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            552,
+            7
+          ],
+          [
+            "movie",
+            22,
+            553,
+            7
+          ],
+          [
+            "movie_flags",
+            22,
+            554,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            555,
+            7
+          ],
+          [
+            "movie",
+            22,
+            556,
+            7
+          ],
+          [
+            "set_flag",
+            141
+          ],
+          [
+            "movie_flags",
+            22,
+            557,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            558,
+            7
+          ],
+          [
+            "set_flag",
+            142
+          ],
+          [
+            "movie_flags",
+            22,
+            559,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            560,
+            7
+          ],
+          [
+            "movie",
+            22,
+            561,
+            7
+          ],
+          [
+            "movie",
+            22,
+            562,
+            7
+          ],
+          [
+            "movie",
+            22,
+            563,
+            7
+          ],
+          [
+            "set_global",
+            "GV_RUNES_TRANSLATED",
+            1
+          ],
+          [
+            "set_flag",
+            283
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ],
+          [
+            "set_flag",
+            140
+          ],
+          [
+            "consume_held"
+          ],
+          [
+            "movie_flags",
+            22,
+            550,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            552,
+            7
+          ],
+          [
+            "movie",
+            22,
+            553,
+            7
+          ],
+          [
+            "movie_flags",
+            22,
+            554,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            555,
+            7
+          ],
+          [
+            "movie",
+            22,
+            556,
+            7
+          ],
+          [
+            "set_flag",
+            141
+          ],
+          [
+            "movie_flags",
+            22,
+            557,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            558,
+            7
+          ],
+          [
+            "set_flag",
+            142
+          ],
+          [
+            "movie_flags",
+            22,
+            559,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            560,
+            7
+          ],
+          [
+            "movie",
+            22,
+            561,
+            7
+          ],
+          [
+            "movie",
+            22,
+            562,
+            7
+          ],
+          [
+            "movie",
+            22,
+            563,
+            7
+          ],
+          [
+            "set_global",
+            "GV_RUNES_TRANSLATED",
+            1
+          ],
+          [
+            "set_flag",
+            283
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ],
+          [
+            "set_flag",
+            140
+          ],
+          [
+            "consume_held"
+          ],
+          [
+            "movie_flags",
+            22,
+            550,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            552,
+            7
+          ],
+          [
+            "movie",
+            22,
+            553,
+            7
+          ],
+          [
+            "movie_flags",
+            22,
+            554,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            555,
+            7
+          ],
+          [
+            "movie",
+            22,
+            556,
+            7
+          ],
+          [
+            "set_flag",
+            141
+          ],
+          [
+            "movie_flags",
+            22,
+            557,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            558,
+            7
+          ],
+          [
+            "set_flag",
+            142
+          ],
+          [
+            "movie_flags",
+            22,
+            559,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            560,
+            7
+          ],
+          [
+            "movie",
+            22,
+            561,
+            7
+          ],
+          [
+            "movie",
+            22,
+            562,
+            7
+          ],
+          [
+            "movie",
+            22,
+            563,
+            7
+          ],
+          [
+            "set_global",
+            "GV_RUNES_TRANSLATED",
+            1
+          ],
+          [
+            "set_flag",
+            283
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ],
+          [
+            "set_flag",
+            140
+          ],
+          [
+            "consume_held"
+          ],
+          [
+            "movie_flags",
+            22,
+            550,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            552,
+            7
+          ],
+          [
+            "movie",
+            22,
+            553,
+            7
+          ],
+          [
+            "movie_flags",
+            22,
+            554,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            555,
+            7
+          ],
+          [
+            "movie",
+            22,
+            556,
+            7
+          ],
+          [
+            "set_flag",
+            141
+          ],
+          [
+            "movie_flags",
+            22,
+            557,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            558,
+            7
+          ],
+          [
+            "set_flag",
+            142
+          ],
+          [
+            "movie_flags",
+            22,
+            559,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            560,
+            7
+          ],
+          [
+            "movie",
+            22,
+            561,
+            7
+          ],
+          [
+            "movie",
+            22,
+            562,
+            7
+          ],
+          [
+            "movie",
+            22,
+            563,
+            7
+          ],
+          [
+            "set_global",
+            "GV_RUNES_TRANSLATED",
+            1
+          ],
+          [
+            "set_flag",
+            283
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ],
+          [
+            "set_flag",
+            140
+          ],
+          [
+            "consume_held"
+          ],
+          [
+            "movie_flags",
+            22,
+            550,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            552,
+            7
+          ],
+          [
+            "movie",
+            22,
+            553,
+            7
+          ],
+          [
+            "movie_flags",
+            22,
+            554,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            555,
+            7
+          ],
+          [
+            "movie",
+            22,
+            556,
+            7
+          ],
+          [
+            "set_flag",
+            141
+          ],
+          [
+            "movie_flags",
+            22,
+            557,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            558,
+            7
+          ],
+          [
+            "set_flag",
+            142
+          ],
+          [
+            "movie_flags",
+            22,
+            559,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            560,
+            7
+          ],
+          [
+            "movie",
+            22,
+            561,
+            7
+          ],
+          [
+            "movie",
+            22,
+            562,
+            7
+          ],
+          [
+            "movie",
+            22,
+            563,
+            7
+          ],
+          [
+            "set_global",
+            "GV_RUNES_TRANSLATED",
+            1
+          ],
+          [
+            "set_flag",
+            283
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ],
+          [
+            "set_flag",
+            140
+          ],
+          [
+            "consume_held"
+          ],
+          [
+            "movie_flags",
+            22,
+            550,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            552,
+            7
+          ],
+          [
+            "movie",
+            22,
+            553,
+            7
+          ],
+          [
+            "movie_flags",
+            22,
+            554,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            555,
+            7
+          ],
+          [
+            "movie",
+            22,
+            556,
+            7
+          ],
+          [
+            "set_flag",
+            141
+          ],
+          [
+            "movie_flags",
+            22,
+            557,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            558,
+            7
+          ],
+          [
+            "set_flag",
+            142
+          ],
+          [
+            "movie_flags",
+            22,
+            559,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            560,
+            7
+          ],
+          [
+            "movie",
+            22,
+            561,
+            7
+          ],
+          [
+            "movie",
+            22,
+            562,
+            7
+          ],
+          [
+            "movie",
+            22,
+            563,
+            7
+          ],
+          [
+            "set_global",
+            "GV_RUNES_TRANSLATED",
+            1
+          ],
+          [
+            "set_flag",
+            283
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ],
+          [
+            "set_flag",
+            140
+          ],
+          [
+            "consume_held"
+          ],
+          [
+            "movie_flags",
+            22,
+            550,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            552,
+            7
+          ],
+          [
+            "movie",
+            22,
+            553,
+            7
+          ],
+          [
+            "movie_flags",
+            22,
+            554,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            555,
+            7
+          ],
+          [
+            "movie",
+            22,
+            556,
+            7
+          ],
+          [
+            "set_flag",
+            141
+          ],
+          [
+            "movie_flags",
+            22,
+            557,
+            7,
+            160
+          ],
+          [
+            "movie",
+            22,
+            558,
+            7
+          ],
+          [
+            "set_flag",
+            142
+          ],
+          [
+            "movie_flags",
+            22,
+            559,
+            7,
+            128
+          ],
+          [
+            "movie",
+            22,
+            560,
+            7
+          ],
+          [
+            "movie",
+            22,
+            561,
+            7
+          ],
+          [
+            "movie",
+            22,
+            562,
+            7
+          ],
+          [
+            "movie",
+            22,
+            563,
+            7
+          ],
+          [
+            "set_global",
+            "GV_RUNES_TRANSLATED",
+            1
+          ],
+          [
+            "set_flag",
+            283
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "72-Wax runes",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "clear_flag",
+            265
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            22,
+            378,
+            7
+          ],
+          [
+            "movie",
+            22,
+            379,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            22,
+            378,
+            7
+          ],
+          [
+            "movie",
+            22,
+            379,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            22,
+            378,
+            7
+          ],
+          [
+            "movie",
+            22,
+            379,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 0,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            22,
+            378,
+            7
+          ],
+          [
+            "movie",
+            22,
+            379,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            22,
+            378,
+            7
+          ],
+          [
+            "movie",
+            22,
+            379,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            22,
+            378,
+            7
+          ],
+          [
+            "movie",
+            22,
+            379,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            22,
+            378,
+            7
+          ],
+          [
+            "movie",
+            22,
+            379,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 0,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            22,
+            378,
+            7
+          ],
+          [
+            "movie",
+            22,
+            379,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 1,
+          "143": 0,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 0
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 0
+      },
+      "expected": {
+        "handled": 1,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "held": "94-Iron flute",
+        "flags": {
+          "140": 1,
+          "143": 1,
+          "283": 1
+        },
+        "power_orb": 1
+      },
+      "expected": {
+        "handled": 1,
+        "effects": []
+      }
+    }
+  ],
+  "media": {
+    "refusal_movies": [
+      {
+        "index": 110,
+        "key": 3446623076,
+        "offset": 21551951,
+        "size": 216958,
+        "name": "WOMS\\MOFF\\2237807E.VQA",
+        "sha256": "1419ccb73d0416a19242b0c7a17e68aaf48b7e6fc4a546bf377683ec07b68ece",
+        "frames": 52,
+        "width": 228,
+        "height": 172,
+        "fps": 15,
+        "x": 140,
+        "y": 140,
+        "atlases": [
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237807E_000.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237807E_001.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237807E_002.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237807E_003.png"
+        ],
+        "columns": 4,
+        "rows": 4,
+        "audio": "res://assets/lol2/generated/monastery_rooms/MOFF/2237807E.wav",
+        "video_duration": 3.466666666666667,
+        "audio_samples": 87464,
+        "duration": 3.966621315192744
+      },
+      {
+        "index": 115,
+        "key": 3446885220,
+        "offset": 5664133,
+        "size": 380618,
+        "name": "WOMS\\MOFF\\2237907E.VQA",
+        "sha256": "6f12d7b6c335d642c357a70c7d8e8c4ffaa3c91164216ac2119e1e1720102251",
+        "frames": 105,
+        "width": 228,
+        "height": 172,
+        "fps": 15,
+        "x": 140,
+        "y": 140,
+        "atlases": [
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237907E_000.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237907E_001.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237907E_002.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237907E_003.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237907E_004.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237907E_005.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237907E_006.png"
+        ],
+        "columns": 4,
+        "rows": 4,
+        "audio": "res://assets/lol2/generated/monastery_rooms/MOFF/2237907E.wav",
+        "video_duration": 7.0,
+        "audio_samples": 165374,
+        "duration": 7.499954648526077
+      }
+    ],
+    "orb_movies": [
+      {
+        "index": 89,
+        "key": 3445836644,
+        "offset": 22038775,
+        "size": 280398,
+        "name": "WOMS\\MOFF\\2237507E.VQA",
+        "sha256": "91c528649726bd6ede3341f7476a348e7c6f9f9d18aef7bf5857f01f90c110eb",
+        "frames": 75,
+        "width": 228,
+        "height": 164,
+        "fps": 15,
+        "x": 140,
+        "y": 148,
+        "atlases": [
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237507E_000.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237507E_001.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237507E_002.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237507E_003.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237507E_004.png"
+        ],
+        "columns": 4,
+        "rows": 4,
+        "audio": "res://assets/lol2/generated/monastery_rooms/MOFF/2237507E.wav",
+        "video_duration": 5.0,
+        "audio_samples": 121274,
+        "duration": 5.499954648526077
+      },
+      {
+        "index": 98,
+        "key": 3446098788,
+        "offset": 21457605,
+        "size": 94346,
+        "name": "WOMS\\MOFF\\2237607E.VQA",
+        "sha256": "ec6c18930f2079082c4b52bd5f209e36a362f3e26b867b982b799735bd0735a8",
+        "frames": 15,
+        "width": 228,
+        "height": 164,
+        "fps": 15,
+        "x": 140,
+        "y": 148,
+        "atlases": [
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237607E_000.png"
+        ],
+        "columns": 4,
+        "rows": 4,
+        "audio": "res://assets/lol2/generated/monastery_rooms/MOFF/2237607E.wav",
+        "video_duration": 1.0,
+        "audio_samples": 33074,
+        "duration": 1.499954648526077
+      },
+      {
+        "index": 105,
+        "key": 3446360932,
+        "offset": 14881975,
+        "size": 447246,
+        "name": "WOMS\\MOFF\\2237707E.VQA",
+        "sha256": "7ed0de282d2608c90b0221e0cd43615a5d5d0ff0727e396d4410878b885c1e55",
+        "frames": 125,
+        "width": 228,
+        "height": 172,
+        "fps": 15,
+        "x": 140,
+        "y": 140,
+        "atlases": [
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237707E_000.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237707E_001.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237707E_002.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237707E_003.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237707E_004.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237707E_005.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237707E_006.png",
+          "res://assets/lol2/generated/monastery_rooms/MOFF/2237707E_007.png"
+        ],
+        "columns": 4,
+        "rows": 4,
+        "audio": "res://assets/lol2/generated/monastery_rooms/MOFF/2237707E.wav",
+        "video_duration": 8.333333333333334,
+        "audio_samples": 194774,
+        "duration": 8.83328798185941
+      }
+    ]
+  },
+  "scope": "48 native MOFF06ea offer-handler cases with explicit held-item/flag/global host boundaries. Original five Julian movie patches/audio staged with exact frame/sample counts. Power-orb knowledge producer and native movie flag rendering remain separate."
+}

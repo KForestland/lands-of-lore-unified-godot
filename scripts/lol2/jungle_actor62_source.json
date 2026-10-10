@@ -1,0 +1,462 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "audit_sha256": "d015d72071e470166d84fd4ce7da08a987fd2680e0fbfeab7e87d060161a1c19",
+ "actor": {
+  "actor": 62,
+  "definition": 1,
+  "position": [
+   -713,
+   0,
+   -5307
+  ],
+  "heading": 29491,
+  "health": 100,
+  "flags": 30082,
+  "present": false
+ },
+ "groups": [
+  {
+   "owner_kind": "region",
+   "owner": 1672,
+   "event": 2,
+   "value": 0,
+   "predicate": null,
+   "stream": 0,
+   "group": 3384,
+   "commands": [
+    "09023e000300",
+    "09023e001500",
+    "090379071000"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 1698,
+   "event": 2,
+   "value": 0,
+   "predicate": null,
+   "stream": 0,
+   "group": 3408,
+   "commands": [
+    "09023e000300",
+    "09023e001500",
+    "090379071000"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 1703,
+   "event": 2,
+   "value": 0,
+   "predicate": null,
+   "stream": 0,
+   "group": 3432,
+   "commands": [
+    "09023e000300",
+    "09023e001500",
+    "090379071000"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 62,
+   "event": 6,
+   "value": 276,
+   "predicate": 206,
+   "stream": 1,
+   "group": 29396,
+   "commands": [
+    "10023e000200",
+    "1201000004fed21200008002c7f100280000",
+    "14023e004d01fff53e00",
+    "02023e000501",
+    "020100000000",
+    "0d023e0004040000",
+    "12023e00effd161300000800ee6e00320000"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 62,
+   "event": 6,
+   "value": 6,
+   "predicate": null,
+   "stream": 1,
+   "group": 29474,
+   "commands": [
+    "c60000002c01",
+    "0d023e0004100000"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 62,
+   "event": 6,
+   "value": 3,
+   "predicate": 1,
+   "stream": 1,
+   "group": 29494,
+   "commands": [
+    "c60000002c02",
+    "05023e000200"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 62,
+   "event": 8,
+   "value": 333,
+   "predicate": 208,
+   "stream": 1,
+   "group": 29512,
+   "commands": [
+    "10023e000300",
+    "14023e004501ff953e00"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 62,
+   "event": 8,
+   "value": 325,
+   "predicate": 209,
+   "stream": 1,
+   "group": 29534,
+   "commands": [
+    "10023e000400",
+    "14023e000201ff953e00"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 62,
+   "event": 8,
+   "value": 258,
+   "predicate": 210,
+   "stream": 1,
+   "group": 29556,
+   "commands": [
+    "10023e000500",
+    "14023e00f300ff953e00"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 62,
+   "event": 8,
+   "value": 243,
+   "predicate": 211,
+   "stream": 1,
+   "group": 29578,
+   "commands": [
+    "02023e000600",
+    "020100000100",
+    "0d023e0001020000",
+    "10023e000a00"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 62,
+   "event": 6,
+   "value": 3,
+   "predicate": 216,
+   "stream": 1,
+   "group": 29610,
+   "commands": [
+    "10023e000b00",
+    "0d023e0001010000",
+    "0d023e000d000000",
+    "0d023e0007000000"
+   ]
+  }
+ ],
+ "records": [
+  {
+   "offset": 10196,
+   "kind": 6,
+   "raw": "0606d4721401",
+   "predicate": 206
+  },
+  {
+   "offset": 10202,
+   "kind": 19,
+   "raw": "0413ce00",
+   "predicate": null
+  },
+  {
+   "offset": 10206,
+   "kind": 6,
+   "raw": "060622730600",
+   "predicate": null
+  },
+  {
+   "offset": 10212,
+   "kind": 6,
+   "raw": "060636730300",
+   "predicate": 1
+  },
+  {
+   "offset": 10218,
+   "kind": 19,
+   "raw": "04130100",
+   "predicate": null
+  },
+  {
+   "offset": 10222,
+   "kind": 8,
+   "raw": "060848734d01",
+   "predicate": 208
+  },
+  {
+   "offset": 10228,
+   "kind": 19,
+   "raw": "0413d000",
+   "predicate": null
+  },
+  {
+   "offset": 10232,
+   "kind": 8,
+   "raw": "06085e734501",
+   "predicate": 209
+  },
+  {
+   "offset": 10238,
+   "kind": 19,
+   "raw": "0413d100",
+   "predicate": null
+  },
+  {
+   "offset": 10242,
+   "kind": 8,
+   "raw": "060874730201",
+   "predicate": 210
+  },
+  {
+   "offset": 10248,
+   "kind": 19,
+   "raw": "0413d200",
+   "predicate": null
+  },
+  {
+   "offset": 10252,
+   "kind": 8,
+   "raw": "06088a73f300",
+   "predicate": 211
+  },
+  {
+   "offset": 10258,
+   "kind": 19,
+   "raw": "0413d300",
+   "predicate": null
+  },
+  {
+   "offset": 10262,
+   "kind": 6,
+   "raw": "0606aa730300",
+   "predicate": 216
+  },
+  {
+   "offset": 10268,
+   "kind": 19,
+   "raw": "0413d800",
+   "predicate": null
+  }
+ ],
+ "predicates": {
+  "1": {
+   "op": "==",
+   "left": {
+    "local": 44
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "00032c0001"
+  },
+  "206": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0005000000"
+  },
+  "208": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 2
+   },
+   "raw": "0005000002"
+  },
+  "209": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 3
+   },
+   "raw": "0005000003"
+  },
+  "210": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 4
+   },
+   "raw": "0005000004"
+  },
+  "211": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 5
+   },
+   "raw": "0005000005"
+  },
+  "216": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 10
+   },
+   "raw": "000500000a"
+  }
+ },
+ "regions": [
+  {
+   "region": 1672,
+   "polygon": [
+    [
+     -746.0,
+     -4827.0
+    ],
+    [
+     -377.0,
+     -4923.0
+    ],
+    [
+     -359.0,
+     -4803.0
+    ],
+    [
+     -706.0,
+     -4660.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "region": 1698,
+   "polygon": [
+    [
+     -789.0,
+     -4791.0
+    ],
+    [
+     -746.0,
+     -4827.0
+    ],
+    [
+     -706.0,
+     -4660.0
+    ],
+    [
+     -717.0,
+     -4629.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "region": 1703,
+   "polygon": [
+    [
+     -304.0,
+     -4818.0
+    ],
+    [
+     -359.0,
+     -4803.0
+    ],
+    [
+     -377.0,
+     -4923.0
+    ],
+    [
+     -325.0,
+     -4934.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  }
+ ],
+ "owned_locals": [
+  44
+ ],
+ "voice": {
+  "243": {
+   "path": "res://assets/lol2/generated/jungle_actor62/voice/243.wav",
+   "duration": 2.147845804988662,
+   "name": "0120704e.aud",
+   "wav_sha256": "83b85ca403fb098862f2fbd53d5b07435cf67ebc4f41c3e6a3e2f961ed972b44"
+  },
+  "258": {
+   "path": "res://assets/lol2/generated/jungle_actor62/voice/258.wav",
+   "duration": 2.6035374149659862,
+   "name": "0120604e.aud",
+   "wav_sha256": "a2ce19bc32f5405b657dc911b86c5fee95a42e72d0f754067b7ee28aa1b37937"
+  },
+  "325": {
+   "path": "res://assets/lol2/generated/jungle_actor62/voice/325.wav",
+   "duration": 1.9417687074829932,
+   "name": "0220504e.aud",
+   "wav_sha256": "6b49f6aeea91a3886f9ff4e361af27653a571756dee63e7eb18e8b99b24b6dcf"
+  },
+  "333": {
+   "path": "res://assets/lol2/generated/jungle_actor62/voice/333.wav",
+   "duration": 1.9940136054421769,
+   "name": "0220404e.aud",
+   "wav_sha256": "dfa7cfc28399b60663f3fc9387af4051c8f03036af512cd768370d5a067a0bbf"
+  }
+ },
+ "poses": {
+  "4": {
+   "selector": 4,
+   "frames": 14,
+   "views": 16
+  }
+ },
+ "actions": {
+  "2": {
+   "selector": 5,
+   "frames": 8
+  }
+ },
+ "dead_paths": {
+  "event6": "29474: no shipped opcode18 sets word bit 0x20 (Grok); 29494 needs local44==1 from it"
+ },
+ "event3": "action2 clip end (Grok 0xA56B3, +0xAA==2) \u2192 29610",
+ "scope": "Region link + event20 talk (state0) with four original lines by sound-finished chain, release at state10. External prop1913 sound kept as receipt."
+}

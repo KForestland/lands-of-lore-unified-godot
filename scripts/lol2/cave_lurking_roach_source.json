@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "actors": [
+    {
+      "actor": 36,
+      "definition": 6,
+      "position": [
+        -655,
+        -430,
+        -13734
+      ],
+      "heading": 32768,
+      "health": 150,
+      "behavior": 14,
+      "flags": 25986,
+      "present": true,
+      "reward_scale": 4,
+      "source_offset": 7321830,
+      "placement_hex": "71fda635008052fe82656f067a1c00000000000000000000000000000000960006330000000e093c00ff0096000000000000000000000000"
+    },
+    {
+      "actor": 37,
+      "definition": 6,
+      "position": [
+        272,
+        -430,
+        -14004
+      ],
+      "heading": 36044,
+      "health": 150,
+      "behavior": 14,
+      "flags": 25986,
+      "present": true,
+      "reward_scale": 4,
+      "source_offset": 7321886,
+      "placement_hex": "1001b436cc8c52fe82659d06821c00000000000000000000000000000000960006330000000e093d00ff0096000000000000000011024c01"
+    }
+  ],
+  "definitions": {
+    "6": {
+      "name": "WORM",
+      "clips": {
+        "idle": {
+          "selector": 0,
+          "frames": 9
+        },
+        "walk": {
+          "selector": 2,
+          "frames": 9
+        },
+        "rise": {
+          "selector": 6,
+          "frames": 8
+        },
+        "death": {
+          "selector": 8,
+          "frames": 20
+        },
+        "corpse": {
+          "selector": 9,
+          "frames": 1
+        },
+        "attacks": [
+          {
+            "selector": 5,
+            "frames": 16,
+            "hits": [
+              [
+                9,
+                50
+              ],
+              [
+                12,
+                50
+              ]
+            ],
+            "damage": [
+              15,
+              15
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "regions": [],
+  "neighbour_wake": {},
+  "counted": [],
+  "counter_target": 0,
+  "controls": [],
+  "native_base": 30,
+  "autonomous_attacks_enabled": true,
+  "stat_sha256": "48028169c5fec9730ba06dba08a3919d1815f044d053152ba19e541e6d15ef56",
+  "marker59": {
+    "index": 59,
+    "position": [
+      -978,
+      -14011
+    ],
+    "region": 1611,
+    "radius_units": 288,
+    "flags_byte7": 8,
+    "raw_hex": "2efcbb364b060908",
+    "archive_offset": 7119310
+  },
+  "startup": [
+    {
+      "actor": 36,
+      "handler": {
+        "stream": 1,
+        "group": 14206,
+        "owner_kind": "actor",
+        "owner": 36,
+        "event": 6,
+        "value": 9,
+        "predicate": null,
+        "archive_offset": 7254823
+      },
+      "command": {
+        "archive_offset": 7247077,
+        "raw_hex": "0d02240010003b00"
+      }
+    },
+    {
+      "actor": 37,
+      "handler": {
+        "stream": 1,
+        "group": 14214,
+        "owner_kind": "actor",
+        "owner": 37,
+        "event": 6,
+        "value": 9,
+        "predicate": null,
+        "archive_offset": 7254831
+      },
+      "command": {
+        "archive_offset": 7247085,
+        "raw_hex": "0d02250010003b00"
+      }
+    }
+  ],
+  "code": [
+    {
+      "start": 681409,
+      "end": 681485,
+      "sha256": "bc5df7246c8dd9c28cd15f393530db460bf6a6352da2f98dacd0d6e4b2af8ec8"
+    },
+    {
+      "start": 699470,
+      "end": 699497,
+      "sha256": "662d3143d5d75bc73dc1ba10fed2cc78700366532250d9d4858f3ce9678d10c8"
+    },
+    {
+      "start": 664726,
+      "end": 664736,
+      "sha256": "e95a58ec1d33f6d1e6a4bfd5362e2833e46ec265766b50e0819f451bc9cb3a82"
+    }
+  ],
+  "scope": "Source-present150HP pair, initial behavior14/action9 and event9 shared AI marker59. Native goal5 targets player; AA1 walks and reach condition44 selects AA2 dispatching clip5. Shared perception, reach50, speed48, 8fps and region navigation are explicit playable adapters; no arbitrary region spawn. Marker is area-wide AI context, not a saved patrol path."
+}

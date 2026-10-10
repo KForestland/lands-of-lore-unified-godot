@@ -1,0 +1,9 @@
+# Guards 52/53 sword and shield loot
+
+Prop699 kind6 tail [9,0] → group7878 grants actor52 one Short Sword (0xe29a1126) and one Guard Shield (0x9e689a13, GLOBAL definition37), each with item property 1; prop1067 → group8908 grants actor53 the same pair with property 4. Property is an item byte, not a quantity. Native event9 scanner ADF34 selects both groups without a predicate on cave arrival (sel0/any1, sel3/any1, sel0/any0). No source group removes actor52 or actor53; guard52 is present at load (control114 → actor52 movie → control119 → wake), guard53 is spawned by regions106/121. Evidence: `AI_COMMS/classic_review_20261007/opus/guard52_53_loot_20261009/grant_replay.json`.
+
+`cave_guard_pair_loot.gd` (one instance per guard) applies the shared five-active-second retirement to a dead, present guard and exposes both original images; each item is picked up individually with aimed E (cave:guard52:/guard53: Short_Sword and Guard_Shield). Receipts are per item and saved as guard52_loot/guard53_loot.
+
+The Guard Shield is an offhand item with its original definition byte41 defense (5). Offhand defense now uses the equipped offhand item's own pinned defense (Bracers unchanged at 5); the inventory UI and status text show the item's label and defense; the inventory gains a generic catalog label/icon fallback (also naming earlier guard drops). The cave save checks the offhand against owned, cave-admitted loot; the shield and its offhand slot carry through cave → Museum → Jungle via the existing item-effects state.
+
+Validation: real control114 movie/wake, supplied region106 contact and camera placement, production damage, live (unfrozen) retirement, dispatched E and inventory Equip, disk reload, Museum and Jungle handoff. Native drop order, save-list parity, earned route and full native combat defense parity are not established.

@@ -1,0 +1,96 @@
+--- a/scripts/lol2/jungle_dawn.gd
++++ b/scripts/lol2/jungle_dawn.gd
+@@ -40,6 +40,7 @@
+ var hooks: Dictionary={}
+ var src: Dictionary
+ var media: Dictionary
++var projectiles:=preload("res://scripts/lol2/dawn_projectile_store.gd").new()
+ var state: Dictionary
+ var population: Node3D
+ var inside: Array=[]
+@@ -78,7 +79,10 @@
+ 
+ func checkpoint() -> Dictionary:
+ 	_mirror_damage()
+-	return {"version":1,"state":state.duplicate(true),"body":population.checkpoint(),"inside":inside.duplicate(),"hold":hold,"receipts":receipts.duplicate()}
++	var packet: Dictionary={"version":1,"state":state.duplicate(true),"body":population.checkpoint(),"inside":inside.duplicate(),"hold":hold,"receipts":receipts.duplicate()}
++	var effects: Dictionary=projectiles.checkpoint()
++	if effects!=projectiles.initial():packet.projectiles=effects
++	return packet
+ 
+ ## Atomic: an invalid packet changes nothing.
+ func restore(packet: Variant) -> String:
+@@ -86,6 +90,7 @@
+ 	if not error.is_empty(): return error
+ 	error=population.restore(packet.body)
+ 	if not error.is_empty(): return error
++	projectiles.restore(packet.get("projectiles",projectiles.initial()))
+ 	state=State.canonical(packet.state)
+ 	inside=packet.inside.map(func(r):return int(r));hold=bool(packet.hold);receipts=packet.receipts.duplicate()
+ 	host.curse.restore_legacy_dawn_admission(receipts)
+--- a/scripts/lol2/jungle_dawn_packet.gd
++++ b/scripts/lol2/jungle_dawn_packet.gd
+@@ -4,9 +4,14 @@
+ const Generic=preload("res://scripts/lol2/scripted_creature_state.gd")
+ const POPULATION="res://scripts/lol2/jungle_dawn_population_source.json"
+ const MAX_RECEIPTS:=64
++const Projectiles=preload("res://scripts/lol2/dawn_projectile_store.gd")
+ static func validate(packet: Variant) -> String:
+-	if not packet is Dictionary or packet.size()!=6 or packet.get("version")!=1: return "Invalid Dawn packet."
++	if not packet is Dictionary or packet.size()!=6+int(packet.has("projectiles")) or packet.get("version")!=1: return "Invalid Dawn packet."
+ 	if not FileAccess.file_exists(State.MEDIA) or not FileAccess.file_exists(POPULATION): return "Dawn media missing (run tools/prepare_jungle_dawn_media.py and prepare_jungle_dawn_population.py)."
++	var projectile_error:=Projectiles.validate(packet.get("projectiles",Projectiles.initial()))
++	if not projectile_error.is_empty():return projectile_error
++	for effect in packet.get("projectiles",Projectiles.initial()).effects:
++		if int(effect.owner)!=63:return "Projectile belongs to another caster."
+ 	var src:=State.source()
+ 	var error:=State.validate(packet.get("state"),src,State.media())
+ 	if not error.is_empty(): return error
+--- a/scripts/lol2/hive_dawn20.gd
++++ b/scripts/lol2/hive_dawn20.gd
+@@ -43,6 +43,7 @@
+ var hooks: Dictionary={}
+ var src: Dictionary
+ var media: Dictionary
++var projectiles:=preload("res://scripts/lol2/dawn_projectile_store.gd").new()
+ var state: Dictionary
+ var population: Node3D
+ var hold:=false
+@@ -82,7 +83,10 @@
+ 
+ func checkpoint() -> Dictionary:
+ 	_mirror_damage()
+-	return {"version":1,"state":state.duplicate(true),"body":population.checkpoint(),"hold":hold,"receipts":receipts.duplicate()}
++	var packet: Dictionary={"version":1,"state":state.duplicate(true),"body":population.checkpoint(),"hold":hold,"receipts":receipts.duplicate()}
++	var effects: Dictionary=projectiles.checkpoint()
++	if effects!=projectiles.initial():packet.projectiles=effects
++	return packet
+ 
+ ## Atomic: an invalid packet changes nothing.
+ func restore(packet: Variant) -> String:
+@@ -90,6 +94,7 @@
+ 	if not error.is_empty(): return error
+ 	error=population.restore(packet.body)
+ 	if not error.is_empty(): return error
++	projectiles.restore(packet.get("projectiles",projectiles.initial()))
+ 	state=State.canonical(packet.state)
+ 	hold=bool(packet.hold);receipts=packet.receipts.duplicate()
+ 	_start_voice();_sync_body(0.0);_present()
+--- a/scripts/lol2/hive_dawn20_packet.gd
++++ b/scripts/lol2/hive_dawn20_packet.gd
+@@ -4,9 +4,14 @@
+ const Generic=preload("res://scripts/lol2/scripted_creature_state.gd")
+ const POPULATION="res://scripts/lol2/hive_dawn20_population_source.json"
+ const MAX_RECEIPTS:=64
++const Projectiles=preload("res://scripts/lol2/dawn_projectile_store.gd")
+ static func validate(packet: Variant) -> String:
+-	if not packet is Dictionary or packet.size()!=5 or packet.get("version")!=1: return "Invalid Hive Dawn packet."
++	if not packet is Dictionary or packet.size()!=5+int(packet.has("projectiles")) or packet.get("version")!=1: return "Invalid Hive Dawn packet."
+ 	if not FileAccess.file_exists(State.MEDIA) or not FileAccess.file_exists(POPULATION): return "Hive Dawn media missing (run tools/prepare_hive_dawn20_media.py and prepare_hive_dawn20_population.py)."
++	var projectile_error:=Projectiles.validate(packet.get("projectiles",Projectiles.initial()))
++	if not projectile_error.is_empty():return projectile_error
++	for effect in packet.get("projectiles",Projectiles.initial()).effects:
++		if int(effect.owner)!=20:return "Projectile belongs to another caster."
+ 	var src:=State.source()
+ 	var error:=State.validate(packet.get("state"),src,State.media())
+ 	if not error.is_empty(): return error

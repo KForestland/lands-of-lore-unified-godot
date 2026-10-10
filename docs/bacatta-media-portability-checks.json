@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "byte_identical_files": 1930,
+  "source_hashes": {
+    "tools/lol2_movie_format.py": "27a50fe1ad1f8cc9b16c2b36abae0b00cd29635cf33ec9353da73e8f9f45f836",
+    "tools/prepare_jungle_exit_movies.py": "c1a1c8e64cf6b29715399b1e848b67ae9b096cf7cfd257c58cce7de4675bdfb0",
+    "tools/prepare_museum_creature_sprites.py": "18a442ff1ebe7bf9ceec118198567af1a575744a854d980b18c9d43bb4b79e2f",
+    "tools/prepare_jungle_bacatta_media.py": "69a04f6df247db200237dea3c020ff83b16cc931d98d49c7f63b25a9525a483a",
+    "tools/prepare_creature_audio_clips.py": "2d97788381c8add453e4d3339dffff186a1fc80217965b27fd8626c979b01c01",
+    "tools/vqa_v2_decode.py": "b7b22ab37dc8bfd7992a4b84ce475547b4cb39e03ec491ba9e20a3e5aaaeb102",
+    "tools/lol2_creature_sprite_format.py": "f50766f3a670ee55d82c69a72a1b63fd4e6b5668898efb434674ddd1e8a6f46d",
+    "tools/lol2_source_format.py": "e66046e1ad87559706b75e21822440b7ebc2753e9321b3d9e042f6e9ff2f4791",
+    "tools/lol2_material_format.py": "61332945f41c75828382ae08dfd25498a4a988466714e2bb7589b103a05653c3",
+    "tools/lol2_movie_media.py": "8ba23ea7b2bf3f46d575f528a79b361e35ac842de17c9c2e6af95499935b5b06",
+    "tools/lol2/map_video_inventory.py": "1c953e2e82642c3326458a6abaa0eda5272d510f262ff7690967b2b70a7247f9"
+  },
+  "limits": [
+    "Prepared source contract and texture required; remaining generators not covered."
+  ],
+  "consumer_imports": {
+    "prepare_jungle_bacatta65_media": "PASS",
+    "prepare_jungle_exit_woman_media": "PASS",
+    "prepare_jungle_dawn_media": "PASS",
+    "prepare_hive_dawn20_media": "PASS",
+    "prepare_jungle_kelsrick": "PASS"
+  },
+  "full_local_receipt": "/home/bob/AI_COMMS/classic_review_20261007/lead/bacatta_media_portability/report.json",
+  "full_receipt_sha256": "fd313c50e38dd9cd6bdd8f4eb4f24f8c360d958b4ee9a6432abf5f2b7347f465"
+}

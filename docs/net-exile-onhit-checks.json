@@ -1,0 +1,40 @@
+{
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "definition": {
+  "index": 25,
+  "name": "26-Net of Exile",
+  "identity": "0x1edb305a",
+  "handler": 104
+ },
+ "handler": {
+  "address": "0x9B718",
+  "event": 17,
+  "target_class": 2,
+  "pool_object": "0x7A",
+  "constructor": "0x10E2F8"
+ },
+ "spans": {
+  "0x9b718": "5ee52400e0d419a40a50ce407cd33ffdea6c983758cc905ab1bcd8b19ccd74f1",
+  "0x10e2f8": "1131563677d13753b048a6963569efce7c85fb41fdb30ccca7f51a9f7bc43680"
+ },
+ "facts": {
+  "0x9b721": "event 0x11 only",
+  "0x9b73d": "target class 2",
+  "0x9b741": "pool object 0x7A",
+  "0x10e310": "family 4",
+  "0x10e331": "+0x58 = 0x2A",
+  "0x10e3bd": "class 0x22574",
+  "0x10e3ef": "message 0x1A",
+  "0x10e429": "lifetime +0x6E = 0xA0000"
+ },
+ "lifetime": {
+  "raw": "0xA0000",
+  "reading": "10.0 (16.16) -> 10 s hold (inference)"
+ },
+ "not_hosted": [
+  "pool 0x5E net visual",
+  "message 0x1A to class 0x22574",
+  "native sound request"
+ ],
+ "passed": true
+}
