@@ -7,7 +7,7 @@ func _ready() -> void:
 	layer = 100
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	label = Label.new()
-	label.position = Vector2(16, 116)
+	label.position = Vector2(440, 8)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.add_theme_color_override("font_color", Color.WHITE)
 	label.add_theme_color_override("font_shadow_color", Color.BLACK)
@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 	var area := scene.scene_file_path.get_file().get_basename().replace("_walkthrough", "").replace("_review", "").replace("_", " ").capitalize()
 	location = "%s | X %.1f  Y %.1f  H %.1f" % [area, at.x, at.z, at.y]
 	label.text = location + (" | Copied" if Time.get_ticks_msec() < copied_until else " | F8 copy location")
+	label.position = Vector2(maxf(16.0, (get_viewport().get_visible_rect().size.x - label.get_minimum_size().x) * 0.5), 8)
 	label.show()
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_F8 and not location.is_empty():
