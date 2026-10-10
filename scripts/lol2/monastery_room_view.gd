@@ -19,6 +19,10 @@ func _ready() -> void:
 	if FileAccess.file_exists(village_path):
 		var village: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(village_path))
 		manifest.rooms.merge(village.rooms)
+	# Village LIZ room (tools/prepare_liz_room_media.py).
+	var liz_path := "res://assets/lol2/generated/liz_room/rooms.json"
+	if FileAccess.file_exists(liz_path):
+		manifest.rooms.merge(JSON.parse_string(FileAccess.get_file_as_string(liz_path)).rooms)
 	var side_path := "res://assets/lol2/generated/monastery_side_rooms/rooms.json"
 	if FileAccess.file_exists(side_path):
 		var side: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(side_path))

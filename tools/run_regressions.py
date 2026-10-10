@@ -124,6 +124,7 @@ CORE += [('fire_crystal_live_test','rendered'), ('museum_sconce_recharge_test','
 CORE += [('museum_sconce_burn_test', 'rendered')]
 CORE += [('hive_reaver_pillars_live_test', 'rendered')]
 CORE += [('tavern_return_live_test', 'rendered')]
+CORE += [('liz_room_live_test', 'rendered'), ('tavern_liz_ordinary_route_test', 'rendered')]
 CORE += [('cave_guard38_loot_test', 'rendered')]
 CORE += [('cave_guard39_loot_test', 'rendered')]
 CORE += [('monastery_dawn_dampen_test', 'rendered'), ('jungle_beehives_live_test', 'rendered'), ('museum_blood_loot_test', 'rendered'), ('cave_guard54_loot_test', 'rendered'), ('jungle_kelsrick_loot_test', 'rendered'), ('cave_guard52_53_loot_test', 'rendered')]

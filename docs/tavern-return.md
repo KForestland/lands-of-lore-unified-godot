@@ -104,4 +104,4 @@ archers):
 
 ## Activation coverage limitation
 
-The current regression places the player at the entry regions and calls room admission directly. Scenario 1 also disables Bacatta57. These checks verify the branch logic and persistence, not a walked approach or viewport hotspot click. Only the post-betrayal monastery/Hive escape uses continuous grounded movement. An ordinary-input route check remains pending.
+The current regression places the player at the entry regions and calls room admission directly. Scenario 1 also disables Bacatta57. These checks verify the branch logic and persistence, not a walked approach or viewport hotspot click. Only the post-betrayal monastery/Hive escape uses continuous grounded movement. The additional `tavern_liz_ordinary_route_test` now covers grounded approaches to regions 3501/3805, actual viewport clicks, the earned farewell, sealing return, maid alert and LIZ access after the seal, with every encounter owner active. Its initial main-gate-open state and starting position are supplied; it is not a fresh full-campaign proof.

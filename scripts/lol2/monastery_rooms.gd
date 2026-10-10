@@ -48,7 +48,7 @@ func _ready() -> void:
 	give.size = Vector2(100,28)
 	view.canvas.add_child(give)
 	give.pressed.connect(func(): offer_item(str(held.get_item_metadata(held.selected))))
-	for data in [[Rect2(0,106,87,227),"MCEL","MENT"],[Rect2(272,132,119,167),"MGAR","MENT"],[Rect2(140,106,95,217),"MLIB","MENT"],[Rect2(431,152,179,161),"MOFF","MENT"],[Rect2(244,220,142,90),"CAN","VILLAGE"]]:
+	for data in [[Rect2(0,106,87,227),"MCEL","MENT"],[Rect2(272,132,119,167),"MGAR","MENT"],[Rect2(140,106,95,217),"MLIB","MENT"],[Rect2(431,152,179,161),"MOFF","MENT"],[Rect2(244,220,142,90),"CAN","VILLAGE"],[Rect2(425,211,151,99),"LIZ","VILLAGE"]]:
 		var hit := Control.new()
 		hit.position = data[0].position
 		hit.size = data[0].size
@@ -59,6 +59,15 @@ func _ready() -> void:
 		hit.gui_input.connect(func(event):
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT: enter_room(destination))
 		hotspots.append(hit)
+	# LIZ hotspot0 (91,282)-(146,339): the one-time wax pickup. Hotspots1..4 are source quips with unknown lines
+	# (not hosted; they neither grant nor leave).
+	var wax := Control.new()
+	wax.position = Vector2(91,282); wax.size = Vector2(55,57); wax.set_meta("room","LIZ")
+	wax.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	view.canvas.add_child(wax)
+	wax.gui_input.connect(func(event):
+		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT: take_wax())
+	hotspots.append(wax)
 	restore()
 func active() -> bool:
 	return available and not str(state().get("room","")).is_empty()
@@ -71,6 +80,9 @@ func enter_room(destination: String) -> bool:
 		if not current.is_empty() or not view.manifest.rooms.has(destination): return false
 	elif destination == "CAN":
 		if current != "VILLAGE" or s.flags.get("267",0) != 0: return false
+	elif destination == "LIZ":
+		# VILLAGE hotspot3 (0x591): room("liz_") with no flag test.
+		if current != "VILLAGE": return false
 	elif current != "MENT": return false
 	elif destination == "MOFF" and not State.office_admitted(s): return false
 	elif destination == "MCEL" and not State.cellar_admitted(s): return false
@@ -104,6 +116,9 @@ func leave_room() -> void:
 	elif s.room == "VILLAGE":
 		s.room = ""
 		was_inside = true
+	elif s.room == "LIZ":
+		# Callback8 (0x63D): room("VILLAGE_"), exit_room.
+		s.room = "VILLAGE"
 	elif s.room == "CAN":
 		if s.flags.get("37",0) == 1:
 			Speech.begin_exit(s)
@@ -202,6 +217,8 @@ func refresh_speech() -> void:
 	if index != shown_cursor:
 		shown_cursor = index
 		view.play_patch(index,float(speech.elapsed) if speaking else Speech.duration(speech.sequence,index),speech.sequence)
+		# LIZ cues are audio-only sound-bank requests: show the room background, not the intro's last frame.
+		if shown_room == "LIZ" and int(view.clip.get("frames",0)) == 0: view.patch.texture = null
 	view.elapsed = float(speech.elapsed) if speaking else float(view.clip.duration)
 	view.set_time(view.elapsed)
 	if not speaking: view.voice.stop()
@@ -225,6 +242,11 @@ func advance(delta: float) -> void:
 	if state().room == "MLIB" and speech.sequence == "MLIB_EXIT_RUNES" and not Speech.active(speech):
 		state().room = "MENT"
 		restore()
+		return
+	# LIZ: the first update (callback9, cue 2:59) follows the intro.
+	if state().room == "LIZ" and speech.sequence == "LIZ" and not Speech.active(speech):
+		state().conversation = {"sequence":"LIZ_ENTRY","cursor":0,"elapsed":0.0}
+		refresh_speech()
 		return
 	if state().room == "CAN" and speech.sequence in ["CAN_EXIT","CAN_MAID"] and not Speech.active(speech):
 		state().room = "VILLAGE"
@@ -265,6 +287,23 @@ func _left_village(from: int, to: int) -> bool:
 	var s := state()
 	if int(s.locals.get("Left_Village",0)) != from: return false
 	s.locals.Left_Village = to
+	return true
+
+## LIZ hotspot0 (0x5A7): while flag162 is clear, set it, play cue 100:2 and give one "71-Wax" (the existing beehive
+## pool). Modern adapter: a full inventory or an exhausted pool refuses and leaves 162 clear, so the pickup can be retried.
+func take_wax() -> bool:
+	var s := state()
+	if not active() or s.room != "LIZ" or Speech.active(s.get("conversation",Speech.initial())) or s.flags.get("162",0) != 0: return false
+	var carried: Array = get_parent().carried_collected
+	var id: String = preload("res://scripts/lol2/jungle_beehive_wax.gd").next_free(carried)
+	if id.is_empty() or carried.size() >= preload("res://scripts/lol2/item_catalog.gd").MAX_CARRIED:
+		get_parent().save_feedback("You cannot carry more.")
+		return true
+	s.flags["162"] = 1
+	carried.append(id)
+	s.conversation = {"sequence":"LIZ_WAX","cursor":0,"elapsed":0.0}
+	get_parent().save_feedback("Wax added to inventory.")
+	restore()
 	return true
 
 func attack(message: int) -> bool:

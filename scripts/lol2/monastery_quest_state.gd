@@ -5,6 +5,8 @@ const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 const SIDE_FLAGS := ["170","171","172","176","177","178","181","258","259","260"]
 ## CAN later-visit flags (docs/tavern-return.md); absent in older saves (0).
 const CAN_FLAGS := ["42","43","44"]
+## Village LIZ room: 268 LIZTRAN seen, 162 wax taken (docs/liz-room.md); absent in older saves (0).
+const LIZ_FLAGS := ["162","268"]
 ## MOFF exit visit counters and the one-shot orb gift; absent in older saves (0).
 const OFFICE_FLAGS := ["145","146","148","192"]
 const FLAGS := ["143","140","141","142","265","283","32","33","34","37","41","45","267","134", "135", "136", "138", "182", "183", "184", "144", "191", "264", "266", "269", "288"]
@@ -12,7 +14,7 @@ const GLOBALS := ["GV_KNOWLEDGE_OF_POWER_ORB","GV_MET_BACATTA", "GV_HAS_RUNES", 
 const LOCALS := ["Met_Dawn", "Dawn_dam_out_cave", "Gave_Dawn_Runes"]
 static func initial() -> Dictionary:
 	var state := {"room":"","conversation":preload("res://scripts/lol2/monastery_conversation.gd").initial(),"flags":{},"globals":{},"locals":{"Left_Village":0}}
-	for key in FLAGS + SIDE_FLAGS + OFFICE_FLAGS + CAN_FLAGS: state.flags[key] = 0
+	for key in FLAGS + SIDE_FLAGS + OFFICE_FLAGS + CAN_FLAGS + LIZ_FLAGS: state.flags[key] = 0
 	for key in GLOBALS: state.globals[key] = 0
 	for key in GlobalDefaults.NONZERO: state.globals[key] = GlobalDefaults.initial_value(key)
 	for key in LOCALS: state.locals[key] = 0
@@ -28,7 +30,7 @@ static func validate(state: Variant) -> String:
 		for key in keys:
 			var value = state[bank].get(key,0) if key in ["143","GV_KNOWLEDGE_OF_POWER_ORB","140","141","142","265","283","32","33","34","37","41","45","267","135","136","138","182","183","184"] else state[bank].get(key)
 			if not (value is int or value is float) or not is_finite(float(value)) or not (value == 0 or value == 1): return "Invalid monastery flag."
-	for key in SIDE_FLAGS + OFFICE_FLAGS + CAN_FLAGS:
+	for key in SIDE_FLAGS + OFFICE_FLAGS + CAN_FLAGS + LIZ_FLAGS:
 		var value = state.flags.get(key,0)
 		if not (value is int or value is float) or not (value == 0 or value == 1): return "Invalid monastery side-room flag."
 	if not state.get("side_actor_present",false) is bool: return "Invalid monastery side-room actor."
@@ -47,7 +49,7 @@ static func validate(state: Variant) -> String:
 	if not pending is Array or pending.size() > 2: return "Invalid pending monastery items."
 	for item in pending:
 		if item not in [preload("res://scripts/lol2/monastery_conversation.gd").ORB,preload("res://scripts/lol2/monastery_conversation.gd").DAMPEN] or pending.count(item) != 1: return "Invalid pending monastery items."
-	if not state.get("room","") is String or not state.get("room","") in ["","MENT","MLIB","MOFF","VILLAGE","CAN","MCEL","MGAR"]: return "Invalid monastery room."
+	if not state.get("room","") is String or not state.get("room","") in ["","MENT","MLIB","MOFF","VILLAGE","CAN","MCEL","MGAR","LIZ"]: return "Invalid monastery room."
 	var relationship = state.globals.get("GV_BACATTA_RELATIONSHIP",GlobalDefaults.initial_value("GV_BACATTA_RELATIONSHIP"))
 	if not (relationship is int or relationship is float) or not is_finite(float(relationship)) or relationship != floorf(relationship) or relationship < -2147483648 or relationship > 2147483647: return "Invalid Bacatta relationship."
 	var left = state.locals.get("Left_Village",0)
@@ -70,7 +72,7 @@ static func validate(state: Variant) -> String:
 			if state.conversation.sequence == "CAN_MAID":
 				if int(state.locals.get("Left_Village",0)) != 3 or state.flags.get("34",0) != 1: return "Tavern betrayal without leaving the village."
 				return ""
-			var started_flag: String = {"CAN_REVISIT":"42","CAN_REVISIT_LATE":"43","MCEL":"170","MGAR":"258","MGAR_REPEAT":"258","MOFF_REFUSE":"140","MOFF_ORB":"143","MOFF_RUNES":"140","MLIB":"184","MLIB_ATTACK":"191","MLIB_EXIT_RUNES":"192","MOFF":"134","CAN":"45","VILLAGE":"41","CAN_EXIT":"34"}[state.conversation.sequence]
+			var started_flag: String = {"LIZ":"268","LIZ_ENTRY":"268","LIZ_WAX":"162","CAN_REVISIT":"42","CAN_REVISIT_LATE":"43","MCEL":"170","MGAR":"258","MGAR_REPEAT":"258","MOFF_REFUSE":"140","MOFF_ORB":"143","MOFF_RUNES":"140","MLIB":"184","MLIB_ATTACK":"191","MLIB_EXIT_RUNES":"192","MOFF":"134","CAN":"45","VILLAGE":"41","CAN_EXIT":"34"}[state.conversation.sequence]
 			var expected := 0 if state.conversation.sequence in ["VILLAGE","MOFF_REFUSE"] else 1
 			if state.flags.get(started_flag,0) != expected: return "Monastery speech lacks its start flag."
 	return ""
