@@ -8,6 +8,10 @@ extends RefCounted
 ##          op196 commands start further movers. Movers advance at speed x 2.5 units/s; a blocked mover waits.
 ##  amber:  state 0/1/2 harvestable (selector = state), 5 empty (selector3). Harvest at 2 resets the timer; at
 ##          expiry (source 32..144 s, adapter 88 s) an empty vein regrows to state2.
+##  pillars: corridor support pillars 401/426/676/725 (hive_reaver_pillars_source.json), state 0->1->2 per landed
+##          hit; every hit also runs region365 floor -> -234 (speed20), the Reaver timer's nudge, so a pillar hit can
+##          start the collapse before the sword is taken. The sword is lost only once the alcove (region364) seals.
+##          Saves without pillars (older format) load with all pillars at 0.
 const Items = preload("res://scripts/lol2/hive_amber_items.gd")
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 const REAVER := "hive:control121:Reaver_of_GO"
@@ -15,12 +19,27 @@ const REAVER_DELAY := 7.5
 const AMBER_REGROW := 88.0
 const UNITS_PER_SPEED := 2.5
 const ORIGINAL := {"floor":-235.0,"ceiling":-107.0}
+const PILLARS := ["401","426","676","725"]
+const ALCOVE := 364
 
 static func source() -> Dictionary:
 	return JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/hive_reaver_amber_source.json"))
 
+static func pillar_source() -> Dictionary:
+	return JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/hive_reaver_pillars_source.json"))
+
 static func initial() -> Dictionary:
-	return {"version":1,"reaver":{"state":0,"timer":0.0},"collapse":{"heights":{},"movers":{},"finished":false},"amber":{"state":0,"timer":0.0}}
+	return {"version":1,"reaver":{"state":0,"timer":0.0},"collapse":{"heights":{},"movers":{},"finished":false},"amber":{"state":0,"timer":0.0},"pillars":_pillars_initial()}
+
+static func _pillars_initial() -> Dictionary:
+	var out := {}
+	for id in PILLARS: out[id] = 0
+	return out
+
+static func pillars_hit(state: Dictionary) -> bool:
+	for id in PILLARS:
+		if int(state.get("pillars", {}).get(id, 0)) > 0: return true
+	return false
 
 static func _num(v: Variant, lo: float, hi: float) -> bool:
 	return (v is int or v is float) and is_finite(float(v)) and float(v) >= lo and float(v) <= hi
@@ -30,7 +49,14 @@ static func _key_ok(key: Variant, src: Dictionary) -> bool:
 
 static func validate(value: Variant, src: Dictionary = {}) -> String:
 	if src.is_empty(): src = source()
-	if not value is Dictionary or value.size() != 4 or value.get("version") != 1: return "Invalid Hive Reaver/Amber state."
+	if not value is Dictionary or not value.size() in [4, 5] or value.get("version") != 1: return "Invalid Hive Reaver/Amber state."
+	if value.size() == 5:
+		var p = value.get("pillars")
+		if not p is Dictionary or p.size() != PILLARS.size(): return "Invalid Reaver pillars."
+		for id in PILLARS:
+			var v = p.get(id)
+			if not (v is int or v is float) or float(v) != floorf(float(v)) or not int(v) in [0,1,2]: return "Invalid Reaver pillar state."
+	var hit: bool = value.size() == 5 and pillars_hit(value)
 	var r = value.get("reaver"); var c = value.get("collapse"); var a = value.get("amber")
 	if not r is Dictionary or r.size() != 2 or not (r.get("state") is int or r.get("state") is float) or not int(r.state) in [0,2] or float(r.state) != floorf(float(r.state)): return "Invalid Reaver state."
 	if not _num(r.get("timer"), 0.0, REAVER_DELAY): return "Invalid Reaver timer."
@@ -42,8 +68,8 @@ static func validate(value: Variant, src: Dictionary = {}) -> String:
 		var m = c.movers[key]
 		if not _key_ok(key, src) or not m is Dictionary or m.size() != 2 or not _num(m.get("target"), -235.0, -107.0) or not _num(m.get("speed"), 1, 255): return "Invalid collapse mover."
 		if not c.heights.has(key): return "Collapse mover without a height."
-	if int(r.state) == 0 and (not c.heights.is_empty() or c.finished): return "Collapse without the Reaver taken."
-	if int(r.state) == 2 and float(r.timer) > 0 and not c.heights.is_empty(): return "Collapse before the Reaver timer."
+	if int(r.state) == 0 and (not c.heights.is_empty() or c.finished) and not hit: return "Collapse without the Reaver taken."
+	if int(r.state) == 2 and float(r.timer) > 0 and not c.heights.is_empty() and not hit: return "Collapse before the Reaver timer."
 	if not a is Dictionary or a.size() != 2 or not (a.get("state") is int or a.get("state") is float) or not int(a.state) in [0,1,2,5] or float(a.state) != floorf(float(a.state)): return "Invalid Amber state."
 	if not _num(a.get("timer"), 0.0, AMBER_REGROW): return "Invalid Amber timer."
 	if (int(a.state) == 5) != (float(a.timer) > 0): return "Amber timer disagrees with its state."
@@ -56,6 +82,7 @@ static func canonical(value: Dictionary) -> Dictionary:
 	for key in value.collapse.movers: out.collapse.movers[key] = {"target":float(value.collapse.movers[key].target),"speed":int(value.collapse.movers[key].speed)}
 	out.collapse.finished = bool(value.collapse.finished)
 	out.amber = {"state":int(value.amber.state),"timer":float(value.amber.timer)}
+	for id in PILLARS: out.pillars[id] = int(value.get("pillars", {}).get(id, 0))
 	return out
 
 ## Displayed selectors: Reaver 0 (sword) / 1 (empty); Amber 0..3 (state5 shows selector3).
@@ -65,9 +92,14 @@ static func amber_selector(state: Dictionary) -> int: return 3 if int(state.ambe
 static func height(state: Dictionary, region: int, surface: String) -> float:
 	return float(state.collapse.heights.get("%d:%s" % [region, surface], ORIGINAL[surface]))
 
+## The alcove (region364) is sealed once its rising floor and falling ceiling meet (both -185 by the chain).
+static func alcove_sealed(state: Dictionary) -> bool:
+	return height(state, ALCOVE, "ceiling") - height(state, ALCOVE, "floor") < 0.5
+
 ## Empty-hand take (kind4 mode0 state0): one Reaver; state1 -> selector1 callback -> state2 with a fresh timer.
+## Refused once the alcove has sealed (a pillar-started collapse before the take loses the optional sword).
 static func take_reaver(state: Dictionary, collected: Array) -> bool:
-	if int(state.reaver.state) != 0 or REAVER in collected or collected.size() >= Catalog.MAX_CARRIED: return false
+	if int(state.reaver.state) != 0 or alcove_sealed(state) or REAVER in collected or collected.size() >= Catalog.MAX_CARRIED: return false
 	collected.append(REAVER)
 	state.reaver = {"state":2,"timer":REAVER_DELAY}
 	return true
@@ -83,15 +115,26 @@ static func harvest_amber(state: Dictionary, collected: Array) -> String:
 	else: state.amber.state = s + 1
 	return id
 
-## Starts one op196 mover and dispatches its start event (and any chained starts) immediately.
+## Starts one op196 mover and dispatches its start event (and any chained starts) immediately. A repeat request
+## for a target already reached or already being approached changes nothing (no second chain dispatch).
 static func _start(state: Dictionary, src: Dictionary, m: Dictionary) -> void:
 	var key := "%d:%s" % [int(m.region), str(m.surface)]
 	var current := height(state, int(m.region), str(m.surface))
 	if float(m.target) == current: return
+	if state.collapse.movers.has(key) and float(state.collapse.movers[key].target) == float(m.target): return
 	state.collapse.heights[key] = current
 	state.collapse.movers[key] = {"target":float(m.target),"speed":int(m.speed)}
 	var up := float(m.target) > current
 	_event(state, src, int(m.region), (0 if up else 1) + (2 if str(m.surface) == "ceiling" else 0))
+
+## Landed hit on a corridor pillar (kind9 value2048): its state record (0->1, 1->2, 2 stays), then the
+## unconditional region365 floor nudge. Returns false for an unknown pillar.
+static func hit_pillar(state: Dictionary, src: Dictionary, pillars: Dictionary, id: String) -> bool:
+	if not id in PILLARS: return false
+	if not state.has("pillars"): state.pillars = _pillars_initial()
+	state.pillars[id] = int(pillars.states[str(int(state.pillars[id]))].next)
+	_start(state, src, pillars.trigger)
+	return true
 
 static func _event(state: Dictionary, src: Dictionary, region: int, event: int) -> void:
 	for link in src.chain:

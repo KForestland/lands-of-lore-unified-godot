@@ -3,6 +3,9 @@ extends Node3D
 ## Saved as quests.hive_reaver_amber. E at an aimed control in reach takes the sword / one Amber. Corridor
 ## regions 364..370 get moving prisms (ceiling slabs hanging from the original ceiling, the alcove floor block) with
 ## collision; a ceiling stops above a player standing under it, and a rising floor carries a standing player.
+## The four corridor support pillars (hive_reaver_pillars_source.json) take landed melee and Spark hits through
+## non-blocking hit bodies (layers 4|8): each hit advances the pillar and nudges region365, starting the same
+## collapse; the sword can then still be taken until the alcove seals.
 const State = preload("res://scripts/lol2/hive_reaver_amber_state.gd")
 const Items = preload("res://scripts/lol2/hive_amber_items.gd")
 const ROOT := "res://assets/lol2/generated/hive_reaver_amber/"
@@ -13,9 +16,19 @@ var state: Dictionary = State.initial()
 var controls := {}
 var slabs := {}
 var materials := {}
+var pillar_source: Dictionary
+var pillars := {}
+const PILLAR_LAYERS := 4 | 8
+
+## One per pillar: the shared melee (hive_hit_receiver) and Spark (spark_receiver) dispatch call it.
+class PillarReceiver extends RefCounted:
+	var owner
+	var id: String
+	func receive_hit() -> bool: return owner.hit_pillar(id)
+	func receive_spark() -> bool: return owner.hit_pillar(id)
 
 static func assets_ready() -> bool:
-	return FileAccess.file_exists("res://scripts/lol2/hive_reaver_amber_source.json") and FileAccess.file_exists(ROOT + "m0271.png") and FileAccess.file_exists(ROOT + "m0027.png") and FileAccess.file_exists(ROOT + "amber.png")
+	return FileAccess.file_exists("res://scripts/lol2/hive_reaver_amber_source.json") and FileAccess.file_exists(ROOT + "m0271.png") and FileAccess.file_exists(ROOT + "m0027.png") and FileAccess.file_exists(ROOT + "amber.png") and FileAccess.file_exists("res://scripts/lol2/hive_reaver_pillars_source.json") and FileAccess.file_exists(ROOT + "pillar.png")
 
 func initial() -> Dictionary: return State.initial()
 func checkpoint() -> Dictionary: return state.duplicate(true)
@@ -43,6 +56,36 @@ func setup(owner: Node3D, saved: Variant = null) -> String:
 			var mesh := MeshInstance3D.new(); body.add_child(mesh)
 			var shape := CollisionShape3D.new(); body.add_child(shape)
 			slabs["%s:%s" % [region, surface]] = {"body":body,"mesh":mesh,"shape":shape,"shown":INF}
+	pillar_source = State.pillar_source()
+	if not pillar_source is Dictionary or int(pillar_source.get("version", 0)) != 1: return "Invalid Reaver pillar source."
+	var texture := ImageTexture.create_from_image(Image.load_from_file(ROOT + str(pillar_source.image.file)))
+	for id in State.PILLARS:
+		var row: Dictionary = pillar_source.pillars[id]
+		var p: Array = row.position
+		var sprite := Sprite3D.new()
+		sprite.name = "ReaverPillar%s" % id
+		sprite.texture = texture
+		sprite.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
+		sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+		sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+		sprite.shaded = false
+		var width := float(row.right) - float(row.left); var tall := float(row.top) - float(row.bottom)
+		sprite.pixel_size = width / float(texture.get_width())
+		sprite.scale.y = tall / (float(texture.get_height()) * sprite.pixel_size)
+		sprite.flip_h = int(row.frame_flags) & 64 != 0
+		sprite.position = Vector3(p[0], float(p[1]) + float(row.bottom) + tall / 2.0, p[2])
+		add_child(sprite)
+		# Hit-only body: melee (mask 7) and Hive Spark (mask 11) rays reach layers 4|8; the player does not collide.
+		var body := StaticBody3D.new(); body.name = "ReaverPillarHit%s" % id
+		body.collision_layer = PILLAR_LAYERS; body.collision_mask = 0
+		var shape := CollisionShape3D.new(); var cylinder := CylinderShape3D.new()
+		cylinder.radius = width * 0.25; cylinder.height = tall
+		shape.shape = cylinder; body.add_child(shape)
+		body.position = Vector3(p[0], float(p[1]) + float(row.bottom) + tall / 2.0, p[2])
+		var receiver := PillarReceiver.new(); receiver.owner = self; receiver.id = id
+		body.set_meta("hive_hit_receiver", receiver); body.set_meta("spark_receiver", receiver); body.set_meta("hive_reaver_pillar", id)
+		add_child(body)
+		pillars[id] = {"sprite":sprite,"body":body,"receiver":receiver}
 	return restore(saved)
 
 func restore(saved: Variant) -> String:
@@ -153,7 +196,9 @@ func target() -> String:
 
 func interaction_hint() -> String:
 	var key := target()
-	if key == "121": return "E — Take the sword" if int(state.reaver.state) == 0 else ""
+	if key == "121":
+		if int(state.reaver.state) != 0: return ""
+		return "The alcove has sealed over the sword." if State.alcove_sealed(state) else "E — Take the sword"
 	if key == "123": return "E — Take amber" if int(state.amber.state) in [0,1,2] else "The amber vein is spent."
 	return ""
 
@@ -169,12 +214,20 @@ func use() -> bool:
 	var collected: Array = host.carried_inventory.collected
 	if key == "121":
 		if int(state.reaver.state) != 0: return false
+		if State.alcove_sealed(state): _feedback("The alcove has sealed over the sword."); return true
 		if not State.take_reaver(state, collected): _feedback("You cannot carry more."); return true
 		_feedback("Reaver of GO added to inventory.")
 	else:
 		if not int(state.amber.state) in [0,1,2]: _feedback("The amber vein is spent."); return true
 		if State.harvest_amber(state, collected).is_empty(): _feedback("You cannot carry more amber."); return true
 		_feedback("Amber added to inventory.")
+	present()
+	return true
+
+## Landed player hit (melee or Spark) on a corridor pillar: source state record + region365 nudge. World gate only.
+func hit_pillar(id: String) -> bool:
+	if not _active() or not State.hit_pillar(state, source, pillar_source, id): return false
+	_feedback("The cracked pillar shudders.")
 	present()
 	return true
 
@@ -202,6 +255,7 @@ func _blocked(key: String, next: float) -> bool:
 
 func _physics_process(delta: float) -> void:
 	if not _active(): return
+	var was_sealed := State.alcove_sealed(state)
 	var floor_key := ""
 	var before := 0.0
 	for region in source.regions:
@@ -212,6 +266,8 @@ func _physics_process(delta: float) -> void:
 			var rise := State.height(state, int(floor_key.get_slice(":", 0)), "floor") - before
 			if rise > 0 and absf(_player_span().x - before) < 4.0: host.player.global_position.y += rise
 		present()
+		if not was_sealed and State.alcove_sealed(state) and int(state.reaver.state) == 0:
+			_feedback("The alcove has sealed over the sword.")
 
 func _process(_delta: float) -> void:
 	var text := interaction_hint()

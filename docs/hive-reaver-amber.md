@@ -65,9 +65,10 @@ The trap is a chasing ceiling collapse that permanently seals the corridor from 
 - **Occupants:** a ceiling stops 2 units above a player standing under it, and the chain waits. A rising floor carries a standing player.
 - **Not hosted:**
   - op204 region materials, op9 prop properties, op208, op20 sounds.
-  - The alternative region-365 triggers from hit props 401/426/676/725.
   - The Reaver equip flag.
 
 Test: `tests/hive_reaver_amber_live_test.gd` (registered in `tools/run_regressions.py`).
 
 Independent escape check starts from a supplied pickup vantage, dispatches E, then uses production grounded movement through six shared source portals with no repositioning after pickup. Engine-driven timer, pause gating, following ceiling, safe region371 and disk reload pass. Reaver equipment is tested through the inventory; its original negative50 defense is shown in the item details.
+
+The alternative region-365 hit triggers on props401/426/676/725 are hosted; see [Reaver corridor pillars](hive-reaver-pillars.md).

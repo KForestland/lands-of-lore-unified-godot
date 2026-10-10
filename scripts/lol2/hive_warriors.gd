@@ -74,6 +74,8 @@ func strike() -> bool:
 	if not hit.is_empty() and hit.collider.has_meta("hive_executioner_live"):
 		var damage := preload("res://scripts/lol2/player_form_rules.gd").melee_damage(review.player_form,preload("res://scripts/lol2/player_equipment.gd").weapon(review.carried_inventory.equipped_item))
 		return review.executioner_live.receive_strike(review.item_effects.melee_damage(damage))
+	if not hit.is_empty() and hit.collider.has_meta("hive_hit_receiver"):
+		return hit.collider.get_meta("hive_hit_receiver").receive_hit()
 	if hit.is_empty() or not hit.collider.has_meta("hive_guardian"): return false
 	var index := int(hit.collider.get_meta("hive_guardian"))
 	if enemies[index] <= 0: return false
