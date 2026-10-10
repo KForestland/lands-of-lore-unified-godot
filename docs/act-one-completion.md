@@ -1,6 +1,6 @@
 # Classic Act 1 completion
 
-Latest verified delivery: [R11](act-one-r11-verification.md), with296 passing regressions, a fresh11-leg campaign including Kityara, and packaged Linux continuation checks. R12 adds the shaft lift and later pickups; full304 regressions, exports, packed assets, Linux save/restart and captain checks passed. Its fresh campaign was interrupted by shutdown and is being rerun on the unchanged frozen source. R11 remains the certified delivery until that route and final packaged Jungle review pass.
+Latest verified delivery: [R12](act-one-r12-verification.md), with304 passing regressions, a fresh11-leg campaign including Kityara and linked saves, both exports/all21,205 packed assets, and actual Linux save/restart/captain/Jungle checks. The final packaged Jungle screenshot was reviewed. Later chamber, Fire crystal, Net and Prism source changes passed private combined12 checks and are integrated for main verification; they are not in R12 binaries.
 
 Scope clarification (2026-09-15): this is an intermediate milestone within the
 [complete Classic Edition](classic-edition.md), not the final product endpoint.
@@ -10,14 +10,14 @@ Current acceptance reconciliation (2026-10-09): modern implementations are prefe
 
 | Requirement | Verified state | Remaining action |
 | --- | --- | --- |
-| Continuous route and saved continuation | R11 has 11 fresh linked legs through darker-jungle arrival, including Kityara; full296 and packaged Linux continuation passed | Finish R12 full304/fresh11/package verification on its frozen revision |
+| Continuous route and saved continuation | R12 has 11 fresh linked legs through darker-jungle arrival, including Kityara; full304 and packaged Linux continuation passed | Verify later additions in the next frozen candidate |
 | Combat, items, forms and saves | Source includes the shaft lift, later pickups and their focused integration checks | Preserve state and ordinary gameplay as new effects are integrated |
 | Loot and harvesting | Captain and guards38/39/52/53/54, Kelsrick loot, renewable Aloe/sap/wax and barrel behavior are implemented; see their feature reports | Do not classify all loot or harvesting as absent; assess any remaining producer individually |
 | Museum and Hive optional items | Long Arm reward/trap, Prism pickup, Reaver/Amber, Net pickup, Cave Stone and Manafoil are implemented with documented adapters | Prism blindness/panorama and the Net hold adapter are reviewed privately; listed secondary Reaver triggers remain separate work |
-| Private reviewed additions | Cave ambience/passage, Fire crystal/recharge, Net hold and Prism blindness/panorama passed combined12/12 with unchanged source, including fixes for death cleanup and failed-repeat feedback | Await R12 freeze completion before integrating; Museum recharge currently requires a supplied crystal because normal Act1 offers no return path |
+| Reviewed later additions | Cave ambience/passage, Fire crystal/recharge, Net hold and Prism blindness/panorama passed combined12/12 with unchanged source, including fixes for death cleanup and failed-repeat feedback | Finish main integration and next-candidate checks; Museum recharge currently requires a supplied crystal because normal Act1 offers no return path |
 | Unresolved original content | Museum prop93 treasure producer and some optional room/offer outcomes remain unverified; source.not_hosted lists identify specific secondary effects | Resolve gameplay-relevant outcomes with bounded investigation and modern implementations; ten skeleton deaths do not establish a treasure grant |
 | Visual/audio acceptance | Local packaged screenshots and targeted shaft/splash visuals reviewed | Representative GPU and audible playback review remain open |
-| Repeatable package | Both R12 exports, all21,205 prepared assets and actual Linux save/restart/captain checks passed | Complete fresh-campaign package verification; clean-machine original-media preparation and native Windows execution remain open |
+| Repeatable package | Both R12 exports, all21,205 prepared assets and actual Linux save/restart/captain checks passed | R12 fresh-campaign/package verification passed; clean-machine original-media preparation and native Windows execution remain open |
 | Owner acceptance | Not recorded | Review a certified candidate after remaining fixes |
 
 The actor inventory records111 partial bindings,80 staging placements and3 unactivated by direct scripts. A binding is not proof of complete behavior, and these counts are not completion percentages. Historical notes below describe earlier revisions; their old missing-feature and campaign claims do not override the current evidence above.
