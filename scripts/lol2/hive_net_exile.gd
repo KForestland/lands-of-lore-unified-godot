@@ -1,7 +1,7 @@
 extends Node3D
 ## Hive prop214 bone-and-branch pile (hive_net_exile_source.json). Saved as quests.hive_net_exile {version, state}.
 ## E with the pile aimed and in reach grants "26-Net of Exile" once (source kind4 mode0 at state0, then state1);
-## the pile itself stays. The Net's handler104 on-hit effect is not hosted.
+## the pile itself stays. The Net's handler104 on-hit hold lives in net_exile_hold.gd.
 const ITEM := "hive:prop214:Net_of_Exile"
 const SOURCE := "res://scripts/lol2/hive_net_exile_source.json"
 const ROOT := "res://assets/lol2/generated/hive_net_exile/"

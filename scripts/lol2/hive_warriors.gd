@@ -65,7 +65,11 @@ func strike() -> bool:
 		return review.get_node("Chasm").activate()
 	if not hit.is_empty() and hit.collider.has_meta("hive_return_actor"):
 		var damage := preload("res://scripts/lol2/player_form_rules.gd").melee_damage(review.player_form,preload("res://scripts/lol2/player_equipment.gd").weapon(review.carried_inventory.equipped_item))
-		return hit.collider.get_meta("hive_population_owner").receive_damage(str(hit.collider.get_meta("hive_return_actor")),review.item_effects.melee_damage(damage))
+		var owner = hit.collider.get_meta("hive_population_owner")
+		var id := str(hit.collider.get_meta("hive_return_actor"))
+		if not owner.receive_damage(id,review.item_effects.melee_damage(damage)): return false
+		if owner.has_method("net_hit"): owner.net_hit(id,str(review.carried_inventory.equipped_item))
+		return true
 	if not hit.is_empty() and hit.collider.has_meta("hive_executioner_live"):
 		var damage := preload("res://scripts/lol2/player_form_rules.gd").melee_damage(review.player_form,preload("res://scripts/lol2/player_equipment.gd").weapon(review.carried_inventory.equipped_item))
 		return review.executioner_live.receive_strike(review.item_effects.melee_damage(damage))

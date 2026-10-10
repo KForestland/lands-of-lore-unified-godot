@@ -6,6 +6,7 @@ const State=preload("res://scripts/lol2/jungle_dino_population_state.gd")
 const Live=preload("res://scripts/lol2/creature_live_rules.gd")
 const Sprite=preload("res://scripts/lol2/jungle_dino_sprite.gd")
 const Forms=preload("res://scripts/lol2/player_form_rules.gd")
+const Net=preload("res://scripts/lol2/net_exile_hold.gd")
 ## Same creature pixel scale as the cave Roach presentation (adapter).
 const UNITS_PER_PIXEL:=0.21818181818181817
 const STRIKE_COOLDOWN:=0.45
@@ -21,6 +22,8 @@ var source: Dictionary={}
 var strike_remaining: float:
 	get: return float(view().get("strike_remaining",0.0))
 	set(value): state().strike_remaining=value
+## Net of Exile holds {actor id: seconds left}; transient (net_exile_hold.gd).
+var net_holds: Dictionary={}
 var label: Label
 var audio: Node3D
 
@@ -78,6 +81,7 @@ func view() -> Dictionary:
 
 func restore() -> void:
 	_fresh={}
+	net_holds.clear()
 	var s:=view()
 	for id in bodies:
 		var p: Array=s.actors[id].position
@@ -106,6 +110,7 @@ func advance(delta: float) -> void:
 	for actor in s.actors.values():
 		if actor.health==0 and actor.death<State.DEATH_SECONDS: changed=true
 	State.advance_death(s,delta)
+	Net.tick(net_holds,delta)
 	var target: Vector3=host.player.global_position
 	var protected: bool=Forms.protected(host)
 	var space:=get_world_3d().direct_space_state
@@ -115,6 +120,11 @@ func advance(delta: float) -> void:
 		moving[id]=false
 		if s.actors[id].health<=0:
 			body.velocity=Vector3.ZERO;continue
+		if Net.held(net_holds,id):
+			# Netted: stands still, any started bite is cancelled.
+			body.velocity=Vector3.ZERO
+			if live.mode!=Live.IDLE or float(live.elapsed)!=0.0 or live.hit: live.merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false},true);clocks[id]=0.0;changed=true
+			continue
 		var separation: Vector3=target-body.global_position
 		var distance:=Vector2(separation.x,separation.z).length()
 		var sight:=false
@@ -215,6 +225,7 @@ func receive_damage(id: String, amount: int, melee: bool=true, effect: int=20) -
 		host.quest_state.jungle_dino_population=s.duplicate(true)
 		s=state()
 	if State.damage(s,id,amount)!=loss: return false
+	if s.actors[id].health==0: net_holds.erase(id)
 	if audio!=null: audio.sync(0.0)
 	if host.has_method("save_feedback"): host.save_feedback("Dinosaur defeated." if s.actors[id].health==0 else "Strike landed.")
 	present()
@@ -236,7 +247,18 @@ func strike() -> bool:
 	if id.is_empty(): return false
 	var damage: int=Forms.melee_damage(host.player_form,host.equipped_item!="")
 	if host.get("item_effects")!=null and host.item_effects.has_method("melee_damage"): damage=host.item_effects.melee_damage(damage)
-	return receive_damage(id,damage)
+	if not receive_damage(id,damage): return false
+	net_hit(id,str(host.equipped_item))
+	return true
+
+## Net of Exile on a landed hit (net_exile_hold.gd).
+func net_hit(id: String, item: String) -> bool:
+	if not Net.apply(net_holds,id,item,view().actors.has(id) and int(view().actors[id].health)>0): return false
+	state().live[id].merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false},true)
+	bodies[id].velocity=Vector3.ZERO;clocks[id]=0.0
+	Net.notify(host,Net.feedback("dinosaur"))
+	present()
+	return true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED:
@@ -250,5 +272,5 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if not is_instance_valid(label): return
 	var id:=aimed() if world_active() else ""
-	label.text="" if id.is_empty() else "Dinosaur %d/%d" % [view().actors[id].health,int(source.max_health)]
+	label.text="" if id.is_empty() else "Dinosaur %d/%d" % [view().actors[id].health,int(source.max_health)]+(" · netted" if Net.held(net_holds,id) else "")
 	if host.starting_magic!=null and host.starting_magic.health()==0: label.text="You fell · R: recover here · F9: load save"

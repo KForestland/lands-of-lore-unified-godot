@@ -7,6 +7,7 @@ const State=preload("res://scripts/lol2/scripted_creature_state.gd")
 const Live=preload("res://scripts/lol2/creature_live_rules.gd")
 const Library=preload("res://scripts/lol2/creature_sprite_library.gd")
 const Forms=preload("res://scripts/lol2/player_form_rules.gd")
+const Net=preload("res://scripts/lol2/net_exile_hold.gd")
 const STRIKE_COOLDOWN:=0.45
 const STRIKE_REACH:=110.0
 var config: Dictionary={}
@@ -23,6 +24,8 @@ var meshes: Dictionary={}
 var clocks: Dictionary={}
 var moving: Dictionary={}
 var strike_remaining:=0.0
+## Net of Exile holds {actor id: seconds left}; transient (net_exile_hold.gd).
+var net_holds: Dictionary={}
 var label: Label
 
 ## config: root (sprite dir), source (json path), look {definition: {canvas, scale,
@@ -100,6 +103,7 @@ func restore(saved: Variant) -> String:
 	var error:=State.validate(saved,src)
 	if not error.is_empty(): return error
 	state=State.canonical(saved,src)
+	net_holds.clear()
 	for id in bodies:
 		var p: Array=state.actors[id].position
 		bodies[id].position=Vector3(p[0],p[1],p[2])+origin()
@@ -118,6 +122,7 @@ func advance(delta: float) -> void:
 	if not world_active():
 		for id in bodies: bodies[id].velocity=Vector3.ZERO
 		return
+	Net.tick(net_holds,delta)
 	var target: Vector3=host.player.global_position
 	var local: Vector3=target-origin()
 	if host.player.is_on_floor(): State.contact(state,src,local,local.y-preload("res://scripts/lol2/player_form_body.gd").FOOT_OFFSET,int(host.player_form))
@@ -130,6 +135,11 @@ func advance(delta: float) -> void:
 		if not State.ready_to_fight(state,src,id):
 			body.velocity=Vector3.ZERO;continue
 		var live: Dictionary=state.live[id]
+		if Net.held(net_holds,id):
+			# Netted: stands still, any started attack is cancelled.
+			body.velocity=Vector3.ZERO
+			live.merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false,"hits":0},true)
+			continue
 		var separation: Vector3=target-body.global_position
 		var distance:=Vector2(separation.x,separation.z).length()
 		var sight:=false
@@ -284,6 +294,7 @@ func receive_damage(id: String, amount: int, melee: bool=true, effect: int=20) -
 		host.set(owner_key,reward.quests)
 	elif host.starting_magic==null or not host.starting_magic.award_hit(loss,effect,scale): return false
 	if State.damage(state,src,id,amount)!=loss: return false
+	if state.actors[id].health==0: net_holds.erase(id)
 	sync_quests()
 	if host.has_method("save_feedback"): host.save_feedback((name_of(id)+" defeated.") if state.actors[id].health==0 else "Strike landed.")
 	present()
@@ -305,7 +316,18 @@ func strike() -> bool:
 	if id.is_empty(): return false
 	var damage: int=Forms.melee_damage(host.player_form,host.equipped_item!="")
 	if host.get("item_effects")!=null and host.item_effects.has_method("melee_damage"): damage=host.item_effects.melee_damage(damage)
-	return receive_damage(id,damage)
+	if not receive_damage(id,damage): return false
+	net_hit(id,str(host.equipped_item))
+	return true
+
+## Net of Exile on a landed hit (net_exile_hold.gd).
+func net_hit(id: String, item: String) -> bool:
+	if not Net.apply(net_holds,id,item,state.actors.has(id) and int(state.actors[id].health)>0): return false
+	state.live[id].merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false,"hits":0},true)
+	bodies[id].velocity=Vector3.ZERO
+	Net.notify(host,Net.feedback(name_of(id)))
+	present()
+	return true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED:
@@ -318,5 +340,5 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if not is_instance_valid(label): return
 	var id:=aimed() if world_active() else ""
-	label.text="" if id.is_empty() else name_of(id)+" %d/%d" % [state.actors[id].health,int(State.actor_row(src,id).health)]
+	label.text="" if id.is_empty() else name_of(id)+" %d/%d" % [state.actors[id].health,int(State.actor_row(src,id).health)]+(" · netted" if Net.held(net_holds,id) else "")
 	if host.starting_magic!=null and host.starting_magic.health()==0: label.text="You fell · R: recover here · F9: load save"

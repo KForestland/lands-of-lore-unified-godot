@@ -55,7 +55,7 @@ const FIXED := {
 	"museum:movable55:SS1":{"slot":"","label":"SS1","icon":GENERATED+"museum_key_locks/ss1.png","origin":"museum"},
 	# Hive control121 grant "18-Reaver of GO" (hive_reaver_amber_source.json; handler18 equip flag only): a weapon.
 	"hive:control121:Reaver_of_GO":{"slot":"weapon","label":"Reaver of GO","icon":GENERATED+"hive_reaver_amber/reaver.png","origin":"jungle"},
-	# Hive prop214 pile grant "26-Net of Exile" (hive_net_exile_source.json); handler104 on-hit effect not hosted.
+	# Hive prop214 pile grant "26-Net of Exile" (hive_net_exile_source.json); handler104 on-hit hold: net_exile_hold.gd.
 	"hive:prop214:Net_of_Exile":{"slot":"weapon","label":"Net of Exile","icon":GENERATED+"hive_net_exile/net.png","origin":"jungle"},
 	# Cave prop1050 "66-Ancients stn" (definition68/handler6, as the Hive stone) and control75 "131-Mana foil"
 	# (definition133/handler43, no verified use) (cave_stone_manafoil_source.json).

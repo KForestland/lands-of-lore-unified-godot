@@ -25,6 +25,6 @@
 
 - **Pickup:** E with the pile aimed and in reach. The Net goes straight into the Hive inventory.
 - **Pile sprite:** the pile isn't among the staged single-state Hive props, so the owner draws it as a fixed-Y billboard.
-- **Not hosted:** the handler104 on-hit effect (pool object 0x7A, family-4 constructor) and what it does to the creature.
+- **On-hit:** the handler104 effect is now hosted as a modern 10 s hold; see `docs/net-exile-onhit.md`.
 
 Test: `tests/hive_net_exile_live_test.gd` (registered in `tools/run_regressions.py`).
