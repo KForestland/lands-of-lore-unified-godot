@@ -1,6 +1,6 @@
 # Classic Act 1 completion
 
-Latest verified delivery: [R12](act-one-r12-verification.md), with304 passing regressions, a fresh11-leg campaign including Kityara and linked saves, both exports/all21,205 packed assets, and actual Linux save/restart/captain/Jungle checks. The final packaged Jungle screenshot was reviewed. Later chamber, Fire crystal, Net and Prism source changes passed private combined12 checks and are integrated for main verification; they are not in R12 binaries.
+Latest verified delivery: **R13** (2026-10-10), with 315/315 regressions on unchanged source, a fresh 11-leg campaign through darker-jungle arrival including Kityara and linked saves, both exports and all 21,243 packed assets matched, and actual Linux save/restart/captain/Jungle checks. Final packaged Jungle screenshot reviewed. R13 includes cave ambience/passage, Fire crystal/recharge, Net hold, Prism blindness/panorama and Reaver pillar triggers. Tavern-return changes remain private and are not in R13. Local candidate: `/home/bob/lol2_act1_candidate_20261010_r13`; see its `packaging_checks.json` and `evidence/`. R12 is retained as a historical verified baseline. Full content, native Windows execution, representative GPU/audio, clean-machine preparation and Kjetil’s acceptance remain open.
 
 Scope clarification (2026-09-15): this is an intermediate milestone within the
 [complete Classic Edition](classic-edition.md), not the final product endpoint.
