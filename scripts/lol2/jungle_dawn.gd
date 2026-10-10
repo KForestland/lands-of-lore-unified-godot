@@ -36,6 +36,8 @@ class Body extends "res://scripts/lol2/scripted_creature_population.gd":
 		return super.strike()
 	## Dawn moves and fights by her source script (the body is never stepped): no Net of Exile hold.
 	func net_hit(_id: String, _item: String) -> bool: return false
+	## Nor a Prism blind (prism_blind.gd).
+	func prism_hit(_id: String, _item: String) -> int: return 0
 const SHADER:="shader_type spatial;\nrender_mode unshaded, cull_disabled;\nuniform sampler2D frame : source_color, filter_nearest, repeat_disable;\nvoid vertex() {\n\tvec3 up = vec3(0.0, 1.0, 0.0);\n\tvec3 right = normalize(cross(up, INV_VIEW_MATRIX[2].xyz));\n\tMODELVIEW_MATRIX = VIEW_MATRIX * mat4(vec4(right, 0.0), vec4(up, 0.0), vec4(cross(right, up), 0.0), MODEL_MATRIX[3]);\n}\nvoid fragment() {\n\tvec4 c = texture(frame, UV);\n\tif (c.a < 0.5) { discard; }\n\tALBEDO = c.rgb;\n}\n"
 var combat: Node3D
 var host: Node3D

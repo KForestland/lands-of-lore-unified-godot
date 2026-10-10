@@ -7,6 +7,7 @@ const Live=preload("res://scripts/lol2/creature_live_rules.gd")
 const Sprite=preload("res://scripts/lol2/jungle_dino_sprite.gd")
 const Forms=preload("res://scripts/lol2/player_form_rules.gd")
 const Net=preload("res://scripts/lol2/net_exile_hold.gd")
+const Prism=preload("res://scripts/lol2/prism_blind.gd")
 ## Same creature pixel scale as the cave Roach presentation (adapter).
 const UNITS_PER_PIXEL:=0.21818181818181817
 const STRIKE_COOLDOWN:=0.45
@@ -24,6 +25,9 @@ var strike_remaining: float:
 	set(value): state().strike_remaining=value
 ## Net of Exile holds {actor id: seconds left}; transient (net_exile_hold.gd).
 var net_holds: Dictionary={}
+## Prism blinds {actor id: seconds left} (prism_blind.gd); transient like the Net holds. Seeded per session.
+var prism_blinds: Dictionary={}
+var prism_rng: RandomNumberGenerator=Prism.new_rng()
 var label: Label
 var audio: Node3D
 
@@ -81,7 +85,7 @@ func view() -> Dictionary:
 
 func restore() -> void:
 	_fresh={}
-	net_holds.clear()
+	net_holds.clear();prism_blinds.clear()
 	var s:=view()
 	for id in bodies:
 		var p: Array=s.actors[id].position
@@ -110,7 +114,7 @@ func advance(delta: float) -> void:
 	for actor in s.actors.values():
 		if actor.health==0 and actor.death<State.DEATH_SECONDS: changed=true
 	State.advance_death(s,delta)
-	Net.tick(net_holds,delta)
+	Net.tick(net_holds,delta);Prism.tick(prism_blinds,delta)
 	var target: Vector3=host.player.global_position
 	var protected: bool=Forms.protected(host)
 	var space:=get_world_3d().direct_space_state
@@ -120,8 +124,8 @@ func advance(delta: float) -> void:
 		moving[id]=false
 		if s.actors[id].health<=0:
 			body.velocity=Vector3.ZERO;continue
-		if Net.held(net_holds,id):
-			# Netted: stands still, any started bite is cancelled.
+		if Net.held(net_holds,id) or Prism.blinded(prism_blinds,id):
+			# Netted or blinded: stands still, any started bite is cancelled.
 			body.velocity=Vector3.ZERO
 			if live.mode!=Live.IDLE or float(live.elapsed)!=0.0 or live.hit: live.merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false},true);clocks[id]=0.0;changed=true
 			continue
@@ -225,7 +229,7 @@ func receive_damage(id: String, amount: int, melee: bool=true, effect: int=20) -
 		host.quest_state.jungle_dino_population=s.duplicate(true)
 		s=state()
 	if State.damage(s,id,amount)!=loss: return false
-	if s.actors[id].health==0: net_holds.erase(id)
+	if s.actors[id].health==0: net_holds.erase(id);prism_blinds.erase(id)
 	if audio!=null: audio.sync(0.0)
 	if host.has_method("save_feedback"): host.save_feedback("Dinosaur defeated." if s.actors[id].health==0 else "Strike landed.")
 	present()
@@ -249,6 +253,7 @@ func strike() -> bool:
 	if host.get("item_effects")!=null and host.item_effects.has_method("melee_damage"): damage=host.item_effects.melee_damage(damage)
 	if not receive_damage(id,damage): return false
 	net_hit(id,str(host.equipped_item))
+	prism_hit(id,str(host.equipped_item))
 	return true
 
 ## Net of Exile on a landed hit (net_exile_hold.gd).
@@ -259,6 +264,17 @@ func net_hit(id: String, item: String) -> bool:
 	Net.notify(host,Net.feedback("dinosaur"))
 	present()
 	return true
+
+## Prism on a landed hit (prism_blind.gd): returns the source-weighted draw, 0 when not eligible.
+func prism_hit(id: String, item: String) -> int:
+	var enclosed:=Prism.player_enclosed(host)
+	var draw:=Prism.apply(prism_blinds,id,item,view().actors.has(id) and int(view().actors[id].health)>0,prism_rng,enclosed)
+	if draw==0 or not Prism.success(draw,enclosed): return draw
+	state().live[id].merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false},true)
+	bodies[id].velocity=Vector3.ZERO;clocks[id]=0.0
+	Prism.notify(host,Prism.feedback("dinosaur"))
+	present()
+	return draw
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED:
@@ -272,5 +288,5 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if not is_instance_valid(label): return
 	var id:=aimed() if world_active() else ""
-	label.text="" if id.is_empty() else "Dinosaur %d/%d" % [view().actors[id].health,int(source.max_health)]+(" · netted" if Net.held(net_holds,id) else "")
+	label.text="" if id.is_empty() else "Dinosaur %d/%d" % [view().actors[id].health,int(source.max_health)]+(" · netted" if Net.held(net_holds,id) else "")+(" · blinded" if Prism.blinded(prism_blinds,id) else "")
 	if host.starting_magic!=null and host.starting_magic.health()==0: label.text="You fell · R: recover here · F9: load save"

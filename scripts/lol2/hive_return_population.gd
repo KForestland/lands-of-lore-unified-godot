@@ -10,8 +10,12 @@ var death_visual: Dictionary={}
 const State=preload("res://scripts/lol2/hive_return_population_state.gd")
 const Forms=preload("res://scripts/lol2/player_form_rules.gd")
 const Net=preload("res://scripts/lol2/net_exile_hold.gd")
+const Prism=preload("res://scripts/lol2/prism_blind.gd")
 ## Net of Exile holds {actor id: seconds left}; transient (net_exile_hold.gd).
 var net_holds: Dictionary={}
+## Prism blinds {actor id: seconds left} (prism_blind.gd); transient like the Net holds. Seeded per session.
+var prism_blinds: Dictionary={}
+var prism_rng: RandomNumberGenerator=Prism.new_rng()
 var rules=State
 var target_prefix:="hivewarrior"
 var visual_paths: Dictionary={}
@@ -59,7 +63,7 @@ func _ready() -> void:
 func checkpoint() -> Dictionary: return state.duplicate(true)
 func restore(saved: Dictionary) -> void:
 	state=rules.canonical(saved)
-	net_holds.clear()
+	net_holds.clear();prism_blinds.clear()
 	for id in bodies:
 		var a: Dictionary=state.actors[id]
 		if death_presenters.has(id) and a.active and a.health==0 and not a.has("death_animation"): a.death_animation=Death.initial(true)
@@ -127,7 +131,7 @@ func receive_damage(id: String, damage: int, melee: bool=true, effect: int=20) -
 		a.warrior_mask=Selection.mask_after_health(a.get("warrior_mask",1 if a.health>50 else 2),a.health,remaining,0).mask
 	a.health=remaining
 	if remaining==0:
-		net_holds.erase(id)
+		net_holds.erase(id);prism_blinds.erase(id)
 		a.windup=0.0;a.cooldown=0.0
 		a.erase("attack_animation")
 		if death_presenters.has(id): a.death_animation=Death.initial()
@@ -136,7 +140,7 @@ func receive_damage(id: String, damage: int, melee: bool=true, effect: int=20) -
 func _physics_process(delta: float) -> void: advance(delta)
 func advance(delta: float) -> void:
 	if not active() or not is_finite(delta) or delta<=0: return
-	Net.tick(net_holds,delta)
+	Net.tick(net_holds,delta);Prism.tick(prism_blinds,delta)
 	for id in bodies:
 		var a: Dictionary=state.actors[id]
 		if not a.active: continue
@@ -145,8 +149,8 @@ func advance(delta: float) -> void:
 			continue
 		var body: CharacterBody3D=bodies[id]
 		a.cooldown=maxf(0.0,float(a.cooldown)-delta)
-		if Net.held(net_holds,id):
-			# Netted: stands still, any started attack/windup is cancelled.
+		if Net.held(net_holds,id) or Prism.blinded(prism_blinds,id):
+			# Netted or blinded: stands still, any started attack/windup is cancelled.
 			body.velocity=Vector3.ZERO;a.windup=0.0;a.erase("attack_animation")
 			continue
 		var distance:=body.global_position.distance_to(host.camera.global_position)
@@ -202,5 +206,18 @@ func net_hit(id: String, item: String) -> bool:
 	present()
 	return true
 
+## Prism on a landed hit (prism_blind.gd): returns the source-weighted draw, 0 when not eligible.
+func prism_hit(id: String, item: String) -> int:
+	var alive: bool=state.actors.has(id) and state.actors[id].active and int(state.actors[id].health)>0
+	var enclosed:=Prism.player_enclosed(host)
+	var draw:=Prism.apply(prism_blinds,id,item,alive,prism_rng,enclosed)
+	if draw==0 or not Prism.success(draw,enclosed): return draw
+	var a: Dictionary=state.actors[id]
+	a.windup=0.0;a.erase("attack_animation")
+	bodies[id].velocity=Vector3.ZERO
+	Prism.notify(host,Prism.feedback("Hive warrior"))
+	present()
+	return draw
+
 func target_label(id: String) -> String:
-	return "Hive Warrior %d/400" % int(state.actors[id].health)+(" · netted" if Net.held(net_holds,id) else "")
+	return "Hive Warrior %d/400" % int(state.actors[id].health)+(" · netted" if Net.held(net_holds,id) else "")+(" · blinded" if Prism.blinded(prism_blinds,id) else "")

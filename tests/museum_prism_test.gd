@@ -55,5 +55,5 @@ func run() -> void:
 	var handoff: Dictionary=jungle.area_handoff();jungle.queue_free();await process_frame;await process_frame
 	var hive=load("res://scenes/lol2/hive_review.tscn").instantiate();root.add_child(hive);current_scene=hive;await process_frame;freeze(hive)
 	if not check(hive.apply_area_handoff(handoff).is_empty() and hive.carried_inventory.equipped_item==Prism.ITEM and hive.quicksave("user://tests/prism_hive.json").is_empty(),"Prism Hive transport/save"):return
-	print("PASS museum_prism: original display, empty-hand actual E, pause/busy refusal, one-time grant, real inventory Equip, disk receipt validation, Jungle/Hive transport. Vantage supplied; shared modern melee, no native blindness/material transition claim.")
+	print("PASS museum_prism: original display, empty-hand actual E, pause/busy refusal, one-time grant, real inventory Equip, disk receipt validation, Jungle/Hive transport. Vantage supplied; shared modern melee (blind and panorama: prism_effects_museum_test, prism_blind_*_test).")
 	quit()

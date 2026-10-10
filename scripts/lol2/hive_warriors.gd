@@ -69,6 +69,7 @@ func strike() -> bool:
 		var id := str(hit.collider.get_meta("hive_return_actor"))
 		if not owner.receive_damage(id,review.item_effects.melee_damage(damage)): return false
 		if owner.has_method("net_hit"): owner.net_hit(id,str(review.carried_inventory.equipped_item))
+		if owner.has_method("prism_hit"): owner.prism_hit(id,str(review.carried_inventory.equipped_item))
 		return true
 	if not hit.is_empty() and hit.collider.has_meta("hive_executioner_live"):
 		var damage := preload("res://scripts/lol2/player_form_rules.gd").melee_damage(review.player_form,preload("res://scripts/lol2/player_equipment.gd").weapon(review.carried_inventory.equipped_item))

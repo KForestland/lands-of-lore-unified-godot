@@ -25,6 +25,7 @@ const SCOPES := ["cave","museum","jungle"]
 const MAX_CARRIED := 64
 const GENERATED := "res://assets/lol2/generated/"
 const FIXED := {
+	# Museum prop280 grant "8-Prism" (museum_prism_source.json); handler7 on-hit blind: prism_blind.gd.
 	"museum:prop280:Prism":{"slot":"weapon","label":"Prism","icon":GENERATED+"museum_prism/icon.png","origin":"museum"},
 	"museum:item1:Dragon_Blood":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
 	"museum:item2:Dragon_Blood":{"slot":"","label":"Dragon Blood","icon":GENERATED+"museum_blood_loot/icon.png","origin":"museum","use":"dragon_blood"},
