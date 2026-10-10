@@ -209,7 +209,10 @@ func advance(delta: float) -> void:
 	if not active(): return
 	var rewards := Speech.advance(state(),delta)
 	for item in rewards:
-		if item is Dictionary and item.has("morgan_heal"):
+		if item is Dictionary and item.has("huline_alert"):
+			# GV_HULINE_ALERT has one owner (the village gate's shared29); the room bank only requests the write.
+			if get_parent().has_method("raise_huline_alert"): get_parent().raise_huline_alert()
+		elif item is Dictionary and item.has("morgan_heal"):
 			# Playable health currently caps at30; native progression health is separate.
 			get_parent().health = preload("res://scripts/lol2/morgan_orb_blessing.gd").heal(get_parent().health,30)
 		else: grant(item)
@@ -223,7 +226,7 @@ func advance(delta: float) -> void:
 		state().room = "MENT"
 		restore()
 		return
-	if state().room == "CAN" and speech.sequence == "CAN_EXIT" and not Speech.active(speech):
+	if state().room == "CAN" and speech.sequence in ["CAN_EXIT","CAN_MAID"] and not Speech.active(speech):
 		state().room = "VILLAGE"
 		restore()
 		return
@@ -240,7 +243,10 @@ func _process(delta: float) -> void:
 	var position: Vector3 = get_parent().player.position
 	var inside := absf(position.y-42.0) < 48.0 and Geometry2D.is_point_in_polygon(Vector2(position.x,position.z),PackedVector2Array(ENTRANCE))
 	var village_inside: bool = view.manifest.rooms.has("VILLAGE") and absf(position.y-32.0) < 48.0 and Geometry2D.is_point_in_polygon(Vector2(position.x,position.z),PackedVector2Array(VILLAGE_ENTRANCE))
-	if (inside or village_inside) and not was_inside: enter_room("MENT" if inside else "VILLAGE")
+	if (inside or village_inside) and not was_inside:
+		# Region3501 event2 also runs g7092: Left_Village 0 -> 2 (docs/tavern-return.md).
+		if village_inside: _left_village(0,2)
+		enter_room("MENT" if inside else "VILLAGE")
 	was_inside = inside or village_inside
 func _unhandled_input(event: InputEvent) -> void:
 	if not active() or not event is InputEventKey or not event.pressed or event.echo: return
@@ -251,6 +257,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.keycode == KEY_F9: get_parent().quickload()
 	else: return
 	get_viewport().set_input_as_handled()
+
+## L4_HJ local36 "Left_Village" writes: region3501 g7092 (0 -> 2) and region3805 g7950 (2 -> 3), each under its
+## source predicate. Returns true when the value changed.
+func left_village(from: int, to: int) -> bool: return _left_village(from,to)
+func _left_village(from: int, to: int) -> bool:
+	var s := state()
+	if int(s.locals.get("Left_Village",0)) != from: return false
+	s.locals.Left_Village = to
+	return true
 
 func attack(message: int) -> bool:
 	var s := state()

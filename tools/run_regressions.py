@@ -123,6 +123,7 @@ CORE = PORTABLE + [(name, 'headless') for name in [
 CORE += [('fire_crystal_live_test','rendered'), ('museum_sconce_recharge_test','rendered'), ('cave_splash_timer_boundary_test','headless'), ('cave_side_chamber_live_test','rendered'), ('cave_prop83_collision_rewind_test','rendered'), ('cave_prop83_lift_live_test','rendered'), ('cave_prop83_lift_state_test','headless'), ('cave_stone_manafoil_live_test','rendered'), ('hive_net_exile_live_test','rendered'), ('hive_reaver_escape_test','rendered'), ('hive_reaver_amber_live_test','rendered'), ('museum_prism_test', 'rendered'), ('museum_long_arm_live_test','rendered'),('museum_long_arm_escape_test','rendered')]
 CORE += [('museum_sconce_burn_test', 'rendered')]
 CORE += [('hive_reaver_pillars_live_test', 'rendered')]
+CORE += [('tavern_return_live_test', 'rendered')]
 CORE += [('cave_guard38_loot_test', 'rendered')]
 CORE += [('cave_guard39_loot_test', 'rendered')]
 CORE += [('monastery_dawn_dampen_test', 'rendered'), ('jungle_beehives_live_test', 'rendered'), ('museum_blood_loot_test', 'rendered'), ('cave_guard54_loot_test', 'rendered'), ('jungle_kelsrick_loot_test', 'rendered'), ('cave_guard52_53_loot_test', 'rendered')]

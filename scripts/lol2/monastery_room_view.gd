@@ -30,6 +30,12 @@ func _ready() -> void:
 		var sequences: Dictionary = moff.sequences
 		sequences["MOFF_EXIT_FLUTE"] = manifest.rooms.MOFF.movies.slice(14,23)
 		manifest.rooms.MOFF.sequences = sequences
+	# CAN later visits (tools/prepare_tavern_return_media.py): maid betrayal, second visit, line675.
+	var revisit_path := "res://assets/lol2/generated/bacatta_revisit/clips.json"
+	if manifest.rooms.has("CAN") and FileAccess.file_exists(revisit_path):
+		var named: Dictionary = manifest.rooms.CAN.get("sequences",{})
+		named.merge(JSON.parse_string(FileAccess.get_file_as_string(revisit_path)).sequences)
+		manifest.rooms.CAN.sequences = named
 	var morgan_path := "res://assets/lol2/generated/morgan_blessing/clips.json"
 	if manifest.rooms.has("MGAR") and FileAccess.file_exists(morgan_path):
 		manifest.rooms.MGAR.sequences = JSON.parse_string(FileAccess.get_file_as_string(morgan_path)).sequences

@@ -195,7 +195,7 @@ func _ready() -> void:
 			village_alarm=preload("res://scripts/lol2/jungle_village_alarm.gd").new()
 			village_alarm.name="JungleVillageAlarm"
 			add_child(village_alarm)
-			var alarm_error: String=village_alarm.setup(self,{"context":_alarm_context,"kelsrick":_alarm_kelsrick,"doors":func(): if is_instance_valid(bacatta57): bacatta57.shut_doors(),"inner_gate":func(raw): if is_instance_valid(inner_gate): inner_gate.external(raw)},quest_state.get("jungle_village_alarm"))
+			var alarm_error: String=village_alarm.setup(self,{"context":_alarm_context,"kelsrick":_alarm_kelsrick,"doors":func(): if is_instance_valid(bacatta57): bacatta57.shut_doors(),"inner_gate":func(raw): if is_instance_valid(inner_gate): inner_gate.external(raw),"region":func(_r): if is_instance_valid(monastery): monastery.left_village(2,3)},quest_state.get("jungle_village_alarm"))
 			if not alarm_error.is_empty(): push_error(alarm_error)
 		if preload("res://scripts/lol2/jungle_drunk.gd").assets_ready() and is_instance_valid(village_alarm):
 			drunk=preload("res://scripts/lol2/jungle_drunk.gd").new();drunk.name="DrunkVillager";add_child(drunk)
@@ -565,6 +565,10 @@ func _kelsrick_context() -> Dictionary:
 	if is_instance_valid(village_gate): shared["29"]=int(village_gate.state().shared29)
 	if is_instance_valid(village_dialogue): local15=int(village_dialogue.state().get("local15",0))
 	return {"shared":shared,"locals":{"15":local15}}
+
+## CAN maid betrayal (docs/tavern-return.md): GV_HULINE_ALERT = 1 through its single owner, the village gate's shared29.
+func raise_huline_alert() -> void:
+	_kelsrick_shared({"index":29,"op":"set","value":1})
 
 ## Opcode206/199 writes (0..255; Soul capped at 10 by the verified runtime index table).
 func _kelsrick_shared(e: Dictionary) -> void:

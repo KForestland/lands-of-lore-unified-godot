@@ -95,7 +95,10 @@ func _region() -> void:
 	var polygon:=PackedVector2Array()
 	for v in src.region.polygon: polygon.append(Vector2(v[0],v[1]))
 	var now: bool=foot>=float(src.region.floor_min)-1 and foot<=float(src.region.floor_max)+3 and Geometry2D.is_point_in_polygon(Vector2(p.x,p.z),polygon)
-	if now and not inside: _apply(State.enter_region(state,src,int(src.region.region),context()))
+	if now and not inside:
+		# Region3805 event2 g7950 (Left_Village 2 -> 3, monastery room bank) precedes g7956; the host owns that bank.
+		if hooks.has("region") and hooks.region is Callable and hooks.region.is_valid(): hooks.region.call(int(src.region.region))
+		_apply(State.enter_region(state,src,int(src.region.region),context()))
 	inside=now
 
 func _apply(effects: Array) -> void:
