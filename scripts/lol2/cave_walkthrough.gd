@@ -316,6 +316,8 @@ func open_inventory() -> bool:
 	inventory.change_equipment = set_equipped_item
 	inventory.equipped_armor = equipped_armor
 	inventory.change_armor = set_equipped_armor
+	# Tab in the inventory returns to play, as in the other areas.
+	if is_instance_valid(interface_hud): inventory.return_to_game = interface_hud.set_cursor.bind(false)
 	add_child(inventory)
 	return true
 
@@ -912,6 +914,8 @@ func _quickload(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
 	interaction_requested = false
 	interaction_available = false
 	_save_feedback("Quicksave loaded.")
+	# A load returns to play, as in the other areas.
+	if is_instance_valid(interface_hud): interface_hud.set_cursor(false)
 	return ""
 
 func _walk_check() -> void:

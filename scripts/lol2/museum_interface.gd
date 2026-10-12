@@ -27,6 +27,7 @@ var character_controls: VBoxContainer
 var save_button: Button
 var load_button: Button
 var save_status: Label
+var inventory_button: Button
 var save_path := preload("res://scripts/lol2/museum_save.gd").DEFAULT_PATH
 var atlas_offset := Vector2.ZERO
 
@@ -48,6 +49,9 @@ func _ready() -> void:
 	hint.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	hint.offset_left = 16; hint.offset_right = cluster.offset_left - 16; hint.offset_top = -44; hint.offset_bottom = -12
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	# A long notice wraps upwards; it never runs off the bottom edge.
+	hint.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	hint.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
 	hint.add_theme_color_override("font_shadow_color", Color.BLACK)
 	hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(hint)
@@ -56,8 +60,9 @@ func _ready() -> void:
 	sheet.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	sheet.offset_left = -240
 	sheet.offset_right = 240
-	sheet.offset_top = -220
-	sheet.offset_bottom = 180
+	sheet.offset_top = -190
+	sheet.offset_bottom = 190
+	sheet.grow_vertical = Control.GROW_DIRECTION_BOTH
 	sheet.add_theme_stylebox_override("panel", panel_style())
 	add_child(sheet)
 	var margin := MarginContainer.new()
@@ -74,7 +79,7 @@ func _ready() -> void:
 	atlas.walkthrough = walkthrough
 	atlas.geometry_path = geometry_path
 	atlas.origin_offset = atlas_offset
-	atlas.custom_minimum_size = Vector2(420, 240)
+	atlas.custom_minimum_size = Vector2(420, 200)
 	box.add_child(atlas)
 	atlas_controls = HBoxContainer.new()
 	atlas_controls.add_theme_constant_override("separation", 8)
@@ -90,31 +95,36 @@ func _ready() -> void:
 			"Overview": control.pressed.connect(atlas.overview)
 		atlas_controls.add_child(control)
 	sheet_body = Label.new()
+	# Wrapped to the sheet width, so long lines never widen the sheet over the cluster.
+	sheet_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	box.add_child(sheet_body)
 	character_controls = VBoxContainer.new()
 	character_controls.add_theme_constant_override("separation", 10)
 	box.add_child(character_controls)
-	var equipment_button := Button.new()
-	equipment_button.text = "Open inventory"
-	equipment_button.pressed.connect(func(): open_page("inventory"))
-	character_controls.add_child(equipment_button)
+	# One row (inventory, save, load) keeps the page inside a 960x540 window.
 	var save_row := HBoxContainer.new()
 	save_row.add_theme_constant_override("separation", 8)
 	character_controls.add_child(save_row)
-	save_row.visible = saves_enabled
+	var equipment_button := Button.new()
+	equipment_button.text = "Inventory · I"
+	equipment_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	equipment_button.pressed.connect(func(): open_page("inventory"))
+	save_row.add_child(equipment_button)
+	inventory_button = equipment_button
 	save_button = Button.new()
-	save_button.text = "Save game · F5"
+	save_button.text = "Save · F5"
 	save_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	save_button.visible = saves_enabled
 	save_button.pressed.connect(func(): run_save_action(false))
 	save_row.add_child(save_button)
 	load_button = Button.new()
-	load_button.text = "Load game · F9"
+	load_button.text = "Load · F9"
 	load_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	load_button.visible = saves_enabled
 	load_button.pressed.connect(func(): run_save_action(true))
 	save_row.add_child(load_button)
 	save_status = Label.new()
 	save_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	save_status.custom_minimum_size.y = 44
 	character_controls.add_child(save_status)
 	var close_button := Button.new()
 	close_button.text = "Close"
@@ -147,12 +157,14 @@ func open_page(page: String) -> void:
 		walkthrough.open_inventory()
 		return
 	sheet.show()
+	# The map takes what the window leaves, so the sheet stays clear of the coordinates and the hint line.
+	atlas.custom_minimum_size.y = clampf(get_viewport().get_visible_rect().size.y - 380.0, 140.0, 320.0)
 	atlas.visible = page == "atlas"
 	atlas_controls.visible = atlas.visible
 	character_controls.visible = not atlas.visible
 	save_status.text = ""
 	sheet_title.text = "Magic Atlas" if page == "atlas" else "Character"
-	sheet_body.text = location_name + " · Local map\nScroll to zoom · Drag to move\nGold marker: your position and facing" if page == "atlas" else character_text()
+	sheet_body.text = location_name + " · Local map\nScroll to zoom · Drag to move · Gold marker: you" if page == "atlas" else character_text()
 
 func _input(event: InputEvent) -> void:
 	# Modal inventory and story overlays own input while the tree is paused.
@@ -196,6 +208,7 @@ var magic_button: Button
 var magic_icon: TextureRect
 var hand_icon: TextureRect
 var blue_button: Button
+var blue_icon: TextureRect
 var spell_bar: TextureRect
 var spell_buttons: Dictionary = {}
 var health_fill: TextureRect
@@ -266,10 +279,12 @@ func build_cluster() -> void:
 	buttons.append(weapon_button)
 	# Blue Button beside the Magic Button, and the Spell Bar to the cluster's left (placement adapter).
 	blue_button = Button.new(); blue_button.name = "BlueButton"; _flat(blue_button); blue_button.tooltip_text = "Spell Book"
-	blue_button.icon = _shape(25); blue_button.expand_icon = true
 	blue_button.size = Vector2(11, 13) * k; blue_button.position = Vector2(magic.position.x - blue_button.size.x - 2, magic.position.y + (magic.size.y - blue_button.size.y) / 2)
 	blue_button.pressed.connect(toggle_spell_bar)
 	cluster.add_child(blue_button)
+	# Drawn as a child (like the rings), not Button.icon: a disabled Button dims its icon, which hid the small dark
+	# diamond for the whole of normal play.
+	blue_icon = _icon(blue_button, _shape(25), Rect2(Vector2.ZERO, blue_button.size))
 	spell_bar = TextureRect.new(); spell_bar.name = "SpellBar"
 	spell_bar.texture = _shape(62); spell_bar.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	spell_bar.expand_mode = TextureRect.EXPAND_IGNORE_SIZE; spell_bar.stretch_mode = TextureRect.STRETCH_SCALE
@@ -328,7 +343,9 @@ func load_spell(spell: String) -> void:
 
 func toggle_spell_bar() -> void:
 	spell_bar.visible = not spell_bar.visible
-	blue_button.icon = _shape(26 if spell_bar.visible else 25)
+	blue_icon.texture = _shape(26 if spell_bar.visible else 25)
+	# The hint line ends at the cluster, or at the open Spell Bar, so neither covers it (a long notice wraps upwards).
+	hint.offset_right = cluster.offset_left + (spell_bar.position.x if spell_bar.visible else 0.0) - 16
 
 ## Health/mana fills (fraction of the slot) and the loaded spell icon, from the shared starting-magic owner.
 func refresh_vitals() -> void:
@@ -362,22 +379,43 @@ func close_sheet() -> void:
 	if atlas_opened_from_game: set_cursor(false)
 	atlas_opened_from_game = false
 
+## One Character page for every area (the Hive no longer overrides it): vitals, form, equipment, skills, then status.
 func character_text() -> String:
-	var weapon := preload("res://scripts/lol2/player_equipment.gd").label(walkthrough.equipped_item) if walkthrough.equipped_item != "" else "None"
+	var Equipment := preload("res://scripts/lol2/player_equipment.gd")
+	var weapon: String = Equipment.label(walkthrough.equipped_item) if walkthrough.equipped_item != "" else "Unarmed"
 	if walkthrough.get("player_form") != null and not preload("res://scripts/lol2/player_form_rules.gd").can_use_weapon(int(walkthrough.player_form)): weapon += " (stored while transformed)"
-	var armor := preload("res://scripts/lol2/player_equipment.gd").armor_label(walkthrough.equipped_armor)
-	return vitals_text() + "Weapon: " + weapon + "\nArmor: " + armor + "\nChange equipment in Inventory."
+	var gear := "Weapon: " + weapon + " · Armor: " + Equipment.armor_label(walkthrough.equipped_armor)
+	var effects = walkthrough.get("item_effects")
+	var offhand: String = str(effects.state().get("offhand","")) if effects != null and is_instance_valid(effects) and effects.has_method("state") else ""
+	if offhand != "": gear += " · Offhand: " + preload("res://scripts/lol2/item_catalog.gd").label(offhand)
+	return vitals_text() + gear + "\n" + skills_text() + status_text() + "Change equipment in Inventory."
 
-## Health and mana from the shared starting-magic owner (the same values in every area).
+## Health, mana and the loaded spell from the shared starting-magic owner (the same values in every area).
 func vitals_text() -> String:
 	var magic = walkthrough.get("starting_magic")
 	if magic == null or not is_instance_valid(magic): return ""
-	var text := "Health: %d / 30\n" % int(magic.health())
-	text += "Spell: %s · Q — Cast · 1/2 or the Spell Bar to change\n" % ("Healing" if loaded_spell() == "heal" else "Spark")
-	if magic.has_method("status_lines"):
-		for line in magic.status_lines(): text += str(line) + "\n"
+	var text := "Health: %d / 30" % int(magic.health())
 	var saved = magic.magic_state() if magic.has_method("magic_state") else {}
-	if saved is Dictionary and saved.get("player") is Dictionary: text += "Mana: %d / %d\n" % [int(saved.player.mana),int(saved.player.maximum)]
+	if saved is Dictionary and saved.get("player") is Dictionary: text += " · Mana: %d / %d" % [int(saved.player.mana),int(saved.player.maximum)]
+	var form: String = walkthrough.curse.message() if walkthrough.get("curse") != null else "Human"
+	text += "\nForm: %s · Spell: %s (Q to cast)\n" % [form, "Healing" if loaded_spell() == "heal" else "Spark"]
+	return text
+
+## Fighting and magic levels/experience (the same owners the area handoffs and saves carry).
+func skills_text() -> String:
+	var magic = walkthrough.get("starting_magic")
+	if magic == null or not is_instance_valid(magic) or not magic.has_method("fighting_state"): return ""
+	var fighting: Dictionary = magic.fighting_state()
+	var saved: Dictionary = magic.magic_state()
+	var spell: Dictionary = saved.player if saved.get("player") is Dictionary else {"level":1,"experience":0}
+	return "Fighting: level %d (%d XP) · Magic: level %d (%d XP)\n" % [int(fighting.level),int(fighting.experience),int(spell.level),int(spell.experience)]
+
+## Aura timer and item status (also shown on the hint line during play).
+func status_text() -> String:
+	var magic = walkthrough.get("starting_magic")
+	var text := ""
+	if magic != null and is_instance_valid(magic) and magic.has_method("status_lines"):
+		for line in magic.status_lines(): text += str(line) + "\n"
 	return text
 
 func refresh_equipment() -> void:
@@ -394,6 +432,7 @@ func refresh_equipment() -> void:
 	if is_instance_valid(sheet) and sheet.visible and not atlas.visible:
 		sheet_body.text = character_text()
 
+var equipment_signature := ""
 func _process(delta: float) -> void:
 	if save_notice_remaining > 0:
 		save_notice_remaining = maxf(0, save_notice_remaining - delta)
@@ -401,6 +440,13 @@ func _process(delta: float) -> void:
 			hint.text = "Tab — Return to game" if cursor_active else ("Tab — Interface · M — Atlas" + (" · F5/F9 — Save/Load" if saves_enabled else ""))
 	if not get_tree().paused: advance_blink(delta)
 	refresh_vitals()
+	# Equip, load, travel and form changes all show on the Attack ring, even in hosts that do not call refresh_equipment().
+	var signature := "%s|%s|%s" % [walkthrough.equipped_item, walkthrough.equipped_armor, walkthrough.get("player_form")]
+	if signature != equipment_signature:
+		equipment_signature = signature
+		refresh_equipment()
+	# The open Character page follows casts, rewards and loads instead of showing the values from when it opened.
+	if sheet.visible and not atlas.visible: sheet_body.text = character_text()
 	magic_hint()
 
 ## Cast notices, the aura timer and item status on the shared hint line (replacing the modern spell panel). Area

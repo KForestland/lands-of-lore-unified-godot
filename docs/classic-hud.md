@@ -101,8 +101,30 @@ for the Cave (`cave_interface.gd`, normal play only; the developer text HUD stay
     label height), below the top-centre coordinate overlay.
 
   Developer mode (F3 / `--developer-tools`) restores the modern panel.
-- **Hint line.** It runs from the left edge to the cluster's left edge, wrapping, so it never overlaps the cluster at
-  960×540 or 1280×720. The lead's coordinate overlay (top centre) is unaffected.
+- **Hint line.** It runs from the left edge to the cluster's left edge (or to the open Spell Bar's left edge), wrapping
+  upwards, so it never overlaps the cluster or the Spell Bar and a long notice never runs off the bottom at 960×540 or
+  1280×720. The lead's coordinate overlay (top centre) is unaffected.
+- **One Character page (r4).** Every area uses the same page (the Hive override was removed):
+  - `Health: h / 30 · Mana: m / M`;
+  - `Form: … · Spell: … (Q to cast)`;
+  - `Weapon: … · Armor: …` (`· Offhand: …` when one is equipped);
+  - `Fighting: level n (x XP) · Magic: level n (x XP)`, read through `starting_magic.fighting_state()` /
+    `magic_state()` from the owner each host already uses (Museum fighting packet, Hive checkpoint, Cave/Jungle
+    quests);
+  - the aura/item status lines, then area extras (the Cave's sample/Aloe counts; its duplicate form line is dropped).
+
+  The body wraps to the sheet width; Inventory, Save and Load share one row; the sheet grows both ways from the centre
+  and the atlas height follows the window, so both pages stay inside 960×540 clear of the cluster, hint and
+  coordinates. The open page refreshes every frame (casts, rewards and loads show at once).
+- **r4 fixes found by the four-area click test:**
+  - the Blue Button art was invisible in normal play: it was a `Button.icon`, which Godot dims while the button is
+    disabled (all of normal play). It is now drawn as a child texture like the rings;
+  - the open Spell Bar (y 468–528 at 960×540) covered the hint line;
+  - the Character page measured 547×478 and the Atlas page 480×461 at 960×540, covering the hint line;
+  - the Cave never refreshed the Attack ring after equip/load/form change. The shell now refreshes when the equipped
+    weapon/armor or form changes, in every host;
+  - the Cave inventory lacked `return_to_game`, so Tab inside it left cursor mode on, unlike the other areas.
+  - a Cave load left cursor mode on; like the other areas it now returns to play.
 
 ## Tests
 
@@ -135,9 +157,20 @@ for the Cave (`cave_interface.gd`, normal play only; the developer text HUD stay
 - the aura status appears on the Hive Character page;
 - screenshots are saved, including Hive with an enemy targeted.
 
+**`tests/classic_hud_acceptance_test.gd`** (rendered, r4) runs Cave, Museum, Jungle and Hive at 960×540 and 1280×720
+with real viewport clicks/keys: one shell and the Blue Button drawn; Tab; Blue Button → Spell Bar → Spark/Heal (ring
+icon follows); Magic Button Heal (+6/−2, fills follow); portrait → Character page content (health, mana, form, spell,
+weapon/armor, fighting/magic level and XP) on screen without overlap; compass → Atlas page on screen without overlap;
+Save button writes the area's existing format, Load button restores (no semantic difference via
+`player_continuity.gd`); Inventory is modal (cast and page refused), Escape closes it; an equipped weapon shows on the
+Attack ring and Beast form hides it and refuses the cast; Attack click returns to play with one ordinary click.
+Supplied: Museum introduction skipped, Hive rescue-return fixture, health/mana values, a carried Stalagmite, Beast form
+assigned directly. Screenshots: `user://tests/hud_acceptance/`.
+
 **Updated for the new layout:** `hive_interface_test` (registered) and `jungle_interface_test` (unregistered). The
 portrait button now has one child, and the click goes to its centre. Inventory is now opened through the shell path
-rather than the Attack Button, here and in the unregistered `museum_equipment_test` (the "Open inventory" button).
+rather than the Attack Button, here and in the unregistered `museum_equipment_test` (the Character page's Inventory
+button, `inventory_button`).
 
 **History.** Revision r2 fixes the r1 (5ae9c4b) blocker found in lead review: the r1 Magic left click could never cast,
 because `world_active` refused the visible cursor, and the r1 Attack ring opened the inventory.

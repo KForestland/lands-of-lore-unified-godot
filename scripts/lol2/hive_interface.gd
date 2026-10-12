@@ -1,5 +1,5 @@
 extends "res://scripts/lol2/museum_interface.gd"
-## Shared original-art interface with Hive health and conversation input guards.
+## Shared original-art interface with Hive prompts and conversation input guards. The Character page is the shared one.
 func conversation_active() -> bool:
 	var actor = walkthrough.get_node("ConversationReview")
 	return actor.started and not actor.completed
@@ -15,20 +15,6 @@ func open_page(page: String) -> void:
 func toggle_atlas() -> void:
 	if conversation_active(): return
 	super.toggle_atlas()
-func character_text() -> String:
-	var weapon := preload("res://scripts/lol2/player_equipment.gd").label(walkthrough.equipped_item) if walkthrough.equipped_item != "" else "Unarmed"
-	if walkthrough.get("player_form") != null and not preload("res://scripts/lol2/player_form_rules.gd").can_use_weapon(int(walkthrough.player_form)): weapon += " (stored while transformed)"
-	var armor := "Mail Shirt" if walkthrough.equipped_armor != "" else "None"
-	var mana_text := ""
-	if not walkthrough.player_magic_checkpoint.is_empty():
-		var magic: Dictionary = walkthrough.player_magic_checkpoint.player
-		mana_text = "\nMana: %d / %d" % [magic.mana,magic.maximum]
-	var status := ""
-	var magic = walkthrough.get("starting_magic")
-	if magic != null and is_instance_valid(magic) and magic.has_method("status_lines"):
-		for line in magic.status_lines(): status += "\n" + str(line)
-	return "Health: %d / 30\nForm: %s\nWeapon: %s\nArmor: %s\nChange equipment in Inventory." % [walkthrough.get_node("Warriors").health,walkthrough.curse.message(),weapon,armor]+mana_text+status
-
 var wax_hint := false
 func _process(delta: float) -> void:
 	super._process(delta)

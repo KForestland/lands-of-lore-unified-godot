@@ -78,7 +78,35 @@ func run() -> void:
 	hive.player_reward_checkpoint={}
 	if not check(hive.quickload(path).is_empty() and hive.player_reward_checkpoint==earned.player_reward_state,"Hive fighting rollback failed"): return
 	if not check(hive.area_handoff().quests.player_reward_state==earned.player_reward_state,"Hive return dropped fighting progression"): return
+	# Independent return-direction check: supplied wounded/mana values, existing earned XP.
+	hive.get_node("Warriors").health=17
+	hive.player_magic_checkpoint.player.mana=9
+	hive.player_magic_checkpoint.spell="heal"
+	hive.player_magic_checkpoint.cooldown=0.25
+	var returned: Dictionary=hive.area_handoff()
+	var malformed:=returned.duplicate(true)
+	malformed.inventory.health=1
+	malformed.quests.hive_dawn20={}
+	var rejection: String=hive.apply_area_handoff(malformed)
+	if not check(not rejection.is_empty() and hive.area_handoff()==returned,"Malformed Dawn packet mutated Hive before rejection"): return
 	await finish(hive)
+	var jungle_return=load("res://scenes/lol2/jungle_walkthrough.tscn").instantiate()
+	root.add_child(jungle_return)
+	jungle_return.set_physics_process(false)
+	if not check(jungle_return.apply_area_handoff(returned).is_empty(),"Hive→Jungle return rejected"): return
+	if not check(jungle_return.health==17 and jungle_return.quest_state.player_reward_state==earned.player_reward_state and jungle_return.quest_state.cave_melee_seed==earned.cave_melee_seed,"Hive→Jungle lost health, XP or reward RNG"): return
+	if not check(jungle_return.quest_state.player_magic_reward_state==returned.quests.player_magic_reward_state,"Hive→Jungle lost mana, selected spell or cooldown"): return
+	if not check(not jungle_return.inventory_state().has("fighting"),"Return created a second fighting owner"): return
+	var returned_before: Dictionary=jungle_return.area_handoff()
+	var return_conflict:=returned.duplicate(true)
+	return_conflict.inventory.fighting={"player_reward_state":{"version":1,"player":earned.player_reward_state.player.duplicate()}}
+	return_conflict.inventory.fighting.player_reward_state.player.experience=1
+	if not check(not jungle_return.apply_area_handoff(return_conflict).is_empty() and jungle_return.area_handoff()==returned_before,"Conflicting return XP mutated Jungle"): return
+	if not check(jungle_return.quicksave(path).is_empty(),"Returned Jungle save failed"): return
+	jungle_return.health=30
+	jungle_return.quest_state.player_reward_state.player.experience=0
+	if not check(jungle_return.quickload(path).is_empty() and jungle_return.health==17 and jungle_return.quest_state.player_reward_state==earned.player_reward_state,"Returned Jungle disk load lost health or XP"): return
+	await finish(jungle_return)
 	DirAccess.remove_absolute(path)
-	print("PASS: live cave melee kill XP10, cave/Museum/Jungle/Hive disk rollback, single quest owner, invalid/conflicting fighting rejection")
+	print("PASS: live cave melee kill XP10, cave/Museum/Jungle/Hive disk rollback, Hive→fresh Jungle return with health17/mana9/Heal/cooldown and disk rollback, single quest owner, invalid/conflicting fighting and malformed Dawn rejection")
 	quit()

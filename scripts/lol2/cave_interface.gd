@@ -5,6 +5,8 @@ extends "res://scripts/lol2/museum_interface.gd"
 func character_text() -> String:
 	var text := super.character_text()
 	var extra: Array = walkthrough.hud_status_lines() if walkthrough.has_method("hud_status_lines") else []
+	# The shared page already shows the form.
+	extra = extra.filter(func(line): return not str(line).begins_with("Form: "))
 	return text + ("\n" + "\n".join(extra) if not extra.is_empty() else "")
 
 var cave_hint := false

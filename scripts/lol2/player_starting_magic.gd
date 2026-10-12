@@ -51,6 +51,17 @@ func magic_state() -> Dictionary:
 	if host.get("player_magic_checkpoint") != null:
 		return host.player_magic_checkpoint if not host.player_magic_checkpoint.is_empty() else fallback
 	return host.quest_state.get("player_magic_reward_state",fallback)
+## Fighting progression (read-only, for the HUD) from whichever owner this host uses: the Museum's fighting packet, the
+## Hive checkpoint, or the Cave/Jungle quests. Absent everywhere = the initial values (nothing earned yet).
+func fighting_state() -> Dictionary:
+	var saved = null
+	if host.get("fighting_checkpoint") is Dictionary: saved = host.fighting_checkpoint.get("player_reward_state")
+	elif host.get("player_reward_checkpoint") is Dictionary and not host.player_reward_checkpoint.is_empty(): saved = host.player_reward_checkpoint
+	elif host.get("quest_state") is Dictionary: saved = host.quest_state.get("player_reward_state")
+	if saved is Dictionary and saved.get("player") is Dictionary: return saved.player
+	if initial_fighting.is_empty(): initial_fighting = JSON.parse_string(FileAccess.get_file_as_string("res://assets/lol2/generated/player_progression_initial.json")).fighting
+	return initial_fighting
+var initial_fighting: Dictionary = {}
 func commit(saved: Dictionary) -> void:
 	if host.get("player_magic_checkpoint") != null: host.player_magic_checkpoint=saved
 	else: host.quest_state.player_magic_reward_state=saved
