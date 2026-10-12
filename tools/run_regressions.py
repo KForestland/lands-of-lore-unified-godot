@@ -151,12 +151,20 @@ HIVE = [(name, 'headless') for name in [
 SUITES = {'portable': PORTABLE, 'core': CORE, 'hive': HIVE, 'all': CORE + HIVE}
 
 
-def run_one(command, timeout, env):
+def run_one(command, timeout, env, log_path=None):
+    if log_path is not None:
+        log_path = Path(log_path)
+        log_path.write_bytes(b"")
+    def append_log(data):
+        if log_path is not None:
+            with log_path.open("ab") as stream:
+                stream.write(data)
     started = time.monotonic()
     try:
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                    env=env, start_new_session=True)
     except OSError as error:
+        append_log(str(error).encode())
         return 127, str(error), False, time.monotonic() - started
     chunks = []
     deadline = started + timeout
@@ -185,6 +193,7 @@ def run_one(command, timeout, env):
             if not data:
                 break
             chunks.append(data)
+            append_log(data)
             sample = tail + data
             if script_error_deadline is None and re.search(rb"(?:^|\n)SCRIPT ERROR:", sample):
                 script_error_deadline = time.monotonic() + 0.2
@@ -196,6 +205,7 @@ def run_one(command, timeout, env):
         kill_group()
         rest, _ = process.communicate()
     chunks.append(rest)
+    append_log(rest)
     code = 124 if timed_out else (1 if script_error_deadline is not None else process.returncode)
     return code, b"".join(chunks).decode(errors="replace"), timed_out, time.monotonic() - started
 
@@ -251,12 +261,17 @@ def main():
             '--resolution', '1280x720', '--fixed-fps', '60'])
         command += ['--path', str(ROOT), '--script', f'res://tests/{name}.gd']
         if name in ('cave_demo_controls_test', 'classic_hud_live_test', 'classic_hud_actions_test', 'classic_hud_layout_test', 'classic_hud_acceptance_test', 'player_continuity_chain_test', 'player_continuity_restart_test'): command += ['--', '--demo-interface']
-        code, log, timed_out, elapsed = run_one(command, args.timeout, {**os.environ, 'DISPLAY': args.display or os.environ.get('DISPLAY', ':0')})
         logfile = output / f'{name}.log'
+        report['current_test'] = {'name': name, 'index': index, 'mode': mode,
+                                  'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                                  'timeout_seconds': args.timeout, 'log': logfile.name}
+        save()
+        code, log, timed_out, elapsed = run_one(command, args.timeout, {**os.environ, 'DISPLAY': args.display or os.environ.get('DISPLAY', ':0')}, logfile)
         logfile.write_text(log)
         errors = [line for line in log.splitlines() if re.search(
             r'SCRIPT ERROR|ERROR:|Assertion failed|Traceback|\bFAIL(?:ED)?\b', line)]
         passed = code == 0 and not errors and bool(re.search(r'\bpass(?:ed)?\b', log, re.IGNORECASE))
+        report['current_test'] = None
         report['tests'].append({'name': name, 'mode': mode, 'passed': passed,
             'returncode': code, 'timed_out': timed_out, 'seconds': round(elapsed, 2),
             'log': logfile.name, 'errors': errors})
