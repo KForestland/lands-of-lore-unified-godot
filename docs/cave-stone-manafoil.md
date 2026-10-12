@@ -64,9 +64,9 @@ L1_DC prop343 and L4_HJ prop1913 each own one kind5 value19 group that grants a 
 - Both also run player op2 0x0D/0x0E.
 
 `tools/audit_debug_kit_props.py` checks the following scope (`docs/debug-kit-props.json`):
-- All 17 direct `E8` call sites of the kind5 dispatcher AD8E0. Each pushes a constant in {0,1,2,3,5,6,13..18,20}; F6C87 passes the masked touch flag, which is 0 on that path. None passes 19.
+- The 17 known direct `E8` call signatures of the kind5 dispatcher AD8E0. Each pushes a constant in {0,1,2,3,5,6,13..18,20}; F6C87 passes the masked touch flag, which is 0 on that path. None passes 19.
 - Every op9 command in both command streams of L1_DC and L4_HJ: none sends property 19 to either prop.
 
-Indirect or computed calls to AD8E0, and other areas' commands, were not enumerated. Within that scope no producer exists, so both are classified as unreachable debug/test kits and are not implemented.
+Indirect or computed calls to AD8E0, and other areas' commands, were not enumerated. No producer is established by this bounded audit. Debug/test-kit purpose remains a hypothesis, and global unreachability is not proved. Both remain unimplemented; the same audit now covers Museum prop93. See [disposition](museum-prop93-disposition.md).
 
 Test: `tests/cave_stone_manafoil_live_test.gd` (registered in `tools/run_regressions.py`).
