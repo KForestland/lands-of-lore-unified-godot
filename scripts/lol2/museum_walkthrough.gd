@@ -43,6 +43,7 @@ var player_magic_checkpoint := preload("res://scripts/lol2/player_magic_state.gd
 ## Cave fighting progression carried unchanged to Jungle quests.
 var fighting_checkpoint: Dictionary = {}
 var control96: Node3D
+var ivory: Node3D
 var prism: Node3D
 var blood_loot: Node3D
 var skeleton_population: Node3D
@@ -212,6 +213,11 @@ func _ready() -> void:
 		add_child(control96)
 		var control_error: String=control96.setup(self,checkpoint.get("museum_control96") if checkpoint is Dictionary else null)
 		if not control_error.is_empty(): push_error(control_error)
+	if preload("res://scripts/lol2/museum_ivory.gd").assets_ready():
+		ivory = preload("res://scripts/lol2/museum_ivory.gd").new()
+		add_child(ivory)
+		var ivory_error: String = ivory.setup(self, checkpoint.get("museum_ivory") if checkpoint is Dictionary else null)
+		if not ivory_error.is_empty(): push_error(ivory_error)
 	if checkpoint is Dictionary: restore_escape_wall(checkpoint)
 	gallery = preload("res://scripts/lol2/museum_gallery.gd").new()
 	add_child(gallery)
@@ -280,6 +286,7 @@ func checkpoint_state() -> Dictionary:
 		"gallery": gallery.checkpoint() if is_instance_valid(gallery) else {},
 		"museum_key_locks": key_locks.checkpoint() if is_instance_valid(key_locks) else KeyLockState.initial(),
 		"museum_long_arm": long_arm.checkpoint() if is_instance_valid(long_arm) else LongArmState.initial(),
+		"museum_ivory": ivory.checkpoint() if is_instance_valid(ivory) else preload("res://scripts/lol2/museum_ivory_state.gd").initial(),
 		"museum_prism": prism.checkpoint() if is_instance_valid(prism) else false,
 		"museum_blood_loot": blood_loot.checkpoint() if is_instance_valid(blood_loot) else null,
 		"skeletons": skeleton_population.checkpoint() if is_instance_valid(skeleton_population) else preload("res://scripts/lol2/museum_skeleton_population_state.gd").initial(),
@@ -435,14 +442,14 @@ func open_dragon_door() -> bool:
 func _unhandled_input(event: InputEvent) -> void:
 	if is_instance_valid(interface_hud) and interface_hud.cursor_active: return
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		if strike_hourglass() or strike_escape_wall() or strike_sword_skeleton():
+		if (is_instance_valid(ivory) and ivory.strike()) or strike_hourglass() or strike_escape_wall() or strike_sword_skeleton():
 			get_viewport().set_input_as_handled()
 			return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_I:
 		if open_inventory(): get_viewport().set_input_as_handled()
 		return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
-		if (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(prism) and prism.use()) or (is_instance_valid(blood_loot) and blood_loot.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
+		if (is_instance_valid(ivory) and ivory.use()) or (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(prism) and prism.use()) or (is_instance_valid(blood_loot) and blood_loot.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
 		return
 	super._unhandled_input(event)
 
@@ -467,6 +474,9 @@ func _physics_process(delta: float) -> void:
 		interaction_label.text = arm_hint
 		interaction_label.show()
 		return
+	var ivory_hint: String = ivory.interaction_hint() if is_instance_valid(ivory) else ""
+	if not ivory_hint.is_empty():
+		interaction_label.text=ivory_hint;interaction_label.show();return
 	var prism_hint: String=prism.interaction_hint() if is_instance_valid(prism) else ""
 	if not prism_hint.is_empty():
 		interaction_label.text=prism_hint;interaction_label.show();return
@@ -554,6 +564,9 @@ func apply_save(state: Dictionary) -> void:
 	if is_instance_valid(long_arm):
 		var arm_error: String = long_arm.restore_checkpoint(saved.get("museum_long_arm",LongArmState.initial()))
 		if not arm_error.is_empty(): push_error(arm_error)
+	if is_instance_valid(ivory):
+		var ivory_error: String = ivory.restore_checkpoint(saved.get("museum_ivory"))
+		if not ivory_error.is_empty(): push_error(ivory_error)
 	champion_stones.restore_collected(carried_collected+item_effect_checkpoint.spent)
 	mail_shirt.visible = not MAIL_ITEM_ID in carried_collected
 	player_magic_checkpoint = preload("res://scripts/lol2/player_magic_state.gd").restore(saved.get("magic",preload("res://scripts/lol2/player_magic_state.gd").initial())).checkpoint

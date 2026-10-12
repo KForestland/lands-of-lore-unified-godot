@@ -56,6 +56,8 @@ static func validate(state: Variant) -> String:
 	if not lock_error.is_empty(): return lock_error
 	var arm_error: String = preload("res://scripts/lol2/museum_long_arm_state.gd").validate(checkpoint.get("museum_long_arm",preload("res://scripts/lol2/museum_long_arm_state.gd").initial()),ids)
 	if not arm_error.is_empty(): return arm_error
+	var ivory_error := preload("res://scripts/lol2/museum_ivory_state.gd").validate(checkpoint.get("museum_ivory",preload("res://scripts/lol2/museum_ivory_state.gd").initial()),ids)
+	if not ivory_error.is_empty(): return ivory_error
 	var carried_error := Catalog.validate_carried(ids,"museum")
 	if not carried_error.is_empty(): return carried_error
 	var equipment_error := Catalog.validate_slots(ids,"museum",checkpoint.get("equipped_item"),checkpoint.get("equipped_armor",""))

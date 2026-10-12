@@ -45,6 +45,8 @@ const FIXED := {
 	"draracle/prop/1108/sample":{"slot":"","label":"Cavern find (unidentified)","icon":"","origin":"cave"},
 	"jungle:kelsrick:Fine_Longsword":{"slot":"weapon","label":"Fine Longsword","icon":GENERATED+"museum_sword_transfer/sword.png","origin":"jungle"},
 	"museum:item11:Fine_Longsword":{"slot":"weapon","label":"Fine Longsword","icon":GENERATED+"museum_sword_transfer/sword.png","origin":"museum"},
+	"museum:item17:Ivory_Chip":{"slot":"","label":"Ivory Chip","icon":GENERATED+"museum_ivory/ivory.png","origin":"museum"},
+	"museum:item18:Ivory_Chip":{"slot":"","label":"Ivory Chip","icon":GENERATED+"museum_ivory/ivory.png","origin":"museum"},
 	"museum:item10:Mail_Shirt":{"slot":"armor","label":"Mail Shirt","icon":GENERATED+"museum_mail/mail.png","origin":"museum","defense":20},
 	"museum:item8:Champion_Stone":{"slot":"","label":"Champion Stone","icon":GENERATED+"museum_stones/stone.png","origin":"museum","use":"champion_stone"},
 	"museum:item9:Champion_Stone":{"slot":"","label":"Champion Stone","icon":GENERATED+"museum_stones/stone.png","origin":"museum","use":"champion_stone"},
