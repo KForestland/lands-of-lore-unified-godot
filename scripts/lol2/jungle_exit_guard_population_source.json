@@ -1,0 +1,120 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "actors": [
+  {
+   "actor": 58,
+   "definition": 9,
+   "position": [
+    5658,
+    -114,
+    -3938
+   ],
+   "heading": 42780,
+   "health": 255,
+   "behavior": 14,
+   "flags": 13698,
+   "present": false,
+   "loot": null,
+   "reward_scale": 10
+  },
+  {
+   "actor": 59,
+   "definition": 9,
+   "position": [
+    5634,
+    -114,
+    -3583
+   ],
+   "heading": 54613,
+   "health": 255,
+   "behavior": 14,
+   "flags": 13698,
+   "present": false,
+   "loot": null,
+   "reward_scale": 10
+  },
+  {
+   "actor": 60,
+   "definition": 9,
+   "position": [
+    5689,
+    -114,
+    -3706
+   ],
+   "heading": 49152,
+   "health": 255,
+   "behavior": 14,
+   "flags": 13698,
+   "present": false,
+   "loot": null,
+   "reward_scale": 10
+  }
+ ],
+ "definitions": {
+  "9": {
+   "name": "GGuard",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 10
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 14
+    },
+    "rise": {
+     "selector": 4,
+     "frames": 9
+    },
+    "death": {
+     "selector": 6,
+     "frames": 20
+    },
+    "corpse": {
+     "selector": 7,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 3,
+      "frames": 13,
+      "hits": [
+       [
+        7,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "native_bases": {
+  "GGuard": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "74fc6beef0cfe7625a8a4661330786b4f758d533180e82cec624f6ac9e4a56c3"
+  }
+ },
+ "regions": [],
+ "neighbour_wake": {},
+ "counted": [],
+ "counter_target": 0,
+ "scripted_dormant": [
+  58,
+  59,
+  60
+ ],
+ "dormant_pose": "idle",
+ "note": "Spawn/wake/hold are driven by jungle_exit_encounter_state.gd source groups; this packet is the generic combat/presentation owner only."
+}

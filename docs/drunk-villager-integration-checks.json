@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "source_stable": true,
+  "tests": [
+    {
+      "name": "jungle_drunk_state_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_kelsrick_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_village_alarm_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_drunk_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_inner_gate_live_test",
+      "passed": true
+    },
+    {
+      "name": "hive_small_route_test",
+      "passed": true
+    },
+    {
+      "name": "hive_route_test",
+      "passed": true
+    }
+  ],
+  "source_hashes": {
+    "scripts/lol2/jungle_drunk.gd": "e072c9f7dd47c6f82deba637df867226c8c00e8d8897d28ba26be30b711ca860",
+    "scripts/lol2/jungle_drunk_state.gd": "0994de7efa110cb340e29c1007cf6e246b67707f31b9e68156bc425a1f9cca71",
+    "scripts/lol2/jungle_drunk_packet.gd": "e0caac3989e1a69fbc6ae8f611cb7ec61738b8862208415ecdf94234d3e3310b",
+    "scripts/lol2/jungle_drunk_source.json": "2e0218626ce25ccf0a25dd2588205f0792cbfa78dd61f62bf990cf0a0204b1c8",
+    "scripts/lol2/jungle_walkthrough.gd": "a9364c5b223f761dca75c2a42d3b2eaae5df7f3363c4ce224c01b9f390cef6a9",
+    "scripts/lol2/act_one_quest_state.gd": "223675e5aa2b4c3ab037013ce9d0be48434d01524ab95f8237dc11d12af40c70",
+    "tests/jungle_drunk_state_test.gd": "dbe00352b2f21cf4d041f80e31e449877af384737c56e9c08ae1da39913db6e0",
+    "tests/jungle_drunk_live_test.gd": "cfafc1ba32bab78f91d72d2f21f672043f8b89b9b80e8f05f6c0edd507fe1dde",
+    "tests/hive_route_test.gd": "bc6078099a60d178dd27ea3d8f79cce3a70a605342e4d1055d37ac67bdb2cfbf",
+    "tests/hive_small_route_test.gd": "e06ee233d85747a6252ab06a6a8b083aaa9da3d01320505b1341f5d7561cba6f",
+    "tools/run_regressions.py": "5f1b6b76621c1c4cd10cb4dc3b229403b9cd26a53bae2a94929ea82597c540ec",
+    "tools/prepare_jungle_drunk.py": "695406cb5a4049d94f482fa651f61aca3c39b553c67c4ff320c4f6c0e78eeb44",
+    "tools/prepare_jungle_drunk_media.py": "61dd84dd3d51dfbe408a23c5ecd835f3e09c3ea9ab9dc519002f3a766805ae4f",
+    "docs/jungle-drunk-villager.md": "b5c0b6a3f89d64500e07ca960ace0b06f5691435efa804de7bfcb6cd2ffffb57"
+  },
+  "media_reproduction_files": 584,
+  "media_receipt_sha256": "ab2c8134fbd4e7d1ce10b4be1163910356ab73865245d9fbcfe319ef7d61edc9",
+  "limits": [
+    "Supplied approach; no earned village traversal claim.",
+    "Source sighting, real E/armed mouse input, fresh-host and disk save recovery verified.",
+    "External prop/control flag commands and struck props484/485 presentation not fully implemented.",
+    "Modern collision/range/clocks and immediate retirement documented.",
+    "Private software-rendered capture inspected; audible/GPU/Bob acceptance open.",
+    "Fresh combined full suite/campaign/build pending."
+  ]
+}

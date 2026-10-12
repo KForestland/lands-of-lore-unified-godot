@@ -1,0 +1,178 @@
+{
+ "version": 1,
+ "left_village": {
+  "local": "Left_Village",
+  "l4_hj_local": 36,
+  "regions": {
+   "3501": {
+    "group": 7092,
+    "event": 2,
+    "predicate": 164,
+    "predicate_raw": "0003240000",
+    "requires": 0,
+    "sets": 2,
+    "archive_offset": 13046514
+   },
+   "3805": {
+    "group": 7950,
+    "event": 2,
+    "predicate": 165,
+    "predicate_raw": "0003240002",
+    "requires": 2,
+    "sets": 3,
+    "archive_offset": 13047072
+   }
+  }
+ },
+ "sequences": {
+  "CAN_MAID": [
+   {
+    "speaker": 32,
+    "line": 700,
+    "name": "WOMS\\CAN\\3270006E.VQA",
+    "sha256": "4479a42fcc2181f6243e7dfed47ba65851756d37eadb68de5b5d627b70ad0702",
+    "kind": "movie"
+   },
+   {
+    "speaker": 32,
+    "line": 701,
+    "name": "WOMS\\CAN\\3270106E.VQA",
+    "sha256": "e98f76dda9c13f6f8acfb0da8f81b5a2444251e1aa55fce79b1289fc64a49b88",
+    "kind": "movie"
+   },
+   {
+    "speaker": 32,
+    "line": 702,
+    "name": "WOMS\\CAN\\3270206E.VQA",
+    "sha256": "25d05fdd5bdd836d0609b05a901ca5969c95145aaffd82c9e47c2c77f23a8de6",
+    "kind": "movie"
+   },
+   {
+    "speaker": 32,
+    "line": 703,
+    "name": "WOMS\\CAN\\3270306E.VQA",
+    "sha256": "281cf5072b481b683a166df7b19e988bbacd55d741b8324eddb85641f605f8e8",
+    "kind": "movie"
+   },
+   {
+    "speaker": 32,
+    "line": 704,
+    "name": "WOMS\\CAN\\3270406E.VQA",
+    "sha256": "85140564ecde20f1913ef203b765d9747d6ae5d856d6b78a4caac2643d10ba5a",
+    "kind": "movie"
+   },
+   {
+    "speaker": 32,
+    "line": 705,
+    "name": "WOMS\\CAN\\3270506E.VQA",
+    "sha256": "b2cef1625bcda99296b4800536355b416db1698a24256525781aae8da17738ed",
+    "kind": "movie"
+   },
+   {
+    "speaker": 32,
+    "line": 706,
+    "name": "WOMS\\CAN\\3270606E.VQA",
+    "sha256": "30c185eca8a779ed4742a3e4ffd0f582911a1383e49507ba391867e3e64f0fc3",
+    "kind": "movie"
+   },
+   {
+    "speaker": 32,
+    "line": 707,
+    "name": "WOMS\\CAN\\3270706E.VQA",
+    "sha256": "ad22c42f8d07a41d6ceffd8b2875a3baaf3d853d5ebcf3994d67398ae18087a8",
+    "kind": "movie"
+   },
+   {
+    "speaker": 32,
+    "line": 708,
+    "name": "WOMS\\CAN\\3270806E.VQA",
+    "sha256": "e5ea09a8a9a5ba3b415ac03c5d0173dd411ad464e6bd47ff818dd2c071d268d8",
+    "kind": "movie"
+   },
+   {
+    "speaker": 32,
+    "line": 709,
+    "name": "WOMS\\CAN\\3270906E.VQA",
+    "sha256": "45cf9e668aad1dde8f55ed16f7a5932c9d03edb64d3a77d5ac681ff732e28f6b",
+    "kind": "movie"
+   }
+  ],
+  "CAN_REVISIT": [
+   {
+    "speaker": 13,
+    "line": 662,
+    "name": "WOMS\\CAN\\1366206E.VQA",
+    "sha256": "d927bf7e048ccf43152343e1ce016be30414c6de956ab94278b1506d39407e27",
+    "kind": "movie"
+   },
+   {
+    "speaker": 13,
+    "line": 663,
+    "name": "WOMS\\CAN\\1366306E.VQA",
+    "sha256": "4ae06753a28afa6851f83477b92d3d64c9fe13f6962f34d7bfe4473e449893d7",
+    "kind": "movie"
+   },
+   {
+    "speaker": 1,
+    "line": 664,
+    "name": "WOMS\\CAN\\0166406E.AUD",
+    "sha256": "0c894fbc9bfb898347dd1050013bdd174a48834a5556ff9f302da0262a31a50c",
+    "kind": "audio_only"
+   },
+   {
+    "speaker": 1,
+    "line": 665,
+    "name": "WOMS\\CAN\\0166506E.AUD",
+    "sha256": "b16a2ca3872d0ccbc569ab465ea7a957831c92285d5eef75cccfd396e1d86e17",
+    "kind": "audio_only"
+   },
+   {
+    "speaker": 13,
+    "line": 666,
+    "name": "WOMS\\CAN\\1366606E.VQA",
+    "sha256": "6ae41cdbdb76ed00831660f633d0a53fe15663e963be0ba9f7fe847122c2ad2d",
+    "kind": "movie"
+   }
+  ],
+  "CAN_REVISIT_LATE": [
+   {
+    "speaker": 13,
+    "line": 675,
+    "name": "WOMS\\CAN\\1367506E.VQA",
+    "sha256": "b189738086680226ef3776d93d50d8764d022f1aefd4f455abcf9825eb3630fc",
+    "kind": "movie"
+   }
+  ]
+ },
+ "effects": {
+  "CAN_MAID": {
+   "after_line_707": [
+    "GV_HULINE_ALERT=1"
+   ],
+   "after_line_708": [
+    "unknown_e4(1) if flag267 clear (not hosted)"
+   ],
+   "after_line_709": [
+    "flag267=1",
+    "room VILLAGE"
+   ]
+  },
+  "CAN_REVISIT": {
+   "start": [
+    "flag42=1"
+   ]
+  },
+  "CAN_REVISIT_LATE": {
+   "start": [
+    "flag43=1"
+   ]
+  },
+  "farewell": {
+   "start": [
+    "flag37=0",
+    "flag44=1"
+   ],
+   "then": "existing CAN_EXIT (0xE09)"
+  }
+ }
+}

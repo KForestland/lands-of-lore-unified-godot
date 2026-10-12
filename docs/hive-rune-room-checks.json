@@ -1,0 +1,1939 @@
+{
+  "dll_sha256": {
+    "RUNES": "8a946f079ae8f9215eaba07de24bae5af4e30a8ddeb4c1749784c9c57fe07647",
+    "RUNECL": "48d360c4d4ce38a00a616fe579f8c51935569194ba62e7bd1bb772d2d439ce8d"
+  },
+  "reward_callbacks": {
+    "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+    "bindings": {
+      "RUNECL:760": {
+        "table_offset": 288,
+        "host": 988532,
+        "target": 887324,
+        "player": 140660,
+        "bank": "fighting",
+        "code_sha256": "fa89211158393f77fb9a771ebd08003d6ea70a853e791b67b68cae1060f6bf80",
+        "relocation": {
+          "target_object": 2,
+          "target_offset": 623952,
+          "record_file_offset": 577427,
+          "record_hex": "07104c0a0250850900"
+        }
+      },
+      "RUNECL:75c": {
+        "table_offset": 292,
+        "host": 988552,
+        "target": 887700,
+        "player": 140660,
+        "bank": "magic",
+        "code_sha256": "8f351c27c81fc83d7544ce49e7ba131c8165818bccec27cced93aac88b1f9aa8",
+        "relocation": {
+          "target_object": 2,
+          "target_offset": 623972,
+          "record_file_offset": 577436,
+          "record_hex": "0710500a0264850900"
+        }
+      }
+    },
+    "scope": "DLL initializer reorders slots760/75c: host table offsets120/124. Wrappers pass the award unchanged to player22574 routines D8A1C/D8B94. Existing fighting accumulation is verified separately; magic accumulation/level-stat integration remains open."
+  },
+  "cases": [
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 0,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 0,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 0,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 0,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 1,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 1,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 1,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 1,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 2,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 2,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 2,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 2,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            8
+          ],
+          [
+            "movie",
+            2,
+            64,
+            24
+          ],
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "next_room",
+            "RUNECL_"
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "next_room",
+            "RUNECL_"
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            8
+          ],
+          [
+            "movie",
+            2,
+            64,
+            24
+          ],
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "next_room",
+            "RUNECL_"
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "set_flag",
+            286
+          ],
+          [
+            "next_room",
+            "RUNECL_"
+          ],
+          [
+            "end_room"
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 3,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 3,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 3,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 3,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "unresolved_callback",
+            "RUNES:81c",
+            256
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "unresolved_callback",
+            "RUNES:81c",
+            256
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "unresolved_callback",
+            "RUNES:81c",
+            256
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "unresolved_callback",
+            "RUNES:81c",
+            256
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 4,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 4,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 4,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 4,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 4,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "remove_overlay",
+            "RUNES2_"
+          ],
+          [
+            "named_movie",
+            "RUNES3_"
+          ],
+          [
+            "give_item",
+            "66-Ancients stn",
+            0
+          ],
+          [
+            "set_flag",
+            7
+          ],
+          [
+            "movie",
+            100,
+            2,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 4,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "remove_overlay",
+            "RUNES2_"
+          ],
+          [
+            "named_movie",
+            "RUNES3_"
+          ],
+          [
+            "give_item",
+            "66-Ancients stn",
+            0
+          ],
+          [
+            "set_flag",
+            7
+          ],
+          [
+            "movie",
+            100,
+            2,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 4,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 4,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 5,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 5,
+        "lights": 0,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 5,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 5,
+        "lights": 0,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            26,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 5,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 5,
+        "lights": 1,
+        "flags": {
+          "7": 0,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 5,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 0
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNES",
+        "hotspot": 5,
+        "lights": 1,
+        "flags": {
+          "7": 1,
+          "8": 1
+        },
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            51,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "???"
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            24,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "71-Wax"
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "award_experience",
+            "fighting",
+            200
+          ],
+          [
+            "award_experience",
+            "magic",
+            200
+          ],
+          [
+            "consume_held"
+          ],
+          [
+            "give_item",
+            "72-Wax runes",
+            0
+          ],
+          [
+            "set_global",
+            "GV_HAS_RUNES",
+            1
+          ],
+          [
+            "movie",
+            2,
+            66,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "94-Iron flute"
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            35,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "72-Wax runes"
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            35,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": ""
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            51,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "???"
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            24,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "71-Wax"
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "consume_held"
+          ],
+          [
+            "give_item",
+            "72-Wax runes",
+            0
+          ],
+          [
+            "set_global",
+            "GV_HAS_RUNES",
+            1
+          ],
+          [
+            "movie",
+            2,
+            66,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "94-Iron flute"
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            35,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 0,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "72-Wax runes"
+      },
+      "expected": {
+        "handled": 1,
+        "effects": [
+          [
+            "movie",
+            2,
+            35,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "???"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "71-Wax"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "94-Iron flute"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "72-Wax runes"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "???"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "71-Wax"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "94-Iron flute"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 1,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "72-Wax runes"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": [
+          [
+            "movie",
+            2,
+            62,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "???"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "71-Wax"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "94-Iron flute"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "72-Wax runes"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "???"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "71-Wax"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "94-Iron flute"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 2,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "72-Wax runes"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "???"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "71-Wax"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "94-Iron flute"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 0,
+        "held": "72-Wax runes"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": ""
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "???"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "71-Wax"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "94-Iron flute"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    },
+    {
+      "inputs": {
+        "room": "RUNECL",
+        "hotspot": 3,
+        "lights": 1,
+        "flags": {},
+        "has_runes": 1,
+        "held": "72-Wax runes"
+      },
+      "expected": {
+        "handled": 0,
+        "effects": []
+      }
+    }
+  ],
+  "scope": "Native dispatch instructions replayed with mocked host queries and recorded effect calls. Host callback internals, real item matching, media and reward application are not replayed."
+}

@@ -2,6 +2,9 @@ extends Node3D
 @export var default_full_map := false
 const WALK_SPEED = 80.0
 const SPRINT_SPEED = 144.0
+# Modern jump tuning: 25 units of rise under the existing 128-unit gravity.
+const JUMP_SPEED := 80.0
+var jump_requested := false
 const ROOT = "res://assets/lol2/generated/original_floors/"
 var fixtures: Array
 var data: Dictionary
@@ -167,6 +170,7 @@ func _add_face(points: Array, material: Material, collision_faces: PackedVector3
 		surface.add_vertex(p)
 		collision_faces.append(p)
 func _reset() -> void:
+	jump_requested = false
 	waypoint = 0
 	route_ticks = 0
 	if connected and checkpoint < 0: target = point(fixtures[selected].waypoints[0])
@@ -186,6 +190,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_SPACE and not flying and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not get_tree().paused and is_physics_processing() and player.is_on_floor():
+			jump_requested = true
 		if event.keycode == KEY_ESCAPE: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		if event.keycode == KEY_R: _reset()
 		if event.keycode == KEY_F and full_map:
@@ -223,13 +229,15 @@ func _physics_process(delta: float) -> void:
 		var remaining := Vector2(target.x - player.position.x, target.z - player.position.z).length()
 		speed = minf(speed, remaining / delta)
 	if flying:
+		jump_requested = false
 		direction = camera.global_basis * Vector3(float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)), 0, float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W))) if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED else Vector3.ZERO
 		direction.y += float(Input.is_physical_key_pressed(KEY_SPACE)) - float(Input.is_physical_key_pressed(KEY_CTRL))
 		player.position += direction.normalized() * speed * 4 * delta
 		return
 	player.velocity.x = direction.x * speed
 	player.velocity.z = direction.z * speed
-	player.velocity.y = 0 if player.is_on_floor() else player.velocity.y - 128 * delta
+	player.velocity.y = JUMP_SPEED if jump_requested and player.is_on_floor() else (0.0 if player.is_on_floor() else player.velocity.y - 128 * delta)
+	jump_requested = false
 	player.move_and_slide()
 	grounded = grounded or player.is_on_floor()
 	var minimum_y: float = fixtures[0].minimum_floor_y if full_map else minf(start.y, target.y)

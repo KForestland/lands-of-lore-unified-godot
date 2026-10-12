@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "returncode": 0,
+  "seconds": 65.5029224280006,
+  "log": "tmp/earned_jungle_hive_walk.log",
+  "input_proof": "docs/museum-earned-jungle-walk-checks.json",
+  "input_save": "user://tests/act1_earned_museum_jungle.json",
+  "input_sha256": "41938bb206a0a465e3412aa2dadb345dd9e1ff582779383e09e5829196da4969",
+  "output_save": "user://tests/act1_cave_hive_entry.json",
+  "output_sha256": "fb2b38290ad0fb2719386bf1b1d4ef8077919913198cfef8fc9f1d96eda92120",
+  "file_sha256": {
+    "tests/earned_jungle_hive_walk_test.gd": "b8860fc71ae05f62e7a9c695a85ff08d499ea9d28f260bd9a3c9c75a7b043a1b",
+    "tools/build_earned_jungle_hive_walk.py": "8f62f37b9fb40aa9004e0a810879d319c0f0828b7deaec8f74f74f5b90fac62f",
+    "tests/fixtures/earned_jungle_hive_walk_route.json": "66a534a65f3a2865ccffb83263da32715a557116ef09ba44bd173f2ba94cf8ba",
+    "scripts/lol2/hive_route.gd": "dad2ac66590030d0ab7a9ab81a1b6a9de82effeb65a4f3d28ac28e385bee9e9e"
+  },
+  "scope": "198-region route from original dragon arrival3875 to human Hive entrance2809, actual scene transition, grounding and disk save. Earned Stalagmite/Fine Longsword preserved; rescue/chasm remain unearned. Input save SHA validated; normal W input and production physics. No test position/form/inventory/quest injection.",
+  "limits": [
+    "Engine clock4x and physics240; automated camera steering.",
+    "Original terrain/collision unchanged;1667\u21921665 portal sample steered to75% to clear inside wall.",
+    "This joins the earned cave/Museum route to Hive entrance; rescue/connected quests and full Act1 remain separate until continued."
+  ]
+}

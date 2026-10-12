@@ -1,0 +1,20 @@
+{
+  "unit_tests": {
+    "passed": 8,
+    "command": "python3 -m unittest discover -s tests -p test_verify_demo_stage.py -v"
+  },
+  "real_R3": {
+    "staged_inputs": 17226,
+    "assets": 16853,
+    "templates": 2,
+    "matches_original_manifest": true,
+    "source": "Archived R3 runtime plus unchanged original local generated assets"
+  },
+  "mixed_revision_rejected": {
+    "exit_code": 1,
+    "reason": "Input verification failed: Staged file set differs: missing=['scripts/lol2/dawn_spell58_plasma.gd', 'scripts/lol2/dawn_spell7_chain.gd', 'scripts/lol2/dawn_spell_bolts.gd'], extra=[]",
+    "manifest_created": false
+  },
+  "tool_sha256": "43689f21efa6358fc1181b2ce986c9e93847d2ff878755a1874c270eab9700fd",
+  "scope": "Build-input identity, original-game export feature, raw media rules and template paths. Not extraction portability, runtime or engine compatibility proof."
+}

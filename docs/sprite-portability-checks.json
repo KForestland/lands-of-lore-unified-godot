@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "name": "museum",
+      "archive": "DAT/L3_DH.MIX",
+      "definitions": [
+        0,
+        1,
+        2
+      ],
+      "texture_sha256": "7e353789b4ca6ff8b5630f894e85ec1788d9c4713eaa537aded98b78ece21e07",
+      "frames": 833,
+      "unsupported": [
+        {
+          "resource": 33,
+          "type": 834
+        }
+      ],
+      "identical_files": 835
+    },
+    {
+      "name": "bacatta",
+      "archive": "DAT/L4_HJ.MIX",
+      "definitions": [
+        5
+      ],
+      "texture_sha256": "98c97fabb6fa8db7ca78a7c3626106ec850a6d5e37952292e15f32cb966a227b",
+      "frames": 264,
+      "unsupported": [
+        {
+          "resource": 460,
+          "type": 834
+        },
+        {
+          "resource": 459,
+          "type": 834
+        },
+        {
+          "resource": 457,
+          "type": 834
+        },
+        {
+          "resource": 456,
+          "type": 834
+        },
+        {
+          "resource": 455,
+          "type": 834
+        },
+        {
+          "resource": 454,
+          "type": 834
+        },
+        {
+          "resource": 565,
+          "type": 834
+        }
+      ],
+      "identical_files": 266
+    },
+    {
+      "name": "guards",
+      "archive": "DAT/L4_HJ.MIX",
+      "definitions": [
+        9
+      ],
+      "texture_sha256": "98c97fabb6fa8db7ca78a7c3626106ec850a6d5e37952292e15f32cb966a227b",
+      "frames": 300,
+      "unsupported": [
+        {
+          "resource": 464,
+          "type": 834
+        },
+        {
+          "resource": 463,
+          "type": 834
+        },
+        {
+          "resource": 462,
+          "type": 834
+        },
+        {
+          "resource": 458,
+          "type": 834
+        },
+        {
+          "resource": 461,
+          "type": 834
+        }
+      ],
+      "identical_files": 302
+    }
+  ],
+  "scope": "Standalone shared sprite staging from supplied original archive and existing texture blob; PNGs, palettes and complete manifests match current assets byte-for-byte. Texture-blob extraction and full asset preparation remain separate.",
+  "review": "/home/bob/AI_COMMS/classic_review_20261007/lead/sprite_portability",
+  "boundary_tests": {
+    "passed": true,
+    "total": 6,
+    "command": "python3 -m unittest discover -s tests -p test_creature_sprite_format.py -v"
+  },
+  "consumer_imports": {
+    "passed": true,
+    "modules": [
+      "prepare_cave_guard_sprites",
+      "prepare_cave_roach_audio",
+      "prepare_jungle_bacatta_media",
+      "prepare_jungle_exit_woman_media",
+      "prepare_hive_dawn20_population"
+    ]
+  },
+  "Pillow": "10.2.0",
+  "source_sha256": {
+    "tools/prepare_museum_creature_sprites.py": "18a442ff1ebe7bf9ceec118198567af1a575744a854d980b18c9d43bb4b79e2f",
+    "tools/lol2_creature_sprite_format.py": "f50766f3a670ee55d82c69a72a1b63fd4e6b5668898efb434674ddd1e8a6f46d",
+    "tools/lol2_source_format.py": "e66046e1ad87559706b75e21822440b7ebc2753e9321b3d9e042f6e9ff2f4791",
+    "tests/test_creature_sprite_format.py": "30168b6ec53efed16e8f6d42f737bb43e72aa01bca41e43b0d2a7870216dd05e"
+  }
+}

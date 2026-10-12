@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "movies": [
+    {
+      "movie": "L1_DC/0520101e.vqa",
+      "sha256": "ba0c7699b4f9c7e2c7cdd8ddd9b76de96bf96b9a7ef7d8abf084de4108df26e4",
+      "frames": 30,
+      "partial": true,
+      "audio_samples": 55124,
+      "equal_files": 31,
+      "existing_output_rejected": true
+    },
+    {
+      "movie": "L8_SJ/1335508e.vqa",
+      "sha256": "a8af7fcaac30e9a163ea9934006438500bb44750183df735f3daaa78ea947416",
+      "frames": 55,
+      "partial": false,
+      "audio_samples": 91874,
+      "equal_files": 56,
+      "existing_output_rejected": true
+    },
+    {
+      "movie": "L4_HJ/wo14.vqa",
+      "sha256": "a7000258d7d9199213a6925419f6c99e2640a547c290e0aad329c3d8a1d92a61",
+      "frames": 16,
+      "partial": true,
+      "audio_samples": 0,
+      "equal_files": 16,
+      "existing_output_rejected": true
+    }
+  ],
+  "decoder_tests": {
+    "passed": true,
+    "total": 8
+  },
+  "scope": "Unchanged shared decode/audio functions and isolated CLI match prior raw PNG/WAV bytes for partial-codebook, FFmpeg fallback and silent fixtures. Requires NumPy/Pillow/FFmpeg. Unsupported VQA variants remain rejected; not all movies or whole asset preparation.",
+  "review": "/home/bob/AI_COMMS/classic_review_20261007/lead/movie_decode_portability",
+  "consumer_imports": {
+    "passed": true,
+    "modules": [
+      "prepare_jungle_exit_movies",
+      "prepare_jungle_bacatta_media",
+      "prepare_jungle_dawn_media"
+    ],
+    "same_shared_functions": true
+  },
+  "environment": {
+    "numpy": "2.4.3",
+    "Pillow": "10.2.0",
+    "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers"
+  },
+  "source_sha256": {
+    "tools/lol2_movie_media.py": "8ba23ea7b2bf3f46d575f528a79b361e35ac842de17c9c2e6af95499935b5b06",
+    "tools/prepare_jungle_exit_movies.py": "5455757844466fa077da9e760275e30a7bebc485946dbd89b72a24bfc5304cc9",
+    "tools/vqa_v2_decode.py": "b7b22ab37dc8bfd7992a4b84ce475547b4cb39e03ec491ba9e20a3e5aaaeb102"
+  }
+}

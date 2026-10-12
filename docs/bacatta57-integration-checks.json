@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "jungle_bacatta57_state_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_bacatta_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_bacatta65_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_bacatta57_live_test",
+      "passed": true
+    },
+    {
+      "name": "hive_small_route_test",
+      "passed": true
+    },
+    {
+      "name": "bacatta_rooms_test",
+      "passed": true
+    },
+    {
+      "name": "monastery_rooms_test",
+      "passed": true
+    },
+    {
+      "name": "hive_route_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_village_gate_test",
+      "passed": true
+    }
+  ],
+  "source_stable": true,
+  "source_hashes": {
+    "docs/jungle-bacatta57.md": "1d32eb4c11e959d75471d17cd00184e51ff3750c3504633bd20343d9f2206f51",
+    "docs/jungle-bacatta65.md": "56e30b5fab7c512f41c3ae68e27af801904e2ebe82c2e2d8d03d23d79dfdd0ad",
+    "scripts/lol2/act_one_quest_state.gd": "62695e9bb7a764d5316a726e22736b30f5462af110be1bd63c3b1264d371680f",
+    "scripts/lol2/jungle_bacatta57.gd": "fd0bfb7e5e5f5bc268ecac86514ed3ace594c65ba9008a8b2ea95cbb099ee124",
+    "scripts/lol2/jungle_bacatta57_packet.gd": "e33b5236d78183b418643b7e8295d991673a21edaff0e4577153e51f12afa677",
+    "scripts/lol2/jungle_bacatta57_population_source.json": "9ce8fa0062950cbd01a859bb993f290c1e1baea3a835b38d8ed1c631cc051ca9",
+    "scripts/lol2/jungle_bacatta57_source.json": "c8fcfc521e08d3772ff8dee7cf95793dc4b9e7ba97b210d9bd44cbfc38254061",
+    "scripts/lol2/jungle_bacatta57_state.gd": "86b2d0131fc28ddc08ee02df1b924b923d654c26e900071521a2ce9e55fbde1c",
+    "scripts/lol2/jungle_walkthrough.gd": "99f00d2b7219650d9d5d6259bceac62ae67cfd04cd954b55aad0e36a4a80a4c8",
+    "scripts/lol2/player_spark_aura.gd": "bee0bfb89b8108df2402929564f8b2602761ade95e954f70b789aceeddf9e432",
+    "tests/jungle_bacatta57_live_test.gd": "0f27441ecd1654cc6ebdae2c04887e4b50088b610cfac4a5079560337152686a",
+    "tests/jungle_bacatta57_state_test.gd": "977d096b4b17526df5f07972d3a9d58a50f73b846e1948362778b567ab934b56",
+    "tests/jungle_bacatta65_live_test.gd": "28a81d191334300d8285952cf0cef3cb38fb8d251eb173f7007320918bd015da",
+    "tools/prepare_jungle_bacatta57.py": "e49051a8a2a7c8380ff8c3d58a922c465e7162c205e18182ab18b4a315b7d899",
+    "tools/run_regressions.py": "bcb1d7ab7c57bc68adc87faa8fd15bc66f688d34a0ddb0716a48a2c421adec46",
+    "tools/audit_act_one_actor_coverage.py": "28864d67705fd20e3b99f8e9e7e44e98eebc77b93d75e7bbf191053532458aa0",
+    "docs/act-one-actor-coverage.json": "e65674583de20f6e576763d853d0a8752ff26099cafd2c097c985cc463f033c0",
+    "docs/act-one-actor-coverage.md": "e3ff469f54759d6da665d75c516f26cce7e0cbc55991287908f812fc5f3f68cf",
+    "tests/hive_route_test.gd": "f670907d1c7652772bb4ddf41b0e0dbc841e320a1161c7dbf7df2e00727817f3",
+    "tests/hive_small_route_test.gd": "79e4b04852dc1a334235472189e6ad90ab6260056cc67531045b4dc453683dce"
+  },
+  "limits": [
+    "Focused integrated checks only; fresh combined full suite, campaign and build pending.",
+    "Live branch uses supplied post-farewell state; not an earned farewell walkthrough.",
+    "Village alarm remains a separate pending integration; unknown source flag effects unresolved.",
+    "Bob playtest acceptance remains open."
+  ]
+}

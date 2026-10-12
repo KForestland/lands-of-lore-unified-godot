@@ -1,0 +1,1040 @@
+{
+ "passed": true,
+ "dll_sha256": "4489d2ad3b866f7eaadec1e811f3b003d10f57a7f40f54ee9eb7a64e2a8d6696",
+ "slots": {
+  "0x111c": "debug",
+  "0x1120": "load_shape",
+  "0x1124": "free_shape",
+  "0x1128": "show_sprite",
+  "0x112c": "hide_sprite",
+  "0x1130": "hotspot",
+  "0x1134": "remove_hotspot",
+  "0x1138": "npc",
+  "0x113c": "stop_npc",
+  "0x1140": "start_loop",
+  "0x1144": "stop_loop",
+  "0x1158": "give_item",
+  "0x115c": "consume_held",
+  "0x1160": "set_flag",
+  "0x1168": "get_flag",
+  "0x116c": "movie",
+  "0x1180": "mana_debit",
+  "0x1184": "exit_room",
+  "0x1188": "inventory_has",
+  "0x118c": "get_global",
+  "0x1190": "holding_any",
+  "0x119c": "arm_timer",
+  "0x11a0": "stop_timer",
+  "0x11a8": "held_is",
+  "0x11b8": "set_global",
+  "0x11d8": "load_room",
+  "0x1218": "quip",
+  "0x121c": "reset_trigger_bits",
+  "0x1230": "cursor_show",
+  "0x1234": "cursor_hide",
+  "0x1238": "movie_flags",
+  "0x1240": "award_fighting",
+  "0x1254": "ambient_start",
+  "0x1258": "ambient_stop"
+ },
+ "used": [
+  "arm_timer",
+  "get_flag",
+  "get_global",
+  "movie",
+  "npc",
+  "set_flag",
+  "set_global",
+  "start_loop",
+  "stop_loop",
+  "stop_npc",
+  "stop_timer"
+ ],
+ "cases": [
+  {
+   "message": 6,
+   "present": 0,
+   "guard": 0,
+   "flags": {
+    "190": 0,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 6,
+   "present": 0,
+   "guard": 0,
+   "flags": {
+    "190": 0,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 6,
+   "present": 0,
+   "guard": 0,
+   "flags": {
+    "190": 1,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 6,
+   "present": 0,
+   "guard": 0,
+   "flags": {
+    "190": 1,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 6,
+   "present": 0,
+   "guard": 1,
+   "flags": {
+    "190": 0,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 1
+  },
+  {
+   "message": 6,
+   "present": 0,
+   "guard": 1,
+   "flags": {
+    "190": 0,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 1
+  },
+  {
+   "message": 6,
+   "present": 0,
+   "guard": 1,
+   "flags": {
+    "190": 1,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 1
+  },
+  {
+   "message": 6,
+   "present": 0,
+   "guard": 1,
+   "flags": {
+    "190": 1,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 1
+  },
+  {
+   "message": 6,
+   "present": 1,
+   "guard": 0,
+   "flags": {
+    "190": 0,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [
+    [
+     "stop_timer"
+    ],
+    [
+     "arm_timer",
+     900
+    ],
+    [
+     "set_flag",
+     191
+    ],
+    [
+     "set_global",
+     "GV_DAWN_ATTACKED_IN_MONASTERY",
+     1
+    ],
+    [
+     "set_global",
+     "GV_LUTHERS_SOUL",
+     2
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     4
+    ],
+    [
+     "stop_timer"
+    ],
+    [
+     "movie",
+     3,
+     773,
+     7
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     5
+    ],
+    [
+     "stop_loop",
+     3,
+     999,
+     7
+    ],
+    [
+     "stop_npc",
+     0
+    ],
+    [
+     "npc",
+     0,
+     18,
+     307,
+     254,
+     100,
+     100
+    ],
+    [
+     "start_loop",
+     18,
+     995,
+     7
+    ],
+    [
+     "set_flag",
+     185
+    ],
+    [
+     "set_flag",
+     190
+    ]
+   ],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 6,
+   "present": 1,
+   "guard": 0,
+   "flags": {
+    "190": 0,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [
+    [
+     "stop_timer"
+    ],
+    [
+     "arm_timer",
+     900
+    ],
+    [
+     "set_flag",
+     191
+    ],
+    [
+     "set_global",
+     "GV_DAWN_ATTACKED_IN_MONASTERY",
+     1
+    ],
+    [
+     "set_global",
+     "GV_LUTHERS_SOUL",
+     2
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     4
+    ],
+    [
+     "stop_timer"
+    ],
+    [
+     "movie",
+     3,
+     773,
+     7
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     5
+    ],
+    [
+     "stop_loop",
+     3,
+     999,
+     7
+    ],
+    [
+     "stop_npc",
+     0
+    ],
+    [
+     "npc",
+     0,
+     18,
+     307,
+     254,
+     100,
+     100
+    ],
+    [
+     "start_loop",
+     18,
+     995,
+     7
+    ],
+    [
+     "set_flag",
+     185
+    ],
+    [
+     "set_flag",
+     190
+    ]
+   ],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 6,
+   "present": 1,
+   "guard": 0,
+   "flags": {
+    "190": 1,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [
+    [
+     "stop_timer"
+    ],
+    [
+     "set_flag",
+     191
+    ],
+    [
+     "set_global",
+     "GV_DAWN_ATTACKED_IN_MONASTERY",
+     1
+    ],
+    [
+     "stop_timer"
+    ],
+    [
+     "movie",
+     3,
+     773,
+     7
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     6
+    ],
+    [
+     "stop_loop",
+     3,
+     999,
+     7
+    ],
+    [
+     "stop_npc",
+     0
+    ],
+    [
+     "npc",
+     0,
+     18,
+     307,
+     254,
+     100,
+     100
+    ],
+    [
+     "start_loop",
+     18,
+     995,
+     7
+    ],
+    [
+     "set_flag",
+     185
+    ]
+   ],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 6,
+   "present": 1,
+   "guard": 0,
+   "flags": {
+    "190": 1,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  },
+  {
+   "message": 6,
+   "present": 1,
+   "guard": 1,
+   "flags": {
+    "190": 0,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  },
+  {
+   "message": 6,
+   "present": 1,
+   "guard": 1,
+   "flags": {
+    "190": 0,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  },
+  {
+   "message": 6,
+   "present": 1,
+   "guard": 1,
+   "flags": {
+    "190": 1,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  },
+  {
+   "message": 6,
+   "present": 1,
+   "guard": 1,
+   "flags": {
+    "190": 1,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  },
+  {
+   "message": 7,
+   "present": 0,
+   "guard": 0,
+   "flags": {
+    "190": 0,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 7,
+   "present": 0,
+   "guard": 0,
+   "flags": {
+    "190": 0,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 7,
+   "present": 0,
+   "guard": 0,
+   "flags": {
+    "190": 1,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 7,
+   "present": 0,
+   "guard": 0,
+   "flags": {
+    "190": 1,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 7,
+   "present": 0,
+   "guard": 1,
+   "flags": {
+    "190": 0,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 1
+  },
+  {
+   "message": 7,
+   "present": 0,
+   "guard": 1,
+   "flags": {
+    "190": 0,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 1
+  },
+  {
+   "message": 7,
+   "present": 0,
+   "guard": 1,
+   "flags": {
+    "190": 1,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 1
+  },
+  {
+   "message": 7,
+   "present": 0,
+   "guard": 1,
+   "flags": {
+    "190": 1,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 0,
+   "guard_after": 1
+  },
+  {
+   "message": 7,
+   "present": 1,
+   "guard": 0,
+   "flags": {
+    "190": 0,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [
+    [
+     "stop_timer"
+    ],
+    [
+     "arm_timer",
+     900
+    ],
+    [
+     "set_flag",
+     191
+    ],
+    [
+     "set_global",
+     "GV_DAWN_ATTACKED_IN_MONASTERY",
+     1
+    ],
+    [
+     "set_global",
+     "GV_LUTHERS_SOUL",
+     2
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     4
+    ],
+    [
+     "stop_timer"
+    ],
+    [
+     "movie",
+     3,
+     773,
+     7
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     5
+    ],
+    [
+     "stop_loop",
+     3,
+     999,
+     7
+    ],
+    [
+     "stop_npc",
+     0
+    ],
+    [
+     "npc",
+     0,
+     18,
+     307,
+     254,
+     100,
+     100
+    ],
+    [
+     "start_loop",
+     18,
+     995,
+     7
+    ],
+    [
+     "set_flag",
+     185
+    ],
+    [
+     "set_flag",
+     190
+    ]
+   ],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 7,
+   "present": 1,
+   "guard": 0,
+   "flags": {
+    "190": 0,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [
+    [
+     "stop_timer"
+    ],
+    [
+     "arm_timer",
+     900
+    ],
+    [
+     "set_flag",
+     191
+    ],
+    [
+     "set_global",
+     "GV_DAWN_ATTACKED_IN_MONASTERY",
+     1
+    ],
+    [
+     "set_global",
+     "GV_LUTHERS_SOUL",
+     2
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     4
+    ],
+    [
+     "stop_timer"
+    ],
+    [
+     "movie",
+     3,
+     773,
+     7
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     5
+    ],
+    [
+     "stop_loop",
+     3,
+     999,
+     7
+    ],
+    [
+     "stop_npc",
+     0
+    ],
+    [
+     "npc",
+     0,
+     18,
+     307,
+     254,
+     100,
+     100
+    ],
+    [
+     "start_loop",
+     18,
+     995,
+     7
+    ],
+    [
+     "set_flag",
+     185
+    ],
+    [
+     "set_flag",
+     190
+    ]
+   ],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 7,
+   "present": 1,
+   "guard": 0,
+   "flags": {
+    "190": 1,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [
+    [
+     "stop_timer"
+    ],
+    [
+     "set_flag",
+     191
+    ],
+    [
+     "set_global",
+     "GV_DAWN_ATTACKED_IN_MONASTERY",
+     1
+    ],
+    [
+     "stop_timer"
+    ],
+    [
+     "movie",
+     3,
+     773,
+     7
+    ],
+    [
+     "set_global",
+     "GV_DAWN_RELATIONSHIP",
+     6
+    ],
+    [
+     "stop_loop",
+     3,
+     999,
+     7
+    ],
+    [
+     "stop_npc",
+     0
+    ],
+    [
+     "npc",
+     0,
+     18,
+     307,
+     254,
+     100,
+     100
+    ],
+    [
+     "start_loop",
+     18,
+     995,
+     7
+    ],
+    [
+     "set_flag",
+     185
+    ]
+   ],
+   "dawn_present_after": 0,
+   "guard_after": 0
+  },
+  {
+   "message": 7,
+   "present": 1,
+   "guard": 0,
+   "flags": {
+    "190": 1,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 0,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  },
+  {
+   "message": 7,
+   "present": 1,
+   "guard": 1,
+   "flags": {
+    "190": 0,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  },
+  {
+   "message": 7,
+   "present": 1,
+   "guard": 1,
+   "flags": {
+    "190": 0,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  },
+  {
+   "message": 7,
+   "present": 1,
+   "guard": 1,
+   "flags": {
+    "190": 1,
+    "191": 0
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  },
+  {
+   "message": 7,
+   "present": 1,
+   "guard": 1,
+   "flags": {
+    "190": 1,
+    "191": 1
+   },
+   "globals": {
+    "GV_DAWN_ATTACKED_IN_MONASTERY": 0,
+    "GV_LUTHERS_SOUL": 3,
+    "GV_DAWN_RELATIONSHIP": 5
+   },
+   "handled": 1,
+   "effects": [],
+   "dawn_present_after": 1,
+   "guard_after": 1
+  }
+ ],
+ "scope": "Native MLIB 0x98F/0xF09 handler effects for all 32 message/present/guard/flag combinations; player input behind messages 6/7 unbound."
+}

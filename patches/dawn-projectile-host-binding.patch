@@ -1,0 +1,34 @@
+--- a/scripts/lol2/jungle_dawn.gd
++++ b/scripts/lol2/jungle_dawn.gd
+@@ -96,6 +96,14 @@
+ func world_active() -> bool: return host.starting_magic!=null and host.starting_magic.world_active()
+ func origin() -> Vector3: return population.origin()
+ 
++## Shared world launch boundary for the effect owner. Source launch getters are
++## supplied by that owner; this method binds map membership, physics and caster
++## exclusion without mutating dialogue, health or saved encounter state.
++func query_projectile_launch(context: Dictionary, target: Variant=null) -> Dictionary:
++	var excluded: Array[RID]=[population.bodies[ID].get_rid()]
++	return preload("res://scripts/lol2/dawn_projectile_world.gd").launch(
++		get_world_3d().direct_space_state,population.navigation,origin(),context,target,excluded)
++
+ ## The source hold (0x26..0x27) spans her whole talk and wait. While she speaks every input is held; while she waits
+ ## (looping idle) the player stays in place but can look, open the inventory, offer an item or strike.
+ func talking() -> bool: return not state.clip.is_empty() and not bool(state.clip.repeat)
+--- a/scripts/lol2/hive_dawn20.gd
++++ b/scripts/lol2/hive_dawn20.gd
+@@ -100,6 +100,14 @@
+ func world_active() -> bool: return host.starting_magic!=null and host.starting_magic.world_active()
+ func origin() -> Vector3: return population.origin()
+ 
++## Shared world launch boundary for the effect owner. Source launch getters are
++## supplied by that owner; this method binds map membership, physics and caster
++## exclusion without mutating dialogue, health or saved encounter state.
++func query_projectile_launch(context: Dictionary, target: Variant=null) -> Dictionary:
++	var excluded: Array[RID]=[population.bodies[ID].get_rid()]
++	return preload("res://scripts/lol2/dawn_projectile_world.gd").launch(
++		get_world_3d().direct_space_state,population.navigation,origin(),context,target,excluded)
++
+ ## The source hold (0x26..0x27) spans her talk; while she speaks every input is held.
+ func talking() -> bool: return set_up() and not state.clip.is_empty() and not bool(state.clip.repeat)
+ func input_locked() -> bool: return set_up() and hold and talking()

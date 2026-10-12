@@ -1,0 +1,208 @@
+{
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "texture_sha256": "c577f70d194cb25fa6b83818ae7e240486ac871b6915408eb2515ded5f1251ba",
+  "definition": 0,
+  "name": "HIVEW",
+  "clips": [
+    {
+      "selector": 11,
+      "resource": 1549,
+      "frames": 18,
+      "interval": 1024,
+      "events": [
+        {
+          "kind": 1,
+          "frame": 11,
+          "raw_hex": "010b3c000c010400"
+        },
+        {
+          "kind": 2,
+          "frame": 11,
+          "raw_hex": "020bf20180000a14"
+        }
+      ]
+    },
+    {
+      "selector": 12,
+      "resource": 1053,
+      "frames": 16,
+      "interval": 1024,
+      "events": [
+        {
+          "kind": 2,
+          "frame": 10,
+          "raw_hex": "020aee0180000a14"
+        },
+        {
+          "kind": 1,
+          "frame": 11,
+          "raw_hex": "010b64000c010400"
+        }
+      ]
+    },
+    {
+      "selector": 13,
+      "resource": 1531,
+      "frames": 18,
+      "interval": 1024,
+      "events": [
+        {
+          "kind": 1,
+          "frame": 8,
+          "raw_hex": "0108140004000400"
+        },
+        {
+          "kind": 2,
+          "frame": 8,
+          "raw_hex": "0208210280000a14"
+        }
+      ]
+    },
+    {
+      "selector": 14,
+      "resource": 1203,
+      "frames": 16,
+      "interval": 1024,
+      "events": [
+        {
+          "kind": 2,
+          "frame": 8,
+          "raw_hex": "02081c0280000a14"
+        },
+        {
+          "kind": 1,
+          "frame": 9,
+          "raw_hex": "0109320004000400"
+        }
+      ]
+    },
+    {
+      "selector": 19,
+      "resource": 1003,
+      "frames": 16,
+      "interval": 1024,
+      "events": [
+        {
+          "kind": 2,
+          "frame": 0,
+          "raw_hex": "0200540380000a14"
+        }
+      ]
+    },
+    {
+      "selector": 20,
+      "resource": 1591,
+      "frames": 13,
+      "interval": 1024,
+      "events": [
+        {
+          "kind": 2,
+          "frame": 0,
+          "raw_hex": "0200530380000a14"
+        }
+      ]
+    },
+    {
+      "selector": 21,
+      "resource": 335,
+      "frames": 1,
+      "interval": 1024,
+      "events": []
+    }
+  ],
+  "frame_cases": 1792,
+  "tick_cases": 912,
+  "code": [
+    {
+      "start": 687556,
+      "end": 687621,
+      "sha256": "1cbf821426e2ecde6912ca42dddbfacd857ec189fa57910b9d146225f22443dd"
+    },
+    {
+      "start": 993604,
+      "end": 993821,
+      "sha256": "a863dd852792e31394408ae17da5b43beea1a20b8b582cdc3185f28ee9f86caf"
+    },
+    {
+      "start": 991124,
+      "end": 991326,
+      "sha256": "064a51aeebffd33cf85388f85305fab20130156f7c841d2fedc5062f35d6a0d8"
+    },
+    {
+      "start": 993300,
+      "end": 993525,
+      "sha256": "17923c87af6dfafb7bdef032c92e739a67cd12199f393ae827891b6339c2b406"
+    },
+    {
+      "start": 677294,
+      "end": 678026,
+      "sha256": "58d6f7180da635b5937b7828c97862eaa5c5e78dee97d37fbea3c0c5c090408a"
+    },
+    {
+      "start": 684644,
+      "end": 684779,
+      "sha256": "f76503e0275f4892a2c9277447e0cc9913c58d6382632bec5062b6a4b7f9b7b7"
+    },
+    {
+      "start": 736332,
+      "end": 736337,
+      "sha256": "f838e4e72fd41c515256e665e457041e9583dc8b1b1f885bf2183419a25391b1"
+    },
+    {
+      "start": 369051,
+      "end": 369054,
+      "sha256": "faeefb2168e12ec8a7f7a80cd8bdd714d5ceb2c6a47c8ee271460228fde6c67a"
+    },
+    {
+      "start": 369056,
+      "end": 369140,
+      "sha256": "f3baa136916fb527391de4bc1c99133cd69188dafaca9043068c602b8d7e29ff"
+    }
+  ],
+  "source_actions": {
+    "11": [
+      5,
+      6,
+      20,
+      0
+    ],
+    "12": [
+      5,
+      1,
+      20,
+      0
+    ],
+    "13": [
+      5,
+      6,
+      80,
+      0
+    ],
+    "14": [
+      5,
+      1,
+      80,
+      0
+    ],
+    "19": [
+      14,
+      1,
+      0,
+      0
+    ],
+    "20": [
+      14,
+      6,
+      0,
+      0
+    ],
+    "21": [
+      15,
+      7,
+      0,
+      0
+    ]
+  },
+  "scope": "Actual HIVEW definition and source state/first-view/texture prefixes supplied. Native F1F94 frame counts, F2814 matching and A55AE timer/event updates replayed. Active predicate, sound, event3 callback, target damage and AI decisions remain supplied boundaries. Source action bytes are extracted, not proof of selection or death-to-corpse transitions; live clock conversion and directional selection remain open."
+}

@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "source_stable": true,
+  "tests": [
+    {
+      "name": "jungle_bacatta57_state_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_village_alarm_state_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_kelsrick_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_bacatta65_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_bacatta57_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_village_alarm_live_test",
+      "passed": true
+    },
+    {
+      "name": "hive_small_route_test",
+      "passed": true
+    },
+    {
+      "name": "hive_route_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_village_gate_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_followup_test",
+      "passed": true
+    }
+  ],
+  "source_hashes": {
+    "docs/jungle-village-alarm.md": "e1722e597a687276087dc28e83a299ace33d7843b53e7c645612c3485e0dab5b",
+    "scripts/lol2/act_one_quest_state.gd": "a6f59a27bad20c72f479af874de42026b2939a882a2255d6a8f7ff2f0822ba81",
+    "scripts/lol2/jungle_bacatta57.gd": "a371bd521dc5c0d518c0f100fff8d8ad78f0eeacbc8c9a016ea14ad13ab721ec",
+    "scripts/lol2/jungle_bacatta57_state.gd": "35932f41d875cb1d6e46af60ca8cf1b9a4a2cea1f8ec5b6f296396351f7cd44e",
+    "scripts/lol2/jungle_kelsrick.gd": "14d320389bcc0efa61bfe225630e56e21fe574d0c7909795b9702009760b3df9",
+    "scripts/lol2/jungle_village_alarm.gd": "0234373775a9230ab33493978cb2e21e915da287969a14ff2db3a37084fe0209",
+    "scripts/lol2/jungle_village_alarm_packet.gd": "4a4782c3c6db4c9ad1caf79f493b1f9ab02d21a41052fb1e0d8b27d96e70dfca",
+    "scripts/lol2/jungle_village_alarm_source.json": "8244d5d294c24f3860c2a63b0c85b168629b66d5f9730c60118b0c0e42df4751",
+    "scripts/lol2/jungle_village_alarm_state.gd": "caaf0258eae5ebe12322ae9c31c8bc697a7543a6c4bb3450be294511697c03fa",
+    "scripts/lol2/jungle_village_gate.gd": "231e7991cde3b656776dd23b0cd453dc146c98cea9469176021b26e09da53c26",
+    "scripts/lol2/jungle_walkthrough.gd": "cc95c582899b92d2b5c69f18ee11e821d2451269036085957d57c124516f900f",
+    "tests/jungle_bacatta57_state_test.gd": "baba71c221e9f374cf880a725492815aed6c88822bd824b5f270c49b251727c9",
+    "tests/jungle_village_alarm_live_test.gd": "b14ea5ae7f443fd7267b51b6bafb74bbb6c48c9259c2ede56e65c00a0a177d4b",
+    "tests/jungle_village_alarm_state_test.gd": "b084a8cdc506cfe19804a69444041802867aec9e75364078a3d06ac1be97f155",
+    "tools/prepare_jungle_village_alarm.py": "35eabe94e7a43e6837981d458fe3a43ff4ff090c641645a04179e001bb28421c",
+    "tools/run_regressions.py": "a1af2d3a9a62e68f3ef915beae91b71fd2b5a2450806e57b5be9569c4f87c993",
+    "tests/hive_route_test.gd": "511d7176302fde430bd61a5548e09d9bd0b62a44c265dca2c763869823fb2607",
+    "tests/hive_small_route_test.gd": "eee094a82a6b986dd86988eefbef03031c5e77fdb88765133deec61d6eddc0d0"
+  },
+  "review_fix": "Reproduced arrow damage through intervening wall; truncate reachable hit segment at first wall. Both wall-before-player and wall-after-player probes pass.",
+  "limits": [
+    "Alert/approach supplied in focused encounter test; not an earned hostile route.",
+    "Inner gate74/75 and control82/98 completion pending separate follow-up.",
+    "Drunk villager encounter and unknown flag semantics remain tracked.",
+    "Arrows in flight are transient on reload; timer and world-state persistence tested.",
+    "Full combined suite, fresh campaign, refreshed binaries and Bob acceptance pending."
+  ]
+}

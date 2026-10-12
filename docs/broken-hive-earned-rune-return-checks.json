@@ -1,0 +1,42 @@
+{
+  "actor_hold_waits": 1,
+  "cave_derived": true,
+  "input_sha256": "710723c35fec07b49940c8df45b929ce02a760773525b17d25f33f8f1751f433",
+  "inventory": [
+    "cave:prop641:harvest1:Stalagmite",
+    "cave:captain:Short_Sword",
+    "cave:captain:Burnt_Chain",
+    "museum:item11:Fine_Longsword",
+    "museum:control181:Tho_Broken",
+    "monastery:item94:Iron_Flute",
+    "hive:Wax_runes:0"
+  ],
+  "output_sha256": "ac37b1a9b325d52c17d72d80a77bfd1901fa6fb6f5dc0c930e6ef2856d1f51ef",
+  "passed": true,
+  "scope": "Earned rune save continuation, reverse48 corridor portals, lowest platform jump, ascent, upper landing jump,101 Hive and117 Jungle source-region routes through actual area transition into MENT. No test position/form/quest injection. Hive guardian combat enabled; movement and curse clocks driven manually. Returns to MENT; Julian translation checked by the next leg.",
+  "world_dawn": {
+    "groups": [
+      5214,
+      29646,
+      5246,
+      29682,
+      29864,
+      29682,
+      29898,
+      29682,
+      30134,
+      29932,
+      29682,
+      29982,
+      29682,
+      30162,
+      30016,
+      29682,
+      30190,
+      5350
+    ],
+    "owner_state": 8,
+    "present": false,
+    "talked": 1
+  }
+}

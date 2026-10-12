@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "source": {
+    "file": "DAT/L3_DH.MIX",
+    "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+    "geometry_key": 3106551060,
+    "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+  },
+  "actor": 20,
+  "group": 12578,
+  "owners": [
+    {
+      "stream": 1,
+      "group": 12578,
+      "owner_kind": "actor",
+      "owner": 20,
+      "event": 6,
+      "value": 9,
+      "predicate": null,
+      "archive_offset": 5853248
+    }
+  ],
+  "grants": [
+    {
+      "archive_offset": 5846974,
+      "raw_hex": "03021400bfb15e7c04000000"
+    },
+    {
+      "archive_offset": 5846986,
+      "raw_hex": "03021400bfb15e7c04000000"
+    }
+  ],
+  "definition": 166,
+  "identity": 2086580671,
+  "definition_hex": "000000000000000000000000000000000000000000000000bfb15e7c100000006400388324e451ff441009043c000100000f0500100000000019000000000040000066100000000000000000000000000000000000000000000000",
+  "placed": [
+    {
+      "row": 1,
+      "position": [
+        3151,
+        0,
+        -643
+      ],
+      "region": 755,
+      "flags": 2,
+      "raw": "4f0c8302000000000200f302000000000000000014747f00d97b5a0014000000bfb15e7c00",
+      "id": "museum:item1:Dragon_Blood"
+    },
+    {
+      "row": 2,
+      "position": [
+        3135,
+        0,
+        -624
+      ],
+      "region": 755,
+      "flags": 2,
+      "raw": "3f0c7002000000000200f302000000000000000014747f00d97b5a0014000000bfb15e7c00",
+      "id": "museum:item2:Dragon_Blood"
+    },
+    {
+      "row": 3,
+      "position": [
+        3140,
+        0,
+        -636
+      ],
+      "region": 755,
+      "flags": 2,
+      "raw": "440c7c02000000000200f302000000000000000014747f00d97b5a0014000000bfb15e7c00",
+      "id": "museum:item3:Dragon_Blood"
+    }
+  ],
+  "icon_sha256": "9b8ef4732153c36a1a52738dc74c2f88493c6ab10213be92e10614c70316f069",
+  "scope": "Two explicit actor-owned grants plus three active placed vials. Modern corpse retirement, six-second fuse, blast range/damage and placement are adapters; native behavior parity is not claimed."
+}

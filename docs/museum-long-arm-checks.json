@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "source_regeneration": {
+    "source_identical": true,
+    "assets_identical": true,
+    "asset_count": 17,
+    "patch_sha256": "960964ded0e0bc7e046e36dc73b26782f9b9c1088c5a266db0491a38140797fc",
+    "base_and_result_files_verified": 15,
+    "scope": "Original pinned commands, unchanged builder baseline, floor variant and icon/sprite outputs; source data and assets remain unchanged in final reviewed revision."
+  },
+  "reviewed_release_sha256": "dbbd36844478aab92eba6a9cf520b035b37c4846c6f724719913d75cad12cff5",
+  "strengthened_escape_test_sha256": "b131b9579c7bbc074e797fc49008c32d0d184b95f4c5ab51d8870ae94daa10a7",
+  "tests": [
+    {
+      "name": "item_catalog_test",
+      "passed": true
+    },
+    {
+      "name": "museum_long_arm_live_test",
+      "passed": true
+    },
+    {
+      "name": "museum_long_arm_escape_test",
+      "passed": true
+    },
+    {
+      "name": "museum_key_locks_live_test",
+      "passed": true
+    },
+    {
+      "name": "museum_checkpoint_test",
+      "passed": true
+    }
+  ],
+  "source_stable": true,
+  "escape": {
+    "floor_landing": -210,
+    "portals": 30,
+    "rat_strikes": 40,
+    "final_human": true,
+    "alive": true,
+    "resets": 0,
+    "disk_reload": true
+  },
+  "scope": "Supplied initial approach and key78 state; live fall, curse, fight and movement. Safety prerequisite covers new pickups; no native closed-lock escape claim."
+}

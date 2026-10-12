@@ -1,0 +1,2573 @@
+{
+  "passed": true,
+  "total": 256,
+  "source_stable": true,
+  "source_changed_files": [],
+  "all_test_source_hashes_match_R4_manifest": true,
+  "archive": "/home/bob/AI_COMMS/classic_review_20261007/lead/act1_full256_20261007T061146Z",
+  "archive_manifest_sha256": "6dde6f425550cb37347dbbdd9c3142e80d5e95ef8c6e0e83acad911a9c926a94",
+  "report_sha256": "07ba8b21048af1534bf8c3772cafd122bde81ae9e915969cb8bd2999153601f8",
+  "tests": [
+    {
+      "name": "hive_attack_portable_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_attack_portable_test.log",
+      "errors": []
+    },
+    {
+      "name": "item_catalog_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.11,
+      "log": "item_catalog_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_spatial_admission_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.67,
+      "log": "hive_spatial_admission_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_damage_calculation_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.11,
+      "log": "hive_damage_calculation_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_mitigation_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.73,
+      "log": "player_mitigation_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_spell_motion_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "dawn_spell_motion_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_spell_contact_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.63,
+      "log": "dawn_spell_contact_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_explosion_calculation_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "dawn_explosion_calculation_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_explosion_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.83,
+      "log": "dawn_explosion_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_admission_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "dawn_admission_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_selection_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "dawn_selection_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_spell_scoring_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.83,
+      "log": "dawn_spell_scoring_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_ai_decision_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.74,
+      "log": "dawn_ai_decision_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_cast_entry_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.65,
+      "log": "dawn_cast_entry_test.log",
+      "errors": []
+    },
+    {
+      "name": "vqa_partial_codebook_media_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.63,
+      "log": "vqa_partial_codebook_media_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_player_damage_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "dawn_player_damage_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_combined_damage_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.12,
+      "log": "dawn_combined_damage_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_projectile_store_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "dawn_projectile_store_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_projectile_launch_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.57,
+      "log": "dawn_projectile_launch_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_projectile_world_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.65,
+      "log": "dawn_projectile_world_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_heading_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "dawn_heading_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_cast_target_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "dawn_cast_target_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_cast_dispatch_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "dawn_cast_dispatch_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_dawn20_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_dawn20_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "monastery_library_attack_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.56,
+      "log": "monastery_library_attack_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_spell_bolts_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 33.45,
+      "log": "dawn_spell_bolts_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_spell7_chain_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.65,
+      "log": "dawn_spell7_chain_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_spell58_plasma_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "dawn_spell58_plasma_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_cast_completion_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "dawn_cast_completion_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_temporary_effects_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "dawn_temporary_effects_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_active_spells_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "dawn_active_spells_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_object_distance_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "dawn_object_distance_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_player_health_adjustment_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_player_health_adjustment_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_blocked_player_damage_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.74,
+      "log": "hive_blocked_player_damage_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_executioner_damage_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.65,
+      "log": "hive_executioner_damage_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_path_control_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.65,
+      "log": "hive_path_control_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_population_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "cave_roach_population_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_melee_reward_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.94,
+      "log": "cave_melee_reward_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_live_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.63,
+      "log": "cave_roach_live_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_live_behavior_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 20.04,
+      "log": "cave_roach_live_behavior_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dino_population_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.01,
+      "log": "jungle_dino_population_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dino_population_portable_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "jungle_dino_population_portable_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_skeleton_population_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.65,
+      "log": "museum_skeleton_population_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_skeleton_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.61,
+      "log": "museum_skeleton_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_guard_population_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "cave_guard_population_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_lurking_roach_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "cave_lurking_roach_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_lurking_roach_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.96,
+      "log": "cave_lurking_roach_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_wild_roach_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.63,
+      "log": "cave_wild_roach_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_wild_roach_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.04,
+      "log": "cave_wild_roach_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_eyes_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "cave_eyes_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_eyes_save_roundtrip_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.64,
+      "log": "cave_eyes_save_roundtrip_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_scenic_guard_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.02,
+      "log": "cave_scenic_guard_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_scenic_guard_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.15,
+      "log": "cave_scenic_guard_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_defense_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.02,
+      "log": "player_defense_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_guard_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.36,
+      "log": "cave_guard_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "creature_navigation_clock_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.23,
+      "log": "creature_navigation_clock_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_control_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 2.07,
+      "log": "museum_control_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_sword_skeleton_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 2.15,
+      "log": "museum_sword_skeleton_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_control96_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "museum_control96_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_guard_controls_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "cave_guard_controls_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_captain_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.56,
+      "log": "cave_captain_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_bacatta_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.92,
+      "log": "jungle_bacatta_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_kelsrick_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "jungle_kelsrick_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dawn_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "jungle_dawn_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_actor62_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "jungle_actor62_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_exit_encounter_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "jungle_exit_encounter_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_exit_encounter_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.48,
+      "log": "jungle_exit_encounter_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "source_control_contact_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "source_control_contact_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_villager_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.65,
+      "log": "jungle_villager_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "creature_navigation_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 16.97,
+      "log": "creature_navigation_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dino_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.01,
+      "log": "jungle_dino_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_population_position_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.89,
+      "log": "hive_population_position_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dino_idle_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.85,
+      "log": "jungle_dino_idle_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "scripted_creature_audio_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "scripted_creature_audio_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_creature_audio_playback_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.74,
+      "log": "museum_creature_audio_playback_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_creature_audio_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 2.16,
+      "log": "museum_creature_audio_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_guard_audio_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.32,
+      "log": "cave_guard_audio_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_audio_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.14,
+      "log": "cave_roach_audio_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_entrance_roach_audio_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.05,
+      "log": "cave_entrance_roach_audio_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dino_audio_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.74,
+      "log": "jungle_dino_audio_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dino_audio_playback_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.74,
+      "log": "jungle_dino_audio_playback_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dino_audio_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.96,
+      "log": "jungle_dino_audio_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dino_damage_atomic_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.01,
+      "log": "jungle_dino_damage_atomic_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_population_visual_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "cave_roach_population_visual_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_population_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "cave_roach_population_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_population_live_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.04,
+      "log": "cave_roach_population_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_startup_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.95,
+      "log": "cave_roach_startup_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_population_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.95,
+      "log": "cave_roach_population_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_effective_stats_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "cave_roach_effective_stats_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_roach_ai_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "cave_roach_ai_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ai_action_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.83,
+      "log": "hive_ai_action_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ai_goal_choice_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.82,
+      "log": "hive_ai_goal_choice_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ai_animation_commit_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_ai_animation_commit_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_executioner_pose_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_executioner_pose_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_source_pose_runtime_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.73,
+      "log": "hive_source_pose_runtime_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_outcome_transition_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.81,
+      "log": "hive_outcome_transition_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_executioner_runtime_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_executioner_runtime_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_executioner_action_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.65,
+      "log": "hive_executioner_action_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_action_admission_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_action_admission_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ai_schedule_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_ai_schedule_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_timing_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "hive_timing_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_marker_checkpoint_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "hive_marker_checkpoint_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_actor_marker_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "hive_actor_marker_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_marker_runtime_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.63,
+      "log": "hive_marker_runtime_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_startup_geometry_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_startup_geometry_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_fixed_geometry_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_fixed_geometry_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_condition_geometry_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_condition_geometry_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_condition_runtime_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.74,
+      "log": "hive_condition_runtime_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_remaining_conditions_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_remaining_conditions_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_player_conditions_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_player_conditions_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_actor_conditions_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_actor_conditions_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_effective_stats_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_effective_stats_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_clock_runtime_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_clock_runtime_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_initial_stats_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.73,
+      "log": "hive_initial_stats_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_attack_runtime_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_attack_runtime_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_attack_feedback_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_attack_feedback_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_stat_adjustments_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.74,
+      "log": "hive_stat_adjustments_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_source_adjustments_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_source_adjustments_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_modern_combat_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.5,
+      "log": "dawn_modern_combat_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_modern_spells_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 19.8,
+      "log": "dawn_modern_spells_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_projectile_hosts_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.21,
+      "log": "dawn_projectile_hosts_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_dawn20_region478_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 20.72,
+      "log": "hive_dawn20_region478_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_dawn20_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 8.03,
+      "log": "hive_dawn20_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "monastery_library_attack_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.98,
+      "log": "monastery_library_attack_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_review_captain_guard_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.95,
+      "log": "cave_review_captain_guard_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_curse_integration",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 12.25,
+      "log": "cave_curse_integration.log",
+      "errors": []
+    },
+    {
+      "name": "cave_museum_transfer_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 11.12,
+      "log": "cave_museum_transfer_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_demo_controls_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.09,
+      "log": "cave_demo_controls_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_guard_controls_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 23.5,
+      "log": "cave_guard_controls_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "captain_equipment_transport_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 9.67,
+      "log": "captain_equipment_transport_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_exit_woman_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.86,
+      "log": "jungle_exit_woman_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_exit_woman_earned_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 16.87,
+      "log": "jungle_exit_woman_earned_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_captain_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.73,
+      "log": "cave_captain_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_bacatta_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.57,
+      "log": "jungle_bacatta_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_kelsrick_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.22,
+      "log": "jungle_kelsrick_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_dawn_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.17,
+      "log": "jungle_dawn_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_actor62_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.43,
+      "log": "jungle_actor62_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_world_items_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.65,
+      "log": "jungle_world_items_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_scenic_guard_spark_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.76,
+      "log": "cave_scenic_guard_spark_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_control96_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 2.62,
+      "log": "museum_control96_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_exit_scene_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.59,
+      "log": "jungle_exit_scene_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_eyes_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.78,
+      "log": "cave_eyes_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_scenic_guard_scene_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.46,
+      "log": "cave_scenic_guard_scene_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_contact_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_boulder_contact_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_impulse_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.73,
+      "log": "hive_boulder_impulse_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_damage_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.02,
+      "log": "hive_boulder_damage_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_audio_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_boulder_audio_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_actor_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_boulder_actor_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_sprite_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_boulder_sprite_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_moving_geometry_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.63,
+      "log": "hive_moving_geometry_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_sequence_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_boulder_sequence_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_worm_animation_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "hive_worm_animation_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_warrior_selection_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.73,
+      "log": "hive_warrior_selection_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_warrior_animation_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "hive_warrior_animation_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ambush_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_ambush_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_population_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "hive_rune_population_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_return_population_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_return_population_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_spark_aura_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "player_spark_aura_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_ancient_charge_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.11,
+      "log": "player_ancient_charge_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "executioner_spell_reward_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.82,
+      "log": "executioner_spell_reward_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_aloe_effect_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "cave_aloe_effect_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_broken_case_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.65,
+      "log": "museum_broken_case_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_broken_thohan_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.82,
+      "log": "museum_broken_thohan_test.log",
+      "errors": []
+    },
+    {
+      "name": "morgan_orb_blessing_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "morgan_orb_blessing_test.log",
+      "errors": []
+    },
+    {
+      "name": "moff_revisit_plan_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "moff_revisit_plan_test.log",
+      "errors": []
+    },
+    {
+      "name": "moff_revisit_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "moff_revisit_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_source_pickups_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.73,
+      "log": "jungle_source_pickups_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_item_effects_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.02,
+      "log": "player_item_effects_test.log",
+      "errors": []
+    },
+    {
+      "name": "magic_shop_callbacks_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.64,
+      "log": "magic_shop_callbacks_test.log",
+      "errors": []
+    },
+    {
+      "name": "magic_shop_offer_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "magic_shop_offer_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_live_melee_reward_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.02,
+      "log": "hive_live_melee_reward_test.log",
+      "errors": []
+    },
+    {
+      "name": "weapon_shop_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "weapon_shop_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "magic_shop_plan_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "magic_shop_plan_test.log",
+      "errors": []
+    },
+    {
+      "name": "monastery_offer_plan_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "monastery_offer_plan_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_response_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.02,
+      "log": "hive_rune_response_test.log",
+      "errors": []
+    },
+    {
+      "name": "act_one_departure_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "act_one_departure_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_transaction_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.02,
+      "log": "hive_rune_transaction_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_magic_reward_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_magic_reward_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_curse_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "hive_curse_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "monastery_quest_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.01,
+      "log": "monastery_quest_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_room_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "hive_rune_room_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_executioner_scene_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.79,
+      "log": "hive_executioner_scene_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_schedule_scene_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.49,
+      "log": "hive_schedule_scene_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_timing_scene_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.49,
+      "log": "hive_timing_scene_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_playback_rate_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.49,
+      "log": "hive_playback_rate_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_marker_scene_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.44,
+      "log": "hive_marker_scene_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_chasm_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 8.92,
+      "log": "hive_chasm_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_quest_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.87,
+      "log": "hive_quest_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_save_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.09,
+      "log": "jungle_save_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_exit_woman_state_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.55,
+      "log": "jungle_exit_woman_state_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_defense_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.42,
+      "log": "player_defense_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_population_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.4,
+      "log": "hive_rune_population_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_audio_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 9.06,
+      "log": "hive_boulder_audio_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_contact_earned_walk_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 9.8,
+      "log": "hive_boulder_contact_earned_walk_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_contact_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.11,
+      "log": "hive_boulder_contact_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulders_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.21,
+      "log": "hive_boulders_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_boulder_surfaces_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 9.41,
+      "log": "hive_boulder_surfaces_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_warrior_attack_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.07,
+      "log": "hive_warrior_attack_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_warrior_death_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.47,
+      "log": "hive_warrior_death_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "world_fall_boundary_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.16,
+      "log": "world_fall_boundary_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ambush_spark_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.49,
+      "log": "hive_ambush_spark_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ambush_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.12,
+      "log": "hive_ambush_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_spark_rewards_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.62,
+      "log": "player_spark_rewards_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_return_population_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 8.63,
+      "log": "hive_return_population_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_spark_aura_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.21,
+      "log": "player_spark_aura_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_curse_gates_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.37,
+      "log": "hive_curse_gates_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_spell_reward_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.53,
+      "log": "hive_spell_reward_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_aloe_live_use_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 9.96,
+      "log": "cave_aloe_live_use_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_aloe_use_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.88,
+      "log": "jungle_aloe_use_test.log",
+      "errors": []
+    },
+    {
+      "name": "museum_broken_thohan_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.26,
+      "log": "museum_broken_thohan_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "morgan_blessing_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.43,
+      "log": "morgan_blessing_test.log",
+      "errors": []
+    },
+    {
+      "name": "moff_revisit_room_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.29,
+      "log": "moff_revisit_room_test.log",
+      "errors": []
+    },
+    {
+      "name": "weapon_shop_offer_room_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.39,
+      "log": "weapon_shop_offer_room_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_source_pickups_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 8.57,
+      "log": "jungle_source_pickups_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_item_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.22,
+      "log": "player_item_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "magic_shop_hotspot_room_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.34,
+      "log": "magic_shop_hotspot_room_test.log",
+      "errors": []
+    },
+    {
+      "name": "magic_shop_inventory_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.87,
+      "log": "magic_shop_inventory_test.log",
+      "errors": []
+    },
+    {
+      "name": "monastery_side_rooms_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.68,
+      "log": "monastery_side_rooms_test.log",
+      "errors": []
+    },
+    {
+      "name": "weapon_shop_room_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.69,
+      "log": "weapon_shop_room_test.log",
+      "errors": []
+    },
+    {
+      "name": "magic_shop_media_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 2.29,
+      "log": "magic_shop_media_test.log",
+      "errors": []
+    },
+    {
+      "name": "magic_shop_room_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.43,
+      "log": "magic_shop_room_test.log",
+      "errors": []
+    },
+    {
+      "name": "monastery_offer_responses_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 15.03,
+      "log": "monastery_offer_responses_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_speech_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.47,
+      "log": "hive_rune_speech_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_ancient_stone_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.77,
+      "log": "hive_ancient_stone_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_starting_magic_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.91,
+      "log": "player_starting_magic_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_magic_handoff_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 9.85,
+      "log": "player_magic_handoff_test.log",
+      "errors": []
+    },
+    {
+      "name": "cave_fighting_handoff_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 9.65,
+      "log": "cave_fighting_handoff_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_executioner_live_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.28,
+      "log": "hive_executioner_live_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_weapon_admission_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.8,
+      "log": "hive_weapon_admission_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_light_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.74,
+      "log": "hive_rune_light_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_copy_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.57,
+      "log": "hive_rune_copy_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_entry_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.29,
+      "log": "hive_rune_entry_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_rune_media_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 1.43,
+      "log": "hive_rune_media_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_wax_return_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 32.22,
+      "log": "hive_wax_return_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_flute_return_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 43.78,
+      "log": "hive_flute_return_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_small_route_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 9.03,
+      "log": "hive_small_route_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_curse_runtime_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 13.9,
+      "log": "hive_curse_runtime_test.log",
+      "errors": []
+    },
+    {
+      "name": "player_curse_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.77,
+      "log": "player_curse_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_curse_wax_walk_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 26.46,
+      "log": "hive_curse_wax_walk_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_elevator_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 8.72,
+      "log": "hive_elevator_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_lift_wax_walk_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.16,
+      "log": "hive_lift_wax_walk_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_jump_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.91,
+      "log": "hive_jump_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_wax_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.68,
+      "log": "hive_wax_test.log",
+      "errors": []
+    },
+    {
+      "name": "bacatta_rooms_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.69,
+      "log": "bacatta_rooms_test.log",
+      "errors": []
+    },
+    {
+      "name": "monastery_rooms_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.5,
+      "log": "monastery_rooms_test.log",
+      "errors": []
+    },
+    {
+      "name": "monastery_room_media_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.87,
+      "log": "monastery_room_media_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_executioner_sprite_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.09,
+      "log": "hive_executioner_sprite_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_chasm_input_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.82,
+      "log": "hive_chasm_input_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_warriors_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.76,
+      "log": "hive_warriors_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_interface_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.11,
+      "log": "hive_interface_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_resume_launcher_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.14,
+      "log": "hive_resume_launcher_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_quest_walk_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 96.15,
+      "log": "hive_quest_walk_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_nest_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.95,
+      "log": "hive_nest_test.log",
+      "errors": []
+    },
+    {
+      "name": "hive_route_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 9.1,
+      "log": "hive_route_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_village_gate_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 12.43,
+      "log": "jungle_village_gate_test.log",
+      "errors": []
+    },
+    {
+      "name": "jungle_followup_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 11.37,
+      "log": "jungle_followup_test.log",
+      "errors": []
+    }
+  ],
+  "scope": "Full registered256-test suite on the three-spell source, matching R4 staged provenance. Not a completed R4 campaign, packaged runtime, native Windows/GPU/audio or Bob acceptance."
+}

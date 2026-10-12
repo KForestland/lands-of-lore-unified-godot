@@ -14,6 +14,10 @@ config/name="Lands of Lore Unified Godot"
 run/main_scene="res://scenes/lol2/setup.tscn"
 config/features=PackedStringArray("4.6")
 
+[autoload]
+
+PlaytestLocation="*res://scripts/lol2/playtest_location.gd"
+
 [display]
 
 window/size/viewport_width=1280

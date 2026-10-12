@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "run": "dawn_projectile_store_final_20261007",
+      "sha256": "7933b9394474a3117d21bc5aa3a412b7b44d3b9c3fc5a8d11f11daa1c155ecb2",
+      "passed": true,
+      "source_stable": true,
+      "tests": [
+        "dawn_projectile_store_test"
+      ]
+    },
+    {
+      "run": "dawn_projectile_saved_hosts_final_20261007",
+      "sha256": "9a7df3f864715bf0315c769ec15ea077d7ef394e3c408df356f8750ddf3f6016",
+      "passed": true,
+      "source_stable": true,
+      "tests": [
+        "dawn_projectile_store_test",
+        "dawn_projectile_hosts_test",
+        "hive_dawn20_live_test",
+        "jungle_dawn_live_test"
+      ]
+    }
+  ],
+  "files": {
+    "scripts/lol2/dawn_projectile_store.gd": "3e94c927b74e388e668e4ba68ae686c16689226350c72429e0821c44a8521c5d",
+    "tests/dawn_projectile_store_test.gd": "8023cdd30e3f776297e87957fd3f2a23e903695eae57740820fe4978344452a5",
+    "tests/dawn_projectile_hosts_test.gd": "317d8b509212c726a2c9573011a7a2c873a79888500bc5e92e006c55965fcf7b"
+  },
+  "ai_creation": false,
+  "live_damage_dispatch": false
+}

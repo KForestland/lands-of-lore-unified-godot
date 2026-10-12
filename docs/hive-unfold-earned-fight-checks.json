@@ -1,0 +1,71 @@
+{
+  "ambush": {
+    "actors": {
+      "33": {
+        "active": true,
+        "cooldown": 0.0,
+        "death_animation": {
+          "corpse": true,
+          "fraction": 0.0,
+          "frame": 0,
+          "timer": 0
+        },
+        "elapsed": 0.0,
+        "health": 0,
+        "phase": 3,
+        "position": [
+          -4816.49951171875,
+          -3000.0,
+          -6386.11279296875
+        ],
+        "seed": 1278565293,
+        "warrior_mask": 2,
+        "windup": 0.0
+      },
+      "35": {
+        "active": true,
+        "cooldown": 0.0,
+        "elapsed": 0.0,
+        "health": 0,
+        "phase": 3,
+        "position": [
+          -2562.20385742188,
+          -619.000793457031,
+          -8160.66650390625
+        ],
+        "seed": 870860624,
+        "windup": 0.0
+      }
+    },
+    "contact716": true,
+    "feeding_hit_disabled": false,
+    "local7": 1,
+    "version": 1
+  },
+  "casts": 2,
+  "health": 3,
+  "input_proof": "docs/hive-unfold-earned-walk-checks.json",
+  "input_save": "user://tests/act1_unfold_earned_arrival.json",
+  "input_sha256": "0ac90721881bc1d6771daec0e7d3bbbe539fc64f4b8ca1cf49fd46f0094fca42",
+  "output_save": "user://tests/act1_unfold_earned_defeated.json",
+  "output_sha256": "29c972223478adc882bb97ef85f2a384ac26e8e4c058f1616ca5cc2dbee17013",
+  "passed": true,
+  "position": [
+    -2564.79028320312,
+    -970.954650878906,
+    -7613.9521484375
+  ],
+  "scope": "Hash-linked earned encounter arrival, actual maximum Spark and aimed melee, ordinary movement, defeated actor33, walked/jumped return to stop4 lift and JSON rollback. No position/inventory/quest/form injections. Accelerated clocks/manual movement and curse ticks are test adapters; earlier route legs reused, not full Act One.",
+  "strikes": 27,
+  "seconds": 8.793331811000826,
+  "runner_report": "tmp/act1_team_20260927/unfold_fight_attack_animation_report.json",
+  "source_hashes": {
+    "scripts/lol2/hive_warrior_attack.gd": "f7a89a5a0007c0023f506e0e9175c001a4aeab535ed58ad29edf94877fb1e9f5",
+    "scripts/lol2/hive_warrior_death.gd": "505888a71d9107e491b9e461de5230506d7e3173fca162e3e4bd8a643e432f98",
+    "scripts/lol2/hive_return_population.gd": "d164621684a26627fcb7e79ac7bc6cc1187ff91651c754a4e696d59a17f48cf1",
+    "scripts/lol2/hive_return_population_state.gd": "73880e9e4c270cc116013f88c91c06109fe9c7ab8856995af20f0101743f4ff0",
+    "scripts/lol2/hive_ambush_state.gd": "191ade5bccd3f2d9fcb152d92c3f0107d2e5abcf7c7cba2f4b8e13ab304ce16d",
+    "scripts/lol2/hive_executioner_sprite.gd": "e971612ec50b458b8212ccdf13ce96bc6652098400fce807bb4fdaa726ad2d85",
+    "tests/hive_unfold_earned_fight_test.gd": "dc021b0cfa466083dc45a20e7762eee5740a3b86783c3394e7140be64164b812"
+  }
+}

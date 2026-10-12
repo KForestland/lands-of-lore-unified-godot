@@ -1,0 +1,276 @@
+{
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "liz_mix_sha256": "0b81a4fb6ec55ca2c4dc88ff2ec7f89c8012d76b98375c33022c56f83c653c3d",
+ "liz_dll_sha256": "d08a4dd833d1c7252e9e5181aa2a81ddadb6162136da058350f2d5bf84801e77",
+ "village_mix_sha256": "497fa122ad5c48dbbd6f651f826f57383436a3962cd67d4b175ffd636a25548b",
+ "village_dll_sha256": "a2eba4575456458a3b6597149456ac695674bca6b5cc89c3f8e445eb428bfa20",
+ "sound_bank_sha256": "e2d6df9a11a3d5bf6746911eac464c7f90efceaf7535e32a0f582dcea6afc3f6",
+ "liz_slots": {
+  "0x714": {
+   "offset": "0x18",
+   "name": "hotspot",
+   "target": "0xef028"
+  },
+  "0x718": {
+   "offset": "0x1c",
+   "name": "remove_hotspot",
+   "target": "0xef07c"
+  },
+  "0x73c": {
+   "offset": "0x40",
+   "name": "give_item",
+   "target": "0xef2b8"
+  },
+  "0x744": {
+   "offset": "0x48",
+   "name": "set_flag",
+   "target": "0xef32c"
+  },
+  "0x74c": {
+   "offset": "0x50",
+   "name": "get_flag",
+   "target": "0xef380"
+  },
+  "0x750": {
+   "offset": "0x54",
+   "name": "movie",
+   "target": "0xee784"
+  },
+  "0x768": {
+   "offset": "0x68",
+   "name": "exit_room",
+   "target": "0xef464"
+  },
+  "0x788": {
+   "offset": "0x88",
+   "name": "room",
+   "target": "0xef558"
+  },
+  "0x7bc": {
+   "offset": "0xbc",
+   "name": "load_room",
+   "target": "0xef704"
+  },
+  "0x7fc": {
+   "offset": "0xfc",
+   "name": "quip",
+   "target": "0xf133c"
+  },
+  "0x800": {
+   "offset": "0x100",
+   "name": "reset_trigger_bits",
+   "target": "0xf14cc"
+  },
+  "0x838": {
+   "offset": "0x138",
+   "name": "ambient_start",
+   "target": "0xf1654"
+  },
+  "0x83c": {
+   "offset": "0x13c",
+   "name": "ambient_stop",
+   "target": "0xf16d8"
+  }
+ },
+ "windows": {
+  "setup": {
+   "start": "0x47c",
+   "end": "0x54d",
+   "sha256": "963c3b16d1b5e8a0904e5dca9fa2767db71e5f01fb82c1c7ebd4c87c582878ff",
+   "instructions": 50
+  },
+  "click": {
+   "start": "0x5a7",
+   "end": "0x63d",
+   "sha256": "dadf45dc766b71f84798c7ce2f370cbc165fece52851b19dd26c8f68fe60951d",
+   "instructions": 49
+  },
+  "exit8": {
+   "start": "0x63d",
+   "end": "0x654",
+   "sha256": "7b704bfc367288d1085592ea3694dec635a8503ad3a1018635e84e0c1899bb32",
+   "instructions": 6
+  },
+  "first9": {
+   "start": "0x654",
+   "end": "0x67b",
+   "sha256": "67e2ecb12011cf6bc0e1554dabf5729ebee0e88a28f4f0dac51e0fc75fb628cc",
+   "instructions": 12
+  },
+  "village_click": {
+   "start": "0x560",
+   "end": "0x5c1",
+   "sha256": "0731c80225840850439db4df95d9fa0f92509268e30bedcb275103279055c5be",
+   "instructions": 28
+  }
+ },
+ "setup": [
+  [
+   "get_flag",
+   [
+    268
+   ]
+  ],
+  [
+   "load_room",
+   [
+    "LIZTRAN",
+    1,
+    "eax"
+   ]
+  ],
+  [
+   "set_flag",
+   [
+    268
+   ]
+  ],
+  [
+   "hotspot",
+   [
+    0,
+    91,
+    282,
+    146,
+    339
+   ]
+  ],
+  [
+   "hotspot",
+   [
+    1,
+    177,
+    151,
+    217,
+    221
+   ]
+  ],
+  [
+   "hotspot",
+   [
+    2,
+    290,
+    238,
+    344,
+    316
+   ]
+  ],
+  [
+   "hotspot",
+   [
+    3,
+    404,
+    244,
+    472,
+    322
+   ]
+  ],
+  [
+   "hotspot",
+   [
+    4,
+    220,
+    198,
+    365,
+    234
+   ]
+  ],
+  [
+   "reset_trigger_bits",
+   []
+  ]
+ ],
+ "click": [
+  [
+   "get_flag",
+   [
+    162,
+    "ebx"
+   ]
+  ],
+  [
+   "set_flag",
+   [
+    162
+   ]
+  ],
+  [
+   "movie",
+   [
+    100,
+    2,
+    24
+   ]
+  ],
+  [
+   "give_item",
+   [
+    "71-Wax",
+    "ebx"
+   ]
+  ]
+ ],
+ "exit8": [
+  [
+   "room",
+   [
+    "VILLAGE_"
+   ]
+  ],
+  [
+   "exit_room",
+   []
+  ]
+ ],
+ "first9": [
+  [
+   "ambient_start",
+   [
+    367,
+    90
+   ]
+  ],
+  [
+   "movie",
+   [
+    2,
+    59,
+    24
+   ]
+  ]
+ ],
+ "media": {
+  "WOMS\\LIZ\\LIZ_.VQA": {
+   "sha256": "9bc7243cd3a62d49fa296d8727348c868de8351bfc18206d074aea45e379913f",
+   "frames": 30,
+   "width": 640,
+   "height": 400
+  },
+  "WOMS\\LIZ\\LIZTRAN.VQA": {
+   "sha256": "28be770c9d70fa80917a489a2d15f5d00f95320c497c8a618a0b90b103080708",
+   "frames": 160,
+   "width": 640,
+   "height": 400
+  }
+ },
+ "cues": {
+  "100:2": {
+   "trailer_index": 270,
+   "request": 221,
+   "bank_record": "0100224e.aud",
+   "sha256": "449f860e1be353a8bb98f332136000491e6cbf21d7dd35fc35206139c5d381c8",
+   "bytes": 13012,
+   "rate": 22050
+  },
+  "2:59": {
+   "trailer_index": 200,
+   "request": 247,
+   "bank_record": "0120224e.aud",
+   "sha256": "d8f5a86c84abdba61db94852884c03729fd5a398be76e46a1dd10dd1bd526f56",
+   "bytes": 14676,
+   "rate": 22050
+  }
+ },
+ "wax_identity": "0xae5adacf",
+ "passed": true
+}

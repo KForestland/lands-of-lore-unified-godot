@@ -1,0 +1,64 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "actors": [
+  {
+   "actor": 62,
+   "definition": 1,
+   "position": [
+    -713,
+    0,
+    -5307
+   ],
+   "heading": 29491,
+   "health": 100,
+   "behavior": 14,
+   "flags": 30082,
+   "present": false,
+   "loot": null,
+   "reward_scale": 1
+  }
+ ],
+ "definitions": {
+  "1": {
+   "name": "Tig_mal",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 8
+    },
+    "walk": {
+     "selector": 3,
+     "frames": 14
+    },
+    "rise": {
+     "selector": 0,
+     "frames": 8
+    },
+    "death": {
+     "selector": 16,
+     "frames": 44
+    },
+    "corpse": {
+     "selector": 19,
+     "frames": 1
+    },
+    "attacks": []
+   }
+  }
+ },
+ "regions": [],
+ "neighbour_wake": {},
+ "counted": [],
+ "counter_target": 0,
+ "scripted_dormant": [
+  62
+ ],
+ "dormant_pose": "idle",
+ "note": "Presentation/target owner only. Attacks/death rows are not staged as gameplay until the event3 (hostile) producer is resolved."
+}

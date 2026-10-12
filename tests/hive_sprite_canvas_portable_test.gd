@@ -1,0 +1,31 @@
+extends SceneTree
+const Presenter=preload("res://scripts/lol2/hive_executioner_sprite.gd")
+func _initialize() -> void:
+	var source_root: String="user://tests/sprite_canvas_%d/" % Time.get_ticks_usec()
+	assert(DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(source_root))==OK)
+	for canvas in [Vector2(320,200),Vector2(95,78)]:
+		var picture:=Image.create(int(canvas.x),int(canvas.y),false,Image.FORMAT_RGBA8)
+		picture.fill(Color.WHITE)
+		assert(picture.save_png(source_root+"frame.png")==OK)
+		var file:=FileAccess.open(source_root+"sprites.json",FileAccess.WRITE)
+		file.store_string(JSON.stringify({"version":1,"clips":[{"selector":0,"frames":1,"columns":1,"width":canvas.x,"height":canvas.y,"file":"frame.png"}]}))
+		file.close()
+		var sprite:=MeshInstance3D.new()
+		sprite.mesh=QuadMesh.new()
+		sprite.mesh.size=Vector2(50,40)
+		sprite.mesh.center_offset=Vector3(0,20,0)
+		sprite.material_override=StandardMaterial3D.new()
+		var presenter:=Presenter.new()
+		var expected: Dictionary={0:{"width":int(canvas.x),"height":int(canvas.y),"frames":1}}
+		assert(presenter.bind(sprite,source_root,expected,canvas).is_empty())
+		assert(presenter.present({"pose":0,"source_pose":{"selector":0,"frame":0}}).is_empty())
+		assert(sprite.mesh.size==Vector2(50,40) and sprite.mesh.center_offset==Vector3(0,20,0))
+		var material: Material=sprite.material_override
+		assert(not presenter.bind(sprite,source_root,expected,Vector2(NAN,1)).is_empty())
+		assert(sprite.material_override==material)
+		sprite.free()
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(source_root+"sprites.json"))
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(source_root+"frame.png"))
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(source_root))
+	print("PASS asset-free explicit sprite canvases, world dimensions, bottom anchor and invalid-bind rollback")
+	quit()

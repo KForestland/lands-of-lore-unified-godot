@@ -1,0 +1,40 @@
+--- a/scripts/lol2/jungle_dawn.gd
++++ b/scripts/lol2/jungle_dawn.gd
+@@ -109,6 +109,17 @@
+ 	return preload("res://scripts/lol2/dawn_projectile_world.gd").launch(
+ 		get_world_3d().direct_space_state,population.navigation,origin(),context,target,excluded)
+ 
++## Explicit shared-clock entry; scheduler/collision dispatch remain caller-owned.
++func move_projectile(id: int, world_delta: int, radius: float) -> Dictionary:
++	var motion: Dictionary=projectiles.motion(id,world_delta)
++	if motion.has("error"):return motion
++	var excluded: Array[RID]=[population.bodies[ID].get_rid()]
++	var result:=preload("res://scripts/lol2/dawn_projectile_world.gd").sweep(
++		get_world_3d().direct_space_state,origin(),motion.from,motion.to,radius,excluded)
++	if result.has("error"):return result
++	var error: String=projectiles.moved(id,motion.from,result.position)
++	return {"error":error} if not error.is_empty() else result
++
+ 
+ ## The source hold (0x26..0x27) spans her whole talk and wait. While she speaks every input is held; while she waits
+ ## (looping idle) the player stays in place but can look, open the inventory, offer an item or strike.
+--- a/scripts/lol2/hive_dawn20.gd
++++ b/scripts/lol2/hive_dawn20.gd
+@@ -113,6 +113,17 @@
+ 	return preload("res://scripts/lol2/dawn_projectile_world.gd").launch(
+ 		get_world_3d().direct_space_state,population.navigation,origin(),context,target,excluded)
+ 
++## Explicit shared-clock entry; scheduler/collision dispatch remain caller-owned.
++func move_projectile(id: int, world_delta: int, radius: float) -> Dictionary:
++	var motion: Dictionary=projectiles.motion(id,world_delta)
++	if motion.has("error"):return motion
++	var excluded: Array[RID]=[population.bodies[ID].get_rid()]
++	var result:=preload("res://scripts/lol2/dawn_projectile_world.gd").sweep(
++		get_world_3d().direct_space_state,origin(),motion.from,motion.to,radius,excluded)
++	if result.has("error"):return result
++	var error: String=projectiles.moved(id,motion.from,result.position)
++	return {"error":error} if not error.is_empty() else result
++
+ 
+ ## The source hold (0x26..0x27) spans her talk; while she speaks every input is held.
+ func talking() -> bool: return set_up() and not state.clip.is_empty() and not bool(state.clip.repeat)

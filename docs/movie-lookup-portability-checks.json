@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "placement_count": 30,
+  "exact_count": 30,
+  "ambiguous_count": 0,
+  "unresolved_count": 0,
+  "inventory_equal": true,
+  "inventory_sha256": "e90c115b4848d77fa93efbb1b90235e8aa3d8ffe6494596b5bb9c1780e271bce",
+  "scope": "Static placement inventory exactly matches prior reader under python3 -S with only three local tool files; no decoding, visual or whole-asset portability claim.",
+  "review": "/home/bob/AI_COMMS/classic_review_20261007/lead/movie_lookup_portability",
+  "tests": {
+    "passed": true,
+    "total": 7,
+    "command": "python3 -m pytest tests/test_map_video_inventory.py -q"
+  },
+  "cli_extraction": {
+    "passed": true,
+    "movies": 23,
+    "all_extracted_hashes_match": true,
+    "input_scope": "Existing geometry props reports plus original archives",
+    "python": "python3 -S"
+  },
+  "consumer_imports": [
+    "prepare_jungle_exit_movies",
+    "prepare_jungle_bacatta_media",
+    "prepare_jungle_dawn_media"
+  ],
+  "source_sha256": {
+    "tools/lol2/map_video_inventory.py": "1c953e2e82642c3326458a6abaa0eda5272d510f262ff7690967b2b70a7247f9",
+    "tools/lol2_movie_format.py": "4713f87bd635de8f7e026731c2d35d34d710552598df89b15414a368ca7615c8",
+    "tools/lol2_source_format.py": "e66046e1ad87559706b75e21822440b7ebc2753e9321b3d9e042f6e9ff2f4791"
+  }
+}

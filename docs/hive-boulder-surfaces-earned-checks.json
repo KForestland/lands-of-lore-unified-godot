@@ -1,0 +1,26 @@
+{
+  "health": 30,
+  "input_save": "user://tests/act1_unfold_earned_defeated.json",
+  "input_sha256": "29c972223478adc882bb97ef85f2a384ac26e8e4c058f1616ca5cc2dbee17013",
+  "natural_morphs": [
+    {
+      "from": 0,
+      "health": 30,
+      "to": 2
+    }
+  ],
+  "output_save": "user://tests/act1_boulder_surfaces_earned_exit.json",
+  "output_sha256": "a95b1bf59b25be87da9f4c182b9d13a35fef7235881582693188e9f23ecb4799",
+  "passed": true,
+  "player_position": [
+    -2059.61743164062,
+    -1667.9990234375,
+    -6700.1875
+  ],
+  "scope": "SHA-verified earned lower-fight save, production lift stops5/6, ordinary jump/walk through13 source regions, live surface trigger/descent/exit. No pose/form/item/quest injection after load. Accelerated manually driven movement/curse ticks. Boulder actor motion/contact/sounds are still absent, so this proves surface reachability only, not the complete encounter. Earlier campaign legs reused.",
+  "surfaces": {
+    "elapsed": 2.0,
+    "phase": 3,
+    "version": 1
+  }
+}

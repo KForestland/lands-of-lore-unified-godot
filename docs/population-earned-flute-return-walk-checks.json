@@ -1,0 +1,25 @@
+{
+  "input_sha256": "2df37ec84609abf63308e555d59e6fe6e9d1f800874d3c508dd0cccbd3b79e96",
+  "output_save": "user://tests/act1_population_broken_flute_hive_return.json",
+  "output_sha256": "aacdc7125cc06264b7e1743f83c56441067c44b299ca933e0f8d4017cd1a59c8",
+  "passed": true,
+  "scope": "Earned broken-sword Hive arrival through Executioner/rescue, village, Bacatta/Dawn/Julian flute and actual Hive return. Normal movement with manually driven movement ticks, accelerated clocks. No supplied inventory/quest/position. Seven return warriors are activated by the earned quest state and remain alive; this proves arrival integration, not that this route fought all seven.",
+  "population": {
+    "actors": [
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "all_active": true,
+    "health_each": 400,
+    "rescued": 1,
+    "met_bacatta": 1,
+    "executioner_health": 0
+  },
+  "input_proof": "docs/broken-earned-jungle-hive-walk-checks.json",
+  "seconds": 172.2077209399995
+}

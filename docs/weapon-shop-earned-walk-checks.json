@@ -1,0 +1,16 @@
+{
+  "input_path": "user://tests/act1_magic_speech_runes_monastery_return.json",
+  "input_proof": "docs/magic-speech-hive-earned-rune-return-checks.json",
+  "input_sha256": "510bc2f196360be783b12ebe85144e318c454deb8e5410affd7adb4716bab05e",
+  "inventory": [
+    "cave:prop641:harvest1:Stalagmite",
+    "museum:item11:Fine_Longsword",
+    "monastery:item94:Iron_Flute",
+    "hive:Wax_runes:0",
+    "hive:runes:Ancients_Stone"
+  ],
+  "output_path": "user://tests/act1_shop_orb_monastery.json",
+  "output_sha256": "eda40c765dd74da876e5591b73debf44c441ae3fdfd1d058a15d1e6d76e92b40",
+  "passed": true,
+  "scope": "Cave-derived earned rune-return checkpoint; continuous source-portal walk from monastery to WPNEXT, first WPN conversation, object2 power-orb knowledge, return walk, original garden/cellar conversations and Julian empty-hand response. No position/form/quest injection after load. Movement/curse ticks manually driven, time/audio4x. Shop item and other content acceptance remain separate."
+}

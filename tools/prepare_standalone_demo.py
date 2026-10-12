@@ -14,10 +14,11 @@ templates=args.templates.resolve()
 stage.mkdir(parents=True,exist_ok=True)
 for name in ['scripts','scenes','assets']:
  shutil.copytree(src/name,stage/name,dirs_exist_ok=True,ignore=shutil.ignore_patterns('*.import','*.uid'))
-s=(src/'project.godot').read_text().replace('res://scenes/lol2/setup.tscn','res://scenes/lol2/cave_walkthrough.tscn').replace('Lands of Lore Unified Godot','LoL2 Cavern Walkthrough')
+s=(src/'project.godot').read_text().replace('res://scenes/lol2/setup.tscn','res://scenes/lol2/original_game_gate.tscn').replace('Lands of Lore Unified Godot','LoL2 Cavern Walkthrough')
 (stage/'project.godot').write_text(s)
 # Preserve exact palette indices and raw PNG FileAccess in exported packs.
-for p in (stage/'assets').rglob('*.png'):
+for p in list((stage/'assets').rglob('*.png'))+list((stage/'assets').rglob('*.wav')):
+ # Raw WAVs too: creature audio reads them with AudioStreamWAV.load_from_file.
  p.with_name(p.name+'.import').write_text('[remap]\n\nimporter="keep"\n')
 blocks=[]
 for i,(name,platform,ext,template) in enumerate([('Linux','Linux','x86_64','linux_release.x86_64'),('Windows','Windows Desktop','exe','windows_release_x86_64.exe')]):
@@ -26,9 +27,10 @@ for i,(name,platform,ext,template) in enumerate([('Linux','Linux','x86_64','linu
 name="{name}"
 platform="{platform}"
 runnable=true
+custom_features="original_game_required"
 advanced_options=false
 export_filter="all_resources"
-include_filter="assets/lol2/generated/*.json,assets/lol2/generated/*.png"
+include_filter="assets/*.json,assets/*.png,assets/*.wav,assets/*.ogv,assets/*.bin,scripts/lol2/*.json"
 exclude_filter=""
 export_path="../{name}/LoL2-Cavern.{ext}"
 script_export_mode=1

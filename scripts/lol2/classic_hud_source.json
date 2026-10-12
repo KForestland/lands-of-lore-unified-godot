@@ -1,0 +1,191 @@
+{
+ "version": 1,
+ "scale": 2,
+ "source": {
+  "archive": "GLOBAL.MIX",
+  "key": 606080735,
+  "sha256": "1c03f2a0f739368c66078103d43131ea0fde26bfffdd34186b21611dde3fd50e",
+  "palette_sha256": "520c6fe31ccb9d5e1044b958e082df7919d63b46008dee9965d1b1e956a17729"
+ },
+ "manual": {
+  "sha256": "3c3cac3f02fb22771948c7cd9c997f2a2c2588d5535adaa0a4f8e0dfd5eb8f52",
+  "printed_pages": [
+   7,
+   10,
+   39
+  ],
+  "evidence": "classic_review_20261007/lead/manual_hud_review/evidence.json"
+ },
+ "anchor": "bottom_right",
+ "shapes": {
+  "2": {
+   "role": "cluster",
+   "file": "shape_002.png",
+   "width": 85,
+   "height": 73,
+   "opaque": 3051,
+   "indices_sha256": "384252e006e55c50699f7a409e3059ade17698b328327b4c5acdedfa197faf1a"
+  },
+  "1": {
+   "role": "ring_disc",
+   "file": "shape_001.png",
+   "width": 21,
+   "height": 22,
+   "opaque": 349,
+   "indices_sha256": "f1a49da5ed53f16ee3cc4b79d3a7e197c368d4d8877c2c0bd181559b9a3d7e1e"
+  },
+  "62": {
+   "role": "spell_bar",
+   "file": "shape_062.png",
+   "width": 159,
+   "height": 30,
+   "opaque": 2457,
+   "indices_sha256": "1714b196818b7023e00b8e28f28cd71020333f9613e294d33ebaac11c163cde9"
+  },
+  "6": {
+   "role": "attack_unarmed_hand",
+   "file": "shape_006.png",
+   "width": 21,
+   "height": 21,
+   "opaque": 82,
+   "indices_sha256": "65d061802d38ebe01c852b472201094a0c808495b656a59d03be7dbf6aab0a9c"
+  },
+  "57": {
+   "role": "health_fill",
+   "file": "shape_057.png",
+   "width": 39,
+   "height": 4,
+   "opaque": 156,
+   "indices_sha256": "8a157f268133238d54c3465285716a33fa35a94f4447536a9adcd5861ec71b72"
+  },
+  "59": {
+   "role": "mana_fill",
+   "file": "shape_059.png",
+   "width": 25,
+   "height": 4,
+   "opaque": 100,
+   "indices_sha256": "0c03ddd7c8790c6399badc3caed68f4b978a1178c7978cf369e0fadd2fc12a8f"
+  },
+  "25": {
+   "role": "blue_button",
+   "file": "shape_025.png",
+   "width": 11,
+   "height": 13,
+   "opaque": 32,
+   "indices_sha256": "b7ad7d2fb819705095282af7ace3de92e08d9d385fe6ee79be42acb6bdef8135"
+  },
+  "26": {
+   "role": "blue_button_open",
+   "file": "shape_026.png",
+   "width": 11,
+   "height": 13,
+   "opaque": 32,
+   "indices_sha256": "9648515fee6c6737b68b80935b468d1e4de9dabdf528b1b464f9fb2163d004d1"
+  },
+  "63": {
+   "role": "spell_heal",
+   "file": "shape_063.png",
+   "width": 21,
+   "height": 21,
+   "opaque": 109,
+   "indices_sha256": "6788e5e3632d90539f9b7aaac1a6d068a4775877ce9c5be2469ffa95ed715b39"
+  },
+  "65": {
+   "role": "spell_spark",
+   "file": "shape_065.png",
+   "width": 21,
+   "height": 21,
+   "opaque": 67,
+   "indices_sha256": "c7cda1986e8d23fd97eb3c9b0f13d06723f2424d91c3c111415c1b751e5e622d"
+  }
+ },
+ "cluster": {
+  "portrait": {
+   "x": 41,
+   "y": 7,
+   "width": 38,
+   "height": 52,
+   "pixels": 1560
+  },
+  "attack_ring": {
+   "x": 7,
+   "y": 9,
+   "width": 21,
+   "height": 21,
+   "pixels": 349
+  },
+  "magic_ring": {
+   "x": 7,
+   "y": 42,
+   "width": 21,
+   "height": 21,
+   "pixels": 349
+  },
+  "mana_slot": {
+   "x": 5,
+   "y": 66,
+   "width": 25,
+   "height": 4,
+   "pixels": 100
+  },
+  "health_slot": {
+   "x": 41,
+   "y": 66,
+   "width": 39,
+   "height": 4,
+   "pixels": 156
+  }
+ },
+ "spell_bar": {
+  "rings": [
+   {
+    "x": 15,
+    "y": 5,
+    "width": 21,
+    "height": 21,
+    "pixels": 349
+   },
+   {
+    "x": 39,
+    "y": 5,
+    "width": 21,
+    "height": 21,
+    "pixels": 349
+   },
+   {
+    "x": 63,
+    "y": 5,
+    "width": 21,
+    "height": 21,
+    "pixels": 349
+   },
+   {
+    "x": 87,
+    "y": 5,
+    "width": 21,
+    "height": 21,
+    "pixels": 349
+   },
+   {
+    "x": 111,
+    "y": 5,
+    "width": 21,
+    "height": 21,
+    "pixels": 349
+   },
+   {
+    "x": 135,
+    "y": 5,
+    "width": 21,
+    "height": 21,
+    "pixels": 349
+   }
+  ],
+  "attach": "left_of_cluster_bottom_aligned"
+ },
+ "adapters": [
+  "ring icon / bar fill / blue button roles: size match to the art plus manual look, not byte-proven",
+  "Spell Bar attachment and Blue Button position: placed beside the cluster, offsets not taken from manual crops",
+  "equipped weapon icon: the existing item icon fitted into the Attack ring"
+ ]
+}

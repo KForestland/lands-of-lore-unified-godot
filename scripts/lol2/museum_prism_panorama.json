@@ -1,0 +1,371 @@
+{
+ "version": 1,
+ "source": {
+  "archive": "DAT/L3_DH.MIX",
+  "archive_sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7",
+  "texture_blob_sha256": "7e353789b4ca6ff8b5630f894e85ec1788d9c4713eaa537aded98b78ece21e07",
+  "cleared_descriptor": 871,
+  "cleared_payload_sha256": "67f1ff1e30858678eefcfa8039088bd2d97c08f182f1fa57e5417005479d31d8"
+ },
+ "scope": "Shown while the Prism is on display; prop280 pickup (group6590 op204 x7) clears the panels to the transparent descriptor 871. One-sided toward the alcove. Static mip0, index0 transparency, unshaded (adapters).",
+ "panels": [
+  {
+   "region": 481,
+   "wall_record": 1743,
+   "descriptor": 430,
+   "cleared_descriptor": 871,
+   "image": "panorama_430.png",
+   "width": 128,
+   "height": 80,
+   "payload_sha256": "a55cf3ee77fb099700a70d9d0c937543e752dd7dab387ca8ab959e3ec93929e5",
+   "points": [
+    [
+     2519.0,
+     -65,
+     -3331.0
+    ],
+    [
+     2377.0,
+     -65,
+     -3201.0
+    ],
+    [
+     2377.0,
+     40,
+     -3201.0
+    ],
+    [
+     2519.0,
+     40,
+     -3331.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     1.0000000000000002,
+     1.0
+    ],
+    [
+     1.0000000000000002,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "left_normal_inward": true
+  },
+  {
+   "region": 482,
+   "wall_record": 1744,
+   "descriptor": 429,
+   "cleared_descriptor": 871,
+   "image": "panorama_429.png",
+   "width": 128,
+   "height": 80,
+   "payload_sha256": "0c5f18c30236a2e34e5ce433d453c089fe23e9a69f2e1fffa3da9f04788a18a6",
+   "points": [
+    [
+     2519.0,
+     -65,
+     -3492.0
+    ],
+    [
+     2519.0,
+     -65,
+     -3331.0
+    ],
+    [
+     2519.0,
+     40,
+     -3331.0
+    ],
+    [
+     2519.0,
+     40,
+     -3492.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "left_normal_inward": true
+  },
+  {
+   "region": 483,
+   "wall_record": 1771,
+   "descriptor": 428,
+   "cleared_descriptor": 871,
+   "image": "panorama_428.png",
+   "width": 128,
+   "height": 80,
+   "payload_sha256": "62293cbc3a236d8f15e468581663e0fe325032aa4ee738cd707e2ea221b1f6c4",
+   "points": [
+    [
+     2396.0,
+     -65,
+     -3608.0
+    ],
+    [
+     2519.0,
+     -65,
+     -3492.0
+    ],
+    [
+     2519.0,
+     40,
+     -3492.0
+    ],
+    [
+     2396.0,
+     40,
+     -3608.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     1.0000000000000002,
+     1.0
+    ],
+    [
+     1.0000000000000002,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "left_normal_inward": true
+  },
+  {
+   "region": 447,
+   "wall_record": 1745,
+   "descriptor": 427,
+   "cleared_descriptor": 871,
+   "image": "panorama_427.png",
+   "width": 128,
+   "height": 80,
+   "payload_sha256": "96c7d710efef96b8e89a3a9462a16750cba3822ab5c6c3e72ba13480fd6a961f",
+   "points": [
+    [
+     2234.0,
+     -65,
+     -3609.0
+    ],
+    [
+     2396.0,
+     -65,
+     -3608.0
+    ],
+    [
+     2396.0,
+     40,
+     -3608.0
+    ],
+    [
+     2234.0,
+     40,
+     -3609.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "left_normal_inward": true
+  },
+  {
+   "region": 484,
+   "wall_record": 1772,
+   "descriptor": 426,
+   "cleared_descriptor": 871,
+   "image": "panorama_426.png",
+   "width": 128,
+   "height": 80,
+   "payload_sha256": "a9d71b4673c4c461e887e6b177fd19360ebb4cab55e7eab9f635c62981d0b5b8",
+   "points": [
+    [
+     2119.0,
+     -65,
+     -3493.0
+    ],
+    [
+     2234.0,
+     -65,
+     -3609.0
+    ],
+    [
+     2234.0,
+     40,
+     -3609.0
+    ],
+    [
+     2119.0,
+     40,
+     -3493.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "left_normal_inward": true
+  },
+  {
+   "region": 485,
+   "wall_record": 1746,
+   "descriptor": 425,
+   "cleared_descriptor": 871,
+   "image": "panorama_425.png",
+   "width": 128,
+   "height": 80,
+   "payload_sha256": "1b6f805dfad67c6ca6b6a44a741afc56cb0849ed8019c4461e06a696c408fbd2",
+   "points": [
+    [
+     2119.0,
+     -65,
+     -3327.0
+    ],
+    [
+     2119.0,
+     -65,
+     -3493.0
+    ],
+    [
+     2119.0,
+     40,
+     -3493.0
+    ],
+    [
+     2119.0,
+     40,
+     -3327.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "left_normal_inward": true
+  },
+  {
+   "region": 486,
+   "wall_record": 1747,
+   "descriptor": 424,
+   "cleared_descriptor": 871,
+   "image": "panorama_424.png",
+   "width": 128,
+   "height": 80,
+   "payload_sha256": "10bcc975376d24eb230be27ba6e392e73dc58ce1fc2fc132b9611c0c48246144",
+   "points": [
+    [
+     2259.0,
+     -65,
+     -3201.0
+    ],
+    [
+     2119.0,
+     -65,
+     -3327.0
+    ],
+    [
+     2119.0,
+     40,
+     -3327.0
+    ],
+    [
+     2259.0,
+     40,
+     -3201.0
+    ]
+   ],
+   "uv": [
+    [
+     -0.0,
+     1.0
+    ],
+    [
+     0.9999999999999999,
+     1.0
+    ],
+    [
+     0.9999999999999999,
+     0.0
+    ],
+    [
+     -0.0,
+     0.0
+    ]
+   ],
+   "left_normal_inward": true
+  }
+ ]
+}

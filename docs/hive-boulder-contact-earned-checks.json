@@ -1,0 +1,76 @@
+{
+  "actors": {
+    "actors": {
+      "30": {
+        "active": true,
+        "fraction": 0.0,
+        "frame": 0,
+        "index": 6,
+        "position": [
+          -2222.008056640625,
+          -1684.9964599609375,
+          -6861.3359375
+        ],
+        "rolling": false,
+        "stopping": true,
+        "timer": 0,
+        "velocity_y": 0.0
+      },
+      "31": {
+        "active": true,
+        "fraction": 0.0,
+        "frame": 0,
+        "index": 7,
+        "position": [
+          -2210.651123046875,
+          -1700.0003662109375,
+          -6716.30859375
+        ],
+        "rolling": false,
+        "stopping": true,
+        "timer": 0,
+        "velocity_y": 0.0
+      }
+    },
+    "legacy_retired": false,
+    "version": 1
+  },
+  "audio": {
+    "clocks": {
+      "30": -1.0,
+      "31": -1.0,
+      "close": 1.4628571428571429,
+      "exit": 2.159455782312925
+    },
+    "version": 1
+  },
+  "contact": {
+    "angle": 0,
+    "magnitude": 0.0,
+    "version": 1
+  },
+  "health": 30,
+  "input_save": "user://tests/act1_unfold_earned_defeated.json",
+  "input_sha256": "29c972223478adc882bb97ef85f2a384ac26e8e4c058f1616ca5cc2dbee17013",
+  "natural_morphs": [
+    {
+      "from": 0,
+      "health": 30,
+      "to": 2
+    }
+  ],
+  "output_save": "user://tests/act1_boulder_contact_earned_exit.json",
+  "output_sha256": "abe827a3a902fd92b3a99f4a647d44785a0f32f5c32bc086c7a33c26e226eca4",
+  "passed": true,
+  "player_position": [
+    -2059.091796875,
+    -1667.9884033203125,
+    -6701.1494140625
+  ],
+  "scope": "SHA-verified earned lower-fight save, production lift stops5/6, ordinary jump/walk through13 source regions, live surface trigger/descent/exit. No pose/form/item/quest injection after load. Accelerated manually driven movement/curse ticks. Original boulder visuals and saved path/fall/stop motion are active. Original close, rolling and exit cues are live with saved clocks; Godot spatial mixing remains an adapter. Player contact response/damage and saved momentum are active with documented modern timing/normal-mode/empty-defense adapters; this route proves survivable traversal, not an intentional contact test. Earlier campaign legs reused.",
+  "surfaces": {
+    "elapsed": 2.0,
+    "phase": 3,
+    "version": 1
+  }
+}

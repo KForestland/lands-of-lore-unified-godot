@@ -1,0 +1,189 @@
+{
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "dispatcher": "AD8E0",
+ "caller_values": {
+  "0x5bad5": 1,
+  "0xb230e": 1,
+  "0xb4315": 2,
+  "0xb433c": 3,
+  "0xb435f": 20,
+  "0xd0847": 14,
+  "0xd0868": 15,
+  "0xd0889": 13,
+  "0xd08c5": 16,
+  "0xd0c22": 6,
+  "0xd39e6": 5,
+  "0xd4ad1": 6,
+  "0xd4af4": 6,
+  "0xd4b39": 6,
+  "0xd757a": 17,
+  "0xd7746": 18,
+  "0xf6c87": 0
+ },
+ "props": {
+  "L1_DC:prop343": {
+   "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+   },
+   "event_archive_offset": 7249513,
+   "event_hex": "0605d60a1300",
+   "group": 2774,
+   "commands": [
+    "03010000852f15dc04000000",
+    "03010000ba9c64e004000000",
+    "03010000c744720c04000000",
+    "030100003cc973de04000000",
+    "030100003cc973de04000000",
+    "030100003cc973de04000000",
+    "030100003cc973de04000000",
+    "030100003cc973de04000000",
+    "030100003cc973de04000000",
+    "03010000139a689e04000000",
+    "030100005744fe6504000000",
+    "03010000b632bb0904000000",
+    "03010000d3cbc5a404000000",
+    "03010000d3cbc5a404000000",
+    "03010000d3cbc5a404000000",
+    "03010000087aeb6904000000",
+    "020100000d03",
+    "020100000e02"
+   ],
+   "items": [
+    "130-Pyra pod",
+    "66-Ancients stn",
+    "61-Guardian orb",
+    "108-Cave aloe",
+    "108-Cave aloe",
+    "108-Cave aloe",
+    "108-Cave aloe",
+    "108-Cave aloe",
+    "108-Cave aloe",
+    "38-Guard shield",
+    "37-Brnt Chain",
+    "29-Lt crosbow",
+    "24-Rock",
+    "24-Rock",
+    "24-Rock",
+    "3-Halberd"
+   ],
+   "player_ops": [
+    "020100000d03",
+    "020100000e02"
+   ],
+   "property19_senders": 0,
+   "classification": "producer unestablished; candidate debug/test kit; do not grant as a gameplay reward"
+  },
+  "L3_DH:prop93": {
+   "source": {
+    "file": "DAT/L3_DH.MIX",
+    "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+    "geometry_key": 3106551060,
+    "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+   },
+   "event_archive_offset": 5848164,
+   "event_hex": "0605da051300",
+   "group": 1498,
+   "commands": [
+    "03010000330a8b1704000000",
+    "03010000852f15dc04000000",
+    "03010000ba9c64e004000000",
+    "030100003cc973de04000000",
+    "030100003cc973de04000000",
+    "030100003cc973de04000000",
+    "03010000977862fc04000000",
+    "03010000977862fc04000000",
+    "030100008100eecf04000000",
+    "03010000139a689e04000000",
+    "03010000b632bb0904000000",
+    "03010000087aeb6904000000",
+    "020100000d03",
+    "020100000e03"
+   ],
+   "items": [
+    "92-Sk key",
+    "130-Pyra pod",
+    "66-Ancients stn",
+    "108-Cave aloe",
+    "108-Cave aloe",
+    "108-Cave aloe",
+    "121-Champion st",
+    "121-Champion st",
+    "41-Mail shirt",
+    "38-Guard shield",
+    "29-Lt crosbow",
+    "3-Halberd"
+   ],
+   "player_ops": [
+    "020100000d03",
+    "020100000e03"
+   ],
+   "property19_senders": 0,
+   "classification": "producer unestablished; candidate debug/test kit; do not grant as a gameplay reward"
+  },
+  "L4_HJ:prop1913": {
+   "source": {
+    "file": "DAT/L4_HJ.MIX",
+    "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+    "geometry_key": 3710797084,
+    "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+   },
+   "event_archive_offset": 12766160,
+   "event_hex": "0605d63e1300",
+   "group": 16086,
+   "commands": [
+    "03010000d9cd0de504000000",
+    "0301000078a3020a04000000",
+    "03010000da22f39e04000000",
+    "03010000ce2d245c04000000",
+    "030100002af1717f04000000",
+    "03010000bfa15aa604000000",
+    "03010000ba9c64e004000000",
+    "03010000ba9c64e004000000",
+    "03010000139a689e04000000",
+    "03010000d368d5a904000000",
+    "030100008100eecf04000000",
+    "03010000b632bb0904000000",
+    "03010000be4082e104000000",
+    "020100000d03",
+    "020100000e03"
+   ],
+   "items": [
+    "8-Prism",
+    "123-Pois paint",
+    "93-Skull key",
+    "147-SumScrl",
+    "7-Long arm",
+    "68-SS1",
+    "66-Ancients stn",
+    "66-Ancients stn",
+    "38-Guard shield",
+    "84-Dragon gem",
+    "41-Mail shirt",
+    "29-Lt crosbow",
+    "6-Fine longswd"
+   ],
+   "player_ops": [
+    "020100000d03",
+    "020100000e03"
+   ],
+   "property19_senders": 0,
+   "classification": "producer unestablished; candidate debug/test kit; do not grant as a gameplay reward"
+  }
+ },
+ "wall_case19": {
+  "cases": 256,
+  "passed": true,
+  "entry": "0x65500",
+  "code_hex": "8a500580f22088500588d680ce40887005b8010000005bc3",
+  "effect": "byte +5 = (old XOR 0x20) OR 0x40; EAX=1; no calls",
+  "limit": "Supplied wall-record pointer and byte; parent dispatch/gameplay reachability not replayed."
+ },
+ "limits": [
+  "Direct E8 byte-signature scan and known argument patterns; not a complete control-flow or indirect-call proof.",
+  "Debug/test-kit purpose is a hypothesis. Source commands are not proof of an earned reward.",
+  "No original interactive execution or global unreachability claim."
+ ]
+}

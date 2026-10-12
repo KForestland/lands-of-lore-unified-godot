@@ -1,0 +1,1731 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "metadata_sha256": "6ac3bee1526f18496a83ee6a80723be01048f28b1808e760fbe35b8d6685114b",
+ "texture_sha256": "98c97fabb6fa8db7ca78a7c3626106ec850a6d5e37952292e15f32cb966a227b",
+ "actor": {
+  "actor": 64,
+  "definition": 7,
+  "position": [
+   -1892,
+   0,
+   -5475
+  ],
+  "heading": 11468,
+  "health": 200,
+  "flags": 9602,
+  "present": true,
+  "archive_offset": 13015266,
+  "raw": "9cf86315cc2c00008225840eee2800000000000000000000000000000000c80007250000000e090c00ff00c8000000000000000000000000"
+ },
+ "groups": [
+  {
+   "stream": 0,
+   "group": 5084,
+   "owner_kind": "region",
+   "owner": 2750,
+   "descriptors": [
+    157
+   ],
+   "event": 2,
+   "value": 0,
+   "predicate": 20,
+   "archive_offset": 13045568,
+   "commands": [
+    {
+     "archive_offset": 13028068,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 13028076,
+     "raw_hex": "091052000d00"
+    },
+    {
+     "archive_offset": 13028082,
+     "raw_hex": "091061000d00"
+    },
+    {
+     "archive_offset": 13028088,
+     "raw_hex": "100240000100"
+    },
+    {
+     "archive_offset": 13028094,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 13028102,
+     "raw_hex": "c60000000803"
+    },
+    {
+     "archive_offset": 13028108,
+     "raw_hex": "01204a000000"
+    },
+    {
+     "archive_offset": 13028114,
+     "raw_hex": "01204b000000"
+    },
+    {
+     "archive_offset": 13028120,
+     "raw_hex": "051062000000"
+    },
+    {
+     "archive_offset": 13028126,
+     "raw_hex": "0c1064000e00"
+    },
+    {
+     "archive_offset": 13028132,
+     "raw_hex": "091064001500"
+    }
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 7116,
+   "owner_kind": "region",
+   "owner": 3567,
+   "descriptors": [
+    272
+   ],
+   "event": 2,
+   "value": 0,
+   "predicate": 162,
+   "archive_offset": 13046542,
+   "commands": [
+    {
+     "archive_offset": 13030100,
+     "raw_hex": "100240000500"
+    },
+    {
+     "archive_offset": 13030106,
+     "raw_hex": "c60000002801"
+    },
+    {
+     "archive_offset": 13030112,
+     "raw_hex": "090240001500"
+    }
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 7140,
+   "owner_kind": "region",
+   "owner": 3567,
+   "descriptors": [
+    272
+   ],
+   "event": 2,
+   "value": 0,
+   "predicate": 118,
+   "archive_offset": 13046554,
+   "commands": [
+    {
+     "archive_offset": 13030118,
+     "raw_hex": "090240001500"
+    }
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 7146,
+   "owner_kind": "region",
+   "owner": 3567,
+   "descriptors": [
+    272
+   ],
+   "event": 2,
+   "value": 0,
+   "predicate": 176,
+   "archive_offset": 13046566,
+   "commands": [
+    {
+     "archive_offset": 13030130,
+     "raw_hex": "0903ab011000"
+    },
+    {
+     "archive_offset": 13030136,
+     "raw_hex": "090240001100"
+    },
+    {
+     "archive_offset": 13030142,
+     "raw_hex": "020100002600"
+    },
+    {
+     "archive_offset": 13030148,
+     "raw_hex": "12010000f4f88d1500001202c7b100280000"
+    },
+    {
+     "archive_offset": 13030166,
+     "raw_hex": "090240001500"
+    }
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 7194,
+   "owner_kind": "region",
+   "owner": 3567,
+   "descriptors": [
+    272
+   ],
+   "event": 2,
+   "value": 0,
+   "predicate": 172,
+   "archive_offset": 13046578,
+   "commands": [
+    {
+     "archive_offset": 13030178,
+     "raw_hex": "100240000100"
+    },
+    {
+     "archive_offset": 13030184,
+     "raw_hex": "090240001500"
+    },
+    {
+     "archive_offset": 13030190,
+     "raw_hex": "020100002600"
+    },
+    {
+     "archive_offset": 13030196,
+     "raw_hex": "12010000f4f88d1500001202c7b100280000"
+    },
+    {
+     "archive_offset": 13030214,
+     "raw_hex": "c60000000804"
+    }
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 7242,
+   "owner_kind": "region",
+   "owner": 3567,
+   "descriptors": [
+    272
+   ],
+   "event": 2,
+   "value": 0,
+   "predicate": 141,
+   "archive_offset": 13046590,
+   "commands": [
+    {
+     "archive_offset": 13030226,
+     "raw_hex": "090240001500"
+    },
+    {
+     "archive_offset": 13030232,
+     "raw_hex": "020100002600"
+    },
+    {
+     "archive_offset": 13030238,
+     "raw_hex": "12010000f4f88d1500001202c7b100280000"
+    },
+    {
+     "archive_offset": 13030256,
+     "raw_hex": "c60000000807"
+    }
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 7920,
+   "owner_kind": "region",
+   "owner": 3791,
+   "descriptors": [
+    294
+   ],
+   "event": 2,
+   "value": 0,
+   "predicate": 103,
+   "archive_offset": 13047046,
+   "commands": [
+    {
+     "archive_offset": 13030904,
+     "raw_hex": "100240000200"
+    },
+    {
+     "archive_offset": 13030910,
+     "raw_hex": "c60000000806"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30402,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 9,
+   "value": 0,
+   "predicate": null,
+   "archive_offset": 12770022,
+   "commands": [
+    {
+     "archive_offset": 12758712,
+     "raw_hex": "c70000000b01"
+    },
+    {
+     "archive_offset": 12758718,
+     "raw_hex": "020100002700"
+    },
+    {
+     "archive_offset": 12758724,
+     "raw_hex": "c60000003401"
+    },
+    {
+     "archive_offset": 12758730,
+     "raw_hex": "c600000008c8"
+    },
+    {
+     "archive_offset": 12758736,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12758744,
+     "raw_hex": "0d02400007000000"
+    },
+    {
+     "archive_offset": 12758752,
+     "raw_hex": "0d02400011000000"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30456,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 9,
+   "value": 0,
+   "predicate": 31,
+   "archive_offset": 12770032,
+   "commands": [
+    {
+     "archive_offset": 12758766,
+     "raw_hex": "090240000e00"
+    },
+    {
+     "archive_offset": 12758772,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12758780,
+     "raw_hex": "100240002800"
+    },
+    {
+     "archive_offset": 12758786,
+     "raw_hex": "020100002700"
+    },
+    {
+     "archive_offset": 12758792,
+     "raw_hex": "090240001200"
+    },
+    {
+     "archive_offset": 12758798,
+     "raw_hex": "0d02400004090000"
+    },
+    {
+     "archive_offset": 12758806,
+     "raw_hex": "c70000001d01"
+    },
+    {
+     "archive_offset": 12758812,
+     "raw_hex": "c60000000864"
+    },
+    {
+     "archive_offset": 12758818,
+     "raw_hex": "c60000003401"
+    },
+    {
+     "archive_offset": 12758824,
+     "raw_hex": "0802400000000000"
+    },
+    {
+     "archive_offset": 12758832,
+     "raw_hex": "0802400007000000"
+    },
+    {
+     "archive_offset": 12758840,
+     "raw_hex": "080240000a000300"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30544,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 9,
+   "value": 0,
+   "predicate": 132,
+   "archive_offset": 12770046,
+   "commands": [
+    {
+     "archive_offset": 12758854,
+     "raw_hex": "090240000e00"
+    },
+    {
+     "archive_offset": 12758860,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12758868,
+     "raw_hex": "100240002800"
+    },
+    {
+     "archive_offset": 12758874,
+     "raw_hex": "090240001200"
+    },
+    {
+     "archive_offset": 12758880,
+     "raw_hex": "020100002700"
+    },
+    {
+     "archive_offset": 12758886,
+     "raw_hex": "c70000001d01"
+    },
+    {
+     "archive_offset": 12758892,
+     "raw_hex": "c60000000864"
+    },
+    {
+     "archive_offset": 12758898,
+     "raw_hex": "c60000003401"
+    },
+    {
+     "archive_offset": 12758904,
+     "raw_hex": "0d024000040c0000"
+    },
+    {
+     "archive_offset": 12758912,
+     "raw_hex": "0802400000000000"
+    },
+    {
+     "archive_offset": 12758920,
+     "raw_hex": "0802400007000000"
+    },
+    {
+     "archive_offset": 12758928,
+     "raw_hex": "080240000a000200"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30632,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 20,
+   "predicate": 63,
+   "archive_offset": 12770060,
+   "commands": [
+    {
+     "archive_offset": 12758942,
+     "raw_hex": "0802400001000100"
+    },
+    {
+     "archive_offset": 12758950,
+     "raw_hex": "c60000000801"
+    },
+    {
+     "archive_offset": 12758956,
+     "raw_hex": "0d02400004090000"
+    },
+    {
+     "archive_offset": 12758964,
+     "raw_hex": "0802400000000000"
+    },
+    {
+     "archive_offset": 12758972,
+     "raw_hex": "0802400007000000"
+    },
+    {
+     "archive_offset": 12758980,
+     "raw_hex": "080240000a000100"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30684,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 0,
+   "predicate": 206,
+   "archive_offset": 12770070,
+   "commands": [
+    {
+     "archive_offset": 12758994,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12759002,
+     "raw_hex": "051062000100"
+    },
+    {
+     "archive_offset": 12759008,
+     "raw_hex": "020100002700"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30710,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 4,
+   "value": 1,
+   "predicate": 206,
+   "archive_offset": 12770080,
+   "commands": [
+    {
+     "archive_offset": 12759020,
+     "raw_hex": "0802400001000200"
+    },
+    {
+     "archive_offset": 12759028,
+     "raw_hex": "0d02400004090000"
+    },
+    {
+     "archive_offset": 12759036,
+     "raw_hex": "0802400000000000"
+    },
+    {
+     "archive_offset": 12759044,
+     "raw_hex": "0802400007000000"
+    },
+    {
+     "archive_offset": 12759052,
+     "raw_hex": "080240000a000200"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30756,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 0,
+   "predicate": 246,
+   "archive_offset": 12770094,
+   "commands": [
+    {
+     "archive_offset": 12759066,
+     "raw_hex": "090240001100"
+    },
+    {
+     "archive_offset": 12759072,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12759080,
+     "raw_hex": "0d0240000d000000"
+    },
+    {
+     "archive_offset": 12759088,
+     "raw_hex": "0d02400007000000"
+    },
+    {
+     "archive_offset": 12759096,
+     "raw_hex": "c70000001d01"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30798,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 20,
+   "predicate": 64,
+   "archive_offset": 12770104,
+   "commands": [
+    {
+     "archive_offset": 12759108,
+     "raw_hex": "091062000e00"
+    },
+    {
+     "archive_offset": 12759114,
+     "raw_hex": "091052000e00"
+    },
+    {
+     "archive_offset": 12759120,
+     "raw_hex": "091061000e00"
+    },
+    {
+     "archive_offset": 12759126,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12759134,
+     "raw_hex": "0d024000040b0000"
+    },
+    {
+     "archive_offset": 12759142,
+     "raw_hex": "0802400000000000"
+    },
+    {
+     "archive_offset": 12759150,
+     "raw_hex": "0802400007000000"
+    },
+    {
+     "archive_offset": 12759158,
+     "raw_hex": "080240000a000100"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30862,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 0,
+   "predicate": 207,
+   "archive_offset": 12770114,
+   "commands": [
+    {
+     "archive_offset": 12759172,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12759180,
+     "raw_hex": "c60000000805"
+    },
+    {
+     "archive_offset": 12759186,
+     "raw_hex": "020100002700"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30888,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 20,
+   "predicate": 65,
+   "archive_offset": 12770124,
+   "commands": [
+    {
+     "archive_offset": 12759198,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12759206,
+     "raw_hex": "0d024000040a0000"
+    },
+    {
+     "archive_offset": 12759214,
+     "raw_hex": "0802400000000000"
+    },
+    {
+     "archive_offset": 12759222,
+     "raw_hex": "0802400007000000"
+    },
+    {
+     "archive_offset": 12759230,
+     "raw_hex": "080240000a000100"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30934,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 0,
+   "predicate": 208,
+   "archive_offset": 12770134,
+   "commands": [
+    {
+     "archive_offset": 12759244,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12759252,
+     "raw_hex": "c60000000808"
+    },
+    {
+     "archive_offset": 12759258,
+     "raw_hex": "100240000300"
+    },
+    {
+     "archive_offset": 12759264,
+     "raw_hex": "020100002700"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 30966,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 20,
+   "predicate": 33,
+   "archive_offset": 12770144,
+   "commands": [
+    {
+     "archive_offset": 12759276,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12759284,
+     "raw_hex": "c60000000809"
+    },
+    {
+     "archive_offset": 12759290,
+     "raw_hex": "0d024000040c0000"
+    },
+    {
+     "archive_offset": 12759298,
+     "raw_hex": "0802400000000000"
+    },
+    {
+     "archive_offset": 12759306,
+     "raw_hex": "0802400007000000"
+    },
+    {
+     "archive_offset": 12759314,
+     "raw_hex": "080240000a000100"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 31018,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 0,
+   "predicate": 209,
+   "archive_offset": 12770154,
+   "commands": [
+    {
+     "archive_offset": 12759328,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12759336,
+     "raw_hex": "0d024000040c0000"
+    },
+    {
+     "archive_offset": 12759344,
+     "raw_hex": "020100002700"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 31046,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 20,
+   "predicate": 34,
+   "archive_offset": 12770164,
+   "commands": [
+    {
+     "archive_offset": 12759356,
+     "raw_hex": "12010000f8f88a150000120211b100320000"
+    },
+    {
+     "archive_offset": 12759374,
+     "raw_hex": "020100002600"
+    },
+    {
+     "archive_offset": 12759380,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12759388,
+     "raw_hex": "100240000300"
+    },
+    {
+     "archive_offset": 12759394,
+     "raw_hex": "0d024000040f0000"
+    },
+    {
+     "archive_offset": 12759402,
+     "raw_hex": "0802400000000000"
+    },
+    {
+     "archive_offset": 12759410,
+     "raw_hex": "0802400007000000"
+    },
+    {
+     "archive_offset": 12759418,
+     "raw_hex": "080240000a000100"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 31122,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 11,
+   "predicate": null,
+   "archive_offset": 12770174,
+   "commands": [
+    {
+     "archive_offset": 12759432,
+     "raw_hex": "090240000d00"
+    },
+    {
+     "archive_offset": 12759438,
+     "raw_hex": "ce00000000ff"
+    },
+    {
+     "archive_offset": 12759444,
+     "raw_hex": "c6000000081e"
+    },
+    {
+     "archive_offset": 12759450,
+     "raw_hex": "091052000d00"
+    },
+    {
+     "archive_offset": 12759456,
+     "raw_hex": "091061000d00"
+    },
+    {
+     "archive_offset": 12759462,
+     "raw_hex": "091062000d00"
+    },
+    {
+     "archive_offset": 12759468,
+     "raw_hex": "c70000000b01"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 31170,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 265,
+   "predicate": null,
+   "archive_offset": 12770180,
+   "commands": [
+    {
+     "archive_offset": 12759480,
+     "raw_hex": "03024000be4082e104000000"
+    },
+    {
+     "archive_offset": 12759492,
+     "raw_hex": "0d02400004090000"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 31196,
+   "owner_kind": "actor",
+   "owner": 64,
+   "event": 6,
+   "value": 13,
+   "predicate": null,
+   "archive_offset": 12770186,
+   "commands": [
+    {
+     "archive_offset": 12759506,
+     "raw_hex": "0903f7011500"
+    }
+   ]
+  }
+ ],
+ "external": [
+  {
+   "stream": 0,
+   "group": 4354,
+   "owner_kind": "region",
+   "owner": 2443,
+   "descriptors": [
+    131
+   ],
+   "event": 2,
+   "value": 0,
+   "predicate": 154,
+   "archive_offset": 13045084,
+   "actor_commands": [
+    {
+     "archive_offset": 13027360,
+     "raw_hex": "090240001100"
+    }
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 4442,
+   "owner_kind": "region",
+   "owner": 2443,
+   "descriptors": [
+    131
+   ],
+   "event": 2,
+   "value": 0,
+   "predicate": 111,
+   "archive_offset": 13045096,
+   "actor_commands": [
+    {
+     "archive_offset": 13027466,
+     "raw_hex": "100240000500"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 21222,
+   "owner_kind": "control",
+   "owner": 99,
+   "event": 9,
+   "value": 0,
+   "predicate": null,
+   "archive_offset": 12767476,
+   "actor_commands": [
+    {
+     "archive_offset": 12749538,
+     "raw_hex": "090240001500"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 21372,
+   "owner_kind": "control",
+   "owner": 100,
+   "event": 6,
+   "value": 20,
+   "predicate": 166,
+   "archive_offset": 12767504,
+   "actor_commands": [
+    {
+     "archive_offset": 12749700,
+     "raw_hex": "090240000300"
+    },
+    {
+     "archive_offset": 12749706,
+     "raw_hex": "0d0240000d000000"
+    },
+    {
+     "archive_offset": 12749714,
+     "raw_hex": "0d02400007000000"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 21418,
+   "owner_kind": "control",
+   "owner": 100,
+   "event": 6,
+   "value": 20,
+   "predicate": 49,
+   "archive_offset": 12767514,
+   "actor_commands": [
+    {
+     "archive_offset": 12749728,
+     "raw_hex": "090240001100"
+    },
+    {
+     "archive_offset": 12749734,
+     "raw_hex": "0802400001000000"
+    },
+    {
+     "archive_offset": 12749742,
+     "raw_hex": "0d0240000d000000"
+    },
+    {
+     "archive_offset": 12749750,
+     "raw_hex": "0d02400007000000"
+    }
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 27172,
+   "owner_kind": "control",
+   "owner": 216,
+   "event": 2,
+   "value": 304,
+   "predicate": 192,
+   "archive_offset": 12769166,
+   "actor_commands": [
+    {
+     "archive_offset": 12755568,
+     "raw_hex": "0d0240000d000000"
+    },
+    {
+     "archive_offset": 12755576,
+     "raw_hex": "0d02400007000000"
+    }
+   ]
+  }
+ ],
+ "records": [
+  {
+   "kind": 9,
+   "raw": "0a09c276000060000181",
+   "predicate": null,
+   "group": 30402
+  },
+  {
+   "kind": 9,
+   "raw": "0a09f87600001f000181",
+   "predicate": 31,
+   "group": 30456
+  },
+  {
+   "kind": 9,
+   "raw": "0a09507700001f000181",
+   "predicate": 132,
+   "group": 30544
+  },
+  {
+   "kind": 6,
+   "raw": "0606a8771400",
+   "predicate": 63,
+   "group": 30632
+  },
+  {
+   "kind": 6,
+   "raw": "0606dc770000",
+   "predicate": 206,
+   "group": 30684
+  },
+  {
+   "kind": 4,
+   "raw": "0a04f677010000000000",
+   "predicate": 206,
+   "group": 30710
+  },
+  {
+   "kind": 6,
+   "raw": "060624780000",
+   "predicate": 246,
+   "group": 30756
+  },
+  {
+   "kind": 6,
+   "raw": "06064e781400",
+   "predicate": 64,
+   "group": 30798
+  },
+  {
+   "kind": 6,
+   "raw": "06068e780000",
+   "predicate": 207,
+   "group": 30862
+  },
+  {
+   "kind": 6,
+   "raw": "0606a8781400",
+   "predicate": 65,
+   "group": 30888
+  },
+  {
+   "kind": 6,
+   "raw": "0606d6780000",
+   "predicate": 208,
+   "group": 30934
+  },
+  {
+   "kind": 6,
+   "raw": "0606f6781400",
+   "predicate": 33,
+   "group": 30966
+  },
+  {
+   "kind": 6,
+   "raw": "06062a790000",
+   "predicate": 209,
+   "group": 31018
+  },
+  {
+   "kind": 6,
+   "raw": "060646791400",
+   "predicate": 34,
+   "group": 31046
+  },
+  {
+   "kind": 6,
+   "raw": "060692790b00",
+   "predicate": null,
+   "group": 31122
+  },
+  {
+   "kind": 6,
+   "raw": "0606c2790901",
+   "predicate": null,
+   "group": 31170
+  },
+  {
+   "kind": 6,
+   "raw": "0606dc790d00",
+   "predicate": null,
+   "group": 31196
+  }
+ ],
+ "predicates": {
+  "20": {
+   "op": "==",
+   "left": {
+    "local": 6
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003060000"
+  },
+  "31": {
+   "op": "AND",
+   "left": {
+    "predicate": 3,
+    "expression": {
+     "op": "!=",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 3
+     },
+     "raw": "0105000003"
+    }
+   },
+   "right": {
+    "predicate": 8,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "raw": "0604030408"
+  },
+  "33": {
+   "op": "AND",
+   "left": {
+    "predicate": 32,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "right": {
+    "predicate": 209,
+    "expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 3
+     },
+     "raw": "0005000003"
+    }
+   },
+   "raw": "06042004d1"
+  },
+  "34": {
+   "op": "AND",
+   "left": {
+    "predicate": 32,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "right": {
+    "predicate": 211,
+    "expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 5
+     },
+     "raw": "0005000005"
+    }
+   },
+   "raw": "06042004d3"
+  },
+  "63": {
+   "op": "AND",
+   "left": {
+    "predicate": 32,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "right": {
+    "predicate": 206,
+    "expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    }
+   },
+   "raw": "06042004ce"
+  },
+  "64": {
+   "op": "AND",
+   "left": {
+    "predicate": 8,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "right": {
+    "predicate": 207,
+    "expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    }
+   },
+   "raw": "06040804cf"
+  },
+  "65": {
+   "op": "AND",
+   "left": {
+    "predicate": 8,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "right": {
+    "predicate": 208,
+    "expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 2
+     },
+     "raw": "0005000002"
+    }
+   },
+   "raw": "06040804d0"
+  },
+  "103": {
+   "op": "==",
+   "left": {
+    "local": 8
+   },
+   "right": {
+    "immediate": 5
+   },
+   "raw": "0003080005"
+  },
+  "118": {
+   "op": "AND",
+   "left": {
+    "predicate": 113,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 8
+     },
+     "right": {
+      "immediate": 8
+     },
+     "raw": "0003080008"
+    }
+   },
+   "right": {
+    "predicate": 32,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "raw": "0604710420"
+  },
+  "132": {
+   "op": "AND",
+   "left": {
+    "predicate": 209,
+    "expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 3
+     },
+     "raw": "0005000003"
+    }
+   },
+   "right": {
+    "predicate": 8,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "raw": "0604d10408"
+  },
+  "141": {
+   "op": "AND",
+   "left": {
+    "predicate": 190,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 98,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 29
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "00021d0000"
+      }
+     },
+     "right": {
+      "predicate": 104,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 8
+       },
+       "right": {
+        "immediate": 6
+       },
+       "raw": "0003080006"
+      }
+     },
+     "raw": "0604620468"
+    }
+   },
+   "right": {
+    "predicate": 32,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "raw": "0604be0420"
+  },
+  "162": {
+   "op": "AND",
+   "left": {
+    "predicate": 200,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 15,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 6
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0003060001"
+      }
+     },
+     "right": {
+      "predicate": 199,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 40
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0003280000"
+      }
+     },
+     "raw": "06040f04c7"
+    }
+   },
+   "right": {
+    "predicate": 163,
+    "expression": {
+     "op": "==",
+     "left": {
+      "shared": 11
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "00020b0000"
+    }
+   },
+   "raw": "0604c804a3"
+  },
+  "172": {
+   "op": "AND",
+   "left": {
+    "predicate": 189,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 98,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 29
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "00021d0000"
+      }
+     },
+     "right": {
+      "predicate": 101,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 8
+       },
+       "right": {
+        "immediate": 3
+       },
+       "raw": "0003080003"
+      }
+     },
+     "raw": "0604620465"
+    }
+   },
+   "right": {
+    "predicate": 32,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "raw": "0604bd0420"
+  },
+  "176": {
+   "op": "AND",
+   "left": {
+    "predicate": 180,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 131,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 15
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "00030f0001"
+      }
+     },
+     "right": {
+      "predicate": 125,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 8
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0003080000"
+      }
+     },
+     "raw": "060483047d"
+    }
+   },
+   "right": {
+    "predicate": 32,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 52
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003340000"
+    }
+   },
+   "raw": "0604b40420"
+  },
+  "206": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0005000000"
+  },
+  "207": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0005000001"
+  },
+  "208": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 2
+   },
+   "raw": "0005000002"
+  },
+  "209": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 3
+   },
+   "raw": "0005000003"
+  },
+  "246": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 40
+   },
+   "raw": "0005000028"
+  }
+ },
+ "regions": [
+  {
+   "region": 2750,
+   "polygon": [
+    [
+     -1740.0,
+     -5577.0
+    ],
+    [
+     -1900.0,
+     -5529.0
+    ],
+    [
+     -1899.0,
+     -5549.0
+    ],
+    [
+     -1766.0,
+     -5597.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "region": 3567,
+   "polygon": [
+    [
+     -1732.640869140625,
+     -5491.8232421875
+    ],
+    [
+     -1848.1605224609375,
+     -5442.6513671875
+    ],
+    [
+     -1897.0,
+     -5525.0
+    ],
+    [
+     -1738.0,
+     -5573.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "region": 3791,
+   "polygon": [
+    [
+     -1804.0938720703125,
+     -5053.60205078125
+    ],
+    [
+     -1865.0,
+     -5028.0
+    ],
+    [
+     -1840.6920166015625,
+     -5434.796875
+    ],
+    [
+     -1731.0,
+     -5483.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  }
+ ],
+ "poses": {
+  "9": {
+   "resource": 109,
+   "vqa": "E079E.VQA"
+  },
+  "10": {
+   "resource": 108,
+   "vqa": "E080E.VQA"
+  },
+  "11": {
+   "resource": 107,
+   "vqa": "E081E.VQA"
+  },
+  "12": {
+   "resource": 106,
+   "vqa": "E082E.VQA"
+  },
+  "13": {
+   "resource": 105,
+   "vqa": "E083E.VQA"
+  },
+  "14": {
+   "resource": 104,
+   "vqa": "E084E.VQA"
+  },
+  "15": {
+   "resource": 103,
+   "vqa": "E085E.VQA"
+  }
+ },
+ "code": [
+  {
+   "start": 711745,
+   "end": 711837,
+   "sha256": "272b4c5acbbd85d6f2fc2d8e8b02fc13d008e09b5e90ebfa48136ea9b4e6e259"
+  },
+  {
+   "start": 712097,
+   "end": 712133,
+   "sha256": "ca40ab168406a7f2efdc8d1bc600c186fde37ab4ba9d92d00f5ade95ff9a95a9"
+  },
+  {
+   "start": 741627,
+   "end": 741655,
+   "sha256": "6c346531c639bd63dd6c956d5c861df8dcb2fd8e220965f26226b9c875434589"
+  },
+  {
+   "start": 742333,
+   "end": 742361,
+   "sha256": "44b6452524283ec726d79d7b4ad42780b7f731a79f7028af24b61cb472772f56"
+  }
+ ],
+ "owned_locals": [
+  6,
+  8,
+  32,
+  33,
+  40,
+  52
+ ],
+ "shared_indices": [
+  0,
+  11,
+  29
+ ],
+ "scope": "Original64 present, normal region3567 after control99 local15, held-item first-match response, source hit/death and actor-only sword grant. External movable/control effects emitted to host; no duplicate control99 speech. Region/clock/presentation adapter explicitly bounded."
+}

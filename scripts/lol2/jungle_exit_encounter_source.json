@@ -1,0 +1,1068 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "actors": [
+  {
+   "actor": 58,
+   "name": "GGuard",
+   "definition": 9,
+   "position": [
+    5658,
+    -114,
+    -3938
+   ],
+   "heading": 42780,
+   "health": 255,
+   "behavior": 14,
+   "flags": 13698,
+   "present": false
+  },
+  {
+   "actor": 59,
+   "name": "GGuard",
+   "definition": 9,
+   "position": [
+    5634,
+    -114,
+    -3583
+   ],
+   "heading": 54613,
+   "health": 255,
+   "behavior": 14,
+   "flags": 13698,
+   "present": false
+  },
+  {
+   "actor": 60,
+   "name": "GGuard",
+   "definition": 9,
+   "position": [
+    5689,
+    -114,
+    -3706
+   ],
+   "heading": 49152,
+   "health": 255,
+   "behavior": 14,
+   "flags": 13698,
+   "present": false
+  },
+  {
+   "actor": 61,
+   "name": "BACL4",
+   "definition": 5,
+   "position": [
+    3550,
+    0,
+    -4152
+   ],
+   "heading": 51154,
+   "health": 200,
+   "behavior": 14,
+   "flags": 30082,
+   "present": false
+  }
+ ],
+ "regions": [
+  {
+   "region": 4437,
+   "polygon": [
+    [
+     4595.0,
+     -3534.0
+    ],
+    [
+     4642.0,
+     -3775.0
+    ],
+    [
+     4767.0,
+     -3774.0
+    ],
+    [
+     4756.0,
+     -3611.0
+    ]
+   ],
+   "floor_min": -114,
+   "floor_max": -114
+  },
+  {
+   "region": 4435,
+   "polygon": [
+    [
+     4756.0,
+     -3611.0
+    ],
+    [
+     4767.0,
+     -3774.0
+    ],
+    [
+     4879.0,
+     -3793.0
+    ],
+    [
+     4873.0,
+     -3626.0
+    ]
+   ],
+   "floor_min": -114,
+   "floor_max": -114
+  },
+  {
+   "region": 4439,
+   "polygon": [
+    [
+     4483.0,
+     -3533.0
+    ],
+    [
+     4528.0,
+     -3747.0
+    ],
+    [
+     4642.0,
+     -3775.0
+    ],
+    [
+     4595.0,
+     -3534.0
+    ]
+   ],
+   "floor_min": -114,
+   "floor_max": -114
+  },
+  {
+   "region": 4442,
+   "polygon": [
+    [
+     5111.0,
+     -3659.0
+    ],
+    [
+     5114.0,
+     -3840.0
+    ],
+    [
+     5232.0,
+     -3847.0
+    ],
+    [
+     5229.0,
+     -3663.0
+    ]
+   ],
+   "floor_min": -114,
+   "floor_max": -114
+  },
+  {
+   "region": 4450,
+   "polygon": [
+    [
+     4238.0,
+     -3506.0
+    ],
+    [
+     4241.0,
+     -3716.0
+    ],
+    [
+     4395.0,
+     -3731.0
+    ],
+    [
+     4379.0,
+     -3522.0
+    ]
+   ],
+   "floor_min": -114,
+   "floor_max": -114
+  }
+ ],
+ "predicates": {
+  "2": {
+   "op": "==",
+   "left": {
+    "local": 49
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003310000"
+  },
+  "28": {
+   "op": "==",
+   "left": {
+    "local": 42
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "00032a0001"
+  },
+  "29": {
+   "op": "==",
+   "left": {
+    "local": 42
+   },
+   "right": {
+    "immediate": 2
+   },
+   "raw": "00032a0002"
+  },
+  "30": {
+   "op": "==",
+   "left": {
+    "local": 42
+   },
+   "right": {
+    "immediate": 3
+   },
+   "raw": "00032a0003"
+  },
+  "46": {
+   "op": "<",
+   "left": {
+    "local": 48
+   },
+   "right": {
+    "immediate": 3
+   },
+   "raw": "0503300003"
+  },
+  "50": {
+   "op": "AND",
+   "left": {
+    "predicate": 45,
+    "expression": {
+     "op": ">=",
+     "left": {
+      "local": 48
+     },
+     "right": {
+      "immediate": 3
+     },
+     "raw": "0303300003"
+    }
+   },
+   "right": {
+    "predicate": 2,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 49
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003310000"
+    }
+   },
+   "raw": "06042d0402"
+  },
+  "51": {
+   "op": "AND",
+   "left": {
+    "predicate": 47,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 46,
+      "expression": {
+       "op": "<",
+       "left": {
+        "local": 48
+       },
+       "right": {
+        "immediate": 3
+       },
+       "raw": "0503300003"
+      }
+     },
+     "right": {
+      "predicate": 206,
+      "expression": {
+       "op": "==",
+       "left": {
+        "owner_state": true
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0005000000"
+      }
+     },
+     "raw": "06042e04ce"
+    }
+   },
+   "right": {
+    "predicate": 2,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 49
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003310000"
+    }
+   },
+   "raw": "06042f0402"
+  },
+  "52": {
+   "op": "AND",
+   "left": {
+    "predicate": 48,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 46,
+      "expression": {
+       "op": "<",
+       "left": {
+        "local": 48
+       },
+       "right": {
+        "immediate": 3
+       },
+       "raw": "0503300003"
+      }
+     },
+     "right": {
+      "predicate": 207,
+      "expression": {
+       "op": "==",
+       "left": {
+        "owner_state": true
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0005000001"
+      }
+     },
+     "raw": "06042e04cf"
+    }
+   },
+   "right": {
+    "predicate": 2,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 49
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003310000"
+    }
+   },
+   "raw": "0604300402"
+  },
+  "54": {
+   "op": "<",
+   "left": {
+    "local": 42
+   },
+   "right": {
+    "immediate": 3
+   },
+   "raw": "05032a0003"
+  },
+  "67": {
+   "op": "==",
+   "left": {
+    "local": 56
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0003380001"
+  },
+  "138": {
+   "op": "AND",
+   "left": {
+    "predicate": 119,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 182,
+      "expression": {
+       "op": "AND",
+       "left": {
+        "predicate": 178,
+        "expression": {
+         "op": "OR",
+         "left": {
+          "predicate": 177,
+          "expression": {
+           "op": "==",
+           "left": {
+            "shared": 47
+           },
+           "right": {
+            "immediate": 0
+           },
+           "raw": "00022f0000"
+          }
+         },
+         "right": {
+          "predicate": 185,
+          "expression": {
+           "op": "==",
+           "left": {
+            "local": 41
+           },
+           "right": {
+            "immediate": 1
+           },
+           "raw": "0003290001"
+          }
+         },
+         "raw": "0704b104b9"
+        }
+       },
+       "right": {
+        "predicate": 168,
+        "expression": {
+         "op": "AND",
+         "left": {
+          "predicate": 145,
+          "expression": {
+           "op": "==",
+           "left": {
+            "shared": 14
+           },
+           "right": {
+            "immediate": 1
+           },
+           "raw": "00020e0001"
+          }
+         },
+         "right": {
+          "predicate": 167,
+          "expression": {
+           "op": "==",
+           "left": {
+            "shared": 18
+           },
+           "right": {
+            "immediate": 1
+           },
+           "raw": "0002120001"
+          }
+         },
+         "raw": "06049104a7"
+        }
+       },
+       "raw": "0604b204a8"
+      }
+     },
+     "right": {
+      "predicate": 126,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 51
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0003330000"
+      }
+     },
+     "raw": "0604b6047e"
+    }
+   },
+   "right": {
+    "predicate": 139,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 53
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003350000"
+    }
+   },
+   "raw": "060477048b"
+  },
+  "182": {
+   "op": "AND",
+   "left": {
+    "predicate": 178,
+    "expression": {
+     "op": "OR",
+     "left": {
+      "predicate": 177,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 47
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "00022f0000"
+      }
+     },
+     "right": {
+      "predicate": 185,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 41
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0003290001"
+      }
+     },
+     "raw": "0704b104b9"
+    }
+   },
+   "right": {
+    "predicate": 168,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 145,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 14
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "00020e0001"
+      }
+     },
+     "right": {
+      "predicate": 167,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 18
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0002120001"
+      }
+     },
+     "raw": "06049104a7"
+    }
+   },
+   "raw": "0604b204a8"
+  },
+  "206": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0005000000"
+  },
+  "207": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0005000001"
+  }
+ },
+ "groups": [
+  {
+   "stream": 0,
+   "group": 17748,
+   "owner_kind": "region",
+   "owner": 4437,
+   "record": 2,
+   "value": 0,
+   "predicate": 138,
+   "commands": [
+    "c60000003501",
+    "c60000002a01"
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 17646,
+   "owner_kind": "region",
+   "owner": 4435,
+   "record": 2,
+   "value": 0,
+   "predicate": 28,
+   "commands": [
+    "09035d0b0200",
+    "090328020200",
+    "c60000002a02",
+    "10032e110100"
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 17850,
+   "owner_kind": "region",
+   "owner": 4439,
+   "record": 2,
+   "value": 0,
+   "predicate": 67,
+   "commands": [
+    "c60000003802",
+    "09023a001100",
+    "09023c001100",
+    "09023b001100",
+    "091036000200",
+    "091035000200",
+    "091034000200"
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 17922,
+   "owner_kind": "region",
+   "owner": 4442,
+   "record": 2,
+   "value": 0,
+   "predicate": 29,
+   "commands": [
+    "09023b001500",
+    "c60000002a03"
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 18054,
+   "owner_kind": "region",
+   "owner": 4450,
+   "record": 2,
+   "value": 0,
+   "predicate": 30,
+   "commands": [
+    "0e023a0004000100",
+    "09032e111500"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 10720,
+   "owner_kind": "prop",
+   "owner": 552,
+   "record": 5,
+   "value": 0,
+   "predicate": 182,
+   "commands": [
+    "c60000003801",
+    "020100002500",
+    "091036000300",
+    "091035000300",
+    "091034000300",
+    "09023a000300",
+    "09023c000300",
+    "09023b000300",
+    "c60000000105",
+    "09032a020200",
+    "050328020100",
+    "0803280200000000",
+    "080328020700ff00",
+    "080328020a000400"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28242,
+   "owner_kind": "actor",
+   "owner": 58,
+   "record": 2,
+   "value": 304,
+   "predicate": 206,
+   "commands": [
+    "0e023a0004000000",
+    "10032e110100",
+    "0d023a0006000000",
+    "0d023a000a000000",
+    "08023a0001000000",
+    "0d023a00040c0000",
+    "08023a0000000000",
+    "08023a0002000000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28310,
+   "owner_kind": "actor",
+   "owner": 58,
+   "record": 6,
+   "value": 0,
+   "predicate": 206,
+   "commands": [
+    "08023a0001000000",
+    "0d023a000d000000",
+    "0d023a0007000000",
+    "0e023a0003000100"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28348,
+   "owner_kind": "actor",
+   "owner": 58,
+   "record": 2,
+   "value": 304,
+   "predicate": 2,
+   "commands": [
+    "0e023a0004000100",
+    "09032e111500"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28376,
+   "owner_kind": "actor",
+   "owner": 58,
+   "record": 9,
+   "value": 0,
+   "predicate": 54,
+   "commands": [
+    "10032e110100",
+    "090328020200",
+    "09035d0b0200",
+    "c60000002a03",
+    "09023b001500"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28606,
+   "owner_kind": "actor",
+   "owner": 59,
+   "record": 9,
+   "value": 0,
+   "predicate": 54,
+   "commands": [
+    "10032e110100",
+    "090328020200",
+    "09035d0b0200",
+    "c60000002a03",
+    "09023b001500"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28884,
+   "owner_kind": "actor",
+   "owner": 60,
+   "record": 9,
+   "value": 0,
+   "predicate": 54,
+   "commands": [
+    "10032e110100",
+    "090328020200",
+    "09035d0b0200",
+    "c60000002a03",
+    "09023b001500"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28412,
+   "owner_kind": "actor",
+   "owner": 58,
+   "record": 6,
+   "value": 10,
+   "predicate": null,
+   "commands": [
+    "cf0000003001",
+    "10023a000a00",
+    "0e023a0003000100"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28642,
+   "owner_kind": "actor",
+   "owner": 59,
+   "record": 6,
+   "value": 10,
+   "predicate": null,
+   "commands": [
+    "cf0000003001"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28920,
+   "owner_kind": "actor",
+   "owner": 60,
+   "record": 6,
+   "value": 10,
+   "predicate": null,
+   "commands": [
+    "cf0000003001"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28438,
+   "owner_kind": "actor",
+   "owner": 59,
+   "record": 6,
+   "value": 20,
+   "predicate": 206,
+   "commands": [
+    "0903c6000300",
+    "0903c5000300",
+    "0903c8000300",
+    "0903c7000300",
+    "d20000000a1e",
+    "10023b000100",
+    "0d023b0006000000",
+    "0d023b000a000000",
+    "08023b0001000000",
+    "0d023b0004080000",
+    "08023b0000000000",
+    "08023b0002000000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 28528,
+   "owner_kind": "actor",
+   "owner": 59,
+   "record": 6,
+   "value": 0,
+   "predicate": 207,
+   "commands": [
+    "0e023a0003000000",
+    "08023b0001000000",
+    "0d023a0007000000",
+    "0d023c0007000000",
+    "0d023b0007000000",
+    "0d023a000d000000",
+    "0d023c000d000000",
+    "0d023b000d000000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 16986,
+   "owner_kind": "prop",
+   "owner": 4398,
+   "record": 6,
+   "value": 532,
+   "predicate": 50,
+   "commands": [
+    "020100002400",
+    "c6000000300a",
+    "090328121500",
+    "15032e112100",
+    "020100004200",
+    "c60000002a05",
+    "0903c5000200",
+    "0903c8000200",
+    "0903c7000200",
+    "0903c6000200",
+    "09023d000200",
+    "12010000b715520f00000408eece000a0000"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 17076,
+   "owner_kind": "prop",
+   "owner": 4398,
+   "record": 6,
+   "value": 532,
+   "predicate": 51,
+   "commands": [
+    "020100002400",
+    "c6000000300a",
+    "090328121500",
+    "15032e113800",
+    "020100004200",
+    "09023d000200",
+    "09023b000200",
+    "09023a000200",
+    "09023c000200",
+    "12010000bb15520f00000408eece000a0000",
+    "020100000100"
+   ]
+  },
+  {
+   "stream": 1,
+   "group": 17160,
+   "owner_kind": "prop",
+   "owner": 4398,
+   "record": 6,
+   "value": 532,
+   "predicate": 52,
+   "commands": [
+    "020100002400",
+    "c6000000300a",
+    "090328121500",
+    "15032e113900",
+    "020100004200",
+    "c60000002a05",
+    "0903c5000200",
+    "0903c8000200",
+    "0903c7000200",
+    "0903c6000200",
+    "09023d000200",
+    "09023b000200",
+    "09023a000200",
+    "09023c000200",
+    "12010000b715520f00000408eece000a0000"
+   ]
+  }
+ ],
+ "timers": [
+  {
+   "actor": 58,
+   "ordinal": 0,
+   "group": 28242,
+   "flags": 1,
+   "range": [
+    0,
+    15
+   ],
+   "countdown": 900,
+   "raw": "0a02526e30010f008403"
+  },
+  {
+   "actor": 58,
+   "ordinal": 1,
+   "group": 28348,
+   "flags": 1,
+   "range": [
+    0,
+    15
+   ],
+   "countdown": 900,
+   "raw": "0a02bc6e30010f008403"
+  }
+ ],
+ "endings": [
+  {
+   "predicate": 50,
+   "group": 16986,
+   "movie_index": 33,
+   "movie": "HW-BRDGE.VQA",
+   "movie_archive": "DAT/L4_HJI.MIX",
+   "movie_sha256": "ab47a72c385c846af5f52eb8f6f3772ceb7af83331c6fbe93b4a9580123b8856",
+   "player_position": [
+    5559,
+    0,
+    -3922
+   ],
+   "player_move_raw": "12010000b715520f00000408eece000a0000",
+   "removes": [
+    61
+   ],
+   "sets_local42_5": true
+  },
+  {
+   "predicate": 51,
+   "group": 17076,
+   "movie_index": 56,
+   "movie": "E068E.VQA",
+   "movie_archive": "DAT/L4_HJI.MIX",
+   "movie_sha256": "70ba7c5b75bd1c3c2e80906fa5e5a8f539770fcb979a61b9b76e8fca0fa3943a",
+   "player_position": [
+    5563,
+    0,
+    -3922
+   ],
+   "player_move_raw": "12010000bb15520f00000408eece000a0000",
+   "removes": [
+    61,
+    59,
+    58,
+    60
+   ],
+   "sets_local42_5": false
+  },
+  {
+   "predicate": 52,
+   "group": 17160,
+   "movie_index": 57,
+   "movie": "E069E.VQA",
+   "movie_archive": "DAT/L4_HJI.MIX",
+   "movie_sha256": "d8259a8b43649742164bba6bd5c707822451f515cb3174181f990f5058e49937",
+   "player_position": [
+    5559,
+    0,
+    -3922
+   ],
+   "player_move_raw": "12010000b715520f00000408eece000a0000",
+   "removes": [
+    61,
+    59,
+    58,
+    60
+   ],
+   "sets_local42_5": true
+  }
+ ],
+ "prop552": {
+  "position": [
+   3592,
+   -15,
+   -4145
+  ],
+  "flags": 21634,
+  "present": false,
+  "raw": "080e31101cc7f1ff8254c90ea211700016007d12001001801280ff80000004005500000003"
+ },
+ "shared_names": {
+  "13": "GV_BACATTA_RELATIONSHIP",
+  "14": "GV_RUNES_TRANSLATED",
+  "18": "GV_MET_BACATTA",
+  "47": "GV_LUTHER_KNOWS_ABOUT_DANIEL"
+ },
+ "tick_rate": 60,
+ "owned_locals": [
+  42,
+  48,
+  53,
+  56
+ ],
+ "supplied": {
+  "shared": [
+   13,
+   14,
+   18,
+   47
+  ],
+  "locals": [
+   41,
+   49,
+   51
+  ]
+ },
+ "unresolved": [
+  "prop552 kind5 group10720 producer (guard spawn) \u2014 supplied trigger only",
+  "kind9 hit acceptance rules",
+  "actor event0 (scripted pose endpoint) and event10 (counted defeat) producers",
+  "op9 property17 (region4439) and op13 subcommand10 meaning",
+  "opcode21 movie option byte / playback timing",
+  "guard60/Bacatta61 branch (event20 from Bacatta groups) not staged"
+ ]
+}

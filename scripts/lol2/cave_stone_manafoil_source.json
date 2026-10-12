@@ -1,0 +1,325 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L1_DC.MIX",
+  "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+  "geometry_key": 2971673856,
+  "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+ },
+ "stone": {
+  "prop": 1050,
+  "item": {
+   "identity": 3764690106,
+   "name": "66-Ancients stn",
+   "definition": 68,
+   "handler": 6
+  },
+  "use_group": 8846,
+  "arrival_group": 8876,
+  "position": [
+   1356,
+   -215,
+   -11738
+  ],
+  "region": 751,
+  "sprite": {
+   "file": "stone.png",
+   "left": -14.0,
+   "right": 15.0,
+   "bottom": 0,
+   "top": 30
+  }
+ },
+ "foil": {
+  "control": 75,
+  "item": {
+   "identity": 3257002859,
+   "name": "131-Mana foil",
+   "definition": 133,
+   "handler": 43
+  },
+  "use_group": 9750,
+  "selector_group": 9768,
+  "help_local": 16,
+  "position": [
+   209,
+   -1000,
+   -10691
+  ],
+  "template": 46,
+  "faces": [
+   {
+    "points": [
+     [
+      195.0,
+      -995,
+      -10714.0
+     ],
+     [
+      195.0,
+      -995,
+      -10668.0
+     ],
+     [
+      223.0,
+      -995,
+      -10668.0
+     ],
+     [
+      223.0,
+      -995,
+      -10714.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "child": 85,
+    "child_mask": 4294967295
+   },
+   {
+    "points": [
+     [
+      195.0,
+      -1000,
+      -10668.0
+     ],
+     [
+      195.0,
+      -1000,
+      -10714.0
+     ],
+     [
+      223.0,
+      -1000,
+      -10714.0
+     ],
+     [
+      223.0,
+      -1000,
+      -10668.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "child": 85,
+    "child_mask": 4294967295
+   },
+   {
+    "points": [
+     [
+      195.0,
+      -995,
+      -10668.0
+     ],
+     [
+      223.0,
+      -995,
+      -10668.0
+     ],
+     [
+      223.0,
+      -1000,
+      -10668.0
+     ],
+     [
+      195.0,
+      -1000,
+      -10668.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "child": 85,
+    "child_mask": 4294967295
+   },
+   {
+    "points": [
+     [
+      223.0,
+      -995,
+      -10714.0
+     ],
+     [
+      195.0,
+      -995,
+      -10714.0
+     ],
+     [
+      195.0,
+      -1000,
+      -10714.0
+     ],
+     [
+      223.0,
+      -1000,
+      -10714.0
+     ]
+    ],
+    "uv": [
+     [
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0
+     ],
+     [
+      1.0,
+      1.0
+     ]
+    ],
+    "child": 85,
+    "child_mask": 4294967295
+   },
+   {
+    "points": [
+     [
+      223.0,
+      -995,
+      -10668.0
+     ],
+     [
+      223.0,
+      -995,
+      -10714.0
+     ],
+     [
+      223.0,
+      -1000,
+      -10714.0
+     ],
+     [
+      223.0,
+      -1000,
+      -10668.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "child": 85,
+    "child_mask": 4294967295
+   },
+   {
+    "points": [
+     [
+      195.0,
+      -995,
+      -10714.0
+     ],
+     [
+      195.0,
+      -995,
+      -10668.0
+     ],
+     [
+      195.0,
+      -1000,
+      -10668.0
+     ],
+     [
+      195.0,
+      -1000,
+      -10714.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "child": 85,
+    "child_mask": 4294967295
+   }
+  ],
+  "box_material": "m0086.png"
+ },
+ "adapters": [
+  "E at the aimed pickup in reach is the kind4 mode0 producer",
+  "prop1050 is hidden after the take (op9 property16 hands the object to the native hand presentation)",
+  "control75: E runs group9750 when local16 is 0 (the help screen of op2 sub 0x29 is not hosted), then advances the selector to 1, which runs the source kind3 group9768 grant once; no selector writer was found in the audited scope (direct dispatch and both streams)",
+  "the displayed child86 (resource93, rejected encoding) is shown by the Mana foil item icon above the box until the take"
+ ],
+ "scope": "Direct source records and grants; the control75 selector producer is a documented modern adapter."
+}

@@ -1,0 +1,40 @@
+{
+  "magic": {
+    "cooldown": 0.0,
+    "player": {
+      "experience": 197,
+      "level": 1,
+      "mana": 20,
+      "maximum": 20
+    },
+    "regen_elapsed": 0.0,
+    "spark_reward_seed": 324508639,
+    "spell": "heal",
+    "version": 1
+  },
+  "output_save": "user://tests/act1_magic_museum_arrival.json",
+  "output_sha256": "b64fb743413ff59bd6112c10d0faeeff3f35456cdf0a644daa84da661b1d31f1",
+  "passed": true,
+  "scope": "Original cave entrance, earned Stalagmite, actual ROACH injury, keyboard Healing and Spark, melee finish, doors/curse/bridge/story through real Museum arrival. No health, mana, inventory, position or form injection after source spawn. Automated steering and4x clock; combat/spell tuning remains provisional. Includes earned captain introduction, walked lure, aimed Spark surrender and both rewards carried to Museum.",
+  "spells": {
+    "captain": {
+      "grants": [
+        "5-Short swd",
+        "37-Brnt Chain"
+      ],
+      "region": 954
+    },
+    "healing": {
+      "health_after": 30,
+      "health_before": 24,
+      "mana_after": 18,
+      "mana_before": 20
+    },
+    "spark": {
+      "enemy_after": 16,
+      "enemy_before": 24,
+      "mana_after": 17,
+      "mana_before": 18
+    }
+  }
+}

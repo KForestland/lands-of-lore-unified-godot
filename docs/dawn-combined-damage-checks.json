@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "cases": 4320,
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 403746,
+      "end": 405433,
+      "sha256": "f6296c30faec4323107e49ab9b096d067709ab2e0c0883458cadba5bf0b1b460"
+    },
+    {
+      "start": 682664,
+      "end": 682698,
+      "sha256": "60df3d058280262c68648a2f006100130e41c0d1c7255bb077a72e06ab7032e0"
+    },
+    {
+      "start": 887312,
+      "end": 887323,
+      "sha256": "a1f68ae48b2fa7f752e5a6175923c02e26bc4ca51606709a19e0108c585b8721"
+    }
+  ],
+  "limits": [
+    "Actual original62922 calculation and original caster/player factor getters; CALL/RET bridge only.",
+    "Environmental local20 supplied explicitly (false/true); its world producer not executed.",
+    "Adjusted amount/signature, equipment scalar/descriptors and current health supplied.",
+    "Final attacker callback, target receiver/health owner, and effects lifecycle outside replay."
+  ],
+  "integration": {
+    "complete": true,
+    "passed": true,
+    "tests": [
+      {
+        "name": "hive_damage_calculation_test",
+        "mode": "headless",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "seconds": 1.11,
+        "log": "hive_damage_calculation_test.log",
+        "errors": []
+      },
+      {
+        "name": "dawn_explosion_calculation_test",
+        "mode": "headless",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "seconds": 0.64,
+        "log": "dawn_explosion_calculation_test.log",
+        "errors": []
+      },
+      {
+        "name": "dawn_player_damage_test",
+        "mode": "headless",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "seconds": 0.55,
+        "log": "dawn_player_damage_test.log",
+        "errors": []
+      },
+      {
+        "name": "dawn_combined_damage_test",
+        "mode": "headless",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "seconds": 1.11,
+        "log": "dawn_combined_damage_test.log",
+        "errors": []
+      }
+    ],
+    "source_changed_files": []
+  },
+  "prior_runs": [
+    "dawn_combined_damage_20261007:3/4; integral JSON subtype rejected, fixed",
+    "dawn_combined_damage_final_20261007:3/4; test compared int/float arrays by container equality, fixed"
+  ]
+}

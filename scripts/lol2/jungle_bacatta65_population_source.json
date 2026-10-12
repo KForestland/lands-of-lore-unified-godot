@@ -1,0 +1,86 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "actors": [
+  {
+   "actor": 65,
+   "definition": 5,
+   "position": [
+    35,
+    0,
+    -4135
+   ],
+   "heading": 0,
+   "health": 200,
+   "behavior": 4,
+   "flags": 30082,
+   "present": false,
+   "loot": null,
+   "reward_scale": 10
+  }
+ ],
+ "definitions": {
+  "5": {
+   "name": "BACL4",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 10
+    },
+    "walk": {
+     "selector": 8,
+     "frames": 12
+    },
+    "rise": {
+     "selector": 12,
+     "frames": 8
+    },
+    "death": {
+     "selector": 0,
+     "frames": 1
+    },
+    "corpse": {
+     "selector": 0,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 9,
+      "frames": 16,
+      "hits": [
+       [
+        9,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "native_bases": {
+  "BACL4": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "d55c8c264f78bd28f2165b76d8aee9b0358b77eecc06d6a72025872c1b54ef01"
+  }
+ },
+ "regions": [],
+ "neighbour_wake": {},
+ "counted": [],
+ "counter_target": 0,
+ "scripted_dormant": [
+  65
+ ],
+ "dormant_pose": "idle",
+ "note": "actor65 body (BACL4 definition5, as Bacatta61): peaceful after outcome B, hostile after outcome A; death/corpse use the idle frame."
+}

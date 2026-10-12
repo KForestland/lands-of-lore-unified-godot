@@ -1,0 +1,20 @@
+extends SceneTree
+const Selection = preload("res://scripts/lol2/hive_warrior_selection.gd")
+func _initialize() -> void:
+	var rows: Array=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/hive_warrior_selection_native.json"))
+	assert(rows.size()==21504)
+	for row in rows:
+		var result: Dictionary=Selection.select(row.action,row.mask,row.mode,row.sample)
+		assert(result.get("selector")==row.selector and result.draws==1)
+	for bad in [NAN,INF,-1,256,1.5,"1",null]: assert(Selection.select(5,bad,0,0).has("error"))
+	assert(Selection.select(5,6,0,101).has("error"))
+	assert(Selection.select(5,6,4,0).has("error"))
+	assert(Selection.select(13,6,0,0).has("error"))
+	var masks: Array=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/hive_warrior_mask_native.json"))
+	assert(masks.size()==7236)
+	for row in masks: assert(Selection.mask_after_health(row.mask,row.previous,row.health,row.kind).get("mask")==row.result)
+	assert(Selection.mask_after_health(6,100,50,0).has("error"))
+	assert(Selection.mask_after_health(1,100,NAN,0).has("error"))
+	print("PASS 7236 native health-mask updates")
+	print("PASS 21504 native HIVEW selections and invalid-input rejection")
+	quit()

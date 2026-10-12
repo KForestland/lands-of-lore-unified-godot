@@ -1,0 +1,11 @@
+# Museum prop93 disposition — 2026-10-12
+
+Do not award treasure for ten skeleton deaths. Current state/live regressions preserve counter10, prop93=0 and legacy receipt migration. The specific unresolved switch lead is ruled out; this item is parked unless new producer evidence appears.
+
+L3_DH prop93 owns kind5/value19 group1498 (`0605da051300`): twelve static item commands and two player opcode2 commands. They are not an earned reward merely because they exist. Control96 uses kind5/value0 and is a separate, already implemented interaction. Prior predicate replay establishes that predicate58 examines local23 before queued increments, so ten counted deaths from zero do not enable the prop93 timer. Opcode14 operations3/4 enable/disable that timer, not owner states3/4.
+
+`tools/audit_debug_kit_props.py` pins LOLG.DAT and source archives, verifies Cave/Museum/Jungle kit records, and repeats the seventeen known direct AD8E0 call-signature/argument checks. It also resolves both the 0x65381 switch displacement and case19 through LE fixups. Case19 at0x65500 is a straight-line wall-record byte update: `(old XOR 0x20) OR 0x40`, return1, no calls. Native instruction replay passes all256 possible input bytes with adjacent bytes unchanged. It cannot grant the prop93 kit.
+
+This corrects older wording that claimed globally unreachable debug kits. Indirect/computed calls and complete original-game reachability were not enumerated. Debug-kit purpose is a hypothesis. Reopen only for an actual AD8E0 value19 dispatch on prop93's list, a demonstrated indirect producer, or a reproducible original-game observation.
+
+Verification: pinned source/native audit PASS; existing Museum skeleton state and live checks2/2 PASS/source-stable. No gameplay or save format changes. Local evidence: `AI_COMMS/classic_review_20261007/lead/prop93_disposition_20261012`. The earlier collaborator report and lead review had already rejected the switch; this pass makes the result reproducible in the repository and reconciles the stale queue. Full source regeneration requires locally prepared `docs/game-source-inventory.json` and original media; the switch replay itself only needs the pinned executable and existing RE helper checkout.

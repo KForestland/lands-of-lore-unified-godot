@@ -1,0 +1,28 @@
+{
+  "files": {
+    "scripts/lol2/dawn_cast_completion.gd": "68c3947b5cd05f66ea3165b72397a703cb6f6df69369cc92b9852a91cd65abf7",
+    "scripts/lol2/dawn_temporary_effects.gd": "5e876e2e278a4407ecdf1133d499d4ad803b387a848e5c63a1a69365f3514d3e",
+    "scripts/lol2/dawn_spell_selection.gd": "76926c0b8fe1798476e157897d928d996f4b155fe3b04e7ac595398785325d47",
+    "scripts/lol2/dawn_spell_admission.gd": "7835f62e29e6cf477e09a616c6a20533c4fa6bfd42507d1d27613cc0609fb244",
+    "scripts/lol2/hive_player_conditions.gd": "b6351df5bdc06ec8e43454961ab8d1269f9bdf5eeb6cb4bc477f5bb12f053093",
+    "scripts/lol2/hive_condition_geometry.gd": "ac5b8d5156a6c8f2ea586197daaad3ec9128eaf5ed8228a974f1ed93acea06c1",
+    "scripts/lol2/dawn_active_spells.gd": "018439812436c9cf5ac243d3a07114beb515250c4d698a45163938c61d68e19a",
+    "tests/fixtures/dawn_admission_native.json": "5513f29b5d007e9b1e3efdb9a16385d27787e2767b20000216eb3262e59dc50a",
+    "tests/fixtures/dawn_selection_native.json": "b9ed1ca4946ef4dbcbeba3b017c2fb88f45cc3fa7201f06f135243546de3c417",
+    "tests/fixtures/dawn_selection_scores.json": "056a30ec7252694ab97bd34fc44681bd1ce9a4374a4be045b633c988826a5116",
+    "tests/fixtures/dawn_cast_completion_native.json": "e4e1a818f20e02cc943bdddddf00a7bb28871b6fb83644071a591b37ce5dedc8",
+    "tests/fixtures/dawn_cast_failure_native.json": "a97af89f4816726b11efbb3f78a323f592a4b82bf80cd5ca2ed76f2ecdebbefc",
+    "tests/fixtures/dawn_effect_lifetime_results.json": "01f82a84485144ec2935abc05334b0eb86e65044097cdd86f8cf1ad39a8fa1af",
+    "tests/fixtures/dawn_spell50_update_results.json": "dd005e3334cb56bd7f06b0b7629f89313bf4d8f43cb3b4b5005807b71257f916",
+    "tests/fixtures/dawn_active_expiry_native.json": "ff8f608036ef82741707ac71eade6723fc849c376149fe3df3d8f014bed07322",
+    "tests/fixtures/hive_startup_geometry_native.json": "d647353c674fb1576b4ac7db3fd36611d7849634ef7294ce207f770923267c14",
+    "tests/fixtures/dawn_object_distance_native.json": "8f45cd2cc2ac54fa3901b2103bf3d54c723ecaaf2a772fa78b423ef275f3ee5b",
+    "tests/dawn_active_spells_test.gd": "7a842249da06b6f38d38df3b4410baafebd6f45f679dcc4c0c02258d270aa6d8",
+    "tests/dawn_admission_test.gd": "0c54eedda05b43f6a00700d26ca634cca50ccce304a63f40e278dceb9247446c",
+    "tests/dawn_temporary_effects_test.gd": "037b5c2a897822302b6e472b859776b412eb7d33c9197839704418d7379ba902",
+    "tests/dawn_object_distance_test.gd": "b0d6ba5f4e7005d47a89e12ae6f6f639276116858c882a3f75370997910432ea",
+    "tests/dawn_selection_test.gd": "bd8c65d2b3ff19a951c10232a8307ad7cdc3179bce3d5255b92eb0cf30611692",
+    "tests/dawn_cast_completion_test.gd": "19684b1a52e94966893023dd588c47e4cf5b71e59134c93377ff6e5a67ddf163"
+  },
+  "scope": "Staged combat components, numeric native fixtures and portable tests. No original executable/media payloads; not integrated into live Dawn. Shared geometry extension pending main integration after campaign."
+}

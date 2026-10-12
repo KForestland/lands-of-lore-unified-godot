@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "scope": "Region478 unload integration; supplied monastery globals and initial rune-control aim, followed by grounded movement. Not a fresh campaign or complete Dawn combat.",
+  "report_sha256": "cad732260a7e0cd8b440cbd3c9c4f055b2d923b44d729b463f7ee0f86c7f2008",
+  "source_stable": true,
+  "tests": [
+    {
+      "name": "hive_dawn20_state_test",
+      "passed": true,
+      "seconds": 0.64
+    },
+    {
+      "name": "monastery_library_attack_test",
+      "passed": true,
+      "seconds": 0.54
+    },
+    {
+      "name": "hive_dawn20_region478_test",
+      "passed": true,
+      "seconds": 20.72
+    },
+    {
+      "name": "hive_dawn20_live_test",
+      "passed": true,
+      "seconds": 7.92
+    },
+    {
+      "name": "monastery_library_attack_live_test",
+      "passed": true,
+      "seconds": 7.08
+    }
+  ],
+  "source_review": {
+    "status": "PASS",
+    "regeneration_matches_release": true,
+    "route_regions": 21,
+    "all_neighbor_edges_and_floor_steps_checked": true,
+    "source_media_binding": "8df7fb51c7f55ae807151d72feba56831e4c5ded86f8b6ff0d9c50045ac3bd21",
+    "group906": {
+      "owner_kind": "region",
+      "owner": 478,
+      "event": 2,
+      "value": 0,
+      "predicate": 192,
+      "stream": 0,
+      "group": 906,
+      "commands": [
+        "09033e010a00",
+        "0802140001000000"
+      ]
+    },
+    "predicate192": {
+      "op": "==",
+      "left": {
+        "local": 31
+      },
+      "right": {
+        "immediate": 1
+      },
+      "raw": "00031f0001"
+    },
+    "decoder_changed": false
+  },
+  "patch_sha256": "a3da25ea3775bb312cd55be29d445a4e4bc786bfb05da2083205eae130900f71",
+  "files": {
+    "tools/prepare_hive_dawn20.py": "78b18accedc7397bdd4400933c4ea024c64e66d79f9b751ad59826dc7b5b5014",
+    "scripts/lol2/hive_dawn20.gd": "306e255fb2e04908e8d6fd19c480275fd2664922519798b04d124ee0117a00fe",
+    "scripts/lol2/hive_dawn20_source.json": "8df7fb51c7f55ae807151d72feba56831e4c5ded86f8b6ff0d9c50045ac3bd21",
+    "tests/hive_dawn20_state_test.gd": "2119ab1a793b7399d04f8bb30a4b2d908c1fb21707eaf0e6ffc6b8bb3266a049",
+    "tests/hive_dawn20_region478_test.gd": "4a39a942384a3fb38fc4dc3c290220d588aa237e822f1d8102f2e7e723bc494f",
+    "tests/fixtures/hive_dawn20_region478_route.json": "c51c81bfac4950aa6097226633f494638727d7bc39b3cc3bb8e73806dd14bb8b",
+    "docs/hive-dawn20.md": "5cd99e935efcde65ddc67ccde7cb74d1971f63063f7d193bb2b0075fd43c37c9"
+  },
+  "limitations": [
+    "Decoder H2 not integrated",
+    "Rendered host dependencies and original media remain local",
+    "Dawn hostile combat incomplete",
+    "Fresh demo build and Bob acceptance open"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "status": "PASS independent5/5 and finalmain2/2 source-stable",
+  "scope": "Natural Hive-spawn\u2192Kelsrick talk1\u2192south inner-gate crossing, plus supplied gate/save/live/neighbor checks. Not full cave-earned campaign or final acceptance.",
+  "independent_tests": [
+    "jungle_inner_gate_state_test",
+    "jungle_village_alarm_live_test",
+    "jungle_drunk_live_test",
+    "jungle_inner_gate_live_test",
+    "hive_quest_walk_test --kelsrick-inner-gate"
+  ],
+  "main_tests": [
+    {
+      "name": "jungle_inner_gate_live_test",
+      "passed": true,
+      "seconds": 10.64
+    },
+    {
+      "name": "kelsrick_inner_gate_walk_test",
+      "passed": true,
+      "seconds": 120.77
+    }
+  ],
+  "source_stable": true,
+  "files": {
+    "docs/jungle-inner-gate.md": "de86cdbf664ea915714af47fb9b18812f74f509042a60bb18ddbf7f91d65f2f2",
+    "scripts/lol2/jungle_inner_gate.gd": "eac3a9808b7773081301e043c954c38822a09ff7c6fb162bac5545bd4d7e913b",
+    "tests/hive_quest_walk_test.gd": "10317fc9dc52795835639376e7306f5e0d53e5189616498c7028cc7eff8a7d65",
+    "tests/fixtures/kelsrick_inner_gate_routes.json": "d841f5acffdae784bd23e9533f935467b410f2fd13c69f97f35b1c2fed794830",
+    "tests/kelsrick_inner_gate_walk_test.gd": "0c5d9e6e02231cb93498c18ae37887874b46caaf96669fb27ac326d8850da976",
+    "tools/run_regressions.py": "92390ed12b9984910120d6bdc0eac1a8e7b88f364398130063990b26c4faa217"
+  },
+  "remaining": "Chief-hut/watergate producers unimplemented; Opus paused after inventory. Full current suite/campaign/build and Bob acceptance open."
+}

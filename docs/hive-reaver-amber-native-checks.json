@@ -1,0 +1,49 @@
+{
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "spans": {
+  "0x649b3": "3fbc0339f3dfca2f840ffc9fd7d3050c4334069aac99c8fe75ff7348bda09ec0",
+  "0x64fba": "96e1772f3643f0548fec1342f59ca90a6f850f59482644320b9e1d96ccdd441c",
+  "0x64fee": "3fa0511bcbbd2a9a1eac6896905c04328abdaa79e677c5dfaca7373dfbb2373d",
+  "0x651da": "5c8f238d868c0283a4adf442c8a88dcf9cedec26e33e77d793091916f23a224b",
+  "0xf3015": "3b39da229e26264e46755f1063bc98f3469b37761123a823be12e517e4ab913b",
+  "0x972af": "96a3a3ec653ae00be767d973e82dbce23cec667b1027a9b9fc7fac59eeb19b10",
+  "0x972d4": "70bf087d41c2cf3b9770802d0b9f3b595c1301cb842a15faa4a885bf9f7d9328",
+  "0x6507b": "769436598f307705e7a421f348a593f5db6dd7191363c8ed42417d7bd6004c1b"
+ },
+ "op196": {
+  "dispatch": "649B3 -> 6484A -> 64DDC",
+  "byte6_bit0": "ceiling (1) / floor (0)",
+  "byte6_bit3": "relative",
+  "byte7": "speed"
+ },
+ "region_events": {
+  "start": {
+   "floor_up": 0,
+   "floor_down": 1,
+   "ceiling_up": 2,
+   "ceiling_down": 3,
+   "then": [
+    12,
+    13
+   ]
+  },
+  "end": {
+   "floor_up": 4,
+   "floor_down": 5,
+   "ceiling_up": 6,
+   "ceiling_down": 7,
+   "then": [
+    16,
+    17
+   ]
+  },
+  "dispatcher": "F2FC0: kind 0x0B records, region word +4, event byte +6"
+ },
+ "reaver_handler": {
+  "index": 18,
+  "address": "0x972D4",
+  "equip": "event10 sets 0x2270E bit3",
+  "unequip": "event11 clears it"
+ },
+ "passed": true
+}

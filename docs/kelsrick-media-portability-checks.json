@@ -1,0 +1,132 @@
+{
+  "status": "PASS standalone regeneration and independent causal frame comparison; live asset replacement pending",
+  "files": 2325,
+  "unchanged_files": 2253,
+  "changed_frames": 72,
+  "missing": [],
+  "extra": [],
+  "cause": "Existing Kelsrick images match FFmpeg with top-level VQFL seek snapshots; rebuilt images match FFmpeg when only those snapshots are removed, consistent with reviewed linear playback decoder.",
+  "causal_comparison": [
+    {
+      "selector": "9",
+      "movie": "E079E.VQA",
+      "source_sha256": "a191a4c054c8a20263eb7c08667df3fb2a5d43a9b233a0b1186c3be3d1143d3b",
+      "removed_vqfl": 3,
+      "frames": 666,
+      "original_ffmpeg_vs_existing": {
+        "different_frames": [],
+        "equal_frames": 666,
+        "ffmpeg_exit": 0
+      },
+      "stripped_ffmpeg_vs_rebuilt": {
+        "different_frames": [],
+        "equal_frames": 666,
+        "ffmpeg_exit": 0
+      }
+    },
+    {
+      "selector": "10",
+      "movie": "E080E.VQA",
+      "source_sha256": "9bf8a2746aeb3ad3fae16337737418dfd1da6256d0eb885a2f30e060c4f8e7db",
+      "removed_vqfl": 1,
+      "frames": 285,
+      "original_ffmpeg_vs_existing": {
+        "different_frames": [],
+        "equal_frames": 285,
+        "ffmpeg_exit": 0
+      },
+      "stripped_ffmpeg_vs_rebuilt": {
+        "different_frames": [],
+        "equal_frames": 285,
+        "ffmpeg_exit": 0
+      }
+    },
+    {
+      "selector": "11",
+      "movie": "E081E.VQA",
+      "source_sha256": "146fdc149a949c8ea6192389ffae3114974f93a52f4946282e399804c43f5a07",
+      "removed_vqfl": 1,
+      "frames": 289,
+      "original_ffmpeg_vs_existing": {
+        "different_frames": [],
+        "equal_frames": 289,
+        "ffmpeg_exit": 0
+      },
+      "stripped_ffmpeg_vs_rebuilt": {
+        "different_frames": [],
+        "equal_frames": 289,
+        "ffmpeg_exit": 0
+      }
+    },
+    {
+      "selector": "12",
+      "movie": "E082E.VQA",
+      "source_sha256": "bcd1374a5cb723bd51c6185519d4b8f1aa00f20f15b889d9c4d5e9272fee6fb7",
+      "removed_vqfl": 2,
+      "frames": 233,
+      "original_ffmpeg_vs_existing": {
+        "different_frames": [],
+        "equal_frames": 233,
+        "ffmpeg_exit": 0
+      },
+      "stripped_ffmpeg_vs_rebuilt": {
+        "different_frames": [],
+        "equal_frames": 233,
+        "ffmpeg_exit": 0
+      }
+    },
+    {
+      "selector": "13",
+      "movie": "E083E.VQA",
+      "source_sha256": "70335b6a7aad8f911909c0e7776f17b8ef36ed2a90d267b29993619676890d93",
+      "removed_vqfl": 1,
+      "frames": 159,
+      "original_ffmpeg_vs_existing": {
+        "different_frames": [],
+        "equal_frames": 159,
+        "ffmpeg_exit": 0
+      },
+      "stripped_ffmpeg_vs_rebuilt": {
+        "different_frames": [],
+        "equal_frames": 159,
+        "ffmpeg_exit": 0
+      }
+    },
+    {
+      "selector": "14",
+      "movie": "E084E.VQA",
+      "source_sha256": "d41a45c39d4d2a30caf7efbae4b938a939207861e0ce5fa3d5d26431c3801d4d",
+      "removed_vqfl": 0,
+      "frames": 162,
+      "original_ffmpeg_vs_existing": {
+        "different_frames": [],
+        "equal_frames": 162,
+        "ffmpeg_exit": 0
+      },
+      "stripped_ffmpeg_vs_rebuilt": {
+        "different_frames": [],
+        "equal_frames": 162,
+        "ffmpeg_exit": 0
+      }
+    },
+    {
+      "selector": "15",
+      "movie": "E085E.VQA",
+      "source_sha256": "c3a0097fb067f1dab91fe5d0dcb44ae30419ae38ed665ec5abcbbaf0e4a38560",
+      "removed_vqfl": 1,
+      "frames": 239,
+      "original_ffmpeg_vs_existing": {
+        "different_frames": [],
+        "equal_frames": 239,
+        "ffmpeg_exit": 0
+      },
+      "stripped_ffmpeg_vs_rebuilt": {
+        "different_frames": [],
+        "equal_frames": 239,
+        "ffmpeg_exit": 0
+      }
+    }
+  ],
+  "rebuilt_manifest_sha256": "90cccbb4d12dd64863956fa49abb668f43c426e3ca319f6673ae4c5d291968d3",
+  "scope": "Original media stays local. Regeneration is not full clean-machine preparation or demo acceptance. Main shared assets have not been replaced while campaign and N3 tests use them."
+}

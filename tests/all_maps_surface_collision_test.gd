@@ -37,7 +37,12 @@ func run() -> void:
 			"scene_sha256": FileAccess.get_sha256(scene_path)}
 		for face in review.faces:
 			if face.kind != "floor" and face.kind != "ceiling": continue
-			var points: Array = face.points
+			var points: Array = face.points.duplicate()
+			# Keep source-order probe arithmetic stable across render winding changes.
+			if bool(face.get("source_winding_reversed", false)):
+				var tail := points.slice(1)
+				tail.reverse()
+				points = [points[0]] + tail
 			var a := vec(points[0])
 			for i in range(1, points.size() - 1):
 				var b := vec(points[i])

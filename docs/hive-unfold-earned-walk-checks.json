@@ -1,0 +1,53 @@
+{
+  "ambush": {
+    "actors": {
+      "33": {
+        "active": true,
+        "cooldown": 0.0,
+        "elapsed": 0.0,
+        "health": 400,
+        "phase": 3,
+        "position": [
+          -4811.64111328125,
+          -3000.0,
+          -6383.5322265625
+        ],
+        "seed": 324508672,
+        "windup": 0.0
+      },
+      "35": {
+        "active": true,
+        "cooldown": 0.0,
+        "elapsed": 0.0,
+        "health": 0,
+        "phase": 3,
+        "position": [
+          -2562.20385742188,
+          -619.000793457031,
+          -8160.66650390625
+        ],
+        "seed": 870860624,
+        "windup": 0.0
+      }
+    },
+    "contact716": true,
+    "feeding_hit_disabled": false,
+    "local7": 1,
+    "version": 1
+  },
+  "input_save": "user://tests/act1_feeding_earned_defeated.json",
+  "input_sha256": "64f5efbca5aaeed3169257ff62c11343b812a8c2ddf07142a18ba33f83451be8",
+  "output_save": "user://tests/act1_unfold_earned_arrival.json",
+  "output_sha256": "0ac90721881bc1d6771daec0e7d3bbbe539fc64f4b8ca1cf49fd46f0094fca42",
+  "passed": true,
+  "scope": "Earned save, production lift stop4 west landing, manual ordinary movement, no subsequent pose/form/item/quest injection. Accelerated clocks; earlier legs reused.",
+  "seconds": 10.59501111499776,
+  "runner_report": "tmp/act1_team_20260927/unfold_earned_stop4_report.json",
+  "source_hashes": {
+    "tests/hive_unfold_earned_walk_test.gd": "9c538cb9e8cb6fba73ba3b171665373853d038f072dd4383b77157831da8ace6",
+    "tests/hive_lift_wax_walk_test.gd": "0d2601073600ba06ef87b76b64aeb5f68b4139aeec30901817355cca0c45b4e8",
+    "tests/fixtures/hive_unfold_stop4_route.json": "d6353359409b680831487c9eb8515abdf67bfe2dbd7b49d243ddf81fdbdd7e9a",
+    "scripts/lol2/jungle_review.gd": "e9ecdab2c9c96d009369f28de2f616922f9acab51bb764291abf97f3cd829fdb"
+  },
+  "review": "Final tests latch inherited failures and reject dead/reset/flying completion; approach additionally requires actor33 initially inactive at400HP. Grok original-candidate review prompted these guards."
+}

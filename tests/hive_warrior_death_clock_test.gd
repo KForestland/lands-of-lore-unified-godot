@@ -1,0 +1,20 @@
+extends SceneTree
+const Death=preload("res://scripts/lol2/hive_warrior_death.gd")
+func _initialize() -> void:
+	var coarse:=Death.initial()
+	Death.advance(coarse,0.2)
+	assert(coarse.frame==3 and not coarse.corpse and Death.validate(coarse).is_empty())
+	var restored:=Death.canonical(JSON.parse_string(JSON.stringify(coarse)))
+	assert(restored==coarse)
+	Death.advance(coarse,1.0)
+	for i in range(60): Death.advance(restored,1.0/60.0)
+	assert(coarse==restored and coarse==Death.initial(true))
+	var terminal:=Death.initial()
+	terminal.frame=12
+	Death.advance(terminal,0.001)
+	assert(terminal==Death.initial(true))
+	for bad in [{"corpse":true,"frame":1,"timer":0,"fraction":0.0},{"corpse":false,"frame":13,"timer":0,"fraction":0.0},{"corpse":false,"frame":1,"timer":1024,"fraction":0.0},{"corpse":false,"frame":1,"timer":0,"fraction":NAN}]: assert(not Death.validate(bad).is_empty())
+	Death.advance(coarse,100)
+	assert(coarse==Death.initial(true))
+	print("PASS warrior partial clock JSON, coarse/fine corpse transition, terminal resume and invalid states")
+	quit()

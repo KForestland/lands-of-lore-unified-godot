@@ -1,5 +1,6 @@
 // Artistic walkthrough light field, not recovered original light values.
 uniform vec3 glow_positions[4];
+uniform vec4 glow_active = vec4(1.0);
 uniform bool glow_enabled = true;
 uniform bool glowing_prop = false;
 vec3 cave_light_field(vec3 view_position, vec3 world_position) {
@@ -8,7 +9,7 @@ vec3 cave_light_field(vec3 view_position, vec3 world_position) {
     if (glow_enabled) {
         for (int i = 0; i < 4; i++) {
             float weight = max(0.0, 1.0 - distance(world_position, glow_positions[i]) / 80.0);
-            result += vec3(0.20, 0.65, 0.30) * weight * weight;
+            result += vec3(0.20, 0.65, 0.30) * weight * weight * glow_active[i];
         }
         if (glowing_prop) { result = max(result, vec3(1.15, 1.8, 1.1)); }
     }

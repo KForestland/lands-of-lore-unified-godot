@@ -1,0 +1,921 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "actor": {
+  "actor": 63,
+  "definition": 8,
+  "position": [
+   -5710,
+   -100,
+   3937
+  ],
+  "heading": 39321,
+  "health": 200,
+  "present": false,
+  "flags": 30082
+ },
+ "groups": [
+  {
+   "owner_kind": "region",
+   "owner": 2812,
+   "event": 2,
+   "value": 0,
+   "predicate": 159,
+   "stream": 0,
+   "group": 5214,
+   "commands": [
+    "0e034c0004000000",
+    "020100003c00",
+    "020100002500",
+    "09023f000300"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 2842,
+   "event": 2,
+   "value": 0,
+   "predicate": 186,
+   "stream": 0,
+   "group": 5246,
+   "commands": [
+    "09023f001400",
+    "c60000001301",
+    "08023f0007000000",
+    "08023f000a000100",
+    "020100002600",
+    "02023f000500",
+    "120100007fe95cf0000092009919f9500000"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 2959,
+   "event": 2,
+   "value": 0,
+   "predicate": null,
+   "stream": 0,
+   "group": 5350,
+   "commands": [
+    "0e034c0003000000",
+    "09023f000200"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 5,
+   "value": 0,
+   "predicate": null,
+   "stream": 1,
+   "group": 29646,
+   "commands": [
+    "05023f000a00",
+    "08023f0000000000",
+    "08023f000700ff00",
+    "08023f000a000000"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 0,
+   "predicate": 62,
+   "stream": 1,
+   "group": 29682,
+   "commands": [
+    "08023f000700ff00",
+    "08023f000a000000"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 4,
+   "value": 3,
+   "predicate": 23,
+   "stream": 1,
+   "group": 29704,
+   "commands": [
+    "ce0000000002",
+    "ce0000000c01",
+    "c70000000a01",
+    "c60000001101",
+    "020100000b05",
+    "020100000c05",
+    "0e023f0004010000",
+    "0e023f0004000000",
+    "020100001800",
+    "09023f001400",
+    "10023f000300",
+    "08023f0007000000",
+    "08023f000a000600"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 0,
+   "predicate": 209,
+   "stream": 1,
+   "group": 29796,
+   "commands": [
+    "09023f001400",
+    "10023f000400",
+    "08023f0007000000",
+    "08023f000a000700"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 0,
+   "predicate": 210,
+   "stream": 1,
+   "group": 29830,
+   "commands": [
+    "09023f001400",
+    "10023f000a00",
+    "08023f0007000000",
+    "08023f000a000800"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 0,
+   "predicate": 206,
+   "stream": 1,
+   "group": 29864,
+   "commands": [
+    "09023f001400",
+    "10023f000100",
+    "08023f0007000000",
+    "08023f000a000200"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 0,
+   "predicate": 207,
+   "stream": 1,
+   "group": 29898,
+   "commands": [
+    "09023f001400",
+    "10023f001400",
+    "08023f0007000000",
+    "08023f000a000300"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 2,
+   "value": 304,
+   "predicate": null,
+   "stream": 1,
+   "group": 29932,
+   "commands": [
+    "09023f001400",
+    "08023f0007000000",
+    "08023f000a000900",
+    "10023f000600",
+    "0e023f0005000000",
+    "0e023f0004000000"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 1280,
+   "predicate": 212,
+   "stream": 1,
+   "group": 29982,
+   "commands": [
+    "09023f001400",
+    "08023f0007000000",
+    "08023f000a000a00",
+    "10023f001e00"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 2,
+   "value": 304,
+   "predicate": 213,
+   "stream": 1,
+   "group": 30016,
+   "commands": [
+    "09023f001400",
+    "10023f000800",
+    "08023f0007000000",
+    "08023f000a000b00",
+    "0e023f0005000100",
+    "0e023f0004000100"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 4,
+   "value": 1,
+   "predicate": 156,
+   "stream": 1,
+   "group": 30066,
+   "commands": [
+    "c60000001901",
+    "09023f001400",
+    "08023f0007000000",
+    "08023f000a000400"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 4,
+   "value": 1,
+   "predicate": 157,
+   "stream": 1,
+   "group": 30100,
+   "commands": [
+    "c60000001902",
+    "09023f001400",
+    "08023f0007000000",
+    "08023f000a000500"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 0,
+   "predicate": 226,
+   "stream": 1,
+   "group": 30134,
+   "commands": [
+    "0e023f0003000000",
+    "0e023f0005000000",
+    "10023f000300"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 0,
+   "predicate": 236,
+   "stream": 1,
+   "group": 30162,
+   "commands": [
+    "0e023f0003000100",
+    "0e023f0005000100",
+    "10023f000700"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 0,
+   "predicate": 214,
+   "stream": 1,
+   "group": 30190,
+   "commands": [
+    "020100002400",
+    "14033d05e300fa451f00",
+    "02023f000600",
+    "020100002700",
+    "09023f000200"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 0,
+   "predicate": 216,
+   "stream": 1,
+   "group": 30230,
+   "commands": [
+    "020100002400",
+    "02023f000600",
+    "ce0000000c01",
+    "020100002700",
+    "09023f000200"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 9,
+   "value": 0,
+   "predicate": 160,
+   "stream": 1,
+   "group": 30266,
+   "commands": [
+    "ce00000000ff",
+    "ce0000000cff",
+    "0903d1011500",
+    "c60000001a01",
+    "09023f001400",
+    "10023f002800",
+    "08023f0007000000",
+    "08023f000a000c00"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 256,
+   "predicate": 246,
+   "stream": 1,
+   "group": 30324,
+   "commands": [
+    "08023f0001000000",
+    "020100002400",
+    "02023f000600",
+    "020100002700",
+    "10023f003200",
+    "03023f000dbcf84301000000",
+    "0d023f000d000000",
+    "0d023f0007000000"
+   ]
+  },
+  {
+   "owner_kind": "actor",
+   "owner": 63,
+   "event": 6,
+   "value": 13,
+   "predicate": null,
+   "stream": 1,
+   "group": 30390,
+   "commands": [
+    "090344051500"
+   ]
+  }
+ ],
+ "records": [
+  {
+   "offset": 10274,
+   "kind": 5,
+   "raw": "0605ce730000",
+   "predicate": null
+  },
+  {
+   "offset": 10280,
+   "kind": 6,
+   "raw": "0606f2730000",
+   "predicate": 62
+  },
+  {
+   "offset": 10290,
+   "kind": 4,
+   "raw": "0a040874030013285bb4",
+   "predicate": 23
+  },
+  {
+   "offset": 10304,
+   "kind": 6,
+   "raw": "060664740000",
+   "predicate": 209
+  },
+  {
+   "offset": 10314,
+   "kind": 6,
+   "raw": "060686740000",
+   "predicate": 210
+  },
+  {
+   "offset": 10324,
+   "kind": 6,
+   "raw": "0606a8740000",
+   "predicate": 206
+  },
+  {
+   "offset": 10334,
+   "kind": 6,
+   "raw": "0606ca740000",
+   "predicate": 207
+  },
+  {
+   "offset": 10344,
+   "kind": 2,
+   "raw": "0a02ec7430010a005802",
+   "predicate": null
+  },
+  {
+   "offset": 10354,
+   "kind": 6,
+   "raw": "06061e750005",
+   "predicate": 212
+  },
+  {
+   "offset": 10364,
+   "kind": 2,
+   "raw": "0a02407530010f008403",
+   "predicate": 213
+  },
+  {
+   "offset": 10378,
+   "kind": 4,
+   "raw": "0a047275010000000000",
+   "predicate": 156
+  },
+  {
+   "offset": 10392,
+   "kind": 4,
+   "raw": "0a049475010000000000",
+   "predicate": 157
+  },
+  {
+   "offset": 10406,
+   "kind": 6,
+   "raw": "0606b6750000",
+   "predicate": 226
+  },
+  {
+   "offset": 10416,
+   "kind": 6,
+   "raw": "0606d2750000",
+   "predicate": 236
+  },
+  {
+   "offset": 10426,
+   "kind": 6,
+   "raw": "0606ee750000",
+   "predicate": 214
+  },
+  {
+   "offset": 10436,
+   "kind": 6,
+   "raw": "060616760000",
+   "predicate": 216
+  },
+  {
+   "offset": 10446,
+   "kind": 9,
+   "raw": "0a093a76000000000181",
+   "predicate": 160
+  },
+  {
+   "offset": 10460,
+   "kind": 6,
+   "raw": "060674760001",
+   "predicate": 246
+  },
+  {
+   "offset": 10470,
+   "kind": 6,
+   "raw": "0606b6760d00",
+   "predicate": null
+  }
+ ],
+ "predicates": {
+  "23": {
+   "op": "==",
+   "left": {
+    "local": 17
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003110000"
+  },
+  "62": {
+   "op": "!=",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 40
+   },
+   "raw": "0105000028"
+  },
+  "156": {
+   "op": "==",
+   "left": {
+    "local": 25
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003190000"
+  },
+  "157": {
+   "op": "==",
+   "left": {
+    "local": 25
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0003190001"
+  },
+  "159": {
+   "op": "AND",
+   "left": {
+    "predicate": 160,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 26
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "00031a0000"
+    }
+   },
+   "right": {
+    "predicate": 155,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 143,
+      "expression": {
+       "op": "AND",
+       "left": {
+        "predicate": 140,
+        "expression": {
+         "op": "==",
+         "left": {
+          "shared": 9
+         },
+         "right": {
+          "immediate": 1
+         },
+         "raw": "0002090001"
+        }
+       },
+       "right": {
+        "predicate": 142,
+        "expression": {
+         "op": "==",
+         "left": {
+          "local": 19
+         },
+         "right": {
+          "immediate": 0
+         },
+         "raw": "0003130000"
+        }
+       },
+       "raw": "06048c048e"
+      }
+     },
+     "right": {
+      "predicate": 158,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 40
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0002280000"
+      }
+     },
+     "raw": "06048f049e"
+    }
+   },
+   "raw": "0604a0049b"
+  },
+  "160": {
+   "op": "==",
+   "left": {
+    "local": 26
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "00031a0000"
+  },
+  "186": {
+   "op": "AND",
+   "left": {
+    "predicate": 161,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 143,
+      "expression": {
+       "op": "AND",
+       "left": {
+        "predicate": 140,
+        "expression": {
+         "op": "==",
+         "left": {
+          "shared": 9
+         },
+         "right": {
+          "immediate": 1
+         },
+         "raw": "0002090001"
+        }
+       },
+       "right": {
+        "predicate": 142,
+        "expression": {
+         "op": "==",
+         "left": {
+          "local": 19
+         },
+         "right": {
+          "immediate": 0
+         },
+         "raw": "0003130000"
+        }
+       },
+       "raw": "06048c048e"
+      }
+     },
+     "right": {
+      "predicate": 160,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 26
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "00031a0000"
+      }
+     },
+     "raw": "06048f04a0"
+    }
+   },
+   "right": {
+    "predicate": 158,
+    "expression": {
+     "op": "==",
+     "left": {
+      "shared": 40
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0002280000"
+    }
+   },
+   "raw": "0604a1049e"
+  },
+  "206": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0005000000"
+  },
+  "207": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0005000001"
+  },
+  "209": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 3
+   },
+   "raw": "0005000003"
+  },
+  "210": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 4
+   },
+   "raw": "0005000004"
+  },
+  "212": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 6
+   },
+   "raw": "0005000006"
+  },
+  "213": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 7
+   },
+   "raw": "0005000007"
+  },
+  "214": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 8
+   },
+   "raw": "0005000008"
+  },
+  "216": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 10
+   },
+   "raw": "000500000a"
+  },
+  "226": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 20
+   },
+   "raw": "0005000014"
+  },
+  "236": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 30
+   },
+   "raw": "000500001e"
+  },
+  "246": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 40
+   },
+   "raw": "0005000028"
+  }
+ },
+ "shared_names": {
+  "0": "GV_LUTHERS_SOUL",
+  "9": "GV_HAS_RUNES",
+  "10": "GV_GAVE_DAWN_RUNES",
+  "12": "GV_DAWN_RELATIONSHIP",
+  "40": "GV_DAWN_ATTACKED_IN_MONASTERY"
+ },
+ "owned_locals": [
+  17,
+  19,
+  25,
+  26
+ ],
+ "timers": [
+  {
+   "ordinal": 0,
+   "group": 29932,
+   "flags": 1,
+   "remaining": 600,
+   "range": [
+    0,
+    10
+   ],
+   "predicate": null
+  },
+  {
+   "ordinal": 1,
+   "group": 30016,
+   "flags": 1,
+   "remaining": 900,
+   "range": [
+    0,
+    15
+   ],
+   "predicate": 213
+  }
+ ],
+ "offers": [
+  {
+   "mode": 3,
+   "identity": 3025872915,
+   "group": 29704,
+   "item": {
+    "definition": 74,
+    "name": "72-Wax runes"
+   }
+  },
+  {
+   "mode": 1,
+   "identity": 0,
+   "group": 30066
+  },
+  {
+   "mode": 1,
+   "identity": 0,
+   "group": 30100
+  }
+ ],
+ "regions": [
+  {
+   "region": 2812,
+   "polygon": [
+    [
+     -6242.0,
+     4416.0
+    ],
+    [
+     -6041.0,
+     4559.0
+    ],
+    [
+     -6194.0,
+     4717.0
+    ],
+    [
+     -6357.0,
+     4552.0
+    ]
+   ],
+   "floor_min": -100,
+   "floor_max": -100
+  },
+  {
+   "region": 2842,
+   "polygon": [
+    [
+     -5827.0,
+     3995.0
+    ],
+    [
+     -5730.0,
+     4066.0
+    ],
+    [
+     -5860.0,
+     4211.0
+    ],
+    [
+     -5937.0,
+     4151.0
+    ]
+   ],
+   "floor_min": -100,
+   "floor_max": -100
+  },
+  {
+   "region": 2959,
+   "polygon": [
+    [
+     -4841.0,
+     2917.0
+    ],
+    [
+     -4850.0,
+     3022.0
+    ],
+    [
+     -4928.0,
+     2995.0
+    ],
+    [
+     -4964.0,
+     2887.0
+    ]
+   ],
+   "floor_min": -70,
+   "floor_max": -70
+  }
+ ],
+ "selector": 10,
+ "resource": 1,
+ "vqa": "E065E.VQA"
+}

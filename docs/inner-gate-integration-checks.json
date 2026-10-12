@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "source_stable": true,
+  "tests": [
+    {
+      "name": "jungle_inner_gate_state_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_kelsrick_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_bacatta57_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_village_alarm_live_test",
+      "passed": true
+    },
+    {
+      "name": "jungle_inner_gate_live_test",
+      "passed": true
+    },
+    {
+      "name": "hive_small_route_test",
+      "passed": true
+    },
+    {
+      "name": "hive_route_test",
+      "passed": true
+    }
+  ],
+  "source_hashes": {
+    "docs/jungle-inner-gate.md": "31be295e57557a303041cec20d308c04b44493fc2f7f2ebaf8618ab328c6004f",
+    "docs/jungle-village-alarm.md": "2cbe4407c141084ca039231f6ecd76086769fa41a6ea421281fceb335a554b5d",
+    "scripts/lol2/act_one_quest_state.gd": "e5532a24e5e48d99f703bd8b0a834657efe849930edb64e3683b619b2af1d908",
+    "scripts/lol2/jungle_inner_gate.gd": "17ffae195cd5e8d29b38fde5bbb25f59e21f6c7d216d6da78ab49b2b9efcb48d",
+    "scripts/lol2/jungle_inner_gate_source.json": "94aae828bd1d95ee6ea2832fbe2fd011f6da307928152f55f7736ada12de6456",
+    "scripts/lol2/jungle_inner_gate_state.gd": "7c9ad9d4e8c4547aad0fc19047f01820457e438e430786f19b502c2025822878",
+    "scripts/lol2/jungle_village_alarm.gd": "21c6c28d427d29fd2ac4777594585893419ced5d2b9fdda045684121c1b68cc2",
+    "scripts/lol2/jungle_village_alarm_source.json": "1139032ee74471a27a9e7fa3397c56815721900729097edb2e864b46123c9877",
+    "scripts/lol2/jungle_village_alarm_state.gd": "af867ebb087b4cdb945c3bd5379b40f36b952cf250f6353ae41131f6c6462162",
+    "scripts/lol2/jungle_walkthrough.gd": "47d46a12ff84658a35ec0faa1bb8a4d5d8aa471a9efb77275e85dca4fa5c576c",
+    "tests/jungle_inner_gate_live_test.gd": "03bfc34969f641423941ce7da2c29c1c420cef6191a2ff8c9a3e3a13bd31c5f5",
+    "tests/jungle_inner_gate_state_test.gd": "ec457af216fee2d212881c9b1f469dc200b68dc429574f09e90617008a18e2f5",
+    "tests/jungle_village_alarm_state_test.gd": "134fa7be2f3fa47bf72c9b685ebb366096cb72fd45edca4dbd7ee342eecfd33f",
+    "tools/prepare_jungle_inner_gate.py": "e935f43d23e3478eae870001329c17ee77d28b09660483d5fb225fb1cf9a9a0d",
+    "tools/prepare_jungle_village_alarm.py": "b3b8bca9c0e0e28e5a6e027b940405c4cf96185c49452161d43298d4a6d1a153",
+    "tools/run_regressions.py": "e2c47b3730c4fcbb0a19110e06448d87c1c3552e9f5acaaae1c53a257bc09e75",
+    "tests/hive_route_test.gd": "1e88878d513894f4906cceb5a1ee93a96d45a5730835b675b279bb572eb219c8",
+    "tests/hive_small_route_test.gd": "9fc007d6594d0cbf45f02fefded72cec618b8e27028bf9941b1fe6e9dae517ca"
+  },
+  "regeneration": "Two contracts and three inner-gate asset files byte-identical",
+  "limits": [
+    "Focused branch checks use supplied approach/state. Earned south crossing pending Opus N3.",
+    "Water-gate/chief hut smoke-out producers remain unimplemented upstream puzzle content.",
+    "Right-leaf mask presentation under review.",
+    "Fresh combined suite/campaign/build and Bob acceptance remain open."
+  ]
+}

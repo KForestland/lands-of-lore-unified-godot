@@ -1,0 +1,48 @@
+--- a/scripts/lol2/jungle_dawn.gd
++++ b/scripts/lol2/jungle_dawn.gd
+@@ -120,8 +120,8 @@
+ 			found=true
+ 			if effect.position!=sweep.get("position"):return {"error":"Stale projectile collision position."}
+ 	if not found:return {"error":"Unknown player collision projectile."}
+-	var supplied:=source_context.duplicate(true)
+-	supplied.attacker_heading=int(population.state.live[ID].heading)
++	var supplied:=preload("res://scripts/lol2/dawn_player_damage.gd").live_context(host.starting_magic,preload("res://scripts/lol2/player_defense.gd").scalar(host),int(population.state.live[ID].heading),source_context)
++	if supplied.has("error"):return supplied
+ 	return preload("res://scripts/lol2/dawn_player_damage.gd").direct(host.starting_magic,projectiles,id,collision_heading,supplied)
+ 
+ ## Player distance comes from the actual host position. Other world neighbors
+@@ -137,8 +137,8 @@
+ 	var Damage=preload("res://scripts/lol2/dawn_player_damage.gd")
+ 	var neighbors:=other_neighbors.duplicate(true)
+ 	neighbors.append({"id":Damage.PLAYER,"kind":1,"flags":player_flags,"distance":distance.distance,"direct":false})
+-	var supplied:=source_context.duplicate(true)
+-	supplied.attacker_heading=int(population.state.live[ID].heading)
++	var supplied:=preload("res://scripts/lol2/dawn_player_damage.gd").live_context(host.starting_magic,preload("res://scripts/lol2/player_defense.gd").scalar(host),int(population.state.live[ID].heading),source_context)
++	if supplied.has("error"):return supplied
+ 	return Damage.explosion(host.starting_magic,projectiles,id,neighbors,supplied)
+ 
+ ## Explicit shared-clock entry; scheduler/collision dispatch remain caller-owned.
+--- a/scripts/lol2/hive_dawn20.gd
++++ b/scripts/lol2/hive_dawn20.gd
+@@ -124,8 +124,8 @@
+ 			found=true
+ 			if effect.position!=sweep.get("position"):return {"error":"Stale projectile collision position."}
+ 	if not found:return {"error":"Unknown player collision projectile."}
+-	var supplied:=source_context.duplicate(true)
+-	supplied.attacker_heading=int(population.state.live[ID].heading)
++	var supplied:=preload("res://scripts/lol2/dawn_player_damage.gd").live_context(host.starting_magic,preload("res://scripts/lol2/player_defense.gd").scalar(host),int(population.state.live[ID].heading),source_context)
++	if supplied.has("error"):return supplied
+ 	return preload("res://scripts/lol2/dawn_player_damage.gd").direct(host.starting_magic,projectiles,id,collision_heading,supplied)
+ 
+ ## Player distance comes from the actual host position. Other world neighbors
+@@ -141,8 +141,8 @@
+ 	var Damage=preload("res://scripts/lol2/dawn_player_damage.gd")
+ 	var neighbors:=other_neighbors.duplicate(true)
+ 	neighbors.append({"id":Damage.PLAYER,"kind":1,"flags":player_flags,"distance":distance.distance,"direct":false})
+-	var supplied:=source_context.duplicate(true)
+-	supplied.attacker_heading=int(population.state.live[ID].heading)
++	var supplied:=preload("res://scripts/lol2/dawn_player_damage.gd").live_context(host.starting_magic,preload("res://scripts/lol2/player_defense.gd").scalar(host),int(population.state.live[ID].heading),source_context)
++	if supplied.has("error"):return supplied
+ 	return Damage.explosion(host.starting_magic,projectiles,id,neighbors,supplied)
+ 
+ ## Explicit shared-clock entry; scheduler/collision dispatch remain caller-owned.

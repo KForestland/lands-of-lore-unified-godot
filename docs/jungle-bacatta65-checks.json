@@ -1,0 +1,92 @@
+{
+  "status": "Integrated; final main8/8PASS/source-stable",
+  "patch": "54db10f8387c5add78ce6cf9dd4e09291311299d2d3fcd26269d724dda2f0b6b",
+  "independent": {
+    "passed": true,
+    "tests": 8,
+    "source_stable": true,
+    "report": "/home/bob/AI_COMMS/classic_review_20261007/lead/bacatta65_L_review/project/tmp/independent_L/report.json"
+  },
+  "body_probe": {
+    "passed": true,
+    "source_stable": true,
+    "health_after_attack": 24,
+    "pause_unchanged": true,
+    "corpse_disk_restore": true,
+    "scope": "Supplied approach and lethal receiver; no earned approach or ordinary-melee defeat claim."
+  },
+  "numeric_regeneration_equal": true,
+  "conversation_capture_inspected": true,
+  "main_files": {
+    "scripts/lol2/jungle_walkthrough.gd": "f40e1ed175dab41d5dadf787f229ca06bb85142ecdfaf690f9572ac57dbfab40",
+    "scripts/lol2/act_one_quest_state.gd": "a363ea46fed3ba917924adc89c17702658487690e03599396c26244b254d712f",
+    "scripts/lol2/player_spark_aura.gd": "5a83d17c1488ef1191eaaec5782139c83f239f402707f5f9952a21671ec40208",
+    "tools/run_regressions.py": "6bf459bf54a2d4f63b7c052643306b93fef12dfd90c8c99a783af65be496bb20",
+    "tools/prepare_jungle_bacatta65.py": "9b5c6a9389b7779561f247208b045078e00f64f3da6b9e0e1b08cbf0a5257557",
+    "tools/prepare_jungle_bacatta65_media.py": "51372bf523676cb9a5fec2c3d4d4bdb8452d6f95361eea7c8a474a9cbef54ceb",
+    "scripts/lol2/jungle_bacatta65_source.json": "e4f2d2de2349827600c40590f4e2b3ae7303a1035bd81c62395269186f771fe6",
+    "scripts/lol2/jungle_bacatta65_population_source.json": "15ece3f40039869f392181aa78c6bdf801aa413ba0e13163f7a797cb22e19776",
+    "scripts/lol2/jungle_bacatta65_state.gd": "57c55c52d5e5240d6e29cefb1c616ab8ef0062a5d1e1893ed8dd4398dec5c503",
+    "scripts/lol2/jungle_bacatta65_packet.gd": "3f6917e86d3295fa5161ac3f3931a276b13c0f2e3cc131e2687daeceb0331fab",
+    "scripts/lol2/jungle_bacatta65.gd": "166ca27d9a36b3d8f1bafd257edcac401611210c4327e82b89cb1da2f9b97ad3",
+    "tests/jungle_bacatta65_state_test.gd": "436d1e192069e9c432bda49b4126e8766da2a05cc96b680b7b8798d944c89093",
+    "tests/jungle_bacatta65_live_test.gd": "afd851f7945178cc64c640a0b1c93bd0949117bf3d347d91e754079ffc0bc037",
+    "docs/jungle-bacatta65.md": "1c53e69dd77aadd31d35ae996faf594dc1241aaa142cbbf170e519b102e6ef2f"
+  },
+  "media_files": 2404,
+  "limits": [
+    "Actor57 remains separate work",
+    "No full campaign or full258 suite after this change yet",
+    "R4 binaries predate this encounter",
+    "Bob acceptance open"
+  ],
+  "harness_correction": "Independent probe first failed parsing because SceneTree has no get_tree(); corrected harness only; failed log retained.",
+  "main_checks": {
+    "passed": true,
+    "source_stable": true,
+    "total": 8,
+    "report_sha256": "e88cb9d82f0ed932a34a9b84ea7b9be996a80b1a3545535d1a2c86441d3c73e0",
+    "tests": [
+      {
+        "name": "jungle_bacatta65_state_test",
+        "passed": true,
+        "seconds": 0.66
+      },
+      {
+        "name": "jungle_exit_woman_live_test",
+        "passed": true,
+        "seconds": 11.77
+      },
+      {
+        "name": "jungle_bacatta_live_test",
+        "passed": true,
+        "seconds": 7.0
+      },
+      {
+        "name": "jungle_kelsrick_live_test",
+        "passed": true,
+        "seconds": 6.48
+      },
+      {
+        "name": "jungle_bacatta65_live_test",
+        "passed": true,
+        "seconds": 18.27
+      },
+      {
+        "name": "hive_quest_save_test",
+        "passed": true,
+        "seconds": 8.04
+      },
+      {
+        "name": "jungle_save_test",
+        "passed": true,
+        "seconds": 6.56
+      },
+      {
+        "name": "player_spark_aura_live_test",
+        "passed": true,
+        "seconds": 7.52
+      }
+    ]
+  }
+}

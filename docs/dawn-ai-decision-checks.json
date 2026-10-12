@@ -1,0 +1,18 @@
+{
+  "cases": 280,
+  "scope": "Native AACD4..AAE7E composed decision. Original DawnL4 profile; effective stats and random returns supplied. Stops before commit/tail/effects.",
+  "files": {
+    "scripts/lol2/dawn_ai_decision.gd": "4e87eae48e81e9700f3a9b36abd0397086aa196f878fe69155c5adca102d446d",
+    "scripts/lol2/dawn_ai_profile.json": "04bcd13d8fe549a139784e4435b2ec46b6a597b45e273a6450974e1a4c4f5374",
+    "scripts/lol2/hive_ai_goal_choice.gd": "65e5f57368aefbb8cca029d7890aa269667511aa412056cab79cb5baa739ee67",
+    "scripts/lol2/dawn_spell_selection.gd": "24eedbeb3566a6da2d07c9168d6e52511888b238726f6a12dde1fd6823a9c474",
+    "tests/dawn_ai_decision_test.gd": "413b3f492bcad5e38f5070a110d751524e407e8356eb16955971054e49a396f5",
+    "tests/fixtures/dawn_decision_native.json": "7e244aa45f58f598a83d433739cc707ade369b706d094483f324eb199366aa26",
+    "docs/dawn-casting-portable.md": "a4b3bf2f65a9804d31214ebded0614bbf1318b5794662093f6a3bff454cbb951"
+  },
+  "native_generator_sha256": "87987dab3b9191180282ec5d6c37c7e570ed013de9e3bb83f92403acbd3393ec",
+  "main_checks": [
+    "tmp/regressions/dawn_decision_20261007/report.json",
+    "tmp/regressions/dawn_decision_rng_20261007/report.json"
+  ]
+}
