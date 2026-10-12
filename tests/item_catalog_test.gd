@@ -569,6 +569,10 @@ func museum_state(ids: Array, weapon: String = "", armor: String = "") -> Dictio
 		state.checkpoint.skeletons=population.initial()
 		population.damage(state.checkpoint.skeletons,population.source(),"20",1000)
 		state.checkpoint.museum_blood_loot={"elapsed":5.0,"taken":blood_ids.map(func(id):return id in ids)}
+	var ivory = preload("res://scripts/lol2/museum_ivory_state.gd")
+	state.checkpoint.museum_ivory = ivory.initial()
+	for i in ivory.IDS.size():
+		if ivory.IDS[i] in ids: state.checkpoint.museum_ivory.stages[i] = 2
 	return state
 ## Owner states that agree with carrying a single conserved Museum item.
 func with_owner_state(state: Dictionary, id: String) -> Dictionary:
@@ -629,10 +633,10 @@ func run() -> void:
 	for id in Catalog.ids("cave"):
 		var cave_weapon: bool = Catalog.slot(id)=="weapon"
 		if not check(cave_weapon == (preload("res://scripts/lol2/cave_stalagmite.gd").valid_item(id) or id in [Captain.SWORD,"cave:guard38:Short_Sword","cave:guard39:Short_Sword","cave:guard54:prop1013:Short_Sword","cave:guard54:actor54:Short_Sword","cave:guard52:Short_Sword","cave:guard53:Short_Sword"]) and (Catalog.slot(id)=="armor") == (id == Captain.ARMOR),"Cave slot scope differs: "+id):return
-	# Capacity: the Museum universe is 28; old cap 22 rejected it (inventory fixture only).
+	# Capacity: the Museum universe is 45, including two independently owned ivory chips (inventory fixture only).
 	var museum_ids := Catalog.ids("museum")
 	# +2 cave-origin ids: prop1050 Ancients' Stone and control75 Mana foil (cave_stone_manafoil.gd).
-	if not check(museum_ids.size() == 43 and Catalog.ids("cave").size() == 29,"Museum/cave universe sizes changed: %d/%d" % [museum_ids.size(),Catalog.ids("cave").size()]):return
+	if not check(museum_ids.size() == 45 and Catalog.ids("cave").size() == 29,"Museum/cave universe sizes changed: %d/%d" % [museum_ids.size(),Catalog.ids("cave").size()]):return
 	if not check(Catalog.validate_carried(museum_ids,"museum").is_empty() and Catalog.validate_slots(museum_ids,"museum",Captain.SWORD,Captain.ARMOR).is_empty(),"Catalog rejects maximum Museum carry"):return
 	var without_captain := museum_ids.filter(func(id): return not Captain.valid(id))
 	# Carrying the Sk key and SS1 means no lock holds the key and the SS1 panel is empty.
@@ -653,5 +657,5 @@ func run() -> void:
 			[owned,"museum","jungle:item51:Th_Dagger","",""],[owned,"museum","","","jungle:weapon_shop:Gargoyle_Bracers"],[owned,"jungle",7,"",""],[owned,"jungle","",null,""],[owned,"jungle","unknown:item","",""]]:
 		if not check(not Catalog.validate_slots(case[0],case[1],case[2],case[3],case[4]).is_empty(),"Bad equipment accepted: "+str(case.slice(1))):return
 	if failed: return
-	print("PASS item catalog: %d ids enumerated (cave27/museum35/jungle%d), 77-row before-matrix + live player_equipment/museum_save/jungle_save equivalence, labels/icons, defense8/20/5, Museum 35 accepted with captain equipment (fixture, not earned), negatives." % [all.size(),all.size()])
+	print("PASS item catalog: %d ids enumerated (cave29/museum45/jungle%d), 77-row before-matrix + live player_equipment/museum_save/jungle_save equivalence, labels/icons, defense8/20/5, Museum 45 accepted with captain equipment (fixture, not earned), negatives." % [all.size(),all.size()])
 	quit()

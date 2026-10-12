@@ -9,6 +9,18 @@ The main goal is to finish the complete original Lands of Lore 2 Classic in Godo
 [Classic Edition](classic-edition.md) remains the fidelity contract. Bob’s 2026-10-07 direction permits modern mechanics when better or faster; exact replication is not required. Enhancements and other games do not displace this plan. Existing dated test results certify their recorded revisions only.
 
 
+## Approved next iteration: Godot development workflow — 2026-10-12
+
+Owner approved this work after the current R16 qualification attempt. Improve the existing Godot project and tools; a custom engine fork or broad rewrite is not required. Preserve functional gameplay, the established state owners and personal saves.
+
+1. **Diagnostics first:** add a development-only panel with location, quest flags, inventory identities, equipped items, skills/XP, magic and the last save/load or transition rejection. Provide a copyable diagnostic report without exposing personal filesystem paths unnecessarily.
+2. **Test reliability alongside diagnostics:** separate deterministic state assertions from audio/render timing observations, record useful timing diagnostics and keep real failure checks. Investigate intermittent failures instead of merely increasing tolerances or suppressing errors. Preserve failed evidence.
+3. **Named checkpoints:** reuse existing fixtures through clearly labelled development entry points and isolated userdata. Record provenance and distinguish supplied state from earned campaign progress.
+4. **Incremental transition consolidation:** reuse the existing Cave/Museum/Jungle/Hive state adapters behind consistent validation and transfer entry points. Preserve legacy saves, reject malformed current state before mutation, and prove A→B→C, return and process-restart continuity of UI/skills/magic/items before replacing another boundary.
+5. **One-command verification:** consolidate existing focused checks, build drivers and evidence reports into an entry point with clear running/passed/failed states, source linkage and failure propagation. Reuse current scripts rather than adding another competing pipeline.
+
+First implementation slice: diagnostics plus reliable, actionable test reporting. Complete or explicitly close the current qualification attempt before editing its frozen runtime/tools/tests. Later-area expansion follows this bounded workflow improvement; combat/cave-inn work remains deferred. No editor settings change is required from the owner.
+
 ## Current overview and priority — 2026-10-12
 
 Finish a reliable, connected Act 1, then extend the same campaign into later areas. Preserve the game’s function and recognizable interface; use modern implementation when it saves time. Exact native algorithms, timing and pixel replication are not gates unless a difference breaks gameplay or an agreed presentation requirement.
