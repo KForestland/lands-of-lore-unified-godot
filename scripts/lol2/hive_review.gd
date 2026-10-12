@@ -346,7 +346,10 @@ func apply_area_handoff(state: Variant, entering: bool = true) -> String:
 		return_population.arrive(state.quests)
 		rune_population.arrive(state.quests)
 	return error
-func quicksave(path: String = Save.DEFAULT_PATH) -> String:
+## Diagnostics record every outcome, including early refusals that show no message (docs/dev-diagnostics.md).
+func quicksave(path: String = Save.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", _quicksave_unrecorded(path))
+func quickload(path: String = Save.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", _quickload_unrecorded(path))
+func _quicksave_unrecorded(path: String = Save.DEFAULT_PATH) -> String:
 	if get_tree().paused: return "Close the current overlay before saving."
 	if flying: return "Return to walking mode before saving."
 	var state := area_handoff()
@@ -354,7 +357,7 @@ func quicksave(path: String = Save.DEFAULT_PATH) -> String:
 		"position":[player.position.x,player.position.y,player.position.z],
 		"yaw":wrapf(player.rotation.y,-PI,PI),"pitch":camera.rotation.x}})
 	return Save.write_save(path,state)
-func quickload(path: String = Save.DEFAULT_PATH) -> String:
+func _quickload_unrecorded(path: String = Save.DEFAULT_PATH) -> String:
 	if get_tree().paused: return "Close the current overlay before loading."
 	var result := Save.read_save(path)
 	return result.error if not result.error.is_empty() else apply_save(result.state)

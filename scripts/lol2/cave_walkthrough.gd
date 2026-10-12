@@ -567,9 +567,11 @@ func _enter_museum() -> void:
 		# Stay in the cave with state intact; the chamber arrival can be retried.
 		chamber_arrival_state = "not_started"
 		_save_feedback("Cannot leave the cave: " + transfer_error)
+		preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "transfer Cave->Museum", transfer_error)
 		return
 	get_tree().set_meta("lol2_cave_completion", completion)
 	var error := get_tree().change_scene_to_file("res://scenes/lol2/museum_walkthrough.tscn")
+	preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "transfer Cave->Museum", "" if error == OK else "Museum scene could not load.")
 	if error != OK:
 		get_tree().remove_meta("lol2_cave_completion")
 		chamber_arrival_state = "not_started"
@@ -828,7 +830,10 @@ func _save_feedback(message: String) -> void:
 		interface_hud.save_notice_remaining = 5.0
 	print(message)
 
-func _quicksave(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
+## Diagnostics record every outcome, including early refusals that show no message (docs/dev-diagnostics.md).
+func _quicksave(path: String = WalkthroughSave.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", _quicksave_unrecorded(path))
+func _quickload(path: String = WalkthroughSave.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", _quickload_unrecorded(path))
+func _quicksave_unrecorded(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
 	if not walkthrough_ready:
 		return "The cavern is still loading."
 	if is_instance_valid(video_overlay) or drowning.dead or (roach != null and roach.model.player_health<=0):
@@ -839,7 +844,7 @@ func _quicksave(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
 	_save_feedback("Quicksaved." if error.is_empty() else "Save failed: " + error)
 	return error
 
-func _quickload(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
+func _quickload_unrecorded(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
 	if not walkthrough_ready:
 		return "The cavern is still loading."
 	if is_instance_valid(video_overlay): return "Finish the scene before loading."

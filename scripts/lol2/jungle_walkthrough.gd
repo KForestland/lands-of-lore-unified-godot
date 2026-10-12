@@ -226,7 +226,9 @@ func _ready() -> void:
 	get_window().title = "Lands of Lore II — "+area_name
 	if get_tree().has_meta("lol2_jungle_handoff"):
 		var handoff = get_tree().get_meta("lol2_jungle_handoff")
-		if apply_inventory_handoff(handoff).is_empty(): get_tree().remove_meta("lol2_jungle_handoff")
+		var handoff_error := apply_inventory_handoff(handoff)
+		preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "arrival Museum->Jungle", handoff_error)
+		if handoff_error.is_empty(): get_tree().remove_meta("lol2_jungle_handoff")
 	if get_tree().has_meta("lol2_jungle_resume"):
 		var resume = get_tree().get_meta("lol2_jungle_resume")
 		if apply_save(resume).is_empty(): get_tree().remove_meta("lol2_jungle_resume")
@@ -317,7 +319,10 @@ func apply_inventory_handoff(state: Variant) -> String:
 	if is_instance_valid(interface_hud): interface_hud.refresh_equipment()
 	return ""
 
-func quicksave(path: String = "") -> String:
+## Diagnostics record every outcome, including early refusals that show no message (docs/dev-diagnostics.md).
+func quicksave(path: String = "") -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", _quicksave_unrecorded(path))
+func quickload(path: String = "") -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", _quickload_unrecorded(path))
+func _quicksave_unrecorded(path: String = "") -> String:
 	if path.is_empty(): path = area_save_path
 	if get_tree().paused: return "Close the current overlay before saving."
 	if flying: return "Return to walking mode before saving."
@@ -326,7 +331,7 @@ func quicksave(path: String = "") -> String:
 		"player":{"position":[player.position.x,player.position.y,player.position.z],
 		"yaw":wrapf(player.rotation.y,-PI,PI),"pitch":camera.rotation.x}},area_save_format)
 
-func quickload(path: String = "") -> String:
+func _quickload_unrecorded(path: String = "") -> String:
 	if path.is_empty(): path = area_save_path
 	if get_tree().paused: return "Close the current overlay before loading."
 	var result := Save.read_save(path,area_save_format)

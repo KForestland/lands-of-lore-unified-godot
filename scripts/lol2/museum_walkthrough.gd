@@ -133,6 +133,7 @@ func _ready() -> void:
 	set_development_mode(false)
 	var state = get_tree().get_meta("lol2_cave_completion", {})
 	var transfer_error := validate_cave_transfer(state)
+	if get_tree().has_meta("lol2_cave_completion"): preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "arrival Cave->Museum", transfer_error)
 	if not transfer_error.is_empty():
 		# The cave refuses to leave with such a packet; never half-apply it here.
 		push_warning("Rejected cave completion packet: " + transfer_error)
@@ -530,7 +531,10 @@ func save_feedback(message: String) -> void:
 	interaction_label.text = message
 	interaction_label.show()
 
-func quicksave(path: String = Save.DEFAULT_PATH) -> String:
+## Diagnostics record every outcome, including early refusals that show no message (docs/dev-diagnostics.md).
+func quicksave(path: String = Save.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", _quicksave_unrecorded(path))
+func quickload(path: String = Save.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", _quickload_unrecorded(path))
+func _quicksave_unrecorded(path: String = Save.DEFAULT_PATH) -> String:
 	if introduction_state != "complete" or get_tree().paused: return "Close the current overlay before saving."
 	if flying:
 		save_feedback("Return to walking mode before saving.")
@@ -542,7 +546,7 @@ func quicksave(path: String = Save.DEFAULT_PATH) -> String:
 	save_feedback("Museum saved." if error.is_empty() else "Save failed: " + error)
 	return error
 
-func quickload(path: String = Save.DEFAULT_PATH) -> String:
+func _quickload_unrecorded(path: String = Save.DEFAULT_PATH) -> String:
 	if get_tree().paused: return "Close the current overlay before loading."
 	var result := Save.read_save(path)
 	if not result.error.is_empty():
@@ -642,6 +646,7 @@ func enter_mirror() -> bool:
 	var error := preload("res://scripts/lol2/jungle_save.gd").validate_inventory(handoff)
 	if not error.is_empty():
 		save_feedback(error)
+		preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "transfer Museum->Jungle", error)
 		return true
 	mirror_transition_pending = true
 	_finish_jungle_transition.call_deferred(handoff)
@@ -652,6 +657,7 @@ func _finish_jungle_transition(handoff: Dictionary) -> void:
 	# Explicit travel starts at entry1; an old resume request must not override it.
 	if get_tree().has_meta("lol2_jungle_resume"): get_tree().remove_meta("lol2_jungle_resume")
 	var result := get_tree().change_scene_to_file(MirrorRoute.DESTINATION)
+	preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "transfer Museum->Jungle", "" if result == OK else "Could not enter the jungle.")
 	if result != OK:
 		get_tree().remove_meta("lol2_jungle_handoff")
 		mirror_transition_pending = false
@@ -685,11 +691,13 @@ func enter_dragon() -> bool:
 	if not can_enter_dragon(): return false
 	if not Overlay.story_assets_ready(DRAGON_CLIPS) or not preload("res://scripts/lol2/jungle_walkthrough.gd").assets_ready():
 		save_feedback("Dragon journey assets are missing from this build.")
+		preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "transfer Museum->Jungle", "Dragon journey assets are missing from this build.")
 		return true
 	var handoff := inventory_state()
 	var error := preload("res://scripts/lol2/jungle_save.gd").validate_inventory(handoff)
 	if not error.is_empty():
 		save_feedback(error)
+		preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "transfer Museum->Jungle", error)
 		return true
 	mirror_transition_pending = true
 	dragon_flight = Overlay.new()
