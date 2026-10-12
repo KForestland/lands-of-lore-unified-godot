@@ -35,7 +35,7 @@ func captain_packet() -> Dictionary:
 	var magic:=Magic.initial();magic.player.mana=13;magic.player.experience=40
 	var curse:=Curse.initial()
 	curse.merge({"phase":1,"previous":0,"target":2,"remaining":2.0,"duration":90.0,"seed":12345,"cave_triggered":true},true)
-	return {"collected":["draracle/prop/1108/sample",Cap.SWORD,Cap.ARMOR,Aloe.item_id(791,2)],"item_effects":effects,
+	return {"cave_transfer_version":1,"collected":["draracle/prop/1108/sample",Cap.SWORD,Cap.ARMOR,Aloe.item_id(791,2)],"item_effects":effects,
 		"equipped_item":Cap.SWORD,"equipped_armor":Cap.ARMOR,"health":12,"curse":curse,
 		"magic":magic,"player_form":0,"chamber_complete":true,
 		"fighting":Fighting.pack(Reward.apply({},10,99,1).quests)}
@@ -69,7 +69,21 @@ func run() -> void:
 	# Validator: positive current/legacy, negatives by class.
 	var good:=captain_packet()
 	if not check(Museum.validate_cave_transfer(good).is_empty() and Museum.validate_cave_transfer({"collected":[Cap.SWORD],"equipped_item":Cap.SWORD}).is_empty() and Museum.validate_cave_transfer({}).is_empty(),"Valid packets rejected"):return
+	# All ten top-level fields are mandatory for version1; a legacy flag cannot bypass that contract.
+	for field in Museum.CAVE_TRANSFER_FIELDS:
+		var missing:=good.duplicate(true);missing.erase(field)
+		if not check(not Museum.validate_cave_transfer(missing).is_empty(),"Accepted missing current field: "+field):return
+		missing.legacy=true
+		if not check(not Museum.validate_cave_transfer(missing).is_empty(),"Legacy flag bypassed current contract: "+field):return
+	for version in [null,true,false,0,2,-1,1.5,"1",NAN,INF]:
+		var malformed:=good.duplicate(true);malformed.cave_transfer_version=version
+		if not check(not Museum.validate_cave_transfer(malformed).is_empty(),"Invalid transfer version accepted"):return
+	if not check(Museum.validate_cave_transfer(JSON.parse_string(JSON.stringify(good)),true).is_empty(),"JSON version1 packet rejected"):return
+	var legacy:=good.duplicate(true);legacy.erase("cave_transfer_version")
+	if not check(Museum.validate_cave_transfer(legacy).is_empty() and not Museum.validate_cave_transfer(legacy,true).is_empty(),"Legacy/current sender distinction failed"):return
+	if not check(Museum.validate_cave_transfer({"health":12}).is_empty(),"Unversioned partial legacy packet rejected"):return
 	var bad_cases:={}
+	var missing_magic:=good.duplicate(true);missing_magic.erase("magic");bad_cases["missing current magic"]=missing_magic
 	for change in [["collected",["bogus:item"]],["collected",["jungle:item51:Th_Dagger"]],["collected",[Cap.SWORD,Cap.SWORD]],["collected","x"],
 			["equipped_item",""],["equipped_armor",Cap.SWORD],["item_effects",{"version":1}],["magic",{"version":99}],["fighting",{"bogus":1}],
 			["health",-5],["health",31],["health",2.5],["player_form",7],["curse","x"],["chamber_complete",false]]:
@@ -83,7 +97,7 @@ func run() -> void:
 	if not check(not Museum.validate_cave_transfer(null).is_empty() and not Museum.validate_cave_transfer([]).is_empty(),"Accepted non-dictionary packet"):return
 	if not check(Magic.restore(good.magic).has("checkpoint") and Curse.valid(good.curse,0) and Curse.valid(transformed_packet().curse,2) and Museum.validate_cave_transfer(transformed_packet()).is_empty(),"Fixture states are not valid source states"):return
 	# Receiver: valid packets retained in full, compared in the Museum's canonical forms.
-	for p in [good,transformed_packet()]:
+	for p in [good,transformed_packet(),legacy]:
 		var applied:=await enter(p)
 		var expected:={"collected":p.collected,"weapon":Cap.SWORD,"armor":Cap.ARMOR,"health":12,"form":p.player_form,
 			"fighting":Fighting.restore(p.fighting).checkpoint,"magic":Magic.restore(p.magic).checkpoint,"item_effects":ItemState.canonical(p.item_effects),"curse":p.curse}
@@ -94,13 +108,18 @@ func run() -> void:
 	# Legacy no-optional-fields packet.
 	applied=await enter({"collected":["cave:prop641:harvest1:Stalagmite"],"equipped_item":"cave:prop641:harvest1:Stalagmite"})
 	if not check(applied.ready and applied.weapon=="cave:prop641:harvest1:Stalagmite" and applied.health==30 and applied.fighting.is_empty(),"Legacy transfer differs"):return
+	applied=await enter({"health":12})
+	if not check(applied.ready and applied.health==12 and applied.collected.is_empty(),"Partial legacy transfer changed"):return
 	# Malformed packets are rejected whole: nothing partial, Museum still initializes.
-	for name in ["[\"collected\", [\"bogus:item\"]]","[\"equipped_item\", \"\"]","[\"magic\", { \"version\": 99 }]","[\"fighting\", { \"bogus\": 1 }]","[\"health\", -5]"]:
+	for name in ["missing current magic","[\"collected\", [\"bogus:item\"]]","[\"equipped_item\", \"\"]","[\"magic\", { \"version\": 99 }]","[\"fighting\", { \"bogus\": 1 }]","[\"health\", -5]"]:
 		if not check(bad_cases.has(name),"Missing case "+name):return
 		applied=await enter(bad_cases[name])
 		if not check(applied.ready and applied.collected.is_empty() and applied.weapon=="" and applied.armor=="" and applied.health==30 and applied.form==0,"Malformed packet partially applied ("+name+"): "+str(applied)):return
 	# Sender: the real cave refuses a malformed packet and remains retryable.
-	var cave=load("res://scenes/lol2/cave_walkthrough.tscn").instantiate()
+	# The Cave scene is a script-only Node3D. Instantiate its subclass directly: replacing the
+	# script on an existing instance would orphan the original script's preallocated child Nodes.
+	var cave=load("res://tests/fixtures/cave_transfer_omission_probe.gd").new()
+	cave.name="CaveWalkthrough"
 	root.add_child(cave);current_scene=cave
 	for i in range(600):
 		await process_frame
@@ -115,8 +134,17 @@ func run() -> void:
 	var unchanged: bool=cave._save_state()==before
 	await process_frame
 	if not check(unchanged and current_scene==cave and is_instance_valid(cave) and not has_meta("lol2_cave_completion") and cave.chamber_arrival_state=="not_started" and cave.save_notice.begins_with("Cannot leave the cave:"),"Cave left or changed state with a malformed packet"):return
-	# Corrected state leaves normally with a validated packet.
+	# The actual sender also refuses a removed version marker or any missing current field.
 	cave.equipped_item=""
+	var current: Dictionary=cave._completion_state()
+	if not check(current.cave_transfer_version==1 and Museum.validate_cave_transfer(current,true).is_empty(),"Producer did not emit complete version1"):return
+	for field in ["cave_transfer_version"]+Museum.CAVE_TRANSFER_FIELDS:
+		cave.omitted_field=field
+		var saved: Dictionary=cave._save_state()
+		cave.chamber_arrival_state="complete";cave._enter_museum()
+		if not check(cave._save_state()==saved and current_scene==cave and not has_meta("lol2_cave_completion") and cave.chamber_arrival_state=="not_started" and cave.save_notice.begins_with("Cannot leave the cave:"),"Incomplete sender changed state or departed: "+field):return
+	cave.omitted_field=""
+	# Corrected state leaves normally with a validated packet.
 	cave.chamber_arrival_state="complete"
 	cave._enter_museum()
 	if not check(has_meta("lol2_cave_completion") and Museum.validate_cave_transfer(get_meta("lol2_cave_completion")).is_empty(),"Valid cave completion not handed over"):return
@@ -125,5 +153,5 @@ func run() -> void:
 	await finish(current_scene)
 	remove_meta("lol2_cave_completion")
 	if failed: return
-	print("PASS cave→Museum transfer: validator %d malformed classes rejected, current captain/legacy packets applied in full, malformed packets rejected whole on Museum entry, real cave refuses to leave with an unowned weapon (state unchanged, retryable) and leaves after correction. Supplied states; not earned." % bad_cases.size())
+	print("PASS cave→Museum transfer: validator %d malformed classes rejected, version1 all10 missing-field and malformed-version controls, full/partial unversioned compatibility, current captain/legacy packets applied in full, malformed packets rejected whole on Museum entry, real cave refuses to leave with an unowned weapon (state unchanged, retryable) refuses all11 version/field omissions without mutation, and leaves after correction. Supplied states; not earned." % bad_cases.size())
 	quit()

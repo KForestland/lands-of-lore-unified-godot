@@ -5,10 +5,19 @@ const INTRO_CLIPS := [4, 5]
 const Save = preload("res://scripts/lol2/museum_save.gd")
 const CHECKPOINT_KEY := "lol2_museum_checkpoint"
 ## Cave chamber completion packet (tree meta lol2_cave_completion), checked by the cave before it
-## leaves and again on Museum entry. Optional fields keep legacy packets valid; every carried,
-## equipped or consumed item must be cave-owned. Reuses the catalog and existing player validators.
-static func validate_cave_transfer(state: Variant) -> String:
+## leaves and again on Museum entry. Version1 requires every top-level player field; the live sender
+## also requires the version marker. Unversioned legacy packets retain their optional-field behavior.
+## Existing field validators still own item, magic, fighting and curse semantics.
+const CAVE_TRANSFER_VERSION := 1
+const CAVE_TRANSFER_FIELDS := ["collected","equipped_item","equipped_armor","item_effects","health","player_form","curse","magic","fighting","chamber_complete"]
+static func validate_cave_transfer(state: Variant, require_current: bool = false) -> String:
 	if not state is Dictionary: return "Invalid cave completion."
+	if require_current and not state.has("cave_transfer_version"): return "Missing cave transfer version."
+	if state.has("cave_transfer_version"):
+		var version = state.cave_transfer_version
+		if not (version is int or version is float) or not is_finite(float(version)) or version != CAVE_TRANSFER_VERSION: return "Unsupported cave transfer version."
+		for field in CAVE_TRANSFER_FIELDS:
+			if not state.has(field): return "Missing cave transfer field: " + field
 	var ids = state.get("collected",[])
 	var error := Catalog.validate_carried(ids,"cave")
 	if error.is_empty(): error = Catalog.validate_slots(ids,"cave",state.get("equipped_item",""),state.get("equipped_armor",""))

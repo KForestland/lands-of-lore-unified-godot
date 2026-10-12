@@ -562,7 +562,7 @@ func play_chamber_arrival() -> bool:
 func _enter_museum() -> void:
 	if not is_inside_tree() or chamber_arrival_state != "complete": return
 	var completion := _completion_state()
-	var transfer_error: String = preload("res://scripts/lol2/museum_walkthrough.gd").validate_cave_transfer(completion)
+	var transfer_error: String = preload("res://scripts/lol2/museum_walkthrough.gd").validate_cave_transfer(completion, true)
 	if not transfer_error.is_empty():
 		# Stay in the cave with state intact; the chamber arrival can be retried.
 		chamber_arrival_state = "not_started"
@@ -587,7 +587,7 @@ func carried_items() -> Array:
 	return items.filter(func(id): return id not in item_effect_checkpoint.spent)
 
 func _completion_state() -> Dictionary:
-	return {"collected": carried_items(), "item_effects":item_effect_checkpoint.duplicate(true),
+	return {"cave_transfer_version":1, "collected": carried_items(), "item_effects":item_effect_checkpoint.duplicate(true),
 		"equipped_item": equipped_item, "equipped_armor": equipped_armor, "health": roach.model.player_health if roach != null else 30,
 		"curse": curse.snapshot(), "magic":player_magic_checkpoint.duplicate(true), "player_form": player_form, "chamber_complete": true,
 		"fighting":preload("res://scripts/lol2/player_fighting_transport.gd").pack(quest_state)}

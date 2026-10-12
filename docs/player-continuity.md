@@ -119,3 +119,17 @@ Receipts: `user://tests/continuity/phase1.json` and `phase2.json`, the per-area 
   This is not proof that every malformed handoff is atomic.
 - Falling below the cave floor runs the walkthrough's fall recovery (`_reset`), which also restores health to 30. That
   is existing recovery behaviour, observed when a test placement fell through; the chain asserts that it did not run.
+
+## Versioned Cave → Museum admission (post-R14, 2026-10-12)
+
+The live Cave completion packet now carries `cave_transfer_version: 1`. Before leaving, the Cave requires that marker plus all ten existing top-level fields: collected, equipped_item, equipped_armor, item_effects, health, player_form, curse, magic, fighting and chamber_complete. Museum also requires those fields whenever the marker is present. Existing validators still check their contents. Unknown, malformed and nonfinite versions are rejected; JSON's numeric1 remains valid. A `legacy:true` field does not bypass a version1 requirement.
+
+Older unversioned packets retain the existing optional-field behavior, including empty, inventory-only, partial-health and complete packets. Packet age is not guessed from health/magic fields. This marker is for the live transfer, not a new disk-save format: loading an old Cave save causes the current producer to emit version1 on departure.
+
+The controlled negative probe removed magic from a supplied packet with13 mana: the previous validator accepted it and Museum defaulted to20. This reproduces an omission risk, not an observed drop by the normal Cave producer. The stricter live sender rejects an incomplete current packet before scene change; it retains player state and allows the chamber sequence to be retried. A version marker removed from a live packet is also rejected. Directly injected invalid Museum packets keep the existing whole-rejection/fresh-initialization behavior; the live sender prevents that situation in normal travel.
+
+`cave_museum_transfer_test` checks every missing field, invalid versions, a legacy-flag bypass attempt, JSON roundtrip, full and partial unversioned compatibility, and inherited production departure admission with each of11 marker/field omissions. Failed sends leave the Cave's saved player state unchanged and remain retryable; a corrected packet leaves normally. Receiver checks include magic13, captain gear, fighting XP, an Aloe effect and human/transformed curse states. The omission fixture overrides only packet production. Two early fixture runs passed assertions but leaked preallocated Nodes when replacing an instantiated scene's script; the final fixture constructs the subclass directly and does not suppress engine errors.
+
+Legacy inputs still permit defaults, and nested packet semantics remain owned by the existing validators. This is not a guarantee against arbitrary packet corruption, a redesign of other area loaders, or full world-state continuity. R14 binaries and personal saves are unchanged. Evidence: `AI_COMMS/classic_review_20261007/lead/cave_transfer_version_20261012`.
+
+Validation: focused6/6 PASS/source-stable, covering the transfer contract, Cave→Museum→Jungle/HUD continuity, new-process reload, magic, fighting/Hive return and two archived R13 saves. Four integrated code/test paths match the tested revision; the complete runtime/test snapshot differs only in the isolated project name. Full next-candidate suite/campaign/package qualification remains pending.
