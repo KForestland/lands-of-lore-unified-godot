@@ -23,7 +23,11 @@ func character_text() -> String:
 	if not walkthrough.player_magic_checkpoint.is_empty():
 		var magic: Dictionary = walkthrough.player_magic_checkpoint.player
 		mana_text = "\nMana: %d / %d" % [magic.mana,magic.maximum]
-	return "Health: %d / 30\nForm: %s\nWeapon: %s\nArmor: %s\nChange equipment in Inventory." % [walkthrough.get_node("Warriors").health,walkthrough.curse.message(),weapon,armor]+mana_text
+	var status := ""
+	var magic = walkthrough.get("starting_magic")
+	if magic != null and is_instance_valid(magic) and magic.has_method("status_lines"):
+		for line in magic.status_lines(): status += "\n" + str(line)
+	return "Health: %d / 30\nForm: %s\nWeapon: %s\nArmor: %s\nChange equipment in Inventory." % [walkthrough.get_node("Warriors").health,walkthrough.curse.message(),weapon,armor]+mana_text+status
 
 var wax_hint := false
 func _process(delta: float) -> void:

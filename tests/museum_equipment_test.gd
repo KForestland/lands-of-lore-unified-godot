@@ -53,7 +53,8 @@ func _run() -> void:
 	await process_frame
 	for pressed in [true, false]:
 		var click := InputEventMouseButton.new()
-		click.position = scene.interface_hud.weapon_button.get_global_rect().get_center()
+		# The Attack Button attacks now (docs/classic-hud.md); the Character page's "Open inventory" button opens it.
+		click.position = scene.interface_hud.character_controls.get_child(0).get_global_rect().get_center()
 		click.button_index = MOUSE_BUTTON_LEFT
 		click.pressed = pressed
 		Input.parse_input_event(click)

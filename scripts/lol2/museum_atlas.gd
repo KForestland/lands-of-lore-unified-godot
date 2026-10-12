@@ -2,6 +2,8 @@ extends Control
 ## Geometry overview, not a reconstruction of native automap discovery rules.
 var walkthrough: Node3D
 var geometry_path := "res://assets/lol2/generated/museum_review/museum.json"
+## World-space offset added to source x/z (the Cave places its source geometry at native_translation).
+var origin_offset := Vector2.ZERO
 var edges: Array = []
 var floor_polygons: Array[PackedVector2Array] = []
 var bounds := Rect2()
@@ -14,10 +16,23 @@ func _ready() -> void:
 	tooltip_text = "Scroll to zoom · Drag to move"
 	var data = JSON.parse_string(FileAccess.get_file_as_string(geometry_path))
 	var perimeter := {}
-	for face in data.faces:
-		if face.kind != "floor": continue
+	# Review geometry ("faces": floor polygons in world x/z) or a creature-navigation graph ("regions": source
+	# region quads in x/z), the latter for areas without a faces export (the Cave).
+	var floors: Array = []
+	if data.has("faces"):
+		for face in data.faces:
+			if face.kind != "floor": continue
+			var points := PackedVector2Array()
+			for p in face.points: points.append(Vector2(p[0],p[2]))
+			floors.append(points)
+	else:
+		for region in data.regions:
+			var points := PackedVector2Array()
+			for p in region[0]: points.append(Vector2(p[0],p[1]))
+			floors.append(points)
+	for source_polygon in floors:
 		var polygon := PackedVector2Array()
-		for p in face.points: polygon.append(Vector2(p[0],p[2]))
+		for p in source_polygon: polygon.append(p + origin_offset)
 		var area := 0.0
 		for i in polygon.size(): area += polygon[i].cross(polygon[(i+1)%polygon.size()])
 		if absf(area) < 0.02: continue

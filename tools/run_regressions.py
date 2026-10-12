@@ -122,6 +122,7 @@ CORE = PORTABLE + [(name, 'headless') for name in [
     'hive_stat_adjustments_test', 'hive_source_adjustments_test']]
 CORE += [('fire_crystal_live_test','rendered'), ('museum_sconce_recharge_test','rendered'), ('cave_splash_timer_boundary_test','headless'), ('cave_side_chamber_live_test','rendered'), ('cave_prop83_collision_rewind_test','rendered'), ('cave_prop83_lift_live_test','rendered'), ('cave_prop83_lift_state_test','headless'), ('cave_stone_manafoil_live_test','rendered'), ('hive_net_exile_live_test','rendered'), ('hive_reaver_escape_test','rendered'), ('hive_reaver_amber_live_test','rendered'), ('museum_prism_test', 'rendered'), ('museum_long_arm_live_test','rendered'),('museum_long_arm_escape_test','rendered')]
 CORE += [('museum_sconce_burn_test', 'rendered')]
+CORE += [('classic_hud_live_test', 'rendered'), ('classic_hud_actions_test', 'rendered'), ('classic_hud_layout_test', 'rendered')]
 CORE += [('hive_reaver_pillars_live_test', 'rendered')]
 CORE += [('tavern_return_live_test', 'rendered')]
 CORE += [('liz_room_live_test', 'rendered'), ('tavern_liz_ordinary_route_test', 'rendered')]
@@ -247,7 +248,7 @@ def main():
             '--display-driver', 'x11', '--rendering-method', 'gl_compatibility',
             '--resolution', '1280x720', '--fixed-fps', '60'])
         command += ['--path', str(ROOT), '--script', f'res://tests/{name}.gd']
-        if name == 'cave_demo_controls_test': command += ['--', '--demo-interface']
+        if name in ('cave_demo_controls_test', 'classic_hud_live_test', 'classic_hud_actions_test', 'classic_hud_layout_test'): command += ['--', '--demo-interface']
         code, log, timed_out, elapsed = run_one(command, args.timeout, {**os.environ, 'DISPLAY': args.display or os.environ.get('DISPLAY', ':0')})
         logfile = output / f'{name}.log'
         logfile.write_text(log)

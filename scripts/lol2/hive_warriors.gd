@@ -106,10 +106,20 @@ func _unhandled_input(event: InputEvent) -> void:
 		if active() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			strike()
 			get_viewport().set_input_as_handled()
+## Normal play with the classic HUD (docs/classic-hud.md): health is shown by the cluster, so this label carries
+## only target information and the Defeated prompt, as the other areas' population labels do.
+func classic_hud() -> bool:
+	var review = get_parent()
+	return is_instance_valid(review.get("interface_hud")) and review.interface_hud.has_method("refresh_vitals") and not review.development_mode
 func _process(delta: float) -> void:
+	_process_body(delta)
+	if is_instance_valid(label) and classic_hud(): label.text = label.text.trim_prefix(" · ")
+func _process_body(delta: float) -> void:
 	if not is_instance_valid(label): return
-	label.position.y = 125 if get_parent().development_mode else 16
-	label.text = "Health %d/30 · Left click: strike" % health if health > 0 else "Defeated · F9: load or R: retry guardians"
+	# Normal play: below the top-centre coordinate overlay, at the other areas' population-label height.
+	label.position.y = 125 if get_parent().development_mode else (48 if classic_hud() else 16)
+	if classic_hud() and health > 0: label.text = ""
+	else: label.text = "Health %d/30 · Left click: strike" % health if health > 0 else "Defeated · F9: load or R: retry guardians"
 	if not active(): return
 	cooldown = maxf(0,cooldown-delta)
 	var review = get_parent()

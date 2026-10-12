@@ -9,6 +9,22 @@ var fallback: Dictionary=Magic.initial()
 var label: Label
 var notice := ""
 var notice_time := 0.0
+## Modern spell panel (top right). In normal play the classic HUD cluster (docs/classic-hud.md) replaces it: the
+## Magic Button/Spell Bar select and cast; notices, aura and item status go to the shared hint and Character page.
+var panel: VBoxContainer
+func classic_hud_present() -> bool:
+	var hud = host.get("interface_hud")
+	return hud != null and is_instance_valid(hud) and hud.has_method("refresh_vitals") and not bool(host.get("development_mode"))
+## Status for the classic HUD: the loaded spell, a recent cast notice, the aura timer and item status.
+func status_lines() -> Array:
+	var saved: Dictionary=magic_state()
+	var lines: Array = []
+	if protected(): lines.append("Lightning aura · %ds" % ceili(float(aura.state().timer)/65536.0/aura.State.TICKS_PER_SECOND))
+	if host.get("item_effects")!=null and is_instance_valid(host.item_effects):
+		var item_status: String=host.item_effects.status()
+		if not item_status.is_empty(): lines.append(item_status)
+	return lines
+func notice_text() -> String: return notice if notice_time > 0 else ""
 func _ready() -> void:
 	host=get_parent()
 	aura=preload("res://scripts/lol2/player_spark_aura.gd").new()
@@ -17,7 +33,7 @@ func _ready() -> void:
 	var layer:=CanvasLayer.new()
 	layer.layer=8
 	add_child(layer)
-	var panel:=VBoxContainer.new()
+	panel=VBoxContainer.new()
 	panel.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
 	panel.position=Vector2(-290,16)
 	panel.custom_minimum_size.x=275
@@ -65,9 +81,17 @@ func world_active() -> bool:
 	# Kityara's conversation hold freezes the world the same way; only her owner keeps its clip clock.
 	if host.get("kityara")!=null and is_instance_valid(host.kityara) and host.kityara.movement_locked(): return false
 	return movie_world_active()
+## A click on the HUD Magic Button (docs/classic-hud.md) happens in interface cursor mode, so only for that request
+## the mouse-captured and interface-cursor gates are waived; every other world gate still refuses.
+var interface_request := false
+func cast_from_interface(charge: int = 1) -> bool:
+	interface_request = true
+	var ok := cast(charge)
+	interface_request = false
+	return ok
 ## world_active() without the hut-movie lock: the chief-hut owner's movie clock only.
 func movie_world_active() -> bool:
-	if get_tree().paused or host.flying or health()<=0 or Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED: return false
+	if get_tree().paused or host.flying or health()<=0 or (Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED and not interface_request): return false
 	if get_tree().current_scene!=null and get_tree().current_scene!=host: return false
 	if host.get("drowning") != null and host.drowning.dead: return false
 	if host.get("guard_controls")!=null and is_instance_valid(host.guard_controls) and host.guard_controls.input_locked(): return false
@@ -78,7 +102,7 @@ func movie_world_active() -> bool:
 	if host.get("mirror_transition_pending") != null and host.mirror_transition_pending: return false
 	for name in ["inventory","video_overlay"]:
 		if host.get(name)!=null and is_instance_valid(host.get(name)): return false
-	if host.get("interface_hud") != null and host.interface_hud.cursor_active: return false
+	if host.get("interface_hud") != null and host.interface_hud.cursor_active and not interface_request: return false
 	for name in ["monastery","magic_shop","weapon_shop","departure","exit_encounter","runes","village_dialogue","followup_dialogue"]:
 		if host.get(name)!=null and is_instance_valid(host.get(name)) and host.get(name).active(): return false
 	if host.has_node("ConversationReview"):
@@ -207,6 +231,7 @@ func _process(delta: float) -> void:
 			saved.regen_elapsed=fmod(elapsed,period) if saved.player.mana<saved.player.maximum else 0.0
 		commit(saved)
 	notice_time=maxf(0,notice_time-delta)
+	if is_instance_valid(panel): panel.visible = not classic_hud_present()
 	label.text="%s · Mana %d/%d\nQ — Cast%s" % ["Healing" if saved.get("spell","spark")=="heal" else "Spark",saved.player.mana,saved.player.maximum," · "+notice if notice_time>0 else ""]
 
 	if saved.get("spell","spark") == "spark": label.text += "\nShift+Q — Max Spark"

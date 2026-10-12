@@ -93,6 +93,8 @@ var indexed_door_surfaces: Array[Node3D] = []
 var item_effect_checkpoint := preload("res://scripts/lol2/player_item_state.gd").initial()
 var item_effects: Node
 var starting_magic: Node
+## Shared area HUD (docs/classic-hud.md); normal play only, the developer text HUD stays in development mode.
+var interface_hud: CanvasLayer
 func attach_starting_magic() -> void:
 	starting_magic=preload("res://scripts/lol2/player_starting_magic.gd").new()
 	starting_magic.name="StartingMagic"
@@ -286,7 +288,55 @@ func _ready() -> void:
 		camera.look_at(collectible.target_position())
 
 	flight_label.visible = development_mode
+	if not development_mode and not is_instance_valid(interface_hud): _attach_interface()
 	walkthrough_ready = true
+
+func _attach_interface() -> void:
+	interface_hud = preload("res://scripts/lol2/cave_interface.gd").new()
+	interface_hud.walkthrough = self
+	interface_hud.location_name = "Draracle’s Caverns"
+	interface_hud.save_path = WalkthroughSave.DEFAULT_PATH
+	interface_hud.save_location_name = "Cave"
+	# No faces export exists for the Cave; the source region graph (creature_nav) draws the map.
+	interface_hud.geometry_path = "res://assets/lol2/generated/creature_nav/L1_DC.json"
+	interface_hud.atlas_offset = Vector2(native_translation.x, native_translation.z)
+	add_child(interface_hud)
+	hud.visible = false
+
+## Shared-HUD hooks (the other area hosts expose the same names).
+func quicksave(path: String = WalkthroughSave.DEFAULT_PATH) -> String: return _quicksave(path)
+func quickload(path: String = WalkthroughSave.DEFAULT_PATH) -> String: return _quickload(path)
+func save_feedback(message: String) -> void: _save_feedback(message)
+func open_inventory() -> bool:
+	if is_instance_valid(inventory) or is_instance_valid(video_overlay): return false
+	inventory = preload("res://scripts/lol2/museum_inventory.gd").new()
+	inventory.item_ids = carried_items()
+	inventory.use_item = item_effects.use
+	inventory.equipped_item = equipped_item
+	inventory.change_equipment = set_equipped_item
+	inventory.equipped_armor = equipped_armor
+	inventory.change_armor = set_equipped_armor
+	add_child(inventory)
+	return true
+
+## The dynamic line the cave label would show first: fallen, then a loot prompt, then a curse warning.
+func hud_prompt() -> String:
+	if roach != null and roach.model.player_health<=0: return "You fell · R: checkpoint · F9: load save"
+	if captain!=null and captain.loot!=null and captain.loot.aimed(): return "E — Take Short Sword"
+	for loot in [guard38_loot,guard39_loot]:
+		if loot!=null and loot.aimed(): return "E — Take Short Sword"
+	if guard54_loot!=null and not guard54_loot.aimed().is_empty(): return "E — Take Short Sword"
+	for pair_loot in [guard52_loot,guard53_loot]:
+		if pair_loot!=null and not pair_loot.aimed().is_empty(): return "E — Take " + ("Short Sword" if pair_loot.aimed() == "sword" else "Guard Shield")
+	if curse.state.phase in [1,3]: return curse.message()
+	return ""
+
+## Cave status for the Character page (form, stored weapon, samples, Aloe).
+func hud_status_lines() -> Array:
+	var lines: Array = ["Form: " + curse.message()]
+	if collectible.collected: lines.append("Cavern samples: 1")
+	if aloe != null: lines.append("Cave Aloe: %d" % carried_items().filter(func(id): return preload("res://scripts/lol2/cave_aloe.gd").valid_item(id)).size())
+	return lines
 
 func _resize_index_view() -> void:
 	super._resize_index_view()
@@ -436,15 +486,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_I:
-			if not is_instance_valid(inventory) and not is_instance_valid(video_overlay):
-				inventory = preload("res://scripts/lol2/museum_inventory.gd").new()
-				inventory.item_ids = carried_items()
-				inventory.use_item = item_effects.use
-				inventory.equipped_item = equipped_item
-				inventory.change_equipment = set_equipped_item
-				inventory.equipped_armor = equipped_armor
-				inventory.change_armor = set_equipped_armor
-				add_child(inventory)
+			open_inventory()
 			get_viewport().set_input_as_handled()
 			return
 		if event.keycode == KEY_V and indexed_chain != null:
@@ -588,7 +630,7 @@ func _process(_delta: float) -> void:
 	if roach != null:
 		hud.text += "\nHealth: %d/%d · Left click: strike" % [roach.model.player_health,roach.Model.PLAYER_HEALTH]
 		if roach.model.player_health<=0: hud.text += "\nYou fell · R: checkpoint · F9: load save"
-	interaction_prompt.visible = not drowning.dead and hud.visible and interaction_available and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	interaction_prompt.visible = not drowning.dead and (hud.visible or is_instance_valid(interface_hud)) and interaction_available and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
 	interaction_prompt.text = "E · Strike chain" if (indexed_chain != null and indexed_chain.can_strike()) or (river_chains != null and river_chains.target_chain() >= 0) else "E · Collect cavern sample"
 	if aloe != null and aloe.target() >= 0: interaction_prompt.text = "E · Pick Cave Aloe"
 	if stalagmites != null and stalagmites.target() >= 0: interaction_prompt.text = "E · Take Stalagmite"
@@ -778,6 +820,10 @@ func set_equipped_armor(item_id: String) -> bool:
 func _save_feedback(message: String) -> void:
 	save_notice = message
 	save_notice_until = Time.get_ticks_msec() + 5000
+	# Normal play shows notices on the shared HUD hint (the cave label is hidden there).
+	if is_instance_valid(interface_hud):
+		interface_hud.hint.text = message
+		interface_hud.save_notice_remaining = 5.0
 	print(message)
 
 func _quicksave(path: String = WalkthroughSave.DEFAULT_PATH) -> String:

@@ -76,23 +76,23 @@ func _run() -> void:
 	assert(map.zoom == 1.0 and map.pan == Vector2.ZERO)
 	key(KEY_ESCAPE)
 	assert(not hud.sheet.visible and hud.cursor_active)
-	# Portrait textures must pass actual clicks through to the character button.
-	assert(hud.buttons[0].get_child_count() == 2)
+	# Portrait textures (the cluster's oval, docs/classic-hud.md) must pass actual clicks through to the character button.
+	assert(hud.buttons[0].get_child_count() == 1)
 	for pressed in [true, false]:
 		var click := InputEventMouseButton.new()
-		click.position = hud.buttons[0].global_position + Vector2(120, 60)
+		click.position = hud.buttons[0].get_global_rect().get_center()
 		click.button_index = MOUSE_BUTTON_LEFT
 		click.pressed = pressed
 		Input.parse_input_event(click)
 		Input.flush_buffered_events()
 	assert(hud.sheet.visible and not hud.atlas.visible)
-	hud.buttons[2].pressed.emit()
+	hud.open_page("inventory")  # Attack Button now attacks (docs/classic-hud.md); the shell inventory path
 	assert(paused and is_instance_valid(scene.inventory))
 	key(KEY_ESCAPE)
 	await process_frame
 	await process_frame
 	assert(not paused and hud.cursor_active and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE)
-	hud.buttons[2].pressed.emit()
+	hud.open_page("inventory")  # Attack Button now attacks (docs/classic-hud.md); the shell inventory path
 	key(KEY_TAB)
 	await process_frame
 	await process_frame
