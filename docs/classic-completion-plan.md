@@ -102,18 +102,18 @@ These are planned tasks, not new collaborator assignments. The lead verifies act
 
 | ID / priority | Task | Depends on | Done when |
 | --- | --- | --- | --- |
-| P01 / now | Pin source/assets, private HUD release and current build; reconcile stale open rows against newest receipts. | None | One reproducible baseline; integrated/private/delivered status separated. Planning audit completed; implementation baseline pin remains open. |
-| P02 / now | Finish original HUD integration and inspect all four hosts. | P01, corrected private release | Real clicks, notices and status work; two resolutions; no duplicate panel or overlap; save identity preserved. |
-| P03 / now | Inventory persistent fields and add the shared semantic continuity check described above. | P01 | Every UI/skill/magic/item field has an owner and migration rule; existing adapters reused; dropped-field negative control fails. |
-| P04 / next | Run A→B→C, return and process-restart checks with actual earned saves. | P02–P03 | Matrix cases have state comparisons, screenshots and linked save hashes on one revision. Fix losses before adding areas. |
-| P05 / next | Reconcile Act 1 behavior ledger from walkthroughs, source records, existing feature docs and observed playtest failures. | P01 | Each required/optional branch has status, ordinary trigger, evidence and next action; deferred cave/inn issues explicit. No invented Museum prop93 reward without an actual producer. |
+| P01 / complete for R14 | Pin source/assets, private HUD release and current build; reconcile stale open rows against newest receipts. | None | One reproducible baseline; integrated/private/delivered status separated. R14 baseline pinned and archived; complete for this candidate. |
+| P02 / technically verified | Finish original HUD integration and inspect all four hosts. | P01, corrected private release | Real clicks, notices and status work; two resolutions; no duplicate panel or overlap; save identity preserved. |
+| P03 / selected fields verified | Inventory persistent fields and add the shared semantic continuity check described above. | P01 | Every UI/skill/magic/item field has an owner and migration rule; existing adapters reused; dropped-field negative control fails. |
+| P04 / scoped checks verified | Run A→B→C, return and process-restart checks with actual earned saves. | P02–P03 | Matrix cases have state comparisons, screenshots and linked save hashes on one revision. Fix losses before adding areas. |
+| P05 / known gaps reconciled | Reconcile Act 1 behavior ledger from walkthroughs, source records, existing feature docs and observed playtest failures. | P01 | Each required/optional branch has status, ordinary trigger, evidence and next action; deferred cave/inn issues explicit. Known gaps now reconciled in [remaining-work ledger](act-one-remaining-work.md); exhaustive branch coverage remains open. No invented Museum prop93 reward without an actual producer. |
 | P06 / next | Close required progression/trigger gaps one complete slice at a time. | P05; P03 for state-changing work | Ordinary player can trigger the behavior and continue; save/retry/repeat/return checked. Combat tuning stays deferred unless a route blocker requires intervention. |
 | P07 / milestone | Freeze next demo; run full applicable suite, fresh campaign and actual packaged checks; owner playtest. | P04, required P06 | Delivered artifact matches checked source/assets. Known omissions explicit; Act 1 acceptance is separately recorded. |
 | P08 / later | Bind L8_SJ and adjacent archive identities, prerequisites, interiors and exits; build first later-area slice. | Act 1 gate and source/route mapping | Act 1 continuation enters a useful playable next area with all player state intact. Archive number alone is not route order. |
 | P09 / later | Expand in connected campaign groups through remaining quests and endings. | P08, then each preceding dependency | Every added area passes the same continuity gate; optional and mutually exclusive branches have their own checks. |
 | P10 / release | Fresh whole-game campaign, supported-platform testing, clean asset preparation and owner acceptance. | P09 | Reproducible accepted release with continuation/migration, recovery, controls and documented modern differences. |
 
-First bounded implementation batch: P01–P04. Success is one consistent HUD and a demonstrated no-loss Cave→Museum→Jungle→Hive/return chain, not a larger test count. Estimate later batches after measuring this one; no unsupported full-game ETA.
+R14 completes the pinned build/HUD batch and scoped player continuity checks; P03–P04 are not exhaustive world/quest/effect coverage. Next bounded content investigation is G01 in the [remaining-work ledger](act-one-remaining-work.md): bind the Museum ivory-chip producer and reachability before implementing it. No unsupported full-game ETA.
 
 ## Act 1 demo acceptance
 

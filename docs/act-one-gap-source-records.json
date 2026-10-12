@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-12",
+  "basis": "R14 verified baseline; local code/metadata inspection, no new original-game execution",
+  "files": {
+    "scripts/lol2/museum_key_locks_source.json": "29bd7dfca4e3e3b38e47a7c623271c22eee7bba60e486177ae5618830cc73eab",
+    "scripts/lol2/jungle_beehives_source.json": "5247fc1147e18ceaccdaf6d24ff081922f8659f18c3e73dc9ba0c19547ed7d55",
+    "scripts/lol2/liz_room_source.json": "c941a0066dbf40753e7d4bab961780426eb28910ff27cdcf635e4ef0b00cecf5",
+    "scripts/lol2/museum_long_arm_source.json": "9b55ee0809a3048220cfd56e008d752dcb9864db9d390588b9d001e3e382eb96",
+    "scripts/lol2/hive_reaver_amber_source.json": "38fa2d6dccfabb2efba9e32602c31ca019cfab93bc51801a0d7ad290099d04e5",
+    "scripts/lol2/item_catalog.gd": "07d4b77e6521ca6d3561da12db155f09c4de61be619578ecc063876828ac4f72",
+    "scripts/lol2/player_defense.gd": "0c2f6deaa53a620dfe4cd7ba8e8da0ab6213c5f22aedf7ec4a3af7f0e82ab91c"
+  },
+  "ivory_inventory": {
+    "path": "/home/bob/lol2_out/museum_sword_neighborhood_20260914/neighborhood.json",
+    "sha256": "37ea81d7fb5a9d494582965e4347d64dfa3e792611b8e8b749825beddc99bd6e",
+    "source_archive_sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+    "items": [
+      {
+        "index": 17,
+        "position": [
+          32,
+          724,
+          10
+        ],
+        "definition_id": "0x42e0c09",
+        "label": "Ivory_Chip",
+        "source_flags": 4098,
+        "raw_hex": "2000d40200000a0002103700000000000000000014747f00d97b5a0014000000090c2e0400",
+        "nearby": false
+      },
+      {
+        "index": 18,
+        "position": [
+          232,
+          1646,
+          0
+        ],
+        "definition_id": "0x42e0c09",
+        "label": "Ivory_Chip",
+        "source_flags": 4098,
+        "raw_hex": "e8006e060000000002109500000000000000000014747f00d97b5a0014000000090c2e0400",
+        "nearby": false
+      }
+    ],
+    "limit": "Extracted records only; activation, coordinate semantics and ordinary reachability not newly established."
+  },
+  "limit": "Known declared gaps, not exhaustive content coverage."
+}

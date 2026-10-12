@@ -24,6 +24,18 @@ func _initialize() -> void:
  check(C.compare(one,reordered).is_empty(),"Dictionary ordering changed meaning")
  check(not C.compare(one,C.from_packet({"collected":["a","a"],"item_effects":{"spent":["b"]}},{})).is_empty(),"Duplicate carried identity hidden")
  check(not C.compare(one,C.from_packet({"collected":["a"],"item_effects":{"spent":["b","b"]}},{})).is_empty(),"Duplicate consumption hidden")
+ # A projection must report source presence, not silently supply legacy defaults.
+ for quest_owned in [false,true]:
+  var magic := {"player":{"level":1,"experience":0,"mana":5,"maximum":20},"spell":"spark"}
+  var missing := magic.duplicate(true)
+  missing.erase("spell")
+  var full := C.from_packet({} if quest_owned else {"magic":magic},{"player_magic_reward_state":magic} if quest_owned else {})
+  var dropped := C.from_packet({} if quest_owned else {"magic":missing},{"player_magic_reward_state":missing} if quest_owned else {})
+  check(full.get("magic.spell")=="spark","Explicit Spark missing from snapshot")
+  check(not dropped.has("magic.spell"),"Missing selected spell was synthesized")
+  check(C.compare(full,dropped)==["magic.spell: missing after (was spark)"],"Dropped Spark selection escaped comparison")
+  check(not C.compare(dropped,full).is_empty(),"Synthesized selection escaped comparison")
+  check(not C.compare(dropped,dropped,{"magic.spell":"spark"}).is_empty(),"Absent expected selection escaped comparison")
  var allowance := C.mana_allowance(5,20,0.1,0.0)
  check(allowance.max==5,"Sub-period elapsed time permits refill")
  check(not C.compare({"mana":5},{"mana":20},{"mana":allowance}).is_empty(),"Spontaneous full refill accepted")

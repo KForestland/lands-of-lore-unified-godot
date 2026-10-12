@@ -44,6 +44,15 @@ the Hive return check below compares the complete magic checkpoint, including co
 regeneration period. The travel test includes two frame endpoints as a conservative timing margin. Pause can reduce
 regeneration within the bound; an arbitrary refill to maximum is not automatically permitted.
 
+The projection preserves whether `magic.spell` was actually present. It does not synthesize Spark for a missing key;
+legacy migration/defaults remain the loaders' responsibility. Otherwise losing an explicit Spark selection could be
+invisible to comparison. Inventory-owned and quest-owned magic both have missing/appearing/expected-field controls.
+
+Post-R14 review: the new omission controls failed against R14's checker, then all four focused contract/HUD/chain/
+new-process checks passed with stable source after the correction (including the two R13 compatibility saves).
+Local evidence: `AI_COMMS/classic_review_20261007/lead/continuity_spell_review_20261012`.
+This changes verification only; the verified R14 binary is unchanged.
+
 `player_continuity_contract_test` checks these rules with missing-field, duplicate-item, NaN/infinity, malformed-range
 and excessive-refill negative controls.
 

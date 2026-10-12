@@ -47,7 +47,8 @@ static func from_packet(inventory: Dictionary, quests: Dictionary) -> Dictionary
 	var magic = inventory.get("magic", quests.get("player_magic_reward_state"))
 	if magic is Dictionary and magic.get("player") is Dictionary:
 		for key in ["level", "experience", "mana", "maximum"]: result["magic." + key] = magic.player.get(key)
-		result["magic.spell"] = magic.get("spell", "spark")
+		# Check source presence; migration/defaults belong to the actual loader.
+		if magic.has("spell"): result["magic.spell"] = magic.spell
 	var fighting = null
 	if inventory.get("fighting") is Dictionary: fighting = inventory.fighting.get("player_reward_state")
 	if fighting == null: fighting = quests.get("player_reward_state")

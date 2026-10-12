@@ -1,0 +1,36 @@
+# Act One remaining-work ledger — 2026-10-12
+
+Baseline: [verified R14](act-one-r14-verification.md), 326 tests and a fresh linked 11-leg campaign. This reconciles the known outstanding work against current implementation; it is not an exhaustive enumeration of every original command or branch. Historical feature notes and generated `not_hosted` lists describe their recorded revision and must not be treated as a current backlog without checking the host.
+
+## Reconciled behavior
+
+| Area / branch | Ordinary trigger and current state | Evidence | Next action |
+| --- | --- | --- | --- |
+| Required Act One route | Entrance, cave encounters/doors/bridge, Museum route, rescue, flute, wax/runes, knowledge, translation, repair, departure work in the linked campaign. | R14 campaign archive and audited saved outputs. | Preserve; owner playtest remains open. |
+| Shared HUD / skills / equipment | Tab/Character, Attack/Magic buttons, inventory, F5/F9; four-host display and selected-field continuity implemented. | R14 HUD, chain, restart and transport tests; packaged Jungle review. | Extend missing-field controls where a concrete blind spot is found; retain current owners. |
+| Village tavern and LIZ | Walk village departure/return regions; click room hotspots; wax once, maid alert and sealed tavern. Implemented and included in R14. | `tavern-return.md`, `liz-room.md`, `tavern_liz_ordinary_route_test.gd`. | Full route plus Hive round-trip of these particular room flags is not established by the 11-leg campaign; keep that distinction. |
+| Bracers and equipment defense | Inventory offhand equipment; Gargoyle Bracers catalog slot is offhand/defense5; `player_defense.gd` reads equipped carried gear. | `item_catalog.gd`, `player_defense.gd`, `gargoyle-bracers-live-checks.json`. | Older weapon-shop text saying accessory equipping is absent is superseded. Remaining tuning deferred. |
+| Sconce recharge | Held burnt crystal at Museum control113 transforms into a fresh crystal; source/live behavior implemented. | `museum-sconce-burn.md`, `museum_sconce_recharge_test.gd`, R14 suite. | Ordinary return with a burnt crystal remains unavailable in the current Act One route. Do not claim an earned recharge route. |
+| Reaver / Net / Prism | Pickups, collapse/pillar triggers, hold/blind effects and death cleanup implemented with documented adapters. | `hive-reaver-amber.md`, respective feature reports and R14 tests. | Generated raw `not_hosted` records still include secondary sound/effect commands; those are separate from the working gameplay. |
+| Cave Stone / Manafoil / lift | Pickup/use, lift and checkpoint behavior implemented. | `cave-stone-manafoil.md`, R14 lift and collision-rewind tests. | Do not reopen unreachable debug kits as required player content. |
+
+## Known unresolved work
+
+| ID / priority | Trigger / scope | What is established | Smallest next action / acceptance |
+| --- | --- | --- | --- |
+| G01 / next source probe | Museum ivory chips; original activation trigger unbound | Local extracted world-item rows17/18 both have `Ivory_Chip`, definition `0x42e0c09`, flags4098. No hosted catalog identity was found. The records do not by themselves prove a smash-vase producer or reachability. | Bind original activation owner and item placement before implementing. Then use existing item IDs/catalog/save transport; test ordinary activation, exactly-once pickup, save/retry and carry through departure. Do not make chips a departure gate. |
+| G02 / bounded source probe | Museum prop93 / skeleton-linked treasure claim | Producer still unestablished. Skeleton deaths alone do not establish a grant. | Require an actual source producer and activation predicate; do not invent a reward to match guide prose. |
+| G03 / optional room responses | LIZ hotspots1–4, callback11, ambient367 | `liz_room_source.json` records unresolved quips/host calls. Entrance and wax pickup work. | Bind a response and implement its observable effect through the existing room owner; save/repeat/return check. |
+| G04 / optional item/room branches | MAGIC offers, WPN later visits, non-orb monastery/hostile outcomes | Core offers and earned knowledge/repair are hosted. Some feature documents mix old omissions with current code. | Identify one still-unhosted predicate/producer against current owner before assigning implementation. Do not label all shop offers absent. |
+| G05 / secondary effects | Museum key controls, Long Arm, Reaver chain | Generated source records retain sound, transient prop, material and native-movement omissions. Long Arm already uses a safety prerequisite and functional escape adapter. | Prioritize effects needed to understand or complete a puzzle; polish-only sounds/particles follow. Preserve documented modern movement adapters. |
+| G06 / unresolved interaction | Beehive empty-hand status and kind5/value2 hit | Source records identify these operations; gameplay effect of status0x27 is unestablished. Renewable wax/timers are already hosted. | One discriminating source/runtime check for the player-visible outcome; no speculative damage/debuff implementation. |
+| G07 / deferred by owner | Reported cave puzzles/inn triggers and combat tuning | R14's tested main route passes; this does not refute the reported side-path failures. | Keep deferred unless specifically resumed or a confirmed critical route blocker changes priority. Record exact location and trigger when available. |
+| G08 / later campaign | L7_DH and L8_SJ / continuation | Source-mapped, not gameplay-integrated. Darker-jungle scene is a saved continuation boundary. | Bind archive names/arrivals/exits and prerequisites, then one connected playable slice with state continuity. Do not certify later areas from the departure save. |
+| G09 / release portability | Original media preparation, Windows runtime, GPU/audio | Prepared-media builds and Linux software-rendered checks pass. | Clean preparation recipe; native Windows run; representative rendering/audio; owner acceptance. |
+| G10 / continuity scope | Current-packet requirements and late restore failures | Current transfer validators retain optional legacy fields. The tested malformed Dawn/conflicting fighting packets reject unchanged; all possible post-validation failures are not proven atomic. | Reproduce a specific loss before changing loaders. Version current packets explicitly if strict fields are added; preserve legacy saves. |
+
+## Source inventory limits
+
+`act-one-gap-source-records.json` records the exact local files read for this reconciliation and the extracted ivory rows. The `not_hosted` entries are historical declarations, not a count of missing gameplay. In particular, the Museum key-lock metadata's old “no burnt-crystal producer” statement is superseded by Fire crystal use/burnout and recharge implementation. Raw Reaver hex records need command-level classification before scheduling.
+
+The selected next content investigation is G01: establish the ivory-chip activation and reachable pickup contract. This is a bounded source task, not permission to invent a vase interaction or a new campaign prerequisite. Full Act One content acceptance remains open.

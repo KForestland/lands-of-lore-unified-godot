@@ -10,8 +10,7 @@ Talk, Long Arm and Bracers reproduce the normal living-NPC Short Sword, Long Arm
 and Gargoyle Bracers grants, respectively. Grants occur at their original movie
 boundaries and are retained by inventory, Jungle/Hive/darker-jungle saves and
 rollback. The two weapons can be selected; they currently use the existing
-provisional armed-melee adapter. Bracers have original art and inventory identity,
-but accessory equipping and original item-specific combat stats remain open.
+provisional armed-melee adapter. Bracers have original art and inventory identity. Current integration equips them in the offhand slot and includes their pinned defense5 contribution through `player_defense.gd`; see `gargoyle-bracers-live-checks.json`. Other original item-specific combat behavior remains subject to documented adapters.
 
 `tools/audit_weapon_shop.py` runs original room callback instructions with explicit
 host boundaries. Eight selected WPN interactions match in both loose and archived
