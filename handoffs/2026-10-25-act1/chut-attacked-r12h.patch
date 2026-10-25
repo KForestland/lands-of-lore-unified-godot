@@ -1,0 +1,398 @@
+diff --git a/docs/DEVIATIONS.md b/docs/DEVIATIONS.md
+index 01f3fa69f9d6ef23bf2b6497827156ec7dd5d702..fb62b9e98144645b2bfa1f7511e08102d3c8994e 100644
+--- a/docs/DEVIATIONS.md
++++ b/docs/DEVIATIONS.md
+@@ -89,3 +89,5 @@ the original whole-box collision remains. Assembly211 and five original debris s
+ sound requests. Creature-only region3032 refusal uses outline collision walls on layer11; player movement and aim
+ rays ignore them, and creatures already inside can leave. Quest state restores the one-time break and support history
+ without replaying sound. See `jungle-bridge-break.md` for source pins, media preparation and verification limits.
++
++| 2026-10-25 | Jungle CHUT | Kelsrick-attacked arrival now owns local33/alert, original line365 and forced exit. Existing room modal controls gate combat; native118/114 weapon-icon state lifecycle is not reproduced. Direct attack/stone hotspots remain unhosted. | Original callback9/handler replay; source-pinned line365. | pending rendered earned route |
+diff --git a/docs/jungle-chut-room.md b/docs/jungle-chut-room.md
+index 25e304c5887be81a679d9a42dfeadd886ca9d409..61d401edb5327d850947ef3ec6285bf69a108a27 100644
+--- a/docs/jungle-chut-room.md
++++ b/docs/jungle-chut-room.md
+@@ -50,3 +50,18 @@ The shared village gate owns the alert. `CHUT_DEAD` saves its line cursor and el
+ completion to prevent replay. Eight original callback executions verify admission and call order; original clip
+ frames/audio samples are verified by the media preparer. Movie flags0x60/0xC0 remain the existing plain-line adapter.
+ Rendered earned entry and final candidate qualification remain pending. Attack branches and stone hotspots remain open.
++
++## Kelsrick-attacked arrival response
++
++Callback9's alive-Kelsrick/attacked-local52 branch is hosted separately from direct attack.
++With flags153/150 clear, it writes Anyar_Attacked (Jungle local33) through the existing Kelsrick
++owner, raises the shared Huline alert, plays original line29/365/6, then places Luther at
++(-1749,-5457) and faces native286 degrees using the existing facing adapter before leaving.
++Flag152 does not suppress this branch. Flags150/153 are not invented for it.
++The original clip has103 frames and162434 audio samples. Mid-line and completed saves retain
++the shared/local owners and placement; saved yaw may normalize196 degrees to-164 degrees.
++
++Presentation adapter: the room's existing modal controls gate world combat during speech.
++Native hosts118/114 also draw disabled/normal weapon icons; their exact conditional icon-state
++lifecycle is not ported by this branch. Direct room attack, stone hotspots and secondary
++message/ambient behavior remain unfinished. Supplied-state tests are not an earned combat route.
+diff --git a/scripts/lol2/chut_room_source.json b/scripts/lol2/chut_room_source.json
+index aea465e740ffef8ded204b40e35f229794fec597..a3fa604a6c8bf2c3d180112092be4d0eb101a878 100644
+--- a/scripts/lol2/chut_room_source.json
++++ b/scripts/lol2/chut_room_source.json
+@@ -458,6 +458,81 @@
+    }
+   ]
+  },
++ "attacked_visit": {
++  "admission": "flag153 clear, Kelsrick alive, local52 nonzero, flag150 clear",
++  "lines": [
++   365
++  ],
++  "local_before_lines": [
++   33,
++   1
++  ],
++  "alert_before_lines": true,
++  "place": [
++   -1749,
++   5457
++  ],
++  "host_f0": 286,
++  "calls": [
++   {
++    "address": "0x73c",
++    "host": "set_local",
++    "offset": "0xb4",
++    "args": [
++     "Anyar_Attacked",
++     1
++    ]
++   },
++   {
++    "address": "0x74c",
++    "host": "set_global",
++    "offset": "0x9c",
++    "args": [
++     "GV_HULINE_ALERT",
++     1
++    ]
++   },
++   {
++    "address": "0x75e",
++    "host": "movie",
++    "offset": "0x54",
++    "args": [
++     29,
++     365,
++     6
++    ]
++   },
++   {
++    "address": "0x771",
++    "host": "place",
++    "offset": "0xe0",
++    "args": [
++     -1749,
++     5457
++    ]
++   },
++   {
++    "address": "0x77f",
++    "host": "host_f0",
++    "offset": "0xf0",
++    "args": [
++     286
++    ]
++   },
++   {
++    "address": "0x788",
++    "host": "exit_room",
++    "offset": "0x68",
++    "args": []
++   },
++   {
++    "address": "0x78e",
++    "host": "0x114",
++    "offset": "0x114",
++    "args": []
++   }
++  ]
++ },
+  "first_update": {
+   "ambient_start": [
+    338,
+@@ -723,10 +798,21 @@
+    "x": 276,
+    "y": 140,
+    "movie_flags": 192
++  },
++  {
++   "line": 365,
++   "name": "WOMS\\CHUT\\2936506E.VQA",
++   "sha256": "ee6c64e6f411167c92c8d07cfb63f99c44fdb4d43e404559a2f78127eedd41b9",
++   "frames": 103,
++   "width": 472,
++   "height": 332,
++   "x": 0,
++   "y": 68,
++   "movie_flags": 0
+   }
+  ],
+  "not_hosted": [
+-  "Kelsrick_Attacked/Anyar attack branch 0x6E8 (lines 365, 1000, Soul -1, flag150)",
++  "Direct attack branch of handler 0x6E8 requires d78, decrements Soul, sets flag150, plays 29/998/6, installs stone hotspots and requests sound 100/17/24; native conditional weapon-icon lifecycle remains unported",
+   "flag150 hotspots 0x594 (66-Ancients stn) and message5 lines 366/367 (0x68B)",
+   "ambient 338 and the speaker29 actor hotspot (0x20)",
+   "control100 event5 group21322 (control112 start) and event6/20 groups 21372/21418"
+diff --git a/scripts/lol2/jungle_kelsrick.gd b/scripts/lol2/jungle_kelsrick.gd
+index a8bfd1d42fb2da589927ca7fab0f0e013eda76ae..6f1bf3fba85b28299cb43313e49cfef4eceb2087 100644
+--- a/scripts/lol2/jungle_kelsrick.gd
++++ b/scripts/lol2/jungle_kelsrick.gd
+@@ -212,6 +212,12 @@ func run_external(group: int, commands: Array) -> Array:
+ 	return effects.filter(func(e): return str(e.type) in ["external","local"])
+ 
+ ## Locals the alarm's predicates read (Kelsrick owns them).
++## CHUT host set_local("Anyar_Attacked",1) writes the same L4_HJ local33 owned here.
++func mark_anyar_attacked() -> bool:
++	if state==null or state.is_empty() or not state.locals.has("33"): return false
++	state.locals["33"]=1
++	return true
++
+ func local_value(index: int) -> int: return int(state.locals.get(str(index),0)) if state!=null and not state.is_empty() else 0
+ 
+ ## ---- effects ---------------------------------------------------------------------------------------
+diff --git a/scripts/lol2/monastery_conversation.gd b/scripts/lol2/monastery_conversation.gd
+index 763dabce74854901d63e84bd2002b5b947d080cb..9ccab2071ffac4e9088b8f152e5417bcf6e7bdbe 100644
+--- a/scripts/lol2/monastery_conversation.gd
++++ b/scripts/lol2/monastery_conversation.gd
+@@ -20,7 +20,7 @@ const LIZ_QUIPS := ["LIZ_QUIP_56", "LIZ_QUIP_21", "LIZ_QUIP_27", "LIZ_QUIP_58",
+ const LIZ_SEQUENCES := ["LIZ","LIZ_ENTRY","LIZ_WAX"] + LIZ_QUIPS
+ ## Chief's hut CHUT (docs/jungle-chut-room.md): the hut-apr intro on every load (setup load_room), then the first-visit
+ ## lines 350..364 when callback9 admits them (monastery_rooms.gd chut_first_update).
+-const CHUT_SEQUENCES := ["CHUT","CHUT_FIRST","CHUT_DEAD"]
++const CHUT_SEQUENCES := ["CHUT","CHUT_FIRST","CHUT_DEAD","CHUT_ATTACKED"]
+ const MOFF_EXITS := ["MOFF_EXIT_FIRST","MOFF_EXIT_SECOND","MOFF_EXIT_LATER","MOFF_EXIT_RUNES","MOFF_EXIT_ORB","MOFF_EXIT_DEAD","MOFF_EXIT_FLUTE"]
+ const FRAMES := {"LIZ_QUIP_56":[0],"LIZ_QUIP_21":[0],"LIZ_QUIP_27":[0],"LIZ_QUIP_58":[0],"LIZ_QUIP_26":[0],"LIZ_QUIP_33":[0],"LIZ_QUIP_57":[0],"LIZ_QUIP_20":[0],
+ 	"MLIB_ATTACK":[97],
+@@ -37,14 +37,14 @@ const FRAMES := {"LIZ_QUIP_56":[0],"LIZ_QUIP_21":[0],"LIZ_QUIP_27":[0],"LIZ_QUIP
+ 	"VILLAGE":[148],
+ 	"CAN":[127,135,0,0,61,71,94,121,0,0,118,44],
+ 	"LIZ":[160],"LIZ_ENTRY":[0],"LIZ_WAX":[0],
+-	"CHUT_DEAD":[66,50,34,24,43],"CHUT":[110],"CHUT_FIRST":[57,33,46,40,30,99,50,42,117,66,45,102,170,12,105],
++	"CHUT_ATTACKED":[103],"CHUT_DEAD":[66,50,34,24,43],"CHUT":[110],"CHUT_FIRST":[57,33,46,40,30,99,50,42,117,66,45,102,170,12,105],
+ 	"CAN_MAID":[46,49,65,47,26,20,48,66,72,54],"CAN_REVISIT":[28,34,0,0,14],"CAN_REVISIT_LATE":[72],
+ 	"MLIB":[80,12,53,28,75,42,27,32,52,25,54,139,63,56,70],
+ 	"MOFF":[38,37,54,67,49,29,65,53,121,82,51,57,83,205,41,63,51,36,72,40,42,47,32],
+ 	"MOFF_REVISIT":[59,45,50,29,123,123],"MOFF_REVISIT_LATE":[43,26,71,22],"MOFF_HELD_RUNES":[50,63,42,48,28,62],"MOFF_TRANSLATED":[35,20,63,31,78],
+ 	"MOFF_EXIT_FIRST":[68,166],"MOFF_EXIT_SECOND":[38,14,35,59,35,62],"MOFF_EXIT_LATER":[38],"MOFF_EXIT_RUNES":[39,75],"MOFF_EXIT_ORB":[41,40,49,82],"MOFF_EXIT_DEAD":[0,0],
+ 	"MOFF_EXIT_FLUTE":[41,63,51,36,72,40,42,47,32]}
+-const SAMPLES := {"LIZ_QUIP_56":[31744],"LIZ_QUIP_21":[11520],"LIZ_QUIP_27":[29440],"LIZ_QUIP_58":[17984],"LIZ_QUIP_26":[13376],"LIZ_QUIP_33":[33536],"LIZ_QUIP_57":[25664],"LIZ_QUIP_20":[24448],"MLIB_ATTACK":[153614],"MLIB_EXIT_RUNES":[40424,63944,58064,103634,41894,174194],"MGAR_ORB":[232994,537284],"MGAR_ORB_REFUSE":[156554],"MCEL":[88934, 56594, 69824, 94814, 85994, 91874, 44834, 100694, 75704, 90404, 56594, 113924, 105104],"MGAR":[112454, 122744, 110984, 112454, 62474, 62474, 183014, 159494, 134504, 334424, 91874, 275624, 61004, 228584],"MGAR_REPEAT":[102164, 99224, 108044, 160964],"MOFF_REFUSE":[87464,165374],"MOFF_ORB":[121274,33074,194774],"MOFF_RUNES":[97754, 52184, 128624, 37484, 34544, 440264, 78644, 109514, 85994, 49244, 243284, 146264, 124214],"CAN_EXIT":[15872,41984,78644,41894],"VILLAGE":[228584],"CAN":[197714,209474,91264,86272,100694,115394,149204,188894,48000,72128,184484,75704],"LIZ":[246224],"LIZ_ENTRY":[28864],"LIZ_WAX":[25600],"CHUT_DEAD":[108044,84524,61004,46304,74234],"CHUT":[172724],"CHUT_FIRST":[94814,59534,78644,69824,55124,156554,84524,72764,183014,108044,77174,160964,260924,28664,165374],"CAN_MAID":[78644,83054,106574,80114,49244,40424,81584,108044,116864,90404],"CAN_REVISIT":[52184,61004,74368,15488,31604],"CAN_REVISIT_LATE":[116864],"MLIB": [128624, 28664, 88934, 52184, 121274, 72764, 50714, 58064, 87464, 47774, 90404, 215354, 103634, 93344, 113924], "MOFF": [66884, 65414, 90404, 109514, 83054, 53654, 106574, 88934, 188894, 131564, 85994, 94814, 133034, 312374, 71294, 103634, 85994, 63944, 116864, 69824, 72764, 80114, 58064],"MOFF_REVISIT":[97754,77174,84524,53654,191834,191834],"MOFF_REVISIT_LATE":[74234,49244,115394,43364],"MOFF_HELD_RUNES":[84524,103634,72764,81584,52184,102164],"MOFF_TRANSLATED":[62474,40424,103634,56594,125684],"MOFF_EXIT_FIRST":[110984,255044],"MOFF_EXIT_SECOND":[66884,31604,62474,97754,62474,102164],"MOFF_EXIT_LATER":[66884],"MOFF_EXIT_RUNES":[68354,121274],"MOFF_EXIT_ORB":[71294,69824,83054,131564],"MOFF_EXIT_DEAD":[39168,41344]}
++const SAMPLES := {"LIZ_QUIP_56":[31744],"LIZ_QUIP_21":[11520],"LIZ_QUIP_27":[29440],"LIZ_QUIP_58":[17984],"LIZ_QUIP_26":[13376],"LIZ_QUIP_33":[33536],"LIZ_QUIP_57":[25664],"LIZ_QUIP_20":[24448],"MLIB_ATTACK":[153614],"MLIB_EXIT_RUNES":[40424,63944,58064,103634,41894,174194],"MGAR_ORB":[232994,537284],"MGAR_ORB_REFUSE":[156554],"MCEL":[88934, 56594, 69824, 94814, 85994, 91874, 44834, 100694, 75704, 90404, 56594, 113924, 105104],"MGAR":[112454, 122744, 110984, 112454, 62474, 62474, 183014, 159494, 134504, 334424, 91874, 275624, 61004, 228584],"MGAR_REPEAT":[102164, 99224, 108044, 160964],"MOFF_REFUSE":[87464,165374],"MOFF_ORB":[121274,33074,194774],"MOFF_RUNES":[97754, 52184, 128624, 37484, 34544, 440264, 78644, 109514, 85994, 49244, 243284, 146264, 124214],"CAN_EXIT":[15872,41984,78644,41894],"VILLAGE":[228584],"CAN":[197714,209474,91264,86272,100694,115394,149204,188894,48000,72128,184484,75704],"LIZ":[246224],"LIZ_ENTRY":[28864],"LIZ_WAX":[25600],"CHUT_ATTACKED":[162434],"CHUT_DEAD":[108044,84524,61004,46304,74234],"CHUT":[172724],"CHUT_FIRST":[94814,59534,78644,69824,55124,156554,84524,72764,183014,108044,77174,160964,260924,28664,165374],"CAN_MAID":[78644,83054,106574,80114,49244,40424,81584,108044,116864,90404],"CAN_REVISIT":[52184,61004,74368,15488,31604],"CAN_REVISIT_LATE":[116864],"MLIB": [128624, 28664, 88934, 52184, 121274, 72764, 50714, 58064, 87464, 47774, 90404, 215354, 103634, 93344, 113924], "MOFF": [66884, 65414, 90404, 109514, 83054, 53654, 106574, 88934, 188894, 131564, 85994, 94814, 133034, 312374, 71294, 103634, 85994, 63944, 116864, 69824, 72764, 80114, 58064],"MOFF_REVISIT":[97754,77174,84524,53654,191834,191834],"MOFF_REVISIT_LATE":[74234,49244,115394,43364],"MOFF_HELD_RUNES":[84524,103634,72764,81584,52184,102164],"MOFF_TRANSLATED":[62474,40424,103634,56594,125684],"MOFF_EXIT_FIRST":[110984,255044],"MOFF_EXIT_SECOND":[66884,31604,62474,97754,62474,102164],"MOFF_EXIT_LATER":[66884],"MOFF_EXIT_RUNES":[68354,121274],"MOFF_EXIT_ORB":[71294,69824,83054,131564],"MOFF_EXIT_DEAD":[39168,41344]}
+ static func duration(sequence: String, index: int) -> float:
+ 	if sequence == "MOFF_EXIT_FLUTE": return duration("MOFF",index+14)
+ 	return maxf(float(FRAMES[sequence][index])/15.0,float(SAMPLES[sequence][index])/22050.0)
+@@ -70,7 +70,7 @@ static func active(s: Dictionary) -> bool:
+ 	return not s.sequence.is_empty() and s.cursor < FRAMES[s.sequence].size()
+ static func begin(state: Dictionary, room: String) -> bool:
+ 	var s: Dictionary = state.get("conversation",initial())
+-	if active(s) or not FRAMES.has(room) or room in ["MGAR_REPEAT","CAN_EXIT","MOFF_RUNES","MOFF_REFUSE","MOFF_ORB","MLIB_ATTACK","LIZ_ENTRY","LIZ_WAX","CHUT_FIRST","CHUT_DEAD"] + CAN_LATER + LIZ_QUIPS: return false
++	if active(s) or not FRAMES.has(room) or room in ["MGAR_REPEAT","CAN_EXIT","MOFF_RUNES","MOFF_REFUSE","MOFF_ORB","MLIB_ATTACK","LIZ_ENTRY","LIZ_WAX","CHUT_FIRST","CHUT_DEAD","CHUT_ATTACKED"] + CAN_LATER + LIZ_QUIPS: return false
+ 	var Room = load("res://scripts/lol2/monastery_quest_state.gd")
+ 	if room == "LIZ":
+ 		preload("res://scripts/lol2/liz_room_responses.gd").reset_triggers(state)
+@@ -129,6 +129,8 @@ static func advance(state: Dictionary, delta: float) -> Array:
+ 			for key in ["176","177","178"]: state.flags[key] = 1
+ 		elif s.sequence == "MGAR_REPEAT" and finished == 3:
+ 			state.flags["260"] = 1
++		elif s.sequence == "CHUT_ATTACKED" and finished == 0:
++			rewards.append({"chut_attacked_exit":true})
+ 		elif s.sequence == "CHUT_FIRST":
+ 			# CHUT 0x9C4: flag151 follows line358, Met_Kelsrick (L4_HJ local30) follows line362; place and exit_room
+ 			# follow line364.
+diff --git a/scripts/lol2/monastery_quest_state.gd b/scripts/lol2/monastery_quest_state.gd
+index 0f271f5fecb6d9f54570f3472c3675dbc2db47de..65c6134bf5034c09c8d3ac1f5916f5b1d19adbe7 100644
+--- a/scripts/lol2/monastery_quest_state.gd
++++ b/scripts/lol2/monastery_quest_state.gd
+@@ -87,6 +87,8 @@ static func validate(state: Variant) -> String:
+ 			if state.conversation.sequence == "CHUT": return ""
+ 			if state.conversation.sequence == "CHUT_DEAD":
+ 				return "" if state.flags.get("153",0) == 1 and state.flags.get("150",0) == 0 and int(state.globals.get("GV_KELSRICK_DEAD",0)) != 0 else "Chief death speech lacks its source admission."
++			if state.conversation.sequence == "CHUT_ATTACKED":
++				return "" if state.flags.get("153",0) == 0 and state.flags.get("150",0) == 0 and int(state.globals.get("GV_KELSRICK_DEAD",0)) == 0 else "Chief attacked response lacks its source admission."
+ 			if state.conversation.sequence == "CHUT_FIRST":
+ 				return "" if state.flags.get("152",0) == 1 else "Chief's hut speech lacks its start flag."
+ 			var started_flag: String = {"LIZ":"268","LIZ_ENTRY":"268","LIZ_WAX":"162","CAN_REVISIT":"42","CAN_REVISIT_LATE":"43","MCEL":"170","MGAR":"258","MGAR_REPEAT":"258","MOFF_REFUSE":"140","MOFF_ORB":"143","MOFF_RUNES":"140","MLIB":"184","MLIB_ATTACK":"191","MLIB_EXIT_RUNES":"192","MOFF":"134","CAN":"45","VILLAGE":"41","CAN_EXIT":"34"}[state.conversation.sequence]
+diff --git a/scripts/lol2/monastery_rooms.gd b/scripts/lol2/monastery_rooms.gd
+index d8353e1862c135415b168210e2ede309c87d2992..c4f7e542437140a6d7095db56a200ad37a0642f4 100644
+--- a/scripts/lol2/monastery_rooms.gd
++++ b/scripts/lol2/monastery_rooms.gd
+@@ -278,6 +278,9 @@ func advance(delta: float) -> void:
+ 		if item is Dictionary and item.has("huline_alert"):
+ 			# GV_HULINE_ALERT has one owner (the village gate's shared29); the room bank only requests the write.
+ 			if get_parent().has_method("raise_huline_alert"): get_parent().raise_huline_alert()
++		elif item is Dictionary and item.has("chut_attacked_exit"):
++			_chut_leave(true)
++			return
+ 		elif item is Dictionary and item.has("chut_exit"):
+ 			_chut_leave()
+ 			return
+@@ -432,7 +435,14 @@ func chut_first_update() -> bool:
+ 		s.flags["153"] = 1
+ 		s.conversation = {"sequence":"CHUT_DEAD","cursor":0,"elapsed":0.0}
+ 		return true
+-	if _kelsrick_attacked() or s.flags.get("152",0) != 0 or s.flags.get("150",0) != 0: return false
++	if s.flags.get("150",0) != 0: return false
++	if _kelsrick_attacked():
++		var kelsrick = get_parent().get("kelsrick")
++		if not get_parent().has_method("raise_huline_alert") or not kelsrick.mark_anyar_attacked(): return false
++		get_parent().raise_huline_alert()
++		s.conversation = {"sequence":"CHUT_ATTACKED","cursor":0,"elapsed":0.0}
++		return true
++	if s.flags.get("152",0) != 0: return false
+ 	s.flags["152"] = 1
+ 	s.conversation = {"sequence":"CHUT_FIRST","cursor":0,"elapsed":0.0}
+ 	return true
+@@ -446,14 +456,14 @@ func _kelsrick_attacked() -> bool:
+ ## facing Kelsrick to the west): Godot yaw = degrees - 90.
+ const CHUT_PLACE := Vector2(-1769,-5464)
+ const CHUT_HEADING := 150.0
+-func _chut_leave() -> void:
++func _chut_leave(attacked: bool = false) -> void:
+ 	var s := state()
+ 	s.room = ""
+ 	s.conversation = Speech.initial()
+ 	var player: Node3D = get_parent().player
+-	player.position.x = CHUT_PLACE.x
+-	player.position.z = CHUT_PLACE.y
+-	player.rotation.y = deg_to_rad(CHUT_HEADING-90.0)
++	player.position.x = -1749.0 if attacked else CHUT_PLACE.x
++	player.position.z = -5457.0 if attacked else CHUT_PLACE.y
++	player.rotation.y = deg_to_rad((286.0 if attacked else CHUT_HEADING)-90.0)
+ 	was_inside = false
+ 	restore()
+ 
+diff --git a/tests/jungle_chut_attacked_restart_test.gd b/tests/jungle_chut_attacked_restart_test.gd
+new file mode 100644
+index 0000000000000000000000000000000000000000..854ee880c5dfa48bd4b913dc73e54e15be09c139
+--- /dev/null
++++ b/tests/jungle_chut_attacked_restart_test.gd
+@@ -0,0 +1,20 @@
++extends SceneTree
++var scene
++func _initialize() -> void: run.call_deferred()
++func run() -> void:
++	scene=load("res://scenes/lol2/jungle_walkthrough.tscn").instantiate();root.add_child(scene);current_scene=scene
++	for i in 1500:
++		await process_frame
++		if scene.ready_for_review:break
++	assert(scene.ready_for_review);scene.process_mode=Node.PROCESS_MODE_DISABLED
++	assert(scene.quickload("user://tests/chut_attacked_mid.json")=="")
++	var s: Dictionary=scene.monastery.state()
++	assert(s.room=="CHUT" and s.conversation.sequence=="CHUT_ATTACKED" and is_equal_approx(s.conversation.elapsed,0.25))
++	assert(scene.kelsrick.local_value(33)==1 and scene.kelsrick.local_value(52)==1 and scene.village_gate.state().shared29==1)
++	scene.monastery.advance(20.0);assert(scene.monastery.state().room=="")
++	assert(scene.quickload("user://tests/chut_attacked_done.json")=="")
++	assert(scene.monastery.state().room=="" and scene.kelsrick.local_value(33)==1)
++	assert(is_equal_approx(scene.player.position.x,-1749.0) and is_equal_approx(scene.player.position.z,-5457.0))
++	assert(absf(angle_difference(scene.player.rotation.y,deg_to_rad(196.0)))<0.0001)
++	print("PASS CHUT attacked fresh-process midline/completed restore and forced exit continuity")
++	quit()
+diff --git a/tests/jungle_chut_attacked_test.gd b/tests/jungle_chut_attacked_test.gd
+new file mode 100644
+index 0000000000000000000000000000000000000000..9a2688fea22d1df1b6f71b39038cf103c3ccb991
+--- /dev/null
++++ b/tests/jungle_chut_attacked_test.gd
+@@ -0,0 +1,44 @@
++extends SceneTree
++const Speech=preload("res://scripts/lol2/monastery_conversation.gd")
++var scene
++func _initialize() -> void: run.call_deferred()
++func run() -> void:
++	scene=load("res://scenes/lol2/jungle_walkthrough.tscn").instantiate();root.add_child(scene);current_scene=scene
++	for i in 1500:
++		await process_frame
++		if scene.ready_for_review:break
++	assert(scene.ready_for_review)
++	scene.process_mode=Node.PROCESS_MODE_DISABLED
++	var rooms=scene.monastery
++	var s: Dictionary=rooms.state()
++	for attacked in [0,1]:
++		for f150 in [0,1]:
++			for f153 in [0,1]:
++				s.flags["152"]=1;s.flags["150"]=f150;s.flags["153"]=f153
++				s.globals.GV_KELSRICK_DEAD=0
++				s.room="CHUT";s.conversation={"sequence":"CHUT","cursor":1,"elapsed":0.0}
++				scene.kelsrick.state.locals["52"]=attacked;scene.kelsrick.state.locals["33"]=0
++				var admitted: bool=attacked==1 and f150==0 and f153==0
++				assert(rooms.chut_first_update()==admitted)
++				assert(scene.kelsrick.local_value(33)==int(admitted))
++				if admitted:assert(s.conversation.sequence=="CHUT_ATTACKED" and scene.village_gate.state().shared29==1)
++	s.flags["150"]=0;s.flags["153"]=0;scene.kelsrick.state.locals["52"]=1;scene.kelsrick.state.locals["33"]=0
++	s.conversation=Speech.initial();s.room=""
++	assert(rooms.enter_room("CHUT"))
++	rooms.advance(Speech.duration("CHUT",0))
++	assert(s.conversation.sequence=="CHUT_ATTACKED")
++	var clip: Dictionary=rooms.view.manifest.rooms.CHUT.sequences.CHUT_ATTACKED[0]
++	assert(clip.line==365 and clip.frames==103 and clip.audio_samples==162434)
++	rooms.advance(0.25)
++	assert(scene.quicksave("user://tests/chut_attacked_mid.json")=="")
++	assert(scene.quickload("user://tests/chut_attacked_mid.json")=="")
++	s=rooms.state();assert(s.conversation.sequence=="CHUT_ATTACKED" and is_equal_approx(s.conversation.elapsed,0.25))
++	assert(scene.kelsrick.local_value(33)==1 and scene.kelsrick.local_value(52)==1)
++	rooms.advance(20.0)
++	assert(s.room=="" and s.conversation.sequence=="")
++	assert(is_equal_approx(scene.player.position.x,-1749.0) and is_equal_approx(scene.player.position.z,-5457.0))
++	assert(absf(angle_difference(scene.player.rotation.y,deg_to_rad(196.0)))<0.0001)
++	assert(s.flags["150"]==0 and s.flags["153"]==0)
++	assert(scene.quicksave("user://tests/chut_attacked_done.json")=="")
++	print("PASS CHUT attacked:8 admission cases, actual local33 owner/alert, intro->365, midline diskload, native exit position/facing, no flag150/153 invention")
++	quit()
+diff --git a/tools/prepare_chut_room_media.py b/tools/prepare_chut_room_media.py
+index c41c4b0cc966c536fd85daefcb7eea9bde434d35..2b73fd882d6689e762fbe6ed6452e20d28bc81a8 100644
+--- a/tools/prepare_chut_room_media.py
++++ b/tools/prepare_chut_room_media.py
+@@ -67,7 +67,7 @@ def main(src):
+         path, record = cached(clip['name']); assert record['sha256'] == clip['sha256']
+         lines.append(dict(monastery_media.stage_patch(path, out / (path.stem + '.ogv'), dict(record, kind='movie'), ROOT), line=clip['line']))
+     room = dict(background=background, movies=[intro], idle=staged['idle'], idle_dead=staged['idle_dead'],
+-                sequences={'CHUT': [intro], 'CHUT_FIRST': [c for c in lines if c['line'] in src['first_visit']['lines']], 'CHUT_DEAD': [c for c in lines if c['line'] in src['dead_visit']['lines']]})
++                sequences={'CHUT': [intro], 'CHUT_FIRST': [c for c in lines if c['line'] in src['first_visit']['lines']], 'CHUT_DEAD': [c for c in lines if c['line'] in src['dead_visit']['lines']], 'CHUT_ATTACKED': [c for c in lines if c['line'] in src['attacked_visit']['lines']]})
+     (out / 'rooms.json').write_text(json.dumps(dict(version=1, canvas=[640, 400], rooms={'CHUT': room}), indent=1) + '\n')
+     print('PASS CHUT media: background %d frames, intro %d frames / %d samples, %d lines (%s)' % (
+         background['frames'], intro['frames'], intro['audio_samples'], len(lines),
+diff --git a/tools/run_regressions.py b/tools/run_regressions.py
+index 6e63f2100fb3b0d3e47be6c7f334cfb08b8aab7b..edbfc460db5fb2c33b7495cc8facf686f6adcbf6 100644
+--- a/tools/run_regressions.py
++++ b/tools/run_regressions.py
+@@ -17,6 +17,8 @@ from regression_source import snapshot as source_snapshot, changes as source_cha
+ ROOT = Path(__file__).resolve().parents[1]
+ PORTABLE = [('hive_attack_portable_test', 'headless')]
+ CORE = PORTABLE + [(name, 'headless') for name in [
++    'jungle_chut_attacked_test',
++    'jungle_chut_attacked_restart_test',
+     'jungle_chut_dead_test',
+     'jungle_chut_dead_restart_test',
+     'item_catalog_test',
+diff --git a/tools/verify_chut_room_sources.py b/tools/verify_chut_room_sources.py
+index ec4ac27854e9165a9ee97c83d8a91e3363f94a75..668ac7074e40f8ac7aaf9af326a835fdcd4c3fde 100644
+--- a/tools/verify_chut_room_sources.py
++++ b/tools/verify_chut_room_sources.py
+@@ -114,8 +114,10 @@ def main():
+     assert [(r["host"],r["args"]) for r in dead[:5]] == [("get_global",["GV_KELSRICK_DEAD"]),("get_flag",[150]),("set_global",["GV_HULINE_ALERT",1]),("get_flag",[153]),("set_flag",[153])]
+     assert [r["args"][1] for r in dead if r["host"] in ("movie","movie_flags")] == list(range(375,380))
+     flagged = {r['args'][1]: r['args'][3] for r in first + dead if r['host'] == 'movie_flags'}
++    attacked = calls(module, table, 0x735, 0x794)
++    assert [(r['host'],r['args']) for r in attacked] == [('set_local',['Anyar_Attacked',1]),('set_global',['GV_HULINE_ALERT',1]),('movie',[29,365,6]),('place',[-1749,5457]),('host_f0',[286]),('exit_room',[]),('0x114',[])]
+     clips = []
+-    for line in LINES + list(range(375,380)):
++    for line in LINES + list(range(375,380)) + [365]:
+         rec = movie(archive, f'WOMS\\CHUT\\29{line:03d}06E.VQA')
+         clips.append(dict(line=line, name=rec['name'], sha256=rec['sha256'], frames=rec['frames'], width=rec['width'], height=rec['height'],
+                           x=rec['x'], y=rec['y'], movie_flags=flagged.get(line, 0)))
+@@ -140,8 +142,9 @@ def main():
+                                    place=[-1769, 5464], host_f0=150, calls=first),
+                   leave=dict(place=[-1769, 5464], host_f0=150, calls=leave),
+                   dead_visit=dict(admission="flag153 clear, Kelsrick dead, flag150 clear", alert_before_lines=True, start_flag=153, lines=list(range(375,380)), calls=dead),
++                  attacked_visit=dict(admission="flag153 clear, Kelsrick alive, local52 nonzero, flag150 clear", lines=[365], local_before_lines=[33,1], alert_before_lines=True, place=[-1749,5457], host_f0=286, calls=attacked),
+                   first_update=dict(ambient_start=[338, 170], done_flag=153), media=media, clips=clips,
+-                  not_hosted=['Kelsrick_Attacked/Anyar attack branch 0x6E8 (lines 365, 1000, Soul -1, flag150)',
++                  not_hosted=['Direct attack branch of handler 0x6E8 requires d78, decrements Soul, sets flag150, plays 29/998/6, installs stone hotspots and requests sound 100/17/24; native conditional weapon-icon lifecycle remains unported',
+                               'flag150 hotspots 0x594 (66-Ancients stn) and message5 lines 366/367 (0x68B)',
+                               'ambient 338 and the speaker29 actor hotspot (0x20)',
+                               'control100 event5 group21322 (control112 start) and event6/20 groups 21372/21418'])
