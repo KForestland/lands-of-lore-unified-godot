@@ -198,3 +198,14 @@ Dark Halls is implemented and has intermediate campaign evidence; production swa
 and final qualification remain open. Its old “not gameplay-integrated” and unknown-status
 wording must not be used to assign duplicate work or claim completion. See local
 `r12h_remaining_guide_reconciliation.json`.
+
+## Reproducible direct-attack media tool
+
+`chut-attack-media-tool.patch` adds a supplementary preparation tool and pinned numeric/hash
+source contract (private commit `be11dcfe2406a64d4188135558fdf4e959ebdaf5`). Run
+`python3 tools/prepare_chut_attack_media.py --game GAME --output-root FRESH`.
+It uses the existing published decoders and ffmpeg; no companion reverse-engineering checkout
+is required. Fresh output matches all nine independently staged media files byte-for-byte.
+It writes `attack_media.json`, leaving room manifest/runtime integration as explicit next work.
+Decoder demux warnings persist despite successful exit and exact frame/sample verification;
+audible/rendered checks remain open. Original media is not published.

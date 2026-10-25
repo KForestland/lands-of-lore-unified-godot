@@ -3,13 +3,14 @@
   "head_commit": "3a4c92f48374effadfdb7a7270d2a65f72515324",
   "scope": "source-only patches; excludes assets/project profile/history",
   "files": {
-    "README.md": "93872edc6751043f2d2a00666294277f90f1fc7ba0fbb99331d56933219539bc",
+    "README.md": "8f4fbca71361fe70a9ac048f744a15a1d9f4d8695f9f6a3567bf3b9f4bfc3250",
     "chut-death-implementation.patch": "94f5e00428df013afed7f32443049a5d3df72130ab468070128cae408f4b3b09",
     "chut-death-restart.patch": "8d70e7c63c439edd21ff1881a8bb4eb8d8e94d6d75892a3802d23653d4fe86c0",
     "private-runtime-and-chut.patch": "af5e8241c0a39565698a51cfa6a307646b7f73cc0c05d4017075b125fb4fe62b",
     "chut-r12g-compatible.patch": "1af873b1e2890abf5163183220875685830ad4533449f180fda9689e0a910315",
     "chut-hostile-annotation.patch": "c9ff1f495827a2bb48630d84e8420249557ac0cdc2164135f4c112addb5aaa61",
-    "chut-attacked-r12h.patch": "4546c2795109608b0c9d399edc0f2f9115c9a815501286a0b5f274b6c7b56793"
+    "chut-attacked-r12h.patch": "4546c2795109608b0c9d399edc0f2f9115c9a815501286a0b5f274b6c7b56793",
+    "chut-attack-media-tool.patch": "8227ff31bf82948485381c2c4b86a7efd4b3b288953f110bc2ebd7c70c368103"
   },
   "chut_compatible_base_commit": "bd9e31c03e54668c901e9c7edfb235cb2d5ca97e",
   "attacked_patch_base_commit": "902b273ec5494199564a99d016471721b37eb309"
