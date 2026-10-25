@@ -78,18 +78,38 @@ campaign. The project profile and owner launcher changes are deliberately absent
 5. Preserve the delivered intermediate r12f and r12e fallback. Grok remains stopped (usage exhausted); do not restart it.
    The owner is working on LoL1; this handoff assigns no LoL1 work.
 
-The chief-hut hostile branch also needs further source work: static decoding distinguishes the Kelsrick-attacked
-response (line365, alert and forced exit) from the direct attack response (soul change/flag150 and additional callbacks).
-Old notes conflated these; do not implement them as a single unconditional sequence.
+## Hostile chief-hut branch: continuation evidence
 
-A subsequent original-DLL handler replay passed 48 combinations of flags150/153, internal latches
-`d74`/`d78`, and soul0/1/10. The direct-attack branch additionally requires `d78 != 0`;
-`d74` takes priority. External host callbacks were stubbed/recorded and the latches supplied,
-so their activation producers and unknown host effects remain unverified. Soul0 passes raw
--1 to the host; this does not establish host clamping behavior. No hostile-branch runtime
-implementation or earned gameplay qualification is claimed.
+This branch is not implemented in the candidate. Do not conflate the Kelsrick-attacked response
+(line365, alert, placement/facing and forced exit) with direct attack (soul change, flag150,
+actor changes, stone hotspots and sound request). The original module and executable hashes are
+pinned by the existing source verifier and local replay receipts.
 
-Follow-up: four native setup-slice cases confirm `d78` starts at1 in the module data
-and setup clears it when flag153 is set and flag150 is clear. Its initial activation is
-therefore explained; module/re-entry lifetime is still unverified. Static callback9 sets
-`d74` when Kelsrick is alive and `Kelsrick_Attacked` is nonzero. Unknown host effects remain open.
+- Original handler replay: 48 combinations of flags150/153, internal latches d74/d78 and soul0/1/10 pass.
+  d74 takes priority; direct attack additionally requires d78. Soul0 passes raw -1 to the host;
+  host clamping is not established by this replay.
+- Setup-slice replay: 4 cases pass. Module data initializes d74=0, d78=1; setup clears d78 when
+  flag153 is set and flag150 is clear. Whole-module lifetime across re-entry remains unverified.
+- Callback9 replay: 16 combinations pass. With flag152 preset to suppress peaceful first visit,
+  alive Kelsrick plus `Kelsrick_Attacked` and clear flags150/153 sets d74 internally and invokes
+  the attacked response. Dead Kelsrick instead selects the death branch. External callbacks are stubbed.
+- Original LE fixups resolve host-table offsets against table0xE92C:
+
+| Offset | Native target | Verified effect and remaining limit |
+| --- | --- | --- |
+| 0x118 | 0xF1550 | Calls0x83158 with object0x23819 and0xFF; changes object byte+0x412 and invokes rendering/resource functions. Full presentation semantics unresolved. |
+| 0x114 | 0xF1564 | Calls0x8309C on the same object; conditional byte+0x412 reset and rendering/resource calls. Do not assume an unconditional input unlock. |
+| 0x30 | 0xEF20C | Four valid-speaker-slot replays pass: selected24-byte slot fields+0x10/+0x14 become0/-1; other fields and other slot unchanged. Field consumers and absent-speaker behavior unresolved. |
+| 0xEC | 0xED364 | Sets0xDB4C8=1. Four movie-guard replays verify diversion to cleanup at0xEED3D. Setup statically clears the flag at0xED5AF. Full room lifetime unresolved. |
+
+Local reproducible scripts and receipts are in `AI_COMMS/codex_act1_review_20261025`:
+`verify_chut_attack_dispatch.py`, `verify_chut_attack_latch_setup.py`,
+`verify_chut_callback9_attack.py`, `verify_chut_host_movie_guard.py`, and
+`verify_chut_host_actor_slot.py`. These require the original game and retained local decoder dependencies;
+they are not GitHub CI results. Native original media/executable bytes are not published here.
+
+Next: resolve the two presentation helpers, actor-slot consumers, native direct-attack event and
+re-entry lifetime; implement and test the complete hostile interaction in a separate candidate.
+For the existing death branch, an earned ordinary-input kill -> inner gate -> region2750 -> CHUT
+route is still required: supplied-state tests do not prove it. The entry group5084 tests local6==0;
+record prior-visit history rather than bypassing that predicate.
