@@ -39,9 +39,10 @@ Results below are local receipts, not a new GitHub CI run.
 - CHUT mid-dialogue/completed saves across a new OS process: 2/2 checks passed, complete and source-stable.
 - Shield automatic presentation, early-area clocks and Jungle/Hive transport: 3/3 focused checks passed.
   Native timer/animation/cost evidence and further scoped tests are described by the included source and tests.
-- The full earned village escape route passed in Opus's prior rendered run. Restart qualification is **not yet closed**:
-  fourth run passed full route/reload but source changed during the run; the focused test failed. Fifth run is testing
-  commit `c5a2fd056325e3b4f5034170a0d6e314c6217906` with corrected clock ownership and gate-relink assertions.
+- Frozen fixA fifth rendered run completed: focused earned escape, continuous ordinary-input route and
+  separate-process reload all passed (3/3), with `source_stable: true`. The route saves the broken gap,
+  then crosses original region3896 to relink the leaves before the final MENT save.
+  This qualifies the fixA escape scope only; the integrated r12h candidate still requires validation.
 
 ## Media and reproduction
 
