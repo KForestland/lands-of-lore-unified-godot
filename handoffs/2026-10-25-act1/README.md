@@ -81,3 +81,10 @@ campaign. The project profile and owner launcher changes are deliberately absent
 The chief-hut hostile branch also needs further source work: static decoding distinguishes the Kelsrick-attacked
 response (line365, alert and forced exit) from the direct attack response (soul change/flag150 and additional callbacks).
 Old notes conflated these; do not implement them as a single unconditional sequence.
+
+A subsequent original-DLL handler replay passed 48 combinations of flags150/153, internal latches
+`d74`/`d78`, and soul0/1/10. The direct-attack branch additionally requires `d78 != 0`;
+`d74` takes priority. External host callbacks were stubbed/recorded and the latches supplied,
+so their activation producers and unknown host effects remain unverified. Soul0 passes raw
+-1 to the host; this does not establish host clamping behavior. No hostile-branch runtime
+implementation or earned gameplay qualification is claimed.
