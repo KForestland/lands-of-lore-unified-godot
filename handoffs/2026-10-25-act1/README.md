@@ -153,3 +153,21 @@ no further grant. Two registered hotspots therefore do not mean two stones. The 
 commits the flag before calling the grant function and ignores its return; actual inventory
 capacity/failure semantics still need evidence. This is source replay evidence, not implemented
 stone gameplay. Local receipt: `chut_stone_pickup_dispatch_review.json`.
+## Continuation checkpoint
+
+The frozen r12h affected suite was last observed with 181 completed tests and zero failures;
+the aggregate was still incomplete. This is a progress snapshot, not qualification approval.
+Opus retains integration and renderer ownership. Apply the attacked-arrival slice after that run.
+
+The next implementation is direct room attack and six stone pickups. No code for this slice
+has been started. Native hotspot bounds are (274,169)–(373,352) and (374,169)–(456,352).
+The attack clip998 has63 frames at188×220, positioned(272,136); its audio must still be decoded.
+The following cue100/17 has57408 samples, and first-stone cue2/30 has12992 samples, both22050Hz.
+Soundbank extraction requires its trailer mapping. Local receipts are
+`chut_stone_hotspot_shape_review.json` and `chut_direct_attack_media_review.json`.
+
+Reuse the existing room attack and inventory paths after checking capacity handling. Test
+full inventory, duplicate prevention, actor/hotspot persistence and fresh-process restart.
+Native latch/re-entry lifetime remains unresolved. The detailed continuation instructions are
+in local `AI_COMMS/act1_completion_20261017/OPUS_CODEX_HANDOFF_20261025.txt`.
+Full Act1 acceptance remains open; delivered r12f and the r12e fallback are unchanged.
