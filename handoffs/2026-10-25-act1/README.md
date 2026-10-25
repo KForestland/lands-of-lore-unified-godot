@@ -119,3 +119,29 @@ annotations that incorrectly combined hostile branches and named line1000. It ap
 to r12h902b273 in an isolated-index check. This changes metadata only; apply after the frozen
 qualification run. It is additional to the runtime CHUT patches above. Python/JSON parsing
 and generator/metadata text agreement were checked; no runtime behavior changed.
+
+## Subsequent private branch: attacked-Kelsrick arrival
+
+`chut-attacked-r12h.patch` is an additional implementation slice against r12h
+`902b273ec5494199564a99d016471721b37eb309`, from private commit
+`702e2d6d43a70090164e47c91a608ee95730a555`. Apply only after the frozen qualification run.
+It includes the annotation correction, so do not also apply `chut-hostile-annotation.patch`.
+The isolated-index application check passes; candidate documentation and test-list contents are retained.
+
+This implements the alive-Kelsrick/attacked-local52 arrival branch: write local33 through its
+existing owner, raise alert, play original line365, place at(-1749,-5457), face native286 degrees
+using the established facing adapter, and exit. Native flag150/153 are not invented.
+Four headless checks passed on unchanged private source: admission/playback/save, fresh-process
+restart, existing death branch, and peaceful visit. These are supplied-state checks.
+
+Reprepare CHUT media using the updated generator. The original line365 has103 frames and162434
+audio samples. The complete local135-file SHA manifest is in
+`AI_COMMS/codex_act1_review_20261025/chut_attacked_implementation_review.json`; no original media
+is published here. New tests: `jungle_chut_attacked_test` followed by
+`jungle_chut_attacked_restart_test`, each launched separately by the regression runner.
+
+Direct room attack, stone hotspots, secondary/ambient effects and exact native conditional
+weapon-icon lifecycle remain unfinished. The existing room modal combat gate is the documented
+presentation/input adapter. Earned rendered attack-to-entry, integrated regressions and package
+qualification remain required. Earlier hostile-section statements apply to the frozen r12h
+candidate; this later patch implements only the attacked-arrival branch.
