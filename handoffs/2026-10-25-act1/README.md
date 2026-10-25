@@ -113,3 +113,9 @@ re-entry lifetime; implement and test the complete hostile interaction in a sepa
 For the existing death branch, an earned ordinary-input kill -> inner gate -> region2750 -> CHUT
 route is still required: supplied-state tests do not prove it. The entry group5084 tests local6==0;
 record prior-visit history rather than bypassing that predicate.
+
+`chut-hostile-annotation.patch` (private commit8b1e1d6) corrects the generator and source JSON
+annotations that incorrectly combined hostile branches and named line1000. It applies cleanly
+to r12h902b273 in an isolated-index check. This changes metadata only; apply after the frozen
+qualification run. It is additional to the runtime CHUT patches above. Python/JSON parsing
+and generator/metadata text agreement were checked; no runtime behavior changed.

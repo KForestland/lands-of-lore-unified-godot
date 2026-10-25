@@ -1,0 +1,39 @@
+From 8b1e1d63cc4712a5c1bc960c79f92b64aa97e1b7 Mon Sep 17 00:00:00 2001
+From: Codex <codex@local>
+Date: Sun, 25 Oct 2026 19:25:32 +0100
+Subject: [PATCH] Correct CHUT hostile branch source annotations
+
+---
+ scripts/lol2/chut_room_source.json | 2 +-
+ tools/verify_chut_room_sources.py  | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/scripts/lol2/chut_room_source.json b/scripts/lol2/chut_room_source.json
+index aea465e..20461b9 100644
+--- a/scripts/lol2/chut_room_source.json
++++ b/scripts/lol2/chut_room_source.json
+@@ -726,7 +726,7 @@
+   }
+  ],
+  "not_hosted": [
+-  "Kelsrick_Attacked/Anyar attack branch 0x6E8 (lines 365, 1000, Soul -1, flag150)",
++  "Hostile handler 0x6E8: Kelsrick-attacked branch plays 29/365/6 and exits; direct attack requires d78, decrements Soul, sets flag150, plays 29/998/6, installs stone hotspots and requests sound 100/17/24",
+   "flag150 hotspots 0x594 (66-Ancients stn) and message5 lines 366/367 (0x68B)",
+   "ambient 338 and the speaker29 actor hotspot (0x20)",
+   "control100 event5 group21322 (control112 start) and event6/20 groups 21372/21418"
+diff --git a/tools/verify_chut_room_sources.py b/tools/verify_chut_room_sources.py
+index ec4ac27..43147d5 100644
+--- a/tools/verify_chut_room_sources.py
++++ b/tools/verify_chut_room_sources.py
+@@ -141,7 +141,7 @@ def main():
+                   leave=dict(place=[-1769, 5464], host_f0=150, calls=leave),
+                   dead_visit=dict(admission="flag153 clear, Kelsrick dead, flag150 clear", alert_before_lines=True, start_flag=153, lines=list(range(375,380)), calls=dead),
+                   first_update=dict(ambient_start=[338, 170], done_flag=153), media=media, clips=clips,
+-                  not_hosted=['Kelsrick_Attacked/Anyar attack branch 0x6E8 (lines 365, 1000, Soul -1, flag150)',
++                  not_hosted=['Hostile handler 0x6E8: Kelsrick-attacked branch plays 29/365/6 and exits; direct attack requires d78, decrements Soul, sets flag150, plays 29/998/6, installs stone hotspots and requests sound 100/17/24',
+                               'flag150 hotspots 0x594 (66-Ancients stn) and message5 lines 366/367 (0x68B)',
+                               'ambient 338 and the speaker29 actor hotspot (0x20)',
+                               'control100 event5 group21322 (control112 start) and event6/20 groups 21372/21418'])
+-- 
+2.43.0
+
