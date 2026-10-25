@@ -17,6 +17,11 @@ No original game media, original executables, personal saves, credentials, or pr
 
 ## Integration applicability
 
+`chut-r12g-compatible.patch` combines both CHUT commits against r12g `bd9e31c`, adapting only
+the documentation row and headless test registration. Its isolated-index apply check passes.
+Use it instead of the two separate CHUT patches on this base. Runtime tests on the integrated
+candidate remain required; this is source applicability evidence only.
+
 An isolated-index apply check against r12g `bd9e31c` found context conflicts in
 `docs/DEVIATIONS.md` and `tools/run_regressions.py` for the CHUT implementation patch.
 Resolve these by retaining the candidate documentation and test list, adding the CHUT death-branch

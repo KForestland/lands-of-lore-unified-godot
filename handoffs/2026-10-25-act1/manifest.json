@@ -3,9 +3,11 @@
   "head_commit": "3a4c92f48374effadfdb7a7270d2a65f72515324",
   "scope": "source-only patches; excludes assets/project profile/history",
   "files": {
-    "README.md": "fc3fdc944d066d249cf40b2c94479a8509b6e42b491899a52aae09a47a270789",
+    "README.md": "c61948c98344c01c4ef93897135011a0874baeb442755fd494345915f6ad6bf3",
     "chut-death-implementation.patch": "94f5e00428df013afed7f32443049a5d3df72130ab468070128cae408f4b3b09",
     "chut-death-restart.patch": "8d70e7c63c439edd21ff1881a8bb4eb8d8e94d6d75892a3802d23653d4fe86c0",
-    "private-runtime-and-chut.patch": "af5e8241c0a39565698a51cfa6a307646b7f73cc0c05d4017075b125fb4fe62b"
-  }
+    "private-runtime-and-chut.patch": "af5e8241c0a39565698a51cfa6a307646b7f73cc0c05d4017075b125fb4fe62b",
+    "chut-r12g-compatible.patch": "1af873b1e2890abf5163183220875685830ad4533449f180fda9689e0a910315"
+  },
+  "chut_compatible_base_commit": "bd9e31c03e54668c901e9c7edfb235cb2d5ca97e"
 }
