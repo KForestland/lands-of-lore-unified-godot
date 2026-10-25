@@ -15,6 +15,15 @@ No original game media, original executables, personal saves, credentials, or pr
   twice through the cumulative patch. Their tested parent includes the private status work; cherry-picking into a
   different candidate requires fresh validation.
 
+## Integration applicability
+
+An isolated-index apply check against r12g `bd9e31c` found context conflicts in
+`docs/DEVIATIONS.md` and `tools/run_regressions.py` for the CHUT implementation patch.
+Resolve these by retaining the candidate documentation and test list, adding the CHUT death-branch
+deviation note and the `jungle_chut_dead_test` / `jungle_chut_dead_restart_test` entries.
+Do not replace the candidate files wholesale with the private branch versions. This check did not
+modify the running candidate; applying and requalifying the complete slice remains integration work.
+
 ## Verified scope
 
 Results below are local receipts, not a new GitHub CI run.
