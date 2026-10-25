@@ -171,3 +171,30 @@ full inventory, duplicate prevention, actor/hotspot persistence and fresh-proces
 Native latch/re-entry lifetime remains unresolved. The detailed continuation instructions are
 in local `AI_COMMS/act1_completion_20261017/OPUS_CODEX_HANDOFF_20261025.txt`.
 Full Act1 acceptance remains open; delivered r12f and the r12e fallback are unchanged.
+
+## Prepared direct-attack media and inventory integration findings
+
+The missing original media is now staged privately, with source hashes and decoded counts
+verified: attack clip998 has63 frames and103634 mono samples; cue100/17 has57408 samples
+and cue2/30 has12992 samples, all22050Hz. The decoder returned success with demux warnings;
+exact counts passed, while audible and in-game rendered fidelity still require review.
+Local receipt: `chut_direct_media_staging_review.json`. These assets are not included in GitHub.
+
+Both original CHUT.SHP hotspot images were decoded and visually inspected. They show adjacent
+pieces of the seated chief, **not loose stone icons**. Preserve their original placement and
+use the native handler's flags154–159 for the six rewards. Dimensions, indexed pixels, PNG
+roundtrip and index0 transparency passed verification. Local receipt:
+`chut_stone_media_staging_review.json`; native active-palette ownership remains untraced.
+
+The generic room grant helper deduplicates identical item ids and capacity-checks only certain
+existing rewards. It cannot grant all six stones unchanged. Add six distinct CHUT identities
+to catalog lookup and enumeration with the existing ancient-stone use behavior; do not reuse
+Cave/Hive/river identities or recycle consumed CHUT identities. Check capacity before committing
+a pickup using the existing documented no-loss adapter. Native inventory-failure behavior
+is still unverified. Local review: `chut_inventory_integration_review.json`.
+
+Candidate remaining-work documentation also needs reconciliation after the frozen run:
+Dark Halls is implemented and has intermediate campaign evidence; production swarm/shield
+and final qualification remain open. Its old “not gameplay-integrated” and unknown-status
+wording must not be used to assign duplicate work or claim completion. See local
+`r12h_remaining_guide_reconciliation.json`.
