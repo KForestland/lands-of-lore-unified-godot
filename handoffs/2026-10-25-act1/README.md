@@ -88,3 +88,8 @@ A subsequent original-DLL handler replay passed 48 combinations of flags150/153,
 so their activation producers and unknown host effects remain unverified. Soul0 passes raw
 -1 to the host; this does not establish host clamping behavior. No hostile-branch runtime
 implementation or earned gameplay qualification is claimed.
+
+Follow-up: four native setup-slice cases confirm `d78` starts at1 in the module data
+and setup clears it when flag153 is set and flag150 is clear. Its initial activation is
+therefore explained; module/re-entry lifetime is still unverified. Static callback9 sets
+`d74` when Kelsrick is alive and `Kelsrick_Attacked` is nonzero. Unknown host effects remain open.
