@@ -145,3 +145,11 @@ weapon-icon lifecycle remain unfinished. The existing room modal combat gate is 
 presentation/input adapter. Earned rendered attack-to-entry, integrated regressions and package
 qualification remain required. Earlier hostile-section statements apply to the frozen r12h
 candidate; this later patch implements only the attacked-arrival branch.
+
+Stone pickup follow-up: 128 original handler0x594 replays cover flag150 and every combination
+of flags154–159. Each admitted click sets the first unused flag and requests one
+`66-Ancients stn`; only flag154's pickup also requests cue2/30/24. All six flags set means
+no further grant. Two registered hotspots therefore do not mean two stones. The native handler
+commits the flag before calling the grant function and ignores its return; actual inventory
+capacity/failure semantics still need evidence. This is source replay evidence, not implemented
+stone gameplay. Local receipt: `chut_stone_pickup_dispatch_review.json`.
