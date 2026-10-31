@@ -24,7 +24,7 @@ intact. Clamping at output may saturate bright greens intentionally.
 To start near a glow while keeping walking controls:
 
 ```sh
-/home/bob/run_lol2_cave_walkthrough.sh --glow-record=1108
+a local launcher (run_lol2_cave_walkthrough.sh, not published) --glow-record=1108
 ```
 
 For repeatable fixed-camera comparisons:

@@ -1,24 +1,48 @@
-# Lands of Lore — Godot restoration research
+# Lands of Lore II in Godot
 
-Status report 2026-10-31: [where LoL2 in Godot stands and estimated time](docs/STATUS_2026-10-31.md).
+Lands of Lore: Guardians of Destiny (Westwood, 1997) rebuilt in Godot 4.
 
-Earlier update: [Executioner combat component and asset-free test](docs/executioner-combat-core.md).
+**Latest status: [status report 2026-10-31](docs/STATUS_2026-10-31.md).**
 
-This repository contains the experimental Lands of Lore 2 cave scenes, geometry
-exporters and collision checks. The full recovered static layout has been explored
-locally in Godot. Standalone cave walkthrough exports are now prepared locally for Linux and
-Windows; see [packaging and validation](docs/standalone-demo.md). This is a
-walkthrough proof of concept, not a complete game remake.
+## What this project is
 
-Read [restoration status](docs/RESTORATION_STATUS.md) for current results,
-controls, validation limits and the local extraction dependencies.
+- **Classic edition:** the original game's maps, scripts and behaviour, run from the
+  original data. The original's own script records run on a native script host that
+  follows the decoded executable. Every original bug is fixed, and every intentional
+  difference is logged in the [deviations ledger](docs/DEVIATIONS.md).
+- **Enhanced edition (later):** modern lighting, quality-of-life and wider outdoor
+  maps on the same engine. See [Enhanced edition ideas](docs/ENHANCED_EDITION_IDEAS.md).
 
-Original game assets are not included. Opening the project without generated
-assets shows setup information. With those assets present, run
-`tools/lol2/run_full_cave.sh` for the full experimental cave.
+Original game files are not included and never will be. You need your own copy of the
+game (the GOG release); the project builds its assets from it.
 
-Godot validation used version 4.7.2. Python tools require the dependencies noted
-in their source and the external evidence artifacts documented in the status file.
+## State of this repository
 
-Next priorities: portable asset generation, native wall geometry and material
-mapping, special openings, interactive objects and original-game behavior.
+The code here is a **September 2026 snapshot** (the Draracle Caverns research build).
+Development continues locally; the current work (Act 1 playable start to finish, all
+Act 2-3 maps walkable, the native script host, HUD, help and journal) is not published
+yet. It will be published as a cleaned snapshot without any original game media.
+
+Docs that describe the current local build:
+
+- [Status report 2026-10-31](docs/STATUS_2026-10-31.md): progress per area and estimated time
+- [Restoration status](docs/RESTORATION_STATUS.md): what works, how it is tested, known limits
+- [Deviations ledger](docs/DEVIATIONS.md): every intentional difference from the original
+- [Classic HUD](docs/classic-hud.md), [help system](docs/help-system.md), [My Journal](docs/my-journal.md)
+- [Enhanced edition ideas](docs/ENHANCED_EDITION_IDEAS.md)
+
+Docs that describe the September snapshot in this repository:
+
+- [Executioner combat core](docs/executioner-combat-core.md)
+- [Standalone cave demo packaging](docs/standalone-demo.md)
+- [Full cave walk](docs/FULL_CAVE_WALK.md) and the other Cave reviews in `docs/`
+
+## Related repositories
+
+- Format research for LoL2: https://github.com/KForestland/lands-of-lore-2-re
+- LoL1 research (closed): https://github.com/KForestland/lands-of-lore-1-re
+
+## Licence
+
+The project's own code and docs are MIT licensed (see [LICENSE](LICENSE)). Lands of Lore
+and all original game content belong to their rights holders and are not covered.

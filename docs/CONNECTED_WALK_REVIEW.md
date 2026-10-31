@@ -4,7 +4,7 @@ Update: now 21 regions, walk speed 80, Shift sprint 144. See
 CONNECTED_WALK_EXPANSION.md for current validation and coverage.
 The 12-region figures below describe the initial checkpoint.
 
-Launch `/home/bob/run_lol2_connected_walk.sh`.
+Launch a local launcher (`run_lol2_connected_walk.sh`, not published).
 WASD/mouse move/look; Escape releases the mouse; click recaptures; R resets.
 Falls automatically reset. The earlier local-pair launcher remains available.
 

@@ -22,7 +22,7 @@ captures/capsule_traversal_audit_expanded_shell_gravity.json.
 
 ## Reproduce
 
-From /home/bob/lands-of-lore-unified-godot:
+From <project folder>:
 
 ```sh
 python3 tools/lol2/build_traversal_fixtures.py --all

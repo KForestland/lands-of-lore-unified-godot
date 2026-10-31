@@ -4,7 +4,7 @@ Updated 2026-09-23. Owner order: **all maps → complete Act1 → Act2**.
 
 This is the persistent execution backlog requested by Bob. Checked items mean the stated bounded task is verified, not that the entire map/game is complete. All15 maps currently remain `ready_for_content=false`. Work in dependency order; retain source evidence and label modern approximations. Unresolved native details warrant additional research only when they prevent a concrete implementation decision.
 
-Evidence: `/home/bob/AI_COMMS/map_first_20260922/integrated_checkpoint.json`. Existing detailed content dependencies remain in `act-one-completion.md`, `game-coverage.md`, and the canonical task queue. Act2 archive membership is deliberately unassigned until supported by progression evidence.
+Evidence: `AI_COMMS/map_first_20260922/integrated_checkpoint.json`. Existing detailed content dependencies remain in `act-one-completion.md`, `game-coverage.md`, and the canonical task queue. Act2 archive membership is deliberately unassigned until supported by progression evidence.
 
 ## Map foundation — established evidence
 
