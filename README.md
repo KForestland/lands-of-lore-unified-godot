@@ -1,6 +1,8 @@
 # Lands of Lore — Godot restoration research
 
-Recent update: [Executioner combat component and asset-free test](docs/executioner-combat-core.md).
+Status report 2026-10-31: [where LoL2 in Godot stands and estimated time](docs/STATUS_2026-10-31.md).
+
+Earlier update: [Executioner combat component and asset-free test](docs/executioner-combat-core.md).
 
 This repository contains the experimental Lands of Lore 2 cave scenes, geometry
 exporters and collision checks. The full recovered static layout has been explored
