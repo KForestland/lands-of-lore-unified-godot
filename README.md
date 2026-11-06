@@ -2,7 +2,7 @@
 
 Lands of Lore: Guardians of Destiny (Westwood, 1997) rebuilt in Godot 4.
 
-**Latest status: [status report 2026-10-31](docs/STATUS_2026-10-31.md).**
+**Latest status: [status report 2026-11-06](docs/STATUS_2026-11-06.md)** (about 60% of a complete Classic LoL2; previous: [2026-10-31](docs/STATUS_2026-10-31.md)).
 
 ## What this project is
 
