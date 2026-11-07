@@ -1,0 +1,319 @@
+{
+ "version": 1,
+ "archive": "DAT/L7_DH.MIX",
+ "definitions_sha256": "b399b5c8bfea3597293a3237f30f45985efa2dd88d2dc29d5d18ca7488f60891",
+ "controls": [
+  {
+   "control": 58,
+   "template": 7,
+   "native": [
+    1843,
+    1052,
+    420
+   ],
+   "heading": 41506,
+   "position": [
+    1843,
+    420,
+    -1052
+   ],
+   "grants": [
+    {
+     "use": 1,
+     "group": 7044,
+     "predicate": 206,
+     "name": "47-Stone bracrs",
+     "label": "Stone bracrs",
+     "id": "darkhalls:control58u1:Stone_bracrs",
+     "identity": 4068191763,
+     "definition": 46,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/stone_bracrs.png",
+     "command_hex": "0301000013ae7bf204000000"
+    }
+   ]
+  },
+  {
+   "control": 59,
+   "template": 7,
+   "native": [
+    2082,
+    1146,
+    420
+   ],
+   "heading": 32768,
+   "position": [
+    2082,
+    420,
+    -1146
+   ],
+   "grants": [
+    {
+     "use": 1,
+     "group": 7084,
+     "predicate": 206,
+     "name": "45-Fire shield",
+     "label": "Fire shield",
+     "id": "darkhalls:control59u1:Fire_shield",
+     "identity": 2110957721,
+     "definition": 44,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/fire_shield.png",
+     "command_hex": "0301000099a8d27d04000000"
+    }
+   ]
+  },
+  {
+   "control": 71,
+   "template": 0,
+   "native": [
+    -1075,
+    727,
+    750
+   ],
+   "heading": 16201,
+   "position": [
+    -1075,
+    750,
+    -727
+   ],
+   "grants": [
+    {
+     "use": 1,
+     "group": 7608,
+     "predicate": 206,
+     "name": "85-Colims amult",
+     "label": "Colims amult",
+     "id": "darkhalls:control71u1:Colims_amult",
+     "identity": 2856716505,
+     "definition": 87,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/colims_amult.png",
+     "command_hex": "03010000d90846aa00000000"
+    }
+   ]
+  },
+  {
+   "control": 968,
+   "template": 4,
+   "native": [
+    -2809,
+    3891,
+    85
+   ],
+   "heading": 0,
+   "position": [
+    -2809,
+    85,
+    -3891
+   ],
+   "grants": [
+    {
+     "use": 1,
+     "group": 12082,
+     "predicate": 206,
+     "name": "146-HlScrl",
+     "label": "HlScrl",
+     "id": "darkhalls:control968u1:HlScrl",
+     "identity": 2071991751,
+     "definition": 148,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/hlscrl.png",
+     "command_hex": "03010000c715807b04000000"
+    },
+    {
+     "use": 2,
+     "group": 12106,
+     "predicate": 207,
+     "name": "146-HlScrl",
+     "label": "HlScrl",
+     "id": "darkhalls:control968u2:HlScrl",
+     "identity": 2071991751,
+     "definition": 148,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/hlscrl.png",
+     "command_hex": "03010000c715807b04000000"
+    }
+   ]
+  },
+  {
+   "control": 971,
+   "template": 4,
+   "native": [
+    -2595,
+    3634,
+    85
+   ],
+   "heading": 32768,
+   "position": [
+    -2595,
+    85,
+    -3634
+   ],
+   "grants": [
+    {
+     "use": 1,
+     "group": 12130,
+     "predicate": 206,
+     "name": "149-Prsmscrl",
+     "label": "Prsmscrl",
+     "id": "darkhalls:control971u1:Prsmscrl",
+     "identity": 4231928024,
+     "definition": 151,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/prsmscrl.png",
+     "command_hex": "03010000d8183efc04000000"
+    }
+   ]
+  },
+  {
+   "control": 974,
+   "template": 0,
+   "native": [
+    -2222,
+    2318,
+    55
+   ],
+   "heading": 24029,
+   "position": [
+    -2222,
+    55,
+    -2318
+   ],
+   "grants": [
+    {
+     "use": 1,
+     "group": 12224,
+     "predicate": 206,
+     "name": "66-Ancients stn",
+     "label": "Ancients stn",
+     "id": "darkhalls:control974u1:Ancients_stn",
+     "identity": 3764690106,
+     "definition": 68,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/ancients_stn.png",
+     "command_hex": "03010000ba9c64e004000000"
+    },
+    {
+     "use": 2,
+     "group": 12248,
+     "predicate": 207,
+     "name": "73-Spkscrl",
+     "label": "Spkscrl",
+     "id": "darkhalls:control974u2:Spkscrl",
+     "identity": 328994862,
+     "definition": 75,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/spkscrl.png",
+     "command_hex": "030100002e109c1304000000"
+    }
+   ]
+  },
+  {
+   "control": 975,
+   "template": 5,
+   "native": [
+    -2331,
+    2393,
+    55
+   ],
+   "heading": 62623,
+   "position": [
+    -2331,
+    55,
+    -2393
+   ],
+   "grants": [
+    {
+     "use": 1,
+     "group": 12272,
+     "predicate": 206,
+     "name": "149-Prsmscrl",
+     "label": "Prsmscrl",
+     "id": "darkhalls:control975u1:Prsmscrl",
+     "identity": 4231928024,
+     "definition": 151,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/prsmscrl.png",
+     "command_hex": "03010000d8183efc04000000"
+    },
+    {
+     "use": 2,
+     "group": 12302,
+     "predicate": 207,
+     "name": "149-Prsmscrl",
+     "label": "Prsmscrl",
+     "id": "darkhalls:control975u2:Prsmscrl",
+     "identity": 4231928024,
+     "definition": 151,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/prsmscrl.png",
+     "command_hex": "03010000d8183efc04000000"
+    }
+   ]
+  },
+  {
+   "control": 976,
+   "template": 4,
+   "native": [
+    -2225,
+    2396,
+    55
+   ],
+   "heading": 1456,
+   "position": [
+    -2225,
+    55,
+    -2396
+   ],
+   "grants": [
+    {
+     "use": 1,
+     "group": 12332,
+     "predicate": 206,
+     "name": "146-HlScrl",
+     "label": "HlScrl",
+     "id": "darkhalls:control976u1:HlScrl",
+     "identity": 2071991751,
+     "definition": 148,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/hlscrl.png",
+     "command_hex": "03010000c715807b04000000"
+    },
+    {
+     "use": 2,
+     "group": 12356,
+     "predicate": 207,
+     "name": "147-SumScrl",
+     "label": "SumScrl",
+     "id": "darkhalls:control976u2:SumScrl",
+     "identity": 1545874894,
+     "definition": 149,
+     "icon": "res://assets/lol2/generated/dark_halls_loot/sumscrl.png",
+     "command_hex": "03010000ce2d245c04000000"
+    }
+   ]
+  }
+ ],
+ "rix": {
+  "actor": 57,
+  "death_group": 14414,
+  "death_commands": [
+   "090300001500",
+   "ce00000000ff",
+   "0802390001000000",
+   "0d0239000d000000",
+   "0d02390007000000",
+   "0d02390011000000",
+   "c70000003001",
+   "0e03d40003000000",
+   "020100002700",
+   "020100002400",
+   "100239000a00"
+  ],
+  "corpse": {
+   "group": 14496,
+   "name": "14-Plasma staff",
+   "label": "Plasma staff",
+   "id": "darkhalls:actor57:Plasma_staff",
+   "identity": 545508956,
+   "definition": 13,
+   "icon": "res://assets/lol2/generated/dark_halls_loot/plasma_staff.png",
+   "command_hex": "030100005cce832001000000"
+  }
+ },
+ "not_hosted": [
+  "prop212 event5 g328 (six items)",
+  "actor57 talk/give branches (g14102/g14186/g14234/g14330 soul +2)"
+ ],
+ "scope": "Original L7 item-giving controls (event4 use, predicate206 first / 207 second). Use semantics of the items are not replayed."
+}

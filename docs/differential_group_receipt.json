@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "harness": {
+  "instructions": 395,
+  "sha256": "ad0f481bd34925039334d8ca454ea093fe7be597b0272b623d151273f6b93c8c",
+  "cuts": [],
+  "stubs": {
+   "0x5d904": 0,
+   "0xe3924": 1,
+   "0xb3b04": 2,
+   "0xb3ac4": 3,
+   "0xad7f4": 4,
+   "0x5a8ac": 5
+  },
+  "windows": {
+   "0xbb00": 9216,
+   "0x22d00": 9728,
+   "0x23c00": 10240,
+   "0xb7c00": 10752,
+   "0xb7d00": 11008
+  }
+ },
+ "case_a": {
+  "group": 13798,
+  "command": "052039000300",
+  "entry": "0x5D510",
+  "selector_0x3d": 3,
+  "return_eax": 1
+ },
+ "case_b": {
+  "group": 13798,
+  "command": "012039006400",
+  "entry": "0x63DAC",
+  "travel_0x50": 21845,
+  "mode_byte": 6,
+  "return_eax": 1
+ },
+ "object": {
+  "mode": 6,
+  "angle_word": 21845,
+  "selector_before": 0,
+  "stub_calls_a": 2,
+  "stub_calls_b": 2
+ },
+ "scope": "Native handler stores on a synthetic movable object; stubs logged; the host test compares its staged fields."
+}

@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "group": 5074,
+  "predicate": {
+    "op": "==",
+    "left": {
+      "local": 7
+    },
+    "right": {
+      "immediate": 0
+    },
+    "raw": "0003070000"
+  },
+  "preceding_commands": [
+    "0503c5010100",
+    "d0909907000a0500",
+    "1403c5017b01ff113e2b"
+  ],
+  "commands": [
+    "cc900700ffff0000",
+    "cc900b00ffff0000",
+    "cc900a00ffff0000",
+    "c490070091fe006400000000",
+    "c4900b00b4fe006400000000",
+    "c4900a00c9fe006400000000"
+  ],
+  "floors": [
+    {
+      "region": 7,
+      "height": -395,
+      "target": -367,
+      "speed": 100,
+      "initial_material": 5,
+      "material": 0,
+      "initial_derived_byte39": 0,
+      "derived_byte39": 0,
+      "polygon": [
+        [
+          61.0,
+          -16787.0
+        ],
+        [
+          138.0,
+          -16712.0
+        ],
+        [
+          77.0,
+          -16736.0
+        ],
+        [
+          50.0,
+          -16772.0
+        ]
+      ],
+      "before": {
+        "index": 5,
+        "name": "Rapids",
+        "resource": 310,
+        "raw_hex": "0836e1d2360100000100451b000004200300050002640b00",
+        "angle": 0,
+        "offset_x": 0,
+        "offset_y": 0,
+        "offsets": [
+          1,
+          69
+        ],
+        "scale": 0.5
+      },
+      "after": {
+        "index": 0,
+        "name": "Cave floor",
+        "resource": 134,
+        "raw_hex": "bbc3b27486000000f5ffbc00000000f00000000001000800",
+        "angle": 0,
+        "offset_x": 0,
+        "offset_y": 0,
+        "offsets": [
+          245,
+          188
+        ],
+        "scale": 1.0
+      },
+      "uv_before": [
+        [
+          65.58203125,
+          0.77734375
+        ],
+        [
+          65.2890625,
+          1.078125
+        ],
+        [
+          65.3828125,
+          0.83984375
+        ],
+        [
+          65.5234375,
+          0.734375
+        ]
+      ],
+      "uv_after": [
+        [
+          66.53125,
+          0.97265625
+        ],
+        [
+          66.23828125,
+          1.2734375
+        ],
+        [
+          66.33203125,
+          1.03515625
+        ],
+        [
+          66.47265625,
+          0.9296875
+        ]
+      ]
+    },
+    {
+      "region": 11,
+      "height": -395,
+      "target": -332,
+      "speed": 100,
+      "initial_material": 5,
+      "material": 0,
+      "initial_derived_byte39": 0,
+      "derived_byte39": 0,
+      "polygon": [
+        [
+          77.0,
+          -16736.0
+        ],
+        [
+          7.0,
+          -16733.0
+        ],
+        [
+          21.0,
+          -16754.0
+        ],
+        [
+          50.0,
+          -16772.0
+        ]
+      ],
+      "before": {
+        "index": 5,
+        "name": "Rapids",
+        "resource": 310,
+        "raw_hex": "0836e1d2360100000100451b000004200300050002640b00",
+        "angle": 0,
+        "offset_x": 0,
+        "offset_y": 0,
+        "offsets": [
+          1,
+          69
+        ],
+        "scale": 0.5
+      },
+      "after": {
+        "index": 0,
+        "name": "Cave floor",
+        "resource": 134,
+        "raw_hex": "bbc3b27486000000f5ffbc00000000f00000000001000800",
+        "angle": 0,
+        "offset_x": 0,
+        "offset_y": 0,
+        "offsets": [
+          245,
+          188
+        ],
+        "scale": 1.0
+      },
+      "uv_before": [
+        [
+          65.3828125,
+          0.83984375
+        ],
+        [
+          65.37109375,
+          0.56640625
+        ],
+        [
+          65.453125,
+          0.62109375
+        ],
+        [
+          65.5234375,
+          0.734375
+        ]
+      ],
+      "uv_after": [
+        [
+          66.33203125,
+          1.03515625
+        ],
+        [
+          66.3203125,
+          0.76171875
+        ],
+        [
+          66.40234375,
+          0.81640625
+        ],
+        [
+          66.47265625,
+          0.9296875
+        ]
+      ]
+    },
+    {
+      "region": 10,
+      "height": -395,
+      "target": -311,
+      "speed": 100,
+      "initial_material": 5,
+      "material": 0,
+      "initial_derived_byte39": 0,
+      "derived_byte39": 0,
+      "polygon": [
+        [
+          138.0,
+          -16712.0
+        ],
+        [
+          -30.171676635742188,
+          -16705.326171875
+        ],
+        [
+          7.0,
+          -16733.0
+        ],
+        [
+          77.0,
+          -16736.0
+        ]
+      ],
+      "before": {
+        "index": 5,
+        "name": "Rapids",
+        "resource": 310,
+        "raw_hex": "0836e1d2360100000100451b000004200300050002640b00",
+        "angle": 0,
+        "offset_x": 0,
+        "offset_y": 0,
+        "offsets": [
+          1,
+          69
+        ],
+        "scale": 0.5
+      },
+      "after": {
+        "index": 0,
+        "name": "Cave floor",
+        "resource": 134,
+        "raw_hex": "bbc3b27486000000f5ffbc00000000f00000000001000800",
+        "angle": 0,
+        "offset_x": 0,
+        "offset_y": 0,
+        "offsets": [
+          245,
+          188
+        ],
+        "scale": 1.0
+      },
+      "uv_before": [
+        [
+          65.2890625,
+          1.078125
+        ],
+        [
+          65.26299285888672,
+          0.4212043881416321
+        ],
+        [
+          65.37109375,
+          0.56640625
+        ],
+        [
+          65.3828125,
+          0.83984375
+        ]
+      ],
+      "uv_after": [
+        [
+          66.23828125,
+          1.2734375
+        ],
+        [
+          66.21221160888672,
+          0.6165168881416321
+        ],
+        [
+          66.3203125,
+          0.76171875
+        ],
+        [
+          66.33203125,
+          1.03515625
+        ]
+      ]
+    }
+  ],
+  "completion": {
+    "region": 10,
+    "event": 4,
+    "stream": 0,
+    "group": 0,
+    "command": "c60000000701"
+  },
+  "scope": "Only ordered material/motion portion of accepted group5074. Caller must execute preceding prop453 selector, view effect and sound379, supply native movement admission, apply world geometry/collision and dispatch completion to shared local bank. No hit admission or full puzzle integration claim."
+}

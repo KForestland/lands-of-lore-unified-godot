@@ -12,7 +12,7 @@ These are geometric candidates, NOT a replay of the native wall builder. They
 may need different topology/materials or exceptions. They remain an amber,
 default-hidden review layer toggled with I. No collision is generated from them.
 B/C still toggle boundary walls and ceilings. Run the existing launcher
-a local launcher (`run_lol2_original_floors.sh`, not published).
+`~/run_lol2_original_floors.sh`.
 
 Tests: equal openings produce no span; narrower openings preserve the open
 interval; crossing slopes and vertically disjoint rooms are checked against

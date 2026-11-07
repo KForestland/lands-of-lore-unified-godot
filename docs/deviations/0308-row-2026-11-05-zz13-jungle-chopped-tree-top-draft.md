@@ -1,0 +1,1 @@
+| 2026-11-05 | Jungle chopped-tree top (draft) | jungle_review skips face 8631 only when geometry_file is jungle.json. Selector 0 on prop records 3268 and 3277 is unchanged. draw_unbound_walls is unchanged. | grok J03 / O03. The flat block is the unbound span at heights 127-255 toward region 1667. | Bug fix (both editions); owner to confirm |

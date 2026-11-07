@@ -1,0 +1,1 @@
+| 2026-11-06 | Atlas sub-area sections (draft) | On L9_DR, L10_DC, L16_CA, and L14_HT, one Section control steps through containment depth. Depth 0 is Floor. A deeper pile is Inside N. Other areas keep the storey drawing. PgUp and PgDn stay on storeys. The atlas stays unpaused. | Z05 centroid overlaps. Owner decision 2026-11-05: portal rooms get their own tab. | pending |

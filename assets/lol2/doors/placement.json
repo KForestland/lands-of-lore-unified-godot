@@ -1,0 +1,52 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795",
+  "code_sha256": "73bc2f7939102ed1fe96811d4e063b93b4036c3a6f30a46f875d59a514afd8b5",
+  "placements": [
+    {
+      "index": 75,
+      "template": 13,
+      "native_xyz": [
+        1225,
+        11582,
+        -215
+      ],
+      "heading": 43144,
+      "fixed_xyz": [
+        80281600,
+        759037952,
+        -14090240
+      ],
+      "floor_review_position": [
+        19.140625,
+        -3.359375,
+        -180.96875
+      ],
+      "raw_hex": "c9043e2d88a829ff820545033a2000005c24f3821414188300000000012b19000d040601160a000000"
+    },
+    {
+      "index": 79,
+      "template": 6,
+      "native_xyz": [
+        1190,
+        11635,
+        -215
+      ],
+      "heading": 10376,
+      "fixed_xyz": [
+        77987840,
+        762511360,
+        -14090240
+      ],
+      "floor_review_position": [
+        18.59375,
+        -3.359375,
+        -181.796875
+      ],
+      "raw_hex": "a604732d882829ff82054503a42000005c24f3821414188300000000012b1900060106012f0a000000"
+    }
+  ],
+  "checks": 2,
+  "mismatches": 0,
+  "scope": "Native base-constructor XYZ slice. Floor review maps X,Z,-Y at1/64, an existing display convention. Runtime floor adjustment/collision not executed."
+}

@@ -1,0 +1,11 @@
+{
+ "name": "playtest_starts_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 628,
+ "needs": {
+  "env": [
+   "LOL2_ORIGINAL_GAME_EXE"
+  ]
+ }
+}

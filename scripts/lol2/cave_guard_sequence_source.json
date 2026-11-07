@@ -1,0 +1,3021 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "plates": [
+    {
+      "id": 104,
+      "position": [
+        -9,
+        -285,
+        -16615
+      ],
+      "polygon": [
+        [
+          -171.736328125,
+          -16694.271484375
+        ],
+        [
+          -88.59751892089844,
+          -16453.209014892578
+        ],
+        [
+          152.46495056152344,
+          -16536.34782409668
+        ],
+        [
+          69.32614135742188,
+          -16777.4102935791
+        ]
+      ],
+      "height": -285,
+      "template": 21,
+      "raw_hex": "f7ffe7407d32e3fe82046c04d41718830000000001000000000000001400000015",
+      "child_raw": "000000000000080000000000000008000000000000000000000000000000000000000000000000000000000000000000ffffffff807f807f00000000",
+      "records": [
+        {
+          "stream": 1,
+          "group": 9994,
+          "owner_kind": "control",
+          "owner": 104,
+          "event": 5,
+          "value": 4,
+          "predicate": 206,
+          "archive_offset": 7253633,
+          "commands": [
+            {
+              "archive_offset": 7242871,
+              "raw_hex": "c5901d000500"
+            },
+            {
+              "archive_offset": 7242877,
+              "raw_hex": "c5900a000500"
+            },
+            {
+              "archive_offset": 7242883,
+              "raw_hex": "020100000000"
+            },
+            {
+              "archive_offset": 7242889,
+              "raw_hex": "020100002000"
+            },
+            {
+              "archive_offset": 7242895,
+              "raw_hex": "0203c8010500"
+            },
+            {
+              "archive_offset": 7242901,
+              "raw_hex": "120100002c001b41000081001c4700640000"
+            },
+            {
+              "archive_offset": 7242919,
+              "raw_hex": "012049006400"
+            },
+            {
+              "archive_offset": 7242925,
+              "raw_hex": "012048006400"
+            },
+            {
+              "archive_offset": 7242931,
+              "raw_hex": "0903c8010a00"
+            },
+            {
+              "archive_offset": 7242937,
+              "raw_hex": "102048000100"
+            },
+            {
+              "archive_offset": 7242943,
+              "raw_hex": "101068000100"
+            },
+            {
+              "archive_offset": 7242949,
+              "raw_hex": "091068000200"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": {
+    "4184": {
+      "stream": 1,
+      "group": 4184,
+      "owner_kind": "prop",
+      "owner": 456,
+      "event": 5,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 7250221,
+      "commands": [
+        {
+          "archive_offset": 7237061,
+          "raw": "0803c80100000000"
+        },
+        {
+          "archive_offset": 7237069,
+          "raw": "0803c80102000000"
+        }
+      ],
+      "predicate_expression": null
+    },
+    "4206": {
+      "stream": 1,
+      "group": 4206,
+      "owner_kind": "prop",
+      "owner": 456,
+      "event": 6,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 7250227,
+      "commands": [
+        {
+          "archive_offset": 7237083,
+          "raw": "0803c80101000000"
+        },
+        {
+          "archive_offset": 7237091,
+          "raw": "0503c8010100"
+        },
+        {
+          "archive_offset": 7237097,
+          "raw": "1003c8010100"
+        },
+        {
+          "archive_offset": 7237103,
+          "raw": "0803c80102000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      }
+    },
+    "4240": {
+      "stream": 1,
+      "group": 4240,
+      "owner_kind": "prop",
+      "owner": 456,
+      "event": 6,
+      "value": 0,
+      "predicate": 207,
+      "archive_offset": 7250237,
+      "commands": [
+        {
+          "archive_offset": 7237117,
+          "raw": "0803c80101000000"
+        },
+        {
+          "archive_offset": 7237125,
+          "raw": "0503c8010200"
+        },
+        {
+          "archive_offset": 7237131,
+          "raw": "1003c8010200"
+        },
+        {
+          "archive_offset": 7237137,
+          "raw": "0803c80102000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0005000001"
+      }
+    },
+    "4274": {
+      "stream": 1,
+      "group": 4274,
+      "owner_kind": "prop",
+      "owner": 456,
+      "event": 6,
+      "value": 0,
+      "predicate": 208,
+      "archive_offset": 7250247,
+      "commands": [
+        {
+          "archive_offset": 7237151,
+          "raw": "0803c80101000000"
+        },
+        {
+          "archive_offset": 7237159,
+          "raw": "0503c8010300"
+        },
+        {
+          "archive_offset": 7237165,
+          "raw": "1003c8010300"
+        },
+        {
+          "archive_offset": 7237171,
+          "raw": "0803c80102000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 2
+        },
+        "raw": "0005000002"
+      }
+    },
+    "4308": {
+      "stream": 1,
+      "group": 4308,
+      "owner_kind": "prop",
+      "owner": 456,
+      "event": 6,
+      "value": 0,
+      "predicate": 209,
+      "archive_offset": 7250257,
+      "commands": [
+        {
+          "archive_offset": 7237185,
+          "raw": "0803c80101000000"
+        },
+        {
+          "archive_offset": 7237193,
+          "raw": "0503c8010400"
+        },
+        {
+          "archive_offset": 7237199,
+          "raw": "1003c8010400"
+        },
+        {
+          "archive_offset": 7237205,
+          "raw": "0803c80102000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 3
+        },
+        "raw": "0005000003"
+      }
+    },
+    "4342": {
+      "stream": 1,
+      "group": 4342,
+      "owner_kind": "prop",
+      "owner": 456,
+      "event": 6,
+      "value": 0,
+      "predicate": 210,
+      "archive_offset": 7250267,
+      "commands": [
+        {
+          "archive_offset": 7237219,
+          "raw": "0803c80101000000"
+        },
+        {
+          "archive_offset": 7237227,
+          "raw": "0503c8010500"
+        },
+        {
+          "archive_offset": 7237233,
+          "raw": "1003c8010500"
+        },
+        {
+          "archive_offset": 7237239,
+          "raw": "0803c80102000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 4
+        },
+        "raw": "0005000004"
+      }
+    },
+    "4376": {
+      "stream": 1,
+      "group": 4376,
+      "owner_kind": "prop",
+      "owner": 456,
+      "event": 6,
+      "value": 0,
+      "predicate": 211,
+      "archive_offset": 7250277,
+      "commands": [
+        {
+          "archive_offset": 7237253,
+          "raw": "0203c8010600"
+        },
+        {
+          "archive_offset": 7237259,
+          "raw": "090315001500"
+        },
+        {
+          "archive_offset": 7237265,
+          "raw": "102041000100"
+        },
+        {
+          "archive_offset": 7237271,
+          "raw": "102040000100"
+        },
+        {
+          "archive_offset": 7237277,
+          "raw": "012041006400"
+        },
+        {
+          "archive_offset": 7237283,
+          "raw": "012040006400"
+        },
+        {
+          "archive_offset": 7237289,
+          "raw": "012045006400"
+        },
+        {
+          "archive_offset": 7237295,
+          "raw": "012046006400"
+        },
+        {
+          "archive_offset": 7237301,
+          "raw": "0e03030203000000"
+        },
+        {
+          "archive_offset": 7237309,
+          "raw": "020100000100"
+        },
+        {
+          "archive_offset": 7237315,
+          "raw": "012044006400"
+        },
+        {
+          "archive_offset": 7237321,
+          "raw": "012042006400"
+        },
+        {
+          "archive_offset": 7237327,
+          "raw": "102042000100"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 5
+        },
+        "raw": "0005000005"
+      }
+    },
+    "9994": {
+      "stream": 1,
+      "group": 9994,
+      "owner_kind": "control",
+      "owner": 104,
+      "event": 5,
+      "value": 4,
+      "predicate": 206,
+      "archive_offset": 7253633,
+      "commands": [
+        {
+          "archive_offset": 7242871,
+          "raw": "c5901d000500"
+        },
+        {
+          "archive_offset": 7242877,
+          "raw": "c5900a000500"
+        },
+        {
+          "archive_offset": 7242883,
+          "raw": "020100000000"
+        },
+        {
+          "archive_offset": 7242889,
+          "raw": "020100002000"
+        },
+        {
+          "archive_offset": 7242895,
+          "raw": "0203c8010500"
+        },
+        {
+          "archive_offset": 7242901,
+          "raw": "120100002c001b41000081001c4700640000"
+        },
+        {
+          "archive_offset": 7242919,
+          "raw": "012049006400"
+        },
+        {
+          "archive_offset": 7242925,
+          "raw": "012048006400"
+        },
+        {
+          "archive_offset": 7242931,
+          "raw": "0903c8010a00"
+        },
+        {
+          "archive_offset": 7242937,
+          "raw": "102048000100"
+        },
+        {
+          "archive_offset": 7242943,
+          "raw": "101068000100"
+        },
+        {
+          "archive_offset": 7242949,
+          "raw": "091068000200"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      }
+    },
+    "56": {
+      "stream": 1,
+      "group": 56,
+      "owner_kind": "prop",
+      "owner": 21,
+      "event": 6,
+      "value": 20,
+      "predicate": 199,
+      "archive_offset": 7247597,
+      "commands": [
+        {
+          "archive_offset": 7232927,
+          "raw": "090404001a00"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "local": 7
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0003070000"
+      }
+    },
+    "5050": {
+      "stream": 1,
+      "group": 5050,
+      "owner_kind": "prop",
+      "owner": 515,
+      "event": 2,
+      "value": 304,
+      "predicate": null,
+      "archive_offset": 7250755,
+      "commands": [
+        {
+          "archive_offset": 7237927,
+          "raw": "0e03030204000000"
+        },
+        {
+          "archive_offset": 7237935,
+          "raw": "140303024301ff5dfafa"
+        }
+      ],
+      "predicate_expression": null
+    },
+    "12346": {
+      "stream": 1,
+      "group": 12346,
+      "owner_kind": "movable",
+      "owner": 64,
+      "event": 4,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 7255567,
+      "commands": [
+        {
+          "archive_offset": 7245223,
+          "raw": "012046006400"
+        },
+        {
+          "archive_offset": 7245229,
+          "raw": "012040006400"
+        },
+        {
+          "archive_offset": 7245235,
+          "raw": "102040000100"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      }
+    },
+    "12370": {
+      "stream": 1,
+      "group": 12370,
+      "owner_kind": "movable",
+      "owner": 64,
+      "event": 4,
+      "value": 0,
+      "predicate": 207,
+      "archive_offset": 7255581,
+      "commands": [
+        {
+          "archive_offset": 7245247,
+          "raw": "012046000000"
+        },
+        {
+          "archive_offset": 7245253,
+          "raw": "012040000000"
+        },
+        {
+          "archive_offset": 7245259,
+          "raw": "102040000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0005000001"
+      }
+    },
+    "12394": {
+      "stream": 1,
+      "group": 12394,
+      "owner_kind": "movable",
+      "owner": 65,
+      "event": 4,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 7255597,
+      "commands": [
+        {
+          "archive_offset": 7245271,
+          "raw": "012045006400"
+        },
+        {
+          "archive_offset": 7245277,
+          "raw": "012041006400"
+        },
+        {
+          "archive_offset": 7245283,
+          "raw": "102041000100"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      }
+    },
+    "12418": {
+      "stream": 1,
+      "group": 12418,
+      "owner_kind": "movable",
+      "owner": 65,
+      "event": 4,
+      "value": 0,
+      "predicate": 207,
+      "archive_offset": 7255611,
+      "commands": [
+        {
+          "archive_offset": 7245295,
+          "raw": "012045000000"
+        },
+        {
+          "archive_offset": 7245301,
+          "raw": "012041000000"
+        },
+        {
+          "archive_offset": 7245307,
+          "raw": "102041000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0005000001"
+      }
+    },
+    "12442": {
+      "stream": 1,
+      "group": 12442,
+      "owner_kind": "movable",
+      "owner": 66,
+      "event": 4,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 7255627,
+      "commands": [
+        {
+          "archive_offset": 7245319,
+          "raw": "012044006400"
+        },
+        {
+          "archive_offset": 7245325,
+          "raw": "012042006400"
+        },
+        {
+          "archive_offset": 7245331,
+          "raw": "102042000100"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      }
+    },
+    "12466": {
+      "stream": 1,
+      "group": 12466,
+      "owner_kind": "movable",
+      "owner": 66,
+      "event": 4,
+      "value": 0,
+      "predicate": 207,
+      "archive_offset": 7255641,
+      "commands": [
+        {
+          "archive_offset": 7245343,
+          "raw": "012044000000"
+        },
+        {
+          "archive_offset": 7245349,
+          "raw": "012042000000"
+        },
+        {
+          "archive_offset": 7245355,
+          "raw": "102042000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0005000001"
+      }
+    },
+    "12538": {
+      "stream": 1,
+      "group": 12538,
+      "owner_kind": "movable",
+      "owner": 68,
+      "event": 6,
+      "value": 15,
+      "predicate": 206,
+      "archive_offset": 7255697,
+      "commands": [
+        {
+          "archive_offset": 7245415,
+          "raw": "0903c8010200"
+        },
+        {
+          "archive_offset": 7245421,
+          "raw": "102044000100"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      }
+    },
+    "12568": {
+      "stream": 1,
+      "group": 12568,
+      "owner_kind": "movable",
+      "owner": 72,
+      "event": 4,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 7255723,
+      "commands": [
+        {
+          "archive_offset": 7245445,
+          "raw": "012049006400"
+        },
+        {
+          "archive_offset": 7245451,
+          "raw": "012048006400"
+        },
+        {
+          "archive_offset": 7245457,
+          "raw": "102048000100"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      }
+    },
+    "12592": {
+      "stream": 1,
+      "group": 12592,
+      "owner_kind": "movable",
+      "owner": 72,
+      "event": 4,
+      "value": 0,
+      "predicate": 207,
+      "archive_offset": 7255737,
+      "commands": [
+        {
+          "archive_offset": 7245469,
+          "raw": "012049000000"
+        },
+        {
+          "archive_offset": 7245475,
+          "raw": "012048000000"
+        },
+        {
+          "archive_offset": 7245481,
+          "raw": "102048000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0005000001"
+      }
+    },
+    "12490": {
+      "stream": 1,
+      "group": 12490,
+      "owner_kind": "movable",
+      "owner": 67,
+      "event": 4,
+      "value": 0,
+      "predicate": 206,
+      "archive_offset": 7255657,
+      "commands": [
+        {
+          "archive_offset": 7245367,
+          "raw": "012047006400"
+        },
+        {
+          "archive_offset": 7245373,
+          "raw": "012043006400"
+        },
+        {
+          "archive_offset": 7245379,
+          "raw": "102043000100"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0005000000"
+      }
+    },
+    "12514": {
+      "stream": 1,
+      "group": 12514,
+      "owner_kind": "movable",
+      "owner": 67,
+      "event": 4,
+      "value": 0,
+      "predicate": 207,
+      "archive_offset": 7255681,
+      "commands": [
+        {
+          "archive_offset": 7245391,
+          "raw": "012047000000"
+        },
+        {
+          "archive_offset": 7245397,
+          "raw": "012043000000"
+        },
+        {
+          "archive_offset": 7245403,
+          "raw": "102043000000"
+        }
+      ],
+      "predicate_expression": {
+        "op": "==",
+        "left": {
+          "owner_state": true
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "0005000001"
+      }
+    },
+    "12556": {
+      "stream": 1,
+      "group": 12556,
+      "owner_kind": "movable",
+      "owner": 71,
+      "event": 6,
+      "value": 15,
+      "predicate": null,
+      "archive_offset": 7255709,
+      "commands": [
+        {
+          "archive_offset": 7245427,
+          "raw": "c59077040500"
+        }
+      ],
+      "predicate_expression": null
+    },
+    "12562": {
+      "stream": 1,
+      "group": 12562,
+      "owner_kind": "movable",
+      "owner": 71,
+      "event": 6,
+      "value": 16,
+      "predicate": null,
+      "archive_offset": 7255715,
+      "commands": [
+        {
+          "archive_offset": 7245433,
+          "raw": "c59077040400"
+        }
+      ],
+      "predicate_expression": null
+    }
+  },
+  "clips": [
+    {
+      "selector": 0,
+      "fps": 15,
+      "count": 78,
+      "frames": [
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0001.png",
+          "sha256": "f8ad68fe16de5b9cb80bd8d80a5e1ab2e2dc26b4010b8e836dde9b686719e570"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0002.png",
+          "sha256": "1ae2cadc5a2458fc5c9e9cc380d7fb6cdb2afbaa8ef6652fd367acd699203336"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0003.png",
+          "sha256": "b8ffaf3482a8aa4e9ea023e133a1ce17c2162a868795ed216c8c4e0ffcd66b37"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0004.png",
+          "sha256": "c65dc96ef100dfd535c38519887c21d1ae19eaf5ae70f5b80acea5dfb72773c1"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0005.png",
+          "sha256": "a620f48b22859c1bae73865f7c65c7a93f7b612d2f21b2d15483964995137d1f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0006.png",
+          "sha256": "f05403c117e1b5b2e81466fd55e2be426faf7d23c399e7d884551d982fabd7b3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0007.png",
+          "sha256": "cdd65cd1593cafa60747706ad123cf762fbabc7f74611f012511b975bcbf5a12"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0008.png",
+          "sha256": "1f09f2d829d40c12c7d094db7ea3d1535e00c1576ea18f715c7e21356252dd76"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0009.png",
+          "sha256": "8b910f73e4af923357632f0e16665af768c1adbb90424d8de1e4236c23b43d78"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0010.png",
+          "sha256": "3ddbd0133b0d46ae7395c87dbada6a78ee6d5af2762bf12efb54cca7396fb0e3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0011.png",
+          "sha256": "97268b61e15074c690e92b27c4e36555a4d27ac9122eb37055cd74b15fff018d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0012.png",
+          "sha256": "047e2e51e398ecb4242261dd0b422cd88349d7a0c55b84740794525136faae7b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0013.png",
+          "sha256": "16b2034f5b600dbbb6f8cfaec30ac5a32536d76c159acb0d91ea382c01f13a90"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0014.png",
+          "sha256": "d290bcf227e23e43d0fa17dced3bab56c32377eff0f4036d39abf87a6a86e4fd"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0015.png",
+          "sha256": "fc3de4bc5d7e595eac98db9b7ff39b90346ba403dc43b9f5a401cb5701ab27d8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0016.png",
+          "sha256": "8fc176a3afadb39719b7a2b1aff98cdf99cef756032c7ef1045fe46e03c9102b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0017.png",
+          "sha256": "d93eab1bac8546e15b40a1e4111ed48def8acdaf84d825e0ae513050fdd03b10"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0018.png",
+          "sha256": "3a5d807ce5ca3a250e4c4a5bf9cc574e3d29744e486d73b1eef48f68bf424e58"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0019.png",
+          "sha256": "b31902244d5a537e6b09c6f508efd46d57a35b33301320d3221e71bcccb8be22"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0020.png",
+          "sha256": "64da7eee23059bbb408f3c9c0f1416bddaa205055a3b294d3c9f84eee7ea579c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0021.png",
+          "sha256": "a41d833f0bd589679f93ba226fb3a26a37936dad8f632d2e0aa64aa425e56145"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0022.png",
+          "sha256": "3be7a5dca475b3c83c150e198c3ec989a11e7f111efe140fc0560898cf35a246"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0023.png",
+          "sha256": "b9d9ceb074ce2a32b5ba64fbc1d9777684de0516e8161745bad0c22de7b0eb0c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0024.png",
+          "sha256": "b110b2a7e0886b68045e55fad38b762ae45e98a2b111312a009bdb2e8f589763"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0025.png",
+          "sha256": "c8992ce4291375d5eb9de6a45f83f89b7ab303df5910fd575701b21d52af69da"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0026.png",
+          "sha256": "eae5052ffeb3d7b797ffe56e17979802fc7b74e0105446b5f82b3acff675f641"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0027.png",
+          "sha256": "0b7b6eaba2d7a3abd12a8b1423b5f0d5f62ac63947d7b2036350ab93f6f67364"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0028.png",
+          "sha256": "44074faf70e0ffa395d0c285204f93f1c9d2b9bcbf1436506b75bfdb03a9db47"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0029.png",
+          "sha256": "5be6b93b98289382e3fab92464e01266674fcd01c7f779462c47509e221a679c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0030.png",
+          "sha256": "efd7ae7194f9e28da4aeaff9563bd7172563999fd3e533085a43a2c25276f5ff"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0031.png",
+          "sha256": "d78fbc91d86255287f66d78236de083e2df3e2bf0837a490987edc5fe04dd988"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0032.png",
+          "sha256": "cf9721a3ec5c9f5600e5ae683ba8a4837723bc645040eb9d9021abf63e1aa7d3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0033.png",
+          "sha256": "325437728c2a2ca772520acb99c14290e77b6973f1e658d9b587914631807f34"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0034.png",
+          "sha256": "acc5a2f155b20276d09e055072b11c14084e5cfdccb21fd327b02993152cd86b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0035.png",
+          "sha256": "99ca9f4daf73620b887b5d517118437c6ec52d4da977103a996bab41eeced0cc"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0036.png",
+          "sha256": "da3585502c46ace000a7f7abd864e86f7a1ecf883a6e80582df8f6e4b1d02451"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0037.png",
+          "sha256": "769ef21aa25524fe2ce80180bd6cf34c63cb8d079fc671c3c34da477ffd3b629"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0038.png",
+          "sha256": "8b718104bb6524fa0ec2ac330216736bff66304272a51e5f32a0ef0167c38ba1"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0039.png",
+          "sha256": "59c6782a48e1866bebaad6dc2cd62277ad3d354acf2cb276d53e60e00824a4c0"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0040.png",
+          "sha256": "90f982eeae68d56ca794c3fea0ce459dcf3cb5e531fdb9a82e9aeb26f9dc2923"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0041.png",
+          "sha256": "d3728e0e2ac3c0be7895956dee51ba1104ba9db0fa3694cbb23810493131d8ec"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0042.png",
+          "sha256": "bef04cfa102e011eac7bd6f184e19db08635985aef1a99ed766fdc85dd42e010"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0043.png",
+          "sha256": "e9994139dd60ac6ae9b0917cea402105342942970677c5a6cb0ee07912fb3947"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0044.png",
+          "sha256": "fafc9da334fc6ac9f6f4ce09675209a7b4811369f58f19eed9e6f1608d0b18fc"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0045.png",
+          "sha256": "63bfa863f79bd75a7a483a03f4929094f9be22dc135d47a16b12d48d86376e66"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0046.png",
+          "sha256": "d559d9aba327deb293f379eeaaeee6dedd16e1b134bfae35312822db689384ee"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0047.png",
+          "sha256": "38f06e8341c8a6e2c716f2972d6d163207174c6178edf467c5ddb7d733323de4"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0048.png",
+          "sha256": "4c357be773b9da9414e8224035a46d76f18100ac34e8df7413b1a7acdf79fdf8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0049.png",
+          "sha256": "ba3917fb727f00c66d9252b0ac3f095d1f1fefd3c96c8b05ca9b85da8efb594a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0050.png",
+          "sha256": "5f03a7cdcadc41e44b321ffd903f9c9c98865afe4bf128e7485ba7d43586dc80"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0051.png",
+          "sha256": "b178efc5c10709eb06625c9ce2260db178797758b2cfd7dd561a8d930b8632ce"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0052.png",
+          "sha256": "5dbe76a6d38118882ebac3b4241d19ea7f703524046f52ec6371d68dce598d88"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0053.png",
+          "sha256": "07d641638c254fd676ff47baf3f7289fcc3c456e490aa27558ead72fed2dbfea"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0054.png",
+          "sha256": "b4e8326bcf5f85e01bbd53fb6a63cae490b0912474b2662a88fd45aee86d51de"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0055.png",
+          "sha256": "5ce93d80c01cc0eacf92f9f79d36e38d639a476bb62e36a59b802911e73d2c8b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0056.png",
+          "sha256": "543403880cdaab8738896e665006bb817f6b09f831a39a88f41d547af3ce168f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0057.png",
+          "sha256": "b849a4bd737dd1ebae4ccd150e2511a7283a11953cfb03b1ae7a4bd0cdb4274f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0058.png",
+          "sha256": "1ea9c9f1c5d259f31f13d1b1377082aaefea03029b6d1817df0c11f4af0eaa92"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0059.png",
+          "sha256": "8e4e424f9f4e7d3a82384a7ba628921e5116b69b5c8b386619fc9c5e0e65e728"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0060.png",
+          "sha256": "01e81bfe08667aeb557e9bf529fe420aace8ea9e0572633baf264ffed7cbe783"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0061.png",
+          "sha256": "753ea3866be077699323f61dd796897e1363ad428d2383e896178f45414b40f3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0062.png",
+          "sha256": "d31530fbad2371e46665fd0b0a7db4b7befa3ec33a444c9db2dc0e89b536df42"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0063.png",
+          "sha256": "a02964f47756924be0b17ebafcccfc57e3575b86fc73b8176b3d98d6dfd90b4f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0064.png",
+          "sha256": "7fea19e6b59395ad2061f3ac5d5fe4779df5df889fce853810440882c18284ef"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0065.png",
+          "sha256": "1afa27a0d522b850ff93b860682604be4b833589c1c57cf5e02ce0b1c16593d5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0066.png",
+          "sha256": "c2724f4d237a9bc3171dee93e6ca8fa39875b42fbbb834cb5c626d96fb1ee086"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0067.png",
+          "sha256": "cde8abd096ede1776ba33972debbd7007aa8d04cde71f5675d923ff93c5bb6a2"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0068.png",
+          "sha256": "d939d6488ac6dd93c2a53334c5cc13aa775ab0879647e6da3389db1cf079cbdd"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0069.png",
+          "sha256": "64bd277f621aad67b31cb462d9fabc6c995d00dbeedc858a182baf72d7773efe"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0070.png",
+          "sha256": "0be64db3ecd7ac081bd7a26d8eb30fc35202c891fb12b77dd658868f0214bca4"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0071.png",
+          "sha256": "bff5ac033800c78bdcae8ba5f655251369e821100a6042ed11fb6a5de4f538c7"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0072.png",
+          "sha256": "13934d8700af499822a052b9fd36c559e1a97368b2b632d885d0960b83359c4d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0073.png",
+          "sha256": "fe72f2e5417f3157228b510d8a58b4db00de7784c3a7a0861a37ba0f08d73b58"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0074.png",
+          "sha256": "3d5d446a359094f7d2c124ce11baffc92f60ebd51758f07e980decfbb41fd11e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0075.png",
+          "sha256": "ece83ed21bd6256ff6d72020a2a25b4404214c4399086145023a81063d1a659e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0076.png",
+          "sha256": "9c894dace68f9a44f6b6bf716754ffd74df61e34ee629117c59c6aea03ceb709"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0077.png",
+          "sha256": "ee9216e75c0e418cdeae714c20734ebd10ab24c3cf985ca0bfa65105e02f3dbc"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/0/frames/0078.png",
+          "sha256": "7e6fd2fef6fdd2db3b1fea177199406c040ed6173970a5e3ecf5178e22ef6600"
+        }
+      ],
+      "audio": "res://assets/lol2/generated/cave_guard_sequence/0/voice.wav",
+      "audio_sha256": "3af29fd55623a0c6be58c057e0ce811408a4f7e428e285975e42708c9947cf3c",
+      "source_binding": {
+        "archive": "DAT/L1_DCI.MIX",
+        "archive_sha256": "941e6741f689aef0651c2f4a39f9c0c2741fac5b79fb7d0416da433767ea2322",
+        "candidates": [
+          {
+            "prefix": "SPHERE1",
+            "logical_name": "SPHERE1\\L1_DC\\0655001E.VQA",
+            "key": 1020286577,
+            "offset": 56259642,
+            "length": 550716,
+            "sha256": "d002edf63ba1cd9cedb87def66db41421bf64f6e92750724cc9f061762565df0",
+            "wvqa": true
+          }
+        ],
+        "status": "exact",
+        "binding": "unique_hash_header_witness",
+        "prefix": "SPHERE1",
+        "logical_name": "SPHERE1\\L1_DC\\0655001E.VQA",
+        "key": 1020286577,
+        "offset": 56259642,
+        "length": 550716,
+        "sha256": "d002edf63ba1cd9cedb87def66db41421bf64f6e92750724cc9f061762565df0",
+        "mix_index": 19,
+        "vqhd": {
+          "form_size": 550708,
+          "form_spans_entry": true,
+          "version": 2,
+          "flags": 1,
+          "count": 78,
+          "width": 224,
+          "height": 364,
+          "fps": 15,
+          "block_w": 4,
+          "block_h": 4
+        },
+        "reason": "one SPHERE prefix key in this area movie MIX is FORM/WVQA"
+      },
+      "canvas": [
+        640,
+        400
+      ],
+      "crop": {
+        "x": 224,
+        "y": 20,
+        "width": 224,
+        "height": 364
+      },
+      "matte": [
+        0,
+        251,
+        251
+      ],
+      "audio_samples": 125684,
+      "audio_rate": 22050
+    },
+    {
+      "selector": 1,
+      "fps": 15,
+      "count": 16,
+      "frames": [
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0001.png",
+          "sha256": "e2d51b72f31027e54f82d3dc75105967eca490503650b37134903aec04111123"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0002.png",
+          "sha256": "11a66ccb012a1edfaef113b4599d6b8383325c35dcb547b18c8ddcb64df34a36"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0003.png",
+          "sha256": "bca2ac59ece5b487c4f325c46b69f89229e4a31defcc60897a2fd8c81c0a333a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0004.png",
+          "sha256": "8cf82789842eb56dc7beab949c33edd53886fe0c35fe210e9e9a43e79557b7eb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0005.png",
+          "sha256": "0c4f8bb3bb6634148a0d3cb8fb7d9f72e891dbf523adf487c7a4b8ebe37c626d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0006.png",
+          "sha256": "1f3a3e7d529b1609c5ff433fbbc99804449ca614222b5ee1a408b78fdcc4fe38"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0007.png",
+          "sha256": "6b66df49039bd28aea522e6252cec0520b2ea9dc37e6d517e47af5b3bf504161"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0008.png",
+          "sha256": "29a96ab222be73b6f7e288a9dc1f4cc2d67971fb3dd971655b8559c208f00bc8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0009.png",
+          "sha256": "3dddb78a9c4e244cb76c1271d54f9700ef5be7fe9383f9d945e27f68ab14f6e5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0010.png",
+          "sha256": "ac058a34880a1bdee433bd3c43b71b864164ed85fe61f55f255d7b702667988d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0011.png",
+          "sha256": "6d97395ae60715f337d8c361403b249101765cdcd30cbf6f3446193a8b53798d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0012.png",
+          "sha256": "b4f95dc876d07cebb185b3b2527e19c99254e3897674f8c041883cacefd0e55c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0013.png",
+          "sha256": "b24b09d7e3a0d9bee37b1aad3a25b78d8b21498619b8c3d1efede46cf5590070"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0014.png",
+          "sha256": "c1e056de1abec8a03242ce220b3a7f912f6747e71f3aabab906d0682eedc046b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0015.png",
+          "sha256": "f656a14163bfcac65dc623832b29bd341f0ee10e3db8fce0d18d9d213200e47e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/1/frames/0016.png",
+          "sha256": "6686aceb4d44e40aa9bfda1a2c2e62d03a7b15ea4ae75be5bd55d98705829129"
+        }
+      ],
+      "audio": "res://assets/lol2/generated/cave_guard_sequence/1/voice.wav",
+      "audio_sha256": "d7052e6a81054738ff3eda7840079fc79d6a40a64d9288e6e5944ddb40e4508b",
+      "source_binding": {
+        "archive": "DAT/L1_DCI.MIX",
+        "archive_sha256": "941e6741f689aef0651c2f4a39f9c0c2741fac5b79fb7d0416da433767ea2322",
+        "candidates": [
+          {
+            "prefix": "SPHERE1",
+            "logical_name": "SPHERE1\\L1_DC\\0155201E.VQA",
+            "key": 349722225,
+            "offset": 16486058,
+            "length": 110216,
+            "sha256": "3f17b631d3c632acd401719346628a662c3839f02c4c6df3b4b931d81c08249d",
+            "wvqa": true
+          }
+        ],
+        "status": "exact",
+        "binding": "unique_hash_header_witness",
+        "prefix": "SPHERE1",
+        "logical_name": "SPHERE1\\L1_DC\\0155201E.VQA",
+        "key": 349722225,
+        "offset": 16486058,
+        "length": 110216,
+        "sha256": "3f17b631d3c632acd401719346628a662c3839f02c4c6df3b4b931d81c08249d",
+        "mix_index": 8,
+        "vqhd": {
+          "form_size": 110208,
+          "form_spans_entry": true,
+          "version": 2,
+          "flags": 1,
+          "count": 16,
+          "width": 184,
+          "height": 324,
+          "fps": 15,
+          "block_w": 4,
+          "block_h": 4
+        },
+        "reason": "one SPHERE prefix key in this area movie MIX is FORM/WVQA"
+      },
+      "canvas": [
+        640,
+        400
+      ],
+      "crop": {
+        "x": 232,
+        "y": 64,
+        "width": 184,
+        "height": 324
+      },
+      "matte": [
+        0,
+        251,
+        251
+      ],
+      "audio_samples": 34544,
+      "audio_rate": 22050
+    },
+    {
+      "selector": 2,
+      "fps": 15,
+      "count": 33,
+      "frames": [
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0001.png",
+          "sha256": "e2d51b72f31027e54f82d3dc75105967eca490503650b37134903aec04111123"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0002.png",
+          "sha256": "11a66ccb012a1edfaef113b4599d6b8383325c35dcb547b18c8ddcb64df34a36"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0003.png",
+          "sha256": "bca2ac59ece5b487c4f325c46b69f89229e4a31defcc60897a2fd8c81c0a333a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0004.png",
+          "sha256": "8cf82789842eb56dc7beab949c33edd53886fe0c35fe210e9e9a43e79557b7eb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0005.png",
+          "sha256": "0c4f8bb3bb6634148a0d3cb8fb7d9f72e891dbf523adf487c7a4b8ebe37c626d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0006.png",
+          "sha256": "1f3a3e7d529b1609c5ff433fbbc99804449ca614222b5ee1a408b78fdcc4fe38"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0007.png",
+          "sha256": "6b66df49039bd28aea522e6252cec0520b2ea9dc37e6d517e47af5b3bf504161"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0008.png",
+          "sha256": "29a96ab222be73b6f7e288a9dc1f4cc2d67971fb3dd971655b8559c208f00bc8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0009.png",
+          "sha256": "3dddb78a9c4e244cb76c1271d54f9700ef5be7fe9383f9d945e27f68ab14f6e5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0010.png",
+          "sha256": "ac058a34880a1bdee433bd3c43b71b864164ed85fe61f55f255d7b702667988d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0011.png",
+          "sha256": "6d97395ae60715f337d8c361403b249101765cdcd30cbf6f3446193a8b53798d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0012.png",
+          "sha256": "b4f95dc876d07cebb185b3b2527e19c99254e3897674f8c041883cacefd0e55c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0013.png",
+          "sha256": "b24b09d7e3a0d9bee37b1aad3a25b78d8b21498619b8c3d1efede46cf5590070"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0014.png",
+          "sha256": "c1e056de1abec8a03242ce220b3a7f912f6747e71f3aabab906d0682eedc046b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0015.png",
+          "sha256": "f656a14163bfcac65dc623832b29bd341f0ee10e3db8fce0d18d9d213200e47e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0016.png",
+          "sha256": "6686aceb4d44e40aa9bfda1a2c2e62d03a7b15ea4ae75be5bd55d98705829129"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0017.png",
+          "sha256": "e2d51b72f31027e54f82d3dc75105967eca490503650b37134903aec04111123"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0018.png",
+          "sha256": "11a66ccb012a1edfaef113b4599d6b8383325c35dcb547b18c8ddcb64df34a36"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0019.png",
+          "sha256": "bca2ac59ece5b487c4f325c46b69f89229e4a31defcc60897a2fd8c81c0a333a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0020.png",
+          "sha256": "8cf82789842eb56dc7beab949c33edd53886fe0c35fe210e9e9a43e79557b7eb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0021.png",
+          "sha256": "0c4f8bb3bb6634148a0d3cb8fb7d9f72e891dbf523adf487c7a4b8ebe37c626d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0022.png",
+          "sha256": "1f3a3e7d529b1609c5ff433fbbc99804449ca614222b5ee1a408b78fdcc4fe38"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0023.png",
+          "sha256": "6b66df49039bd28aea522e6252cec0520b2ea9dc37e6d517e47af5b3bf504161"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0024.png",
+          "sha256": "29a96ab222be73b6f7e288a9dc1f4cc2d67971fb3dd971655b8559c208f00bc8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0025.png",
+          "sha256": "3dddb78a9c4e244cb76c1271d54f9700ef5be7fe9383f9d945e27f68ab14f6e5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0026.png",
+          "sha256": "ac058a34880a1bdee433bd3c43b71b864164ed85fe61f55f255d7b702667988d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0027.png",
+          "sha256": "6d97395ae60715f337d8c361403b249101765cdcd30cbf6f3446193a8b53798d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0028.png",
+          "sha256": "b4f95dc876d07cebb185b3b2527e19c99254e3897674f8c041883cacefd0e55c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0029.png",
+          "sha256": "b24b09d7e3a0d9bee37b1aad3a25b78d8b21498619b8c3d1efede46cf5590070"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0030.png",
+          "sha256": "c1e056de1abec8a03242ce220b3a7f912f6747e71f3aabab906d0682eedc046b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0031.png",
+          "sha256": "f656a14163bfcac65dc623832b29bd341f0ee10e3db8fce0d18d9d213200e47e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0032.png",
+          "sha256": "6686aceb4d44e40aa9bfda1a2c2e62d03a7b15ea4ae75be5bd55d98705829129"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/2/frames/0033.png",
+          "sha256": "b894d6ea348b285940b09aca11a7fbb6af9ab8dc4b9a0731138b4192e9b1c996"
+        }
+      ],
+      "audio": "res://assets/lol2/generated/cave_guard_sequence/2/voice.wav",
+      "audio_sha256": "63be076b1353aab2cee3b39d5acd6545cd97e15d1b8f03289687adb5cf2a9922",
+      "source_binding": {
+        "archive": "DAT/L1_DCI.MIX",
+        "archive_sha256": "941e6741f689aef0651c2f4a39f9c0c2741fac5b79fb7d0416da433767ea2322",
+        "candidates": [
+          {
+            "prefix": "SPHERE1",
+            "logical_name": "SPHERE1\\L1_DC\\0155301E.VQA",
+            "key": 349984369,
+            "offset": 61430330,
+            "length": 229636,
+            "sha256": "2ac6c4e70eb4f1cdb46cf0584f1c46bc4f28829a81a2487f9278ba86374c27a1",
+            "wvqa": true
+          }
+        ],
+        "status": "exact",
+        "binding": "unique_hash_header_witness",
+        "prefix": "SPHERE1",
+        "logical_name": "SPHERE1\\L1_DC\\0155301E.VQA",
+        "key": 349984369,
+        "offset": 61430330,
+        "length": 229636,
+        "sha256": "2ac6c4e70eb4f1cdb46cf0584f1c46bc4f28829a81a2487f9278ba86374c27a1",
+        "mix_index": 10,
+        "vqhd": {
+          "form_size": 229628,
+          "form_spans_entry": true,
+          "version": 2,
+          "flags": 1,
+          "count": 33,
+          "width": 184,
+          "height": 324,
+          "fps": 15,
+          "block_w": 4,
+          "block_h": 4
+        },
+        "reason": "one SPHERE prefix key in this area movie MIX is FORM/WVQA"
+      },
+      "canvas": [
+        640,
+        400
+      ],
+      "crop": {
+        "x": 232,
+        "y": 64,
+        "width": 184,
+        "height": 324
+      },
+      "matte": [
+        0,
+        251,
+        251
+      ],
+      "audio_samples": 59534,
+      "audio_rate": 22050
+    },
+    {
+      "selector": 3,
+      "fps": 15,
+      "count": 76,
+      "frames": [
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0001.png",
+          "sha256": "6384dde258e3c7096b8dedc8a3e915fdbdc1c8b355b3abe3c33b3869880f2ed1"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0002.png",
+          "sha256": "5452c71fc4cf0208e481c9fd993f5849cf90d1ad25f059cb1a83fc5390c0e921"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0003.png",
+          "sha256": "a59c6308d5e890fb12212742a7cf6778e4614a3056b24f0a986a675ca1942a8a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0004.png",
+          "sha256": "4db42e81ccc5f5a79329c15b620d5db0c57da69f7a5a457c049c4f2f97515b9c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0005.png",
+          "sha256": "4ded2ca8370784da88e8f50d7598b2a1f56f4bcc037afbf2cf386973c1722f69"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0006.png",
+          "sha256": "afce3f634b58b6321661c1fb07db66b35559dfefaae6bb7a2c5780a4c3664977"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0007.png",
+          "sha256": "a07cc52236403458d562aa4a721a68c81ed1a58a1b68df10927dd1127c122735"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0008.png",
+          "sha256": "c8575b79f945d2145b8f952045fcf31d74184f3991826c423ba9636dba7af065"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0009.png",
+          "sha256": "dbb5304b53acf8b5d8cd1007ff9193915c66006589d888471b2d187dc7d735cb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0010.png",
+          "sha256": "4786cdb39bea0acd87ec89ec367e927cd7ab68170dfab3a2c41593173931c52f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0011.png",
+          "sha256": "2d664680afcfcc6e2570004f025f5c29d7e9b1a373cf533afa23afaf5e791f5f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0012.png",
+          "sha256": "50de87772ec4dad587a2cb49d6adbd765b3a732b177aa608ad1c83d296c6900f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0013.png",
+          "sha256": "64289b75fbfb36a8822d2b046d0a086df1683ca086d2af2550e949f1e7c4b0b3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0014.png",
+          "sha256": "438c6328c206176183b87dfec3f41641e782d6de6e426cee224ff55dacb74600"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0015.png",
+          "sha256": "3071e679dfd95137874b06a6b4fcc593fdbcb7e9ebf739543f50d1c30a23013a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0016.png",
+          "sha256": "39f2529491dfe6963b0fcdbded1898e64807c4100ae23ba17bb4b4fc13618cb7"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0017.png",
+          "sha256": "9957295351916030c24cd27d46b51dadb4337ed17d5f9b1b28e63814c45e69be"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0018.png",
+          "sha256": "bc35f5c04ede0183ebd6af8eb88fb13b14b1fba3b4f08d0cc0e8e13a7c06c53c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0019.png",
+          "sha256": "cc99e2c9fb85b3be5534fadefe4484e9c51d1c6d948d73d4e73d3bd627a635db"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0020.png",
+          "sha256": "4bd3148b35be6ac4a47d12f84b45dcc5547ba91d86c69130ae4fd6c4a2eb03bb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0021.png",
+          "sha256": "dab0be52d5a5942128ee2daea69c133cd8180ae29fe37d8413aaf9796f1f05b1"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0022.png",
+          "sha256": "a2002a1cd0370543063358c13fa7dc0e21a27d551d1acd7bd49b9c140e35bb3e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0023.png",
+          "sha256": "b2b2848131ba39569dbacfb31ea49fd91bbc0fd851f5fd7b9314356ea23fb50e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0024.png",
+          "sha256": "9c0f79832c77d7d09adfa0fcba3747eff8e83fc66c9ecaa86662b7bc36fdd645"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0025.png",
+          "sha256": "9bb6b214dd82e6b6ede1b26813dc38e8cc01e6dd842c0f3933155e9e3ca63128"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0026.png",
+          "sha256": "ed9dc2c5981d9c8feb2676ab31e2d5af0d7e3461b947cf6d878d94ac69769a2d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0027.png",
+          "sha256": "ce132a7814ca759ecbb47310aafa1d83e529aaa872272c868092561fb859aea0"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0028.png",
+          "sha256": "7b1c524cf2d448928ca303aed7b28720d1e31957f62c4f08a1c625335bc2bf15"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0029.png",
+          "sha256": "858952ace97b48c6b014fd35362bc524845e6c51d4128188196688f1b51459e9"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0030.png",
+          "sha256": "7f130cfdf74a74ea8075ff428342662b3cf58bb43a8e2f54479c57ad5565a5be"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0031.png",
+          "sha256": "d38347d2dd2f2903e98f1cb0c796180aff045d48f2a92be700590ec67df33776"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0032.png",
+          "sha256": "0d7e0a99cb295c6f5ef30b3cb5ec15db3e4b30f1d05f2d320f34566ae4705b23"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0033.png",
+          "sha256": "e5cf2140193ec74c9419bd1e423acd3edc1af8abdc0ff07a4e704b7afb5f2f83"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0034.png",
+          "sha256": "ad01f97a5941e42af994022a7c8868960f4e797e89ac7bb23b77b4d95a6f56b4"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0035.png",
+          "sha256": "51dbd71d7f8e21b46a63b0d316c91510d6fc2a6056aae5dfac71b8d442725921"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0036.png",
+          "sha256": "b336e96c77b283c5201794f87f0813dd79d76131526bb84dae84f98de7a6f495"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0037.png",
+          "sha256": "0fa23276075862639c871f11bde2478de97b8fe56f1114db827a1e976da1971d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0038.png",
+          "sha256": "2a4963016c9ada380ef74982a55e5723d6e0da66ce4f5993711d462160e4d1a9"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0039.png",
+          "sha256": "321f756a381833930f62b91ff77dfdfa94437f90b30d56f67ddc0c7198f92de8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0040.png",
+          "sha256": "bea940ef351c4d7dc94a514dd6c12f2265ad9db09c812df9ca2d113f95f72292"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0041.png",
+          "sha256": "25ce0c050190f3fb8c2583bb8af2754ae21b6c7ab6d38c2399394c6a95ab2d4b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0042.png",
+          "sha256": "1b954e19b692d823fd58a0c7d09dfc0927417a4028b87c1e1787b2f31f176ba4"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0043.png",
+          "sha256": "5dc9e29e63eb499c818686d1dd5ddbfd1037c020661b349724017e6d4752c2f5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0044.png",
+          "sha256": "55720067ede59ac292b920972f110998143862dd85ebc35a70b67e616b360851"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0045.png",
+          "sha256": "21434fde784da3436e76f231ba417ecb736d6e7ff1fd615e4ed2846c7dc5e69a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0046.png",
+          "sha256": "62fe6010cb8dc89dce2f9d0cb7c8430150f6f213f61a87016f98991ee601e7b7"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0047.png",
+          "sha256": "f649eeae9d71b7989b64e344cf2345d66d30996c153c1894493b372ee8bd8057"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0048.png",
+          "sha256": "0a6f5281f9bf044d51e195a6982b10e2bcd21a1cc370630c4cba53ccf9210867"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0049.png",
+          "sha256": "ec1b963e4dbf64db7a751af5e592fad5616d0fa453a77b776ec9babfe419952b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0050.png",
+          "sha256": "53421659d9d1f0fa823814f822c2e67e1f47798a7e8ce07f18b0bf9f7dc8cf78"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0051.png",
+          "sha256": "7ceefec705528888c57fd14fc2225d5d967d48f65a4fda7a3be08cedb261334f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0052.png",
+          "sha256": "60f1f2d8298cbe1f01bd3177f95651ae72e3a456475f5a0d0b924752490428e3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0053.png",
+          "sha256": "022ed09b4ca680b20deea98cad1fed5194fe19a003539e181a43a84bd94eeb85"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0054.png",
+          "sha256": "b0f89f3089fc7e08ba845179513cd06c5c0581dfa509f1cf57467fdcc4352499"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0055.png",
+          "sha256": "f140d931a04b053bceda54258dd782f4fdf159e69ac2f48ddb504becc0d3a415"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0056.png",
+          "sha256": "66f3edec8284dd9d61484dfc800c6e0305acf31e2ff47e76b8705f948d04caf8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0057.png",
+          "sha256": "9bdd24b725e70989b028c21c49d8f09b23ac2515b0230c491e7e7391c84202ae"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0058.png",
+          "sha256": "dcc44a4048bb3c779fb14e7a40a6b4050440a7eb688b8a62212f657295666105"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0059.png",
+          "sha256": "aaaed3ad7e9f3c744750c7dff4fd38409a2448296454d81cdb00f3db607a9b92"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0060.png",
+          "sha256": "7eabb7ee202cecb3f1a7c48da282ee92cf01ac537fcd01a0eac1eb92ebc56147"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0061.png",
+          "sha256": "a8989df5e30faa25ae26ca3732106c8939ddecc5030f1881b79f13176f8c3408"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0062.png",
+          "sha256": "0af15527fa82bdeed118a9479689db972ef54059e804cff16c6981bc7f43c986"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0063.png",
+          "sha256": "3234b8b7cfa8719c1743567f5d6b4da4e3d99e8e5b51df7f488d175988850825"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0064.png",
+          "sha256": "ebfa87e4122e074fba966eca9be6983e81f1e6582ebe5e8c0cdf6a2eec6d25e3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0065.png",
+          "sha256": "45f0bcaba1d152c67234d53883f75d70c18675bc950dd5e2d479cfb13f8b0792"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0066.png",
+          "sha256": "050b3da00efa2ee251ef2a4e6c053b8c703dbbcfb669ae0c3fe2b77cef90d687"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0067.png",
+          "sha256": "92da58927d0c87b7585a9de106d9c6d1ef5e5780634feb90dc8059cdba07a7c8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0068.png",
+          "sha256": "06da678c1d5856c19eeff3ddafebbd893a5ce1a0127e8b87687019545edb6734"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0069.png",
+          "sha256": "11e74fd28cedd073eac78357dd9786483afaf83534faccf0064951438251836d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0070.png",
+          "sha256": "740dc39d88453cd81c6f87df285eeeacd677125b8f9b4540fe757b684cac5b25"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0071.png",
+          "sha256": "e9e80c65c9cdd9c7021e967cfccbc85351f91e3d20f6917e442b33a01ea534e2"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0072.png",
+          "sha256": "8aa4369896119137c6766c6ce66b40add3ae3cf216e410c5b58f9f1a5cceb89d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0073.png",
+          "sha256": "6dfc30bfb86e8fa0afa0d06fdbb6d993fd7eeddd2d329a201b9b77859968b6fc"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0074.png",
+          "sha256": "4e139ce27eb32b77c44a3720af26c30a256528f545769386bb91325279e3ff5e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0075.png",
+          "sha256": "fcba95b27d35e05abf3f47e2bb2fdb363b184ec70829a9a51a9eccd2d14b919f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/3/frames/0076.png",
+          "sha256": "42b3f45ef71b5388aab0c2f802a946ed2f4cb8eef894ce0d82be22837da37ac4"
+        }
+      ],
+      "audio": "res://assets/lol2/generated/cave_guard_sequence/3/voice.wav",
+      "audio_sha256": "efd6401e70eda51142fa1ca5a47795267f5a47fdb38338914ebf9a63b7de114a",
+      "source_binding": {
+        "archive": "DAT/L1_DCI.MIX",
+        "archive_sha256": "941e6741f689aef0651c2f4a39f9c0c2741fac5b79fb7d0416da433767ea2322",
+        "candidates": [
+          {
+            "prefix": "SPHERE1",
+            "logical_name": "SPHERE1\\L1_DC\\0655401E.VQA",
+            "key": 1021335153,
+            "offset": 53263124,
+            "length": 512796,
+            "sha256": "48982c45a8315bcc2151543058be906befc96929d9b86c215da2bed21fbe3d8f",
+            "wvqa": true
+          }
+        ],
+        "status": "exact",
+        "binding": "unique_hash_header_witness",
+        "prefix": "SPHERE1",
+        "logical_name": "SPHERE1\\L1_DC\\0655401E.VQA",
+        "key": 1021335153,
+        "offset": 53263124,
+        "length": 512796,
+        "sha256": "48982c45a8315bcc2151543058be906befc96929d9b86c215da2bed21fbe3d8f",
+        "mix_index": 22,
+        "vqhd": {
+          "form_size": 512788,
+          "form_spans_entry": true,
+          "version": 2,
+          "flags": 1,
+          "count": 76,
+          "width": 200,
+          "height": 348,
+          "fps": 15,
+          "block_w": 4,
+          "block_h": 4
+        },
+        "reason": "one SPHERE prefix key in this area movie MIX is FORM/WVQA"
+      },
+      "canvas": [
+        640,
+        400
+      ],
+      "crop": {
+        "x": 224,
+        "y": 36,
+        "width": 200,
+        "height": 348
+      },
+      "matte": [
+        0,
+        251,
+        251
+      ],
+      "audio_samples": 122744,
+      "audio_rate": 22050
+    },
+    {
+      "selector": 4,
+      "fps": 15,
+      "count": 65,
+      "frames": [
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0001.png",
+          "sha256": "e2d51b72f31027e54f82d3dc75105967eca490503650b37134903aec04111123"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0002.png",
+          "sha256": "11a66ccb012a1edfaef113b4599d6b8383325c35dcb547b18c8ddcb64df34a36"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0003.png",
+          "sha256": "bca2ac59ece5b487c4f325c46b69f89229e4a31defcc60897a2fd8c81c0a333a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0004.png",
+          "sha256": "8cf82789842eb56dc7beab949c33edd53886fe0c35fe210e9e9a43e79557b7eb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0005.png",
+          "sha256": "0c4f8bb3bb6634148a0d3cb8fb7d9f72e891dbf523adf487c7a4b8ebe37c626d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0006.png",
+          "sha256": "1f3a3e7d529b1609c5ff433fbbc99804449ca614222b5ee1a408b78fdcc4fe38"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0007.png",
+          "sha256": "6b66df49039bd28aea522e6252cec0520b2ea9dc37e6d517e47af5b3bf504161"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0008.png",
+          "sha256": "29a96ab222be73b6f7e288a9dc1f4cc2d67971fb3dd971655b8559c208f00bc8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0009.png",
+          "sha256": "3dddb78a9c4e244cb76c1271d54f9700ef5be7fe9383f9d945e27f68ab14f6e5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0010.png",
+          "sha256": "ac058a34880a1bdee433bd3c43b71b864164ed85fe61f55f255d7b702667988d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0011.png",
+          "sha256": "6d97395ae60715f337d8c361403b249101765cdcd30cbf6f3446193a8b53798d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0012.png",
+          "sha256": "b4f95dc876d07cebb185b3b2527e19c99254e3897674f8c041883cacefd0e55c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0013.png",
+          "sha256": "b24b09d7e3a0d9bee37b1aad3a25b78d8b21498619b8c3d1efede46cf5590070"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0014.png",
+          "sha256": "c1e056de1abec8a03242ce220b3a7f912f6747e71f3aabab906d0682eedc046b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0015.png",
+          "sha256": "f656a14163bfcac65dc623832b29bd341f0ee10e3db8fce0d18d9d213200e47e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0016.png",
+          "sha256": "6686aceb4d44e40aa9bfda1a2c2e62d03a7b15ea4ae75be5bd55d98705829129"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0017.png",
+          "sha256": "e2d51b72f31027e54f82d3dc75105967eca490503650b37134903aec04111123"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0018.png",
+          "sha256": "11a66ccb012a1edfaef113b4599d6b8383325c35dcb547b18c8ddcb64df34a36"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0019.png",
+          "sha256": "bca2ac59ece5b487c4f325c46b69f89229e4a31defcc60897a2fd8c81c0a333a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0020.png",
+          "sha256": "8cf82789842eb56dc7beab949c33edd53886fe0c35fe210e9e9a43e79557b7eb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0021.png",
+          "sha256": "0c4f8bb3bb6634148a0d3cb8fb7d9f72e891dbf523adf487c7a4b8ebe37c626d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0022.png",
+          "sha256": "1f3a3e7d529b1609c5ff433fbbc99804449ca614222b5ee1a408b78fdcc4fe38"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0023.png",
+          "sha256": "6b66df49039bd28aea522e6252cec0520b2ea9dc37e6d517e47af5b3bf504161"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0024.png",
+          "sha256": "29a96ab222be73b6f7e288a9dc1f4cc2d67971fb3dd971655b8559c208f00bc8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0025.png",
+          "sha256": "3dddb78a9c4e244cb76c1271d54f9700ef5be7fe9383f9d945e27f68ab14f6e5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0026.png",
+          "sha256": "ac058a34880a1bdee433bd3c43b71b864164ed85fe61f55f255d7b702667988d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0027.png",
+          "sha256": "6d97395ae60715f337d8c361403b249101765cdcd30cbf6f3446193a8b53798d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0028.png",
+          "sha256": "b4f95dc876d07cebb185b3b2527e19c99254e3897674f8c041883cacefd0e55c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0029.png",
+          "sha256": "b24b09d7e3a0d9bee37b1aad3a25b78d8b21498619b8c3d1efede46cf5590070"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0030.png",
+          "sha256": "c1e056de1abec8a03242ce220b3a7f912f6747e71f3aabab906d0682eedc046b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0031.png",
+          "sha256": "f656a14163bfcac65dc623832b29bd341f0ee10e3db8fce0d18d9d213200e47e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0032.png",
+          "sha256": "6686aceb4d44e40aa9bfda1a2c2e62d03a7b15ea4ae75be5bd55d98705829129"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0033.png",
+          "sha256": "e2d51b72f31027e54f82d3dc75105967eca490503650b37134903aec04111123"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0034.png",
+          "sha256": "11a66ccb012a1edfaef113b4599d6b8383325c35dcb547b18c8ddcb64df34a36"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0035.png",
+          "sha256": "bca2ac59ece5b487c4f325c46b69f89229e4a31defcc60897a2fd8c81c0a333a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0036.png",
+          "sha256": "8cf82789842eb56dc7beab949c33edd53886fe0c35fe210e9e9a43e79557b7eb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0037.png",
+          "sha256": "0c4f8bb3bb6634148a0d3cb8fb7d9f72e891dbf523adf487c7a4b8ebe37c626d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0038.png",
+          "sha256": "1f3a3e7d529b1609c5ff433fbbc99804449ca614222b5ee1a408b78fdcc4fe38"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0039.png",
+          "sha256": "6b66df49039bd28aea522e6252cec0520b2ea9dc37e6d517e47af5b3bf504161"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0040.png",
+          "sha256": "29a96ab222be73b6f7e288a9dc1f4cc2d67971fb3dd971655b8559c208f00bc8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0041.png",
+          "sha256": "3dddb78a9c4e244cb76c1271d54f9700ef5be7fe9383f9d945e27f68ab14f6e5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0042.png",
+          "sha256": "ac058a34880a1bdee433bd3c43b71b864164ed85fe61f55f255d7b702667988d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0043.png",
+          "sha256": "6d97395ae60715f337d8c361403b249101765cdcd30cbf6f3446193a8b53798d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0044.png",
+          "sha256": "b4f95dc876d07cebb185b3b2527e19c99254e3897674f8c041883cacefd0e55c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0045.png",
+          "sha256": "b24b09d7e3a0d9bee37b1aad3a25b78d8b21498619b8c3d1efede46cf5590070"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0046.png",
+          "sha256": "c1e056de1abec8a03242ce220b3a7f912f6747e71f3aabab906d0682eedc046b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0047.png",
+          "sha256": "f656a14163bfcac65dc623832b29bd341f0ee10e3db8fce0d18d9d213200e47e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0048.png",
+          "sha256": "6686aceb4d44e40aa9bfda1a2c2e62d03a7b15ea4ae75be5bd55d98705829129"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0049.png",
+          "sha256": "e2d51b72f31027e54f82d3dc75105967eca490503650b37134903aec04111123"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0050.png",
+          "sha256": "11a66ccb012a1edfaef113b4599d6b8383325c35dcb547b18c8ddcb64df34a36"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0051.png",
+          "sha256": "bca2ac59ece5b487c4f325c46b69f89229e4a31defcc60897a2fd8c81c0a333a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0052.png",
+          "sha256": "8cf82789842eb56dc7beab949c33edd53886fe0c35fe210e9e9a43e79557b7eb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0053.png",
+          "sha256": "0c4f8bb3bb6634148a0d3cb8fb7d9f72e891dbf523adf487c7a4b8ebe37c626d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0054.png",
+          "sha256": "1f3a3e7d529b1609c5ff433fbbc99804449ca614222b5ee1a408b78fdcc4fe38"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0055.png",
+          "sha256": "6b66df49039bd28aea522e6252cec0520b2ea9dc37e6d517e47af5b3bf504161"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0056.png",
+          "sha256": "29a96ab222be73b6f7e288a9dc1f4cc2d67971fb3dd971655b8559c208f00bc8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0057.png",
+          "sha256": "3dddb78a9c4e244cb76c1271d54f9700ef5be7fe9383f9d945e27f68ab14f6e5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0058.png",
+          "sha256": "ac058a34880a1bdee433bd3c43b71b864164ed85fe61f55f255d7b702667988d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0059.png",
+          "sha256": "6d97395ae60715f337d8c361403b249101765cdcd30cbf6f3446193a8b53798d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0060.png",
+          "sha256": "b4f95dc876d07cebb185b3b2527e19c99254e3897674f8c041883cacefd0e55c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0061.png",
+          "sha256": "b24b09d7e3a0d9bee37b1aad3a25b78d8b21498619b8c3d1efede46cf5590070"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0062.png",
+          "sha256": "c1e056de1abec8a03242ce220b3a7f912f6747e71f3aabab906d0682eedc046b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0063.png",
+          "sha256": "f656a14163bfcac65dc623832b29bd341f0ee10e3db8fce0d18d9d213200e47e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0064.png",
+          "sha256": "6686aceb4d44e40aa9bfda1a2c2e62d03a7b15ea4ae75be5bd55d98705829129"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/4/frames/0065.png",
+          "sha256": "b894d6ea348b285940b09aca11a7fbb6af9ab8dc4b9a0731138b4192e9b1c996"
+        }
+      ],
+      "audio": "res://assets/lol2/generated/cave_guard_sequence/4/voice.wav",
+      "audio_sha256": "8c9c7c86f9a2d13017bde05a086b4a07e041cf23f881a39892ed13bb45f0280c",
+      "source_binding": {
+        "archive": "DAT/L1_DCI.MIX",
+        "archive_sha256": "941e6741f689aef0651c2f4a39f9c0c2741fac5b79fb7d0416da433767ea2322",
+        "candidates": [
+          {
+            "prefix": "SPHERE1",
+            "logical_name": "SPHERE1\\L1_DC\\0155501E.VQA",
+            "key": 350508657,
+            "offset": 16596274,
+            "length": 437068,
+            "sha256": "d793ff3361063ab26f184237a765e3ef38ed38e1bab6d423045fd8b73e1881c0",
+            "wvqa": true
+          }
+        ],
+        "status": "exact",
+        "binding": "unique_hash_header_witness",
+        "prefix": "SPHERE1",
+        "logical_name": "SPHERE1\\L1_DC\\0155501E.VQA",
+        "key": 350508657,
+        "offset": 16596274,
+        "length": 437068,
+        "sha256": "d793ff3361063ab26f184237a765e3ef38ed38e1bab6d423045fd8b73e1881c0",
+        "mix_index": 11,
+        "vqhd": {
+          "form_size": 437060,
+          "form_spans_entry": true,
+          "version": 2,
+          "flags": 1,
+          "count": 65,
+          "width": 184,
+          "height": 324,
+          "fps": 15,
+          "block_w": 4,
+          "block_h": 4
+        },
+        "reason": "one SPHERE prefix key in this area movie MIX is FORM/WVQA"
+      },
+      "canvas": [
+        640,
+        400
+      ],
+      "crop": {
+        "x": 232,
+        "y": 64,
+        "width": 184,
+        "height": 324
+      },
+      "matte": [
+        0,
+        251,
+        251
+      ],
+      "audio_samples": 106574,
+      "audio_rate": 22050
+    },
+    {
+      "selector": 5,
+      "fps": 15,
+      "count": 162,
+      "frames": [
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0001.png",
+          "sha256": "657a0e8896e6d1682c4ddfaa6b7ee7d9f3597a438bfbff397a0b3af9ebb312a8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0002.png",
+          "sha256": "c6baae6ffa02a9e5974deb7d1e91d29114177e21f898efe6bb2c960053662ba7"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0003.png",
+          "sha256": "4b9880df709abb6da773b620a33ac90f9a9c35a2a35726c8878b06daaaff452b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0004.png",
+          "sha256": "ebdbe745e8815f674c1ee910e5b619eefd8c677161d3af7af14aa7e00aa6248d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0005.png",
+          "sha256": "f7684b634921a8c550934074bc449018c4fb91a0e5645fe142f808ba9865a40f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0006.png",
+          "sha256": "8ded3d560bed60bce73c1261385c3a0de1c35ad934c793cfc6d19136f4850319"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0007.png",
+          "sha256": "e104e7133f82960d3cf45a811deaabe9c42f97ea93d7b5cece76b825211fb303"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0008.png",
+          "sha256": "2b4433803ce6d6ad6c56559f1f83979c439b5182bb0ba661351b5a8c530e97ab"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0009.png",
+          "sha256": "8d77c0bceaf2a37d762a153e679df0baa8a840eabe48ba84426d6e9b5dc2a32b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0010.png",
+          "sha256": "57bdb162d2a370d75205ff247e9341437cad6ad577cf0467c2fce4ace933b9b6"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0011.png",
+          "sha256": "e07533bdbb674c878f79303b3a352805b3483713137f524a4eef5cc912da9258"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0012.png",
+          "sha256": "f2b821cecd711a302792544448284e724588dc37ee1460712a66eaa652597ae0"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0013.png",
+          "sha256": "e70a0bb737319d60f02c3089a58a75706530c65f37e652aee467284402c3b70b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0014.png",
+          "sha256": "71e5f08399cbf3f24ce10bcab5933a8739e2d7f846162496fd6ab56309e4343d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0015.png",
+          "sha256": "bfc2180d058a4f68250330773a6154eafc6d9a10d9919680b7f49c874072b3af"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0016.png",
+          "sha256": "b5f72ebc385c363ec077a6c40dcc121560317384fd92f897e9e7bf69f20df8cf"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0017.png",
+          "sha256": "dfe0cca8732ce233c80465e6907fed70daaa11f8de1f61adac313096920e2e7f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0018.png",
+          "sha256": "d137aa4801b6f2ad59faa8f7d14611b2fff09ee8f23c1f9c28de2410fb821806"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0019.png",
+          "sha256": "526a58e3dcb58ec76798b261c207fae3e09833dc20182b03d73da141125ea700"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0020.png",
+          "sha256": "a42ac9ed9268ca9bccb9646f70a6bf6cfb4ecb144d1f135e058fd1d490f2f7c5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0021.png",
+          "sha256": "1a68c848381256cd8ee2aae288880c49ed357d29b0834809332d9e995c9d1e16"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0022.png",
+          "sha256": "ae3eb502693d83ff922811befc6098f936878cf0657d298bf7ff3c547f419f48"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0023.png",
+          "sha256": "8d8500982e4c1f69edb11970010f93fe330b3ab03cc924a714ced6b3fb15a634"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0024.png",
+          "sha256": "e08853283572a004ada7f2ad5d47921df7d86d275727576347ccefbb3269d0bd"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0025.png",
+          "sha256": "08eb6b1b514e97bf2d10d0095aebeb27727c9a70d7889e5fb0565f52808620dc"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0026.png",
+          "sha256": "be98fa4698021ceb4fb7cc1f1be393e5679435179fea981cb082230a8487d90f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0027.png",
+          "sha256": "95f3e042a3e35ad075934d4715fdc0cee99741de00f01c3bf4e00ccd1e46aaea"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0028.png",
+          "sha256": "b15dc7e6e2cc967ca7f052c0b252b7f2521e216924d584b508d9bf95bbcb2944"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0029.png",
+          "sha256": "a0a34b0f4aa66205bf84de119b26e0adb15f7be587aab568150b0e304cfe7c8e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0030.png",
+          "sha256": "5da5966960a02f3e84d82c9338ad8f944d9eb0bb23e44128f8fd9707fb8c6fe6"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0031.png",
+          "sha256": "3a4c8ca4ce244076054fac824f8d56188e4d1a96e6fc477a4e880cbf58c5fd7c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0032.png",
+          "sha256": "2cf6a832e020198f62675be0c3b7b69d92eb267c7f930332e9db781fad3776bc"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0033.png",
+          "sha256": "cf37c3a857c419f76875278209ddf668d7fe538e1134e9896ca4dc69afc5691d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0034.png",
+          "sha256": "9b911457d5114b15922914e0dde25c3d60a3d7c4d6050c5d471e243948548aa0"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0035.png",
+          "sha256": "25ab0f6a83b64e24f8bec6f940671a0f00f839b84ce9d4be86dc3fb101ac049f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0036.png",
+          "sha256": "45e5423571d40f94eb21056f334331567a665078030f78cda87cbb89e180ac44"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0037.png",
+          "sha256": "bbfef190cad246064f712ebc9de62a9ca210d7f7952b486c5cf9178316a357ac"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0038.png",
+          "sha256": "72f9528100eac10b1f31a75900efcc40f093680054acf4345f223af38d32f148"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0039.png",
+          "sha256": "6f8c4d9200897125ae81de998caabbaed3ad3d1282c9da660773a66964b7c9b3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0040.png",
+          "sha256": "127df30e621c14fac0d2839d0e360cfd3b58301239e2dabd0ba2675b258e8584"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0041.png",
+          "sha256": "4315f90715af4940a04dc9c08a6a5b7b93b5afbd9b30d933ab1c110f186c98af"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0042.png",
+          "sha256": "c478253e8c3653df52108227c856d3c28a32008d6d05f49faa8628b8f6df2b1f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0043.png",
+          "sha256": "150c1bfa63788f115cf34f032585558706d3cd88d9bf292924114fc125697fa6"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0044.png",
+          "sha256": "5f458944a27f0c58c983869fe6a6b722a682ed12d4a043c7a26f4d202e3227ed"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0045.png",
+          "sha256": "0bfadd557ab4716f61f1207e2cb18f51ceb9a142b03ba752ec69d02f2ca10c91"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0046.png",
+          "sha256": "c18531224e07bfd473064fc33b639ac9631b28a04f6149c0dc14fb1f18469de3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0047.png",
+          "sha256": "e228ced05bcafc948e0cfb71af4941073ba296552eb74c84bba6860498f7d8c2"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0048.png",
+          "sha256": "00b6c8cbae555e0856116bf08589596c8d3bc97e77e6fad76d1bab9a365c8581"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0049.png",
+          "sha256": "2879774e1211fef8d7046b5b6b36b2bd14ebd0b31c4a173fa123e581383bfb47"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0050.png",
+          "sha256": "410180a8737874741f1476a59a97532db9cfc79b84d1cbffe6b5c167de836150"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0051.png",
+          "sha256": "fe6811d5e5f0f61ced7bf5e35130bad946b710f6881afcefadecc40e883aa822"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0052.png",
+          "sha256": "5ed269a9c66f6f7bfe426f7085ff8c7e209ddf1ee6a21ee8360b526f4f57e1b3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0053.png",
+          "sha256": "4dd72cc83c095c35e9e3370c158ab150a59cb912ca2a65ca612d4958affcbaed"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0054.png",
+          "sha256": "767c32d1a2a96a1e2908e2d31a0a0158cf65f5e16e583555a5579cd5fbc788ac"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0055.png",
+          "sha256": "eee18e62a9b2bddb2f4197714ba695e2c1ae26ad70e3fec62267d9321bff2416"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0056.png",
+          "sha256": "18d2b2106e0deb28dac320cad8d973fb7977d4f12adcefdece9facfe2cbb000a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0057.png",
+          "sha256": "f6d60c4012d4579904f1963698b4505ddaba415e867f96e13ffade08e2225c48"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0058.png",
+          "sha256": "57f6b8aad9bc54793479f6789dd6ad40cdc5fa488e6f0c434d5937ef9d004fcd"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0059.png",
+          "sha256": "823a8124a8adfbee02f1f12ee0139065f88aff923bfe63c91420349e6dd3b192"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0060.png",
+          "sha256": "ad10fa44d0806bcf6c1b6762baa8b2f372226165b15435d36342aebb2b33aa57"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0061.png",
+          "sha256": "ddcbada21462fd9ba4053f692d099e09c536026cd0b72402468baca06d4fc55e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0062.png",
+          "sha256": "20e24025c8d5e546993d5c85938d31bb1610afbd9b7c5e7a89f75e8bec69169a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0063.png",
+          "sha256": "882489894e02f0ce9016f347d4ca249cf271804b29052992bd9ec41905c94389"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0064.png",
+          "sha256": "db10c01e79d5c2590eb08130d5b1d66dde8064cc6882d4073d22f9e106920cc6"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0065.png",
+          "sha256": "6566e846961c7b9204567d6811de9307b6411b4ebbb2bbc0b4a74fb7c38eeaf9"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0066.png",
+          "sha256": "0ad84d24a33b508f6bd68828873ce2b55b9dd93d3f4d281af8a038c0f63587f3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0067.png",
+          "sha256": "d543edbb68ef38c591f2c6be7a69b86a31a2cd48ba436e1269ba1e00f7967ac6"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0068.png",
+          "sha256": "d3b76dff546561efaf7902c80645ebe3e85e0a9e725e67a7678af1644a2a3e8b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0069.png",
+          "sha256": "e0e8e7714bdf1208d8571f4bf565584e3adeee5f06935e8c95e2f7c74fa61209"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0070.png",
+          "sha256": "727a007db9fe483d7f0fc18b9f00d7e707c505efff4bea904a614420a06d3286"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0071.png",
+          "sha256": "34d195cf78054363981eae06a31dbab74c457f793660ba8ef4515f95dc67ef3d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0072.png",
+          "sha256": "ef57384530d109183f1dea0d881977bbd3437972b7e209dc886f3d3f221ccc9c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0073.png",
+          "sha256": "e53db311d54d0b167bfb9ebebdce179a3548c17419655f6c02ef97da203b616c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0074.png",
+          "sha256": "2e621666051fd936e9412da313176a9b1d375a6e5dd509e67c4d88754cd653e4"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0075.png",
+          "sha256": "5c213ab0cf6e89812ada0723726e0bd7f6abc83bf5565df879c0bbf2146e5677"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0076.png",
+          "sha256": "108e904f062452a2f1708de7cef8d5af7930905bd7450dd09c16ccb69bd75499"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0077.png",
+          "sha256": "fe3f7c001ff487fb900127fe58d83e376f4f188cdc90c4540711d332b08c0385"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0078.png",
+          "sha256": "37fc2288791e100dd06cd00928f4aa794e7afb1d2633fd99ab014852a1161f74"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0079.png",
+          "sha256": "4bed67a51b99b893c77c13f2bc8a0f68e4bbb703a55caaba88b761f7d879e0ae"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0080.png",
+          "sha256": "374e4598b4e975594a8b9ab234851f1339b7ec679af38b3c9a65b01c82120823"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0081.png",
+          "sha256": "a1cc1b119f4f9d6005ff78dd3e04ff839de8d6e6688b5049b0fbd21d4ce07c42"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0082.png",
+          "sha256": "0702102ffb4b697060a514deb3d8a6697bf786c5793bf8c782c486b582d08fe1"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0083.png",
+          "sha256": "ddb86d83c3005f5d07c271209be13cdf90d0ee30826c22ce0b2f904b4d3882a0"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0084.png",
+          "sha256": "a5d222720d8b0efc459c6bd402d3a5dcab3165da815ba5315010708dacd43761"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0085.png",
+          "sha256": "87fabcc0cf0cb4b1549465b2bf7c9cfa11af53ce7d7489eca98f8b670adff99d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0086.png",
+          "sha256": "ff4f5ceda1eb8c64b04f9becf2a0e4d636ce9687f5fe178428a7374b65696b74"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0087.png",
+          "sha256": "389aa94893c74c25b35343089ab4d9226a3fda1d081a515b10c1e52e8504bdc0"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0088.png",
+          "sha256": "d46715ac6b1b305c84bed0b80f685a254b0ddf1fcf48535f928cdc865e36e72b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0089.png",
+          "sha256": "1100ce7ddc4320e542d1a0eae7c662747606416a6e938c77e505cb537e3c8c3c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0090.png",
+          "sha256": "dfdfbe96a1acd5343a7fccc2461df70ec6e94eb2cdd2b9441af721e60d742555"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0091.png",
+          "sha256": "3aca6e35a120eb6eb02dd5b97492da36bc977eeabf043f79af04b2a5cab37fcb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0092.png",
+          "sha256": "d7e32e916ce27aeeeb40059a707e815cd17ffc518cd5e9d537c8cf602dba2ee9"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0093.png",
+          "sha256": "5286f820487d771d6e3001aac39baca110c5a195aed2c155010438772f9f831d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0094.png",
+          "sha256": "dae62524c85dceb8c50c36f432fd42c2e4e905d848d38b3f45688aa4e822bce5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0095.png",
+          "sha256": "e82b021b375512bf81e1e54c6f8abfdce4aeafb4494fc2b39e7a466035e3f610"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0096.png",
+          "sha256": "6a63d5d42bd3f86d2b9b869a37f6eae856be944c1d6a1e1be81f053cc2cf9124"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0097.png",
+          "sha256": "6d5afb10f6049a3dc97ed4e49d11e961e16427781bd056be8234e5dcf5442ce4"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0098.png",
+          "sha256": "b515da990d5d6c5ef908676f66beaa1a5c3e149e434378f1bbfb1c5841be493f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0099.png",
+          "sha256": "f14fe8da7d8f838271705e1f03b8cad30181f3312ddf60a71b0c9c8d72a850ff"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0100.png",
+          "sha256": "beafd02ac2aa36001a279e19e53f564cc856961eda9e8e4f889380b1c15ea599"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0101.png",
+          "sha256": "37e2d364be506e5d4405cb8950d7b6e635cc472be53eb21f6626a0456be33523"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0102.png",
+          "sha256": "a6dab02878946873ff6e12ada2e7367deb96af0ae31483e2fbf012a417d4f3e6"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0103.png",
+          "sha256": "5d2bbfdcbb2e81ab4a41617d81fb05348b24e1c716e3f3ba4e15887322bd788d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0104.png",
+          "sha256": "ecbf79ff45d911be65e6b20e343940c41d5cea2dc25df70ab35fbcf5d6d0446d"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0105.png",
+          "sha256": "d1542d20bc42a5f7f108aeecf4831a517781d8d0135e862c90e1fcb892dec1ff"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0106.png",
+          "sha256": "9b38dd12aec64eed2d4ab1833832b556013e6bc5f4e98e40e6ca1d9e435da21a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0107.png",
+          "sha256": "7cb1bcba884825805c68b9f4dbc659359a28ffb37e91e666ff5cc21270f0bd34"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0108.png",
+          "sha256": "167f0755a14d78a513c2aca809a4ee8ebef5731cf53220df289ddcfb51cbb7ce"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0109.png",
+          "sha256": "5f1536f003a4664a4a539796acb756afbbdb5864e3c2f679d9d1dd412a1a8660"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0110.png",
+          "sha256": "f7a8d44518a644ee0fd0a2e3c99cb480ea71698e540b1ce0e845942945d9edeb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0111.png",
+          "sha256": "57ec83fa3decf274eef84b20d46d6bf22069addf0326f901a0949fa5293dad05"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0112.png",
+          "sha256": "ef650676d7a44aced10ae05040f10b286d767b4810203a04dea51cb0403dfc01"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0113.png",
+          "sha256": "79db6443a7923bb53a78b17e225bc30f713e633c15ddf080a069a0ff3e375b2c"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0114.png",
+          "sha256": "d051728f7f00f5c9e2b9e1a3fd1fe5c57e1b6989f1b4f54c59ac4de561940e5e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0115.png",
+          "sha256": "11cc8dbeda55a77797f035e1600d750560c7c86b4be7f57e67d7ac059eaec784"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0116.png",
+          "sha256": "e1d34065bd320e6794f9813517e08c77200505829dcb00c701c427bdb066d7a7"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0117.png",
+          "sha256": "bec265dd4c61060f20333b8d8719e517833e3666501f9d7b7f2a5fe29591b127"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0118.png",
+          "sha256": "d557e92074d4b5371ba65a510b36036fc3622f11bd309e9915e10b20b6997fb8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0119.png",
+          "sha256": "4391acaf3822fe14257490f210b6277c3b90bdbc5ea40142f3d94f6ac38b7566"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0120.png",
+          "sha256": "0ac3b1c4f8244c00f8485c7e3986016269fce532df60bf5adaa2812e9503bd9e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0121.png",
+          "sha256": "d4b8aa6b5035588195d1b3f819d7ef0f4b32104fa5c4753a25ef41e9a80d63d9"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0122.png",
+          "sha256": "550b5442247417a15831b7e0ce5d7887b6eb9ea796a09eb256288f8dcbb0b4f2"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0123.png",
+          "sha256": "ca5b916cbd97aead4227113a9e44ad9f25eb13a61312b74ceba9357e43ec088e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0124.png",
+          "sha256": "ab7703c2ece62eea7be1a0e2ba4968326d64be0acc2d53c5c726250649f7141a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0125.png",
+          "sha256": "0137c8bc96e02c65373935e080c545a50ea8ba6695b86ab6204a37dc9b653bca"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0126.png",
+          "sha256": "4b7db4c9e85156070d3688305847f2af0b1f3f63078c027ed8a0d765d5dd44bb"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0127.png",
+          "sha256": "ca859f636b5a51b76002d9b3d232ddd884eb191389eb248443200a0803b2f9c1"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0128.png",
+          "sha256": "c991f779d81765278165ed1696adb23446722e986cf4705cb64087fc59e4abd2"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0129.png",
+          "sha256": "a9ef40d16d6a6a0d02ace1084673bdc47d30176b330a47e27cf2bc33cfdcd392"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0130.png",
+          "sha256": "68783ed1d659321f06a8e55bbca7a406d1832345937af63d950d4da4b39fa66f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0131.png",
+          "sha256": "4842f4b06a743d953bf8055a150394148906ee487b468813c11b7442306f8840"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0132.png",
+          "sha256": "15b720aec21b3f39b409b376571563d6a7c347cbaebcc38cb0c82694e0a3e415"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0133.png",
+          "sha256": "d67962046ce1cac818952ed520b3ebe0af99b67d23bcd127bc5d67cba6ecf8f1"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0134.png",
+          "sha256": "f94ac009b3f1cfed265ccec741ffcce8b0be9ee45939c3c256930f4cb5e53606"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0135.png",
+          "sha256": "0d372fa8682de677aa766e6f63d734c7d5e66376f86815c3e5021348fb2f1a6e"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0136.png",
+          "sha256": "492b1e38e94598bb0038636a060826e0ccdfa30216effda28839721bdf24c453"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0137.png",
+          "sha256": "d70fe89e1db16fddb4f887cb24408d326e908b955abce89bfcadbb58d0434eb3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0138.png",
+          "sha256": "a047d32c0a2bb64081a1017dd98bf07dd3c961fe8cc95da6cf50a8995822fc49"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0139.png",
+          "sha256": "3b88a3d47c57b631153711175074a98984c6640e3c2e2789fb8b21c5dc1c0529"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0140.png",
+          "sha256": "6106b84a3f13bad07d658b505ae3a3bb51126849c53346c819b3c56f65450c60"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0141.png",
+          "sha256": "cd8e6049fb3a1c884d4da1eeb50ab58010a078dc8f7435645c0a01ea1eba1cb8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0142.png",
+          "sha256": "83a9bdab779508091bd83e005fca69c6f4b9f6dc6adda4d2c981b7f709734053"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0143.png",
+          "sha256": "b5fca7145b0ec575a75e903ae307f7d3ca87f5ba29622a4b36ebcd4e43d7a154"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0144.png",
+          "sha256": "3b83d40196ac3ec7b9b8326c2b9244a24ea3c9fd0e6d55ee146438134502e9d3"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0145.png",
+          "sha256": "582244443c770ea01b77cd4d30ea0f4b5662a9ccc13457f587c79e5b556a497a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0146.png",
+          "sha256": "5c5ee5cb4a099f1c6f7f5dd2c6a82fa3fec153c5ed4b0d585dd293c150b176c5"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0147.png",
+          "sha256": "a5b1f07ab86f881348a5244403232a0c7294ec0b623d766faba73f23e0200751"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0148.png",
+          "sha256": "be93f6e82fb9c5ad6346293bf24ca486168ddef3a2a349c223dce746b9242463"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0149.png",
+          "sha256": "95cf5fa6d46f8344b6e7edfa8ab321a07f101a5851fb9d6d2344406636025619"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0150.png",
+          "sha256": "041d7e79644bc38ecea8d838ca2cc52abd21c0ca9897fd2f528aa7c33f872190"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0151.png",
+          "sha256": "e3691a0be52ba65da7c0b20001120fa8cf8aa97e62b998b7c71029c7accd2e39"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0152.png",
+          "sha256": "0e7166944b87c648cf153aa26b3efd2c38749d3e6fd649437d02742d55e54eb8"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0153.png",
+          "sha256": "674083b0a17722b5297f39c39008ad809c83144d6459a86e743451d5caf9537a"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0154.png",
+          "sha256": "f0d48f5b54c222513165aa50975dd55fff968291f78f96e9b28d6d6c46ccdc27"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0155.png",
+          "sha256": "ce057bfd85742cea3c7fafc4554df964a33f2109b8661fc70bdba3b250a31135"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0156.png",
+          "sha256": "9417db754237e947623479cbcc8585b21aa329bf612b1f4fe3d51fe3e29a7de9"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0157.png",
+          "sha256": "761f56814c1dab2e9cfcfef9a3ed39b1686b7b85830a2d0b8f1dd393415dd720"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0158.png",
+          "sha256": "34bc689cdceb3e4de382b1e4b73bc7e15328ecb4f1941d915a582efdd6f0cdee"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0159.png",
+          "sha256": "5e43a3a50a955fad124eea18d3f091cb2043b1d8c6079d40c9f63587028b653f"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0160.png",
+          "sha256": "663cf0566c78171372282e1e4725ddfb3424d083c501409129e9fe4d24b27bb1"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0161.png",
+          "sha256": "7516723d48330d84527b8301063f809e292b7acfbd7c9f65d6ae1f3ee8913d7b"
+        },
+        {
+          "file": "res://assets/lol2/generated/cave_guard_sequence/5/frames/0162.png",
+          "sha256": "80d5d25c195fcb0a196f2a37bfa0c1bd073e2c263fde42147431cf133924dfcc"
+        }
+      ],
+      "audio": "res://assets/lol2/generated/cave_guard_sequence/5/voice.wav",
+      "audio_sha256": "2f5111c122e35b82062eb8a0b8c45bdd41c5ce42199ef38639d0fe68e70ad336",
+      "source_binding": {
+        "archive": "DAT/L1_DCI.MIX",
+        "archive_sha256": "941e6741f689aef0651c2f4a39f9c0c2741fac5b79fb7d0416da433767ea2322",
+        "candidates": [
+          {
+            "prefix": "SPHERE1",
+            "logical_name": "SPHERE1\\L1_DC\\0655601E.VQA",
+            "key": 1021859441,
+            "offset": 60262968,
+            "length": 1125264,
+            "sha256": "22e60c54336a05bcbfd743ce367bd6292411b3256cb5096439797fc90ad04d4d",
+            "wvqa": true
+          }
+        ],
+        "status": "exact",
+        "binding": "unique_hash_header_witness",
+        "prefix": "SPHERE1",
+        "logical_name": "SPHERE1\\L1_DC\\0655601E.VQA",
+        "key": 1021859441,
+        "offset": 60262968,
+        "length": 1125264,
+        "sha256": "22e60c54336a05bcbfd743ce367bd6292411b3256cb5096439797fc90ad04d4d",
+        "mix_index": 23,
+        "vqhd": {
+          "form_size": 1125256,
+          "form_spans_entry": true,
+          "version": 2,
+          "flags": 1,
+          "count": 162,
+          "width": 200,
+          "height": 364,
+          "fps": 15,
+          "block_w": 4,
+          "block_h": 4
+        },
+        "reason": "one SPHERE prefix key in this area movie MIX is FORM/WVQA"
+      },
+      "canvas": [
+        640,
+        400
+      ],
+      "crop": {
+        "x": 220,
+        "y": 24,
+        "width": 200,
+        "height": 364
+      },
+      "matte": [
+        0,
+        251,
+        251
+      ],
+      "audio_samples": 249164,
+      "audio_rate": 22050
+    }
+  ],
+  "position": [
+    158,
+    -285,
+    -16640
+  ],
+  "dimensions": [
+    145,
+    90
+  ],
+  "scope": "Source clips, support and command records. Runtime effects outside the movie state machine require explicit consumers; no completion claim from media playback alone."
+}

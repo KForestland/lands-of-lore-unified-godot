@@ -1,0 +1,551 @@
+{
+  "passed": true,
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "definitions_sha256": "b399b5c8bfea3597293a3237f30f45985efa2dd88d2dc29d5d18ca7488f60891",
+  "owners": [
+    {
+      "index": 115,
+      "name": "113-Brook flou",
+      "identity": 2361559
+    }
+  ],
+  "handler": 86,
+  "relocation": {
+    "target_object": 2,
+    "target_offset": 268688,
+    "record_file_offset": 573171,
+    "record_hex": "0710b8090290190400"
+  },
+  "spans": {
+    "initial": {
+      "start": 851004,
+      "end": 851014,
+      "sha256": "d35b62b68e76f3caaf1d29bdb185155d6f9e366286f3fe1b16f671113fb85994"
+    },
+    "extend": {
+      "start": 899096,
+      "end": 899163,
+      "sha256": "8e8ad3b445a433209c97904aaf23ea31c587210d6bc219ba2a91bcd526f06c9a"
+    },
+    "tick": {
+      "start": 865276,
+      "end": 865344,
+      "sha256": "5375d7f4fa141ee425e04541419e32fcf84bd765b4594837b290ac0b338c9939"
+    },
+    "caller": {
+      "start": 633442,
+      "end": 633455,
+      "sha256": "8486b5db92807c31811d5277bd352003ae28d32843979744b1ea85742d381e8b"
+    },
+    "gate": {
+      "start": 403385,
+      "end": 403392,
+      "sha256": "a538107de92dfddb67502fc143a9830a752b5089bd5eaa935277dcb443d6ffb2"
+    }
+  },
+  "extension_cases": [
+    {
+      "timer": 0,
+      "flags": 0,
+      "counter": 0,
+      "after": 235929600
+    },
+    {
+      "timer": 0,
+      "flags": 239,
+      "counter": 255,
+      "after": 235929600
+    },
+    {
+      "timer": 0,
+      "flags": 255,
+      "counter": 7,
+      "after": 235929600
+    },
+    {
+      "timer": 1,
+      "flags": 0,
+      "counter": 0,
+      "after": 235929601
+    },
+    {
+      "timer": 1,
+      "flags": 239,
+      "counter": 255,
+      "after": 235929601
+    },
+    {
+      "timer": 1,
+      "flags": 255,
+      "counter": 7,
+      "after": 235929601
+    },
+    {
+      "timer": 65535,
+      "flags": 0,
+      "counter": 0,
+      "after": 235995135
+    },
+    {
+      "timer": 65535,
+      "flags": 239,
+      "counter": 255,
+      "after": 235995135
+    },
+    {
+      "timer": 65535,
+      "flags": 255,
+      "counter": 7,
+      "after": 235995135
+    },
+    {
+      "timer": 65536,
+      "flags": 0,
+      "counter": 0,
+      "after": 235995136
+    },
+    {
+      "timer": 65536,
+      "flags": 239,
+      "counter": 255,
+      "after": 235995136
+    },
+    {
+      "timer": 65536,
+      "flags": 255,
+      "counter": 7,
+      "after": 235995136
+    },
+    {
+      "timer": 305419896,
+      "flags": 0,
+      "counter": 0,
+      "after": 541349496
+    },
+    {
+      "timer": 305419896,
+      "flags": 239,
+      "counter": 255,
+      "after": 541349496
+    },
+    {
+      "timer": 305419896,
+      "flags": 255,
+      "counter": 7,
+      "after": 541349496
+    },
+    {
+      "timer": 2147483647,
+      "flags": 0,
+      "counter": 0,
+      "after": 2383413247
+    },
+    {
+      "timer": 2147483647,
+      "flags": 239,
+      "counter": 255,
+      "after": 2383413247
+    },
+    {
+      "timer": 2147483647,
+      "flags": 255,
+      "counter": 7,
+      "after": 2383413247
+    },
+    {
+      "timer": 2147483648,
+      "flags": 0,
+      "counter": 0,
+      "after": 2383413248
+    },
+    {
+      "timer": 2147483648,
+      "flags": 239,
+      "counter": 255,
+      "after": 2383413248
+    },
+    {
+      "timer": 2147483648,
+      "flags": 255,
+      "counter": 7,
+      "after": 2383413248
+    },
+    {
+      "timer": 4294901760,
+      "flags": 0,
+      "counter": 0,
+      "after": 235864064
+    },
+    {
+      "timer": 4294901760,
+      "flags": 239,
+      "counter": 255,
+      "after": 235864064
+    },
+    {
+      "timer": 4294901760,
+      "flags": 255,
+      "counter": 7,
+      "after": 235864064
+    },
+    {
+      "timer": 4294967295,
+      "flags": 0,
+      "counter": 0,
+      "after": 235929599
+    },
+    {
+      "timer": 4294967295,
+      "flags": 239,
+      "counter": 255,
+      "after": 235929599
+    },
+    {
+      "timer": 4294967295,
+      "flags": 255,
+      "counter": 7,
+      "after": 235929599
+    }
+  ],
+  "tick_cases": [
+    {
+      "timer": 0,
+      "delta": 0,
+      "after": 0,
+      "callbacks": []
+    },
+    {
+      "timer": 0,
+      "delta": 1,
+      "after": 0,
+      "callbacks": []
+    },
+    {
+      "timer": 0,
+      "delta": 65536,
+      "after": 0,
+      "callbacks": []
+    },
+    {
+      "timer": 0,
+      "delta": 2147483647,
+      "after": 0,
+      "callbacks": []
+    },
+    {
+      "timer": 0,
+      "delta": 4294967295,
+      "after": 0,
+      "callbacks": []
+    },
+    {
+      "timer": 1,
+      "delta": 0,
+      "after": 1,
+      "callbacks": []
+    },
+    {
+      "timer": 1,
+      "delta": 1,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 1,
+      "delta": 65536,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 1,
+      "delta": 2147483647,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 1,
+      "delta": 4294967295,
+      "after": 2,
+      "callbacks": []
+    },
+    {
+      "timer": 65535,
+      "delta": 0,
+      "after": 65535,
+      "callbacks": []
+    },
+    {
+      "timer": 65535,
+      "delta": 1,
+      "after": 65534,
+      "callbacks": []
+    },
+    {
+      "timer": 65535,
+      "delta": 65536,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 65535,
+      "delta": 2147483647,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 65535,
+      "delta": 4294967295,
+      "after": 65536,
+      "callbacks": []
+    },
+    {
+      "timer": 65536,
+      "delta": 0,
+      "after": 65536,
+      "callbacks": []
+    },
+    {
+      "timer": 65536,
+      "delta": 1,
+      "after": 65535,
+      "callbacks": []
+    },
+    {
+      "timer": 65536,
+      "delta": 65536,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 65536,
+      "delta": 2147483647,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 65536,
+      "delta": 4294967295,
+      "after": 65537,
+      "callbacks": []
+    },
+    {
+      "timer": 305419896,
+      "delta": 0,
+      "after": 305419896,
+      "callbacks": []
+    },
+    {
+      "timer": 305419896,
+      "delta": 1,
+      "after": 305419895,
+      "callbacks": []
+    },
+    {
+      "timer": 305419896,
+      "delta": 65536,
+      "after": 305354360,
+      "callbacks": []
+    },
+    {
+      "timer": 305419896,
+      "delta": 2147483647,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 305419896,
+      "delta": 4294967295,
+      "after": 305419897,
+      "callbacks": []
+    },
+    {
+      "timer": 2147483647,
+      "delta": 0,
+      "after": 2147483647,
+      "callbacks": []
+    },
+    {
+      "timer": 2147483647,
+      "delta": 1,
+      "after": 2147483646,
+      "callbacks": []
+    },
+    {
+      "timer": 2147483647,
+      "delta": 65536,
+      "after": 2147418111,
+      "callbacks": []
+    },
+    {
+      "timer": 2147483647,
+      "delta": 2147483647,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 2147483647,
+      "delta": 4294967295,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 2147483648,
+      "delta": 0,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 2147483648,
+      "delta": 1,
+      "after": 2147483647,
+      "callbacks": []
+    },
+    {
+      "timer": 2147483648,
+      "delta": 65536,
+      "after": 2147418112,
+      "callbacks": []
+    },
+    {
+      "timer": 2147483648,
+      "delta": 2147483647,
+      "after": 1,
+      "callbacks": []
+    },
+    {
+      "timer": 2147483648,
+      "delta": 4294967295,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 4294901760,
+      "delta": 0,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 4294901760,
+      "delta": 1,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 4294901760,
+      "delta": 65536,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 4294901760,
+      "delta": 2147483647,
+      "after": 2147418113,
+      "callbacks": []
+    },
+    {
+      "timer": 4294901760,
+      "delta": 4294967295,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 4294967295,
+      "delta": 0,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 4294967295,
+      "delta": 1,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 4294967295,
+      "delta": 65536,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 4294967295,
+      "delta": 2147483647,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    },
+    {
+      "timer": 4294967295,
+      "delta": 4294967295,
+      "after": 0,
+      "callbacks": [
+        "0x82d5c",
+        "0x82db8"
+      ]
+    }
+  ],
+  "initial_zero": true,
+  "limits": [
+    "Actual original instructions replayed; expiry UI callbacks intercepted at their call boundaries.",
+    "Directional guard is player+1F6, not inferred pause/equipment state.",
+    "No claim about full item-use admission, availability in Act1, UI callback contents, or live shared-clock binding."
+  ]
+}

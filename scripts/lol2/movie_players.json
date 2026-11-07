@@ -1,0 +1,101 @@
+{
+ "version": 1,
+ "scope": "World-side binding of the opcode-21 movie table (scripts/lol2/movie_table.json) to the port's players. 'player' is the script that already stages and plays that movie through its own owner; 'none' means no player exists yet: the host still stages the request and the world side logs which movie it would be (opcode21_movie adapter, docs/DEVIATIONS.md). Only names an Act 1 command references are listed; every other table entry is 'none' by default.",
+ "players": {
+  "flood": {
+   "index": 29,
+   "player": "scripts/lol2/cave_flood_movie.gd",
+   "evidence": "tools/prepare_cave_flood_movie.py: op21 entry 29 = flood (L1_DC group 146)"
+  },
+  "luthrdie": {
+   "index": 74,
+   "player": "scripts/lol2/cave_entrance_death.gd",
+   "evidence": "tools/prepare_cave_entrance_death.py: entries 74/11/35"
+  },
+  "bst-die": {
+   "index": 11,
+   "player": "scripts/lol2/cave_entrance_death.gd",
+   "evidence": "tools/prepare_cave_entrance_death.py: entries 74/11/35"
+  },
+  "liz-die": {
+   "index": 35,
+   "player": "scripts/lol2/cave_entrance_death.gd",
+   "evidence": "tools/prepare_cave_entrance_death.py: entries 74/11/35"
+  },
+  "e032e": {
+   "index": 24,
+   "player": "scripts/lol2/museum_draracle.gd",
+   "evidence": "tools/prepare_museum_draracle_videos.py: entries 24/25"
+  },
+  "e033e": {
+   "index": 25,
+   "player": "scripts/lol2/museum_draracle.gd",
+   "evidence": "tools/prepare_museum_draracle_videos.py: entries 24/25"
+  },
+  "hw-brdge": {
+   "index": 33,
+   "player": "scripts/lol2/jungle_exit_encounter.gd",
+   "evidence": "assets/lol2/generated/jungle_exit_movies/movies.json names hw-brdge"
+  },
+  "e068e": {
+   "index": 56,
+   "player": "scripts/lol2/jungle_exit_encounter.gd",
+   "evidence": "jungle_exit_movies/movies.json names e068e"
+  },
+  "e069e": {
+   "index": 57,
+   "player": "scripts/lol2/jungle_exit_encounter.gd",
+   "evidence": "jungle_exit_movies/movies.json names e069e"
+  },
+  "e125e": {
+   "index": 26,
+   "player": "scripts/lol2/act_one_departure.gd",
+   "evidence": "tools/prepare_act_one_departure.py and act_one_departure_source.json name e125e"
+  },
+  "e029e": {
+   "index": 21,
+   "player": "none",
+   "evidence": "L1_DC, 9 commands; no producer stages e029e (the name also occurs as a material label, not a movie)"
+  },
+  "e030e": {
+   "index": 22,
+   "player": "none",
+   "evidence": "L1_DC, 1 command; no producer stages e030e"
+  },
+  "e031e": {
+   "index": 23,
+   "player": "none",
+   "evidence": "L1_DC, 10 commands; no producer stages e031e"
+  },
+  "fishdeth": {
+   "index": 28,
+   "player": "none",
+   "evidence": "L4_HJ, 444 commands; no producer stages fishdeth"
+  },
+  "hut-fire": {
+   "index": 55,
+   "player": "none",
+   "evidence": "L4_HJ, 1 command; no producer stages hut-fire"
+  },
+  "1372504e": {
+   "index": 76,
+   "player": "none",
+   "evidence": "L4_HJ, 1 command; no producer stages it"
+  },
+  "0377804e": {
+   "index": 77,
+   "player": "none",
+   "evidence": "L4_HJ, 1 command; no producer stages it"
+  },
+  "1386904e": {
+   "index": 78,
+   "player": "none",
+   "evidence": "L4_HJ, 1 command; no producer stages it"
+  },
+  "2730706e": {
+   "index": 79,
+   "player": "none",
+   "evidence": "L4_HJ, 1 command; no producer stages it"
+  }
+ }
+}

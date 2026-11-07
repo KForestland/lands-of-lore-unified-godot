@@ -1,0 +1,1271 @@
+{
+  "format": "lol2-restoration-dark-halls",
+  "inventory": {
+    "collected": [],
+    "curse": {
+      "cave_triggered": false,
+      "duration": 0.0,
+      "phase": 0,
+      "previous": 0,
+      "remaining": 0.0,
+      "seed": 3866075703,
+      "target": 0
+    },
+    "equipped_armor": "",
+    "equipped_item": "",
+    "health": 30,
+    "item_effects": {
+      "aloe": {
+        "base": 0,
+        "clock": 0,
+        "fraction": 0.0,
+        "pending": 0
+      },
+      "ancient_charges": 0,
+      "champion": {
+        "active": false,
+        "timer": 0,
+        "version": 1
+      },
+      "fraction": 0.0,
+      "spent": [],
+      "version": 1
+    },
+    "player_form": 0
+  },
+  "player": {
+    "pitch": 0.0,
+    "position": [
+      -3043.0,
+      117.0,
+      -2007.0
+    ],
+    "yaw": -1.5707963705062866
+  },
+  "quests": {
+    "act_one_departure": {
+      "elapsed": 0.0,
+      "local55": 0,
+      "phase": "idle"
+    },
+    "conversation": {
+      "completed": false,
+      "elapsed": 0.0,
+      "section_cursor": 0,
+      "started": false
+    },
+    "dark_halls_population": {
+      "actors": {
+        "24": {
+          "death": 0.0,
+          "health": 120,
+          "position": [
+            -1307.0,
+            310.0,
+            -2033.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "25": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -1110.0,
+            750.0,
+            -761.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "26": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -1194.0,
+            745.0,
+            -754.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "27": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -1243.0,
+            750.0,
+            -705.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "28": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -1250.0,
+            750.0,
+            562.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "29": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -438.0,
+            640.0,
+            576.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "30": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            2006.0,
+            640.0,
+            303.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "31": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -200.0,
+            640.0,
+            261.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "32": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -200.0,
+            640.0,
+            359.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "33": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            2600.0,
+            640.0,
+            576.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "34": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            3588.0,
+            530.0,
+            576.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "35": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            2027.0,
+            420.0,
+            -1320.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "36": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            1971.0,
+            420.0,
+            -1348.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "37": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            2265.0,
+            420.0,
+            -1481.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "38": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            2678.0,
+            420.0,
+            -1677.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "39": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            2580.0,
+            420.0,
+            -2546.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "40": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -781.0,
+            310.0,
+            -2179.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "41": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -1240.0,
+            310.0,
+            -2026.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "42": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            1903.0,
+            310.0,
+            -3967.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "43": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            989.0,
+            310.0,
+            -3827.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "44": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            906.0,
+            310.0,
+            -3812.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "45": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            557.0,
+            310.0,
+            -3969.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "46": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -985.0,
+            310.0,
+            -3961.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "47": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -2041.0,
+            200.0,
+            -3969.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "48": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -2662.0,
+            85.0,
+            -3737.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "49": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -2809.0,
+            85.0,
+            -3692.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "50": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -2915.0,
+            85.0,
+            -3748.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "51": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -3022.0,
+            85.0,
+            -2747.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "52": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -2748.0,
+            85.0,
+            -2414.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "53": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -2696.0,
+            85.0,
+            -2063.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "54": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            -2753.0,
+            85.0,
+            -2022.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "55": {
+          "death": 0.0,
+          "health": 101,
+          "position": [
+            -2816.0,
+            85.0,
+            -2014.0
+          ],
+          "present": true,
+          "rise": 0.75,
+          "woken": true
+        },
+        "57": {
+          "death": 0.0,
+          "health": 200,
+          "position": [
+            3242.0,
+            530.0,
+            -634.0
+          ],
+          "present": true,
+          "rise": 2.0,
+          "woken": true
+        },
+        "58": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            456.0,
+            0.0,
+            -3140.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "59": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            958.0,
+            50.0,
+            -3249.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "60": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            864.0,
+            50.0,
+            -3249.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "61": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            760.0,
+            50.0,
+            -3251.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "62": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            663.0,
+            50.0,
+            -3249.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "63": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            555.0,
+            50.0,
+            -3242.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "64": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            459.0,
+            50.0,
+            -3254.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "65": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            462.0,
+            50.0,
+            -3343.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "66": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            572.0,
+            50.0,
+            -3343.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "67": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            658.0,
+            50.0,
+            -3346.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "68": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            760.0,
+            50.0,
+            -3346.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "69": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            861.0,
+            50.0,
+            -3346.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "70": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            953.0,
+            50.0,
+            -3341.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "71": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            951.0,
+            50.0,
+            -3440.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "72": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            854.0,
+            50.0,
+            -3440.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "73": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            758.0,
+            50.0,
+            -3442.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "74": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            664.0,
+            50.0,
+            -3442.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        },
+        "75": {
+          "death": 0.0,
+          "health": 100,
+          "position": [
+            565.0,
+            50.0,
+            -3442.0
+          ],
+          "present": true,
+          "rise": 0.875,
+          "woken": true
+        }
+      },
+      "counter": 0,
+      "live": {
+        "24": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 17294,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "25": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "26": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "27": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "28": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "29": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "30": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "31": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "32": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "33": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "34": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "35": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "36": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "37": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "38": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "39": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "40": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "41": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "42": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "43": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "44": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "45": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "46": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "47": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 0,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "48": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 46057,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "49": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 46057,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "50": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 46057,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "51": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 31493,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "52": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 41870,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "53": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 49880,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "54": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 49880,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "55": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 49880,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "57": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 16384,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "58": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32768,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "59": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "60": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "61": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "62": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "63": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "64": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "65": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "66": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "67": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "68": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "69": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "70": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "71": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "72": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "73": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "74": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        },
+        "75": {
+          "attack": 0,
+          "elapsed": 0.0,
+          "heading": 32950,
+          "hit": false,
+          "hits": 0,
+          "mode": 0
+        }
+      },
+      "prop93": 0,
+      "regions": [],
+      "version": 1
+    },
+    "dark_halls_rix": {
+      "dead": false,
+      "staff": false
+    },
+    "hive_chasm": {
+      "activated": false,
+      "elapsed": 0.0
+    },
+    "hive_curse": {
+      "enabled": false,
+      "human_return_used": [],
+      "region": -1,
+      "remaining": 120.0,
+      "running": true,
+      "seed": 324508639
+    },
+    "hive_elevator": {
+      "armed": false,
+      "flute_signal": 0,
+      "height": -235.0,
+      "played_flute": false,
+      "poll_elapsed": 0.0,
+      "target": 0
+    },
+    "hive_nest": {
+      "elapsed": 0.0,
+      "phase": 0
+    },
+    "hive_room_entered": false,
+    "hive_wax_collected": false,
+    "jungle_dagger_collected": false,
+    "jungle_village": {
+      "dialogue": {
+        "elapsed": 0.0,
+        "local15": 0,
+        "local46": 0,
+        "started": false
+      },
+      "elapsed": 0.0,
+      "followup": {
+        "elapsed": 0.0,
+        "local18": 0,
+        "shared18": 0,
+        "speech": 0.0
+      },
+      "local24": 0,
+      "shared29": 0
+    },
+    "magic_shop": {
+      "conversation": {
+        "cursor": 0,
+        "elapsed": 0.0,
+        "sequence": ""
+      },
+      "flags": {
+        "301": 0,
+        "46": 0,
+        "47": 0,
+        "48": 0,
+        "49": 0,
+        "50": 0,
+        "51": 0,
+        "52": 0,
+        "53": 0,
+        "54": 0,
+        "55": 0,
+        "56": 0,
+        "57": 0,
+        "58": 0
+      },
+      "globals": {
+        "GV_KNOWLEDGE_OF_POWER_ORB": 0,
+        "GV_LUTHERS_SOUL": 5
+      },
+      "pending_items": [],
+      "quip_mask": 0,
+      "quip_seed": 20260927,
+      "reward_seed": 324508639,
+      "room": "",
+      "script": {
+        "args": {},
+        "cursor": 0,
+        "elapsed": 0.0,
+        "handler": ""
+      },
+      "timer_armed": false,
+      "timer_left": 0.0
+    },
+    "monastery": {
+      "conversation": {
+        "cursor": 0,
+        "elapsed": 0.0,
+        "sequence": ""
+      },
+      "flags": {
+        "134": 0,
+        "135": 0,
+        "136": 0,
+        "138": 0,
+        "140": 0,
+        "141": 0,
+        "142": 0,
+        "143": 0,
+        "144": 0,
+        "145": 0,
+        "146": 0,
+        "148": 0,
+        "162": 0,
+        "170": 0,
+        "171": 0,
+        "172": 0,
+        "176": 0,
+        "177": 0,
+        "178": 0,
+        "181": 0,
+        "182": 0,
+        "183": 0,
+        "184": 0,
+        "191": 0,
+        "192": 0,
+        "258": 0,
+        "259": 0,
+        "260": 0,
+        "264": 0,
+        "265": 0,
+        "266": 0,
+        "267": 0,
+        "268": 0,
+        "269": 0,
+        "283": 0,
+        "288": 0,
+        "32": 0,
+        "33": 0,
+        "34": 0,
+        "37": 0,
+        "41": 0,
+        "42": 0,
+        "43": 0,
+        "44": 0,
+        "45": 0
+      },
+      "globals": {
+        "GV_BACATTA_RELATIONSHIP": 1,
+        "GV_DAWN_RELATIONSHIP": 1,
+        "GV_HAS_RUNES": 0,
+        "GV_KNOWLEDGE_OF_POWER_ORB": 0,
+        "GV_LUTHERS_SOUL": 5,
+        "GV_MET_BACATTA": 0,
+        "GV_RIX_DEAD": 0,
+        "GV_RUNES_TRANSLATED": 0
+      },
+      "locals": {
+        "Dawn_dam_out_cave": 0,
+        "Gave_Dawn_Runes": 0,
+        "Left_Village": 0,
+        "Met_Dawn": 0,
+        "Met_Morgan": 0
+      },
+      "room": "",
+      "side_actor_present": false
+    },
+    "player_magic_reward_state": {
+      "player": {
+        "experience": 54,
+        "level": 1,
+        "mana": 20,
+        "maximum": 20
+      },
+      "spark_reward_seed": 324508639,
+      "version": 1
+    },
+    "shared_flag_38": 0,
+    "weapon_shop": {
+      "cursor": 0,
+      "elapsed": 0.0,
+      "flags": {},
+      "globals": {},
+      "locals": {},
+      "orb_seen": false,
+      "room": "",
+      "sequence": ""
+    }
+  },
+  "version": 1
+}

@@ -1,0 +1,120 @@
+{
+  "passed": true,
+  "returncode": 0,
+  "seconds": 351.6942081669986,
+  "script": "res://tests/hive_quest_walk_test.gd",
+  "arguments": [
+    "--earned-cave-chain",
+    "--continue-monastery",
+    "--return-hive"
+  ],
+  "log": "tmp/regressions/cave_executioner_flute/run.log",
+  "log_sha256": "3e3e137b60b138904a1d238f3f321ac886a5e706da9cad2435ec63824241ecf4",
+  "input_proof": "docs/earned-jungle-hive-walk-checks.json",
+  "input_save": "user://tests/act1_cave_hive_entry.json",
+  "input_sha256": "fb2b38290ad0fb2719386bf1b1d4ef8077919913198cfef8fc9f1d96eda92120",
+  "output_save": "user://tests/act1_cave_flute_hive_return.json",
+  "output_sha256": "d95ec564912d65f3f56a51c989bda025173cd83b992921d11b985f0caea85e7d",
+  "checkpoints": {
+    "act1_cave_earned_flute.json": {
+      "sha256": "5ffae4779c49f1a6a7486662335cd74665fef519b099c26c7ce297e5238ded0f",
+      "format": "lol2-restoration-jungle",
+      "inventory": {
+        "collected": [
+          "cave:prop641:harvest1:Stalagmite",
+          "museum:item11:Fine_Longsword",
+          "monastery:item94:Iron_Flute"
+        ],
+        "curse": {
+          "cave_triggered": true,
+          "duration": 0.0,
+          "phase": 0,
+          "previous": 0,
+          "remaining": 0.0,
+          "seed": 2776662818,
+          "target": 0
+        },
+        "equipped_armor": "",
+        "equipped_item": "museum:item11:Fine_Longsword",
+        "health": 30,
+        "player_form": 0
+      },
+      "position": [
+        4247.42431640625,
+        42.00257110595703,
+        2368.376708984375
+      ],
+      "room": "MOFF",
+      "executioner": {
+        "cooldown": 0.0,
+        "elapsed": 0.0,
+        "health": 0,
+        "hit_sent": false,
+        "mode": "dead",
+        "position": [
+          -954.91748046875,
+          -239.74497985839844,
+          -6044.91064453125
+        ],
+        "version": 1
+      }
+    },
+    "act1_cave_flute_hive_return.json": {
+      "sha256": "d95ec564912d65f3f56a51c989bda025173cd83b992921d11b985f0caea85e7d",
+      "format": "lol2-restoration-hive",
+      "inventory": {
+        "collected": [
+          "cave:prop641:harvest1:Stalagmite",
+          "museum:item11:Fine_Longsword",
+          "monastery:item94:Iron_Flute"
+        ],
+        "curse": {
+          "cave_triggered": true,
+          "duration": 0.0,
+          "phase": 0,
+          "previous": 0,
+          "remaining": 0.0,
+          "seed": 2776662818,
+          "target": 0
+        },
+        "equipped_armor": "",
+        "equipped_item": "museum:item11:Fine_Longsword",
+        "health": 30,
+        "player_form": 0
+      },
+      "position": [
+        -1065.98779296875,
+        -202.9564208984375,
+        -8307.576171875
+      ],
+      "room": "",
+      "executioner": {
+        "cooldown": 0.0,
+        "elapsed": 0.0,
+        "health": 0,
+        "hit_sent": false,
+        "mode": "dead",
+        "position": [
+          -954.91748046875,
+          -239.74497985839844,
+          -6044.91064453125
+        ],
+        "version": 1
+      }
+    }
+  },
+  "file_sha256": {
+    "tests/hive_quest_walk_test.gd": "d241f2e2666bcf3566c163305f0437c9f45be7a240cb16abbfd5219c97ec2abe",
+    "tests/fixtures/hive_quest_walk_routes.json": "7b9e2448ed4a9ec2ea515748eb2643381ebe5b576846eabb5a681a97b4830124",
+    "tests/fixtures/hive_flute_return_routes.json": "22136e8e856f179179d488decbad50eb607e0335864261b404722709c3820f89",
+    "scripts/lol2/hive_executioner_live.gd": "d58beb2244a4116fe2813981a28b48e46d3ac12bb6db1dd611b269b6c3d0a5b8"
+  },
+  "scope": "Cave-derived entry with earned gear through live Executioner duel/death/corpse, guardian/rescue, village/Bacatta/Dawn/Julian/flute and actual Hive return. No post-load position/health/quest injection. Automated grounded movement and aimed strikes. Provisional combat tuning. This run precedes the form-rule changes.",
+  "limits": [
+    "Engine time_scale4/physics240; movement/aim driven by test with scene physics disabled while production combat and interaction components run.",
+    "Room entry/leave use production callbacks. Original conversations finish naturally.",
+    "Checkpoint-linked continuity from cave entry, not one uninterrupted full-Act1 run.",
+    "Other required content/encounters, full casting/forms, exact native clock/combat/visual parity and owner review remain open."
+  ],
+  "timed_out": false
+}

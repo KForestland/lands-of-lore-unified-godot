@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "tests": [
+    "dawn_player_damage_test",
+    "dawn_projectile_hosts_test",
+    "hive_dawn20_live_test",
+    "jungle_dawn_live_test"
+  ],
+  "source_stable": true,
+  "report_sha256": "a261980cfa2990ba5982f8bd24780e8554b9f4185217af6c0bc12906c91efa48",
+  "files": {
+    "scripts/lol2/dawn_player_damage.gd": "a7a1d4919c5eacd8743a582ec35044de1668c80426ad8c9877a42cb2387b9d83",
+    "scripts/lol2/hive_player_health_adjustment.gd": "497b01b3cbea5715d3767743e36cf643408ccf0cf3ca37d45d7f699b312e6038",
+    "tests/dawn_player_damage_test.gd": "89004fdeb4c27816ab3216d7dd0d671fbbd5aa6edc4a5eda55fee44cb9a59740",
+    "tests/dawn_projectile_hosts_test.gd": "ec05442702fb6dbe1faeb24b423a309a89c233f1aeaa2b06dbafaeafca52d036"
+  },
+  "live_health_setter": true,
+  "live_player_rid_check": true,
+  "automatic_cast_scheduler": false,
+  "native_stat_getter_binding": false,
+  "native_lethal_continuation": false
+}

@@ -1,0 +1,62 @@
+{
+ "version": 1,
+ "purpose": "Compact recorded data for tools/prepare_act_one_departure.py explicit path (departure.json native fields only).",
+ "provenance": {
+  "recorded_doc": "docs/act-one-departure-media-checks.json (local, unpublished)",
+  "recorded_sha256": "a889b5e8be601edd7c44af13c8adb0092a8b9e65693b993b0aebf74ca2a85cb1",
+  "producer": "tools/prepare_act_one_departure.py main()",
+  "producer_sha256": "760cacfcf4eeafb46e95d1a9964602514ff050861d5edb7195e51f09debfdf76",
+  "executable": "LOLG.DAT",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "scope": "Opcode21 dispatch slice with explicit eax==esi context produces movie index26/option0, not a control70 operation. Relocated name table gives e125e; unique sphere1/area hash/header binds original318-frame movie and staged conversion frame count. Source level8 entry1 position/flat floor/ceiling are pinned; full native movie pipeline, placement and live route not yet integrated."
+ },
+ "limits": [
+  "opcode21_relocation / name_table_relocation are recorded LE fixup-table lookups; the tool checks the pinned executable bytes of each fixup record, the handler/name targets they imply (0xB5AB5; \"e125e\"), not the fixup-table walk.",
+  "native_argument_cases are recorded results of emulating handler B5AB5..B5AC1 (capstone + CreatureReplay) for three command-record addresses; not re-run. The tool pins the handler bytes (handler_sha256) and checks at byte level that B5AC1 is an E8 call to CF2B4.",
+  "Regions, arrival, destination source and the movie binding are NOT carried: they are re-derived from the original L4_HJ/L8_SJ/L4_HJI archives with published readers."
+ ],
+ "command": "150346001a00",
+ "handler": {
+  "start": 744117,
+  "end": 744139,
+  "call": 744129,
+  "call_target": 848564,
+  "sha256": "4abe38f2b71fa5f1c54a225a11ce89eaffd4108416f352eb13f173420d0b4d25"
+ },
+ "opcode21_relocation": {
+  "target_object": 2,
+  "target_offset": 379537,
+  "record_file_offset": 335120,
+  "record_hex": "0710c8080291ca0500"
+ },
+ "native_argument_cases": [
+  {
+   "record": 4194304,
+   "args": [
+    26,
+    0
+   ]
+  },
+  {
+   "record": 5308416,
+   "args": [
+    26,
+    0
+   ]
+  },
+  {
+   "record": 6422528,
+   "args": [
+    26,
+    0
+   ]
+  }
+ ],
+ "name_table_relocation": {
+  "target_object": 5,
+  "target_offset": 11637,
+  "record_file_offset": 579141,
+  "record_hex": "0700d00505752d"
+ },
+ "name": "e125e"
+}

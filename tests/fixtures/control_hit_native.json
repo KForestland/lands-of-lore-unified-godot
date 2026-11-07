@@ -1,0 +1,710 @@
+{
+  "passed": true,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "record_hex": "0a09f826000000000181",
+  "record_archive_offset": 7253621,
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code_sha256": "1c9059f1efab583ec518866220bacd49b68a128ae764fc315988136b1ff8c4ee",
+  "mode_bindings": [
+    {
+      "mode": 0,
+      "target": 713577,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 348997,
+        "record_file_offset": 326347,
+        "record_hex": "071090020245530500"
+      }
+    },
+    {
+      "mode": 1,
+      "target": 713560,
+      "relocation": {
+        "target_object": 2,
+        "target_offset": 348980,
+        "record_file_offset": 326356,
+        "record_hex": "071094020234530500"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "mask0": 0,
+      "mask2": 0,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 0,
+      "mask2": 0,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 0,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 0,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 1,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 0,
+      "mask2": 1,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 1,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 1,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 4,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 0,
+      "mask2": 4,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 4,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 4,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 65535,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 0,
+      "mask2": 65535,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 65535,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 0,
+      "mask2": 65535,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 0,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 1,
+      "mask2": 0,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 0,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 0,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 1,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 1,
+      "mask2": 1,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 1,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 1,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 4,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 1,
+      "mask2": 4,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 4,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 4,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 65535,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 1,
+      "mask2": 65535,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 65535,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 1,
+      "mask2": 65535,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 0,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 2,
+      "mask2": 0,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 0,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 0,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 1,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 2,
+      "mask2": 1,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 1,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 1,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 4,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 2,
+      "mask2": 4,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 4,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 4,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 65535,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 2,
+      "mask2": 65535,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 65535,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2,
+      "mask2": 65535,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 0,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 4,
+      "mask2": 0,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 0,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 0,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 1,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 4,
+      "mask2": 1,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 1,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 1,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 4,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 4,
+      "mask2": 4,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 4,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 4,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 65535,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 4,
+      "mask2": 65535,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 65535,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 4,
+      "mask2": 65535,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 0,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 2048,
+      "mask2": 0,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 0,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 0,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 1,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 2048,
+      "mask2": 1,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 1,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 1,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 4,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 2048,
+      "mask2": 4,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 4,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 4,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 65535,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 2048,
+      "mask2": 65535,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 65535,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 2048,
+      "mask2": 65535,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 0,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 65535,
+      "mask2": 0,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 0,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 0,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 1,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 65535,
+      "mask2": 1,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 1,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 1,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 4,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 65535,
+      "mask2": 4,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 4,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 4,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 65535,
+      "amount": 0,
+      "admitted": false,
+      "second_admitted": null
+    },
+    {
+      "mask0": 65535,
+      "mask2": 65535,
+      "amount": 1,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 65535,
+      "amount": 2,
+      "admitted": true,
+      "second_admitted": false
+    },
+    {
+      "mask0": 65535,
+      "mask2": 65535,
+      "amount": 255,
+      "admitted": true,
+      "second_admitted": false
+    }
+  ],
+  "scope": "Original control103 kind9 has both mask filters0 (wildcards), threshold1, mode81. Any supplied positive hit amount queues9976 once, then clears mode to0 and rejects repeat. Native actor/contact damage production and property18 flag consumer not replayed; this proves event-list one-shot independently of that flag."
+}

@@ -1,0 +1,15 @@
+# Museum niche scrolls — implementation checkpoint
+
+Original placements12–16 contain two Spark, two Healing and one Summon scroll. Each has a distinct carried identity; the catalog admits them from Museum onward. `verify_museum_scroll_sources.py --game ORIGINAL_ROOT` checks original hashes, placement identity/region/coordinates and the port coordinate binding.
+
+Raw source height8070 is an initialization value. The independent continuous native93FBC constructor/B286C update replay lands all five at30 after14 supplied clock1 updates and retains30 through64. Evidence and replay: `AI_COMMS/codex_act1_review_20261028/scroll_native_settled_review.json`. This replay does not populate nearby live props/creatures.
+
+Ground sprites use original31×16 images from the existing definition pack. The Museum half-pixel presentation adapter makes them15.5×8 units, bottom at30 and centre34. Inventory presentation continues to use the separate original24×24 icons. The scale/centering is an adapter awaiting visual qualification, not a newly proven native rendering transform.
+
+The optional `museum_scrolls` checkpoint separates taken and consumed receipts. Missing state is accepted for older saves containing no new scroll IDs. Inventory must match unconsumed taken copies. Validation precedes restore and rejects inconsistent receipts. Consumed copies remain hidden after restart. `record_consumption` only records a successful effect; no scroll spell handler calls it yet, and pickup does not grant a spell.
+
+Headless state/catalog/save tests cover duplicate identities, old-save defaults, malformed receipts, rejected-write preservation, and a separate-process real host restore from supplied partial/consumed state. The registry orders the save producer before its restart consumer. These fixtures do not prove earned collection or native spell effects.
+
+`museum_scroll_live_test` requires a rendered display because the production world-input gate requires captured mouse input. It is pending qualification. Earned navigation to the niches, rendered views, nearby population interactions, actual pickup-derived restart, scroll spell effects, final integration and package qualification remain open. Do not treat this checkpoint as release-ready.
+
+Prepared `museum_scroll_escape_test` extends the Aloe/Long Arm escape check with a candidate walking detour from region1459 through the static shared-edge route to the scroll niches, then returns to the escape route. It attempts production E on all five original actors and checks unique carried/unconsumed receipts and hidden actors after the inherited host reload. The inherited initial walkway placement and open-lock78 state remain supplied. Route geometry is a candidate from `museum_scroll_route_candidates.json`; no post-start repositioning or item grants are added. Godot syntax check passes; body clearance, actual collection, rendered traversal and fresh-process scroll restoration remain unqualified. The base escape test now exposes its portal list through a default-preserving method for this derived route.

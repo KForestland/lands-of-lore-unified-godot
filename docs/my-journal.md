@@ -4,14 +4,14 @@ Owner rule 2026-10-27: Classic keeps native stuck points and gives a vague My Jo
 LoL2 has no journal of its own (no "journal" text in the original files), so this is a presentation adapter on the
 shared interface sheet (the Atlas/Character sheet), opened by the player with **J** (or closed with J/Escape).
 
-- Notes: the `JOURNAL_HINTS` rows beside the planners' flags (`scripts/lol2/my_journal.gd` SOURCES, 13 notes; id =
+- Notes: the `JOURNAL_HINTS` rows beside the planners' flags (`scripts/lol2/my_journal.gd` SOURCES, 18 notes; id =
   the row's `when`). The `enhanced_guard` text is developer data and never shown.
 - Discovery: `MyJournal.discover(host, id)` at the moment in play; shown in discovery order; one notice
   "A new note in My Journal (J)." Reading changes nothing.
 - Saved: `item_effects.journal` (array of ids) in the carried packet, so it travels with every save and area handoff;
   older saves have none; `player_item_state.validate` rejects unknown/duplicate/non-text ids; continuity snapshots carry
   `journal[id]`.
-- Wired moments (11 of 13):
+- Wired moments (16 of 18):
   - `pilot_spark_before_plate`: an admitted Spark/fire hit on the Museum pilot flame (prop61) before the niche plate.
   - `long_arm_before_passage`: first reaching the Long arm walkway while passage78 is still shut (before the pickup).
   - `tavern_after_farewell`: while Bacatta's farewell (CAN_EXIT, flag34) plays.
@@ -25,6 +25,9 @@ shared interface sheet (the Atlas/Character sheet), opened by the player with **
   - `kelsrick_must_die_quietly`: Mauri's first meeting sets den flag 28; `village_hostile_gate_shut`: his tunnel offer
     with the village roused sets den flag 18 (both now forwarded as host effects to `thieves_den_rooms._apply`).
   - `thohan_sword_broken`: the Museum control181 grant of the broken Thohan while GV_KNOWLEDGE_OF_POWER_ORB is clear.
+  - `larkhon_must_sleep` / `larkhon_ask_shaman` / `larkhon_serum_needs_leaf` / `larkhon_vapors_unactivated`: near the L8
+    Larkhon (600 units) or at its L8->L12 refusal, the one matching earned state (`l8_larkhon.gd guidance_for`).
+  - `tree_torches_unlit`: near the L8 tree platform with fewer than five torches lit (`l8_tree.gd`).
 - Not wired (no planner state represents the moment):
   - `hut_smoked_before_password`: the chief's-hut smoke-out (Kelsrick local6 `Has_Luther_smoked_the_Cheifs_hut`) is not
     hosted; no port code writes local6 (docs/jungle-inner-gate.md). The contract also asks for a before-the-fire text.

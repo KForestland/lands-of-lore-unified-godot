@@ -1,0 +1,12 @@
+{
+ "name": "act_one_departure_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 572,
+ "needs": {
+  "fixtures": [
+   "user://tests/act1_departure_ready.json with sha docs/act-one-departure-walk-checks.json output_sha256 (earned by the departure walk chain)"
+  ],
+  "chain": "earned-save chain: the departure walk writes the hash-pinned input save first"
+ }
+}

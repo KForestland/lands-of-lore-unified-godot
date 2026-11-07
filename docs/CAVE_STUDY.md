@@ -14,7 +14,7 @@ Open `project.godot` in Godot 4.6+ and press F6 on
 Godot 4.7.2 Flatpak and the compatibility renderer.
 
 ```bash
-flatpak run org.godotengine.Godot --path <project folder>
+flatpak run org.godotengine.Godot --path ~/lands-of-lore-unified-godot
 ```
 
 WASD moves, mouse looks, Escape releases/captures the pointer, R restarts,

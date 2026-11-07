@@ -1,0 +1,591 @@
+{
+ "version": 1,
+ "source_sha256": "700300d0cdf7df0af9471f3476c4e6ba473a603fa89e3a6e1855037d70be09c7",
+ "actor": {
+  "actor": 76,
+  "definition": 5,
+  "position": [
+   2503,
+   0,
+   -5816
+  ],
+  "heading": 44964,
+  "health": 200,
+  "placement_word30": 200,
+  "constructor_cap_operands": [
+   200,
+   1000
+  ],
+  "constructor_cap_grade": "LIKELY",
+  "health_mapping": "port adapter; original English stat unnamed",
+  "behavior": 7,
+  "flags": 30082,
+  "present": false,
+  "loot": null,
+  "reward_scale": 25,
+  "placement_hex": "c709b816a4af000082756613882300000000000000000000000000000000c800053600000007000b000000c8000000000000000000000000",
+  "placement_offset": 23375164
+ },
+ "path": {
+  "index": 0,
+  "first": 0,
+  "count": 12,
+  "flags": 0,
+  "points": [
+   {
+    "position": [
+     2165,
+     -5810
+    ],
+    "region": 2796,
+    "flags": 2
+   },
+   {
+    "position": [
+     1777,
+     -5814
+    ],
+    "region": 4588,
+    "flags": 2
+   },
+   {
+    "position": [
+     1942,
+     -6387
+    ],
+    "region": 580,
+    "flags": 2
+   },
+   {
+    "position": [
+     2379,
+     -6596
+    ],
+    "region": 1401,
+    "flags": 2
+   },
+   {
+    "position": [
+     2556,
+     -7094
+    ],
+    "region": 6593,
+    "flags": 2
+   },
+   {
+    "position": [
+     2790,
+     -7458
+    ],
+    "region": 356,
+    "flags": 2
+   },
+   {
+    "position": [
+     2776,
+     -8162
+    ],
+    "region": 5371,
+    "flags": 2
+   },
+   {
+    "position": [
+     3131,
+     -8577
+    ],
+    "region": 1075,
+    "flags": 2
+   },
+   {
+    "position": [
+     3578,
+     -8975
+    ],
+    "region": 4717,
+    "flags": 2
+   },
+   {
+    "position": [
+     3650,
+     -9444
+    ],
+    "region": 5392,
+    "flags": 2
+   },
+   {
+    "position": [
+     4060,
+     -9751
+    ],
+    "region": 5943,
+    "flags": 2
+   },
+   {
+    "position": [
+     4135,
+     -10151
+    ],
+    "region": 5945,
+    "flags": 1030
+   }
+  ]
+ },
+ "fight_regions": [
+  {
+   "region": 5940,
+   "polygon": [
+    [
+     4227.04,
+     -9989.28
+    ],
+    [
+     4220.0,
+     -10202.0
+    ],
+    [
+     4259.0,
+     -10202.0
+    ],
+    [
+     4258.0,
+     -9991.0
+    ]
+   ],
+   "floor": [
+    -20,
+    10
+   ]
+  },
+  {
+   "region": 5945,
+   "polygon": [
+    [
+     4035.0,
+     -10023.0
+    ],
+    [
+     4044.0,
+     -10202.0
+    ],
+    [
+     4185.0,
+     -10202.0
+    ],
+    [
+     4198.0,
+     -9991.0
+    ]
+   ],
+   "floor": [
+    -20,
+    -20
+   ]
+  },
+  {
+   "region": 5946,
+   "polygon": [
+    [
+     4198.0,
+     -9991.0
+    ],
+    [
+     4185.0,
+     -10202.0
+    ],
+    [
+     4220.0,
+     -10202.0
+    ],
+    [
+     4227.04,
+     -9989.28
+    ]
+   ],
+   "floor": [
+    -20,
+    -20
+   ]
+  },
+  {
+   "region": 5947,
+   "polygon": [
+    [
+     4015.0,
+     -10029.0
+    ],
+    [
+     3965.0,
+     -10147.0
+    ],
+    [
+     4044.0,
+     -10202.0
+    ],
+    [
+     4035.0,
+     -10023.0
+    ]
+   ],
+   "floor": [
+    -20,
+    10
+   ]
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 23389824,
+     "kind": 2,
+     "offset": 5924,
+     "opcode": 9,
+     "raw_hex": "09024c000200",
+     "target": 76
+    },
+    {
+     "file_offset": 23389830,
+     "kind": 144,
+     "offset": 5930,
+     "opcode": 197,
+     "raw_hex": "c590f7140400",
+     "target": 5367
+    },
+    {
+     "file_offset": 23389836,
+     "kind": 144,
+     "offset": 5936,
+     "opcode": 197,
+     "raw_hex": "c590f8140400",
+     "target": 5368
+    },
+    {
+     "file_offset": 23389842,
+     "kind": 3,
+     "offset": 5942,
+     "opcode": 14,
+     "raw_hex": "0e036c0004000000",
+     "target": 108
+    },
+    {
+     "file_offset": 23389850,
+     "kind": 3,
+     "offset": 5950,
+     "opcode": 9,
+     "raw_hex": "090302041500",
+     "target": 1026
+    },
+    {
+     "file_offset": 23389856,
+     "kind": 0,
+     "offset": 5956,
+     "opcode": 199,
+     "raw_hex": "c70000001001",
+     "target": 0
+    },
+    {
+     "file_offset": 23389862,
+     "kind": 3,
+     "offset": 5962,
+     "opcode": 21,
+     "raw_hex": "1503df063600",
+     "target": 1759
+    },
+    {
+     "file_offset": 23389868,
+     "kind": 1,
+     "offset": 5968,
+     "opcode": 18,
+     "raw_hex": "120100000f10e72600000400388e000a0000",
+     "target": 0
+    }
+   ],
+   "count": 8,
+   "file_offset": 23389818,
+   "group": 5918,
+   "header_hex": "f00000000800",
+   "raw_hex": "f0000000080009024c000200c590f7140400c590f81404000e036c0004000000090302041500c700000010011503df063600120100000f10e72600000400388e000a0000",
+   "stream": 0
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 23389960,
+     "kind": 2,
+     "offset": 6060,
+     "opcode": 9,
+     "raw_hex": "09024c000200",
+     "target": 76
+    },
+    {
+     "file_offset": 23389966,
+     "kind": 144,
+     "offset": 6066,
+     "opcode": 197,
+     "raw_hex": "c590f7140400",
+     "target": 5367
+    },
+    {
+     "file_offset": 23389972,
+     "kind": 144,
+     "offset": 6072,
+     "opcode": 197,
+     "raw_hex": "c590f8140400",
+     "target": 5368
+    },
+    {
+     "file_offset": 23389978,
+     "kind": 3,
+     "offset": 6078,
+     "opcode": 14,
+     "raw_hex": "0e036c0004000000",
+     "target": 108
+    },
+    {
+     "file_offset": 23389986,
+     "kind": 3,
+     "offset": 6086,
+     "opcode": 9,
+     "raw_hex": "090302041500",
+     "target": 1026
+    },
+    {
+     "file_offset": 23389992,
+     "kind": 0,
+     "offset": 6092,
+     "opcode": 199,
+     "raw_hex": "c70000001001",
+     "target": 0
+    },
+    {
+     "file_offset": 23389998,
+     "kind": 3,
+     "offset": 6098,
+     "opcode": 21,
+     "raw_hex": "1503df063600",
+     "target": 1759
+    },
+    {
+     "file_offset": 23390004,
+     "kind": 1,
+     "offset": 6104,
+     "opcode": 18,
+     "raw_hex": "120100000f10e72600000400388e000a0000",
+     "target": 0
+    }
+   ],
+   "count": 8,
+   "file_offset": 23389954,
+   "group": 6054,
+   "header_hex": "f00000000800",
+   "raw_hex": "f0000000080009024c000200c590f7140400c590f81404000e036c0004000000090302041500c700000010011503df063600120100000f10e72600000400388e000a0000",
+   "stream": 0
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 23390096,
+     "kind": 2,
+     "offset": 6196,
+     "opcode": 9,
+     "raw_hex": "09024c000200",
+     "target": 76
+    },
+    {
+     "file_offset": 23390102,
+     "kind": 144,
+     "offset": 6202,
+     "opcode": 197,
+     "raw_hex": "c590f7140400",
+     "target": 5367
+    },
+    {
+     "file_offset": 23390108,
+     "kind": 144,
+     "offset": 6208,
+     "opcode": 197,
+     "raw_hex": "c590f8140400",
+     "target": 5368
+    },
+    {
+     "file_offset": 23390114,
+     "kind": 3,
+     "offset": 6214,
+     "opcode": 14,
+     "raw_hex": "0e036c0004000000",
+     "target": 108
+    },
+    {
+     "file_offset": 23390122,
+     "kind": 3,
+     "offset": 6222,
+     "opcode": 9,
+     "raw_hex": "090302041500",
+     "target": 1026
+    },
+    {
+     "file_offset": 23390128,
+     "kind": 0,
+     "offset": 6228,
+     "opcode": 199,
+     "raw_hex": "c70000001001",
+     "target": 0
+    },
+    {
+     "file_offset": 23390134,
+     "kind": 3,
+     "offset": 6234,
+     "opcode": 21,
+     "raw_hex": "1503df063600",
+     "target": 1759
+    },
+    {
+     "file_offset": 23390140,
+     "kind": 1,
+     "offset": 6240,
+     "opcode": 18,
+     "raw_hex": "120100000f10e72600000400388e000a0000",
+     "target": 0
+    }
+   ],
+   "count": 8,
+   "file_offset": 23390090,
+   "group": 6190,
+   "header_hex": "f00000000800",
+   "raw_hex": "f0000000080009024c000200c590f7140400c590f81404000e036c0004000000090302041500c700000010011503df063600120100000f10e72600000400388e000a0000",
+   "stream": 0
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 23390232,
+     "kind": 2,
+     "offset": 6332,
+     "opcode": 9,
+     "raw_hex": "09024c000200",
+     "target": 76
+    },
+    {
+     "file_offset": 23390238,
+     "kind": 144,
+     "offset": 6338,
+     "opcode": 197,
+     "raw_hex": "c590f7140400",
+     "target": 5367
+    },
+    {
+     "file_offset": 23390244,
+     "kind": 144,
+     "offset": 6344,
+     "opcode": 197,
+     "raw_hex": "c590f8140400",
+     "target": 5368
+    },
+    {
+     "file_offset": 23390250,
+     "kind": 3,
+     "offset": 6350,
+     "opcode": 14,
+     "raw_hex": "0e036c0004000000",
+     "target": 108
+    },
+    {
+     "file_offset": 23390258,
+     "kind": 3,
+     "offset": 6358,
+     "opcode": 9,
+     "raw_hex": "090302041500",
+     "target": 1026
+    },
+    {
+     "file_offset": 23390264,
+     "kind": 0,
+     "offset": 6364,
+     "opcode": 199,
+     "raw_hex": "c70000001001",
+     "target": 0
+    },
+    {
+     "file_offset": 23390270,
+     "kind": 3,
+     "offset": 6370,
+     "opcode": 21,
+     "raw_hex": "1503df063600",
+     "target": 1759
+    },
+    {
+     "file_offset": 23390276,
+     "kind": 1,
+     "offset": 6376,
+     "opcode": 18,
+     "raw_hex": "120100000f10e72600000400388e000a0000",
+     "target": 0
+    }
+   ],
+   "count": 8,
+   "file_offset": 23390226,
+   "group": 6326,
+   "header_hex": "f00000000800",
+   "raw_hex": "f0000000080009024c000200c590f7140400c590f81404000e036c0004000000090302041500c700000010011503df063600120100000f10e72600000400388e000a0000",
+   "stream": 0
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 23233106,
+     "kind": 0,
+     "offset": 12772,
+     "opcode": 198,
+     "raw_hex": "c60000000802",
+     "target": 0
+    },
+    {
+     "file_offset": 23233112,
+     "kind": 0,
+     "offset": 12778,
+     "opcode": 198,
+     "raw_hex": "c60000000501",
+     "target": 0
+    },
+    {
+     "file_offset": 23233118,
+     "kind": 144,
+     "offset": 12784,
+     "opcode": 204,
+     "raw_hex": "cc906f0ce1207101",
+     "target": 3183
+    },
+    {
+     "file_offset": 23233126,
+     "kind": 144,
+     "offset": 12792,
+     "opcode": 197,
+     "raw_hex": "c590ed0d0200",
+     "target": 3565
+    },
+    {
+     "file_offset": 23233132,
+     "kind": 2,
+     "offset": 12798,
+     "opcode": 9,
+     "raw_hex": "09024c000300",
+     "target": 76
+    }
+   ],
+   "count": 5,
+   "file_offset": 23233100,
+   "group": 12766,
+   "header_hex": "f00000000500",
+   "raw_hex": "f00000000500c60000000802c60000000501cc906f0ce1207101c590ed0d020009024c000300",
+   "stream": 1
+  }
+ ],
+ "movie": {
+  "index": 54,
+  "name": "wrm_stat",
+  "file": "wrm_stat.vqa",
+  "pointer": 11850,
+  "name_file_offset": 1850990
+ },
+ "scope": "Original actor76 placement behavior7/path0 and twelve source markers; source region predicates and movie54 retained. Modern physical steering/speed and Human encounter admission, not native callback replay."
+}

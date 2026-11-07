@@ -1,0 +1,88 @@
+{
+ "source_sha256": "b9d79292e7dd6fc2eba972e55628ee05e671a4d814de8b291310d540b3f742b9",
+ "objects": [
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6854319,
+     "group": 8152,
+     "kind": 5,
+     "offset": 4050,
+     "predicate": null,
+     "raw_hex": "0605d81f0400",
+     "stream": 1,
+     "value": 4
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 6854325,
+     "group": 8188,
+     "kind": 6,
+     "offset": 4056,
+     "predicate": {
+      "entry_file_offset": 6933212,
+      "entry_hex": "00020f0000",
+      "index": 20,
+      "trailer_file_offset": 6854331,
+      "trailer_hex": "04131400"
+     },
+     "raw_hex": "0606fc1f1400",
+     "stream": 1,
+     "value": 20
+    },
+    {
+     "file_offset": 6854331,
+     "kind": 19,
+     "offset": 4062,
+     "raw_hex": "04131400"
+    }
+   ],
+   "file_offset": 6873364,
+   "index": 54,
+   "list_file_offset": 6854319,
+   "list_offset": 4050,
+   "placement_hex": "d5f6f40e0000e7fb8204a803d20f7f0000000000010000000000000024003c0006",
+   "ref": "control:54",
+   "table": "control",
+   "terminator_offset": 4066
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 6847331,
+     "kind": 1,
+     "offset": 8158,
+     "opcode": 2,
+     "raw_hex": "020100002400",
+     "target": 0
+    },
+    {
+     "file_offset": 6847337,
+     "kind": 16,
+     "offset": 8164,
+     "opcode": 9,
+     "raw_hex": "091036001500",
+     "target": 54
+    },
+    {
+     "file_offset": 6847343,
+     "kind": 1,
+     "offset": 8170,
+     "opcode": 18,
+     "raw_hex": "120100003df30fe7000085040080000a0000",
+     "target": 0
+    }
+   ],
+   "count": 3,
+   "file_offset": 6847325,
+   "group": 8152,
+   "header_hex": "f00000000300",
+   "raw_hex": "f00000000300020100002400091036001500120100003df30fe7000085040080000a0000",
+   "stream": 1
+  }
+ ],
+ "scope": "Exact source placement/kind5/group bytes; native transport semantics unentered; production modern adapter documented0270."
+}

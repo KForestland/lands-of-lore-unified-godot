@@ -1,0 +1,28 @@
+extends SceneTree
+const State=preload("res://scripts/lol2/cave_guard_encounter_state.gd")
+func _initialize() -> void:
+	var src:=State.Sequence.source();var geometry:=State.Movement.source();var s:=State.initial(src,geometry)
+	State.timer_step(s,src,geometry,600,0);assert(not s.delayed.started and s.delayed.left==120)
+	State.enter(s,src,geometry,Vector2(-9,-16615),-285,true,0,0)
+	assert(s.region_flags["10"]==0 and s.region_flags["29"]==32)
+	State.rendered(s,src,geometry,0);State.movie_step(s,src,geometry,100,0)
+	assert(s.delayed.started and not s.delayed.fired and s.delayed.left==120)
+	State.timer_step(s,src,geometry,60,0);assert(s.delayed.left==60 and not s.delayed.fired)
+	var saved=JSON.parse_string(JSON.stringify(s));assert(State.validate(saved,src,geometry).is_empty());s=State.canonical(saved)
+	var before:=s.duplicate(true);State.timer_step(s,src,geometry,0,0);State.Delayed.advance_audio(s.delayed,0);assert(s==before)
+	State.timer_step(s,src,geometry,59,0);assert(s.delayed.left==1 and not s.delayed.fired)
+	State.timer_step(s,src,geometry,1,0);assert(s.delayed.fired and s.delayed.left==120 and s.delayed.audio==0)
+	assert(s.groups.count(5050)==1 and State.validate(s,src,geometry).is_empty())
+	State.Delayed.advance_audio(s.delayed,0.5);assert(s.delayed.audio==0.5)
+	saved=JSON.parse_string(JSON.stringify(s));assert(State.validate(saved,src,geometry).is_empty());s=State.canonical(saved)
+	State.timer_step(s,src,geometry,600,0);assert(s.groups.count(5050)==1)
+	State.Delayed.advance_audio(s.delayed,100);assert(s.delayed.audio==State.Delayed.duration())
+	assert(State.validate(s,src,geometry).is_empty())
+	var bad:=s.duplicate(true);bad.groups.append(5050);assert(not State.validate(bad,src,geometry).is_empty())
+	bad=s.duplicate(true);bad.region_flags["29"]=0;assert(not State.validate(bad,src,geometry).is_empty())
+	for step in [1,60,119,120,121,600]:
+		var t:=State.Delayed.initial();State.Delayed.start(t);t.left=1
+		assert(State.Delayed.step(t,step))
+		assert(t.left==(121-step if 120>step else 0))
+	print("PASS guard delayed effects: exact regionbits,120tick one-shot, pre/postexpiry JSONrestore, zero-step pause, original carry, voiceclock, duplicate/invalidflag rejection.")
+	quit()

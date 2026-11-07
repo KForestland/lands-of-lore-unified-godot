@@ -16,7 +16,7 @@ review usability, not native wall correctness; floor UVs remain conspicuously
 diagnostic in the water area. No collision, material binding or native evidence
 was promoted during this UI pass.
 
-Run a local launcher (`run_lol2_original_floors.sh`, not published).
+Run `~/run_lol2_original_floors.sh`.
 Changed: scripts/lol2/original_floor_review.gd in the Godot project.
 Next: use the close-up views with original-game evidence to resolve step and
 special-opening behavior before collision generation and playable traversal.

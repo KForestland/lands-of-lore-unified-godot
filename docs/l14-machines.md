@@ -1,0 +1,9 @@
+STORY057: original Examining teleport72/table73, body187, Grinder77, Blood Trough75, region3902 contact and dormant original statuette65 are pinned in l14-machines-source.json. Source bytes verify against original L14_HT.MIX. Native callees/caller/body continuity remain unentered; all book association and timing/form adaptations are explicit0288.
+
+Earned l14_machines_earned_test PASS40.59s, source stable: tmp/regressions/l14_machines_probe4/report.json. Exact STORY055 flute save -> physical lower table route -> actual pedestal input/body/grinding timer -> original world trough carry/save-reload -> physical aperture -> wrong orientation/item/full inventory/pause/repeat guards -> Kit single insertion ->743-unit physical route around machine -> earned-Dreamstone Lizard viewpoint at original low output -> actual same dormant item65 catch before landing -> Human/save-reload. No seeded item or death, no player teleport or deleted aperture wall.
+
+Immutable tmp/l14_machines_qualified_save.json SHA473695d0556b9f34c35c57832db75d70bbeb84bf4fc25f1060284e9ca9cb7cb0. Original Temple flute77 retained once alongside statue65, trough committed once in machine3902 slot and absent from world. Statue uses original source position3325,-54,-3617 and settles1unit tofloor-55; original21.5-high icon fits24-high output chamber. Pressing lasts15active seconds so a prompt walker can reach the back; settle/catch window2active seconds. Missed statue stays recoverable; no softlock.
+
+Rejected probes: front-side catch was blocked by original aperture; back Human viewpoint and40/8unit rises were incompatible with low ceiling-31. Final test uses actual Lizard body/viewpoint and original-position statue, preserving source collision and world-item ray. No failed endpoint promoted.
+
+Affected055 flute test PASS32.87s, source stable, tmp/regressions/l14_machines_affected/report.json. Source verifier/deviations/diff checks pass.

@@ -1,0 +1,1157 @@
+{
+  "scope": "Original predicate instructions under explicit emulator inputs; not full-game runtime evidence",
+  "exe_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "fixups": [
+    {
+      "file_offset": 257800,
+      "raw": "07002c0a02c2da",
+      "slot": 55852,
+      "target": 420582
+    },
+    {
+      "file_offset": 257807,
+      "raw": "0700300a02c7da",
+      "slot": 55856,
+      "target": 420587
+    },
+    {
+      "file_offset": 257814,
+      "raw": "0700340a0206db",
+      "slot": 55860,
+      "target": 420650
+    },
+    {
+      "file_offset": 257821,
+      "raw": "0700380a02f1da",
+      "slot": 55864,
+      "target": 420629
+    },
+    {
+      "file_offset": 257828,
+      "raw": "07003c0a0223db",
+      "slot": 55868,
+      "target": 420679
+    },
+    {
+      "file_offset": 257835,
+      "raw": "0700400a0217db",
+      "slot": 55872,
+      "target": 420667
+    },
+    {
+      "file_offset": 257842,
+      "raw": "0700440a02c7da",
+      "slot": 55876,
+      "target": 420587
+    },
+    {
+      "file_offset": 257849,
+      "raw": "0700480a0238db",
+      "slot": 55880,
+      "target": 420700
+    },
+    {
+      "file_offset": 257856,
+      "raw": "07004c0a0253db",
+      "slot": 55884,
+      "target": 420727
+    },
+    {
+      "file_offset": 257863,
+      "raw": "0700500a0257db",
+      "slot": 55888,
+      "target": 420731
+    },
+    {
+      "file_offset": 257870,
+      "raw": "0700540a028bdb",
+      "slot": 55892,
+      "target": 420783
+    },
+    {
+      "file_offset": 257877,
+      "raw": "0700580a0268db",
+      "slot": 55896,
+      "target": 420748
+    },
+    {
+      "file_offset": 257884,
+      "raw": "07005c0a02c8db",
+      "slot": 55900,
+      "target": 420844
+    },
+    {
+      "file_offset": 257891,
+      "raw": "0700600a02aedb",
+      "slot": 55904,
+      "target": 420818
+    },
+    {
+      "file_offset": 257898,
+      "raw": "0700640a0257db",
+      "slot": 55908,
+      "target": 420731
+    },
+    {
+      "file_offset": 257905,
+      "raw": "0700680a0257db",
+      "slot": 55912,
+      "target": 420731
+    },
+    {
+      "file_offset": 257912,
+      "raw": "07006c0a021fdc",
+      "slot": 55916,
+      "target": 420931
+    },
+    {
+      "file_offset": 257919,
+      "raw": "0700700a0233dc",
+      "slot": 55920,
+      "target": 420951
+    },
+    {
+      "file_offset": 257926,
+      "raw": "0700740a0247dc",
+      "slot": 55924,
+      "target": 420971
+    },
+    {
+      "file_offset": 257933,
+      "raw": "0700780a025bdc",
+      "slot": 55928,
+      "target": 420991
+    },
+    {
+      "file_offset": 257940,
+      "raw": "07007c0a026bdc",
+      "slot": 55932,
+      "target": 421007
+    },
+    {
+      "file_offset": 257947,
+      "raw": "0700800a027fdc",
+      "slot": 55936,
+      "target": 421027
+    },
+    {
+      "file_offset": 257954,
+      "raw": "0700840a02ecdb",
+      "slot": 55940,
+      "target": 420880
+    },
+    {
+      "file_offset": 257961,
+      "raw": "0700880a0207dc",
+      "slot": 55944,
+      "target": 420907
+    }
+  ],
+  "vectors": [
+    {
+      "table": [
+        "0003000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0003000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0003000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0003000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0003000200"
+      ],
+      "index": 0,
+      "local": [
+        3
+      ],
+      "shared": [
+        9
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0003000200"
+      ],
+      "index": 0,
+      "local": [
+        9
+      ],
+      "shared": [
+        3
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0003000200"
+      ],
+      "index": 0,
+      "local": [
+        255
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0103000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0103000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0103000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0103000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0103000200"
+      ],
+      "index": 0,
+      "local": [
+        3
+      ],
+      "shared": [
+        9
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0103000200"
+      ],
+      "index": 0,
+      "local": [
+        9
+      ],
+      "shared": [
+        3
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0103000200"
+      ],
+      "index": 0,
+      "local": [
+        255
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0203000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0203000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0203000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0203000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0203000200"
+      ],
+      "index": 0,
+      "local": [
+        3
+      ],
+      "shared": [
+        9
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0203000200"
+      ],
+      "index": 0,
+      "local": [
+        9
+      ],
+      "shared": [
+        3
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0203000200"
+      ],
+      "index": 0,
+      "local": [
+        255
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0303000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0303000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0303000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0303000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0303000200"
+      ],
+      "index": 0,
+      "local": [
+        3
+      ],
+      "shared": [
+        9
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0303000200"
+      ],
+      "index": 0,
+      "local": [
+        9
+      ],
+      "shared": [
+        3
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0303000200"
+      ],
+      "index": 0,
+      "local": [
+        255
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0403000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0403000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0403000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0403000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0403000200"
+      ],
+      "index": 0,
+      "local": [
+        3
+      ],
+      "shared": [
+        9
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0403000200"
+      ],
+      "index": 0,
+      "local": [
+        9
+      ],
+      "shared": [
+        3
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0403000200"
+      ],
+      "index": 0,
+      "local": [
+        255
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0503000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0503000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0503000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0503000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0503000200"
+      ],
+      "index": 0,
+      "local": [
+        3
+      ],
+      "shared": [
+        9
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0503000200"
+      ],
+      "index": 0,
+      "local": [
+        9
+      ],
+      "shared": [
+        3
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0503000200"
+      ],
+      "index": 0,
+      "local": [
+        255
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0603000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0603000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0603000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0603000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0603000200"
+      ],
+      "index": 0,
+      "local": [
+        3
+      ],
+      "shared": [
+        9
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0603000200"
+      ],
+      "index": 0,
+      "local": [
+        9
+      ],
+      "shared": [
+        3
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0603000200"
+      ],
+      "index": 0,
+      "local": [
+        255
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0703000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0703000200"
+      ],
+      "index": 0,
+      "local": [
+        0
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0703000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0703000200"
+      ],
+      "index": 0,
+      "local": [
+        1
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0703000200"
+      ],
+      "index": 0,
+      "local": [
+        3
+      ],
+      "shared": [
+        9
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0703000200"
+      ],
+      "index": 0,
+      "local": [
+        9
+      ],
+      "shared": [
+        3
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0703000200"
+      ],
+      "index": 0,
+      "local": [
+        255
+      ],
+      "shared": [
+        1
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0003000000",
+        "0105000009",
+        "0604000401",
+        "0704000401"
+      ],
+      "index": 2,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 0,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0003000000",
+        "0105000009",
+        "0604000401",
+        "0704000401"
+      ],
+      "index": 3,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 0,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0003000000",
+        "0105000009",
+        "0604000401",
+        "0704000401"
+      ],
+      "index": 2,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0003000000",
+        "0105000009",
+        "0604000401",
+        "0704000401"
+      ],
+      "index": 3,
+      "local": [
+        0
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0003000000",
+        "0105000009",
+        "0604000401",
+        "0704000401"
+      ],
+      "index": 2,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 0,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0003000000",
+        "0105000009",
+        "0604000401",
+        "0704000401"
+      ],
+      "index": 3,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 0,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0003000000",
+        "0105000009",
+        "0604000401",
+        "0704000401"
+      ],
+      "index": 2,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0003000000",
+        "0105000009",
+        "0604000401",
+        "0704000401"
+      ],
+      "index": 3,
+      "local": [
+        1
+      ],
+      "shared": [
+        0
+      ],
+      "context": 9,
+      "expected": 0
+    },
+    {
+      "table": [
+        "0000010001",
+        "0000070007"
+      ],
+      "index": 0,
+      "local": [
+        0,
+        7
+      ],
+      "shared": [
+        0,
+        7
+      ],
+      "context": 7,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0002010201",
+        "0000070007"
+      ],
+      "index": 0,
+      "local": [
+        0,
+        7
+      ],
+      "shared": [
+        0,
+        7
+      ],
+      "context": 7,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0003010301",
+        "0000070007"
+      ],
+      "index": 0,
+      "local": [
+        0,
+        7
+      ],
+      "shared": [
+        0,
+        7
+      ],
+      "context": 7,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0004010401",
+        "0000070007"
+      ],
+      "index": 0,
+      "local": [
+        0,
+        7
+      ],
+      "shared": [
+        0,
+        7
+      ],
+      "context": 7,
+      "expected": 1
+    },
+    {
+      "table": [
+        "0005010501",
+        "0000070007"
+      ],
+      "index": 0,
+      "local": [
+        0,
+        7
+      ],
+      "shared": [
+        0,
+        7
+      ],
+      "context": 7,
+      "expected": 1
+    }
+  ]
+}

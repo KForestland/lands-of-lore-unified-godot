@@ -1,0 +1,1 @@
+| 2026-11-06 | L16 dragon room start (STORY-078, draft) | The dragon earned test loads the centre-tower save and checks at_bars and seen_actor. It still places Luther on the statue and the dragon. The module still does not fire control 74. | No route from the centre hall to region 9476 was read. | Adapter (owner rule 2026-10-30) |

@@ -1,0 +1,219 @@
+{
+ "dll_sha256": "40632dd9a34dbe057d24ffb3d47e87d60108512e3a0f7cf4289e8ab3b0975eb9",
+ "message": 8,
+ "entry": 2805,
+ "raw_hex": "6a66ff151411000083c40485c0752e6a0b6a176a01ff151811000083c40c6a0b6a186a29ff151811000083c40c6a66ff150c11000083c404e9780000006864100000ff153811000083c40485c0742b682b010000ff150c11000083c4046a0b688b0000006a29ff151811000083c40c6a0b688c0000006a01eb326835100000ff153811000083c40485c0741a682b010000ff150c11000083c404ff15dc1100006a0b6a08ebd06a0b6a3c6a29ff151811000083c40c6892100000ff1550110000e92cffffff68b1100000ff153811000083c40485c0745a6824100000ff153811000083c40485c075486a0b6a166a29ff151811000083c40c6a01689b100000ff157c11000083c408687f0f000068a6090000ff15a811000083c4086a2cff15b811000083c404ff1530110000e99300000068641000",
+ "calls": [
+  {
+   "address": "0xaf7",
+   "host": "get_flag",
+   "offset": "0x50",
+   "args": [
+    102
+   ]
+  },
+  {
+   "address": "0xb0a",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    1,
+    23,
+    11
+   ]
+  },
+  {
+   "address": "0xb19",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    41,
+    24,
+    11
+   ]
+  },
+  {
+   "address": "0xb24",
+   "host": "set_flag",
+   "offset": "0x48",
+   "args": [
+    102
+   ]
+  },
+  {
+   "address": "0xb37",
+   "host": "get_global",
+   "offset": "0x70",
+   "args": [
+    4196
+   ]
+  },
+  {
+   "address": "0xb49",
+   "host": "set_flag",
+   "offset": "0x48",
+   "args": [
+    299
+   ]
+  },
+  {
+   "address": "0xb5b",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    41,
+    139,
+    11
+   ]
+  },
+  {
+   "address": "0xb74",
+   "host": "get_global",
+   "offset": "0x70",
+   "args": [
+    4149
+   ]
+  },
+  {
+   "address": "0xb86",
+   "host": "set_flag",
+   "offset": "0x48",
+   "args": [
+    299
+   ]
+  },
+  {
+   "address": "0xb8f",
+   "host": "0x114",
+   "offset": "0x114",
+   "args": []
+  },
+  {
+   "address": "0xba1",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    41,
+    60,
+    11
+   ]
+  },
+  {
+   "address": "0xbaf",
+   "host": "0x88",
+   "offset": "0x88",
+   "args": [
+    4242
+   ]
+  },
+  {
+   "address": "0xbbf",
+   "host": "get_global",
+   "offset": "0x70",
+   "args": [
+    4273
+   ]
+  },
+  {
+   "address": "0xbd1",
+   "host": "get_global",
+   "offset": "0x70",
+   "args": [
+    4132
+   ]
+  },
+  {
+   "address": "0xbe4",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    41,
+    22,
+    11
+   ]
+  },
+  {
+   "address": "0xbf4",
+   "host": "set_local",
+   "offset": "0xb4",
+   "args": [
+    4251,
+    1
+   ]
+  },
+  {
+   "address": "0xc07",
+   "host": "place",
+   "offset": "0xe0",
+   "args": [
+    2470,
+    3967
+   ]
+  },
+  {
+   "address": "0xc12",
+   "host": "host_f0",
+   "offset": "0xf0",
+   "args": [
+    44
+   ]
+  },
+  {
+   "address": "0xc1b",
+   "host": "exit_room",
+   "offset": "0x68",
+   "args": []
+  }
+ ],
+ "scope": "Original DANIEL exit to settlement room chain and SETTLE1 world exit531/4414. Modern post-bout action collapses intervening room-view navigation; does not claim B1 view navigation fixed.",
+ "settlement_exit": {
+  "dll_sha256": "063cc40f953248168d59d5724f640c339a75f9db09f5dbe8201f144edad42c4a",
+  "range": [
+   1312,
+   1408
+  ],
+  "raw_hex": "14683e010000689901000068c800000068920000006a04ff150c07000083c414b801000000c331c0c3683e1100006813020000ff15d807000083c40868b4000000ff15e807000083c404ff156007000031c0c3ff157c07000031c0c39e050000",
+  "calls": [
+   {
+    "address": "0x537",
+    "host": "0x18",
+    "offset": "0x18",
+    "args": []
+   },
+   {
+    "address": "0x553",
+    "host": "place",
+    "offset": "0xe0",
+    "args": [
+     531,
+     4414
+    ]
+   },
+   {
+    "address": "0x561",
+    "host": "host_f0",
+    "offset": "0xf0",
+    "args": [
+     180
+    ]
+   },
+   {
+    "address": "0x56a",
+    "host": "exit_room",
+    "offset": "0x68",
+    "args": []
+   },
+   {
+    "address": "0x573",
+    "host": "0x84",
+    "offset": "0x84",
+    "args": []
+   }
+  ],
+  "place": [
+   531,
+   4414
+  ],
+  "heading": 180
+ }
+}

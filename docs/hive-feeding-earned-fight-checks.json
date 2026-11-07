@@ -1,0 +1,58 @@
+{
+  "ambush": {
+    "actors": {
+      "33": {
+        "active": false,
+        "cooldown": 0.0,
+        "elapsed": 0.0,
+        "health": 400,
+        "phase": 0,
+        "position": [
+          -4796.0,
+          -3000.0,
+          -6374.0
+        ],
+        "seed": 324508672,
+        "windup": 0.0
+      },
+      "35": {
+        "active": true,
+        "cooldown": 0.0,
+        "elapsed": 0.0,
+        "health": 0,
+        "phase": 3,
+        "position": [
+          -2562.20385742188,
+          -619.000793457031,
+          -8160.66650390625
+        ],
+        "seed": 870860624,
+        "windup": 0.0
+      }
+    },
+    "contact716": true,
+    "feeding_hit_disabled": false,
+    "local7": 0,
+    "version": 1
+  },
+  "casts": 2,
+  "health": 1,
+  "input_proof": "docs/hive-feeding-earned-walk-checks.json",
+  "input_save": "user://tests/act1_feeding_earned_arrival.json",
+  "input_sha256": "8059a9b5b445a353d636bd7030a512ea74c6a9d94f37117fa36b81d81afa6345",
+  "output_save": "user://tests/act1_feeding_earned_defeated.json",
+  "output_sha256": "64f5efbca5aaeed3169257ff62c11343b812a8c2ddf07142a18ba33f83451be8",
+  "passed": true,
+  "position": [
+    -2564.0,
+    -586.954162597656,
+    -7615.32666015625
+  ],
+  "scope": "Hash-linked earned encounter arrival, actual maximum Spark and aimed melee, ordinary movement, defeated actor35, walked/jumped return to stop2 lift and JSON rollback. No position/inventory/quest/form injections. Accelerated clocks/manual movement and curse ticks are test adapters; earlier route legs reused, not full Act One.",
+  "strikes": 21,
+  "seconds": 3.3713628020013857,
+  "runner_report": "tmp/act1_team_20260927/feeding_fight_single_clock_report.json",
+  "script_sha256": "c90989c0219a839e4eb99b4f8740388ec9997a5bcf10dafd3251bfd1d85326c2",
+  "helper_sha256": "0d2601073600ba06ef87b76b64aeb5f68b4139aeec30901817355cca0c45b4e8",
+  "curse_clock": "Automatic curse callbacks disabled; inherited tick_curse drives one update per manually driven movement/wait tick. Engine time4x/physics240 remain adapters."
+}

@@ -1,0 +1,2452 @@
+{
+ "version": 1,
+ "source": {
+  "area": "L1_DC",
+  "archive_sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+  "geometry_key": 2971673856,
+  "metadata_key": 2971019266,
+  "evidence": [
+   "G44_cave_props",
+   "G45_cave_ambient"
+  ]
+ },
+ "frame_seconds": 0.1,
+ "art": {
+  "prop_219": [
+   "prop_219_0_index.png"
+  ],
+  "prop_222": [
+   "prop_222_0_index.png",
+   "prop_222_1_index.png",
+   "prop_222_2_index.png",
+   "prop_222_3_index.png",
+   "prop_222_4_index.png",
+   "prop_222_5_index.png",
+   "prop_222_6_index.png",
+   "prop_222_7_index.png",
+   "prop_222_8_index.png",
+   "prop_222_9_index.png",
+   "prop_222_10_index.png",
+   "prop_222_11_index.png",
+   "prop_222_12_index.png",
+   "prop_222_13_index.png",
+   "prop_222_14_index.png",
+   "prop_222_15_index.png",
+   "prop_222_16_index.png",
+   "prop_222_17_index.png",
+   "prop_222_18_index.png",
+   "prop_222_19_index.png",
+   "prop_222_20_index.png",
+   "prop_222_21_index.png",
+   "prop_222_22_index.png",
+   "prop_222_23_index.png",
+   "prop_222_24_index.png",
+   "prop_222_25_index.png",
+   "prop_222_26_index.png",
+   "prop_222_27_index.png",
+   "prop_222_28_index.png",
+   "prop_222_29_index.png",
+   "prop_222_30_index.png",
+   "prop_222_31_index.png",
+   "prop_222_32_index.png",
+   "prop_222_33_index.png",
+   "prop_222_34_index.png",
+   "prop_222_35_index.png",
+   "prop_222_36_index.png",
+   "prop_222_37_index.png"
+  ],
+  "prop_145": [
+   "prop_145_0_index.png",
+   "prop_145_1_index.png",
+   "prop_145_2_index.png",
+   "prop_145_3_index.png",
+   "prop_145_4_index.png",
+   "prop_145_5_index.png",
+   "prop_145_6_index.png",
+   "prop_145_7_index.png",
+   "prop_145_8_index.png",
+   "prop_145_9_index.png"
+  ],
+  "prop_268": [
+   "prop_268_0_index.png",
+   "prop_268_1_index.png",
+   "prop_268_2_index.png",
+   "prop_268_3_index.png"
+  ],
+  "prop_279": [
+   "prop_279_0_index.png",
+   "prop_279_1_index.png",
+   "prop_279_2_index.png",
+   "prop_279_3_index.png"
+  ],
+  "prop_260": [
+   "prop_260_0_index.png",
+   "prop_260_1_index.png",
+   "prop_260_2_index.png",
+   "prop_260_3_index.png",
+   "prop_260_4_index.png"
+  ],
+  "prop_539": [
+   "prop_539_0_index.png",
+   "prop_539_1_index.png",
+   "prop_539_2_index.png",
+   "prop_539_3_index.png",
+   "prop_539_4_index.png",
+   "prop_539_5_index.png",
+   "prop_539_6_index.png",
+   "prop_539_7_index.png",
+   "prop_539_8_index.png",
+   "prop_539_9_index.png",
+   "prop_539_10_index.png",
+   "prop_539_11_index.png",
+   "prop_539_12_index.png",
+   "prop_539_13_index.png",
+   "prop_539_14_index.png",
+   "prop_539_15_index.png",
+   "prop_539_16_index.png",
+   "prop_539_17_index.png",
+   "prop_539_18_index.png",
+   "prop_539_19_index.png"
+  ],
+  "prop_296": [
+   "prop_296_0_index.png"
+  ]
+ },
+ "props": {
+  "20": {
+   "template": 73,
+   "group": "wall torch",
+   "position": [
+    -1564,
+    40,
+    -6094
+   ],
+   "region": 964,
+   "material": "prop_219",
+   "frames": [
+    "prop_219_0_index.png"
+   ],
+   "left": -37.0,
+   "right": 40.0,
+   "bottom": 0,
+   "top": 100,
+   "frame_flags": 0,
+   "placement_offset": 7256645,
+   "chain": {
+    "material": "prop_222",
+    "frames": [
+     "prop_222_0_index.png",
+     "prop_222_1_index.png",
+     "prop_222_2_index.png",
+     "prop_222_3_index.png",
+     "prop_222_4_index.png",
+     "prop_222_5_index.png",
+     "prop_222_6_index.png",
+     "prop_222_7_index.png",
+     "prop_222_8_index.png",
+     "prop_222_9_index.png",
+     "prop_222_10_index.png",
+     "prop_222_11_index.png",
+     "prop_222_12_index.png",
+     "prop_222_13_index.png",
+     "prop_222_14_index.png",
+     "prop_222_15_index.png",
+     "prop_222_16_index.png",
+     "prop_222_17_index.png",
+     "prop_222_18_index.png",
+     "prop_222_19_index.png",
+     "prop_222_20_index.png",
+     "prop_222_21_index.png",
+     "prop_222_22_index.png",
+     "prop_222_23_index.png",
+     "prop_222_24_index.png",
+     "prop_222_25_index.png",
+     "prop_222_26_index.png",
+     "prop_222_27_index.png",
+     "prop_222_28_index.png",
+     "prop_222_29_index.png",
+     "prop_222_30_index.png",
+     "prop_222_31_index.png",
+     "prop_222_32_index.png",
+     "prop_222_33_index.png",
+     "prop_222_34_index.png",
+     "prop_222_35_index.png",
+     "prop_222_36_index.png",
+     "prop_222_37_index.png"
+    ],
+    "left": -17.0,
+    "right": 20.0,
+    "bottom": 0,
+    "top": 100,
+    "frame_flags": 8
+   }
+  },
+  "224": {
+   "template": 73,
+   "group": "wall torch",
+   "position": [
+    -685,
+    -150,
+    -10016
+   ],
+   "region": 1073,
+   "material": "prop_219",
+   "frames": [
+    "prop_219_0_index.png"
+   ],
+   "left": -37.0,
+   "right": 40.0,
+   "bottom": 0,
+   "top": 100,
+   "frame_flags": 0,
+   "placement_offset": 7264193,
+   "chain": {
+    "material": "prop_222",
+    "frames": [
+     "prop_222_0_index.png",
+     "prop_222_1_index.png",
+     "prop_222_2_index.png",
+     "prop_222_3_index.png",
+     "prop_222_4_index.png",
+     "prop_222_5_index.png",
+     "prop_222_6_index.png",
+     "prop_222_7_index.png",
+     "prop_222_8_index.png",
+     "prop_222_9_index.png",
+     "prop_222_10_index.png",
+     "prop_222_11_index.png",
+     "prop_222_12_index.png",
+     "prop_222_13_index.png",
+     "prop_222_14_index.png",
+     "prop_222_15_index.png",
+     "prop_222_16_index.png",
+     "prop_222_17_index.png",
+     "prop_222_18_index.png",
+     "prop_222_19_index.png",
+     "prop_222_20_index.png",
+     "prop_222_21_index.png",
+     "prop_222_22_index.png",
+     "prop_222_23_index.png",
+     "prop_222_24_index.png",
+     "prop_222_25_index.png",
+     "prop_222_26_index.png",
+     "prop_222_27_index.png",
+     "prop_222_28_index.png",
+     "prop_222_29_index.png",
+     "prop_222_30_index.png",
+     "prop_222_31_index.png",
+     "prop_222_32_index.png",
+     "prop_222_33_index.png",
+     "prop_222_34_index.png",
+     "prop_222_35_index.png",
+     "prop_222_36_index.png",
+     "prop_222_37_index.png"
+    ],
+    "left": -17.0,
+    "right": 20.0,
+    "bottom": 0,
+    "top": 100,
+    "frame_flags": 8
+   }
+  },
+  "344": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -89,
+    30,
+    -4431
+   ],
+   "region": 1315,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268633
+  },
+  "345": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -94,
+    30,
+    -4420
+   ],
+   "region": 1314,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268670
+  },
+  "346": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -83,
+    30,
+    -4444
+   ],
+   "region": 1323,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268707
+  },
+  "347": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -304,
+    30,
+    -4744
+   ],
+   "region": 1302,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268744
+  },
+  "348": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -307,
+    30,
+    -4751
+   ],
+   "region": 1302,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268781
+  },
+  "349": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -311,
+    30,
+    -4759
+   ],
+   "region": 1302,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268818
+  },
+  "350": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -206,
+    30,
+    -4647
+   ],
+   "region": 1297,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268855
+  },
+  "351": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -200,
+    30,
+    -4630
+   ],
+   "region": 1297,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268892
+  },
+  "352": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -213,
+    30,
+    -4663
+   ],
+   "region": 1297,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268929
+  },
+  "353": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -220,
+    30,
+    -4681
+   ],
+   "region": 1297,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7268966
+  },
+  "354": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -226,
+    30,
+    -4699
+   ],
+   "region": 1294,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7269003
+  },
+  "355": {
+   "template": 90,
+   "group": "jungle mist",
+   "position": [
+    -195,
+    30,
+    -4614
+   ],
+   "region": 1278,
+   "material": "prop_145",
+   "frames": [
+    "prop_145_0_index.png",
+    "prop_145_1_index.png",
+    "prop_145_2_index.png",
+    "prop_145_3_index.png",
+    "prop_145_4_index.png",
+    "prop_145_5_index.png",
+    "prop_145_6_index.png",
+    "prop_145_7_index.png",
+    "prop_145_8_index.png",
+    "prop_145_9_index.png"
+   ],
+   "left": -9.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 17,
+   "frame_flags": 16,
+   "placement_offset": 7269040
+  },
+  "361": {
+   "template": 0,
+   "group": "water pillar",
+   "position": [
+    -2686,
+    -9,
+    -4944
+   ],
+   "region": 1328,
+   "material": "prop_268",
+   "frames": [
+    "prop_268_0_index.png",
+    "prop_268_1_index.png",
+    "prop_268_2_index.png",
+    "prop_268_3_index.png"
+   ],
+   "left": -31.0,
+   "right": 31.0,
+   "bottom": 0,
+   "top": 163,
+   "frame_flags": 0,
+   "placement_offset": 7269262
+  },
+  "362": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    -2687,
+    -6,
+    -5012
+   ],
+   "region": 1328,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7269299
+  },
+  "371": {
+   "template": 81,
+   "group": "waterfall",
+   "position": [
+    -93,
+    19,
+    -4422
+   ],
+   "region": 1315,
+   "material": "prop_260",
+   "frames": [
+    "prop_260_0_index.png",
+    "prop_260_1_index.png",
+    "prop_260_2_index.png",
+    "prop_260_3_index.png",
+    "prop_260_4_index.png"
+   ],
+   "left": -5.0,
+   "right": 5.0,
+   "bottom": 0,
+   "top": 142,
+   "frame_flags": 32,
+   "placement_offset": 7269632
+  },
+  "374": {
+   "template": 81,
+   "group": "waterfall",
+   "position": [
+    -85,
+    19,
+    -4440
+   ],
+   "region": 1315,
+   "material": "prop_260",
+   "frames": [
+    "prop_260_0_index.png",
+    "prop_260_1_index.png",
+    "prop_260_2_index.png",
+    "prop_260_3_index.png",
+    "prop_260_4_index.png"
+   ],
+   "left": -5.0,
+   "right": 5.0,
+   "bottom": 0,
+   "top": 142,
+   "frame_flags": 32,
+   "placement_offset": 7269743
+  },
+  "376": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    -131,
+    30,
+    -4613
+   ],
+   "region": 1273,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7269817
+  },
+  "377": {
+   "template": 2,
+   "group": "big water pillar",
+   "position": [
+    -175,
+    30,
+    -4531
+   ],
+   "region": 1280,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -44.5,
+   "right": 47.5,
+   "bottom": 0,
+   "top": 95,
+   "frame_flags": 64,
+   "placement_offset": 7269854
+  },
+  "378": {
+   "template": 81,
+   "group": "waterfall",
+   "position": [
+    -303,
+    19,
+    -4743
+   ],
+   "region": 1306,
+   "material": "prop_260",
+   "frames": [
+    "prop_260_0_index.png",
+    "prop_260_1_index.png",
+    "prop_260_2_index.png",
+    "prop_260_3_index.png",
+    "prop_260_4_index.png"
+   ],
+   "left": -5.0,
+   "right": 5.0,
+   "bottom": 0,
+   "top": 142,
+   "frame_flags": 32,
+   "placement_offset": 7269891
+  },
+  "379": {
+   "template": 81,
+   "group": "waterfall",
+   "position": [
+    -311,
+    19,
+    -4759
+   ],
+   "region": 1302,
+   "material": "prop_260",
+   "frames": [
+    "prop_260_0_index.png",
+    "prop_260_1_index.png",
+    "prop_260_2_index.png",
+    "prop_260_3_index.png",
+    "prop_260_4_index.png"
+   ],
+   "left": -5.0,
+   "right": 5.0,
+   "bottom": 0,
+   "top": 142,
+   "frame_flags": 32,
+   "placement_offset": 7269928
+  },
+  "382": {
+   "template": 81,
+   "group": "waterfall",
+   "position": [
+    -197,
+    20,
+    -4625
+   ],
+   "region": 1273,
+   "material": "prop_260",
+   "frames": [
+    "prop_260_0_index.png",
+    "prop_260_1_index.png",
+    "prop_260_2_index.png",
+    "prop_260_3_index.png",
+    "prop_260_4_index.png"
+   ],
+   "left": -5.0,
+   "right": 5.0,
+   "bottom": 0,
+   "top": 142,
+   "frame_flags": 32,
+   "placement_offset": 7270039
+  },
+  "383": {
+   "template": 81,
+   "group": "waterfall",
+   "position": [
+    -240,
+    21,
+    -4597
+   ],
+   "region": 1308,
+   "material": "prop_260",
+   "frames": [
+    "prop_260_0_index.png",
+    "prop_260_1_index.png",
+    "prop_260_2_index.png",
+    "prop_260_3_index.png",
+    "prop_260_4_index.png"
+   ],
+   "left": -5.0,
+   "right": 5.0,
+   "bottom": 0,
+   "top": 142,
+   "frame_flags": 32,
+   "placement_offset": 7270076
+  },
+  "386": {
+   "template": 81,
+   "group": "waterfall",
+   "position": [
+    -234,
+    21,
+    -4615
+   ],
+   "region": 1295,
+   "material": "prop_260",
+   "frames": [
+    "prop_260_0_index.png",
+    "prop_260_1_index.png",
+    "prop_260_2_index.png",
+    "prop_260_3_index.png",
+    "prop_260_4_index.png"
+   ],
+   "left": -5.0,
+   "right": 5.0,
+   "bottom": 0,
+   "top": 142,
+   "frame_flags": 32,
+   "placement_offset": 7270187
+  },
+  "388": {
+   "template": 81,
+   "group": "waterfall",
+   "position": [
+    -222,
+    19,
+    -4685
+   ],
+   "region": 1297,
+   "material": "prop_260",
+   "frames": [
+    "prop_260_0_index.png",
+    "prop_260_1_index.png",
+    "prop_260_2_index.png",
+    "prop_260_3_index.png",
+    "prop_260_4_index.png"
+   ],
+   "left": -5.0,
+   "right": 5.0,
+   "bottom": 0,
+   "top": 142,
+   "frame_flags": 32,
+   "placement_offset": 7270261
+  },
+  "472": {
+   "template": 0,
+   "group": "water pillar",
+   "position": [
+    426,
+    -252,
+    -10230
+   ],
+   "region": 986,
+   "material": "prop_268",
+   "frames": [
+    "prop_268_0_index.png",
+    "prop_268_1_index.png",
+    "prop_268_2_index.png",
+    "prop_268_3_index.png"
+   ],
+   "left": -31.0,
+   "right": 31.0,
+   "bottom": 0,
+   "top": 160,
+   "frame_flags": 0,
+   "placement_offset": 7273369
+  },
+  "474": {
+   "template": 0,
+   "group": "water pillar",
+   "position": [
+    437,
+    -192,
+    -11050
+   ],
+   "region": 1019,
+   "material": "prop_268",
+   "frames": [
+    "prop_268_0_index.png",
+    "prop_268_1_index.png",
+    "prop_268_2_index.png",
+    "prop_268_3_index.png"
+   ],
+   "left": -31.0,
+   "right": 31.0,
+   "bottom": 0,
+   "top": 160,
+   "frame_flags": 0,
+   "placement_offset": 7273443
+  },
+  "475": {
+   "template": 0,
+   "group": "water pillar",
+   "position": [
+    608,
+    -222,
+    -10732
+   ],
+   "region": 1000,
+   "material": "prop_268",
+   "frames": [
+    "prop_268_0_index.png",
+    "prop_268_1_index.png",
+    "prop_268_2_index.png",
+    "prop_268_3_index.png"
+   ],
+   "left": -31.0,
+   "right": 31.0,
+   "bottom": 0,
+   "top": 160,
+   "frame_flags": 0,
+   "placement_offset": 7273480
+  },
+  "476": {
+   "template": 0,
+   "group": "water pillar",
+   "position": [
+    608,
+    -222,
+    -10632
+   ],
+   "region": 998,
+   "material": "prop_268",
+   "frames": [
+    "prop_268_0_index.png",
+    "prop_268_1_index.png",
+    "prop_268_2_index.png",
+    "prop_268_3_index.png"
+   ],
+   "left": -31.0,
+   "right": 31.0,
+   "bottom": 0,
+   "top": 160,
+   "frame_flags": 0,
+   "placement_offset": 7273517
+  },
+  "477": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    677,
+    -222,
+    -10720
+   ],
+   "region": 994,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7273554
+  },
+  "478": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    326,
+    -192,
+    -11056
+   ],
+   "region": 1038,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7273591
+  },
+  "479": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    417,
+    -253,
+    -10292
+   ],
+   "region": 988,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7273628
+  },
+  "480": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    320,
+    -252,
+    -10250
+   ],
+   "region": 982,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7273665
+  },
+  "483": {
+   "template": 2,
+   "group": "big water pillar",
+   "position": [
+    -1017,
+    -209,
+    -9144
+   ],
+   "region": 671,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -44.5,
+   "right": 47.5,
+   "bottom": 0,
+   "top": 95,
+   "frame_flags": 64,
+   "placement_offset": 7273776
+  },
+  "485": {
+   "template": 2,
+   "group": "big water pillar",
+   "position": [
+    -697,
+    -209,
+    -9420
+   ],
+   "region": 675,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -44.5,
+   "right": 47.5,
+   "bottom": 0,
+   "top": 95,
+   "frame_flags": 64,
+   "placement_offset": 7273850
+  },
+  "487": {
+   "template": 2,
+   "group": "big water pillar",
+   "position": [
+    -632,
+    -209,
+    -9063
+   ],
+   "region": 703,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -44.5,
+   "right": 47.5,
+   "bottom": 0,
+   "top": 95,
+   "frame_flags": 64,
+   "placement_offset": 7273924
+  },
+  "488": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    -985,
+    -209,
+    -9045
+   ],
+   "region": 670,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7273961
+  },
+  "489": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    -368,
+    -209,
+    -9149
+   ],
+   "region": 699,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7273998
+  },
+  "490": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    -521,
+    -209,
+    -9425
+   ],
+   "region": 681,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7274035
+  },
+  "491": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    -873,
+    -209,
+    -9291
+   ],
+   "region": 680,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7274072
+  },
+  "494": {
+   "template": 3,
+   "group": "water pillar",
+   "position": [
+    -556,
+    -209,
+    -9226
+   ],
+   "region": 689,
+   "material": "prop_279",
+   "frames": [
+    "prop_279_0_index.png",
+    "prop_279_1_index.png",
+    "prop_279_2_index.png",
+    "prop_279_3_index.png"
+   ],
+   "left": -27.0,
+   "right": 30.0,
+   "bottom": 0,
+   "top": 75,
+   "frame_flags": 0,
+   "placement_offset": 7274183
+  },
+  "519": {
+   "template": 73,
+   "group": "wall torch",
+   "position": [
+    -2603,
+    80,
+    -4584
+   ],
+   "region": 619,
+   "material": "prop_219",
+   "frames": [
+    "prop_219_0_index.png"
+   ],
+   "left": -37.0,
+   "right": 40.0,
+   "bottom": 0,
+   "top": 100,
+   "frame_flags": 0,
+   "placement_offset": 7275108,
+   "chain": {
+    "material": "prop_222",
+    "frames": [
+     "prop_222_0_index.png",
+     "prop_222_1_index.png",
+     "prop_222_2_index.png",
+     "prop_222_3_index.png",
+     "prop_222_4_index.png",
+     "prop_222_5_index.png",
+     "prop_222_6_index.png",
+     "prop_222_7_index.png",
+     "prop_222_8_index.png",
+     "prop_222_9_index.png",
+     "prop_222_10_index.png",
+     "prop_222_11_index.png",
+     "prop_222_12_index.png",
+     "prop_222_13_index.png",
+     "prop_222_14_index.png",
+     "prop_222_15_index.png",
+     "prop_222_16_index.png",
+     "prop_222_17_index.png",
+     "prop_222_18_index.png",
+     "prop_222_19_index.png",
+     "prop_222_20_index.png",
+     "prop_222_21_index.png",
+     "prop_222_22_index.png",
+     "prop_222_23_index.png",
+     "prop_222_24_index.png",
+     "prop_222_25_index.png",
+     "prop_222_26_index.png",
+     "prop_222_27_index.png",
+     "prop_222_28_index.png",
+     "prop_222_29_index.png",
+     "prop_222_30_index.png",
+     "prop_222_31_index.png",
+     "prop_222_32_index.png",
+     "prop_222_33_index.png",
+     "prop_222_34_index.png",
+     "prop_222_35_index.png",
+     "prop_222_36_index.png",
+     "prop_222_37_index.png"
+    ],
+    "left": -17.0,
+    "right": 20.0,
+    "bottom": 0,
+    "top": 100,
+    "frame_flags": 8
+   }
+  },
+  "536": {
+   "template": 48,
+   "group": "meat (hanging)",
+   "position": [
+    591,
+    -156,
+    -12216
+   ],
+   "region": 1087,
+   "material": "prop_539",
+   "frames": [
+    "prop_539_0_index.png",
+    "prop_539_1_index.png",
+    "prop_539_2_index.png",
+    "prop_539_3_index.png",
+    "prop_539_4_index.png",
+    "prop_539_5_index.png",
+    "prop_539_6_index.png",
+    "prop_539_7_index.png",
+    "prop_539_8_index.png",
+    "prop_539_9_index.png",
+    "prop_539_10_index.png",
+    "prop_539_11_index.png",
+    "prop_539_12_index.png",
+    "prop_539_13_index.png",
+    "prop_539_14_index.png",
+    "prop_539_15_index.png",
+    "prop_539_16_index.png",
+    "prop_539_17_index.png",
+    "prop_539_18_index.png",
+    "prop_539_19_index.png"
+   ],
+   "left": -12.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 129,
+   "frame_flags": 0,
+   "placement_offset": 7275737
+  },
+  "537": {
+   "template": 48,
+   "group": "meat (hanging)",
+   "position": [
+    538,
+    -172,
+    -12190
+   ],
+   "region": 1083,
+   "material": "prop_539",
+   "frames": [
+    "prop_539_0_index.png",
+    "prop_539_1_index.png",
+    "prop_539_2_index.png",
+    "prop_539_3_index.png",
+    "prop_539_4_index.png",
+    "prop_539_5_index.png",
+    "prop_539_6_index.png",
+    "prop_539_7_index.png",
+    "prop_539_8_index.png",
+    "prop_539_9_index.png",
+    "prop_539_10_index.png",
+    "prop_539_11_index.png",
+    "prop_539_12_index.png",
+    "prop_539_13_index.png",
+    "prop_539_14_index.png",
+    "prop_539_15_index.png",
+    "prop_539_16_index.png",
+    "prop_539_17_index.png",
+    "prop_539_18_index.png",
+    "prop_539_19_index.png"
+   ],
+   "left": -12.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 129,
+   "frame_flags": 0,
+   "placement_offset": 7275774
+  },
+  "538": {
+   "template": 48,
+   "group": "meat (hanging)",
+   "position": [
+    516,
+    -156,
+    -12263
+   ],
+   "region": 1087,
+   "material": "prop_539",
+   "frames": [
+    "prop_539_0_index.png",
+    "prop_539_1_index.png",
+    "prop_539_2_index.png",
+    "prop_539_3_index.png",
+    "prop_539_4_index.png",
+    "prop_539_5_index.png",
+    "prop_539_6_index.png",
+    "prop_539_7_index.png",
+    "prop_539_8_index.png",
+    "prop_539_9_index.png",
+    "prop_539_10_index.png",
+    "prop_539_11_index.png",
+    "prop_539_12_index.png",
+    "prop_539_13_index.png",
+    "prop_539_14_index.png",
+    "prop_539_15_index.png",
+    "prop_539_16_index.png",
+    "prop_539_17_index.png",
+    "prop_539_18_index.png",
+    "prop_539_19_index.png"
+   ],
+   "left": -12.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 129,
+   "frame_flags": 0,
+   "placement_offset": 7275811
+  },
+  "539": {
+   "template": 48,
+   "group": "meat (hanging)",
+   "position": [
+    442,
+    -156,
+    -12254
+   ],
+   "region": 1085,
+   "material": "prop_539",
+   "frames": [
+    "prop_539_0_index.png",
+    "prop_539_1_index.png",
+    "prop_539_2_index.png",
+    "prop_539_3_index.png",
+    "prop_539_4_index.png",
+    "prop_539_5_index.png",
+    "prop_539_6_index.png",
+    "prop_539_7_index.png",
+    "prop_539_8_index.png",
+    "prop_539_9_index.png",
+    "prop_539_10_index.png",
+    "prop_539_11_index.png",
+    "prop_539_12_index.png",
+    "prop_539_13_index.png",
+    "prop_539_14_index.png",
+    "prop_539_15_index.png",
+    "prop_539_16_index.png",
+    "prop_539_17_index.png",
+    "prop_539_18_index.png",
+    "prop_539_19_index.png"
+   ],
+   "left": -12.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 129,
+   "frame_flags": 0,
+   "placement_offset": 7275848
+  },
+  "540": {
+   "template": 48,
+   "group": "meat (hanging)",
+   "position": [
+    486,
+    -156,
+    -12197
+   ],
+   "region": 1085,
+   "material": "prop_539",
+   "frames": [
+    "prop_539_0_index.png",
+    "prop_539_1_index.png",
+    "prop_539_2_index.png",
+    "prop_539_3_index.png",
+    "prop_539_4_index.png",
+    "prop_539_5_index.png",
+    "prop_539_6_index.png",
+    "prop_539_7_index.png",
+    "prop_539_8_index.png",
+    "prop_539_9_index.png",
+    "prop_539_10_index.png",
+    "prop_539_11_index.png",
+    "prop_539_12_index.png",
+    "prop_539_13_index.png",
+    "prop_539_14_index.png",
+    "prop_539_15_index.png",
+    "prop_539_16_index.png",
+    "prop_539_17_index.png",
+    "prop_539_18_index.png",
+    "prop_539_19_index.png"
+   ],
+   "left": -12.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 129,
+   "frame_flags": 0,
+   "placement_offset": 7275885
+  },
+  "541": {
+   "template": 48,
+   "group": "meat (hanging)",
+   "position": [
+    563,
+    -156,
+    -12311
+   ],
+   "region": 1087,
+   "material": "prop_539",
+   "frames": [
+    "prop_539_0_index.png",
+    "prop_539_1_index.png",
+    "prop_539_2_index.png",
+    "prop_539_3_index.png",
+    "prop_539_4_index.png",
+    "prop_539_5_index.png",
+    "prop_539_6_index.png",
+    "prop_539_7_index.png",
+    "prop_539_8_index.png",
+    "prop_539_9_index.png",
+    "prop_539_10_index.png",
+    "prop_539_11_index.png",
+    "prop_539_12_index.png",
+    "prop_539_13_index.png",
+    "prop_539_14_index.png",
+    "prop_539_15_index.png",
+    "prop_539_16_index.png",
+    "prop_539_17_index.png",
+    "prop_539_18_index.png",
+    "prop_539_19_index.png"
+   ],
+   "left": -12.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 129,
+   "frame_flags": 0,
+   "placement_offset": 7275922
+  },
+  "542": {
+   "template": 48,
+   "group": "meat (hanging)",
+   "position": [
+    605,
+    -156,
+    -12280
+   ],
+   "region": 1087,
+   "material": "prop_539",
+   "frames": [
+    "prop_539_0_index.png",
+    "prop_539_1_index.png",
+    "prop_539_2_index.png",
+    "prop_539_3_index.png",
+    "prop_539_4_index.png",
+    "prop_539_5_index.png",
+    "prop_539_6_index.png",
+    "prop_539_7_index.png",
+    "prop_539_8_index.png",
+    "prop_539_9_index.png",
+    "prop_539_10_index.png",
+    "prop_539_11_index.png",
+    "prop_539_12_index.png",
+    "prop_539_13_index.png",
+    "prop_539_14_index.png",
+    "prop_539_15_index.png",
+    "prop_539_16_index.png",
+    "prop_539_17_index.png",
+    "prop_539_18_index.png",
+    "prop_539_19_index.png"
+   ],
+   "left": -12.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 129,
+   "frame_flags": 0,
+   "placement_offset": 7275959
+  },
+  "550": {
+   "template": 73,
+   "group": "wall torch",
+   "position": [
+    -199,
+    -295,
+    -17706
+   ],
+   "region": 24,
+   "material": "prop_219",
+   "frames": [
+    "prop_219_0_index.png"
+   ],
+   "left": -37.0,
+   "right": 40.0,
+   "bottom": 0,
+   "top": 100,
+   "frame_flags": 0,
+   "placement_offset": 7276255,
+   "chain": {
+    "material": "prop_222",
+    "frames": [
+     "prop_222_0_index.png",
+     "prop_222_1_index.png",
+     "prop_222_2_index.png",
+     "prop_222_3_index.png",
+     "prop_222_4_index.png",
+     "prop_222_5_index.png",
+     "prop_222_6_index.png",
+     "prop_222_7_index.png",
+     "prop_222_8_index.png",
+     "prop_222_9_index.png",
+     "prop_222_10_index.png",
+     "prop_222_11_index.png",
+     "prop_222_12_index.png",
+     "prop_222_13_index.png",
+     "prop_222_14_index.png",
+     "prop_222_15_index.png",
+     "prop_222_16_index.png",
+     "prop_222_17_index.png",
+     "prop_222_18_index.png",
+     "prop_222_19_index.png",
+     "prop_222_20_index.png",
+     "prop_222_21_index.png",
+     "prop_222_22_index.png",
+     "prop_222_23_index.png",
+     "prop_222_24_index.png",
+     "prop_222_25_index.png",
+     "prop_222_26_index.png",
+     "prop_222_27_index.png",
+     "prop_222_28_index.png",
+     "prop_222_29_index.png",
+     "prop_222_30_index.png",
+     "prop_222_31_index.png",
+     "prop_222_32_index.png",
+     "prop_222_33_index.png",
+     "prop_222_34_index.png",
+     "prop_222_35_index.png",
+     "prop_222_36_index.png",
+     "prop_222_37_index.png"
+    ],
+    "left": -17.0,
+    "right": 20.0,
+    "bottom": 0,
+    "top": 100,
+    "frame_flags": 8
+   }
+  },
+  "551": {
+   "template": 73,
+   "group": "wall torch",
+   "position": [
+    55,
+    -295,
+    -17702
+   ],
+   "region": 13,
+   "material": "prop_219",
+   "frames": [
+    "prop_219_0_index.png"
+   ],
+   "left": -37.0,
+   "right": 40.0,
+   "bottom": 0,
+   "top": 100,
+   "frame_flags": 0,
+   "placement_offset": 7276292,
+   "chain": {
+    "material": "prop_222",
+    "frames": [
+     "prop_222_0_index.png",
+     "prop_222_1_index.png",
+     "prop_222_2_index.png",
+     "prop_222_3_index.png",
+     "prop_222_4_index.png",
+     "prop_222_5_index.png",
+     "prop_222_6_index.png",
+     "prop_222_7_index.png",
+     "prop_222_8_index.png",
+     "prop_222_9_index.png",
+     "prop_222_10_index.png",
+     "prop_222_11_index.png",
+     "prop_222_12_index.png",
+     "prop_222_13_index.png",
+     "prop_222_14_index.png",
+     "prop_222_15_index.png",
+     "prop_222_16_index.png",
+     "prop_222_17_index.png",
+     "prop_222_18_index.png",
+     "prop_222_19_index.png",
+     "prop_222_20_index.png",
+     "prop_222_21_index.png",
+     "prop_222_22_index.png",
+     "prop_222_23_index.png",
+     "prop_222_24_index.png",
+     "prop_222_25_index.png",
+     "prop_222_26_index.png",
+     "prop_222_27_index.png",
+     "prop_222_28_index.png",
+     "prop_222_29_index.png",
+     "prop_222_30_index.png",
+     "prop_222_31_index.png",
+     "prop_222_32_index.png",
+     "prop_222_33_index.png",
+     "prop_222_34_index.png",
+     "prop_222_35_index.png",
+     "prop_222_36_index.png",
+     "prop_222_37_index.png"
+    ],
+    "left": -17.0,
+    "right": 20.0,
+    "bottom": 0,
+    "top": 100,
+    "frame_flags": 8
+   }
+  },
+  "552": {
+   "template": 65,
+   "group": "shrinktofit",
+   "position": [
+    -215,
+    -265,
+    -14590
+   ],
+   "region": 1058,
+   "material": "prop_296",
+   "frames": [
+    "prop_296_0_index.png"
+   ],
+   "left": -30.0,
+   "right": 31.0,
+   "bottom": 0,
+   "top": 126,
+   "frame_flags": 0,
+   "placement_offset": 7276329
+  },
+  "623": {
+   "template": 73,
+   "group": "wall torch",
+   "position": [
+    -114,
+    30,
+    -7767
+   ],
+   "region": 875,
+   "material": "prop_219",
+   "frames": [
+    "prop_219_0_index.png"
+   ],
+   "left": -37.0,
+   "right": 40.0,
+   "bottom": 0,
+   "top": 100,
+   "frame_flags": 0,
+   "placement_offset": 7278956,
+   "chain": {
+    "material": "prop_222",
+    "frames": [
+     "prop_222_0_index.png",
+     "prop_222_1_index.png",
+     "prop_222_2_index.png",
+     "prop_222_3_index.png",
+     "prop_222_4_index.png",
+     "prop_222_5_index.png",
+     "prop_222_6_index.png",
+     "prop_222_7_index.png",
+     "prop_222_8_index.png",
+     "prop_222_9_index.png",
+     "prop_222_10_index.png",
+     "prop_222_11_index.png",
+     "prop_222_12_index.png",
+     "prop_222_13_index.png",
+     "prop_222_14_index.png",
+     "prop_222_15_index.png",
+     "prop_222_16_index.png",
+     "prop_222_17_index.png",
+     "prop_222_18_index.png",
+     "prop_222_19_index.png",
+     "prop_222_20_index.png",
+     "prop_222_21_index.png",
+     "prop_222_22_index.png",
+     "prop_222_23_index.png",
+     "prop_222_24_index.png",
+     "prop_222_25_index.png",
+     "prop_222_26_index.png",
+     "prop_222_27_index.png",
+     "prop_222_28_index.png",
+     "prop_222_29_index.png",
+     "prop_222_30_index.png",
+     "prop_222_31_index.png",
+     "prop_222_32_index.png",
+     "prop_222_33_index.png",
+     "prop_222_34_index.png",
+     "prop_222_35_index.png",
+     "prop_222_36_index.png",
+     "prop_222_37_index.png"
+    ],
+    "left": -17.0,
+    "right": 20.0,
+    "bottom": 0,
+    "top": 100,
+    "frame_flags": 8
+   }
+  },
+  "624": {
+   "template": 73,
+   "group": "wall torch",
+   "position": [
+    37,
+    40,
+    -6802
+   ],
+   "region": 654,
+   "material": "prop_219",
+   "frames": [
+    "prop_219_0_index.png"
+   ],
+   "left": -37.0,
+   "right": 40.0,
+   "bottom": 0,
+   "top": 100,
+   "frame_flags": 0,
+   "placement_offset": 7278993,
+   "chain": {
+    "material": "prop_222",
+    "frames": [
+     "prop_222_0_index.png",
+     "prop_222_1_index.png",
+     "prop_222_2_index.png",
+     "prop_222_3_index.png",
+     "prop_222_4_index.png",
+     "prop_222_5_index.png",
+     "prop_222_6_index.png",
+     "prop_222_7_index.png",
+     "prop_222_8_index.png",
+     "prop_222_9_index.png",
+     "prop_222_10_index.png",
+     "prop_222_11_index.png",
+     "prop_222_12_index.png",
+     "prop_222_13_index.png",
+     "prop_222_14_index.png",
+     "prop_222_15_index.png",
+     "prop_222_16_index.png",
+     "prop_222_17_index.png",
+     "prop_222_18_index.png",
+     "prop_222_19_index.png",
+     "prop_222_20_index.png",
+     "prop_222_21_index.png",
+     "prop_222_22_index.png",
+     "prop_222_23_index.png",
+     "prop_222_24_index.png",
+     "prop_222_25_index.png",
+     "prop_222_26_index.png",
+     "prop_222_27_index.png",
+     "prop_222_28_index.png",
+     "prop_222_29_index.png",
+     "prop_222_30_index.png",
+     "prop_222_31_index.png",
+     "prop_222_32_index.png",
+     "prop_222_33_index.png",
+     "prop_222_34_index.png",
+     "prop_222_35_index.png",
+     "prop_222_36_index.png",
+     "prop_222_37_index.png"
+    ],
+    "left": -17.0,
+    "right": 20.0,
+    "bottom": 0,
+    "top": 100,
+    "frame_flags": 8
+   }
+  },
+  "644": {
+   "template": 65,
+   "group": "shrinktofit",
+   "position": [
+    -503,
+    -207,
+    -11774
+   ],
+   "region": 284,
+   "material": "prop_296",
+   "frames": [
+    "prop_296_0_index.png"
+   ],
+   "left": -30.0,
+   "right": 31.0,
+   "bottom": 0,
+   "top": 126,
+   "frame_flags": 0,
+   "placement_offset": 7279733
+  },
+  "645": {
+   "template": 65,
+   "group": "shrinktofit",
+   "position": [
+    -1445,
+    -230,
+    -12086
+   ],
+   "region": 1801,
+   "material": "prop_296",
+   "frames": [
+    "prop_296_0_index.png"
+   ],
+   "left": -30.0,
+   "right": 31.0,
+   "bottom": 0,
+   "top": 126,
+   "frame_flags": 0,
+   "placement_offset": 7279770
+  },
+  "1110": {
+   "template": 48,
+   "group": "meat (hanging)",
+   "position": [
+    1175,
+    -216,
+    -12219
+   ],
+   "region": 858,
+   "material": "prop_539",
+   "frames": [
+    "prop_539_0_index.png",
+    "prop_539_1_index.png",
+    "prop_539_2_index.png",
+    "prop_539_3_index.png",
+    "prop_539_4_index.png",
+    "prop_539_5_index.png",
+    "prop_539_6_index.png",
+    "prop_539_7_index.png",
+    "prop_539_8_index.png",
+    "prop_539_9_index.png",
+    "prop_539_10_index.png",
+    "prop_539_11_index.png",
+    "prop_539_12_index.png",
+    "prop_539_13_index.png",
+    "prop_539_14_index.png",
+    "prop_539_15_index.png",
+    "prop_539_16_index.png",
+    "prop_539_17_index.png",
+    "prop_539_18_index.png",
+    "prop_539_19_index.png"
+   ],
+   "left": -12.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 129,
+   "frame_flags": 0,
+   "placement_offset": 7296975
+  }
+ },
+ "emitters": {
+  "prop20": {
+   "owner_kind": "prop",
+   "owner": 20,
+   "position": [
+    -1564,
+    40,
+    -6094
+   ],
+   "sound": 741,
+   "file": "741.wav",
+   "volume": 128,
+   "flags": 18,
+   "inner": 160,
+   "outer": 480,
+   "group": 46,
+   "command_offset": 7232917,
+   "name": "torch2.aud"
+  },
+  "prop224": {
+   "owner_kind": "prop",
+   "owner": 224,
+   "position": [
+    -685,
+    -150,
+    -10016
+   ],
+   "sound": 740,
+   "file": "740.wav",
+   "volume": 128,
+   "flags": 18,
+   "inner": 160,
+   "outer": 480,
+   "group": 2764,
+   "command_offset": 7235635,
+   "name": "torch1.aud"
+  },
+  "prop447": {
+   "owner_kind": "prop",
+   "owner": 447,
+   "position": [
+    -65,
+    -278,
+    -18723
+   ],
+   "sound": 754,
+   "file": "754.wav",
+   "volume": 200,
+   "flags": 18,
+   "inner": 288,
+   "outer": 976,
+   "group": 4066,
+   "command_offset": 7236937,
+   "name": "rumblel1.aud"
+  },
+  "prop519": {
+   "owner_kind": "prop",
+   "owner": 519,
+   "position": [
+    -2603,
+    80,
+    -4584
+   ],
+   "sound": 741,
+   "file": "741.wav",
+   "volume": 128,
+   "flags": 18,
+   "inner": 160,
+   "outer": 480,
+   "group": 5164,
+   "command_offset": 7238035,
+   "name": "torch2.aud"
+  },
+  "prop538": {
+   "owner_kind": "prop",
+   "owner": 538,
+   "position": [
+    516,
+    -156,
+    -12263
+   ],
+   "sound": 581,
+   "file": "581.wav",
+   "volume": 128,
+   "flags": 6,
+   "inner": 160,
+   "outer": 480,
+   "group": 5250,
+   "command_offset": 7238121,
+   "name": "flies1.aud"
+  },
+  "prop550": {
+   "owner_kind": "prop",
+   "owner": 550,
+   "position": [
+    -199,
+    -295,
+    -17706
+   ],
+   "sound": 741,
+   "file": "741.wav",
+   "volume": 128,
+   "flags": 2,
+   "inner": 160,
+   "outer": 480,
+   "group": 5478,
+   "command_offset": 7238349,
+   "name": "torch2.aud"
+  },
+  "prop551": {
+   "owner_kind": "prop",
+   "owner": 551,
+   "position": [
+    55,
+    -295,
+    -17702
+   ],
+   "sound": 741,
+   "file": "741.wav",
+   "volume": 128,
+   "flags": 2,
+   "inner": 160,
+   "outer": 480,
+   "group": 5488,
+   "command_offset": 7238359,
+   "name": "torch2.aud"
+  },
+  "prop614": {
+   "owner_kind": "prop",
+   "owner": 614,
+   "position": [
+    399,
+    -9,
+    -11390
+   ],
+   "sound": 761,
+   "file": "761.wav",
+   "volume": 128,
+   "flags": 2,
+   "inner": 48,
+   "outer": 368,
+   "group": 7210,
+   "command_offset": 7240081,
+   "name": "h2ofallf.aud"
+  },
+  "prop623": {
+   "owner_kind": "prop",
+   "owner": 623,
+   "position": [
+    -114,
+    30,
+    -7767
+   ],
+   "sound": 741,
+   "file": "741.wav",
+   "volume": 128,
+   "flags": 18,
+   "inner": 160,
+   "outer": 480,
+   "group": 7220,
+   "command_offset": 7240091,
+   "name": "torch2.aud"
+  },
+  "prop624": {
+   "owner_kind": "prop",
+   "owner": 624,
+   "position": [
+    37,
+    40,
+    -6802
+   ],
+   "sound": 741,
+   "file": "741.wav",
+   "volume": 128,
+   "flags": 2,
+   "inner": 160,
+   "outer": 480,
+   "group": 7230,
+   "command_offset": 7240101,
+   "name": "torch2.aud"
+  },
+  "prop635": {
+   "owner_kind": "prop",
+   "owner": 635,
+   "position": [
+    -2219,
+    136,
+    -5078
+   ],
+   "sound": 669,
+   "file": "669.wav",
+   "volume": 128,
+   "flags": 2,
+   "inner": 160,
+   "outer": 480,
+   "group": 7724,
+   "command_offset": 7240595,
+   "name": "jungle4.aud"
+  },
+  "prop958": {
+   "owner_kind": "prop",
+   "owner": 958,
+   "position": [
+    1057,
+    -215,
+    -11765
+   ],
+   "sound": 581,
+   "file": "581.wav",
+   "volume": 128,
+   "flags": 6,
+   "inner": 192,
+   "outer": 512,
+   "group": 8658,
+   "command_offset": 7241529,
+   "name": "flies1.aud"
+  },
+  "prop961": {
+   "owner_kind": "prop",
+   "owner": 961,
+   "position": [
+    864,
+    -215,
+    -11953
+   ],
+   "sound": 581,
+   "file": "581.wav",
+   "volume": 128,
+   "flags": 6,
+   "inner": 160,
+   "outer": 480,
+   "group": 8712,
+   "command_offset": 7241583,
+   "name": "flies1.aud"
+  },
+  "prop962": {
+   "owner_kind": "prop",
+   "owner": 962,
+   "position": [
+    888,
+    -215,
+    -11586
+   ],
+   "sound": 581,
+   "file": "581.wav",
+   "volume": 128,
+   "flags": 6,
+   "inner": 160,
+   "outer": 480,
+   "group": 8744,
+   "command_offset": 7241615,
+   "name": "flies1.aud"
+  },
+  "prop1050": {
+   "owner_kind": "prop",
+   "owner": 1050,
+   "position": [
+    1356,
+    -215,
+    -11738
+   ],
+   "sound": 583,
+   "file": "583.wav",
+   "volume": 128,
+   "flags": 2,
+   "inner": 176,
+   "outer": 496,
+   "group": 8876,
+   "command_offset": 7241747,
+   "name": "lowhuml1.aud"
+  },
+  "prop1359": {
+   "owner_kind": "prop",
+   "owner": 1359,
+   "position": [
+    448,
+    -255,
+    -10545
+   ],
+   "sound": 660,
+   "file": "660.wav",
+   "volume": 128,
+   "flags": 7,
+   "inner": 496,
+   "outer": 816,
+   "group": 9532,
+   "command_offset": 7242403,
+   "name": "h2oloop1.aud"
+  },
+  "prop1502": {
+   "owner_kind": "prop",
+   "owner": 1502,
+   "position": [
+    -137,
+    -149,
+    -9302
+   ],
+   "sound": 660,
+   "file": "660.wav",
+   "volume": 128,
+   "flags": 23,
+   "inner": 288,
+   "outer": 608,
+   "group": 9620,
+   "command_offset": 7242491,
+   "name": "h2oloop1.aud"
+  },
+  "control171": {
+   "owner_kind": "control",
+   "owner": 171,
+   "position": [
+    1334,
+    -215,
+    -11643
+   ],
+   "sound": 438,
+   "file": "438.wav",
+   "volume": 128,
+   "flags": 22,
+   "inner": 160,
+   "outer": 480,
+   "group": 11452,
+   "command_offset": 7244323,
+   "name": "skelton1.aud"
+  }
+ },
+ "files": {
+  "438.wav": "2947765122f7498469d86877685fc5483ecc30c9b3f2b2a27e02c8f7edc63b5b",
+  "581.wav": "c63df60809ecda9749d3440527df9b1b8c2543c469105de96750b93c68a1e176",
+  "583.wav": "28c352528eb17abd25afaec16074878c6c0e0d34280aa93ba155e60ad2b04ec1",
+  "660.wav": "d88fb37c0004e8f1db1b54b8c86714482eee7ae06b8f534898b15c7444a1a791",
+  "669.wav": "f10cd1cb914710bd73ee61c4356b9bdedcb5e476e4c15435f42fea8eac3032a4",
+  "740.wav": "c633ae04bec2bdce7b20b430751eec7579327d630a97d8ea71ef8b454553d831",
+  "741.wav": "fb288ebce976f7e6376e120a2227c2fcecf1b89e2bfabad341ae5efe0945e88f",
+  "754.wav": "4db3f57ceada62a72c226be895351e4c9bdda4603f392aa106f49803d6b3407c",
+  "761.wav": "c8454c89253c789c608fa69e362b95b1245c76f0006e15fdd6b5f279fa1a2e70",
+  "prop_145_0_index.png": "cafca58e8d844f00497c2025ec320c3082b8fa43d2bb2459d4d7208ffa94a308",
+  "prop_145_1_index.png": "8899532970e0b9d53db8863326feb5c535fcbfd7659afdc75f70ee3324ba6b1f",
+  "prop_145_2_index.png": "204493ff851bd8a2e6e191868fdf3ad2ebfadec81b94f47c73ad8b99b802a054",
+  "prop_145_3_index.png": "f018d0b7006d737fdfe65cafdab9ff3699cad60bfbc19ac5b71d4dbfbc3fa0a5",
+  "prop_145_4_index.png": "1a295677c703876550a9ac77463a133f958e6074c4c1531103470861c4c1b66a",
+  "prop_145_5_index.png": "84f98b9be1e9fd056cf02f7b896c5324ce9cb87d367bd69847fd6b4601a29e9d",
+  "prop_145_6_index.png": "55a6d0ca18253a5c1ab2298c5c8677b6a342f150d3ea3652376e50a4429be19d",
+  "prop_145_7_index.png": "06d7c7dd140264485d48eaa7a22cfe6798871a256fa87501f9ce7000426ab0c6",
+  "prop_145_8_index.png": "9c4a390737ea0893e8e1b4485e11533abdcdf1ec4ef2484b386ac419f0f46d3e",
+  "prop_145_9_index.png": "a9bd96702d528eee7c765c8adbb685a468efb5b0bb983abd6723a8a7d9d2a95e",
+  "prop_219_0_index.png": "a47d64d2ba1484cf500913f042cf92483341dad58b0a98fc1a1756db7c38ffa9",
+  "prop_222_0_index.png": "5c677a9451205e238610017a16735d23a5483d833f7fa5cea7238c9fb9b9ae3e",
+  "prop_222_10_index.png": "5a4aa67c8901eb6e8154c07620a027aaa487e6cd346f47d1572d14ec7b6fe4e9",
+  "prop_222_11_index.png": "ae4d63aec25219aaee618c572ca7f715328541d022f16eb1f766f4c072c81de9",
+  "prop_222_12_index.png": "9958e7faf9745c832c5202e19750c69b5709fac07cbd0667a45b39392f593173",
+  "prop_222_13_index.png": "54d209c8a5b5b262a5457ea17dedf876c011eac499b375899e381bcd957f9b08",
+  "prop_222_14_index.png": "482e709004501609f967875416897623aac296a54072b81f639560ca46bdd528",
+  "prop_222_15_index.png": "579cc57e93f5a43c3f2b8ae331339e9ab0e5b16b6c5e52c1e5accf121fec9491",
+  "prop_222_16_index.png": "7637f55f149aa7b15922dd0b6a3e46b2a588d1873b06b35544193a89440b71ed",
+  "prop_222_17_index.png": "b8aca0809d2e20627f13edf8df11bc1963e55fdde75ee7eaaf956ef35b2fe066",
+  "prop_222_18_index.png": "347b34c785b709f63eb9cea8dae9a0552ec1cbbfdbb9215b23c69956b84db9d1",
+  "prop_222_19_index.png": "bcba5621506a3d36b8ca7a5b95001ee3fd188a0a47407dd56687e53a570c660d",
+  "prop_222_1_index.png": "729c50c2aa3c8b0d123aa71c3da10ec6bbbf416fe84f089d02f2ad611fb1dcd2",
+  "prop_222_20_index.png": "04aa7214f0913673fa998324eecdeba49fc1cd8e8faffb9d05c0ab804b2f01a0",
+  "prop_222_21_index.png": "be5642534eeb50d6c9510bb413065f70c2dea62f3e424139275202c8ceb3c7a8",
+  "prop_222_22_index.png": "badd6ff0776f18c1d227985ef57b19a7455716390e98870698c55a9aca3943ae",
+  "prop_222_23_index.png": "1acff3fbe46c76e213442178e0f35ca9b6023355c45a7721f248f15f179dc5db",
+  "prop_222_24_index.png": "ed1530f5d480f755ff757bc67a0f1ea18e393a2f51701197907cd6aa2d72669f",
+  "prop_222_25_index.png": "9a71d1f742b3230caa36627e84945d35ead91d4cf17cb3790b9710bff4cb629d",
+  "prop_222_26_index.png": "2f9b181f094ca761b84e36e1f863e996182a2ea7d28a862c802e6a040dd6c2e5",
+  "prop_222_27_index.png": "00ae04d5e5d2542905b3ee20dd63be6c6041052d3c579c125b609ae552e411df",
+  "prop_222_28_index.png": "f48a9e42268622d0174f4b02277c25855eaacac358c417c63ef2db8d3aaa1ac9",
+  "prop_222_29_index.png": "c2fbe62b1ce08d7b5896bf0ce51cf766fe155c7e053b103db3bbde9b883878b1",
+  "prop_222_2_index.png": "fc30c2260679663c16429347471fff116df5ef7197a6eadcb130b22a880bbfda",
+  "prop_222_30_index.png": "c82e1a1f550b41e8f26eb413fe5d799a19f33784941620ae20d31c37348fa668",
+  "prop_222_31_index.png": "e68135c482b04692490f56db2bc31da7203677f0774125cc9833b11878c78f95",
+  "prop_222_32_index.png": "4b55d8f9048b41c8c1743267e94b787addba83fbb40715c44b43604d03cd52ef",
+  "prop_222_33_index.png": "2889a31d8f79447d2b3af3bc2c3ac7b555525974a3dbf2e740775634c3e284e2",
+  "prop_222_34_index.png": "64b68584f2ce503824057df4d9d8803494eeb8e1e717e9db12a6711a0159e9b7",
+  "prop_222_35_index.png": "e7f466587a42fc6e69fa554e9124c4c1a09dc4973c86c4e08fbca02ee3a5928c",
+  "prop_222_36_index.png": "2065b3106989e3c2ed196ec730c64c62f25ce19f895108f8fa009e25a24474e9",
+  "prop_222_37_index.png": "e8a49fbd55f9e3363dad5b23a10abe7d0d2b7ac29f6b7a5db8ecb8133e5fd867",
+  "prop_222_3_index.png": "3b5c11202fcb7ebc8af6d27b5a1027375970352a5f3b9c2fcde47378437b5198",
+  "prop_222_4_index.png": "60d171f17e884d0f018fa725831bd2e8e92bbbc64b2e37efcb2e5325699fd450",
+  "prop_222_5_index.png": "2482c17fd0b396ac086e72431e6e9f92fa9f2a881cf662fe8f80298b82238200",
+  "prop_222_6_index.png": "3b6f820244b03245d7f6091de43df8f078ef220d1a7f9c11923928dfd86d9b36",
+  "prop_222_7_index.png": "87e8253242e9c0bfd67ccc04bc8c0901169c18c930ee49377ef6cad943505319",
+  "prop_222_8_index.png": "aeeb11a3ed9a02be373577d4b46fe7fcaaf857f2777349505f5141af56063dc6",
+  "prop_222_9_index.png": "14282e4736033128d0b986d43d6ec2e44a99d784eb8a0a7471c9213858dc6723",
+  "prop_260_0_index.png": "85386bc0b45265d467d70e8c9a4ebdc278acdb207820599c084af6e8c85fa7f6",
+  "prop_260_1_index.png": "2708c72095cead86d339f3b7c92f61bc17737a74a541607aa2bcc7bd7b400096",
+  "prop_260_2_index.png": "bc70f3db563b75821b52a4694fe6e6b412b06c54d2114d3ae74b2925bf1b6735",
+  "prop_260_3_index.png": "7ab50097ba34d352a4adac9d0da5df93143b66ad4a2be9fab274b9ef83fa6d8f",
+  "prop_260_4_index.png": "ac7164fb425ea00efefd8a184c7b4ae56c7e53a913de4a6b86d9c718c949076b",
+  "prop_268_0_index.png": "de6be707e499a566a5f26ac194e2aff8d42c8a4079d2499989e8284d269f6f8e",
+  "prop_268_1_index.png": "9f2b8b6a3da73336f9a6194d1955962516f4ec395fc852e5a6c476fdd59e962b",
+  "prop_268_2_index.png": "2cdf1058cdaff23f1d6ba49e421ce5940a94e0ebf5b00e51a96cf86cb3fddd7a",
+  "prop_268_3_index.png": "8d3400296c86f6c4ad0ef906bb56e69d31ef3aefd13c94cccfe744746f8ec41d",
+  "prop_279_0_index.png": "7b5825272fac082a22fca8c0dbaa70092e31e88da23e24095a7f070bd85d20db",
+  "prop_279_1_index.png": "f3bf47c909f8fa7a845353cb2a3efa978849b89a5aac0efbe1b5cb90f9c062c0",
+  "prop_279_2_index.png": "a9ab73e5f2763d0dd6eeea2310d50d98717d337b060210185480cbe5cbad0aba",
+  "prop_279_3_index.png": "f64ee4e2e67952611196c71edb0722e0e3d2f1fc499e9aab10f5a7b4930742bb",
+  "prop_296_0_index.png": "7d1e915580d7250fc98cad8e492e70669c7c3b07b5204e95074674caaeec8421",
+  "prop_539_0_index.png": "83eb42ad8fbbbbade87790799df32470d963fc2071684a5a1251a27b0321dea8",
+  "prop_539_10_index.png": "e3d51a8515ad46cbf33381797314c152fde6d0644604c7503583b0bb97f81dc1",
+  "prop_539_11_index.png": "7bf578844949900acdc66f407f4371b5411ee6c76874b042b1ef9e4079fa497c",
+  "prop_539_12_index.png": "5d43a891c32e65793c3271a059fa6b9d41649b27ea6d02490dd341f8a3a5da34",
+  "prop_539_13_index.png": "7d480931ddd42329b56c96a8de1362fbca34ebcf913f2373be1ddd3ed73df5b4",
+  "prop_539_14_index.png": "060a5e5e9510eb9a82ecc506f75e94839060f955f7ae6603e0105ad945009cbd",
+  "prop_539_15_index.png": "08807ea67da89a6d94e2a91ead55227fef49a7e610da77e3d19ea815d2cd19e0",
+  "prop_539_16_index.png": "90e0b26e9997f2484c9e2fd4afeef60a138e8ce27a53595ff2e77fcc820df604",
+  "prop_539_17_index.png": "c3c43ee85b2cdd65939eedf4f8ad07abbe28ee4a506ab6027c99c800c911ff84",
+  "prop_539_18_index.png": "1b6f2db0c6a8519ade19691c1d43508d87706d2855a0e6cb2314298c1b13ee30",
+  "prop_539_19_index.png": "4c22360101f0808d45be236f3af92dd8ec5226defab4e14eac5a4c91ac5ca060",
+  "prop_539_1_index.png": "2fb6631faf8aded0d67251e75e7d1fefd4607928c7f247e033d7f79ccac7941f",
+  "prop_539_2_index.png": "3f8ded4246a6a08c0a1f88c19a6290134e0382f654657f5b2a793ff03b01e552",
+  "prop_539_3_index.png": "bad891686f16827cb40f4e5fe48d0fb451d959a1fa5f8713519eda8dd6eaa8c3",
+  "prop_539_4_index.png": "7b4896e873ee925656e1c6dbbdc3a1f9833ae03117ac152e005a66ad6e6e8afc",
+  "prop_539_5_index.png": "f0da31ee7be7db233179370d669e884fa4b62d479dc40be86841221afdb8b935",
+  "prop_539_6_index.png": "d84a88b5c1cdaaf9d7837f3c5da2cf584ac95bb38d1158901efd28beeab425ba",
+  "prop_539_7_index.png": "70d7b5b37420701f06afb0a56eb51506facf1ed3840e8e9ac4d9c3ffec266125",
+  "prop_539_8_index.png": "bdddb42f87188bb4d72c13b7713d9555456efb24b90f8b0f57cbe3c842eb917b",
+  "prop_539_9_index.png": "e61642173e82322158a2449d1d95f25268b3926f573af185daced511472d5feb"
+ },
+ "not_hosted": [
+  {
+   "records": [
+    139,
+    140,
+    141,
+    142,
+    143
+   ],
+   "reason": "already hosted by cave_side_chamber.gd"
+  },
+  {
+   "records": [
+    473
+   ],
+   "reason": "already hosted by cave_stalactites.gd (prop473)"
+  },
+  {
+   "records": [
+    19
+   ],
+   "reason": "torch moved by op18 (to -525, 11204) in groups 8478/8556; not static scenery"
+  },
+  {
+   "records": [
+    484,
+    486
+   ],
+   "reason": "own event groups (484: event9 value1, event4 predicate207; 486: event2 value560, event6 value20 predicates 207-214); behaviour not decoded"
+  },
+  {
+   "records": [
+    1208,
+    1209,
+    1210,
+    1211
+   ],
+   "reason": "Small/Medium Oil: tar-fire rows; need cave_tar_fires.gd ignition, not ambient"
+  },
+  {
+   "records": [
+    536,
+    537,
+    539,
+    540,
+    541,
+    542
+   ],
+   "reason": "meat drawn; their event4 (E use, predicate206) groups (op16 state1 + sound) are not hosted"
+  },
+  {
+   "emitters": [
+    "prop383 -> prop380 sound760",
+    "prop343 group3008: eight opcode-20 children naming props 84/206/936/638/751/873 and control139"
+   ],
+   "reason": "the command targets another object; which position the handler uses is UNKNOWN (G45 handler_argument)"
+  }
+ ],
+ "adapters": [
+  "frame_seconds 0.1: every row animates at the rate the other Cave hosts use (owner trial 2026-10-29; native rate UNKNOWN, G67)",
+  "the torch flame (chained state1) quad is offset 0.05 units toward the camera so it draws over its coplanar holder",
+  "frame flag 0x10 (additive overlay, mist) and 0x20 (waterfall) are not rendered differently; 0x40/0x80 flips are",
+  "emitters loop (AudioStreamWAV LOOP_FORWARD): the native loop bit is undecoded (G45); name is the LOCALLNG sound-bank row label of the selector (prepare_creature_audio_clips), not a filename read from the command",
+  "emitter gain/range use the port 3D defaults (unit_size 64, volume 0 dB); the stored native volume byte and the +0x18/+0x1c dwords are kept in the contract, their audible use is UNKNOWN (G45)",
+  "emitters start once the Cave walkthrough is ready and are not saved: the native trigger of these event6 value9 groups is UNKNOWN (no runtime caller entered, G45)"
+ ],
+ "scope": "Ambient Cave scenery and arrival sound emitters; nothing is saved; no collision (blocking UNKNOWN on every row, G44)."
+}

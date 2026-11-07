@@ -1,0 +1,651 @@
+{
+  "scope": "Act 2/3 map packs the gate offers as test starts (owner 2026-10-30: jump to a level without replaying the earlier ones). One row per staged map; the gate shows a row only when act2_map.gd finds its pack. label_witness says where the level's name comes from; no display name is proven for these levels (G93).",
+  "maps": [
+    {
+      "area": "L10_DC",
+      "scene": "res://scenes/lol2/maps/L10_DC.tscn",
+      "label": "Preview: Dracoid Cemetary (L10_DC)",
+      "label_witness": "the Savage Jungle (L8_SJ) export's adjacent-level label for its exit to this level, original spelling; label binding unbound",
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 3200,
+          "y": 2995,
+          "heading_units": 17186,
+          "region": 3782,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13162766,
+          "raw_hex": "800cb30b2243c60e00000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -150,
+          "y": 221,
+          "heading_units": 1,
+          "region": 5,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13162778,
+          "raw_hex": "6affdd000100050001000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": -542,
+          "y": 856,
+          "heading_units": 24758,
+          "region": 65,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13162790,
+          "raw_hex": "e2fd5803b660410002000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    {
+      "area": "L12_CM",
+      "scene": "res://scenes/lol2/maps/L12_CM.tscn",
+      "label": "Preview: L12_CM",
+      "label_witness": "Archive identifier, not an inferred original display name.",
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 2784,
+          "y": 18222,
+          "heading_units": 23665,
+          "region": 1948,
+          "floor_min": -1230,
+          "grade": "LIKELY",
+          "file_offset": 9858960,
+          "raw_hex": "e00a2e47715c9c0700000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -347,
+          "y": 5603,
+          "heading_units": 49152,
+          "region": 735,
+          "floor_min": -80,
+          "grade": "LIKELY",
+          "file_offset": 9858972,
+          "raw_hex": "a5fee31500c0df0201000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 3211,
+          "y": 18903,
+          "heading_units": 40960,
+          "region": 3642,
+          "floor_min": -1230,
+          "grade": "LIKELY",
+          "file_offset": 9858984,
+          "raw_hex": "8b0cd74900a03a0e02000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    {
+      "area": "L13_RC",
+      "scene": "res://scenes/lol2/maps/L13_RC.tscn",
+      "label": "Preview: L13_RC (Ruloi caverns)",
+      "label_witness": "no level lists an exit label for this level; 'Ruloi caverns' describes the owner's longplay segment from about 202:30, whose HUD counter 'Remaining Ruloi 19/19' matches the level's 20 RULOI actor rows (G93); not a display name",
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": -3344,
+          "y": -6564,
+          "heading_units": 28089,
+          "region": 488,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 6887702,
+          "raw_hex": "f0f25ce6b96de80100000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -3260,
+          "y": -6631,
+          "heading_units": 1,
+          "region": 487,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 6887714,
+          "raw_hex": "44f319e60100e70101000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": -2336,
+          "y": 4192,
+          "heading_units": 0,
+          "region": 636,
+          "floor_min": -1080,
+          "grade": "LIKELY",
+          "file_offset": 6887726,
+          "raw_hex": "e0f6601000007c0202000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -2176,
+          "y": -4160,
+          "heading_units": 0,
+          "region": 323,
+          "floor_min": -70,
+          "grade": "LIKELY",
+          "file_offset": 6887738,
+          "raw_hex": "80f7c0ef0000430103000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    {
+      "area": "L14_HT",
+      "scene": "res://scenes/lol2/maps/L14_HT.tscn",
+      "label": "Preview: L14_HT",
+      "label_witness": "Archive identifier, not an inferred original display name.",
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 2576,
+          "y": 3181,
+          "heading_units": 60694,
+          "region": 796,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 11781430,
+          "raw_hex": "100a6d0c16ed1c0300000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": 2411,
+          "y": 2413,
+          "heading_units": 1,
+          "region": 864,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 11781442,
+          "raw_hex": "6b096d090100600301000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 789,
+          "y": -10774,
+          "heading_units": 0,
+          "region": 2282,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 11781454,
+          "raw_hex": "1503ead50000ea0802000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -1336,
+          "y": -11466,
+          "heading_units": 0,
+          "region": 4176,
+          "floor_min": 40,
+          "grade": "LIKELY",
+          "file_offset": 11781466,
+          "raw_hex": "c8fa36d30000501003000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    {
+      "area": "L16_CA",
+      "scene": "res://scenes/lol2/maps/L16_CA.tscn",
+      "label": "Preview: City of the Ancients (L16_CA)",
+      "label_witness": "the L17_HC export's adjacent-level label for its exits to this level (twice); label binding unbound; the longplay's city segment from about 257:00",
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 5575,
+          "y": -9185,
+          "heading_units": 16144,
+          "region": 9655,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 18782149,
+          "raw_hex": "c7151fdc103fb72500000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -3860,
+          "y": 1341,
+          "heading_units": 1,
+          "region": 137,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 18782161,
+          "raw_hex": "ecf03d050100890001000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 2107,
+          "y": -4183,
+          "heading_units": 0,
+          "region": 9603,
+          "floor_min": 15,
+          "grade": "LIKELY",
+          "file_offset": 18782173,
+          "raw_hex": "3b08a9ef0000832502000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -7820,
+          "y": -10696,
+          "heading_units": 61895,
+          "region": 9824,
+          "floor_min": -530,
+          "grade": "LIKELY",
+          "file_offset": 18782185,
+          "raw_hex": "74e138d6c7f1602603000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    {
+      "area": "L17_HC",
+      "scene": "res://scenes/lol2/maps/L17_HC.tscn",
+      "label": "Preview: L17_HC",
+      "label_witness": "Archive identifier, not an inferred original display name.",
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": -4721,
+          "y": -6700,
+          "heading_units": 61004,
+          "region": 109,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 4808871,
+          "raw_hex": "8fedd4e54cee6d0000000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": 1434,
+          "y": 7075,
+          "heading_units": 32768,
+          "region": 131,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 4808883,
+          "raw_hex": "9a05a31b0080830001000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": -5732,
+          "y": -5829,
+          "heading_units": 49152,
+          "region": 1311,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 4808895,
+          "raw_hex": "9ce93be900c01f0502000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": 8089,
+          "y": -2128,
+          "heading_units": 53703,
+          "region": 1315,
+          "floor_min": -30,
+          "grade": "LIKELY",
+          "file_offset": 4808907,
+          "raw_hex": "991fb0f7c7d1230503000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    {
+      "area": "L19_BC",
+      "scene": "res://scenes/lol2/maps/L19_BC.tscn",
+      "label": "Preview: Belial's Chamber (L19_BC)",
+      "label_witness": "the L17_HC and L20_BB exports' adjacent-level labels for their exits to this level; label binding unbound; no panorama record in this level (fully roofed)",
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 1405,
+          "y": 1253,
+          "heading_units": 4798,
+          "region": 1691,
+          "floor_min": -130,
+          "grade": "LIKELY",
+          "file_offset": 6182338,
+          "raw_hex": "7d05e504be129b0600000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": 84,
+          "y": -305,
+          "heading_units": 49152,
+          "region": 25,
+          "floor_min": -10,
+          "grade": "LIKELY",
+          "file_offset": 6182350,
+          "raw_hex": "5400cffe00c0190001000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 3201,
+          "y": 872,
+          "heading_units": 49152,
+          "region": 2365,
+          "floor_min": -975,
+          "grade": "LIKELY",
+          "file_offset": 6182362,
+          "raw_hex": "810c680300c03d0902000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": 1260,
+          "y": 1431,
+          "heading_units": 0,
+          "region": 1715,
+          "floor_min": -120,
+          "grade": "LIKELY",
+          "file_offset": 6182374,
+          "raw_hex": "ec0497050000b30603000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    {
+      "area": "L20_BB",
+      "scene": "res://scenes/lol2/maps/L20_BB.tscn",
+      "label": "Preview: L20_BB",
+      "label_witness": "Archive identifier, not an inferred original display name.",
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": -7387,
+          "y": 4890,
+          "heading_units": 49298,
+          "region": 1243,
+          "floor_min": -50,
+          "grade": "LIKELY",
+          "file_offset": 15553678,
+          "raw_hex": "25e31a1392c0db0400000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -2383,
+          "y": 4261,
+          "heading_units": 16384,
+          "region": 316,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 15553690,
+          "raw_hex": "b1f6a51000403c0101000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": -2398,
+          "y": 3206,
+          "heading_units": 16384,
+          "region": 1523,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 15553702,
+          "raw_hex": "a2f6860c0040f30502000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -3328,
+          "y": 3104,
+          "heading_units": 0,
+          "region": 595,
+          "floor_min": -50,
+          "grade": "LIKELY",
+          "file_offset": 15553714,
+          "raw_hex": "00f3200c0000530203000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 4,
+          "x": -928,
+          "y": 1632,
+          "heading_units": 0,
+          "region": 101,
+          "floor_min": -60,
+          "grade": "LIKELY",
+          "file_offset": 15553726,
+          "raw_hex": "60fc60060000650004000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 5,
+          "x": -2944,
+          "y": 1152,
+          "heading_units": 0,
+          "region": 521,
+          "floor_min": -50,
+          "grade": "LIKELY",
+          "file_offset": 15553738,
+          "raw_hex": "80f480040000090205000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    {
+      "area": "L8_SJ",
+      "scene": "res://scenes/lol2/darker_jungle.tscn",
+      "label": "L8_SJ",
+      "label_witness": "Archive identifier",
+      "travel_only": true,
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": -1244,
+          "y": 2466,
+          "heading_units": 54628,
+          "region": 671,
+          "floor_min": -10,
+          "grade": "LIKELY",
+          "file_offset": 13550153,
+          "raw_hex": "24fba20964d59f0200000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -4577,
+          "y": -1168,
+          "heading_units": 16384,
+          "region": 2359,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550165,
+          "raw_hex": "1fee70fb0040370901000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 3972,
+          "y": 2482,
+          "heading_units": 36408,
+          "region": 911,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550177,
+          "raw_hex": "840fb209388e8f0302000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": 868,
+          "y": -2180,
+          "heading_units": 61895,
+          "region": 1532,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550189,
+          "raw_hex": "64037cf7c7f1fc0503000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 4,
+          "x": 7152,
+          "y": -2236,
+          "heading_units": 41870,
+          "region": 3449,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550201,
+          "raw_hex": "f01b44f78ea3790d04000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 5,
+          "x": -4292,
+          "y": 1623,
+          "heading_units": 30037,
+          "region": 66,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550213,
+          "raw_hex": "3cef57065575420005000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 6,
+          "x": 2063,
+          "y": 2326,
+          "heading_units": 29127,
+          "region": 3539,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550225,
+          "raw_hex": "0f081609c771d30d06000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 7,
+          "x": 1725,
+          "y": -2959,
+          "heading_units": 8192,
+          "region": 3574,
+          "floor_min": -50,
+          "grade": "LIKELY",
+          "file_offset": 13550237,
+          "raw_hex": "bd0671f40020f60d07000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 8,
+          "x": 544,
+          "y": 4928,
+          "heading_units": 0,
+          "region": 1023,
+          "floor_min": -30,
+          "grade": "LIKELY",
+          "file_offset": 13550249,
+          "raw_hex": "200240130000ff0308000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 9,
+          "x": 1283,
+          "y": 1311,
+          "heading_units": 27306,
+          "region": 437,
+          "floor_min": -500,
+          "grade": "LIKELY",
+          "file_offset": 13550261,
+          "raw_hex": "03051f05aa6ab50109000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    {
+      "area": "L9_DR",
+      "scene": "res://scenes/lol2/dragon_level.tscn",
+      "label": "L9_DR",
+      "label_witness": "Archive identifier",
+      "travel_only": true,
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 3607,
+          "y": 8471,
+          "heading_units": 24003,
+          "region": 3414,
+          "floor_min": -60,
+          "grade": "LIKELY",
+          "file_offset": 23383720,
+          "raw_hex": "170e1721c35d560d00000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": 81,
+          "y": -603,
+          "heading_units": 1,
+          "region": 1343,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 23383732,
+          "raw_hex": "5100a5fd01003f0501000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 7221,
+          "y": 1736,
+          "heading_units": 43690,
+          "region": 5338,
+          "floor_min": 10,
+          "grade": "LIKELY",
+          "file_offset": 23383744,
+          "raw_hex": "351cc806aaaada1402000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -3032,
+          "y": 8232,
+          "heading_units": 0,
+          "region": 2306,
+          "floor_min": 200,
+          "grade": "LIKELY",
+          "file_offset": 23383756,
+          "raw_hex": "28f428200000020903000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 4,
+          "x": -3530,
+          "y": 1256,
+          "heading_units": 0,
+          "region": 3704,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 23383768,
+          "raw_hex": "36f2e8040000780e04000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1864 @@
+{
+  "passed": true,
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 663847,
+      "end": 663860,
+      "sha256": "cdeed355d0929989bd0efc65f5a051b90828c45e01c26d5ec479f7a7821fef19"
+    },
+    {
+      "start": 637576,
+      "end": 637609,
+      "sha256": "71b6a019295fe723e08640157f8a4a8b8cd3bfc92eb4acbdce3abe55f135d1f0"
+    }
+  ],
+  "constructor_cases": 194,
+  "lookup_cases": 40,
+  "areas": [
+    {
+      "id": "L1_DC",
+      "source": {
+        "file": "DAT/L1_DC.MIX",
+        "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+        "geometry_key": 2971673856,
+        "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+      },
+      "actors": [
+        {
+          "actor": 0,
+          "name": "ROACH",
+          "placement_archive_offset": 7319814,
+          "identity": 3732130108,
+          "identity_hex": "de73c93c",
+          "item": {
+            "definition": 110,
+            "name": "108-Cave aloe"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 1,
+          "name": "GGUARD",
+          "placement_archive_offset": 7319870,
+          "identity": 552,
+          "identity_hex": "00000228",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 2,
+          "name": "GGUARD",
+          "placement_archive_offset": 7319926,
+          "identity": 552,
+          "identity_hex": "00000228",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 3,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7319982,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 4,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320038,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 5,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320094,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 6,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320150,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 7,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320206,
+          "identity": 7572780,
+          "identity_hex": "00738d2c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 8,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320262,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 9,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320318,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 10,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320374,
+          "identity": 15079692,
+          "identity_hex": "00e6190c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 11,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320430,
+          "identity": 15974420,
+          "identity_hex": "00f3c014",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 12,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320486,
+          "identity": 4294967040,
+          "identity_hex": "ffffff00",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 13,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320542,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 14,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320598,
+          "identity": 120389632,
+          "identity_hex": "072d0000",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 15,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320654,
+          "identity": 15734564,
+          "identity_hex": "00f01724",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 16,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320710,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 17,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320766,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 18,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320822,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 19,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320878,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 20,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320934,
+          "identity": 7572780,
+          "identity_hex": "00738d2c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 21,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7320990,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 22,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7321046,
+          "identity": 552,
+          "identity_hex": "00000228",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 23,
+          "name": "ROACH",
+          "placement_archive_offset": 7321102,
+          "identity": 3732130108,
+          "identity_hex": "de73c93c",
+          "item": {
+            "definition": 110,
+            "name": "108-Cave aloe"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 24,
+          "name": "WORM",
+          "placement_archive_offset": 7321158,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 25,
+          "name": "Roach",
+          "placement_archive_offset": 7321214,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 26,
+          "name": "Roach",
+          "placement_archive_offset": 7321270,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 27,
+          "name": "Roach",
+          "placement_archive_offset": 7321326,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 28,
+          "name": "Roach",
+          "placement_archive_offset": 7321382,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 29,
+          "name": "Roach",
+          "placement_archive_offset": 7321438,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 30,
+          "name": "Roach",
+          "placement_archive_offset": 7321494,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 31,
+          "name": "Roach",
+          "placement_archive_offset": 7321550,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 32,
+          "name": "Roach",
+          "placement_archive_offset": 7321606,
+          "identity": 4294967040,
+          "identity_hex": "ffffff00",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 33,
+          "name": "Roach",
+          "placement_archive_offset": 7321662,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 34,
+          "name": "Roach",
+          "placement_archive_offset": 7321718,
+          "identity": 23244112,
+          "identity_hex": "0162ad50",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 35,
+          "name": "Roach",
+          "placement_archive_offset": 7321774,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 36,
+          "name": "WORM",
+          "placement_archive_offset": 7321830,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 37,
+          "name": "WORM",
+          "placement_archive_offset": 7321886,
+          "identity": 21758481,
+          "identity_hex": "014c0211",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 38,
+          "name": "GGUARD",
+          "placement_archive_offset": 7321942,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 39,
+          "name": "GGUARD",
+          "placement_archive_offset": 7321998,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 40,
+          "name": "Roach",
+          "placement_archive_offset": 7322054,
+          "identity": 14552072,
+          "identity_hex": "00de0c08",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 41,
+          "name": "Roach",
+          "placement_archive_offset": 7322110,
+          "identity": 514,
+          "identity_hex": "00000202",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 42,
+          "name": "Roach",
+          "placement_archive_offset": 7322166,
+          "identity": 3154117631,
+          "identity_hex": "bc0003ff",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 43,
+          "name": "Roach",
+          "placement_archive_offset": 7322222,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 44,
+          "name": "Roach",
+          "placement_archive_offset": 7322278,
+          "identity": 1409308006,
+          "identity_hex": "54005566",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 45,
+          "name": "Roach",
+          "placement_archive_offset": 7322334,
+          "identity": 1409286144,
+          "identity_hex": "54000000",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 46,
+          "name": "Roach",
+          "placement_archive_offset": 7322390,
+          "identity": 84,
+          "identity_hex": "00000054",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 47,
+          "name": "Roach",
+          "placement_archive_offset": 7322446,
+          "identity": 3845,
+          "identity_hex": "00000f05",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 48,
+          "name": "Roach",
+          "placement_archive_offset": 7322502,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 49,
+          "name": "Roach",
+          "placement_archive_offset": 7322558,
+          "identity": 5596713,
+          "identity_hex": "00556629",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 50,
+          "name": "Roach",
+          "placement_archive_offset": 7322614,
+          "identity": 4256498432,
+          "identity_hex": "fdb50300",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 51,
+          "name": "Roach",
+          "placement_archive_offset": 7322670,
+          "identity": 514,
+          "identity_hex": "00000202",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 52,
+          "name": "GGUARD",
+          "placement_archive_offset": 7322726,
+          "identity": 92534515,
+          "identity_hex": "0583f6f3",
+          "item": {
+            "definition": 0,
+            "name": "1-Stalagmite"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 53,
+          "name": "GGUARD",
+          "placement_archive_offset": 7322782,
+          "identity": 19202577,
+          "identity_hex": "01250211",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 54,
+          "name": "GGUARD",
+          "placement_archive_offset": 7322838,
+          "identity": 6160913,
+          "identity_hex": "005e0211",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 55,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 7322894,
+          "identity": 514,
+          "identity_hex": "00000202",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 56,
+          "name": "GGCAPT",
+          "placement_archive_offset": 7322950,
+          "identity": 15906148,
+          "identity_hex": "00f2b564",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        }
+      ]
+    },
+    {
+      "id": "L3_DH",
+      "source": {
+        "file": "DAT/L3_DH.MIX",
+        "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+        "geometry_key": 3106551060,
+        "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+      },
+      "actors": [
+        {
+          "actor": 0,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875150,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 1,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875206,
+          "identity": 16,
+          "identity_hex": "00000010",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 2,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875262,
+          "identity": 2382376960,
+          "identity_hex": "8e003000",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 3,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875318,
+          "identity": 32896,
+          "identity_hex": "00008080",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 4,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875374,
+          "identity": 16309236,
+          "identity_hex": "00f8dbf4",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 5,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875430,
+          "identity": 17039361,
+          "identity_hex": "01040001",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 6,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875486,
+          "identity": 19857444,
+          "identity_hex": "012f0024",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 7,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875542,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 8,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875598,
+          "identity": 1375994156,
+          "identity_hex": "5204012c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 9,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875654,
+          "identity": 4294966785,
+          "identity_hex": "fffffe01",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 10,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875710,
+          "identity": 335564042,
+          "identity_hex": "14004d0a",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 11,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875766,
+          "identity": 771758336,
+          "identity_hex": "2e001900",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 12,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875822,
+          "identity": 15731412,
+          "identity_hex": "00f00ad4",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 13,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875878,
+          "identity": 1409286144,
+          "identity_hex": "54000000",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 14,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875934,
+          "identity": 126,
+          "identity_hex": "0000007e",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 15,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5875990,
+          "identity": 2139059839,
+          "identity_hex": "7f7f767f",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 16,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5876046,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 17,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5876102,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 18,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5876158,
+          "identity": 14834884,
+          "identity_hex": "00e25cc4",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 19,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5876214,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 20,
+          "name": "skel",
+          "placement_archive_offset": 5876270,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 21,
+          "name": "skel",
+          "placement_archive_offset": 5876326,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 22,
+          "name": "Rat",
+          "placement_archive_offset": 5876382,
+          "identity": 3732130108,
+          "identity_hex": "de73c93c",
+          "item": {
+            "definition": 110,
+            "name": "108-Cave aloe"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 23,
+          "name": "skel",
+          "placement_archive_offset": 5876438,
+          "identity": 394988083,
+          "identity_hex": "178b0a33",
+          "item": {
+            "definition": 94,
+            "name": "92-Sk key"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 24,
+          "name": "skel",
+          "placement_archive_offset": 5876494,
+          "identity": 394988083,
+          "identity_hex": "178b0a33",
+          "item": {
+            "definition": 94,
+            "name": "92-Sk key"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 25,
+          "name": "skel",
+          "placement_archive_offset": 5876550,
+          "identity": 394988083,
+          "identity_hex": "178b0a33",
+          "item": {
+            "definition": 94,
+            "name": "92-Sk key"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 26,
+          "name": "skel",
+          "placement_archive_offset": 5876606,
+          "identity": 394988083,
+          "identity_hex": "178b0a33",
+          "item": {
+            "definition": 94,
+            "name": "92-Sk key"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 27,
+          "name": "skel",
+          "placement_archive_offset": 5876662,
+          "identity": 394988083,
+          "identity_hex": "178b0a33",
+          "item": {
+            "definition": 94,
+            "name": "92-Sk key"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 28,
+          "name": "skel",
+          "placement_archive_offset": 5876718,
+          "identity": 394988083,
+          "identity_hex": "178b0a33",
+          "item": {
+            "definition": 94,
+            "name": "92-Sk key"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 29,
+          "name": "skel",
+          "placement_archive_offset": 5876774,
+          "identity": 394988083,
+          "identity_hex": "178b0a33",
+          "item": {
+            "definition": 94,
+            "name": "92-Sk key"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 30,
+          "name": "skel",
+          "placement_archive_offset": 5876830,
+          "identity": 2790957503,
+          "identity_hex": "a65aa1bf",
+          "item": {
+            "definition": 70,
+            "name": "68-SS1"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 31,
+          "name": "skel",
+          "placement_archive_offset": 5876886,
+          "identity": 394988083,
+          "identity_hex": "178b0a33",
+          "item": {
+            "definition": 94,
+            "name": "92-Sk key"
+          },
+          "classification": "global_item"
+        },
+        {
+          "actor": 32,
+          "name": "skel",
+          "placement_archive_offset": 5876942,
+          "identity": 1958882940,
+          "identity_hex": "74c22e7c",
+          "item": {
+            "definition": 11,
+            "name": "12-Tho Broken"
+          },
+          "classification": "global_item"
+        }
+      ]
+    },
+    {
+      "id": "L4_HJ",
+      "source": {
+        "file": "DAT/L4_HJ.MIX",
+        "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+        "geometry_key": 3710797084,
+        "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+      },
+      "actors": [
+        {
+          "actor": 0,
+          "name": "L4WW",
+          "placement_archive_offset": 13011682,
+          "identity": 552,
+          "identity_hex": "00000228",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 1,
+          "name": "SSAR",
+          "placement_archive_offset": 13011738,
+          "identity": 1818913387,
+          "identity_hex": "6c6a6a6b",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 2,
+          "name": "SSAR",
+          "placement_archive_offset": 13011794,
+          "identity": 1795555404,
+          "identity_hex": "6b06004c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 3,
+          "name": "SSAR",
+          "placement_archive_offset": 13011850,
+          "identity": 1835887978,
+          "identity_hex": "6d6d6d6a",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 4,
+          "name": "SSAR",
+          "placement_archive_offset": 13011906,
+          "identity": 2829674921,
+          "identity_hex": "a8a969a9",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 5,
+          "name": "SSAR",
+          "placement_archive_offset": 13011962,
+          "identity": 1772726887,
+          "identity_hex": "69a9aa67",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 6,
+          "name": "SSAR",
+          "placement_archive_offset": 13012018,
+          "identity": 2842389099,
+          "identity_hex": "a96b6a6b",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 7,
+          "name": "SSAR",
+          "placement_archive_offset": 13012074,
+          "identity": 2842323625,
+          "identity_hex": "a96a6aa9",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 8,
+          "name": "SSAR",
+          "placement_archive_offset": 13012130,
+          "identity": 50358893,
+          "identity_hex": "03006a6d",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 9,
+          "name": "SSAR",
+          "placement_archive_offset": 13012186,
+          "identity": 1772331620,
+          "identity_hex": "69a3a264",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 10,
+          "name": "SSAR",
+          "placement_archive_offset": 13012242,
+          "identity": 552,
+          "identity_hex": "00000228",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 11,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012298,
+          "identity": 1650788096,
+          "identity_hex": "62650700",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 12,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012354,
+          "identity": 2795570688,
+          "identity_hex": "a6a10600",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 13,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012410,
+          "identity": 2874476288,
+          "identity_hex": "ab550700",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 14,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012466,
+          "identity": 879454887,
+          "identity_hex": "346b6aa7",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 15,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012522,
+          "identity": 1835888237,
+          "identity_hex": "6d6d6e6d",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 16,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012578,
+          "identity": 1568501044,
+          "identity_hex": "5d7d6d34",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 17,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012634,
+          "identity": 884567662,
+          "identity_hex": "34b96e6e",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 18,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012690,
+          "identity": 1852730932,
+          "identity_hex": "6e6e6e34",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 19,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012746,
+          "identity": 879586612,
+          "identity_hex": "346d6d34",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 20,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 13012802,
+          "identity": 552,
+          "identity_hex": "00000228",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 21,
+          "name": "DINO",
+          "placement_archive_offset": 13012858,
+          "identity": 34816940,
+          "identity_hex": "021343ac",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 22,
+          "name": "DINO",
+          "placement_archive_offset": 13012914,
+          "identity": 1,
+          "identity_hex": "00000001",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 23,
+          "name": "DINO",
+          "placement_archive_offset": 13012970,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 24,
+          "name": "DINO",
+          "placement_archive_offset": 13013026,
+          "identity": 36322156,
+          "identity_hex": "022a3b6c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 25,
+          "name": "DINO",
+          "placement_archive_offset": 13013082,
+          "identity": 4294967040,
+          "identity_hex": "ffffff00",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 26,
+          "name": "DINO",
+          "placement_archive_offset": 13013138,
+          "identity": 16712259,
+          "identity_hex": "00ff0243",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 27,
+          "name": "DINO",
+          "placement_archive_offset": 13013194,
+          "identity": 34830668,
+          "identity_hex": "0213794c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 28,
+          "name": "DINO",
+          "placement_archive_offset": 13013250,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 29,
+          "name": "DINO",
+          "placement_archive_offset": 13013306,
+          "identity": 4294902339,
+          "identity_hex": "ffff0243",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 30,
+          "name": "DINO",
+          "placement_archive_offset": 13013362,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 31,
+          "name": "DINO",
+          "placement_archive_offset": 13013418,
+          "identity": 1292108344,
+          "identity_hex": "4d040238",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 32,
+          "name": "DINO",
+          "placement_archive_offset": 13013474,
+          "identity": 641991224,
+          "identity_hex": "26440238",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 33,
+          "name": "DINO",
+          "placement_archive_offset": 13013530,
+          "identity": 4286841399,
+          "identity_hex": "ff840237",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 34,
+          "name": "DINO",
+          "placement_archive_offset": 13013586,
+          "identity": 3636724279,
+          "identity_hex": "d8c40237",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 35,
+          "name": "DINO",
+          "placement_archive_offset": 13013642,
+          "identity": 35257388,
+          "identity_hex": "0219fc2c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 36,
+          "name": "TIG_ROG",
+          "placement_archive_offset": 13013698,
+          "identity": 584,
+          "identity_hex": "00000248",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 37,
+          "name": "TIG_ROG",
+          "placement_archive_offset": 13013754,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 38,
+          "name": "TIG_ROG",
+          "placement_archive_offset": 13013810,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 39,
+          "name": "TIG_CUB",
+          "placement_archive_offset": 13013866,
+          "identity": 4904,
+          "identity_hex": "00001328",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 40,
+          "name": "TIG_CUB",
+          "placement_archive_offset": 13013922,
+          "identity": 12634,
+          "identity_hex": "0000315a",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 41,
+          "name": "TIG_CUB",
+          "placement_archive_offset": 13013978,
+          "identity": 1694515712,
+          "identity_hex": "65004200",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 42,
+          "name": "TIG_CUB",
+          "placement_archive_offset": 13014034,
+          "identity": 34816940,
+          "identity_hex": "021343ac",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 43,
+          "name": "TIG_CUB",
+          "placement_archive_offset": 13014090,
+          "identity": 1,
+          "identity_hex": "00000001",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 44,
+          "name": "TIG_CUB",
+          "placement_archive_offset": 13014146,
+          "identity": 36316428,
+          "identity_hex": "022a250c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 45,
+          "name": "TIG_CUB",
+          "placement_archive_offset": 13014202,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 46,
+          "name": "TIG_FEM",
+          "placement_archive_offset": 13014258,
+          "identity": 1,
+          "identity_hex": "00000001",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 47,
+          "name": "TIG_FEM",
+          "placement_archive_offset": 13014314,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 48,
+          "name": "TIG_FEM",
+          "placement_archive_offset": 13014370,
+          "identity": 36315380,
+          "identity_hex": "022a20f4",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 49,
+          "name": "TIG_FEM",
+          "placement_archive_offset": 13014426,
+          "identity": 4294902274,
+          "identity_hex": "ffff0202",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 50,
+          "name": "TIG_FEM",
+          "placement_archive_offset": 13014482,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 51,
+          "name": "TIG_MAL",
+          "placement_archive_offset": 13014538,
+          "identity": 34829612,
+          "identity_hex": "0213752c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 52,
+          "name": "TIG_MAL",
+          "placement_archive_offset": 13014594,
+          "identity": 2,
+          "identity_hex": "00000002",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 53,
+          "name": "TIG_MAL",
+          "placement_archive_offset": 13014650,
+          "identity": 36314268,
+          "identity_hex": "022a1c9c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 54,
+          "name": "TIG_MAL",
+          "placement_archive_offset": 13014706,
+          "identity": 4294967040,
+          "identity_hex": "ffffff00",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 55,
+          "name": "TIG_MAL",
+          "placement_archive_offset": 13014762,
+          "identity": 2122219134,
+          "identity_hex": "7e7e7e7e",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 56,
+          "name": "TIG_MAL",
+          "placement_archive_offset": 13014818,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 57,
+          "name": "BACL4",
+          "placement_archive_offset": 13014874,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 58,
+          "name": "GGuard",
+          "placement_archive_offset": 13014930,
+          "identity": 262416,
+          "identity_hex": "00040110",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 59,
+          "name": "GGuard",
+          "placement_archive_offset": 13014986,
+          "identity": 1312903251,
+          "identity_hex": "4e415053",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 60,
+          "name": "GGuard",
+          "placement_archive_offset": 13015042,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 61,
+          "name": "BACL4",
+          "placement_archive_offset": 13015098,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 62,
+          "name": "TIG_MAL",
+          "placement_archive_offset": 13015154,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 63,
+          "name": "DawnL4",
+          "placement_archive_offset": 13015210,
+          "identity": 514,
+          "identity_hex": "00000202",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 64,
+          "name": "Kelsrick",
+          "placement_archive_offset": 13015266,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 65,
+          "name": "BACL4",
+          "placement_archive_offset": 13015322,
+          "identity": 514,
+          "identity_hex": "00000202",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 66,
+          "name": "L4WW",
+          "placement_archive_offset": 13015378,
+          "identity": 28180994,
+          "identity_hex": "01ae0202",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        }
+      ]
+    },
+    {
+      "id": "L5_HC",
+      "source": {
+        "file": "DAT/L5_HC.MIX",
+        "sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+        "geometry_key": 3776990464,
+        "geometry_sha256": "69a9c0dd739ad36691c6513d53cf007204aa3bd35d5762e8f8f4e8c6dbcb9e85"
+      },
+      "actors": [
+        {
+          "actor": 0,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944282,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 1,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944338,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 2,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944394,
+          "identity": 19927184,
+          "identity_hex": "01301090",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 3,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944450,
+          "identity": 19945184,
+          "identity_hex": "013056e0",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 4,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944506,
+          "identity": 19577100,
+          "identity_hex": "012ab90c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 5,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944562,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 6,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944618,
+          "identity": 19664044,
+          "identity_hex": "012c0cac",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 7,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944674,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 8,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944730,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 9,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944786,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 10,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944842,
+          "identity": 1,
+          "identity_hex": "00000001",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 11,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944898,
+          "identity": 19604140,
+          "identity_hex": "012b22ac",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 12,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5944954,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 13,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5945010,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 14,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5945066,
+          "identity": 19979184,
+          "identity_hex": "0130dbb0",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 15,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5945122,
+          "identity": 20045884,
+          "identity_hex": "0131e03c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 16,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5945178,
+          "identity": 19775740,
+          "identity_hex": "012dc0fc",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 17,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5945234,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 18,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5945290,
+          "identity": 19548396,
+          "identity_hex": "012a48ec",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 19,
+          "name": "B_HUMAN",
+          "placement_archive_offset": 5945346,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 20,
+          "name": "DAWNL4",
+          "placement_archive_offset": 5945402,
+          "identity": 514,
+          "identity_hex": "00000202",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 21,
+          "name": "HIVEW",
+          "placement_archive_offset": 5945458,
+          "identity": 31467568,
+          "identity_hex": "01e02830",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 22,
+          "name": "HIVEW",
+          "placement_archive_offset": 5945514,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 23,
+          "name": "HIVEW",
+          "placement_archive_offset": 5945570,
+          "identity": 30550996,
+          "identity_hex": "01d22bd4",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 24,
+          "name": "HIVEW",
+          "placement_archive_offset": 5945626,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 25,
+          "name": "HIVEW",
+          "placement_archive_offset": 5945682,
+          "identity": 4294967040,
+          "identity_hex": "ffffff00",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 26,
+          "name": "HIVEW",
+          "placement_archive_offset": 5945738,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 27,
+          "name": "HIVEW",
+          "placement_archive_offset": 5945794,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 28,
+          "name": "HIVEW",
+          "placement_archive_offset": 5945850,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 29,
+          "name": "HIVEW",
+          "placement_archive_offset": 5945906,
+          "identity": 0,
+          "identity_hex": "00000000",
+          "item": null,
+          "classification": "zero"
+        },
+        {
+          "actor": 30,
+          "name": "WORM",
+          "placement_archive_offset": 5945962,
+          "identity": 757935405,
+          "identity_hex": "2d2d2d2d",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 31,
+          "name": "WORM",
+          "placement_archive_offset": 5946018,
+          "identity": 3089891842,
+          "identity_hex": "b82c0202",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 32,
+          "name": "HIVEW",
+          "placement_archive_offset": 5946074,
+          "identity": 4450956,
+          "identity_hex": "0043ea8c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 33,
+          "name": "HIVEW",
+          "placement_archive_offset": 5946130,
+          "identity": 4450956,
+          "identity_hex": "0043ea8c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 34,
+          "name": "HIVEW",
+          "placement_archive_offset": 5946186,
+          "identity": 642735244,
+          "identity_hex": "264f5c8c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 35,
+          "name": "EXEC",
+          "placement_archive_offset": 5946242,
+          "identity": 15817244,
+          "identity_hex": "00f15a1c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        },
+        {
+          "actor": 36,
+          "name": "EXEC",
+          "placement_archive_offset": 5946298,
+          "identity": 15817244,
+          "identity_hex": "00f15a1c",
+          "item": null,
+          "classification": "unresolved_nonzero"
+        }
+      ]
+    }
+  ],
+  "finding": "Native constructor copies placement+52 into actor+0x74 and initializes actor+0x78 item-list head to zero. Native 9BA88 resolves identity only within an existing supplied linked list; identity alone does not establish possessed loot.",
+  "static_followups": [
+    "A2A38 resolves actor+0x74 against actor+0x78 in the B5bit0x10 branch; event8 dispatch precedes this branch.",
+    "A5275..A52B1 drains actor+0x78 in the nonzero B7 mode terminal cleanup; ordinary corpse mode takes A52C6 instead.",
+    "A57EF..A583B also uses actor+0x74 in an attack-context player-target branch. Do not label the field solely as a guaranteed death drop."
+  ],
+  "limits": [
+    "Constructor prefix and linked-list lookup executed, not the whole constructor or gameplay.",
+    "Initial item-list producers, death/use/drop timing, and item allocation still require evidence.",
+    "Unresolved nonzero identities are not classified as valid items, unused data, or corruption.",
+    "No gameplay behavior changed; source contracts retain their historical loot field name."
+  ]
+}

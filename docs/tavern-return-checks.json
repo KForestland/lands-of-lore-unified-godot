@@ -1,0 +1,873 @@
+{
+ "l4_hj": {
+  "source": {
+   "file": "DAT/L4_HJ.MIX",
+   "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+   "geometry_key": 3710797084,
+   "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+  },
+  "local36": "Left_Village",
+  "op_c6_anchor": "g27172 local52/7/8/32 writes",
+  "writers": [
+   [
+    0,
+    7092,
+    "c60000002402"
+   ],
+   [
+    0,
+    7950,
+    "c60000002403"
+   ]
+  ],
+  "regions": {
+   "3501": {
+    "group": 7092,
+    "event": 2,
+    "predicate": 164,
+    "predicate_raw": "0003240000",
+    "requires": 0,
+    "sets": 2,
+    "archive_offset": 13046514
+   },
+   "3805": {
+    "group": 7950,
+    "event": 2,
+    "predicate": 165,
+    "predicate_raw": "0003240002",
+    "requires": 2,
+    "sets": 3,
+    "archive_offset": 13047072
+   }
+  }
+ },
+ "import_anchors": {
+  "MOFF.MIX": {
+   "base": "0x13e0",
+   "checked": [
+    [
+     "0x141c",
+     "give_item"
+    ],
+    [
+     "0x1430",
+     "movie"
+    ],
+    [
+     "0x1424",
+     "set_flag"
+    ],
+    [
+     "0x14fc",
+     "movie_flags"
+    ]
+   ]
+  },
+  "MLIB.MIX": {
+   "base": "0x111c",
+   "checked": [],
+   "semantic": [
+    "get_local Dawn_dam_out_cave",
+    "set_local Met_Dawn 1",
+    "set_global GV_RUNES_TRANSLATED 1"
+   ]
+  },
+  "CAN.MIX": {
+   "base": "0xf3c",
+   "checked": [
+    [
+     "0xf8c",
+     "movie"
+    ],
+    [
+     "0xf80",
+     "set_flag"
+    ]
+   ]
+  }
+ },
+ "can_first_visit": {
+  "message_table": [
+   "0x51",
+   "0x5f",
+   "0x69",
+   "0x73",
+   "0x87",
+   "0x95",
+   "0xa3",
+   "0xad",
+   "0xb7",
+   "0xc1",
+   "0xcb",
+   "0xd5",
+   "0xe2"
+  ],
+  "first_visit_tail": [
+   [
+    "set_flag",
+    [
+     37
+    ]
+   ],
+   [
+    "0x80",
+    [
+     120
+    ]
+   ]
+  ],
+  "promise_calls": [
+   [
+    "0x84",
+    []
+   ],
+   [
+    "clear_flag",
+    [
+     37
+    ]
+   ],
+   [
+    "movie",
+    [
+     1,
+     640,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     1,
+     641,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     1,
+     642,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     643,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     644,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     645,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     1,
+     646,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     647,
+     6
+    ]
+   ]
+  ],
+  "exit_calls": [
+   [
+    "0x84",
+    []
+   ],
+   [
+    "test_flag",
+    [
+     37
+    ]
+   ],
+   [
+    "near",
+    null
+   ],
+   [
+    "clear_flag",
+    [
+     37
+    ]
+   ],
+   [
+    "test_flag",
+    [
+     34
+    ]
+   ],
+   [
+    "test_flag",
+    [
+     43
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     667,
+     6
+    ]
+   ],
+   [
+    "0x118",
+    []
+   ],
+   [
+    "movie",
+    [
+     1,
+     656,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     657,
+     6
+    ]
+   ],
+   [
+    "0x114",
+    []
+   ],
+   [
+    "get_global",
+    [
+     "GV_BACATTA_RELATIONSHIP"
+    ]
+   ],
+   [
+    "set_global",
+    [
+     "GV_BACATTA_RELATIONSHIP",
+     "eax"
+    ]
+   ],
+   [
+    "set_flag",
+    [
+     34
+    ]
+   ],
+   [
+    "room",
+    [
+     "VILLAGE_"
+    ]
+   ],
+   [
+    "close",
+    []
+   ]
+  ],
+  "relationship": "get_global + inc eax + set_global (0x9A7..0x9BC): +1 on the ordinary exit",
+  "timer": "host +0x80(120) after flag37; message10 = 0xD54 (promise); MAGIC adapter: 60 ticks/s"
+ },
+ "can": {
+  "archive_sha256": "55395c6cfa2f846f4edb360877ab9c68002dce1367a5109624e1c3feba634675",
+  "dll_sha256": "60835dcd4a697b208ac264faa72eb7e9b71eac35178d08a91fb7f54a414d6e92",
+  "table_base": "0xf3c",
+  "spans": {
+   "setup_later_0x9ea": "1d4419ebb1887eb6f808fee1f5801d30dbfcef8b95326b8d7097eec68657b745",
+   "exit_0xe09": "20e1ec061c917609ba9b646cedfc8056b65f71217bc7c00ce41462e7ab92f36b",
+   "first_0xc21": "b7199e5c84e75c1c2aca56f211a9aab8a2ef7673028c8436b197a1955d49db93",
+   "promise_0xd54": "7864be0dcc164096c39d4dff6d088fbf1f530949542c4ac2ac923443b6b38921",
+   "exit_0x91b": "3036023fe82a0ff59d6ab959c7564efcd13c46695c0b822c97cd2c1822523d01"
+  },
+  "setup_calls": [
+   [
+    "0x138",
+    [
+     398,
+     150
+    ]
+   ],
+   [
+    "test_flag",
+    [
+     34
+    ]
+   ],
+   [
+    "get_local",
+    [
+     "Left_Village"
+    ]
+   ],
+   [
+    "movie_flags",
+    [
+     32,
+     700,
+     6,
+     160
+    ]
+   ],
+   [
+    "movie",
+    [
+     32,
+     701,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     32,
+     702,
+     6
+    ]
+   ],
+   [
+    "movie_flags",
+    [
+     32,
+     703,
+     6,
+     128
+    ]
+   ],
+   [
+    "movie",
+    [
+     32,
+     704,
+     6
+    ]
+   ],
+   [
+    "movie_flags",
+    [
+     32,
+     705,
+     6,
+     128
+    ]
+   ],
+   [
+    "movie_flags",
+    [
+     32,
+     706,
+     6,
+     160
+    ]
+   ],
+   [
+    "movie",
+    [
+     32,
+     707,
+     6
+    ]
+   ],
+   [
+    "debug_print",
+    [
+     "&&& CAN_.C: Maid smiles, blue light happens\r"
+    ]
+   ],
+   [
+    "set_global",
+    [
+     "GV_HULINE_ALERT",
+     1
+    ]
+   ],
+   [
+    "movie_flags",
+    [
+     32,
+     708,
+     6,
+     224
+    ]
+   ],
+   [
+    "test_flag",
+    [
+     267
+    ]
+   ],
+   [
+    "unknown_e4",
+    [
+     1
+    ]
+   ],
+   [
+    "movie",
+    [
+     32,
+     709,
+     6
+    ]
+   ],
+   [
+    "set_flag",
+    [
+     267
+    ]
+   ],
+   [
+    "room",
+    [
+     "VILLAGE_"
+    ]
+   ],
+   [
+    "close",
+    []
+   ],
+   [
+    "test_flag",
+    [
+     42
+    ]
+   ],
+   [
+    "set_flag",
+    [
+     42
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     662,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     663,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     1,
+     664,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     1,
+     665,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     666,
+     6
+    ]
+   ],
+   [
+    "test_flag",
+    [
+     43
+    ]
+   ],
+   [
+    "set_flag",
+    [
+     43
+    ]
+   ],
+   [
+    "test_flag",
+    [
+     44
+    ]
+   ],
+   [
+    "clear_flag",
+    [
+     37
+    ]
+   ],
+   [
+    "set_flag",
+    [
+     44
+    ]
+   ]
+  ],
+  "exit_calls": [
+   [
+    "set_flag",
+    [
+     34
+    ]
+   ],
+   [
+    "set_global",
+    [
+     "GV_BACATTA_RELATIONSHIP",
+     0
+    ]
+   ],
+   [
+    "0x118",
+    []
+   ],
+   [
+    "test_flag",
+    [
+     37
+    ]
+   ],
+   [
+    "clear_flag",
+    [
+     37
+    ]
+   ],
+   [
+    "movie",
+    [
+     1,
+     637,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     1,
+     638,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     676,
+     6
+    ]
+   ],
+   [
+    "movie",
+    [
+     13,
+     677,
+     6
+    ]
+   ],
+   [
+    "0x114",
+    []
+   ],
+   [
+    "close",
+    []
+   ]
+  ],
+  "movie_flags": {
+   "700": 160,
+   "703": 128,
+   "705": 128,
+   "706": 160,
+   "708": 224
+  },
+  "unknown": [
+   "host +0xE4(1) before line709 when flag267 is clear",
+   "movie_flags variants 0x80/0xA0/0xE0",
+   "debug print +0x0"
+  ]
+ },
+ "media": {
+  "CAN_MAID": [
+   {
+    "speaker": 32,
+    "line": 700,
+    "name": "WOMS\\CAN\\3270006E.VQA",
+    "size": 100646,
+    "sha256": "4479a42fcc2181f6243e7dfed47ba65851756d37eadb68de5b5d627b70ad0702",
+    "kind": "movie",
+    "movie_flags": 160
+   },
+   {
+    "speaker": 32,
+    "line": 701,
+    "name": "WOMS\\CAN\\3270106E.VQA",
+    "size": 107776,
+    "sha256": "e98f76dda9c13f6f8acfb0da8f81b5a2444251e1aa55fce79b1289fc64a49b88",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 32,
+    "line": 702,
+    "name": "WOMS\\CAN\\3270206E.VQA",
+    "size": 125920,
+    "sha256": "25d05fdd5bdd836d0609b05a901ca5969c95145aaffd82c9e47c2c77f23a8de6",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 32,
+    "line": 703,
+    "name": "WOMS\\CAN\\3270306E.VQA",
+    "size": 104350,
+    "sha256": "281cf5072b481b683a166df7b19e988bbacd55d741b8324eddb85641f605f8e8",
+    "kind": "movie",
+    "movie_flags": 128
+   },
+   {
+    "speaker": 32,
+    "line": 704,
+    "name": "WOMS\\CAN\\3270406E.VQA",
+    "size": 71202,
+    "sha256": "85140564ecde20f1913ef203b765d9747d6ae5d856d6b78a4caac2643d10ba5a",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 32,
+    "line": 705,
+    "name": "WOMS\\CAN\\3270506E.VQA",
+    "size": 67008,
+    "sha256": "b2cef1625bcda99296b4800536355b416db1698a24256525781aae8da17738ed",
+    "kind": "movie",
+    "movie_flags": 128
+   },
+   {
+    "speaker": 32,
+    "line": 706,
+    "name": "WOMS\\CAN\\3270606E.VQA",
+    "size": 108656,
+    "sha256": "30c185eca8a779ed4742a3e4ffd0f582911a1383e49507ba391867e3e64f0fc3",
+    "kind": "movie",
+    "movie_flags": 160
+   },
+   {
+    "speaker": 32,
+    "line": 707,
+    "name": "WOMS\\CAN\\3270706E.VQA",
+    "size": 129310,
+    "sha256": "ad22c42f8d07a41d6ceffd8b2875a3baaf3d853d5ebcf3994d67398ae18087a8",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 32,
+    "line": 708,
+    "name": "WOMS\\CAN\\3270806E.VQA",
+    "size": 143694,
+    "sha256": "e5ea09a8a9a5ba3b415ac03c5d0173dd411ad464e6bd47ff818dd2c071d268d8",
+    "kind": "movie",
+    "movie_flags": 224
+   },
+   {
+    "speaker": 32,
+    "line": 709,
+    "name": "WOMS\\CAN\\3270906E.VQA",
+    "size": 115530,
+    "sha256": "45cf9e668aad1dde8f55ed16f7a5932c9d03edb64d3a77d5ac681ff732e28f6b",
+    "kind": "movie",
+    "movie_flags": null
+   }
+  ],
+  "CAN_REVISIT": [
+   {
+    "speaker": 13,
+    "line": 662,
+    "name": "WOMS\\CAN\\1366206E.VQA",
+    "size": 405660,
+    "sha256": "d927bf7e048ccf43152343e1ce016be30414c6de956ab94278b1506d39407e27",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 13,
+    "line": 663,
+    "name": "WOMS\\CAN\\1366306E.VQA",
+    "size": 481698,
+    "sha256": "4ae06753a28afa6851f83477b92d3d64c9fe13f6962f34d7bfe4473e449893d7",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 1,
+    "line": 664,
+    "name": "WOMS\\CAN\\0166406E.AUD",
+    "size": 37780,
+    "sha256": "0c894fbc9bfb898347dd1050013bdd174a48834a5556ff9f302da0262a31a50c",
+    "kind": "audio_only",
+    "movie_flags": null
+   },
+   {
+    "speaker": 1,
+    "line": 665,
+    "name": "WOMS\\CAN\\0166506E.AUD",
+    "size": 7884,
+    "sha256": "b16a2ca3872d0ccbc569ab465ea7a957831c92285d5eef75cccfd396e1d86e17",
+    "kind": "audio_only",
+    "movie_flags": null
+   },
+   {
+    "speaker": 13,
+    "line": 666,
+    "name": "WOMS\\CAN\\1366606E.VQA",
+    "size": 227664,
+    "sha256": "6ae41cdbdb76ed00831660f633d0a53fe15663e963be0ba9f7fe847122c2ad2d",
+    "kind": "movie",
+    "movie_flags": null
+   }
+  ],
+  "CAN_REVISIT_LATE": [
+   {
+    "speaker": 13,
+    "line": 675,
+    "name": "WOMS\\CAN\\1367506E.VQA",
+    "size": 955762,
+    "sha256": "b189738086680226ef3776d93d50d8764d022f1aefd4f455abcf9825eb3630fc",
+    "kind": "movie",
+    "movie_flags": null
+   }
+  ],
+  "CAN_PROMISE": [
+   {
+    "speaker": 1,
+    "line": 640,
+    "name": "WOMS\\CAN\\0164006E.AUD",
+    "size": 11228,
+    "sha256": "977d61d74c950b480da22cf14c0d6c4b212ca57900ec57922170fb5e69071f39",
+    "kind": "audio_only",
+    "movie_flags": null
+   },
+   {
+    "speaker": 1,
+    "line": 641,
+    "name": "WOMS\\CAN\\0164106E.AUD",
+    "size": 56340,
+    "sha256": "fcd52eead2ae9f576b53782d1021351246999ed4285514a3dca6f4d97671a5a5",
+    "kind": "audio_only",
+    "movie_flags": null
+   },
+   {
+    "speaker": 1,
+    "line": 642,
+    "name": "WOMS\\CAN\\0164206E.AUD",
+    "size": 24420,
+    "sha256": "bdb87ec8b847bb831bff9582fc436424a81f588d4927161bb246317cc0ac5f25",
+    "kind": "audio_only",
+    "movie_flags": null
+   },
+   {
+    "speaker": 13,
+    "line": 643,
+    "name": "WOMS\\CAN\\1364306E.VQA",
+    "size": 1732086,
+    "sha256": "8816a30d37453858a1010628ff0f91166b4da806b50b32013213d086aa5389d8",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 13,
+    "line": 644,
+    "name": "WOMS\\CAN\\1364406E.VQA",
+    "size": 1801122,
+    "sha256": "d426e54578be9449c965a40f05330c40806f8e69f2959c2cfef5abb1ec2d1cc8",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 13,
+    "line": 645,
+    "name": "WOMS\\CAN\\1364506E.VQA",
+    "size": 738682,
+    "sha256": "26cabb2b86edf2e293f21fe57d72cd2a1ac2082e3dcb9864b119fd60dd2d56f1",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 1,
+    "line": 646,
+    "name": "WOMS\\CAN\\0164606E.AUD",
+    "size": 10740,
+    "sha256": "7bd98485c2dce7917ef5a2780c7ae508b9feca2a008c551dcbf5d8f4766d7f4a",
+    "kind": "audio_only",
+    "movie_flags": null
+   },
+   {
+    "speaker": 13,
+    "line": 647,
+    "name": "WOMS\\CAN\\1364706E.VQA",
+    "size": 1248858,
+    "sha256": "7d72070bbd162151f6910ebb7d7a25981459bb3e9b1653a54b1ff8b3e512939c",
+    "kind": "movie",
+    "movie_flags": null
+   },
+   {
+    "speaker": 13,
+    "line": 648,
+    "name": "WOMS\\CAN\\1364806E.VQA",
+    "size": 1206954,
+    "sha256": "52fc7b4ac8e060326c920900f98c1b8cab4ba5236388572633738d6fe3f9b8fc",
+    "kind": "movie",
+    "movie_flags": null
+   }
+  ],
+  "CAN_LEAVE": [
+   {
+    "speaker": 1,
+    "line": 656,
+    "name": "WOMS\\CAN\\0165606E.AUD",
+    "size": 18316,
+    "sha256": "8059d53dca0e39dc7419aee6653a45ac6cd3cd0bae346b34fd744803cf864f50",
+    "kind": "audio_only",
+    "movie_flags": null
+   },
+   {
+    "speaker": 13,
+    "line": 657,
+    "name": "WOMS\\CAN\\1365706E.VQA",
+    "size": 825658,
+    "sha256": "e57e224c67fcbcd577265e634c542e584d333abd4f255235be424ebbab299aec",
+    "kind": "movie",
+    "movie_flags": null
+   }
+  ]
+ },
+ "passed": true
+}

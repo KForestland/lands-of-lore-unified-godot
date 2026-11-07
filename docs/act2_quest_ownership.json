@@ -1,0 +1,721 @@
+{
+ "version": 1,
+ "scope": "Act2 modern quest consequences, each with one production owner; per-slice headless receipts, full earned Silverleaf loop still pending.",
+ "consequences": [
+  {
+   "id": "l8.gift.first_delivery",
+   "owner": "modern:l8_journey_state",
+   "action": "offer_daniel",
+   "source": "hintbook86-87",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_journey.gd"
+  },
+  {
+   "id": "l8.gift.dropped",
+   "owner": "modern:l8_journey_state",
+   "action": "hopper_interruption",
+   "source": "hintbook87",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_journey.gd"
+  },
+  {
+   "id": "l8.gift.recovered",
+   "owner": "modern:l8_journey_state",
+   "action": "recover_blade",
+   "source": "hintbook87",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_journey.gd"
+  },
+  {
+   "id": "l8.temple.first_visit",
+   "owner": "modern:l8_journey_state",
+   "action": "visit_temple",
+   "source": "hintbook87; native region1514/group1044 retains its own local6 write",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_journey.gd"
+  },
+  {
+   "id": "l8.village.admission",
+   "owner": "modern:l8_journey_state",
+   "action": "show_guard",
+   "source": "hintbook88",
+   "runtime_enabled": true,
+   "integration_requirement": "Do not also dispatch native guard item-offer groups20320/20388 for this modern action.",
+   "binding": "scripts/lol2/l8_journey.gd"
+  },
+  {
+   "id": "l8.gift.final_delivery",
+   "owner": "modern:l8_journey_state",
+   "action": "offer_daniel",
+   "source": "hintbook89",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_journey.gd"
+  },
+  {
+   "id": "l8.shaman.key",
+   "owner": "modern:l8_journey_state",
+   "action": "visit_shaman",
+   "source": "hintbook89/98; SHAMAN callback9 give100-Drac sigil",
+   "runtime_enabled": true,
+   "integration_requirement": "Do not replay the native SHAMAN give-item callback as another reward owner.",
+   "binding": "scripts/lol2/l8_journey.gd"
+  },
+  {
+   "id": "l8.travel.cemetery",
+   "owner": "native:L8_SJ:0:564",
+   "action": "leave_for_cemetery",
+   "source": "L8 source exit group564 -> level10 selector1",
+   "runtime_enabled": true
+  },
+  {
+   "id": "l10.cemetery.main_gate",
+   "owner": "modern:l10_main_gate",
+   "action": "unlock",
+   "source": "Prima97; Brady187/207; source control70",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_main_gate.gd",
+   "integration_requirement": "Do not dispatch native sigil-offer group17758 as a second reward/motion owner."
+  },
+  {
+   "id": "l8.village.backroom",
+   "owner": "modern:l8_backroom",
+   "action": "backroom",
+   "source": "SHAMAN/SHBAK source clips225..237; Grok shbak_news_card.md",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_journey.gd",
+   "integration_requirement": "Do not also dispatch native doorway flags215..217/246 or room transitions. Stage tools/prepare_l8_backroom.py audio."
+  },
+  {
+   "id": "l10.tomb.doors",
+   "owner": "modern:l10_tomb_state",
+   "action": "offer matching charged globe",
+   "source": "Prima97-99; Brady186/189; Grok l10_tomb_doors.md 2026-11-01 static joins",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_tombs.gd",
+   "integration_requirement": "Do not dispatch native receptacle kind3/kind4 handlers for this modern offer; one transaction consumes each instance, one saved slot owns each door."
+  },
+  {
+   "id": "l10.catacomb.braziers",
+   "owner": "modern:l10_braziers",
+   "action": "ignite",
+   "source": "Prima99; source template23 Bone Brazier, kind9/value81 selects1; Grok astra_story008_anchors.md separates courtyard control113/114",
+   "binding": "scripts/lol2/l10_braziers.gd",
+   "runtime_enabled": true,
+   "integration_requirement": "Modern ignition owns the saved lit set; do not replay native kind9/kind3 groups for this action."
+  },
+  {
+   "id": "act2.cemetery.jungle_pit.travel",
+   "owner": "native:act2_progression",
+   "action": "enter source exit regions",
+   "source": "Prima100/112; L10 region0 -> L8 arrival2; L8 region3132 -> L9 arrival1",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/act2_progression.gd",
+   "integration_requirement": "Retain native region predicates and earned inventory handoff; carry explicit no-seed host configuration, do not add a second transition owner."
+  },
+  {
+   "id": "l9.opening.stone_creatures",
+   "owner": "modern:scripted_creature_population",
+   "action": "earned melee combat with actors61/68",
+   "source": "Prima112; source L9 StSquid placements61/68",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/act2_creatures.gd",
+   "integration_requirement": "Shared population damage, defense, rewards and save state own combat; route helper uses earned armor and production heal, no health/mana/actor seeding."
+  },
+  {
+   "id": "l9.magic_bridge",
+   "owner": "modern:l9_magic_bridge",
+   "action": "Spark source prop2648",
+   "source": "Prima112; source prop2648/group13448 -> control466 -> timer16982 controls466/467",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_magic_bridge.gd",
+   "integration_requirement": "Do not also dispatch native prop2648/timer466 groups; saved flag selects original mode7 faces/child boxes once. Prop1086 remains the separate teleporter-door orb."
+  },
+  {
+   "id": "l9.tower.alcoves_fields",
+   "owner": "modern:l9_tower",
+   "action": "Physical alcove entry and Spark at source orbs1090/1088/1087/1089",
+   "source": "Prima112; reciprocal opcode18 coordinate words; groups9124/8808/8656/8972",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_tower.gd",
+   "integration_requirement": "Opcode18 movement interpretation is an approved modern adapter, not decoded semantics or arrival4. Saved orb IDs own scoped stair-field state on the sole global RegionBlockers physical body; TowerFields is visual-only (layer0, physics disabled). The existing native opcode197 binder shares that global body; do not also replay source Tower field groups. Other native static/dynamic walls retain their global ownership. Adapter0295 preserves scoped Tower edge foot/head extension0."
+  },
+  {
+   "id": "l10.catacomb.low_fences",
+   "owner": "modern:l10_fences",
+   "action": "One-way running jump and midair Ctrl over template17 controls74/75/174",
+   "source": "Prima99-100; lead04:22; source adjacent floor heights",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_fences.gd",
+   "integration_requirement": "Own fence triangle/box collision once. Low side never admits; high grounded approach plus airborne running crouch toward low side admits transiently. Reset passage on load; stacked upper floors remain independent."
+  },
+  {
+   "id": "l9.dead_bracers",
+   "owner": "modern:l9_dead_bracers",
+   "action": "Spark original shield312 after Saar79 death, then pickup original55",
+   "source": "Prima113; control312 template46; actor79 callback11/group20798 names312 and55",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_dead_bracers.gd",
+   "integration_requirement": "Only saved modern shield flag gates release/pickup; do not replay native20798 to independently unlock this consequence. Source original item placement, no synthetic reward."
+  },
+  {
+   "id": "l9.mirror_room",
+   "owner": "modern:l9_mirrors",
+   "action": "Spark prop1086, source door65/66 motion and physical same-area mirror alcoves",
+   "source": "Prima112-113; group8620; source region opcode18 pairs; shared native region2299 owns cross-level L10/2 exit",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_mirrors.gd",
+   "integration_requirement": "Modern saved orb flag supplies source mover100-percent angle; no duplicate8602/8620 replay. Opcode18 movement/floor grounding are explicitly adapters. Actual cross-level mirror event remains native binder owned."
+  },
+  {
+   "id": "l10.caretaker_barrel",
+   "owner": "modern:l10_barrel",
+   "action": "White tomb109 permits switch61, movable74, Human tipping477, rolling176 and oil spill",
+   "source": "Prima101; switch groups17280/17286; barrel17170/20308/20326",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_barrel.gd",
+   "integration_requirement": "Kit owns white109/112. Saved switch/phase/distance solely own this barrel sequence; do not independently replay native switch/barrel groups. Door withdrawal, immediate tipping, roll timing, obstacle rule and oil presentation are modern adapters."
+  },
+  {
+   "id": "l10.oil_collapse",
+   "owner": "modern:l10_oil",
+   "action": "Actual Spark ray ignites earned spill, blast and scoped tomb collapse expose original catacomb floor",
+   "source": "Prima101-102; Broken Barrel327; prop432/group16506 opcode196 targets and signed word-90",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_oil.gd",
+   "integration_requirement": "Require barrel phase2. Saved burned flag solely owns blast/collapse; do not also replay15012/15156/16506 or seed native local0. Barrel owner observes flag to retire puddles/broken barrels; Kit remains sole globe owner."
+  },
+  {
+   "id": "l10.priest_urn",
+   "owner": "modern:l10_priest",
+   "action": "Speak with source priest158 after Kit blue154 while carrying earned bracers; grant source definition78 urn once",
+   "source": "Prima103/113; prop158/group7748 opcode3 identityCFE9BC82; template34 idle47loiter.vqa",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_priest.gd",
+   "integration_requirement": "Pure capacity-checked gift commits inventory/history/flag together. Bracers remain carried. Kit owns blue door; do not replay native7748 or seed shared34. Original movie loop only; errand text is book-led."
+  },
+  {
+   "id": "l9.noble_north_rails",
+   "owner": "modern:l9_noble_rails",
+   "action": "strike",
+   "source": "Prima113; controls478/479/480 groups17302/17320/17338",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_noble_rails.gd"
+  },
+  {
+   "id": "l9.chapel_cremation",
+   "owner": "modern:l9_pyre",
+   "action": "grab/place/ignite/urn",
+   "source": "Prima114; body2406/pyre301/orbs1205-1206, source Full urnD9475D01",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_pyre.gd"
+  },
+  {
+   "id": "l10.priest_ankh_entry",
+   "owner": "modern:l10_ankh_state",
+   "action": "Kit ashes exchange and Holy Switch66",
+   "source": "Prima103-104; prop156/groups6000/6210; control66/group17490; prop248/group11480; DEVIATIONS0234",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_emperor_entry.gd"
+  },
+  {
+   "id": "l10.emperor_receptacles_remains",
+   "owner": "modern:l10_emperor_state",
+   "action": "Kit colour boxes and inner ankh; original EMPT room sarcophagus reward",
+   "source": "Prima104/Brady189,209; source125/126/127/175/143; region3789/group922 room21; DEVIATIONS0235",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_emperor.gd"
+  },
+  {
+   "id": "l10.emperor_remains_ruins_handoff",
+   "owner": "native:control150_region42",
+   "action": "source E150 and mirror42 carry earned remains into Ruins arrival3",
+   "source": "Prima104; existing source event binding and DEVIATIONS0227; actual STORY023 route",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/act2_progression.gd"
+  },
+  {
+   "id": "l9.statue_bowl",
+   "owner": "modern:l9_statue_state",
+   "action": "original STAT room left-bowl Kit remains offering",
+   "source": "Prima115; region3185/group3774 room20; STAT_.WOM hotspot0; DEVIATIONS0236",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_statue.gd"
+  },
+  {
+   "id": "l9.statue_walk_fight",
+   "owner": "modern:l9_statue_walk",
+   "action": "physical actor76 path0 and source movie54; no Dampen or flood claim",
+   "source": "Prima115-116; source path0, regions5940/5945/5946/5947; DEVIATIONS0237",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_statue_walk.gd",
+   "integration_requirement": "The committed Kit offering restores source group12766 opcode197 arm2 clear of region3565 on the shared global RegionBlockers body, including reload. Do not replay the native offering group alongside this modern consequence. Other region walls remain enabled."
+  },
+  {
+   "id": "l9.flood.water",
+   "owner": "modern:l9_flood_state",
+   "action": "original statue fight completion starts rising water and saved drowning clock",
+   "source": "L9 prop1026/1027/1031/1023 groups6850/6966/7086/5752",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_flood.gd"
+  },
+  {
+   "id": "l9.flood.escape",
+   "owner": "modern:l9_escape_state",
+   "action": "physical table122 lift/dock and raft82 ride; earned completion fires source control82 -> prop104 exit",
+   "source": "lead17:22; original placements, tunnel6304 floor420, groups14058/2140/2168; DEVIATIONS0246",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l9_escape.gd"
+  },
+  {
+   "id": "l8.shore.return_closure",
+   "owner": "modern:l8_shore",
+   "action": "earned L9 raft exit -> original L8 arrival5 -> Dawn20 present; permanent destination9 travel refusal",
+   "source": "Prima89/106/117; prop630 group7888; DEVIATIONS0247",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_shore.gd"
+  },
+  {
+   "id": "l8.dawn.bracer_exchange",
+   "owner": "modern:l8_dawn_state",
+   "action": "earned shore Dawn20 accepts recovered L9 bracers through Kit and gives original Control Token once",
+   "source": "Prima90/104; actor20 group13602, prop102 group4340; DEVIATIONS0248",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_dawn.gd"
+  },
+  {
+   "id": "l8.baccata.rescue",
+   "owner": "modern:l8_baccata",
+   "action": "cut original-location trap, show actor116, narrated conversation and saved departure",
+   "source": "Prima90/117; prop100/101/1117/1122, actor116; DEVIATIONS0249",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_baccata.gd"
+  },
+  {
+   "id": "l10.silverleaf.growth",
+   "owner": "modern:l10_silverleaf",
+   "action": "earned Emperor revisit without bracers grows original tree props159..170",
+   "source": "Prima90/104; prop254 group11762; DEVIATIONS0250",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_silverleaf.gd"
+  },
+  {
+   "id": "l10.silverleaf.harvest",
+   "owner": "modern:l10_silverleaf_harvest",
+   "action": "one original leaf grant per source tree159..170, capacity checked and persistently depleted",
+   "source": "original groups8218..8548; DEVIATIONS0251",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l10_silverleaf.gd"
+  },
+  {
+   "id": "l8.village.admitted_guard",
+   "owner": "modern:act2_creatures",
+   "action": "guard113 remains peaceful after earned village admission without health/position changes",
+   "source": "existing village admission adapter0209; DEVIATIONS0251",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/act2_creatures.gd"
+  },
+  {
+   "id": "l8.tribe.initiation",
+   "owner": "modern:l8_tribe",
+   "action": "Kit Silverleaf offer -> original SHAMAN speech/place -> saved nonlethal bout -> membership",
+   "source": "SHAMAN_.WOM image746; DEVIATIONS0252; actor23 choice is adapter",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_tribe.gd"
+  },
+  {
+   "id": "l8.shaman.second_leaf",
+   "owner": "modern:l8_shaman_trade",
+   "action": "Kit second Silverleaf exchange for original Amaranth Serum119 after membership",
+   "source": "SHAMAN_.WOM give_item117-Amaranth sr; DEVIATIONS0253",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_tribe.gd"
+  },
+  {
+   "id": "l8.clubhouse.access",
+   "owner": "modern:l8_clubhouse",
+   "action": "earned membership opens original paired doors51/52 through guard21; source stones stay with Act2WorldItems",
+   "source": "original actor21/group15106; DEVIATIONS0254",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_clubhouse.gd"
+  },
+  {
+   "id": "l8.huline.speech",
+   "owner": "modern:l8_huline_speech",
+   "action": "original actor-bound cues with saved near-actor one-shot playback; no reward consequences",
+   "source": "original groups18566/17970/15636/17284; DEVIATIONS0255",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_huline_speech.gd"
+  },
+  {
+   "id": "l8.larkhon.passage",
+   "owner": "modern:l8_larkhon",
+   "action": "atomic Kit recipe/activated chest dose -> saved guardian sleep and source passage collision -> native L12 exit",
+   "source": "actor115/group21504; region3277/group1908; DEVIATIONS0256",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_larkhon.gd"
+  },
+  {
+   "id": "l12.gulch.route",
+   "owner": "existing:act2_map",
+   "action": "physical gulch ascent and non-gorilla branch; position save only, no item transaction or added quest flag",
+   "source": "Prima120-121; original L12 regions and raised controls106..113",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/act2_map.gd"
+  },
+  {
+   "id": "l12.glacier.collapse",
+   "owner": "modern:l12_glacier",
+   "action": "saved original12-region floor lowering and six-log removal on modern valley entry",
+   "source": "L12 prop335/stream1group1068; DEVIATIONS0257",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l12_glacier.gd"
+  },
+  {
+   "id": "l12.citadel.approach",
+   "owner": "modern:l12_citadel",
+   "action": "Kenneth search/Kit picture impact, rescued Baccata summary and original movie before native L13 entrance",
+   "source": "L12 prop4/group140; control74/group2808; DEVIATIONS0258",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l12_citadel.gd"
+  },
+  {
+   "id": "l13.egg.first_iris",
+   "owner": "modern:l13_egg_door",
+   "action": "production Spark at switch420 opens original iris106/region1226",
+   "source": "L13 group7888; DEVIATIONS0259",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_egg_door.gd"
+  },
+  {
+   "id": "l13.egg.basin",
+   "owner": "modern:l13_eggs",
+   "action": "eye opens original paired irises; Spark vent triggers saved drainage; existing WorldItems owns original dormant pickups",
+   "source": "L13 prop363/group7274, prop265/group4918; DEVIATIONS0260",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_eggs.gd"
+  },
+  {
+   "id": "l13.egg.elevator",
+   "owner": "modern:l13_elevator",
+   "action": "Spark or nearby E descends original elevator floors with saved motion and support-ray carry",
+   "source": "L13 prop362/group6788; DEVIATIONS0261",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_elevator.gd"
+  },
+  {
+   "id": "l13.prison.maidens",
+   "owner": "modern:l13_prison",
+   "action": "Human jump at original plate52 opens SLAVES; source media and saved release guarded by nineteen original Ruloi health records",
+   "source": "L13 control52/group8104; SLAVES room consumer; DEVIATIONS0262",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_prison.gd"
+  },
+  {
+   "id": "l13.spires.dawn_gate",
+   "owner": "modern:l13_spires",
+   "action": "Actual Spark completes original Spires; saved pair opens geometry-derived Dawn passage",
+   "source": "Spire hit groups/local16/17; DEVIATIONS0265",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_spires.gd"
+  },
+  {
+   "id": "l13.prison.dawn",
+   "owner": "modern:l13_dawn_prison",
+   "action": "Human jump at original plate51 visits DSLAVE original room and examines recess",
+   "source": "L13 control51/group8074; DEVIATIONS0265",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_dawn_prison.gd"
+  },
+  {
+   "id": "l13.prison.dreamstone",
+   "owner": "modern:l13_dawn_release",
+   "action": "Kit retained Dreamstone release with original dialogue and one saved Bestial Disk gift",
+   "source": "DSLAVE module0x67e..0x7cf; DEVIATIONS0266",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_dawn_release.gd"
+  },
+  {
+   "id": "l13.bridge.plates",
+   "owner": "modern:l13_bridge",
+   "action": "Saved active-world reveal wave on original eleven visible/colliding bridge plates",
+   "source": "L13 controls90..100 timer180; DEVIATIONS0267",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_bridge.gd"
+  },
+  {
+   "id": "l13.belial.encounter",
+   "owner": "modern:l13_belial",
+   "action": "enter_and_cure",
+   "source": "source103/group8770; original movie31; Prima poison cure;0268",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_belial.gd"
+  },
+  {
+   "id": "l13.altar.sword_stone",
+   "owner": "modern:l13_altar",
+   "action": "offer_then_take",
+   "source": "source325/174/175/326;0269",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_altar.gd"
+  },
+  {
+   "id": "l13.altar.return",
+   "owner": "modern:l13_return_pad",
+   "action": "jump",
+   "source": "control54/group8152;0270",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_return_pad.gd"
+  },
+  {
+   "id": "l13.exit.dreamstone",
+   "owner": "modern:l13_exit_lock",
+   "action": "insert_then_retrieve",
+   "source": "control104/group8870/8922; door105;0272",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l13_exit_lock.gd"
+  },
+  {
+   "id": "l12.river.rafts",
+   "owner": "modern:l12_river_rafts",
+   "action": "continuous_motion_and_carry",
+   "source": "movables50/51/55 original seven opcode18 waypoint words;0273",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l12_river_rafts.gd"
+  },
+  {
+   "id": "l12.niche.obsidian_armor",
+   "owner": "modern:l12_niche_armor",
+   "action": "spark_then_take_and_equip",
+   "source": "prop136/group564 floor3026 and dormant item5/definition54;0274",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l12_niche_armor.gd"
+  },
+  {
+   "id": "l12.crevasse.gate_and_form_choice",
+   "owner": "modern:l12_crevasse",
+   "action": "spark_gate_then_request_form",
+   "source": "prop436/control91 original groups; Prima4236-4239;0276",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l12_crevasse.gd"
+  },
+  {
+   "id": "l12.grotto.frozen_book_bow",
+   "owner": "modern:l12_frozen_bow",
+   "action": "spark_then_timed_pickup",
+   "source": "original89 and nativeitem36 pinned separately; Prima4239-4245 book reward35 adapter0277",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l12_frozen_bow.gd"
+  },
+  {
+   "id": "l8.temple.dreamstone_entry",
+   "owner": "modern:l8_temple_door",
+   "action": "insert_retrieve_enter",
+   "source": "Prima129/131; originalprop1198/group11612, L14doors92/93; modernjoins0280",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_temple_door.gd"
+  },
+  {
+   "id": "l14.priest.body_slab",
+   "owner": "modern:l14_priest_body",
+   "action": "carry_then_kit_place",
+   "source": "originalprop274 and rectangle816; Prima132;0281",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_priest_body.gd"
+  },
+  {
+   "id": "l14.priest.bowls_floor_spark",
+   "owner": "modern:l14_priest_ritual",
+   "action": "kit_bowls_lower_floor_spark_body",
+   "source": "original369/370 identity offers/groups14556/14868; Prima133;0282",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_priest_ritual.gd"
+  },
+  {
+   "id": "l14.north.post_shard",
+   "owner": "modern:l14_post_shard",
+   "action": "take_once",
+   "source": "control71/group16904 identityD0421BDE; Prima133;0283",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_post_shard.gd"
+  },
+  {
+   "id": "l8.tree.torches_stairs_shard_slot",
+   "owner": "modern:l8_tree",
+   "action": "spark_five_raise_insert_retrieve",
+   "source": "original1338..1342/prop1 floors/control66 shard identities/movable50; Prima92/133;0284",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l8_tree.gd"
+  },
+  {
+   "id": "l14.hanging.open",
+   "owner": "modern:l14_hanging",
+   "action": "interact",
+   "source": "control124/groups17788,17816; book input adapter0285",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_hanging.gd"
+  },
+  {
+   "id": "l14.spider_passage",
+   "owner": "modern:l14_spider_passage",
+   "action": "proximity_breach_and_timed_respawn",
+   "source": "control64/groups16852,16880 and original actor68; adapter0286",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_spider_passage.gd"
+  },
+  {
+   "id": "l14.lower_passage.form_choice",
+   "owner": "modern:l14_lower_passage",
+   "action": "choose_form",
+   "source": "earned Dreamstone adapter0276 extended locally by0287",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_lower_passage.gd"
+  },
+  {
+   "id": "l14.machines.statue",
+   "owner": "modern:l14_machines",
+   "action": "start_carry_rotate_insert_catch",
+   "source": "control72/73/75/77, original item65; adapter0288",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_machines.gd"
+  },
+  {
+   "id": "l14.bedroom.headboard_crack",
+   "owner": "modern:l14_bedroom",
+   "action": "push_headboard",
+   "source": "prop8/345 and movables0/1, original ceiling2358; adapter0289",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_bedroom.gd"
+  },
+  {
+   "id": "l14.library.stairs_door",
+   "owner": "modern:l14_library",
+   "action": "ordered_hall_buttons",
+   "source": "146group18364/147group18580; adapter0290",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_library.gd"
+  },
+  {
+   "id": "l14.library.exit",
+   "owner": "modern:l14_library",
+   "action": "exit_button148",
+   "source": "148group18592; adapter0291",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_library.gd"
+  },
+  {
+   "id": "l14.niche.statue_shard",
+   "owner": "modern:l14_niche",
+   "action": "offer_statue_raise_original_pedestal",
+   "source": "126->75->73/74->381/379/323 beneath original67; adapter0293",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_niche.gd"
+  },
+  {
+   "id": "l14.shard_bowls.passage",
+   "owner": "modern:l14_shard_bowls",
+   "action": "two_distinct_Kit_shards_open_original_rear_passage",
+   "source": "props405/406 andmovable71group19426; geometryadapter0294",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_shard_bowls.gd"
+  },
+  {
+   "id": "l14.spiral.dreamstone",
+   "owner": "modern:l14_spiral",
+   "action": "Kit insert/retrieve earned Dreamstone in original72;39originalfloor motions; actualspiral/bridge approach",
+   "source": "Original movable72/groups19620/19666/19696; Prima137; docs/l14-three-doors-source.json",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_spiral.gd",
+   "integration_requirement": "Only this owner transforms39 originalfloor faces. Keep originalceilings/bridge/slot geometry. Do not also replay native slot groups or generic72 hinge. Absoluteheight interpretation and4active-sec timer are logged adapter0296; committedKitreceipt survives Dreamstone retrieval."
+  },
+  {
+   "id": "l14.trials.left_idol",
+   "owner": "modern:l14_trials",
+   "action": "Open original90, traverse unchanged ledges withactualjumps, take original371 Jkaridol andbringback",
+   "source": "Prima137; original NiceDoor90 event0 andprop371/group15150 identity1200015E",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_trials.gd",
+   "integration_requirement": "Only trials owns original88/89/90 door meshes andprop371 pickup/hiding. No nativegroup replay or duplicate sourceitem5 pickup for reward. Dooractuation/bookaward join logged0297. Middle/right have separate ownership rows."
+  },
+  {
+   "id": "l14.trials.middle_floor",
+   "owner": "modern:l14_tilt",
+   "action": "Original2132/2133 opposite rides, four highbuttons142..145, originalfarbarrier2291 opens",
+   "source": "Descriptor94 andstream0groups1908/1938/2004/2034; fourbuttonfinalgroups; Prima137-138",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_tilt.gd",
+   "integration_requirement": "Sole floor/barrier/twoouterwall owner; selectedlowerceilings clippedonlyat originalupperroute footprints, outsideheights/UVs/collision retained. No nativebutton/floor replay. Sourceheightwords/timing/physicalskirts are logged0298, no playerposition writes."
+  },
+  {
+   "id": "l14.trials.middle_idol",
+   "owner": "modern:l14_trials",
+   "action": "Originaldoor89 afterfirstidol; sourceprop372 onepersistent Jkaridol afterfourbuttons",
+   "source": "Originalprop372/group15210 identity1200015E; bookmiddletrial",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_trials.gd",
+   "integration_requirement": "Sole prop372 pickup/hiding, distinctfromworlditem5 andleftprop371; nativeop3mode unentered, logged0298."
+  },
+  {
+   "id": "l14.trials.right_paths",
+   "owner": "modern:l14_fire_paths",
+   "action": "Three original raised-path buttons; bridge56/57, six near steps, far gate55",
+   "source": "Controls60/61/62, bridge57 groups19200/19224, prop179 groups9216/9300, descriptor214/region3981/group3656",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_fire_paths.gd",
+   "integration_requirement": "Sole physical mesh owner for55/56/57 and six step floors. No generic hinge or native replay. Height interpretation and active-time motion logged0299; gate triggered only by actual far landing, no player-position writes."
+  },
+  {
+   "id": "l14.trials.right_idol",
+   "owner": "modern:l14_trials",
+   "action": "Originaldoor88 aftersecondidol; sourceprop384 onepersistent thirdJkaridol",
+   "source": "Originalprop384/group15378 identity1200015E; bookrighttrial",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_trials.gd",
+   "integration_requirement": "Sole prop384 pickup/hiding; three source instances remain distinct; originalopcode3 mode unentered, logged0299."
+  },
+  {
+   "id": "l14.flute.oil_covers",
+   "owner": "modern:l14_flute_slot",
+   "action": "Kit exact earned flute insertion/retrieval closes original oil covers77/78",
+   "source": "Original76/group20258; Prima138-139; owner2026-11-03 01:05 either-flute ruling",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_flute_slot.gd",
+   "integration_requirement": "Sole76/77/78 mesh and collision owner; no generic hinge or native replay. Exact inventory instance retained; one committed receipt persists retrieval. Modern cover motion logged0300."
+  },
+  {
+   "id": "l14.traps.bypass_boulder",
+   "owner": "modern:l14_trap_route",
+   "action": "Original81/80 bypass doors and central-region777 boulder hazard",
+   "source": "Original event0 side doors, descriptor25/group1212, Boulder template12 resource473",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_trap_route.gd",
+   "integration_requirement": "Sole original80/81 mesh owner; no generic hinge replay. Boulder placement/timing/hit band are logged0301. Never write player position; older earned saves restore trigger state."
+  },
+  {
+   "id": "l14.idols.stair_crossing",
+   "owner": "modern:l14_idol_pedestals",
+   "action": "Three unique earned idol Kit receipts assemble fourteen original MovingStair parts",
+   "source": "Original cases85/86/87, thirdreceipt20602 ->prop399/group15772 controls90..103",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_idol_pedestals.gd",
+   "integration_requirement": "Sole case and static-stair mesh/collision owner; no generic hinge or native replay. Original stair heights retained; case elevation, XZ/heading interpretation and timing logged0302. Inventoryinstances remain distinct."
+  },
+  {
+   "id": "l14.hoppers.body_weight",
+   "owner": "modern:l14_hopper_platform",
+   "action": "Original five hopper combat, unique corpse carry, Kit five weights and actual player-step platform descent",
+   "source": "Original actors91..95, control63/floor2447, props181..185 andgroup9900/10110; book139",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_hopper_platform.gd",
+   "integration_requirement": "Sole pressure/counterfloor owner; population owns actual health/deaths, dedicated physical NPC hover only forfive actors afterearnedactivation. DistinctcarryIDs requireactualdeadbody receipts. No nativeweight replay. Selection/hover/carry/height/timing logged0303; no playerposition writes."
+  },
+  {
+   "id": "l14.belial.admission_combat",
+   "owner": "modern:l14_belial",
+   "action": "Earned weighted elevator source relocation, original landing floors, local confrontation and Beast-only melee admission",
+   "source": "Descriptor115 ->prop221 groups12072/12198, actor90; lead05:52 and Prima140",
+   "runtime_enabled": true,
+   "binding": "scripts/lol2/l14_belial.gd",
+   "integration_requirement": "Sole arrival-floor owner and damage admission gate; shared population owns actual health/death. Source opcode18 operand modes, local F/E/G interaction, summary dialogue, reflection cap and Dreamstone form choice are adapter0305. No test-only relocation or seeded death."
+  }
+ ]
+}

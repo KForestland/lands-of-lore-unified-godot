@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856
+  },
+  "prop": 83,
+  "group": 146,
+  "record": {
+    "kind": 8,
+    "value": 956,
+    "archive_offset": 7247823
+  },
+  "commands": [
+    "090353000800",
+    "150366021d00",
+    "120100006801d62a00000508388e000a0000",
+    "050353000200",
+    "100353000100",
+    "0903be000200",
+    "0903d9010200",
+    "cc901104f6056a02",
+    "cc901104f5056a02",
+    "cc900f0413036a02",
+    "cc900d04f4056a02",
+    "cc900d04f3056a02",
+    "060366020100",
+    "100353000100",
+    "090353001500"
+  ],
+  "op21": {
+    "index": 1,
+    "target": [
+      "prop",
+      614
+    ],
+    "movie": 29
+  },
+  "movie": {
+    "name": "flood",
+    "archive": "DAT/L1_DCI.MIX",
+    "entry": 14,
+    "key": 486230760,
+    "source_sha256": "033a587b1ded3e4de617be5ef3813527b0fa0ee1d47247300a5e952329c64e91",
+    "path": "res://assets/lol2/generated/cave_flood/flood.ogv",
+    "width": 640,
+    "height": 400,
+    "frames": 200,
+    "fps": 15,
+    "seconds": 13.3333,
+    "samples": 305024,
+    "rate": 22050,
+    "sha256": "d842c2667fe3907331e92e2efbd9e6f45ce31be828b6e70a9cfb2643a294a37f"
+  },
+  "scope": "g146 op21 only: the full-screen FLOOD movie at the prop83 chain transition. g146 op9 property8, op204 materials and op6 prop614 event1 are not hosted."
+}

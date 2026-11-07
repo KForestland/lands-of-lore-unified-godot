@@ -1,0 +1,29 @@
+{
+  "input_save": "user://tests/act1_magic_museum_arrival.json",
+  "input_sha256": "ccab649dd8ceea928113f170691b5eb78bfe455b88a9d5c5ec52aa063cb26e09",
+  "magic": {
+    "cooldown": 0.0,
+    "player": {
+      "experience": 0,
+      "level": 1,
+      "mana": 20,
+      "maximum": 20
+    },
+    "regen_elapsed": 0.0,
+    "spell": "spark",
+    "version": 1
+  },
+  "output_save": "user://tests/act1_magic_museum_jungle.json",
+  "output_sha256": "4c839d2232b449a3f3da4f06c20a8fd8073ef7a8d95a9125625f0594bac0718b",
+  "passed": true,
+  "scope": "Earned spell-using cave save through natural curse expiry, Museum puzzles and original dragon movie to grounded Jungle. Automated walking/4x clock, no injected position, inventory, quest or magic state.",
+  "seconds": 70.29455504399812,
+  "log": "tmp/regressions/museum_starting_spells_corrected/run.log",
+  "regression_report": "tmp/regressions/museum_starting_spells_corrected/report.json",
+  "source_sha256": {
+    "tests/museum_earned_walk_test.gd": "65b3076a09dad9c24b93405c557de9774de0a3db30d0b0164807f0a236242120",
+    "scripts/lol2/museum_walkthrough.gd": "aea883b5b41ec6b44afd5584d6f325f3ad86ff0055e301582c0e879f8d04c353",
+    "scripts/lol2/jungle_walkthrough.gd": "819a5d8d1a90d2a9f4381e5027a253a4f90d3c43c4e6e6df45401fd595599e4a",
+    "scripts/lol2/player_starting_magic.gd": "bc46488bfd31b17b210990717f311135790eb402dcfd78b787b03e60bfcd18f7"
+  }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "monastery_rune_offer_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 578,
+ "needs": {
+  "env": [
+   "LOL2_EARNED_SAVES"
+  ],
+  "fixtures": [
+   "earned monastery rune checkpoint saves per route (act1_*, act1_broken_*, act1_magic_*, act1_shop_*)"
+  ],
+  "chain": "earned-save chain with route args --broken-sword / --julian-offers / --rune-speech / --ancient-stone / --starting-spells / --earned-cave-chain / --weapon-shop"
+ }
+}

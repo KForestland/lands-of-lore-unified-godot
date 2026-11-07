@@ -1,0 +1,9 @@
+{
+ "name": "dev_checkpoint_resume_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 576,
+ "needs": {
+  "chain": "run ONLY through tools/dev_checkpoint.py run NAME --project COPY --script res://tests/dev_checkpoint_resume_test.gd (isolated userdata, --dev-diagnostics, --original-game-exe)"
+ }
+}

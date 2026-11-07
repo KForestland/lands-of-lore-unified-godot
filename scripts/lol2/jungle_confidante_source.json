@@ -1,0 +1,1480 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "geometry_sha256": "d960c3af12a4bbcb222fb0aba67f68bfbbc248b012cd48a8fa124d0fefedad4b",
+ "locations": {
+  "112": {
+   "control": {
+    "id": 112,
+    "position": [
+     -1281,
+     24,
+     -4225
+    ],
+    "heading": 33860,
+    "flags": 21634,
+    "raw": "fffa81104484180082544c0dae237f000000000001000000000000002400060034",
+    "template": 52,
+    "dimensions": [
+     60,
+     1,
+     37
+    ],
+    "movie_resource": 510
+   },
+   "starter_prop": 492,
+   "movie": {
+    "name": "E103E.VQA",
+    "sha256": "c2bbfa9bfca14f7ae25e46ccc28d9d096a98bfa2039c7f7f0790d25f7a9f5935",
+    "fps": 15,
+    "segments": [
+     {
+      "index": 0,
+      "first": 0,
+      "last": 631,
+      "frames": 632,
+      "duration": 42.13333333333333,
+      "name": "HOthr000HU755-761"
+     },
+     {
+      "index": 1,
+      "first": 632,
+      "last": 659,
+      "frames": 28,
+      "duration": 1.8666666666666667,
+      "name": "HDdie000HUDie"
+     },
+     {
+      "index": 2,
+      "first": 660,
+      "last": 660,
+      "frames": 1,
+      "duration": 0.06666666666666667,
+      "name": "HDead000HUCorpse"
+     },
+     {
+      "index": 3,
+      "first": 661,
+      "last": 679,
+      "frames": 19,
+      "duration": 1.2666666666666666,
+      "name": "HLoit000HUBasic"
+     }
+    ]
+   }
+  },
+  "123": {
+   "control": {
+    "id": 123,
+    "position": [
+     -1283,
+     24,
+     -4228
+    ],
+    "heading": 33860,
+    "flags": 21634,
+    "raw": "fdfa84104484180082544d0dd8237f0000000000010000000000000024000c002f",
+    "template": 47,
+    "dimensions": [
+     60,
+     1,
+     37
+    ],
+    "movie_resource": 511
+   },
+   "starter_prop": 1465,
+   "movie": {
+    "name": "E102E.VQA",
+    "sha256": "892664913976b06709365a8c179add1f4013c7611a1f73ba99139c8f31473f10",
+    "fps": 15,
+    "segments": [
+     {
+      "index": 0,
+      "first": 0,
+      "last": 500,
+      "frames": 501,
+      "duration": 33.4,
+      "name": "HOthr000HU750-757"
+     },
+     {
+      "index": 1,
+      "first": 501,
+      "last": 528,
+      "frames": 28,
+      "duration": 1.8666666666666667,
+      "name": "HDdie000HUBasic"
+     },
+     {
+      "index": 2,
+      "first": 529,
+      "last": 529,
+      "frames": 1,
+      "duration": 0.06666666666666667,
+      "name": "HDead000HUCorpse"
+     },
+     {
+      "index": 3,
+      "first": 530,
+      "last": 548,
+      "frames": 19,
+      "duration": 1.2666666666666666,
+      "name": "HLoit000"
+     }
+    ]
+   }
+  }
+ },
+ "props": {
+  "68": {
+   "id": 68,
+   "position": [
+    -1122,
+    -50,
+    -4205
+   ],
+   "heading": 0,
+   "flags": 1154,
+   "raw": "9efb6d100000ceff82049f1214011d010100ffff0000006e006eff6e0000b4001200000003"
+  },
+  "492": {
+   "id": 492,
+   "position": [
+    -1270,
+    0,
+    -4301
+   ],
+   "heading": 0,
+   "flags": 1026,
+   "raw": "0afbcd10000000000204500d12110000b00ea5019f019d016214b214b00000006000000003"
+  },
+  "1465": {
+   "id": 1465,
+   "position": [
+    -1248,
+    0,
+    -4294
+   ],
+   "heading": 0,
+   "flags": 17538,
+   "raw": "20fbc610000000008244500d3e19ff0007f806ff060c07ecff6b00440000c8003400000003"
+  }
+ },
+ "regions": [
+  {
+   "id": 3247,
+   "polygon": [
+    [
+     -1647.0,
+     -4553.0
+    ],
+    [
+     -1547.0,
+     -4523.0
+    ],
+    [
+     -1547.0,
+     -4468.0
+    ],
+    [
+     -1643.0,
+     -4468.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "id": 3253,
+   "polygon": [
+    [
+     -1643.0,
+     -4468.0
+    ],
+    [
+     -1547.0,
+     -4468.0
+    ],
+    [
+     -1497.0,
+     -4395.0
+    ],
+    [
+     -1582.0,
+     -4395.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "id": 3397,
+   "polygon": [
+    [
+     -1233.0,
+     -4395.0
+    ],
+    [
+     -1306.0,
+     -4395.0
+    ],
+    [
+     -1306.0,
+     -4468.0
+    ],
+    [
+     -1233.0,
+     -4468.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "id": 3408,
+   "polygon": [
+    [
+     -1233.0,
+     -4272.0
+    ],
+    [
+     -1306.0,
+     -4273.0
+    ],
+    [
+     -1306.0,
+     -4386.0
+    ],
+    [
+     -1233.0,
+     -4386.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  },
+  {
+   "id": 4523,
+   "polygon": [
+    [
+     -1646.998779296875,
+     -4561.41455078125
+    ],
+    [
+     -1546.999267578125,
+     -4561.6220703125
+    ],
+    [
+     -1547.0,
+     -4523.0
+    ],
+    [
+     -1647.0,
+     -4553.0
+    ]
+   ],
+   "floor_min": 0,
+   "floor_max": 0
+  }
+ ],
+ "records": [
+  {
+   "owner_kind": "control",
+   "owner": 112,
+   "kind": 6,
+   "value": 0,
+   "stream": 1,
+   "group": 25584,
+   "predicate": 208,
+   "archive_offset": 12768688,
+   "raw": "0606f0630000",
+   "commands": [
+    "ce0000000001",
+    "021070000600",
+    "020100002700",
+    "c60000001403",
+    "0810700001000100",
+    "091070000200"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 112,
+   "kind": 6,
+   "value": 0,
+   "stream": 1,
+   "group": 25686,
+   "predicate": 9,
+   "archive_offset": 12768708,
+   "raw": "060656640000",
+   "commands": [
+    "021070000600",
+    "020100002700",
+    "c60000001403",
+    "0810700001000000",
+    "091070000200",
+    "14107000e300ff7dfa00"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 112,
+   "kind": 6,
+   "value": 1,
+   "stream": 1,
+   "group": 25556,
+   "predicate": 207,
+   "archive_offset": 12768678,
+   "raw": "0606d4630100",
+   "commands": [
+    "101070000200",
+    "0810700007000000",
+    "081070000a000000"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 112,
+   "kind": 9,
+   "value": 0,
+   "stream": 1,
+   "group": 25628,
+   "predicate": null,
+   "archive_offset": 12768698,
+   "raw": "0a091c64000000000181",
+   "commands": [
+    "021070000600",
+    "c60000002701",
+    "ce00000000ff",
+    "020100002700",
+    "c60000001403",
+    "0810700007000000",
+    "081070000a000100",
+    "101070000500"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 123,
+   "kind": 6,
+   "value": 0,
+   "stream": 1,
+   "group": 25764,
+   "predicate": 207,
+   "archive_offset": 12768730,
+   "raw": "0606a4640000",
+   "commands": [
+    "c60000001b01",
+    "02107b000600",
+    "020100002700",
+    "08107b0001000100",
+    "09107b000200"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 123,
+   "kind": 6,
+   "value": 0,
+   "stream": 1,
+   "group": 25876,
+   "predicate": 9,
+   "archive_offset": 12768750,
+   "raw": "060614650000",
+   "commands": [
+    "02107b000600",
+    "020100002700",
+    "c60000001402",
+    "08107b0001000000",
+    "09107b000200",
+    "14107b00e300ff7dfa00"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 123,
+   "kind": 6,
+   "value": 1,
+   "stream": 1,
+   "group": 25734,
+   "predicate": 207,
+   "archive_offset": 12768720,
+   "raw": "060686640100",
+   "commands": [
+    "0e03440003000000",
+    "08107b0007000000",
+    "08107b000a000000"
+   ]
+  },
+  {
+   "owner_kind": "control",
+   "owner": 123,
+   "kind": 9,
+   "value": 0,
+   "stream": 1,
+   "group": 25802,
+   "predicate": null,
+   "archive_offset": 12768740,
+   "raw": "0a09ca64000000000181",
+   "commands": [
+    "02107b000600",
+    "c60000002701",
+    "1003ec010500",
+    "ce00000000ff",
+    "14107b000d0150810a14",
+    "020100002700",
+    "c60000001402",
+    "08107b0007000000",
+    "08107b000a000100",
+    "10107b000500"
+   ]
+  },
+  {
+   "owner_kind": "prop",
+   "owner": 68,
+   "kind": 2,
+   "value": 304,
+   "stream": 1,
+   "group": 260,
+   "predicate": null,
+   "archive_offset": 12759820,
+   "raw": "0a020401300117006405",
+   "commands": [
+    "0e03440004000000",
+    "c60000001b01"
+   ]
+  },
+  {
+   "owner_kind": "prop",
+   "owner": 492,
+   "kind": 5,
+   "value": 0,
+   "stream": 1,
+   "group": 10380,
+   "predicate": 105,
+   "archive_offset": 12763914,
+   "raw": "06058c280000",
+   "commands": [
+    "09107b000200",
+    "091070000300",
+    "1003ec010100",
+    "0810700000000000",
+    "081070000700ff00",
+    "081070000a000300"
+   ]
+  },
+  {
+   "owner_kind": "prop",
+   "owner": 1465,
+   "kind": 5,
+   "value": 0,
+   "stream": 1,
+   "group": 15632,
+   "predicate": 96,
+   "archive_offset": 12766006,
+   "raw": "0605103d0000",
+   "commands": [
+    "09107b000300",
+    "091070000200",
+    "08107b0000000000",
+    "08107b000700ff00",
+    "08107b000a000300"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 3247,
+   "kind": 2,
+   "value": 0,
+   "stream": 0,
+   "group": 6340,
+   "predicate": null,
+   "archive_offset": 13046186,
+   "raw": "080cc418af0c0200",
+   "commands": [
+    "0903b9050a00",
+    "08107b0001000000"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 3253,
+   "kind": 2,
+   "value": 0,
+   "stream": 0,
+   "group": 6360,
+   "predicate": null,
+   "archive_offset": 13046194,
+   "raw": "080cd818b50c0200",
+   "commands": [
+    "0903b9050a00",
+    "08107b0001000000"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 3397,
+   "kind": 2,
+   "value": 0,
+   "stream": 0,
+   "group": 6840,
+   "predicate": 170,
+   "archive_offset": 13046414,
+   "raw": "080cb81a450d0200",
+   "commands": [
+    "c60000001402"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 3408,
+   "kind": 2,
+   "value": 0,
+   "stream": 0,
+   "group": 6852,
+   "predicate": 198,
+   "archive_offset": 13046426,
+   "raw": "080cc41a500d0200",
+   "commands": [
+    "1003b9050100",
+    "10107b000100",
+    "c60000001401",
+    "020100002600",
+    "02107b000501",
+    "1201000009fbe31000001200008000320000"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 3408,
+   "kind": 2,
+   "value": 0,
+   "stream": 0,
+   "group": 6906,
+   "predicate": 175,
+   "archive_offset": 13046438,
+   "raw": "080cfa1a500d0200",
+   "commands": [
+    "101070000100",
+    "c60000001403",
+    "021070000501",
+    "020100002600",
+    "1201000009fbe31000001200008000320000"
+   ]
+  },
+  {
+   "owner_kind": "region",
+   "owner": 4523,
+   "kind": 2,
+   "value": 0,
+   "stream": 0,
+   "group": 19340,
+   "predicate": null,
+   "archive_offset": 13050940,
+   "raw": "080c8c4bab110200",
+   "commands": [
+    "0903b9050a00",
+    "08107b0001000000"
+   ]
+  }
+ ],
+ "predicates": {
+  "208": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 2
+   },
+   "raw": "0005000002"
+  },
+  "9": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 5
+   },
+   "raw": "0005000005"
+  },
+  "207": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0005000001"
+  },
+  "105": {
+   "op": "AND",
+   "left": {
+    "predicate": 94,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 100,
+      "expression": {
+       "op": "OR",
+       "left": {
+        "predicate": 92,
+        "expression": {
+         "op": "==",
+         "left": {
+          "local": 6
+         },
+         "right": {
+          "immediate": 1
+         },
+         "raw": "0003060001"
+        }
+       },
+       "right": {
+        "predicate": 109,
+        "expression": {
+         "op": "==",
+         "left": {
+          "local": 33
+         },
+         "right": {
+          "immediate": 1
+         },
+         "raw": "0003210001"
+        }
+       },
+       "raw": "07045c046d"
+      }
+     },
+     "right": {
+      "predicate": 4,
+      "expression": {
+       "op": "==",
+       "left": {
+        "owner_state": true
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0005000000"
+      }
+     },
+     "raw": "0604640404"
+    }
+   },
+   "right": {
+    "predicate": 106,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 27
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "00031b0001"
+    }
+   },
+   "raw": "06045e046a"
+  },
+  "94": {
+   "op": "AND",
+   "left": {
+    "predicate": 100,
+    "expression": {
+     "op": "OR",
+     "left": {
+      "predicate": 92,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 6
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0003060001"
+      }
+     },
+     "right": {
+      "predicate": 109,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 33
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0003210001"
+      }
+     },
+     "raw": "07045c046d"
+    }
+   },
+   "right": {
+    "predicate": 4,
+    "expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    }
+   },
+   "raw": "0604640404"
+  },
+  "100": {
+   "op": "OR",
+   "left": {
+    "predicate": 92,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 6
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0003060001"
+    }
+   },
+   "right": {
+    "predicate": 109,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 33
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0003210001"
+    }
+   },
+   "raw": "07045c046d"
+  },
+  "92": {
+   "op": "==",
+   "left": {
+    "local": 6
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0003060001"
+  },
+  "109": {
+   "op": "==",
+   "left": {
+    "local": 33
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0003210001"
+  },
+  "4": {
+   "op": "==",
+   "left": {
+    "owner_state": true
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0005000000"
+  },
+  "106": {
+   "op": "==",
+   "left": {
+    "local": 27
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "00031b0001"
+  },
+  "96": {
+   "op": "AND",
+   "left": {
+    "predicate": 93,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 91,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 6
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0003060000"
+      }
+     },
+     "right": {
+      "predicate": 4,
+      "expression": {
+       "op": "==",
+       "left": {
+        "owner_state": true
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0005000000"
+      }
+     },
+     "raw": "06045b0404"
+    }
+   },
+   "right": {
+    "predicate": 205,
+    "expression": {
+     "op": "OR",
+     "left": {
+      "predicate": 203,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 47
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "00022f0001"
+      }
+     },
+     "right": {
+      "predicate": 204,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 25
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0002190001"
+      }
+     },
+     "raw": "0704cb04cc"
+    }
+   },
+   "raw": "06045d04cd"
+  },
+  "93": {
+   "op": "AND",
+   "left": {
+    "predicate": 91,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 6
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003060000"
+    }
+   },
+   "right": {
+    "predicate": 4,
+    "expression": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    }
+   },
+   "raw": "06045b0404"
+  },
+  "91": {
+   "op": "==",
+   "left": {
+    "local": 6
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003060000"
+  },
+  "205": {
+   "op": "OR",
+   "left": {
+    "predicate": 203,
+    "expression": {
+     "op": "==",
+     "left": {
+      "shared": 47
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "00022f0001"
+    }
+   },
+   "right": {
+    "predicate": 204,
+    "expression": {
+     "op": "==",
+     "left": {
+      "shared": 25
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0002190001"
+    }
+   },
+   "raw": "0704cb04cc"
+  },
+  "203": {
+   "op": "==",
+   "left": {
+    "shared": 47
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "00022f0001"
+  },
+  "204": {
+   "op": "==",
+   "left": {
+    "shared": 25
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0002190001"
+  },
+  "170": {
+   "op": "==",
+   "left": {
+    "local": 20
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0003140001"
+  },
+  "198": {
+   "op": "AND",
+   "left": {
+    "predicate": 202,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 144,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 20
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0003140000"
+      }
+     },
+     "right": {
+      "predicate": 205,
+      "expression": {
+       "op": "OR",
+       "left": {
+        "predicate": 203,
+        "expression": {
+         "op": "==",
+         "left": {
+          "shared": 47
+         },
+         "right": {
+          "immediate": 1
+         },
+         "raw": "00022f0001"
+        }
+       },
+       "right": {
+        "predicate": 204,
+        "expression": {
+         "op": "==",
+         "left": {
+          "shared": 25
+         },
+         "right": {
+          "immediate": 1
+         },
+         "raw": "0002190001"
+        }
+       },
+       "raw": "0704cb04cc"
+      }
+     },
+     "raw": "06049004cd"
+    }
+   },
+   "right": {
+    "predicate": 20,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 6
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003060000"
+    }
+   },
+   "raw": "0604ca0414"
+  },
+  "202": {
+   "op": "AND",
+   "left": {
+    "predicate": 144,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 20
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003140000"
+    }
+   },
+   "right": {
+    "predicate": 205,
+    "expression": {
+     "op": "OR",
+     "left": {
+      "predicate": 203,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 47
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "00022f0001"
+      }
+     },
+     "right": {
+      "predicate": 204,
+      "expression": {
+       "op": "==",
+       "left": {
+        "shared": 25
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0002190001"
+      }
+     },
+     "raw": "0704cb04cc"
+    }
+   },
+   "raw": "06049004cd"
+  },
+  "144": {
+   "op": "==",
+   "left": {
+    "local": 20
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003140000"
+  },
+  "20": {
+   "op": "==",
+   "left": {
+    "local": 6
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003060000"
+  },
+  "175": {
+   "op": "AND",
+   "left": {
+    "predicate": 171,
+    "expression": {
+     "op": "AND",
+     "left": {
+      "predicate": 169,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 20
+       },
+       "right": {
+        "immediate": 2
+       },
+       "raw": "0003140002"
+      }
+     },
+     "right": {
+      "predicate": 100,
+      "expression": {
+       "op": "OR",
+       "left": {
+        "predicate": 92,
+        "expression": {
+         "op": "==",
+         "left": {
+          "local": 6
+         },
+         "right": {
+          "immediate": 1
+         },
+         "raw": "0003060001"
+        }
+       },
+       "right": {
+        "predicate": 109,
+        "expression": {
+         "op": "==",
+         "left": {
+          "local": 33
+         },
+         "right": {
+          "immediate": 1
+         },
+         "raw": "0003210001"
+        }
+       },
+       "raw": "07045c046d"
+      }
+     },
+     "raw": "0604a90464"
+    }
+   },
+   "right": {
+    "predicate": 174,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 39
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0003270000"
+    }
+   },
+   "raw": "0604ab04ae"
+  },
+  "171": {
+   "op": "AND",
+   "left": {
+    "predicate": 169,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 20
+     },
+     "right": {
+      "immediate": 2
+     },
+     "raw": "0003140002"
+    }
+   },
+   "right": {
+    "predicate": 100,
+    "expression": {
+     "op": "OR",
+     "left": {
+      "predicate": 92,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 6
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0003060001"
+      }
+     },
+     "right": {
+      "predicate": 109,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 33
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0003210001"
+      }
+     },
+     "raw": "07045c046d"
+    }
+   },
+   "raw": "0604a90464"
+  },
+  "169": {
+   "op": "==",
+   "left": {
+    "local": 20
+   },
+   "right": {
+    "immediate": 2
+   },
+   "raw": "0003140002"
+  },
+  "174": {
+   "op": "==",
+   "left": {
+    "local": 39
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "0003270000"
+  },
+  "196": {
+   "op": "AND",
+   "left": {
+    "predicate": 195,
+    "expression": {
+     "op": "==",
+     "left": {
+      "local": 39
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0003270001"
+    }
+   },
+   "right": {
+    "predicate": 85,
+    "expression": {
+     "op": "==",
+     "left": {
+      "shared": 29
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "00021d0001"
+    }
+   },
+   "raw": "0604c30455"
+  },
+  "195": {
+   "op": "==",
+   "left": {
+    "local": 39
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "0003270001"
+  },
+  "85": {
+   "op": "==",
+   "left": {
+    "shared": 29
+   },
+   "right": {
+    "immediate": 1
+   },
+   "raw": "00021d0001"
+  },
+  "37": {
+   "op": "==",
+   "left": {
+    "local": 47
+   },
+   "right": {
+    "immediate": 0
+   },
+   "raw": "00032f0000"
+  }
+ },
+ "timers": {
+  "68": [
+   {
+    "ordinal": 0,
+    "group": 260,
+    "value": 304,
+    "flags": 1,
+    "range": [
+     0,
+     23
+    ],
+    "remaining": 1380
+   }
+  ]
+ },
+ "hits": {
+  "112": {
+   "group": 25628,
+   "mask0": 0,
+   "mask1": 0,
+   "threshold": 1,
+   "mode": 1,
+   "one_shot": true,
+   "raw": "0a091c64000000000181"
+  },
+  "123": {
+   "group": 25802,
+   "mask0": 0,
+   "mask1": 0,
+   "threshold": 1,
+   "mode": 1,
+   "one_shot": true,
+   "raw": "0a09ca64000000000181"
+  }
+ },
+ "local_names": {
+  "6": "Has_Luther_smoked_the_Cheifs_hut",
+  "20": "Confidante_trigger_is_active",
+  "27": "Met_Confidant",
+  "33": "Anyar_Attacked",
+  "39": "Killed_Confidante"
+ },
+ "owned_locals": [
+  20,
+  27,
+  39
+ ],
+ "kelsrick_locals": [
+  6,
+  33
+ ],
+ "shared_names": {
+  "0": "GV_LUTHERS_SOUL",
+  "25": "GV_KITYARA_DEAD",
+  "29": "GV_HULINE_ALERT",
+  "47": "GV_LUTHER_KNOWS_ABOUT_DANIEL"
+ },
+ "sounds": {
+  "227": "0100624e.aud",
+  "269": "0203924e.aud"
+ },
+ "not_hosted": {
+  "records": [
+   {
+    "owner_kind": "control",
+    "owner": 100,
+    "kind": 5,
+    "value": 0,
+    "stream": 1,
+    "group": 21322,
+    "predicate": null,
+    "archive_offset": 12767498,
+    "raw": "06054a530000",
+    "commands": [
+     "0810550001000000",
+     "08107b0001000000",
+     "0810700001000000",
+     "08106e0001000000",
+     "0903e5010a00",
+     "0903e4010a00"
+    ]
+   },
+   {
+    "owner_kind": "movable",
+    "owner": 78,
+    "kind": 9,
+    "value": 2048,
+    "stream": 1,
+    "group": 28068,
+    "predicate": 196,
+    "archive_offset": 12770716,
+    "raw": "0a09a46d000800000104",
+    "commands": [
+     "14105100c401fa000a14",
+     "091051000300",
+     "09204e000200"
+    ]
+   },
+   {
+    "owner_kind": "movable",
+    "owner": 79,
+    "kind": 9,
+    "value": 2048,
+    "stream": 1,
+    "group": 28140,
+    "predicate": 196,
+    "archive_offset": 12770760,
+    "raw": "0a09ec6d000800000104",
+    "commands": [
+     "14105100c40180000a14",
+     "091050000300",
+     "09204f000200"
+    ]
+   },
+   {
+    "owner_kind": "prop",
+    "owner": 1465,
+    "kind": 9,
+    "value": 0,
+    "stream": 1,
+    "group": 15674,
+    "predicate": 37,
+    "archive_offset": 12766016,
+    "raw": "0a093a3d000000000101",
+    "commands": [
+     "1003ec010100",
+     "1403b9059f023c000a14",
+     "c60000002f01",
+     "0503b9050100"
+    ]
+   }
+  ],
+  "gate_leaves": {
+   "78": {
+    "group": 28068,
+    "mask0": 2048,
+    "mask1": 0,
+    "threshold": 1,
+    "mode": 4,
+    "raw": "0a09a46d000800000104",
+    "commands": [
+     "14105100c401fa000a14",
+     "091051000300",
+     "09204e000200"
+    ]
+   },
+   "79": {
+    "group": 28140,
+    "mask0": 2048,
+    "mask1": 0,
+    "threshold": 1,
+    "mode": 4,
+    "raw": "0a09ec6d000800000104",
+    "commands": [
+     "14105100c40180000a14",
+     "091050000300",
+     "09204f000200"
+    ]
+   }
+  },
+  "reason": "Leaf groups need a hit context carrying bit 0x0800 (AE2C8 mask test) with context+0x26 <= threshold (mode4); no traced producer supplies it (Grok contract, item 4). Barrel prop1465 and control100 belong to other owners."
+ },
+ "scope": "Direct source events. Sight edges, region entry edges, body/aim reach, the idle presentation and clip clocks are modern adapters in the live owner."
+}

@@ -1,0 +1,11 @@
+# Museum Dragon Blood
+
+Original actor20 arrival group12578 grants two separate Drag Blood nodes (identity0x7c5eb1bf, definition166, item property4). Three additional active placements are Museum item rows1–3 in region755. The preparer checks archive bytes, identities and placement flags, and extracts the original LOCAL resource26 vial image. All five have distinct inventory receipts.
+
+The two creature-owned vials appear after a documented modern five-active-second corpse retirement. The three placed vials use their original positions. Aimed, unobstructed E picks up one vial; saves conserve each receipt across carried and consumed states. Legacy saves default to uncollected vials.
+
+Inventory Use places a vial ahead of the player on nearby supporting ground. It explodes after six active-world seconds, damaging visible targets within120units and the player for20health. These values, placement behavior and the simple flash are modern adapters. The existing creature receiver dispatch supplies damage and magic progression; no spell mana is charged. Walls block the blast, paused worlds stop the fuse, and retirement is recorded before damage callbacks. Bomb position, area and fuse survive disk saves and Museum→Jungle→Hive transport. A bomb left in another area stays dormant until that area's saved state is resumed.
+
+The delayed-explosive behavior is corroborated by [L. Burroni's walkthrough](https://gamefaqs.gamespot.com/pc/197756-lands-of-lore-guardians-of-destiny/faqs/1936); the original grant and artwork are independently pinned to local game data. Exact native fuse, explosion arithmetic, throw physics, sound and later-area destructible-object reactions are not claimed. This is not a healing potion.
+
+Validation covers all five actual E pickups, production lethal damage, engine-driven retirement, partial and taken saves, inventory Use, active-fuse save/reload, paused/off-area clocks, actual engine explosion, player/creature health, no repeated blast/drop after reload, consumed-item conservation, Jungle/Hive handoffs and a real collision wall blocking blast damage. Combat positions, camera approaches, a timer boundary and the occlusion wall are supplied test fixtures rather than an earned route.

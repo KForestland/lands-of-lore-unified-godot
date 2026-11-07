@@ -1,0 +1,607 @@
+{
+  "status": "PASS",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "cases": [
+    {
+      "speed": 40,
+      "tick_fixed": 0,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 0,
+      "callback": false,
+      "result": 2949120
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 0,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 0,
+      "callback": false,
+      "result": 65536
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 0,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 0,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 0,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 0,
+      "callback": false,
+      "result": 0
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 0,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 0,
+      "callback": false,
+      "result": 2883584
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 0,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 0,
+      "callback": true,
+      "result": 2949120
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 1,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 1,
+      "callback": false,
+      "result": 2949119
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 1,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 1,
+      "callback": false,
+      "result": 65535
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 1,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 1,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 1,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 1,
+      "callback": false,
+      "result": 1
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 1,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 1,
+      "callback": false,
+      "result": 2883585
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 1,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 1,
+      "callback": true,
+      "result": 2949120
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 32768,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 54613,
+      "callback": false,
+      "result": 2894507
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 32768,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 54613,
+      "callback": false,
+      "result": 10923
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 32768,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 54613,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 32768,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 54613,
+      "callback": false,
+      "result": 54613
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 32768,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 54613,
+      "callback": false,
+      "result": 2938197
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 32768,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 54613,
+      "callback": true,
+      "result": 2949120
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 65536,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 109226,
+      "callback": false,
+      "result": 2839894
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 65536,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 109226,
+      "callback": false,
+      "result": 0
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 65536,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 109226,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 65536,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 109226,
+      "callback": false,
+      "result": 109226
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 65536,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 109226,
+      "callback": false,
+      "result": 2949120
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 65536,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 109226,
+      "callback": true,
+      "result": 2949120
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 131072,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 218453,
+      "callback": false,
+      "result": 2730667
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 131072,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 218453,
+      "callback": false,
+      "result": 0
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 131072,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 218453,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 131072,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 218453,
+      "callback": false,
+      "result": 218453
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 131072,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 218453,
+      "callback": false,
+      "result": 2949120
+    },
+    {
+      "speed": 40,
+      "tick_fixed": 131072,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 218453,
+      "callback": true,
+      "result": 2949120
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 0,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 0,
+      "callback": false,
+      "result": 2949120
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 0,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 0,
+      "callback": false,
+      "result": 65536
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 0,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 0,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 0,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 0,
+      "callback": false,
+      "result": 0
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 0,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 0,
+      "callback": false,
+      "result": 2883584
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 0,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 0,
+      "callback": true,
+      "result": 2949120
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 1,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 2,
+      "callback": false,
+      "result": 2949118
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 1,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 2,
+      "callback": false,
+      "result": 65534
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 1,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 2,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 1,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 2,
+      "callback": false,
+      "result": 2
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 1,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 2,
+      "callback": false,
+      "result": 2883586
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 1,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 2,
+      "callback": true,
+      "result": 2949120
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 32768,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 81920,
+      "callback": false,
+      "result": 2867200
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 32768,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 81920,
+      "callback": false,
+      "result": 0
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 32768,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 81920,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 32768,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 81920,
+      "callback": false,
+      "result": 81920
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 32768,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 81920,
+      "callback": false,
+      "result": 2949120
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 32768,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 81920,
+      "callback": true,
+      "result": 2949120
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 65536,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 163840,
+      "callback": false,
+      "result": 2785280
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 65536,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 163840,
+      "callback": false,
+      "result": 0
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 65536,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 163840,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 65536,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 163840,
+      "callback": false,
+      "result": 163840
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 65536,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 163840,
+      "callback": false,
+      "result": 2949120
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 65536,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 163840,
+      "callback": true,
+      "result": 2949120
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 131072,
+      "increasing": false,
+      "current": 2949120,
+      "target": 0,
+      "step": 327680,
+      "callback": false,
+      "result": 2621440
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 131072,
+      "increasing": false,
+      "current": 65536,
+      "target": 0,
+      "step": 327680,
+      "callback": false,
+      "result": 0
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 131072,
+      "increasing": false,
+      "current": 0,
+      "target": 0,
+      "step": 327680,
+      "callback": true,
+      "result": 0
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 131072,
+      "increasing": true,
+      "current": 0,
+      "target": 2949120,
+      "step": 327680,
+      "callback": false,
+      "result": 327680
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 131072,
+      "increasing": true,
+      "current": 2883584,
+      "target": 2949120,
+      "step": 327680,
+      "callback": false,
+      "result": 2949120
+    },
+    {
+      "speed": 60,
+      "tick_fixed": 131072,
+      "increasing": true,
+      "current": 2949120,
+      "target": 2949120,
+      "step": 327680,
+      "callback": true,
+      "result": 2949120
+    }
+  ],
+  "scope": "60 bounded source speed/direction/clamp cases. Tick22C54 supplied, positive speed40/60; tick wall-clock producer, collision solver and callback dispatch not executed. Endpoint callback occurs on next update after clamp."
+}

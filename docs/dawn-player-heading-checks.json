@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "passed": true,
+  "tests": [
+    {
+      "name": "dawn_player_damage_test",
+      "mode": "headless",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 0.54,
+      "log": "dawn_player_damage_test.log",
+      "errors": []
+    },
+    {
+      "name": "dawn_projectile_hosts_test",
+      "mode": "rendered",
+      "passed": true,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.03,
+      "log": "dawn_projectile_hosts_test.log",
+      "errors": []
+    }
+  ],
+  "source_changed_files": [],
+  "scope": "Inverse existing source-arrival yaw adapter, cardinal/wrapped headings, actual host facing and disk restore; not original input quantization or automatic combat."
+}

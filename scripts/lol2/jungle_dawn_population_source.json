@@ -1,0 +1,83 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "actors": [
+  {
+   "actor": 63,
+   "definition": 8,
+   "position": [
+    -5710,
+    -100,
+    3937
+   ],
+   "heading": 39321,
+   "health": 200,
+   "behavior": 14,
+   "flags": 30082,
+   "present": false,
+   "loot": null,
+   "reward_scale": 10
+  }
+ ],
+ "definitions": {
+  "8": {
+   "name": "Dawn",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 26
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 20
+    },
+    "rise": {
+     "selector": 6,
+     "frames": 17
+    },
+    "death": {
+     "selector": 8,
+     "frames": 79
+    },
+    "corpse": {
+     "selector": 9,
+     "frames": 1
+    },
+    "attacks": []
+   }
+  }
+ },
+ "regions": [],
+ "neighbour_wake": {},
+ "counted": [],
+ "counter_target": 0,
+ "scripted_dormant": [
+  63
+ ],
+ "dormant_pose": "idle",
+ "pending": {
+  "attacks": "def8 sel4/sel5 kind5 frame events unresolved natively; not staged",
+  "kind5_events": {
+   "4": [
+    [
+     5,
+     22,
+     0
+    ]
+   ],
+   "5": [
+    [
+     5,
+     12,
+     0
+    ]
+   ]
+  }
+ },
+ "note": "Hostile-body presentation/target owner only; spawn, talk, offers and hit admission are the source state."
+}

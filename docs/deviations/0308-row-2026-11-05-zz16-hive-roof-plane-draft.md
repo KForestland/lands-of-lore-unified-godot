@@ -1,0 +1,1 @@
+| 2026-11-05 | Hive roof plane (draft) | hive_review skips ceiling face 654 before the jungle draw, only when geometry_file ends with hive.json. Floors 655, 662, 663, and 670 stay. Region 269 is not moved. | grok J06 / O03. Face 654 is region 265 at height -107 with no material, on the same plane as the brick floors. | Bug fix (both editions); owner to confirm |

@@ -1,0 +1,11 @@
+# Clubhouse access
+
+Original L8 actor21 at(-1791,0,1068) has group15106 whose first two commands move original movable51 and52 to100 percent. Three original Ancients Stones, definition68, are item32/33/34 inside the adjacent building, around(-1880,70,570). A second three-stone cluster around(1850,-40,1280) is separate and unchanged. The book-to-building identification is an inference from the guard/paired-door/stone grouping, not a decoded building name.
+
+The original guard predicates98/127 are not decoded as membership. The modern owner uses the earned tribe receipt and a human/reach/facing/LOS/active-world interaction. It retains the original guard body/500HP and makes this interaction actor peaceful. The guard appears on approach within300 units or for an already-open clubhouse; map entry alone preserves its original absent state. This was corrected after the creature regression caught premature spawning. A narrated welcome replaces unjoined guard speech. The original doors are sixteen type1 attached picket sprites, eight per leaf. Their existing batch instances move together. Collision uses each leaf’s source child bounds; mirrored outer-edge hinges derived from those bounds and the source angular endpoint are a modern motion adapter, since the native moving pivot is unjoined. Initial rotation around the placement centers failed physical passage and was rejected; the modern receipt owns their open state and generic native use cannot bypass it. The original three world pickups retain their existing single owner and capacity checks, with an added closed-clubhouse admission guard.
+
+Grok’s19:58 board check independently confirms template26 Hut Door, guard21, and the three stones four region hops inside; the other cluster is among vines. Native predicates remain unread.
+
+Qualification:1/1 PASS72.39s, source unchanged, `tmp/regressions/l8_clubhouse_ready/report.json`. Actual033 save ->74 walking waypoints/live combat -> guard21 -> physically closed/open paired doors -> original three pickups -> save/reload. Output `tmp/l8_clubhouse_earned_save.json`. Guard remains500HP, no resets or seeds. No additional stones are granted or seeded.
+
+After deferring guard spawn to approach, the physical clubhouse test passed again72.35s and the original creature census passed6.05s in `tmp/regressions/l8_huline_speech_final/report.json`.

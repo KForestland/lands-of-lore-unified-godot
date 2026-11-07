@@ -1,0 +1,1 @@
+| 2026-10-27 | Jungle CHUT | `Anyar_Attacked` (L4_HJ local 33) is written straight into Kelsrick's local bank by the room; the alert goes through the village gate's shared29 owner and the soul through the monastery globals (floor 0, cap 10), as the other rooms do. | Single owners for shared state. | approved by owner rule 2026-10-27 |

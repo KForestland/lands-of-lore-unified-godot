@@ -1,0 +1,20 @@
+{
+  "daniel_known": 1,
+  "input_path": "user://tests/act1_broken_runes_monastery_return.json",
+  "input_proof": "docs/broken-hive-earned-rune-return-checks.json",
+  "input_sha256": "e584effeaf6701b55d68325484384573c9bf301ba15b8e8ddb9186bf9155b4b9",
+  "inventory": [
+    "cave:prop641:harvest1:Stalagmite",
+    "cave:captain:Short_Sword",
+    "cave:captain:Burnt_Chain",
+    "museum:item11:Fine_Longsword",
+    "museum:control181:Tho_Broken",
+    "monastery:item94:Iron_Flute",
+    "hive:Wax_runes:0"
+  ],
+  "kityara_met": 1,
+  "output_path": "user://tests/act1_broken_orb_monastery.json",
+  "output_sha256": "34604cb91255b3e9270bc6106a678f1e0b55517497aa3f5f505e7bea5e4f4818",
+  "passed": true,
+  "scope": "Cave-derived earned rune-return checkpoint; continuous source-portal walk from monastery through WPN first meeting and Daniel knowledge, return, then MAGIC, original Rashar introduction, earned broken sword offer and power-orb knowledge, return walk, original garden/cellar conversations and Julian empty-hand response. No position/form/quest injection after load. Movement/curse ticks manually driven, time/audio4x. Shop item and other content acceptance remain separate."
+}

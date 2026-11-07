@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[2]
 BASE=ROOT/'assets/lol2/generated/original_floors'
 data=json.loads((BASE/'floors.json').read_text())
 pairs=json.loads((BASE/'traversal_expanded.json').read_text())
-g=json.load(open('/home/bob/lol2_out/draracle_openings_2026-09-11/geometry_v2.json'))
+g=json.load(open('~/lol2_out/draracle_openings_2026-09-11/geometry_v2.json'))
 faces={int(f['region']):f for f in data['faces']}
 adj=defaultdict(set)
 for pair in pairs:

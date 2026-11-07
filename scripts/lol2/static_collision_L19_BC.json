@@ -1,0 +1,82 @@
+{
+ "version": 1,
+ "area": "L19_BC",
+ "source": {
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "movables": {
+   "file": "DAT/L19_BC.MIX",
+   "sha256": "59cd77a17e8fce0286281fdea17e134fc88436cbc0c77b1a5f4039e5edde3380",
+   "geometry_key": 3137941376
+  }
+ },
+ "rule": "solid = placement word8 & 0x80; template byte0x2D&3 != 0 -> oriented box width=byte0x2F, depth=byte0x30, height=byte0x31 from the placement height, rotated by heading (0..65535 = full turn); mode 3: one such box per child record (bounds bytes 0x34..0x39, admitted by mask bit of the assembly mode)",
+ "boxes": {
+  "51": {
+   "template": 11,
+   "flags": 130,
+   "mode": 2,
+   "width": 110,
+   "depth": 50,
+   "height": 33,
+   "x": 2929,
+   "y": 765,
+   "h": -1000,
+   "heading": 0,
+   "scripted": false
+  },
+  "52": {
+   "template": 11,
+   "flags": 130,
+   "mode": 2,
+   "width": 110,
+   "depth": 50,
+   "height": 33,
+   "x": 3006,
+   "y": 1004,
+   "h": -1000,
+   "heading": 0,
+   "scripted": false
+  },
+  "56": {
+   "template": 10,
+   "flags": 130,
+   "mode": 3,
+   "width": 150,
+   "depth": 70,
+   "height": 60,
+   "x": 1583,
+   "y": 3618,
+   "h": 55,
+   "heading": 16384,
+   "scripted": false,
+   "children": [
+    {
+     "child": 16,
+     "type": 0,
+     "mask": 1,
+     "bounds": [
+      -75,
+      75,
+      -35,
+      35,
+      0,
+      60
+     ]
+    }
+   ]
+  },
+  "57": {
+   "template": 9,
+   "flags": 1154,
+   "mode": 2,
+   "width": 255,
+   "depth": 255,
+   "height": 0,
+   "x": 1240,
+   "y": 1454,
+   "h": -120,
+   "heading": 24940,
+   "scripted": true
+  }
+ }
+}

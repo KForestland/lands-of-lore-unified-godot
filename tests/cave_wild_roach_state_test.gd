@@ -1,0 +1,32 @@
+extends SceneTree
+const State=preload("res://scripts/lol2/scripted_creature_state.gd")
+const SOURCE="res://scripts/lol2/cave_wild_roach_source.json"
+func _initialize() -> void:
+	var src:=State.source(SOURCE)
+	var s:=State.initial(src)
+	assert(s.actors.keys()==["0"] and State.validate(s,src).is_empty())
+	assert(s.actors["0"].position==[177.0,-250.0,-10282.0] and s.actors["0"].present)
+	assert(State.ready_to_fight(s,src,"0") and src.regions.is_empty() and src.controls.is_empty())
+	var rules:=State.attack_rules(src,"0",0)
+	assert(rules.impacts==[[1.5,1]] and rules.clip==2.0)
+	assert(State.advance_live(s,src,"0",0.1,100,true,false,30)==0 and s.live["0"].mode==1)
+	assert(State.advance_live(s,src,"0",0.1,20,true,false,30)==0 and s.live["0"].mode==2)
+	assert(State.advance_live(s,src,"0",1.0,20,true,false,30)==0)
+	var attack_save:=s.duplicate(true)
+	assert(State.advance_live(s,src,"0",0.5,20,true,false,30)==1)
+	assert(State.advance_live(s,src,"0",0.1,20,true,false,29)==0)
+	assert(State.advance_live(attack_save,src,"0",0.5,20,true,true,30)==0)
+	assert(State.validate(s,src).is_empty())
+	assert(State.damage(s,src,"0",37)==37)
+	var saved: Dictionary=JSON.parse_string(JSON.stringify(s))
+	assert(State.validate(saved,src).is_empty() and State.canonical(saved,src)==State.canonical(s,src))
+	assert(State.damage(s,src,"0",999)==63 and State.damage(s,src,"0",999)==0)
+	State.advance_clocks(s,src,10.0)
+	assert(s.actors["0"].death==2.5 and State.validate(s,src).is_empty())
+	assert(s.counter==0 and s.prop93==0)
+	var bad:=saved.duplicate(true);bad.actors["0"].health=101
+	assert(not State.validate(bad,src).is_empty())
+	bad=saved.duplicate(true);bad.actors["23"]=bad.actors["0"]
+	assert(not State.validate(bad,src).is_empty())
+	print("PASS actor0 source presence, hit timeline, partial health rollback, terminal corpse, identity rejection; admission remains adapter")
+	quit()

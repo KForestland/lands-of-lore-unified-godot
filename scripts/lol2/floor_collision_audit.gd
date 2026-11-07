@@ -42,14 +42,14 @@ func _ready() -> void:
 	var failures: Array = []
 	for probe in probes:
 		var p: Vector3 = probe.center
-		var query := PhysicsRayQueryParameters3D.create(p + Vector3.UP * 0.01 * audit_scale, p - Vector3.UP * 0.01 * audit_scale)
+		var query := PhysicsRayQueryParameters3D.create(p + Vector3.UP * 0.01 * audit_scale, p - Vector3.UP * 0.01 * audit_scale, preload("res://scripts/lol2/region_blockers.gd").RAY_MASK)  # floors only, never the region blockers
 		query.hit_back_faces = true
 		var hit := get_world_3d().direct_space_state.intersect_ray(query)
 		if hit.is_empty():
 			failures.append({"region": probe.region, "triangle": probe.triangle, "weights": probe.weights, "reason": "miss"})
 		elif hit.position.distance_to(p) > 0.002 * audit_scale:
 			failures.append({"region": probe.region, "triangle": probe.triangle, "weights": probe.weights, "reason": "height mismatch", "error": hit.position.distance_to(p)})
-	var empty_query := PhysicsRayQueryParameters3D.create(Vector3(1000, 100, 1000) * audit_scale, Vector3(1000, -100, 1000) * audit_scale)
+	var empty_query := PhysicsRayQueryParameters3D.create(Vector3(1000, 100, 1000) * audit_scale, Vector3(1000, -100, 1000) * audit_scale, preload("res://scripts/lol2/region_blockers.gd").RAY_MASK)
 	var empty_ok := get_world_3d().direct_space_state.intersect_ray(empty_query).is_empty()
 	var report := {"audit_scale": audit_scale, "tested_triangles": tested_triangles, "tested_probes": probes.size(), "skipped_degenerate": skipped, "failures": failures, "outside_probe_empty": empty_ok, "scope": "Isolated floor collision at four interior points per triangle. No walls, movement, hazards, opening semantics or native collision parity tested."}
 	DirAccess.make_dir_recursive_absolute("res://captures")

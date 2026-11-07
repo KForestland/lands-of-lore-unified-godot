@@ -1,42 +1,44 @@
-# Lands of Lore II restoration status
+# Lands of Lore 2 restoration status
 
-Updated: 2026-10-31. This describes the current local build (r12t). The code published
-in this repository is the older September snapshot; see the README.
+The current experimental full-cave view assembles all recovered static floor
+geometry in one world: 1,953 floor polygons, 1,939 ceilings, 1,338 boundary quads
+and 955 provisional interior spans. Floors use original extracted pixels where
+bindings are available; unresolved materials are pink. This is not a completed
+1:1 remake. Wall geometry and floor UVs remain provisional; native wall textures,
+special openings, objects, actions, hazards and sound need further work.
 
-## What works
+## Run the local build
 
-- **Act 1, start to finish:** Draracle Caverns, the Museum, the Huline Jungle, the
-  Hive, the village and the optional Dark Halls detour. The owner played it through on
-  2026-10-31 and reported few issues.
-- **Acts 2 and 3:** all ten later maps (L8_SJ, L9_DR, L10_DC, L12_CM, L13_RC, L14_HT,
-  L16_CA, L17_HC, L19_BC, L20_BB) are built from the original geometry and are walkable
-  through preview starts. Level-to-level exits are being connected; most already run the
-  original exit scripts.
-- **Native script host:** the game's own command records run on a host that follows the
-  decoded original code (opcodes, timers, hit filters, record kinds). About 42% of all
-  script groups are hosted. Mechanisms not yet decoded are left unhosted rather than
-  guessed; where a workaround was needed it is an adapter logged in the deviations ledger.
-- **Interface:** the original HUD (portraits, morph animations, 150-350% UI scale), the
-  original in-game help system, My Journal, and the original transformation curse rules.
+With generated assets available, run `tools/lol2/run_full_cave.sh` from any directory.
+It uses an installed `godot` executable, falling back to Flatpak Godot.
+WASD/mouse move/look, Shift sprints, F toggles inspection flight, Space/Ctrl move
+vertically in flight, N/P jump to checkpoints, and R resets. Escape releases the
+mouse. These controls and dimensions are experimental, not recovered native movement.
 
-## How it is checked
+See [full-cave notes](FULL_CAVE_WALK.md) for validation and fidelity limits.
+The full-world sprint checks cover a continuous 79-waypoint route and 119 separate
+checkpoint routes; they do not prove every cave connection is traversable.
 
-Every change runs an affected-test set (about 320 headless and 270 rendered tests), and
-every build runs scripted campaigns through Act 1, a package audit and a smoke test
-before it reaches the owner's playtest launcher. Rendered tests compare against frames
-from a full original longplay.
+## Contributor setup limitation
 
-## Not done yet
+Generated game assets and screenshots are excluded from Git. A fresh clone is
+not yet a self-contained extraction pipeline or playable cave download.
+The Python exporters currently consume evidence artifacts from Bob's local
+`~/lol2_out` workspace, including decoded geometry, descriptor bindings,
+replayed setup values and recovered lookup tables. Several extraction tools and
+the original game files live outside this repository. The exporter defaults
+still contain those local paths. Do not treat missing assets as a Godot bug.
 
-- Items across the whole game (Act 1 items work)
-- RPG stats and progression
-- Dialog and dialog logic (the village dialog is broken)
-- Combat polish, magic, sound
-- Act 1 leftovers: some puzzle mechanisms, lighting, the village
+The next packaging task is to bundle the required source-only extraction tools
+with configurable input/output paths and document their dependency order, so
+contributors can regenerate assets from their own game installation.
 
-Phase order: maps, then items, RPG, dialog, small fixes; sound and combat polish last.
+## Latest wall evidence
 
-## Assets
-
-No original game data is in this repository. The asset producers read the user's own
-game files; publishing a self-contained pipeline is part of the next code snapshot.
+3,052 eight-byte wall records partition across 1,471 regions without gaps or
+overlap. Native instruction-span checks agree on region indexing and surface
+fields. The static wall resource consumer maps their signed first word to 30
+compact resource descriptors, with 3,052 checks and zero mismatches. These are
+host replays of original instructions, not live gameplay captures. Explicit
+loader-to-global provenance and native wall-span geometry still need closure
+before those bindings are applied to the Godot shell.

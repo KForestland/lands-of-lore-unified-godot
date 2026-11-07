@@ -1,0 +1,16 @@
+{
+ "name": "dark_halls_walked_windows_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 582,
+ "needs": {
+  "env": [
+   "LOL2_EARNED_SAVES",
+   "LOL2_ORIGINAL_GAME_EXE"
+  ],
+  "fixtures": [
+   "earned R18 monastery save (LOL2_EARNED_SAVES)"
+  ],
+  "chain": "earned Dark Halls slice: hall -> cellar -> MCEL click -> L7 arrival with the earned inventory (needs the earned save; fails \"creatures missing: 51\" without it)"
+ }
+}

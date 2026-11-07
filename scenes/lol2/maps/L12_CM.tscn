@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/lol2/act2_map.gd" id="1"]
+
+[node name="MapL12_CM" type="Node3D"]
+script = ExtResource("1")
+area_id = "L12_CM"
+map_blockers_enabled = false
+geometry_file = "res://assets/lol2/generated/maps/L12_CM/area.json"
+review_title = "L12_CM preview"
+huline_content = false
+area_name = "L12_CM preview"
+area_save_path = "user://saves/map_L12_CM_quicksave.json"
+area_save_format = "lol2-restoration-map-L12_CM"

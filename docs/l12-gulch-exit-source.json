@@ -1,0 +1,56 @@
+{
+ "source_sha256": "53d7b166f7856049e20d734d10b013da4cea22e3aa746fb7f3cfe307b3c198cc",
+ "objects": [
+  {
+   "events": [
+    {
+     "descriptors": [
+      100
+     ],
+     "event": 2,
+     "extra_hex": "",
+     "file_offset": 9861506,
+     "group": 0,
+     "kind": 12,
+     "offset": 2,
+     "predicate": null,
+     "raw_hex": "080c0000de020200",
+     "region": 734,
+     "stream": 0,
+     "value": 0
+    }
+   ],
+   "index": 734,
+   "ref": "region:734",
+   "table": "region"
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 9859062,
+     "kind": 1,
+     "offset": 6,
+     "opcode": 2,
+     "raw_hex": "020100002488",
+     "target": 0
+    },
+    {
+     "file_offset": 9859068,
+     "kind": 1,
+     "offset": 12,
+     "opcode": 2,
+     "raw_hex": "020100001c88",
+     "target": 0
+    }
+   ],
+   "count": 2,
+   "file_offset": 9859056,
+   "group": 0,
+   "header_hex": "f00000000200",
+   "raw_hex": "f00000000200020100002488020100001c88",
+   "stream": 0
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+# Citadel altar return pad — earned transport
+
+Originalcontrol54/group8152 and its placement/kind5 bytes are pinned in `l13-return-pad-source.json`, reproduced by `verify_l13_return_pad_source.py`. The production owner requires the earned stone and an actual human jump on the original pad, then applies the source X/Z with geometry-derived floor support. Native transport semantics remain UNKNOWN; DEVIATIONS0270 records the contact/persistence/support adapter. Inventory and equipped Dark Sword are preserved.
+
+`l13_return_pad_earned_test`1/1 PASS6.6s source unchanged, report `tmp/regressions/l13_return_pad_probe/report.json`. Starts from immutable earned altar save, physically walks to54, jumps, returns to the entrance, then saves/reloads with stone and sword. Immutable output `tmp/l13_return_pad_qualified_save.json` SHA192f8d98753668a6af178b29a6c7cb934085137ee9b46ae277275c324cb37fed. Next: physical descent and return to Dawn for STORY041 positive release. No seeded stone/death or test teleport.

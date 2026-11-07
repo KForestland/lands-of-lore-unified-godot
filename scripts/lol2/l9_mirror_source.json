@@ -1,0 +1,75 @@
+{
+ "grade": "SOURCE bytes; book-led movement/grounding ADAPTER",
+ "transports": [
+  {
+   "regions": [
+    3640,
+    3641,
+    3642,
+    3643,
+    3644,
+    3655
+   ],
+   "position": [
+    -3027,
+    232,
+    -8232
+   ],
+   "floor_region": 2306,
+   "requires_open": true,
+   "heading": 16384,
+   "witnesses": [
+    {
+     "region": 3640,
+     "raw_hex": "120100002df42820000004040040000a0000",
+     "file_offset": 23388654
+    },
+    {
+     "region": 3641,
+     "raw_hex": "120100002df42820000004040040000a0000",
+     "file_offset": 23388672
+    },
+    {
+     "region": 3642,
+     "raw_hex": "120100002df42820000004040040000a0000",
+     "file_offset": 23388690
+    },
+    {
+     "region": 3643,
+     "raw_hex": "120100002df42820000004040040000a0000",
+     "file_offset": 23388708
+    },
+    {
+     "region": 3644,
+     "raw_hex": "120100002df42820000004040040000a0000",
+     "file_offset": 23388726
+    },
+    {
+     "region": 3655,
+     "raw_hex": "120100002df42820000004040040000a0000",
+     "file_offset": 23388744
+    }
+   ]
+  },
+  {
+   "regions": [
+    2300
+   ],
+   "position": [
+    -1627,
+    52,
+    -1046
+   ],
+   "floor_region": 3656,
+   "requires_open": false,
+   "heading": 63169,
+   "witnesses": [
+    {
+     "region": 2300,
+     "raw_hex": "12010000a5f916040000040cc1f6000a0000",
+     "file_offset": 23384454
+    }
+   ]
+  }
+ ]
+}

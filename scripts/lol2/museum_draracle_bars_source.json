@@ -1,0 +1,1282 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L3_DH.MIX",
+  "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "geometry_key": 3106551060,
+  "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+ },
+ "movable_export_sha256": "6c2938f8d659c21e49ba66d7cfb404c84edae1d78a10d43b2d9ffe54b52cc0ae",
+ "region": 1174,
+ "record": "080c540596040200",
+ "group": 1364,
+ "commands": [
+  "ce00000000ff",
+  "d20000000800",
+  "061052000200",
+  "090388001000",
+  "091052001000",
+  "090389001000",
+  "09038b001000",
+  "09038a001000",
+  "012047006400",
+  "012048006400",
+  "012049006400",
+  "01204a006400",
+  "06038a000200",
+  "060389000200",
+  "060388000200",
+  "06038b000200",
+  "c60000001101",
+  "0810520001000000",
+  "01204d000000"
+ ],
+ "hosted_command_indices": [
+  8,
+  9,
+  10,
+  11,
+  16,
+  18
+ ],
+ "polygon": [
+  [
+   -3672.0,
+   -1152.0
+  ],
+  [
+   -3223.0,
+   -1152.0
+  ],
+  [
+   -3223.0,
+   -1024.0
+  ],
+  [
+   -3672.0,
+   -1024.0
+  ]
+ ],
+ "floor": 0,
+ "ceiling": 120,
+ "local": 17,
+ "bars": {
+  "ids": [
+   71,
+   72,
+   73,
+   74
+  ],
+  "percent": 100
+ },
+ "gate": {
+  "id": 77,
+  "percent": 0,
+  "template": 58,
+  "mode": 6,
+  "travel": 54,
+  "owner": "museum_gate.gd (modern hinge)"
+ },
+ "movables": [
+  {
+   "motion": {
+    "index": 71,
+    "archive_offset": 5880871,
+    "raw_hex": "33f16204000088ff81017f04000000007c745a0014747f000000000001003e00370100016428000000",
+    "template": 55,
+    "mode": 0,
+    "height": -120,
+    "travel": 100,
+    "speed_byte": 40,
+    "initial_travel": 0
+   },
+   "placement": {
+    "index": 71,
+    "x": -3789,
+    "y": 1122,
+    "height": -120,
+    "heading": 0
+   },
+   "faces": [
+    {
+     "face": 0,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1124.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1119.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1119.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1124.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0433.png"
+    },
+    {
+     "face": 1,
+     "points": [
+      [
+       -3792.0,
+       -120,
+       -1119.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1124.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1124.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1119.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0433.png"
+    },
+    {
+     "face": 2,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1119.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1119.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1119.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1119.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 3,
+     "points": [
+      [
+       -3787.0,
+       0,
+       -1124.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1124.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1124.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1124.0
+      ]
+     ],
+     "uv": [
+      [
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0
+      ],
+      [
+       1.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 4,
+     "points": [
+      [
+       -3787.0,
+       0,
+       -1119.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1124.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1124.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1119.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 5,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1124.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1119.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1119.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1124.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    }
+   ]
+  },
+  {
+   "motion": {
+    "index": 72,
+    "archive_offset": 5880912,
+    "raw_hex": "33f14c04000088ff81018504000000007c745a0014747f000000000001003e00370100016428000000",
+    "template": 55,
+    "mode": 0,
+    "height": -120,
+    "travel": 100,
+    "speed_byte": 40,
+    "initial_travel": 0
+   },
+   "placement": {
+    "index": 72,
+    "x": -3789,
+    "y": 1100,
+    "height": -120,
+    "heading": 0
+   },
+   "faces": [
+    {
+     "face": 0,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1102.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1097.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1097.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1102.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0433.png"
+    },
+    {
+     "face": 1,
+     "points": [
+      [
+       -3792.0,
+       -120,
+       -1097.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1102.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1102.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1097.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0433.png"
+    },
+    {
+     "face": 2,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1097.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1097.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1097.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1097.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 3,
+     "points": [
+      [
+       -3787.0,
+       0,
+       -1102.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1102.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1102.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1102.0
+      ]
+     ],
+     "uv": [
+      [
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0
+      ],
+      [
+       1.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 4,
+     "points": [
+      [
+       -3787.0,
+       0,
+       -1097.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1102.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1102.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1097.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 5,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1102.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1097.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1097.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1102.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    }
+   ]
+  },
+  {
+   "motion": {
+    "index": 73,
+    "archive_offset": 5880953,
+    "raw_hex": "33f13404000088ff81018b04000000007c745a0014747f000000000001003e00370100016428000000",
+    "template": 55,
+    "mode": 0,
+    "height": -120,
+    "travel": 100,
+    "speed_byte": 40,
+    "initial_travel": 0
+   },
+   "placement": {
+    "index": 73,
+    "x": -3789,
+    "y": 1076,
+    "height": -120,
+    "heading": 0
+   },
+   "faces": [
+    {
+     "face": 0,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1078.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1073.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1073.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1078.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0433.png"
+    },
+    {
+     "face": 1,
+     "points": [
+      [
+       -3792.0,
+       -120,
+       -1073.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1078.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1078.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1073.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0433.png"
+    },
+    {
+     "face": 2,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1073.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1073.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1073.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1073.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 3,
+     "points": [
+      [
+       -3787.0,
+       0,
+       -1078.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1078.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1078.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1078.0
+      ]
+     ],
+     "uv": [
+      [
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0
+      ],
+      [
+       1.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 4,
+     "points": [
+      [
+       -3787.0,
+       0,
+       -1073.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1078.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1078.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1073.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 5,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1078.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1073.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1073.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1078.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    }
+   ]
+  },
+  {
+   "motion": {
+    "index": 74,
+    "archive_offset": 5880994,
+    "raw_hex": "33f11c04000088ff81019104000000007c745a0014747f000000000001003e00370100016428000000",
+    "template": 55,
+    "mode": 0,
+    "height": -120,
+    "travel": 100,
+    "speed_byte": 40,
+    "initial_travel": 0
+   },
+   "placement": {
+    "index": 74,
+    "x": -3789,
+    "y": 1052,
+    "height": -120,
+    "heading": 0
+   },
+   "faces": [
+    {
+     "face": 0,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1054.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1049.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1049.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1054.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0433.png"
+    },
+    {
+     "face": 1,
+     "points": [
+      [
+       -3792.0,
+       -120,
+       -1049.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1054.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1054.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1049.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0433.png"
+    },
+    {
+     "face": 2,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1049.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1049.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1049.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1049.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 3,
+     "points": [
+      [
+       -3787.0,
+       0,
+       -1054.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1054.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1054.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1054.0
+      ]
+     ],
+     "uv": [
+      [
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0
+      ],
+      [
+       1.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 4,
+     "points": [
+      [
+       -3787.0,
+       0,
+       -1049.0
+      ],
+      [
+       -3787.0,
+       0,
+       -1054.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1054.0
+      ],
+      [
+       -3787.0,
+       -120,
+       -1049.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    },
+    {
+     "face": 5,
+     "points": [
+      [
+       -3792.0,
+       0,
+       -1054.0
+      ],
+      [
+       -3792.0,
+       0,
+       -1049.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1049.0
+      ],
+      [
+       -3792.0,
+       -120,
+       -1054.0
+      ]
+     ],
+     "uv": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       1.0,
+       0.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       0.0,
+       1.0
+      ]
+     ],
+     "material": "res://assets/lol2/generated/museum_draracle_bars/material_0431.png"
+    }
+   ]
+  }
+ ],
+ "materials": {
+  "res://assets/lol2/generated/museum_draracle_bars/material_0433.png": "67a7716b4eba744b99d8957c68d4bfdb281dc89917d148b857e51f72c3882da7",
+  "res://assets/lol2/generated/museum_draracle_bars/material_0431.png": "ee997787fe2eeca181db0f3d35d9004a917eb00c5afcb4b447aca48be4951525"
+ },
+ "control": {
+  "id": 79,
+  "position": [
+   -3625,
+   0,
+   -372
+  ],
+  "heading": 16384,
+  "template": 65,
+  "use_local19": 2,
+  "next_local19": 3,
+  "groups": {
+   "6976": [
+    "14104f008a0180000a14",
+    "c60000001303"
+   ],
+   "6998": [
+    "14104f003801ff811200"
+   ]
+  },
+  "first_sound": 394,
+  "follow_sound": 312
+ },
+ "audio": {
+  "394": {
+   "name": "chain4.aud",
+   "path": "res://assets/lol2/generated/museum_draracle_bars/394.wav",
+   "samples": 20000,
+   "rate": 22050,
+   "wav_sha256": "517143d9154879afecac81443af094f87ebc13091274a0f4d899f2fcaba00561"
+  },
+  "312": {
+   "name": "0202424e.aud",
+   "path": "res://assets/lol2/generated/museum_draracle_bars/312.wav",
+   "samples": 7488,
+   "rate": 22050,
+   "wav_sha256": "09d977bf149feec835cd9f27c274c4f35d85e3693df07c57511483bacc568c74"
+  }
+ },
+ "not_hosted": [
+  "g1364 op206 ce00000000ff, op210 d20000000800 (music)",
+  "g1364 control82 op6/op8/op9 and props136-139 op6 sub2/op9 property16",
+  "op20 bytes after the sound id (0x80 0x00 0x0a 0x14 / 0xff 0x81 0x12 0x00) are not interpreted (volume/priority)"
+ ],
+ "adapters": [
+  "grounded entry = foot on floor 0 (+3 tolerance) inside the region1174 polygon, as region1220",
+  "bar travel clock = cave_guard_movement_state (speed_byte*10/4 units per 60 ticks); native speed clock not replayed",
+  "gate77 percent0 = museum_gate close (its modern 1.2 s hinge)",
+  "control79 has no visual: E aims at its placement 40 units above the floor (host can_reach_item)",
+  "event8 value394 = sound394 playback finished: sound312 then starts; neither sound clock is saved",
+  "saves without the field restore bars down and local17 0"
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "version": 1,
+ "purpose": "Compact consumed-record recipe for tools/prepare_hive_rune_media.py explicit path (assets/lol2/generated/hive_rune_rooms).",
+ "provenance": {
+  "recorded_audit": "docs/hive-rune-room-source.json (local, unpublished)",
+  "recorded_sha256": "3d906a456ebf3b6861039755b58c4aa73e3c613862986e49551d422871a512bc",
+  "producer": "tools/audit_hive_rune_rooms.py main()",
+  "producer_sha256": "eb87d7972482aff40ddb352a9c54d85bb31312d742f82a536005ae1de2fb38d0",
+  "consumer": "tools/prepare_hive_rune_media.py",
+  "consumer_sha256": "ffa3a37ee4dd4fa9cf458d5900937b0e8e1f85f2304440e93b80fdc59edfa173",
+  "method": "Pinned DLL disassembly and source command ownership; functional contract, not a native execution trace."
+ },
+ "limits": [
+  "hotspots are literal hotspot-call arguments (index, x0, y0, x1, y1) from static disassembly of each room DLL (recorded audit method); not a native trace and not re-derived. They are copied verbatim into rooms.json.",
+  "archive_sha256 and the DLL binding are re-verified against the original RUNES/RUNECL archives.",
+  "Clip names (RUNES_, RUNES1_..RUNES4_, RUNECL_) are tool constants, re-verified as VQA entries in the originals.",
+  "Omitted as not consumed: strings, disassembly, reward_callbacks, hive, contract, audit limits."
+ ],
+ "rooms": {
+  "RUNES": {
+   "archive_sha256": "095a7e016786edb83ca9b83ad15f174d3ff7a1848f444281fd471b52f435c4dd",
+   "dll": {
+    "index": 6,
+    "key": 818657803,
+    "offset": 90,
+    "size": 2778,
+    "name": "WOMS\\RUNES_.WOM",
+    "sha256": "8a946f079ae8f9215eaba07de24bae5af4e30a8ddeb4c1749784c9c57fe07647"
+   },
+   "hotspots": [
+    {
+     "address": "0x489",
+     "kind": "hotspot",
+     "args": [
+      1,
+      0,
+      44,
+      127,
+      345
+     ]
+    },
+    {
+     "address": "0x4a8",
+     "kind": "hotspot",
+     "args": [
+      2,
+      160,
+      161,
+      214,
+      263
+     ]
+    },
+    {
+     "address": "0x4c4",
+     "kind": "hotspot",
+     "args": [
+      3,
+      384,
+      92,
+      452,
+      168
+     ]
+    },
+    {
+     "address": "0x4e3",
+     "kind": "hotspot",
+     "args": [
+      4,
+      404,
+      184,
+      451,
+      236
+     ]
+    }
+   ]
+  },
+  "RUNECL": {
+   "archive_sha256": "a2b8b1c5dfd9b43c9e105f29c12761df02ad579fa76b2f386a97ac7678001067",
+   "dll": {
+    "index": 2,
+    "key": 3752305122,
+    "offset": 42,
+    "size": 2476,
+    "name": "WOMS\\RUNECL_.WOM",
+    "sha256": "48d360c4d4ce38a00a616fe579f8c51935569194ba62e7bd1bb772d2d439ce8d"
+   },
+   "hotspots": [
+    {
+     "address": "0x492",
+     "kind": "hotspot",
+     "args": [
+      0,
+      181,
+      130,
+      430,
+      274
+     ]
+    },
+    {
+     "address": "0x4b1",
+     "kind": "hotspot",
+     "args": [
+      1,
+      181,
+      275,
+      430,
+      388
+     ]
+    }
+   ]
+  }
+ }
+}

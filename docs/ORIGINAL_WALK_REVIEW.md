@@ -1,6 +1,6 @@
 # Experimental original-cave walk view — 2026-09-11
 
-Launch a local launcher (`run_lol2_original_walk.sh`, not published).
+Launch `~/run_lol2_original_walk.sh`.
 
 WASD moves; mouse looks; Escape releases the mouse and left-click recaptures it.
 R resets to the sample start. N/P selects the next/previous region pair. Falling
@@ -23,7 +23,7 @@ shell and controls visible. Capture: captures/original_walk_review.png.
 Manual mouse/keyboard feel and every sample's appearance are not yet reviewed.
 
 ```sh
-flatpak run org.godotengine.Godot --headless --fixed-fps 60 --path <project folder> res://scenes/lol2/original_walk_review.tscn -- --walk-smoke
+flatpak run org.godotengine.Godot --headless --fixed-fps 60 --path ~/lands-of-lore-unified-godot res://scenes/lol2/original_walk_review.tscn -- --walk-smoke
 ```
 
 Source: scripts/lol2/original_walk_review.gd and scenes/lol2/original_walk_review.tscn.

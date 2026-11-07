@@ -1,0 +1,166 @@
+{
+ "source_sha256": "3eff07430a453d2c6f09133f869874e0530af1b6a3bfff7f4297761b96a28bc2",
+ "objects": [
+  {
+   "ref": "actor:23",
+   "placement_hex": "f60ae510779700008275e40ea8160000000000000000000000000000000078000e250000000e094100ff00580200000000000000020214a5",
+   "file_offset": 13540122,
+   "events": [
+    {
+     "extra_hex": "03",
+     "file_offset": 13468204,
+     "group": 15636,
+     "kind": 8,
+     "offset": 5886,
+     "predicate": null,
+     "raw_hex": "0608143df703",
+     "stream": 1,
+     "value": 247
+    }
+   ]
+  },
+  {
+   "ref": "actor:82",
+   "placement_hex": "870e9b130000a3018275640e8419000000000000000000000000000000008c0006050000000e093700ff002c01000000000000001c549c01",
+   "file_offset": 13543426,
+   "events": [
+    {
+     "extra_hex": "03",
+     "file_offset": 13468926,
+     "group": 17284,
+     "kind": 8,
+     "offset": 6608,
+     "predicate": null,
+     "raw_hex": "06088443f703",
+     "stream": 1,
+     "value": 247
+    }
+   ]
+  },
+  {
+   "ref": "actor:92",
+   "placement_hex": "bcf0bbfb38ae000082651b02c61a00000000000000000000000000000000c80000050000000e097e00ff0058020000000000000000000000",
+   "file_offset": 13543986,
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 13469188,
+     "group": 17970,
+     "kind": 6,
+     "offset": 6870,
+     "predicate": {
+      "entry_file_offset": 13701769,
+      "entry_hex": "0005000002",
+      "index": 208,
+      "trailer_file_offset": 13469194,
+      "trailer_hex": "0413d000"
+     },
+     "raw_hex": "060632460000",
+     "stream": 1,
+     "value": 0
+    }
+   ]
+  },
+  {
+   "ref": "actor:93",
+   "placement_hex": "f2f05afbb6c0000082651b022a1b000000000000000000000000000000007d0004050000000e097f00ff0058020000000000000000000000",
+   "file_offset": 13544042,
+   "events": [
+    {
+     "extra_hex": "03",
+     "file_offset": 13469328,
+     "group": 18566,
+     "kind": 8,
+     "offset": 7010,
+     "predicate": null,
+     "raw_hex": "06088648e503",
+     "stream": 1,
+     "value": 229
+    }
+   ]
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 13456118,
+     "kind": 2,
+     "offset": 15636,
+     "opcode": 20,
+     "raw_hex": "14021700f80380c14b14",
+     "target": 23
+    }
+   ],
+   "count": 1,
+   "file_offset": 13456118,
+   "group": 15636,
+   "header_hex": null,
+   "raw_hex": "14021700f80380c14b14",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13457766,
+     "kind": 2,
+     "offset": 17284,
+     "opcode": 20,
+     "raw_hex": "14025200f803ffddfa00",
+     "target": 82
+    }
+   ],
+   "count": 1,
+   "file_offset": 13457766,
+   "group": 17284,
+   "header_hex": null,
+   "raw_hex": "14025200f803ffddfa00",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13458458,
+     "kind": 2,
+     "offset": 17976,
+     "opcode": 8,
+     "raw_hex": "08025c0001000000",
+     "target": 92
+    },
+    {
+     "file_offset": 13458466,
+     "kind": 2,
+     "offset": 17984,
+     "opcode": 20,
+     "raw_hex": "14025c00f40380814b14",
+     "target": 92
+    }
+   ],
+   "count": 2,
+   "file_offset": 13458452,
+   "group": 17970,
+   "header_hex": "f00000000200",
+   "raw_hex": "f0000000020008025c000100000014025c00f40380814b14",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13459054,
+     "kind": 2,
+     "offset": 18572,
+     "opcode": 20,
+     "raw_hex": "14025d00ed0080414b14",
+     "target": 93
+    }
+   ],
+   "count": 1,
+   "file_offset": 13459048,
+   "group": 18566,
+   "header_hex": "f00000000100",
+   "raw_hex": "f0000000010014025d00ed0080414b14",
+   "stream": 1
+  }
+ ],
+ "scope": "Original actor-owned opcode20 cues only. Near-actor E and once-only playback are modern; no native conversation branch or transcription claimed."
+}

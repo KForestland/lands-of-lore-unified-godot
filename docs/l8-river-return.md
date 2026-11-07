@@ -1,0 +1,5 @@
+STORY-048 returns from the earned L12 gulch arrival through the original L8 rise, crosses the river with the local physical jump adapter0279, and walks the original corridor into the jungle.
+
+`l8_river_return_earned_test` passed1/1 in61.79s with source unchanged (`tmp/regressions/l8_river_return_probe4/report.json`). The first landing was(5101.261,31.9782,1879.988); no water landing, recovery, seeded state or teleport. The actual east takeoff rested on an original prop at foot-179, so the launch formula uses actual foot height rather than assuming terrain-200. Earlier failed probes were not promoted. Wrong location, non-sprint and unearned exit retain the shared200 impulse.
+
+Immutable result `tmp/l8_river_return_qualified_save.json`, SHA38782a29b9e87b96a48fd64e08b18a98f9f3974a1b0542cb7c7cacec67e6ef56, jungle corridor(-1774.22,32.04,1171.01). All earned equipment and Dreamstone persist over save/reload. Affected original forward river/guardian route passed1/1 in123.12s with source unchanged (`tmp/regressions/l8_return_jump_affected/report.json`).

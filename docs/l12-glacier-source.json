@@ -1,0 +1,296 @@
+{
+ "source_sha256": "53d7b166f7856049e20d734d10b013da4cea22e3aa746fb7f3cfe307b3c198cc",
+ "objects": [
+  {
+   "events": [
+    {
+     "extra_hex": "010200201c",
+     "file_offset": 9828340,
+     "group": 1048,
+     "kind": 2,
+     "offset": 426,
+     "predicate": null,
+     "raw_hex": "0a02180480010200201c",
+     "stream": 1,
+     "value": 128
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 9828350,
+     "group": 1068,
+     "kind": 6,
+     "offset": 436,
+     "predicate": {
+      "entry_file_offset": 10014534,
+      "entry_hex": "0005000000",
+      "index": 206,
+      "trailer_file_offset": 9828356,
+      "trailer_hex": "0413ce00"
+     },
+     "raw_hex": "06062c041400",
+     "stream": 1,
+     "value": 20
+    },
+    {
+     "file_offset": 9828356,
+     "kind": 19,
+     "offset": 442,
+     "raw_hex": "0413ce00"
+    }
+   ],
+   "file_offset": 9842629,
+   "index": 335,
+   "list_file_offset": 9828340,
+   "list_offset": 426,
+   "placement_hex": "5b10422d000048fe02040403aa0103e7005404e7002405e700f405e7000000002100000003",
+   "ref": "prop:335",
+   "table": "prop",
+   "terminator_offset": 446
+  },
+  {
+   "events": [],
+   "file_offset": 9848156,
+   "index": 52,
+   "list_file_offset": 9827914,
+   "list_offset": 0,
+   "placement_hex": "e30d202d2d9887fd8110920300007f00000000000100000000000000f400940013",
+   "ref": "control:52",
+   "table": "control",
+   "terminator_offset": 0
+  },
+  {
+   "events": [],
+   "file_offset": 9848189,
+   "index": 53,
+   "list_file_offset": 9827914,
+   "list_offset": 0,
+   "placement_hex": "ba0d3d2dc1966cfd8110920300007f00000000000100000000000000f400940013",
+   "ref": "control:53",
+   "table": "control",
+   "terminator_offset": 0
+  },
+  {
+   "events": [],
+   "file_offset": 9848222,
+   "index": 54,
+   "list_file_offset": 9827914,
+   "list_offset": 0,
+   "placement_hex": "630d772dc1964efd8110920300007f00000000000100000000000000f400940013",
+   "ref": "control:54",
+   "table": "control",
+   "terminator_offset": 0
+  },
+  {
+   "events": [],
+   "file_offset": 9848255,
+   "index": 55,
+   "list_file_offset": 9827914,
+   "list_offset": 0,
+   "placement_hex": "8b0d5b2d779764fd8110920300007f00000000000100000000000000f4007c0014",
+   "ref": "control:55",
+   "table": "control",
+   "terminator_offset": 0
+  },
+  {
+   "events": [],
+   "file_offset": 9848288,
+   "index": 56,
+   "list_file_offset": 9827914,
+   "list_offset": 0,
+   "placement_hex": "400d8d2d779743fd8110920300007f00000000000100000000000000f4007c0014",
+   "ref": "control:56",
+   "table": "control",
+   "terminator_offset": 0
+  },
+  {
+   "events": [],
+   "file_offset": 9848321,
+   "index": 57,
+   "list_file_offset": 9827914,
+   "list_offset": 0,
+   "placement_hex": "1c0da72dc19638fd8110920300007f00000000000100000000000000f400940013",
+   "ref": "control:57",
+   "table": "control",
+   "terminator_offset": 0
+  }
+ ],
+ "group": {
+  "commands": [
+   {
+    "file_offset": 9822146,
+    "kind": 3,
+    "offset": 1074,
+    "opcode": 16,
+    "raw_hex": "10034f010100",
+    "target": 335
+   },
+   {
+    "file_offset": 9822152,
+    "kind": 16,
+    "offset": 1080,
+    "opcode": 9,
+    "raw_hex": "091034000300",
+    "target": 52
+   },
+   {
+    "file_offset": 9822158,
+    "kind": 16,
+    "offset": 1086,
+    "opcode": 9,
+    "raw_hex": "091035000300",
+    "target": 53
+   },
+   {
+    "file_offset": 9822164,
+    "kind": 16,
+    "offset": 1092,
+    "opcode": 9,
+    "raw_hex": "091037000300",
+    "target": 55
+   },
+   {
+    "file_offset": 9822170,
+    "kind": 16,
+    "offset": 1098,
+    "opcode": 9,
+    "raw_hex": "091036000300",
+    "target": 54
+   },
+   {
+    "file_offset": 9822176,
+    "kind": 16,
+    "offset": 1104,
+    "opcode": 9,
+    "raw_hex": "091038000300",
+    "target": 56
+   },
+   {
+    "file_offset": 9822182,
+    "kind": 16,
+    "offset": 1110,
+    "opcode": 9,
+    "raw_hex": "091039000300",
+    "target": 57
+   },
+   {
+    "file_offset": 9822188,
+    "kind": 3,
+    "offset": 1116,
+    "opcode": 20,
+    "raw_hex": "14034f015e01ff177d00",
+    "target": 335
+   },
+   {
+    "file_offset": 9822198,
+    "kind": 144,
+    "offset": 1126,
+    "opcode": 208,
+    "raw_hex": "d090000000050500",
+    "target": 0
+   },
+   {
+    "file_offset": 9822206,
+    "kind": 144,
+    "offset": 1134,
+    "opcode": 196,
+    "raw_hex": "c490a203befb003200000000",
+    "target": 930
+   },
+   {
+    "file_offset": 9822218,
+    "kind": 144,
+    "offset": 1146,
+    "opcode": 196,
+    "raw_hex": "c490a103befb003200000000",
+    "target": 929
+   },
+   {
+    "file_offset": 9822230,
+    "kind": 144,
+    "offset": 1158,
+    "opcode": 196,
+    "raw_hex": "c490a003befb003200000000",
+    "target": 928
+   },
+   {
+    "file_offset": 9822242,
+    "kind": 144,
+    "offset": 1170,
+    "opcode": 196,
+    "raw_hex": "c4909f03befb003200000000",
+    "target": 927
+   },
+   {
+    "file_offset": 9822254,
+    "kind": 144,
+    "offset": 1182,
+    "opcode": 196,
+    "raw_hex": "c4909e03befb003200000000",
+    "target": 926
+   },
+   {
+    "file_offset": 9822266,
+    "kind": 144,
+    "offset": 1194,
+    "opcode": 196,
+    "raw_hex": "c4909d03befb003200000000",
+    "target": 925
+   },
+   {
+    "file_offset": 9822278,
+    "kind": 144,
+    "offset": 1206,
+    "opcode": 196,
+    "raw_hex": "c4909c03befb003200000000",
+    "target": 924
+   },
+   {
+    "file_offset": 9822290,
+    "kind": 144,
+    "offset": 1218,
+    "opcode": 196,
+    "raw_hex": "c4909b03befb003200000000",
+    "target": 923
+   },
+   {
+    "file_offset": 9822302,
+    "kind": 144,
+    "offset": 1230,
+    "opcode": 196,
+    "raw_hex": "c4909a03befb003200000000",
+    "target": 922
+   },
+   {
+    "file_offset": 9822314,
+    "kind": 144,
+    "offset": 1242,
+    "opcode": 196,
+    "raw_hex": "c4909903befb003200000000",
+    "target": 921
+   },
+   {
+    "file_offset": 9822326,
+    "kind": 144,
+    "offset": 1254,
+    "opcode": 196,
+    "raw_hex": "c4909803befb003200000000",
+    "target": 920
+   },
+   {
+    "file_offset": 9822338,
+    "kind": 144,
+    "offset": 1266,
+    "opcode": 196,
+    "raw_hex": "c4909703befb003200000000",
+    "target": 919
+   }
+  ],
+  "count": 21,
+  "file_offset": 9822140,
+  "group": 1068,
+  "header_hex": "f00000001500",
+  "raw_hex": "f0000000150010034f01010009103400030009103500030009103700030009103600030009103800030009103900030014034f015e01ff177d00d090000000050500c490a203befb003200000000c490a103befb003200000000c490a003befb003200000000c4909f03befb003200000000c4909e03befb003200000000c4909d03befb003200000000c4909c03befb003200000000c4909b03befb003200000000c4909a03befb003200000000c4909903befb003200000000c4909803befb003200000000c4909703befb003200000000",
+  "stream": 1
+ },
+ "scope": "Original prop335 event links and group1068. Region932/916 entry trigger and 60Hz clock modern; no native avalanche dispatcher/audio/camera-shake claim."
+}

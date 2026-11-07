@@ -1,0 +1,280 @@
+{
+ "version": 1,
+ "area": "L4_HJ",
+ "source": {
+  "archive_sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775"
+ },
+ "producer": {
+  "support_owner": "D39C3: new owner +79 gets ADA30(records, player +1AB form); old owner gets AD8E0(kind5, value5, argFF)",
+  "assembly_op5": "vtable5484+B0 -> 5D510 (relocated); writes mode +3D and child count +3B only",
+  "form_of_value": {
+   "9": [
+    1
+   ],
+   "10": [
+    0,
+    1
+   ]
+  },
+  "code": [
+   {
+    "va": "0xd39c3",
+    "hex": "8b537d3b537974"
+   },
+   {
+    "va": "0xd39f8",
+    "hex": "8a83ab0100000fbec0508b4379508b5028ff92b8000000"
+   },
+   {
+    "va": "0xd3a13",
+    "hex": "e8"
+   },
+   {
+    "va": "0xadac2",
+    "hex": "8a43042c0489df3c08"
+   },
+   {
+    "va": "0x5d558",
+    "hex": "885e3d"
+   },
+   {
+    "va": "0x5d566",
+    "hex": "e8"
+   },
+   {
+    "va": "0x5d56b",
+    "hex": "88463b"
+   },
+   {
+    "va": "0x5a8c8",
+    "hex": "d3e6"
+   },
+   {
+    "va": "0x5a8d0",
+    "hex": "8b4a3021f1"
+   }
+  ]
+ },
+ "predicate206": {
+  "raw": "0005000000",
+  "meaning": "owner state == 0"
+ },
+ "planks": {
+  "210": {
+   "id": 210,
+   "position": [
+    1466,
+    -90,
+    1205
+   ],
+   "heading": 0,
+   "flags": 3234,
+   "template": 25,
+   "raw": "ba054bfb0000a6ffa20cd80b26257f000000000001000000000000002400040019",
+   "box": {
+    "width": 250,
+    "depth": 120,
+    "height": 90
+   }
+  },
+  "212": {
+   "id": 212,
+   "position": [
+    1726,
+    -90,
+    1207
+   ],
+   "heading": 0,
+   "flags": 19618,
+   "template": 25,
+   "raw": "be0649fb0000a6ffa24cbf0b3c257f000000000001000000000000002400320019",
+   "box": {
+    "width": 250,
+    "depth": 120,
+    "height": 90
+   }
+  },
+  "213": {
+   "id": 213,
+   "position": [
+    946,
+    -90,
+    1207
+   ],
+   "heading": 0,
+   "flags": 3234,
+   "template": 25,
+   "raw": "b20349fb0000a6ffa20c910b44257f000000000001000000000000002400940019",
+   "box": {
+    "width": 250,
+    "depth": 120,
+    "height": 90
+   }
+  },
+  "214": {
+   "id": 214,
+   "position": [
+    1206,
+    -90,
+    1207
+   ],
+   "heading": 0,
+   "flags": 3234,
+   "template": 25,
+   "raw": "b60449fb0000a6ffa20cbb0b4c257f000000000001000000000000002400540019",
+   "box": {
+    "width": 250,
+    "depth": 120,
+    "height": 90
+   }
+  }
+ },
+ "mode_children": {
+  "0": [
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56
+  ],
+  "1": [
+   49,
+   50,
+   51,
+   52
+  ]
+ },
+ "piece211": {
+  "id": 211,
+  "position": [
+   1576,
+   -110,
+   1206
+  ],
+  "heading": 16384,
+  "flags": 4098,
+  "template": 22,
+  "raw": "28064afb004092ff0210d80b00007f000000000001000000000000002400000016"
+ },
+ "creature_region": {
+  "id": 3032,
+  "raw": "00000000cb0bbf0bba0bbb0b7f03820372036f03a6ffaf00d700ffff00010080283cff800000010000000000",
+  "floor": -90,
+  "ceiling": 175,
+  "polygon": [
+   [
+    1339.0,
+    1139.0
+   ],
+   [
+    1586.0,
+    1137.0
+   ],
+   [
+    1586.0,
+    1277.0
+   ],
+   [
+    1339.0,
+    1279.0
+   ]
+  ]
+ },
+ "breaks": {
+  "plank": 210,
+  "value": 9,
+  "forms": [
+   1
+  ],
+  "predicate": 206,
+  "groups": [
+   {
+    "group": 26868,
+    "archive_offset": 12769054,
+    "commands": [
+     "c60000003201",
+     "c590d80b0300",
+     "0510d2000100",
+     "0910d3000300",
+     "0903c5030300",
+     "0903c1030300",
+     "0903c2030300",
+     "0903c4030300",
+     "0903c3030300",
+     "1010d2000100",
+     "1010d2000100"
+    ]
+   },
+   {
+    "group": 26940,
+    "archive_offset": 12769064,
+    "commands": [
+     "1410d200c40180000a14"
+    ]
+   }
+  ],
+  "effects": {
+   "local50": 1,
+   "region_bit1": 3032,
+   "plank_mode": 1,
+   "plank_state": 1,
+   "link_assembly": 211,
+   "link_props": [
+    965,
+    961,
+    962,
+    964,
+    963
+   ],
+   "sound": 452
+  }
+ },
+ "creaks": {
+  "212": {
+   "value": 10,
+   "forms": [
+    0,
+    1
+   ],
+   "group": 26956,
+   "archive_offset": 12769076,
+   "commands": [
+    "1410d4000b0380000a14"
+   ],
+   "sound": 779
+  },
+  "213": {
+   "value": 10,
+   "forms": [
+    0,
+    1
+   ],
+   "group": 26966,
+   "archive_offset": 12769084,
+   "commands": [
+    "1410d500090380000a14"
+   ],
+   "sound": 777
+  },
+  "214": {
+   "value": 10,
+   "forms": [
+    0,
+    1
+   ],
+   "group": 26976,
+   "archive_offset": 12769092,
+   "commands": [
+    "1410d6000d0380000a14"
+   ],
+   "sound": 781
+  }
+ },
+ "delivery_contract": "docs/jungle-bridge-break.md; source verification alone does not certify gameplay",
+ "scope": "Bounded source contract; the support classifier is replayed by the port as grounded contact on the plank box top (source_control_contact.gd tolerance), not the native vertical solver."
+}

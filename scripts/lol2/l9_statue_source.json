@@ -1,0 +1,891 @@
+{
+  "grade": "Original STAT room admission/bowl receiver; modern Kit consequence, no native room callback replay",
+  "objects": [
+    {
+      "events": [
+        {
+          "extra_hex": "90eb0a",
+          "file_offset": 23250338,
+          "group": 20226,
+          "kind": 10,
+          "offset": 9096,
+          "predicate": null,
+          "raw_hex": "080a024f0090eb0a",
+          "stream": 1,
+          "value": 0
+        },
+        {
+          "extra_hex": "903a17",
+          "file_offset": 23250346,
+          "group": 20232,
+          "kind": 10,
+          "offset": 9104,
+          "predicate": null,
+          "raw_hex": "080a084f00903a17",
+          "stream": 1,
+          "value": 0
+        },
+        {
+          "extra_hex": "903917",
+          "file_offset": 23250354,
+          "group": 20258,
+          "kind": 10,
+          "offset": 9112,
+          "predicate": null,
+          "raw_hex": "080a224f00903917",
+          "stream": 1,
+          "value": 0
+        },
+        {
+          "extra_hex": "0000000101",
+          "file_offset": 23250362,
+          "group": 20276,
+          "kind": 9,
+          "offset": 9120,
+          "predicate": null,
+          "raw_hex": "0a09344f000000000101",
+          "stream": 1,
+          "value": 0
+        },
+        {
+          "extra_hex": "0a",
+          "file_offset": 23250372,
+          "group": 20304,
+          "kind": 6,
+          "offset": 9130,
+          "predicate": {
+            "entry_file_offset": 23522877,
+            "entry_hex": "0005000001",
+            "index": 207,
+            "trailer_file_offset": 23250378,
+            "trailer_hex": "0413cf00"
+          },
+          "raw_hex": "0606504f030a",
+          "stream": 1,
+          "value": 3
+        },
+        {
+          "file_offset": 23250378,
+          "kind": 19,
+          "offset": 9136,
+          "raw_hex": "0413cf00"
+        },
+        {
+          "extra_hex": "00",
+          "file_offset": 23250382,
+          "group": 20324,
+          "kind": 6,
+          "offset": 9140,
+          "predicate": {
+            "entry_file_offset": 23522387,
+            "entry_hex": "0003130000",
+            "index": 109,
+            "trailer_file_offset": 23250388,
+            "trailer_hex": "04136d00"
+          },
+          "raw_hex": "0606644f0e00",
+          "stream": 1,
+          "value": 14
+        },
+        {
+          "file_offset": 23250388,
+          "kind": 19,
+          "offset": 9146,
+          "raw_hex": "04136d00"
+        },
+        {
+          "extra_hex": "00",
+          "file_offset": 23250392,
+          "group": 20336,
+          "kind": 6,
+          "offset": 9150,
+          "predicate": {
+            "entry_file_offset": 23522392,
+            "entry_hex": "0003130001",
+            "index": 110,
+            "trailer_file_offset": 23250398,
+            "trailer_hex": "04136e00"
+          },
+          "raw_hex": "0606704f0e00",
+          "stream": 1,
+          "value": 14
+        },
+        {
+          "file_offset": 23250398,
+          "kind": 19,
+          "offset": 9156,
+          "raw_hex": "04136e00"
+        }
+      ],
+      "file_offset": 23375164,
+      "index": 76,
+      "list_file_offset": 23250338,
+      "list_offset": 9096,
+      "placement_hex": "c709b816a4af000082756613882300000000000000000000000000000000c800053600000007000b000000c8000000000000000000000000",
+      "ref": "actor:76",
+      "table": "actor",
+      "terminator_offset": 9160
+    },
+    {
+      "events": [
+        {
+          "extra_hex": "00",
+          "file_offset": 23247290,
+          "group": 12766,
+          "kind": 6,
+          "offset": 6048,
+          "predicate": {
+            "entry_file_offset": 23522122,
+            "entry_hex": "0003080001",
+            "index": 56,
+            "trailer_file_offset": 23247296,
+            "trailer_hex": "04133800"
+          },
+          "raw_hex": "0606de311400",
+          "stream": 1,
+          "value": 20
+        },
+        {
+          "file_offset": 23247296,
+          "kind": 19,
+          "offset": 6054,
+          "raw_hex": "04133800"
+        }
+      ],
+      "file_offset": 23348302,
+      "index": 2622,
+      "list_file_offset": 23247290,
+      "list_offset": 6048,
+      "placement_hex": "b00919170000fbff02046013a0179a089508822083204420432014008c0000001a00000003",
+      "ref": "prop:2622",
+      "table": "prop",
+      "terminator_offset": 6058
+    },
+    {
+      "events": [
+        {
+          "descriptors": [
+            256
+          ],
+          "event": 2,
+          "extra_hex": "",
+          "file_offset": 23392176,
+          "group": 3774,
+          "kind": 12,
+          "offset": 1058,
+          "predicate": null,
+          "raw_hex": "080cbe0e710c0200",
+          "region": 3185,
+          "stream": 0,
+          "value": 0
+        }
+      ],
+      "index": 3185,
+      "ref": "region:3185",
+      "table": "region"
+    }
+  ],
+  "groups": [
+    {
+      "commands": [
+        {
+          "file_offset": 23387680,
+          "kind": 3,
+          "offset": 3780,
+          "opcode": 12,
+          "raw_hex": "0c033e0a1400",
+          "target": 2622
+        },
+        {
+          "file_offset": 23387686,
+          "kind": 3,
+          "offset": 3786,
+          "opcode": 9,
+          "raw_hex": "09033e0a1500",
+          "target": 2622
+        },
+        {
+          "file_offset": 23387692,
+          "kind": 1,
+          "offset": 3792,
+          "opcode": 18,
+          "raw_hex": "12010000fa094317000004000080000a0000",
+          "target": 0
+        }
+      ],
+      "count": 3,
+      "file_offset": 23387674,
+      "group": 3774,
+      "header_hex": "f00000000300",
+      "raw_hex": "f000000003000c033e0a140009033e0a150012010000fa094317000004000080000a0000",
+      "stream": 0
+    },
+    {
+      "commands": [
+        {
+          "file_offset": 23233106,
+          "kind": 0,
+          "offset": 12772,
+          "opcode": 198,
+          "raw_hex": "c60000000802",
+          "target": 0
+        },
+        {
+          "file_offset": 23233112,
+          "kind": 0,
+          "offset": 12778,
+          "opcode": 198,
+          "raw_hex": "c60000000501",
+          "target": 0
+        },
+        {
+          "file_offset": 23233118,
+          "kind": 144,
+          "offset": 12784,
+          "opcode": 204,
+          "raw_hex": "cc906f0ce1207101",
+          "target": 3183
+        },
+        {
+          "file_offset": 23233126,
+          "kind": 144,
+          "offset": 12792,
+          "opcode": 197,
+          "raw_hex": "c590ed0d0200",
+          "target": 3565
+        },
+        {
+          "file_offset": 23233132,
+          "kind": 2,
+          "offset": 12798,
+          "opcode": 9,
+          "raw_hex": "09024c000300",
+          "target": 76
+        }
+      ],
+      "count": 5,
+      "file_offset": 23233100,
+      "group": 12766,
+      "header_hex": "f00000000500",
+      "raw_hex": "f00000000500c60000000802c60000000501cc906f0ce1207101c590ed0d020009024c000300",
+      "stream": 1
+    },
+    {
+      "commands": [
+        {
+          "file_offset": 23240560,
+          "kind": 3,
+          "offset": 20226,
+          "opcode": 9,
+          "raw_hex": "0903be041500",
+          "target": 1214
+        }
+      ],
+      "count": 1,
+      "file_offset": 23240560,
+      "group": 20226,
+      "header_hex": null,
+      "raw_hex": "0903be041500",
+      "stream": 1
+    },
+    {
+      "commands": [
+        {
+          "file_offset": 23240572,
+          "kind": 3,
+          "offset": 20238,
+          "opcode": 14,
+          "raw_hex": "0e036c0003000000",
+          "target": 108
+        },
+        {
+          "file_offset": 23240580,
+          "kind": 2,
+          "offset": 20246,
+          "opcode": 9,
+          "raw_hex": "09024c000200",
+          "target": 76
+        },
+        {
+          "file_offset": 23240586,
+          "kind": 0,
+          "offset": 20252,
+          "opcode": 198,
+          "raw_hex": "c60000000501",
+          "target": 0
+        }
+      ],
+      "count": 3,
+      "file_offset": 23240566,
+      "group": 20232,
+      "header_hex": "f00000000300",
+      "raw_hex": "f000000003000e036c000300000009024c000200c60000000501",
+      "stream": 1
+    },
+    {
+      "commands": [
+        {
+          "file_offset": 23240598,
+          "kind": 2,
+          "offset": 20264,
+          "opcode": 9,
+          "raw_hex": "09024c000200",
+          "target": 76
+        },
+        {
+          "file_offset": 23240604,
+          "kind": 0,
+          "offset": 20270,
+          "opcode": 198,
+          "raw_hex": "c60000000501",
+          "target": 0
+        }
+      ],
+      "count": 2,
+      "file_offset": 23240592,
+      "group": 20258,
+      "header_hex": "f00000000200",
+      "raw_hex": "f0000000020009024c000200c60000000501",
+      "stream": 1
+    },
+    {
+      "commands": [
+        {
+          "file_offset": 23240616,
+          "kind": 2,
+          "offset": 20282,
+          "opcode": 16,
+          "raw_hex": "10024c000100",
+          "target": 76
+        },
+        {
+          "file_offset": 23240622,
+          "kind": 2,
+          "offset": 20288,
+          "opcode": 13,
+          "raw_hex": "0d024c0006000000",
+          "target": 76
+        },
+        {
+          "file_offset": 23240630,
+          "kind": 2,
+          "offset": 20296,
+          "opcode": 13,
+          "raw_hex": "0d024c0004060000",
+          "target": 76
+        }
+      ],
+      "count": 3,
+      "file_offset": 23240610,
+      "group": 20276,
+      "header_hex": "f00000000300",
+      "raw_hex": "f0000000030010024c0001000d024c00060000000d024c0004060000",
+      "stream": 1
+    },
+    {
+      "commands": [
+        {
+          "file_offset": 23240644,
+          "kind": 2,
+          "offset": 20310,
+          "opcode": 16,
+          "raw_hex": "10024c000000",
+          "target": 76
+        },
+        {
+          "file_offset": 23240650,
+          "kind": 2,
+          "offset": 20316,
+          "opcode": 13,
+          "raw_hex": "0d024c0007000000",
+          "target": 76
+        }
+      ],
+      "count": 2,
+      "file_offset": 23240638,
+      "group": 20304,
+      "header_hex": "f00000000200",
+      "raw_hex": "f0000000020010024c0000000d024c0007000000",
+      "stream": 1
+    },
+    {
+      "commands": [
+        {
+          "file_offset": 23240664,
+          "kind": 0,
+          "offset": 20330,
+          "opcode": 198,
+          "raw_hex": "c60000001301",
+          "target": 0
+        }
+      ],
+      "count": 1,
+      "file_offset": 23240658,
+      "group": 20324,
+      "header_hex": "f00000000100",
+      "raw_hex": "f00000000100c60000001301",
+      "stream": 1
+    },
+    {
+      "commands": [
+        {
+          "file_offset": 23240676,
+          "kind": 0,
+          "offset": 20342,
+          "opcode": 198,
+          "raw_hex": "c60000001302",
+          "target": 0
+        },
+        {
+          "file_offset": 23240682,
+          "kind": 1,
+          "offset": 20348,
+          "opcode": 2,
+          "raw_hex": "020100001100",
+          "target": 0
+        }
+      ],
+      "count": 2,
+      "file_offset": 23240670,
+      "group": 20336,
+      "header_hex": "f00000000200",
+      "raw_hex": "f00000000200c60000001302020100001100",
+      "stream": 1
+    }
+  ],
+  "wom": {
+    "sha256": "7a9366c52cadb104c45e3039da35aefcb5d11635b8f9c2619de27aac984aa097",
+    "bindings": {
+      "dll_sha256": "7a9366c52cadb104c45e3039da35aefcb5d11635b8f9c2619de27aac984aa097",
+      "callbacks": {
+        "0": 246,
+        "1": 1148,
+        "2": 1246,
+        "3": 1310,
+        "4": 1313,
+        "5": 1310,
+        "6": 1310,
+        "7": 1310,
+        "8": 1685,
+        "9": 1694,
+        "10": 1760,
+        "11": 1754,
+        "12": 1754
+      },
+      "slots": {
+        "0x71c": {
+          "host_offset": "0x0",
+          "name": null,
+          "target": "0xeeedc"
+        },
+        "0x720": {
+          "host_offset": "0x4",
+          "name": null,
+          "target": "0xeeedc"
+        },
+        "0x724": {
+          "host_offset": "0x8",
+          "name": "load_shapes",
+          "target": "0xeeee0"
+        },
+        "0x728": {
+          "host_offset": "0xc",
+          "name": "free_shapes",
+          "target": "0xeef34"
+        },
+        "0x72c": {
+          "host_offset": "0x10",
+          "name": "shape_hotspot",
+          "target": "0xeef60"
+        },
+        "0x730": {
+          "host_offset": "0x14",
+          "name": "remove_shape_hotspot",
+          "target": "0xeefe4"
+        },
+        "0x734": {
+          "host_offset": "0x18",
+          "name": "hotspot",
+          "target": "0xef028"
+        },
+        "0x738": {
+          "host_offset": "0x1c",
+          "name": "remove_hotspot",
+          "target": "0xef07c"
+        },
+        "0x73c": {
+          "host_offset": "0x20",
+          "name": "actor",
+          "target": "0xef0b4"
+        },
+        "0x740": {
+          "host_offset": "0x24",
+          "name": null,
+          "target": "0xef154"
+        },
+        "0x744": {
+          "host_offset": "0x28",
+          "name": "idle",
+          "target": "0xef1c4"
+        },
+        "0x748": {
+          "host_offset": "0x2c",
+          "name": null,
+          "target": "0xef1e8"
+        },
+        "0x74c": {
+          "host_offset": "0x30",
+          "name": null,
+          "target": "0xef20c"
+        },
+        "0x750": {
+          "host_offset": "0x34",
+          "name": null,
+          "target": "0xef270"
+        },
+        "0x754": {
+          "host_offset": "0x38",
+          "name": null,
+          "target": "0xef28c"
+        },
+        "0x758": {
+          "host_offset": "0x3c",
+          "name": null,
+          "target": "0xef2a8"
+        },
+        "0x75c": {
+          "host_offset": "0x40",
+          "name": "give_item",
+          "target": "0xef2b8"
+        },
+        "0x760": {
+          "host_offset": "0x44",
+          "name": "take_held_item",
+          "target": "0xef304"
+        },
+        "0x764": {
+          "host_offset": "0x48",
+          "name": "set_flag",
+          "target": "0xef32c"
+        },
+        "0x768": {
+          "host_offset": "0x4c",
+          "name": "clear_flag",
+          "target": "0xef358"
+        },
+        "0x76c": {
+          "host_offset": "0x50",
+          "name": "get_flag",
+          "target": "0xef380"
+        },
+        "0x770": {
+          "host_offset": "0x54",
+          "name": "movie",
+          "target": "0xee784"
+        },
+        "0x778": {
+          "host_offset": "0x58",
+          "name": null,
+          "target": "0xef3ac"
+        },
+        "0x77c": {
+          "host_offset": "0x5c",
+          "name": "damage",
+          "target": "0xef3c0"
+        },
+        "0x780": {
+          "host_offset": "0x60",
+          "name": null,
+          "target": "0xef438"
+        },
+        "0x784": {
+          "host_offset": "0x64",
+          "name": null,
+          "target": "0xef44c"
+        },
+        "0x788": {
+          "host_offset": "0x68",
+          "name": "exit_room",
+          "target": "0xef464"
+        },
+        "0x78c": {
+          "host_offset": "0x6c",
+          "name": null,
+          "target": "0xef484"
+        },
+        "0x790": {
+          "host_offset": "0x70",
+          "name": "get_global",
+          "target": "0xef4b0"
+        },
+        "0x794": {
+          "host_offset": "0x74",
+          "name": "holding_item",
+          "target": "0xef4c0"
+        },
+        "0x798": {
+          "host_offset": "0x78",
+          "name": null,
+          "target": "0xef4d0"
+        },
+        "0x79c": {
+          "host_offset": "0x7c",
+          "name": null,
+          "target": "0xef4ec"
+        },
+        "0x7a0": {
+          "host_offset": "0x80",
+          "name": "arm_timer",
+          "target": "0xef508"
+        },
+        "0x7a4": {
+          "host_offset": "0x84",
+          "name": "cancel_timer",
+          "target": "0xef530"
+        },
+        "0x7a8": {
+          "host_offset": "0x88",
+          "name": "room",
+          "target": "0xef558"
+        },
+        "0x7ac": {
+          "host_offset": "0x8c",
+          "name": null,
+          "target": "0xef590"
+        },
+        "0x7b0": {
+          "host_offset": "0x90",
+          "name": null,
+          "target": "0xef5cc"
+        },
+        "0x7b4": {
+          "host_offset": "0x94",
+          "name": null,
+          "target": "0xef5f0"
+        },
+        "0x7b8": {
+          "host_offset": "0x98",
+          "name": null,
+          "target": "0xef614"
+        },
+        "0x7bc": {
+          "host_offset": "0x9c",
+          "name": "set_global",
+          "target": "0xef640"
+        },
+        "0x7c0": {
+          "host_offset": "0xa0",
+          "name": null,
+          "target": "0xef350"
+        },
+        "0x7c4": {
+          "host_offset": "0xa4",
+          "name": "held_item_state",
+          "target": "0xef664"
+        },
+        "0x7c8": {
+          "host_offset": "0xa8",
+          "name": "held_item_is_magic",
+          "target": "0xef698"
+        },
+        "0x7cc": {
+          "host_offset": "0xac",
+          "name": null,
+          "target": "0xef6b0"
+        },
+        "0x7d0": {
+          "host_offset": "0xb0",
+          "name": null,
+          "target": "0xef6c8"
+        },
+        "0x7d4": {
+          "host_offset": "0xb4",
+          "name": "set_local",
+          "target": "0xef6e0"
+        },
+        "0x7d8": {
+          "host_offset": "0xb8",
+          "name": "get_local",
+          "target": "0xef4b0"
+        },
+        "0x7dc": {
+          "host_offset": "0xbc",
+          "name": "load_room",
+          "target": "0xef704"
+        },
+        "0x7e0": {
+          "host_offset": "0xc0",
+          "name": null,
+          "target": "0xee43c"
+        },
+        "0x7e4": {
+          "host_offset": "0xc4",
+          "name": null,
+          "target": "0xee540"
+        },
+        "0x7e8": {
+          "host_offset": "0xc8",
+          "name": null,
+          "target": "0xee6d4"
+        },
+        "0x7ec": {
+          "host_offset": "0xcc",
+          "name": null,
+          "target": "0xee6dc"
+        },
+        "0x7f0": {
+          "host_offset": "0xd0",
+          "name": null,
+          "target": "0xee6e4"
+        },
+        "0x7f4": {
+          "host_offset": "0xd4",
+          "name": null,
+          "target": "0xee6f0"
+        },
+        "0x7f8": {
+          "host_offset": "0xd8",
+          "name": null,
+          "target": "0xee72c"
+        },
+        "0x7fc": {
+          "host_offset": "0xdc",
+          "name": null,
+          "target": "0xee774"
+        },
+        "0x800": {
+          "host_offset": "0xe0",
+          "name": "place",
+          "target": "0xed370"
+        },
+        "0x804": {
+          "host_offset": "0xe4",
+          "name": null,
+          "target": "0xed3bc"
+        },
+        "0x808": {
+          "host_offset": "0xe8",
+          "name": "random",
+          "target": "0xed3d4"
+        },
+        "0x80c": {
+          "host_offset": "0xec",
+          "name": null,
+          "target": "0xed364"
+        },
+        "0x810": {
+          "host_offset": "0xf0",
+          "name": "set_heading",
+          "target": "0xed398"
+        },
+        "0x814": {
+          "host_offset": "0xf4",
+          "name": null,
+          "target": "0xed3ec"
+        },
+        "0x818": {
+          "host_offset": "0xf8",
+          "name": null,
+          "target": "0xef680"
+        },
+        "0x81c": {
+          "host_offset": "0xfc",
+          "name": null,
+          "target": "0xf133c"
+        },
+        "0x820": {
+          "host_offset": "0x100",
+          "name": null,
+          "target": "0xf14cc"
+        },
+        "0x824": {
+          "host_offset": "0x104",
+          "name": null,
+          "target": "0xf14e0"
+        },
+        "0x828": {
+          "host_offset": "0x108",
+          "name": null,
+          "target": "0xf14ec"
+        },
+        "0x82c": {
+          "host_offset": "0x10c",
+          "name": null,
+          "target": "0xf152c"
+        },
+        "0x830": {
+          "host_offset": "0x110",
+          "name": null,
+          "target": "0xf1540"
+        },
+        "0x834": {
+          "host_offset": "0x114",
+          "name": "cursor_show",
+          "target": "0xf1564"
+        },
+        "0x838": {
+          "host_offset": "0x118",
+          "name": "cursor_hide",
+          "target": "0xf1550"
+        },
+        "0x83c": {
+          "host_offset": "0x11c",
+          "name": "movie_flags",
+          "target": "0xeed64"
+        },
+        "0x840": {
+          "host_offset": "0x124",
+          "name": null,
+          "target": "0xf1588"
+        },
+        "0x844": {
+          "host_offset": "0x120",
+          "name": "add_fighting_xp",
+          "target": "0xf1574"
+        },
+        "0x848": {
+          "host_offset": "0x128",
+          "name": null,
+          "target": "0xf159c"
+        },
+        "0x84c": {
+          "host_offset": "0x12c",
+          "name": null,
+          "target": "0xf15d0"
+        },
+        "0x850": {
+          "host_offset": "0x130",
+          "name": null,
+          "target": "0xf15e0"
+        },
+        "0x854": {
+          "host_offset": "0x134",
+          "name": "sfx",
+          "target": "0xf15f0"
+        },
+        "0x858": {
+          "host_offset": "0x138",
+          "name": "ambient_start",
+          "target": "0xf1654"
+        },
+        "0x85c": {
+          "host_offset": "0x13c",
+          "name": "ambient_stop",
+          "target": "0xf16d8"
+        }
+      }
+    },
+    "hotspot0": [
+      145,
+      185,
+      275,
+      329
+    ],
+    "setup_span_048e_04a9": "6849010000681301000068b9000000689100000050ff1534070000",
+    "offer_span_0533_066f": "8b54240485d20f854701000068f4060000ff15ac07000083c40485c00f841c010000ff156007000068ee0000006a6a6a65680e0100006a316a00ff153c07000083c4186a0968e70300006a31ff154407000083c40c6a0968850300006a31ff157007000083c40c6a0968c90000006a31ff157007000083c40c6a0968ca0000006a31ff157007000083c40c6a0968cb0000006a31ff157007000083c40c6a0968cc0000006a31ff157007000083c40c6a0968cd0000006a31ff157007000083c40c6a0968ce0000006a02ff157007000083c40c6a0968860300006a31ff157007000083c40c6a00ff154007000083c40468f9000000ff156407000083c4046a00ff153807000083c4046a01ff153807000083c4046a016a016803070000ff15dc07000083c40c6a01680c070000ff15d407000083c408ff1588070000",
+    "remains_string_offset": "0x6f4",
+    "remains_string": "75-Emp remains",
+    "local8_name": "animate_statue"
+  },
+  "limits": "Native stat_wlk transition, callback timing and actor76 follow/worm path are not replayed by the bowl host."
+}

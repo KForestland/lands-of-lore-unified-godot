@@ -1,0 +1,81 @@
+{
+ "version": 1,
+ "purpose": "Compact entrance selection for tools/prepare_weapon_shop.py explicit path (rooms.json entrances/return_pose). Everything except the room-name-table row is re-derived from the pinned original L4_HJ geometry.",
+ "provenance": {
+  "recorded_audit": "docs/act-one-shops-source.json (local, unpublished)",
+  "recorded_sha256": "1f759a592e7e46ae6857ed4ebfaf2237dec19cc5f4ba4033159bc3fc8fb1d205",
+  "producer": "tools/audit_act_one_shops.py main()",
+  "producer_sha256": "b11af289793abef4c3cd84f91f9535c4944c0011693849a26d7fceda341abe14",
+  "executable": "LOLG.DAT",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "scope": "Pinned executable room-name relocations, all15 source-map command streams and direct owners;32 entry replays and3 bounded knowledge-branch replays with explicit host boundaries. This establishes missing Huline Jungle shop content, not live room integration, route admission or full required-content closure. Host1214(1000) binds a clamped player mana debit (seven native wrapper cases);1230(600) binds a timer deadline, whose cadence and hold integration remain open."
+ },
+ "limits": [
+  "room_name.index 43 -> \"wpnext_\" is the recorded result of reading the executable room-name pointer table through its LE fixup records; the tool checks the pinned executable bytes of that fixup record and of the name string, not the fixup-table walk itself.",
+  "entrances lists every L4_HJ opcode-12 room-select command (bytes 0c 03, room index 43) in both command streams; the tool re-scans the original geometry and requires exactly this list.",
+  "Entrance polygons are the direct region owners of those command groups (published collect_owners) with corner positions from the original vertex table (x/65536, -y/65536); floor heights and live trigger semantics are not carried. return_pose is the first entrance group's second command (opcode 0x12) x, y, bearing.",
+  "Only the weapon shop exterior entrance; the magic_ entrance and Rashar replay cases of the same audit are omitted."
+ ],
+ "area": {
+  "id": "L4_HJ",
+  "source": {
+   "file": "DAT/L4_HJ.MIX",
+   "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+   "geometry_key": 3710797084,
+   "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+  }
+ },
+ "room_name": {
+  "index": 43,
+  "name": "wpnext_",
+  "file_offset": 1852492,
+  "relocation": {
+   "target_object": 5,
+   "target_offset": 13352,
+   "record_file_offset": 577800,
+   "record_hex": "0700180b052834"
+  }
+ },
+ "entrances": [
+  {
+   "stream": 0,
+   "group": 3468,
+   "command": "0c03200a2b00",
+   "commands": [
+    "0c03200a2b00",
+    "1201000083eb770200008500bbbb000a0000"
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 3498,
+   "command": "0c03200a2b00",
+   "commands": [
+    "0c03200a2b00",
+    "1201000083eb770200008500bbbb000a0000"
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 3528,
+   "command": "0c03200a2b00",
+   "commands": [
+    "0c03200a2b00",
+    "1201000083eb770200008500bbbb000a0000"
+   ]
+  },
+  {
+   "stream": 0,
+   "group": 4020,
+   "command": "0c03200a2b00",
+   "commands": [
+    "0c03200a2b00",
+    "1201000083eb770200008500bbbb000a0000"
+   ]
+  }
+ ],
+ "return_pose": {
+  "entrance": 0,
+  "command": 1
+ }
+}

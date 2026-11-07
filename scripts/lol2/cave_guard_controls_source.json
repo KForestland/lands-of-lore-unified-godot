@@ -1,0 +1,885 @@
+{
+ "initial": {
+  "39": {
+   "path": 0,
+   "index": 0,
+   "behavior": 14,
+   "action": 9
+  },
+  "52": {
+   "path": 255,
+   "index": 0,
+   "behavior": 14,
+   "action": 9
+  }
+ },
+ "constructor": {
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "start": 664479,
+  "end": 664659,
+  "sha256": "9b71c71a018dd42601aa2b5c244b88488a58665bd414d3d3aacd4845586bf9bb"
+ },
+ "path": {
+  "first": 0,
+  "count": 9,
+  "flags": 0,
+  "points": [
+   {
+    "position": [
+     -1180,
+     -5846
+    ],
+    "region": 961,
+    "flags": 1
+   },
+   {
+    "position": [
+     -1624,
+     -5897
+    ],
+    "region": 966,
+    "flags": 0
+   },
+   {
+    "position": [
+     -2222,
+     -5591
+    ],
+    "region": 1813,
+    "flags": 0
+   },
+   {
+    "position": [
+     -2299,
+     -4855
+    ],
+    "region": 625,
+    "flags": 0
+   },
+   {
+    "position": [
+     -2300,
+     -4337
+    ],
+    "region": 609,
+    "flags": 0
+   },
+   {
+    "position": [
+     -2401,
+     -3943
+    ],
+    "region": 941,
+    "flags": 0
+   },
+   {
+    "position": [
+     -2307,
+     -3537
+    ],
+    "region": 932,
+    "flags": 0
+   },
+   {
+    "position": [
+     -1969,
+     -3319
+    ],
+    "region": 1013,
+    "flags": 0
+   },
+   {
+    "position": [
+     -1126,
+     -2963
+    ],
+    "region": 746,
+    "flags": 0
+   }
+  ]
+ },
+ "exit_region": {
+  "region": 746,
+  "polygon": [
+   [
+    -1208.0,
+    -3203.0
+   ],
+   [
+    -1050.0,
+    -3206.0
+   ],
+   [
+    -1113.0,
+    -2925.0
+   ],
+   [
+    -1268.0,
+    -2999.0
+   ]
+  ],
+  "floor_min": 81,
+  "floor_max": 81
+ },
+ "version": 1,
+ "source": {
+  "file": "DAT/L1_DC.MIX",
+  "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+  "geometry_key": 2971673856,
+  "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+ },
+ "texture_sha256": "102410e0b69037da2bdf451dd4de9c7e30df2c9d1309b1d0a1c0224ab7218c97",
+ "groups": {
+  "10114": {
+   "stream": 1,
+   "group": 10114,
+   "owner_kind": "control",
+   "owner": 109,
+   "event": 5,
+   "value": 9,
+   "predicate": 4,
+   "archive_offset": 7253669,
+   "commands": [
+    {
+     "archive_offset": 7242991,
+     "raw_hex": "100335050100"
+    },
+    {
+     "archive_offset": 7242997,
+     "raw_hex": "090227000200"
+    },
+    {
+     "archive_offset": 7243003,
+     "raw_hex": "090315020300"
+    },
+    {
+     "archive_offset": 7243009,
+     "raw_hex": "060315020100"
+    },
+    {
+     "archive_offset": 7243015,
+     "raw_hex": "0803150200000000"
+    },
+    {
+     "archive_offset": 7243023,
+     "raw_hex": "0803150202000000"
+    },
+    {
+     "archive_offset": 7243031,
+     "raw_hex": "10106d000100"
+    },
+    {
+     "archive_offset": 7243037,
+     "raw_hex": "0d02270006000000"
+    },
+    {
+     "archive_offset": 7243045,
+     "raw_hex": "0d02270000070000"
+    },
+    {
+     "archive_offset": 7243053,
+     "raw_hex": "0d02270001010000"
+    },
+    {
+     "archive_offset": 7243061,
+     "raw_hex": "0d02270007000000"
+    }
+   ]
+  },
+  "10198": {
+   "stream": 1,
+   "group": 10198,
+   "owner_kind": "control",
+   "owner": 109,
+   "event": 5,
+   "value": 7,
+   "predicate": 4,
+   "archive_offset": 7253679,
+   "commands": [
+    {
+     "archive_offset": 7243075,
+     "raw_hex": "090227000200"
+    },
+    {
+     "archive_offset": 7243081,
+     "raw_hex": "090315020300"
+    },
+    {
+     "archive_offset": 7243087,
+     "raw_hex": "060315020100"
+    },
+    {
+     "archive_offset": 7243093,
+     "raw_hex": "050315020100"
+    },
+    {
+     "archive_offset": 7243099,
+     "raw_hex": "0803150200000000"
+    },
+    {
+     "archive_offset": 7243107,
+     "raw_hex": "0803150202000000"
+    },
+    {
+     "archive_offset": 7243115,
+     "raw_hex": "10106d000100"
+    },
+    {
+     "archive_offset": 7243121,
+     "raw_hex": "0d02270007000000"
+    },
+    {
+     "archive_offset": 7243129,
+     "raw_hex": "0d0227000d000000"
+    }
+   ]
+  },
+  "5174": {
+   "stream": 1,
+   "group": 5174,
+   "owner_kind": "prop",
+   "owner": 533,
+   "event": 6,
+   "value": 0,
+   "predicate": null,
+   "archive_offset": 7250815,
+   "commands": [
+    {
+     "archive_offset": 7238051,
+     "raw_hex": "0803150201000000"
+    },
+    {
+     "archive_offset": 7238059,
+     "raw_hex": "090315020200"
+    },
+    {
+     "archive_offset": 7238065,
+     "raw_hex": "090227000300"
+    },
+    {
+     "archive_offset": 7238071,
+     "raw_hex": "060227000100"
+    }
+   ]
+  },
+  "10266": {
+   "stream": 1,
+   "group": 10266,
+   "owner_kind": "control",
+   "owner": 114,
+   "event": 5,
+   "value": 4,
+   "predicate": 4,
+   "archive_offset": 7253691,
+   "commands": [
+    {
+     "archive_offset": 7243143,
+     "raw_hex": "0d023400040a0000"
+    },
+    {
+     "archive_offset": 7243151,
+     "raw_hex": "0802340000000000"
+    },
+    {
+     "archive_offset": 7243159,
+     "raw_hex": "0802340002000000"
+    },
+    {
+     "archive_offset": 7243167,
+     "raw_hex": "101072000100"
+    },
+    {
+     "archive_offset": 7243173,
+     "raw_hex": "020100000000"
+    },
+    {
+     "archive_offset": 7243179,
+     "raw_hex": "020100002000"
+    },
+    {
+     "archive_offset": 7243185,
+     "raw_hex": "120100005effe41d000013029ff400280000"
+    }
+   ]
+  },
+  "14362": {
+   "stream": 1,
+   "group": 14362,
+   "owner_kind": "actor",
+   "owner": 52,
+   "event": 6,
+   "value": 0,
+   "predicate": null,
+   "archive_offset": 7254987,
+   "commands": [
+    {
+     "archive_offset": 7247239,
+     "raw_hex": "0802340001000000"
+    },
+    {
+     "archive_offset": 7247247,
+     "raw_hex": "0810770000000000"
+    },
+    {
+     "archive_offset": 7247255,
+     "raw_hex": "0810770002000000"
+    }
+   ]
+  },
+  "10332": {
+   "stream": 1,
+   "group": 10332,
+   "owner_kind": "control",
+   "owner": 119,
+   "event": 6,
+   "value": 0,
+   "predicate": null,
+   "archive_offset": 7253703,
+   "commands": [
+    {
+     "archive_offset": 7243209,
+     "raw_hex": "0810770001000000"
+    },
+    {
+     "archive_offset": 7243217,
+     "raw_hex": "0d0234000d000000"
+    },
+    {
+     "archive_offset": 7243225,
+     "raw_hex": "0d02340007000000"
+    },
+    {
+     "archive_offset": 7243233,
+     "raw_hex": "020100000100"
+    },
+    {
+     "archive_offset": 7243239,
+     "raw_hex": "091077000200"
+    }
+   ]
+  },
+  "14306": {
+   "stream": 1,
+   "group": 14306,
+   "owner_kind": "actor",
+   "owner": 39,
+   "event": 10,
+   "value": 36864,
+   "predicate": null,
+   "archive_offset": 7254961,
+   "commands": [
+    {
+     "archive_offset": 7247177,
+     "raw_hex": "090227000200"
+    }
+   ]
+  },
+  "14312": {
+   "stream": 1,
+   "group": 14312,
+   "owner_kind": "actor",
+   "owner": 39,
+   "event": 9,
+   "value": 0,
+   "predicate": null,
+   "archive_offset": 7254969,
+   "commands": [
+    {
+     "archive_offset": 7247189,
+     "raw_hex": "0d02270006000000"
+    },
+    {
+     "archive_offset": 7247197,
+     "raw_hex": "0d0227000d000000"
+    },
+    {
+     "archive_offset": 7247205,
+     "raw_hex": "0d02270007000000"
+    }
+   ]
+  }
+ },
+ "placements": {
+  "prop533": {
+   "position": [
+    -1051,
+    0,
+    -5874
+   ],
+   "heading": 9466,
+   "raw_hex": "e5fbf216fa2400008216c003c40c002700300a000201610664006400000000004e00000003"
+  },
+  "control119": {
+   "position": [
+    -189,
+    -10,
+    -7773
+   ],
+   "heading": 31493,
+   "raw_hex": "43ff5d1e057bf6ff02446d031a18188300000000010000000000000014006c001c"
+  },
+  "actor39": {
+   "position": [
+    -1051,
+    0,
+    -5871
+   ],
+   "heading": 9466,
+   "raw_hex": "e5fbef16fa2400008277c003f61c00000000000000000000000000000000960001360000000e090000000050000000000000000000000000"
+  },
+  "actor52": {
+   "position": [
+    -163,
+    -10,
+    -7834
+   ],
+   "heading": 32039,
+   "raw_hex": "5dff9a1e277df6ff82656d031e1d00000000000000000000000000000000960002150000000e095200ff00500000000000000000f3f68305"
+  }
+ },
+ "prop_template": {
+  "index": 78,
+  "selector_count": 4,
+  "flags": 1,
+  "template_hex": "0000000000000000000000000000000000000000000000006561e28c5000080000000000010000000050820000010202000f01002895e7",
+  "selectors": [
+   {
+    "selector": 0,
+    "frame_count": -2,
+    "state_height": 80,
+    "state_hex": "00000000000004000000f40001fe8250",
+    "state_offset": 8831,
+    "frames": [
+     {
+      "descriptor": 1912,
+      "left": -65.0,
+      "right": 65.0,
+      "bottom": 0,
+      "top_trim": 0,
+      "frame_flags": 0,
+      "frame_hex": "780700121c00000000000000",
+      "frame_offset": 11167
+     }
+    ]
+   },
+   {
+    "selector": 1,
+    "frame_count": -2,
+    "state_height": 80,
+    "state_hex": "00000000000004000000f40001fe8250",
+    "state_offset": 8847,
+    "frames": [
+     {
+      "descriptor": 1913,
+      "left": -65.0,
+      "right": 65.0,
+      "bottom": 0,
+      "top_trim": 0,
+      "frame_flags": 0,
+      "frame_hex": "790700121c00000000000000",
+      "frame_offset": 11179
+     }
+    ]
+   },
+   {
+    "selector": 2,
+    "frame_count": 1,
+    "state_height": 0,
+    "state_hex": "00000000000004000000f40001010000",
+    "state_offset": 8863,
+    "frames": [
+     {
+      "descriptor": 0,
+      "left": 0.0,
+      "right": 0.0,
+      "bottom": 0,
+      "top_trim": 0,
+      "frame_flags": 0,
+      "frame_hex": "000000000000000000000000",
+      "frame_offset": 11191
+     }
+    ]
+   },
+   {
+    "selector": 3,
+    "frame_count": 1,
+    "state_height": 0,
+    "state_hex": "00000000000004000000f40001010000",
+    "state_offset": 8879,
+    "frames": [
+     {
+      "descriptor": 0,
+      "left": 0.0,
+      "right": 0.0,
+      "bottom": 0,
+      "top_trim": 0,
+      "frame_flags": 0,
+      "frame_hex": "000000000000000000000000",
+      "frame_offset": 11203
+     }
+    ]
+   }
+  ]
+ },
+ "control_template": {
+  "index": 28,
+  "child_count": 1,
+  "dimensions": [
+   105,
+   1,
+   76
+  ],
+  "children": [
+   {
+    "index": 42,
+    "type_byte": 0,
+    "mask": 4294967295,
+    "bounds": [
+     -53,
+     52,
+     -1,
+     0,
+     0,
+     76
+    ],
+    "surfaces": [
+     {
+      "resource_id": 0,
+      "raw_hex": "0000000000000000"
+     },
+     {
+      "resource_id": 0,
+      "raw_hex": "0000000000000000"
+     },
+     {
+      "resource_id": 618,
+      "raw_hex": "6a02000000000000"
+     },
+     {
+      "resource_id": 618,
+      "raw_hex": "6a02000000000000"
+     },
+     {
+      "resource_id": 0,
+      "raw_hex": "0000000000000000"
+     },
+     {
+      "resource_id": 0,
+      "raw_hex": "0000000000000000"
+     }
+    ],
+    "raw_hex": "000000000000000000000000000000006a020000000000006a0200000000000000000000000000000000000000000000ffffffffcb34ff00004c0400"
+   }
+  ],
+  "raw_hex": "000000000000000000000000000000000000000000000000ffffffff5ecaf67d080000007c0708000800080000220069014c01000000000000260000"
+ },
+ "bindings": [
+  {
+   "resource": 1912,
+   "movie": "0520101e.vqa",
+   "descriptor": [
+    4109,
+    400,
+    248,
+    834,
+    255,
+    1025,
+    2415580824,
+    10772346,
+    0,
+    0,
+    0,
+    0,
+    22,
+    0,
+    0,
+    0,
+    0
+   ],
+   "payload": "42039001f800160030353230313031652e7671610000"
+  },
+  {
+   "resource": 1913,
+   "movie": "0520301e.vqa",
+   "descriptor": [
+    4110,
+    400,
+    248,
+    834,
+    255,
+    1025,
+    333168868,
+    10772368,
+    0,
+    0,
+    0,
+    0,
+    22,
+    0,
+    0,
+    0,
+    0
+   ],
+   "payload": "42039001f800160030353230333031652e7671610000"
+  },
+  {
+   "resource": 1914,
+   "movie": "0725001e.vqa",
+   "descriptor": [
+    4111,
+    400,
+    248,
+    834,
+    255,
+    1025,
+    3040692232,
+    10772390,
+    0,
+    0,
+    0,
+    0,
+    22,
+    0,
+    0,
+    0,
+    0
+   ],
+   "payload": "42039001f800160030373235303031652e7671610000"
+  },
+  {
+   "resource": 1916,
+   "movie": "0625101e.vqa",
+   "descriptor": [
+    4113,
+    640,
+    356,
+    323,
+    255,
+    1025,
+    4120634893,
+    10772434,
+    0,
+    0,
+    0,
+    0,
+    22,
+    0,
+    0,
+    0,
+    0
+   ],
+   "payload": "430180026401160030363235313031652e7671610000"
+  }
+ ],
+ "plates": [
+  {
+   "id": 109,
+   "position": [
+    -969,
+    1,
+    -5948
+   ],
+   "polygon": [
+    [
+     -956.376953125,
+     -6128.576171875
+    ],
+    [
+     -1148.8214874267578,
+     -5961.279113769531
+    ],
+    [
+     -981.5244293212891,
+     -5768.834579467773
+    ],
+    [
+     -789.0798950195312,
+     -5936.131637573242
+    ]
+   ],
+   "height": 1,
+   "template": 21,
+   "raw_hex": "37fc3c17d862010081048502f81718830000000001000000000000001400000015",
+   "child_raw": "000000000000080000000000000008000000000000000000000000000000000000000000000000000000000000000000ffffffff807f807f00000000",
+   "records": [
+    {
+     "stream": 1,
+     "group": 10114,
+     "owner_kind": "control",
+     "owner": 109,
+     "event": 5,
+     "value": 9,
+     "predicate": 4,
+     "archive_offset": 7253669,
+     "commands": [
+      {
+       "archive_offset": 7242991,
+       "raw_hex": "100335050100"
+      },
+      {
+       "archive_offset": 7242997,
+       "raw_hex": "090227000200"
+      },
+      {
+       "archive_offset": 7243003,
+       "raw_hex": "090315020300"
+      },
+      {
+       "archive_offset": 7243009,
+       "raw_hex": "060315020100"
+      },
+      {
+       "archive_offset": 7243015,
+       "raw_hex": "0803150200000000"
+      },
+      {
+       "archive_offset": 7243023,
+       "raw_hex": "0803150202000000"
+      },
+      {
+       "archive_offset": 7243031,
+       "raw_hex": "10106d000100"
+      },
+      {
+       "archive_offset": 7243037,
+       "raw_hex": "0d02270006000000"
+      },
+      {
+       "archive_offset": 7243045,
+       "raw_hex": "0d02270000070000"
+      },
+      {
+       "archive_offset": 7243053,
+       "raw_hex": "0d02270001010000"
+      },
+      {
+       "archive_offset": 7243061,
+       "raw_hex": "0d02270007000000"
+      }
+     ]
+    },
+    {
+     "stream": 1,
+     "group": 10198,
+     "owner_kind": "control",
+     "owner": 109,
+     "event": 5,
+     "value": 7,
+     "predicate": 4,
+     "archive_offset": 7253679,
+     "commands": [
+      {
+       "archive_offset": 7243075,
+       "raw_hex": "090227000200"
+      },
+      {
+       "archive_offset": 7243081,
+       "raw_hex": "090315020300"
+      },
+      {
+       "archive_offset": 7243087,
+       "raw_hex": "060315020100"
+      },
+      {
+       "archive_offset": 7243093,
+       "raw_hex": "050315020100"
+      },
+      {
+       "archive_offset": 7243099,
+       "raw_hex": "0803150200000000"
+      },
+      {
+       "archive_offset": 7243107,
+       "raw_hex": "0803150202000000"
+      },
+      {
+       "archive_offset": 7243115,
+       "raw_hex": "10106d000100"
+      },
+      {
+       "archive_offset": 7243121,
+       "raw_hex": "0d02270007000000"
+      },
+      {
+       "archive_offset": 7243129,
+       "raw_hex": "0d0227000d000000"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 114,
+   "position": [
+    -152,
+    -10,
+    -7650
+   ],
+   "polygon": [
+    [
+     -187.10726928710938,
+     -7603.444976806641
+    ],
+    [
+     -94.40097045898438,
+     -7640.931243896484
+    ],
+    [
+     -116.89273071289062,
+     -7696.555023193359
+    ],
+    [
+     -209.59902954101562,
+     -7659.068756103516
+    ]
+   ],
+   "height": -10,
+   "template": 30,
+   "raw_hex": "68ffe21d5bf0f6ff820453040e1818830000000001000000000000001400bc001e",
+   "child_raw": "0000000000000800a2010000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffce32e21e00000000",
+   "records": [
+    {
+     "stream": 1,
+     "group": 10266,
+     "owner_kind": "control",
+     "owner": 114,
+     "event": 5,
+     "value": 4,
+     "predicate": 4,
+     "archive_offset": 7253691,
+     "commands": [
+      {
+       "archive_offset": 7243143,
+       "raw_hex": "0d023400040a0000"
+      },
+      {
+       "archive_offset": 7243151,
+       "raw_hex": "0802340000000000"
+      },
+      {
+       "archive_offset": 7243159,
+       "raw_hex": "0802340002000000"
+      },
+      {
+       "archive_offset": 7243167,
+       "raw_hex": "101072000100"
+      },
+      {
+       "archive_offset": 7243173,
+       "raw_hex": "020100000000"
+      },
+      {
+       "archive_offset": 7243179,
+       "raw_hex": "020100002000"
+      },
+      {
+       "archive_offset": 7243185,
+       "raw_hex": "120100005effe41d000013029ff400280000"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "scope": "Exact movie/control consumers. Kind5 production support entry is shared native-proven adapter. Actor39 own region746 removal and constructor-bound path0 included. Other actor death/timer ownership stays external."
+}

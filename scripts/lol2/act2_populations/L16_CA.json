@@ -1,0 +1,1064 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L16_CA.MIX",
+  "sha256": "810d39ae20a980c4b912fda9dbb05db7917b879fbfcc7cdf4a9f91d26707d2a4",
+  "geometry_key": 3201897348,
+  "geometry_sha256": "2369482678839199fb3f04acd2d35d74ecc5a745853c0a4aaa4a6deacd1a40a4"
+ },
+ "actors": [
+  {
+   "actor": 20,
+   "definition": 0,
+   "position": [
+    2475,
+    90,
+    14266
+   ],
+   "heading": 29309,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": 552,
+   "reward_scale": 20,
+   "placement_hex": "ab0946c87d725a008265e214464b00000000000000000000000000000000ff00006400000006005400ff00e8030000000000000028020000",
+   "placement_offset": 18770508
+  },
+  {
+   "actor": 21,
+   "definition": 3,
+   "position": [
+    -5440,
+    0,
+    -1792
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 13041841,
+   "reward_scale": 20,
+   "placement_hex": "c0ea00070000000082615027000000000000000000000000000000000000ff00032000000006002300ff00e80300000000000000b100c700",
+   "placement_offset": 18770564
+  },
+  {
+   "actor": 22,
+   "definition": 3,
+   "position": [
+    -5376,
+    0,
+    -1792
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 20975553,
+   "reward_scale": 20,
+   "placement_hex": "00eb00070000000082615027000000000000000000000000000000000000ff00032000000006002200ff00e80300000000000000c10f4001",
+   "placement_offset": 18770620
+  },
+  {
+   "actor": 23,
+   "definition": 3,
+   "position": [
+    -5312,
+    0,
+    -1792
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 50663955,
+   "reward_scale": 20,
+   "placement_hex": "40eb00070000000082615027000000000000000000000000000000000000ff00032000000006002100ff00e8030000000000000013120503",
+   "placement_offset": 18770676
+  },
+  {
+   "actor": 24,
+   "definition": 3,
+   "position": [
+    -5248,
+    0,
+    -1792
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 11076034,
+   "reward_scale": 20,
+   "placement_hex": "80eb00070000000082615027000000000000000000000000000000000000ff00032000000006002000ff00e80300000000000000c201a900",
+   "placement_offset": 18770732
+  },
+  {
+   "actor": 25,
+   "definition": 3,
+   "position": [
+    -5184,
+    0,
+    -1792
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 8392328,
+   "reward_scale": 20,
+   "placement_hex": "c0eb00070000000082615027000000000000000000000000000000000000ff00032000000006001f00ff00e80300000000000000880e8000",
+   "placement_offset": 18770788
+  },
+  {
+   "actor": 26,
+   "definition": 3,
+   "position": [
+    -5120,
+    0,
+    -1792
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 50660876,
+   "reward_scale": 20,
+   "placement_hex": "00ec00070000000082615027000000000000000000000000000000000000ff00032000000006001e00ff00e803000000000000000c060503",
+   "placement_offset": 18770844
+  },
+  {
+   "actor": 27,
+   "definition": 3,
+   "position": [
+    -5056,
+    0,
+    -1792
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 12779648,
+   "reward_scale": 20,
+   "placement_hex": "40ec00070000000082615027000000000000000000000000000000000000ff00032000000006001d00ff00e803000000000000008000c300",
+   "placement_offset": 18770900
+  },
+  {
+   "actor": 28,
+   "definition": 3,
+   "position": [
+    -5056,
+    0,
+    -1856
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 8390773,
+   "reward_scale": 20,
+   "placement_hex": "40ec40070000000082615027000000000000000000000000000000000000ff00032000000006001000ff00e8030000000000000075088000",
+   "placement_offset": 18770956
+  },
+  {
+   "actor": 29,
+   "definition": 3,
+   "position": [
+    -5120,
+    0,
+    -1856
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 50659607,
+   "reward_scale": 20,
+   "placement_hex": "00ec40070000000082615027000000000000000000000000000000000000ff00032000000006001100ff00e8030000000000000017010503",
+   "placement_offset": 18771012
+  },
+  {
+   "actor": 30,
+   "definition": 3,
+   "position": [
+    -5184,
+    0,
+    -1856
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 13041764,
+   "reward_scale": 20,
+   "placement_hex": "c0eb40070000000082615027000000000000000000000000000000000000ff00032000000006001200ff00e803000000000000006400c700",
+   "placement_offset": 18771068
+  },
+  {
+   "actor": 31,
+   "definition": 3,
+   "position": [
+    -5248,
+    0,
+    -1856
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 3409719,
+   "reward_scale": 20,
+   "placement_hex": "80eb40070000000082615027000000000000000000000000000000000000ff00032000000006001300ff00e8030000000000000037073400",
+   "placement_offset": 18771124
+  },
+  {
+   "actor": 32,
+   "definition": 3,
+   "position": [
+    -5312,
+    0,
+    -1856
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 50597135,
+   "reward_scale": 20,
+   "placement_hex": "40eb40070000000082615027000000000000000000000000000000000000ff00032000000006001400ff00e803000000000000000f0d0403",
+   "placement_offset": 18771180
+  },
+  {
+   "actor": 33,
+   "definition": 3,
+   "position": [
+    -5376,
+    0,
+    -1856
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 46530636,
+   "reward_scale": 20,
+   "placement_hex": "00eb40070000000082615027000000000000000000000000000000000000ff00032000000006001500ff00e803000000000000004c00c602",
+   "placement_offset": 18771236
+  },
+  {
+   "actor": 34,
+   "definition": 3,
+   "position": [
+    -5440,
+    0,
+    -1856
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": 552,
+   "reward_scale": 20,
+   "placement_hex": "c0ea400700000000826550275c4b00000000000000000000000000000000ff00032000000006001600ff00e8030000000000000028020000",
+   "placement_offset": 18771292
+  },
+  {
+   "actor": 35,
+   "definition": 0,
+   "position": [
+    -4033,
+    0,
+    11696
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": null,
+   "reward_scale": 20,
+   "placement_hex": "3ff050d2000000008265eb13644b00000000000000000000000000000000ff00006400000006003a00ff00e8030000000000000000000000",
+   "placement_offset": 18771348
+  },
+  {
+   "actor": 36,
+   "definition": 0,
+   "position": [
+    -6630,
+    0,
+    8675
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": null,
+   "reward_scale": 20,
+   "placement_hex": "1ae61dde00000000826552037a4b00000000000000000000000000000000ff00006400000006003600ff00e8030000000000000000000000",
+   "placement_offset": 18771404
+  },
+  {
+   "actor": 37,
+   "definition": 0,
+   "position": [
+    -9821,
+    0,
+    9827
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": null,
+   "reward_scale": 20,
+   "placement_hex": "a3d99dd9000000008265ad09904b00000000000000000000000000000000ff00006400000006003800ff00e8030000000000000000000000",
+   "placement_offset": 18771460
+  },
+  {
+   "actor": 38,
+   "definition": 0,
+   "position": [
+    -4042,
+    0,
+    14145
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": 4294967040,
+   "reward_scale": 20,
+   "placement_hex": "36f0bfc8000000008265fe04a64b00000000000000000000000000000000ff00006400000006005300ff00e8030000000000000000ffffff",
+   "placement_offset": 18771516
+  },
+  {
+   "actor": 39,
+   "definition": 0,
+   "position": [
+    -1747,
+    0,
+    9114
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": null,
+   "reward_scale": 20,
+   "placement_hex": "2df966dc0000000082655c06bc4b00000000000000000000000000000000ff00006400000006003700ff00e8030000000000000000000000",
+   "placement_offset": 18771572
+  },
+  {
+   "actor": 40,
+   "definition": 0,
+   "position": [
+    2030,
+    0,
+    10596
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": null,
+   "reward_scale": 20,
+   "placement_hex": "ee079cd6000000008265a514d24b00000000000000000000000000000000ff00006400000006003900ff00e8030000000000000000000000",
+   "placement_offset": 18771628
+  },
+  {
+   "actor": 41,
+   "definition": 0,
+   "position": [
+    -69,
+    0,
+    7662
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": null,
+   "reward_scale": 20,
+   "placement_hex": "bbff12e20000000082651406e84b00000000000000000000000000000000ff00006400000006003400ff00e8030000000000000000000000",
+   "placement_offset": 18771684
+  },
+  {
+   "actor": 42,
+   "definition": 0,
+   "position": [
+    -834,
+    0,
+    2004
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": null,
+   "reward_scale": 20,
+   "placement_hex": "befc2cf80000000082651907fe4b00000000000000000000000000000000ff00006400000006002f00ff00e8030000000000000000000000",
+   "placement_offset": 18771740
+  },
+  {
+   "actor": 43,
+   "definition": 0,
+   "position": [
+    -4968,
+    0,
+    3700
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": null,
+   "reward_scale": 20,
+   "placement_hex": "98ec8cf10000000082650701144c00000000000000000000000000000000ff00006400000006003100ff00e8030000000000000000000000",
+   "placement_offset": 18771796
+  },
+  {
+   "actor": 44,
+   "definition": 0,
+   "position": [
+    -8412,
+    0,
+    1957
+   ],
+   "heading": 0,
+   "health": 1000,
+   "placement_word30": 255,
+   "constructor_cap_operands": [
+    1000,
+    1000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 6,
+   "flags": 25986,
+   "present": true,
+   "loot": 4228120908,
+   "reward_scale": 20,
+   "placement_hex": "24df5bf80000000082658d0e2a4c00000000000000000000000000000000ff00006400000006002e00ff00e803000000000000004c0104fc",
+   "placement_offset": 18771852
+  },
+  {
+   "actor": 45,
+   "definition": 2,
+   "position": [
+    5522,
+    0,
+    7968
+   ],
+   "heading": 0,
+   "health": 800,
+   "placement_word30": 180,
+   "constructor_cap_operands": [
+    800,
+    800
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 14,
+   "flags": 30082,
+   "present": false,
+   "loot": 33554432,
+   "reward_scale": 20,
+   "placement_hex": "9215e0e00000000082755f24404c00000000000000000000000000000000b40002050000000e093500ff0020030000000000000000000002",
+   "placement_offset": 18771908
+  },
+  {
+   "actor": 46,
+   "definition": 1,
+   "position": [
+    5521,
+    -6,
+    6609
+   ],
+   "heading": 0,
+   "health": 2000,
+   "placement_word30": 200,
+   "constructor_cap_operands": [
+    2000,
+    2000
+   ],
+   "constructor_cap_grade": "LIKELY",
+   "health_mapping": "port adapter; original English stat unnamed",
+   "behavior": 14,
+   "flags": 30082,
+   "present": false,
+   "loot": 3355443714,
+   "reward_scale": 20,
+   "placement_hex": "91152fe60000faff82750024924c00000000000000000000000000000000c80001050000000e093300ff00d00700000000000000020200c8",
+   "placement_offset": 18771964
+  }
+ ],
+ "definitions": {
+  "0": {
+   "name": "VISC",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 30
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 30
+    },
+    "rise": {
+     "selector": 5,
+     "frames": 12
+    },
+    "death": {
+     "selector": 7,
+     "frames": 20
+    },
+    "corpse": {
+     "selector": 8,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 3,
+      "frames": 22,
+      "hits": [
+       [
+        6,
+        50
+       ],
+       [
+        10,
+        50
+       ]
+      ],
+      "damage": [
+       7,
+       7
+      ]
+     }
+    ]
+   },
+   "peaceful_adapter": false,
+   "damage_base_adapter": 15
+  },
+  "1": {
+   "name": "HL3",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 11
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 14
+    },
+    "rise": {
+     "selector": 7,
+     "frames": 10
+    },
+    "death": {
+     "selector": 25,
+     "frames": 13
+    },
+    "corpse": {
+     "selector": 26,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 4,
+      "frames": 14,
+      "hits": [
+       [
+        8,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   },
+   "peaceful_adapter": false,
+   "damage_base_adapter": 15
+  },
+  "2": {
+   "name": "bacl16",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 8
+    },
+    "walk": {
+     "selector": 2,
+     "frames": 12
+    },
+    "rise": {
+     "selector": 14,
+     "frames": 8
+    },
+    "death": {
+     "selector": 18,
+     "frames": 17
+    },
+    "corpse": {
+     "selector": 20,
+     "frames": 1
+    },
+    "attacks": []
+   },
+   "peaceful_adapter": true,
+   "damage_base_adapter": 15
+  },
+  "3": {
+   "name": "VISC",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 30
+    },
+    "walk": {
+     "selector": 0,
+     "frames": 30
+    },
+    "rise": {
+     "selector": 0,
+     "frames": 30
+    },
+    "death": {
+     "selector": 0,
+     "frames": 30
+    },
+    "corpse": {
+     "selector": 0,
+     "frames": 30
+    },
+    "attacks": []
+   },
+   "peaceful_adapter": false,
+   "damage_base_adapter": 15
+  }
+ },
+ "look": {
+  "0": {
+   "canvas": [
+    320,
+    200
+   ],
+   "scale": 0.6233766233766234,
+   "floor_row": 165,
+   "radius": 24,
+   "height": 48
+  },
+  "1": {
+   "canvas": [
+    480,
+    300
+   ],
+   "scale": 0.1951219512195122,
+   "floor_row": 285,
+   "radius": 24,
+   "height": 48
+  },
+  "2": {
+   "canvas": [
+    320,
+    200
+   ],
+   "scale": 0.2857142857142857,
+   "floor_row": 190,
+   "radius": 20.142857142857142,
+   "height": 48
+  },
+  "3": {
+   "canvas": [
+    320,
+    200
+   ],
+   "scale": 0.6,
+   "floor_row": 165,
+   "radius": 24,
+   "height": 48
+  }
+ },
+ "regions": [],
+ "neighbour_wake": {},
+ "counted": [],
+ "counter_target": 0,
+ "scripted_dormant": [
+  20,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46
+ ],
+ "controls": [],
+ "dormant_pose": "idle",
+ "source_actor_count": 47,
+ "excluded": [
+  {
+   "actor": 0,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 1,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 2,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 3,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 4,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 5,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 6,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 7,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 8,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 9,
+   "definition": 5,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 10,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 11,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 12,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 13,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 14,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 15,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 16,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 17,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 18,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  },
+  {
+   "actor": 19,
+   "definition": 4,
+   "name": "B_HUMAN",
+   "reason": "invisible B_HUMAN emitter"
+  }
+ ],
+ "unsupported_definitions": [],
+ "clip_adapters": [
+  {
+   "definition": 3,
+   "missing_action": 0,
+   "fallback_selector": 0
+  },
+  {
+   "definition": 3,
+   "missing_action": 9,
+   "fallback_selector": 0
+  },
+  {
+   "definition": 3,
+   "missing_action": 14,
+   "fallback_selector": 0
+  },
+  {
+   "definition": 3,
+   "missing_action": 15,
+   "fallback_selector": 0
+  }
+ ],
+ "wake_targets": [
+  20,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46
+ ],
+ "grade": "LIKELY",
+ "adapters": [
+  "generic AI/48-unit height",
+  "15 attack base; LIKELY constructor min(placement+0x2B,definition+0x63) mapped to port health",
+  "story NPC peaceful until native owner",
+  "native field wake bridge; initial dormant when targeted by wake commands"
+ ]
+}

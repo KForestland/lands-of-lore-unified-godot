@@ -1,0 +1,994 @@
+{
+ "version": 1,
+ "source": {
+  "area": "L3_DH",
+  "archive_sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "review": "~/lol2_out/all_maps_20260922/L3_DH/review.json",
+  "review_sha256": "8af16e5dcc1e02a2fa8eea985649211993a5771b41b7fb183e5cb1e45258ab8d"
+ },
+ "templates": {
+  "22": {
+   "unlit": {
+    "left": -12.5,
+    "right": 12.5,
+    "bottom": 0,
+    "top": 63
+   },
+   "lit": {
+    "left": -12.5,
+    "right": 12.5,
+    "bottom": 0,
+    "top": 63
+   },
+   "unlit_layers": [
+    "holder_unlit",
+    "embers"
+   ],
+   "lit_layers": [
+    "holder_lit",
+    "flame"
+   ],
+   "chain": "state byte11 bit0 draws the next state at the same anchor (F1A94)"
+  },
+  "42": {
+   "pilot": {
+    "left": -1.5,
+    "right": 1.5,
+    "bottom": 0,
+    "top": 8
+   },
+   "flare": {
+    "left": -6.5,
+    "right": 7.5,
+    "bottom": 0,
+    "top": 25
+   }
+  }
+ },
+ "art": {
+  "holder_unlit": [
+   "holder_unlit_0.png"
+  ],
+  "embers": [
+   "embers_0.png",
+   "embers_1.png",
+   "embers_2.png",
+   "embers_3.png",
+   "embers_4.png"
+  ],
+  "holder_lit": [
+   "holder_lit_0.png",
+   "holder_lit_1.png",
+   "holder_lit_2.png",
+   "holder_lit_3.png",
+   "holder_lit_4.png"
+  ],
+  "flame": [
+   "flame_0.png",
+   "flame_1.png",
+   "flame_2.png",
+   "flame_3.png",
+   "flame_4.png"
+  ],
+  "flare": [
+   "flare_0.png",
+   "flare_1.png",
+   "flare_2.png",
+   "flare_3.png",
+   "flare_4.png",
+   "flare_5.png",
+   "flare_6.png"
+  ],
+  "pilot": [
+   "flame_0.png",
+   "flame_1.png",
+   "flame_2.png",
+   "flame_3.png",
+   "flame_4.png"
+  ]
+ },
+ "torches": {
+  "63": {
+   "position": [
+    -1846,
+    35,
+    -1097
+   ],
+   "region": 1463,
+   "mask0": 17,
+   "durability": 1,
+   "record": "0a09c201110001000104",
+   "group": 450
+  },
+  "227": {
+   "position": [
+    -2020,
+    45,
+    -985
+   ],
+   "region": null,
+   "mask0": 17,
+   "durability": 1,
+   "record": "0a09c413110001000104",
+   "group": 5060
+  },
+  "228": {
+   "position": [
+    -2020,
+    45,
+    -1184
+   ],
+   "region": null,
+   "mask0": 17,
+   "durability": 1,
+   "record": "0a09fe13110001000104",
+   "group": 5118
+  },
+  "68": {
+   "position": [
+    -2331,
+    45,
+    -1149
+   ],
+   "region": 339,
+   "mask0": 17,
+   "durability": 1,
+   "record": "0a093c02110001000104",
+   "group": 572
+  },
+  "69": {
+   "position": [
+    -2331,
+    45,
+    -1026
+   ],
+   "region": 339,
+   "mask0": 17,
+   "durability": 1,
+   "record": "0a097602110001000104",
+   "group": 630
+  },
+  "274": {
+   "position": [
+    -2174,
+    45,
+    -453
+   ],
+   "region": 906,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a094a19010001000104",
+   "group": 6474
+  },
+  "273": {
+   "position": [
+    -1735,
+    45,
+    -97
+   ],
+   "region": 627,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a091019010001000104",
+   "group": 6416
+  },
+  "272": {
+   "position": [
+    -948,
+    45,
+    -101
+   ],
+   "region": 625,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09d618010001000104",
+   "group": 6358
+  },
+  "269": {
+   "position": [
+    -357,
+    75,
+    429
+   ],
+   "region": 793,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a092818010001000104",
+   "group": 6184
+  },
+  "266": {
+   "position": [
+    -381,
+    45,
+    -249
+   ],
+   "region": 54,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a097a17010001000104",
+   "group": 6010
+  },
+  "268": {
+   "position": [
+    79,
+    45,
+    -255
+   ],
+   "region": 38,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09ee17010001000104",
+   "group": 6126
+  },
+  "231": {
+   "position": [
+    -379,
+    45,
+    -633
+   ],
+   "region": 35,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a094c14010001000104",
+   "group": 5196
+  },
+  "267": {
+   "position": [
+    80,
+    45,
+    -636
+   ],
+   "region": 55,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09b417010001000104",
+   "group": 6068
+  },
+  "265": {
+   "position": [
+    -264,
+    45,
+    -1052
+   ],
+   "region": 285,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a094017010001000104",
+   "group": 5952
+  },
+  "264": {
+   "position": [
+    247,
+    45,
+    -1049
+   ],
+   "region": 278,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a090617010001000104",
+   "group": 5894
+  },
+  "263": {
+   "position": [
+    978,
+    45,
+    -1059
+   ],
+   "region": 327,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09cc16010001000104",
+   "group": 5836
+  },
+  "262": {
+   "position": [
+    1378,
+    45,
+    -1281
+   ],
+   "region": 24,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a099216010001000104",
+   "group": 5778
+  },
+  "261": {
+   "position": [
+    1260,
+    45,
+    -1678
+   ],
+   "region": 28,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a095816010001000104",
+   "group": 5720
+  },
+  "80": {
+   "position": [
+    1119,
+    45,
+    -1980
+   ],
+   "region": 1357,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09ec04010001000104",
+   "group": 1260
+  },
+  "79": {
+   "position": [
+    482,
+    45,
+    -1877
+   ],
+   "region": 1469,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09b204010001000104",
+   "group": 1202
+  },
+  "232": {
+   "position": [
+    78,
+    45,
+    -1716
+   ],
+   "region": 150,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a098614010001000104",
+   "group": 5254
+  },
+  "78": {
+   "position": [
+    -122,
+    45,
+    -1987
+   ],
+   "region": 441,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a097804010001000104",
+   "group": 1144
+  },
+  "76": {
+   "position": [
+    -776,
+    45,
+    -1519
+   ],
+   "region": 654,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a090404010001000104",
+   "group": 1028
+  },
+  "275": {
+   "position": [
+    -2168,
+    45,
+    -1776
+   ],
+   "region": 868,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a098419010001000104",
+   "group": 6532
+  },
+  "271": {
+   "position": [
+    -1631,
+    45,
+    -1988
+   ],
+   "region": 392,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a099c18010001000104",
+   "group": 6300
+  },
+  "270": {
+   "position": [
+    -1122,
+    45,
+    -1987
+   ],
+   "region": 378,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a096218010001000104",
+   "group": 6242
+  },
+  "75": {
+   "position": [
+    -929,
+    45,
+    -2381
+   ],
+   "region": 90,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09ca03010001000104",
+   "group": 970
+  },
+  "257": {
+   "position": [
+    -387,
+    45,
+    -2264
+   ],
+   "region": 80,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a097015010001000104",
+   "group": 5488
+  },
+  "77": {
+   "position": [
+    339,
+    45,
+    -2503
+   ],
+   "region": 1328,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a093e04010001000104",
+   "group": 1086
+  },
+  "73": {
+   "position": [
+    871,
+    45,
+    -2536
+   ],
+   "region": 422,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a095603010001000104",
+   "group": 854
+  },
+  "74": {
+   "position": [
+    1091,
+    45,
+    -2531
+   ],
+   "region": 405,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a099003010001000104",
+   "group": 912
+  },
+  "258": {
+   "position": [
+    1104,
+    45,
+    -2273
+   ],
+   "region": 935,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09aa15010001000104",
+   "group": 5546
+  },
+  "259": {
+   "position": [
+    1734,
+    45,
+    -2355
+   ],
+   "region": 952,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09e415010001000104",
+   "group": 5604
+  },
+  "260": {
+   "position": [
+    1754,
+    45,
+    -1935
+   ],
+   "region": 788,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a091e16010001000104",
+   "group": 5662
+  },
+  "198": {
+   "position": [
+    252,
+    45,
+    -1287
+   ],
+   "region": 61,
+   "mask0": 1,
+   "durability": 1,
+   "record": "0a09ac0e010001000104",
+   "group": 3756
+  }
+ },
+ "order": [
+  63,
+  227,
+  228,
+  68,
+  69,
+  274,
+  273,
+  272,
+  269,
+  266,
+  268,
+  231,
+  267,
+  265,
+  264,
+  263,
+  262,
+  261,
+  80,
+  79,
+  232,
+  78,
+  76,
+  275,
+  271,
+  270,
+  75,
+  257,
+  77,
+  73,
+  74,
+  258,
+  259,
+  260,
+  198
+ ],
+ "pilot": {
+  "position": [
+   -1883,
+   25,
+   -1011
+  ],
+  "region": 1476,
+  "durability": 2,
+  "records": [
+   {
+    "group": 0,
+    "kind": 9,
+    "raw": "0a090000110001000184",
+    "predicate": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 1
+     },
+     "raw": "0005000001"
+    },
+    "commands": [
+     "09033d001500",
+     "06033d000532",
+     "06033d0006fa",
+     "06033d00031e",
+     "06033d000432",
+     "05033d000100",
+     "06033d000100",
+     "09033d001200",
+     "14033d00e40280020a14",
+     "020100001001"
+    ]
+   },
+   {
+    "group": 70,
+    "kind": 6,
+    "raw": "060646001400",
+    "predicate": null,
+    "commands": [
+     "13033f00010001000500",
+     "1303e300010001000500",
+     "1303e400010001000500",
+     "13034400010001000500",
+     "13034500010001000500",
+     "13031201010001000500",
+     "13031101010001000500",
+     "13031001010001000500",
+     "13030d01010001000500",
+     "13030a01010001000500",
+     "13030c01010001000500",
+     "1303e700010001000500",
+     "13030b01010001000500",
+     "13030901010001000500",
+     "13030801010001000500",
+     "13030701010001000500",
+     "13030601010001000500",
+     "13030501010001000500",
+     "13035000010001000500",
+     "13034f00010001000500",
+     "1303e800010001000500",
+     "13034e00010001000500",
+     "13034c00010001000500",
+     "13031301010001000500",
+     "13030f01010001000500",
+     "13030e01010001000500",
+     "13034b00010001000500",
+     "13030101010001000500",
+     "13034d00010001000500",
+     "13034900010001000500",
+     "13034a00010001000500",
+     "13030201010001000500",
+     "13030301010001000500",
+     "13030401010001000500",
+     "1303c600010001000500",
+     "d090000000050200",
+     "14033f009b01ff110f1f",
+     "10033d000100"
+    ]
+   }
+  ]
+ },
+ "switch": {
+  "movable": 52,
+  "records": [
+   {
+    "group": 12092,
+    "kind": 4,
+    "raw": "0a043c2f000000000000",
+    "predicate": null,
+    "commands": [
+     "10033d000100"
+    ]
+   },
+   {
+    "group": 12104,
+    "kind": 6,
+    "raw": "0606482f1000",
+    "predicate": null,
+    "commands": [
+     "10033d000000"
+    ]
+   }
+  ],
+  "faces": [
+   {
+    "points": [
+     [
+      -1890.0,
+      45,
+      -1019.0
+     ],
+     [
+      -1890.0,
+      45,
+      -1018.0
+     ],
+     [
+      -1875.0,
+      45,
+      -1018.0
+     ],
+     [
+      -1875.0,
+      45,
+      -1019.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "material": "31"
+   },
+   {
+    "points": [
+     [
+      -1890.0,
+      30,
+      -1018.0
+     ],
+     [
+      -1890.0,
+      30,
+      -1019.0
+     ],
+     [
+      -1875.0,
+      30,
+      -1019.0
+     ],
+     [
+      -1875.0,
+      30,
+      -1018.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "material": "31"
+   },
+   {
+    "points": [
+     [
+      -1890.0,
+      45,
+      -1018.0
+     ],
+     [
+      -1875.0,
+      45,
+      -1018.0
+     ],
+     [
+      -1875.0,
+      30,
+      -1018.0
+     ],
+     [
+      -1890.0,
+      30,
+      -1018.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "material": "31"
+   },
+   {
+    "points": [
+     [
+      -1875.0,
+      45,
+      -1019.0
+     ],
+     [
+      -1890.0,
+      45,
+      -1019.0
+     ],
+     [
+      -1890.0,
+      30,
+      -1019.0
+     ],
+     [
+      -1875.0,
+      30,
+      -1019.0
+     ]
+    ],
+    "uv": [
+     [
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0
+     ],
+     [
+      1.0,
+      1.0
+     ]
+    ],
+    "material": "31"
+   },
+   {
+    "points": [
+     [
+      -1875.0,
+      45,
+      -1018.0
+     ],
+     [
+      -1875.0,
+      45,
+      -1019.0
+     ],
+     [
+      -1875.0,
+      30,
+      -1019.0
+     ],
+     [
+      -1875.0,
+      30,
+      -1018.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "material": "31"
+   },
+   {
+    "points": [
+     [
+      -1890.0,
+      45,
+      -1019.0
+     ],
+     [
+      -1890.0,
+      45,
+      -1018.0
+     ],
+     [
+      -1890.0,
+      30,
+      -1018.0
+     ],
+     [
+      -1890.0,
+      30,
+      -1019.0
+     ]
+    ],
+    "uv": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.0,
+      1.0
+     ]
+    ],
+    "material": "31"
+   }
+  ],
+  "aim": [
+   -1882.5,
+   37.5,
+   -1018.5
+  ]
+ },
+ "event20": {
+  "group": 70,
+  "hit": {
+   "mask0": 1,
+   "mask2": 1,
+   "damage": 5
+  },
+  "shake": "d090000000050200",
+  "sound": {
+   "request": 411,
+   "at": 63
+  },
+  "state": 1
+ },
+ "award": {
+  "op": "020100001001",
+  "sub": 16,
+  "arg": 1,
+  "meaning": "one magic level (D88CD: thresholds[level] - experience)"
+ },
+ "sounds": {
+  "740": {
+   "file": "740.wav",
+   "name": "torch1.aud",
+   "duration": 3.065
+  },
+  "411": {
+   "file": "411.wav",
+   "name": "expfire1.aud",
+   "duration": 4.8065
+  }
+ },
+ "files": {
+  "411.wav": "1dbb9d40ab0d98c8e056ce82167b29cafdeb426bed446e7d447713a7dd73ead9",
+  "740.wav": "c633ae04bec2bdce7b20b430751eec7579327d630a97d8ea71ef8b454553d831",
+  "embers_0.png": "08ecb15b2302cd119aea00f22587d46e78c00516b9bd9ef68efe4cc8795056d3",
+  "embers_1.png": "1235e9b72a56709ae4cf01b4c927adb957168c74832bb6362550cfa12b55edbe",
+  "embers_2.png": "2e23ad5439d79ab888a4ecf5bf55f689d53606a5401b3fc0010095e92636c6dd",
+  "embers_3.png": "7bcfec14436e3bb8b0e98fbb2396450ec4f4a65125b23d696d45fad7c27b1e73",
+  "embers_4.png": "dd22ecb3c3259659f08f49044346d6d7f1a4469b5ccb902276810ac9e2ce709b",
+  "flame_0.png": "889a08b96b661e2078ec984248710113d1c7c6e335b7c844b7450d26707603d2",
+  "flame_1.png": "466d6e9968a47cb9984dae0bd0b422c0393483a06b63083400a0edbe225ca823",
+  "flame_2.png": "6c49e24eb8d15be5e91a3a6f74985f7b156a97f7dd2b1e284980e3e726894da7",
+  "flame_3.png": "d60807a42eb54f7470afd8d23eff5f63773e7295fd462cc195517948aecc5457",
+  "flame_4.png": "d366d55247672dfbb032ab920cad552fb674bd26bb6ed29bf25eeb7e0f16efbd",
+  "flare_0.png": "0c9d7dbabc56b03a927afbcd3d36243d621117a99c0c826bfac6545fdf2b273f",
+  "flare_1.png": "26f770d06bdae9ed664b192d4343a0c6935941affa549e210f49f60236b8743a",
+  "flare_2.png": "fe5c79b18e28fd7102a36782f553568f008d92dcee7a5da55268dce562e41c3c",
+  "flare_3.png": "cd38f0be1c9d9db2161701c2645bb14c19a2a629a477d233208ccca8dee96f4e",
+  "flare_4.png": "912b1bc6f65888e9e5ecd175240626b92ce6997214b892548a611efaab482667",
+  "flare_5.png": "27aff6d3e237daf1081eac49284dc9ed3d63f3010406649a0fb94148d80f6738",
+  "flare_6.png": "95b221eb3afe646750c324ad09395c048f0bb5e0b8d8842222554906f42d1d09",
+  "holder_lit_0.png": "9de865ff8a2f04f54c8d2cee3b209b71250eaea8b26138f1ca705e881d76d504",
+  "holder_lit_1.png": "a9611bb0cfd256529860a35177269f4a3a7ac072cc3302f26a61614eae7ec58d",
+  "holder_lit_2.png": "22d23f144c69f5c3d4667b988c5dedada2b30ca33716214bc47bd656147981db",
+  "holder_lit_3.png": "a1c36e297c60250baae4a896f72a64d5df58ddd8f4267e177144a3beffdc696b",
+  "holder_lit_4.png": "f32e2b9ed7596bee9c7fd4cc5ce58ca769d54a0c2431769dd44e662ca414cb4e",
+  "holder_unlit_0.png": "99bc106d7896b609cd8bb8dc142b5d4b2d19f49773ed24ef33f780f99ee2e8cc"
+ },
+ "not_hosted": [
+  "op6 sub5/6/3/4 property writes on each lit torch (0x32/0xFA/0x1E/0x32; meaning UNKNOWN, likely light radius/intensity for the lighting chunk)",
+  "op9 property18 on lit torches and prop61 (UNKNOWN)",
+  "op208 screen shake (sub0x90, intensity5, 2 s) in group70",
+  "movable52 travel: kind6 value16 (a travel end) resets prop61 to state0, but what starts the plate's travel is not traced; the plate is drawn still and the reset never fires",
+  "Firestorm/fire-crystal hits (mask0 bit0x10): only the Spark context 1/1 is delivered"
+ ],
+ "adapters": [
+  "animations at 10 frames/s (native sequence rate unverified, as the all-maps export)",
+  "frame-flag-0x10 overlays (embers, flame, pilot, flare) drawn additively: their dark smoke pixels would otherwise cover the bracket (longplay f_00265 shows a lit torch without a dark halo)",
+  "hit volumes: torch = sprite width x 63 x 8 units; pilot = 16 x 16 x 16 units around the flame (native template depth byte30 = 229 would block the corridors)",
+  "E (empty hand, within reach) on the plate stands for the native kind4 mode0 click",
+  "Spark context 1/1 with port damage 8; group70 hits use damage 5 as recorded"
+ ]
+}

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "provenance": {
+    "recorded_report": "docs/player-progression-initial-checks.json",
+    "recorded_sha256": "f7de4d6bc05f70adb5f391e5b3c8b0fd5729addd48d7dde18806f61c4ceb4d49",
+    "producer": "tools/verify_player_progression_initial.py",
+    "producer_sha256": "41f02c7960b1604dfbf53a4893383aaa748c03dd6e50cb4afc473cc8393fc94f",
+    "limits": "Bounded initializer slices with supplied player pointer and dirty-memory seeds. No subsequent game-start scripts or full constructor call chain claim. Authored current guardian gameplay health30 remains separate; do not silently replace legacy save health with this initial packet."
+  },
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code": [
+    {
+      "start": 850584,
+      "end": 850614,
+      "sha256": "d718c264f9a025f602324c33289bb4cb86b44eda5f3f7de8d474ce1e158d9594"
+    },
+    {
+      "start": 850688,
+      "end": 850742,
+      "sha256": "a99c75990ec4525d66108069408bf4c937d91cf60ae187ef4a6411afe3b49673"
+    },
+    {
+      "start": 850807,
+      "end": 850817,
+      "sha256": "2241e84cb0e403f574fce0284a116907727579d07b76d815da1d2d57b244f673"
+    },
+    {
+      "start": 851163,
+      "end": 851204,
+      "sha256": "030571167d5de2cfdd56183dcf7e66c2073cb080d17e25a420b4958063523d05"
+    }
+  ],
+  "fighting": {
+    "experience": 0,
+    "level": 1,
+    "condition": 0,
+    "maximum": 8,
+    "health": 8,
+    "stat151": 5,
+    "stat155": 10
+  },
+  "magic": {
+    "experience": 0,
+    "level": 1,
+    "maximum": 20,
+    "mana": 20
+  }
+}

@@ -1,0 +1,526 @@
+{
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "scope": "Execute (Unicorn, original LOLG.DAT bytes) the damage-request producers of Dawn spells 7 and 58 and pin every request\nthey send to a target's virtual+0x80 receiver, in the field naming of tools/verify_hive_spark_request.py\n(mask word0, signature word2, target +4, owner +8, projectile +16, mode +20, subtype +21, amount +22).\n\n- Spell 7 hop child (vtable 0x6774, Spark class built by 0x10A0E8 at each chain hop):\n  - slot +0xFC 0x10A1D8 = stored-target request (needs projectile+0x42);\n  - slot +0x100 0x10A28C = contact request(s) to a touched object.\n- Spell 58 (Plasma, vtable 0x7860) hit routine 0x105A40(projectile, target): one-shot (latch +0x5E), keyed by the impact\n  state +0x58 that the flight selector maps to (inline tables at 0x105620 / 0x10592C).\n\nBoundaries:\n- memset 0x14F8A4 is bridged;\n- the audio cue E3924 is disabled through byte 0x269C4 bit0, as the Spark verifier does;\n- the touched object's virtual+0 call in 0x10A28C returns a supplied type;\n- execution stops at each receiver call, so damage handling after the receiver is not executed.\n",
+  "cases": [
+    {
+      "function": "0x10a1d8",
+      "owner": 0,
+      "has_target": false,
+      "requests": []
+    },
+    {
+      "function": "0x10a1d8",
+      "owner": 0,
+      "has_target": true,
+      "requests": [
+        {
+          "receiver": 1576960,
+          "mask": 17,
+          "signature": 1,
+          "target": 1576960,
+          "owner": 0,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 84,
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "function": "0x10a1d8",
+      "owner": 1589248,
+      "has_target": false,
+      "requests": []
+    },
+    {
+      "function": "0x10a1d8",
+      "owner": 1589248,
+      "has_target": true,
+      "requests": [
+        {
+          "receiver": 1576960,
+          "mask": 17,
+          "signature": 1,
+          "target": 1576960,
+          "owner": 1589248,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 84,
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "function": "0x10a28c",
+      "owner": 0,
+      "requests": [
+        {
+          "receiver": 1576960,
+          "mask": 1,
+          "signature": 1,
+          "target": 1576960,
+          "owner": 0,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 84,
+          "amount": 2
+        },
+        {
+          "receiver": 1576960,
+          "mask": 16,
+          "signature": 1,
+          "target": 1576960,
+          "owner": 0,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 84,
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "function": "0x10a28c",
+      "owner": 1589248,
+      "requests": [
+        {
+          "receiver": 1576960,
+          "mask": 1,
+          "signature": 1,
+          "target": 1576960,
+          "owner": 1589248,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 84,
+          "amount": 2
+        },
+        {
+          "receiver": 1576960,
+          "mask": 16,
+          "signature": 1,
+          "target": 1576960,
+          "owner": 1589248,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 84,
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 0,
+      "latched": 0,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 0,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 0,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 0,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 1,
+      "latched": 0,
+      "has_target": true,
+      "requests": [
+        {
+          "receiver": 1576960,
+          "mask": 16,
+          "signature": 2,
+          "target": 1576960,
+          "owner": 0,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 58,
+          "amount": 3
+        },
+        {
+          "receiver": 1576960,
+          "mask": 1,
+          "signature": 2,
+          "target": 1576960,
+          "owner": 0,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 58,
+          "amount": 3
+        }
+      ],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 1,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 1,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 1,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 2,
+      "latched": 0,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 2,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 2,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 2,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 3,
+      "latched": 0,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 3,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 3,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 3,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 4,
+      "latched": 0,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 4,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 4,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 4,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 5,
+      "latched": 0,
+      "has_target": true,
+      "requests": [
+        {
+          "receiver": 1576960,
+          "mask": 17,
+          "signature": 1,
+          "target": 1576960,
+          "owner": 1589248,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 58,
+          "amount": 10
+        }
+      ],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 5,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 5,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 5,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 6,
+      "latched": 0,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 6,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 6,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 6,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 7,
+      "latched": 0,
+      "has_target": true,
+      "requests": [
+        {
+          "receiver": 1576960,
+          "mask": 17,
+          "signature": 1,
+          "target": 1576960,
+          "owner": 1589248,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 60,
+          "amount": 30
+        }
+      ],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 7,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 7,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 7,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 8,
+      "latched": 0,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 8,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 8,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 8,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 9,
+      "latched": 0,
+      "has_target": true,
+      "requests": [
+        {
+          "receiver": 1576960,
+          "mask": 17,
+          "signature": 1,
+          "target": 1576960,
+          "owner": 1589248,
+          "projectile": 1572864,
+          "mode": 2,
+          "subtype": 58,
+          "amount": 4
+        }
+      ],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 9,
+      "latched": 0,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 0
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 9,
+      "latched": 1,
+      "has_target": true,
+      "requests": [],
+      "latch_after": 1
+    },
+    {
+      "function": "0x105a40",
+      "impact_state": 9,
+      "latched": 1,
+      "has_target": false,
+      "requests": [],
+      "latch_after": 1
+    }
+  ],
+  "flight_to_impact": {
+    "0": 1,
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": 5,
+    "5": null,
+    "6": 7,
+    "7": null,
+    "8": 9
+  },
+  "dawn_dispatch": {
+    "7": "0x10A9D0(instance,owner,target,alternate): chain bolt, hop children send mask0x11 subtype0x54 amount10 to each hop target",
+    "58": "0x10519C(instance,owner,target,alternate,1,4): selector4 -> impact5 -> one mask0x11 subtype0x3A amount10 request, source owner"
+  },
+  "code": [
+    {
+      "start": "0x10a1d8",
+      "end": "0x10a32e",
+      "sha256": "bb59accaf59686f8d46ee35358ffe5de2a4f4bd9f210b52bcd67eaac431c4bb1"
+    },
+    {
+      "start": "0x105a40",
+      "end": "0x105be6",
+      "sha256": "e8ae24313f56390e6def34d5fab15f4c68464182c8b6ec4fd01ba9797efefbda"
+    },
+    {
+      "start": "0x105620",
+      "end": "0x105644",
+      "sha256": "8b8321aee600e84f93d9f878df9c4ce0d1c7e0f80b9f45b8582466e4f82f948f"
+    },
+    {
+      "start": "0x10592c",
+      "end": "0x105950",
+      "sha256": "88e918bf34bbc88bb708a62a398be8c7a5b4ca4790e5b6bf3c6afe3cbad38475"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "regions": [
+    303,
+    302,
+    301,
+    300,
+    289,
+    793,
+    799,
+    798,
+    797,
+    796,
+    795,
+    794,
+    1216
+  ],
+  "points": [
+    [
+      -2565.0,
+      -7291.0
+    ],
+    [
+      -2564.0,
+      -7188.0
+    ],
+    [
+      -2566.5,
+      -7126.0
+    ],
+    [
+      -2572.5,
+      -7064.0
+    ],
+    [
+      -2573.0,
+      -7043.0
+    ],
+    [
+      -2572.5,
+      -6974.5
+    ],
+    [
+      -2566.5,
+      -6919.5
+    ],
+    [
+      -2550.5,
+      -6886.5
+    ],
+    [
+      -2524.0,
+      -6841.0
+    ],
+    [
+      -2491.0,
+      -6797.0
+    ],
+    [
+      -2437.5,
+      -6753.0
+    ],
+    [
+      -2384.0,
+      -6719.0
+    ],
+    [
+      -2230,
+      -6720
+    ]
+  ],
+  "source_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "minimum_clearance": 47,
+  "minimum_portal_width": 32,
+  "scope": "Source neighbor BFS with standing-clearance and portal-width filters; capsule traversal, special connectors and native progression not established."
+}

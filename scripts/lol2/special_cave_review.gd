@@ -7,6 +7,8 @@ var layer_cameras: Array[Camera3D] = []
 var special_frames := 0
 var raw_views: Array[SubViewport] = []
 var occluder_pairs: Array = []
+## Source mesh -> occluder duplicate. Membership stays O(1); the pairs array remains for existing callers.
+var occluder_by_source: Dictionary = {}
 
 func _copy_occluders(node: Node) -> void:
 	if node is MeshInstance3D and node.layers == 2:
@@ -21,6 +23,7 @@ func _copy_occluders(node: Node) -> void:
 		add_child(duplicate)
 		duplicate.global_transform = original.global_transform
 		occluder_pairs.append([original, duplicate])
+		occluder_by_source[original] = duplicate
 	for child in node.get_children():
 		_copy_occluders(child)
 
@@ -39,6 +42,39 @@ func _plane(distance: float, extent: Vector2, offset: Vector2, layer: int, textu
 	add_child(mesh)
 	mesh.global_transform = camera.global_transform
 	mesh.global_position += camera.global_basis * Vector3(offset.x, offset.y, -distance)
+
+## Move and show the occluder and light duplicates of one source mesh.
+## A shared light material is compared by its current indices, so one mesh cannot
+## skip an upload that another mesh still needs.
+func sync_render_source(source: Node3D, texture: Texture2D = null) -> void:
+	if source == null or not is_instance_valid(source):
+		return
+	var show: bool = source.is_visible_in_tree()
+	var placed: Transform3D = source.global_transform
+	_apply_render_copy(occluder_by_source.get(source), show, placed, texture)
+	var lights: Variant = get("light_by_source")
+	if lights is Dictionary:
+		_apply_render_copy((lights as Dictionary).get(source), show, placed, texture)
+
+func _apply_render_copy(copy: Variant, show: bool, placed: Transform3D, texture: Texture2D) -> void:
+	if not (copy is Node3D):
+		return
+	var node: Node3D = copy as Node3D
+	if not is_instance_valid(node):
+		return
+	if node.visible != show:
+		node.visible = show
+	if node.global_transform != placed:
+		node.global_transform = placed
+	if texture == null or not (node is GeometryInstance3D):
+		return
+	var geom: GeometryInstance3D = node as GeometryInstance3D
+	var material: Material = geom.material_override
+	if not (material is ShaderMaterial):
+		return
+	var shader: ShaderMaterial = material as ShaderMaterial
+	if shader.get_shader_parameter("indices") != texture:
+		shader.set_shader_parameter("indices", texture)
 
 func _source_view(layer: int, occlusion: bool = true) -> SubViewport:
 	var view := SubViewport.new()

@@ -1,0 +1,44 @@
+{
+ "passed": true,
+ "rooms": {
+  "TEXT": {
+   "archive_sha256": "a2ba8ba8e18c5ebeaea51ec8e8c36eae865f839341b16b7597ece01272f51302",
+   "dll_sha256": "07ecefa5f1da675a2bff081ae479b65be34813f35415ac9b83557fa859db625d",
+   "host_calls": 10,
+   "requests": 0,
+   "resolved": 0,
+   "replies": 0,
+   "unnamed": 1
+  },
+  "TCEL": {
+   "archive_sha256": "27614f82095f3319344c8e4dcccdfe5be7ceeb1d2aa0f6b0dd06ae4c04b4be5d",
+   "dll_sha256": "181ad6810dbb8ae32fce750fe3a6f8f26eb7d9c5883f3867b3837bacff6fdd36",
+   "host_calls": 31,
+   "requests": 1,
+   "resolved": 1,
+   "replies": 0,
+   "unnamed": 1
+  },
+  "TDOOR": {
+   "archive_sha256": "36672526f1295e3ed86f01eee167f883e76d4d12ed976262c1c5048ed75f23f0",
+   "dll_sha256": "11ac45ff5aca64eac8da913e5d9d16a6ca254b36be75d0c85042653d2b2f49c3",
+   "host_calls": 39,
+   "requests": 6,
+   "resolved": 6,
+   "replies": 0,
+   "unnamed": 3
+  },
+  "TINT": {
+   "archive_sha256": "838c78763aabeb13c48bcfb4ec2804423a333eba535f9c0371c884af7a89c37f",
+   "dll_sha256": "3dd5753ac195d430d286c440d69cde4d5d37f65af8f62ece90a78893339f2bc7",
+   "host_calls": 211,
+   "requests": 67,
+   "resolved": 67,
+   "replies": 19,
+   "unnamed": 2
+  }
+ },
+ "source": "scripts/lol2/thieves_den_source.json",
+ "source_sha256": "9bc782058f0b3e64380a8788b91f8ded338f5e303dc43c07da3270a98071744e",
+ "scope": "Static read of the four den DLLs: slot bindings through LOLG.DAT fixups, dispatcher targets, every host call with literal arguments per callback, hotspot/shape/actor geometry, placements, flag/global/local/item names and media requests resolved to pinned archive entries. Control flow (branch conditions) is documented in docs/thieves-den.md from the listings; it is not replayed here."
+}

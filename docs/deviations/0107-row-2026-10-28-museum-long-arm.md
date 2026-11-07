@@ -1,0 +1,1 @@
+| 2026-10-28 | Museum Long arm | The lead's closed-passage78 refusal (2026-10-09) is now an Enhanced Edition guard only (`--enhanced`); Classic lets the axe be taken before the Sk key opens lock78, as the original does, with a My Journal hint (museum_long_arm_state.gd JOURNAL_HINTS). | Owner 2026-10-28: Classic native + hint, Enhanced guard. | approved (owner 2026-10-28) |

@@ -1,0 +1,719 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "aloe": {
+  "identity": 3218984099,
+  "name": "107-Aloe",
+  "definition": 109,
+  "handler": 9
+ },
+ "sap": {
+  "identity": 1690340112,
+  "name": "109-Ironwod sap",
+  "definition": 111,
+  "handler": 98
+ },
+ "plants": {
+  "254": {
+   "use": {
+    "0": 4968,
+    "1": 5006,
+    "2": 5052
+   },
+   "timers": [
+    {
+     "group": 5106,
+     "predicate": "0005000001",
+     "commands": [
+      "0e03fe0004000000",
+      "1003fe000000",
+      "0503fe000000"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 5132,
+     "predicate": "0005000002",
+     "commands": [
+      "0e03fe0004000100",
+      "1003fe000100",
+      "0503fe000100"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 5158,
+     "predicate": "0005000003",
+     "commands": [
+      "0e03fe0004000200",
+      "1003fe000200",
+      "0503fe000200"
+     ],
+     "period_seconds": 900.0
+    }
+   ],
+   "position": [
+    3354,
+    -170,
+    -2996
+   ],
+   "region": 2236
+  },
+  "255": {
+   "use": {
+    "0": 5184,
+    "1": 5222,
+    "2": 5268
+   },
+   "timers": [
+    {
+     "group": 5322,
+     "predicate": "0005000001",
+     "commands": [
+      "0e03ff0004000000",
+      "1003ff000000",
+      "0503ff000000"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 5348,
+     "predicate": "0005000002",
+     "commands": [
+      "0e03ff0004000100",
+      "1003ff000100",
+      "0503ff000100"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 5374,
+     "predicate": "0005000003",
+     "commands": [
+      "0e03ff0004000200",
+      "1003ff000200",
+      "0503ff000200"
+     ],
+     "period_seconds": 900.0
+    }
+   ],
+   "position": [
+    3440,
+    -170,
+    -3051
+   ],
+   "region": 2236
+  },
+  "256": {
+   "use": {
+    "0": 5400,
+    "1": 5438,
+    "2": 5484
+   },
+   "timers": [
+    {
+     "group": 5538,
+     "predicate": "0005000001",
+     "commands": [
+      "0e03000104000000",
+      "100300010000",
+      "050300010000"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 5564,
+     "predicate": "0005000002",
+     "commands": [
+      "0e03000104000100",
+      "100300010100",
+      "050300010100"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 5590,
+     "predicate": "0005000003",
+     "commands": [
+      "0e03000104000200",
+      "100300010200",
+      "050300010200"
+     ],
+     "period_seconds": 900.0
+    }
+   ],
+   "position": [
+    -3987,
+    0,
+    -2348
+   ],
+   "region": 1509
+  },
+  "257": {
+   "use": {
+    "0": 5616,
+    "1": 5654,
+    "2": 5700
+   },
+   "timers": [
+    {
+     "group": 5754,
+     "predicate": "0005000001",
+     "commands": [
+      "0e03010104000000",
+      "100301010000",
+      "050301010000"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 5780,
+     "predicate": "0005000002",
+     "commands": [
+      "0e03010104000100",
+      "100301010100",
+      "050301010100"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 5806,
+     "predicate": "0005000003",
+     "commands": [
+      "0e03010104000200",
+      "100301010200",
+      "050301010200"
+     ],
+     "period_seconds": 900.0
+    }
+   ],
+   "position": [
+    -1212,
+    30,
+    1313
+   ],
+   "region": 2507
+  },
+  "258": {
+   "use": {
+    "0": 5832,
+    "1": 5870,
+    "2": 5916
+   },
+   "timers": [
+    {
+     "group": 5970,
+     "predicate": "0005000001",
+     "commands": [
+      "0e03020104000000",
+      "100302010000",
+      "050302010000"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 5996,
+     "predicate": "0005000002",
+     "commands": [
+      "0e03020104000100",
+      "100302010100",
+      "050302010100"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 6022,
+     "predicate": "0005000003",
+     "commands": [
+      "0e03020104000200",
+      "100302010200",
+      "050302010200"
+     ],
+     "period_seconds": 900.0
+    }
+   ],
+   "position": [
+    -3446,
+    0,
+    -827
+   ],
+   "region": 2320
+  },
+  "259": {
+   "use": {
+    "0": 6048,
+    "1": 6086,
+    "2": 6132
+   },
+   "timers": [
+    {
+     "group": 6186,
+     "predicate": "0005000001",
+     "commands": [
+      "0e03030104000000",
+      "100303010000",
+      "050303010000"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 6212,
+     "predicate": "0005000002",
+     "commands": [
+      "0e03030104000100",
+      "100303010100",
+      "050303010100"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 6238,
+     "predicate": "0005000003",
+     "commands": [
+      "0e03030104000200",
+      "100303010200",
+      "050303010200"
+     ],
+     "period_seconds": 900.0
+    }
+   ],
+   "position": [
+    2253,
+    0,
+    1549
+   ],
+   "region": 3056
+  },
+  "260": {
+   "use": {
+    "0": 6264,
+    "1": 6302,
+    "2": 6348
+   },
+   "timers": [
+    {
+     "group": 6402,
+     "predicate": "0005000001",
+     "commands": [
+      "0e03040104000000",
+      "100304010000",
+      "050304010000"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 6428,
+     "predicate": "0005000002",
+     "commands": [
+      "0e03040104000100",
+      "100304010100",
+      "050304010100"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 6454,
+     "predicate": "0005000003",
+     "commands": [
+      "0e03040104000200",
+      "100304010200",
+      "050304010200"
+     ],
+     "period_seconds": 900.0
+    }
+   ],
+   "position": [
+    -2529,
+    0,
+    -5017
+   ],
+   "region": 417
+  },
+  "311": {
+   "use": {
+    "0": 9834,
+    "1": 9872,
+    "2": 9918
+   },
+   "timers": [
+    {
+     "group": 9972,
+     "predicate": "0005000001",
+     "commands": [
+      "0e03370104000000",
+      "100337010000",
+      "050337010000"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 9998,
+     "predicate": "0005000002",
+     "commands": [
+      "0e03370104000100",
+      "100337010100",
+      "050337010100"
+     ],
+     "period_seconds": 900.0
+    },
+    {
+     "group": 10024,
+     "predicate": "0005000003",
+     "commands": [
+      "0e03370104000200",
+      "100337010200",
+      "050337010200"
+     ],
+     "period_seconds": 900.0
+    }
+   ],
+   "position": [
+    -1808,
+    0,
+    -1194
+   ],
+   "region": 1435
+  }
+ },
+ "trees": {
+  "261": {
+   "hit": {
+    "group": 6480,
+    "mask0": 270,
+    "mask2": 4,
+    "mode": 4,
+    "threshold": 3
+   },
+   "use": {
+    "1": 6504,
+    "2": 6536,
+    "3": 6568
+   },
+   "animation_end": 6600,
+   "timer": {
+    "group": 6620,
+    "predicate": "0405000000",
+    "commands": [
+     "11030501ff00"
+    ],
+    "period_seconds": 1080.0
+   },
+   "position": [
+    -2272,
+    0,
+    310
+   ],
+   "region": 2109
+  },
+  "262": {
+   "hit": {
+    "group": 6626,
+    "mask0": 270,
+    "mask2": 4,
+    "mode": 4,
+    "threshold": 3
+   },
+   "use": {
+    "1": 6650,
+    "2": 6682,
+    "3": 6714
+   },
+   "animation_end": 6746,
+   "timer": {
+    "group": 6766,
+    "predicate": "0405000000",
+    "commands": [
+     "11030601ff00"
+    ],
+    "period_seconds": 1080.0
+   },
+   "position": [
+    1929,
+    0,
+    1075
+   ],
+   "region": 2975
+  },
+  "263": {
+   "hit": {
+    "group": 6772,
+    "mask0": 270,
+    "mask2": 4,
+    "mode": 4,
+    "threshold": 3
+   },
+   "use": {
+    "1": 6796,
+    "2": 6828,
+    "3": 6860
+   },
+   "animation_end": 6892,
+   "timer": {
+    "group": 6912,
+    "predicate": "0405000000",
+    "commands": [
+     "11030701ff00"
+    ],
+    "period_seconds": 1080.0
+   },
+   "position": [
+    -4486,
+    0,
+    -3721
+   ],
+   "region": 2561
+  },
+  "264": {
+   "hit": {
+    "group": 6918,
+    "mask0": 270,
+    "mask2": 4,
+    "mode": 4,
+    "threshold": 3
+   },
+   "use": {
+    "1": 6942,
+    "2": 6974,
+    "3": 7006
+   },
+   "animation_end": 7038,
+   "timer": {
+    "group": 7058,
+    "predicate": "0405000000",
+    "commands": [
+     "11030801ff00"
+    ],
+    "period_seconds": 1080.0
+   },
+   "position": [
+    912,
+    0,
+    -2271
+   ],
+   "region": 1265
+  },
+  "265": {
+   "hit": {
+    "group": 7064,
+    "mask0": 270,
+    "mask2": 4,
+    "mode": 4,
+    "threshold": 3
+   },
+   "use": {
+    "1": 7088,
+    "2": 7120,
+    "3": 7152
+   },
+   "animation_end": 7184,
+   "timer": {
+    "group": 7204,
+    "predicate": "0405000000",
+    "commands": [
+     "11030901ff00"
+    ],
+    "period_seconds": 1080.0
+   },
+   "position": [
+    2044,
+    0,
+    1173
+   ],
+   "region": 2974
+  },
+  "266": {
+   "hit": {
+    "group": 7210,
+    "mask0": 270,
+    "mask2": 4,
+    "mode": 4,
+    "threshold": 3
+   },
+   "use": {
+    "1": 7234,
+    "2": 7266,
+    "3": 7298
+   },
+   "animation_end": 7330,
+   "timer": {
+    "group": 7350,
+    "predicate": "0405000000",
+    "commands": [
+     "11030a01ff00"
+    ],
+    "period_seconds": 1080.0
+   },
+   "position": [
+    -584,
+    0,
+    -3802
+   ],
+   "region": 588
+  },
+  "267": {
+   "hit": {
+    "group": 7356,
+    "mask0": 270,
+    "mask2": 4,
+    "mode": 4,
+    "threshold": 3
+   },
+   "use": {
+    "1": 7380,
+    "2": 7412,
+    "3": 7444
+   },
+   "animation_end": 7476,
+   "timer": {
+    "group": 7496,
+    "predicate": "0405000000",
+    "commands": [
+     "11030b01ff00"
+    ],
+    "period_seconds": 1080.0
+   },
+   "position": [
+    -2376,
+    0,
+    270
+   ],
+   "region": 2109
+  },
+  "310": {
+   "hit": {
+    "group": 9688,
+    "mask0": 270,
+    "mask2": 4,
+    "mode": 4,
+    "threshold": 3
+   },
+   "use": {
+    "1": 9712,
+    "2": 9744,
+    "3": 9776
+   },
+   "animation_end": 9808,
+   "timer": {
+    "group": 9828,
+    "predicate": "0405000000",
+    "commands": [
+     "11033601ff00"
+    ],
+    "period_seconds": 1080.0
+   },
+   "position": [
+    -603,
+    30,
+    1412
+   ],
+   "region": 2488
+  }
+ },
+ "single": {
+  "1464": {
+   "use": 15580,
+   "hit": {
+    "group": 15604,
+    "mode": 1,
+    "threshold": 1,
+    "one_shot": true,
+    "sound_command": "1403b8059f023c000a14"
+   },
+   "position": [
+    -1627,
+    0,
+    -4224
+   ],
+   "region": 3262
+  }
+ },
+ "art": {
+  "plant": [
+   {
+    "selector": 0,
+    "descriptor": 669,
+    "image": "plant_0.png",
+    "left": -56.0,
+    "right": 56.0,
+    "sha256": "1b94793d70bd769e219471cb0e3602261e9fc48fd0c5e09b469537cdfd45cd89"
+   },
+   {
+    "selector": 1,
+    "descriptor": 670,
+    "image": "plant_1.png",
+    "left": -56.0,
+    "right": 56.0,
+    "sha256": "44d5aec442b5233857100582e754dc650f21a5afe54a890b538a569c9689dc4b"
+   },
+   {
+    "selector": 2,
+    "descriptor": 671,
+    "image": "plant_2.png",
+    "left": -56.0,
+    "right": 56.0,
+    "sha256": "97f5397c905c8c98586809bf17e33efd55d91310b7585318a8e75a78478e86d8"
+   },
+   {
+    "selector": 3,
+    "descriptor": 672,
+    "image": "plant_3.png",
+    "left": -56.0,
+    "right": 56.0,
+    "sha256": "e9aa283431ca7989ec42ea49bdb42a5b6a130178ef22381147905d6d384c90ef"
+   }
+  ],
+  "tree": [
+   {
+    "selector": 0,
+    "descriptor": 668,
+    "image": "tree_0.png",
+    "left": -57.5,
+    "right": 57.5,
+    "sha256": "fc02c00f9acc4d3d354f3ce2cb3ac6fef8ef609b8a2d2fb1af937c90bd1ce8ee"
+   },
+   {
+    "selector": 1,
+    "descriptor": 658,
+    "image": "tree_1.png",
+    "left": -57.5,
+    "right": 57.5,
+    "sha256": "c139b18c8e3282373a60e2c189e69b499ebefb155ed3ea340898b748253fc0e5"
+   }
+  ],
+  "single": [
+   {
+    "selector": 0,
+    "descriptor": 110,
+    "image": "single_0.png",
+    "left": -11.5,
+    "right": 14.5,
+    "sha256": "91e83534a75aaadb093de0f857860dfc8b585365676bb0508bc1c2fe056770cc"
+   },
+   {
+    "selector": 1,
+    "descriptor": 70,
+    "image": "single_1.png",
+    "left": -13.5,
+    "right": 14.5,
+    "sha256": "9008b5ee7d2249a12c2a77f98751deb1a910d5485c3900d5fd30f1f2bb3e21ec"
+   }
+  ]
+ },
+ "ticks_per_second": 60,
+ "adapters": [
+  "E with an empty hand at an aimed, reachable, unoccluded plant or tree is the kind4 mode0 producer",
+  "an armed melee strike (context masks 2/4, damage>=1) is the kind9 producer for trees and prop1464; Spark (1/1) does not match the tree masks and is not hosted for prop1464",
+  "tree event3 (animation end) at state0 is applied as soon as the timer returns a tree to state0 (single-frame selectors; native event3 timing not replayed)",
+  "timers run on the active Jungle world clock at 60 ticks/s (consistent with every record counter = minutes*60*60)",
+  "op7 and the prop1464 op20 sound are presentation (not hosted)"
+ ],
+ "pools": {
+  "aloe": 27,
+  "sap": 24
+ }
+}

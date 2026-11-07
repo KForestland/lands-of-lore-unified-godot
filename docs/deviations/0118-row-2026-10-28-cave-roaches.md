@@ -1,0 +1,1 @@
+| 2026-10-28 | Cave Roaches | Wander/scurry movement is an adapter (native action-0 movement untraced): random-heading legs 0.8-2.4 s at the pursuit speed 42 with 0.5-1.5 s pauses, seeded per actor, 160-unit leash around the spawn, ledge check kept; Flee moves straight away from the player. Legs are not saved. | Owner "scurrying around". | pending |

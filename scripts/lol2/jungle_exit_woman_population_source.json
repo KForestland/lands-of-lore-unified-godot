@@ -1,0 +1,89 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L4_HJ.MIX",
+  "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "geometry_key": 3710797084,
+  "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba"
+ },
+ "actors": [
+  {
+   "actor": 0,
+   "definition": 6,
+   "position": [
+    5874,
+    -114,
+    -3778
+   ],
+   "heading": 50790,
+   "health": 100,
+   "behavior": 3,
+   "flags": 13698,
+   "present": false,
+   "loot": null,
+   "reward_scale": 0
+  },
+  {
+   "actor": 66,
+   "definition": 6,
+   "position": [
+    5874,
+    -114,
+    -3779
+   ],
+   "heading": 49516,
+   "health": 100,
+   "behavior": 3,
+   "flags": 13698,
+   "present": false,
+   "loot": null,
+   "reward_scale": 0
+  }
+ ],
+ "definitions": {
+  "6": {
+   "name": "L4WW",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 16
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 12
+    },
+    "rise": {
+     "selector": 4,
+     "frames": 9
+    },
+    "death": {
+     "selector": 0,
+     "frames": 1
+    },
+    "corpse": {
+     "selector": 0,
+     "frames": 1
+    },
+    "attacks": []
+   }
+  }
+ },
+ "native_bases": {
+  "L4WW": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "e737ecb733da98913413a28c577bd421175619d7a81a2d13693b5e4827d223ed"
+  }
+ },
+ "regions": [],
+ "neighbour_wake": {},
+ "counted": [],
+ "counter_target": 0,
+ "scripted_dormant": [
+  0,
+  66
+ ],
+ "dormant_pose": "idle",
+ "note": "Post-conversation goal3 presence only; no attack strip hit events; death/corpse use the idle frame."
+}

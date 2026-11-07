@@ -1,0 +1,12 @@
+{
+ "name": "walkthrough_save_integration",
+ "suite": "core",
+ "mode": "headless",
+ "order": 579,
+ "needs": {
+  "fixtures": [
+   "isolated user data (project.godot config/use_custom_user_dir)"
+  ],
+  "chain": "two processes --restart-write then --restart-read in one isolated user dir"
+ }
+}

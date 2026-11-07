@@ -1,0 +1,33 @@
+{
+  "archive": "LOCALLNG.MIX",
+  "archive_sha256": "113a35353cac0344db298616ea4eff9fd254ab83494079ce7777560b655ee2d8",
+  "entry": {
+    "index": 4,
+    "key": 1570429112,
+    "offset": 3396744,
+    "size": 25010232
+  },
+  "request_id": 920,
+  "original_filename": "0935001e.aud",
+  "original_label": "Glad_Hey_you",
+  "metadata_entry_offset": 24993884,
+  "metadata_hex": "893f2601bb8c00004fa6a4030000000030393335303031652e61756400222276476c61645f4865795f796f7500655f7269736573009eff0050500a00",
+  "payload_entry_offset": 19283849,
+  "payload_size": 36027,
+  "payload_sha256": "f2f006b510e8ec3bccb62d9436bc513f3f68939b4c51ad36a964e606421fb11b",
+  "sample_rate": 22050,
+  "channels": 1,
+  "sample_width": 2,
+  "samples": 70910,
+  "duration_seconds": 3.215873015873016,
+  "chunks": 70,
+  "declared_output_bytes": 141822,
+  "decoded_output_bytes": 141820,
+  "decoder_diagnostics": [
+    "Error during demuxing: Input/output error",
+    "Error retrieving a packet from demuxer: Input/output error"
+  ],
+  "pcm_sha256": "8b0f0d49031f5a451916f5809ed739c3cdf022aae1cc1055a9f3b805f55566dd",
+  "wav_sha256": "194183c3c76cf1c775e294aaf01e68b5fcefd91a9ea76fe44b650fdd21413e08",
+  "scope": "Original labelled warning voice matched to user-observed Hey, you! bridge headfake. Native bridge trigger binding not established. FFmpeg IMA-ADPCM decode; source declares one more sample than encoded nibbles supply. No padding applied. Existing Python AUD decoder has different rounding and is not used here."
+}

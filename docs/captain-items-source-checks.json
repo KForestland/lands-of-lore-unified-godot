@@ -1,0 +1,32 @@
+{
+  "definitions_sha256": "b399b5c8bfea3597293a3237f30f45985efa2dd88d2dc29d5d18ca7488f60891",
+  "graphics_sha256": "36e0d2a0e843126e28d60411ea3e67b3db2f8ea6185bcd6d520271790736ad93",
+  "items": {
+    "cave:captain:Short_Sword": {
+      "name": "5-Short swd",
+      "label": "Short Sword",
+      "definition": 4,
+      "resource": 271,
+      "icon": "res://assets/lol2/generated/cave_captain_items/Short_Sword.png",
+      "defense": 0,
+      "definition_hex": "00000000000000000000000000000000000000000000000026119ae206000000b800388324e451ff0006362a32010100000f04002400000802130102000400440a0000002d01060000000000000000000000000000000000000000",
+      "pixels_sha256": "bc750170b5ae18dcca31f433187664f636d69980677fbbaa03ef55d8073dbb61"
+    },
+    "cave:captain:Burnt_Chain": {
+      "name": "37-Brnt Chain",
+      "label": "Burnt Chain",
+      "definition": 36,
+      "resource": 289,
+      "icon": "res://assets/lol2/generated/cave_captain_items/Burnt_Chain.png",
+      "defense": 8,
+      "definition_hex": "0000000000000000000000000000000000000000000000005744fe650b0047004c00388324e451ff000b2a1b64000100000f04002400004b0126010000000060000800000000000602010008000400010000000000020000000000",
+      "pixels_sha256": "5894333cf5465bdc474dfcfbf61ab7a44f027c3f72c0d510c4be739b18906467"
+    }
+  },
+  "armor_scalars": {
+    "Burnt_Chain": 8,
+    "Mail_Shirt": 20,
+    "Gargoyle_Bracers": 5
+  },
+  "scope": "Exact source captain kind4 player grants; original icon decode. Equipped armor contribution byte+0x41 shares verified native six-slot defense sum (verify_gargoyle_bracers.py). Weapon uses existing playable melee adapter; not a native sword damage claim."
+}

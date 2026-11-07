@@ -1,0 +1,68 @@
+{
+ "source_sha256": "3eff07430a453d2c6f09133f869874e0530af1b6a3bfff7f4297761b96a28bc2",
+ "objects": [
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 13466698,
+     "group": 11612,
+     "kind": 6,
+     "offset": 4380,
+     "predicate": {
+      "entry_file_offset": 13701409,
+      "entry_hex": "00030d0001",
+      "index": 136,
+      "trailer_file_offset": 13466704,
+      "trailer_hex": "04138800"
+     },
+     "raw_hex": "06065c2d1400",
+     "stream": 1,
+     "value": 20
+    },
+    {
+     "file_offset": 13466704,
+     "kind": 19,
+     "offset": 4386,
+     "raw_hex": "04138800"
+    }
+   ],
+   "file_offset": 13514670,
+   "index": 1198,
+   "list_file_offset": 13466698,
+   "list_offset": 4380,
+   "placement_hex": "f60202f8000000008204e9051c1100800a8000000100000000000000000000001200000003",
+   "ref": "prop:1198",
+   "table": "prop",
+   "terminator_offset": 4390
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 13452100,
+     "kind": 1,
+     "offset": 11618,
+     "opcode": 2,
+     "raw_hex": "020100001c2e",
+     "target": 0
+    },
+    {
+     "file_offset": 13452106,
+     "kind": 0,
+     "offset": 11624,
+     "opcode": 198,
+     "raw_hex": "c60000000d00",
+     "target": 0
+    }
+   ],
+   "count": 2,
+   "file_offset": 13452094,
+   "group": 11612,
+   "header_hex": "f00000000200",
+   "raw_hex": "f00000000200020100001c2ec60000000d00",
+   "stream": 1
+  }
+ ]
+}

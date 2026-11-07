@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "inputs": 281,
+  "partial_clips": 43,
+  "identical_rgb_frames": 9809,
+  "frame_count_mismatches": [],
+  "missing_inner_padding": [],
+  "after_hashes": {
+    "tools/vqa_v2_decode.py": "b7b22ab37dc8bfd7992a4b84ce475547b4cb39e03ec491ba9e20a3e5aaaeb102",
+    "tests/test_vqa_v2_decode.py": "55edac7148ccf3eb3ba158b223cb3e2262695a6efbacac3464ebef5a67ec44c6",
+    "tools/verify_vqa_partial_codebooks.py": "688a5e676832490c9ecff3a16e25e810de573378efed9b878927d66fc3b561f2",
+    "tools/verify_vqa_vqfl_cause.py": "eed660a7f01ec0d1f5d587b5b90c701b4e40d48ac97bcb95d84b39164108f83a",
+    "tools/_vqfl_ffmpeg_model.py": "af303a05a32d5a4b11948e6a4c6b2b241a1d4b40eb1ef9a99079c99bcd08222e",
+    "tools/_vqfl_seek_check.py": "c4b5dee177f0f61d5cc657e6c63d042fcd25793d29aee1479de0154f00c285c7",
+    "tools/prepare_jungle_exit_movies.py": "4249de9dc34350b1b37e6de4ba6df2fcb7cc310eb4206d91df5a4e2d838cd206",
+    "tools/prepare_departure_playback.py": "0331bebbf405789c7b946b95d4bdb6fdca3ae590ef77c04a7301c5918e461d89",
+    "tools/prepare_hive_ancient_stone.py": "4952ac0491a51dc6a59e33f578a81143e2d6c14b920874404cb7f1b1314dba4a",
+    "tools/prepare_jungle_village_dialogue.py": "0a1bfd87a212b1aa0f5fecf03a93629d5e59fd16469be4213c750557332a21be",
+    "tools/prepare_jungle_followup_dialogue.py": "d679692fda7cfce411ef991a0627fcec0e6719537d74e2eecdf02c7efddb7d91",
+    "tests/vqa_partial_codebook_media_test.gd": "5e20ad0ade965cc1fc043220260ff485ab955e0df2a3bd1cfeb47364402b37cf"
+  },
+  "asset_free_tests": 8,
+  "media_test": "PASS/source_stable",
+  "limits": [
+    "Python reimplementation, not original-code execution.",
+    "Non-partial compressed payloads delegated to FFmpeg; classification validates container/header/frame count.",
+    "No general decoder conformance claim."
+  ],
+  "causal_rerun": {
+    "ffmpeg_model": {
+      "clips": 43,
+      "frames": 9809,
+      "ffmpeg_model_exact": 9807,
+      "decoder_differs": 426,
+      "decoder_differs_explained": 424,
+      "clips_with_vqfl": 12
+    },
+    "vqfl_seek_snapshots": {
+      "consistent": 58,
+      "inconsistent": 0,
+      "clips": 12
+    }
+  }
+}

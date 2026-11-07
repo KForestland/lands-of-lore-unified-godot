@@ -1,0 +1,162 @@
+{
+ "source": {
+  "file": "DAT/L9_DR.MIX",
+  "geometry_entry_offset": 22719810,
+  "geometry_entry_size": 823367,
+  "geometry_key": 3511575868,
+  "geometry_sha256": "bfb777c68921591ff1f1f6dd47a7f2aa858de939da55c913eccd4a6615180692",
+  "sha256": "700300d0cdf7df0af9471f3476c4e6ba473a603fa89e3a6e1855037d70be09c7"
+ },
+ "objects": [
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 23249618,
+     "group": 17302,
+     "kind": 5,
+     "offset": 8376,
+     "predicate": null,
+     "raw_hex": "060596430100",
+     "stream": 1,
+     "value": 1
+    }
+   ],
+   "file_offset": 23367406,
+   "index": 478,
+   "list_file_offset": 23249618,
+   "list_offset": 8376,
+   "placement_hex": "7903c51500007d008104f211b8207f000000000001000000000000003400a40016",
+   "ref": "control:478",
+   "table": "control",
+   "terminator_offset": 8382
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 23249626,
+     "group": 17320,
+     "kind": 5,
+     "offset": 8384,
+     "predicate": null,
+     "raw_hex": "0605a8430100",
+     "stream": 1,
+     "value": 1
+    }
+   ],
+   "file_offset": 23367439,
+   "index": 479,
+   "list_file_offset": 23249626,
+   "list_offset": 8384,
+   "placement_hex": "8501c51500007d008104f711c0207f000000000001000000000000003400a40016",
+   "ref": "control:479",
+   "table": "control",
+   "terminator_offset": 8390
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 23249634,
+     "group": 17338,
+     "kind": 5,
+     "offset": 8392,
+     "predicate": null,
+     "raw_hex": "0605ba430100",
+     "stream": 1,
+     "value": 1
+    }
+   ],
+   "file_offset": 23367472,
+   "index": 480,
+   "list_file_offset": 23249634,
+   "list_offset": 8392,
+   "placement_hex": "7f02c51500007d008104f011c8207f000000000001000000000000003400a40016",
+   "ref": "control:480",
+   "table": "control",
+   "terminator_offset": 8398
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 23237642,
+     "kind": 16,
+     "offset": 17308,
+     "opcode": 9,
+     "raw_hex": "0910de010b00",
+     "target": 478
+    },
+    {
+     "file_offset": 23237648,
+     "kind": 16,
+     "offset": 17314,
+     "opcode": 5,
+     "raw_hex": "0510de010100",
+     "target": 478
+    }
+   ],
+   "count": 2,
+   "file_offset": 23237636,
+   "group": 17302,
+   "header_hex": "f00000000200",
+   "raw_hex": "f000000002000910de010b000510de010100",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 23237660,
+     "kind": 16,
+     "offset": 17326,
+     "opcode": 9,
+     "raw_hex": "0910df010b00",
+     "target": 479
+    },
+    {
+     "file_offset": 23237666,
+     "kind": 16,
+     "offset": 17332,
+     "opcode": 5,
+     "raw_hex": "0510df010100",
+     "target": 479
+    }
+   ],
+   "count": 2,
+   "file_offset": 23237654,
+   "group": 17320,
+   "header_hex": "f00000000200",
+   "raw_hex": "f000000002000910df010b000510df010100",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 23237678,
+     "kind": 16,
+     "offset": 17344,
+     "opcode": 9,
+     "raw_hex": "0910e0010b00",
+     "target": 480
+    },
+    {
+     "file_offset": 23237684,
+     "kind": 16,
+     "offset": 17350,
+     "opcode": 5,
+     "raw_hex": "0510e0010100",
+     "target": 480
+    }
+   ],
+   "count": 2,
+   "file_offset": 23237672,
+   "group": 17338,
+   "header_hex": "f00000000200",
+   "raw_hex": "f000000002000910e0010b000510e0010100",
+   "stream": 1
+  }
+ ],
+ "scope": "Original source hit events select broken mode1. Opcode9 byte0b and native melee admission remain UNKNOWN; modern aimed strike and save state own the consequence."
+}

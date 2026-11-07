@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "provenance": {
+    "report": "docs/hive-perception-definition.json",
+    "report_sha256": "c056a10a9873542ad33ebd0635fcf4d0d77f5121014b6ba935121be07b3b0284",
+    "producer": "tools/verify_hive_perception_definition.py",
+    "producer_sha256": "1816a05dbd2ff35b314db4a71ab41a5c30f0d01dd300c731645371cae891b12c",
+    "capture_files": {
+      "init.jsonl": "d128447ff9f0cc36492412af18fbf22c02fb9cf2367d0b95ca14a85202873d2d",
+      "ai.jsonl": "4ee75152c5c244d62798313878c0fc8b9460acf9c85e8b85acb0b21154af53ae"
+    },
+    "samples": 496,
+    "scope": "Observed Executioner definition in496 paired DONE samples, mapped through37 construction indices. Does not establish loader semantics or mutable definition behavior outside capture."
+  },
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "packet": {
+    "version": 1,
+    "actor": 36,
+    "definition": {
+      "near_range": 400,
+      "falloff": 200,
+      "angle": 32768,
+      "ranges": [
+        10,
+        10,
+        0,
+        0,
+        250,
+        500
+      ]
+    }
+  }
+}

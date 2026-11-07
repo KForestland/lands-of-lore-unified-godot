@@ -1,0 +1,51 @@
+{
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "regions": [
+    {
+      "id": 10,
+      "raw_hex": "000000006a0409000b000700e109d809e809e90975fe59ff0200240303020480056400640000010000000000",
+      "archive_offset": 7146927,
+      "flags": 3
+    },
+    {
+      "id": 29,
+      "raw_hex": "0000000012006d041c001700220ad809d209210a75fe59ff02008908230302611e0000640000010000000000",
+      "archive_offset": 7147763,
+      "flags": 35
+    }
+  ],
+  "timer": {
+    "placement": "5301854200000eff83042f00960c038203e3fe05002700e70900020161000f002a00000003",
+    "position": [
+      339,
+      -242,
+      -17029
+    ],
+    "record_hex": "0a02ba13300102007800",
+    "archive_offset": 7250755,
+    "initial_countdown": 120,
+    "request": 323
+  },
+  "audio": {
+    "323": {
+      "name": "0230324e.aud",
+      "rate": 22050,
+      "samples": 31744,
+      "duration": 1.4396371882086167,
+      "chunks": 31,
+      "audio_sha256": "b23d34efb0ba01043cde364a145594bbac3eece368cc112556dc5ea1d54a82e6",
+      "pcm_sha256": "55d44b97f10e1eef338f161e7e9504d7529b59179368d77decab85d4a0647bd4",
+      "wav_sha256": "8c5b0cb046f2f6480b39f3db2872a49ee928416d5a2ee0ad1a94189138a47e48",
+      "diagnostics": [
+        "Error during demuxing: Input/output error",
+        "Error retrieving a packet from demuxer: Input/output error"
+      ],
+      "path": "res://assets/lol2/generated/cave_guard_timer/323.wav"
+    }
+  }
+}

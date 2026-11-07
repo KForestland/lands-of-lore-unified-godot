@@ -1,0 +1,1 @@
+| 2026-11-06 | L20 faux-Draracle (STORY-091, draft) | E at actor 46 records a strike. Killed stays false. Keys 0, 1, and 2 record in that order after the strike. Doors stay at current travel. Actor 75 can be seen. No speech is stored. | HINTBOOK 5535-5546. Opcode 1 and opcode 14 were not entered. | Adapter (owner rule 2026-10-30) |

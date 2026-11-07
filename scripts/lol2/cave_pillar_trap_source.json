@@ -1,0 +1,1250 @@
+{
+ "version": 1,
+ "source": {
+  "area": "L1_DC",
+  "archive_sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345"
+ },
+ "art": {
+  "pillar": [
+   {
+    "selector": 0,
+    "frames": [
+     "11_0_index.png",
+     "11_1_index.png"
+    ],
+    "left": -6.5,
+    "right": 6.5,
+    "bottom": 0,
+    "top": 113
+   },
+   {
+    "selector": 1,
+    "frames": [
+     "13_0_index.png"
+    ],
+    "left": -5.5,
+    "right": 6.5,
+    "bottom": 0,
+    "top": 113
+   }
+  ],
+  "static": {
+   "frames": [
+    "15_0_index.png"
+   ],
+   "left": -5.5,
+   "right": 6.5,
+   "bottom": 0,
+   "top": 114
+  },
+  "stone": {
+   "frames": [
+    "419_0_index.png",
+    "419_1_index.png",
+    "419_2_index.png",
+    "419_3_index.png",
+    "419_4_index.png",
+    "419_5_index.png",
+    "419_6_index.png",
+    "419_7_index.png",
+    "419_8_index.png",
+    "419_9_index.png",
+    "419_10_index.png",
+    "419_11_index.png",
+    "419_12_index.png",
+    "419_13_index.png",
+    "419_14_index.png",
+    "419_15_index.png",
+    "419_16_index.png",
+    "419_17_index.png",
+    "419_18_index.png",
+    "419_19_index.png",
+    "419_20_index.png",
+    "419_21_index.png",
+    "419_22_index.png",
+    "419_23_index.png",
+    "419_24_index.png",
+    "419_25_index.png",
+    "419_26_index.png",
+    "419_27_index.png",
+    "419_28_index.png",
+    "419_29_index.png"
+   ],
+   "left": -12.0,
+   "right": 15.0,
+   "bottom": 0,
+   "top": 156
+  },
+  "rubble": "rubble_312_index.png"
+ },
+ "statics": {
+  "1213": {
+   "position": [
+    -535,
+    -220,
+    -10823
+   ],
+   "region": 0,
+   "left": -5.5,
+   "right": 6.5,
+   "bottom": 0,
+   "top": 100
+  },
+  "1214": {
+   "position": [
+    -535,
+    -220,
+    -11079
+   ],
+   "region": 1946,
+   "left": -5.5,
+   "right": 6.5,
+   "bottom": 0,
+   "top": 100
+  },
+  "1215": {
+   "position": [
+    -535,
+    -220,
+    -10694
+   ],
+   "region": 1948,
+   "left": -5.5,
+   "right": 6.5,
+   "bottom": 0,
+   "top": 100
+  },
+  "1216": {
+   "position": [
+    -417,
+    -220,
+    -10693
+   ],
+   "region": 1948,
+   "left": -5.5,
+   "right": 6.5,
+   "bottom": 0,
+   "top": 100
+  },
+  "1217": {
+   "position": [
+    -417,
+    -220,
+    -10823
+   ],
+   "region": 0,
+   "left": -5.5,
+   "right": 6.5,
+   "bottom": 0,
+   "top": 100
+  },
+  "1218": {
+   "position": [
+    -417,
+    -220,
+    -11204
+   ],
+   "region": 1945,
+   "left": -5.5,
+   "right": 6.5,
+   "bottom": 0,
+   "top": 100
+  }
+ },
+ "pillar": {
+  "id": 878,
+  "position": [
+   -535,
+   -220,
+   -11204
+  ],
+  "region": 1945,
+  "left": -6.5,
+  "right": 6.5,
+  "bottom": 0,
+  "top": 99,
+  "durability": 2,
+  "height": 114,
+  "depth": 8,
+  "records": [
+   {
+    "group": 8416,
+    "kind": 4,
+    "raw": "0a04e020000000000000",
+    "predicate": {
+     "op": "==",
+     "left": {
+      "owner_state": true
+     },
+     "right": {
+      "immediate": 0
+     },
+     "raw": "0005000000"
+    },
+    "commands": [
+     "14036e03bb0396111f0f",
+     "10036e030100",
+     "07036e030200",
+     "07036e030000"
+    ]
+   },
+   {
+    "group": 8450,
+    "kind": 6,
+    "raw": "06060221143c",
+    "predicate": null,
+    "commands": [
+     "14036e03bb0396001f0f",
+     "07036e030200",
+     "07036e030000"
+    ]
+   },
+   {
+    "group": 8478,
+    "kind": 9,
+    "raw": "0a091e21060904000104",
+    "predicate": {
+     "op": "AND",
+     "left": {
+      "predicate": 18,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 9
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0003090001"
+      }
+     },
+     "right": {
+      "predicate": 15,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 24
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0003180000"
+      }
+     },
+     "raw": "060412040f"
+    },
+    "commands": [
+     "c60000001801",
+     "c60000001f00",
+     "12031300f3fdc42b00000900000000190000",
+     "12031300f3fdc42b00000900000000190000",
+     "090313000e00",
+     "090313000e00",
+     "090398001500",
+     "090396001500"
+    ]
+   },
+   {
+    "group": 8556,
+    "kind": 9,
+    "raw": "0a096c21110001000104",
+    "predicate": {
+     "op": "AND",
+     "left": {
+      "predicate": 18,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 9
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0003090001"
+      }
+     },
+     "right": {
+      "predicate": 15,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 24
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0003180000"
+      }
+     },
+     "raw": "060412040f"
+    },
+    "commands": [
+     "c60000001801",
+     "c60000001f01",
+     "12031300f3fdc42b00000900000000140000",
+     "12031300f3fdc42b00000900000000140000",
+     "090313000e00",
+     "090313000e00",
+     "090396001500",
+     "090398001500"
+    ]
+   }
+  ]
+ },
+ "stones": {
+  "1221": {
+   "position": [
+    -505,
+    -220,
+    -10876
+   ],
+   "region": 1934,
+   "left": -12.0,
+   "right": 15.0,
+   "bottom": 0,
+   "top": 156,
+   "sound": 696
+  },
+  "1222": {
+   "position": [
+    -499,
+    -220,
+    -11222
+   ],
+   "region": 1945,
+   "left": -12.0,
+   "right": 15.0,
+   "bottom": 0,
+   "top": 156,
+   "sound": 698
+  },
+  "1223": {
+   "position": [
+    -426,
+    -220,
+    -11157
+   ],
+   "region": 1941,
+   "left": -12.0,
+   "right": 15.0,
+   "bottom": 0,
+   "top": 156,
+   "sound": 696
+  },
+  "1224": {
+   "position": [
+    -517,
+    -220,
+    -11010
+   ],
+   "region": 1929,
+   "left": -12.0,
+   "right": 15.0,
+   "bottom": 0,
+   "top": 156,
+   "sound": 698
+  },
+  "1225": {
+   "position": [
+    -456,
+    -220,
+    -10862
+   ],
+   "region": 1934,
+   "left": -12.0,
+   "right": 15.0,
+   "bottom": 0,
+   "top": 156,
+   "sound": 697
+  }
+ },
+ "timer": {
+  "id": 151,
+  "flags": 16,
+  "enabled": false,
+  "range_seconds": [
+   5,
+   15
+  ],
+  "random_states": 5,
+  "order": {
+   "0": {
+    "stone": 1222,
+    "shake": [
+     2,
+     1
+    ]
+   },
+   "1": {
+    "stone": 1223,
+    "shake": [
+     1,
+     2
+    ]
+   },
+   "2": {
+    "stone": 1224,
+    "shake": [
+     1,
+     1
+    ]
+   },
+   "3": {
+    "stone": 1225,
+    "shake": [
+     2,
+     2
+    ]
+   },
+   "4": {
+    "stone": 1221,
+    "shake": [
+     3,
+     1
+    ]
+   }
+  }
+ },
+ "reward": {
+  "id": 150,
+  "records": [
+   {
+    "group": 1886,
+    "kind": 6,
+    "raw": "06065e071401",
+    "predicate": {
+     "op": "AND",
+     "left": {
+      "predicate": 14,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 31
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "00031f0001"
+      }
+     },
+     "right": {
+      "predicate": 33,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 11
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "00030b0001"
+      }
+     },
+     "raw": "06040e0421"
+    },
+    "commands": [
+     "020100000a07"
+    ]
+   },
+   {
+    "group": 1898,
+    "kind": 6,
+    "raw": "06066a071401",
+    "predicate": {
+     "op": "AND",
+     "left": {
+      "predicate": 14,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 31
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "00031f0001"
+      }
+     },
+     "right": {
+      "predicate": 35,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 11
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "00030b0000"
+      }
+     },
+     "raw": "06040e0423"
+    },
+    "commands": [
+     "c60000000b01",
+     "020100001001"
+    ]
+   },
+   {
+    "group": 1916,
+    "kind": 6,
+    "raw": "06067c071401",
+    "predicate": {
+     "op": "AND",
+     "left": {
+      "predicate": 13,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 31
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "00031f0000"
+      }
+     },
+     "right": {
+      "predicate": 33,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 11
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "00030b0001"
+      }
+     },
+     "raw": "06040d0421"
+    },
+    "commands": [
+     "020100000905"
+    ]
+   },
+   {
+    "group": 1928,
+    "kind": 6,
+    "raw": "060688071401",
+    "predicate": {
+     "op": "AND",
+     "left": {
+      "predicate": 13,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 31
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "00031f0000"
+      }
+     },
+     "right": {
+      "predicate": 35,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 11
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "00030b0000"
+      }
+     },
+     "raw": "06040d0423"
+    },
+    "commands": [
+     "c60000000b01",
+     "020100000f01"
+    ]
+   }
+  ]
+ },
+ "collapse": {
+  "id": 152,
+  "records": [
+   {
+    "group": 2064,
+    "kind": 6,
+    "raw": "060610081401",
+    "predicate": {
+     "op": "AND",
+     "left": {
+      "predicate": 206,
+      "expression": {
+       "op": "==",
+       "left": {
+        "owner_state": true
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0005000000"
+      }
+     },
+     "right": {
+      "predicate": 203,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 6
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0003060000"
+      }
+     },
+     "raw": "0604ce04cb"
+    },
+    "commands": [
+     "c60000000e01",
+     "092004000300",
+     "0820040000000000",
+     "0820040002000000",
+     "05036e030100",
+     "142004008801ff11320c",
+     "142004007b01ff11320c",
+     "0d02260006000000",
+     "0d0226000a000000",
+     "0d022600000a0000",
+     "0d02260001010000",
+     "0d02260007000000",
+     "0e03970004000000"
+    ]
+   },
+   {
+    "group": 2172,
+    "kind": 6,
+    "raw": "06067c081401",
+    "predicate": {
+     "op": "AND",
+     "left": {
+      "predicate": 206,
+      "expression": {
+       "op": "==",
+       "left": {
+        "owner_state": true
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0005000000"
+      }
+     },
+     "right": {
+      "predicate": 204,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 6
+       },
+       "right": {
+        "immediate": 2
+       },
+       "raw": "0003060002"
+      }
+     },
+     "raw": "0604ce04cc"
+    },
+    "commands": [
+     "c60000000e01",
+     "092004000300",
+     "0820040000000000",
+     "0820040002000000",
+     "05036e030100",
+     "142004008801ff11320c",
+     "142004007b01ff11320c",
+     "0e03970004000000"
+    ]
+   },
+   {
+    "group": 2240,
+    "kind": 6,
+    "raw": "0606c0081401",
+    "predicate": {
+     "op": "AND",
+     "left": {
+      "predicate": 206,
+      "expression": {
+       "op": "==",
+       "left": {
+        "owner_state": true
+       },
+       "right": {
+        "immediate": 0
+       },
+       "raw": "0005000000"
+      }
+     },
+     "right": {
+      "predicate": 205,
+      "expression": {
+       "op": "==",
+       "left": {
+        "local": 6
+       },
+       "right": {
+        "immediate": 1
+       },
+       "raw": "0003060001"
+      }
+     },
+     "raw": "0604ce04cd"
+    },
+    "commands": [
+     "020100000c02",
+     "020100000b02",
+     "c60000000e01",
+     "100226000100",
+     "0e03970004000000",
+     "092004000300",
+     "0820040000000000",
+     "0820040002000000",
+     "05036e030100",
+     "142004008801ff11320c",
+     "142004007b01ff11320c"
+    ]
+   }
+  ]
+ },
+ "guard": {
+  "actor": 38,
+  "regions": {
+   "1934": {
+    "local6": 1,
+    "polygon": [
+     [
+      -543.53662109375,
+      -10922.9990234375
+     ],
+     [
+      -408.0,
+      -10923.0
+     ],
+     [
+      -407.29669189453125,
+      -10840.0009765625
+     ],
+     [
+      -543.7033081054688,
+      -10839.9990234375
+     ]
+    ],
+    "floor_min": -220,
+    "floor_max": -220
+   },
+   "0": {
+    "local6": 1,
+    "polygon": [
+     [
+      -543.7655639648438,
+      -10806.0
+     ],
+     [
+      -543.7033081054688,
+      -10839.9990234375
+     ],
+     [
+      -407.29669189453125,
+      -10840.0009765625
+     ],
+     [
+      -407.23443603515625,
+      -10808.0009765625
+     ]
+    ],
+    "floor_min": -220,
+    "floor_max": -220
+   },
+   "1952": {
+    "local6": 1,
+    "polygon": [
+     [
+      -543.7655639648438,
+      -10806.0
+     ],
+     [
+      -407.23443603515625,
+      -10808.0009765625
+     ],
+     [
+      -407.0641174316406,
+      -10713.0
+     ],
+     [
+      -543.9359130859375,
+      -10713.0
+     ]
+    ],
+    "floor_min": -220,
+    "floor_max": -220
+   },
+   "1947": {
+    "local6": 2,
+    "polygon": [
+     [
+      -407.532958984375,
+      -10970.0009765625
+     ],
+     [
+      -408.0,
+      -10923.0
+     ],
+     [
+      -543.53662109375,
+      -10922.9990234375
+     ],
+     [
+      -544.0,
+      -10970.0
+     ]
+    ],
+    "floor_min": -220,
+    "floor_max": -220
+   },
+   "1929": {
+    "local6": 2,
+    "polygon": [
+     [
+      -407.70513916015625,
+      -11064.0009765625
+     ],
+     [
+      -407.532958984375,
+      -10970.0009765625
+     ],
+     [
+      -544.0,
+      -10970.0
+     ],
+     [
+      -543.2948608398438,
+      -11064.9990234375
+     ]
+    ],
+    "floor_min": -220,
+    "floor_max": -220
+   },
+   "1948": {
+    "local6": 0,
+    "polygon": [
+     [
+      -544.0,
+      -10678.0
+     ],
+     [
+      -543.9359130859375,
+      -10713.0
+     ],
+     [
+      -407.0641174316406,
+      -10713.0
+     ],
+     [
+      -407.0,
+      -10678.0
+     ]
+    ],
+    "floor_min": -220,
+    "floor_max": -220
+   }
+  },
+  "crush_sound": 768,
+  "crush_sound_prop": {
+   "id": 17,
+   "position": [
+    -489,
+    -220,
+    -10948
+   ]
+  },
+  "magic_award": 200,
+  "fighting_award": 200
+ },
+ "player_regions": {
+  "1929": {
+   "role": "local9",
+   "value": 1,
+   "kind": 2,
+   "group": 2322,
+   "polygon": [
+    [
+     -407.70513916015625,
+     -11064.0009765625
+    ],
+    [
+     -407.532958984375,
+     -10970.0009765625
+    ],
+    [
+     -544.0,
+     -10970.0
+    ],
+    [
+     -543.2948608398438,
+     -11064.9990234375
+    ]
+   ],
+   "floor_min": -220,
+   "floor_max": -220
+  },
+  "1947": {
+   "role": "local9",
+   "value": 0,
+   "kind": 2,
+   "group": 2374,
+   "polygon": [
+    [
+     -407.532958984375,
+     -10970.0009765625
+    ],
+    [
+     -408.0,
+     -10923.0
+    ],
+    [
+     -543.53662109375,
+     -10922.9990234375
+    ],
+    [
+     -544.0,
+     -10970.0
+    ]
+   ],
+   "floor_min": -220,
+   "floor_max": -220
+  },
+  "120": {
+   "role": "collapse",
+   "value": 1,
+   "kind": 4,
+   "group": 52,
+   "polygon": [
+    [
+     -300.0,
+     -11738.0
+    ],
+    [
+     -154.0,
+     -11706.0
+    ],
+    [
+     -186.0,
+     -11654.0
+    ],
+    [
+     -334.0,
+     -11672.0
+    ]
+   ],
+   "floor_min": -215,
+   "floor_max": -215
+  },
+  "234": {
+   "role": "collapse",
+   "value": 1,
+   "kind": 4,
+   "group": 76,
+   "polygon": [
+    [
+     -700.0,
+     -11610.0
+    ],
+    [
+     -693.0,
+     -11645.0
+    ],
+    [
+     -632.0,
+     -11674.0
+    ],
+    [
+     -689.0,
+     -11546.0
+    ]
+   ],
+   "floor_min": -215,
+   "floor_max": -215
+  },
+  "283": {
+   "role": "collapse",
+   "value": 1,
+   "kind": 4,
+   "group": 94,
+   "polygon": [
+    [
+     -689.0,
+     -11546.0
+    ],
+    [
+     -632.0,
+     -11674.0
+    ],
+    [
+     -481.0,
+     -11662.0
+    ],
+    [
+     -434.2867736816406,
+     -11632.2529296875
+    ]
+   ],
+   "floor_min": -215,
+   "floor_max": -207
+  },
+  "1787": {
+   "role": "timer",
+   "value": 3,
+   "kind": 2,
+   "group": 2016,
+   "polygon": [
+    [
+     -558.0,
+     -10212.0
+    ],
+    [
+     -753.0,
+     -10238.0
+    ],
+    [
+     -688.0,
+     -10333.0
+    ],
+    [
+     -558.0,
+     -10227.0
+    ]
+   ],
+   "floor_min": -197,
+   "floor_max": -197
+  },
+  "1785": {
+   "role": "timer",
+   "value": 4,
+   "kind": 2,
+   "group": 2008,
+   "polygon": [
+    [
+     -544.0,
+     -10195.0
+    ],
+    [
+     -741.0,
+     -10138.0
+    ],
+    [
+     -753.0,
+     -10238.0
+    ],
+    [
+     -558.0,
+     -10212.0
+    ]
+   ],
+   "floor_min": -197,
+   "floor_max": -195
+  },
+  "1788": {
+   "role": "timer",
+   "value": 4,
+   "kind": 2,
+   "group": 2024,
+   "polygon": [
+    [
+     -1317.0,
+     -12025.0
+    ],
+    [
+     -1181.0,
+     -12029.0
+    ],
+    [
+     -1213.0,
+     -11914.0
+    ],
+    [
+     -1339.0,
+     -11971.0
+    ]
+   ],
+   "floor_min": -225,
+   "floor_max": -225
+  },
+  "1793": {
+   "role": "timer",
+   "value": 4,
+   "kind": 2,
+   "group": 2032,
+   "polygon": [
+    [
+     -1181.0,
+     -12029.0
+    ],
+    [
+     -1317.0,
+     -12025.0
+    ],
+    [
+     -1271.0,
+     -12051.0
+    ],
+    [
+     -1237.0,
+     -12045.0
+    ]
+   ],
+   "floor_min": -225,
+   "floor_max": -225
+  }
+ },
+ "rubble": {
+  "movable": 4,
+  "faces": [
+   {
+    "points": [
+     [
+      -593.0,
+      -97,
+      -10915.0
+     ],
+     [
+      -361.0,
+      -97,
+      -10915.0
+     ],
+     [
+      -361.0,
+      -242,
+      -10915.0
+     ],
+     [
+      -593.0,
+      -242,
+      -10915.0
+     ]
+    ]
+   },
+   {
+    "points": [
+     [
+      -361.0,
+      -97,
+      -10920.0
+     ],
+     [
+      -593.0,
+      -97,
+      -10920.0
+     ],
+     [
+      -593.0,
+      -242,
+      -10920.0
+     ],
+     [
+      -361.0,
+      -242,
+      -10920.0
+     ]
+    ]
+   }
+  ],
+  "sounds": [
+   392,
+   379
+  ]
+ },
+ "sounds": {
+  "955": {
+   "file": "955.wav",
+   "seconds": 0.772
+  },
+  "696": {
+   "file": "696.wav",
+   "seconds": 5.2425
+  },
+  "697": {
+   "file": "697.wav",
+   "seconds": 1.9156
+  },
+  "698": {
+   "file": "698.wav",
+   "seconds": 3.065
+  },
+  "392": {
+   "file": "392.wav",
+   "seconds": 7.0589
+  },
+  "379": {
+   "file": "379.wav",
+   "seconds": 6.4435
+  },
+  "768": {
+   "file": "768.wav",
+   "seconds": 1.8372
+  }
+ },
+ "files": {
+  "11_0_index.png": "39485f299322bba77e4ca4fa5a3e0bfc62cd746e6410f4f958a5d28473c8793f",
+  "11_1_index.png": "a4651d99ff47b3d081a7df740f1bc7170b2d1ec78527da940a34c3d6c1c0bb1f",
+  "13_0_index.png": "ad6716a3bb4ab9cfb500ef73520999177b3c0cb362122c53186318ae345ab86b",
+  "15_0_index.png": "ef11a71e91611aa5bb5fd1ce4d1e141c1d88e5ecf0987adcd99f16cab09b4974",
+  "379.wav": "ed0994b81c01d511faccfc0ac4f6992cd10539c5c1271e820385ef5cf083f177",
+  "392.wav": "8b0d499f4bb8da02e179d4618bd9dbdf2a98d229ec8013c15e6b9164be242327",
+  "419_0_index.png": "0061394ecdf75eec51c3c6e2d0443b1543b76e9747b9f35f1e2490a1662ab2e4",
+  "419_10_index.png": "38ceab4d1567796cb61b05a4555ac6765549177e7c6579b438a4f1f6e734371a",
+  "419_11_index.png": "a2447be5ee63f82a299690c5b7b742d0d17dcb87a3442f24fbc249b783a62838",
+  "419_12_index.png": "314bdcd2b24cc82ac2bc89353a91c74ccc87da45236e638cc463269d2159f2ec",
+  "419_13_index.png": "518fd744858ea9513a5633a3103af7e17ab05199df791a92bb5ec0423a7b3d26",
+  "419_14_index.png": "176d5e366251d6641e9e7455f7aaaf5fa558407d5512cfd5cadb5d1c9ea0a7ac",
+  "419_15_index.png": "b57e4953b55447f6c3d0ccb3a9c8b2898a7dbb90f346699134a06f7da6ee03d4",
+  "419_16_index.png": "fd8ab2f9e12af04da4a858c18efb50024f2d645b6ac0aabf37a6a43871b6ffcd",
+  "419_17_index.png": "1d7b0b158df4f0d9e45024a2ef918fab6ca3c72e706ab621b529381839404336",
+  "419_18_index.png": "f7e81744af39d7e4ee3d3633650ea9949f72fdcc1cdb8b9b32603a5842df629a",
+  "419_19_index.png": "8e586b59f917ac76718b225de342dfbe6057ef8226fc28e8980424c591dfb5a2",
+  "419_1_index.png": "2ad9905c645696add829e4574a67afc950ec487a6f647793e5838e55d004b919",
+  "419_20_index.png": "389d958c9dbf03e08e3eb0041b611b644e895c730ae2dd526f285942f8a8767f",
+  "419_21_index.png": "a951bfed502b4ed2c3b965177563b49e2e9be92298bb5ef516171e7a17746f2c",
+  "419_22_index.png": "495407099c6194aa53db496e5230e41d17c6f2d6745195774266038f9c57f608",
+  "419_23_index.png": "521257606cf5140d197548b3984639ae7994e55789b9f4034921797311037c84",
+  "419_24_index.png": "d7e77b84f637f76703a9cb301c0c143a5e42322520e885ae1e8b53367a2edbf7",
+  "419_25_index.png": "9bf9e3555816a135af9b7b89d0c15a70b92411aa0a79602f8bec4f7b5029f0f1",
+  "419_26_index.png": "0061394ecdf75eec51c3c6e2d0443b1543b76e9747b9f35f1e2490a1662ab2e4",
+  "419_27_index.png": "965200e4ee32106af3378956a8572db74abbedf508f11ea17df69621cc9b38a3",
+  "419_28_index.png": "21141a459cb6650fa52f3be6d37083bebeab3885701b18521bfdc5167133fd01",
+  "419_29_index.png": "21141a459cb6650fa52f3be6d37083bebeab3885701b18521bfdc5167133fd01",
+  "419_2_index.png": "5d37918d9fde8d035210c94fa00c113727e8605e496e874623dfb91d7885606b",
+  "419_3_index.png": "903e436da952beca27eeb766fbcb48513cde94dd275bd8b7b68171dc5c4e810b",
+  "419_4_index.png": "6a6fc70069c36b00d98220fbdcadd72c78766dd6a8c69ad807dcd2e6577df31d",
+  "419_5_index.png": "afb83ee9b332af7d29470aef2765f5d6673ee98cb02db792d016c9de25b4f6c7",
+  "419_6_index.png": "c34fe9cfdde9ab19a19c856fbf8b5d328639fb17cfea4199363b3fee7eeeb139",
+  "419_7_index.png": "1bccdfb19d8a91a9a524188d0aa40060ee7f1b9d64199588feb3728253718ae7",
+  "419_8_index.png": "cc68526c0efe2bb88e40230aedff19c0bc2a0a2ebab34f0b37549f2c77fc4033",
+  "419_9_index.png": "12abdf51d8f45e9ec0ca73514643ef94f4130b071c5504f1292ec8461aaa33e2",
+  "696.wav": "6cb54708402cb6c88edca1f0302d2226ee55c74887610c1cda9cfa90e063772c",
+  "697.wav": "ed4563ab5ae1b04f42f594c42b48eb48a75a35344903d28f09096977fa9a26ba",
+  "698.wav": "c468bd22c478b0320aaf4768d35047a6a991c210d4ff3e846291f5593bbbc3a2",
+  "768.wav": "68e9f5af752755a365a53d91c288421eaa3f9a1c4aacaee93c311ed8c5bcc3a5",
+  "955.wav": "d9565bbe4fa13bc5f12df2564f4a8be0ddec6c4070b37686bf481c034649062e",
+  "rubble_312_index.png": "c560f0ab2d4112df7624f7cb11a18a2caca4e266d059a7c52431d90288f601c7"
+ },
+ "adapters": [
+  "timer reload random 5..15 s from the port RNG, not the native 12415C state; op23 state from the same RNG",
+  "op7 (2,0),(0,0) plays one pass from frame0 then holds frame0 (cave_side_chamber convention), 10 frames/s",
+  "hit volume = selector0 width x template height(byte28) x depth(byte30), as the scenic prop574 rule",
+  "guard38 crush: health set to 0 with no hit reward (the op2 awards are the reward), GGUARD death clip (selector8 = native op5 selector8) then the shared corpse; native unlink at state2 is not mirrored",
+  "rubble collision = convex hull of its two faces; faces drawn at once on link (travel 0, op8 media start has no proven picture change)",
+  "region event2/event4 = player entry edge (floor-qualified), as the side-chamber and curse owners"
+ ],
+ "not_hosted": [
+  "op208 screen shake (prop151 event20, region1945)",
+  "op9 prop19 property14 and op18 on prop19 (no queue)",
+  "local6==0 op13 commands on actor38 (unresolved creature sub-ops)",
+  "local14 (no reader found in L1_DC predicates)"
+ ]
+}

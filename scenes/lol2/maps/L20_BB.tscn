@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/lol2/act2_map.gd" id="1"]
+
+[node name="MapL20_BB" type="Node3D"]
+script = ExtResource("1")
+area_id = "L20_BB"
+map_blockers_enabled = false
+geometry_file = "res://assets/lol2/generated/maps/L20_BB/area.json"
+review_title = "L20_BB preview"
+huline_content = false
+area_name = "L20_BB preview"
+area_save_path = "user://saves/map_L20_BB_quicksave.json"
+area_save_format = "lol2-restoration-map-L20_BB"

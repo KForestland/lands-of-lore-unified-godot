@@ -1,0 +1,260 @@
+{
+  "source": {
+    "file": "DAT/L3_DH.MIX",
+    "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+    "geometry_key": 3106551060,
+    "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+  },
+  "prop": {
+    "record": 214,
+    "template": 29,
+    "selector": 0,
+    "position": [
+      347,
+      -50,
+      -3423
+    ],
+    "region": 978,
+    "material": "prop_970",
+    "width": 640,
+    "height": 400,
+    "left": -127.5,
+    "right": 127.5,
+    "bottom": 0,
+    "top": 159,
+    "animated": false,
+    "state_offset": 4711,
+    "state_hex": "000000000000040000008c000101ff9f",
+    "frame_offset": 5775,
+    "frame_hex": "ca0300000000000000000000",
+    "frame_flags": 0,
+    "placement_offset": 5861682,
+    "placement_hex": "5b015f0d0000ceff8106d2037c088004730448041a04000064000800d20000001d00000003"
+  },
+  "image": {
+    "key": "prop_970",
+    "kind": "block",
+    "width": 640,
+    "height": 400,
+    "descriptor_flags": 4678,
+    "codebook": 11,
+    "payload_sha256": "79672c83de91f8fed36360746983a708bc7eabbd4b359b94be93869ae3331dfa",
+    "index1_policy": "palette colour; block family has no row-grammar index-1 shadow",
+    "image": "sprites/prop_970.png",
+    "index": "sprites/prop_970_index.png",
+    "shadow": "sprites/prop_970_shadow.png",
+    "omitted_index1_pixels": 0
+  },
+  "owners": [
+    {
+      "stream": 1,
+      "group": 4444,
+      "owner_kind": "prop",
+      "owner": 214,
+      "event": 4,
+      "value": 0,
+      "predicate": null,
+      "archive_offset": 5849694,
+      "commands": [
+        {
+          "archive_offset": 5838832,
+          "raw_hex": "141066009804ff151219"
+        },
+        {
+          "archive_offset": 5838842,
+          "raw_hex": "0703d6000100"
+        },
+        {
+          "archive_offset": 5838848,
+          "raw_hex": "0503d6000100"
+        },
+        {
+          "archive_offset": 5838854,
+          "raw_hex": "0703d6000000"
+        },
+        {
+          "archive_offset": 5838860,
+          "raw_hex": "0703d6000a08"
+        },
+        {
+          "archive_offset": 5838866,
+          "raw_hex": "1003d6000100"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "group": 4490,
+      "owner_kind": "prop",
+      "owner": 214,
+      "event": 6,
+      "value": 2,
+      "predicate": 19,
+      "archive_offset": 5849704,
+      "commands": [
+        {
+          "archive_offset": 5838878,
+          "raw_hex": "0703d6000100"
+        },
+        {
+          "archive_offset": 5838884,
+          "raw_hex": "0903d6001000"
+        },
+        {
+          "archive_offset": 5838890,
+          "raw_hex": "14106600970280070a14"
+        },
+        {
+          "archive_offset": 5838900,
+          "raw_hex": "0903d6000200"
+        },
+        {
+          "archive_offset": 5838906,
+          "raw_hex": "0603d6000200"
+        },
+        {
+          "archive_offset": 5838912,
+          "raw_hex": "c60000000c01"
+        }
+      ]
+    }
+  ],
+  "status": "original_art_extracted_runtime_omitted",
+  "template": {
+    "index": 29,
+    "selector_count": 2,
+    "flags": 1,
+    "template_hex": "000000000000000000000000000000000000000000000000d8c0c53e9f00e5000000000001000000009fff0a003d020021040100e8657f",
+    "selectors": [
+      {
+        "selector": 0,
+        "frame_count": 1,
+        "state_height": 159,
+        "state_hex": "000000000000040000008c000101ff9f",
+        "state_offset": 4711,
+        "frames": [
+          {
+            "descriptor": 970,
+            "left": -127.5,
+            "right": 127.5,
+            "bottom": 0,
+            "top_trim": 0,
+            "frame_flags": 0,
+            "frame_hex": "ca0300000000000000000000",
+            "frame_offset": 5775
+          }
+        ]
+      },
+      {
+        "selector": 1,
+        "frame_count": 1,
+        "state_height": 159,
+        "state_hex": "000000000000040000008c000101ff9f",
+        "state_offset": 4727,
+        "frames": [
+          {
+            "descriptor": 1009,
+            "left": -127.5,
+            "right": 127.5,
+            "bottom": 0,
+            "top_trim": 0,
+            "frame_flags": 16,
+            "frame_hex": "f10310000000000000000000",
+            "frame_offset": 5787
+          }
+        ]
+      }
+    ]
+  },
+  "predicate19": {
+    "op": "==",
+    "left": {
+      "owner_state": true
+    },
+    "right": {
+      "immediate": 1
+    },
+    "raw": "0005000001"
+  },
+  "active_image": {
+    "key": "prop_1009",
+    "kind": "block",
+    "width": 640,
+    "height": 400,
+    "descriptor_flags": 4678,
+    "codebook": 12,
+    "payload_sha256": "3d6e96a880d7aeaf9c7621221fc0ee90d2d3bee5d1a743b2b9641e9b5c37196d",
+    "index1_policy": "palette colour; block family has no row-grammar index-1 shadow",
+    "image": "sprites/prop_1009.png",
+    "index": "sprites/prop_1009_index.png",
+    "shadow": "sprites/prop_1009_shadow.png",
+    "omitted_index1_pixels": 0
+  },
+  "pending": [
+    "Interpret opcode7 sprite sequencing and frame_flags16 for selector1 before hosting interaction.",
+    "Bind original spatial sounds/events and callback6/value2; prove local12 effects.",
+    "Portable staging, exact owner-pose rendered check and save/restart."
+  ],
+  "images": {
+    "prop_1009_index.png": "eff041c6227782db7b66242ddf42b5616466d3e02cc8cbe25f59965a377cca72",
+    "prop_970_shadow.png": "1aea4dbb379e4b2dd7508c67d465924d7e48f2764b39a9c0850c7f8697e44ae1",
+    "prop_1009_shadow.png": "1aea4dbb379e4b2dd7508c67d465924d7e48f2764b39a9c0850c7f8697e44ae1",
+    "prop_1009.png": "e0ef2e672c21c8763a74253b21357295f4aa4c463decb5031f1aedf1ca0d1fc2",
+    "prop_970.png": "b00c62f4eaac56fcd7d8f454d1791e21a5b24a453eaed7a3d7a4b4db1a43c511",
+    "prop_970_index.png": "fbb06fdb600016b7e91143016008e236b8b044ce112549d61d76d1835ad0235b"
+  },
+  "atlas_hashes": {
+    "atlas_1009.png": "19cbcebc9fb6adf3dc2f2c853c904576a6a22b8c72e7098ba0a38787af5d229a",
+    "atlas_970.png": "241a71a1d2d8b2755fed3b921a07866c53eee86d62f7252a17a04c40d7ac3216"
+  },
+  "audio": {
+    "1175": {
+      "name": "webshot1.aud",
+      "rate": 22050,
+      "samples": 11774,
+      "duration": 0.533968253968254,
+      "chunks": 12,
+      "audio_sha256": "c8f0c6b58e6313e9285e14f1ac5d9a9d83ea070862f5e2786faa9d59efd6ec71",
+      "pcm_sha256": "40f068ba0203dfa630c2b32e04822582196d34f660f4b138505d73381779af3a",
+      "wav_sha256": "78c9d5eae15e227cda57b17ea874c51b93ecda189b984a84a374ce59df06cf65",
+      "diagnostics": [
+        "Error during demuxing: Input/output error",
+        "Error retrieving a packet from demuxer: Input/output error"
+      ],
+      "path": "res://assets/lol2/generated/museum_belial/1175.wav"
+    },
+    "1176": {
+      "name": "beliale.aud",
+      "rate": 22050,
+      "samples": 199936,
+      "duration": 9.067392290249433,
+      "chunks": 196,
+      "audio_sha256": "3f85e80a6586f4a3d37ddae2c5eedc375e0565e8337369b4efa923505a560bdd",
+      "pcm_sha256": "0e185f95c7f43f459db97d3d8c58f3f4ef684ded294c1bd9eab2ae7b573e39c9",
+      "wav_sha256": "7f63a39107b6530d92a40b27ee19e8ee5c32981b9e0ad1c5c65111f342652ca4",
+      "diagnostics": [
+        "Error during demuxing: Input/output error",
+        "Error retrieving a packet from demuxer: Input/output error"
+      ],
+      "path": "res://assets/lol2/generated/museum_belial/1176.wav"
+    }
+  },
+  "sound_control": {
+    "index": 102,
+    "x": 345,
+    "y": 3255,
+    "heading": 0,
+    "height": -10,
+    "fixed_origin": [
+      22609920,
+      213319680
+    ],
+    "placement": "static_102",
+    "placement_kind": "static_assembly",
+    "source_index": 102,
+    "template": 45,
+    "placement_offset": 5871671,
+    "placement_hex": "5901b70c0000f6ff8100130200007f0000000000010000000000000014002c002d",
+    "motion_bytes_hex": ""
+  }
+}

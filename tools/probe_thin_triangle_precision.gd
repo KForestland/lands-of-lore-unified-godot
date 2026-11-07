@@ -1,6 +1,6 @@
 extends SceneTree
 ## Isolate known thin-triangle ray misses at source coordinates and near origin.
-var map_root := "/home/bob/lol2_out/all_maps_20260922"
+var map_root := "~/lol2_out/all_maps_20260922"
 
 func _initialize() -> void:
 	call_deferred("run")

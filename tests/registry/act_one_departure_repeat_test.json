@@ -1,0 +1,12 @@
+{
+ "name": "act_one_departure_repeat_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 573,
+ "needs": {
+  "fixtures": [
+   "user://tests/act1_departure_ready.json (written by act_one_departure_test)"
+  ],
+  "chain": "runs after act_one_departure_test in the same user dir"
+ }
+}

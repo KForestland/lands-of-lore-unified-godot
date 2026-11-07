@@ -1,0 +1,3185 @@
+{
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856
+  },
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "rotation_table_sha256": "d7c7437da1c1be8f1d19e78433e8a976f19a90fe8004827a36dc383470294c53",
+  "movables": [
+    {
+      "motion": {
+        "index": 64,
+        "archive_offset": 7326592,
+        "raw_hex": "9401fb40004001ff02059a04621f00005c24f382141418830000000001000000220100012d28000000",
+        "template": 34,
+        "mode": 0,
+        "height": -255,
+        "travel": 45,
+        "speed_byte": 40,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 11,
+            "vertical_delta": 11.0
+          },
+          {
+            "percent": 50,
+            "target": 22,
+            "vertical_delta": 22.0
+          },
+          {
+            "percent": 75,
+            "target": 33,
+            "vertical_delta": 33.0
+          },
+          {
+            "percent": 100,
+            "target": 45,
+            "vertical_delta": 45.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 64,
+        "x": 404,
+        "y": 16635,
+        "heading": 16384,
+        "height": -255,
+        "fixed_origin": [
+          26476544,
+          1090191360
+        ],
+        "placement": 64,
+        "placement_kind": "movable",
+        "source_index": 64,
+        "template": 34,
+        "placement_offset": 7326592,
+        "placement_hex": "9401fb40004001ff02059a04621f00005c24f382141418830000000001000000220100012d28000000",
+        "motion_bytes_hex": "0100012d28000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 64,
+          "placement_kind": "movable",
+          "source_index": 64,
+          "template": 34,
+          "child": 51,
+          "face": 0,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              424.0,
+              -250,
+              -16638.0
+            ],
+            [
+              384.0,
+              -250,
+              -16638.0
+            ],
+            [
+              384.0,
+              -250,
+              -16633.0
+            ],
+            [
+              424.0,
+              -250,
+              -16633.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 64,
+          "placement_kind": "movable",
+          "source_index": 64,
+          "template": 34,
+          "child": 51,
+          "face": 1,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              384.0,
+              -255,
+              -16638.0
+            ],
+            [
+              424.0,
+              -255,
+              -16638.0
+            ],
+            [
+              424.0,
+              -255,
+              -16633.0
+            ],
+            [
+              384.0,
+              -255,
+              -16633.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 64,
+          "placement_kind": "movable",
+          "source_index": 64,
+          "template": 34,
+          "child": 51,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              384.0,
+              -250,
+              -16638.0
+            ],
+            [
+              384.0,
+              -250,
+              -16633.0
+            ],
+            [
+              384.0,
+              -255,
+              -16633.0
+            ],
+            [
+              384.0,
+              -255,
+              -16638.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 64,
+          "placement_kind": "movable",
+          "source_index": 64,
+          "template": 34,
+          "child": 51,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              424.0,
+              -250,
+              -16633.0
+            ],
+            [
+              424.0,
+              -250,
+              -16638.0
+            ],
+            [
+              424.0,
+              -255,
+              -16638.0
+            ],
+            [
+              424.0,
+              -255,
+              -16633.0
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 64,
+          "placement_kind": "movable",
+          "source_index": 64,
+          "template": 34,
+          "child": 51,
+          "face": 4,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              384.0,
+              -250,
+              -16633.0
+            ],
+            [
+              424.0,
+              -250,
+              -16633.0
+            ],
+            [
+              424.0,
+              -255,
+              -16633.0
+            ],
+            [
+              384.0,
+              -255,
+              -16633.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 64,
+          "placement_kind": "movable",
+          "source_index": 64,
+          "template": 34,
+          "child": 51,
+          "face": 5,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              424.0,
+              -250,
+              -16638.0
+            ],
+            [
+              384.0,
+              -250,
+              -16638.0
+            ],
+            [
+              384.0,
+              -255,
+              -16638.0
+            ],
+            [
+              424.0,
+              -255,
+              -16638.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        }
+      ]
+    },
+    {
+      "motion": {
+        "index": 65,
+        "archive_offset": 7326633,
+        "raw_hex": "94011541004001ff02059c04801f00005c24f382141418830000000001000000220100012d28000000",
+        "template": 34,
+        "mode": 0,
+        "height": -255,
+        "travel": 45,
+        "speed_byte": 40,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 11,
+            "vertical_delta": 11.0
+          },
+          {
+            "percent": 50,
+            "target": 22,
+            "vertical_delta": 22.0
+          },
+          {
+            "percent": 75,
+            "target": 33,
+            "vertical_delta": 33.0
+          },
+          {
+            "percent": 100,
+            "target": 45,
+            "vertical_delta": 45.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 65,
+        "x": 404,
+        "y": 16661,
+        "heading": 16384,
+        "height": -255,
+        "fixed_origin": [
+          26476544,
+          1091895296
+        ],
+        "placement": 65,
+        "placement_kind": "movable",
+        "source_index": 65,
+        "template": 34,
+        "placement_offset": 7326633,
+        "placement_hex": "94011541004001ff02059c04801f00005c24f382141418830000000001000000220100012d28000000",
+        "motion_bytes_hex": "0100012d28000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 65,
+          "placement_kind": "movable",
+          "source_index": 65,
+          "template": 34,
+          "child": 51,
+          "face": 0,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              424.0,
+              -250,
+              -16664.0
+            ],
+            [
+              384.0,
+              -250,
+              -16664.0
+            ],
+            [
+              384.0,
+              -250,
+              -16659.0
+            ],
+            [
+              424.0,
+              -250,
+              -16659.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 65,
+          "placement_kind": "movable",
+          "source_index": 65,
+          "template": 34,
+          "child": 51,
+          "face": 1,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              384.0,
+              -255,
+              -16664.0
+            ],
+            [
+              424.0,
+              -255,
+              -16664.0
+            ],
+            [
+              424.0,
+              -255,
+              -16659.0
+            ],
+            [
+              384.0,
+              -255,
+              -16659.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 65,
+          "placement_kind": "movable",
+          "source_index": 65,
+          "template": 34,
+          "child": 51,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              384.0,
+              -250,
+              -16664.0
+            ],
+            [
+              384.0,
+              -250,
+              -16659.0
+            ],
+            [
+              384.0,
+              -255,
+              -16659.0
+            ],
+            [
+              384.0,
+              -255,
+              -16664.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 65,
+          "placement_kind": "movable",
+          "source_index": 65,
+          "template": 34,
+          "child": 51,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              424.0,
+              -250,
+              -16659.0
+            ],
+            [
+              424.0,
+              -250,
+              -16664.0
+            ],
+            [
+              424.0,
+              -255,
+              -16664.0
+            ],
+            [
+              424.0,
+              -255,
+              -16659.0
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 65,
+          "placement_kind": "movable",
+          "source_index": 65,
+          "template": 34,
+          "child": 51,
+          "face": 4,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              384.0,
+              -250,
+              -16659.0
+            ],
+            [
+              424.0,
+              -250,
+              -16659.0
+            ],
+            [
+              424.0,
+              -255,
+              -16659.0
+            ],
+            [
+              384.0,
+              -255,
+              -16659.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 65,
+          "placement_kind": "movable",
+          "source_index": 65,
+          "template": 34,
+          "child": 51,
+          "face": 5,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              424.0,
+              -250,
+              -16664.0
+            ],
+            [
+              384.0,
+              -250,
+              -16664.0
+            ],
+            [
+              384.0,
+              -255,
+              -16664.0
+            ],
+            [
+              424.0,
+              -255,
+              -16664.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        }
+      ]
+    },
+    {
+      "motion": {
+        "index": 66,
+        "archive_offset": 7326674,
+        "raw_hex": "94012c4100402eff02059e049e1f00005c24f382141418830000000001000000220101012d28000000",
+        "template": 34,
+        "mode": 1,
+        "height": -210,
+        "travel": 45,
+        "speed_byte": 40,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 11,
+            "vertical_delta": -11.0
+          },
+          {
+            "percent": 50,
+            "target": 22,
+            "vertical_delta": -22.0
+          },
+          {
+            "percent": 75,
+            "target": 33,
+            "vertical_delta": -33.0
+          },
+          {
+            "percent": 100,
+            "target": 45,
+            "vertical_delta": -45.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 66,
+        "x": 404,
+        "y": 16684,
+        "heading": 16384,
+        "height": -210,
+        "fixed_origin": [
+          26476544,
+          1093402624
+        ],
+        "placement": 66,
+        "placement_kind": "movable",
+        "source_index": 66,
+        "template": 34,
+        "placement_offset": 7326674,
+        "placement_hex": "94012c4100402eff02059e049e1f00005c24f382141418830000000001000000220101012d28000000",
+        "motion_bytes_hex": "0101012d28000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 66,
+          "placement_kind": "movable",
+          "source_index": 66,
+          "template": 34,
+          "child": 51,
+          "face": 0,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              424.0,
+              -205,
+              -16687.0
+            ],
+            [
+              384.0,
+              -205,
+              -16687.0
+            ],
+            [
+              384.0,
+              -205,
+              -16682.0
+            ],
+            [
+              424.0,
+              -205,
+              -16682.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 66,
+          "placement_kind": "movable",
+          "source_index": 66,
+          "template": 34,
+          "child": 51,
+          "face": 1,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              384.0,
+              -210,
+              -16687.0
+            ],
+            [
+              424.0,
+              -210,
+              -16687.0
+            ],
+            [
+              424.0,
+              -210,
+              -16682.0
+            ],
+            [
+              384.0,
+              -210,
+              -16682.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 66,
+          "placement_kind": "movable",
+          "source_index": 66,
+          "template": 34,
+          "child": 51,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              384.0,
+              -205,
+              -16687.0
+            ],
+            [
+              384.0,
+              -205,
+              -16682.0
+            ],
+            [
+              384.0,
+              -210,
+              -16682.0
+            ],
+            [
+              384.0,
+              -210,
+              -16687.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 66,
+          "placement_kind": "movable",
+          "source_index": 66,
+          "template": 34,
+          "child": 51,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              424.0,
+              -205,
+              -16682.0
+            ],
+            [
+              424.0,
+              -205,
+              -16687.0
+            ],
+            [
+              424.0,
+              -210,
+              -16687.0
+            ],
+            [
+              424.0,
+              -210,
+              -16682.0
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 66,
+          "placement_kind": "movable",
+          "source_index": 66,
+          "template": 34,
+          "child": 51,
+          "face": 4,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              384.0,
+              -205,
+              -16682.0
+            ],
+            [
+              424.0,
+              -205,
+              -16682.0
+            ],
+            [
+              424.0,
+              -210,
+              -16682.0
+            ],
+            [
+              384.0,
+              -210,
+              -16682.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 66,
+          "placement_kind": "movable",
+          "source_index": 66,
+          "template": 34,
+          "child": 51,
+          "face": 5,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              424.0,
+              -205,
+              -16687.0
+            ],
+            [
+              384.0,
+              -205,
+              -16687.0
+            ],
+            [
+              384.0,
+              -210,
+              -16687.0
+            ],
+            [
+              424.0,
+              -210,
+              -16687.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        }
+      ]
+    },
+    {
+      "motion": {
+        "index": 67,
+        "archive_offset": 7326715,
+        "raw_hex": "94014341004001ff0205a004bc1f00005c24f382141418830000000001000000220100112d28000000",
+        "template": 34,
+        "mode": 0,
+        "height": -255,
+        "travel": 45,
+        "speed_byte": 40,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 11,
+            "vertical_delta": 11.0
+          },
+          {
+            "percent": 50,
+            "target": 22,
+            "vertical_delta": 22.0
+          },
+          {
+            "percent": 75,
+            "target": 33,
+            "vertical_delta": 33.0
+          },
+          {
+            "percent": 100,
+            "target": 45,
+            "vertical_delta": 45.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 67,
+        "x": 404,
+        "y": 16707,
+        "heading": 16384,
+        "height": -255,
+        "fixed_origin": [
+          26476544,
+          1094909952
+        ],
+        "placement": 67,
+        "placement_kind": "movable",
+        "source_index": 67,
+        "template": 34,
+        "placement_offset": 7326715,
+        "placement_hex": "94014341004001ff0205a004bc1f00005c24f382141418830000000001000000220100112d28000000",
+        "motion_bytes_hex": "0100112d28000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 67,
+          "placement_kind": "movable",
+          "source_index": 67,
+          "template": 34,
+          "child": 51,
+          "face": 0,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              424.0,
+              -250,
+              -16710.0
+            ],
+            [
+              384.0,
+              -250,
+              -16710.0
+            ],
+            [
+              384.0,
+              -250,
+              -16705.0
+            ],
+            [
+              424.0,
+              -250,
+              -16705.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 67,
+          "placement_kind": "movable",
+          "source_index": 67,
+          "template": 34,
+          "child": 51,
+          "face": 1,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              384.0,
+              -255,
+              -16710.0
+            ],
+            [
+              424.0,
+              -255,
+              -16710.0
+            ],
+            [
+              424.0,
+              -255,
+              -16705.0
+            ],
+            [
+              384.0,
+              -255,
+              -16705.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 67,
+          "placement_kind": "movable",
+          "source_index": 67,
+          "template": 34,
+          "child": 51,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              384.0,
+              -250,
+              -16710.0
+            ],
+            [
+              384.0,
+              -250,
+              -16705.0
+            ],
+            [
+              384.0,
+              -255,
+              -16705.0
+            ],
+            [
+              384.0,
+              -255,
+              -16710.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 67,
+          "placement_kind": "movable",
+          "source_index": 67,
+          "template": 34,
+          "child": 51,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              424.0,
+              -250,
+              -16705.0
+            ],
+            [
+              424.0,
+              -250,
+              -16710.0
+            ],
+            [
+              424.0,
+              -255,
+              -16710.0
+            ],
+            [
+              424.0,
+              -255,
+              -16705.0
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 67,
+          "placement_kind": "movable",
+          "source_index": 67,
+          "template": 34,
+          "child": 51,
+          "face": 4,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              384.0,
+              -250,
+              -16705.0
+            ],
+            [
+              424.0,
+              -250,
+              -16705.0
+            ],
+            [
+              424.0,
+              -255,
+              -16705.0
+            ],
+            [
+              384.0,
+              -255,
+              -16705.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 67,
+          "placement_kind": "movable",
+          "source_index": 67,
+          "template": 34,
+          "child": 51,
+          "face": 5,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              424.0,
+              -250,
+              -16710.0
+            ],
+            [
+              384.0,
+              -250,
+              -16710.0
+            ],
+            [
+              384.0,
+              -255,
+              -16710.0
+            ],
+            [
+              424.0,
+              -255,
+              -16710.0
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        }
+      ]
+    },
+    {
+      "motion": {
+        "index": 68,
+        "archive_offset": 7326756,
+        "raw_hex": "96000841604b51ff82058704e41f00005c24f382141418830000000001007600250101016e28000000",
+        "template": 37,
+        "mode": 1,
+        "height": -175,
+        "travel": 110,
+        "speed_byte": 40,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 27,
+            "vertical_delta": -27.0
+          },
+          {
+            "percent": 50,
+            "target": 55,
+            "vertical_delta": -55.0
+          },
+          {
+            "percent": 75,
+            "target": 82,
+            "vertical_delta": -82.0
+          },
+          {
+            "percent": 100,
+            "target": 110,
+            "vertical_delta": -110.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 68,
+        "x": 150,
+        "y": 16648,
+        "heading": 19296,
+        "height": -175,
+        "fixed_origin": [
+          9830400,
+          1091043328
+        ],
+        "placement": 68,
+        "placement_kind": "movable",
+        "source_index": 68,
+        "template": 37,
+        "placement_offset": 7326756,
+        "placement_hex": "96000841604b51ff82058704e41f00005c24f382141418830000000001007600250101016e28000000",
+        "motion_bytes_hex": "0101016e28000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 68,
+          "placement_kind": "movable",
+          "source_index": 68,
+          "template": 37,
+          "child": 57,
+          "face": 0,
+          "child_mask": 4294967295,
+          "resource_id": 962,
+          "points": [
+            [
+              168.4560546875,
+              -35,
+              -16705.125274658203
+            ],
+            [
+              163.64968872070312,
+              -35,
+              -16706.5030670166
+            ],
+            [
+              130.58267211914062,
+              -35,
+              -16591.150283813477
+            ],
+            [
+              135.3890380859375,
+              -35,
+              -16589.772491455078
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0962/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 68,
+          "placement_kind": "movable",
+          "source_index": 68,
+          "template": 37,
+          "child": 57,
+          "face": 1,
+          "child_mask": 4294967295,
+          "resource_id": 962,
+          "points": [
+            [
+              163.64968872070312,
+              -175,
+              -16706.5030670166
+            ],
+            [
+              168.4560546875,
+              -175,
+              -16705.125274658203
+            ],
+            [
+              135.3890380859375,
+              -175,
+              -16589.772491455078
+            ],
+            [
+              130.58267211914062,
+              -175,
+              -16591.150283813477
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0962/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 68,
+          "placement_kind": "movable",
+          "source_index": 68,
+          "template": 37,
+          "child": 57,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 177,
+          "points": [
+            [
+              163.64968872070312,
+              -35,
+              -16706.5030670166
+            ],
+            [
+              130.58267211914062,
+              -35,
+              -16591.150283813477
+            ],
+            [
+              130.58267211914062,
+              -175,
+              -16591.150283813477
+            ],
+            [
+              163.64968872070312,
+              -175,
+              -16706.5030670166
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 68,
+          "placement_kind": "movable",
+          "source_index": 68,
+          "template": 37,
+          "child": 57,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 177,
+          "points": [
+            [
+              135.3890380859375,
+              -35,
+              -16589.772491455078
+            ],
+            [
+              168.4560546875,
+              -35,
+              -16705.125274658203
+            ],
+            [
+              168.4560546875,
+              -175,
+              -16705.125274658203
+            ],
+            [
+              135.3890380859375,
+              -175,
+              -16589.772491455078
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 68,
+          "placement_kind": "movable",
+          "source_index": 68,
+          "template": 37,
+          "child": 57,
+          "face": 4,
+          "child_mask": 4294967295,
+          "resource_id": 177,
+          "points": [
+            [
+              130.58267211914062,
+              -35,
+              -16591.150283813477
+            ],
+            [
+              135.3890380859375,
+              -35,
+              -16589.772491455078
+            ],
+            [
+              135.3890380859375,
+              -175,
+              -16589.772491455078
+            ],
+            [
+              130.58267211914062,
+              -175,
+              -16591.150283813477
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 68,
+          "placement_kind": "movable",
+          "source_index": 68,
+          "template": 37,
+          "child": 57,
+          "face": 5,
+          "child_mask": 4294967295,
+          "resource_id": 177,
+          "points": [
+            [
+              168.4560546875,
+              -35,
+              -16705.125274658203
+            ],
+            [
+              163.64968872070312,
+              -35,
+              -16706.5030670166
+            ],
+            [
+              163.64968872070312,
+              -175,
+              -16706.5030670166
+            ],
+            [
+              168.4560546875,
+              -175,
+              -16705.125274658203
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png"
+        }
+      ]
+    },
+    {
+      "motion": {
+        "index": 69,
+        "archive_offset": 7326797,
+        "raw_hex": "f2008140d802e3fe82018304000000005c24f382141418830000000001007600250100016e28000000",
+        "template": 37,
+        "mode": 0,
+        "height": -285,
+        "travel": 110,
+        "speed_byte": 40,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 27,
+            "vertical_delta": 27.0
+          },
+          {
+            "percent": 50,
+            "target": 55,
+            "vertical_delta": 55.0
+          },
+          {
+            "percent": 75,
+            "target": 82,
+            "vertical_delta": 82.0
+          },
+          {
+            "percent": 100,
+            "target": 110,
+            "vertical_delta": 110.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 69,
+        "x": 242,
+        "y": 16513,
+        "heading": 728,
+        "height": -285,
+        "fixed_origin": [
+          15859712,
+          1082195968
+        ],
+        "placement": 69,
+        "placement_kind": "movable",
+        "source_index": 69,
+        "template": 37,
+        "placement_offset": 7326797,
+        "placement_hex": "f2008140d802e3fe82018304000000005c24f382141418830000000001007600250100016e28000000",
+        "motion_bytes_hex": "0100016e28000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 69,
+          "placement_kind": "movable",
+          "source_index": 69,
+          "template": 37,
+          "child": 57,
+          "face": 0,
+          "child_mask": 4294967295,
+          "resource_id": 962,
+          "points": [
+            [
+              182.28594970703125,
+              -145,
+              -16519.179077148438
+            ],
+            [
+              181.93728637695312,
+              -145,
+              -16514.191284179688
+            ],
+            [
+              301.6443176269531,
+              -145,
+              -16505.823364257812
+            ],
+            [
+              301.99298095703125,
+              -145,
+              -16510.811157226562
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0962/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 69,
+          "placement_kind": "movable",
+          "source_index": 69,
+          "template": 37,
+          "child": 57,
+          "face": 1,
+          "child_mask": 4294967295,
+          "resource_id": 962,
+          "points": [
+            [
+              181.93728637695312,
+              -285,
+              -16514.191284179688
+            ],
+            [
+              182.28594970703125,
+              -285,
+              -16519.179077148438
+            ],
+            [
+              301.99298095703125,
+              -285,
+              -16510.811157226562
+            ],
+            [
+              301.6443176269531,
+              -285,
+              -16505.823364257812
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0962/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 69,
+          "placement_kind": "movable",
+          "source_index": 69,
+          "template": 37,
+          "child": 57,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 177,
+          "points": [
+            [
+              181.93728637695312,
+              -145,
+              -16514.191284179688
+            ],
+            [
+              301.6443176269531,
+              -145,
+              -16505.823364257812
+            ],
+            [
+              301.6443176269531,
+              -285,
+              -16505.823364257812
+            ],
+            [
+              181.93728637695312,
+              -285,
+              -16514.191284179688
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 69,
+          "placement_kind": "movable",
+          "source_index": 69,
+          "template": 37,
+          "child": 57,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 177,
+          "points": [
+            [
+              301.99298095703125,
+              -145,
+              -16510.811157226562
+            ],
+            [
+              182.28594970703125,
+              -145,
+              -16519.179077148438
+            ],
+            [
+              182.28594970703125,
+              -285,
+              -16519.179077148438
+            ],
+            [
+              301.99298095703125,
+              -285,
+              -16510.811157226562
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 69,
+          "placement_kind": "movable",
+          "source_index": 69,
+          "template": 37,
+          "child": 57,
+          "face": 4,
+          "child_mask": 4294967295,
+          "resource_id": 177,
+          "points": [
+            [
+              301.6443176269531,
+              -145,
+              -16505.823364257812
+            ],
+            [
+              301.99298095703125,
+              -145,
+              -16510.811157226562
+            ],
+            [
+              301.99298095703125,
+              -285,
+              -16510.811157226562
+            ],
+            [
+              301.6443176269531,
+              -285,
+              -16505.823364257812
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 69,
+          "placement_kind": "movable",
+          "source_index": 69,
+          "template": 37,
+          "child": 57,
+          "face": 5,
+          "child_mask": 4294967295,
+          "resource_id": 177,
+          "points": [
+            [
+              182.28594970703125,
+              -145,
+              -16519.179077148438
+            ],
+            [
+              181.93728637695312,
+              -145,
+              -16514.191284179688
+            ],
+            [
+              181.93728637695312,
+              -285,
+              -16514.191284179688
+            ],
+            [
+              182.28594970703125,
+              -285,
+              -16519.179077148438
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png"
+        }
+      ]
+    },
+    {
+      "motion": {
+        "index": 70,
+        "archive_offset": 7326838,
+        "raw_hex": "f2007040d802e3fe82018504000000005c24f38214141883000000000100fe0021010001643c000000",
+        "template": 33,
+        "mode": 0,
+        "height": -285,
+        "travel": 100,
+        "speed_byte": 60,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 25,
+            "vertical_delta": 25.0
+          },
+          {
+            "percent": 50,
+            "target": 50,
+            "vertical_delta": 50.0
+          },
+          {
+            "percent": 75,
+            "target": 75,
+            "vertical_delta": 75.0
+          },
+          {
+            "percent": 100,
+            "target": 100,
+            "vertical_delta": 100.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 70,
+        "x": 242,
+        "y": 16496,
+        "heading": 728,
+        "height": -285,
+        "fixed_origin": [
+          15859712,
+          1081081856
+        ],
+        "placement": 70,
+        "placement_kind": "movable",
+        "source_index": 70,
+        "template": 33,
+        "placement_offset": 7326838,
+        "placement_hex": "f2007040d802e3fe82018504000000005c24f38214141883000000000100fe0021010001643c000000",
+        "motion_bytes_hex": "010001643c000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 70,
+          "placement_kind": "movable",
+          "source_index": 70,
+          "template": 33,
+          "child": 50,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 133,
+          "points": [
+            [
+              181.93728637695312,
+              -145,
+              -16497.191284179688
+            ],
+            [
+              301.6443176269531,
+              -145,
+              -16488.823364257812
+            ],
+            [
+              301.6443176269531,
+              -285,
+              -16488.823364257812
+            ],
+            [
+              181.93728637695312,
+              -285,
+              -16497.191284179688
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0133/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 70,
+          "placement_kind": "movable",
+          "source_index": 70,
+          "template": 33,
+          "child": 50,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 133,
+          "points": [
+            [
+              301.99298095703125,
+              -145,
+              -16493.811157226562
+            ],
+            [
+              182.28594970703125,
+              -145,
+              -16502.179077148438
+            ],
+            [
+              182.28594970703125,
+              -285,
+              -16502.179077148438
+            ],
+            [
+              301.99298095703125,
+              -285,
+              -16493.811157226562
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0133/mip_0_palette.png"
+        }
+      ]
+    },
+    {
+      "motion": {
+        "index": 71,
+        "archive_offset": 7326879,
+        "raw_hex": "85000b41604be3fe82058a04f01f00005c24f38214141883000000000100fe0021010001643c000000",
+        "template": 33,
+        "mode": 0,
+        "height": -285,
+        "travel": 100,
+        "speed_byte": 60,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 25,
+            "vertical_delta": 25.0
+          },
+          {
+            "percent": 50,
+            "target": 50,
+            "vertical_delta": 50.0
+          },
+          {
+            "percent": 75,
+            "target": 75,
+            "vertical_delta": 75.0
+          },
+          {
+            "percent": 100,
+            "target": 100,
+            "vertical_delta": 100.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 71,
+        "x": 133,
+        "y": 16651,
+        "heading": 19296,
+        "height": -285,
+        "fixed_origin": [
+          8716288,
+          1091239936
+        ],
+        "placement": 71,
+        "placement_kind": "movable",
+        "source_index": 71,
+        "template": 33,
+        "placement_offset": 7326879,
+        "placement_hex": "85000b41604be3fe82058a04f01f00005c24f38214141883000000000100fe0021010001643c000000",
+        "motion_bytes_hex": "010001643c000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 71,
+          "placement_kind": "movable",
+          "source_index": 71,
+          "template": 33,
+          "child": 50,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 133,
+          "points": [
+            [
+              146.64968872070312,
+              -145,
+              -16709.5030670166
+            ],
+            [
+              113.58267211914062,
+              -145,
+              -16594.150283813477
+            ],
+            [
+              113.58267211914062,
+              -285,
+              -16594.150283813477
+            ],
+            [
+              146.64968872070312,
+              -285,
+              -16709.5030670166
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0133/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 71,
+          "placement_kind": "movable",
+          "source_index": 71,
+          "template": 33,
+          "child": 50,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 133,
+          "points": [
+            [
+              118.3890380859375,
+              -145,
+              -16592.772491455078
+            ],
+            [
+              151.4560546875,
+              -145,
+              -16708.125274658203
+            ],
+            [
+              151.4560546875,
+              -285,
+              -16708.125274658203
+            ],
+            [
+              118.3890380859375,
+              -285,
+              -16592.772491455078
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0133/mip_0_palette.png"
+        }
+      ]
+    },
+    {
+      "motion": {
+        "index": 72,
+        "archive_offset": 7326920,
+        "raw_hex": "84ff3941828d2eff82058b04fe1f00005c24f382141418830000000001003000220101012828000000",
+        "template": 34,
+        "mode": 1,
+        "height": -210,
+        "travel": 40,
+        "speed_byte": 40,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 10,
+            "vertical_delta": -10.0
+          },
+          {
+            "percent": 50,
+            "target": 20,
+            "vertical_delta": -20.0
+          },
+          {
+            "percent": 75,
+            "target": 30,
+            "vertical_delta": -30.0
+          },
+          {
+            "percent": 100,
+            "target": 40,
+            "vertical_delta": -40.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 72,
+        "x": -124,
+        "y": 16697,
+        "heading": 36226,
+        "height": -210,
+        "fixed_origin": [
+          -8126464,
+          1094254592
+        ],
+        "placement": 72,
+        "placement_kind": "movable",
+        "source_index": 72,
+        "template": 34,
+        "placement_offset": 7326920,
+        "placement_hex": "84ff3941828d2eff82058b04fe1f00005c24f382141418830000000001003000220101012828000000",
+        "motion_bytes_hex": "0101012828000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 72,
+          "placement_kind": "movable",
+          "source_index": 72,
+          "template": 34,
+          "child": 51,
+          "face": 0,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              -127.66923522949219,
+              -205,
+              -16677.112045288086
+            ],
+            [
+              -114.65715026855469,
+              -205,
+              -16714.936141967773
+            ],
+            [
+              -119.38516235351562,
+              -205,
+              -16716.56265258789
+            ],
+            [
+              -132.39724731445312,
+              -205,
+              -16678.738555908203
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 72,
+          "placement_kind": "movable",
+          "source_index": 72,
+          "template": 34,
+          "child": 51,
+          "face": 1,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              -114.65715026855469,
+              -210,
+              -16714.936141967773
+            ],
+            [
+              -127.66923522949219,
+              -210,
+              -16677.112045288086
+            ],
+            [
+              -132.39724731445312,
+              -210,
+              -16678.738555908203
+            ],
+            [
+              -119.38516235351562,
+              -210,
+              -16716.56265258789
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 72,
+          "placement_kind": "movable",
+          "source_index": 72,
+          "template": 34,
+          "child": 51,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              -114.65715026855469,
+              -205,
+              -16714.936141967773
+            ],
+            [
+              -119.38516235351562,
+              -205,
+              -16716.56265258789
+            ],
+            [
+              -119.38516235351562,
+              -210,
+              -16716.56265258789
+            ],
+            [
+              -114.65715026855469,
+              -210,
+              -16714.936141967773
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 72,
+          "placement_kind": "movable",
+          "source_index": 72,
+          "template": 34,
+          "child": 51,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 85,
+          "points": [
+            [
+              -132.39724731445312,
+              -205,
+              -16678.738555908203
+            ],
+            [
+              -127.66923522949219,
+              -205,
+              -16677.112045288086
+            ],
+            [
+              -127.66923522949219,
+              -210,
+              -16677.112045288086
+            ],
+            [
+              -132.39724731445312,
+              -210,
+              -16678.738555908203
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 72,
+          "placement_kind": "movable",
+          "source_index": 72,
+          "template": 34,
+          "child": 51,
+          "face": 4,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              -119.38516235351562,
+              -205,
+              -16716.56265258789
+            ],
+            [
+              -132.39724731445312,
+              -205,
+              -16678.738555908203
+            ],
+            [
+              -132.39724731445312,
+              -210,
+              -16678.738555908203
+            ],
+            [
+              -119.38516235351562,
+              -210,
+              -16716.56265258789
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 72,
+          "placement_kind": "movable",
+          "source_index": 72,
+          "template": 34,
+          "child": 51,
+          "face": 5,
+          "child_mask": 4294967295,
+          "resource_id": 86,
+          "points": [
+            [
+              -127.66923522949219,
+              -205,
+              -16677.112045288086
+            ],
+            [
+              -114.65715026855469,
+              -205,
+              -16714.936141967773
+            ],
+            [
+              -114.65715026855469,
+              -210,
+              -16714.936141967773
+            ],
+            [
+              -127.66923522949219,
+              -210,
+              -16677.112045288086
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png"
+        }
+      ]
+    },
+    {
+      "motion": {
+        "index": 73,
+        "archive_offset": 7326961,
+        "raw_hex": "99002e406c4151ff82015c04000000005c24f38214141883000000000100fe0021010101643c000000",
+        "template": 33,
+        "mode": 1,
+        "height": -175,
+        "travel": 100,
+        "speed_byte": 60,
+        "initial_travel": 0,
+        "samples": [
+          {
+            "percent": 0,
+            "target": 0,
+            "vertical_delta": 0.0
+          },
+          {
+            "percent": 25,
+            "target": 25,
+            "vertical_delta": -25.0
+          },
+          {
+            "percent": 50,
+            "target": 50,
+            "vertical_delta": -50.0
+          },
+          {
+            "percent": 75,
+            "target": 75,
+            "vertical_delta": -75.0
+          },
+          {
+            "percent": 100,
+            "target": 100,
+            "vertical_delta": -100.0
+          }
+        ]
+      },
+      "placement": {
+        "index": 73,
+        "x": 153,
+        "y": 16430,
+        "heading": 16748,
+        "height": -175,
+        "fixed_origin": [
+          10027008,
+          1076756480
+        ],
+        "placement": 73,
+        "placement_kind": "movable",
+        "source_index": 73,
+        "template": 33,
+        "placement_offset": 7326961,
+        "placement_hex": "99002e406c4151ff82015c04000000005c24f38214141883000000000100fe0021010101643c000000",
+        "motion_bytes_hex": "010101643c000000"
+      },
+      "faces": [
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 73,
+          "placement_kind": "movable",
+          "source_index": 73,
+          "template": 33,
+          "child": 50,
+          "face": 2,
+          "child_mask": 4294967295,
+          "resource_id": 133,
+          "points": [
+            [
+              152.07183837890625,
+              -35,
+              -16490.06687927246
+            ],
+            [
+              147.93182373046875,
+              -35,
+              -16370.140121459961
+            ],
+            [
+              147.93182373046875,
+              -175,
+              -16370.140121459961
+            ],
+            [
+              152.07183837890625,
+              -175,
+              -16490.06687927246
+            ]
+          ],
+          "uv": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0133/mip_0_palette.png"
+        },
+        {
+          "kind": "movable",
+          "region": null,
+          "placement": 73,
+          "placement_kind": "movable",
+          "source_index": 73,
+          "template": 33,
+          "child": 50,
+          "face": 3,
+          "child_mask": 4294967295,
+          "resource_id": 133,
+          "points": [
+            [
+              152.92877197265625,
+              -35,
+              -16369.96762084961
+            ],
+            [
+              157.06878662109375,
+              -35,
+              -16489.89437866211
+            ],
+            [
+              157.06878662109375,
+              -175,
+              -16489.89437866211
+            ],
+            [
+              152.92877197265625,
+              -175,
+              -16369.96762084961
+            ]
+          ],
+          "uv": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "material": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0133/mip_0_palette.png"
+        }
+      ]
+    }
+  ],
+  "materials": {
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png": "7b91a25d45ca53d5703f9ca930e38e267a2b2360fb2beae69194e8032cf2a8b1",
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png": "ee6cf439375ee4023c8241a0e99a740c99e467da9c722253192971d14d8f97c3",
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0962/mip_0_palette.png": "e184563f622001ad1b87a03aa1ed095843ea4dfb67ecc78b1a48bbfd4b47e4eb",
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png": "abbcd4be9850f66af8a95ae00af4d6d16fe4b23b01366d1ea9552bf292ad2645",
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0133/mip_0_palette.png": "df2ab9ba2c21ab0132af68bf68b49b44e9dff85f60409df4a13a5ccdfd72728c"
+  },
+  "indexed_materials": {
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_palette.png": {
+      "path": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0086/mip_0_indices.png",
+      "sha256": "d008fc07666b4d95e2f7655ec6217c173c2b0ed390304b08c3933e18690a04a2"
+    },
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_palette.png": {
+      "path": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0085/mip_0_indices.png",
+      "sha256": "3d767a9729ca0bcca48b0f32a6652843eb8b80a4b806c878d408afb3f7153595"
+    },
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0962/mip_0_palette.png": {
+      "path": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0962/mip_0_indices.png",
+      "sha256": "721b3c85fb4ec4b6a39c138c0af52737d3ce6f7778dad4d73f2f8bdc983ba080"
+    },
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_palette.png": {
+      "path": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0177/mip_0_indices.png",
+      "sha256": "aadc81f93758eb13f2bf07e8131e10cd208df9941f9aff6f7d15427347d8cf8d"
+    },
+    "res://assets/lol2/generated/cave_guard_sequence/movables/material_0133/mip_0_palette.png": {
+      "path": "res://assets/lol2/generated/cave_guard_sequence/movables/material_0133/mip_0_indices.png",
+      "sha256": "867160fb4aa5928f20653da13f61453840ab27d1f7f2327d4145f435920c687c"
+    }
+  },
+  "scope": "Fresh original ten movable geometries (levers 64-67/72, gates and doors 68-71/73), original texture assets and native-proven vertical endpoint motion. No host motion/collision/timing claim."
+}

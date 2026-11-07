@@ -1,0 +1,12 @@
+{
+ "name": "cave_bridge_save_integration",
+ "suite": "core",
+ "mode": "headless",
+ "order": 581,
+ "needs": {
+  "args": [
+   "--chain-approach"
+  ],
+  "chain": "asserts --chain-approach and jumps to checkpoint 13 of the indexed chain; run by the chain walk tooling"
+ }
+}

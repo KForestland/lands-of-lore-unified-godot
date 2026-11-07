@@ -1,0 +1,50 @@
+{
+ "version": 1,
+ "purpose": "Compact recorded data for tools/prepare_monastery_side_rooms.py explicit path: rooms.json sources.*.callbacks only.",
+ "provenance": {
+  "recorded_doc": "docs/monastery-side-rooms-source.json (local, unpublished)",
+  "recorded_sha256": "a83320cf3030051409363bebd0c4d30cba4450303ea187ce59b4e2e18e563c66",
+  "producer": "tools/prepare_monastery_side_rooms.py main()",
+  "producer_sha256": "d0e48c3bd24d568c87680c4cec2b5cf1d301557eb9542974bc70d1a5266efab0",
+  "callbacks_from": "tools/audit_weapon_shop.py RoomReplay.__init__ (capstone: first call in each of the 13 wrapper stubs addressed by image[j*4])",
+  "callbacks_from_sha256": "12f21990c83770bb45736f109942be8ecc926941bcca67874021e8367b519da8",
+  "scope": "Original setup/entry instruction replays with explicit flag/global/local/item query boundaries; first/repeat garden and first cellar conversation. Later power-orb/hostility/timers and response hotspots remain separate."
+ },
+ "limits": [
+  "callbacks are recorded capstone results; the tool checks each against the original DLL image only at byte level (the rel32 target of the first E8 byte in the 26-byte window of wrapper u32(image, j*4)), not by disassembly.",
+  "No consumer reads sources; they are carried so the regenerated rooms.json equals the shipped one.",
+  "dll_sha256/archive_sha256 are recomputed from the originals; sequences come from the published fixture."
+ ],
+ "callbacks": {
+  "MCEL": [
+   246,
+   1148,
+   1408,
+   1475,
+   1478,
+   1662,
+   1995,
+   2009,
+   2118,
+   2157,
+   2208,
+   1725,
+   1725
+  ],
+  "MGAR": [
+   246,
+   1148,
+   1374,
+   1428,
+   1431,
+   1460,
+   1986,
+   2000,
+   2168,
+   2364,
+   3106,
+   3100,
+   3100
+  ]
+ }
+}

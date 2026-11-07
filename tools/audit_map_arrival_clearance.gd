@@ -13,7 +13,7 @@ func coords(value: Vector3) -> Array:
 	return [value.x, value.y, value.z]
 
 func run() -> void:
-	var map_root := "/home/bob/lol2_out/all_maps_20260922"
+	var map_root := "~/lol2_out/all_maps_20260922"
 	var report_path := ""
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--map-root="): map_root = arg.trim_prefix("--map-root=")

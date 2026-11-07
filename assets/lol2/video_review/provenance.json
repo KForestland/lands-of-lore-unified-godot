@@ -1,0 +1,28 @@
+{
+  "clips": [
+    {
+      "file": "kevin_entry6.ogv",
+      "sha256": "cb29bcf075904f87e224f18766decc63a88ae0c2a88cca64be646e1202e71668",
+      "source_sha256": "6bd39df40b4ed2517cc959fec347f8bbd40996c226c98ef7c8f5775e2e8a9642",
+      "frames": 558,
+      "fps": 15
+    },
+    {
+      "file": "kevin_entry20.ogv",
+      "sha256": "51d5d68acff481e8fc23790f31171382781a1392c962cc55b02d316e91936846",
+      "source_sha256": "acca7e041ae368bcbfc828a1d29c224efba5c60066dee3eadac5efa9f2eb1ae0",
+      "frames": 150,
+      "fps": 15
+    },
+    {
+      "file": "bluescreen_entry24.ogv",
+      "sha256": "ab5a0245f225b2bb8f792e24a3402d1c4c2ce7c014b5674df6294bdd8cbf88f9",
+      "source_sha256": "8940541d2abae8172fa64f1f8134ff43a70fc1831ece53a11353d5dee8eb5fe4",
+      "frames": 64,
+      "fps": 15
+    }
+  ],
+  "identification": "User identifies Kenneth in entries6/20; entry24 is blue-screen clip. Original filename mapping remains unresolved.",
+  "conversion": "convert_cave_video_review.py, Theora all-keyframe video and Vorbis audio, lossy review assets",
+  "legacy_filenames": "kevin_entry6.ogv and kevin_entry20.ogv retain their existing paths; displayed character name is Kenneth."
+}

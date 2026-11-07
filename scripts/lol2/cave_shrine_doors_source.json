@@ -1,0 +1,90 @@
+{
+ "version": 1,
+ "source": {
+  "area": "L1_DC",
+  "archive_sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775"
+ },
+ "controls": {
+  "0": {
+   "group": 9666,
+   "record": "080ac22506022600",
+   "commands": [
+    "12100100cbfd082a000012000000000a0000",
+    "1210000077fe082a000012000000000a0000"
+   ]
+  },
+  "1": {
+   "group": 9708,
+   "record": "080aec2506022600",
+   "commands": [
+    "1210000074fe092a000012000000000a0000",
+    "12100100cffd022a000012000000000a0000"
+   ]
+  }
+ },
+ "placements": {
+  "0": {
+   "offset": 7313588,
+   "hex": "46fe062a000024ff8205a00744171883000000000100000000000000140074002b",
+   "x": -442,
+   "y": 10758
+  },
+  "1": {
+   "offset": 7313621,
+   "hex": "00fe072a000024ff8205a0074e171883000000000100000000000000140074002b",
+   "x": -512,
+   "y": 10759
+  }
+ },
+ "poses": {
+  "9666": {
+   "1": {
+    "x": -565,
+    "y": 10760,
+    "heading": 0,
+    "raw": "12100100cbfd082a000012000000000a0000"
+   },
+   "0": {
+    "x": -393,
+    "y": 10760,
+    "heading": 0,
+    "raw": "1210000077fe082a000012000000000a0000"
+   }
+  },
+  "9708": {
+   "0": {
+    "x": -396,
+    "y": 10761,
+    "heading": 0,
+    "raw": "1210000074fe092a000012000000000a0000"
+   },
+   "1": {
+    "x": -561,
+    "y": 10754,
+    "heading": 0,
+    "raw": "12100100cffd022a000012000000000a0000"
+   }
+  }
+ },
+ "guard": 38,
+ "walker": {
+  "entry": "0xae7d8",
+  "case6": "0xae851",
+  "callers": [
+   "0x5ba99",
+   "0x5bab0",
+   "0xb1cc9",
+   "0xb22b0",
+   "0xb22c7"
+  ],
+  "lookup": "0x5fbc8 kind2 = actor pool, kind1 = player"
+ },
+ "adapters": [
+  "contact = guard38 capsule within its radius + 2 of a block box (the native collision pair is the physics contact; the guard is stopped by the solid block first)",
+  "op18 flags 0x12 / byte15 10 travel is not replayed: both blocks slide linearly to the group's targets in SLIDE_SECONDS; the first contact wins (controls 0 and 1 run identical moves)"
+ ],
+ "not_hosted": [
+  "op18 heading word (0) and the per-group 3-4 unit target differences beyond the first group"
+ ]
+}

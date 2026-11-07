@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "pit": {
+    "face_index": 3307,
+    "region": 1249,
+    "kind": "floor",
+    "material": "231",
+    "lowered_y": -50,
+    "raised_y": 30,
+    "points": [
+      [
+        -2103.0,
+        -50,
+        -1079.0
+      ],
+      [
+        -2103.0,
+        -50,
+        -1091.0
+      ],
+      [
+        -2087.0,
+        -50,
+        -1091.0
+      ],
+      [
+        -2087.0,
+        -50,
+        -1079.0
+      ]
+    ],
+    "uv": [
+      [
+        16.859375,
+        -32.859375
+      ],
+      [
+        17.046875,
+        -32.859375
+      ],
+      [
+        17.046875,
+        -32.609375
+      ],
+      [
+        16.859375,
+        -32.609375
+      ]
+    ]
+  },
+  "plate": {
+    "movable": 65,
+    "template": 66,
+    "native_xy": [
+      -2096,
+      1085
+    ],
+    "height": -5,
+    "position": [
+      -2096,
+      -5,
+      -1085
+    ],
+    "aim": [
+      -2095,
+      0,
+      -1085
+    ],
+    "placement_hex": "d0f73d040000fbff8105e104f81700007c745a0014747f00000000000100a400420103011f08000000"
+  },
+  "orb": {
+    "template": 32,
+    "position": [
+      -2048,
+      19,
+      -1085
+    ],
+    "region": 1257,
+    "selector": 0,
+    "descriptor": 907,
+    "left": -16.5,
+    "right": 17.5,
+    "bottom": 0.0,
+    "top": 66.0,
+    "frame_flags": 0,
+    "selectors": 5,
+    "state_count": 1,
+    "flag50": 1,
+    "file": "orb.png",
+    "width": 123,
+    "height": 208,
+    "payload_sha256": "92988b3cd31668cc6c1526f2c3dab0435c512dfc206914bebddca02b5e375686",
+    "index1": 0,
+    "record": 154
+  },
+  "crystal": {
+    "template": 18,
+    "position": [
+      -1305,
+      10,
+      -722
+    ],
+    "region": 866,
+    "selector": 0,
+    "descriptor": 455,
+    "left": -43.0,
+    "right": 43.0,
+    "bottom": 0.0,
+    "top": 81.0,
+    "frame_flags": 0,
+    "selectors": 1,
+    "state_count": 1,
+    "flag50": 0,
+    "file": "crystal.png",
+    "width": 172,
+    "height": 163,
+    "payload_sha256": "222c347d05562b2e74f5986604b7a549ca9b2537349f193a5769e2e43a6f76ab",
+    "index1": 0,
+    "record": 297
+  }
+}

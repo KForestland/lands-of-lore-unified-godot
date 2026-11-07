@@ -1,0 +1,66 @@
+{
+  "archive_sha256": "a310d534b22d227dce4cf4baa89c651406a9e013ed889802c34e3e8270bda585",
+  "module_sha256": "dc4b6a441d69e0b1d232f32fb706d8353f27e0cfdfa7f0b0cb3915d21578af9e",
+  "scope": "Static fresh-visit grants; later flag206 bonus not hosted",
+  "witnesses": [
+    {
+      "module_offset": "0x1a6",
+      "hex": "8b50408915a4100000"
+    },
+    {
+      "module_offset": "0x60a",
+      "hex": "68c8000000ff15ac100000"
+    },
+    {
+      "module_offset": "0x65e",
+      "hex": "68c9000000ff15ac100000"
+    },
+    {
+      "module_offset": "0x6f5",
+      "hex": "68ca000000ff15ac100000"
+    },
+    {
+      "module_offset": "0x74f",
+      "hex": "68cb000000ff15ac100000"
+    },
+    {
+      "module_offset": "0x820",
+      "hex": "68cc000000ff15ac100000"
+    },
+    {
+      "module_offset": "0x876",
+      "hex": "68cd000000ff15ac100000"
+    },
+    {
+      "module_offset": "0x63c",
+      "hex": "6a0068e80f0000e9e6000000"
+    },
+    {
+      "module_offset": "0x727",
+      "hex": "6a0068f80f0000ff15a4100000"
+    },
+    {
+      "module_offset": "0x82e",
+      "hex": "6a00682f100000ff15a4100000"
+    }
+  ],
+  "groups": {
+    "sap": [
+      200,
+      201
+    ],
+    "amber": [
+      202,
+      203
+    ],
+    "aloe": [
+      204,
+      205
+    ]
+  },
+  "strings": {
+    "0xfe8": "109-Ironwod sap",
+    "0xff8": "110-Amber",
+    "0x102f": "108-Cave aloe"
+  }
+}

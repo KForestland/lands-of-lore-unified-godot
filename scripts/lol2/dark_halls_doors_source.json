@@ -1,0 +1,117 @@
+{
+ "version": 1,
+ "archive": "DAT/L7_DH.MIX",
+ "doors": [
+  {
+   "movable": 56,
+   "mode": 4,
+   "swing_degrees": 120,
+   "sign": 1,
+   "heading": 49152,
+   "origin": [
+    -2612.0,
+    85,
+    -2459.0
+   ],
+   "pivot": [
+    -2611.0,
+    85,
+    -2432.5
+   ],
+   "size": [
+    53,
+    80,
+    4
+   ],
+   "use_open": [
+    "012038006400",
+    "102038000100"
+   ],
+   "use_close": [
+    "012038000000",
+    "102038000000"
+   ],
+   "speed_byte": 45
+  },
+  {
+   "movable": 57,
+   "mode": 1,
+   "swing_degrees": 120,
+   "sign": -1,
+   "heading": 16384,
+   "origin": [
+    -1525.0,
+    310,
+    -2031.0
+   ],
+   "pivot": [
+    -1524.0,
+    310,
+    -2057.5
+   ],
+   "size": [
+    53,
+    80,
+    4
+   ],
+   "use_open": [
+    "012039006400",
+    "102039000100"
+   ],
+   "use_close": [
+    "012039000000",
+    "102039000000"
+   ],
+   "speed_byte": 30
+  }
+ ],
+ "trap": {
+  "region": 1338,
+  "group": 794,
+  "commands": [
+   "142039007103ff000a14",
+   "012039000000",
+   "102039000200",
+   "1202490099f8a406000085080080000a0000",
+   "0d0249000c000000",
+   "0d02490007000000"
+  ],
+  "polygon": [
+   [
+    -1719.0,
+    -1876.0
+   ],
+   [
+    -1538.0,
+    -1876.0
+   ],
+   [
+    -1538.0,
+    -1858.0
+   ],
+   [
+    -1719.0,
+    -1858.0
+   ]
+  ],
+  "floor": 310,
+  "door": 57,
+  "actor": "73",
+  "actor_to": [
+   -1895,
+   -1700
+  ],
+  "actor_heading": 32768,
+  "unlock_group": 15750,
+  "locked_use": [
+   "142039007303ff000a14",
+   "102039000300"
+  ]
+ },
+ "not_hosted": [
+  "kind9 hit sequence: selectors 1/2/3; group13798 requests percent100 (hit-filter producer not replayed)",
+  "region83 g76 (local6 == 0 AND local4 == 1): door56 shut, state 3",
+  "door57 locked use: sound 883 then state 3 without travel; no state3 use row; actor73 event6/value10 group15750 resets state0"
+ ],
+ "scope": "Doors 56/57 E toggle and native hinge; door57 Shade trap (region1338) and its actor73 unlock. Swing time, reach and leaf box are modern adapters."
+}

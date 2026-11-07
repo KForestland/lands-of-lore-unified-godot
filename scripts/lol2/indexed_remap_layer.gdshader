@@ -3,6 +3,8 @@ render_mode unshaded;
 uniform sampler2D background_indices : filter_nearest, repeat_disable;
 uniform sampler2D source_indices : filter_nearest, repeat_disable;
 uniform sampler2D remap : filter_nearest, repeat_disable;
+uniform sampler2D blend_table : filter_nearest, repeat_disable;
+uniform bool palette_blend = false;
 int decode_index(vec4 value) {
     ivec2 nibble = clamp(ivec2(round((value.rg * 255.0 - 64.0) / 12.0)), ivec2(0), ivec2(15));
     return nibble.x + 16 * nibble.y;
@@ -13,7 +15,12 @@ void fragment() {
     int source = decode_index(texture(source_indices, UV));
     int result = destination;
     float marker = background.b;
-    if (source > 1) { result = source; marker = 0.0; }
+    if (palette_blend) {
+        if (source > 0 && source < 128 && !(marker > 0.25 && marker < 0.75)) {
+            result = int(round(texelFetch(blend_table, ivec2(destination, source), 0).r * 255.0));
+        }
+    }
+    else if (source > 1) { result = source; marker = 0.0; }
     // A diagnostic unresolved floor has no trustworthy original index.
     else if (source == 1 && !(marker > 0.25 && marker < 0.75)) {
         result = int(round(texelFetch(remap, ivec2(destination, 0), 0).r * 255.0));

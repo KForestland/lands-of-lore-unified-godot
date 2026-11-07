@@ -1,0 +1,9 @@
+# Citadel basin — STORY-039 slice B
+
+The earned first-iris save continues through source Eye Switch363 and paired irises107/108. Nearby Human E opens the original iris faces/collision; original group7274 signals those controls. PlayerStartingMagic then owns the real Spark ray, mana and cooldown at a scoped receiver on original Green Vent265, below Light364. Both original prop images hide after one hit.
+
+Drainage is explicitly modern: seven original basin floor regions322/323/324/329/330/331/332 descend20 units over2 active-world seconds. Native group4918's arm8 stores remaining word-20, but its later floor effect and unnamed clock multiplier are unknown. The port does not claim that20 units or2 seconds reproduces the original. Saved progress pauses with the world and restores floor collision. Native acid damage, egg retaliation/respawn, vent effects and iris animation are unhosted.
+
+Original dormant rows145/146/147 become visible after completion, retaining original identities, positions and source bytes. Existing Act2WorldItems is the only pickup owner; normal reach, aim, ray, capacity and collection-history guards apply. Coward's Shield, Myriad and Bastion currently enter carried inventory only; equipment/stat handlers remain unhosted. No receptacle or charger is involved.
+
+Qualification: `tmp/regressions/l13_basin_ready/report.json`, 1/1 PASS11.75s, source unchanged. Input immutable `tmp/l13_egg_door_qualified_save.json`, SHA256 `f5450e1574da3a93ec9add223282a7c1484f85975979e01bd3de8a1fe608313c`. Test walks through both access stages, casts actual Spark, saves/reloads during drainage, physically picks all three items, rejects duplicates and reloads the resulting save. Output `tmp/l13_basin_earned_save.json`. No seeded inventory, recovery or coordinate teleport. STORY-039 remains claimed for the elevator.

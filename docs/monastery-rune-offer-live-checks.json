@@ -1,0 +1,15 @@
+{
+  "input_sha256": "b16764be02bdaa0bc2affc34ae6e7049f2b1b8d5c8573f93863cc5d74b94901b",
+  "output_sha256": "71e9d64815062c4bccf8636cfb4accee1468a649c05e973b0275863a95b4488d",
+  "passed": true,
+  "scope": "Earned monastery return checkpoint; office admission, held rune GUI offer, original13 clips/audio, source flags and delayed translation, partial disk rollback, natural playback completion, final disk resume and Hive carry. Wrong-item speech and alternate office branches remain unimplemented.",
+  "log": "tmp/monastery_rune_offer.log",
+  "log_sha256": "ba0d7f1f10e746a659117ffae9d05b050914c4d45f1b67c69e066907fb151e8a",
+  "source_sha256": {
+    "tests/monastery_rune_offer_test.gd": "e97a5db22059e87db27470d0497922c42be6e1d0d17693855afce34c40bf1255",
+    "scripts/lol2/monastery_rooms.gd": "8b4f1afc54211fc3e4d61b417baac37a55782dc0035a1a2138bd7cba3e91a263",
+    "scripts/lol2/monastery_conversation.gd": "7c4bcbc76f0edd7dd41b81ba532f9be43a2a209101f568003b8e947a551dc338",
+    "scripts/lol2/monastery_quest_state.gd": "cde61bdeff35f3f80fc8b46396a9d6b5552d093db33a66d3dd0c7685b69313a6",
+    "scripts/lol2/monastery_room_view.gd": "fd00b1163e0b0945b6e0fab522469cf67da66313397d707793e7448e819dca7d"
+  }
+}
