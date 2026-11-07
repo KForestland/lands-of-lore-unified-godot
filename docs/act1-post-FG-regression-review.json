@@ -1,0 +1,27 @@
+{
+  "frozen_full_run": {
+    "tests": 240,
+    "passed": 236,
+    "source_stable": true,
+    "sha256": "d51180d7f157339bddfebb5669ee065f3543eff0734ebfeee1ccd15d0e3f0967"
+  },
+  "focused_integration": {
+    "tests": 12,
+    "passed": 12,
+    "source_stable": true,
+    "sha256": "b15be07c5ca6c0d6c9fdb0679eb7083a7e9e0bf3b1e5109ba4f76747cf0c05dd"
+  },
+  "distinct_tests_with_passing_evidence": 243,
+  "scope": "Evidence across two revisions/runs, not one clean243-test run. Heading/target/dispatch additive integration; four old test expectation/reporting corrections. Full campaign afterFG and fresh export not performed. Live combat and Bob acceptance open.",
+  "fixed_tests": [
+    "dawn_spell_motion_test",
+    "dawn_spell_contact_test",
+    "hive_route_test",
+    "hive_small_route_test"
+  ],
+  "new_tests": [
+    "dawn_heading_test",
+    "dawn_cast_target_test",
+    "dawn_cast_dispatch_test"
+  ]
+}

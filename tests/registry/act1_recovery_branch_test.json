@@ -1,0 +1,18 @@
+{
+ "name": "act1_recovery_branch_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 571,
+ "needs": {
+  "env": [
+   "LOL2_RECOVERY_HOST",
+   "LOL2_EARNED_SAVES",
+   "LOL2_ORIGINAL_GAME_EXE"
+  ],
+  "fixtures": [
+   "R16 earned saves copied to the area resume path",
+   "a DISPOSABLE copy with config/use_custom_user_dir"
+  ],
+  "chain": "one process per host; run by act1_recovery_{cave,museum,jungle,hive}_test (CORE) which set LOL2_RECOVERY_HOST"
+ }
+}

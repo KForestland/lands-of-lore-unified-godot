@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "note": "Named development checkpoints (docs/dev-checkpoints.md). Each entry pins one archived, earned save by sha256. Saves are referenced in place and never copied into the repository.",
+  "checkpoints": {
+    "jungle-from-museum": {
+      "area": "Jungle",
+      "format": "lol2-restoration-jungle",
+      "scene": "res://scenes/lol2/jungle_walkthrough.tscn",
+      "resume_path": "user://saves/jungle_quicksave.json",
+      "gate_button": "Resume jungle",
+      "source": "~/AI_COMMS/classic_review_20261007/lead/act1_r16_campaign_20261012T142646Z/saves/act1_broken_museum_jungle.json",
+      "sha256": "125fcbc5ea64d746f60eadf1f272206bc34259b4b71c09b63ee8b3f7a8d8f221",
+      "provenance": {
+        "kind": "earned",
+        "campaign": "R16 fresh11 (lead/act1_r16_campaign_20261012T142646Z)",
+        "leg": 2,
+        "proof": "proofs/museum-broken-sword-earned-checks.json",
+        "proof_input_sha256": "e9d1be51d96114bbf68b31ae21895f8d50a6c57c0540b62e0cf766d9ae07c9ca",
+        "method": "automated route driver: steering and accelerated clock; no position, inventory, quest or magic injection (proof scope)"
+      },
+      "supplied": []
+    }
+  }
+}

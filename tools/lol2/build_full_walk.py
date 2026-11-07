@@ -14,7 +14,7 @@ for pair in json.loads((BASE/'traversal_expanded.json').read_text()):
  source=faces[pair['regions'][0]]['points'][0]
  offset=[source[i]*64-pair['faces'][0][0][i]-origin[i] for i in range(3)]
  checkpoints.append(dict(regions=pair['regions'],start=[pair['start'][i]+offset[i] for i in range(3)],end=[pair['end'][i]+offset[i] for i in range(3)]))
-g=json.load(open('/home/bob/lol2_out/draracle_openings_2026-09-11/geometry_v2.json'))
+g=json.load(open('~/lol2_out/draracle_openings_2026-09-11/geometry_v2.json'))
 markers=[]
 for r in g['regions']:
  if r['id'] not in faces or not r['flags']&0x10:continue

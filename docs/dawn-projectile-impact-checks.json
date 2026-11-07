@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tests": [
+    "dawn_spell_contact_test",
+    "dawn_projectile_store_test",
+    "dawn_projectile_world_test",
+    "dawn_object_distance_test"
+  ],
+  "source_stable": true,
+  "report_sha256": "46599f5aba99626f596ec219f5d13d583219de44634f80e5c9657c5dcdc93366",
+  "files": {
+    "scripts/lol2/dawn_projectile_store.gd": "962c7fa5d3e9f374267a18944fcf695db422e1432a516366e03319091e193276",
+    "tests/dawn_projectile_world_test.gd": "3838f481bf7e50660af05846df4beb78314d5495bca5288782566d9eea02cf69"
+  },
+  "scope": "Measured impacts after actual Godot sweep; actor/wall classification, stable target and collision bearing supplied. No health dispatch or AI scheduling."
+}

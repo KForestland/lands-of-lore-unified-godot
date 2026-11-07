@@ -1,0 +1,148 @@
+{
+ "source_sha256": "c294f9ab142b55c36fff545a1293c419c42353fedefbfe8b77b9c38a2d9a0719",
+ "objects": [
+  {
+   "events": [],
+   "file_offset": 11766282,
+   "index": 122,
+   "list_file_offset": 11736772,
+   "list_offset": 0,
+   "placement_hex": "e5096b0e662600008200400300007f0000000000010000000000000014001e0031",
+   "ref": "control:122",
+   "table": "control",
+   "terminator_offset": 0
+  },
+  {
+   "events": [],
+   "file_offset": 11766315,
+   "index": 123,
+   "list_file_offset": 11736772,
+   "list_offset": 0,
+   "placement_hex": "6909a10e0000000082005e0300007f0000000000010000000000000014001e0031",
+   "ref": "control:123",
+   "table": "control",
+   "terminator_offset": 0
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "0000000000",
+     "file_offset": 11744470,
+     "group": 17788,
+     "kind": 4,
+     "offset": 7698,
+     "predicate": {
+      "entry_file_offset": 11831168,
+      "entry_hex": "0005000000",
+      "index": 8,
+      "trailer_file_offset": 11744480,
+      "trailer_hex": "04130800"
+     },
+     "raw_hex": "0a047c45000000000000",
+     "stream": 1,
+     "value": 0
+    },
+    {
+     "file_offset": 11744480,
+     "kind": 19,
+     "offset": 7708,
+     "raw_hex": "04130800"
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 11744484,
+     "group": 17816,
+     "kind": 6,
+     "offset": 7712,
+     "predicate": {
+      "entry_file_offset": 11831133,
+      "entry_hex": "0005000001",
+      "index": 1,
+      "trailer_file_offset": 11744490,
+      "trailer_hex": "04130100"
+     },
+     "raw_hex": "060698450300",
+     "stream": 1,
+     "value": 3
+    },
+    {
+     "file_offset": 11744490,
+     "kind": 19,
+     "offset": 7718,
+     "raw_hex": "04130100"
+    }
+   ],
+   "file_offset": 11766348,
+   "index": 124,
+   "list_file_offset": 11744470,
+   "list_offset": 7698,
+   "placement_hex": "d4087a0efae4000082044a03121e7f000000000001000000000000001400e40031",
+   "ref": "control:124",
+   "table": "control",
+   "terminator_offset": 7722
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 11730376,
+     "kind": 16,
+     "offset": 17794,
+     "opcode": 20,
+     "raw_hex": "14107c008c0180000a14",
+     "target": 124
+    },
+    {
+     "file_offset": 11730386,
+     "kind": 16,
+     "offset": 17804,
+     "opcode": 5,
+     "raw_hex": "05107c000100",
+     "target": 124
+    },
+    {
+     "file_offset": 11730392,
+     "kind": 16,
+     "offset": 17810,
+     "opcode": 16,
+     "raw_hex": "10107c000100",
+     "target": 124
+    }
+   ],
+   "count": 3,
+   "file_offset": 11730370,
+   "group": 17788,
+   "header_hex": "f00000000300",
+   "raw_hex": "f0000000030014107c008c0180000a1405107c00010010107c000100",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 11730404,
+     "kind": 16,
+     "offset": 17822,
+     "opcode": 9,
+     "raw_hex": "09107c000800",
+     "target": 124
+    },
+    {
+     "file_offset": 11730410,
+     "kind": 16,
+     "offset": 17828,
+     "opcode": 5,
+     "raw_hex": "05107c000200",
+     "target": 124
+    }
+   ],
+   "count": 2,
+   "file_offset": 11730398,
+   "group": 17816,
+   "header_hex": "f00000000200",
+   "raw_hex": "f0000000020009107c00080005107c000200",
+   "stream": 1
+  }
+ ],
+ "interpretation": "Original control124 has hanging texture1267, west of matching122/123. Book join, E caller and open receipt are modern; native commands not claimed decoded."
+}

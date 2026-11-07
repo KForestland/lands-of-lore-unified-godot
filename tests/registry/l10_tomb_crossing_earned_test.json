@@ -1,0 +1,12 @@
+{
+ "name": "l10_tomb_crossing_earned_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 622,
+ "needs": {
+  "fixtures": [
+   "res://tmp/l10_open_tomb_supply_earned_save.json"
+  ],
+  "note": "Produced by l10_open_tomb_earned_test order618 before this order622 test."
+ }
+}

@@ -1,0 +1,275 @@
+{
+  "archive_sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "movie": {
+    "archive_sha256": "bdbebdb475f7756357f1e9687f4a4a654c0817399fc728267c1b6d97d6663834",
+    "entry": {
+      "index": 1,
+      "key": 2592634170,
+      "offset": 130226,
+      "size": 267832
+    },
+    "movie_sha256": "43897ea9f1ee5103d856741a3a624d922eb60d3e9f38da6fa4414bc49ca4a99e",
+    "header": {
+      "version": 2,
+      "frames": 60,
+      "width": 600,
+      "height": 336,
+      "block_w": 4,
+      "block_h": 4,
+      "fps": 15,
+      "parts": 8
+    }
+  },
+  "runtime": {
+    "prop": 163,
+    "position": [
+      -1749,
+      -75,
+      -1663
+    ],
+    "extents": {
+      "width_byte": 255,
+      "height_byte": 143,
+      "left": -126.5,
+      "right": 127.5,
+      "bottom": 0,
+      "top": 143,
+      "frame_flags": 0
+    },
+    "regions": [
+      {
+        "owner": {
+          "stream": 0,
+          "group": 512,
+          "owner_kind": "region",
+          "owner": 361,
+          "descriptors": [
+            13
+          ],
+          "event": 2,
+          "value": 0,
+          "predicate": 38,
+          "archive_offset": 5884372
+        },
+        "commands": [
+          {
+            "archive_offset": 5882718,
+            "raw_hex": "0803a30000000000"
+          },
+          {
+            "archive_offset": 5882726,
+            "raw_hex": "0803a3000700ff00"
+          },
+          {
+            "archive_offset": 5882734,
+            "raw_hex": "0803a30002000000"
+          },
+          {
+            "archive_offset": 5882742,
+            "raw_hex": "c60000000e01"
+          }
+        ],
+        "active": true,
+        "region_archive_offset": 5782190,
+        "region_hex": "000000006a01680166018801a006a1066b066a06000078000d00a803000204800a80098000000100ff000000",
+        "polygon_xz": [
+          [
+            -1600.0,
+            -2112.0
+          ],
+          [
+            -1476.0,
+            -2112.0
+          ],
+          [
+            -1476.0,
+            -1984.0
+          ],
+          [
+            -1600.0,
+            -1984.0
+          ]
+        ],
+        "floor": 0,
+        "ceiling": 120
+      },
+      {
+        "owner": {
+          "stream": 0,
+          "group": 574,
+          "owner_kind": "region",
+          "owner": 365,
+          "descriptors": [
+            13
+          ],
+          "event": 2,
+          "value": 0,
+          "predicate": 39,
+          "archive_offset": 5884396
+        },
+        "commands": [
+          {
+            "archive_offset": 5882780,
+            "raw_hex": "0803a30001000000"
+          },
+          {
+            "archive_offset": 5882788,
+            "raw_hex": "c60000000e00"
+          }
+        ],
+        "active": false,
+        "region_archive_offset": 5782366,
+        "region_hex": "0000000087016c0168016e01a3066d066c06a206000078000d00ac03000204800a80098000000100ff000000",
+        "polygon_xz": [
+          [
+            -1338.0,
+            -2112.0
+          ],
+          [
+            -1338.0,
+            -1984.0
+          ],
+          [
+            -1469.0,
+            -1984.0
+          ],
+          [
+            -1469.0,
+            -2112.0
+          ]
+        ],
+        "floor": 0,
+        "ceiling": 120
+      },
+      {
+        "owner": {
+          "stream": 0,
+          "group": 970,
+          "owner_kind": "region",
+          "owner": 1001,
+          "descriptors": [
+            57
+          ],
+          "event": 2,
+          "value": 0,
+          "predicate": 39,
+          "archive_offset": 5884594
+        },
+        "commands": [
+          {
+            "archive_offset": 5883176,
+            "raw_hex": "0803a30001000000"
+          },
+          {
+            "archive_offset": 5883184,
+            "raw_hex": "c60000000e00"
+          }
+        ],
+        "active": false,
+        "region_archive_offset": 5810350,
+        "region_hex": "00000000eb03ec03e803f0039f06ab0665066406000078003900ea04000204800a80098000000100ff000000",
+        "polygon_xz": [
+          [
+            -2052.0,
+            -2111.0
+          ],
+          [
+            -1974.0,
+            -2118.0
+          ],
+          [
+            -1974.0,
+            -1981.0
+          ],
+          [
+            -1997.0,
+            -1981.0
+          ]
+        ],
+        "floor": 0,
+        "ceiling": 120
+      },
+      {
+        "owner": {
+          "stream": 0,
+          "group": 990,
+          "owner_kind": "region",
+          "owner": 1004,
+          "descriptors": [
+            57
+          ],
+          "event": 2,
+          "value": 0,
+          "predicate": 38,
+          "archive_offset": 5884606
+        },
+        "commands": [
+          {
+            "archive_offset": 5883196,
+            "raw_hex": "0803a30000000000"
+          },
+          {
+            "archive_offset": 5883204,
+            "raw_hex": "0803a3000700ff00"
+          },
+          {
+            "archive_offset": 5883212,
+            "raw_hex": "0803a30002000000"
+          },
+          {
+            "archive_offset": 5883220,
+            "raw_hex": "c60000000e01"
+          }
+        ],
+        "active": true,
+        "region_archive_offset": 5810482,
+        "region_hex": "00000000ea036001e603e903ab06ac0666066506000078003900ee04000204800a80098000000100ff000000",
+        "polygon_xz": [
+          [
+            -1974.0,
+            -2118.0
+          ],
+          [
+            -1825.0,
+            -2118.0
+          ],
+          [
+            -1825.0,
+            -1983.0
+          ],
+          [
+            -1974.0,
+            -1981.0
+          ]
+        ],
+        "floor": 0,
+        "ceiling": 120
+      }
+    ],
+    "predicates": {
+      "38": {
+        "op": "==",
+        "left": {
+          "local": 14
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "00030e0000"
+      },
+      "39": {
+        "op": "==",
+        "left": {
+          "local": 14
+        },
+        "right": {
+          "immediate": 1
+        },
+        "raw": "00030e0001"
+      }
+    }
+  },
+  "placement_offset": 5859795,
+  "placement_hex": "2bf97f060000b5ffa10232049c060620061e00550006003b0a030201800000001f00000003",
+  "scope": "Pinned original source contract; full archive and direct region/command bytes checked by producer. Exact cyan key and fixed-Y billboard are modern presentation adapters."
+}

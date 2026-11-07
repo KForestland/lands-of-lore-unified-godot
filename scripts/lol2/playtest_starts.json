@@ -1,0 +1,418 @@
+{
+  "schema": 1,
+  "scope": "Playtest start points (docs/playtest-starts.md). Ordered story checkpoints; each is a REAL earned save written by the automated campaign/route tests, pinned by sha256, with the producing test, its commit, the input save sha256 and the persistent identities the save must carry (identities: contains/excludes = lists that must / must not appear at a dotted path; values = dotted path -> exact value, numbers compared numerically). tools/prepare_playtest_starts.py stages the files into res://assets/lol2/generated/playtest_starts/ (generated, git-ignored); the original-game gate lists the titles and starts one through its existing area-resume branch. resume = museum | jungle | hive | darker | dark_halls (scripts/lol2/playtest_starts.gd KINDS). Act 2 map saves need a production map-save resume branch first (docs/playtest-starts.md).",
+  "entries": [
+    {
+      "id": "act1-museum-arrival",
+      "title": "Act 1 - Museum arrival (Cave finished)",
+      "act": 1,
+      "area": "Museum",
+      "resume": "museum",
+      "save": "act1_magic_museum_arrival.json",
+      "sha256": "dfd87e89983de6ce700e16b1fb5301cefcc9901ffacf84c18ae13a000ce47e62",
+      "source": {
+        "test": "cave_opening_route_walk",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "01_cave",
+        "proof": "docs/cave-starting-spells-walk-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_magic_museum_arrival.json",
+        "input_save": null,
+        "input_sha256": null,
+        "input_note": "new game: leg 01 starts at the original cave entrance (no input save)"
+      },
+      "identities": {
+        "contains": {
+          "checkpoint.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword",
+            "cave:captain:Burnt_Chain"
+          ]
+        },
+        "excludes": {
+          "checkpoint.collected": [
+            "museum:item11:Fine_Longsword"
+          ]
+        },
+        "values": {
+          "checkpoint.introduction_complete": true
+        }
+      }
+    },
+    {
+      "id": "act1-jungle-arrival",
+      "title": "Act 1 - Huline Jungle arrival (Museum finished, broken sword)",
+      "act": 1,
+      "area": "Huline Jungle",
+      "resume": "jungle",
+      "save": "act1_broken_museum_jungle.json",
+      "sha256": "bf92e27a71fa713713729eab65f00cee443f0745abfa712eb7f9166eb86e15dc",
+      "source": {
+        "test": "museum_earned_walk_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "02_museum",
+        "proof": "docs/museum-broken-sword-earned-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_museum_jungle.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_magic_museum_arrival.json",
+        "input_sha256": "dfd87e89983de6ce700e16b1fb5301cefcc9901ffacf84c18ae13a000ce47e62"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "museum:item11:Fine_Longsword",
+            "museum:control181:Tho_Broken"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "monastery:item94:Iron_Flute",
+            "jungle:magic_shop:Tho_fixed"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_LUTHERS_SOUL": 5,
+          "quests.monastery.globals.GV_MET_BACATTA": 0,
+          "quests.monastery.globals.GV_HAS_RUNES": 0
+        }
+      }
+    },
+    {
+      "id": "act1-hive-entry",
+      "title": "Act 1 - Hive entry",
+      "act": 1,
+      "area": "Hive",
+      "resume": "hive",
+      "save": "act1_broken_hive_entry.json",
+      "sha256": "c40aaa2c7f8da4c733caf12433530c925c76dc8b996ad4a354f3df458707826f",
+      "source": {
+        "test": "earned_jungle_hive_walk_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "03_jungle_hive",
+        "proof": "docs/broken-earned-jungle-hive-walk-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_hive_entry.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_museum_jungle.json",
+        "input_sha256": "bf92e27a71fa713713729eab65f00cee443f0745abfa712eb7f9166eb86e15dc"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "museum:item11:Fine_Longsword",
+            "museum:control181:Tho_Broken"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "monastery:item94:Iron_Flute",
+            "hive:item0:Wax"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_MET_BACATTA": 0,
+          "quests.monastery.globals.GV_HAS_RUNES": 0
+        }
+      }
+    },
+    {
+      "id": "act1-hive-flute-return",
+      "title": "Act 1 - Back in the Hive with the flute",
+      "act": 1,
+      "area": "Hive",
+      "resume": "hive",
+      "save": "act1_broken_flute_hive_return.json",
+      "sha256": "c96dcc5b7ee2414d1d97ac466f85be9ca326477381cbfb44ebe1409dfa870f49",
+      "source": {
+        "test": "hive_quest_walk_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "04_flute",
+        "proof": "docs/broken-earned-flute-return-walk-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_flute_hive_return.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_hive_entry.json",
+        "input_sha256": "c40aaa2c7f8da4c733caf12433530c925c76dc8b996ad4a354f3df458707826f"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "museum:item11:Fine_Longsword",
+            "museum:control181:Tho_Broken",
+            "monastery:item94:Iron_Flute"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "hive:item0:Wax",
+            "hive:Wax_runes:0"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_MET_BACATTA": 1,
+          "quests.monastery.globals.GV_BACATTA_RELATIONSHIP": 2,
+          "quests.monastery.globals.GV_HAS_RUNES": 0
+        }
+      }
+    },
+    {
+      "id": "act1-hive-wax",
+      "title": "Act 1 - Hive, wax collected",
+      "act": 1,
+      "area": "Hive",
+      "resume": "hive",
+      "save": "act1_broken_wax_upper_return.json",
+      "sha256": "2f01e8b86c46c13286c5360d00a9181385b53196440f38be38dd2d7418314b78",
+      "source": {
+        "test": "hive_wax_return_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "05_wax",
+        "proof": "docs/broken-hive-wax-return-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_wax_upper_return.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_flute_hive_return.json",
+        "input_sha256": "c96dcc5b7ee2414d1d97ac466f85be9ca326477381cbfb44ebe1409dfa870f49"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "museum:control181:Tho_Broken",
+            "monastery:item94:Iron_Flute",
+            "hive:item0:Wax"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "hive:Wax_runes:0"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_HAS_RUNES": 0
+        }
+      }
+    },
+    {
+      "id": "act1-hive-runes",
+      "title": "Act 1 - Hive, runes copied",
+      "act": 1,
+      "area": "Hive",
+      "resume": "hive",
+      "save": "act1_broken_earned_runes.json",
+      "sha256": "3b0b287d5a598aaee1bdf5cf985a3ae3de3b285c28d0626e71419aee712e0651",
+      "source": {
+        "test": "hive_earned_rune_walk_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "06_runes",
+        "proof": "docs/broken-hive-earned-rune-walk-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_earned_runes.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_wax_upper_return.json",
+        "input_sha256": "2f01e8b86c46c13286c5360d00a9181385b53196440f38be38dd2d7418314b78"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "museum:control181:Tho_Broken",
+            "hive:Wax_runes:0"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "hive:item0:Wax"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_HAS_RUNES": 1,
+          "quests.monastery.globals.GV_KNOWLEDGE_OF_POWER_ORB": 0
+        }
+      }
+    },
+    {
+      "id": "act1-monastery-runes",
+      "title": "Act 1 - Monastery, back with the copied runes",
+      "act": 1,
+      "area": "Monastery (Huline Jungle)",
+      "resume": "jungle",
+      "save": "act1_broken_runes_monastery_return.json",
+      "sha256": "3e15d8a1973ac9de0e599824bef5cbed0557ec02b9288c69d47edace91aed1f5",
+      "source": {
+        "test": "hive_earned_rune_return_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "07_rune_return",
+        "proof": "docs/broken-hive-earned-rune-return-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_runes_monastery_return.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_earned_runes.json",
+        "input_sha256": "3b0b287d5a598aaee1bdf5cf985a3ae3de3b285c28d0626e71419aee712e0651"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "museum:control181:Tho_Broken",
+            "hive:Wax_runes:0"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "hive:item0:Wax"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_HAS_RUNES": 1,
+          "quests.monastery.globals.GV_KNOWLEDGE_OF_POWER_ORB": 0,
+          "quests.monastery.globals.GV_RUNES_TRANSLATED": 0
+        }
+      }
+    },
+    {
+      "id": "act1-monastery-orb",
+      "title": "Act 1 - Monastery, after Rashar's magic shop (power orb known)",
+      "act": 1,
+      "area": "Monastery (Huline Jungle)",
+      "resume": "jungle",
+      "save": "act1_broken_orb_monastery.json",
+      "sha256": "4a8f3cb5a65d359e7b76e01ff95d61b7a14b3e57cb6860c3d207fe87565ccc7c",
+      "source": {
+        "test": "broken_magic_knowledge_walk_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "08_knowledge",
+        "proof": "docs/broken-magic-knowledge-walk-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_orb_monastery.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_runes_monastery_return.json",
+        "input_sha256": "3e15d8a1973ac9de0e599824bef5cbed0557ec02b9288c69d47edace91aed1f5"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "museum:control181:Tho_Broken",
+            "hive:Wax_runes:0"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "jungle:magic_shop:Tho_fixed"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_KNOWLEDGE_OF_POWER_ORB": 1,
+          "quests.monastery.globals.GV_LUTHER_KNOWS_ABOUT_DANIEL": 1,
+          "quests.monastery.globals.GV_RUNES_TRANSLATED": 0
+        }
+      }
+    },
+    {
+      "id": "act1-runes-translated",
+      "title": "Act 1 - Monastery, runes translated",
+      "act": 1,
+      "area": "Monastery (Huline Jungle)",
+      "resume": "jungle",
+      "save": "act1_broken_runes_translated.json",
+      "sha256": "0fef478c09ccad7594f429625640d254b66f8c756ec5859c32915fbbae3b94bc",
+      "source": {
+        "test": "monastery_rune_offer_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "09_translation",
+        "proof": "docs/broken-monastery-rune-offer-live-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_runes_translated.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_orb_monastery.json",
+        "input_sha256": "4a8f3cb5a65d359e7b76e01ff95d61b7a14b3e57cb6860c3d207fe87565ccc7c"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "museum:control181:Tho_Broken"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "hive:Wax_runes:0",
+            "jungle:magic_shop:Tho_fixed"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_RUNES_TRANSLATED": 1,
+          "quests.monastery.globals.GV_LUTHERS_SOUL": 5
+        }
+      }
+    },
+    {
+      "id": "act1-sword-repaired",
+      "title": "Act 1 - Monastery, sword repaired (before the Dark Halls)",
+      "act": 1,
+      "area": "Monastery (Huline Jungle)",
+      "resume": "jungle",
+      "save": "act1_broken_repaired_monastery.json",
+      "sha256": "ee4a4e45e5fc6a70c971058afd223cf72e2a552305b73a0d223655df9222d34d",
+      "source": {
+        "test": "broken_repair_earned_walk_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "10_repair",
+        "proof": "docs/broken-repair-earned-walk-checks.json",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_repaired_monastery.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_broken_runes_translated.json",
+        "input_sha256": "0fef478c09ccad7594f429625640d254b66f8c756ec5859c32915fbbae3b94bc"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "museum:item11:Fine_Longsword",
+            "jungle:magic_shop:Tho_fixed"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "museum:control181:Tho_Broken"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_LUTHERS_SOUL": 7,
+          "quests.monastery.globals.GV_LUTHER_HAS_WARBLADE": 1,
+          "quests.monastery.globals.GV_RUNES_TRANSLATED": 1
+        }
+      }
+    },
+    {
+      "id": "act1-end-darker-jungle",
+      "title": "End of Act 1 - Darker Jungle arrival (after the Dark Halls)",
+      "act": 1,
+      "area": "Darker Jungle",
+      "resume": "darker",
+      "save": "act1_dark_halls_darker_arrival.json",
+      "sha256": "9606beab57fdb8d246e3f322ba328a1ae965dba1027dda7b4eef5cb55d4c6425",
+      "source": {
+        "test": "dark_halls_earned_detour_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "11-13_dark_halls",
+        "proof": "AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/dark_halls_earned/depart.json (kept output depart_output_darker_arrival.json has this sha256); audit_dark_halls_detour_chain.txt PASS",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_dark_halls_darker_arrival.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/dark_halls_earned/finish_output_jungle_quicksave.json",
+        "input_sha256": "3eb93c33de97fbfc631b7aaffd356b985e8cd98f41bed513fb80656a576a846b",
+        "input_note": "phase depart resumed the phase-finish F5 Jungle save; the detour chain started from act1_broken_repaired_monastery.json (ee4a4e45...)"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "jungle:magic_shop:Tho_fixed",
+            "darkhalls:control968u1:HlScrl",
+            "darkhalls:control968u2:HlScrl",
+            "darkhalls:control971u1:Prsmscrl"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "museum:control181:Tho_Broken"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_LUTHERS_SOUL": 8,
+          "quests.monastery.globals.GV_RIX_DEAD": 0,
+          "quests.dark_halls_windows.done": true,
+          "quests.act_one_departure.phase": "arrived",
+          "quests.act_one_departure.local55": 1
+        }
+      }
+    }
+  ]
+}

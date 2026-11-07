@@ -1,0 +1,1 @@
+| 2026-10-21 | Cave, Museum | Scenery solid boxes block the player and creatures (layer 9) but not aim/line-of-sight rays (layer 1): the same aim/LOS behaviour as every build before native collision. The native LOS rule for these objects is not traced. | Avoid unaudited changes to 115 aim/LOS queries (Codex OPUS_SCENERY_LOS_REVIEW). | pending |

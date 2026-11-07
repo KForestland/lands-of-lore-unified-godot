@@ -1,0 +1,238 @@
+{
+ "source_sha256": "c294f9ab142b55c36fff545a1293c419c42353fedefbfe8b77b9c38a2d9a0719",
+ "item": {
+  "row": 67,
+  "flags": 130,
+  "region": 379,
+  "identity": 3493993438,
+  "position": [
+   2691,
+   -70,
+   -3887
+  ],
+  "heading": 0,
+  "placement_hex": "830a2f0f0000baff82007b01000000000000000014647f00b97b5a0014000000de1b42d000",
+  "file_offset": 11776097,
+  "id": "act2:L14_HT:item67",
+  "definition": 105,
+  "name": "103-Cry shard",
+  "label": "Cry shard",
+  "icon": "res://assets/lol2/generated/items/icons/105.png",
+  "handler": 0,
+  "grade": "LIKELY"
+ },
+ "objects": [
+  {
+   "events": [],
+   "file_offset": 11758519,
+   "index": 311,
+   "list_file_offset": 11736772,
+   "list_offset": 0,
+   "placement_hex": "210b470f000014000210b00100000000000000000000000000000000000000001c00000003",
+   "ref": "prop:311",
+   "table": "prop",
+   "terminator_offset": 0
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00251ef823",
+     "file_offset": 11744524,
+     "group": 17940,
+     "kind": 4,
+     "offset": 7752,
+     "predicate": null,
+     "raw_hex": "0a0414460300251ef823",
+     "stream": 1,
+     "value": 3
+    }
+   ],
+   "file_offset": 11766414,
+   "index": 126,
+   "list_file_offset": 11744524,
+   "list_offset": 7752,
+   "placement_hex": "260b490f004014008204b001481e7f00000000000100000000000000140030002a",
+   "ref": "control:126",
+   "table": "control",
+   "terminator_offset": 7762
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 11746728,
+     "group": 20188,
+     "kind": 6,
+     "offset": 9956,
+     "predicate": null,
+     "raw_hex": "0606dc4e0f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 11779497,
+   "index": 73,
+   "list_file_offset": 11746728,
+   "list_offset": 9956,
+   "placement_hex": "900a330f0000e8ff81053b01e42600005c745a0014647f000000000001000c00300105012046000000",
+   "ref": "movable:73",
+   "table": "movable",
+   "terminator_offset": 9962
+  },
+  {
+   "events": [],
+   "file_offset": 11779538,
+   "index": 74,
+   "list_file_offset": 11736772,
+   "list_offset": 0,
+   "placement_hex": "750a330f0000e8ff81014401000000005c745a0014647f000000000001000c00300104012046000000",
+   "ref": "movable:74",
+   "table": "movable",
+   "terminator_offset": 0
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 11746736,
+     "group": 20240,
+     "kind": 6,
+     "offset": 9964,
+     "predicate": null,
+     "raw_hex": "0606104f0f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 11779579,
+   "index": 75,
+   "list_file_offset": 11746736,
+   "list_offset": 9964,
+   "placement_hex": "1d0b490f004028000205b001ec2600005c745a0014647f0000000000010094002f0101011446000000",
+   "ref": "movable:75",
+   "table": "movable",
+   "terminator_offset": 9970
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 11730528,
+     "kind": 32,
+     "offset": 17946,
+     "opcode": 20,
+     "raw_hex": "14204900bc0296000a14",
+     "target": 73
+    },
+    {
+     "file_offset": 11730538,
+     "kind": 3,
+     "offset": 17956,
+     "opcode": 9,
+     "raw_hex": "090337010300",
+     "target": 311
+    },
+    {
+     "file_offset": 11730544,
+     "kind": 16,
+     "offset": 17962,
+     "opcode": 9,
+     "raw_hex": "09107e000200",
+     "target": 126
+    },
+    {
+     "file_offset": 11730550,
+     "kind": 1,
+     "offset": 17968,
+     "opcode": 2,
+     "raw_hex": "020100001800",
+     "target": 0
+    },
+    {
+     "file_offset": 11730556,
+     "kind": 32,
+     "offset": 17974,
+     "opcode": 1,
+     "raw_hex": "01204b006400",
+     "target": 75
+    }
+   ],
+   "count": 5,
+   "file_offset": 11730522,
+   "group": 17940,
+   "header_hex": "f00000000500",
+   "raw_hex": "f0000000050014204900bc0296000a1409033701030009107e00020002010000180001204b006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 11732776,
+     "kind": 32,
+     "offset": 20194,
+     "opcode": 20,
+     "raw_hex": "14204900d00396000a14",
+     "target": 73
+    },
+    {
+     "file_offset": 11732786,
+     "kind": 144,
+     "offset": 20204,
+     "opcode": 196,
+     "raw_hex": "c4907d01000000fd00000000",
+     "target": 381
+    },
+    {
+     "file_offset": 11732798,
+     "kind": 144,
+     "offset": 20216,
+     "opcode": 196,
+     "raw_hex": "c4907b01000000fd00000000",
+     "target": 379
+    },
+    {
+     "file_offset": 11732810,
+     "kind": 144,
+     "offset": 20228,
+     "opcode": 196,
+     "raw_hex": "c4904301000000fd00000000",
+     "target": 323
+    }
+   ],
+   "count": 4,
+   "file_offset": 11732770,
+   "group": 20188,
+   "header_hex": "f00000000400",
+   "raw_hex": "f0000000040014204900d00396000a14c4907d01000000fd00000000c4907b01000000fd00000000c4904301000000fd00000000",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 11732828,
+     "kind": 32,
+     "offset": 20246,
+     "opcode": 1,
+     "raw_hex": "012049006400",
+     "target": 73
+    },
+    {
+     "file_offset": 11732834,
+     "kind": 32,
+     "offset": 20252,
+     "opcode": 1,
+     "raw_hex": "01204a006400",
+     "target": 74
+    }
+   ],
+   "count": 2,
+   "file_offset": 11732822,
+   "group": 20240,
+   "header_hex": "f00000000200",
+   "raw_hex": "f0000000020001204900640001204a006400",
+   "stream": 1
+  }
+ ],
+ "scope": "Original126 kind4 names statue identity; group17940 names movable75.75 group20240 names73/74.73 group20188 opcode196 names381/379/323 target0, the three contiguous floor-70 pedestal regions under original shard67 at2691,-70,-3887. This strengthens the book-to-source join; native event/callee semantics, relative animation/contact timing remain unentered modern adapters."
+}

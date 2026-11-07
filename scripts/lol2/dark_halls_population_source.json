@@ -1,0 +1,989 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L7_DH.MIX",
+  "sha256": "40b394ebb3cfcfd9f332c4707f2f9e9e7de76d89b82836cec211772ca456b8e7",
+  "geometry_key": 3374994708,
+  "geometry_sha256": "3d5fd30151f2a31965039a0de9119e93136a216aad6d059ab67070b0cb55fb9d"
+ },
+ "actors": [
+  {
+   "actor": 24,
+   "definition": 0,
+   "position": [
+    -1307,
+    310,
+    -2033
+   ],
+   "heading": 17294,
+   "health": 120,
+   "behavior": 6,
+   "flags": 24962,
+   "present": true,
+   "loot": 297009408,
+   "reward_scale": 7
+  },
+  {
+   "actor": 25,
+   "definition": 1,
+   "position": [
+    -1110,
+    750,
+    -761
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 1732490540,
+   "reward_scale": 3
+  },
+  {
+   "actor": 26,
+   "definition": 1,
+   "position": [
+    -1194,
+    745,
+    -754
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 19726335,
+   "reward_scale": 3
+  },
+  {
+   "actor": 27,
+   "definition": 1,
+   "position": [
+    -1243,
+    750,
+    -705
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 21188716,
+   "reward_scale": 3
+  },
+  {
+   "actor": 28,
+   "definition": 1,
+   "position": [
+    -1250,
+    750,
+    562
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 4294904861,
+   "reward_scale": 3
+  },
+  {
+   "actor": 29,
+   "definition": 1,
+   "position": [
+    -438,
+    640,
+    576
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 21168127,
+   "reward_scale": 3
+  },
+  {
+   "actor": 30,
+   "definition": 1,
+   "position": [
+    2006,
+    640,
+    303
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 4294967040,
+   "reward_scale": 3
+  },
+  {
+   "actor": 31,
+   "definition": 1,
+   "position": [
+    -200,
+    640,
+    261
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 4294901760,
+   "reward_scale": 3
+  },
+  {
+   "actor": 32,
+   "definition": 1,
+   "position": [
+    -200,
+    640,
+    359
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 70778882,
+   "reward_scale": 3
+  },
+  {
+   "actor": 33,
+   "definition": 1,
+   "position": [
+    2600,
+    640,
+    576
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": null,
+   "reward_scale": 3
+  },
+  {
+   "actor": 34,
+   "definition": 1,
+   "position": [
+    3588,
+    530,
+    576
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 139806,
+   "reward_scale": 3
+  },
+  {
+   "actor": 35,
+   "definition": 1,
+   "position": [
+    2027,
+    420,
+    -1320
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 8257611,
+   "reward_scale": 3
+  },
+  {
+   "actor": 36,
+   "definition": 1,
+   "position": [
+    1971,
+    420,
+    -1348
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 169760012,
+   "reward_scale": 3
+  },
+  {
+   "actor": 37,
+   "definition": 1,
+   "position": [
+    2265,
+    420,
+    -1481
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 4915500,
+   "reward_scale": 3
+  },
+  {
+   "actor": 38,
+   "definition": 1,
+   "position": [
+    2678,
+    420,
+    -1677
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 1698768460,
+   "reward_scale": 3
+  },
+  {
+   "actor": 39,
+   "definition": 1,
+   "position": [
+    2580,
+    420,
+    -2546
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 19726335,
+   "reward_scale": 3
+  },
+  {
+   "actor": 40,
+   "definition": 1,
+   "position": [
+    -781,
+    310,
+    -2179
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 21021068,
+   "reward_scale": 3
+  },
+  {
+   "actor": 41,
+   "definition": 1,
+   "position": [
+    -1240,
+    310,
+    -2026
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 4294902612,
+   "reward_scale": 3
+  },
+  {
+   "actor": 42,
+   "definition": 1,
+   "position": [
+    1903,
+    310,
+    -3967
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 21037055,
+   "reward_scale": 3
+  },
+  {
+   "actor": 43,
+   "definition": 1,
+   "position": [
+    989,
+    310,
+    -3827
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 27263194,
+   "reward_scale": 3
+  },
+  {
+   "actor": 44,
+   "definition": 1,
+   "position": [
+    906,
+    310,
+    -3812
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 4294901760,
+   "reward_scale": 3
+  },
+  {
+   "actor": 45,
+   "definition": 1,
+   "position": [
+    557,
+    310,
+    -3969
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 8650754,
+   "reward_scale": 3
+  },
+  {
+   "actor": 46,
+   "definition": 1,
+   "position": [
+    -985,
+    310,
+    -3961
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": null,
+   "reward_scale": 3
+  },
+  {
+   "actor": 47,
+   "definition": 1,
+   "position": [
+    -2041,
+    200,
+    -3969
+   ],
+   "heading": 0,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 132638,
+   "reward_scale": 3
+  },
+  {
+   "actor": 48,
+   "definition": 1,
+   "position": [
+    -2662,
+    85,
+    -3737
+   ],
+   "heading": 46057,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 1845543424,
+   "reward_scale": 3
+  },
+  {
+   "actor": 49,
+   "definition": 1,
+   "position": [
+    -2809,
+    85,
+    -3692
+   ],
+   "heading": 46057,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": null,
+   "reward_scale": 3
+  },
+  {
+   "actor": 50,
+   "definition": 1,
+   "position": [
+    -2915,
+    85,
+    -3748
+   ],
+   "heading": 46057,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": null,
+   "reward_scale": 3
+  },
+  {
+   "actor": 51,
+   "definition": 1,
+   "position": [
+    -3022,
+    85,
+    -2747
+   ],
+   "heading": 31493,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 23588440,
+   "reward_scale": 3
+  },
+  {
+   "actor": 52,
+   "definition": 1,
+   "position": [
+    -2748,
+    85,
+    -2414
+   ],
+   "heading": 41870,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": null,
+   "reward_scale": 3
+  },
+  {
+   "actor": 53,
+   "definition": 1,
+   "position": [
+    -2696,
+    85,
+    -2063
+   ],
+   "heading": 49880,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 1694558720,
+   "reward_scale": 3
+  },
+  {
+   "actor": 54,
+   "definition": 1,
+   "position": [
+    -2753,
+    85,
+    -2022
+   ],
+   "heading": 49880,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": null,
+   "reward_scale": 3
+  },
+  {
+   "actor": 55,
+   "definition": 1,
+   "position": [
+    -2816,
+    85,
+    -2014
+   ],
+   "heading": 49880,
+   "health": 100,
+   "behavior": 14,
+   "flags": 24962,
+   "present": true,
+   "loot": 2559312386,
+   "reward_scale": 3
+  },
+  {
+   "actor": 57,
+   "definition": 2,
+   "position": [
+    3242,
+    530,
+    -634
+   ],
+   "heading": 16384,
+   "health": 200,
+   "behavior": 6,
+   "flags": 26498,
+   "present": true,
+   "loot": null,
+   "reward_scale": 8
+  },
+  {
+   "actor": 58,
+   "definition": 0,
+   "position": [
+    456,
+    0,
+    -3140
+   ],
+   "heading": 32768,
+   "health": 100,
+   "behavior": 14,
+   "flags": 26498,
+   "present": true,
+   "loot": 4064543067,
+   "reward_scale": 7
+  },
+  {
+   "actor": 59,
+   "definition": 0,
+   "position": [
+    958,
+    50,
+    -3249
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": 20116932,
+   "reward_scale": 7
+  },
+  {
+   "actor": 60,
+   "definition": 0,
+   "position": [
+    864,
+    50,
+    -3249
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": 20446348,
+   "reward_scale": 7
+  },
+  {
+   "actor": 61,
+   "definition": 0,
+   "position": [
+    760,
+    50,
+    -3251
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": 20484748,
+   "reward_scale": 7
+  },
+  {
+   "actor": 62,
+   "definition": 0,
+   "position": [
+    663,
+    50,
+    -3249
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": null,
+   "reward_scale": 7
+  },
+  {
+   "actor": 63,
+   "definition": 0,
+   "position": [
+    555,
+    50,
+    -3242
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": null,
+   "reward_scale": 7
+  },
+  {
+   "actor": 64,
+   "definition": 0,
+   "position": [
+    459,
+    50,
+    -3254
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": 20085940,
+   "reward_scale": 7
+  },
+  {
+   "actor": 65,
+   "definition": 0,
+   "position": [
+    462,
+    50,
+    -3343
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 26498,
+   "present": true,
+   "loot": 1,
+   "reward_scale": 7
+  },
+  {
+   "actor": 66,
+   "definition": 0,
+   "position": [
+    572,
+    50,
+    -3343
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 26498,
+   "present": true,
+   "loot": 20069300,
+   "reward_scale": 7
+  },
+  {
+   "actor": 67,
+   "definition": 0,
+   "position": [
+    658,
+    50,
+    -3346
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": 20587468,
+   "reward_scale": 7
+  },
+  {
+   "actor": 68,
+   "definition": 0,
+   "position": [
+    760,
+    50,
+    -3346
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": 20454412,
+   "reward_scale": 7
+  },
+  {
+   "actor": 69,
+   "definition": 0,
+   "position": [
+    861,
+    50,
+    -3346
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": 4294967040,
+   "reward_scale": 7
+  },
+  {
+   "actor": 70,
+   "definition": 0,
+   "position": [
+    953,
+    50,
+    -3341
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 18306,
+   "present": true,
+   "loot": 218374144,
+   "reward_scale": 7
+  },
+  {
+   "actor": 71,
+   "definition": 0,
+   "position": [
+    951,
+    50,
+    -3440
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 26498,
+   "present": true,
+   "loot": 20036436,
+   "reward_scale": 7
+  },
+  {
+   "actor": 72,
+   "definition": 0,
+   "position": [
+    854,
+    50,
+    -3440
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 26498,
+   "present": true,
+   "loot": 544040308,
+   "reward_scale": 7
+  },
+  {
+   "actor": 73,
+   "definition": 0,
+   "position": [
+    758,
+    50,
+    -3442
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 4,
+   "flags": 26498,
+   "present": true,
+   "loot": 1543565824,
+   "reward_scale": 7
+  },
+  {
+   "actor": 74,
+   "definition": 0,
+   "position": [
+    664,
+    50,
+    -3442
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 26498,
+   "present": true,
+   "loot": null,
+   "reward_scale": 7
+  },
+  {
+   "actor": 75,
+   "definition": 0,
+   "position": [
+    565,
+    50,
+    -3442
+   ],
+   "heading": 32950,
+   "health": 100,
+   "behavior": 14,
+   "flags": 26498,
+   "present": true,
+   "loot": 514,
+   "reward_scale": 7
+  }
+ ],
+ "definitions": {
+  "0": {
+   "name": "SHADE",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 20
+    },
+    "walk": {
+     "selector": 8,
+     "frames": 19
+    },
+    "rise": {
+     "selector": 13,
+     "frames": 7
+    },
+    "death": {
+     "selector": 15,
+     "frames": 10
+    },
+    "corpse": {
+     "selector": 16,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 11,
+      "frames": 16,
+      "hits": [
+       [
+        11,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     },
+     {
+      "selector": 12,
+      "frames": 16,
+      "hits": [
+       [
+        11,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   }
+  },
+  "1": {
+   "name": "Rat",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 8
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 8
+    },
+    "rise": {
+     "selector": 4,
+     "frames": 6
+    },
+    "death": {
+     "selector": 6,
+     "frames": 11
+    },
+    "corpse": {
+     "selector": 7,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 3,
+      "frames": 13,
+      "hits": [
+       [
+        6,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   }
+  },
+  "2": {
+   "name": "RIX",
+   "clips": {
+    "idle": {
+     "selector": 0,
+     "frames": 22
+    },
+    "walk": {
+     "selector": 1,
+     "frames": 16
+    },
+    "rise": {
+     "selector": 6,
+     "frames": 16
+    },
+    "death": {
+     "selector": 8,
+     "frames": 30
+    },
+    "corpse": {
+     "selector": 9,
+     "frames": 1
+    },
+    "attacks": [
+     {
+      "selector": 4,
+      "frames": 12,
+      "hits": [
+       [
+        5,
+        100
+       ]
+      ],
+      "damage": [
+       15
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "native_bases": {
+  "Rat": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "4961ae57033d1575d6b4fb3302df9815e14bbdceca0b4de6e73730418b071020"
+  },
+  "RIX": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "812434dbbdea7b217402cfbfb8b7464be1a1ec9f1a39019be74acdb3162f1d20"
+  },
+  "SHADE": {
+   "base": 15,
+   "total81": 30,
+   "minimum82": 3,
+   "stat_sha256": "4961ae57033d1575d6b4fb3302df9815e14bbdceca0b4de6e73730418b071020",
+   "adapter": "Rat stats"
+  }
+ },
+ "regions": [],
+ "neighbour_wake": {},
+ "counted": [],
+ "counter_target": 0,
+ "scripted_dormant": [],
+ "controls": []
+}

@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/lol2/hive_review.gd" id="1"]
+
+[ext_resource type="Script" path="res://scripts/lol2/museum_props.gd" id="2"]
+
+[ext_resource type="Script" path="res://scripts/lol2/hive_conversation.gd" id="3"]
+
+[ext_resource type="Script" path="res://scripts/lol2/hive_pillar.gd" id="4"]
+
+[ext_resource type="Script" path="res://scripts/lol2/hive_warriors.gd" id="5"]
+
+[ext_resource type="Script" path="res://scripts/lol2/hive_chasm.gd" id="6"]
+
+[ext_resource type="Script" path="res://scripts/lol2/hive_nest.gd" id="7"]
+
+[node name="HiveReview" type="Node3D"]
+script = ExtResource("1")
+geometry_file = "res://assets/lol2/generated/hive_review/hive.json"
+review_title = "Hive Caves"
+
+[node name="SourcePropCandidates" type="Node3D" parent="."]
+script = ExtResource("2")
+asset_root = "res://assets/lol2/generated/hive_props/"
+
+[node name="ConversationReview" type="MeshInstance3D" parent="."]
+script = ExtResource("3")
+
+[node name="QuestPillar" type="MeshInstance3D" parent="."]
+script = ExtResource("4")
+
+[node name="Warriors" type="Node3D" parent="."]
+script = ExtResource("5")
+
+[node name="Chasm" type="Node3D" parent="."]
+script = ExtResource("6")
+
+[node name="Nest" type="Node3D" parent="."]
+script = ExtResource("7")

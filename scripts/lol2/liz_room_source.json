@@ -1,0 +1,105 @@
+{
+ "version": 1,
+ "room": "LIZ",
+ "source_room": "liz_",
+ "village_hotspot": {
+  "index": 3,
+  "rect": [
+   425,
+   211,
+   576,
+   310
+  ],
+  "flag_test": null
+ },
+ "intro": {
+  "flag": 268,
+  "movie": "WOMS\\LIZ\\LIZTRAN.VQA"
+ },
+ "background": "WOMS\\LIZ\\LIZ_.VQA",
+ "hotspots": [
+  {
+   "index": 0,
+   "rect": [
+    91,
+    282,
+    146,
+    339
+   ]
+  },
+  {
+   "index": 1,
+   "rect": [
+    177,
+    151,
+    217,
+    221
+   ]
+  },
+  {
+   "index": 2,
+   "rect": [
+    290,
+    238,
+    344,
+    316
+   ]
+  },
+  {
+   "index": 3,
+   "rect": [
+    404,
+    244,
+    472,
+    322
+   ]
+  },
+  {
+   "index": 4,
+   "rect": [
+    220,
+    198,
+    365,
+    234
+   ]
+  }
+ ],
+ "wax": {
+  "hotspot": 0,
+  "flag": 162,
+  "cue": "100:2",
+  "item": "71-Wax",
+  "identity": 2925189839,
+  "order": [
+   "set_flag 162",
+   "cue 100:2",
+   "give_item 71-Wax"
+  ]
+ },
+ "entry_cue": "2:59",
+ "exit": "VILLAGE",
+ "cues": {
+  "100:2": {
+   "trailer_index": 270,
+   "request": 221,
+   "bank_record": "0100224e.aud",
+   "sha256": "449f860e1be353a8bb98f332136000491e6cbf21d7dd35fc35206139c5d381c8",
+   "bytes": 13012,
+   "rate": 22050
+  },
+  "2:59": {
+   "trailer_index": 200,
+   "request": 247,
+   "bank_record": "0120224e.aud",
+   "sha256": "d8f5a86c84abdba61db94852884c03729fd5a398be76e46a1dd10dd1bd526f56",
+   "bytes": 14676,
+   "rate": 22050
+  }
+ },
+ "not_hosted": [
+  "quip 0x100/0x200/0x400/0x800 on hotspots 1-4 (lines unknown)",
+  "callback11 host 0xE8/0x134",
+  "ambient 367",
+  "load_room extra arguments 1, 0"
+ ]
+}

@@ -1,0 +1,704 @@
+{
+ "version": 1,
+ "source": {
+  "area": "L1_DC",
+  "archive_sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345"
+ },
+ "prop": 223,
+ "position": [
+  -261,
+  -270,
+  -15192
+ ],
+ "region": 53,
+ "placement_hex": "fbfe583b0000f2fe0254350090040001000000000000000000b500bd000003004400000003",
+ "flags": 21506,
+ "absent": true,
+ "durability": 3,
+ "hit_record_hex": "0a091609110000000283",
+ "masks": [
+  17,
+  0
+ ],
+ "threshold": 2,
+ "mode": 131,
+ "movie": "EXPLODE.VQA",
+ "movie_descriptor": 615,
+ "burst_object": 223,
+ "prop574_burst_object": 222,
+ "groups": {
+  "2326": {
+   "stream": 1,
+   "handlers": [
+    {
+     "stream": 1,
+     "group": 2326,
+     "owner_kind": "prop",
+     "owner": 223,
+     "event": 9,
+     "value": 17,
+     "predicate": 2,
+     "archive_offset": 7248701
+    }
+   ],
+   "commands": [
+    {
+     "archive_offset": 7235203,
+     "raw_hex": "0f03df006503df00",
+     "op": 15,
+     "kind": 3,
+     "target": 223,
+     "argument": 101,
+     "value": 3
+    },
+    {
+     "archive_offset": 7235211,
+     "raw_hex": "090348021100",
+     "op": 9,
+     "kind": 3,
+     "target": 584,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235217,
+     "raw_hex": "090341021100",
+     "op": 9,
+     "kind": 3,
+     "target": 577,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235223,
+     "raw_hex": "090343021100",
+     "op": 9,
+     "kind": 3,
+     "target": 579,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235229,
+     "raw_hex": "090355021100",
+     "op": 9,
+     "kind": 3,
+     "target": 597,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235235,
+     "raw_hex": "090346021100",
+     "op": 9,
+     "kind": 3,
+     "target": 582,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235241,
+     "raw_hex": "090340021100",
+     "op": 9,
+     "kind": 3,
+     "target": 576,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235247,
+     "raw_hex": "0903b8011100",
+     "op": 9,
+     "kind": 3,
+     "target": 440,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235253,
+     "raw_hex": "090344021100",
+     "op": 9,
+     "kind": 3,
+     "target": 580,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235259,
+     "raw_hex": "0903bb011100",
+     "op": 9,
+     "kind": 3,
+     "target": 443,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235265,
+     "raw_hex": "090345021100",
+     "op": 9,
+     "kind": 3,
+     "target": 581,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235271,
+     "raw_hex": "0903b9011100",
+     "op": 9,
+     "kind": 3,
+     "target": 441,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235277,
+     "raw_hex": "0903ba011100",
+     "op": 9,
+     "kind": 3,
+     "target": 442,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235283,
+     "raw_hex": "0903bc011100",
+     "op": 9,
+     "kind": 3,
+     "target": 444,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235289,
+     "raw_hex": "09033f021100",
+     "op": 9,
+     "kind": 3,
+     "target": 575,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235295,
+     "raw_hex": "09034a021100",
+     "op": 9,
+     "kind": 3,
+     "target": 586,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235301,
+     "raw_hex": "090351021100",
+     "op": 9,
+     "kind": 3,
+     "target": 593,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235307,
+     "raw_hex": "090342021100",
+     "op": 9,
+     "kind": 3,
+     "target": 578,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235313,
+     "raw_hex": "0903bd011100",
+     "op": 9,
+     "kind": 3,
+     "target": 445,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235319,
+     "raw_hex": "0903be011100",
+     "op": 9,
+     "kind": 3,
+     "target": 446,
+     "argument": 17,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235325,
+     "raw_hex": "0503ba010200",
+     "op": 5,
+     "kind": 3,
+     "target": 442,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235331,
+     "raw_hex": "0503bc010200",
+     "op": 5,
+     "kind": 3,
+     "target": 444,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235337,
+     "raw_hex": "0503b9010200",
+     "op": 5,
+     "kind": 3,
+     "target": 441,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235343,
+     "raw_hex": "0503bb010200",
+     "op": 5,
+     "kind": 3,
+     "target": 443,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235349,
+     "raw_hex": "0503bd010200",
+     "op": 5,
+     "kind": 3,
+     "target": 445,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235355,
+     "raw_hex": "0503b8010200",
+     "op": 5,
+     "kind": 3,
+     "target": 440,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235361,
+     "raw_hex": "0503be010200",
+     "op": 5,
+     "kind": 3,
+     "target": 446,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235367,
+     "raw_hex": "0903ba011309",
+     "op": 9,
+     "kind": 3,
+     "target": 442,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235373,
+     "raw_hex": "0903b9011309",
+     "op": 9,
+     "kind": 3,
+     "target": 441,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235379,
+     "raw_hex": "0903bc011309",
+     "op": 9,
+     "kind": 3,
+     "target": 444,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235385,
+     "raw_hex": "0903bb011309",
+     "op": 9,
+     "kind": 3,
+     "target": 443,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235391,
+     "raw_hex": "0903b8011309",
+     "op": 9,
+     "kind": 3,
+     "target": 440,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235397,
+     "raw_hex": "0903bd011309",
+     "op": 9,
+     "kind": 3,
+     "target": 445,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235403,
+     "raw_hex": "0903be011309",
+     "op": 9,
+     "kind": 3,
+     "target": 446,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235409,
+     "raw_hex": "090348021309",
+     "op": 9,
+     "kind": 3,
+     "target": 584,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235415,
+     "raw_hex": "090346021309",
+     "op": 9,
+     "kind": 3,
+     "target": 582,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235421,
+     "raw_hex": "090340021309",
+     "op": 9,
+     "kind": 3,
+     "target": 576,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235427,
+     "raw_hex": "090349021309",
+     "op": 9,
+     "kind": 3,
+     "target": 585,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235433,
+     "raw_hex": "090344021309",
+     "op": 9,
+     "kind": 3,
+     "target": 580,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235439,
+     "raw_hex": "09033f021309",
+     "op": 9,
+     "kind": 3,
+     "target": 575,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235445,
+     "raw_hex": "09034a021309",
+     "op": 9,
+     "kind": 3,
+     "target": 586,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235451,
+     "raw_hex": "090345021309",
+     "op": 9,
+     "kind": 3,
+     "target": 581,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235457,
+     "raw_hex": "090343021309",
+     "op": 9,
+     "kind": 3,
+     "target": 579,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235463,
+     "raw_hex": "090342021309",
+     "op": 9,
+     "kind": 3,
+     "target": 578,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235469,
+     "raw_hex": "090347021309",
+     "op": 9,
+     "kind": 3,
+     "target": 583,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235475,
+     "raw_hex": "090341021309",
+     "op": 9,
+     "kind": 3,
+     "target": 577,
+     "argument": 19,
+     "value": 9
+    },
+    {
+     "archive_offset": 7235481,
+     "raw_hex": "090351021000",
+     "op": 9,
+     "kind": 3,
+     "target": 593,
+     "argument": 16,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235487,
+     "raw_hex": "140345029b01fa011907",
+     "op": 20,
+     "kind": 3,
+     "target": 581,
+     "argument": 155,
+     "value": 1
+    },
+    {
+     "archive_offset": 7235497,
+     "raw_hex": "0603df000100",
+     "op": 6,
+     "kind": 3,
+     "target": 223,
+     "argument": 1,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235503,
+     "raw_hex": "0803df0000000000",
+     "op": 8,
+     "kind": 3,
+     "target": 223,
+     "argument": 0,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235511,
+     "raw_hex": "0803df0002000000",
+     "op": 8,
+     "kind": 3,
+     "target": 223,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235519,
+     "raw_hex": "050341020200",
+     "op": 5,
+     "kind": 3,
+     "target": 577,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235525,
+     "raw_hex": "050347020200",
+     "op": 5,
+     "kind": 3,
+     "target": 583,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235531,
+     "raw_hex": "050342020200",
+     "op": 5,
+     "kind": 3,
+     "target": 578,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235537,
+     "raw_hex": "050343020200",
+     "op": 5,
+     "kind": 3,
+     "target": 579,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235543,
+     "raw_hex": "05034a020200",
+     "op": 5,
+     "kind": 3,
+     "target": 586,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235549,
+     "raw_hex": "05033f020200",
+     "op": 5,
+     "kind": 3,
+     "target": 575,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235555,
+     "raw_hex": "050345020200",
+     "op": 5,
+     "kind": 3,
+     "target": 581,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235561,
+     "raw_hex": "050344020200",
+     "op": 5,
+     "kind": 3,
+     "target": 580,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235567,
+     "raw_hex": "050349020200",
+     "op": 5,
+     "kind": 3,
+     "target": 585,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235573,
+     "raw_hex": "050340020200",
+     "op": 5,
+     "kind": 3,
+     "target": 576,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235579,
+     "raw_hex": "050346020200",
+     "op": 5,
+     "kind": 3,
+     "target": 582,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235585,
+     "raw_hex": "050348020200",
+     "op": 5,
+     "kind": 3,
+     "target": 584,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235591,
+     "raw_hex": "060345020100",
+     "op": 6,
+     "kind": 3,
+     "target": 581,
+     "argument": 1,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235597,
+     "raw_hex": "c60000000001",
+     "op": 198,
+     "kind": 0,
+     "target": 0,
+     "argument": 0,
+     "value": 1
+    }
+   ]
+  },
+  "2732": {
+   "stream": 1,
+   "handlers": [
+    {
+     "stream": 1,
+     "group": 2732,
+     "owner_kind": "prop",
+     "owner": 223,
+     "event": 6,
+     "value": 0,
+     "predicate": null,
+     "archive_offset": 7248715
+    }
+   ],
+   "commands": [
+    {
+     "archive_offset": 7235609,
+     "raw_hex": "0803df0001000000",
+     "op": 8,
+     "kind": 3,
+     "target": 223,
+     "argument": 1,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235617,
+     "raw_hex": "0603df000200",
+     "op": 6,
+     "kind": 3,
+     "target": 223,
+     "argument": 2,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235623,
+     "raw_hex": "1003df000100",
+     "op": 16,
+     "kind": 3,
+     "target": 223,
+     "argument": 1,
+     "value": 0
+    },
+    {
+     "archive_offset": 7235629,
+     "raw_hex": "0903df000200",
+     "op": 9,
+     "kind": 3,
+     "target": 223,
+     "argument": 2,
+     "value": 0
+    }
+   ]
+  }
+ },
+ "differences_from_5926": {
+  "removed": [
+   "090307041500",
+   "14034502aa01fa011907",
+   "06033e020100",
+   "08033e0200000000",
+   "08033e0202000000",
+   "0d02370006040000",
+   "0d02370004030000"
+  ],
+  "added": [
+   "0603df000100",
+   "0803df0000000000",
+   "0803df0002000000"
+  ],
+  "first": "0f03df006503df00 replaces 0f033e026503de00"
+ },
+ "scope": "Source groups and admission record for prop223; the hit/queue rules are in the release native receipt."
+}

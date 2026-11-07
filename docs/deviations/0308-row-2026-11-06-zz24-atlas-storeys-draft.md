@@ -1,0 +1,1 @@
+| 2026-11-06 | Atlas storeys (draft) | A1 groups each area's creature-nav regions into storeys by the nav's own links (floor step at most 32). A ramp of small steps stays one storey. Kinds are linked, isolated, blocked, and unmapped. No atlas renderer. | Adapter (owner rule 2026-10-30) | pending |

@@ -1,0 +1,228 @@
+{
+ "source_sha256": "b9d79292e7dd6fc2eba972e55628ee05e671a4d814de8b291310d540b3f742b9",
+ "objects": [
+  {
+   "events": [
+    {
+     "extra_hex": "00e3ae20ce",
+     "file_offset": 6854599,
+     "group": 8870,
+     "kind": 4,
+     "offset": 4330,
+     "predicate": {
+      "entry_file_offset": 6934142,
+      "entry_hex": "0005000000",
+      "index": 206,
+      "trailer_file_offset": 6854609,
+      "trailer_hex": "0413ce00"
+     },
+     "raw_hex": "0a04a6220300e3ae20ce",
+     "stream": 1,
+     "value": 3
+    },
+    {
+     "file_offset": 6854609,
+     "kind": 19,
+     "offset": 4340,
+     "raw_hex": "0413ce00"
+    },
+    {
+     "extra_hex": "0000000000",
+     "file_offset": 6854613,
+     "group": 8922,
+     "kind": 4,
+     "offset": 4344,
+     "predicate": {
+      "entry_file_offset": 6934147,
+      "entry_hex": "0005000001",
+      "index": 207,
+      "trailer_file_offset": 6854623,
+      "trailer_hex": "0413cf00"
+     },
+     "raw_hex": "0a04da22000000000000",
+     "stream": 1,
+     "value": 0
+    },
+    {
+     "file_offset": 6854623,
+     "kind": 19,
+     "offset": 4354,
+     "raw_hex": "0413cf00"
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 6854627,
+     "group": 8952,
+     "kind": 6,
+     "offset": 4358,
+     "predicate": null,
+     "raw_hex": "0606f8220900",
+     "stream": 1,
+     "value": 9
+    }
+   ],
+   "file_offset": 6875014,
+   "index": 104,
+   "list_file_offset": 6854599,
+   "list_offset": 4330,
+   "placement_hex": "c1f2f2e5719c46000204e801ea107f000000000001000000000000002400d40007",
+   "ref": "control:104",
+   "table": "control",
+   "terminator_offset": 4364
+  },
+  {
+   "events": [],
+   "file_offset": 6875047,
+   "index": 105,
+   "list_file_offset": 6850269,
+   "list_offset": 0,
+   "placement_hex": "41f3d4e5008000008240e70100007f000000000001000000000000002400e40005",
+   "ref": "control:105",
+   "table": "control",
+   "terminator_offset": 0
+  },
+  {
+   "events": [
+    {
+     "descriptors": [
+      38
+     ],
+     "event": 2,
+     "extra_hex": "",
+     "file_offset": 6890332,
+     "group": 706,
+     "kind": 12,
+     "offset": 190,
+     "predicate": null,
+     "raw_hex": "080cc202e9010200",
+     "region": 489,
+     "stream": 0,
+     "value": 0
+    }
+   ],
+   "index": 489,
+   "ref": "region:489",
+   "table": "region"
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 6888546,
+     "kind": 1,
+     "offset": 706,
+     "opcode": 2,
+     "raw_hex": "020100001c4c",
+     "target": 0
+    }
+   ],
+   "count": 1,
+   "file_offset": 6888546,
+   "group": 706,
+   "header_hex": null,
+   "raw_hex": "020100001c4c",
+   "stream": 0
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848049,
+     "kind": 16,
+     "offset": 8876,
+     "opcode": 5,
+     "raw_hex": "051068000100",
+     "target": 104
+    },
+    {
+     "file_offset": 6848055,
+     "kind": 16,
+     "offset": 8882,
+     "opcode": 20,
+     "raw_hex": "141069005c0150000a14",
+     "target": 105
+    },
+    {
+     "file_offset": 6848065,
+     "kind": 16,
+     "offset": 8892,
+     "opcode": 7,
+     "raw_hex": "071069000200",
+     "target": 105
+    },
+    {
+     "file_offset": 6848071,
+     "kind": 16,
+     "offset": 8898,
+     "opcode": 7,
+     "raw_hex": "071069000000",
+     "target": 105
+    },
+    {
+     "file_offset": 6848077,
+     "kind": 16,
+     "offset": 8904,
+     "opcode": 9,
+     "raw_hex": "091069000800",
+     "target": 105
+    },
+    {
+     "file_offset": 6848083,
+     "kind": 16,
+     "offset": 8910,
+     "opcode": 16,
+     "raw_hex": "101068000100",
+     "target": 104
+    },
+    {
+     "file_offset": 6848089,
+     "kind": 1,
+     "offset": 8916,
+     "opcode": 2,
+     "raw_hex": "020100001800",
+     "target": 0
+    }
+   ],
+   "count": 7,
+   "file_offset": 6848043,
+   "group": 8870,
+   "header_hex": "f00000000700",
+   "raw_hex": "f00000000700051068000100141069005c0150000a14071069000200071069000000091069000800101068000100020100001800",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848101,
+     "kind": 16,
+     "offset": 8928,
+     "opcode": 5,
+     "raw_hex": "051068000000",
+     "target": 104
+    },
+    {
+     "file_offset": 6848107,
+     "kind": 1,
+     "offset": 8934,
+     "opcode": 3,
+     "raw_hex": "03010000e3ae20ce04000000",
+     "target": 0
+    },
+    {
+     "file_offset": 6848119,
+     "kind": 16,
+     "offset": 8946,
+     "opcode": 16,
+     "raw_hex": "101068000200",
+     "target": 104
+    }
+   ],
+   "count": 3,
+   "file_offset": 6848095,
+   "group": 8922,
+   "header_hex": "f00000000300",
+   "raw_hex": "f0000000030005106800000003010000e3ae20ce04000000101068000200",
+   "stream": 1
+  }
+ ]
+}

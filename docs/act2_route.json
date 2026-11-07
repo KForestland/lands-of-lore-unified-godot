@@ -1,0 +1,4187 @@
+{
+  "version": 1,
+  "scope": "Chapters 8-14 route audit across ten areas. Later area assignments are candidates where stated; native semantic joins remain incomplete. Revisit steps are interleaved across areas, not a linear per-area completion order. Not proof of playable progression.",
+  "grades": [
+    "HINTBOOK",
+    "DECODED"
+  ],
+  "areas": {
+    "L8_SJ": {
+      "source": {
+        "file": "DAT/L8_SJ.MIX",
+        "geometry_entry_offset": 13146529,
+        "geometry_entry_size": 621239,
+        "geometry_key": 1161722651,
+        "geometry_sha256": "8e46b2d25176aa5372956e60bd46d0447a1fe6383aae68c9476f78b5b20e88bd",
+        "sha256": "3eff07430a453d2c6f09133f869874e0530af1b6a3bfff7f4297761b96a28bc2"
+      },
+      "export_sha256": "246a59b85070c039d2b02c468b779cf5873abc914d25d89b46c7976e01cfaebf",
+      "steps": [
+        {
+          "id": "daniel_gift",
+          "hintbook_pages": [
+            86,
+            87
+          ],
+          "action": "Offer Daniel his grandfather's blade, then recover it after the hopper interruption.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            2,
+            23,
+            28
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "L4 gift acquisition and outdoor encounter"
+        },
+        {
+          "id": "temple_first_visit",
+          "hintbook_pages": [
+            87
+          ],
+          "action": "Visit the temple approach and witness the priest encounter before village admission.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Temple introduction"
+        },
+        {
+          "id": "village_admission",
+          "hintbook_pages": [
+            88,
+            89
+          ],
+          "action": "Show the recovered blade to the village guard; visit Daniel and the shaman.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            22,
+            23,
+            25,
+            26,
+            27,
+            28
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Group 7770 links actor 113 (opcode 9 arm 3) and stores opcode 13 slot 0. Kind 4 mode 1 is hosted. The guard item offer, settlement rooms, and the area exit are not reached."
+        },
+        {
+          "id": "cemetery_quest",
+          "hintbook_pages": [
+            89,
+            98
+          ],
+          "action": "Receive the silverleaf request and cemetery key from the shaman; travel to the cemetery.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            0,
+            22
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Shaman reward callback"
+        },
+        {
+          "id": "ruins_return",
+          "hintbook_pages": [
+            89,
+            90
+          ],
+          "action": "After the ruins flood, meet Dawn at the lake and surrender the dead bracers.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "L9 flood return and Dawn offer"
+        },
+        {
+          "id": "bacatta_rescue",
+          "hintbook_pages": [
+            90
+          ],
+          "action": "Free Baccata from his trap on the return route.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Outdoor rope interaction; exact required-versus-optional status not established"
+        },
+        {
+          "id": "silverleaf_return",
+          "hintbook_pages": [
+            90,
+            91
+          ],
+          "action": "Return with silverleaf; complete initiation and offer a leaf to the shaman for potion ingredients.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            2,
+            22,
+            23,
+            28
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "L10 emperor resolution and initiation fight"
+        },
+        {
+          "id": "larkhon",
+          "hintbook_pages": [
+            93
+          ],
+          "action": "Combine silverleaf and amaranth serum; use the activated mixture on the Larkhon and enter the Claw Mountains.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            18
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Item recipe, targeted offer and sleep state"
+        },
+        {
+          "id": "temple_entry",
+          "hintbook_pages": [
+            85,
+            94
+          ],
+          "action": "Return from the mountains with the dreamstone and enter the Huline Temple.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            24
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Dreamstone acquisition in later area; TMPLDOR door and exit callbacks"
+        },
+        {
+          "id": "optional_tree",
+          "hintbook_pages": [
+            92
+          ],
+          "action": "After obtaining a temple shard, light tree-platform torches and use the shard for the optional treasure room.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Optional revisit; not a mandatory exit prerequisite"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 564,
+          "command": {
+            "file_offset": 13551119,
+            "kind": 1,
+            "offset": 576,
+            "opcode": 2,
+            "raw_hex": "020100001c2a",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:908",
+              "event": {
+                "descriptors": [
+                  79
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553127,
+                "group": 564,
+                "kind": 12,
+                "offset": 378,
+                "predicate": null,
+                "raw_hex": "080c34028c030200",
+                "region": 908,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 10,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 874,
+          "command": {
+            "file_offset": 13551431,
+            "kind": 3,
+            "offset": 888,
+            "opcode": 12,
+            "raw_hex": "0c0366032700",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "region:1022",
+              "event": {
+                "descriptors": [
+                  86
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553299,
+                "group": 874,
+                "kind": 12,
+                "offset": 550,
+                "predicate": {
+                  "entry_file_offset": 13701574,
+                  "entry_hex": "0604b304ad",
+                  "index": 169,
+                  "trailer_file_offset": 13553307,
+                  "trailer_hex": "0413a900"
+                },
+                "raw_hex": "080c6a03fe030200",
+                "region": 1022,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 39,
+          "archive": "SETTLE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 900,
+          "command": {
+            "file_offset": 13551461,
+            "kind": 3,
+            "offset": 918,
+            "opcode": 12,
+            "raw_hex": "0c0366031900",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "region:1022",
+              "event": {
+                "descriptors": [
+                  86
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553311,
+                "group": 900,
+                "kind": 12,
+                "offset": 562,
+                "predicate": {
+                  "entry_file_offset": 13701604,
+                  "entry_hex": "0604b304c0",
+                  "index": 175,
+                  "trailer_file_offset": 13553319,
+                  "trailer_hex": "0413af00"
+                },
+                "raw_hex": "080c8403fe030200",
+                "region": 1022,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 25,
+          "archive": "DANIEL.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 930,
+          "command": {
+            "file_offset": 13551485,
+            "kind": 3,
+            "offset": 942,
+            "opcode": 12,
+            "raw_hex": "0c0366032700",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "region:1022",
+              "event": {
+                "descriptors": [
+                  86
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553323,
+                "group": 930,
+                "kind": 12,
+                "offset": 574,
+                "predicate": {
+                  "entry_file_offset": 13701554,
+                  "entry_hex": "06048c04a6",
+                  "index": 165,
+                  "trailer_file_offset": 13553331,
+                  "trailer_hex": "0413a500"
+                },
+                "raw_hex": "080ca203fe030200",
+                "region": 1022,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 39,
+          "archive": "SETTLE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 954,
+          "command": {
+            "file_offset": 13551509,
+            "kind": 3,
+            "offset": 966,
+            "opcode": 12,
+            "raw_hex": "0c0366032700",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "region:1022",
+              "event": {
+                "descriptors": [
+                  86
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553335,
+                "group": 954,
+                "kind": 12,
+                "offset": 586,
+                "predicate": {
+                  "entry_file_offset": 13701519,
+                  "entry_hex": "0003150001",
+                  "index": 158,
+                  "trailer_file_offset": 13553343,
+                  "trailer_hex": "04139e00"
+                },
+                "raw_hex": "080cba03fe030200",
+                "region": 1022,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 39,
+          "archive": "SETTLE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 978,
+          "command": {
+            "file_offset": 13551533,
+            "kind": 3,
+            "offset": 990,
+            "opcode": 12,
+            "raw_hex": "0c0366032700",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "region:1022",
+              "event": {
+                "descriptors": [
+                  86
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553347,
+                "group": 978,
+                "kind": 12,
+                "offset": 598,
+                "predicate": {
+                  "entry_file_offset": 13701524,
+                  "entry_hex": "0003150002",
+                  "index": 159,
+                  "trailer_file_offset": 13553355,
+                  "trailer_hex": "04139f00"
+                },
+                "raw_hex": "080cd203fe030200",
+                "region": 1022,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 39,
+          "archive": "SETTLE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1002,
+          "command": {
+            "file_offset": 13551557,
+            "kind": 3,
+            "offset": 1014,
+            "opcode": 12,
+            "raw_hex": "0c0366032700",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "region:1022",
+              "event": {
+                "descriptors": [
+                  86
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553359,
+                "group": 1002,
+                "kind": 12,
+                "offset": 610,
+                "predicate": {
+                  "entry_file_offset": 13701529,
+                  "entry_hex": "0003150003",
+                  "index": 160,
+                  "trailer_file_offset": 13553367,
+                  "trailer_hex": "0413a000"
+                },
+                "raw_hex": "080cea03fe030200",
+                "region": 1022,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 39,
+          "archive": "SETTLE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1026,
+          "command": {
+            "file_offset": 13551575,
+            "kind": 3,
+            "offset": 1032,
+            "opcode": 12,
+            "raw_hex": "0c0366032700",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "region:1022",
+              "event": {
+                "descriptors": [
+                  86
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553371,
+                "group": 1026,
+                "kind": 12,
+                "offset": 622,
+                "predicate": {
+                  "entry_file_offset": 13701539,
+                  "entry_hex": "0003150004",
+                  "index": 162,
+                  "trailer_file_offset": 13553379,
+                  "trailer_hex": "0413a200"
+                },
+                "raw_hex": "080c0204fe030200",
+                "region": 1022,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 39,
+          "archive": "SETTLE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1056,
+          "command": {
+            "file_offset": 13551623,
+            "kind": 3,
+            "offset": 1080,
+            "opcode": 12,
+            "raw_hex": "0c03ae042600",
+            "target": 1198
+          },
+          "owners": [
+            {
+              "object": "region:1514",
+              "event": {
+                "descriptors": [
+                  142
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553407,
+                "group": 1056,
+                "kind": 12,
+                "offset": 658,
+                "predicate": null,
+                "raw_hex": "080c2004ea050200",
+                "region": 1514,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 38,
+          "archive": "TMPLDOR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1104,
+          "command": {
+            "file_offset": 13551671,
+            "kind": 3,
+            "offset": 1128,
+            "opcode": 12,
+            "raw_hex": "0c03ae042600",
+            "target": 1198
+          },
+          "owners": [
+            {
+              "object": "region:1515",
+              "event": {
+                "descriptors": [
+                  142
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553427,
+                "group": 1104,
+                "kind": 12,
+                "offset": 678,
+                "predicate": null,
+                "raw_hex": "080c5004eb050200",
+                "region": 1515,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 38,
+          "archive": "TMPLDOR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1152,
+          "command": {
+            "file_offset": 13551719,
+            "kind": 3,
+            "offset": 1176,
+            "opcode": 12,
+            "raw_hex": "0c03ae042600",
+            "target": 1198
+          },
+          "owners": [
+            {
+              "object": "region:1519",
+              "event": {
+                "descriptors": [
+                  142
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553447,
+                "group": 1152,
+                "kind": 12,
+                "offset": 698,
+                "predicate": null,
+                "raw_hex": "080c8004ef050200",
+                "region": 1519,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 38,
+          "archive": "TMPLDOR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1200,
+          "command": {
+            "file_offset": 13551767,
+            "kind": 3,
+            "offset": 1224,
+            "opcode": 12,
+            "raw_hex": "0c03ae042600",
+            "target": 1198
+          },
+          "owners": [
+            {
+              "object": "region:1523",
+              "event": {
+                "descriptors": [
+                  142
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553467,
+                "group": 1200,
+                "kind": 12,
+                "offset": 718,
+                "predicate": null,
+                "raw_hex": "080cb004f3050200",
+                "region": 1523,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 38,
+          "archive": "TMPLDOR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1248,
+          "command": {
+            "file_offset": 13551815,
+            "kind": 3,
+            "offset": 1272,
+            "opcode": 12,
+            "raw_hex": "0c03ae042600",
+            "target": 1198
+          },
+          "owners": [
+            {
+              "object": "region:1527",
+              "event": {
+                "descriptors": [
+                  142
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553487,
+                "group": 1248,
+                "kind": 12,
+                "offset": 738,
+                "predicate": null,
+                "raw_hex": "080ce004f7050200",
+                "region": 1527,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 38,
+          "archive": "TMPLDOR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1296,
+          "command": {
+            "file_offset": 13551863,
+            "kind": 3,
+            "offset": 1320,
+            "opcode": 12,
+            "raw_hex": "0c03ae042600",
+            "target": 1198
+          },
+          "owners": [
+            {
+              "object": "region:1530",
+              "event": {
+                "descriptors": [
+                  142
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553507,
+                "group": 1296,
+                "kind": 12,
+                "offset": 758,
+                "predicate": null,
+                "raw_hex": "080c1005fa050200",
+                "region": 1530,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 38,
+          "archive": "TMPLDOR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1492,
+          "command": {
+            "file_offset": 13552035,
+            "kind": 1,
+            "offset": 1492,
+            "opcode": 2,
+            "raw_hex": "020100001ce4",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:2352",
+              "event": {
+                "descriptors": [
+                  241
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553587,
+                "group": 1492,
+                "kind": 12,
+                "offset": 838,
+                "predicate": null,
+                "raw_hex": "080cd40530090200",
+                "region": 2352,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 4,
+          "selector": 7,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 1498,
+          "command": {
+            "file_offset": 13552041,
+            "kind": 1,
+            "offset": 1498,
+            "opcode": 2,
+            "raw_hex": "020100001ce4",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:2353",
+              "event": {
+                "descriptors": [
+                  241
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553595,
+                "group": 1498,
+                "kind": 12,
+                "offset": 846,
+                "predicate": null,
+                "raw_hex": "080cda0531090200",
+                "region": 2353,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 4,
+          "selector": 7,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 1504,
+          "command": {
+            "file_offset": 13552047,
+            "kind": 1,
+            "offset": 1504,
+            "opcode": 2,
+            "raw_hex": "020100001ce4",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:2360",
+              "event": {
+                "descriptors": [
+                  241
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553603,
+                "group": 1504,
+                "kind": 12,
+                "offset": 854,
+                "predicate": null,
+                "raw_hex": "080ce00538090200",
+                "region": 2360,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 4,
+          "selector": 7,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 1670,
+          "command": {
+            "file_offset": 13552225,
+            "kind": 1,
+            "offset": 1682,
+            "opcode": 2,
+            "raw_hex": "020100001c29",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:3132",
+              "event": {
+                "descriptors": [
+                  341
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553727,
+                "group": 1670,
+                "kind": 12,
+                "offset": 978,
+                "predicate": null,
+                "raw_hex": "080c86063c0c0200",
+                "region": 3132,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 9,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 1908,
+          "command": {
+            "file_offset": 13552463,
+            "kind": 1,
+            "offset": 1920,
+            "opcode": 2,
+            "raw_hex": "020100001c2c",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:3277",
+              "event": {
+                "descriptors": [
+                  370
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13553865,
+                "group": 1908,
+                "kind": 12,
+                "offset": 1116,
+                "predicate": null,
+                "raw_hex": "080c7407cd0c0200",
+                "region": 3277,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 12,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 2076,
+          "command": {
+            "file_offset": 13552619,
+            "kind": 1,
+            "offset": 2076,
+            "opcode": 2,
+            "raw_hex": "020100001c49",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:3569",
+              "event": {
+                "descriptors": [
+                  412
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13554015,
+                "group": 2076,
+                "kind": 12,
+                "offset": 1266,
+                "predicate": null,
+                "raw_hex": "080c1c08f10d0200",
+                "region": 3569,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 9,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 2082,
+          "command": {
+            "file_offset": 13552625,
+            "kind": 1,
+            "offset": 2082,
+            "opcode": 2,
+            "raw_hex": "020100001c49",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:3570",
+              "event": {
+                "descriptors": [
+                  412
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13554023,
+                "group": 2082,
+                "kind": 12,
+                "offset": 1274,
+                "predicate": null,
+                "raw_hex": "080c2208f20d0200",
+                "region": 3570,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 9,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 2088,
+          "command": {
+            "file_offset": 13552631,
+            "kind": 1,
+            "offset": 2088,
+            "opcode": 2,
+            "raw_hex": "020100001c49",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:3573",
+              "event": {
+                "descriptors": [
+                  412
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13554031,
+                "group": 2088,
+                "kind": 12,
+                "offset": 1282,
+                "predicate": null,
+                "raw_hex": "080c2808f50d0200",
+                "region": 3573,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 9,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 1,
+          "group": 1924,
+          "command": {
+            "file_offset": 13442420,
+            "kind": 3,
+            "offset": 1938,
+            "opcode": 12,
+            "raw_hex": "0c0366031600",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "prop:28",
+              "event": {
+                "extra_hex": "010300b400",
+                "file_offset": 13462842,
+                "group": 1924,
+                "kind": 2,
+                "offset": 524,
+                "predicate": null,
+                "raw_hex": "0a02840730010300b400",
+                "stream": 1,
+                "value": 48
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 22,
+          "archive": "SHAMAN.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 1,
+          "group": 6368,
+          "command": {
+            "file_offset": 13446876,
+            "kind": 3,
+            "offset": 6394,
+            "opcode": 12,
+            "raw_hex": "0c0366031900",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "prop:118",
+              "event": {
+                "extra_hex": "0101003c00",
+                "file_offset": 13464264,
+                "group": 6368,
+                "kind": 2,
+                "offset": 1946,
+                "predicate": null,
+                "raw_hex": "0a02e018300101003c00",
+                "stream": 1,
+                "value": 48
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 25,
+          "archive": "DANIEL.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 1,
+          "group": 11612,
+          "command": {
+            "file_offset": 13452100,
+            "kind": 1,
+            "offset": 11618,
+            "opcode": 2,
+            "raw_hex": "020100001c2e",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "prop:1198",
+              "event": {
+                "extra_hex": "00",
+                "file_offset": 13466698,
+                "group": 11612,
+                "kind": 6,
+                "offset": 4380,
+                "predicate": {
+                  "entry_file_offset": 13701409,
+                  "entry_hex": "00030d0001",
+                  "index": 136,
+                  "trailer_file_offset": 13466704,
+                  "trailer_hex": "04138800"
+                },
+                "raw_hex": "06065c2d1400",
+                "stream": 1,
+                "value": 20
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 14,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 1,
+          "group": 13278,
+          "command": {
+            "file_offset": 13453790,
+            "kind": 3,
+            "offset": 13308,
+            "opcode": 12,
+            "raw_hex": "0c0366032700",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "movable:53",
+              "event": {
+                "extra_hex": "0000000000",
+                "file_offset": 13470302,
+                "group": 13278,
+                "kind": 4,
+                "offset": 7984,
+                "predicate": {
+                  "entry_file_offset": 13701504,
+                  "entry_hex": "0003140000",
+                  "index": 155,
+                  "trailer_file_offset": 13470312,
+                  "trailer_hex": "04139b00"
+                },
+                "raw_hex": "0a04de33000000000000",
+                "stream": 1,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 39,
+          "archive": "SETTLE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 1,
+          "group": 13320,
+          "command": {
+            "file_offset": 13453838,
+            "kind": 3,
+            "offset": 13356,
+            "opcode": 12,
+            "raw_hex": "0c0366032700",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "movable:54",
+              "event": {
+                "extra_hex": "0000000000",
+                "file_offset": 13470318,
+                "group": 13320,
+                "kind": 4,
+                "offset": 8000,
+                "predicate": {
+                  "entry_file_offset": 13701504,
+                  "entry_hex": "0003140000",
+                  "index": 155,
+                  "trailer_file_offset": 13470328,
+                  "trailer_hex": "04139b00"
+                },
+                "raw_hex": "0a040834000000000000",
+                "stream": 1,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 39,
+          "archive": "SETTLE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 1,
+          "group": 13368,
+          "command": {
+            "file_offset": 13453880,
+            "kind": 3,
+            "offset": 13398,
+            "opcode": 12,
+            "raw_hex": "0c0366032700",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "movable:54",
+              "event": {
+                "extra_hex": "00",
+                "file_offset": 13470332,
+                "group": 13368,
+                "kind": 6,
+                "offset": 8014,
+                "predicate": {
+                  "entry_file_offset": 13701504,
+                  "entry_hex": "0003140000",
+                  "index": 155,
+                  "trailer_file_offset": 13470338,
+                  "trailer_hex": "04139b00"
+                },
+                "raw_hex": "060638341400",
+                "stream": 1,
+                "value": 20
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 39,
+          "archive": "SETTLE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 1,
+          "group": 15970,
+          "command": {
+            "file_offset": 13456492,
+            "kind": 3,
+            "offset": 16010,
+            "opcode": 12,
+            "raw_hex": "0c0366031900",
+            "target": 870
+          },
+          "owners": [
+            {
+              "object": "actor:23",
+              "event": {
+                "extra_hex": "00",
+                "file_offset": 13468294,
+                "group": 15970,
+                "kind": 6,
+                "offset": 5976,
+                "predicate": {
+                  "entry_file_offset": 13701814,
+                  "entry_hex": "000500000b",
+                  "index": 217,
+                  "trailer_file_offset": 13468300,
+                  "trailer_hex": "0413d900"
+                },
+                "raw_hex": "0606623e0000",
+                "stream": 1,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 25,
+          "archive": "DANIEL.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        }
+      ]
+    },
+    "L10_DC": {
+      "source": {
+        "file": "DAT/L10_DC.MIX",
+        "geometry_entry_offset": 12769321,
+        "geometry_entry_size": 989312,
+        "geometry_key": 3260615568,
+        "geometry_sha256": "ef89467deb4073f6d60e70baa45bd5ec55b422f1d28b518b16f7cab86434d5e3",
+        "sha256": "543c86c4fdd425cac166d9a1d371aa856b7070d4fded983a8733c473e48341f9"
+      },
+      "export_sha256": "1c288cdd426f7f80581ff33b7bacd15dfe8a25be54e7ee532b18ee20f0905509",
+      "steps": [
+        {
+          "id": "cemetery_key",
+          "hintbook_pages": [
+            98,
+            99
+          ],
+          "action": "Use the shaman's key to enter the main cemetery.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "L8 shaman reward"
+        },
+        {
+          "id": "gold_globe",
+          "hintbook_pages": [
+            99,
+            100
+          ],
+          "action": "Collect an empty globe, enter the catacombs and charge it gold.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Globe placement, charger and retrieval events"
+        },
+        {
+          "id": "mage_tower",
+          "hintbook_pages": [
+            100,
+            101
+          ],
+          "action": "Visit the ruins' Mage's Tower for dead bracers and white globes; return to the cemetery.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            1
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Teleporter only when activated; earlier access via L8"
+        },
+        {
+          "id": "barrel",
+          "hintbook_pages": [
+            101,
+            102
+          ],
+          "action": "Use a white globe on the tomb, flip its switch, roll the barrel into the opposite tomb and ignite the spilled oil.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Human barrel interaction, collision and fire trigger; hintbook reports an original barrel bug"
+        },
+        {
+          "id": "blue_globes",
+          "hintbook_pages": [
+            103
+          ],
+          "action": "Reach the exposed catacombs and charge blue globes.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Oil explosion opens access"
+        },
+        {
+          "id": "priest",
+          "hintbook_pages": [
+            103
+          ],
+          "action": "Enter the priest's tomb with a blue globe and dead bracers; obtain his urn.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Priest conversation and item grant"
+        },
+        {
+          "id": "priest_return",
+          "hintbook_pages": [
+            104
+          ],
+          "action": "Complete the priest's body-and-ashes task in the ruins; return for the ankh.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "L9 task; cross-area inventory and quest persistence"
+        },
+        {
+          "id": "emperor",
+          "hintbook_pages": [
+            104
+          ],
+          "action": "Use the ankh, place gold/white/blue globes in the matching boxes, hear the emperor and collect his remains.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            2
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Three orb controls and EMPT room callback"
+        },
+        {
+          "id": "emperor_ruins",
+          "hintbook_pages": [
+            104
+          ],
+          "action": "Use the activated teleporter to take the emperor's remains to the ruins.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            1
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Emperor reward and teleporter state"
+        },
+        {
+          "id": "silverleaf",
+          "hintbook_pages": [
+            104,
+            105
+          ],
+          "action": "After the ruins flood and Dawn encounter, revisit the emperor and collect the newly growing silverleaf; return to L8.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            0,
+            2
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "L9 resolution, room callback and plant activation"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 0,
+          "command": {
+            "file_offset": 13162862,
+            "kind": 1,
+            "offset": 0,
+            "opcode": 2,
+            "raw_hex": "020100001c48",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:0",
+              "event": {
+                "descriptors": [
+                  0
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13165094,
+                "group": 0,
+                "kind": 12,
+                "offset": 2,
+                "predicate": null,
+                "raw_hex": "080c000000000200",
+                "region": 0,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 8,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 108,
+          "command": {
+            "file_offset": 13162976,
+            "kind": 1,
+            "offset": 114,
+            "opcode": 2,
+            "raw_hex": "020100001c69",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:42",
+              "event": {
+                "descriptors": [
+                  2
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13165132,
+                "group": 108,
+                "kind": 12,
+                "offset": 40,
+                "predicate": {
+                  "entry_file_offset": 13720793,
+                  "entry_hex": "00030b0001",
+                  "index": 63,
+                  "trailer_file_offset": 13165140,
+                  "trailer_hex": "04133f00"
+                },
+                "raw_hex": "080c6c002a000200",
+                "region": 42,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 9,
+          "selector": 3,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 922,
+          "command": {
+            "file_offset": 13163808,
+            "kind": 3,
+            "offset": 946,
+            "opcode": 12,
+            "raw_hex": "0c03fe001500",
+            "target": 254
+          },
+          "owners": [
+            {
+              "object": "region:3789",
+              "event": {
+                "descriptors": [
+                  775
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 13165652,
+                "group": 922,
+                "kind": 12,
+                "offset": 560,
+                "predicate": null,
+                "raw_hex": "080c9a03cd0e0200",
+                "region": 3789,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 21,
+          "archive": "EMPT.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        }
+      ]
+    },
+    "L9_DR": {
+      "source": {
+        "file": "DAT/L9_DR.MIX",
+        "geometry_entry_offset": 22719810,
+        "geometry_entry_size": 823367,
+        "geometry_key": 3511575868,
+        "geometry_sha256": "bfb777c68921591ff1f1f6dd47a7f2aa858de939da55c913eccd4a6615180692",
+        "sha256": "700300d0cdf7df0af9471f3476c4e6ba473a603fa89e3a6e1855037d70be09c7"
+      },
+      "export_sha256": "9a31dc980132e28439f0d2f9b426fab4a4ccfdbb552745263ef844fa44a093ef",
+      "steps": [
+        {
+          "id": "bridge_orb",
+          "hintbook_pages": [
+            110,
+            112
+          ],
+          "action": "Reach the ruins from L8 and use Spark on the black orb to raise the bridge.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Orb spell caller and bridge groups need an exact join"
+        },
+        {
+          "id": "tower_globes",
+          "hintbook_pages": [
+            112,
+            113
+          ],
+          "action": "Open the tower forcefields, charge two white globes and recover the dead bracers.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            0
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Orb controls, charger and bracer pickup; optional teleport nexus distinguished from required path"
+        },
+        {
+          "id": "priest_ashes",
+          "hintbook_pages": [
+            113,
+            114
+          ],
+          "action": "Bring the priest body onto the altar, energize both orbs, burn the body and collect ashes in his urn.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "ALTAR is a room-name candidate only; corpse placement and urn offer unjoined"
+        },
+        {
+          "id": "emperor_statue",
+          "hintbook_pages": [
+            115
+          ],
+          "action": "Put the emperor remains in the statue alcove bowl and follow the statue.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            2
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "STAT room candidate; remains offer and statue route unjoined"
+        },
+        {
+          "id": "flood_escape",
+          "hintbook_pages": [
+            116,
+            117
+          ],
+          "action": "After the worm encounter floods the chamber, escape by the rising furniture and waterfall passage to L8.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            1,
+            3,
+            12
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Water progression, grate and return event must be earned"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 548,
+          "command": {
+            "file_offset": 23384448,
+            "kind": 1,
+            "offset": 548,
+            "opcode": 2,
+            "raw_hex": "020100001c4a",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:2299",
+              "event": {
+                "descriptors": [
+                  181
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23391310,
+                "group": 548,
+                "kind": 12,
+                "offset": 192,
+                "predicate": null,
+                "raw_hex": "080c2402fb080200",
+                "region": 2299,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 10,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 572,
+          "command": {
+            "file_offset": 23384472,
+            "kind": 1,
+            "offset": 572,
+            "opcode": 2,
+            "raw_hex": "020100001cc8",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:2301",
+              "event": {
+                "descriptors": [
+                  181
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23391326,
+                "group": 572,
+                "kind": 12,
+                "offset": 208,
+                "predicate": null,
+                "raw_hex": "080c3c02fd080200",
+                "region": 2301,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 8,
+          "selector": 6,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3774,
+          "command": {
+            "file_offset": 23387680,
+            "kind": 3,
+            "offset": 3780,
+            "opcode": 12,
+            "raw_hex": "0c033e0a1400",
+            "target": 2622
+          },
+          "owners": [
+            {
+              "object": "region:3185",
+              "event": {
+                "descriptors": [
+                  256
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23392176,
+                "group": 3774,
+                "kind": 12,
+                "offset": 1058,
+                "predicate": null,
+                "raw_hex": "080cbe0e710c0200",
+                "region": 3185,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 20,
+          "archive": "STAT.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 5582,
+          "command": {
+            "file_offset": 23389482,
+            "kind": 1,
+            "offset": 5582,
+            "opcode": 2,
+            "raw_hex": "020100001ce8",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:5340",
+              "event": {
+                "descriptors": [
+                  478
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23393054,
+                "group": 5582,
+                "kind": 12,
+                "offset": 1936,
+                "predicate": null,
+                "raw_hex": "080cce15dc140200",
+                "region": 5340,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 8,
+          "selector": 7,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 5986,
+          "command": {
+            "file_offset": 23389918,
+            "kind": 3,
+            "offset": 6018,
+            "opcode": 12,
+            "raw_hex": "0c03bb052d00",
+            "target": 1467
+          },
+          "owners": [
+            {
+              "object": "region:5940",
+              "event": {
+                "descriptors": [
+                  499
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23393232,
+                "group": 5986,
+                "kind": 12,
+                "offset": 2114,
+                "predicate": {
+                  "entry_file_offset": 23522142,
+                  "entry_hex": "060439043b",
+                  "index": 60,
+                  "trailer_file_offset": 23393240,
+                  "trailer_hex": "04133c00"
+                },
+                "raw_hex": "080c621734170200",
+                "region": 5940,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 45,
+          "archive": "ALTAR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 6024,
+          "command": {
+            "file_offset": 23389948,
+            "kind": 3,
+            "offset": 6048,
+            "opcode": 12,
+            "raw_hex": "0c03bb052d00",
+            "target": 1467
+          },
+          "owners": [
+            {
+              "object": "region:5940",
+              "event": {
+                "descriptors": [
+                  499
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23393244,
+                "group": 6024,
+                "kind": 12,
+                "offset": 2126,
+                "predicate": {
+                  "entry_file_offset": 23522147,
+                  "entry_hex": "06043a043b",
+                  "index": 61,
+                  "trailer_file_offset": 23393252,
+                  "trailer_hex": "04133d00"
+                },
+                "raw_hex": "080c881734170200",
+                "region": 5940,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 45,
+          "archive": "ALTAR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 6122,
+          "command": {
+            "file_offset": 23390054,
+            "kind": 3,
+            "offset": 6154,
+            "opcode": 12,
+            "raw_hex": "0c03bb052d00",
+            "target": 1467
+          },
+          "owners": [
+            {
+              "object": "region:5945",
+              "event": {
+                "descriptors": [
+                  499
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23393268,
+                "group": 6122,
+                "kind": 12,
+                "offset": 2150,
+                "predicate": {
+                  "entry_file_offset": 23522142,
+                  "entry_hex": "060439043b",
+                  "index": 60,
+                  "trailer_file_offset": 23393276,
+                  "trailer_hex": "04133c00"
+                },
+                "raw_hex": "080cea1739170200",
+                "region": 5945,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 45,
+          "archive": "ALTAR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 6160,
+          "command": {
+            "file_offset": 23390084,
+            "kind": 3,
+            "offset": 6184,
+            "opcode": 12,
+            "raw_hex": "0c03bb052d00",
+            "target": 1467
+          },
+          "owners": [
+            {
+              "object": "region:5945",
+              "event": {
+                "descriptors": [
+                  499
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23393280,
+                "group": 6160,
+                "kind": 12,
+                "offset": 2162,
+                "predicate": {
+                  "entry_file_offset": 23522147,
+                  "entry_hex": "06043a043b",
+                  "index": 61,
+                  "trailer_file_offset": 23393288,
+                  "trailer_hex": "04133d00"
+                },
+                "raw_hex": "080c101839170200",
+                "region": 5945,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 45,
+          "archive": "ALTAR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 6258,
+          "command": {
+            "file_offset": 23390190,
+            "kind": 3,
+            "offset": 6290,
+            "opcode": 12,
+            "raw_hex": "0c03bb052d00",
+            "target": 1467
+          },
+          "owners": [
+            {
+              "object": "region:5946",
+              "event": {
+                "descriptors": [
+                  499
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23393304,
+                "group": 6258,
+                "kind": 12,
+                "offset": 2186,
+                "predicate": {
+                  "entry_file_offset": 23522142,
+                  "entry_hex": "060439043b",
+                  "index": 60,
+                  "trailer_file_offset": 23393312,
+                  "trailer_hex": "04133c00"
+                },
+                "raw_hex": "080c72183a170200",
+                "region": 5946,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 45,
+          "archive": "ALTAR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 6296,
+          "command": {
+            "file_offset": 23390220,
+            "kind": 3,
+            "offset": 6320,
+            "opcode": 12,
+            "raw_hex": "0c03bb052d00",
+            "target": 1467
+          },
+          "owners": [
+            {
+              "object": "region:5946",
+              "event": {
+                "descriptors": [
+                  499
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23393316,
+                "group": 6296,
+                "kind": 12,
+                "offset": 2198,
+                "predicate": {
+                  "entry_file_offset": 23522147,
+                  "entry_hex": "06043a043b",
+                  "index": 61,
+                  "trailer_file_offset": 23393324,
+                  "trailer_hex": "04133d00"
+                },
+                "raw_hex": "080c98183a170200",
+                "region": 5946,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 45,
+          "archive": "ALTAR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 6394,
+          "command": {
+            "file_offset": 23390326,
+            "kind": 3,
+            "offset": 6426,
+            "opcode": 12,
+            "raw_hex": "0c03bb052d00",
+            "target": 1467
+          },
+          "owners": [
+            {
+              "object": "region:5947",
+              "event": {
+                "descriptors": [
+                  499
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23393340,
+                "group": 6394,
+                "kind": 12,
+                "offset": 2222,
+                "predicate": {
+                  "entry_file_offset": 23522142,
+                  "entry_hex": "060439043b",
+                  "index": 60,
+                  "trailer_file_offset": 23393348,
+                  "trailer_hex": "04133c00"
+                },
+                "raw_hex": "080cfa183b170200",
+                "region": 5947,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 45,
+          "archive": "ALTAR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 6432,
+          "command": {
+            "file_offset": 23390356,
+            "kind": 3,
+            "offset": 6456,
+            "opcode": 12,
+            "raw_hex": "0c03bb052d00",
+            "target": 1467
+          },
+          "owners": [
+            {
+              "object": "region:5947",
+              "event": {
+                "descriptors": [
+                  499
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 23393352,
+                "group": 6432,
+                "kind": 12,
+                "offset": 2234,
+                "predicate": {
+                  "entry_file_offset": 23522147,
+                  "entry_hex": "06043a043b",
+                  "index": 61,
+                  "trailer_file_offset": 23393360,
+                  "trailer_hex": "04133d00"
+                },
+                "raw_hex": "080c20193b170200",
+                "region": 5947,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 45,
+          "archive": "ALTAR.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 1,
+          "group": 2168,
+          "command": {
+            "file_offset": 23222516,
+            "kind": 1,
+            "offset": 2182,
+            "opcode": 2,
+            "raw_hex": "020100001ca8",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "prop:104",
+              "event": {
+                "extra_hex": "0102007800",
+                "file_offset": 23241814,
+                "group": 2168,
+                "kind": 2,
+                "offset": 572,
+                "predicate": null,
+                "raw_hex": "0a027808300102007800",
+                "stream": 1,
+                "value": 48
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 8,
+          "selector": 5,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        }
+      ]
+    },
+    "L12_CM": {
+      "source": {
+        "file": "DAT/L12_CM.MIX",
+        "geometry_entry_offset": 9580528,
+        "geometry_entry_size": 458603,
+        "geometry_key": 3195626396,
+        "geometry_sha256": "2d60e4151040047d8550e675a13812af04510a6443f2d5b2eb675a7381b73a1e",
+        "sha256": "53d7b166f7856049e20d734d10b013da4cea22e3aa746fb7f3cfe307b3c198cc"
+      },
+      "export_sha256": "dce8376bb7a2c130b783f199816f17f36bb0a7dee2fc93fd244f035cb02a2425",
+      "steps": [
+        {
+          "id": "icy_valley",
+          "hintbook_pages": [
+            120,
+            121
+          ],
+          "action": "Follow the icy valley after the avalanche and cross the cave ledges.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Optional village, cave and lake rewards are not mandatory gates"
+        },
+        {
+          "id": "citadel_approach",
+          "hintbook_pages": [
+            122
+          ],
+          "action": "Cross the river, meet Baccata in the ice tunnel and proceed into the citadel.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            1
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Encounter trigger and citadel entrance join pending; charm is optional"
+        },
+        {
+          "id": "river_return",
+          "hintbook_pages": [
+            127,
+            128
+          ],
+          "action": "Return from the citadel along the river route, then travel back to L8 with the dreamstone.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            0
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Requires L13 dreamstone; optional bow and obsidian detour not a gate"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 0,
+          "command": {
+            "file_offset": 9859068,
+            "kind": 1,
+            "offset": 12,
+            "opcode": 2,
+            "raw_hex": "020100001c88",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:734",
+              "event": {
+                "descriptors": [
+                  100
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 9861506,
+                "group": 0,
+                "kind": 12,
+                "offset": 2,
+                "predicate": null,
+                "raw_hex": "080c0000de020200",
+                "region": 734,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 8,
+          "selector": 4,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 1,
+          "group": 2808,
+          "command": {
+            "file_offset": 9823892,
+            "kind": 1,
+            "offset": 2820,
+            "opcode": 2,
+            "raw_hex": "020100001c2d",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "control:74",
+              "event": {
+                "extra_hex": "00",
+                "file_offset": 9828720,
+                "group": 2808,
+                "kind": 5,
+                "offset": 806,
+                "predicate": null,
+                "raw_hex": "0605f80a0400",
+                "stream": 1,
+                "value": 4
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 13,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        }
+      ]
+    },
+    "L13_RC": {
+      "source": {
+        "file": "DAT/L13_RC.MIX",
+        "geometry_entry_offset": 6731475,
+        "geometry_entry_size": 246056,
+        "geometry_key": 4203288576,
+        "geometry_sha256": "2e021ebeb4dd96a9c8e5caf7a46d49cdbeab2bcf2ba7046df3defee416e60750",
+        "sha256": "b9d79292e7dd6fc2eba972e55628ee05e671a4d814de8b291310d540b3f742b9"
+      },
+      "export_sha256": "326760244c50813170e5627ec57b4d226baeff09d03d899b4f016bbff023da0a",
+      "steps": [
+        {
+          "id": "entry_orb",
+          "hintbook_pages": [
+            124
+          ],
+          "action": "Energize the entry orb, destroy the egg chamber fixture and take the lift down.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Spark, fixture damage, drain and elevator groups unjoined"
+        },
+        {
+          "id": "maiden",
+          "hintbook_pages": [
+            125
+          ],
+          "action": "Cross the activated bridge and speak with the imprisoned maiden and Dawn.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            1,
+            2
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "DSLAVE/SLAVES room candidates; exact dialogue conditions need callback recovery"
+        },
+        {
+          "id": "ruloi_boss",
+          "hintbook_pages": [
+            126
+          ],
+          "action": "Pass the alternating ledges and turrets, then defeat the Ruloi leader.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Movement and combat completion must be linked to source actors"
+        },
+        {
+          "id": "dreamstone",
+          "hintbook_pages": [
+            127
+          ],
+          "action": "Take the dreamstone and free Dawn after the citadel encounter.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            1,
+            2
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Dreamstone grant and prisoner release; optional sword forge precedes pickup"
+        },
+        {
+          "id": "exit_slot",
+          "hintbook_pages": [
+            127,
+            128
+          ],
+          "action": "Use the dreamstone in the exit slot, retrieve it and return to the mountains.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            0
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Slot consumption/retrieval and return gate must preserve the item"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 706,
+          "command": {
+            "file_offset": 6888546,
+            "kind": 1,
+            "offset": 706,
+            "opcode": 2,
+            "raw_hex": "020100001c4c",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:489",
+              "event": {
+                "descriptors": [
+                  38
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 6890332,
+                "group": 706,
+                "kind": 12,
+                "offset": 190,
+                "predicate": null,
+                "raw_hex": "080cc202e9010200",
+                "region": 489,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 12,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 1,
+          "group": 8074,
+          "command": {
+            "file_offset": 6847253,
+            "kind": 16,
+            "offset": 8080,
+            "opcode": 12,
+            "raw_hex": "0c1033001c00",
+            "target": 51
+          },
+          "owners": [
+            {
+              "object": "control:51",
+              "event": {
+                "extra_hex": "00",
+                "file_offset": 6854295,
+                "group": 8074,
+                "kind": 5,
+                "offset": 4026,
+                "predicate": null,
+                "raw_hex": "06058a1f0400",
+                "stream": 1,
+                "value": 4
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 28,
+          "archive": "DSLAVE.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 1,
+          "group": 8104,
+          "command": {
+            "file_offset": 6847283,
+            "kind": 16,
+            "offset": 8110,
+            "opcode": 12,
+            "raw_hex": "0c1034001d00",
+            "target": 52
+          },
+          "owners": [
+            {
+              "object": "control:52",
+              "event": {
+                "extra_hex": "00",
+                "file_offset": 6854303,
+                "group": 8104,
+                "kind": 5,
+                "offset": 4034,
+                "predicate": null,
+                "raw_hex": "0605a81f0400",
+                "stream": 1,
+                "value": 4
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 29,
+          "archive": "SLAVES.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        }
+      ]
+    },
+    "L14_HT": {
+      "source": {
+        "file": "DAT/L14_HT.MIX",
+        "geometry_entry_offset": 11406344,
+        "geometry_entry_size": 465607,
+        "geometry_key": 3533284306,
+        "geometry_sha256": "f5831b7ef235be70489aee179112f5293b1e2067467077cbc0202f15565480b3",
+        "sha256": "c294f9ab142b55c36fff545a1293c419c42353fedefbfe8b77b9c38a2d9a0719"
+      },
+      "export_sha256": "d3e3f2161b115a446ae21e43652895d59e95c82d535cf929e0a7a98c620bfad8",
+      "steps": [
+        {
+          "id": "revive_priest",
+          "hintbook_pages": [
+            132,
+            133
+          ],
+          "action": "Put the priest body on the slab, aloe in the west bowl and poison in the east; lower the floor and use Spark.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Body placement, directional bowls and spell caller unjoined; reported bowl bug not yet reproduced"
+        },
+        {
+          "id": "first_shard",
+          "hintbook_pages": [
+            133
+          ],
+          "action": "Recover the first green shard from the northern ceremonial room and find the curtain passage.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Shard pickup and hidden passage source groups unjoined"
+        },
+        {
+          "id": "flute_statue",
+          "hintbook_pages": [
+            134,
+            135
+          ],
+          "action": "Recover the flute and run the corpse through the two machines to obtain a statue.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Machine ordering, corpse consumption and statue grant unjoined"
+        },
+        {
+          "id": "second_shard",
+          "hintbook_pages": [
+            137
+          ],
+          "action": "Use the lizard passage and the two buttons to reach the library; place the statue for the second shard.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Form restriction, ordered switches and statue receptacle unjoined"
+        },
+        {
+          "id": "shard_bowls",
+          "hintbook_pages": [
+            137
+          ],
+          "action": "Place both green shards in the floating bowls to open the next passage.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Two item offers and passage condition unjoined"
+        },
+        {
+          "id": "three_statues",
+          "hintbook_pages": [
+            138
+          ],
+          "action": "Complete the maze, tilting-floor and fire-button rooms to collect three statues.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Three separate puzzle states required; no completion seeds"
+        },
+        {
+          "id": "pedestals",
+          "hintbook_pages": [
+            139
+          ],
+          "action": "Use the flute slot, cross the oil and blade route, and place the three statues on their pedestals.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Flute use, hazards and three item receptacles unjoined"
+        },
+        {
+          "id": "hopper_platform",
+          "hintbook_pages": [
+            139
+          ],
+          "action": "Load the platform with five hopper bodies, then step onto it.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Corpse count and player occupancy must be sourced"
+        },
+        {
+          "id": "false_belial",
+          "hintbook_pages": [
+            140
+          ],
+          "action": "Fight the temple apparition in Beast form.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Book states Beast; exact source combat/form gate not yet joined"
+        },
+        {
+          "id": "chalice",
+          "hintbook_pages": [
+            140,
+            141
+          ],
+          "action": "Place the dreamstone in the chalice in the voices chamber to raise and enter the ancient city.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            2,
+            3,
+            4
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "CHV room candidate; dreamstone consumed here according to book, unlike earlier doors"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 1462,
+          "command": {
+            "file_offset": 11783030,
+            "kind": 1,
+            "offset": 1462,
+            "opcode": 2,
+            "raw_hex": "020100001c68",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:863",
+              "event": {
+                "descriptors": [
+                  29
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 11785566,
+                "group": 1462,
+                "kind": 12,
+                "offset": 134,
+                "predicate": null,
+                "raw_hex": "080cb6055f030200",
+                "region": 863,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 8,
+          "selector": 3,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3836,
+          "command": {
+            "file_offset": 11785404,
+            "kind": 1,
+            "offset": 3836,
+            "opcode": 2,
+            "raw_hex": "020100001c68",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:4176",
+              "event": {
+                "descriptors": [
+                  245
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 11787208,
+                "group": 3836,
+                "kind": 12,
+                "offset": 1776,
+                "predicate": null,
+                "raw_hex": "080cfc0e50100200",
+                "region": 4176,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 8,
+          "selector": 3,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 1,
+          "group": 9210,
+          "command": {
+            "file_offset": 11721792,
+            "kind": 1,
+            "offset": 9210,
+            "opcode": 2,
+            "raw_hex": "020100001c30",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "prop:170",
+              "event": {
+                "extra_hex": "00",
+                "file_offset": 11739888,
+                "group": 9210,
+                "kind": 6,
+                "offset": 3116,
+                "predicate": {
+                  "entry_file_offset": 11831378,
+                  "entry_hex": "0003160001",
+                  "index": 50,
+                  "trailer_file_offset": 11739894,
+                  "trailer_hex": "04133200"
+                },
+                "raw_hex": "0606fa231400",
+                "stream": 1,
+                "value": 20
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 16,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 1,
+          "group": 17622,
+          "command": {
+            "file_offset": 11730210,
+            "kind": 3,
+            "offset": 17628,
+            "opcode": 12,
+            "raw_hex": "0c03aa001e00",
+            "target": 170
+          },
+          "owners": [
+            {
+              "object": "control:78",
+              "event": {
+                "extra_hex": "0000000000",
+                "file_offset": 11744384,
+                "group": 17622,
+                "kind": 4,
+                "offset": 7612,
+                "predicate": {
+                  "entry_file_offset": 11832163,
+                  "entry_hex": "0005000001",
+                  "index": 207,
+                  "trailer_file_offset": 11744394,
+                  "trailer_hex": "0413cf00"
+                },
+                "raw_hex": "0a04d644000000000000",
+                "stream": 1,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 30,
+          "archive": "CHV.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 1,
+          "group": 17640,
+          "command": {
+            "file_offset": 11730228,
+            "kind": 3,
+            "offset": 17646,
+            "opcode": 12,
+            "raw_hex": "0c03aa001e00",
+            "target": 170
+          },
+          "owners": [
+            {
+              "object": "control:79",
+              "event": {
+                "extra_hex": "0000000000",
+                "file_offset": 11744400,
+                "group": 17640,
+                "kind": 4,
+                "offset": 7628,
+                "predicate": {
+                  "entry_file_offset": 11832163,
+                  "entry_hex": "0005000001",
+                  "index": 207,
+                  "trailer_file_offset": 11744410,
+                  "trailer_hex": "0413cf00"
+                },
+                "raw_hex": "0a04e844000000000000",
+                "stream": 1,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 30,
+          "archive": "CHV.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        }
+      ]
+    },
+    "L16_CA": {
+      "source": {
+        "file": "DAT/L16_CA.MIX",
+        "geometry_entry_offset": 17959024,
+        "geometry_entry_size": 1094640,
+        "geometry_key": 3201897348,
+        "geometry_sha256": "2369482678839199fb3f04acd2d35d74ecc5a745853c0a4aaa4a6deacd1a40a4",
+        "sha256": "810d39ae20a980c4b912fda9dbb05db7917b879fbfcc7cdf4a9f91d26707d2a4"
+      },
+      "export_sha256": "89e940a328f04d35cea360de748c745312e8156d4634698cbc9537ad79c75c8b",
+      "steps": [
+        {
+          "id": "water_source",
+          "hintbook_pages": [
+            146
+          ],
+          "action": "Open the fountain water source for the corner-room tasks.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Orb and fountain break events unjoined"
+        },
+        {
+          "id": "northwest",
+          "hintbook_pages": [
+            147
+          ],
+          "action": "Solve the ice, fire and stone orb sequence in the northwest corner and send its box through the portal.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Elemental item/spell matching; tower transfer area identity not established"
+        },
+        {
+          "id": "northeast",
+          "hintbook_pages": [
+            148,
+            149
+          ],
+          "action": "Use water and silverleaf in the greenhouse pyramid, turn the hourglass and send the box onward.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Lichen reward optional; growth and box transfer unjoined"
+        },
+        {
+          "id": "southeast",
+          "hintbook_pages": [
+            149
+          ],
+          "action": "Ignite the oil at the head statue, obtain the Dark Bow and retreat through the doors to the box portal.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Fire, door timing and portal box unjoined"
+        },
+        {
+          "id": "ivory_chips",
+          "hintbook_pages": [
+            150,
+            153,
+            154,
+            155,
+            156,
+            157
+          ],
+          "action": "Collect four ivory chips from the city puzzles for the southwest route.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Individual chip identities and optional detours require exact joins"
+        },
+        {
+          "id": "southwest",
+          "hintbook_pages": [
+            150
+          ],
+          "action": "Complete the southwest corner after the other three, using the four ivory chips.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Order and chip checks must come from source groups"
+        },
+        {
+          "id": "tower_boxes",
+          "hintbook_pages": [
+            158
+          ],
+          "action": "On each of four tower visits, put the box in its socket and use the yellow control.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Repeated interleaved visits, not four consecutive final steps; tower area mapping UNKNOWN"
+        },
+        {
+          "id": "mantle",
+          "hintbook_pages": [
+            159
+          ],
+          "action": "Defeat the central apparition and cross the light bars to obtain the Mantle.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Boss and light-bar sequence unjoined"
+        },
+        {
+          "id": "dragon_exit",
+          "hintbook_pages": [
+            160
+          ],
+          "action": "Operate the dragon-room orbs and curtain, then follow the opened route into the caverns.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            0,
+            1,
+            2
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "BALCONY room candidate only; exact dragon and one-way exit prerequisites unjoined"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 2974,
+          "command": {
+            "file_offset": 18785267,
+            "kind": 3,
+            "offset": 2980,
+            "opcode": 12,
+            "raw_hex": "0c0390011f00",
+            "target": 400
+          },
+          "owners": [
+            {
+              "object": "region:4812",
+              "event": {
+                "descriptors": [
+                  79
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 18791499,
+                "group": 2974,
+                "kind": 12,
+                "offset": 784,
+                "predicate": null,
+                "raw_hex": "080c9e0bcc120200",
+                "region": 4812,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 31,
+          "archive": "BALCONY.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 7268,
+          "command": {
+            "file_offset": 18789555,
+            "kind": 1,
+            "offset": 7268,
+            "opcode": 2,
+            "raw_hex": "020100001c71",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:9822",
+              "event": {
+                "descriptors": [
+                  330
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 18793075,
+                "group": 7268,
+                "kind": 12,
+                "offset": 2360,
+                "predicate": null,
+                "raw_hex": "080c641c5e260200",
+                "region": 9822,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 17,
+          "selector": 3,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 1,
+          "group": 42056,
+          "command": {
+            "file_offset": 18697002,
+            "kind": 1,
+            "offset": 42056,
+            "opcode": 2,
+            "raw_hex": "020100001c31",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "control:74",
+              "event": {
+                "extra_hex": "00",
+                "file_offset": 18726428,
+                "group": 42056,
+                "kind": 5,
+                "offset": 16190,
+                "predicate": null,
+                "raw_hex": "060548a40400",
+                "stream": 1,
+                "value": 4
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 17,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        }
+      ]
+    },
+    "L17_HC": {
+      "source": {
+        "file": "DAT/L17_HC.MIX",
+        "geometry_entry_offset": 4670072,
+        "geometry_entry_size": 183784,
+        "geometry_key": 3538495408,
+        "geometry_sha256": "5164c2fb3cd7b12be4df3d0ee3124ba5f917ecff29eaef47372d4feef0acce4b",
+        "sha256": "23d7cecf44e83515934083ae101eb4b023dfb748d34e5e0b6eb3c8aca75cc793"
+      },
+      "export_sha256": "857998f2b229a784d2185029fb8e14d40a09891fd16f54d9c09eee44c96b1600",
+      "steps": [
+        {
+          "id": "cavern_route",
+          "hintbook_pages": [
+            164,
+            165
+          ],
+          "action": "Pass the spider caverns and cut through the red strands; use the creature interior route to reach the laboratory.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "L17 assignment inferred from travel topology and HIVE room names; book-to-area geometry join UNKNOWN"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 1512,
+          "command": {
+            "file_offset": 4810533,
+            "kind": 3,
+            "offset": 1524,
+            "opcode": 12,
+            "raw_hex": "0c0377002200",
+            "target": 119
+          },
+          "owners": [
+            {
+              "object": "region:1253",
+              "event": {
+                "descriptors": [
+                  136
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811221,
+                "group": 1512,
+                "kind": 12,
+                "offset": 562,
+                "predicate": null,
+                "raw_hex": "080ce805e5040200",
+                "region": 1253,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 34,
+          "archive": "HIVE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1530,
+          "command": {
+            "file_offset": 4810551,
+            "kind": 3,
+            "offset": 1542,
+            "opcode": 12,
+            "raw_hex": "0c0377002200",
+            "target": 119
+          },
+          "owners": [
+            {
+              "object": "region:1258",
+              "event": {
+                "descriptors": [
+                  136
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811229,
+                "group": 1530,
+                "kind": 12,
+                "offset": 570,
+                "predicate": null,
+                "raw_hex": "080cfa05ea040200",
+                "region": 1258,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 34,
+          "archive": "HIVE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1548,
+          "command": {
+            "file_offset": 4810569,
+            "kind": 3,
+            "offset": 1560,
+            "opcode": 12,
+            "raw_hex": "0c0377002200",
+            "target": 119
+          },
+          "owners": [
+            {
+              "object": "region:1263",
+              "event": {
+                "descriptors": [
+                  136
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811237,
+                "group": 1548,
+                "kind": 12,
+                "offset": 578,
+                "predicate": null,
+                "raw_hex": "080c0c06ef040200",
+                "region": 1263,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 34,
+          "archive": "HIVE1.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1566,
+          "command": {
+            "file_offset": 4810581,
+            "kind": 3,
+            "offset": 1572,
+            "opcode": 12,
+            "raw_hex": "0c0377002500",
+            "target": 119
+          },
+          "owners": [
+            {
+              "object": "region:1293",
+              "event": {
+                "descriptors": [
+                  141
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811247,
+                "group": 1566,
+                "kind": 12,
+                "offset": 588,
+                "predicate": null,
+                "raw_hex": "080c1e060d050200",
+                "region": 1293,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 37,
+          "archive": "HIVE4.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1596,
+          "command": {
+            "file_offset": 4810611,
+            "kind": 3,
+            "offset": 1602,
+            "opcode": 12,
+            "raw_hex": "0c0377002500",
+            "target": 119
+          },
+          "owners": [
+            {
+              "object": "region:1298",
+              "event": {
+                "descriptors": [
+                  141
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811255,
+                "group": 1596,
+                "kind": 12,
+                "offset": 596,
+                "predicate": null,
+                "raw_hex": "080c3c0612050200",
+                "region": 1298,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 37,
+          "archive": "HIVE4.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1608,
+          "command": {
+            "file_offset": 4810623,
+            "kind": 3,
+            "offset": 1614,
+            "opcode": 12,
+            "raw_hex": "0c0377002500",
+            "target": 119
+          },
+          "owners": [
+            {
+              "object": "region:1303",
+              "event": {
+                "descriptors": [
+                  141
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811263,
+                "group": 1608,
+                "kind": 12,
+                "offset": 604,
+                "predicate": null,
+                "raw_hex": "080c480617050200",
+                "region": 1303,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 37,
+          "archive": "HIVE4.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1620,
+          "command": {
+            "file_offset": 4810635,
+            "kind": 3,
+            "offset": 1626,
+            "opcode": 12,
+            "raw_hex": "0c0377002500",
+            "target": 119
+          },
+          "owners": [
+            {
+              "object": "region:1308",
+              "event": {
+                "descriptors": [
+                  141
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811271,
+                "group": 1620,
+                "kind": 12,
+                "offset": 612,
+                "predicate": null,
+                "raw_hex": "080c54061c050200",
+                "region": 1308,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "room",
+          "room_index": 37,
+          "archive": "HIVE4.MIX",
+          "hosted": "adapter request only; room callback not hosted"
+        },
+        {
+          "stream": 0,
+          "group": 1632,
+          "command": {
+            "file_offset": 4810641,
+            "kind": 1,
+            "offset": 1632,
+            "opcode": 2,
+            "raw_hex": "020100001c33",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1312",
+              "event": {
+                "descriptors": [
+                  144
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811281,
+                "group": 1632,
+                "kind": 12,
+                "offset": 622,
+                "predicate": null,
+                "raw_hex": "080c600620050200",
+                "region": 1312,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 1638,
+          "command": {
+            "file_offset": 4810647,
+            "kind": 1,
+            "offset": 1638,
+            "opcode": 2,
+            "raw_hex": "020100001c33",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1313",
+              "event": {
+                "descriptors": [
+                  144
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811289,
+                "group": 1638,
+                "kind": 12,
+                "offset": 630,
+                "predicate": null,
+                "raw_hex": "080c660621050200",
+                "region": 1313,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 1644,
+          "command": {
+            "file_offset": 4810653,
+            "kind": 1,
+            "offset": 1644,
+            "opcode": 2,
+            "raw_hex": "020100001c70",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1318",
+              "event": {
+                "descriptors": [
+                  145
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 4811299,
+                "group": 1644,
+                "kind": 12,
+                "offset": 640,
+                "predicate": null,
+                "raw_hex": "080c6c0626050200",
+                "region": 1318,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 16,
+          "selector": 3,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 1,
+          "group": 3896,
+          "command": {
+            "file_offset": 4785568,
+            "kind": 1,
+            "offset": 3992,
+            "opcode": 2,
+            "raw_hex": "020100001c50",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "movable:50",
+              "event": {
+                "extra_hex": "00",
+                "file_offset": 4788392,
+                "group": 3896,
+                "kind": 5,
+                "offset": 2470,
+                "predicate": {
+                  "entry_file_offset": 4830192,
+                  "entry_hex": "0005000001",
+                  "index": 207,
+                  "trailer_file_offset": 4788398,
+                  "trailer_hex": "0413cf00"
+                },
+                "raw_hex": "0605380f0400",
+                "stream": 1,
+                "value": 4
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 16,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        }
+      ]
+    },
+    "L19_BC": {
+      "source": {
+        "file": "DAT/L19_BC.MIX",
+        "geometry_entry_offset": 5955117,
+        "geometry_entry_size": 361922,
+        "geometry_key": 3137941376,
+        "geometry_sha256": "f39111f0c8e6652eb004eca060eca12a1272a0c75ee0eaeb8e352ede00257de3",
+        "sha256": "59cd77a17e8fce0286281fdea17e134fc88436cbc0c77b1a5f4039e5edde3380"
+      },
+      "export_sha256": "2eaaac1e841f767359918ccc17998f3ecd8c65e8d5a026fa0d4be4aa6cb7cfd3",
+      "steps": [
+        {
+          "id": "laboratory_approach",
+          "hintbook_pages": [
+            166
+          ],
+          "action": "Witness Baccata last encounter, receive the horn and cross the gated liquid chamber using the form passages and switches.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "L19 assignment inferred from L17/L20 topology; precise encounter/area boundary UNKNOWN"
+        },
+        {
+          "id": "rapids_and_circle",
+          "hintbook_pages": [
+            167
+          ],
+          "action": "Traverse the rapids or alternate bridge; use Mist on the four heads, defeat the demon and bring its body to the circle.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Room-to-area join UNKNOWN; item, spell, corpse and elevator events unjoined"
+        },
+        {
+          "id": "birth_chamber",
+          "hintbook_pages": [
+            168
+          ],
+          "action": "Reach Dawn and the birth chamber, use Curse on the mother and pursue Belial past the demons.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [
+            1,
+            2
+          ],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "L19/L20 boundary UNKNOWN; do not assume a decoded exit implements the full sequence"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 0,
+          "command": {
+            "file_offset": 6182476,
+            "kind": 1,
+            "offset": 0,
+            "opcode": 2,
+            "raw_hex": "020100001c51",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:22",
+              "event": {
+                "descriptors": [
+                  4
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 6198274,
+                "group": 0,
+                "kind": 12,
+                "offset": 2,
+                "predicate": null,
+                "raw_hex": "080c000016000200",
+                "region": 22,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 17,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 15784,
+          "command": {
+            "file_offset": 6198260,
+            "kind": 1,
+            "offset": 15784,
+            "opcode": 2,
+            "raw_hex": "020100001c34",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:2369",
+              "event": {
+                "descriptors": [
+                  212
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 6210346,
+                "group": 15784,
+                "kind": 12,
+                "offset": 12074,
+                "predicate": {
+                  "entry_file_offset": 6253920,
+                  "entry_hex": "0002340000",
+                  "index": 204,
+                  "trailer_file_offset": 6210354,
+                  "trailer_hex": "0413cc00"
+                },
+                "raw_hex": "080ca83d41090200",
+                "region": 2369,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 20,
+          "selector": 1,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 15790,
+          "command": {
+            "file_offset": 6198266,
+            "kind": 1,
+            "offset": 15790,
+            "opcode": 2,
+            "raw_hex": "020100001c54",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:2369",
+              "event": {
+                "descriptors": [
+                  212
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 6210358,
+                "group": 15790,
+                "kind": 12,
+                "offset": 12086,
+                "predicate": {
+                  "entry_file_offset": 6253925,
+                  "entry_hex": "0002340001",
+                  "index": 205,
+                  "trailer_file_offset": 6210366,
+                  "trailer_hex": "0413cd00"
+                },
+                "raw_hex": "080cae3d41090200",
+                "region": 2369,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 20,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        }
+      ]
+    },
+    "L20_BB": {
+      "source": {
+        "file": "DAT/L20_BB.MIX",
+        "geometry_entry_offset": 15362198,
+        "geometry_entry_size": 356155,
+        "geometry_key": 3128497026,
+        "geometry_sha256": "d1c61a0d6084d29e75520037e2f55b9bf17e70368379fab70ced098a7b541318",
+        "sha256": "ea3c167f95626dab4bb509429edae6fed903f80b3364757d0b951001de2f8490"
+      },
+      "export_sha256": "b2a79e042c06126a2e0bc82d9834af5b3422416d70b2f51a3a849a9d53951d3f",
+      "steps": [
+        {
+          "id": "pillar_chase",
+          "hintbook_pages": [
+            168,
+            169
+          ],
+          "action": "Pursue Belial through the moving pillars and use the armory resources when needed.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Book-to-area boundary inferred only; hazards, boss phases and optional supplies unjoined"
+        },
+        {
+          "id": "final_belial",
+          "hintbook_pages": [
+            170,
+            171
+          ],
+          "action": "Pass the false Draracle encounter, defeat Belial and reach the concluding sequence.",
+          "grade": "HINTBOOK",
+          "witness_candidates": [],
+          "join": "candidate only: room identity/exit destination does not prove the full quest step",
+          "hosted": "not hosted end-to-end",
+          "reason": "Ending trigger unjoined; the book suspects a finale bug, not yet reproduced or established"
+        }
+      ],
+      "witnesses": [
+        {
+          "stream": 0,
+          "group": 3786,
+          "command": {
+            "file_offset": 15557686,
+            "kind": 1,
+            "offset": 3786,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1475",
+              "event": {
+                "descriptors": [
+                  88
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560266,
+                "group": 3786,
+                "kind": 12,
+                "offset": 2418,
+                "predicate": null,
+                "raw_hex": "080cca0ec3050200",
+                "region": 1475,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3792,
+          "command": {
+            "file_offset": 15557692,
+            "kind": 1,
+            "offset": 3792,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1476",
+              "event": {
+                "descriptors": [
+                  88
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560274,
+                "group": 3792,
+                "kind": 12,
+                "offset": 2426,
+                "predicate": null,
+                "raw_hex": "080cd00ec4050200",
+                "region": 1476,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3798,
+          "command": {
+            "file_offset": 15557698,
+            "kind": 1,
+            "offset": 3798,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1477",
+              "event": {
+                "descriptors": [
+                  88
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560282,
+                "group": 3798,
+                "kind": 12,
+                "offset": 2434,
+                "predicate": null,
+                "raw_hex": "080cd60ec5050200",
+                "region": 1477,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3804,
+          "command": {
+            "file_offset": 15557704,
+            "kind": 1,
+            "offset": 3804,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1478",
+              "event": {
+                "descriptors": [
+                  88
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560290,
+                "group": 3804,
+                "kind": 12,
+                "offset": 2442,
+                "predicate": null,
+                "raw_hex": "080cdc0ec6050200",
+                "region": 1478,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3810,
+          "command": {
+            "file_offset": 15557710,
+            "kind": 1,
+            "offset": 3810,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1479",
+              "event": {
+                "descriptors": [
+                  88
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560298,
+                "group": 3810,
+                "kind": 12,
+                "offset": 2450,
+                "predicate": null,
+                "raw_hex": "080ce20ec7050200",
+                "region": 1479,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3816,
+          "command": {
+            "file_offset": 15557716,
+            "kind": 1,
+            "offset": 3816,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1484",
+              "event": {
+                "descriptors": [
+                  89
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560308,
+                "group": 3816,
+                "kind": 12,
+                "offset": 2460,
+                "predicate": null,
+                "raw_hex": "080ce80ecc050200",
+                "region": 1484,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3822,
+          "command": {
+            "file_offset": 15557722,
+            "kind": 1,
+            "offset": 3822,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1485",
+              "event": {
+                "descriptors": [
+                  89
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560316,
+                "group": 3822,
+                "kind": 12,
+                "offset": 2468,
+                "predicate": null,
+                "raw_hex": "080cee0ecd050200",
+                "region": 1485,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3828,
+          "command": {
+            "file_offset": 15557728,
+            "kind": 1,
+            "offset": 3828,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1486",
+              "event": {
+                "descriptors": [
+                  89
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560324,
+                "group": 3828,
+                "kind": 12,
+                "offset": 2476,
+                "predicate": null,
+                "raw_hex": "080cf40ece050200",
+                "region": 1486,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3834,
+          "command": {
+            "file_offset": 15557734,
+            "kind": 1,
+            "offset": 3834,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1487",
+              "event": {
+                "descriptors": [
+                  89
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560332,
+                "group": 3834,
+                "kind": 12,
+                "offset": 2484,
+                "predicate": null,
+                "raw_hex": "080cfa0ecf050200",
+                "region": 1487,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        },
+        {
+          "stream": 0,
+          "group": 3840,
+          "command": {
+            "file_offset": 15557740,
+            "kind": 1,
+            "offset": 3840,
+            "opcode": 2,
+            "raw_hex": "020100001c53",
+            "target": 0
+          },
+          "owners": [
+            {
+              "object": "region:1488",
+              "event": {
+                "descriptors": [
+                  89
+                ],
+                "event": 2,
+                "extra_hex": "",
+                "file_offset": 15560340,
+                "group": 3840,
+                "kind": 12,
+                "offset": 2492,
+                "predicate": null,
+                "raw_hex": "080c000fd0050200",
+                "region": 1488,
+                "stream": 0,
+                "value": 0
+              }
+            }
+          ],
+          "grade": "DECODED",
+          "type": "exit",
+          "destination": 19,
+          "selector": 2,
+          "hosted": "adapter binder; quest prerequisites not established by exit test"
+        }
+      ]
+    }
+  }
+}

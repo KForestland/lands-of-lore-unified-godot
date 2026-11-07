@@ -1,0 +1,734 @@
+{
+ "version": 1,
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "archive_sha256": "d623157008700d95e3e09cd7462c7d7032a06bfdff48b15ece11fc7c79dc4be7",
+ "dll_sha256": "edf0996f0fb100e244a5a6188fb8121ad241a47bdcacab360686837aed0d11b6",
+ "method": "Static DLL disassembly with initializer-bound host slots; native room execution not replayed.",
+ "room_names": [
+  "pool_",
+  "cave_",
+  "skel_",
+  "ment_",
+  "mcel_",
+  "mgar_",
+  "moff_",
+  "mlib_",
+  "wpn_",
+  "sever_",
+  "runecl_",
+  "runes_",
+  "village_",
+  "can_",
+  "chut_"
+ ],
+ "jungle_entry": {
+  "source_sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f",
+  "region": 2750,
+  "event": 2,
+  "group": 5084,
+  "predicate": 20,
+  "room_control": 100,
+  "room_index": 14,
+  "room": "CHUT",
+  "commands": [
+   "0c1064000e00",
+   "091064001500"
+  ]
+ },
+ "setup": {
+  "load_room": [
+   "hut-apr",
+   1,
+   1
+  ],
+  "background": "chut",
+  "idle_alive": [
+   29,
+   999,
+   6
+  ],
+  "idle_dead": [
+   29,
+   995,
+   6
+  ]
+ },
+ "first_visit": {
+  "admission": "Callback9: flag153 clear; GV_KELSRICK_DEAD == 0; Kelsrick_Attacked (L4_HJ local52) == 0; flags 152 and 150 clear.",
+  "start_flag": 152,
+  "lines": [
+   350,
+   351,
+   352,
+   353,
+   354,
+   355,
+   356,
+   357,
+   358,
+   359,
+   360,
+   361,
+   362,
+   363,
+   364
+  ],
+  "flag_after_line": {
+   "358": 151
+  },
+  "local_after_line": {
+   "362": [
+    "Met_Kelsrick",
+    30,
+    1
+   ]
+  },
+  "place": [
+   -1769,
+   5464
+  ],
+  "host_f0": 150,
+  "calls": [
+   {
+    "address": "0x9c9",
+    "host": "get_global",
+    "offset": "0x70",
+    "args": [
+     "GV_KELSRICK_DEAD"
+    ]
+   },
+   {
+    "address": "0x9df",
+    "host": "get_flag",
+    "offset": "0x50",
+    "args": [
+     152
+    ]
+   },
+   {
+    "address": "0x9f5",
+    "host": "get_flag",
+    "offset": "0x50",
+    "args": [
+     150
+    ]
+   },
+   {
+    "address": "0xa16",
+    "host": "set_flag",
+    "offset": "0x48",
+    "args": [
+     152
+    ]
+   },
+   {
+    "address": "0xa28",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     350,
+     6
+    ]
+   },
+   {
+    "address": "0xa3a",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     351,
+     6
+    ]
+   },
+   {
+    "address": "0xa4c",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     352,
+     6
+    ]
+   },
+   {
+    "address": "0xa63",
+    "host": "movie_flags",
+    "offset": "0x11c",
+    "args": [
+     29,
+     353,
+     6,
+     128
+    ]
+   },
+   {
+    "address": "0xa7a",
+    "host": "movie_flags",
+    "offset": "0x11c",
+    "args": [
+     29,
+     354,
+     6,
+     128
+    ]
+   },
+   {
+    "address": "0xa8c",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     355,
+     6
+    ]
+   },
+   {
+    "address": "0xa9e",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     356,
+     6
+    ]
+   },
+   {
+    "address": "0xab5",
+    "host": "movie_flags",
+    "offset": "0x11c",
+    "args": [
+     29,
+     357,
+     6,
+     128
+    ]
+   },
+   {
+    "address": "0xac7",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     358,
+     6
+    ]
+   },
+   {
+    "address": "0xad5",
+    "host": "set_flag",
+    "offset": "0x48",
+    "args": [
+     151
+    ]
+   },
+   {
+    "address": "0xaec",
+    "host": "movie_flags",
+    "offset": "0x11c",
+    "args": [
+     29,
+     359,
+     6,
+     160
+    ]
+   },
+   {
+    "address": "0xb03",
+    "host": "movie_flags",
+    "offset": "0x11c",
+    "args": [
+     29,
+     360,
+     6,
+     128
+    ]
+   },
+   {
+    "address": "0xb15",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     361,
+     6
+    ]
+   },
+   {
+    "address": "0xb27",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     362,
+     6
+    ]
+   },
+   {
+    "address": "0xb36",
+    "host": "set_local",
+    "offset": "0xb4",
+    "args": [
+     "Met_Kelsrick",
+     "ebx"
+    ]
+   },
+   {
+    "address": "0xb4d",
+    "host": "movie_flags",
+    "offset": "0x11c",
+    "args": [
+     29,
+     363,
+     6,
+     128
+    ]
+   },
+   {
+    "address": "0xb5f",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     364,
+     6
+    ]
+   },
+   {
+    "address": "0xb72",
+    "host": "place",
+    "offset": "0xe0",
+    "args": [
+     -1769,
+     5464
+    ]
+   },
+   {
+    "address": "0xb80",
+    "host": "host_f0",
+    "offset": "0xf0",
+    "args": [
+     150
+    ]
+   },
+   {
+    "address": "0xb91",
+    "host": "exit_room",
+    "offset": "0x68",
+    "args": []
+   }
+  ]
+ },
+ "leave": {
+  "place": [
+   -1769,
+   5464
+  ],
+  "host_f0": 150,
+  "calls": [
+   {
+    "address": "0x870",
+    "host": "place",
+    "offset": "0xe0",
+    "args": [
+     -1769,
+     5464
+    ]
+   },
+   {
+    "address": "0x87e",
+    "host": "host_f0",
+    "offset": "0xf0",
+    "args": [
+     150
+    ]
+   },
+   {
+    "address": "0x887",
+    "host": "exit_room",
+    "offset": "0x68",
+    "args": []
+   }
+  ]
+ },
+ "dead_visit": {
+  "admission": "flag153 clear, Kelsrick dead, flag150 clear",
+  "alert_before_lines": true,
+  "start_flag": 153,
+  "lines": [
+   375,
+   376,
+   377,
+   378,
+   379
+  ],
+  "calls": [
+   {
+    "address": "0x8c9",
+    "host": "get_global",
+    "offset": "0x70",
+    "args": [
+     "GV_KELSRICK_DEAD"
+    ]
+   },
+   {
+    "address": "0x8df",
+    "host": "get_flag",
+    "offset": "0x50",
+    "args": [
+     150
+    ]
+   },
+   {
+    "address": "0x8f7",
+    "host": "set_global",
+    "offset": "0x9c",
+    "args": [
+     "GV_HULINE_ALERT",
+     1
+    ]
+   },
+   {
+    "address": "0x905",
+    "host": "get_flag",
+    "offset": "0x50",
+    "args": [
+     153
+    ]
+   },
+   {
+    "address": "0x917",
+    "host": "set_flag",
+    "offset": "0x48",
+    "args": [
+     153
+    ]
+   },
+   {
+    "address": "0x929",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     375,
+     6
+    ]
+   },
+   {
+    "address": "0x93d",
+    "host": "movie_flags",
+    "offset": "0x11c",
+    "args": [
+     29,
+     376,
+     6,
+     96
+    ]
+   },
+   {
+    "address": "0x94f",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     377,
+     6
+    ]
+   },
+   {
+    "address": "0x961",
+    "host": "movie",
+    "offset": "0x54",
+    "args": [
+     29,
+     378,
+     6
+    ]
+   },
+   {
+    "address": "0x978",
+    "host": "movie_flags",
+    "offset": "0x11c",
+    "args": [
+     29,
+     379,
+     6,
+     192
+    ]
+   }
+  ]
+ },
+ "first_update": {
+  "ambient_start": [
+   338,
+   170
+  ],
+  "done_flag": 153
+ },
+ "media": {
+  "background": {
+   "name": "WOMS\\CHUT\\CHUT_.VQA",
+   "sha256": "1d735f260ad403c4c2fae2649d28fab8c539c4f17f37ce82571764e292b92cdc",
+   "frames": 30,
+   "width": 640,
+   "height": 400,
+   "x": 0,
+   "y": 0
+  },
+  "intro": {
+   "name": "WOMS\\CHUT\\HUT-APR.VQA",
+   "sha256": "aeecccd42d4d412862241daf9daa0055368222c2b8df6c81efd2befdc772a5ba",
+   "frames": 110,
+   "width": 640,
+   "height": 400,
+   "x": 0,
+   "y": 0
+  },
+  "idle": {
+   "name": "WOMS\\CHUT\\2999906E.VQA",
+   "sha256": "fc1fa729d4d0e9d0bfaa24c94854271ef661eff03a0273cb52e625cb0873442c",
+   "frames": 38,
+   "width": 408,
+   "height": 328,
+   "x": 56,
+   "y": 72
+  },
+  "idle_dead": {
+   "name": "WOMS\\CHUT\\2999506E.VQA",
+   "sha256": "79a665a7ef93ff5f71a981eab2be570e0b2a98d0cc9bbba6dd86564d914dee6b",
+   "frames": 54,
+   "width": 192,
+   "height": 216,
+   "x": 276,
+   "y": 140
+  }
+ },
+ "clips": [
+  {
+   "line": 350,
+   "name": "WOMS\\CHUT\\2935006E.VQA",
+   "sha256": "b0e485047aa24c2bef2f6a256ee4b755e26c115d3b214616883730a7980320f4",
+   "frames": 57,
+   "width": 412,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 0
+  },
+  {
+   "line": 351,
+   "name": "WOMS\\CHUT\\2935106E.VQA",
+   "sha256": "1e2365bfa489c0850d0376ab180bebd3e4360452dacde3fe4af0898d17986369",
+   "frames": 33,
+   "width": 416,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 0
+  },
+  {
+   "line": 352,
+   "name": "WOMS\\CHUT\\2935206E.VQA",
+   "sha256": "b5d3a60c871931b2194449dfec014bb8539184addb59f42bf6fba7ad93819f12",
+   "frames": 46,
+   "width": 416,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 0
+  },
+  {
+   "line": 353,
+   "name": "WOMS\\CHUT\\2935306E.VQA",
+   "sha256": "822b392a1a8fb5475ea5a5da2aa43d48bc4a747600ec4bb1634faf8621424f16",
+   "frames": 40,
+   "width": 416,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 128
+  },
+  {
+   "line": 354,
+   "name": "WOMS\\CHUT\\2935406E.VQA",
+   "sha256": "fa117822583c0f03fd63bf7b92abd8ccc9b3a37d20d51dd36778d536fdc5499a",
+   "frames": 30,
+   "width": 416,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 128
+  },
+  {
+   "line": 355,
+   "name": "WOMS\\CHUT\\2935506E.VQA",
+   "sha256": "6a108ea0d0059afbbc9a671d910033a78c5d6aa3e211fe68c060c7e9fcc1f7db",
+   "frames": 99,
+   "width": 416,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 0
+  },
+  {
+   "line": 356,
+   "name": "WOMS\\CHUT\\2935606E.VQA",
+   "sha256": "b924cffd0493c5b73ae7d4d9e8f5a110d950152425b148781f0a2100c59d7cc9",
+   "frames": 50,
+   "width": 416,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 0
+  },
+  {
+   "line": 357,
+   "name": "WOMS\\CHUT\\2935706E.VQA",
+   "sha256": "0cd6af4e91cda2ecb365077811997d981f27dc7fcdd0a94684059cf496be3d72",
+   "frames": 42,
+   "width": 416,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 128
+  },
+  {
+   "line": 358,
+   "name": "WOMS\\CHUT\\2935806E.VQA",
+   "sha256": "e764a33011504a62268a908a8d6a0822128f1e69b74b322cbd09e5f5caa34302",
+   "frames": 117,
+   "width": 416,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 0
+  },
+  {
+   "line": 359,
+   "name": "WOMS\\CHUT\\2935906E.VQA",
+   "sha256": "f13d2510387c0cc67c4853468a0913611f8c130b343fdc1b39de3c3b45af0550",
+   "frames": 66,
+   "width": 404,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 160
+  },
+  {
+   "line": 360,
+   "name": "WOMS\\CHUT\\2936006E.VQA",
+   "sha256": "8a0f208f6c8ea59afd09eadf722d15902706123702484566cde986b108157266",
+   "frames": 45,
+   "width": 404,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 128
+  },
+  {
+   "line": 361,
+   "name": "WOMS\\CHUT\\2936106E.VQA",
+   "sha256": "701a976031062da1b82af25c836c2469f2224d47f711135671912f877675be0e",
+   "frames": 102,
+   "width": 404,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 0
+  },
+  {
+   "line": 362,
+   "name": "WOMS\\CHUT\\2936206E.VQA",
+   "sha256": "15b9dbebd112a3df82c7538c95349df70e9ad7ba1d2f389f575738bb86261409",
+   "frames": 170,
+   "width": 404,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 0
+  },
+  {
+   "line": 363,
+   "name": "WOMS\\CHUT\\2936306E.VQA",
+   "sha256": "10d8b6d1239cb67d0783c5bda23886a18c395dd2b6344e2ba927d0472218cd53",
+   "frames": 12,
+   "width": 404,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 128
+  },
+  {
+   "line": 364,
+   "name": "WOMS\\CHUT\\2936406E.VQA",
+   "sha256": "1ae491f686b63ff30a1be2b67cc867b1c08ccbdaf84e5d33dce9cdf257bfb2bd",
+   "frames": 105,
+   "width": 404,
+   "height": 328,
+   "x": 56,
+   "y": 72,
+   "movie_flags": 0
+  },
+  {
+   "line": 375,
+   "name": "WOMS\\CHUT\\2937506E.VQA",
+   "sha256": "dac9cbcd39eaa6df03132501652e2b563cc00223967f6eaa4b9df2f9c34d2acf",
+   "frames": 66,
+   "width": 216,
+   "height": 216,
+   "x": 252,
+   "y": 140,
+   "movie_flags": 0
+  },
+  {
+   "line": 376,
+   "name": "WOMS\\CHUT\\2937606E.VQA",
+   "sha256": "1fe177c5503418d1269f18c0a1d88db24414351f4aaea7f2ec47ece41bb6ce89",
+   "frames": 50,
+   "width": 216,
+   "height": 216,
+   "x": 252,
+   "y": 140,
+   "movie_flags": 96
+  },
+  {
+   "line": 377,
+   "name": "WOMS\\CHUT\\2937706E.VQA",
+   "sha256": "bd7c8e30c21793a52bdc083224804276a9df74b5bc4b570bbfbeb9c8065aae4d",
+   "frames": 34,
+   "width": 232,
+   "height": 220,
+   "x": 240,
+   "y": 136,
+   "movie_flags": 0
+  },
+  {
+   "line": 378,
+   "name": "WOMS\\CHUT\\2937806E.VQA",
+   "sha256": "582011911e70d7b1c7a3391ee1c7ab425e6235314c74f91a9f309bf409b18b1c",
+   "frames": 24,
+   "width": 216,
+   "height": 216,
+   "x": 256,
+   "y": 140,
+   "movie_flags": 0
+  },
+  {
+   "line": 379,
+   "name": "WOMS\\CHUT\\2937906E.VQA",
+   "sha256": "0743834b98e551825379a1c8e67f4a7538d54e1a7d7a9efe7587535e6cd7b35e",
+   "frames": 43,
+   "width": 196,
+   "height": 216,
+   "x": 276,
+   "y": 140,
+   "movie_flags": 192
+  }
+ ],
+ "not_hosted": [
+  "Kelsrick_Attacked/Anyar attack branch 0x6E8 (lines 365, 1000, Soul -1, flag150)",
+  "flag150 hotspots 0x594 (66-Ancients stn) and message5 lines 366/367 (0x68B)",
+  "ambient 338 and the speaker29 actor hotspot (0x20)",
+  "control100 event5 group21322 (control112 start) and event6/20 groups 21372/21418"
+ ]
+}

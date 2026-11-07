@@ -1,0 +1,449 @@
+{
+  "source": {
+    "status": "source_diagnosis_runtime_missing",
+    "report": "report_2026-10-17T11-19-00_2349619532",
+    "source": {
+      "file": "DAT/L3_DH.MIX",
+      "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+      "geometry_key": 3106551060,
+      "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+    },
+    "prop": 216,
+    "hit_records": [
+      {
+        "kind": 9,
+        "group": 4536,
+        "predicate": 24,
+        "predicate_raw": "0003080000",
+        "commands": [
+          "020100000a05",
+          "0803d80000000000",
+          "0803d80002000000"
+        ],
+        "raw": "0a09b811010003000284"
+      },
+      {
+        "kind": 6,
+        "group": 4564,
+        "predicate": null,
+        "predicate_raw": null,
+        "commands": [
+          "0903d8001000",
+          "090419000300",
+          "c60000000802"
+        ],
+        "raw": "0606d4110000"
+      }
+    ],
+    "groups": [
+      {
+        "stream": 1,
+        "group": 4536,
+        "owners": [
+          {
+            "stream": 1,
+            "group": 4536,
+            "owner_kind": "prop",
+            "owner": 216,
+            "event": 9,
+            "value": 1,
+            "predicate": 24,
+            "archive_offset": 5849716
+          }
+        ],
+        "commands": [
+          {
+            "archive_offset": 5838924,
+            "raw_hex": "020100000a05"
+          },
+          {
+            "archive_offset": 5838930,
+            "raw_hex": "0803d80000000000"
+          },
+          {
+            "archive_offset": 5838938,
+            "raw_hex": "0803d80002000000"
+          }
+        ]
+      },
+      {
+        "stream": 1,
+        "group": 4564,
+        "owners": [
+          {
+            "stream": 1,
+            "group": 4564,
+            "owner_kind": "prop",
+            "owner": 216,
+            "event": 6,
+            "value": 0,
+            "predicate": null,
+            "archive_offset": 5849730
+          }
+        ],
+        "commands": [
+          {
+            "archive_offset": 5838952,
+            "raw_hex": "0903d8001000"
+          },
+          {
+            "archive_offset": 5838958,
+            "raw_hex": "090419000300"
+          },
+          {
+            "archive_offset": 5838964,
+            "raw_hex": "c60000000802"
+          }
+        ]
+      },
+      {
+        "stream": 0,
+        "group": 548,
+        "owners": [
+          {
+            "stream": 0,
+            "group": 548,
+            "owner_kind": "region",
+            "owner": 365,
+            "descriptors": [
+              13
+            ],
+            "event": 2,
+            "value": 0,
+            "predicate": 28,
+            "archive_offset": 5884384
+          }
+        ],
+        "commands": [
+          {
+            "archive_offset": 5882754,
+            "raw_hex": "0803d80001000000"
+          },
+          {
+            "archive_offset": 5882762,
+            "raw_hex": "0903d8000200"
+          },
+          {
+            "archive_offset": 5882768,
+            "raw_hex": "0903d7000300"
+          }
+        ]
+      },
+      {
+        "stream": 0,
+        "group": 902,
+        "owners": [
+          {
+            "stream": 0,
+            "group": 902,
+            "owner_kind": "region",
+            "owner": 769,
+            "descriptors": [
+              40
+            ],
+            "event": 2,
+            "value": 0,
+            "predicate": 28,
+            "archive_offset": 5884520
+          }
+        ],
+        "commands": [
+          {
+            "archive_offset": 5883108,
+            "raw_hex": "0803d80001000000"
+          },
+          {
+            "archive_offset": 5883116,
+            "raw_hex": "0903d8000200"
+          },
+          {
+            "archive_offset": 5883122,
+            "raw_hex": "0903d7000300"
+          }
+        ]
+      }
+    ],
+    "predicates": {
+      "24": {
+        "op": "==",
+        "left": {
+          "local": 8
+        },
+        "right": {
+          "immediate": 0
+        },
+        "raw": "0003080000"
+      },
+      "28": {
+        "op": "==",
+        "left": {
+          "local": 8
+        },
+        "right": {
+          "immediate": 2
+        },
+        "raw": "0003080002"
+      }
+    },
+    "item": {
+      "index": 25,
+      "identity": 2849335507,
+      "definition": 86,
+      "name": "84-Dragon gem",
+      "raw": "7efb89080000000002108e01000000000000000014747f00d97b5a0014000000d368d5a900",
+      "archive_offset": 5877923,
+      "definition_hex": "000000000000000000000000000000000000000000000000d368d5a9080000006300388324e451ff00080b0905040100000f04002400004b013d010000000043000a00000000000000000000000000000000000000000000000000"
+    },
+    "pending": [
+      "Native hit filter admission decode/replay; Spark versus other attack contexts.",
+      "Movie lifecycle completion event and prop215/216 visibility transitions.",
+      "Original item use/transport support, no invented reward semantics.",
+      "Actual owner-pose render/hit/save/restart verification."
+    ]
+  },
+  "movie": {
+    "source": {
+      "area_id": "L3_DH",
+      "map_source": {
+        "file": "DAT/L3_DH.MIX",
+        "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+        "geometry_key": 3106551060
+      },
+      "filename": "drgnhrt.vqa",
+      "raw_hex": "42034001c80016006472676e6872742e767161000000",
+      "descriptor": 478,
+      "status": "exact",
+      "binding": "unique_hash_header_witness",
+      "prefix": "SPHERE1",
+      "logical_name": "SPHERE1\\L3_DH\\DRGNHRT.VQA",
+      "candidates": [
+        {
+          "prefix": "SPHERE1",
+          "logical_name": "SPHERE1\\L3_DH\\DRGNHRT.VQA",
+          "key": 2619370518,
+          "offset": 174,
+          "length": 130052,
+          "sha256": "49f6b1ffa0c4b08e4c87c77efc10c0dfd7b56fd0f59a20d5a05219310a5fe47f",
+          "wvqa": true
+        }
+      ],
+      "archive": "DAT/L3_DHI.MIX",
+      "key": 2619370518,
+      "offset": 174,
+      "length": 130052,
+      "sha256": "49f6b1ffa0c4b08e4c87c77efc10c0dfd7b56fd0f59a20d5a05219310a5fe47f",
+      "archive_sha256": "bdbebdb475f7756357f1e9687f4a4a654c0817399fc728267c1b6d97d6663834",
+      "mix_index": 2,
+      "vqhd": {
+        "form_size": 130044,
+        "form_spans_entry": true,
+        "version": 2,
+        "flags": 1,
+        "count": 20,
+        "width": 304,
+        "height": 168,
+        "fps": 15,
+        "block_w": 4,
+        "block_h": 2
+      },
+      "extracted": "~/lol2_out/all_maps_20260922/video_resources/L3_DH/drgnhrt.vqa",
+      "resolve_reason": "one SPHERE prefix key in this area movie MIX is FORM/WVQA",
+      "comparison": {
+        "descriptor_width": 320,
+        "descriptor_height": 200,
+        "descriptor_flags": 834,
+        "descriptor_tail_u16": 22,
+        "source_frame_count": -1,
+        "state_consumes_one_frame": true,
+        "later_state_frames": "not claimed; signed count consumes exactly one frame record and F2C54 returns index 0",
+        "frame": {
+          "descriptor": 478,
+          "flags": 0,
+          "left_add": 0,
+          "top_trim": 0,
+          "right_sub": 0,
+          "bottom": 0,
+          "frame_hex": "de0100080800000000000000"
+        },
+        "placement": {
+          "record": 216,
+          "template": 27,
+          "selector": 0,
+          "region": 395,
+          "placement_offset": 5861756,
+          "x": -1141,
+          "y": 2207,
+          "z": 0,
+          "position": [
+            -1141,
+            0,
+            -2207
+          ],
+          "placement_hex": "8bfb9f080000000002448b01a0080000000000008802ffffffffb800230003001b00000003"
+        },
+        "vqhd": {
+          "width": 304,
+          "height": 168,
+          "fps": 15,
+          "count": 20
+        },
+        "dimensions_equal": false,
+        "frame_count_equals_consumed_state": false,
+        "tail_u16_equals_fps": false
+      },
+      "inactive_fallback": {
+        "kind": "visual",
+        "source_selector": 0,
+        "displayed_selector": 1,
+        "fallback_chain": [
+          0,
+          1
+        ],
+        "state_hex": "000000000000040000008c000101643c",
+        "frame_hex": "790000050000000000000000",
+        "scope": "Pre-script display with movie override inactive; original movie assets retained."
+      }
+    },
+    "entry": {
+      "index": 2,
+      "key": 2619370518,
+      "offset": 174,
+      "size": 130052
+    },
+    "header": {
+      "version": 2,
+      "frames": 20,
+      "width": 304,
+      "height": 168,
+      "block_w": 4,
+      "block_h": 2,
+      "fps": 15,
+      "parts": 20
+    },
+    "frames": {
+      "0001.png": "32dd8c240a5c923993f8410a297c797b3f655cbc02dd9821317d97398f78e56b",
+      "0002.png": "344a4f4bb253d62a80052f0910064db6d64288f87f530949c21b2756a6f220ab",
+      "0003.png": "38b782648f0e9139eb55ce77e26e8384857787ae0b693e39f8c261bbc14ead5a",
+      "0004.png": "fe61cb2297319e60b00a1ab23a512795e9a56bb4d1bc2e69a3f9e96afed5f293",
+      "0005.png": "c5b2c57a9aa35d589725962727d0e58ebc26e1d754082f17d0729a7c7f3e0e45",
+      "0006.png": "acb2332be94c584988f1cb3b377192df9ca7f62e2c1f6f569e3002544c10fdb9",
+      "0007.png": "4c8b192088c50513b093683cdfd86dd3c651a58dc6b1da03d60e74d49c490786",
+      "0008.png": "f4a4bb456b0d37a8493e2942460b3e7ae6956e966fcbce021c0d9acb9120cb94",
+      "0009.png": "eb3fda78f5a7d41fa2d7fd9ca800f9a561880d41e6c705fd8f9b475747f67f20",
+      "0010.png": "ea8d176ab060f7ae635bcc0cc6f1c6ed102cb1e6b0b528f707d8faaf8e19aec4",
+      "0011.png": "808f1035eb1f93d6e872e70f6d07d60d960c602d25d5be4888f6c584f8418c00",
+      "0012.png": "8c85bcb877ab955f6f5f213673c339387d6d1612a25759168d74e8d52327bca2",
+      "0013.png": "a495690b06c0c48ff5005b1caf4e10a8722349d85cc0a98020deaf7b951c94a7",
+      "0014.png": "f1430754d02512382cc50e1059510f9fdf0c0229149179067e6c49f7aa8b816f",
+      "0015.png": "beb643e5240f71ee1f44aab1cffef7cebd71764844ca6d34270687da062d7218",
+      "0016.png": "d0b35ac1cbb6eb42e3bcd1841eff349bf4682b6d00cd60c817250b652484b6ba",
+      "0017.png": "f75a523c718bdea4a175b58f73aaa12500133498d45b6440ba34c71223da4257",
+      "0018.png": "4705de705e677686278ae4e2df80a566397c1ec136938f177c87748db58a7ac0",
+      "0019.png": "6aa9266f523c91ac8822ec65aafd57c91796c8988514966bafbae2e6dfcdab1f",
+      "0020.png": "94655b21d2ae66fe0762933ab0d15d97b15dcb42b8ec80e765429e8c28242bd0"
+    },
+    "audio_tags": [
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2",
+      "SND2"
+    ]
+  },
+  "template": {
+    "placement": {
+      "record": 216,
+      "template": 27,
+      "selector": 0,
+      "region": 395,
+      "placement_offset": 5861756,
+      "x": -1141,
+      "y": 2207,
+      "z": 0,
+      "position": [
+        -1141,
+        0,
+        -2207
+      ],
+      "placement_hex": "8bfb9f080000000002448b01a0080000000000008802ffffffffb800230003001b00000003"
+    },
+    "template": {
+      "index": 27,
+      "selector_count": 2,
+      "flags": 0,
+      "template_hex": "000000000000000000000000000000000000000000000000530739a24b00e5000000000001000000004b789800010101000f000026657f",
+      "selectors": [
+        {
+          "selector": 0,
+          "frame_count": -1,
+          "state_height": 75,
+          "state_hex": "000000000000040000008c0001ff784b",
+          "state_offset": 4663,
+          "frames": [
+            {
+              "descriptor": 478,
+              "left": -60.0,
+              "right": 60.0,
+              "bottom": 0,
+              "top_trim": 0,
+              "frame_flags": 0,
+              "frame_hex": "de0100080800000000000000",
+              "frame_offset": 5739
+            }
+          ]
+        },
+        {
+          "selector": 1,
+          "frame_count": 1,
+          "state_height": 60,
+          "state_hex": "000000000000040000008c000101643c",
+          "state_offset": 4679,
+          "frames": [
+            {
+              "descriptor": 121,
+              "left": -50.0,
+              "right": 50.0,
+              "bottom": 0,
+              "top_trim": 0,
+              "frame_flags": 0,
+              "frame_hex": "790000050000000000000000",
+              "frame_offset": 5751
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "assets": {
+    "status": "preview_assets_only",
+    "movie_sha256": "49f6b1ffa0c4b08e4c87c77efc10c0dfd7b56fd0f59a20d5a05219310a5fe47f",
+    "frames": 20,
+    "fps": 15,
+    "audio_samples": 40424,
+    "audio_rate": 22050,
+    "files": {
+      "gem.png": "5cea3826ed4db9644218f1257245787fe174a186c8f2417a66f9aba6fdff0f08",
+      "voice.wav": "f1e8205ccd3563d618329cffdfc813c74bac591f85b468398e4b1dbb33ea7c97",
+      "descriptor_121.png": "139793d359886f19bc3c8653cd2ab16b006211c627b9cad59fea9b2f9a729d5a",
+      "atlas.png": "85621f2c7c79550c814bc193549121ee5661b7e8804d4fccafbe0ada489a231d",
+      "descriptor_836.png": "80125b03d525094dc3b402b3b1a0a98734c22f7bc7d396cb52c916a7a59bca20"
+    },
+    "scope": "Original idle descriptor121, drained descriptor836, original item86 icon; exact decoded VGA blue (0,0,251) keyed transparent, foreground RGBA unchanged. Playback review recorded separately."
+  }
+}

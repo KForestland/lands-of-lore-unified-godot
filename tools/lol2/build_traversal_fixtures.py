@@ -3,7 +3,7 @@ import json, math, sys
 expanded = "--all" in sys.argv
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
-g=json.load(open('/home/bob/lol2_out/draracle_openings_2026-09-11/geometry_v2.json'))
+g=json.load(open('~/lol2_out/draracle_openings_2026-09-11/geometry_v2.json'))
 data=json.load(open(ROOT/'assets/lol2/generated/original_floors/floors.json'))
 f={int(x['region']):x for x in data['faces']}
 out=[];counts={'flat':0,'slope':0}

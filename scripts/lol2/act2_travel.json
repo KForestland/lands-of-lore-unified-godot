@@ -1,0 +1,2078 @@
+{
+  "version": 1,
+  "scope": "Original exit records and arrival bytes. Scene mapping/input/camera adapters; no claim every gate is open.",
+  "areas": {
+    "L8_SJ": {
+      "source": {
+        "file": "DAT/L8_SJ.MIX",
+        "geometry_entry_offset": 13146529,
+        "geometry_entry_size": 621239,
+        "geometry_key": 1161722651,
+        "geometry_sha256": "8e46b2d25176aa5372956e60bd46d0447a1fe6383aae68c9476f78b5b20e88bd",
+        "sha256": "3eff07430a453d2c6f09133f869874e0530af1b6a3bfff7f4297761b96a28bc2"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": -1244,
+          "y": 2466,
+          "heading_units": 54628,
+          "region": 671,
+          "floor_min": -10,
+          "grade": "LIKELY",
+          "file_offset": 13550153,
+          "raw_hex": "24fba20964d59f0200000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -4577,
+          "y": -1168,
+          "heading_units": 16384,
+          "region": 2359,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550165,
+          "raw_hex": "1fee70fb0040370901000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 3972,
+          "y": 2482,
+          "heading_units": 36408,
+          "region": 911,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550177,
+          "raw_hex": "840fb209388e8f0302000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": 868,
+          "y": -2180,
+          "heading_units": 61895,
+          "region": 1532,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550189,
+          "raw_hex": "64037cf7c7f1fc0503000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 4,
+          "x": 7152,
+          "y": -2236,
+          "heading_units": 41870,
+          "region": 3449,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550201,
+          "raw_hex": "f01b44f78ea3790d04000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 5,
+          "x": -4292,
+          "y": 1623,
+          "heading_units": 30037,
+          "region": 66,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550213,
+          "raw_hex": "3cef57065575420005000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 6,
+          "x": 2063,
+          "y": 2326,
+          "heading_units": 29127,
+          "region": 3539,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13550225,
+          "raw_hex": "0f081609c771d30d06000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 7,
+          "x": 1725,
+          "y": -2959,
+          "heading_units": 8192,
+          "region": 3574,
+          "floor_min": -50,
+          "grade": "LIKELY",
+          "file_offset": 13550237,
+          "raw_hex": "bd0671f40020f60d07000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 8,
+          "x": 544,
+          "y": 4928,
+          "heading_units": 0,
+          "region": 1023,
+          "floor_min": -30,
+          "grade": "LIKELY",
+          "file_offset": 13550249,
+          "raw_hex": "200240130000ff0308000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 9,
+          "x": 1283,
+          "y": 1311,
+          "heading_units": 27306,
+          "region": 437,
+          "floor_min": -500,
+          "grade": "LIKELY",
+          "file_offset": 13550261,
+          "raw_hex": "03051f05aa6ab50109000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L9_DR": {
+      "source": {
+        "file": "DAT/L9_DR.MIX",
+        "geometry_entry_offset": 22719810,
+        "geometry_entry_size": 823367,
+        "geometry_key": 3511575868,
+        "geometry_sha256": "bfb777c68921591ff1f1f6dd47a7f2aa858de939da55c913eccd4a6615180692",
+        "sha256": "700300d0cdf7df0af9471f3476c4e6ba473a603fa89e3a6e1855037d70be09c7"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 3607,
+          "y": 8471,
+          "heading_units": 24003,
+          "region": 3414,
+          "floor_min": -60,
+          "grade": "LIKELY",
+          "file_offset": 23383720,
+          "raw_hex": "170e1721c35d560d00000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": 81,
+          "y": -603,
+          "heading_units": 1,
+          "region": 1343,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 23383732,
+          "raw_hex": "5100a5fd01003f0501000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 7221,
+          "y": 1736,
+          "heading_units": 43690,
+          "region": 5338,
+          "floor_min": 10,
+          "grade": "LIKELY",
+          "file_offset": 23383744,
+          "raw_hex": "351cc806aaaada1402000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -3032,
+          "y": 8232,
+          "heading_units": 0,
+          "region": 2306,
+          "floor_min": 200,
+          "grade": "LIKELY",
+          "file_offset": 23383756,
+          "raw_hex": "28f428200000020903000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 4,
+          "x": -3530,
+          "y": 1256,
+          "heading_units": 0,
+          "region": 3704,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 23383768,
+          "raw_hex": "36f2e8040000780e04000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L10_DC": {
+      "source": {
+        "file": "DAT/L10_DC.MIX",
+        "geometry_entry_offset": 12769321,
+        "geometry_entry_size": 989312,
+        "geometry_key": 3260615568,
+        "geometry_sha256": "ef89467deb4073f6d60e70baa45bd5ec55b422f1d28b518b16f7cab86434d5e3",
+        "sha256": "543c86c4fdd425cac166d9a1d371aa856b7070d4fded983a8733c473e48341f9"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 3200,
+          "y": 2995,
+          "heading_units": 17186,
+          "region": 3782,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13162766,
+          "raw_hex": "800cb30b2243c60e00000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -150,
+          "y": 221,
+          "heading_units": 1,
+          "region": 5,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13162778,
+          "raw_hex": "6affdd000100050001000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": -542,
+          "y": 856,
+          "heading_units": 24758,
+          "region": 65,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13162790,
+          "raw_hex": "e2fd5803b660410002000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L12_CM": {
+      "source": {
+        "file": "DAT/L12_CM.MIX",
+        "geometry_entry_offset": 9580528,
+        "geometry_entry_size": 458603,
+        "geometry_key": 3195626396,
+        "geometry_sha256": "2d60e4151040047d8550e675a13812af04510a6443f2d5b2eb675a7381b73a1e",
+        "sha256": "53d7b166f7856049e20d734d10b013da4cea22e3aa746fb7f3cfe307b3c198cc"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 2784,
+          "y": 18222,
+          "heading_units": 23665,
+          "region": 1948,
+          "floor_min": -1230,
+          "grade": "LIKELY",
+          "file_offset": 9858960,
+          "raw_hex": "e00a2e47715c9c0700000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -347,
+          "y": 5603,
+          "heading_units": 49152,
+          "region": 735,
+          "floor_min": -80,
+          "grade": "LIKELY",
+          "file_offset": 9858972,
+          "raw_hex": "a5fee31500c0df0201000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 3211,
+          "y": 18903,
+          "heading_units": 40960,
+          "region": 3642,
+          "floor_min": -1230,
+          "grade": "LIKELY",
+          "file_offset": 9858984,
+          "raw_hex": "8b0cd74900a03a0e02000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L13_RC": {
+      "source": {
+        "file": "DAT/L13_RC.MIX",
+        "geometry_entry_offset": 6731475,
+        "geometry_entry_size": 246056,
+        "geometry_key": 4203288576,
+        "geometry_sha256": "2e021ebeb4dd96a9c8e5caf7a46d49cdbeab2bcf2ba7046df3defee416e60750",
+        "sha256": "b9d79292e7dd6fc2eba972e55628ee05e671a4d814de8b291310d540b3f742b9"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": -3344,
+          "y": -6564,
+          "heading_units": 28089,
+          "region": 488,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 6887702,
+          "raw_hex": "f0f25ce6b96de80100000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -3260,
+          "y": -6631,
+          "heading_units": 1,
+          "region": 487,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 6887714,
+          "raw_hex": "44f319e60100e70101000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": -2336,
+          "y": 4192,
+          "heading_units": 0,
+          "region": 636,
+          "floor_min": -1080,
+          "grade": "LIKELY",
+          "file_offset": 6887726,
+          "raw_hex": "e0f6601000007c0202000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -2176,
+          "y": -4160,
+          "heading_units": 0,
+          "region": 323,
+          "floor_min": -70,
+          "grade": "LIKELY",
+          "file_offset": 6887738,
+          "raw_hex": "80f7c0ef0000430103000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L14_HT": {
+      "source": {
+        "file": "DAT/L14_HT.MIX",
+        "geometry_entry_offset": 11406344,
+        "geometry_entry_size": 465607,
+        "geometry_key": 3533284306,
+        "geometry_sha256": "f5831b7ef235be70489aee179112f5293b1e2067467077cbc0202f15565480b3",
+        "sha256": "c294f9ab142b55c36fff545a1293c419c42353fedefbfe8b77b9c38a2d9a0719"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 2576,
+          "y": 3181,
+          "heading_units": 60694,
+          "region": 796,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 11781430,
+          "raw_hex": "100a6d0c16ed1c0300000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": 2411,
+          "y": 2413,
+          "heading_units": 1,
+          "region": 864,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 11781442,
+          "raw_hex": "6b096d090100600301000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 789,
+          "y": -10774,
+          "heading_units": 0,
+          "region": 2282,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 11781454,
+          "raw_hex": "1503ead50000ea0802000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -1336,
+          "y": -11466,
+          "heading_units": 0,
+          "region": 4176,
+          "floor_min": 40,
+          "grade": "LIKELY",
+          "file_offset": 11781466,
+          "raw_hex": "c8fa36d30000501003000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L16_CA": {
+      "source": {
+        "file": "DAT/L16_CA.MIX",
+        "geometry_entry_offset": 17959024,
+        "geometry_entry_size": 1094640,
+        "geometry_key": 3201897348,
+        "geometry_sha256": "2369482678839199fb3f04acd2d35d74ecc5a745853c0a4aaa4a6deacd1a40a4",
+        "sha256": "810d39ae20a980c4b912fda9dbb05db7917b879fbfcc7cdf4a9f91d26707d2a4"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 5575,
+          "y": -9185,
+          "heading_units": 16144,
+          "region": 9655,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 18782149,
+          "raw_hex": "c7151fdc103fb72500000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -3860,
+          "y": 1341,
+          "heading_units": 1,
+          "region": 137,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 18782161,
+          "raw_hex": "ecf03d050100890001000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 2107,
+          "y": -4183,
+          "heading_units": 0,
+          "region": 9603,
+          "floor_min": 15,
+          "grade": "LIKELY",
+          "file_offset": 18782173,
+          "raw_hex": "3b08a9ef0000832502000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -7820,
+          "y": -10696,
+          "heading_units": 61895,
+          "region": 9824,
+          "floor_min": -530,
+          "grade": "LIKELY",
+          "file_offset": 18782185,
+          "raw_hex": "74e138d6c7f1602603000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L17_HC": {
+      "source": {
+        "file": "DAT/L17_HC.MIX",
+        "geometry_entry_offset": 4670072,
+        "geometry_entry_size": 183784,
+        "geometry_key": 3538495408,
+        "geometry_sha256": "5164c2fb3cd7b12be4df3d0ee3124ba5f917ecff29eaef47372d4feef0acce4b",
+        "sha256": "23d7cecf44e83515934083ae101eb4b023dfb748d34e5e0b6eb3c8aca75cc793"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": -4721,
+          "y": -6700,
+          "heading_units": 61004,
+          "region": 109,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 4808871,
+          "raw_hex": "8fedd4e54cee6d0000000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": 1434,
+          "y": 7075,
+          "heading_units": 32768,
+          "region": 131,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 4808883,
+          "raw_hex": "9a05a31b0080830001000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": -5732,
+          "y": -5829,
+          "heading_units": 49152,
+          "region": 1311,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 4808895,
+          "raw_hex": "9ce93be900c01f0502000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": 8089,
+          "y": -2128,
+          "heading_units": 53703,
+          "region": 1315,
+          "floor_min": -30,
+          "grade": "LIKELY",
+          "file_offset": 4808907,
+          "raw_hex": "991fb0f7c7d1230503000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L19_BC": {
+      "source": {
+        "file": "DAT/L19_BC.MIX",
+        "geometry_entry_offset": 5955117,
+        "geometry_entry_size": 361922,
+        "geometry_key": 3137941376,
+        "geometry_sha256": "f39111f0c8e6652eb004eca060eca12a1272a0c75ee0eaeb8e352ede00257de3",
+        "sha256": "59cd77a17e8fce0286281fdea17e134fc88436cbc0c77b1a5f4039e5edde3380"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 1405,
+          "y": 1253,
+          "heading_units": 4798,
+          "region": 1691,
+          "floor_min": -130,
+          "grade": "LIKELY",
+          "file_offset": 6182338,
+          "raw_hex": "7d05e504be129b0600000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": 84,
+          "y": -305,
+          "heading_units": 49152,
+          "region": 25,
+          "floor_min": -10,
+          "grade": "LIKELY",
+          "file_offset": 6182350,
+          "raw_hex": "5400cffe00c0190001000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": 3201,
+          "y": 872,
+          "heading_units": 49152,
+          "region": 2365,
+          "floor_min": -975,
+          "grade": "LIKELY",
+          "file_offset": 6182362,
+          "raw_hex": "810c680300c03d0902000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": 1260,
+          "y": 1431,
+          "heading_units": 0,
+          "region": 1715,
+          "floor_min": -120,
+          "grade": "LIKELY",
+          "file_offset": 6182374,
+          "raw_hex": "ec0497050000b30603000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L20_BB": {
+      "source": {
+        "file": "DAT/L20_BB.MIX",
+        "geometry_entry_offset": 15362198,
+        "geometry_entry_size": 356155,
+        "geometry_key": 3128497026,
+        "geometry_sha256": "d1c61a0d6084d29e75520037e2f55b9bf17e70368379fab70ced098a7b541318",
+        "sha256": "ea3c167f95626dab4bb509429edae6fed903f80b3364757d0b951001de2f8490"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": -7387,
+          "y": 4890,
+          "heading_units": 49298,
+          "region": 1243,
+          "floor_min": -50,
+          "grade": "LIKELY",
+          "file_offset": 15553678,
+          "raw_hex": "25e31a1392c0db0400000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": -2383,
+          "y": 4261,
+          "heading_units": 16384,
+          "region": 316,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 15553690,
+          "raw_hex": "b1f6a51000403c0101000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 2,
+          "x": -2398,
+          "y": 3206,
+          "heading_units": 16384,
+          "region": 1523,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 15553702,
+          "raw_hex": "a2f6860c0040f30502000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -3328,
+          "y": 3104,
+          "heading_units": 0,
+          "region": 595,
+          "floor_min": -50,
+          "grade": "LIKELY",
+          "file_offset": 15553714,
+          "raw_hex": "00f3200c0000530203000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 4,
+          "x": -928,
+          "y": 1632,
+          "heading_units": 0,
+          "region": 101,
+          "floor_min": -60,
+          "grade": "LIKELY",
+          "file_offset": 15553726,
+          "raw_hex": "60fc60060000650004000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 5,
+          "x": -2944,
+          "y": 1152,
+          "heading_units": 0,
+          "region": 521,
+          "floor_min": -50,
+          "grade": "LIKELY",
+          "file_offset": 15553738,
+          "raw_hex": "80f480040000090205000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    },
+    "L4_HJ": {
+      "source": {
+        "file": "DAT/L4_HJ.MIX",
+        "geometry_entry_offset": 12409578,
+        "geometry_entry_size": 831725,
+        "geometry_key": 3710797084,
+        "geometry_sha256": "445d9b270d3e62574d719851305e3e30867715993f073a2dcd0e888295172aba",
+        "sha256": "517afe6d59a4a06212bf4aea7eb42dfbb07826a4677fb77a4032674e64657e8f"
+      },
+      "arrivals": [
+        {
+          "selector": 0,
+          "x": 4080,
+          "y": 3625,
+          "heading_units": 14864,
+          "region": 4407,
+          "floor_min": -114,
+          "grade": "LIKELY",
+          "file_offset": 13022630,
+          "raw_hex": "f00f290e103a371100000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 1,
+          "x": 353,
+          "y": 4909,
+          "heading_units": 40049,
+          "region": 3875,
+          "floor_min": 39,
+          "grade": "LIKELY",
+          "file_offset": 13022642,
+          "raw_hex": "61012d13719c230f01000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 3,
+          "x": -6332,
+          "y": -4697,
+          "heading_units": 7281,
+          "region": 2811,
+          "floor_min": -100,
+          "grade": "LIKELY",
+          "file_offset": 13022654,
+          "raw_hex": "44e7a7ed711cfb0a03000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 4,
+          "x": -1135,
+          "y": -1952,
+          "heading_units": 5461,
+          "region": 2600,
+          "floor_min": 30,
+          "grade": "LIKELY",
+          "file_offset": 13022666,
+          "raw_hex": "91fb60f85515280a04000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 5,
+          "x": 4195,
+          "y": -2342,
+          "heading_units": 54613,
+          "region": 3149,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13022678,
+          "raw_hex": "6310daf655d54d0c05000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 6,
+          "x": 4561,
+          "y": -3282,
+          "heading_units": 40049,
+          "region": 3065,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13022690,
+          "raw_hex": "d1112ef3719cf90b06000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 7,
+          "x": 6768,
+          "y": 3311,
+          "heading_units": 57344,
+          "region": 4514,
+          "floor_min": -214,
+          "grade": "LIKELY",
+          "file_offset": 13022702,
+          "raw_hex": "701aef0c00e0a21107000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 8,
+          "x": -1472,
+          "y": 5248,
+          "heading_units": 0,
+          "region": 3811,
+          "floor_min": 0,
+          "grade": "LIKELY",
+          "file_offset": 13022714,
+          "raw_hex": "40fa80140000e30e08000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        },
+        {
+          "selector": 9,
+          "x": 4689,
+          "y": 3681,
+          "heading_units": 0,
+          "region": 4437,
+          "floor_min": -114,
+          "grade": "LIKELY",
+          "file_offset": 13022726,
+          "raw_hex": "5112610e0000551109000000",
+          "witness": "Grok backlog5 item2: row fields and binding LIKELY; file bytes pinned."
+        }
+      ]
+    }
+  },
+  "edges": [
+    {
+      "id": "L8_SJ:prop:1198:13466698:13452100",
+      "area": "L8_SJ",
+      "owner": "prop:1198",
+      "event": {
+        "extra_hex": "00",
+        "file_offset": 13466698,
+        "group": 11612,
+        "kind": 6,
+        "offset": 4380,
+        "predicate": {
+          "entry_file_offset": 13701409,
+          "entry_hex": "00030d0001",
+          "index": 136,
+          "trailer_file_offset": 13466704,
+          "trailer_hex": "04138800"
+        },
+        "raw_hex": "06065c2d1400",
+        "stream": 1,
+        "value": 20
+      },
+      "stream": 1,
+      "group": 11612,
+      "command_offset": 13452100,
+      "raw_hex": "020100001c2e",
+      "destination": "L14_HT",
+      "level": 14,
+      "selector": 1,
+      "static_grade": "PROVEN",
+      "blocked_reason": "",
+      "position": [
+        758,
+        0,
+        2046
+      ]
+    },
+    {
+      "id": "L8_SJ:region:908:13553127:13551119",
+      "area": "L8_SJ",
+      "owner": "region:908",
+      "event": {
+        "descriptors": [
+          79
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13553127,
+        "group": 564,
+        "kind": 12,
+        "offset": 378,
+        "predicate": null,
+        "raw_hex": "080c34028c030200",
+        "region": 908,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 564,
+      "command_offset": 13551119,
+      "raw_hex": "020100001c2a",
+      "destination": "L10_DC",
+      "level": 10,
+      "selector": 1,
+      "static_grade": "ADAPTER",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L8_SJ:region:2352:13553587:13552035",
+      "area": "L8_SJ",
+      "owner": "region:2352",
+      "event": {
+        "descriptors": [
+          241
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13553587,
+        "group": 1492,
+        "kind": 12,
+        "offset": 838,
+        "predicate": null,
+        "raw_hex": "080cd40530090200",
+        "region": 2352,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 1492,
+      "command_offset": 13552035,
+      "raw_hex": "020100001ce4",
+      "destination": "L4_HJ",
+      "level": 4,
+      "selector": 7,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L8_SJ:region:2353:13553595:13552041",
+      "area": "L8_SJ",
+      "owner": "region:2353",
+      "event": {
+        "descriptors": [
+          241
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13553595,
+        "group": 1498,
+        "kind": 12,
+        "offset": 846,
+        "predicate": null,
+        "raw_hex": "080cda0531090200",
+        "region": 2353,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 1498,
+      "command_offset": 13552041,
+      "raw_hex": "020100001ce4",
+      "destination": "L4_HJ",
+      "level": 4,
+      "selector": 7,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L8_SJ:region:2360:13553603:13552047",
+      "area": "L8_SJ",
+      "owner": "region:2360",
+      "event": {
+        "descriptors": [
+          241
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13553603,
+        "group": 1504,
+        "kind": 12,
+        "offset": 854,
+        "predicate": null,
+        "raw_hex": "080ce00538090200",
+        "region": 2360,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 1504,
+      "command_offset": 13552047,
+      "raw_hex": "020100001ce4",
+      "destination": "L4_HJ",
+      "level": 4,
+      "selector": 7,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L8_SJ:region:3132:13553727:13552225",
+      "area": "L8_SJ",
+      "owner": "region:3132",
+      "event": {
+        "descriptors": [
+          341
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13553727,
+        "group": 1670,
+        "kind": 12,
+        "offset": 978,
+        "predicate": null,
+        "raw_hex": "080c86063c0c0200",
+        "region": 3132,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 1670,
+      "command_offset": 13552225,
+      "raw_hex": "020100001c29",
+      "destination": "L9_DR",
+      "level": 9,
+      "selector": 1,
+      "static_grade": "ADAPTER",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L8_SJ:region:3277:13553865:13552463",
+      "area": "L8_SJ",
+      "owner": "region:3277",
+      "event": {
+        "descriptors": [
+          370
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13553865,
+        "group": 1908,
+        "kind": 12,
+        "offset": 1116,
+        "predicate": null,
+        "raw_hex": "080c7407cd0c0200",
+        "region": 3277,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 1908,
+      "command_offset": 13552463,
+      "raw_hex": "020100001c2c",
+      "destination": "L12_CM",
+      "level": 12,
+      "selector": 1,
+      "static_grade": "ADAPTER",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L8_SJ:region:3569:13554015:13552619",
+      "area": "L8_SJ",
+      "owner": "region:3569",
+      "event": {
+        "descriptors": [
+          412
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13554015,
+        "group": 2076,
+        "kind": 12,
+        "offset": 1266,
+        "predicate": null,
+        "raw_hex": "080c1c08f10d0200",
+        "region": 3569,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 2076,
+      "command_offset": 13552619,
+      "raw_hex": "020100001c49",
+      "destination": "L9_DR",
+      "level": 9,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L8_SJ:region:3570:13554023:13552625",
+      "area": "L8_SJ",
+      "owner": "region:3570",
+      "event": {
+        "descriptors": [
+          412
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13554023,
+        "group": 2082,
+        "kind": 12,
+        "offset": 1274,
+        "predicate": null,
+        "raw_hex": "080c2208f20d0200",
+        "region": 3570,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 2082,
+      "command_offset": 13552625,
+      "raw_hex": "020100001c49",
+      "destination": "L9_DR",
+      "level": 9,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L8_SJ:region:3573:13554031:13552631",
+      "area": "L8_SJ",
+      "owner": "region:3573",
+      "event": {
+        "descriptors": [
+          412
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13554031,
+        "group": 2088,
+        "kind": 12,
+        "offset": 1282,
+        "predicate": null,
+        "raw_hex": "080c2808f50d0200",
+        "region": 3573,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 2088,
+      "command_offset": 13552631,
+      "raw_hex": "020100001c49",
+      "destination": "L9_DR",
+      "level": 9,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L9_DR:prop:104:23241814:23222516",
+      "area": "L9_DR",
+      "owner": "prop:104",
+      "event": {
+        "extra_hex": "0102007800",
+        "file_offset": 23241814,
+        "group": 2168,
+        "kind": 2,
+        "offset": 572,
+        "predicate": null,
+        "raw_hex": "0a027808300102007800",
+        "stream": 1,
+        "value": 48
+      },
+      "stream": 1,
+      "group": 2168,
+      "command_offset": 23222516,
+      "raw_hex": "020100001ca8",
+      "destination": "L8_SJ",
+      "level": 8,
+      "selector": 5,
+      "static_grade": "ADAPTER",
+      "blocked_reason": "",
+      "position": [
+        2672,
+        10,
+        -10506
+      ]
+    },
+    {
+      "id": "L9_DR:region:2299:23391310:23384448",
+      "area": "L9_DR",
+      "owner": "region:2299",
+      "event": {
+        "descriptors": [
+          181
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 23391310,
+        "group": 548,
+        "kind": 12,
+        "offset": 192,
+        "predicate": null,
+        "raw_hex": "080c2402fb080200",
+        "region": 2299,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 548,
+      "command_offset": 23384448,
+      "raw_hex": "020100001c4a",
+      "destination": "L10_DC",
+      "level": 10,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L9_DR:region:2301:23391326:23384472",
+      "area": "L9_DR",
+      "owner": "region:2301",
+      "event": {
+        "descriptors": [
+          181
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 23391326,
+        "group": 572,
+        "kind": 12,
+        "offset": 208,
+        "predicate": null,
+        "raw_hex": "080c3c02fd080200",
+        "region": 2301,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 572,
+      "command_offset": 23384472,
+      "raw_hex": "020100001cc8",
+      "destination": "L8_SJ",
+      "level": 8,
+      "selector": 6,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L9_DR:region:5340:23393054:23389482",
+      "area": "L9_DR",
+      "owner": "region:5340",
+      "event": {
+        "descriptors": [
+          478
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 23393054,
+        "group": 5582,
+        "kind": 12,
+        "offset": 1936,
+        "predicate": null,
+        "raw_hex": "080cce15dc140200",
+        "region": 5340,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 5582,
+      "command_offset": 23389482,
+      "raw_hex": "020100001ce8",
+      "destination": "L8_SJ",
+      "level": 8,
+      "selector": 7,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L10_DC:region:0:13165094:13162862",
+      "area": "L10_DC",
+      "owner": "region:0",
+      "event": {
+        "descriptors": [
+          0
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13165094,
+        "group": 0,
+        "kind": 12,
+        "offset": 2,
+        "predicate": null,
+        "raw_hex": "080c000000000200",
+        "region": 0,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 0,
+      "command_offset": 13162862,
+      "raw_hex": "020100001c48",
+      "destination": "L8_SJ",
+      "level": 8,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L10_DC:region:42:13165132:13162976",
+      "area": "L10_DC",
+      "owner": "region:42",
+      "event": {
+        "descriptors": [
+          2
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 13165132,
+        "group": 108,
+        "kind": 12,
+        "offset": 40,
+        "predicate": {
+          "entry_file_offset": 13720793,
+          "entry_hex": "00030b0001",
+          "index": 63,
+          "trailer_file_offset": 13165140,
+          "trailer_hex": "04133f00"
+        },
+        "raw_hex": "080c6c002a000200",
+        "region": 42,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 108,
+      "command_offset": 13162976,
+      "raw_hex": "020100001c69",
+      "destination": "L9_DR",
+      "level": 9,
+      "selector": 3,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L12_CM:control:74:9828720:9823892",
+      "area": "L12_CM",
+      "owner": "control:74",
+      "event": {
+        "extra_hex": "00",
+        "file_offset": 9828720,
+        "group": 2808,
+        "kind": 5,
+        "offset": 806,
+        "predicate": null,
+        "raw_hex": "0605f80a0400",
+        "stream": 1,
+        "value": 4
+      },
+      "stream": 1,
+      "group": 2808,
+      "command_offset": 9823892,
+      "raw_hex": "020100001c2d",
+      "destination": "L13_RC",
+      "level": 13,
+      "selector": 1,
+      "static_grade": "ADAPTER",
+      "blocked_reason": "",
+      "position": [
+        3684,
+        -1292,
+        -19361
+      ]
+    },
+    {
+      "id": "L12_CM:region:734:9861506:9859068",
+      "area": "L12_CM",
+      "owner": "region:734",
+      "event": {
+        "descriptors": [
+          100
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 9861506,
+        "group": 0,
+        "kind": 12,
+        "offset": 2,
+        "predicate": null,
+        "raw_hex": "080c0000de020200",
+        "region": 734,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 0,
+      "command_offset": 9859068,
+      "raw_hex": "020100001c88",
+      "destination": "L8_SJ",
+      "level": 8,
+      "selector": 4,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L13_RC:region:489:6890332:6888546",
+      "area": "L13_RC",
+      "owner": "region:489",
+      "event": {
+        "descriptors": [
+          38
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 6890332,
+        "group": 706,
+        "kind": 12,
+        "offset": 190,
+        "predicate": null,
+        "raw_hex": "080cc202e9010200",
+        "region": 489,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 706,
+      "command_offset": 6888546,
+      "raw_hex": "020100001c4c",
+      "destination": "L12_CM",
+      "level": 12,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L14_HT:prop:170:11739888:11721792",
+      "area": "L14_HT",
+      "owner": "prop:170",
+      "event": {
+        "extra_hex": "00",
+        "file_offset": 11739888,
+        "group": 9210,
+        "kind": 6,
+        "offset": 3116,
+        "predicate": {
+          "entry_file_offset": 11831378,
+          "entry_hex": "0003160001",
+          "index": 50,
+          "trailer_file_offset": 11739894,
+          "trailer_hex": "04133200"
+        },
+        "raw_hex": "0606fa231400",
+        "stream": 1,
+        "value": 20
+      },
+      "stream": 1,
+      "group": 9210,
+      "command_offset": 11721792,
+      "raw_hex": "020100001c30",
+      "destination": "L16_CA",
+      "level": 16,
+      "selector": 1,
+      "static_grade": "PROVEN",
+      "blocked_reason": "",
+      "position": [
+        1080,
+        0,
+        11330
+      ]
+    },
+    {
+      "id": "L14_HT:region:863:11785566:11783030",
+      "area": "L14_HT",
+      "owner": "region:863",
+      "event": {
+        "descriptors": [
+          29
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 11785566,
+        "group": 1462,
+        "kind": 12,
+        "offset": 134,
+        "predicate": null,
+        "raw_hex": "080cb6055f030200",
+        "region": 863,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 1462,
+      "command_offset": 11783030,
+      "raw_hex": "020100001c68",
+      "destination": "L8_SJ",
+      "level": 8,
+      "selector": 3,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L14_HT:region:4176:11787208:11785404",
+      "area": "L14_HT",
+      "owner": "region:4176",
+      "event": {
+        "descriptors": [
+          245
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 11787208,
+        "group": 3836,
+        "kind": 12,
+        "offset": 1776,
+        "predicate": null,
+        "raw_hex": "080cfc0e50100200",
+        "region": 4176,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3836,
+      "command_offset": 11785404,
+      "raw_hex": "020100001c68",
+      "destination": "L8_SJ",
+      "level": 8,
+      "selector": 3,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L16_CA:control:74:18726428:18697002",
+      "area": "L16_CA",
+      "owner": "control:74",
+      "event": {
+        "extra_hex": "00",
+        "file_offset": 18726428,
+        "group": 42056,
+        "kind": 5,
+        "offset": 16190,
+        "predicate": null,
+        "raw_hex": "060548a40400",
+        "stream": 1,
+        "value": 4
+      },
+      "stream": 1,
+      "group": 42056,
+      "command_offset": 18697002,
+      "raw_hex": "020100001c31",
+      "destination": "L17_HC",
+      "level": 17,
+      "selector": 1,
+      "static_grade": "PROVEN",
+      "blocked_reason": "",
+      "position": [
+        2100,
+        15,
+        4296
+      ]
+    },
+    {
+      "id": "L16_CA:region:9822:18793075:18789555",
+      "area": "L16_CA",
+      "owner": "region:9822",
+      "event": {
+        "descriptors": [
+          330
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 18793075,
+        "group": 7268,
+        "kind": 12,
+        "offset": 2360,
+        "predicate": null,
+        "raw_hex": "080c641c5e260200",
+        "region": 9822,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 7268,
+      "command_offset": 18789555,
+      "raw_hex": "020100001c71",
+      "destination": "L17_HC",
+      "level": 17,
+      "selector": 3,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L17_HC:movable:50:4788392:4785568",
+      "area": "L17_HC",
+      "owner": "movable:50",
+      "event": {
+        "extra_hex": "00",
+        "file_offset": 4788392,
+        "group": 3896,
+        "kind": 5,
+        "offset": 2470,
+        "predicate": {
+          "entry_file_offset": 4830192,
+          "entry_hex": "0005000001",
+          "index": 207,
+          "trailer_file_offset": 4788398,
+          "trailer_hex": "0413cf00"
+        },
+        "raw_hex": "0605380f0400",
+        "stream": 1,
+        "value": 4
+      },
+      "stream": 1,
+      "group": 3896,
+      "command_offset": 4785568,
+      "raw_hex": "020100001c50",
+      "destination": "L16_CA",
+      "level": 16,
+      "selector": 2,
+      "static_grade": "ADAPTER",
+      "blocked_reason": "",
+      "position": [
+        1439,
+        135,
+        -7256
+      ]
+    },
+    {
+      "id": "L17_HC:region:1312:4811281:4810641",
+      "area": "L17_HC",
+      "owner": "region:1312",
+      "event": {
+        "descriptors": [
+          144
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 4811281,
+        "group": 1632,
+        "kind": 12,
+        "offset": 622,
+        "predicate": null,
+        "raw_hex": "080c600620050200",
+        "region": 1312,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 1632,
+      "command_offset": 4810641,
+      "raw_hex": "020100001c33",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 1,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L17_HC:region:1313:4811289:4810647",
+      "area": "L17_HC",
+      "owner": "region:1313",
+      "event": {
+        "descriptors": [
+          144
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 4811289,
+        "group": 1638,
+        "kind": 12,
+        "offset": 630,
+        "predicate": null,
+        "raw_hex": "080c660621050200",
+        "region": 1313,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 1638,
+      "command_offset": 4810647,
+      "raw_hex": "020100001c33",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 1,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L17_HC:region:1318:4811299:4810653",
+      "area": "L17_HC",
+      "owner": "region:1318",
+      "event": {
+        "descriptors": [
+          145
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 4811299,
+        "group": 1644,
+        "kind": 12,
+        "offset": 640,
+        "predicate": null,
+        "raw_hex": "080c6c0626050200",
+        "region": 1318,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 1644,
+      "command_offset": 4810653,
+      "raw_hex": "020100001c70",
+      "destination": "L16_CA",
+      "level": 16,
+      "selector": 3,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L19_BC:region:22:6198274:6182476",
+      "area": "L19_BC",
+      "owner": "region:22",
+      "event": {
+        "descriptors": [
+          4
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 6198274,
+        "group": 0,
+        "kind": 12,
+        "offset": 2,
+        "predicate": null,
+        "raw_hex": "080c000016000200",
+        "region": 22,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 0,
+      "command_offset": 6182476,
+      "raw_hex": "020100001c51",
+      "destination": "L17_HC",
+      "level": 17,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L19_BC:region:2369:6210346:6198260",
+      "area": "L19_BC",
+      "owner": "region:2369",
+      "event": {
+        "descriptors": [
+          212
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 6210346,
+        "group": 15784,
+        "kind": 12,
+        "offset": 12074,
+        "predicate": {
+          "entry_file_offset": 6253920,
+          "entry_hex": "0002340000",
+          "index": 204,
+          "trailer_file_offset": 6210354,
+          "trailer_hex": "0413cc00"
+        },
+        "raw_hex": "080ca83d41090200",
+        "region": 2369,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 15784,
+      "command_offset": 6198260,
+      "raw_hex": "020100001c34",
+      "destination": "L20_BB",
+      "level": 20,
+      "selector": 1,
+      "static_grade": "BLOCKED",
+      "blocked_reason": "left type 2 (0x26E58 array, nothing PROVEN writes it)"
+    },
+    {
+      "id": "L19_BC:region:2369:6210358:6198266",
+      "area": "L19_BC",
+      "owner": "region:2369",
+      "event": {
+        "descriptors": [
+          212
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 6210358,
+        "group": 15790,
+        "kind": 12,
+        "offset": 12086,
+        "predicate": {
+          "entry_file_offset": 6253925,
+          "entry_hex": "0002340001",
+          "index": 205,
+          "trailer_file_offset": 6210366,
+          "trailer_hex": "0413cd00"
+        },
+        "raw_hex": "080cae3d41090200",
+        "region": 2369,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 15790,
+      "command_offset": 6198266,
+      "raw_hex": "020100001c54",
+      "destination": "L20_BB",
+      "level": 20,
+      "selector": 2,
+      "static_grade": "BLOCKED",
+      "blocked_reason": "left type 2 (0x26E58 array, nothing PROVEN writes it)"
+    },
+    {
+      "id": "L20_BB:region:1475:15560266:15557686",
+      "area": "L20_BB",
+      "owner": "region:1475",
+      "event": {
+        "descriptors": [
+          88
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560266,
+        "group": 3786,
+        "kind": 12,
+        "offset": 2418,
+        "predicate": null,
+        "raw_hex": "080cca0ec3050200",
+        "region": 1475,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3786,
+      "command_offset": 15557686,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L20_BB:region:1476:15560274:15557692",
+      "area": "L20_BB",
+      "owner": "region:1476",
+      "event": {
+        "descriptors": [
+          88
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560274,
+        "group": 3792,
+        "kind": 12,
+        "offset": 2426,
+        "predicate": null,
+        "raw_hex": "080cd00ec4050200",
+        "region": 1476,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3792,
+      "command_offset": 15557692,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L20_BB:region:1477:15560282:15557698",
+      "area": "L20_BB",
+      "owner": "region:1477",
+      "event": {
+        "descriptors": [
+          88
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560282,
+        "group": 3798,
+        "kind": 12,
+        "offset": 2434,
+        "predicate": null,
+        "raw_hex": "080cd60ec5050200",
+        "region": 1477,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3798,
+      "command_offset": 15557698,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L20_BB:region:1478:15560290:15557704",
+      "area": "L20_BB",
+      "owner": "region:1478",
+      "event": {
+        "descriptors": [
+          88
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560290,
+        "group": 3804,
+        "kind": 12,
+        "offset": 2442,
+        "predicate": null,
+        "raw_hex": "080cdc0ec6050200",
+        "region": 1478,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3804,
+      "command_offset": 15557704,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L20_BB:region:1479:15560298:15557710",
+      "area": "L20_BB",
+      "owner": "region:1479",
+      "event": {
+        "descriptors": [
+          88
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560298,
+        "group": 3810,
+        "kind": 12,
+        "offset": 2450,
+        "predicate": null,
+        "raw_hex": "080ce20ec7050200",
+        "region": 1479,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3810,
+      "command_offset": 15557710,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L20_BB:region:1484:15560308:15557716",
+      "area": "L20_BB",
+      "owner": "region:1484",
+      "event": {
+        "descriptors": [
+          89
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560308,
+        "group": 3816,
+        "kind": 12,
+        "offset": 2460,
+        "predicate": null,
+        "raw_hex": "080ce80ecc050200",
+        "region": 1484,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3816,
+      "command_offset": 15557716,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L20_BB:region:1485:15560316:15557722",
+      "area": "L20_BB",
+      "owner": "region:1485",
+      "event": {
+        "descriptors": [
+          89
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560316,
+        "group": 3822,
+        "kind": 12,
+        "offset": 2468,
+        "predicate": null,
+        "raw_hex": "080cee0ecd050200",
+        "region": 1485,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3822,
+      "command_offset": 15557722,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L20_BB:region:1486:15560324:15557728",
+      "area": "L20_BB",
+      "owner": "region:1486",
+      "event": {
+        "descriptors": [
+          89
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560324,
+        "group": 3828,
+        "kind": 12,
+        "offset": 2476,
+        "predicate": null,
+        "raw_hex": "080cf40ece050200",
+        "region": 1486,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3828,
+      "command_offset": 15557728,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L20_BB:region:1487:15560332:15557734",
+      "area": "L20_BB",
+      "owner": "region:1487",
+      "event": {
+        "descriptors": [
+          89
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560332,
+        "group": 3834,
+        "kind": 12,
+        "offset": 2484,
+        "predicate": null,
+        "raw_hex": "080cfa0ecf050200",
+        "region": 1487,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3834,
+      "command_offset": 15557734,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    },
+    {
+      "id": "L20_BB:region:1488:15560340:15557740",
+      "area": "L20_BB",
+      "owner": "region:1488",
+      "event": {
+        "descriptors": [
+          89
+        ],
+        "event": 2,
+        "extra_hex": "",
+        "file_offset": 15560340,
+        "group": 3840,
+        "kind": 12,
+        "offset": 2492,
+        "predicate": null,
+        "raw_hex": "080c000fd0050200",
+        "region": 1488,
+        "stream": 0,
+        "value": 0
+      },
+      "stream": 0,
+      "group": 3840,
+      "command_offset": 15557740,
+      "raw_hex": "020100001c53",
+      "destination": "L19_BC",
+      "level": 19,
+      "selector": 2,
+      "static_grade": "PROVEN",
+      "blocked_reason": ""
+    }
+  ]
+}

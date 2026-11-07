@@ -6,7 +6,7 @@ from PIL import Image
 from interior_spans import build
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--evidence-root',type=Path,default=Path('/home/bob/lol2_out'));p.add_argument('--out',type=Path,default=Path(__file__).resolve().parents[2]/'assets/lol2/generated/original_floors');a=p.parse_args();b=a.evidence_root;a.out.mkdir(parents=True,exist_ok=True)
+ p=argparse.ArgumentParser();p.add_argument('--evidence-root',type=Path,default=Path('~/lol2_out'));p.add_argument('--out',type=Path,default=Path(__file__).resolve().parents[2]/'assets/lol2/generated/original_floors');a=p.parse_args();b=a.evidence_root;a.out.mkdir(parents=True,exist_ok=True)
  g=json.loads((b/'draracle_openings_2026-09-11/geometry_v2.json').read_text());bindings=json.loads((b/'draracle_floor_bindings_2026-09-11/bindings.json').read_text());setup=json.loads((b/'draracle_floor_setup_2026-09-11/setup_replay.json').read_text());states={r['preset']:r for r in setup['results'] if r['initial_flags']==0};byregion={r['region']:r for r in bindings['regions']};table=struct.unpack('<4096i',(b/'draracle_rotation_table_2026-09-11/rotation_table.bin').read_bytes())
  def trig(a):
   a&=65535;return table[(a&32767)>>3]*(-1 if a>=32768 else 1)

@@ -1,0 +1,179 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L3_DH.MIX",
+  "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "geometry_key": 3106551060,
+  "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+ },
+ "control": 81,
+ "placement": {
+  "offset": 5870978,
+  "hex": "14f13c040040010082049804c60d7f00000000000100000000000000140034003c",
+  "x": -3820,
+  "y": 1084,
+  "height": 1,
+  "heading": 16384,
+  "template": 60
+ },
+ "points": [
+  [
+   -3820.0,
+   95,
+   -1164.0
+  ],
+  [
+   -3820.0,
+   95,
+   -1004.0
+  ],
+  [
+   -3820.0,
+   1,
+   -1004.0
+  ],
+  [
+   -3820.0,
+   1,
+   -1164.0
+  ]
+ ],
+ "uv": [
+  [
+   0.0,
+   0.0
+  ],
+  [
+   1.0,
+   0.0
+  ],
+  [
+   1.0,
+   1.0
+  ],
+  [
+   0.0,
+   1.0
+  ]
+ ],
+ "modes": {
+  "0": {
+   "mask": 1,
+   "resource": 181,
+   "image": "closed.png"
+  },
+  "1": {
+   "mask": 2,
+   "resource": 61,
+   "frames": [
+    "drawing_0.png",
+    "drawing_1.png",
+    "drawing_2.png",
+    "drawing_3.png",
+    "drawing_4.png",
+    "drawing_5.png",
+    "drawing_6.png",
+    "drawing_7.png"
+   ]
+  },
+  "2": {
+   "mask": 4,
+   "resource": 180,
+   "image": "gathered.png"
+  }
+ },
+ "groups": {
+  "open_use": {
+   "group": 7036,
+   "event": 4,
+   "value": 0,
+   "predicate": 14,
+   "archive_offset": 5851034,
+   "commands": [
+    "091051000e00",
+    "051051000100",
+    "071051000000",
+    "141051005b0180000a14",
+    "091051000800"
+   ]
+  },
+  "open_end": {
+   "group": 7076,
+   "event": 6,
+   "value": 2,
+   "predicate": 14,
+   "archive_offset": 5851048,
+   "commands": [
+    "051051000200",
+    "101051000100",
+    "091051000d00"
+   ]
+  },
+  "close_use": {
+   "group": 7100,
+   "event": 4,
+   "value": 0,
+   "predicate": 15,
+   "archive_offset": 5851058,
+   "commands": [
+    "091051000e00",
+    "051051000100",
+    "071051000300",
+    "071051000800",
+    "071051000000",
+    "141051005a0180000a14",
+    "091051000700"
+   ]
+  },
+  "close_end": {
+   "group": 7152,
+   "event": 6,
+   "value": 2,
+   "predicate": 15,
+   "archive_offset": 5851072,
+   "commands": [
+    "091051000d00",
+    "071051000700",
+    "051051000000",
+    "101051000000"
+   ]
+  }
+ },
+ "predicates": {
+  "14": "0005000000",
+  "15": "0005000001"
+ },
+ "sounds": {
+  "open": 347,
+  "close": 346
+ },
+ "images": {
+  "closed.png": "be044abf7eb3050c9bf78775d6d4d130b6106dc4575adc7de5642456d9596102",
+  "gathered.png": "02a0ca5641dd731e943f44db01264ff144bb76e8dbb70e5f88686b6dc28a06a8",
+  "drawing_0.png": "be044abf7eb3050c9bf78775d6d4d130b6106dc4575adc7de5642456d9596102",
+  "drawing_1.png": "8aea975721ee7f0cb84cf15f14ad6e089bdfa2d469941464f8392863d78b3808",
+  "drawing_2.png": "437b1d76e9428804e8b67377eae80ed3bbc3b58d5089f920b9ac55ea8a5595d6",
+  "drawing_3.png": "0278a9c1b6dc48cdeec98673fea86285f810087f067a15f39facbc5e558af9f1",
+  "drawing_4.png": "3680e20b5f864545a7df7ce620f3c426ec80354ddf6377fff37ca05d09e36ef3",
+  "drawing_5.png": "f5fc7a355f7451b475ddee11e65e919ba703ee24d88f707459ba1cd271542b98",
+  "drawing_6.png": "2fee9043b71f3c0d7e64448f82652f9597fd777069b317ced16628582204f81b",
+  "drawing_7.png": "02a0ca5641dd731e943f44db01264ff144bb76e8dbb70e5f88686b6dc28a06a8"
+ },
+ "audio": {
+  "347": {
+   "path": "res://assets/lol2/generated/museum_curtain/347.wav",
+   "wav_sha256": "37a1067a5d75e03e49109ed7b73a988c2a23139e73c57698164aee49e35757e3",
+   "role": "open"
+  },
+  "346": {
+   "path": "res://assets/lol2/generated/museum_curtain/346.wav",
+   "wav_sha256": "ab9291d59df55926798dd9fcf3adf38a014392ab1754256f4dcc984d47598b3e",
+   "role": "close"
+  }
+ },
+ "root": "res://assets/lol2/generated/museum_curtain/",
+ "not_hosted": [
+  "op9 control81 properties 14/8/13/7",
+  "op7 sub-commands 0/3/8/7 (read as presentation: play forward on open, reverse on close)"
+ ]
+}

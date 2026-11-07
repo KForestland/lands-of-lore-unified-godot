@@ -1,0 +1,825 @@
+{
+ "source_sha256": "b9d79292e7dd6fc2eba972e55628ee05e671a4d814de8b291310d540b3f742b9",
+ "objects": [
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855285,
+     "group": 9318,
+     "kind": 6,
+     "offset": 5016,
+     "predicate": null,
+     "raw_hex": "060666240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6886005,
+   "index": 63,
+   "list_file_offset": 6855285,
+   "list_offset": 5016,
+   "placement_hex": "f0f7710a00408cfb82059005981300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:63",
+   "table": "movable",
+   "terminator_offset": 5022
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855197,
+     "group": 9252,
+     "kind": 6,
+     "offset": 4928,
+     "predicate": null,
+     "raw_hex": "060624240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885513,
+   "index": 51,
+   "list_file_offset": 6855197,
+   "list_offset": 4928,
+   "placement_hex": "f2f7580add3d8cfb82058f05401300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:51",
+   "table": "movable",
+   "terminator_offset": 4934
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855269,
+     "group": 9306,
+     "kind": 6,
+     "offset": 5000,
+     "predicate": null,
+     "raw_hex": "06065a240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885923,
+   "index": 61,
+   "list_file_offset": 6855269,
+   "list_offset": 5000,
+   "placement_hex": "f9f7410a5b308cfb82058f05881300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:61",
+   "table": "movable",
+   "terminator_offset": 5006
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855293,
+     "group": 9336,
+     "kind": 6,
+     "offset": 5024,
+     "predicate": null,
+     "raw_hex": "060678240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6886046,
+   "index": 64,
+   "list_file_offset": 6855293,
+   "list_offset": 5024,
+   "placement_hex": "04f82a0a162c8cfb82058f05a01300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:64",
+   "table": "movable",
+   "terminator_offset": 5030
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855277,
+     "group": 9312,
+     "kind": 6,
+     "offset": 5008,
+     "predicate": null,
+     "raw_hex": "060660240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885964,
+   "index": 62,
+   "list_file_offset": 6855277,
+   "list_offset": 5008,
+   "placement_hex": "10f8150a3e298cfb82058f05901300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:62",
+   "table": "movable",
+   "terminator_offset": 5014
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855213,
+     "group": 9264,
+     "kind": 6,
+     "offset": 4944,
+     "predicate": null,
+     "raw_hex": "060630240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885636,
+   "index": 54,
+   "list_file_offset": 6855213,
+   "list_offset": 4944,
+   "placement_hex": "21f8020a711c8cfb82058e05501300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:54",
+   "table": "movable",
+   "terminator_offset": 4950
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855205,
+     "group": 9258,
+     "kind": 6,
+     "offset": 4936,
+     "predicate": null,
+     "raw_hex": "06062a240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885554,
+   "index": 52,
+   "list_file_offset": 6855205,
+   "list_offset": 4936,
+   "placement_hex": "35f8f209051b8cfb82058e05481300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:52",
+   "table": "movable",
+   "terminator_offset": 4942
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855261,
+     "group": 9300,
+     "kind": 6,
+     "offset": 4992,
+     "predicate": null,
+     "raw_hex": "060654240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885882,
+   "index": 60,
+   "list_file_offset": 6855261,
+   "list_offset": 4992,
+   "placement_hex": "4cf8e409e9138cfb82058e05801300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:60",
+   "table": "movable",
+   "terminator_offset": 4998
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855301,
+     "group": 9342,
+     "kind": 6,
+     "offset": 5032,
+     "predicate": null,
+     "raw_hex": "06067e240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6886087,
+   "index": 65,
+   "list_file_offset": 6855301,
+   "list_offset": 5032,
+   "placement_hex": "62f8dd09f4098cfb82058e05a81300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:65",
+   "table": "movable",
+   "terminator_offset": 5038
+  },
+  {
+   "events": [],
+   "file_offset": 6885595,
+   "index": 53,
+   "list_file_offset": 6850269,
+   "list_offset": 0,
+   "placement_hex": "79f8d90966068cfb82018e05000000005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:53",
+   "table": "movable",
+   "terminator_offset": 0
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855253,
+     "group": 9294,
+     "kind": 6,
+     "offset": 4984,
+     "predicate": null,
+     "raw_hex": "06064e240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885841,
+   "index": 59,
+   "list_file_offset": 6855253,
+   "list_offset": 4984,
+   "placement_hex": "f2f7880a66468cfb82059005781300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:59",
+   "table": "movable",
+   "terminator_offset": 4990
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855189,
+     "group": 9246,
+     "kind": 6,
+     "offset": 4920,
+     "predicate": null,
+     "raw_hex": "06061e240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885472,
+   "index": 50,
+   "list_file_offset": 6855189,
+   "list_offset": 4920,
+   "placement_hex": "f7f79f0af4498cfb82058a05381300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:50",
+   "table": "movable",
+   "terminator_offset": 4926
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855221,
+     "group": 9270,
+     "kind": 6,
+     "offset": 4952,
+     "predicate": null,
+     "raw_hex": "060636240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885677,
+   "index": 55,
+   "list_file_offset": 6855221,
+   "list_offset": 4952,
+   "placement_hex": "fff7b50a9f548cfb82058a05581300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:55",
+   "table": "movable",
+   "terminator_offset": 4958
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855245,
+     "group": 9288,
+     "kind": 6,
+     "offset": 4976,
+     "predicate": null,
+     "raw_hex": "060648240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885800,
+   "index": 58,
+   "list_file_offset": 6855245,
+   "list_offset": 4976,
+   "placement_hex": "0bf8c90a2d588cfb82058a05701300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:58",
+   "table": "movable",
+   "terminator_offset": 4982
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855237,
+     "group": 9282,
+     "kind": 6,
+     "offset": 4968,
+     "predicate": null,
+     "raw_hex": "060642240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885759,
+   "index": 57,
+   "list_file_offset": 6855237,
+   "list_offset": 4968,
+   "placement_hex": "1ef8de0a44648cfb82058b05681300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:57",
+   "table": "movable",
+   "terminator_offset": 4974
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855229,
+     "group": 9276,
+     "kind": 6,
+     "offset": 4960,
+     "predicate": null,
+     "raw_hex": "06063c240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6885718,
+   "index": 56,
+   "list_file_offset": 6855229,
+   "list_offset": 4960,
+   "placement_hex": "32f8ef0a66668cfb82058b05601300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:56",
+   "table": "movable",
+   "terminator_offset": 4966
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855309,
+     "group": 9348,
+     "kind": 6,
+     "offset": 5040,
+     "predicate": null,
+     "raw_hex": "060684240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6886169,
+   "index": 67,
+   "list_file_offset": 6855309,
+   "list_offset": 5040,
+   "placement_hex": "4af8fc0a33738cfb82058b05b01300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:67",
+   "table": "movable",
+   "terminator_offset": 5046
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 6855317,
+     "group": 9354,
+     "kind": 6,
+     "offset": 5048,
+     "predicate": null,
+     "raw_hex": "06068a240f00",
+     "stream": 1,
+     "value": 15
+    }
+   ],
+   "file_offset": 6886210,
+   "index": 68,
+   "list_file_offset": 6855317,
+   "list_offset": 5048,
+   "placement_hex": "63f8040b0b768cfb82058b05b81300005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:68",
+   "table": "movable",
+   "terminator_offset": 5054
+  },
+  {
+   "events": [],
+   "file_offset": 6886128,
+   "index": 66,
+   "list_file_offset": 6850269,
+   "list_offset": 0,
+   "placement_hex": "7cf8090b2d788cfb82018b05000000005c745a0024647f00000000000100ac000d010001c8ff000000",
+   "ref": "movable:66",
+   "table": "movable",
+   "terminator_offset": 0
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 6850203,
+     "kind": 0,
+     "offset": 11030,
+     "opcode": 198,
+     "raw_hex": "c60000001501",
+     "target": 0
+    },
+    {
+     "file_offset": 6850209,
+     "kind": 3,
+     "offset": 11036,
+     "opcode": 14,
+     "raw_hex": "0e03bc0003000000",
+     "target": 188
+    },
+    {
+     "file_offset": 6850217,
+     "kind": 0,
+     "offset": 11044,
+     "opcode": 210,
+     "raw_hex": "d20000000900",
+     "target": 0
+    },
+    {
+     "file_offset": 6850223,
+     "kind": 0,
+     "offset": 11050,
+     "opcode": 210,
+     "raw_hex": "d20000000018",
+     "target": 0
+    },
+    {
+     "file_offset": 6850229,
+     "kind": 0,
+     "offset": 11056,
+     "opcode": 210,
+     "raw_hex": "d200000004c8",
+     "target": 0
+    },
+    {
+     "file_offset": 6850235,
+     "kind": 0,
+     "offset": 11062,
+     "opcode": 210,
+     "raw_hex": "d200000005c8",
+     "target": 0
+    },
+    {
+     "file_offset": 6850241,
+     "kind": 32,
+     "offset": 11068,
+     "opcode": 1,
+     "raw_hex": "01203f006400",
+     "target": 63
+    },
+    {
+     "file_offset": 6850247,
+     "kind": 16,
+     "offset": 11074,
+     "opcode": 7,
+     "raw_hex": "071065000000",
+     "target": 101
+    },
+    {
+     "file_offset": 6850253,
+     "kind": 16,
+     "offset": 11080,
+     "opcode": 20,
+     "raw_hex": "141065003a029600120c",
+     "target": 101
+    },
+    {
+     "file_offset": 6850263,
+     "kind": 16,
+     "offset": 11090,
+     "opcode": 9,
+     "raw_hex": "091065000800",
+     "target": 101
+    }
+   ],
+   "count": 10,
+   "file_offset": 6850197,
+   "group": 11024,
+   "header_hex": "f00000000a00",
+   "raw_hex": "f00000000a00c600000015010e03bc0003000000d20000000900d20000000018d200000004c8d200000005c801203f006400071065000000141065003a029600120c091065000800",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848497,
+     "kind": 32,
+     "offset": 9324,
+     "opcode": 1,
+     "raw_hex": "01203b006400",
+     "target": 59
+    },
+    {
+     "file_offset": 6848503,
+     "kind": 32,
+     "offset": 9330,
+     "opcode": 1,
+     "raw_hex": "012033006400",
+     "target": 51
+    }
+   ],
+   "count": 2,
+   "file_offset": 6848491,
+   "group": 9318,
+   "header_hex": "f00000000200",
+   "raw_hex": "f0000000020001203b006400012033006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848425,
+     "kind": 32,
+     "offset": 9252,
+     "opcode": 1,
+     "raw_hex": "01203d006400",
+     "target": 61
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848425,
+   "group": 9252,
+   "header_hex": null,
+   "raw_hex": "01203d006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848479,
+     "kind": 32,
+     "offset": 9306,
+     "opcode": 1,
+     "raw_hex": "012040006400",
+     "target": 64
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848479,
+   "group": 9306,
+   "header_hex": null,
+   "raw_hex": "012040006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848509,
+     "kind": 32,
+     "offset": 9336,
+     "opcode": 1,
+     "raw_hex": "01203e006400",
+     "target": 62
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848509,
+   "group": 9336,
+   "header_hex": null,
+   "raw_hex": "01203e006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848485,
+     "kind": 32,
+     "offset": 9312,
+     "opcode": 1,
+     "raw_hex": "012036006400",
+     "target": 54
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848485,
+   "group": 9312,
+   "header_hex": null,
+   "raw_hex": "012036006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848437,
+     "kind": 32,
+     "offset": 9264,
+     "opcode": 1,
+     "raw_hex": "012034006400",
+     "target": 52
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848437,
+   "group": 9264,
+   "header_hex": null,
+   "raw_hex": "012034006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848431,
+     "kind": 32,
+     "offset": 9258,
+     "opcode": 1,
+     "raw_hex": "01203c006400",
+     "target": 60
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848431,
+   "group": 9258,
+   "header_hex": null,
+   "raw_hex": "01203c006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848473,
+     "kind": 32,
+     "offset": 9300,
+     "opcode": 1,
+     "raw_hex": "012041006400",
+     "target": 65
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848473,
+   "group": 9300,
+   "header_hex": null,
+   "raw_hex": "012041006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848515,
+     "kind": 32,
+     "offset": 9342,
+     "opcode": 1,
+     "raw_hex": "012035006400",
+     "target": 53
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848515,
+   "group": 9342,
+   "header_hex": null,
+   "raw_hex": "012035006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848467,
+     "kind": 32,
+     "offset": 9294,
+     "opcode": 1,
+     "raw_hex": "012032006400",
+     "target": 50
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848467,
+   "group": 9294,
+   "header_hex": null,
+   "raw_hex": "012032006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848419,
+     "kind": 32,
+     "offset": 9246,
+     "opcode": 1,
+     "raw_hex": "012037006400",
+     "target": 55
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848419,
+   "group": 9246,
+   "header_hex": null,
+   "raw_hex": "012037006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848443,
+     "kind": 32,
+     "offset": 9270,
+     "opcode": 1,
+     "raw_hex": "01203a006400",
+     "target": 58
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848443,
+   "group": 9270,
+   "header_hex": null,
+   "raw_hex": "01203a006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848461,
+     "kind": 32,
+     "offset": 9288,
+     "opcode": 1,
+     "raw_hex": "012039006400",
+     "target": 57
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848461,
+   "group": 9288,
+   "header_hex": null,
+   "raw_hex": "012039006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848455,
+     "kind": 32,
+     "offset": 9282,
+     "opcode": 1,
+     "raw_hex": "012038006400",
+     "target": 56
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848455,
+   "group": 9282,
+   "header_hex": null,
+   "raw_hex": "012038006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848449,
+     "kind": 32,
+     "offset": 9276,
+     "opcode": 1,
+     "raw_hex": "012043006400",
+     "target": 67
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848449,
+   "group": 9276,
+   "header_hex": null,
+   "raw_hex": "012043006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848521,
+     "kind": 32,
+     "offset": 9348,
+     "opcode": 1,
+     "raw_hex": "012044006400",
+     "target": 68
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848521,
+   "group": 9348,
+   "header_hex": null,
+   "raw_hex": "012044006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 6848527,
+     "kind": 32,
+     "offset": 9354,
+     "opcode": 1,
+     "raw_hex": "012042006400",
+     "target": 66
+    }
+   ],
+   "count": 1,
+   "file_offset": 6848527,
+   "group": 9354,
+   "header_hex": null,
+   "raw_hex": "012042006400",
+   "stream": 1
+  }
+ ],
+ "scope": "Original actor40 group11024 signals movable63, then kind6 opcode1 closure50..68. Native event dispatch/motion/timing not executed; instant opening on actual boss death is modern adapter."
+}

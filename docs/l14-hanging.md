@@ -1,0 +1,9 @@
+STORY-054 first slice: original control124 is the west of three matching wall hangings122/123/124. Texture1267 visually confirms the hanging. Book/caller association remains adapter0285. Original HIVEW frame934 resembles the book arachnopod; encounter/spawning still needs qualification.
+
+`l14_hanging_earned_test`: tmp/regressions/l14_hanging_probe/report.json, PASS18.06s, source unchanged. Starts exact final STORY053 Temple save, physically crosses original main doors/ritual room, opens124 via semantic interaction, crosses the original hanging plane, saves/reloads. No seeds or recovery teleport. Immutable tmp/l14_hanging_qualified_save.json SHA9404854b4b38d73b75796c69a3bd5dff64bf66adb59ad40894613a5317bb0e23. This is not full STORY054 completion.
+
+Affected ritual earned test PASS13.68s, source unchanged: tmp/regressions/l14_hanging_affected/report.json. Source-byte verifier and deviations build pass.
+
+Encounter slice: original 38-portal corridor leads to static wall64, actor68 behind. First probe was correctly blocked by64, not promoted. Dedicated wall owner and original actor wake/recurring placement adapter0286; actual two melee combat deaths, paused respawn timer, actual timed respawn and save/reload PASS (tmp/regressions/l14_spider_probe2/report.json), source unchanged. Immutable tmp/l14_spider_qualified_save.json SHAc74a570dc41a812be14a701ba175d192c03f3570e58b180e0d0924d71dd37fd4. Original media is HIVEW, not a separately named spider definition; native spawning/caller/timing remains unentered. Modern population is one recurring actor at a time, not a claim of original gang sizes.
+
+Final encounter PASS104.70s; affected hanging PASS16.36s (tmp/regressions/l14_spider_affected/report.json), both sources stable. STORY054 complete through the logged recurring encounter adapter.

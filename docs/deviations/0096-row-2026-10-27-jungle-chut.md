@@ -1,0 +1,1 @@
+| 2026-10-27 | Jungle CHUT | Not hosted: host slots 0x30 (0xEF20C, called with the actor id after the kill) and 0xEC (0xED364) in branch B, ambient 338 and the cursor calls. | Untraced presentation routines. | approved by owner rule 2026-10-27 |

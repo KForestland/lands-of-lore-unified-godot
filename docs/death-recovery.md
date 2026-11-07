@@ -1,0 +1,15 @@
+# Act 1 death and recovery checks
+
+The Museum and Jungle movement owners previously continued polling W/A/S/D after health reached zero. Independent checks reproduced horizontal movement of 53.33 and 76.52 units respectively, with zero movement during the preceding no-input interval. The fix reads the existing shared health owner and zeroes movement direction while fallen. Gravity and mouse look remain active; R recovery and F9 loading restore movement when health returns. Development flight is also stopped while dead.
+
+The four registered tests are `act1_recovery_cave_test`, `act1_recovery_museum_test`, `act1_recovery_jungle_test` and `act1_recovery_hive_test`. They share one test body and enter through the production startup/resume gate, with development mode disabled. They send actual F5, W, R and F9 key events. Before writing any save, they require custom userdata with a name beginning `lol2-regression-`; the ordinary project configuration is refused.
+
+In the disposable copy's `project.godot`, under `[application]`, set `config/use_custom_user_dir=true` and `config/custom_user_dir_name="lol2-regression-YOUR-UNIQUE-RUN"`. Use a fresh name for each review. Do not change your personal project's configuration to run these checks.
+
+Set `LOL2_ORIGINAL_GAME_EXE` to the supported original `LOLG.EXE` and `LOL2_RECOVERY_SAVES` to an earned campaign save archive. The latter falls back to `LOL2_EARNED_SAVES` when unset. The archive must contain `act1_magic_museum_arrival.json`, `act1_broken_museum_jungle.json` and `act1_broken_hive_entry.json`; hashes are recorded in each receipt. Run in a disposable project with isolated userdata: these tests replace the test project's per-area quicksaves. The Cave begins a fresh game; it does not claim an earned Cave checkpoint.
+
+Each case checks no-input versus held-W displacement while dead, recovery movement, retained player fields and subsequent disk loading. The tests supply a position near a real attacker in Cave/Jungle/Hive. Museum death uses explicitly supplied calls to the production burn handler. These are recovery branch checks, not uninterrupted earned campaign runs.
+
+Across R, the diagnostics quest summary and the set of persisted owners must remain unchanged from the state at death. Persisted paths outside the explicitly named live encounter, scenery, health and timer exceptions are compared exactly. F9 is compared against the F5 file, with named clock/animation and documented playback-generation exceptions. Those exceptions and the live owners excluded across R are recorded by the common test; they are not evidence of complete world-state preservation. Player mana uses the existing regeneration allowance.
+
+Saving while dead remains unchanged: Cave, Museum and Jungle reject it; Hive currently accepts it. The earlier Hive prompt failure was a test expectation mismatch, not a runtime defect. Runtime recovery checks do not establish representative GPU/audio, native Windows, clean installation or owner acceptance.

@@ -1,0 +1,1 @@
+| 2026-10-21 | Monastery / Dark Halls | Cellar (MCEL) hotspot1 takes the player straight into Dark Halls entry 1. The original drops the player into a hidden Jungle pocket (region3191) whose route region 3205 lies behind a 75-unit step the port's walker cannot climb. | Owner 2026-10-21: Dark Halls is Act 1; workaround allowed. | pending |

@@ -1,0 +1,210 @@
+{
+ "dll_sha256": "f655c92f96aa2ca8ecb59a50d84d7cfed38e5a3736c8dc2b942efc4ead7eaab5",
+ "image_size": 7995,
+ "entry": 52,
+ "range": [
+  1862,
+  2219
+ ],
+ "raw_hex": "56837c2408000f85cf030000ff15301e000085c00f844b01000068e31c0000ff15481e000083c40485c00f841c01000068f7000000ff15041e000083c40468f8000000ff15041e000083c404ff15401e000068f2000000ff15081e000083c40485c00f85f6000000ff15d41e000068f4010000ff15e01e000083c40468f4010000ff15dc1e000083c40468f2000000ff15001e000083c4046a0b68490100006a2aff150c1e000083c40c6a0b684a0100006a01ff150c1e000083c40c6a0b684b0100006a2aff150c1e000083c40c6a0b684c0100006a2aff150c1e000083c40c68f21c0000ff152c1e000083c404405068f21c0000ff15581e000083c4086a0168021d0000ff15701e000083c4086a016a0168171d0000ff15781e000083c40c685b10000068770a0000ff159c1e000083c4086a2dff15ac1e000083c404ff15d01e0000ff15241e0000eb126a0b68dc0000006a2aff150c1e000083c40cb8010000005ec3",
+ "calls": [
+  {
+   "address": "0x752",
+   "host": "0x74",
+   "offset": "0x74",
+   "args": [
+    "esi"
+   ]
+  },
+  {
+   "address": "0x765",
+   "host": "0x8c",
+   "offset": "0x8c",
+   "args": [
+    7395
+   ]
+  },
+  {
+   "address": "0x77b",
+   "host": "0x4c",
+   "offset": "0x4c",
+   "args": [
+    247
+   ]
+  },
+  {
+   "address": "0x789",
+   "host": "0x4c",
+   "offset": "0x4c",
+   "args": [
+    248
+   ]
+  },
+  {
+   "address": "0x792",
+   "host": "0x84",
+   "offset": "0x84",
+   "args": []
+  },
+  {
+   "address": "0x79d",
+   "host": "get_flag",
+   "offset": "0x50",
+   "args": [
+    242
+   ]
+  },
+  {
+   "address": "0x7ae",
+   "host": "0x118",
+   "offset": "0x118",
+   "args": []
+  },
+  {
+   "address": "0x7b9",
+   "host": "0x120",
+   "offset": "0x120",
+   "args": [
+    500
+   ]
+  },
+  {
+   "address": "0x7c7",
+   "host": "0x124",
+   "offset": "0x124",
+   "args": [
+    500
+   ]
+  },
+  {
+   "address": "0x7d5",
+   "host": "set_flag",
+   "offset": "0x48",
+   "args": [
+    242
+   ]
+  },
+  {
+   "address": "0x7e7",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    42,
+    329,
+    11
+   ]
+  },
+  {
+   "address": "0x7f9",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    1,
+    330,
+    11
+   ]
+  },
+  {
+   "address": "0x80b",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    42,
+    331,
+    11
+   ]
+  },
+  {
+   "address": "0x81d",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    42,
+    332,
+    11
+   ]
+  },
+  {
+   "address": "0x82b",
+   "host": "get_global",
+   "offset": "0x70",
+   "args": [
+    7410
+   ]
+  },
+  {
+   "address": "0x83b",
+   "host": "set_global",
+   "offset": "0x9c",
+   "args": [
+    7410,
+    "eax"
+   ]
+  },
+  {
+   "address": "0x84b",
+   "host": "set_local",
+   "offset": "0xb4",
+   "args": [
+    7426,
+    1
+   ]
+  },
+  {
+   "address": "0x85d",
+   "host": "load_room",
+   "offset": "0xbc",
+   "args": [
+    7447,
+    1,
+    1
+   ]
+  },
+  {
+   "address": "0x870",
+   "host": "place",
+   "offset": "0xe0",
+   "args": [
+    2679,
+    4187
+   ]
+  },
+  {
+   "address": "0x87b",
+   "host": "host_f0",
+   "offset": "0xf0",
+   "args": [
+    45
+   ]
+  },
+  {
+   "address": "0x884",
+   "host": "0x114",
+   "offset": "0x114",
+   "args": []
+  },
+  {
+   "address": "0x88a",
+   "host": "exit_room",
+   "offset": "0x68",
+   "args": []
+  },
+  {
+   "address": "0x89b",
+   "host": "movie",
+   "offset": "0x54",
+   "args": [
+    42,
+    220,
+    11
+   ]
+  }
+ ],
+ "strings": {
+  "0x1ce3": "115-Silverleaf",
+  "0x1cf2": "GV_LUTHERS_SOUL",
+  "0x1d02": "Luther_goes_to_Arena",
+  "0x1d17": "ARENAAPR"
+ },
+ "scope": "Static source only. Host0xe0 place matches existing CHUT/MCEL audit;0xf0 heading remains an interpretation.500-valued host0x120/0x124 calls unjoined."
+}

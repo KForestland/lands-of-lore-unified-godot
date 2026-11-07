@@ -1,0 +1,15 @@
+# Citadel ground spires and prisons — STORY-040
+
+The lower circuit uses actual combat to finish all nineteen source Ruloi. The next circuit physically walks to original ground Spires266/267/268/171/170, casts production Spark, walks through the opened Dawn passage, jumps onto source plate51, inspects the original imprisoned Dawn room, leaves and walks to plate52, then watches the full original maiden-release movie. The test neither marks actors dead nor moves the player directly.
+
+`docs/l13-spires-source.json` pins template5 placements, event predicates and command groups. `tools/verify_l13_spires_source.py --game GAME` verifies their archive bytes. Template5 is named Spire; selector0 is original descriptor224, intermediate1 descriptor254, final2 descriptor223. Object state5 is not selector5. Original170 hitgroup74 writes local16;171/group162 writes17. Completion groups130/218 select2. Ground266/267/268 write11/12/13. The precise native input, animation callback, gate-effect join and timing remain unhosted.
+
+DEVIATIONS0265 explicitly labels the hintbook-globe to Spire pair join and region457 opening as adapters. Source floor and ceiling457 initially coincide at-1040; the adapter raises its ceiling to adjacent passage ceiling-912 and hides original transverse walls472/507 after both170/171 are lit. It does not alter the player's position or the floor. The source51/group8074 room28 join is pinned separately. Modern jump admission and overlay controls mirror the scoped existing maiden-room owner. Ground Spire151 and upper Spires294..303/351 are supported but not claimed traversed by this circuit.
+
+Dawn media staging: `tools/prepare_l13_dawn_media.py --game GAME --output-root PROJECT`. Original DSLAVE background30frames and Dawn idle60frames are decoded to generated local assets; their SHA pins are checked by the preparer. Original release/speech order is separate STORY041 work. Room media retains source images, not invented artwork. Entry requires the pair and is saved; Dawn is not released by this step.
+
+Maiden media staging and native local18/19/20 evidence are documented in `l13-prison-preparation.md`. Saved release requires every source actor21..39 dead. The native corpse-counter arithmetic is not replayed. Native soul reward, flag306, return placement and full conversation remain unhosted (0262).
+
+Earned qualification `tmp/regressions/l13_spires_prison_probe4/report.json`:1/1 PASS75.45s, source unchanged. Full original release completes, both visits and five lit spires survive actual reload, no seeds/recoveries. Immutable output `tmp/l13_prisons_qualified_save.json` SHA256 `4dbbfb934155d84b532babcc6e3eec36680cd05a9321e8f2a2a385a638a3bfc7`. Earlier missing-fixture and route-through-receiver probes were rejected.
+
+Affected STORY039 production route requalified with the scoped flight owner: `tmp/regressions/l13_eggs_flight_ready/report.json`,1/1 PASS36.63s source unchanged. Original qualified039 input remains pinned; the rerun output is not substituted into existing receipts.

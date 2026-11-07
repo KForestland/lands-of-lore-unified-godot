@@ -1,0 +1,1 @@
+| 2026-10-30 | All (native script host) | Adapter opcode5_spatial: opcode 5 on props (0xF2944) and actors (0xA7DC4) stores +0x30 = command byte 4 (actors also +0x7C = 0); the +0x32 frame count (0xF1F94) and the 0xF2814 restart are not modelled (G97 step_opcode5 LIKELY). Relative selectors (byte 5 != 0) on props stay unhosted. | Owner rule 2026-10-30. | pending |

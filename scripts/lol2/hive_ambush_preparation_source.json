@@ -1,0 +1,101 @@
+{
+  "archive_sha256": "a1979e60d401ae308e430f69a7163ff07a7f704aeb233769add85e7cc0960bf8",
+  "movie_archive_sha256": "38c6bed99f2bc7f95c3b52d362f90495cb7a20f6179d71eadadc08f723592495",
+  "movie_bindings": [
+    {
+      "template": 41,
+      "selector": 0,
+      "resource": 295,
+      "file": "SPHERE1\\L5_HC\\EX05.VQA",
+      "frames": 54,
+      "width": 320,
+      "height": 200,
+      "fps": 15,
+      "label": "HOthr000EXEatingHuline",
+      "sha256": "c2264a8447cb32cc37c17fbec5c4f5b54a75129de36e5abb65be8bf334b39199"
+    },
+    {
+      "template": 41,
+      "selector": 1,
+      "resource": 296,
+      "file": "SPHERE1\\L5_HC\\EX06.VQA",
+      "frames": 17,
+      "width": 320,
+      "height": 200,
+      "fps": 15,
+      "label": "HAppr000EXEatToAttack",
+      "sha256": "45e49430d2addc747d8712ec5727e9207c22f0f4066fc2e227df3208f2e8ea88"
+    },
+    {
+      "template": 43,
+      "selector": 0,
+      "resource": 299,
+      "file": "SPHERE1\\L5_HC\\HW07.VQA",
+      "frames": 25,
+      "width": 320,
+      "height": 200,
+      "fps": 15,
+      "label": "HOthr000HWUnfold",
+      "sha256": "d95245c1325af11a3b257ac65aa1803c64a198acab153d16fe261c3863a8b73d"
+    }
+  ],
+  "shared_constructor": [
+    {
+      "kind": "actor",
+      "index": 33,
+      "flags": 29058,
+      "inactive": true,
+      "initial_state": 0,
+      "template": 0
+    },
+    {
+      "kind": "actor",
+      "index": 35,
+      "flags": 29058,
+      "inactive": true,
+      "initial_state": 0,
+      "template": 1
+    },
+    {
+      "kind": "prop",
+      "index": 316,
+      "flags": 1026,
+      "inactive": false,
+      "initial_state": 0,
+      "template": 43
+    },
+    {
+      "kind": "prop",
+      "index": 318,
+      "flags": 17538,
+      "inactive": false,
+      "initial_state": 0,
+      "template": 41
+    },
+    {
+      "kind": "prop",
+      "index": 363,
+      "flags": 4098,
+      "inactive": true,
+      "initial_state": 0,
+      "template": 38
+    }
+  ],
+  "nest_clips": [
+    {
+      "label": "HOthr000EXNesting",
+      "source_sha256": "a1d6fbf7cc02e82ea6d8c45e0184b3005d473f5849b30eb72e3e4df0c81245e0",
+      "frames": 36
+    },
+    {
+      "label": "HAppr000EXNestToAttack",
+      "source_sha256": "2106b4a283888bd4f800af230a32595d039e3fb93bc34ceb055300b855d2e498",
+      "frames": 28
+    }
+  ],
+  "provenance": {
+    "trigger_report_sha256": "aff03292f3b9c5726072d127aa87e36d1ee4fa03f99a4edc07c0553f808b868f",
+    "nest_review_sha256": "6873b1e49bfb3e85f3a0b3426e67880bee0952fabbd6a591b4987118f0e192e1",
+    "scope": "Retained original movie bindings and historically verified shared constructor results; not a new native replay."
+  }
+}

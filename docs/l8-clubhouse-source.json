@@ -1,0 +1,578 @@
+{
+ "source_sha256": "3eff07430a453d2c6f09133f869874e0530af1b6a3bfff7f4297761b96a28bc2",
+ "objects": [
+  {
+   "events": [
+    {
+     "extra_hex": "00",
+     "file_offset": 13468036,
+     "group": 15008,
+     "kind": 6,
+     "offset": 5718,
+     "predicate": {
+      "entry_file_offset": 13701219,
+      "entry_hex": "0002210000",
+      "index": 98,
+      "trailer_file_offset": 13468042,
+      "trailer_hex": "04136200"
+     },
+     "raw_hex": "0606a03a1400",
+     "stream": 1,
+     "value": 20
+    },
+    {
+     "file_offset": 13468042,
+     "kind": 19,
+     "offset": 5724,
+     "raw_hex": "04136200"
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 13468046,
+     "group": 15050,
+     "kind": 6,
+     "offset": 5728,
+     "predicate": {
+      "entry_file_offset": 13701764,
+      "entry_hex": "0005000001",
+      "index": 207,
+      "trailer_file_offset": 13468052,
+      "trailer_hex": "0413cf00"
+     },
+     "raw_hex": "0606ca3a0000",
+     "stream": 1,
+     "value": 0
+    },
+    {
+     "file_offset": 13468052,
+     "kind": 19,
+     "offset": 5734,
+     "raw_hex": "0413cf00"
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 13468056,
+     "group": 15064,
+     "kind": 6,
+     "offset": 5738,
+     "predicate": {
+      "entry_file_offset": 13701364,
+      "entry_hex": "0002210001",
+      "index": 127,
+      "trailer_file_offset": 13468062,
+      "trailer_hex": "04137f00"
+     },
+     "raw_hex": "0606d83a1400",
+     "stream": 1,
+     "value": 20
+    },
+    {
+     "file_offset": 13468062,
+     "kind": 19,
+     "offset": 5744,
+     "raw_hex": "04137f00"
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 13468066,
+     "group": 15106,
+     "kind": 6,
+     "offset": 5748,
+     "predicate": {
+      "entry_file_offset": 13701769,
+      "entry_hex": "0005000002",
+      "index": 208,
+      "trailer_file_offset": 13468072,
+      "trailer_hex": "0413d000"
+     },
+     "raw_hex": "0606023b0000",
+     "stream": 1,
+     "value": 0
+    },
+    {
+     "file_offset": 13468072,
+     "kind": 19,
+     "offset": 5754,
+     "raw_hex": "0413d000"
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 13468076,
+     "group": 15162,
+     "kind": 6,
+     "offset": 5758,
+     "predicate": {
+      "entry_file_offset": 13701774,
+      "entry_hex": "0005000003",
+      "index": 209,
+      "trailer_file_offset": 13468082,
+      "trailer_hex": "0413d100"
+     },
+     "raw_hex": "06063a3b0000",
+     "stream": 1,
+     "value": 0
+    },
+    {
+     "file_offset": 13468082,
+     "kind": 19,
+     "offset": 5764,
+     "raw_hex": "0413d100"
+    },
+    {
+     "extra_hex": "0000000181",
+     "file_offset": 13468086,
+     "group": 15182,
+     "kind": 9,
+     "offset": 5768,
+     "predicate": null,
+     "raw_hex": "0a094e3b000000000181",
+     "stream": 1,
+     "value": 0
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 13468096,
+     "group": 15212,
+     "kind": 6,
+     "offset": 5778,
+     "predicate": null,
+     "raw_hex": "06066c3b0800",
+     "stream": 1,
+     "value": 8
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 13468102,
+     "group": 15234,
+     "kind": 6,
+     "offset": 5784,
+     "predicate": null,
+     "raw_hex": "0606823b0b00",
+     "stream": 1,
+     "value": 11
+    }
+   ],
+   "file_offset": 13540010,
+   "index": 21,
+   "list_file_offset": 13468036,
+   "list_offset": 5718,
+   "placement_hex": "01f9d4fb000000008275610c561600000000000000000000000000000000780001050000000e093c00ff0058020000000000000000000000",
+   "ref": "actor:21",
+   "table": "actor",
+   "terminator_offset": 5790
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "0000000000",
+     "file_offset": 13470256,
+     "group": 13232,
+     "kind": 4,
+     "offset": 7938,
+     "predicate": {
+      "entry_file_offset": 13701764,
+      "entry_hex": "0005000001",
+      "index": 207,
+      "trailer_file_offset": 13470266,
+      "trailer_hex": "0413cf00"
+     },
+     "raw_hex": "0a04b033000000000000",
+     "stream": 1,
+     "value": 0
+    },
+    {
+     "file_offset": 13470266,
+     "kind": 19,
+     "offset": 7948,
+     "raw_hex": "0413cf00"
+    }
+   ],
+   "file_offset": 13549401,
+   "index": 51,
+   "list_file_offset": 13470256,
+   "list_offset": 7938,
+   "placement_hex": "33f930fc000000008205c20d021f0000dc745a0024747f0000000000010044001a020601400a000000",
+   "ref": "movable:51",
+   "table": "movable",
+   "terminator_offset": 7952
+  },
+  {
+   "events": [
+    {
+     "extra_hex": "0000000000",
+     "file_offset": 13470272,
+     "group": 13250,
+     "kind": 4,
+     "offset": 7954,
+     "predicate": {
+      "entry_file_offset": 13701764,
+      "entry_hex": "0005000001",
+      "index": 207,
+      "trailer_file_offset": 13470282,
+      "trailer_hex": "0413cf00"
+     },
+     "raw_hex": "0a04c233000000000000",
+     "stream": 1,
+     "value": 0
+    },
+    {
+     "file_offset": 13470282,
+     "kind": 19,
+     "offset": 7964,
+     "raw_hex": "0413cf00"
+    }
+   ],
+   "file_offset": 13549442,
+   "index": 52,
+   "list_file_offset": 13470272,
+   "list_offset": 7954,
+   "placement_hex": "0bf930fc000000008205c20d121f0000dc745a0024747f0000000000010044001a0106013f0a000000",
+   "ref": "movable:52",
+   "table": "movable",
+   "terminator_offset": 7968
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 13453720,
+     "kind": 32,
+     "offset": 13238,
+     "opcode": 1,
+     "raw_hex": "012034006400",
+     "target": 52
+    },
+    {
+     "file_offset": 13453726,
+     "kind": 32,
+     "offset": 13244,
+     "opcode": 1,
+     "raw_hex": "012033006400",
+     "target": 51
+    }
+   ],
+   "count": 2,
+   "file_offset": 13453714,
+   "group": 13232,
+   "header_hex": "f00000000200",
+   "raw_hex": "f00000000200012034006400012033006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13453738,
+     "kind": 32,
+     "offset": 13256,
+     "opcode": 1,
+     "raw_hex": "012033006400",
+     "target": 51
+    },
+    {
+     "file_offset": 13453744,
+     "kind": 32,
+     "offset": 13262,
+     "opcode": 1,
+     "raw_hex": "012034006400",
+     "target": 52
+    }
+   ],
+   "count": 2,
+   "file_offset": 13453732,
+   "group": 13250,
+   "header_hex": "f00000000200",
+   "raw_hex": "f00000000200012033006400012034006400",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13455496,
+     "kind": 0,
+     "offset": 15014,
+     "opcode": 198,
+     "raw_hex": "c60000002301",
+     "target": 0
+    },
+    {
+     "file_offset": 13455502,
+     "kind": 2,
+     "offset": 15020,
+     "opcode": 16,
+     "raw_hex": "100215000100",
+     "target": 21
+    },
+    {
+     "file_offset": 13455508,
+     "kind": 2,
+     "offset": 15026,
+     "opcode": 13,
+     "raw_hex": "0d021500040f0000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455516,
+     "kind": 2,
+     "offset": 15034,
+     "opcode": 8,
+     "raw_hex": "0802150000000000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455524,
+     "kind": 2,
+     "offset": 15042,
+     "opcode": 8,
+     "raw_hex": "0802150002000000",
+     "target": 21
+    }
+   ],
+   "count": 5,
+   "file_offset": 13455490,
+   "group": 15008,
+   "header_hex": "f00000000500",
+   "raw_hex": "f00000000500c600000023011002150001000d021500040f000008021500000000000802150002000000",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13455538,
+     "kind": 2,
+     "offset": 15056,
+     "opcode": 8,
+     "raw_hex": "0802150001000000",
+     "target": 21
+    }
+   ],
+   "count": 1,
+   "file_offset": 13455532,
+   "group": 15050,
+   "header_hex": "f00000000100",
+   "raw_hex": "f000000001000802150001000000",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13455552,
+     "kind": 0,
+     "offset": 15070,
+     "opcode": 198,
+     "raw_hex": "c60000002301",
+     "target": 0
+    },
+    {
+     "file_offset": 13455558,
+     "kind": 2,
+     "offset": 15076,
+     "opcode": 13,
+     "raw_hex": "0d02150004150000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455566,
+     "kind": 2,
+     "offset": 15084,
+     "opcode": 16,
+     "raw_hex": "100215000200",
+     "target": 21
+    },
+    {
+     "file_offset": 13455572,
+     "kind": 2,
+     "offset": 15090,
+     "opcode": 8,
+     "raw_hex": "0802150000000000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455580,
+     "kind": 2,
+     "offset": 15098,
+     "opcode": 8,
+     "raw_hex": "080215000a000000",
+     "target": 21
+    }
+   ],
+   "count": 5,
+   "file_offset": 13455546,
+   "group": 15064,
+   "header_hex": "f00000000500",
+   "raw_hex": "f00000000500c600000023010d021500041500001002150002000802150000000000080215000a000000",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13455594,
+     "kind": 32,
+     "offset": 15112,
+     "opcode": 1,
+     "raw_hex": "012033006400",
+     "target": 51
+    },
+    {
+     "file_offset": 13455600,
+     "kind": 32,
+     "offset": 15118,
+     "opcode": 1,
+     "raw_hex": "012034006400",
+     "target": 52
+    },
+    {
+     "file_offset": 13455606,
+     "kind": 2,
+     "offset": 15124,
+     "opcode": 8,
+     "raw_hex": "0802150001000000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455614,
+     "kind": 2,
+     "offset": 15132,
+     "opcode": 13,
+     "raw_hex": "0d02150004160000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455622,
+     "kind": 2,
+     "offset": 15140,
+     "opcode": 8,
+     "raw_hex": "0802150000000000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455630,
+     "kind": 2,
+     "offset": 15148,
+     "opcode": 8,
+     "raw_hex": "0802150002000000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455638,
+     "kind": 2,
+     "offset": 15156,
+     "opcode": 16,
+     "raw_hex": "100215000300",
+     "target": 21
+    }
+   ],
+   "count": 7,
+   "file_offset": 13455588,
+   "group": 15106,
+   "header_hex": "f00000000700",
+   "raw_hex": "f0000000070001203300640001203400640008021500010000000d0215000416000008021500000000000802150002000000100215000300",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13455650,
+     "kind": 2,
+     "offset": 15168,
+     "opcode": 8,
+     "raw_hex": "0802150001000000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455658,
+     "kind": 2,
+     "offset": 15176,
+     "opcode": 16,
+     "raw_hex": "100215000300",
+     "target": 21
+    }
+   ],
+   "count": 2,
+   "file_offset": 13455644,
+   "group": 15162,
+   "header_hex": "f00000000200",
+   "raw_hex": "f000000002000802150001000000100215000300",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13455670,
+     "kind": 2,
+     "offset": 15188,
+     "opcode": 13,
+     "raw_hex": "0d02150000030000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455678,
+     "kind": 2,
+     "offset": 15196,
+     "opcode": 13,
+     "raw_hex": "0d0215000c000000",
+     "target": 21
+    },
+    {
+     "file_offset": 13455686,
+     "kind": 2,
+     "offset": 15204,
+     "opcode": 13,
+     "raw_hex": "0d02150007000000",
+     "target": 21
+    }
+   ],
+   "count": 3,
+   "file_offset": 13455664,
+   "group": 15182,
+   "header_hex": "f00000000300",
+   "raw_hex": "f000000003000d021500000300000d0215000c0000000d02150007000000",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13455700,
+     "kind": 0,
+     "offset": 15218,
+     "opcode": 199,
+     "raw_hex": "c70000001e01",
+     "target": 0
+    },
+    {
+     "file_offset": 13455706,
+     "kind": 2,
+     "offset": 15224,
+     "opcode": 19,
+     "raw_hex": "13027100010001000100",
+     "target": 113
+    }
+   ],
+   "count": 2,
+   "file_offset": 13455694,
+   "group": 15212,
+   "header_hex": "f00000000200",
+   "raw_hex": "f00000000200c70000001e0113027100010001000100",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 13455722,
+     "kind": 3,
+     "offset": 15240,
+     "opcode": 16,
+     "raw_hex": "10033f040100",
+     "target": 1087
+    }
+   ],
+   "count": 1,
+   "file_offset": 13455716,
+   "group": 15234,
+   "header_hex": "f00000000100",
+   "raw_hex": "f0000000010010033f040100",
+   "stream": 1
+  }
+ ],
+ "scope": "Guard21 group15106 commands original movables51/52 to100 percent. Mapping this building to book clubhouse and membership admission is modern; original predicate98/127 not decoded."
+}

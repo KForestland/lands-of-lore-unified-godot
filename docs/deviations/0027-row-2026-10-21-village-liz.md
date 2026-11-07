@@ -1,0 +1,1 @@
+| 2026-10-21 | Village (LIZ) | Hotspot responses use the native f133c history (eight lines, four once-per-entry triggers), but a saved per-room LCG replaces the native global RNG and history storage (Codex liz_responses.patch). | Native RNG stream is global and not replayed. | pending |

@@ -1,0 +1,197 @@
+{
+  "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795",
+  "assembly_sha256": "b3d6b8f528166aad4fe316033eed2bd8404a8f42bd5dadc63bcc15cf08b3cf5a",
+  "records": [
+    {
+      "index": 56,
+      "native_xyz": [
+        -67,
+        16782,
+        -295
+      ],
+      "heading": 0,
+      "template": 49,
+      "bounds_xyz": [
+        -35,
+        34,
+        -75,
+        74,
+        0,
+        5
+      ],
+      "surface_ids": [
+        86,
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "geometry_offset": 234286,
+      "child_offset": 25009,
+      "record_hex": "bdff8e410000d9fea1052b00601e00005c24f382141418830000000001000000310101110303000000",
+      "child_hex": "56000000000000005600000000000000560000000000000056000000000000005600000000000000560000000000000001000000dd22b54a00050000"
+    },
+    {
+      "index": 57,
+      "native_xyz": [
+        -66,
+        16937,
+        -295
+      ],
+      "heading": 0,
+      "template": 49,
+      "bounds_xyz": [
+        -35,
+        34,
+        -75,
+        74,
+        0,
+        5
+      ],
+      "surface_ids": [
+        86,
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "geometry_offset": 234327,
+      "child_offset": 25009,
+      "record_hex": "beff29420000d9fea1052900861e00005c24f382141418830000000001000000310101110909000000",
+      "child_hex": "56000000000000005600000000000000560000000000000056000000000000005600000000000000560000000000000001000000dd22b54a00050000"
+    },
+    {
+      "index": 58,
+      "native_xyz": [
+        -65,
+        17092,
+        -295
+      ],
+      "heading": 0,
+      "template": 49,
+      "bounds_xyz": [
+        -35,
+        34,
+        -75,
+        74,
+        0,
+        5
+      ],
+      "surface_ids": [
+        86,
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "geometry_offset": 234368,
+      "child_offset": 25009,
+      "record_hex": "bfffc4420000d9fea1052700a61e00005c24f382141418830000000001000000310101110604000000",
+      "child_hex": "56000000000000005600000000000000560000000000000056000000000000005600000000000000560000000000000001000000dd22b54a00050000"
+    },
+    {
+      "index": 59,
+      "native_xyz": [
+        -65,
+        17247,
+        -295
+      ],
+      "heading": 0,
+      "template": 49,
+      "bounds_xyz": [
+        -35,
+        34,
+        -75,
+        74,
+        0,
+        5
+      ],
+      "surface_ids": [
+        86,
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "geometry_offset": 234409,
+      "child_offset": 25009,
+      "record_hex": "bfff5f430000d9fea1052400c61e00005c24f382141418830000000001000000310101110a0c000000",
+      "child_hex": "56000000000000005600000000000000560000000000000056000000000000005600000000000000560000000000000001000000dd22b54a00050000"
+    },
+    {
+      "index": 60,
+      "native_xyz": [
+        -64,
+        17401,
+        -295
+      ],
+      "heading": 0,
+      "template": 49,
+      "bounds_xyz": [
+        -35,
+        34,
+        -75,
+        74,
+        0,
+        5
+      ],
+      "surface_ids": [
+        86,
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "geometry_offset": 234450,
+      "child_offset": 25009,
+      "record_hex": "c0fff9430000d9fea1052200e61e00005c24f382141418830000000001000000310101110306000000",
+      "child_hex": "56000000000000005600000000000000560000000000000056000000000000005600000000000000560000000000000001000000dd22b54a00050000"
+    },
+    {
+      "index": 61,
+      "native_xyz": [
+        -65,
+        17554,
+        -295
+      ],
+      "heading": 0,
+      "template": 49,
+      "bounds_xyz": [
+        -35,
+        34,
+        -75,
+        74,
+        0,
+        5
+      ],
+      "surface_ids": [
+        86,
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "geometry_offset": 234491,
+      "child_offset": 25009,
+      "record_hex": "bfff92440000d9fea1052000061f00005c24f38214141883000000000100000031010111070f000000",
+      "child_hex": "56000000000000005600000000000000560000000000000056000000000000005600000000000000560000000000000001000000dd22b54a00050000"
+    }
+  ],
+  "scope": "Source placements and template bounds. Initial motion state, surface86 image binding and original bridge-collapse behavior not established.",
+  "material": {
+    "descriptor": 86,
+    "cache_sha256": "102410e0b69037da2bdf451dd4de9c7e30df2c9d1309b1d0a1c0224ab7218c97",
+    "width": 256,
+    "height": 64,
+    "source_offset": 3393931,
+    "pixels_sha256": "7b0cec09be71c6f70d27ad7c6c39189d8854998253e7b689e77f363aed9de0f0",
+    "png_sha256": "3d650d4f1ca7187130d2002bdf705884e7836fb368d3254fc7b307317bd66d8d",
+    "binding": "Positive surface ID86 + source frame byte0 = descriptor86; shared type0 material rule."
+  }
+}

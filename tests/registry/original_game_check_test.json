@@ -1,0 +1,15 @@
+{
+ "name": "original_game_check_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 580,
+ "needs": {
+  "env": [
+   "LOL2_ORIGINAL_GAME_EXE"
+  ],
+  "args": [
+   "${LOL2_ORIGINAL_GAME_EXE}"
+  ],
+  "note": "first user arg = the original LOLG.EXE path; the runner expands ${VAR} in args"
+ }
+}

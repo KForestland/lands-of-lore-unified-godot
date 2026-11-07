@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/lol2/act2_map.gd" id="1"]
+
+[node name="MapL14_HT" type="Node3D"]
+script = ExtResource("1")
+area_id = "L14_HT"
+map_blockers_enabled = false
+geometry_file = "res://assets/lol2/generated/maps/L14_HT/area.json"
+review_title = "L14_HT preview"
+huline_content = false
+area_name = "L14_HT preview"
+area_save_path = "user://saves/map_L14_HT_quicksave.json"
+area_save_format = "lol2-restoration-map-L14_HT"

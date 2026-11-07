@@ -1,0 +1,1 @@
+| 2026-11-06 | L8 raised platform (draft) | Owner F10 18-15-18 at (-1038, -2302): the platform does not rise. The five torch solids stay on layer 1. The stair collision moves to layer 9, which the spark ray (mask 3) misses, so a Spark 1 or 3 can reach the torches. The rise amount stays the existing stair motion. | Adapter (owner rule 2026-10-30) | pending |

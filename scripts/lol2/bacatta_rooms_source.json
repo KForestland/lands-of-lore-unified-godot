@@ -1,0 +1,496 @@
+{
+ "version": 1,
+ "purpose": "Compact consumed-record recipe for tools/prepare_bacatta_rooms.py explicit path (assets/lol2/generated/bacatta_rooms). Every record is re-verified against the pinned original archives before anything is written.",
+ "provenance": {
+  "recorded_audit": "docs/bacatta-room-source.json (local, unpublished)",
+  "recorded_sha256": "a56d58bd00a919de3edf8926bdc4d469e45f6c38fa466f77f54d1137bcdbc0f1",
+  "producer": "tools/audit_bacatta_rooms.py main()",
+  "producer_sha256": "8aa26c167b3eab04e08228d5e4db569b51f11f1fdb088ff1d643d5b71f387545",
+  "consumer": "tools/prepare_bacatta_rooms.py",
+  "consumer_sha256": "63b792c12dc4b2f197cd2fc848cd71ef59da99bc352a931fe28b34a093adcc2a",
+  "method": "Static DLL calls and source event ownership; native room execution not replayed."
+ },
+ "limits": [
+  "first_visit_calls/exit_calls are literal call arguments from static disassembly of the room DLLs (recorded audit method); they are not a native trace. Media names follow from their movie calls (speaker 1 -> .AUD).",
+  "The recipe re-verifies every record (entry key/offset/size/sha256; VQHD frames/size/fps/x/y for movies) and the DLL bindings against the originals, not the selection itself.",
+  "Omitted as not consumed: disassembly, admission, jungle_entry, remaining."
+ ],
+ "rooms": {
+  "CAN": {
+   "archive_sha256": "55395c6cfa2f846f4edb360877ab9c68002dce1367a5109624e1c3feba634675",
+   "dll": {
+    "index": 36,
+    "key": 1914561845,
+    "offset": 846,
+    "size": 5375,
+    "name": "WOMS\\CAN_.WOM",
+    "sha256": "60835dcd4a697b208ac264faa72eb7e9b71eac35178d08a91fb7f54a414d6e92"
+   },
+   "background": {
+    "index": 14,
+    "key": 2190506692,
+    "offset": 513749,
+    "size": 804974,
+    "name": "WOMS\\CAN\\CAN_.VQA",
+    "sha256": "6f73276baf7104b33424f3ee5256d3cf852f4e59b1c22dec1ab2a297b1a103b6",
+    "frames": 30,
+    "width": 640,
+    "height": 400,
+    "fps": 15,
+    "x": 0,
+    "y": 0
+   },
+   "idle": {
+    "index": 34,
+    "key": 2462379319,
+    "offset": 28079255,
+    "size": 1309658,
+    "name": "WOMS\\CAN\\1399906E.VQA",
+    "sha256": "9211e49810af688faf20fb9b2df0b63d39260fb1025b8ffd915bcab97f72fcab",
+    "frames": 109,
+    "width": 640,
+    "height": 224,
+    "fps": 15,
+    "x": 0,
+    "y": 176
+   },
+   "first_visit_calls": [
+    {
+     "address": "0xc36",
+     "kind": "set_flag",
+     "args": [
+      45
+     ]
+    },
+    {
+     "address": "0xc48",
+     "kind": "movie",
+     "args": [
+      13,
+      625,
+      6
+     ]
+    },
+    {
+     "address": "0xc5a",
+     "kind": "movie",
+     "args": [
+      13,
+      626,
+      6
+     ]
+    },
+    {
+     "address": "0xc6c",
+     "kind": "movie",
+     "args": [
+      1,
+      627,
+      6
+     ]
+    },
+    {
+     "address": "0xc7e",
+     "kind": "movie",
+     "args": [
+      1,
+      628,
+      6
+     ]
+    },
+    {
+     "address": "0xc89",
+     "kind": "set_flag",
+     "args": [
+      32
+     ]
+    },
+    {
+     "address": "0xc9b",
+     "kind": "movie",
+     "args": [
+      13,
+      629,
+      6
+     ]
+    },
+    {
+     "address": "0xcad",
+     "kind": "movie",
+     "args": [
+      13,
+      630,
+      6
+     ]
+    },
+    {
+     "address": "0xcbf",
+     "kind": "movie",
+     "args": [
+      13,
+      631,
+      6
+     ]
+    },
+    {
+     "address": "0xcd1",
+     "kind": "movie",
+     "args": [
+      13,
+      632,
+      6
+     ]
+    },
+    {
+     "address": "0xcdc",
+     "kind": "set_flag",
+     "args": [
+      33
+     ]
+    },
+    {
+     "address": "0xcee",
+     "kind": "movie",
+     "args": [
+      1,
+      633,
+      6
+     ]
+    },
+    {
+     "address": "0xd00",
+     "kind": "movie",
+     "args": [
+      1,
+      634,
+      6
+     ]
+    },
+    {
+     "address": "0xd12",
+     "kind": "movie",
+     "args": [
+      13,
+      635,
+      6
+     ]
+    },
+    {
+     "address": "0xd24",
+     "kind": "movie",
+     "args": [
+      13,
+      636,
+      6
+     ]
+    },
+    {
+     "address": "0xd2f",
+     "kind": "set_flag",
+     "args": [
+      37
+     ]
+    }
+   ],
+   "media": [
+    {
+     "index": 50,
+     "key": 2059722011,
+     "offset": 34580457,
+     "size": 1624974,
+     "name": "WOMS\\CAN\\1362506E.VQA",
+     "sha256": "e7b75dcf30a5e5ad658fd2c9d972866fe5374931f78cb8463ee6fec95a334f50",
+     "frames": 127,
+     "width": 640,
+     "height": 224,
+     "fps": 15,
+     "x": 0,
+     "y": 176,
+     "kind": "movie"
+    },
+    {
+     "index": 55,
+     "key": 2059723035,
+     "offset": 1415655,
+     "size": 1726918,
+     "name": "WOMS\\CAN\\1362606E.VQA",
+     "sha256": "7cd36127aed0bb1a38538539217da9726298a616b7b1a3506599ac73443d3fc8",
+     "frames": 135,
+     "width": 640,
+     "height": 232,
+     "fps": 15,
+     "x": 0,
+     "y": 168,
+     "kind": "movie"
+    },
+    {
+     "index": 10,
+     "key": 2190138654,
+     "offset": 223873,
+     "size": 46364,
+     "name": "WOMS\\CAN\\0162706E.AUD",
+     "sha256": "ec3bd6c2bde1a23241dce25cbb15188f6b4b9ace7fa07284d69d9cada7055191",
+     "kind": "audio_only"
+    },
+    {
+     "index": 12,
+     "key": 2190139678,
+     "offset": 270250,
+     "size": 43828,
+     "name": "WOMS\\CAN\\0162806E.AUD",
+     "sha256": "2a0d533d014822f67232c3b599dfc2e2c7c53c27e7d8eb4e145b265e2e057faa",
+     "kind": "audio_only"
+    },
+    {
+     "index": 66,
+     "key": 2059726107,
+     "offset": 4077103,
+     "size": 810272,
+     "name": "WOMS\\CAN\\1362906E.VQA",
+     "sha256": "8dceabdb23d2d9df20427128c1dffd098921c814682d46965c9ae15706d75739",
+     "frames": 61,
+     "width": 640,
+     "height": 224,
+     "fps": 15,
+     "x": 0,
+     "y": 176,
+     "kind": "movie"
+    },
+    {
+     "index": 40,
+     "key": 2059716895,
+     "offset": 3142573,
+     "size": 934530,
+     "name": "WOMS\\CAN\\1363006E.VQA",
+     "sha256": "ebe0bac2ab9e8e9bb4b16348862fd5acd7b26f29ddea57de197e3cd017e8eced",
+     "frames": 71,
+     "width": 640,
+     "height": 224,
+     "fps": 15,
+     "x": 0,
+     "y": 176,
+     "kind": "movie"
+    },
+    {
+     "index": 42,
+     "key": 2059717919,
+     "offset": 6036981,
+     "size": 1221060,
+     "name": "WOMS\\CAN\\1363106E.VQA",
+     "sha256": "bafc7fdab7357088b5427ec8e61ebd8ce1ecbf6f027a891d457ef0ffd8582dc8",
+     "frames": 94,
+     "width": 640,
+     "height": 224,
+     "fps": 15,
+     "x": 0,
+     "y": 176,
+     "kind": "movie"
+    },
+    {
+     "index": 43,
+     "key": 2059718943,
+     "offset": 7258041,
+     "size": 1557114,
+     "name": "WOMS\\CAN\\1363206E.VQA",
+     "sha256": "7732246d6da222e2e7c482ee0a2e4826a478cf06005312c1af487424024feb37",
+     "frames": 121,
+     "width": 640,
+     "height": 224,
+     "fps": 15,
+     "x": 0,
+     "y": 176,
+     "kind": "movie"
+    },
+    {
+     "index": 4,
+     "key": 2190134562,
+     "offset": 314078,
+     "size": 24388,
+     "name": "WOMS\\CAN\\0163306E.AUD",
+     "sha256": "3a6751ba48e65e8d1b4451d68c3c2de50da698cc0267a2c270e222a553c2b597",
+     "kind": "audio_only"
+    },
+    {
+     "index": 5,
+     "key": 2190135586,
+     "offset": 338466,
+     "size": 36644,
+     "name": "WOMS\\CAN\\0163406E.AUD",
+     "sha256": "c40b1d3bff8f11e9e668e61f8c1c02cdc0af0d00284877c67a0ff82d86f83bfa",
+     "kind": "audio_only"
+    },
+    {
+     "index": 51,
+     "key": 2059722015,
+     "offset": 8815155,
+     "size": 1524286,
+     "name": "WOMS\\CAN\\1363506E.VQA",
+     "sha256": "d7216bada144e11f9a606907a887d34b9c8725940feeedccbc4f6e9f4164f7a6",
+     "frames": 118,
+     "width": 640,
+     "height": 232,
+     "fps": 15,
+     "x": 0,
+     "y": 168,
+     "kind": "movie"
+    },
+    {
+     "index": 56,
+     "key": 2059723039,
+     "offset": 14679145,
+     "size": 606088,
+     "name": "WOMS\\CAN\\1363606E.VQA",
+     "sha256": "a19a16134396ad2dd20a4c8ea209ca474345aa09787199218d8fbf5d04b74d9f",
+     "frames": 44,
+     "width": 640,
+     "height": 224,
+     "fps": 15,
+     "x": 0,
+     "y": 176,
+     "kind": "movie"
+    }
+   ],
+   "exit_calls": [
+    {
+     "address": "0xe0b",
+     "kind": "set_flag",
+     "args": [
+      34
+     ]
+    },
+    {
+     "address": "0xe3b",
+     "kind": "clear_flag",
+     "args": [
+      37
+     ]
+    },
+    {
+     "address": "0xe4d",
+     "kind": "movie",
+     "args": [
+      1,
+      637,
+      6
+     ]
+    },
+    {
+     "address": "0xe5f",
+     "kind": "movie",
+     "args": [
+      1,
+      638,
+      6
+     ]
+    },
+    {
+     "address": "0xe71",
+     "kind": "movie",
+     "args": [
+      13,
+      676,
+      6
+     ]
+    },
+    {
+     "address": "0xe83",
+     "kind": "movie",
+     "args": [
+      13,
+      677,
+      6
+     ]
+    }
+   ],
+   "exit_media": [
+    {
+     "index": 11,
+     "key": 2190138658,
+     "offset": 375110,
+     "size": 8076,
+     "name": "WOMS\\CAN\\0163706E.AUD",
+     "sha256": "a6908459b3de203005c83f105b5ad1146e623f6e17dbb43c5bb3d60bf076c9d1",
+     "kind": "audio_only"
+    },
+    {
+     "index": 13,
+     "key": 2190139682,
+     "offset": 383186,
+     "size": 21332,
+     "name": "WOMS\\CAN\\0163806E.AUD",
+     "sha256": "6142182e95df95af3a89428e0b152bfb5391cf6c58db7a3f5ed4899e7e6fce55",
+     "kind": "audio_only"
+    },
+    {
+     "index": 58,
+     "key": 2059723055,
+     "offset": 29719829,
+     "size": 630664,
+     "name": "WOMS\\CAN\\1367606E.VQA",
+     "sha256": "ded4217d904ed71539e993d9711f16c7e627278292815985a2c8a2d9fdbb6f54",
+     "frames": 46,
+     "width": 640,
+     "height": 224,
+     "fps": 15,
+     "x": 0,
+     "y": 176,
+     "kind": "movie"
+    },
+    {
+     "index": 63,
+     "key": 2059724079,
+     "offset": 30350493,
+     "size": 314078,
+     "name": "WOMS\\CAN\\1367706E.VQA",
+     "sha256": "ee06b5446b5ccc5546796b40a91619df79c2423eaa75d0d814c8a31f8e53e054",
+     "frames": 21,
+     "width": 640,
+     "height": 240,
+     "fps": 15,
+     "x": 0,
+     "y": 160,
+     "kind": "movie"
+    }
+   ]
+  },
+  "VILLAGE": {
+   "archive_sha256": "497fa122ad5c48dbbd6f651f826f57383436a3962cd67d4b175ffd636a25548b",
+   "dll": {
+    "index": 3,
+    "key": 1256917648,
+    "offset": 54,
+    "size": 2447,
+    "name": "WOMS\\VILLAGE_.WOM",
+    "sha256": "a2eba4575456458a3b6597149456ac695674bca6b5cc89c3f8e445eb428bfa20"
+   },
+   "background": {
+    "index": 0,
+    "key": 3406220069,
+    "offset": 2514,
+    "size": 744264,
+    "name": "WOMS\\VILLAGE\\VILLAGE_.VQA",
+    "sha256": "41f773bf23ea0d70e96895853377dee873554912f9fd917d17676dd2cf6fe2ef",
+    "frames": 30,
+    "width": 640,
+    "height": 400,
+    "fps": 15,
+    "x": 0,
+    "y": 0
+   },
+   "intro": {
+    "index": 1,
+    "key": 240951899,
+    "offset": 746778,
+    "size": 3135070,
+    "name": "WOMS\\VILLAGE\\TAVERN.VQA",
+    "sha256": "9fea0ec817b0b1b5cdfb35e30021d0426914174018d4340a9c20dc2896892cd7",
+    "frames": 148,
+    "width": 640,
+    "height": 400,
+    "fps": 15,
+    "x": 0,
+    "y": 0
+   }
+  }
+ }
+}

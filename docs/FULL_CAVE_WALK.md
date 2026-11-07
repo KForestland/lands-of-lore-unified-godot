@@ -1,7 +1,7 @@
 # Full recovered cave walk — 2026-09-11
 
 User requested whole-map assembly instead of incremental area expansion.
-Launch a local launcher (`run_lol2_full_cave.sh`, not published).
+Launch `~/run_lol2_full_cave.sh`.
 
 - WASD + mouse: walk/look; Shift: sprint (80 / 144 original units per second).
 - F: toggle collision-free inspection flight, at four times movement speed.

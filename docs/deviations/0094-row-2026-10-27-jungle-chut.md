@@ -1,0 +1,1 @@
+| 2026-10-27 | Jungle CHUT | The six stones are six new carried ids `jungle:chut:Ancients_Stone_1..6` ("66-Ancients stn", use `ancient`, the Hive stone's icon); a full pack refuses a pickup before its flag is set, so it can be retried (the LIZ/den pattern; the DLL sets the flag first). | Save format needs distinct ids; a full pack must not lose a quest item. | pending |

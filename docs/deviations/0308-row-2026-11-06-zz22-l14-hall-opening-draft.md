@@ -1,0 +1,1 @@
+| 2026-11-06 | L14 hall opening (draft) | Owner F10 18-01-36 and 18-01-44: textures and geometry wrong. Longplay g_276 and g_278 clear that opening to black. A black quad fills region 16 edge 2 from height 0 to 80. Faces 9634, 1810, 9656, 9657, and 9670 clip at ceiling 110. The spider burrow and the quill passage stay unread. | Adapter (owner rule 2026-10-30) | pending |

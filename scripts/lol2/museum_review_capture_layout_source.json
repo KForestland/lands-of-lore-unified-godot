@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "purpose": "Capture-era orientation of raw-variant materials for tools/prepare_museum_review.py.",
+ "provenance": {
+  "captured_materials": "~/lol2_out/museum_capture_20260913/materials (runtime capture, local)",
+  "captured_materials_sha256": "8b01287fd14df44b217d63b626bfc668695a6213385add08656b69e1e9a231ed"
+ },
+ "limits": [
+  "transposed lists the captured materials whose stored images are the transpose of the published export (map_materials converts column_major_raw sources to row-major; the capture did not). This is the recorded capture orientation the shipped review uses, not a claim about native presentation.",
+  "captured_sha256 are the captured PNG bytes (written by the same minimal PNG writer as lol2_material_format.png_rgb); the preparation must reproduce them exactly."
+ ],
+ "transposed": [
+  111
+ ],
+ "captured_sha256": {
+  "111": {
+   "image": "62b5268a91f5e40b39f7b94d0d90ebcc40a9a330162532998691bebea81cd6d4",
+   "frames": [
+    "62b5268a91f5e40b39f7b94d0d90ebcc40a9a330162532998691bebea81cd6d4",
+    "58a3d25e99b1ccf2878a850ca977fee25521f5388c04fe0847f2a774f94b4556",
+    "37b29af67588aaa3e56b8db3129a89db1dd972926639d05d166fad4498cde53d",
+    "a3f42f566a632adf0ec0b7537e93e8762650205df36bed743271ba9c0ec5208d",
+    "5dfaa891f96cd9b0bb2a33a2633eea2f4030394bf7794d7626af8c88d44557e9",
+    "aa44c771dda5bdc43b211df5b9b708bacf596b7547ffa785fb62861e798eec70",
+    "f44161f6538fdebbda349423b286e6513ccc23366132b7dd549572b8b38cac80",
+    "d872985550d4a925ee9023ca626e4c6b58358c94879c17916bbd60b0b5d55570",
+    "e9ead91ccbea7ea620d0c2d0d0f8fed533d4679c30c4a701ec764e65643d7fff",
+    "0accbe1173647e946f332918f807457835bd3370606841dd06f872ab2975bb3c"
+   ]
+  }
+ }
+}

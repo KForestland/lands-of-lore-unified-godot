@@ -1,0 +1,523 @@
+{
+  "passed": true,
+  "returncode": 0,
+  "seconds": 132.94464336199962,
+  "script": "res://tests/cave_opening_route_walk.gd",
+  "arguments": [
+    "--middle-route",
+    "--bridge-route",
+    "--through-museum",
+    "--sprint-smoke",
+    "--route-fast"
+  ],
+  "log": "tmp/regressions/roach_ai_route_20261003/route17.log",
+  "output_save": "user://tests/act1_earned_museum_arrival.json",
+  "output_sha256": "f037cb29b731080f522036ec1e05e62bdfadbd955b80c6374ba87d683e9fa278",
+  "arrival": {
+    "checkpoint": {
+      "collected": [
+        "cave:prop641:harvest1:Stalagmite"
+      ],
+      "curse": {
+        "cave_triggered": true,
+        "duration": 0.0,
+        "phase": 0,
+        "previous": 0,
+        "remaining": 0.0,
+        "seed": 4201869766,
+        "target": 0
+      },
+      "dragon_door": {
+        "opened": false,
+        "progress": 0.0
+      },
+      "equipped_armor": "",
+      "equipped_item": "cave:prop641:harvest1:Stalagmite",
+      "escape_wall": {
+        "stage": 0,
+        "wait": -1.0
+      },
+      "fighting": {
+        "cave_melee_seed": 1179656330,
+        "player_reward_state": {
+          "player": {
+            "condition": 0,
+            "experience": 128,
+            "health": 16,
+            "level": 2,
+            "maximum": 16,
+            "stat151": 7,
+            "stat155": 11
+          },
+          "version": 1
+        }
+      },
+      "gallery": {
+        "gate_open": false,
+        "lever_pulled": false,
+        "painting_moved": false,
+        "progress": 0.0
+      },
+      "gate": {
+        "progress": 0.0,
+        "target_open": false
+      },
+      "hand_item": "",
+      "health": 30,
+      "hourglass": {
+        "activated": false,
+        "elapsed": 0.0,
+        "escaped": false,
+        "final_wait": 25.0,
+        "stage": -1,
+        "wait": 0.0
+      },
+      "introduction_complete": true,
+      "item_effects": {
+        "aloe": {
+          "base": 0,
+          "clock": 0,
+          "fraction": 0.0,
+          "pending": 0
+        },
+        "ancient_charges": 0,
+        "champion": {
+          "active": false,
+          "timer": 0,
+          "version": 1
+        },
+        "fraction": 0.0,
+        "spent": [],
+        "version": 1
+      },
+      "magic": {
+        "cooldown": 0.0,
+        "player": {
+          "experience": 0,
+          "level": 1,
+          "mana": 20,
+          "maximum": 20
+        },
+        "regen_elapsed": 0.0,
+        "spell": "heal",
+        "version": 1
+      },
+      "museum_control181": {
+        "owner_state": 0,
+        "sprite_mode": 0
+      },
+      "player_form": 0,
+      "skeletons": {
+        "actors": {
+          "20": {
+            "death": 0.0,
+            "health": 150,
+            "position": [
+              3048.0,
+              0.0,
+              -716.0
+            ],
+            "present": true,
+            "rise": -1.0,
+            "woken": false
+          },
+          "21": {
+            "death": 0.0,
+            "health": 150,
+            "position": [
+              -4232.0,
+              0.0,
+              -957.0
+            ],
+            "present": false,
+            "rise": -1.0,
+            "woken": false
+          },
+          "22": {
+            "death": 0.0,
+            "health": 40,
+            "position": [
+              -1625.0,
+              -170.0,
+              -1100.0
+            ],
+            "present": true,
+            "rise": 0.75,
+            "woken": true
+          },
+          "23": {
+            "death": 0.0,
+            "health": 100,
+            "position": [
+              -1307.0,
+              0.0,
+              -900.0
+            ],
+            "present": true,
+            "rise": 1.125,
+            "woken": true
+          },
+          "24": {
+            "death": 0.0,
+            "health": 100,
+            "position": [
+              2.0,
+              10.0,
+              -261.0
+            ],
+            "present": true,
+            "rise": -1.0,
+            "woken": false
+          },
+          "25": {
+            "death": 0.0,
+            "health": 100,
+            "position": [
+              8.0,
+              10.0,
+              -470.0
+            ],
+            "present": true,
+            "rise": -1.0,
+            "woken": false
+          },
+          "26": {
+            "death": 0.0,
+            "health": 100,
+            "position": [
+              5.0,
+              10.0,
+              -669.0
+            ],
+            "present": true,
+            "rise": -1.0,
+            "woken": false
+          },
+          "27": {
+            "death": 0.0,
+            "health": 100,
+            "position": [
+              -2107.0,
+              0.0,
+              -1422.0
+            ],
+            "present": true,
+            "rise": -1.0,
+            "woken": false
+          },
+          "28": {
+            "death": 0.0,
+            "health": 150,
+            "position": [
+              -2112.0,
+              0.0,
+              -1258.0
+            ],
+            "present": true,
+            "rise": -1.0,
+            "woken": false
+          },
+          "29": {
+            "death": 0.0,
+            "health": 150,
+            "position": [
+              1124.0,
+              0.0,
+              -432.0
+            ],
+            "present": true,
+            "rise": -1.0,
+            "woken": false
+          },
+          "30": {
+            "death": 0.0,
+            "health": 150,
+            "position": [
+              431.0,
+              0.0,
+              -1335.0
+            ],
+            "present": false,
+            "rise": -1.0,
+            "woken": false
+          },
+          "31": {
+            "death": 0.0,
+            "health": 150,
+            "position": [
+              1319.0,
+              0.0,
+              -1910.0
+            ],
+            "present": true,
+            "rise": -1.0,
+            "woken": false
+          },
+          "32": {
+            "death": 0.0,
+            "health": 150,
+            "position": [
+              891.0,
+              0.0,
+              -2334.0
+            ],
+            "present": true,
+            "rise": -1.0,
+            "woken": false
+          }
+        },
+        "audio": {
+          "20": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "21": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "22": {
+            "request": 0,
+            "sample": 0,
+            "selector": 0,
+            "time": 0.0
+          },
+          "23": {
+            "request": 0,
+            "sample": 0,
+            "selector": 0,
+            "time": 0.0
+          },
+          "24": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "25": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "26": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "27": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "28": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "29": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "30": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "31": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          },
+          "32": {
+            "request": 0,
+            "sample": 0,
+            "selector": -1,
+            "time": 0.0
+          }
+        },
+        "controls": {
+          "92": 0
+        },
+        "counter": 0,
+        "live": {
+          "20": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 33132,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "21": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 17112,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "22": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 0,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "23": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 46967,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "24": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 48605,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "25": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 48605,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "26": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 48605,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "27": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 32950,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "28": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 33132,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "29": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 0,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "30": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 49334,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "31": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 49516,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          },
+          "32": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 49698,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          }
+        },
+        "prop93": 0,
+        "regions": [],
+        "version": 1
+      },
+      "sword": {
+        "collected": false,
+        "elapsed": 0.0,
+        "idle_elapsed": 0.0,
+        "started": false
+      },
+      "version": 1
+    },
+    "format": "lol2-restoration-museum",
+    "player": {
+      "pitch": 0.0,
+      "position": [
+        -3796.0,
+        31.99965476989746,
+        -369.0
+      ],
+      "yaw": -1.5707963705062866
+    },
+    "version": 1
+  },
+  "file_sha256": {
+    "tests/cave_opening_route_walk.gd": "1ed9a3a357b2854c27e0f460f9ea61db86fbbed97a7c66e01876fd519ade3107",
+    "scripts/lol2/cave_walkthrough.gd": "dddc4f91e7cb9d760ff92217e2ffc8c67d33be304c706a5edde09ebd5beb64aa",
+    "scripts/lol2/museum_walkthrough.gd": "44ef61295217ad8be9cb863695933e653942e1f3bc9d63a17af1d6be189a6ed1",
+    "assets/lol2/generated/cave_start/start.json": "79f6efb066dd272aa80a40c6c7e2075e905b293e881d8be1319f0a97a2d2cf1e",
+    "assets/lol2/generated/cave_curse/regions.json": "9ac7e7cc0da49d514a41c7aae0ba2027e895cd1920899e3e24f20b7add6706b1",
+    "assets/lol2/generated/original_floors/full_walk.json": "b634c72f871d2bac87a9fbadbd65e8f6071fd403600d7d76d0565f824509faae"
+  },
+  "scope": "Continuous original cave entry1 through actual Stalagmite pickup/equip, ROACH mouse combat, pool jumps, chain E/doors and disk rollback, natural curse, river support93/95 cuts with safe onward retreat, automatic chamber movies, real Museum change and natural introduction; grounded destination save. No repositioning, supplied equipment, forced forms or scene-completion signals. Production equipment callback used rather than inventory widget.",
+  "limits": [
+    "4x engine clock/240 physics ticks and sprint enabled; not original timing parity.",
+    "Camera steering is automated; combat/form/jump/trigger tuning retains documented adapters.",
+    "One successful route does not establish all required cave content or full Act1.",
+    "Museum exhibits and later areas are not exercised by this proof."
+  ],
+  "route_fix": "Waypoints route around the original corner near native(170,-16493); no production geometry/collision changes.",
+  "history": [
+    {
+      "output_sha256": "90a1592284caa45c25e92db01c02ead993bde3c6e04ebb0fe490396edbd6200e",
+      "log": "tmp/cave_earned_museum_walk.log",
+      "superseded": "2026-10-03: live population Roaches changed the earned route (fights, timing)"
+    },
+    {
+      "output_sha256": "487dba1eb6f01a7f0d485d9cdd9916f907d55935b198fe7e80de4542ee35ce22",
+      "log": "tmp/regressions/roach_ai_route_20261003/route9.log",
+      "superseded": "2026-10-03 cave guards live"
+    },
+    {
+      "output_sha256": "04c279d141655d4525a66b043b377327516b4d3d27794c18dbf7df1e9ca43dc9",
+      "log": "tmp/regressions/roach_ai_route_20261003/route15.log",
+      "superseded": "2026-10-03 guard39 control109 chain + cave indexed render"
+    },
+    {
+      "output_sha256": "91124dd4ea73b6d7e7d044945cab6b26dfd265aa1c2d6c4bc73b316ae3cc0eaa",
+      "log": "tmp/regressions/roach_ai_route_20261003/route16.log",
+      "superseded": "2026-10-03 creature navigation"
+    }
+  ],
+  "date": "2026-10-03",
+  "live_population_evidence": "docs/cave-earned-museum-live-roach-walk-checks.json"
+}

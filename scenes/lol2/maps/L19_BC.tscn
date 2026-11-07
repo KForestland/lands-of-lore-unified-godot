@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/lol2/act2_map.gd" id="1"]
+
+[node name="MapL19_BC" type="Node3D"]
+script = ExtResource("1")
+area_id = "L19_BC"
+geometry_file = "res://assets/lol2/generated/maps/L19_BC/area.json"
+review_title = "Belial's Chamber"
+huline_content = false
+area_name = "Belial's Chamber"
+area_save_path = "user://saves/map_L19_BC_quicksave.json"
+area_save_format = "lol2-restoration-map-L19_BC"

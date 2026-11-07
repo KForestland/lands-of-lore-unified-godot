@@ -1,0 +1,407 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L3_DH.MIX",
+  "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "geometry_key": 3106551060,
+  "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+ },
+ "control": 80,
+ "placement": {
+  "offset": 5870945,
+  "hex": "1ff1430400c000008204d004b40d7f00000000000100000000000000140030003d",
+  "x": -3809,
+  "y": 1091,
+  "height": 0,
+  "heading": 49152,
+  "template": 61
+ },
+ "faces": [
+  {
+   "face": 0,
+   "resource": 31,
+   "points": [
+    [
+     -3815.0,
+     85,
+     -1056.0
+    ],
+    [
+     -3803.0,
+     85,
+     -1056.0
+    ],
+    [
+     -3803.0,
+     85,
+     -1126.0
+    ],
+    [
+     -3815.0,
+     85,
+     -1126.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "face": 1,
+   "resource": 31,
+   "points": [
+    [
+     -3803.0,
+     0,
+     -1056.0
+    ],
+    [
+     -3815.0,
+     0,
+     -1056.0
+    ],
+    [
+     -3815.0,
+     0,
+     -1126.0
+    ],
+    [
+     -3803.0,
+     0,
+     -1126.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "face": 2,
+   "resource": 227,
+   "points": [
+    [
+     -3803.0,
+     85,
+     -1056.0
+    ],
+    [
+     -3803.0,
+     85,
+     -1126.0
+    ],
+    [
+     -3803.0,
+     0,
+     -1126.0
+    ],
+    [
+     -3803.0,
+     0,
+     -1056.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "face": 3,
+   "resource": 138,
+   "points": [
+    [
+     -3815.0,
+     85,
+     -1126.0
+    ],
+    [
+     -3815.0,
+     85,
+     -1056.0
+    ],
+    [
+     -3815.0,
+     0,
+     -1056.0
+    ],
+    [
+     -3815.0,
+     0,
+     -1126.0
+    ]
+   ],
+   "uv": [
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "face": 4,
+   "resource": 31,
+   "points": [
+    [
+     -3803.0,
+     85,
+     -1126.0
+    ],
+    [
+     -3815.0,
+     85,
+     -1126.0
+    ],
+    [
+     -3815.0,
+     0,
+     -1126.0
+    ],
+    [
+     -3803.0,
+     0,
+     -1126.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "face": 5,
+   "resource": 31,
+   "points": [
+    [
+     -3815.0,
+     85,
+     -1056.0
+    ],
+    [
+     -3803.0,
+     85,
+     -1056.0
+    ],
+    [
+     -3803.0,
+     0,
+     -1056.0
+    ],
+    [
+     -3815.0,
+     0,
+     -1056.0
+    ]
+   ],
+   "uv": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ]
+  }
+ ],
+ "frames": [
+  "wheel_0.png",
+  "wheel_1.png",
+  "wheel_2.png",
+  "wheel_3.png",
+  "wheel_4.png",
+  "wheel_5.png",
+  "wheel_6.png",
+  "wheel_7.png",
+  "wheel_8.png",
+  "wheel_9.png",
+  "wheel_10.png",
+  "wheel_11.png",
+  "wheel_12.png",
+  "wheel_13.png",
+  "wheel_14.png",
+  "wheel_15.png",
+  "wheel_16.png",
+  "wheel_17.png",
+  "wheel_18.png",
+  "wheel_19.png",
+  "wheel_20.png",
+  "wheel_21.png",
+  "wheel_22.png",
+  "wheel_23.png",
+  "wheel_24.png",
+  "wheel_25.png",
+  "wheel_26.png",
+  "wheel_27.png",
+  "wheel_28.png",
+  "wheel_29.png",
+  "wheel_30.png",
+  "wheel_31.png",
+  "wheel_32.png",
+  "wheel_33.png",
+  "wheel_34.png",
+  "wheel_35.png",
+  "wheel_36.png",
+  "wheel_37.png",
+  "wheel_38.png",
+  "wheel_39.png"
+ ],
+ "groups": {
+  "use": {
+   "group": 7008,
+   "event": 4,
+   "value": 0,
+   "predicate": null,
+   "archive_offset": 5851016,
+   "commands": [
+    "071050000000",
+    "14105000560180000a14"
+   ]
+  },
+  "end": {
+   "group": 7030,
+   "event": 6,
+   "value": 2,
+   "predicate": null,
+   "archive_offset": 5851026,
+   "commands": [
+    "091050000200"
+   ]
+  }
+ },
+ "sound": 342,
+ "images": {
+  "material_31.png": "9322a887b20838eca38b167e482d745ae21a640a9a299c37e1646a986819b7da",
+  "material_227.png": "fe4b4a88a580b69094e25d43ca01c0615541e727539d5b63938d48179cf5c764",
+  "wheel_0.png": "4dbb001299d428f0d411605022f19483752abd245611f27340af3dd1e443f743",
+  "wheel_1.png": "d1686bf1a2b28889b693a5eb7e23d9e611d79128e4f981e6f5dcb084b958f53d",
+  "wheel_2.png": "ea1f7a1ee7267d474a70e9649d4087642d4aa064ddd9e25800e6b3402832c721",
+  "wheel_3.png": "ae8da4c93141f24f404b2bf900b281c6a787b4cfd1f499ddd7ca5eba72b1d1f3",
+  "wheel_4.png": "76d1be3f716b693c16c3c6978f3433789d524c6372926c230860cbca570520e6",
+  "wheel_5.png": "a5764f8043346bdb96ecf93c2cc2008c2c59fbcd73d5c3a76076c95249a9cee6",
+  "wheel_6.png": "714cfc0b349d8741625f02a29f4c40f331f559242e42da274058cabce3cba4a2",
+  "wheel_7.png": "358ef2e093ed6a9610af4e23b9b8b253e81efd27186fd7e95b1a3106d2a6b0dc",
+  "wheel_8.png": "27febed7d4d753779221f909f7051f3c2e00594a3a9afed699d09e1ddd1a74ac",
+  "wheel_9.png": "cab0b2c00979c614aeb08363876a05cf949baf8363c8e59d44c6254479d5358a",
+  "wheel_10.png": "9127e5773c98fe033f156f44d6e3c23d777eaf1ffcbb88dd2cc0b778448639f9",
+  "wheel_11.png": "b7ddac0609b4197d424ae759691d522c8d68c87a338b9b3bc647ca040d828daa",
+  "wheel_12.png": "bb7da5d98832a121462284ff2a29d6b6460bd49b265b5b5ee2d592e468376c32",
+  "wheel_13.png": "98f6b87963fe4e15437cc0b7f5a26f3a37bd4939f4a18b830feda3a1b4bbfc4f",
+  "wheel_14.png": "3a7a6c78fccf3dfdd120d2f81be2079956b10d81b60670c0403f46226c0df34e",
+  "wheel_15.png": "3ddf05d73da438c071d8346aab4d3b5c77351b9b9dd8237cdea5f73337513ffd",
+  "wheel_16.png": "65edbf21c1eae3fa72b76b467a92aae563d1591da137bd1554d3e3ef8dbf551e",
+  "wheel_17.png": "49c3474123c06859c27923c4ff097bfcbc43d36b0e29c0a67be62cc0cce1a682",
+  "wheel_18.png": "35aac271964af27ec36f0aebd215c319089a22815df91e483b58a278d72c4521",
+  "wheel_19.png": "65a1cef85fcc8ff741a277599bd38320b5e4fbabaceed52cac7cb097c6602b2c",
+  "wheel_20.png": "0fe18c43fff91d570092da86df9129a694176e99085b9be5417fc5a3d3ded5f9",
+  "wheel_21.png": "5731b4257609a7bcd0cdf544f5554b97774f49bec16bc9b2ab61f3da06fcc1b6",
+  "wheel_22.png": "b03b92de1ee52578b791d9ba308743211a66ae93e3ff0d15806ae02f15b75255",
+  "wheel_23.png": "3a0dac6287aa4fb823a9c92a129d718713c3bcba6b352d6eda406c405b8eaeca",
+  "wheel_24.png": "2a57e640aa6dbf1762e76ef378e8fc6451270dca7f22cba9053fa1ea101cca2c",
+  "wheel_25.png": "583764f0ea4b0be3566b3dc8c074f898449545c180cc18dd49fd50196efc9c3f",
+  "wheel_26.png": "af18635e0943670ee8445630af2547de2b9f75c58d27e8d5e6829037b1878f46",
+  "wheel_27.png": "cd4fc4ce15ff8f5b7415e43e5f2fad09571a23f154a1ca660e4a0af8d5ee52c9",
+  "wheel_28.png": "61366a5c4a0f539d3f8d81ed52c395f7e59b035b37aaf8b000edbef7e0885721",
+  "wheel_29.png": "9852dbabd27a719fa24284e60793a5ac10c069ee7e94eea636fb63b433094186",
+  "wheel_30.png": "9289ffe55bdcbf0b21c1c73e3a462999725480902eaf3885d4090cae840f2455",
+  "wheel_31.png": "f9cf2fd0bd4cb9db5851b1ee11de6c613948b9a49e1c1e51281232003ed5d677",
+  "wheel_32.png": "482335a1672f775c3d7d80a98b27fb2e962c8bb9eb3d30bd5a08bc9caa37d03d",
+  "wheel_33.png": "a93f38e42c38812f098cb443434675f5aba690b9ded21300f5daa7f69978c052",
+  "wheel_34.png": "68f87b92549b85871e5f44920d34c60704b89ced659c41d889ba068cc1f6e54c",
+  "wheel_35.png": "0585fe699df1d525fc5b7d4787266654d280d57b5ad6d38371f005e6c1280e49",
+  "wheel_36.png": "e1cabc0d8e1e6da0ae3da0f7505ad25fa945baae636baeb0bd3465bf7c5a60dc",
+  "wheel_37.png": "e1cabc0d8e1e6da0ae3da0f7505ad25fa945baae636baeb0bd3465bf7c5a60dc",
+  "wheel_38.png": "e1cabc0d8e1e6da0ae3da0f7505ad25fa945baae636baeb0bd3465bf7c5a60dc",
+  "wheel_39.png": "e1cabc0d8e1e6da0ae3da0f7505ad25fa945baae636baeb0bd3465bf7c5a60dc"
+ },
+ "audio": {
+  "342": {
+   "path": "res://assets/lol2/generated/museum_wheel_door/342.wav",
+   "wav_sha256": "c2405f6dab9539fad769fb0bc7d70cf5d4da396b5004a0b60de2e46e64bc395c",
+   "role": "use"
+  }
+ },
+ "root": "res://assets/lol2/generated/museum_wheel_door/",
+ "not_hosted": [
+  "op7 playback clock (adapter: 15 frames/s measured from the longplay, 40 frames in about 2.7 s)",
+  "native collision of static assemblies (adapter: the box blocks while linked; the end group unlinks it)"
+ ]
+}

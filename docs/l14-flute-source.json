@@ -1,0 +1,195 @@
+{
+ "source_sha256": "c294f9ab142b55c36fff545a1293c419c42353fedefbfe8b77b9c38a2d9a0719",
+ "item": {
+  "row": 77,
+  "flags": 2,
+  "region": 219,
+  "identity": 3020830916,
+  "position": [
+   1229,
+   -98,
+   -3556
+  ],
+  "heading": 0,
+  "placement_hex": "cd04e40d00009eff0200db00000000000000000014647f00b97b5a0014000000c4380eb400",
+  "file_offset": 11776467,
+  "id": "act2:L14_HT:item77",
+  "definition": 96,
+  "name": "94-Iron flute",
+  "label": "Iron flute",
+  "icon": "res://assets/lol2/generated/items/icons/096.png",
+  "handler": 16,
+  "grade": "LIKELY"
+ },
+ "objects": [
+  {
+   "events": [
+    {
+     "extra_hex": "00c4380eb4",
+     "file_offset": 11746744,
+     "group": 20258,
+     "kind": 4,
+     "offset": 9972,
+     "predicate": {
+      "entry_file_offset": 11831293,
+      "entry_hex": "00030d0000",
+      "index": 33,
+      "trailer_file_offset": 11746754,
+      "trailer_hex": "04132100"
+     },
+     "raw_hex": "0a04224f0300c4380eb4",
+     "stream": 1,
+     "value": 3
+    },
+    {
+     "file_offset": 11746754,
+     "kind": 19,
+     "offset": 9982,
+     "raw_hex": "04132100"
+    },
+    {
+     "extra_hex": "00",
+     "file_offset": 11746758,
+     "group": 20322,
+     "kind": 6,
+     "offset": 9986,
+     "predicate": {
+      "entry_file_offset": 11831293,
+      "entry_hex": "00030d0000",
+      "index": 33,
+      "trailer_file_offset": 11746764,
+      "trailer_hex": "04132100"
+     },
+     "raw_hex": "0606624f1400",
+     "stream": 1,
+     "value": 20
+    },
+    {
+     "file_offset": 11746764,
+     "kind": 19,
+     "offset": 9992,
+     "raw_hex": "04132100"
+    }
+   ],
+   "file_offset": 11779620,
+   "index": 76,
+   "list_file_offset": 11746744,
+   "list_offset": 9972,
+   "placement_hex": "8effec05e9b3b40002051b05f42600005c745a0014647f000000000001001c00270102020e46000000",
+   "ref": "movable:76",
+   "table": "movable",
+   "terminator_offset": 9996
+  }
+ ],
+ "groups": [
+  {
+   "commands": [
+    {
+     "file_offset": 11732846,
+     "kind": 32,
+     "offset": 20264,
+     "opcode": 20,
+     "raw_hex": "14204c00cf0380000a14",
+     "target": 76
+    },
+    {
+     "file_offset": 11732856,
+     "kind": 0,
+     "offset": 20274,
+     "opcode": 198,
+     "raw_hex": "c60000000d01",
+     "target": 0
+    },
+    {
+     "file_offset": 11732862,
+     "kind": 0,
+     "offset": 20280,
+     "opcode": 198,
+     "raw_hex": "c60000001201",
+     "target": 0
+    },
+    {
+     "file_offset": 11732868,
+     "kind": 32,
+     "offset": 20286,
+     "opcode": 5,
+     "raw_hex": "05204c000100",
+     "target": 76
+    },
+    {
+     "file_offset": 11732874,
+     "kind": 144,
+     "offset": 20292,
+     "opcode": 196,
+     "raw_hex": "c4901a051000080500000000",
+     "target": 1306
+    },
+    {
+     "file_offset": 11732886,
+     "kind": 32,
+     "offset": 20304,
+     "opcode": 1,
+     "raw_hex": "01204d006400",
+     "target": 77
+    },
+    {
+     "file_offset": 11732892,
+     "kind": 32,
+     "offset": 20310,
+     "opcode": 1,
+     "raw_hex": "01204e006400",
+     "target": 78
+    },
+    {
+     "file_offset": 11732898,
+     "kind": 1,
+     "offset": 20316,
+     "opcode": 2,
+     "raw_hex": "020100001800",
+     "target": 0
+    }
+   ],
+   "count": 8,
+   "file_offset": 11732840,
+   "group": 20258,
+   "header_hex": "f00000000800",
+   "raw_hex": "f0000000080014204c00cf0380000a14c60000000d01c6000000120105204c000100c4901a05100008050000000001204d00640001204e006400020100001800",
+   "stream": 1
+  },
+  {
+   "commands": [
+    {
+     "file_offset": 11732910,
+     "kind": 0,
+     "offset": 20328,
+     "opcode": 198,
+     "raw_hex": "c60000000d01",
+     "target": 0
+    },
+    {
+     "file_offset": 11732916,
+     "kind": 32,
+     "offset": 20334,
+     "opcode": 5,
+     "raw_hex": "05204c000100",
+     "target": 76
+    },
+    {
+     "file_offset": 11732922,
+     "kind": 144,
+     "offset": 20340,
+     "opcode": 196,
+     "raw_hex": "c4901a051000080500000000",
+     "target": 1306
+    }
+   ],
+   "count": 3,
+   "file_offset": 11732904,
+   "group": 20322,
+   "header_hex": "f00000000300",
+   "raw_hex": "f00000000300c60000000d0105204c000100c4901a051000080500000000",
+   "stream": 1
+  }
+ ],
+ "scope": "Temple item77 uses the same source identity as movable76 offer. Native slot callee/oil consequences remain unentered; later adapter must use this earned Temple instance, not the Hive flute."
+}

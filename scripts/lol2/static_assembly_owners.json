@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "scope": "Static assemblies whose geometry a feature host already draws. tools/prepare_static_assemblies.py skips them and refuses to build if an unlisted assembly face coincides with a face in host_packs. Key = source_index (= control id).",
+  "areas": {
+    "L1_DC": {
+      "host_packs": [
+        "scripts/lol2/cave_stone_manafoil_source.json",
+        "scripts/lol2/cave_rapids_trigger_source.json",
+        "assets/lol2/generated/cave_rapids_trigger",
+        "assets/lol2/generated/cave_pillar_trap",
+        "assets/lol2/generated/cave_prop83_lift",
+        "assets/lol2/generated/cave_stone_manafoil"
+      ],
+      "owners": {
+        "75": "cave_stone_manafoil.gd (control75 Mana foil stone)",
+        "136": "cave_old_orc.gd (control136 template20 = the orc-diee.vqa screen; owner 2026-10-21: no door, only dark behind him)",
+        "99": "cave_rapids_controls.gd (template38 rapids control)",
+        "100": "cave_rapids_controls.gd (template38 rapids control)",
+        "101": "cave_rapids_controls.gd (template38 rapids control)",
+        "102": "cave_rapids_controls.gd (template38 rapids control)",
+        "103": "cave_rapids_controls.gd (template38 rapids control)"
+      }
+    },
+    "L3_DH": {
+      "host_packs": [
+        "assets/lol2/generated/museum_rubble_blocks",
+        "assets/lol2/generated/museum_curtain",
+        "scripts/lol2/museum_wheel_door_source.json",
+        "assets/lol2/generated/museum_control96",
+        "assets/lol2/generated/museum_portraits",
+        "assets/lol2/generated/museum_broken_case",
+        "assets/lol2/generated/museum_escape_wall",
+        "scripts/lol2/museum_curtain_source.json",
+        "scripts/lol2/museum_control96_source.json"
+      ],
+      "owners": {
+        "64": "museum_rubble_blocks.gd",
+        "65": "museum_rubble_blocks.gd",
+        "66": "museum_rubble_blocks.gd",
+        "67": "museum_rubble_blocks.gd",
+        "68": "museum_rubble_blocks.gd",
+        "69": "museum_rubble_blocks.gd",
+        "70": "museum_rubble_blocks.gd",
+        "71": "museum_rubble_blocks.gd",
+        "72": "museum_rubble_blocks.gd",
+        "73": "museum_rubble_blocks.gd",
+        "74": "museum_rubble_blocks.gd",
+        "75": "museum_rubble_blocks.gd",
+        "76": "museum_rubble_blocks.gd",
+        "95": "museum_rubble_blocks.gd",
+        "80": "museum_wheel_door.gd (control80 wheel door, unlinked after its phase group)",
+        "81": "museum_curtain.gd (control81, modes 0-2)",
+        "96": "museum_control96.gd",
+        "179": "museum_control96.gd",
+        "97": "museum_escape_wall.gd (control97 hourglass escape wall)",
+        "159": "museum_portraits.gd",
+        "160": "museum_portraits.gd",
+        "161": "museum_portraits.gd",
+        "162": "museum_portraits.gd",
+        "163": "museum_portraits.gd",
+        "164": "museum_portraits.gd",
+        "181": "museum_broken_case.gd"
+      }
+    },
+    "L4_HJ": {
+      "host_packs": [
+        "assets/lol2/generated/jungle_actor62",
+        "assets/lol2/generated/jungle_bacatta57",
+        "assets/lol2/generated/jungle_bacatta65_media",
+        "assets/lol2/generated/jungle_bacatta_media",
+        "assets/lol2/generated/jungle_beehives",
+        "assets/lol2/generated/jungle_chief_hut",
+        "assets/lol2/generated/jungle_chief_hut_audio",
+        "assets/lol2/generated/jungle_dawn_media",
+        "assets/lol2/generated/jungle_dino_audio",
+        "assets/lol2/generated/jungle_dino_sprites",
+        "assets/lol2/generated/jungle_drunk_media",
+        "assets/lol2/generated/jungle_exit_guard_sprites",
+        "assets/lol2/generated/jungle_exit_movies",
+        "assets/lol2/generated/jungle_exit_woman_media",
+        "assets/lol2/generated/jungle_followup",
+        "assets/lol2/generated/jungle_followup_dialogue",
+        "assets/lol2/generated/jungle_harvest",
+        "assets/lol2/generated/jungle_inner_gate",
+        "assets/lol2/generated/jungle_kelsrick",
+        "assets/lol2/generated/jungle_kityara",
+        "assets/lol2/generated/jungle_kityara_media",
+        "assets/lol2/generated/jungle_source_pickups",
+        "assets/lol2/generated/jungle_village",
+        "assets/lol2/generated/jungle_village_alarm",
+        "assets/lol2/generated/jungle_village_dialogue",
+        "assets/lol2/generated/jungle_villager_sprites",
+        "assets/lol2/generated/jungle_world_items",
+        "scripts/lol2/jungle_actor62_population_source.json",
+        "scripts/lol2/jungle_actor62_source.json",
+        "scripts/lol2/jungle_bacatta57_population_source.json",
+        "scripts/lol2/jungle_bacatta57_source.json",
+        "scripts/lol2/jungle_bacatta65_population_source.json",
+        "scripts/lol2/jungle_bacatta65_source.json",
+        "scripts/lol2/jungle_bacatta_population_source.json",
+        "scripts/lol2/jungle_bacatta_source.json",
+        "scripts/lol2/jungle_beehives_source.json",
+        "scripts/lol2/jungle_dawn_population_source.json",
+        "scripts/lol2/jungle_dawn_source.json",
+        "scripts/lol2/jungle_dino_population_source.json",
+        "scripts/lol2/jungle_drunk_source.json",
+        "scripts/lol2/jungle_exit_encounter_source.json",
+        "scripts/lol2/jungle_exit_guard_population_source.json",
+        "scripts/lol2/jungle_exit_woman_population_source.json",
+        "scripts/lol2/jungle_exit_woman_source.json",
+        "scripts/lol2/jungle_harvest_source.json",
+        "scripts/lol2/jungle_inner_gate_source.json",
+        "scripts/lol2/jungle_kelsrick_population_source.json",
+        "scripts/lol2/jungle_kelsrick_source.json",
+        "scripts/lol2/jungle_kityara_source.json",
+        "scripts/lol2/jungle_village_alarm_source.json",
+        "scripts/lol2/jungle_villager_population_source.json",
+        "scripts/lol2/jungle_world_item_probe_source.json"
+      ],
+      "owners": {
+        "57": "jungle_review terrain (template88 faces already in jungle.json)"
+      }
+    },
+    "L5_HC": {
+      "host_packs": [
+        "assets/lol2/generated/hive_ambush",
+        "assets/lol2/generated/hive_ancient_stone",
+        "assets/lol2/generated/hive_attack",
+        "assets/lol2/generated/hive_boulder_audio",
+        "assets/lol2/generated/hive_boulders",
+        "assets/lol2/generated/hive_chasm",
+        "assets/lol2/generated/hive_conversation",
+        "assets/lol2/generated/hive_curse",
+        "assets/lol2/generated/hive_dawn20_media",
+        "assets/lol2/generated/hive_elevator",
+        "assets/lol2/generated/hive_executioner_sprites",
+        "assets/lol2/generated/hive_nest",
+        "assets/lol2/generated/hive_net_exile",
+        "assets/lol2/generated/hive_outcome",
+        "assets/lol2/generated/hive_pillar",
+        "assets/lol2/generated/hive_props",
+        "assets/lol2/generated/hive_reaver_amber",
+        "assets/lol2/generated/hive_routes",
+        "assets/lol2/generated/hive_rune_entry",
+        "assets/lol2/generated/hive_rune_light",
+        "assets/lol2/generated/hive_rune_rooms",
+        "assets/lol2/generated/hive_rune_speech",
+        "assets/lol2/generated/hive_warrior_sprites",
+        "assets/lol2/generated/hive_warriors",
+        "assets/lol2/generated/hive_wax",
+        "assets/lol2/generated/hive_wax_runes",
+        "assets/lol2/generated/hive_worm_sprites",
+        "scripts/lol2/hive_ambush_preparation_source.json",
+        "scripts/lol2/hive_dawn20_population_source.json",
+        "scripts/lol2/hive_dawn20_source.json",
+        "scripts/lol2/hive_elevator_source.json",
+        "scripts/lol2/hive_net_exile_source.json",
+        "scripts/lol2/hive_perception_source.json",
+        "scripts/lol2/hive_reaver_amber_source.json",
+        "scripts/lol2/hive_reaver_pillars_source.json",
+        "scripts/lol2/hive_review_capture_source.json",
+        "scripts/lol2/hive_rune_rooms_source.json"
+      ],
+      "owners": {
+        "0": "hive_rune_entry (template64)",
+        "121": "hive_reaver_amber.gd (template29)",
+        "123": "hive_reaver_amber.gd (template27)",
+        "125": "hive_elevator (template23)",
+        "126": "hive_elevator (template21)",
+        "127": "hive_elevator (template21)",
+        "128": "hive_elevator (template21)",
+        "129": "hive_elevator (template21)",
+        "130": "hive_elevator (template21)",
+        "131": "hive_elevator (template21)",
+        "132": "hive_elevator (template21)"
+      }
+    },
+    "L8_SJ": {
+      "host_packs": [],
+      "owners": {}
+    },
+    "L10_DC": {
+      "host_packs": [],
+      "owners": {}
+    },
+    "L13_RC": {
+      "host_packs": [],
+      "owners": {}
+    },
+    "L16_CA": {
+      "host_packs": [],
+      "owners": {}
+    },
+    "L19_BC": {
+      "host_packs": [],
+      "owners": {}
+    },
+    "L9_DR": {
+      "host_packs": [],
+      "owners": {}
+    },
+    "L12_CM": {
+      "host_packs": [],
+      "owners": {}
+    },
+    "L14_HT": {
+      "host_packs": [],
+      "owners": {}
+    },
+    "L17_HC": {
+      "host_packs": [],
+      "owners": {}
+    },
+    "L20_BB": {
+      "host_packs": [],
+      "owners": {}
+    }
+  }
+}

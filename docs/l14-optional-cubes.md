@@ -1,0 +1,5 @@
+STORY056 is conditional route advice, not a required grant: Prima135 / hintbook4438–4453 says “If you are a good explorer, you have nine stone cubes” and suggests throwing them across the chokepoint, while warning spiders can chew through them.
+
+At the earned STORY055 endpoint tmp/l14_flute_qualified_save.json (SHA854689a47d77b657832dfbd8e5156721b9a68cab618fbc5fca540a3f1f7773e4), inventory plus Act2 carried identities contain zero definition60 / identityF40E4E1D stone cubes. This route therefore takes the optional bypass and continues to the table/machine task. No cubes are granted, no optional obstruction is set, and the earned save remains unchanged.
+
+Grok source_ids_054_060.md pins seventeen original L13 rows3..19 and no placed or granted L14 cube identity. Seventeen placed is not nine collected. The nine-cube throwing/chewing branch is NOT implemented or qualified by this receipt; only the explicit no-cubes conditional route is satisfied. No native throw-handler45 or spider obstacle logic claim is made.

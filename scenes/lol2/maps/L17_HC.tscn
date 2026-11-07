@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/lol2/act2_map.gd" id="1"]
+
+[node name="MapL17_HC" type="Node3D"]
+script = ExtResource("1")
+area_id = "L17_HC"
+map_blockers_enabled = false
+geometry_file = "res://assets/lol2/generated/maps/L17_HC/area.json"
+review_title = "L17_HC preview"
+huline_content = false
+area_name = "L17_HC preview"
+area_save_path = "user://saves/map_L17_HC_quicksave.json"
+area_save_format = "lol2-restoration-map-L17_HC"

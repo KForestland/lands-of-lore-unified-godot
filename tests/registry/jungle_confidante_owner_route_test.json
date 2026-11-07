@@ -1,0 +1,7 @@
+{
+ "name": "jungle_confidante_owner_route_test",
+ "suite": "core",
+ "mode": "rendered",
+ "order": 318,
+ "needs": {"env": ["LOL2_VILLAGE_ESCAPE_SAVE"], "fixtures": ["LOL2_VILLAGE_ESCAPE_SAVE: pre-shop Jungle campaign save", "LOL2_OWNER_JUNGLE_SAVE (optional): copy of the owner's 2026-11-03 jungle_quicksave"], "note": "PT3-JUNGLE-PASSWORD-GUY: no Confidante before Kit'yara's intro (native gate), then shop intro -> meeting with voice -> den password"}
+}

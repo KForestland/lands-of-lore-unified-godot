@@ -1,0 +1,47 @@
+extends SceneTree
+func _initialize() -> void:
+	_run.call_deferred()
+func make_museum(skip_intro: bool = false) -> Node3D:
+	var scene = load("res://scenes/lol2/museum_walkthrough.tscn").instantiate()
+	# Test scene logic without starting the video decoder.
+	if skip_intro: scene.introduction_state = "complete"
+	root.add_child(scene)
+	scene.set_physics_process(false)
+	scene.sword_transfer.set_process(false)
+	scene.museum_gate.set_physics_process(false)
+	return scene
+func _run() -> void:
+	var scene := make_museum(true)
+	scene.carried_collected = ["checkpoint_test_item"]
+	scene.sword_transfer.restart()
+	scene.sword_transfer.advance(3.8)
+	scene.free()
+	assert(has_meta("lol2_museum_checkpoint"))
+	var checkpoint: Dictionary = get_meta("lol2_museum_checkpoint")
+	assert(checkpoint.introduction_complete and checkpoint.sword.started)
+	scene = make_museum()
+	assert(scene.sword_transfer.phase == "after_transfer")
+	assert(scene.sword_transfer.table_sword.visible and not scene.sword_transfer.held.visible)
+	assert(scene.carried_collected == ["checkpoint_test_item"])
+	assert(scene.introduction_state == "complete" and not is_instance_valid(scene.introduction))
+	assert(not scene.start_introduction())
+	scene.sword_transfer.advance(4)
+	scene.museum_gate.advance(0.6)
+	scene.free()
+	scene = make_museum()
+	assert(scene.sword_transfer.phase == "complete")
+	assert(scene.museum_gate.target_open and is_equal_approx(scene.museum_gate.progress,0.5))
+	scene.museum_gate.advance(0.6)
+	assert(is_equal_approx(scene.museum_gate.progress,1))
+	scene.free()
+	scene = make_museum()
+	assert(scene.sword_transfer.phase == "complete" and scene.museum_gate.progress == 1)
+	assert(not scene.development_mode and not scene.flying)
+	scene.free()
+	remove_meta("lol2_museum_checkpoint")
+	scene = make_museum(true)
+	assert(scene.sword_transfer.phase == "waiting" and scene.museum_gate.progress == 0)
+	scene.free()
+	remove_meta("lol2_museum_checkpoint")
+	print("Museum checkpoint passed: partial transfer, half-open gate, completed revisit, inventory, fresh session")
+	quit()

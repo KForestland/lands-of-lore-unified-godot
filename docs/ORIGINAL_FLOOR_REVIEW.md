@@ -7,7 +7,7 @@ same recovered floor/ceiling endpoint heights as the geometry-v2 preview; this
 is not complete native wall-span reconstruction. Interior steps, jambs, special
 connectors, moving walls and collision remain open.
 
-Run a local launcher (`run_lol2_original_floors.sh`, not published). B toggles boundary walls; C toggles
+Run `~/run_lol2_original_floors.sh`. B toggles boundary walls; C toggles
 ceilings (initially hidden so the overview remains visible). Existing drag/zoom,
 arrow pan and T texture toggle remain. Walls and ceilings use neutral materials,
 with review lighting, rather than invented original material assignments.
@@ -16,7 +16,7 @@ Validation: headless Godot load/count check passes all four geometry totals.
 GUI render captured and visually inspected. Floor UVs remain diagnostic; no
 playable-cave or complete enclosure claim. No automatic collision was created.
 
-Changed files under `<project folder>`:
+Changed files under `~/lands-of-lore-unified-godot`:
 `tools/lol2/import_original_floors.py`,
 `scripts/lol2/original_floor_review.gd`, regenerated floor review assets and
 `captures/original_floor_review.png`.
@@ -36,7 +36,7 @@ are pink. The parent floor with subdivisions is omitted in favor of its child
 polygons. Source vertices/heights and 0–2 triangulation are preserved at a
 provisional display scale of 1/64. No walls or collision are included.
 
-Run a local launcher (`run_lol2_original_floors.sh`, not published).
+Run `~/run_lol2_original_floors.sh`.
 Drag to orbit, wheel to zoom, arrows to pan, T to toggle textures.
 The authored playable cave remains the default scene.
 
@@ -47,7 +47,7 @@ rather than every original signed wrap. These are not final 1:1 UVs. Generated
 Godot review mipmaps reduce overview aliasing; they are not original mip selection.
 Direct file palette and unshaded rendering are not a live lighting reproduction.
 
-Files in `<project folder>`:
+Files in `~/lands-of-lore-unified-godot`:
 - tools/lol2/import_original_floors.py: reproducible evidence-to-review conversion
 - scripts/lol2/original_floor_review.gd: orbitable review scene
 - scenes/lol2/original_floor_review.tscn

@@ -1,0 +1,7 @@
+# First citadel iris — STORY-039 slice A
+
+This is the first access slice of STORY-039, which remains claimed until the basin and elevator are complete. From the actual STORY-038 L13 arrival, the player approaches source switch420 and casts Spark through PlayerStartingMagic. Its normal ray, one-mana debit, form and cooldown admission remain active. A scoped receiver opens original control106 (Iris2) and the existing RegionBlockers region1226. The original two web faces and their collision disappear instantly; the native opening animation/callback chain is not claimed. No second region-blocker owner is created.
+
+Grok21:07 confirms the metadata says Switch420 and Iris2/106, not globe or egg door. Using that switch as the book's Spark globe is an explicit modern join. Original group7888 clears region1226 and signals106; those bytes are pinned. Wrong/paused/non-Spark activation refuses, state survives save/reload, and the test walks around the globe's receiver instead of through it. No inventory transaction or charger is involved, so Kit is not needed in this slice.
+
+Qualification: `tmp/regressions/l13_egg_door_ready/report.json`,1/1 PASS10.17s, source unchanged. Output `tmp/l13_egg_door_earned_save.json`, SHA256 `f5450e1574da3a93ec9add223282a7c1484f85975979e01bd3de8a1fe608313c`. Earlier probe caught duplicate blocking of1226 and a waypoint through the globe; both were corrected. Further eye-switch/egg chamber/drain/loot/elevator work remains.

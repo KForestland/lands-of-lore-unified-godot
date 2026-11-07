@@ -9,7 +9,7 @@ Run the populated local project:
 flatpak run org.godotengine.Godot --path /path/to/project res://scenes/lol2/cave_walkthrough.tscn
 ```
 
-The local launcher is a local launcher (run_lol2_cave_walkthrough.sh, not published). This starts at
+The local launcher is ~/run_lol2_cave_walkthrough.sh. This starts at
 checkpoint14; --checkpoint=N selects another of119 checkpoints. Existing
 original/diagnostic scenes remain available. Standalone Linux and Windows exports are documented in standalone-demo.md.
 

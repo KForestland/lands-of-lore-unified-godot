@@ -1,0 +1,4945 @@
+{
+ "version": 1,
+ "sources": {
+  "global_sha256": "b399b5c8bfea3597293a3237f30f45985efa2dd88d2dc29d5d18ca7488f60891",
+  "local_sha256": "36e0d2a0e843126e28d60411ea3e67b3db2f8ea6185bcd6d520271790736ad93",
+  "exe_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775"
+ },
+ "count": 170,
+ "decodable_icons": 165,
+ "definitions": [
+  {
+   "index": 0,
+   "name": "1-Stalagmite",
+   "label": "Stalagmite",
+   "identity": 92534515,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 4,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 24,
+    "size": [
+     55,
+     20
+    ],
+    "pixels_sha256": "bac115a9c530fa35446d939a341ca93a7c4eb2bc2933f8e9df05ab93956c8fe0"
+   },
+   "ghost": false,
+   "record_sha256": "f84809b81db8dc8dfcb5569cf6f5bf40399e741f2b939ff5180830ae6aaba24c"
+  },
+  {
+   "index": 1,
+   "name": "2-Br Mace",
+   "label": "Br Mace",
+   "identity": 2412466029,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 4,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 268,
+    "size": [
+     83,
+     15
+    ],
+    "pixels_sha256": "8ebb69c40ab2755bba813806667c127eaf6a4c397005ce68d4bdc45841c9c192"
+   },
+   "ghost": false,
+   "record_sha256": "84da844cd5396d9bf33ac96daebf1c26acad2c0e0278c12946783546e3c399c7"
+  },
+  {
+   "index": 2,
+   "name": "3-Halberd",
+   "label": "Halberd",
+   "identity": 1777039880,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 2,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 269,
+    "size": [
+     157,
+     14
+    ],
+    "pixels_sha256": "fc8faad2a9db537dee3e0b24adaa648e201fb6f18225856ee4bc8995660f23bc"
+   },
+   "ghost": false,
+   "record_sha256": "210046a8911fee0267fcb531e6d9bd895e82f42d7d61fe4faa9364970fec4dd0"
+  },
+  {
+   "index": 3,
+   "name": "4-Hand axe",
+   "label": "Hand axe",
+   "identity": 1197597476,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 2,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 270,
+    "size": [
+     70,
+     16
+    ],
+    "pixels_sha256": "9bdada04168d9f8631c29b0751f64d8438239d9e01dd6bfceb3fc3f56d4689fe"
+   },
+   "ghost": false,
+   "record_sha256": "435f37029349729d755171067823d1cabefb09f0575764dd2bae9cd6ee9e4bc5"
+  },
+  {
+   "index": 4,
+   "name": "5-Short swd",
+   "label": "Short swd",
+   "identity": 3801747750,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 2,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 271,
+    "size": [
+     108,
+     12
+    ],
+    "pixels_sha256": "bc750170b5ae18dcca31f433187664f636d69980677fbbaa03ef55d8073dbb61"
+   },
+   "ghost": false,
+   "record_sha256": "35f0fbddbb8e7752e0bdad46777525134d8e66403ff8fd9f2c799b8daddef582"
+  },
+  {
+   "index": 5,
+   "name": "6-Fine longswd",
+   "label": "Fine longswd",
+   "identity": 3783409854,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 2,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 276,
+    "size": [
+     96,
+     10
+    ],
+    "pixels_sha256": "7b5e1f39871069f8bd714a304b8f7beee0bbdd6e3e0ff5eacb7eb8983cbbbe59"
+   },
+   "ghost": false,
+   "record_sha256": "00af46186e3457c4153e04e7f41233a71e58bb399e74e42b635279848f2b4139"
+  },
+  {
+   "index": 6,
+   "name": "7-Long arm",
+   "label": "Long arm",
+   "identity": 2138173738,
+   "handler": 5,
+   "handler_va": "0x96368",
+   "mask": 258,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 277,
+    "size": [
+     73,
+     23
+    ],
+    "pixels_sha256": "0ba7d834991ca3b1f3362892071f1548e90c27bc5dcc4ef13daefa1bf56360c2"
+   },
+   "ghost": false,
+   "record_sha256": "ea029628f605f48ad5cedb080fb9eab83fa5ede15e5f5955a7351d6a0953660d"
+  },
+  {
+   "index": 7,
+   "name": "8-Prism",
+   "label": "Prism",
+   "identity": 3842887129,
+   "handler": 7,
+   "handler_va": "0x965dc",
+   "mask": 2,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 278,
+    "size": [
+     96,
+     12
+    ],
+    "pixels_sha256": "8d2cf10300a3e44faf969313cf1dfdc2ad186d124f93095ff7a9ce6818e7fc6b"
+   },
+   "ghost": false,
+   "record_sha256": "689d6b6af40ff3b0cdddeab5f23760ed14ac389e548f2417a2aa5463ee023673"
+  },
+  {
+   "index": 8,
+   "name": "9-Firestorm",
+   "label": "Firestorm",
+   "identity": 2389504567,
+   "handler": 1,
+   "handler_va": "0x95ff0",
+   "mask": 274,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 5,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 279,
+    "size": [
+     94,
+     10
+    ],
+    "pixels_sha256": "c443bf77139211e6b034ccaf6fb376af45ab580e6a880d1322cadc058991a2ab"
+   },
+   "ghost": false,
+   "record_sha256": "ce8018ff809e4ad1f5a9b6b5dc17d810342a8783d9db1a4b932fb9981d5cb3ce"
+  },
+  {
+   "index": 9,
+   "name": "10-Th Dagger",
+   "label": "Th Dagger",
+   "identity": 2242013435,
+   "handler": 100,
+   "handler_va": "0x9b398",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 66,
+    "size": [
+     32,
+     9
+    ],
+    "pixels_sha256": "6a089fb4e4cc3df87e7154e88caa2a9a1cc234367e64b2aae15cc12b99c0d45d"
+   },
+   "ghost": false,
+   "record_sha256": "f5d371597ae017c873e67318f21dab5d9a6e99e775f2f531e4f5685766695688"
+  },
+  {
+   "index": 10,
+   "name": "11-Serpent staf",
+   "label": "Serpent staf",
+   "identity": 366124397,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 268,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 280,
+    "size": [
+     108,
+     6
+    ],
+    "pixels_sha256": "d8135e9b6a4ba4c6885a7d7a75acd35fe691763078c71dbe884500579fc4204e"
+   },
+   "ghost": false,
+   "record_sha256": "becc7c7c5b446a9c169bf7226cb630f9f4965ff53b65c79be399a04e69937fe8"
+  },
+  {
+   "index": 11,
+   "name": "12-Tho Broken",
+   "label": "Tho Broken",
+   "identity": 1958882940,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 286,
+    "size": [
+     77,
+     22
+    ],
+    "pixels_sha256": "f945658e31803975dde357f88ea425c0ece43e7a28534c2851d8ea75dfcaea1b"
+   },
+   "ghost": false,
+   "record_sha256": "59f79b518f61747f70d4f1c9387b360d1f41879d0e576f86359a31c84034b703"
+  },
+  {
+   "index": 12,
+   "name": "13-Gaunt strike",
+   "label": "Gaunt strike",
+   "identity": 4033986741,
+   "handler": 107,
+   "handler_va": "0x9b8b0",
+   "mask": 256,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 10,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 205,
+    "size": [
+     67,
+     37
+    ],
+    "pixels_sha256": "4937ed75534f57b7c28fce9af7dc7f848128e77d4bff8de8bc3adc5ca08a34b9"
+   },
+   "ghost": false,
+   "record_sha256": "7cde98be11c637db596ecdce124cb571fb7e6eb090517f6a49c866e83779b9a9"
+  },
+  {
+   "index": 13,
+   "name": "14-Plasma staff",
+   "label": "Plasma staff",
+   "identity": 545508956,
+   "handler": 36,
+   "handler_va": "0x97d08",
+   "mask": 4,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 67,
+    "size": [
+     131,
+     21
+    ],
+    "pixels_sha256": "76cd6617ec932c4edb3e44f79439fc62d2648e831708a39835b21b6ffa22ff86"
+   },
+   "ghost": false,
+   "record_sha256": "12d5c06249979a6ccc516b9373cea4018bc586a78a3b2c349277d47c34229a7a"
+  },
+  {
+   "index": 14,
+   "name": "15-War blade",
+   "label": "War blade",
+   "identity": 2254052082,
+   "handler": 85,
+   "handler_va": "0x9a82c",
+   "mask": 8,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 68,
+    "size": [
+     34,
+     9
+    ],
+    "pixels_sha256": "c7dcd8d5fd773a9b20eb11612f15fb83e63314715ea6ecfad50641ac840d1b18"
+   },
+   "ghost": false,
+   "record_sha256": "aa822d6cb0d1727f21ada479d60e35a52b9957df6aad469b786d7d35dafe85a9"
+  },
+  {
+   "index": 15,
+   "name": "16-Ax Traitor",
+   "label": "Ax Traitor",
+   "identity": 2980251294,
+   "handler": 48,
+   "handler_va": "0x988b0",
+   "mask": 258,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 147,
+    "size": [
+     100,
+     15
+    ],
+    "pixels_sha256": "874ae43f20859352d68b1bc0b34100dc2de121574b8a41c6f808f39d72df9c2f"
+   },
+   "ghost": false,
+   "record_sha256": "ef910ce24d011bac1654c5732848246ec16da5cf4eac37cb68e10c3f6e1a18c8"
+  },
+  {
+   "index": 16,
+   "name": "17-Drac dagger",
+   "label": "Drac dagger",
+   "identity": 1908831360,
+   "handler": 59,
+   "handler_va": "0x9944c",
+   "mask": 8,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 137,
+    "size": [
+     28,
+     10
+    ],
+    "pixels_sha256": "ab1a3ff4273118786bf1fb686b817309c1ec5ca6b86af84014d820beac9f0ab1"
+   },
+   "ghost": false,
+   "record_sha256": "924dc77139dab46ebbfcec399bf92718abb03d0ad34e51daf34f05fecee99c11"
+  },
+  {
+   "index": 17,
+   "name": "18-Reaver of GO",
+   "label": "Reaver of GO",
+   "identity": 4101033760,
+   "handler": 18,
+   "handler_va": "0x972d4",
+   "mask": 4354,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": -50,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 200,
+    "size": [
+     141,
+     19
+    ],
+    "pixels_sha256": "df3d1438baa7401c22c0211f781432f774be7e0024eafb9759bb6e9f256b8827"
+   },
+   "ghost": false,
+   "record_sha256": "74a8b20287d7fae53e3c6aa64fa6e35bbc710d7f03151ce5ee19e6c7be9d626f"
+  },
+  {
+   "index": 18,
+   "name": "19-Blizzard",
+   "label": "Blizzard",
+   "identity": 4262341118,
+   "handler": 84,
+   "handler_va": "0x9a794",
+   "mask": 290,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 219,
+    "size": [
+     99,
+     31
+    ],
+    "pixels_sha256": "128a306b73c6c68724432f2951de709b01ab05ce2a53eb4986bea6b3f1036260"
+   },
+   "ghost": false,
+   "record_sha256": "87d07d94502064cf0afce919e5c53d83e947155ec7889c4d482fbf44782905a4"
+  },
+  {
+   "index": 19,
+   "name": "20-Bastion",
+   "label": "Bastion",
+   "identity": 3684570618,
+   "handler": 14,
+   "handler_va": "0x970f4",
+   "mask": 2,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 50,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 225,
+    "size": [
+     132,
+     27
+    ],
+    "pixels_sha256": "e835557bf3082fdbf5c5d4b87e0956cf7f1cc6122dcd40217c364f082eba6e5a"
+   },
+   "ghost": false,
+   "record_sha256": "e2816abccc710fec5234a25d513aad1c2d263989bb988dab19d656a68a0a0efe"
+  },
+  {
+   "index": 20,
+   "name": "21-Tho fixed",
+   "label": "Tho fixed",
+   "identity": 2170231809,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 2,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 105,
+    "size": [
+     98,
+     25
+    ],
+    "pixels_sha256": "66c4532c3632ba2c3e696d90f9ed021e7eb2fb29c038fd3f3656e902a5fa41d3"
+   },
+   "ghost": false,
+   "record_sha256": "4dc29dd6ceb5ab2ab80f6dcdd642af7204431330871caa8a3f3a1528eabf383a"
+  },
+  {
+   "index": 21,
+   "name": "22-Darkstorm",
+   "label": "Darkstorm",
+   "identity": 1694375167,
+   "handler": 57,
+   "handler_va": "0x992dc",
+   "mask": 258,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 20,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 226,
+    "size": [
+     97,
+     21
+    ],
+    "pixels_sha256": "f6dd67b53997c555f406da933e4ad66372c3f34452001ea3712bf5c3f09f8e4e"
+   },
+   "ghost": false,
+   "record_sha256": "b028cdbd91a1270c85e75d925b58f060a0caff78d008712a17a894d05c6d7252"
+  },
+  {
+   "index": 22,
+   "name": "23-Hrn Belial",
+   "label": "Hrn Belial",
+   "identity": 213789840,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 12,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 227,
+    "size": [
+     56,
+     22
+    ],
+    "pixels_sha256": "e74eb93667e790df6c3535558356ec15f3eaa3b314b9df67d7ef02bf265144bf"
+   },
+   "ghost": false,
+   "record_sha256": "8cdc649b3f8c9767bf32c66650af209e1f747288b06e93afcc48884dc16ba7a2"
+  },
+  {
+   "index": 23,
+   "name": "24-Rock",
+   "label": "Rock",
+   "identity": 2764426195,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 4,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 287,
+    "size": [
+     26,
+     21
+    ],
+    "pixels_sha256": "e01cdefcd1ca8fb2b5bee702df6a31e4ed953856e4a3c8a4b20372728b6b8c67"
+   },
+   "ghost": false,
+   "record_sha256": "792f10bdaa67f8e90290a34950bc2513d723df5b890b782a9d471ae2685d50ac"
+  },
+  {
+   "index": 24,
+   "name": "25-Defender",
+   "label": "Defender",
+   "identity": 3992061687,
+   "handler": 55,
+   "handler_va": "0x98e84",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 228,
+    "size": [
+     136,
+     48
+    ],
+    "pixels_sha256": "34026f5779563a70272b85c684ce923e0ff31f87bf36e06467ea561cd4e9d009"
+   },
+   "ghost": false,
+   "record_sha256": "a37df386a687927ab8dfcb0b6256236fe716102d65dc33ac3e7b5cf322ce25c8"
+  },
+  {
+   "index": 25,
+   "name": "26-Net of Exile",
+   "label": "Net of Exile",
+   "identity": 517681242,
+   "handler": 104,
+   "handler_va": "0x9b718",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 233,
+    "size": [
+     127,
+     28
+    ],
+    "pixels_sha256": "1c5b74d19f75b041c31369320138dbb9634e3884deeb13721e833d45732569ac"
+   },
+   "ghost": false,
+   "record_sha256": "a1aa4c8381ad3e5998d2f9968d3550ffa34bd0d86e4444fe8cc5ca4d874bb32b"
+  },
+  {
+   "index": 26,
+   "name": "27-Snare",
+   "label": "Snare",
+   "identity": 197971922,
+   "handler": 71,
+   "handler_va": "0x99bec",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 234,
+    "size": [
+     60,
+     22
+    ],
+    "pixels_sha256": "7eb332151a73b5c72f81ea7e1a64789bae5cbf7179dedd72c02d447784bd3418"
+   },
+   "ghost": false,
+   "record_sha256": "1cdf4e53eaab9d94ec59ab7f09baa0e93a7d57113a2ab2dd30c71baa547d5721"
+  },
+  {
+   "index": 27,
+   "name": "28-Dag Light",
+   "label": "Dag Light",
+   "identity": 492705524,
+   "handler": 68,
+   "handler_va": "0x99a4c",
+   "mask": 2,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 235,
+    "size": [
+     46,
+     8
+    ],
+    "pixels_sha256": "423b22623f882b814cac7300a7b9361aa343dbff2789218b1038ccf2ec1655f5"
+   },
+   "ghost": false,
+   "record_sha256": "2cccdb3f33243da075e284a88dd4cd4678e4ee68f11520b9dac4c8a818cc76ee"
+  },
+  {
+   "index": 28,
+   "name": "29-Lt crosbow",
+   "label": "Lt crosbow",
+   "identity": 163263158,
+   "handler": 54,
+   "handler_va": "0x98d60",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 288,
+    "size": [
+     60,
+     20
+    ],
+    "pixels_sha256": "511d536b9239d93d9a194586008378e989b88538e01ee6fee09b164e8cdf98d4"
+   },
+   "ghost": false,
+   "record_sha256": "36758a4f2c696a5ea594711c99d42ad5211c64dc88a47f4e7137c4cc61a7932b"
+  },
+  {
+   "index": 29,
+   "name": "30-Empty hand",
+   "label": "Empty hand",
+   "identity": 3959297008,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 10,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 146,
+    "size": [
+     57,
+     9
+    ],
+    "pixels_sha256": "41498ded6f4d4d60b840662d05659982f33a7571e3ac0519f09c1f77f4d65dcc"
+   },
+   "ghost": false,
+   "record_sha256": "d5a85ec93c866951d655b4a1cffa4d5e56e8141248e9cc0b0479deb70f55bb39"
+  },
+  {
+   "index": 30,
+   "name": "31-Shift",
+   "label": "Shift",
+   "identity": 448842702,
+   "handler": 50,
+   "handler_va": "0x98998",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 236,
+    "size": [
+     135,
+     48
+    ],
+    "pixels_sha256": "5cacbf59e67dfd3831a1b2cd3d1a6243d368a3e9a90e7c895fe9e5e79bc4b198"
+   },
+   "ghost": false,
+   "record_sha256": "f540264c0cba22f8389633598c826d0bcbc1b6efd5e15cb0f41de6811ffe1ef1"
+  },
+  {
+   "index": 31,
+   "name": "32-Shard",
+   "label": "Shard",
+   "identity": 181192142,
+   "handler": 62,
+   "handler_va": "0x995dc",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 237,
+    "size": [
+     119,
+     38
+    ],
+    "pixels_sha256": "50d11b9d289ee8c6dd1ba84974e2e3d7f5d8fab557ebd935d01c543b2978580f"
+   },
+   "ghost": false,
+   "record_sha256": "d7e0411a8d3ca57e2240d1fe441ae8c04df88b5de43e6e61481b9c650430c9c2"
+  },
+  {
+   "index": 32,
+   "name": "33-Myriad",
+   "label": "Myriad",
+   "identity": 4152865315,
+   "handler": 56,
+   "handler_va": "0x990c0",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 243,
+    "size": [
+     60,
+     22
+    ],
+    "pixels_sha256": "9e9377a3da5c3e27975ab1bc279136547b7cbf0d564ed9348e5282161c214e84"
+   },
+   "ghost": false,
+   "record_sha256": "0815cb321323cd6057c9868634483e3197503f9400eab6f45c806e5cfed1d029"
+  },
+  {
+   "index": 33,
+   "name": "34-Valkryie",
+   "label": "Valkryie",
+   "identity": 1039209223,
+   "handler": 26,
+   "handler_va": "0x97930",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 244,
+    "size": [
+     60,
+     22
+    ],
+    "pixels_sha256": "c8454f738c2a25c91a9f7360550b9dd55b4c3c9d5464460b87bc8d926c22f034"
+   },
+   "ghost": false,
+   "record_sha256": "32d06d17647a291026516987dfbda1d8e68b838dabfbc991ed08555207c23db4"
+  },
+  {
+   "index": 34,
+   "name": "35-N valk crsbw",
+   "label": "N valk crsbw",
+   "identity": 137176418,
+   "handler": 35,
+   "handler_va": "0x97c88",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 148,
+    "size": [
+     60,
+     22
+    ],
+    "pixels_sha256": "b5afa760c251fdb6f48fa95be45a72aa3eeb70b87566d42b1018c07d3421ca40"
+   },
+   "ghost": false,
+   "record_sha256": "8aeec211e35a965fed223520b420739675889a2a340108d592b8854aa678df78"
+  },
+  {
+   "index": 35,
+   "name": "36-Darkbow",
+   "label": "Darkbow",
+   "identity": 3582735614,
+   "handler": 58,
+   "handler_va": "0x993d8",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 245,
+    "size": [
+     135,
+     48
+    ],
+    "pixels_sha256": "19801e7cc3a0e6f68161842da3cb19f19cec1b99eaf60c9b75da0e908540f526"
+   },
+   "ghost": false,
+   "record_sha256": "a4883141a1afc7e41e86dc6650c0884913c2c8177a4d0d806393aca9575234e7"
+  },
+  {
+   "index": 36,
+   "name": "37-Brnt Chain",
+   "label": "Brnt Chain",
+   "identity": 1711162455,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 96,
+   "class_name": "body_armour",
+   "defense": 8,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     6,
+     8,
+     4
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     2
+    ]
+   ],
+   "icon": {
+    "resource": 289,
+    "size": [
+     85,
+     22
+    ],
+    "pixels_sha256": "5894333cf5465bdc474dfcfbf61ab7a44f027c3f72c0d510c4be739b18906467"
+   },
+   "ghost": false,
+   "record_sha256": "2ffe411a9f2cd6b8a34d24ef79818a58c31574f92484315e16441b5f3c22557f"
+  },
+  {
+   "index": 37,
+   "name": "38-Guard shield",
+   "label": "Guard shield",
+   "identity": 2657655315,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 5,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     6,
+     260,
+     4
+    ]
+   ],
+   "icon": {
+    "resource": 290,
+    "size": [
+     57,
+     18
+    ],
+    "pixels_sha256": "527b519a2e8765dcfb994cdf9ea972ca8cc803819bf174ce0854c18f5e9b642e"
+   },
+   "ghost": false,
+   "record_sha256": "d0a745f003fa36e23738baf8f9415a899d81de91d8fc360130e0c99a34144063"
+  },
+  {
+   "index": 38,
+   "name": "39-Orc shield",
+   "label": "Orc shield",
+   "identity": 515254933,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 4,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     6,
+     260,
+     4
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 296,
+    "size": [
+     57,
+     15
+    ],
+    "pixels_sha256": "0d2904d6f3dc79931498356ac66bea74942c8b04854ab23b444debbbbdfa1f5a"
+   },
+   "ghost": false,
+   "record_sha256": "9e06c5215f7e57c80f74ab1581086c1f31f1a2b229e69633965b8ab3c0c78ebd"
+  },
+  {
+   "index": 39,
+   "name": "40-Brkn Orc sh",
+   "label": "Brkn Orc sh",
+   "identity": 3555359867,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 1,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 297,
+    "size": [
+     57,
+     15
+    ],
+    "pixels_sha256": "336703ec45329d65245b6fa4af2e671a2a5d18e20fd0cf7be823a5d62ebdd0aa"
+   },
+   "ghost": false,
+   "record_sha256": "2f56ecf905613ec18f8b5df100472e1b6157d82a006f866fdf45237c4f340d95"
+  },
+  {
+   "index": 40,
+   "name": "41-Mail shirt",
+   "label": "Mail shirt",
+   "identity": 3488481409,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 96,
+   "class_name": "body_armour",
+   "defense": 20,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     5,
+     2,
+     4
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 298,
+    "size": [
+     74,
+     24
+    ],
+    "pixels_sha256": "cc749e19da65215bb01ab6eb8276fc99b84ec47316aa2219bf890d957a397eed"
+   },
+   "ghost": false,
+   "record_sha256": "a7965e1e1c517f3c44a7d362b2195a36f3d268484b7d4b189ecab73c38ade4ca"
+  },
+  {
+   "index": 41,
+   "name": "42-Gargoyle br",
+   "label": "Gargoyle br",
+   "identity": 936552058,
+   "handler": 19,
+   "handler_va": "0x97310",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 5,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 246,
+    "size": [
+     66,
+     25
+    ],
+    "pixels_sha256": "f4409b9818ab2e78428e33bcf389d1ea6d1eb7b9f7071266ae63bb9300b1858e"
+   },
+   "ghost": false,
+   "record_sha256": "f9c9d8be411d6df8b22546b3817d043a41186acc25114a076cf80ba907b56a34"
+  },
+  {
+   "index": 42,
+   "name": "43-Deathstroke",
+   "label": "Deathstroke",
+   "identity": 2720034183,
+   "handler": 17,
+   "handler_va": "0x9729c",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 10,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     5,
+     260,
+     4
+    ]
+   ],
+   "icon": {
+    "resource": 299,
+    "size": [
+     60,
+     12
+    ],
+    "pixels_sha256": "c52c3f572b830ca7d7184aaf228eae5253bb96cfcc01091404e52582c9840ff0"
+   },
+   "ghost": false,
+   "record_sha256": "6dcf8306713434f21a96f5dc968eb612de429e541b0ede32c6af99431a04d95b"
+  },
+  {
+   "index": 43,
+   "name": "44-Platemail",
+   "label": "Platemail",
+   "identity": 2013721877,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 96,
+   "class_name": "body_armour",
+   "defense": 30,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     5,
+     262,
+     4
+    ],
+    [
+     2,
+     17,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 247,
+    "size": [
+     94,
+     27
+    ],
+    "pixels_sha256": "24c0e75d664fe7590af2ebcb0c6e23e521b31a8626e934bb7460bcb75656a99f"
+   },
+   "ghost": false,
+   "record_sha256": "2f941f7901fd9af703db666edf8ed4862fbdfb4ad9cb01a7177c8e2f0a8afdd6"
+  },
+  {
+   "index": 44,
+   "name": "45-Fire shield",
+   "label": "Fire shield",
+   "identity": 2110957721,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 15,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     10,
+     16,
+     0
+    ],
+    [
+     4,
+     32,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 253,
+    "size": [
+     81,
+     21
+    ],
+    "pixels_sha256": "2f66606eef611509c747b473127056a8ca1cfd0f16eb7f1064ec37336f1a35e3"
+   },
+   "ghost": false,
+   "record_sha256": "baade83eb3c3e78c8b674a96dafeddb45972a9c42db5592f6761a1981a85faa8"
+  },
+  {
+   "index": 45,
+   "name": "46-Reflective p",
+   "label": "Reflective p",
+   "identity": 341726304,
+   "handler": 61,
+   "handler_va": "0x995c8",
+   "mask": 0,
+   "item_class": 96,
+   "class_name": "body_armour",
+   "defense": 30,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     2,
+     0,
+     4
+    ],
+    [
+     2,
+     17,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 254,
+    "size": [
+     94,
+     35
+    ],
+    "pixels_sha256": "456844c12d08069ac61d0d5a21d3b007c5d919ebdb3add0bf50486b562659547"
+   },
+   "ghost": false,
+   "record_sha256": "6e69c1f5cb2698574ebb8bc0a3d5d0115a2cd1d8a1eb78a97f577b7d1db5f8b2"
+  },
+  {
+   "index": 46,
+   "name": "47-Stone bracrs",
+   "label": "Stone bracrs",
+   "identity": 4068191763,
+   "handler": 23,
+   "handler_va": "0x97884",
+   "mask": 0,
+   "item_class": 83,
+   "class_name": "shield_bracers",
+   "defense": -30,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     7,
+     0,
+     96
+    ]
+   ],
+   "icon": {
+    "resource": 206,
+    "size": [
+     56,
+     26
+    ],
+    "pixels_sha256": "9bb1b6ed6e03a4cf19dacd21544efb07dd9a69f47b49a15147ac387fded1d78a"
+   },
+   "ghost": false,
+   "record_sha256": "4cbafe6a7bdb5f7ee02f6db30135449b1df7746a955421ca89b58546cb8924b3"
+  },
+  {
+   "index": 47,
+   "name": "48-Gau Might",
+   "label": "Gau Might",
+   "identity": 727593724,
+   "handler": 99,
+   "handler_va": "0x9b37c",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 255,
+    "size": [
+     64,
+     35
+    ],
+    "pixels_sha256": "5a1accdbcf295454e66324883830099250af0e0250123d48dcd28f9944ea1f59"
+   },
+   "ghost": false,
+   "record_sha256": "948d356450d2f24c475f06362ecf987e26a760336214acdaa46ea624e9ec84cf"
+  },
+  {
+   "index": 48,
+   "name": "49-Kierans circ",
+   "label": "Kierans circ",
+   "identity": 2782378123,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 30,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 149,
+    "size": [
+     28,
+     13
+    ],
+    "pixels_sha256": "e123d8b2ec060850c1606f02d0aade056e661cc443a277b9b03a7eba5091f42c"
+   },
+   "ghost": false,
+   "record_sha256": "f404d625f01762a184b9baf270cfca745227d0736a010d0de7728c112f10533f"
+  },
+  {
+   "index": 49,
+   "name": "50-Br valor",
+   "label": "Br valor",
+   "identity": 3423826213,
+   "handler": 47,
+   "handler_va": "0x98894",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 256,
+    "size": [
+     56,
+     23
+    ],
+    "pixels_sha256": "cf74211d70bb451697360e493cc6927ce9330adb0be19c1d40dbad3dbcfcf467"
+   },
+   "ghost": false,
+   "record_sha256": "7dc5191e8ac71e3be184b7d297e6d98ce9aec4868ced2450ee26da094625c68c"
+  },
+  {
+   "index": 50,
+   "name": "51-Cowards sh",
+   "label": "Cowards sh",
+   "identity": 3375386262,
+   "handler": 66,
+   "handler_va": "0x9995c",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 5,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 257,
+    "size": [
+     75,
+     21
+    ],
+    "pixels_sha256": "07d973556910a1462e67f695cce79ddb04403f5e654f3492226de4ed9cdccaca"
+   },
+   "ghost": false,
+   "record_sha256": "e4fbb75876f039ee25664b82e54c56cedc939d12d1ee6ea5e3897055c027965e"
+  },
+  {
+   "index": 51,
+   "name": "52-Dr Gaunt",
+   "label": "Dr Gaunt",
+   "identity": 3552016430,
+   "handler": 52,
+   "handler_va": "0x98d00",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 20,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     6,
+     16,
+     2
+    ],
+    [
+     6,
+     0,
+     2
+    ]
+   ],
+   "icon": {
+    "resource": 262,
+    "size": [
+     64,
+     35
+    ],
+    "pixels_sha256": "05d87a25514469a7e7c3b6944479de1b885b7e1ac0f75ef9a96cc0364474acbd"
+   },
+   "ghost": false,
+   "record_sha256": "6961872617b6919c608f17535d9a31bc5dab54fb1b868f9e374cccdc8af061dd"
+  },
+  {
+   "index": 52,
+   "name": "53-Dr armor",
+   "label": "Dr armor",
+   "identity": 4125719846,
+   "handler": 51,
+   "handler_va": "0x98cc8",
+   "mask": 0,
+   "item_class": 96,
+   "class_name": "body_armour",
+   "defense": 50,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     10,
+     0,
+     2
+    ],
+    [
+     10,
+     16,
+     2
+    ]
+   ],
+   "icon": {
+    "resource": 263,
+    "size": [
+     115,
+     39
+    ],
+    "pixels_sha256": "1e7b843285348df16cf5c988af8fe2760af116202dc4978e4b30097a24c88d6f"
+   },
+   "ghost": false,
+   "record_sha256": "10c7de7666d918fa3b76abe17714d9ac8fa0cab30e5ed357370d5bfc72ba4fe1"
+  },
+  {
+   "index": 53,
+   "name": "54-DF bracers",
+   "label": "DF bracers",
+   "identity": 3485264375,
+   "handler": 53,
+   "handler_va": "0x98d44",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 15,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 80,
+    "size": [
+     64,
+     33
+    ],
+    "pixels_sha256": "0398fed24696e5bb94efc8fce1f963d98bda4be335b7409a9a6369e25d9c30b6"
+   },
+   "ghost": false,
+   "record_sha256": "e53b470f5d4379a508da04ac6e8bd7baa3d835e357fc4ebecdd376df020013de"
+  },
+  {
+   "index": 54,
+   "name": "55-Obs chain",
+   "label": "Obs chain",
+   "identity": 1902058752,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 96,
+   "class_name": "body_armour",
+   "defense": 40,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     5,
+     2,
+     4
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     2,
+     8,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 218,
+    "size": [
+     82,
+     27
+    ],
+    "pixels_sha256": "73239cbda8734974d99c900262927d2d3571a015979dfd31f19e20d53bce734b"
+   },
+   "ghost": false,
+   "record_sha256": "be8a31e4d00dbfd613d13b02fb03eb65948d87b7b1c1e0833e202a9e6ce3e425"
+  },
+  {
+   "index": 55,
+   "name": "56a-Ltng cr",
+   "label": "Ltng cr",
+   "identity": 2228495501,
+   "handler": 8,
+   "handler_va": "0x966e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 81,
+    "size": [
+     19,
+     13
+    ],
+    "pixels_sha256": "e7b1696094b55096a5398514a0119fd94b5759027d203aba7683a4a7461d2990"
+   },
+   "ghost": false,
+   "record_sha256": "9abb2d818960722ea55ee3936efb745fab802bb5b05392ec0e2da8ce1a905468"
+  },
+  {
+   "index": 56,
+   "name": "56b-Ltng c brnt",
+   "label": "Ltng c brnt",
+   "identity": 3447764877,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 82,
+    "size": [
+     19,
+     13
+    ],
+    "pixels_sha256": "186d18c9190db18ce7659bb12d4a45a683d2330c7163c606bd70e838ce082359"
+   },
+   "ghost": false,
+   "record_sha256": "a56fdb683462e8fc1d71e5e55e2859a606715af1fc53004d8a5284efdf7925f2"
+  },
+  {
+   "index": 57,
+   "name": "57a-Fire crstl",
+   "label": "Fire crstl",
+   "identity": 3887632759,
+   "handler": 2,
+   "handler_va": "0x96080",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 305,
+    "size": [
+     30,
+     9
+    ],
+    "pixels_sha256": "5041da654bb5963d9e347cb06a8701cff8c3e54b82562dc5da77ba1465ee14cd"
+   },
+   "ghost": false,
+   "record_sha256": "8ac3ea1a7d0ca80e7d3151931a1e4ea40f45464e05839fcdaa0a6ec913b5bc18"
+  },
+  {
+   "index": 58,
+   "name": "57b-Fire brnt",
+   "label": "Fire brnt",
+   "identity": 3720356727,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 306,
+    "size": [
+     30,
+     7
+    ],
+    "pixels_sha256": "62a3d855e814ece664172f5135d28a109be5124db7e42a655a7416ffa8a9e625"
+   },
+   "ghost": false,
+   "record_sha256": "1f2221e7082b17704233e77572d750fc10dbc077c331a73a381a2ac9d04f89a3"
+  },
+  {
+   "index": 59,
+   "name": "58-Br dead",
+   "label": "Br dead",
+   "identity": 3548218906,
+   "handler": 70,
+   "handler_va": "0x99b94",
+   "mask": 0,
+   "item_class": 80,
+   "class_name": "shield_bracers",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 83,
+    "size": [
+     56,
+     23
+    ],
+    "pixels_sha256": "65e11e1709a2b5356ee7edb752cb53105a4c23c8f50c4b884200362795eb1dc1"
+   },
+   "ghost": false,
+   "record_sha256": "bc4da2c26541e033bb3ff42f4aa8062acb9b7b81008189a509408ce2ad8011cd"
+  },
+  {
+   "index": 60,
+   "name": "59-Stone cube",
+   "label": "Stone cube",
+   "identity": 4094578205,
+   "handler": 45,
+   "handler_va": "0x984cc",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 90,
+    "size": [
+     17,
+     14
+    ],
+    "pixels_sha256": "0ee5ce02839312c8c20042481877d7d2a82a06f95b3a1171534becad95af1d13"
+   },
+   "ghost": false,
+   "record_sha256": "4749dacc8d22ae72277ca93655374202f3baeb3b4f7a314103465e03de6c80b2"
+  },
+  {
+   "index": 61,
+   "name": "60-Stroke dager",
+   "label": "Stroke dager",
+   "identity": 174191026,
+   "handler": 63,
+   "handler_va": "0x99684",
+   "mask": 0,
+   "item_class": 72,
+   "class_name": "thrown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 91,
+    "size": [
+     32,
+     9
+    ],
+    "pixels_sha256": "5e6ed22f1e064a274f4961bef1bde4510d6a16b852a8a851a267dc8bece76c88"
+   },
+   "ghost": false,
+   "record_sha256": "d6913463255313f1915fa763dfb0aaa59f2eab812d42ecad8b27e49a85904e3b"
+  },
+  {
+   "index": 62,
+   "name": "61-Guardian orb",
+   "label": "Guardian orb",
+   "identity": 208815303,
+   "handler": 15,
+   "handler_va": "0x97108",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 92,
+    "size": [
+     23,
+     20
+    ],
+    "pixels_sha256": "8ede882c7c6e6f43f85b28dea617a8f7599bf1722d28ecb88c1d06f4510ed70a"
+   },
+   "ghost": false,
+   "record_sha256": "61e4dd934da54d53dc2efb89e9ed8fc175fbd82bca3113eb74c405436b180e9f"
+  },
+  {
+   "index": 63,
+   "name": "62-ice seed",
+   "label": "ice seed",
+   "identity": 2337929475,
+   "handler": 22,
+   "handler_va": "0x97558",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 93,
+    "size": [
+     10,
+     8
+    ],
+    "pixels_sha256": "915c30be1406706ebe6342054a45c53411187bd3442a898c33ea6ecbb7f46f42"
+   },
+   "ghost": false,
+   "record_sha256": "0b3076ecc3190714fd9445f3d0dba2702197e50abe4ceef5fc94bcd5983c8ae6"
+  },
+  {
+   "index": 64,
+   "name": "63-Rng Drakfire",
+   "label": "Rng Drakfire",
+   "identity": 1864854711,
+   "handler": 65,
+   "handler_va": "0x99920",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 94,
+    "size": [
+     12,
+     8
+    ],
+    "pixels_sha256": "6e012dc2b27ced513f0b8b338c0ace7fc7aa13b25f58433d332aca59e0a1b334"
+   },
+   "ghost": false,
+   "record_sha256": "f091807559942fa6250f8e0280c77f681c5c98435e3e7697c7d65dd6bea47957"
+  },
+  {
+   "index": 65,
+   "name": "64-Rng regen",
+   "label": "Rng regen",
+   "identity": 2606434073,
+   "handler": 13,
+   "handler_va": "0x970b4",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 326,
+    "size": [
+     11,
+     10
+    ],
+    "pixels_sha256": "07ef35db6cb53b9b9048b143f1425c847c151b928b4c4fdda93feb9f63b6e1b9"
+   },
+   "ghost": false,
+   "record_sha256": "bf54a99f31a3cf9bac46c813891f0ebbd9a465d75933d2da8e8f4e1a24fc15b6"
+  },
+  {
+   "index": 66,
+   "name": "65a-Storm",
+   "label": "Storm",
+   "identity": 2590227948,
+   "handler": 83,
+   "handler_va": "0x9a6b0",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 95,
+    "size": [
+     12,
+     13
+    ],
+    "pixels_sha256": "a8ae35ce32e7d69d54cab00513a60f3861e6e24d1539948e79e36f60b09e58f8"
+   },
+   "ghost": false,
+   "record_sha256": "407f11ae682449edb28eeb2c8c82f0b88125415f780d51c4a5f7a6a94108a81d"
+  },
+  {
+   "index": 67,
+   "name": "65b-Storm brnt",
+   "label": "Storm brnt",
+   "identity": 429142086,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 96,
+    "size": [
+     12,
+     13
+    ],
+    "pixels_sha256": "237d20f88807adb20613bd2d8cb0fbfa7403c2c79185d0f59c216cd8b7594cb9"
+   },
+   "ghost": false,
+   "record_sha256": "21519e0ad6ac9c4b16ea82daf35b0c1da1daadf9d2cfaa63f5f41e65d47a9551"
+  },
+  {
+   "index": 68,
+   "name": "66-Ancients stn",
+   "label": "Ancients stn",
+   "identity": 3764690106,
+   "handler": 6,
+   "handler_va": "0x96504",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 308,
+    "size": [
+     40,
+     15
+    ],
+    "pixels_sha256": "bf64959693d241bf8224cc640e4b29f67d0e015c9b1c3a63146914445d57da73"
+   },
+   "ghost": false,
+   "record_sha256": "869f2c1c72ae050e398a49938d3882237f50e30fce752350005dbef712ea3d8f"
+  },
+  {
+   "index": 69,
+   "name": "67-Ruby of trth",
+   "label": "Ruby of trth",
+   "identity": 4227368151,
+   "handler": 101,
+   "handler_va": "0x9b538",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 104,
+    "size": [
+     47,
+     13
+    ],
+    "pixels_sha256": "09023aa303dae48f7ed2770df1d71d2ebfe63554ec83baa437331fd10f303fb9"
+   },
+   "ghost": false,
+   "record_sha256": "d90cf7e1fe7c5b0e4834f28cefde4442bd396f0aa81ad25e92ff91d3a336bd38"
+  },
+  {
+   "index": 70,
+   "name": "68-SS1",
+   "label": "SS1",
+   "identity": 2790957503,
+   "handler": 3,
+   "handler_va": "0x99c60",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 65,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "addef81058c9b92a3c7379164d554357daa98dae1e971dbfe829805686681528"
+   },
+   "ghost": false,
+   "record_sha256": "555b50876ab8bd3f16c7ce89ff49b6c09fe4dcd6ec5fbbec6ac80b1a199df144"
+  },
+  {
+   "index": 71,
+   "name": "69-Tho enchant",
+   "label": "Tho enchant",
+   "identity": 4173120154,
+   "handler": 60,
+   "handler_va": "0x994c4",
+   "mask": 258,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 20,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     5,
+     0,
+     4
+    ]
+   ],
+   "icon": {
+    "resource": 106,
+    "size": [
+     98,
+     25
+    ],
+    "pixels_sha256": "c3bdafd8dc5afcdc079541a693377d4092f0f4df070d6163999568e696dfed50"
+   },
+   "ghost": false,
+   "record_sha256": "bca4b020c514da61b14d89b4f5ae799c890b9c19282c1523a809111ffa232a41"
+  },
+  {
+   "index": 72,
+   "name": "70-Dampen ch",
+   "label": "Dampen ch",
+   "identity": 1140374541,
+   "handler": 27,
+   "handler_va": "0x979a8",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 107,
+    "size": [
+     34,
+     11
+    ],
+    "pixels_sha256": "6b45177203f73c62c1b71e22ceaa68eae4a308db243a32337bb73b170c42c8f8"
+   },
+   "ghost": false,
+   "record_sha256": "3084d67af4f57c098dc1d38bc6369edacbf5eb55de4f49d5af6a5e36fb51f06e"
+  },
+  {
+   "index": 73,
+   "name": "71-Wax",
+   "label": "Wax",
+   "identity": 2925189839,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 109,
+    "size": [
+     55,
+     20
+    ],
+    "pixels_sha256": "2073debcfe78094fc927b67340e6ba56b9f853b024302b5b483f958b02705be8"
+   },
+   "ghost": false,
+   "record_sha256": "d693d6ddbe484ce7d999313f387528c5fb666c7f698ea2b12ee55c91b5d468a0"
+  },
+  {
+   "index": 74,
+   "name": "72-Wax runes",
+   "label": "Wax runes",
+   "identity": 3025872915,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 108,
+    "size": [
+     55,
+     20
+    ],
+    "pixels_sha256": "26c2f6faac4fd53826e00de531d7bf16ef5f04d24c046ccd6f3000dce73b33a2"
+   },
+   "ghost": false,
+   "record_sha256": "5aa87f0889ba1b616c8a84b475c90215debc157eb7be74c6a5fd6548065103ad"
+  },
+  {
+   "index": 75,
+   "name": "73-Spkscrl",
+   "label": "Spkscrl",
+   "identity": 328994862,
+   "handler": 32,
+   "handler_va": "0x96cc8",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 41,
+    "size": [
+     31,
+     16
+    ],
+    "pixels_sha256": "656f55d226c7fd214790cb56baa88ac2e36604f9e1defe72bff0a224a94072ed"
+   },
+   "ghost": false,
+   "record_sha256": "0ab5512e42b78a54429f4555a7b1b4fb834d73cd297f865fed2f606c82b2d1be"
+  },
+  {
+   "index": 76,
+   "name": "74-Control tokn",
+   "label": "Control tokn",
+   "identity": 3421151171,
+   "handler": 28,
+   "handler_va": "0x97a60",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 118,
+    "size": [
+     11,
+     15
+    ],
+    "pixels_sha256": "1e8531915b95eac2dac2bebba637834c621c27d7fc8f31014066b07c9ff12df9"
+   },
+   "ghost": false,
+   "record_sha256": "37a44f666b904e3472c7ba440c5958842dda76ec7345ce833473a6e9186bb59a"
+  },
+  {
+   "index": 77,
+   "name": "75-Emp remains",
+   "label": "Emp remains",
+   "identity": 3299785126,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 207,
+    "size": [
+     51,
+     31
+    ],
+    "pixels_sha256": "1cbf925b7af2d68aae8393710cc9e0543fba82e2ee160a21c568ee1f0ce22169"
+   },
+   "ghost": false,
+   "record_sha256": "0a37bedf5763f97d34d8ae9764c00ec8b9334ce92005ff8bede8123d96c85fdd"
+  },
+  {
+   "index": 78,
+   "name": "76-Caretk urn",
+   "label": "Caretk urn",
+   "identity": 3488201858,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 208,
+    "size": [
+     43,
+     47
+    ],
+    "pixels_sha256": "06c19883e7cd089c6990cc406b095e1866f77f09a940102b08c534700f3fc8cf"
+   },
+   "ghost": false,
+   "record_sha256": "1f4506eb3b03609452f5fed71a2f10605cdd6095d0022f132c70c3e7a4f9ad6e"
+  },
+  {
+   "index": 79,
+   "name": "77-Lizard seal",
+   "label": "Lizard seal",
+   "identity": 4124463237,
+   "handler": 29,
+   "handler_va": "0x97b18",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 119,
+    "size": [
+     38,
+     12
+    ],
+    "pixels_sha256": "734fc41635820f1ca72ac4aa9d39c77794582a91c091d1c95506b831b7a8f1c3"
+   },
+   "ghost": false,
+   "record_sha256": "65274b924502481663d4d75e1b2f2a900b2c3d42a261a326829b81e9d7fdad01"
+  },
+  {
+   "index": 80,
+   "name": "78-Bestial disk",
+   "label": "Bestial disk",
+   "identity": 2145901433,
+   "handler": 30,
+   "handler_va": "0x97bd0",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 120,
+    "size": [
+     34,
+     19
+    ],
+    "pixels_sha256": "45df27ac553d9dcf14f5350ac124c9a420e6ff8a1ca0e47110fff3e1cebd4140"
+   },
+   "ghost": false,
+   "record_sha256": "e5b38ece47f13eaad1ec405f6b2b28b766beb50cb791fdd4e0fc2820892e7b55"
+  },
+  {
+   "index": 81,
+   "name": "79-Portrait Ken",
+   "label": "Portrait Ken",
+   "identity": 2358430593,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 2,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 69,
+    "size": [
+     52,
+     15
+    ],
+    "pixels_sha256": "6955259eac79f4761bba03fcfead1ddd1d32b7f2ab8f74fa39c504ad0ff2e807"
+   },
+   "ghost": false,
+   "record_sha256": "f2014d2e07082e1515ea0ee36508b8385825d4be0c8a6d8336edfe77f6139295"
+  },
+  {
+   "index": 82,
+   "name": "80-Kelens ring",
+   "label": "Kelens ring",
+   "identity": 3856915368,
+   "handler": 21,
+   "handler_va": "0x97408",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 121,
+    "size": [
+     10,
+     7
+    ],
+    "pixels_sha256": "8b3e1c59cd00da24a4babbe2bcdee95cd657c9ce4780e74b5a09d1b84d34b857"
+   },
+   "ghost": false,
+   "record_sha256": "53f21bc27cb11f7dd870aa751a4ef335f938b0f6b56ad4bce20fd613f145cfca"
+  },
+  {
+   "index": 83,
+   "name": "81-St of cobra",
+   "label": "St of cobra",
+   "identity": 4161090370,
+   "handler": 44,
+   "handler_va": "0x984b8",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 122,
+    "size": [
+     11,
+     18
+    ],
+    "pixels_sha256": "54d2b38600e5914b6931a4a79ed23228b7f15ab6593af2deee32bca60be3b7de"
+   },
+   "ghost": false,
+   "record_sha256": "75812f7c43e3e71bbc360df568986841993d42c0d5ca3d315993a26b79c04a2c"
+  },
+  {
+   "index": 84,
+   "name": "82-Vels fruit",
+   "label": "Vels fruit",
+   "identity": 102901910,
+   "handler": 20,
+   "handler_va": "0x9732c",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 123,
+    "size": [
+     16,
+     15
+    ],
+    "pixels_sha256": "27cbc1f491f4970e4ebfc33d2903ebf46f8dca2a5a27370ad12e44a07f33f3f5"
+   },
+   "ghost": false,
+   "record_sha256": "73574c078c0ee5d2c81297f9bf6221235d3fe79577df2f9a8c662df9eacf71c9"
+  },
+  {
+   "index": 85,
+   "name": "83-Power orb",
+   "label": "Power orb",
+   "identity": 2280794846,
+   "handler": 37,
+   "handler_va": "0x97da4",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 309,
+    "size": [
+     26,
+     21
+    ],
+    "pixels_sha256": "b7803d38720f85c144cc592de1d99fd5b97ca222b22794fb3b5b5f59eddd7368"
+   },
+   "ghost": false,
+   "record_sha256": "efa75a1aa625d3ab6c8257fa6a2e26176e0fad19b5e7e48697a96f7a75ff360f"
+  },
+  {
+   "index": 86,
+   "name": "84-Dragon gem",
+   "label": "Dragon gem",
+   "identity": 2849335507,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 10,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 312,
+    "size": [
+     22,
+     17
+    ],
+    "pixels_sha256": "83ef7b5f2cd44a481a8c6dbacce453482d29664e0fab31092cdbc0c047a7dce5"
+   },
+   "ghost": false,
+   "record_sha256": "8e2edba10937a9e18f09d338b0ff260a844a2499ccbe22ae015da0bf54e133ef"
+  },
+  {
+   "index": 87,
+   "name": "85-Colims amult",
+   "label": "Colims amult",
+   "identity": 2856716505,
+   "handler": 97,
+   "handler_va": "0x9b28c",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     7,
+     0,
+     128
+    ],
+    [
+     10,
+     0,
+     1
+    ]
+   ],
+   "icon": {
+    "resource": 313,
+    "size": [
+     44,
+     12
+    ],
+    "pixels_sha256": "b339b20dd4192c0b5039902020d41179c458fd3f03febd27e5f0a80d8478038f"
+   },
+   "ghost": false,
+   "record_sha256": "ad111782634e75c9b286bad611a318cfbc2fbd8c34c5e59939fe484a65860c7b"
+  },
+  {
+   "index": 88,
+   "name": "86-Beozar ring",
+   "label": "Beozar ring",
+   "identity": 1782060968,
+   "handler": 24,
+   "handler_va": "0x978d4",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 5,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     7,
+     0,
+     32
+    ]
+   ],
+   "icon": {
+    "resource": 154,
+    "size": [
+     12,
+     5
+    ],
+    "pixels_sha256": "8f667430088d04b20490fc86e3cf64a22e86ad4eb5eb8ce1c18f03fb086ca506"
+   },
+   "ghost": false,
+   "record_sha256": "295ad244734c3b4d3ed25f952707af8f0a344cb8d7db3d0a154f6e60666c381d"
+  },
+  {
+   "index": 89,
+   "name": "87-G Beozar",
+   "label": "G Beozar",
+   "identity": 4226925211,
+   "handler": 25,
+   "handler_va": "0x9791c",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 10,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     7,
+     0,
+     96
+    ]
+   ],
+   "icon": {
+    "resource": 155,
+    "size": [
+     14,
+     8
+    ],
+    "pixels_sha256": "8ddd8fb14a841be9ebde0f982d964294af0f9b97c1bc58c8b4cdcad442833045"
+   },
+   "ghost": false,
+   "record_sha256": "5d17795f7a52ddf913748f646b52be4f311999ec93dc2d0deb37968e1e6ddd68"
+  },
+  {
+   "index": 90,
+   "name": "88-Keneths chrm",
+   "label": "Keneths chrm",
+   "identity": 4054701196,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 30,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     10,
+     0,
+     5
+    ]
+   ],
+   "icon": {
+    "resource": 130,
+    "size": [
+     71,
+     19
+    ],
+    "pixels_sha256": "5840a838a3ca29496371ff3c55143e994a04ac34cd1be9f332980da13fe597de"
+   },
+   "ghost": false,
+   "record_sha256": "73e44f08f59a57dce89ec8bea60b97ba308c51d31ca35f212a7f912268522405"
+  },
+  {
+   "index": 91,
+   "name": "89-Cat ring",
+   "label": "Cat ring",
+   "identity": 4049419276,
+   "handler": 49,
+   "handler_va": "0x98984",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 131,
+    "size": [
+     11,
+     6
+    ],
+    "pixels_sha256": "a08d9e14b925a2631c40ab960e626ade48d9312c9d45b35139538a5023da3486"
+   },
+   "ghost": false,
+   "record_sha256": "d6c637dba6590042e9d243ae792f244a4902f969babf5d408980ea0460f25a75"
+  },
+  {
+   "index": 92,
+   "name": "90-Iron Rod",
+   "label": "Iron Rod",
+   "identity": 1710624539,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     7,
+     1,
+     0
+    ]
+   ],
+   "icon": {
+    "resource": 209,
+    "size": [
+     49,
+     23
+    ],
+    "pixels_sha256": "dc27cad0c7004d35e22ed630fb8179e016d481b71194be3f3df4eae6de88a5a5"
+   },
+   "ghost": false,
+   "record_sha256": "c8544fb4fbf0bd8a69cd4dbfc0bcaad154c8fd2ac643d92481bf4df60fa4c755"
+  },
+  {
+   "index": 93,
+   "name": "91-Scarab",
+   "label": "Scarab",
+   "identity": 261720076,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [
+    [
+     6,
+     0,
+     2
+    ]
+   ],
+   "icon": {
+    "resource": 70,
+    "size": [
+     25,
+     15
+    ],
+    "pixels_sha256": "bd267cd80eaf652f4f59e8786bff32af8c00df499930cde4ba6da89933326c6d"
+   },
+   "ghost": false,
+   "record_sha256": "7fa53cb1352be3871664ca3abb2fc53e5e74f39eeef1e6ba4cff192da655cbf8"
+  },
+  {
+   "index": 94,
+   "name": "92-Sk key",
+   "label": "Sk key",
+   "identity": 394988083,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 264,
+    "size": [
+     43,
+     15
+    ],
+    "pixels_sha256": "88bfdef5bab8a2c911218ac7217f4264a5d7ecc1f052ad4ec0d96263abc74d09"
+   },
+   "ghost": false,
+   "record_sha256": "249d874c04b80ef223055992edc177a1a55924324560c79989c1a140ae24b806"
+  },
+  {
+   "index": 95,
+   "name": "93-Skull key",
+   "label": "Skull key",
+   "identity": 2666734298,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 314,
+    "size": [
+     52,
+     12
+    ],
+    "pixels_sha256": "150a1e58d79d81f5e8187fcf1033f3c919e9d5969cbaf36d55cfbe4bbf2cab01"
+   },
+   "ghost": false,
+   "record_sha256": "5df2f65efa42fca9394f709a99697086f55497a7228f7279b08e8ee16087d1f7"
+  },
+  {
+   "index": 96,
+   "name": "94-Iron flute",
+   "label": "Iron flute",
+   "identity": 3020830916,
+   "handler": 16,
+   "handler_va": "0x971f0",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 215,
+    "size": [
+     72,
+     15
+    ],
+    "pixels_sha256": "31a40d285d72fbe5e55daf5aa691b01a60df36814776620c7330656d843a4579"
+   },
+   "ghost": false,
+   "record_sha256": "783fb8ef6bf731aa8f46ff21ac010d5f86fc344df74f768ac50f4400c8b75ac9"
+  },
+  {
+   "index": 97,
+   "name": "95-D Ankh",
+   "label": "D Ankh",
+   "identity": 3885062029,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 132,
+    "size": [
+     29,
+     13
+    ],
+    "pixels_sha256": "877b47cd40b95cced95e4d71e0c6139e5fb7169e97b96e8f5e2e82b0d73ce54d"
+   },
+   "ghost": false,
+   "record_sha256": "34a8d4998d1b75c97e76080db1b92efebd38e8a9d7a35551b6b3f5a5f33821e5"
+  },
+  {
+   "index": 98,
+   "name": "96-E Globe",
+   "label": "E Globe",
+   "identity": 4086156423,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 133,
+    "size": [
+     17,
+     15
+    ],
+    "pixels_sha256": "3cafa16647e599618f6e7cee97cea7d458a85b59bab8a72a215d02de8fb344f1"
+   },
+   "ghost": false,
+   "record_sha256": "08205d247bd21d388fe87b5ce80f89084d27a4cf2bdf7e16c4b1930340234cb0"
+  },
+  {
+   "index": 99,
+   "name": "97-Y globe",
+   "label": "Y globe",
+   "identity": 1133383814,
+   "handler": 93,
+   "handler_va": "0x9af08",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 134,
+    "size": [
+     17,
+     15
+    ],
+    "pixels_sha256": "079e0a58c1f4d3fa4d4a56917dd9fccb716dbc3d874c3ac6b9991d29eee0898f"
+   },
+   "ghost": false,
+   "record_sha256": "ef45a4fcc5f15139b8a8601d569786428f42ab60129c900ee0f4d7d534c0651a"
+  },
+  {
+   "index": 100,
+   "name": "98-W globe",
+   "label": "W globe",
+   "identity": 999167110,
+   "handler": 91,
+   "handler_va": "0x9ad98",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 135,
+    "size": [
+     17,
+     15
+    ],
+    "pixels_sha256": "bb9b774f81092f2ae66961a6ac91475a90346ab257ca25a6e67f6c27d9170cd7"
+   },
+   "ghost": false,
+   "record_sha256": "9d35eb02e54decad366d1660599f93485ba48638041002795dfd3be13670dcba"
+  },
+  {
+   "index": 101,
+   "name": "99-B globe",
+   "label": "B globe",
+   "identity": 3884849287,
+   "handler": 92,
+   "handler_va": "0x9ae88",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 136,
+    "size": [
+     17,
+     15
+    ],
+    "pixels_sha256": "c45b4d7c236c2355e6aa26f4775e04467845318b9328a5f32849293e416f76ec"
+   },
+   "ghost": false,
+   "record_sha256": "478466bce36b2673d5e20c458a5f66cfb07e516484927eefffc6826dfc2b7945"
+  },
+  {
+   "index": 102,
+   "name": "100-Drac sigil",
+   "label": "Drac sigil",
+   "identity": 3319438660,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 71,
+    "size": [
+     32,
+     14
+    ],
+    "pixels_sha256": "37eff21f167bb647216750868484893e7203d067c7d11e1d31fc7e503b6ee0a5"
+   },
+   "ghost": false,
+   "record_sha256": "023215fab3d6ccc6e3334b8ea590551e304ebd838acd728d8aec0605daf5071f"
+  },
+  {
+   "index": 103,
+   "name": "101-Statuette",
+   "label": "Statuette",
+   "identity": 603463205,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 160,
+    "size": [
+     35,
+     43
+    ],
+    "pixels_sha256": "7e63aa0f265a841cb24138fd6a362f7e2af041fae8f4c2ffdba0799f60425806"
+   },
+   "ghost": false,
+   "record_sha256": "3024bae50d1c7d72740b03d041c4a222c4309f91a7b903df89bb6f21140c2469"
+  },
+  {
+   "index": 104,
+   "name": "102-Runestone",
+   "label": "Runestone",
+   "identity": 3693756446,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 161,
+    "size": [
+     25,
+     17
+    ],
+    "pixels_sha256": "702a7d7330bfa35a11463d221853cb5b8377ffbeab44bff13150075cbe5e7e97"
+   },
+   "ghost": false,
+   "record_sha256": "48fc64ad2a8d10f8a4e5b44422ae71936b940ec6249cf59b450ff255baa2b519"
+  },
+  {
+   "index": 105,
+   "name": "103-Cry shard",
+   "label": "Cry shard",
+   "identity": 3493993438,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 162,
+    "size": [
+     30,
+     15
+    ],
+    "pixels_sha256": "3cae1e86f9f45b4c30985c15a9e9432617433528a17d3606931638fb8e0fb2b5"
+   },
+   "ghost": false,
+   "record_sha256": "0e72e40afdc4c84b4f7ec3d9524cd36fef640229b6acdc4710b6f88f6216790f"
+  },
+  {
+   "index": 106,
+   "name": "104-Ruby sphere",
+   "label": "Ruby sphere",
+   "identity": 544321399,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 163,
+    "size": [
+     22,
+     18
+    ],
+    "pixels_sha256": "0f261cd2a88cdd054e88e233f4b48976b32bba8cd3d146e39f441fd1e5079e0c"
+   },
+   "ghost": false,
+   "record_sha256": "6ebaec05b393b39c25fe193d0478367afeda994ddcc1ee5ec2171e7857563cff"
+  },
+  {
+   "index": 107,
+   "name": "105-Ivory chip",
+   "label": "Ivory chip",
+   "identity": 70126601,
+   "handler": 90,
+   "handler_va": "0x9ad70",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 164,
+    "size": [
+     25,
+     21
+    ],
+    "pixels_sha256": "a8feec9c2873317ff4656090771c8e48bb0c199793edf219f4a871fb80544178"
+   },
+   "ghost": false,
+   "record_sha256": "ed83b22db73d5f67580a963a5bf41df26a3a88efa0fca4c7950c6043ba3a4a56"
+  },
+  {
+   "index": 108,
+   "name": "106-Jkar idol",
+   "label": "Jkar idol",
+   "identity": 301990238,
+   "handler": 88,
+   "handler_va": "0x9ac14",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 170,
+    "size": [
+     25,
+     43
+    ],
+    "pixels_sha256": "4049af66286313b555258ca589fa0f06b78bb8ea26d25b1d5ebf4a741d6149c3"
+   },
+   "ghost": false,
+   "record_sha256": "b6591d1cd80211b4b9ad813f14030b6369adc95d632f372c2fbe2e2af2206b56"
+  },
+  {
+   "index": 109,
+   "name": "107-Aloe",
+   "label": "Aloe",
+   "identity": 3218984099,
+   "handler": 9,
+   "handler_va": "0x967a8",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 315,
+    "size": [
+     40,
+     10
+    ],
+    "pixels_sha256": "700e1dc3f572c3d40dddccc0f5584aaed8a52e5cd298fc2630b7445be4744c3b"
+   },
+   "ghost": false,
+   "record_sha256": "4e5e15cb08e5208b65bfaf04694b7178808bd6a1fc5e2ec2ba5ffdc57ba877bc"
+  },
+  {
+   "index": 110,
+   "name": "108-Cave aloe",
+   "label": "Cave aloe",
+   "identity": 3732130108,
+   "handler": 9,
+   "handler_va": "0x967a8",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 316,
+    "size": [
+     24,
+     21
+    ],
+    "pixels_sha256": "99da4e34879550c53c1600fd1fd45b973e29f368598a1f999fddfb1266103839"
+   },
+   "ghost": false,
+   "record_sha256": "3e9dcd61b05389f95aa54a3f3c0a3cbce7156a1a7a39dde430f89b729c4818d5"
+  },
+  {
+   "index": 111,
+   "name": "109-Ironwod sap",
+   "label": "Ironwod sap",
+   "identity": 1690340112,
+   "handler": 98,
+   "handler_va": "0x9b2a0",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 171,
+    "size": [
+     56,
+     9
+    ],
+    "pixels_sha256": "cd13dfefb2fa21b9da89241a53ae6d9c552ffbdf3d6f67723b95fcc72abaab33"
+   },
+   "ghost": false,
+   "record_sha256": "e89d9fb67f7db343535f2b95582a181bbad85ae861737f5f4f2f816a240fad2b"
+  },
+  {
+   "index": 112,
+   "name": "110-Amber",
+   "label": "Amber",
+   "identity": 2139463609,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 322,
+    "size": [
+     21,
+     14
+    ],
+    "pixels_sha256": "ecb2a2488ffdb1fad2fcc9cfff8e63a38101c393004d459b36aec05f3f909d57"
+   },
+   "ghost": false,
+   "record_sha256": "efffcc432be66cd16619dd645a9fa67af61a1a08ffda55db4774388f3e55a948"
+  },
+  {
+   "index": 113,
+   "name": "111-Venom sac",
+   "label": "Venom sac",
+   "identity": 3928580128,
+   "handler": 42,
+   "handler_va": "0x9822c",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 323,
+    "size": [
+     51,
+     20
+    ],
+    "pixels_sha256": "401c7e82114e0b70dbb58ac7b8920af1751aece96b865588d79dbbc3202d3f04"
+   },
+   "ghost": false,
+   "record_sha256": "f329f8efb17bccdd1c1d42e88287c0558bae6e0340524d9e960cbae5f4cb8235"
+  },
+  {
+   "index": 114,
+   "name": "112-Lamplt eggs",
+   "label": "Lamplt eggs",
+   "identity": 4126891770,
+   "handler": 69,
+   "handler_va": "0x99ac8",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 216,
+    "size": [
+     50,
+     19
+    ],
+    "pixels_sha256": "3a1ebce2976ea50383eb1a37a0ea22d70c9b9f98f01469c88c3a2644e28b0b1a"
+   },
+   "ghost": false,
+   "record_sha256": "d4e846581db5de752fba0cf7c11995d4249448ff091b6107f192c5ac7105bca5"
+  },
+  {
+   "index": 115,
+   "name": "113-Brook flou",
+   "label": "Brook flou",
+   "identity": 2361559,
+   "handler": 86,
+   "handler_va": "0x9a9b4",
+   "mask": 4,
+   "item_class": 68,
+   "class_name": "hand_weapon",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 78,
+    "size": [
+     62,
+     21
+    ],
+    "pixels_sha256": "20ffa9a97e1b90da65fa7efb211f2cf813455278d45d6b27bb7ed0387ae08939"
+   },
+   "ghost": false,
+   "record_sha256": "61426e5e7226b9556e91b33e761dd502ea0cd4abf1c6158f7f27dc5b4574835e"
+  },
+  {
+   "index": 116,
+   "name": "114-Gorgonite",
+   "label": "Gorgonite",
+   "identity": 4030604266,
+   "handler": 38,
+   "handler_va": "0x97e88",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 172,
+    "size": [
+     28,
+     21
+    ],
+    "pixels_sha256": "a627d12398b36b954c9792ef65526738857ef985ff5e9356d36b2375312938c6"
+   },
+   "ghost": false,
+   "record_sha256": "5adb5ca1db4dfeceddf3ce7c85dc9b835f2c106744c5fa06e8bc5d251076e317"
+  },
+  {
+   "index": 117,
+   "name": "115-Silverleaf",
+   "label": "Silverleaf",
+   "identity": 238320129,
+   "handler": 39,
+   "handler_va": "0x97f88",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 176,
+    "size": [
+     32,
+     17
+    ],
+    "pixels_sha256": "08a8c9cb0bd6413dee5e53feee4500b2dcf2dd86d9144c39c04dbfe630d20d34"
+   },
+   "ghost": false,
+   "record_sha256": "73913d624c6bf9a8c52d7fe623da6f22d9f516e0c40c00572560cba9dc3e09df"
+  },
+  {
+   "index": 118,
+   "name": "116-Mandrake",
+   "label": "Mandrake",
+   "identity": 3810584785,
+   "handler": 67,
+   "handler_va": "0x99970",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 79,
+    "size": [
+     24,
+     17
+    ],
+    "pixels_sha256": "26f7ef199841e4eba9fa3e3bb453c9401e809ec49287a6f4605c54938ca8a5cc"
+   },
+   "ghost": false,
+   "record_sha256": "2f78e3df1171f1e0cb80f66cc99f8a1366820c828f825bd4a6adec4ad0136750"
+  },
+  {
+   "index": 119,
+   "name": "117-Amaranth sr",
+   "label": "Amaranth sr",
+   "identity": 77237872,
+   "handler": 98,
+   "handler_va": "0x9b2a0",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 177,
+    "size": [
+     18,
+     21
+    ],
+    "pixels_sha256": "7b99330977cda8514fdaccac2a6fe6fb14c30e411ea8b3ac5851eabb2f513c38"
+   },
+   "ghost": false,
+   "record_sha256": "8adeb58d7b8d7658af89b3545171733d55afc24449f59bfc3fa72b6f0bfb8ad4"
+  },
+  {
+   "index": 120,
+   "name": "118-Tar crystal",
+   "label": "Tar crystal",
+   "identity": 3538572562,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 178,
+    "size": [
+     46,
+     33
+    ],
+    "pixels_sha256": "49145a35c645c3c5ee99b0cd2ed585ef4aca747eba8dbf8ad935cbb71c52ad17"
+   },
+   "ghost": false,
+   "record_sha256": "37abeb266759a9c8503b8c9b10406f5c86b2bbed6499f728466e371f97debe8a"
+  },
+  {
+   "index": 121,
+   "name": "119-Rain sulph",
+   "label": "Rain sulph",
+   "identity": 4233780611,
+   "handler": 40,
+   "handler_va": "0x98050",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 217,
+    "size": [
+     51,
+     35
+    ],
+    "pixels_sha256": "c492d773d008671577a01b9901a6dab7c86819d694c3f46aa1dd75c225a40775"
+   },
+   "ghost": false,
+   "record_sha256": "4f280154fce267a52b3efab16e576a0192ce6703bf2c74f64996368393e2807e"
+  },
+  {
+   "index": 122,
+   "name": "120-Black lichn",
+   "label": "Black lichn",
+   "identity": 3394104268,
+   "handler": 41,
+   "handler_va": "0x98154",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 179,
+    "size": [
+     32,
+     15
+    ],
+    "pixels_sha256": "ed0abc7f8b66f6059e23addd1182f3c3ecde07f9541b0c57776f6a6ab2ca11e2"
+   },
+   "ghost": false,
+   "record_sha256": "d53389f4780964c94ca53349d44571a8d3f48f4d9181aeb3c93087d68ce32209"
+  },
+  {
+   "index": 123,
+   "name": "121-Champion st",
+   "label": "Champion st",
+   "identity": 4234311831,
+   "handler": 4,
+   "handler_va": "0x96134",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 324,
+    "size": [
+     21,
+     14
+    ],
+    "pixels_sha256": "7688de453ad0f38856edd8542fc82eaf7e90eaacaffbd9f885427ac1c4451fac"
+   },
+   "ghost": false,
+   "record_sha256": "b50a0b26fc345f399b03ce1fa4ff8a82c9178309c6c01a6f98e27d1c78e07427"
+  },
+  {
+   "index": 124,
+   "name": "122-Arrant prac",
+   "label": "Arrant prac",
+   "identity": 3489637597,
+   "handler": 94,
+   "handler_va": "0x9afb8",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 180,
+    "size": [
+     37,
+     20
+    ],
+    "pixels_sha256": "b5f9b1f9bd1e0d43da497ebe8efe1d03bd2dfc5ccd8878798ecfd222b4aae0e4"
+   },
+   "ghost": false,
+   "record_sha256": "1d36f11f9a9419a46f8285564d62f302931be073b000d481fca27ae185cfa812"
+  },
+  {
+   "index": 125,
+   "name": "123-Pois paint",
+   "label": "Pois paint",
+   "identity": 167945080,
+   "handler": 10,
+   "handler_va": "0x96880",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 156,
+    "size": [
+     57,
+     13
+    ],
+    "pixels_sha256": "95ee17e32f9d41d436b7d3769cd450b34b224da249177ea5eadb7528b7353901"
+   },
+   "ghost": false,
+   "record_sha256": "466bcd9a00c7ad3855e7217a715a97f3e3863ab9a5cb0a687e6ef07e78cba5e3"
+  },
+  {
+   "index": 126,
+   "name": "124-War cluster",
+   "label": "War cluster",
+   "identity": 3536344350,
+   "handler": 46,
+   "handler_va": "0x987a4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 186,
+    "size": [
+     30,
+     15
+    ],
+    "pixels_sha256": "e18e6437e14379f74600ae1c7e2ac5d734340d561f86231d85db7e5110047a64"
+   },
+   "ghost": false,
+   "record_sha256": "634bcf4c9143c92bbc1a6c5c728c4550ac29995f455402da2beef6af0c2b556c"
+  },
+  {
+   "index": 127,
+   "name": "125-Force pod",
+   "label": "Force pod",
+   "identity": 3595800529,
+   "handler": 6,
+   "handler_va": "0x96504",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 187,
+    "size": [
+     40,
+     19
+    ],
+    "pixels_sha256": "c916e8830e3a740adb8d1b7a10f1814963160d826073c570cada3a3c8177dead"
+   },
+   "ghost": false,
+   "record_sha256": "b4617cf7564c71a6caa828a938309baf5a3526411753e59079a17e43f401c8ea"
+  },
+  {
+   "index": 128,
+   "name": "126-Larkhon vap",
+   "label": "Larkhon vap",
+   "identity": 1489524481,
+   "handler": 95,
+   "handler_va": "0x9b104",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 188,
+    "size": [
+     18,
+     21
+    ],
+    "pixels_sha256": "245a85a85ade659583bb5c964b60ec3f425ed1ad06d5b69bf8d73ced1db1ff62"
+   },
+   "ghost": false,
+   "record_sha256": "591ceb9bd048130cd3a77a351a066100ffd0baff941f4048ee56d7eff9816f5c"
+  },
+  {
+   "index": 129,
+   "name": "127-Death sac",
+   "label": "Death sac",
+   "identity": 4263864270,
+   "handler": 11,
+   "handler_va": "0x96a44",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 189,
+    "size": [
+     46,
+     33
+    ],
+    "pixels_sha256": "cb4b16eef36778b3920773fc97b983a745f14ab6ed1c99e281eff37351c768a8"
+   },
+   "ghost": false,
+   "record_sha256": "3ad5b6cb7e3603f0d674ff567dbc9090a862ac7ef23b5d40c0ac8750c37a0b74"
+  },
+  {
+   "index": 130,
+   "name": "128-Acid sac",
+   "label": "Acid sac",
+   "identity": 3776250471,
+   "handler": 106,
+   "handler_va": "0x9b7ac",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 190,
+    "size": [
+     46,
+     33
+    ],
+    "pixels_sha256": "977bf44592c065f59ca91220221e61a3e5a68d2707a728c73ab5a460e7e70eb8"
+   },
+   "ghost": false,
+   "record_sha256": "6f706be8d7091503d3f9c65f41ad3ab26ef65a05f9340bbc2b29e091469be4ae"
+  },
+  {
+   "index": 131,
+   "name": "129-Pod of chan",
+   "label": "Pod of chan",
+   "identity": 2987031822,
+   "handler": 87,
+   "handler_va": "0x9aa8c",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 196,
+    "size": [
+     46,
+     33
+    ],
+    "pixels_sha256": "0c784f08737d5021a67878c1a8fde5cc8ef63aa91650ac6dccd21503852833cd"
+   },
+   "ghost": false,
+   "record_sha256": "cb0616e3498c1662f827f1a733c88225f27e2d9c16ce4c4afd186b8ed0906c8e"
+  },
+  {
+   "index": 132,
+   "name": "130-Pyra pod",
+   "label": "Pyra pod",
+   "identity": 3692375941,
+   "handler": 64,
+   "handler_va": "0x99820",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 197,
+    "size": [
+     46,
+     32
+    ],
+    "pixels_sha256": "ad8ea9ec50a476de55570809cf86fb8b13d64ae0dd076493ac63f7db228893b8"
+   },
+   "ghost": false,
+   "record_sha256": "c8bb70be72992458517e1f09d21602ecad030441b9ff463c868e8469816147f4"
+  },
+  {
+   "index": 133,
+   "name": "131-Mana foil",
+   "label": "Mana foil",
+   "identity": 3257002859,
+   "handler": 43,
+   "handler_va": "0x983b8",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 198,
+    "size": [
+     36,
+     17
+    ],
+    "pixels_sha256": "d08bb3ff43a7acbd256099aaf9b2d1a8c7756080339b2ff9fc4f65ffcef5a6a3"
+   },
+   "ghost": false,
+   "record_sha256": "b294c1c08d4bf1c2740bc43b7e8661a985ac2cc71fb2da50df3e4d58b012a11b"
+  },
+  {
+   "index": 134,
+   "name": "132-Mind clustr",
+   "label": "Mind clustr",
+   "identity": 3868621170,
+   "handler": 89,
+   "handler_va": "0x9ac28",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 199,
+    "size": [
+     29,
+     21
+    ],
+    "pixels_sha256": "55b15409bece9b0e4d6b14dd31e81b1a920196e06079ef7547cd542e44c5cb23"
+   },
+   "ghost": false,
+   "record_sha256": "84d01a0c7b09442c885f0540037b7227805ed0a2e04cd40bc568be4b8746b07a"
+  },
+  {
+   "index": 135,
+   "name": "133-St of gorgn",
+   "label": "St of gorgn",
+   "identity": 89658132,
+   "handler": 105,
+   "handler_va": "0x9b774",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 325,
+    "size": [
+     22,
+     13
+    ],
+    "pixels_sha256": "0a2e0cea8126cc4a828fd4fc2b94009237c22658d7ec6b668fa619f18deaa9ec"
+   },
+   "ghost": false,
+   "record_sha256": "8aecf5d7af0de207cc21ab59efe1bf4de60c89b6b226cae18144f0c7687fc0bb"
+  },
+  {
+   "index": 136,
+   "name": "134-Dreamstone",
+   "label": "Dreamstone",
+   "identity": 3458248419,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 4,
+   "descriptors": [],
+   "icon": {
+    "resource": 334,
+    "size": [
+     27,
+     24
+    ],
+    "pixels_sha256": "1c39289649c96be7a3fe1e29442ff08d99767ef25f9d2cc46e3db729f9c00018"
+   },
+   "ghost": false,
+   "record_sha256": "08ebbe36f99523e21fdafda01feb3666c468d2bbb1143f67a5693954d6b5f626"
+  },
+  {
+   "index": 137,
+   "name": "135-SS2",
+   "label": "SS2",
+   "identity": 1520220597,
+   "handler": 72,
+   "handler_va": "0x99d3c",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 64,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "a81f7467e39a0ec0ced8d3ef93ecb5c4e6642e57d2791b2d43c43cf363ae1a77"
+   },
+   "ghost": false,
+   "record_sha256": "b48441f7c8a06609fc4fcb085ded124a3daaf7aa10365d5cfd5e6993dec062c1"
+  },
+  {
+   "index": 138,
+   "name": "136-SS3 ",
+   "label": "SS3",
+   "identity": 2057288117,
+   "handler": 73,
+   "handler_va": "0x99e18",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 63,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "2b55d6fcaa563d150b421a3e49fadc7a6d1004f0e16c4b6d5078833148149727"
+   },
+   "ghost": false,
+   "record_sha256": "e2e0372206d65d40797aee08544103ea3512c4292fc8508e13164f41397bac45"
+  },
+  {
+   "index": 139,
+   "name": "137-SS4",
+   "label": "SS4",
+   "identity": 1520613813,
+   "handler": 74,
+   "handler_va": "0x99ef4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 62,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "ee49ae21fe102d1a81a043bcf2c2da92cbbf6d54859d6889daa71011ab0ea774"
+   },
+   "ghost": false,
+   "record_sha256": "4fa98d45f636777f83b1933ecc917824709b4e40cdf7252b5bbeb5295dc2c9a3"
+  },
+  {
+   "index": 140,
+   "name": "138-SS5",
+   "label": "SS5",
+   "identity": 1520810421,
+   "handler": 75,
+   "handler_va": "0x99fd0",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 61,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "4e36834706aecd981ae9e7c99343c3ecb24410fb55ffe75acd894d0bb5232d71"
+   },
+   "ghost": false,
+   "record_sha256": "ced8bf608211a14711aa6cb95044a12af2cf5b18d7e5da7f93072105bc262bb3"
+  },
+  {
+   "index": 141,
+   "name": "139-SS6",
+   "label": "SS6",
+   "identity": 1521007029,
+   "handler": 76,
+   "handler_va": "0x9a0ac",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 60,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "7d910c6e02b0d115d5e8f03aa5907831407aca1d5b0ac3f433722f7e4c81a092"
+   },
+   "ghost": false,
+   "record_sha256": "c52644d78cf9edbce3de5c8dadabf56707aa01d8a72ed7659d4d048a3352ffb4"
+  },
+  {
+   "index": 142,
+   "name": "140-SS7",
+   "label": "SS7",
+   "identity": 1519893429,
+   "handler": 77,
+   "handler_va": "0x9a188",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 59,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "3f3a4b4bc448163acefca88c1ee4ab9cbc1ae9041a24cf5ba706494d7950f7fe"
+   },
+   "ghost": false,
+   "record_sha256": "81d8c23b98637c84fb4801bb6375da2a123b8d3b99ab3ee322e6893aed6c9a52"
+  },
+  {
+   "index": 143,
+   "name": "141-SS8",
+   "label": "SS8",
+   "identity": 1520090037,
+   "handler": 78,
+   "handler_va": "0x9a264",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 58,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "b7ba6ab6110c3c09cd9b1e247e23671546fd6ae502d2261e249ffe6e3595d49e"
+   },
+   "ghost": false,
+   "record_sha256": "34035e97e9d109ec7ba401e3d856a1b98b711b968c460077080698171653672a"
+  },
+  {
+   "index": 144,
+   "name": "142-SS9",
+   "label": "SS9",
+   "identity": 1520286645,
+   "handler": 79,
+   "handler_va": "0x9a340",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 57,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "65c099a706d466b269cee713949f5bed09071466ca8de00f3ca1950d38a50f10"
+   },
+   "ghost": false,
+   "record_sha256": "6bcce7eb1552519350ff2a7fdd326c2c22e6968c1503efcea8032ea92ef357b2"
+  },
+  {
+   "index": 145,
+   "name": "143-SS10",
+   "label": "SS10",
+   "identity": 2325199797,
+   "handler": 80,
+   "handler_va": "0x9a41c",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 56,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "a07d4ab2619e9d36635abe645870accc18919416393f4c34abb42c6cdd6fa94a"
+   },
+   "ghost": false,
+   "record_sha256": "6736c12e1202667a476ea61287b5b2ebb924f24280dc2d7580ea9ac7ab99e48a"
+  },
+  {
+   "index": 146,
+   "name": "144-SS11",
+   "label": "SS11",
+   "identity": 2342108085,
+   "handler": 81,
+   "handler_va": "0x9a4f8",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 55,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "ce172af01b81e07595803a4633615976e6142d8949e98a54042b4e2ea166b573"
+   },
+   "ghost": false,
+   "record_sha256": "d7d19002dc888de2563317a3d6b40999cdb20614dd89351a5bb4351b2a3aae43"
+  },
+  {
+   "index": 147,
+   "name": "145-SS12",
+   "label": "SS12",
+   "identity": 2359016373,
+   "handler": 82,
+   "handler_va": "0x9a5d4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 54,
+    "size": [
+     58,
+     16
+    ],
+    "pixels_sha256": "4c52aa47048c4c2a4b0d2e68ab4355141ec79889d61ec9ae0d607b90a8798d21"
+   },
+   "ghost": false,
+   "record_sha256": "37fba32f929e4f8b32c41473ff1eb5c7ba147d7f0bfb5e5c074e86feda29d952"
+  },
+  {
+   "index": 148,
+   "name": "146-HlScrl",
+   "label": "HlScrl",
+   "identity": 2071991751,
+   "handler": 31,
+   "handler_va": "0x96c08",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 40,
+    "size": [
+     31,
+     16
+    ],
+    "pixels_sha256": "30f2ff185611df184479a23afbb258d3411a0864d5bdd92844812b32e30a21de"
+   },
+   "ghost": false,
+   "record_sha256": "32c36da56a32ec311290f9a3b835bf27271354c7170faf70bb8d6d6f724909f0"
+  },
+  {
+   "index": 149,
+   "name": "147-SumScrl",
+   "label": "SumScrl",
+   "identity": 1545874894,
+   "handler": 12,
+   "handler_va": "0x96db8",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 39,
+    "size": [
+     31,
+     16
+    ],
+    "pixels_sha256": "30a21358610285f8f73181aadc600b2ee43b6102b49c7887c36485dad3f655e4"
+   },
+   "ghost": false,
+   "record_sha256": "46d200de954483a0eb9ef4c95de8cf3a3f124bd917bef64ab3f7f3c551e4150c"
+  },
+  {
+   "index": 150,
+   "name": "148-MoDScrl",
+   "label": "MoDScrl",
+   "identity": 1540760002,
+   "handler": 34,
+   "handler_va": "0x96f64",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 38,
+    "size": [
+     31,
+     16
+    ],
+    "pixels_sha256": "8be47a1d67299efbca5cad1fac0239816e983d601c014e17db3ef4d917f2e1e9"
+   },
+   "ghost": false,
+   "record_sha256": "85f687e67d45011c2feb94038c25ba0dac8c73c64c02fa8b7e4dc754d2661a4c"
+  },
+  {
+   "index": 151,
+   "name": "149-Prsmscrl",
+   "label": "Prsmscrl",
+   "identity": 4231928024,
+   "handler": 33,
+   "handler_va": "0x96e7c",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 37,
+    "size": [
+     31,
+     16
+    ],
+    "pixels_sha256": "660473976329b8e80fbd58f983d2ca333aeab947404445560774884abf4b7415"
+   },
+   "ghost": false,
+   "record_sha256": "5d5b3a796ba9aeff9c7150ffd3029713c2150b94fbd4530d1511185d471a802b"
+  },
+  {
+   "index": 152,
+   "name": "Kieran ghost",
+   "label": "Kieran ghost",
+   "identity": 206172502,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 32,
+   "class_name": "unknown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": null,
+   "ghost": true,
+   "record_sha256": "2d0a9c35f17c1965fd7eaab62fca77389ae6c5d062d06a70d88c260155d64446"
+  },
+  {
+   "index": 153,
+   "name": "Axe Ghost",
+   "label": "Axe Ghost",
+   "identity": 1752478215,
+   "handler": 5,
+   "handler_va": "0x96368",
+   "mask": 0,
+   "item_class": 0,
+   "class_name": "unknown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": null,
+   "ghost": true,
+   "record_sha256": "f0b2d373cfdc9580151474634175b55ecdaa58f25030d51885de4efed3125b7a"
+  },
+  {
+   "index": 154,
+   "name": "Plas ghost",
+   "label": "Plas ghost",
+   "identity": 2891379699,
+   "handler": 36,
+   "handler_va": "0x97d08",
+   "mask": 0,
+   "item_class": 0,
+   "class_name": "unknown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": null,
+   "ghost": true,
+   "record_sha256": "6a41f02c815b2dc0e17850b38bc6e50a920919ec16c0351566186e922227b179"
+  },
+  {
+   "index": 155,
+   "name": "Dag ghost",
+   "label": "Dag ghost",
+   "identity": 1752979027,
+   "handler": 68,
+   "handler_va": "0x99a4c",
+   "mask": 0,
+   "item_class": 0,
+   "class_name": "unknown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": null,
+   "ghost": true,
+   "record_sha256": "fd3101296648985ea5b732abb5ed1718543a4e428beb218264773b3fff74ea56"
+  },
+  {
+   "index": 156,
+   "name": "Hand ghost",
+   "label": "Hand ghost",
+   "identity": 1888143315,
+   "handler": 85,
+   "handler_va": "0x9a82c",
+   "mask": 0,
+   "item_class": 0,
+   "class_name": "unknown",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": null,
+   "ghost": true,
+   "record_sha256": "87def4ed0ef2a674f0648c04e06c79f700ef48210c228bf61b8d1be283c42ef4"
+  },
+  {
+   "index": 157,
+   "name": "R-ch stone",
+   "label": "ch stone",
+   "identity": 2155217142,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 12,
+    "size": [
+     68,
+     28
+    ],
+    "pixels_sha256": "a1403768fe1beb3d79db3c2b8cb2028f1dbdaa8a1ba1ca838c3ed564adf99f93"
+   },
+   "ghost": false,
+   "record_sha256": "0421a97b31a1480d58b84b3e848756e547ef9d8fbaa45a7cfb90681b399af3ee"
+  },
+  {
+   "index": 158,
+   "name": "R-p paint",
+   "label": "p paint",
+   "identity": 1586722973,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 13,
+    "size": [
+     68,
+     28
+    ],
+    "pixels_sha256": "cc722b686c0995b528ca31ff8e0e2c86bc8ad3bae773f71d5ec2794fb4d47905"
+   },
+   "ghost": false,
+   "record_sha256": "a31c7fb47d2ded16167e94b1284cb1312b2d67a8038eb782ea886cfc61be7b23"
+  },
+  {
+   "index": 159,
+   "name": "R-Warcl",
+   "label": "Warcl",
+   "identity": 3273309718,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 14,
+    "size": [
+     68,
+     28
+    ],
+    "pixels_sha256": "984941e24cc9add883894b1a9fd164328088363b8d5a1abe9ffe0aaa50777e79"
+   },
+   "ghost": false,
+   "record_sha256": "d017aaaf551e9eb0f867d44e257c33f1c82eb9bce45663f50f4a362aaefa9992"
+  },
+  {
+   "index": 160,
+   "name": "R-Acidsac",
+   "label": "Acidsac",
+   "identity": 1340833405,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 15,
+    "size": [
+     68,
+     28
+    ],
+    "pixels_sha256": "6d7d91976867ddea878825ac51b272dec092a394f2633c9f02de3459067cc68f"
+   },
+   "ghost": false,
+   "record_sha256": "5343f75da91d08cf546760fa1d9a52b3597e2a35a33642b913f653f71101449e"
+  },
+  {
+   "index": 161,
+   "name": "R-Deathsac",
+   "label": "Deathsac",
+   "identity": 2078409067,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 16,
+    "size": [
+     68,
+     28
+    ],
+    "pixels_sha256": "189539a8e9056977e05d20068d6a0f25624e3a77f23937b463f82fde31024279"
+   },
+   "ghost": false,
+   "record_sha256": "b9d216bc699571d46d39fba51390aafa48bcda957f55023f72475375ea38c396"
+  },
+  {
+   "index": 162,
+   "name": "R-Pyrapod",
+   "label": "Pyrapod",
+   "identity": 3290527888,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 17,
+    "size": [
+     68,
+     28
+    ],
+    "pixels_sha256": "deb082aed8576e5ce0f83dc5d25c3898de6fcd8777016997b9554d9904080442"
+   },
+   "ghost": false,
+   "record_sha256": "1991b6daa612b10d351a8709dd7acac9179d980b0f31945f734675c8ded68d19"
+  },
+  {
+   "index": 163,
+   "name": "R-Mindcl",
+   "label": "Mindcl",
+   "identity": 1056816914,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 18,
+    "size": [
+     68,
+     28
+    ],
+    "pixels_sha256": "a153405980a719ba213e6d43b7aa07652571245c9bc9a4a8d27763b1b43d8a52"
+   },
+   "ghost": false,
+   "record_sha256": "6078eeaa23dde81d2fe0dce6dbc292e7a59a824d43c64b6812c9628d3cbb15ef"
+  },
+  {
+   "index": 164,
+   "name": "R-Manafoil",
+   "label": "Manafoil",
+   "identity": 1677845645,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 19,
+    "size": [
+     68,
+     28
+    ],
+    "pixels_sha256": "2fefcbc659a4ded0bb9bf45aeecdbe8f89ea3d8b8b8ccc539ff81c9c492adf5a"
+   },
+   "ghost": false,
+   "record_sha256": "ebef00299589cea4c30c83b8e81212ad051a0dff05cde2e881e1cd73da433df1"
+  },
+  {
+   "index": 165,
+   "name": "R-StGorgon",
+   "label": "StGorgon",
+   "identity": 2687631941,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 20,
+    "size": [
+     68,
+     28
+    ],
+    "pixels_sha256": "3d9313ba6d9c7016ed715fefa56dcbb0b1b1d2db5d8982842a63516deee10b1c"
+   },
+   "ghost": false,
+   "record_sha256": "dc7ff5a6519726e6591c97fd77e24a88ad4dec552849e9356707dcb8844bf162"
+  },
+  {
+   "index": 166,
+   "name": "Drag Blood",
+   "label": "Drag Blood",
+   "identity": 2086580671,
+   "handler": 102,
+   "handler_va": "0x9b5a0",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 26,
+    "size": [
+     35,
+     64
+    ],
+    "pixels_sha256": "d071bcc7e721f63b8d54249e11f187095231002a11b86fc8871bdf967be553d9"
+   },
+   "ghost": false,
+   "record_sha256": "961d0319f61bd492721f6cd9aa7fa38d5561101c0281a05890794507d00e8ae8"
+  },
+  {
+   "index": 167,
+   "name": "Cocos Cap",
+   "label": "Cocos Cap",
+   "identity": 2148793954,
+   "handler": 103,
+   "handler_va": "0x9b6fc",
+   "mask": 0,
+   "item_class": 67,
+   "class_name": "ring_amulet",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 21,
+    "size": [
+     92,
+     41
+    ],
+    "pixels_sha256": "328ced71fc926318116799f7105fba73b7859b27f8fde3e76e1aa10ca6b50a82"
+   },
+   "ghost": false,
+   "record_sha256": "193e79d8c3471eafd5d8dc99fffe7ae56933169526d0aa3dd184908ad8174304"
+  },
+  {
+   "index": 168,
+   "name": "Fullurn",
+   "label": "Fullurn",
+   "identity": 3645332737,
+   "handler": 0,
+   "handler_va": "",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 1,
+    "size": [
+     43,
+     47
+    ],
+    "pixels_sha256": "2ae9f0ed350a969bf43ef109db95e1c9eba3a67f9047d3926561ef0cf5c6aacf"
+   },
+   "ghost": false,
+   "record_sha256": "b1f7c7e65d884fe4c93ef660f5ae13fb8aa58429d384f2cceba1b9758be5df10"
+  },
+  {
+   "index": 169,
+   "name": "Scroll",
+   "label": "Scroll",
+   "identity": 3739562770,
+   "handler": 96,
+   "handler_va": "0x9b1e4",
+   "mask": 0,
+   "item_class": 64,
+   "class_name": "other",
+   "defense": 0,
+   "selectors": [
+    1,
+    0
+   ],
+   "byte50": 5,
+   "descriptors": [],
+   "icon": {
+    "resource": 110,
+    "size": [
+     31,
+     16
+    ],
+    "pixels_sha256": "b2a4b235dfd68cefec5f16c55cec2d65ff80ec6b833a3097ad7beec9b08e7910"
+   },
+   "ghost": false,
+   "record_sha256": "8fe2d197f9d5d0d1c4a5376d927466b839f97ed41e22ecaf060d1d946b48ed2c"
+  }
+ ],
+ "scope": "Original item definition fields and icon identities. Raw record bytes and pixels stay in the generated folder. Class-byte slots are an adapter; undecoded stats are not used."
+}

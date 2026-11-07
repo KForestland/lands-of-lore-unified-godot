@@ -1,0 +1,16 @@
+{
+ "name": "earned_jungle_hive_walk_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 577,
+ "needs": {
+  "env": [
+   "LOL2_EARNED_SAVES"
+  ],
+  "fixtures": [
+   "earned Museum/Jungle save with the proof output_sha256",
+   "tests/fixtures/earned_jungle_hive_walk_route.json"
+  ],
+  "chain": "earned-save chain (optional routes --broken-sword / --starting-spells)"
+ }
+}

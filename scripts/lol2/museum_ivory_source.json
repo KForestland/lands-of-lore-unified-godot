@@ -1,0 +1,117 @@
+{
+ "version": 1,
+ "source": {
+  "file": "DAT/L3_DH.MIX",
+  "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
+  "geometry_key": 3106551060,
+  "geometry_sha256": "d2e74dc68ca4a1c4532e548ee7e214537fa74edaf590e518bf341a00748076b7"
+ },
+ "containers": [
+  {
+   "prop": 189,
+   "item": 17,
+   "id": "museum:item17:Ivory_Chip",
+   "position": [
+    57,
+    10,
+    -753
+   ],
+   "region": 55,
+   "durability": 2,
+   "placement_hex": "3900f10200000a0082443700e406ffa305ac059d059b051e00550007000002001e00000103",
+   "hit": {
+    "kind": 9,
+    "group": 3502,
+    "predicate": null,
+    "predicate_raw": null,
+    "commands": [
+     "0903bd000800",
+     "0903bd001200",
+     "1403bd002a0180050a14",
+     "0503bd000000",
+     "090411000300"
+    ],
+    "raw": "0a09ae0d000000000103"
+   },
+   "item_position": [
+    32,
+    10,
+    -724
+   ],
+   "item_raw": "2000d40200000a0002103700000000000000000014747f00d97b5a0014000000090c2e0400",
+   "item_archive_offset": 5877627
+  },
+  {
+   "prop": 195,
+   "item": 18,
+   "id": "museum:item18:Ivory_Chip",
+   "position": [
+    250,
+    0,
+    -1609
+   ],
+   "region": 149,
+   "durability": 2,
+   "placement_hex": "fa00490600000000824495002c0705db05e105e2051e0055000700370a0002001e00000103",
+   "hit": {
+    "kind": 9,
+    "group": 3662,
+    "predicate": 14,
+    "predicate_raw": "0005000000",
+    "commands": [
+     "0903c3001200",
+     "0503c3000000",
+     "090412000300",
+     "0903c3000800",
+     "1003c3000100",
+     "1403c300dd00fa851900"
+    ],
+    "raw": "0a094e0e000000000103"
+   },
+   "item_position": [
+    232,
+    0,
+    -1646
+   ],
+   "item_raw": "e8006e060000000002109500000000000000000014747f00d97b5a0014000000090c2e0400",
+   "item_archive_offset": 5877664
+  }
+ ],
+ "art": [
+  {
+   "selector": 0,
+   "file": "urn_0.png",
+   "left": -26.5,
+   "right": 17.5,
+   "bottom": 0,
+   "top": 29,
+   "sha256": "ee1a3bc799b0eac30beb81561ff991f537e4a1040331880ce4d355a9a4b98f55"
+  },
+  {
+   "selector": 1,
+   "file": "urn_1.png",
+   "left": -26.5,
+   "right": 17.5,
+   "bottom": 0,
+   "top": 29,
+   "sha256": "ee1a3bc799b0eac30beb81561ff991f537e4a1040331880ce4d355a9a4b98f55"
+  }
+ ],
+ "icon_sha256": "8a35626450a09c5a103ab3f42035cf5c4801be9950e518b1d2e04ab6c5d637b6",
+ "native_filter": {
+  "passed": true,
+  "cases": 500,
+  "accepted": 90,
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "code_sha256": "1c9059f1efab583ec518866220bacd49b68a128ae764fc315988136b1ff8c4ee",
+  "condition": "wildcard masks; supplied before>1 and after<=1; prop195 predicate14 result required",
+  "limits": "Damage contexts and predicate return supplied; native attack damage calculation not replayed."
+ },
+ "adapters": [
+  "Modern melee/Spark container damage; native attack calculation not replicated.",
+  "Source selects0 on hit; both decoded images identical. Runtime hides the spent urn for feedback; independent item pickup. Original sound commands not yet hosted."
+ ],
+ "limits": [
+  "No later-area Ivory Chip use or Museum departure prerequisite inferred."
+ ]
+}

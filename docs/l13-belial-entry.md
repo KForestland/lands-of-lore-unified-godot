@@ -1,0 +1,11 @@
+# Citadel first Belial — entry slice
+
+Lead board22:51:45Z authorizes source103/group8770 movie31, arena transport and lower-Web101 admission as logged modern adapters. `l13_belial.gd` now binds E at the original upper web to the complete original movie. The earned ring input must reach the source web and all19 Ruloi must actually be dead. Arrival uses the pinned source X/Z and region577's floor, through the production transition. Native opcode18 semantics are not asserted by this slice; DEVIATIONS0268 retains the raw source words and the unknowns.
+
+The source-card first combat action is HealingIII against poison. The encounter uses an explicit book-led poison/cure adapter, with1HP per2s until HealingIII (3mana, shared6HP restoration, accepted at full health) clears it. Select Healing, then Ctrl-click the HUD Magic Button. This scoped spell is available only for the uncured encounter. Native poison packet/rate, full HealingIII behavior and costs are unhosted.
+
+`l13_belial_entry_earned_test`:1/1 PASS21.65s, source unchanged, report `tmp/regressions/l13_belial_entry_probe/report.json`. It watches the entire1008-frame movie, verifies the world/boss freeze and save refusal, enters the arena through the production owner, makes HealingIII its first action, then settles on the original floor and saves/reloads. No boss health or death is assigned by the test or encounter owner.
+
+Immutable input `tmp/l13_belial_ring_qualified_save.json` SHA2801b3e6957b91b0a578bd7873d9f266bc81cda8f09ed91c305015ee14541aab. Immutable output `tmp/l13_belial_entry_qualified_save.json` SHA0286c78de6f31d0018b7b177a54dd3cef411bd87a6e899fbf1136bcb8c318423, player(-2974,-1108,-2680), boss40 still at(-2431,-1180,-2688). Actual combat remains to qualify; STORY042 is not complete from entry alone.
+
+Combat qualification: `l13_belial_combat_earned_test`1/1 PASS17.92s, source unchanged, `tmp/regressions/l13_belial_combat_probe/report.json`. The player walks from the earned arena admission to(-2707.265,-1127.959,-2680), fights actor40 through existing melee/Spark and actual healing/mana regeneration, and saves/reloads its real death. No combat-health edits. This completes STORY042's approach/movie/first-action cure/combat chain.

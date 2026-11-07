@@ -1,0 +1,66 @@
+# SceneTree tests under tests/ that were in no run_regressions.py suite when the W4 registry was made (2026-10-31).
+# Membership is unchanged by W4; a name leaves this list when it gets a tests/registry/<name>.json.
+# 2026-10-31 triage (lead decision 17:43:11Z): 44 of the 102 passed headless and joined CORE; the 58 below stay with one-line reasons in
+# AI_COMMS/act1_completion_20261017/UNREGISTERED_TESTS_TRIAGE_20261031.md (lead decides: fix, register with env/args, or retire).
+all_maps_surface_collision_test
+bridge_warning_test
+cave_aloe_integration
+cave_bridge_save_test
+cave_entrance_pickup_walk
+cave_lava_test
+cave_opening_route_walk
+cave_pool_jump_test
+cave_roach_integration
+cave_video_overlay_test
+chain_cave_route_test
+chain_interaction_test
+chain_walk_test
+chamber_trigger_test
+hive_review_test
+hive_surface_animation_test
+indexed_chain_checkpoint_test
+jungle_interior_collision_test
+museum_armor_test
+museum_equipment_test
+# RETIRED 2026-10-31 (lead): museum_exhibit_route_test — a skeleton stands in its old route and the walker never fights; the file stays as the BASE CLASS of museum_earned_walk_test (do not delete).
+museum_exhibit_route_test
+museum_hourglass_interaction_test
+museum_review_test
+museum_save_controls_test
+# RETIRED 2026-10-31 (lead): museum_stair_route_test — its fixture crosses region 1178, the 30-high wall footing beside the lattice gate (gate77 at (-4060,0,-844) = region 1182); the longplay passes through the gate, not the wall.
+museum_stair_route_test
+museum_water_animation_test
+river_chain_input_test
+# 2026-10-31: tests that extend another test script (missed by the first registry scan, which looked for "extends SceneTree" only):
+# the earned-walk CHAIN tests (tools/run_act1_fresh_chain.py legs, hash-pinned saves, rendered W-key walks) and two probes.
+broken_repair_earned_walk_test
+broken_magic_knowledge_walk_test
+act_one_departure_walk_test
+cave_collectible_integration
+hive_boulders_earned_walk_test
+hive_earned_rune_walk_test
+hive_feeding_earned_walk_test
+hive_boulder_earned_walk_test
+hive_earned_rune_return_test
+hive_feeding_earned_fight_test
+hive_boulder_audio_earned_walk_test
+hive_unfold_earned_fight_test
+hive_lift_selection_probe
+hive_unfold_earned_walk_test
+moff_orb_earned_walk_test
+museum_earned_walk_test
+weapon_shop_earned_walk_test
+# Base classes extended by Act 2/3 tests (astra chain, merged in r12v 2026-10-31): SceneTree scripts, not tests themselves.
+act2_creature_case
+act2_item_case
+act2_level_transition_case
+act2_mover_case
+# Moved back by the lead in r12w (2026-11-01): failed their first rendered qualification run; fable to fix on return.
+#  museum_interface_test, jungle_interface_test: atlas wheel-zoom anchor assertion (map_point after 1.25 zoom); behaviour predates r12w.
+#  cave_encounter_integration: 114 checks, 0 failures but no PASS word (needs the PASS print).
+#  area_world_items_live_test: re-registered 2026-11-02 (ITEMS-HALF2-PICKUP fix, opus): Act2 twin copies in L8, Museum _use_world, migration assertion.
+museum_interface_test
+jungle_interface_test
+cave_encounter_integration
+#  chamber_location_review: same as cave_encounter_integration: completes ('views captured') but prints no PASS word (r12w round 2).
+chamber_location_review

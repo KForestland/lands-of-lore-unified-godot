@@ -1,0 +1,19 @@
+--- scripts/lol2/museum_walkthrough.gd
++++ scripts/lol2/museum_walkthrough.gd
+@@ -314,6 +323,7 @@ func checkpoint_state() -> Dictionary:
+ 		"escape_wall": escape_wall.checkpoint() if is_instance_valid(escape_wall) else {},
+ 		"gallery": gallery.checkpoint() if is_instance_valid(gallery) else {},
+ 		"museum_key_locks": key_locks.checkpoint() if is_instance_valid(key_locks) else KeyLockState.initial(),
++		"museum_orb_switch": orb_switch.checkpoint() if is_instance_valid(orb_switch) else OrbSwitch.initial(),
+ 		"museum_long_arm": long_arm.checkpoint() if is_instance_valid(long_arm) else LongArmState.initial(),
+ 		"museum_worm": worm.checkpoint(),
+ 		"museum_empty_urns": empty_urns.checkpoint(),
+@@ -489,7 +499,7 @@ func _unhandled_input(event: InputEvent) -> void:
+ 		if open_inventory(): get_viewport().set_input_as_handled()
+ 		return
+ 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
+-		if (is_instance_valid(ivory) and ivory.use()) or (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(prism) and prism.use()) or (is_instance_valid(blood_loot) and blood_loot.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
++		if (is_instance_valid(ivory) and ivory.use()) or (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(orb_switch) and orb_switch.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(prism) and prism.use()) or (is_instance_valid(blood_loot) and blood_loot.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1): get_viewport().set_input_as_handled()
+ 		return
+ 	super._unhandled_input(event)
+ 

@@ -11,6 +11,8 @@ var prop_centers: Dictionary = {}
 var ceiling_count := 0
 var roof: MeshInstance3D
 var wall_count := 0
+## Godot position minus this is the native position (the walk fixture recenters native coordinates).
+var wall_translation := Vector3.ZERO
 var wall_materials: Dictionary = {}
 
 func _ready() -> void:
@@ -43,7 +45,7 @@ func _ready() -> void:
 	flight_label.position.y = 215
 	if "--textured-smoke" in OS.get_cmdline_user_args():
 		print("Textured cave: %d walls, %d ceilings, %d wall materials; existing collision retained" % [wall_count, ceiling_count, wall_materials.size()])
-		get_tree().quit(0 if wall_count > 0 and ceiling_count == 1939 and prop_count == 1183 else 1)
+		get_tree().quit(0 if wall_count > 0 and ceiling_count == 1887 and prop_count == 1183 else 1)
 
 func _show_shell_face(_points: Array) -> bool:
 	# Rebuild visuals from explicit shell kinds below; retain all original collision.
@@ -82,6 +84,7 @@ func _load_pair() -> void:
 			anchor = face
 			break
 	var translation := point(fixtures[selected].faces[0][0]) - point(anchor.points[0]) * 64.0
+	wall_translation = translation
 	_build_roof(translation)
 	_build_props(translation)
 	var groups: Dictionary = {}
@@ -102,14 +105,19 @@ func _load_pair() -> void:
 			wall_materials[key] = material
 			var surface := SurfaceTool.new()
 			surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+			surface.set_custom_format(0, SurfaceTool.CUSTOM_RGBA_FLOAT)
 			surface.set_material(material)
 			groups[key] = surface
 		var surface: SurfaceTool = groups[key]
+		var light := _region_light(int(wall.region))
 		for index in [0, 1, 2, 0, 2, 3]:
 			var uv: Array = wall.uv_unwrapped[index]
 			surface.set_uv(Vector2(uv[0], uv[1]))
+			surface.set_custom(0, light)
 			surface.add_vertex(point(wall.points_godot[index]) + translation)
 		wall_count += 1
+		if preload("res://scripts/lol2/cave_crate_wall.gd").is_riser(wall):
+			preload("res://scripts/lol2/cave_crate_wall.gd").add_collider(stage, wall, translation)
 	for surface in groups.values():
 		var instance := MeshInstance3D.new()
 		instance.mesh = surface.commit()
@@ -156,6 +164,7 @@ func _build_props(translation: Vector3) -> void:
 		var instance := MeshInstance3D.new()
 		instance.mesh = quad
 		instance.position = point(prop.position_native) + translation
+		instance.set_meta("original_record", int(prop.record))
 		props_root.add_child(instance)
 		prop_centers[int(prop.record)] = instance.position + quad.center_offset
 		prop_count += 1
@@ -176,11 +185,17 @@ func _build_roof(translation: Vector3) -> void:
 	material.albedo_color = Color(0.65, 0.65, 0.65)
 	var surface := SurfaceTool.new()
 	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+	surface.set_custom_format(0, SurfaceTool.CUSTOM_RGBA_FLOAT)
 	surface.set_material(material)
+	var sky_manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/lol2/generated/cave_sky/manifest.json"))
+	var open_regions: Dictionary = {}
+	for region in sky_manifest.open_regions: open_regions[int(region)] = true
 	ceiling_count = 0
 	for face in data.shell:
-		if face.kind != "ceiling": continue
+		if face.kind != "ceiling" or int(face.region) in open_regions: continue
+		var light := _region_light(int(face.region))
 		for index in [0, 1, 2, 0, 2, 3]:
+			surface.set_custom(0, light)
 			var native_point := point(face.points[index]) * 64.0
 			surface.set_uv(Vector2(native_point.x / image.get_width(), native_point.z / image.get_height()))
 			surface.add_vertex(native_point + translation)
@@ -217,7 +232,7 @@ func _place_prop_camera(center: Vector3) -> void:
 	for index in range(16):
 		var angle := float(index) * TAU / 16.0
 		var direction := Vector3(sin(angle), 0, cos(angle))
-		var query := PhysicsRayQueryParameters3D.create(center, center + direction * 116.0)
+		var query := PhysicsRayQueryParameters3D.create(center, center + direction * 116.0, preload("res://scripts/lol2/region_blockers.gd").RAY_MASK)  # prop-view placement: walls, not the region blockers
 		query.exclude = [player.get_rid()]
 		query.hit_from_inside = true
 		var hit := space.intersect_ray(query)

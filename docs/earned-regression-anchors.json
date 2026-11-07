@@ -1,0 +1,23 @@
+{
+ "provenance": "Source-stable tmp/regressions/l14_belial_affected_final/report.json; listed producer tests PASS. Overall suite failed unrelated cases; not claimed all-pass.",
+ "anchors": [
+  {
+   "producer": "dampen_departure_earned_test",
+   "source": "tmp/dampen_darker_arrival_earned_save.json",
+   "anchor": "tmp/dampen_darker_arrival_regression_anchor.json",
+   "sha256": "b8b36f01602041be97deb36e307de2c92d1fc375a415d771561edb8bd6d6ecc9"
+  },
+  {
+   "producer": "l8_larkhon_earned_test",
+   "source": "tmp/l12_larkhon_arrival_earned_save.json",
+   "anchor": "tmp/l12_larkhon_arrival_regression_anchor.json",
+   "sha256": "de88903cf254873c19988dbeb90aa86c5322cf9ed1ceb819aa4bf6d0e0ab2db6"
+  },
+  {
+   "producer": "l12_citadel_earned_test",
+   "source": "tmp/l13_citadel_arrival_earned_save.json",
+   "anchor": "tmp/l13_citadel_arrival_regression_anchor.json",
+   "sha256": "21db5d3f9596650ad96df594e103eca6eb79dea299d91e585e610b146622b948"
+  }
+ ]
+}

@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856,
+    "geometry_sha256": "d681fa1e25d6eec6824d0772b65714fd610deaea6a148c43c538229ac90c7795"
+  },
+  "metadata_sha256": "b3d6b8f528166aad4fe316033eed2bd8404a8f42bd5dadc63bcc15cf08b3cf5a",
+  "rotation_sha256": "d7c7437da1c1be8f1d19e78433e8a976f19a90fe8004827a36dc383470294c53",
+  "control": 135,
+  "template": 21,
+  "raw_hex": "53fa480caa4a53008104eb03501818830000000001000000000000001400300015",
+  "position": [
+    -1453,
+    83,
+    -3144
+  ],
+  "heading": 19114,
+  "height": 83,
+  "polygon": [
+    [
+      -1543.55078125,
+      -3300.7421875
+    ],
+    [
+      -1609.483627319336,
+      -3054.4152069091797
+    ],
+    [
+      -1363.1566467285156,
+      -2988.4823608398438
+    ],
+    [
+      -1297.2238006591797,
+      -3234.809341430664
+    ]
+  ],
+  "child_raw": "000000000000080000000000000008000000000000000000000000000000000000000000000000000000000000000000ffffffff807f807f00000000",
+  "records": [
+    {
+      "value": 7,
+      "form": 2,
+      "group": 10608,
+      "predicate": 206,
+      "movie": 35,
+      "archive_offset": 7253757,
+      "commands": [
+        "020100003900",
+        "151087002300",
+        "101087000100"
+      ]
+    },
+    {
+      "value": 8,
+      "form": 0,
+      "group": 10656,
+      "predicate": 206,
+      "movie": 74,
+      "archive_offset": 7253777,
+      "commands": [
+        "101087000100",
+        "020100003900",
+        "151087004a00"
+      ]
+    },
+    {
+      "value": 9,
+      "form": 1,
+      "group": 10632,
+      "predicate": 206,
+      "movie": 11,
+      "archive_offset": 7253767,
+      "commands": [
+        "101087000100",
+        "020100003900",
+        "151087000b00"
+      ]
+    }
+  ],
+  "movies": {
+    "11": {
+      "name": "bst-die",
+      "archive": "DAT/L1_DCI.MIX",
+      "entry": 35,
+      "key": 2147469316,
+      "source_sha256": "3f0006a5c0194cc0822e0b2652329cf5a82039f723190cf069e3d30ef98e8f2e",
+      "path": "res://assets/lol2/generated/cave_entrance_death/bst_die.ogv",
+      "width": 640,
+      "height": 400,
+      "frames": 322,
+      "fps": 15,
+      "seconds": 21.4667,
+      "samples": 484364,
+      "rate": 22050,
+      "sha256": "e52098b0ea1898b68155439576b904dfed731a4f1c367485c58f4d01532c6f60"
+    },
+    "35": {
+      "name": "liz-die",
+      "archive": "DAT/L1_DCI.MIX",
+      "entry": 16,
+      "key": 810534940,
+      "source_sha256": "4f6a426e0c0351807645861d3158a36eae0300dcf1c77f380a33f84ac3af5c46",
+      "path": "res://assets/lol2/generated/cave_entrance_death/liz_die.ogv",
+      "width": 640,
+      "height": 400,
+      "frames": 100,
+      "fps": 15,
+      "seconds": 6.6667,
+      "samples": 158024,
+      "rate": 22050,
+      "sha256": "ee0b99a7996c3c119e2a0bad55a05a377b3419182292c96026586e5734b89dac"
+    },
+    "74": {
+      "name": "luthrdie",
+      "archive": "DAT/L1_DCI.MIX",
+      "entry": 1,
+      "key": 2251858716,
+      "source_sha256": "c062867e2d2a1a120f337d5d1405b8cae7669f10f9f7bdffb108d01bb92ab392",
+      "path": "res://assets/lol2/generated/cave_entrance_death/luthrdie.ogv",
+      "width": 640,
+      "height": 400,
+      "frames": 48,
+      "fps": 15,
+      "seconds": 3.2,
+      "samples": 81584,
+      "rate": 22050,
+      "sha256": "077130e338edfd856dbc6192d7a5f96fde79f5cf26bffdcce4474dc5d7c1c0ce"
+    }
+  },
+  "scope": "Native ADA30 support-owner entry admission per form; owner state0 one-shot; op2 sub0x39 immediate death; op21 full-screen movie. Grounded foot tolerance and polygon admission are the same explicit adapters as source_control_contact.gd."
+}

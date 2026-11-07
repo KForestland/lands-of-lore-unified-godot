@@ -1,0 +1,16 @@
+{
+ "version": 1,
+ "archive": "DAT/L1_DC.MIX",
+ "prop": 1333,
+ "template": 17,
+ "descriptor": 417,
+ "position_native": [-1256, 0, -6132],
+ "arm": {"owner": "control109", "group": 10114, "archive_offset": 7242991, "raw_hex": "100335050100", "meaning": "op16 prop1333 state=1 (beast branch of plate 109 only)"},
+ "bump": {"event": 5, "value": 1, "predicate": 207, "group": 9470, "meaning": "player collision (5BAB8 -> AD8E0(obstacle,1)) with prop state == 1",
+  "commands": [
+   {"archive_offset": 7242347, "raw_hex": "1203350556fb9d1800000908000000230000", "meaning": "op18 move prop1333 to native (-1194, 6301, h0), heading0, flags0x0809, byte15 0x23"},
+   {"archive_offset": 7242365, "raw_hex": "100335050200", "meaning": "op16 prop1333 state=2"}
+  ]},
+ "destination_native": [-1194, 0, -6301],
+ "scope": "Pinned original records (offsets verified by byte search in DAT/L1_DC.MIX). Not hosted: kind10 sound702, kind6 sound221, kind4 empty-hand use (sound280, op9 property14). Slide time 1.0 s and solid radius 24 (keeps the west lane of the neck open as the source region graph does; 48 closed it) are modern adapters (docs/DEVIATIONS.md); op18 timing (flags 0x0809, byte15) is not traced."
+}

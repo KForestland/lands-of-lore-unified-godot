@@ -1,0 +1,3994 @@
+{
+ "version": 1,
+ "voice": "Luther, after holding or meeting the thing. No later use is written.",
+ "sources": {
+  "item_catalog": "scripts/lol2/item_catalog.gd",
+  "act2_items_catalog": "scripts/lol2/act2_items_catalog.gd",
+  "definitions": "assets/lol2/generated/items/definitions.json",
+  "item_census_rows": 170,
+  "census_label_matches": 170,
+  "act2_label_disagreements_not_merged": 84,
+  "hintbook_chapter3": "reference_hintbook/hintbook.txt chapter 3, folio 25",
+  "hintbook_name_matches": 30,
+  "creatures": "grok_research/creatures.md names",
+  "characters": "grok_research/npc_speech_map.md names"
+ },
+ "Items": {
+  "act2:L12_CM:blue_bow": {
+   "name": "Blue Bow",
+   "text": "I have held Blue Bow. It fits the weapon hand."
+  },
+  "act2:L12_CM:item5": {
+   "name": "Obsidian Chain Mail",
+   "text": "I have held Obsidian Chain Mail. It fits the armor place."
+  },
+  "act2:L13_RC:dark_sword": {
+   "name": "Dark Sword",
+   "text": "I have held Dark Sword. It fits the weapon hand."
+  },
+  "act2:L19_BC:horn": {
+   "name": "Hrn Belial",
+   "text": "I have held Hrn Belial. It fits the weapon hand."
+  },
+  "act2:L13_RC:enchanted_thohan": {
+   "name": "Enchanted Thohan’s Sword",
+   "text": "I have held Enchanted Thohan’s Sword. It fits the weapon hand."
+  },
+  "museum:item4:Fire_Crystal": {
+   "name": "Fire crystal",
+   "text": "I have held Fire crystal."
+  },
+  "museum:item5:Fire_Crystal": {
+   "name": "Fire crystal",
+   "text": "I have held Fire crystal."
+  },
+  "museum:item6:Fire_Crystal": {
+   "name": "Fire crystal",
+   "text": "I have held Fire crystal."
+  },
+  "museum:prop280:Prism": {
+   "name": "Prism",
+   "text": "I have held Prism. It fits the weapon hand."
+  },
+  "museum:item1:Dragon_Blood": {
+   "name": "Dragon Blood",
+   "text": "I have held Dragon Blood."
+  },
+  "museum:item2:Dragon_Blood": {
+   "name": "Dragon Blood",
+   "text": "I have held Dragon Blood."
+  },
+  "museum:item3:Dragon_Blood": {
+   "name": "Dragon Blood",
+   "text": "I have held Dragon Blood."
+  },
+  "museum:skeleton20:Dragon_Blood_1": {
+   "name": "Dragon Blood",
+   "text": "I have held Dragon Blood."
+  },
+  "museum:skeleton20:Dragon_Blood_2": {
+   "name": "Dragon Blood",
+   "text": "I have held Dragon Blood."
+  },
+  "cave:guard38:Short_Sword": {
+   "name": "Short Sword",
+   "text": "I have held Short Sword. It fits the weapon hand.",
+   "listed_in_hintbook": true
+  },
+  "cave:guard39:Short_Sword": {
+   "name": "Short Sword",
+   "text": "I have held Short Sword. It fits the weapon hand.",
+   "listed_in_hintbook": true
+  },
+  "cave:guard52:Short_Sword": {
+   "name": "Short Sword",
+   "text": "I have held Short Sword. It fits the weapon hand.",
+   "listed_in_hintbook": true
+  },
+  "cave:guard52:Guard_Shield": {
+   "name": "Guard Shield",
+   "text": "I have held Guard Shield. It fits the off hand."
+  },
+  "cave:guard53:Short_Sword": {
+   "name": "Short Sword",
+   "text": "I have held Short Sword. It fits the weapon hand.",
+   "listed_in_hintbook": true
+  },
+  "cave:guard53:Guard_Shield": {
+   "name": "Guard Shield",
+   "text": "I have held Guard Shield. It fits the off hand."
+  },
+  "cave:guard54:prop1013:Short_Sword": {
+   "name": "Short Sword",
+   "text": "I have held Short Sword. It fits the weapon hand.",
+   "listed_in_hintbook": true
+  },
+  "cave:guard54:actor54:Short_Sword": {
+   "name": "Short Sword",
+   "text": "I have held Short Sword. It fits the weapon hand.",
+   "listed_in_hintbook": true
+  },
+  "draracle/prop/1108/sample": {
+   "name": "Cavern find (unidentified)",
+   "text": "I have held Cavern find (unidentified)."
+  },
+  "jungle:kelsrick:Fine_Longsword": {
+   "name": "Fine Longsword",
+   "text": "I have held Fine Longsword. It fits the weapon hand."
+  },
+  "museum:item11:Fine_Longsword": {
+   "name": "Fine Longsword",
+   "text": "I have held Fine Longsword. It fits the weapon hand."
+  },
+  "museum:item25:Dragon_Gem": {
+   "name": "Dragon Gem",
+   "text": "I have held Dragon Gem."
+  },
+  "museum:item17:Ivory_Chip": {
+   "name": "Ivory Chip",
+   "text": "I have held Ivory Chip."
+  },
+  "museum:item18:Ivory_Chip": {
+   "name": "Ivory Chip",
+   "text": "I have held Ivory Chip."
+  },
+  "museum:item10:Mail_Shirt": {
+   "name": "Mail Shirt",
+   "text": "I have held Mail Shirt. It fits the armor place."
+  },
+  "museum:item8:Champion_Stone": {
+   "name": "Champion Stone",
+   "text": "I have held Champion Stone."
+  },
+  "museum:item9:Champion_Stone": {
+   "name": "Champion Stone",
+   "text": "I have held Champion Stone."
+  },
+  "museum:item7:Lightning_Crystal": {
+   "name": "Lightning crystal",
+   "text": "I have held Lightning crystal."
+  },
+  "museum:control181:Tho_Broken": {
+   "name": "Broken Thohan",
+   "text": "I have held Broken Thohan."
+  },
+  "museum:control87:Sk_key": {
+   "name": "Sk key",
+   "text": "I have held Sk key."
+  },
+  "museum:prop153:Long_arm": {
+   "name": "Long arm",
+   "text": "I have held Long arm. It fits the weapon hand."
+  },
+  "museum:movable55:SS1": {
+   "name": "SS1",
+   "text": "I have held SS1."
+  },
+  "hive:control121:Reaver_of_GO": {
+   "name": "Reaver of GO",
+   "text": "I have held Reaver of GO. It fits the weapon hand."
+  },
+  "hive:prop214:Net_of_Exile": {
+   "name": "Net of Exile",
+   "text": "I have held Net of Exile. It fits the weapon hand."
+  },
+  "cave:prop1050:Ancients_Stone": {
+   "name": "Ancients’ Stone",
+   "text": "I have held Ancients’ Stone."
+  },
+  "cave:control75:Mana_foil": {
+   "name": "Mana Foil",
+   "text": "I have held Mana Foil."
+  },
+  "jungle:item51:Th_Dagger": {
+   "name": "Th Dagger",
+   "text": "I have held Th Dagger. It fits the weapon hand."
+  },
+  "jungle:weapon_shop:Gargoyle_Bracers": {
+   "name": "Gargoyle Bracers",
+   "text": "I have held Gargoyle Bracers. It fits the off hand."
+  },
+  "monastery:item70:Dampen_charm": {
+   "name": "Dampen charm",
+   "text": "I have held Dampen charm."
+  },
+  "hive:runes:Ancients_Stone": {
+   "name": "Ancients’ Stone",
+   "text": "I have held Ancients’ Stone."
+  },
+  "jungle:chut:Ancients_Stone_1": {
+   "name": "Ancients’ Stone",
+   "text": "I have held Ancients’ Stone."
+  },
+  "jungle:chut:Ancients_Stone_2": {
+   "name": "Ancients’ Stone",
+   "text": "I have held Ancients’ Stone."
+  },
+  "jungle:chut:Ancients_Stone_3": {
+   "name": "Ancients’ Stone",
+   "text": "I have held Ancients’ Stone."
+  },
+  "jungle:chut:Ancients_Stone_4": {
+   "name": "Ancients’ Stone",
+   "text": "I have held Ancients’ Stone."
+  },
+  "jungle:chut:Ancients_Stone_5": {
+   "name": "Ancients’ Stone",
+   "text": "I have held Ancients’ Stone."
+  },
+  "jungle:chut:Ancients_Stone_6": {
+   "name": "Ancients’ Stone",
+   "text": "I have held Ancients’ Stone."
+  },
+  "cave:captain:Short_Sword": {
+   "name": "Short Sword",
+   "text": "I have held Short Sword. It fits the weapon hand.",
+   "listed_in_hintbook": true
+  },
+  "cave:captain:Burnt_Chain": {
+   "name": "Burnt Chain",
+   "text": "I have held Burnt Chain. It fits the armor place."
+  },
+  "museum:item12:Spark_Scroll": {
+   "name": "Spkscrl",
+   "text": "I have held Spkscrl."
+  },
+  "museum:item13:Spark_Scroll": {
+   "name": "Spkscrl",
+   "text": "I have held Spkscrl."
+  },
+  "museum:item14:Healing_Scroll": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "museum:item15:Healing_Scroll": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "museum:item16:Summon_Scroll": {
+   "name": "SumScrl",
+   "text": "I have held SumScrl."
+  },
+  "museum:item19:Cave_Aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "museum:item20:Cave_Aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "hive:item5:HlScrl": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "hive:item6:Ltng_cr": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "hive:item7:Ltng_cr": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "hive:item8:Kelens_ring": {
+   "name": "Kelens ring",
+   "text": "I have held Kelens ring."
+  },
+  "hive:item9:SS4": {
+   "name": "SS4",
+   "text": "I have held SS4."
+  },
+  "museum:item0:Cocos_Cap": {
+   "name": "Cocos Cap",
+   "text": "I have held Cocos Cap.",
+   "listed_in_hintbook": true
+  },
+  "darkhalls:item4:SS6": {
+   "name": "SS6",
+   "text": "I have held SS6."
+  },
+  "darkhalls:item5:Gaunt_strike": {
+   "name": "Gaunt strike",
+   "text": "I have held Gaunt strike. It fits the weapon hand."
+  },
+  "darkhalls:item28:Orc_shield": {
+   "name": "Orc shield",
+   "text": "I have held Orc shield. It fits the off hand."
+  },
+  "darkerjungle:item10:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item11:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item12:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item13:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item14:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item15:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item16:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item17:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item18:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item19:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item20:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item21:Lamplt_eggs": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "darkerjungle:item28:Manafoil": {
+   "name": "Manafoil",
+   "text": "I have held Manafoil."
+  },
+  "cave:prop144:harvest1:Stalagmite": {
+   "name": "Stalagmite",
+   "text": "I have held Stalagmite. It fits the weapon hand."
+  },
+  "cave:prop145:harvest1:Stalagmite": {
+   "name": "Stalagmite",
+   "text": "I have held Stalagmite. It fits the weapon hand."
+  },
+  "cave:prop146:harvest1:Stalagmite": {
+   "name": "Stalagmite",
+   "text": "I have held Stalagmite. It fits the weapon hand."
+  },
+  "cave:prop147:harvest1:Stalagmite": {
+   "name": "Stalagmite",
+   "text": "I have held Stalagmite. It fits the weapon hand."
+  },
+  "cave:prop148:harvest1:Stalagmite": {
+   "name": "Stalagmite",
+   "text": "I have held Stalagmite. It fits the weapon hand."
+  },
+  "cave:prop149:harvest1:Stalagmite": {
+   "name": "Stalagmite",
+   "text": "I have held Stalagmite. It fits the weapon hand."
+  },
+  "cave:prop641:harvest1:Stalagmite": {
+   "name": "Stalagmite",
+   "text": "I have held Stalagmite. It fits the weapon hand."
+  },
+  "cave:prop791:harvest1:Cave_Aloe": {
+   "name": "Cave Aloe",
+   "text": "I have held Cave Aloe."
+  },
+  "cave:prop791:harvest2:Cave_Aloe": {
+   "name": "Cave Aloe",
+   "text": "I have held Cave Aloe."
+  },
+  "cave:prop791:harvest3:Cave_Aloe": {
+   "name": "Cave Aloe",
+   "text": "I have held Cave Aloe."
+  },
+  "cave:prop792:harvest1:Cave_Aloe": {
+   "name": "Cave Aloe",
+   "text": "I have held Cave Aloe."
+  },
+  "cave:prop792:harvest2:Cave_Aloe": {
+   "name": "Cave Aloe",
+   "text": "I have held Cave Aloe."
+  },
+  "cave:prop792:harvest3:Cave_Aloe": {
+   "name": "Cave Aloe",
+   "text": "I have held Cave Aloe."
+  },
+  "cave:prop793:harvest1:Cave_Aloe": {
+   "name": "Cave Aloe",
+   "text": "I have held Cave Aloe."
+  },
+  "cave:prop793:harvest2:Cave_Aloe": {
+   "name": "Cave Aloe",
+   "text": "I have held Cave Aloe."
+  },
+  "cave:prop793:harvest3:Cave_Aloe": {
+   "name": "Cave Aloe",
+   "text": "I have held Cave Aloe."
+  },
+  "jungle:weapon_shop:Short_Sword": {
+   "name": "Short Sword",
+   "text": "I have held Short Sword. It fits the weapon hand.",
+   "listed_in_hintbook": true
+  },
+  "jungle:weapon_shop:Long_Arm": {
+   "name": "Long Arm",
+   "text": "I have held Long Arm. It fits the weapon hand."
+  },
+  "jungle:weapon_shop:Firestorm": {
+   "name": "Firestorm",
+   "text": "I have held Firestorm. It fits the weapon hand."
+  },
+  "jungle:herb:sap:0": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "jungle:herb:sap:1": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "jungle:herb:amber:0": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "jungle:herb:amber:1": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "jungle:herb:aloe:0": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:herb:aloe:1": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "monastery:item94:Iron_Flute": {
+   "name": "Iron Flute",
+   "text": "I have held Iron Flute."
+  },
+  "monastery:item83:Power_Orb": {
+   "name": "Power Orb",
+   "text": "I have held Power Orb."
+  },
+  "hive:item0:Wax": {
+   "name": "Wax",
+   "text": "I have held Wax."
+  },
+  "jungle:kityara:Empty_hand": {
+   "name": "Kityara's blade",
+   "text": "I have held Kityara's blade. It fits the weapon hand."
+  },
+  "l8:shaman:Dracoid_sigil": {
+   "name": "Dracoid Sigil",
+   "text": "I have held Dracoid Sigil."
+  },
+  "jungle:magic_shop:War_cluster": {
+   "name": "War Cluster",
+   "text": "I have held War Cluster.",
+   "listed_in_hintbook": true
+  },
+  "jungle:magic_shop:Mana_foil": {
+   "name": "Mana Foil",
+   "text": "I have held Mana Foil."
+  },
+  "jungle:magic_shop:SS5": {
+   "name": "Spell Scroll",
+   "text": "I have held Spell Scroll."
+  },
+  "jungle:magic_shop:Fire_crystals_1": {
+   "name": "Fire Crystal",
+   "text": "I have held Fire Crystal."
+  },
+  "jungle:magic_shop:Fire_crystals_2": {
+   "name": "Fire Crystal",
+   "text": "I have held Fire Crystal."
+  },
+  "jungle:magic_shop:Fire_crystals_3": {
+   "name": "Fire Crystal",
+   "text": "I have held Fire Crystal."
+  },
+  "jungle:magic_shop:Dag_Light": {
+   "name": "Dagger of Light",
+   "text": "I have held Dagger of Light. It fits the weapon hand."
+  },
+  "jungle:magic_shop:Tho_fixed": {
+   "name": "Thohan's Great Sword",
+   "text": "I have held Thohan's Great Sword. It fits the weapon hand."
+  },
+  "jungle:item1:Storm": {
+   "name": "Storm",
+   "text": "I have held Storm."
+  },
+  "jungle:item2:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item3:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item7:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item8:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item9:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item10:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item11:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item12:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item13:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item14:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item40:War_cluster": {
+   "name": "War cluster",
+   "text": "I have held War cluster.",
+   "listed_in_hintbook": true
+  },
+  "jungle:item77:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item78:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item79:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item80:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item81:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item83:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item84:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item85:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item86:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item87:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item4:Mind_clustr": {
+   "name": "Mind clustr",
+   "text": "I have held Mind clustr."
+  },
+  "jungle:item5:Mind_clustr": {
+   "name": "Mind clustr",
+   "text": "I have held Mind clustr."
+  },
+  "jungle:item6:Mind_clustr": {
+   "name": "Mind clustr",
+   "text": "I have held Mind clustr."
+  },
+  "jungle:item15:Guard_shield": {
+   "name": "Guard shield",
+   "text": "I have held Guard shield. It fits the off hand."
+  },
+  "jungle:item16:Rock": {
+   "name": "Rock",
+   "text": "I have held Rock."
+  },
+  "jungle:item17:Rock": {
+   "name": "Rock",
+   "text": "I have held Rock."
+  },
+  "jungle:item18:Spkscrl": {
+   "name": "Spkscrl",
+   "text": "I have held Spkscrl."
+  },
+  "jungle:item19:Spkscrl": {
+   "name": "Spkscrl",
+   "text": "I have held Spkscrl."
+  },
+  "jungle:item20:HlScrl": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "jungle:item21:HlScrl": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "jungle:item22:Ltng_cr": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "jungle:item23:Ltng_cr": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "jungle:item24:Drag_Blood": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "jungle:item25:Drag_Blood": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "jungle:item26:Drag_Blood": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "jungle:item27:Drag_Blood": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "jungle:item28:Drag_Blood": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "jungle:item29:Guardian_orb": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "jungle:item30:Guardian_orb": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "jungle:item31:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item32:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item33:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item34:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item35:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item36:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item37:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item38:ch_stone": {
+   "name": "ch stone",
+   "text": "I have held ch stone."
+  },
+  "jungle:item39:p_paint": {
+   "name": "p paint",
+   "text": "I have held p paint."
+  },
+  "jungle:item43:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item44:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item45:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item46:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item47:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item48:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item49:Arrant_prac": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "jungle:item73:Rock": {
+   "name": "Rock",
+   "text": "I have held Rock."
+  },
+  "jungle:item74:Rock": {
+   "name": "Rock",
+   "text": "I have held Rock."
+  },
+  "jungle:item75:Rock": {
+   "name": "Rock",
+   "text": "I have held Rock."
+  },
+  "jungle:item76:Rock": {
+   "name": "Rock",
+   "text": "I have held Rock."
+  },
+  "jungle:item0:Snare": {
+   "name": "Snare",
+   "text": "I have held Snare."
+  },
+  "jungle:item50:Wax": {
+   "name": "Wax",
+   "text": "I have held Wax."
+  },
+  "jungle:item52:Ironwod_sap": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "jungle:item53:Ironwod_sap": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "jungle:item54:Vels_fruit": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "jungle:item55:Vels_fruit": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "jungle:item56:Vels_fruit": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "jungle:item57:Vels_fruit": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "jungle:item63:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item64:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item65:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item66:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item67:Cave_aloe": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "jungle:item41:Fire_crstl": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "jungle:item42:Fire_crstl": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "jungle:item68:Storm": {
+   "name": "Storm",
+   "text": "I have held Storm."
+  },
+  "jungle:item69:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item70:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item71:Ancients_stn": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "jungle:item72:SS3": {
+   "name": "SS3",
+   "text": "I have held SS3."
+  },
+  "jungle:beehive:Wax_1": {
+   "name": "Wax",
+   "text": "I have held Wax."
+  },
+  "jungle:beehive:Wax_2": {
+   "name": "Wax",
+   "text": "I have held Wax."
+  },
+  "jungle:beehive:Wax_3": {
+   "name": "Wax",
+   "text": "I have held Wax."
+  },
+  "jungle:beehive:Wax_4": {
+   "name": "Wax",
+   "text": "I have held Wax."
+  },
+  "jungle:beehive:Wax_5": {
+   "name": "Wax",
+   "text": "I have held Wax."
+  },
+  "jungle:beehive:Wax_6": {
+   "name": "Wax",
+   "text": "I have held Wax."
+  },
+  "jungle:aloe_plant:Aloe_1": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_2": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_3": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_4": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_5": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_6": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_7": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_8": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_9": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_10": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_11": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_12": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_13": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_14": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_15": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_16": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_17": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_18": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_19": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_20": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_21": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_22": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_23": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_24": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_25": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_26": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:aloe_plant:Aloe_27": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "jungle:sap_tree:Ironwood_sap_1": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_2": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_3": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_4": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_5": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_6": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_7": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_8": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_9": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_10": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_11": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_12": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_13": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_14": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_15": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_16": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_17": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_18": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_19": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_20": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_21": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_22": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_23": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "jungle:sap_tree:Ironwood_sap_24": {
+   "name": "Ironwood sap",
+   "text": "I have held Ironwood sap."
+  },
+  "hive:control123:Amber_1": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_2": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_3": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_4": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_5": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_6": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_7": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_8": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_9": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_10": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_11": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "hive:control123:Amber_12": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "darkhalls:actor57:Plasma_staff": {
+   "name": "Plasma staff",
+   "text": "I have held Plasma staff. It fits the weapon hand."
+  },
+  "darkhalls:control58u1:Stone_bracrs": {
+   "name": "Stone bracers",
+   "text": "I have held Stone bracers. It fits the off hand."
+  },
+  "darkhalls:control59u1:Fire_shield": {
+   "name": "Fire shield",
+   "text": "I have held Fire shield. It fits the off hand."
+  },
+  "darkhalls:control71u1:Colims_amult": {
+   "name": "Colim's amulet",
+   "text": "I have held Colim's amulet."
+  },
+  "darkhalls:control968u1:HlScrl": {
+   "name": "Healing scroll",
+   "text": "I have held Healing scroll."
+  },
+  "darkhalls:control968u2:HlScrl": {
+   "name": "Healing scroll",
+   "text": "I have held Healing scroll."
+  },
+  "darkhalls:control971u1:Prsmscrl": {
+   "name": "Prism scroll",
+   "text": "I have held Prism scroll."
+  },
+  "darkhalls:control974u1:Ancients_stn": {
+   "name": "Ancients’ Stone",
+   "text": "I have held Ancients’ Stone."
+  },
+  "darkhalls:control974u2:Spkscrl": {
+   "name": "Spark scroll",
+   "text": "I have held Spark scroll."
+  },
+  "darkhalls:control975u1:Prsmscrl": {
+   "name": "Prism scroll",
+   "text": "I have held Prism scroll."
+  },
+  "darkhalls:control975u2:Prsmscrl": {
+   "name": "Prism scroll",
+   "text": "I have held Prism scroll."
+  },
+  "darkhalls:control976u1:HlScrl": {
+   "name": "Healing scroll",
+   "text": "I have held Healing scroll."
+  },
+  "darkhalls:control976u2:SumScrl": {
+   "name": "Summon scroll",
+   "text": "I have held Summon scroll."
+  },
+  "hive:Wax_runes:0": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:1": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:2": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:3": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:4": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:5": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:6": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:7": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:8": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:9": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:10": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:11": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:12": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:13": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:14": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:15": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:16": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:17": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:18": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:19": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:20": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:21": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "hive:Wax_runes:22": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "jungle:thieves_den:Pois_paint": {
+   "name": "Pois paint",
+   "text": "I have held Pois paint."
+  },
+  "jungle:thieves_den:Skull_key": {
+   "name": "Skull key",
+   "text": "I have held Skull key."
+  },
+  "act2:L8_SJ:item0": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item1": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item2": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item3": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item4": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item5": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item6": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item7": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item8": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item9": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L8_SJ:item10": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item11": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item12": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item13": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item14": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item15": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item16": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item17": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item18": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item19": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item20": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item21": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L8_SJ:item25": {
+   "name": "Br dead",
+   "text": "I have held Br dead."
+  },
+  "act2:L8_SJ:item26": {
+   "name": "Amaranth sr",
+   "text": "I have held Amaranth sr."
+  },
+  "act2:L8_SJ:item27": {
+   "name": "Empty hand",
+   "text": "I have held Empty hand."
+  },
+  "act2:L8_SJ:item28": {
+   "name": "Manafoil",
+   "text": "I have held Manafoil."
+  },
+  "act2:L8_SJ:item29": {
+   "name": "Mindcl",
+   "text": "I have held Mindcl."
+  },
+  "act2:L8_SJ:item30": {
+   "name": "Warcl",
+   "text": "I have held Warcl."
+  },
+  "act2:L8_SJ:item31": {
+   "name": "Control tokn",
+   "text": "I have held Control tokn."
+  },
+  "act2:L8_SJ:item32": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L8_SJ:item33": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L8_SJ:item34": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L8_SJ:item36": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L8_SJ:item37": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L8_SJ:item38": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L8_SJ:item39": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L8_SJ:item40": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L8_SJ:item41": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L8_SJ:item42": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L8_SJ:item43": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L8_SJ:item44": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L8_SJ:item45": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L8_SJ:item46": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L8_SJ:item47": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "act2:L8_SJ:item48": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "act2:L8_SJ:item51": {
+   "name": "Brook flou",
+   "text": "I have held Brook flou."
+  },
+  "act2:L9_DR:item0": {
+   "name": "Fullurn",
+   "text": "I have held Fullurn."
+  },
+  "act2:L9_DR:item1": {
+   "name": "G Beozar",
+   "text": "I have held G Beozar."
+  },
+  "act2:L9_DR:item2": {
+   "name": "Iron Rod",
+   "text": "I have held Iron Rod."
+  },
+  "act2:L9_DR:item3": {
+   "name": "St of cobra",
+   "text": "I have held St of cobra."
+  },
+  "act2:L9_DR:item4": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "act2:L9_DR:item5": {
+   "name": "SumScrl",
+   "text": "I have held SumScrl."
+  },
+  "act2:L9_DR:item6": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "act2:L9_DR:item7": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "act2:L9_DR:item8": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "act2:L9_DR:item9": {
+   "name": "Cocos Cap",
+   "text": "I have held Cocos Cap.",
+   "listed_in_hintbook": true
+  },
+  "act2:L9_DR:item10": {
+   "name": "Net of Exile",
+   "text": "I have held Net of Exile."
+  },
+  "act2:L9_DR:item11": {
+   "name": "Net of Exile",
+   "text": "I have held Net of Exile."
+  },
+  "act2:L9_DR:item12": {
+   "name": "Prsmscrl",
+   "text": "I have held Prsmscrl."
+  },
+  "act2:L9_DR:item13": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L9_DR:item14": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L9_DR:item15": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "act2:L9_DR:item16": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "act2:L9_DR:item17": {
+   "name": "Rng regen",
+   "text": "I have held Rng regen."
+  },
+  "act2:L9_DR:item18": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item19": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item20": {
+   "name": "Prsmscrl",
+   "text": "I have held Prsmscrl."
+  },
+  "act2:L9_DR:item21": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "act2:L9_DR:item22": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "act2:L9_DR:item23": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "act2:L9_DR:item24": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "act2:L9_DR:item25": {
+   "name": "Rock",
+   "text": "I have held Rock."
+  },
+  "act2:L9_DR:item26": {
+   "name": "Rock",
+   "text": "I have held Rock."
+  },
+  "act2:L9_DR:item27": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "act2:L9_DR:item28": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "act2:L9_DR:item29": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "act2:L9_DR:item30": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "act2:L9_DR:item31": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L9_DR:item32": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item33": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item34": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item35": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item36": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item37": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item38": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item39": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item40": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item41": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item42": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item43": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item44": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item45": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item46": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item47": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item48": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item49": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L9_DR:item50": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L9_DR:item51": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L9_DR:item52": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L9_DR:item53": {
+   "name": "Gau Might",
+   "text": "I have held Gau Might."
+  },
+  "act2:L9_DR:item54": {
+   "name": "Ax Traitor",
+   "text": "I have held Ax Traitor."
+  },
+  "act2:L9_DR:item55": {
+   "name": "Br dead",
+   "text": "I have held Br dead."
+  },
+  "act2:L10_DC:item0": {
+   "name": "SS10",
+   "text": "I have held SS10."
+  },
+  "act2:L10_DC:item1": {
+   "name": "SS9",
+   "text": "I have held SS9."
+  },
+  "act2:L10_DC:item2": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item3": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item4": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item5": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item6": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item7": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "act2:L10_DC:item8": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item8:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item8:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item8:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item9": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item9:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item9:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item9:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item10": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item11": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item12": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item13": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item14": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L10_DC:item15": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L10_DC:item16": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L10_DC:item17": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L10_DC:item18": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "act2:L10_DC:item19": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "act2:L10_DC:item20": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "act2:L10_DC:item21": {
+   "name": "Spkscrl",
+   "text": "I have held Spkscrl."
+  },
+  "act2:L10_DC:item22": {
+   "name": "Spkscrl",
+   "text": "I have held Spkscrl."
+  },
+  "act2:L10_DC:item23": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L10_DC:item24": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L10_DC:item25": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L10_DC:item26": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L10_DC:item27": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L10_DC:item28": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "act2:L10_DC:item29": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "act2:L10_DC:item30": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "act2:L10_DC:item32": {
+   "name": "Valkryie",
+   "text": "I have held Valkryie."
+  },
+  "act2:L10_DC:item33": {
+   "name": "Beozar ring",
+   "text": "I have held Beozar ring."
+  },
+  "act2:L10_DC:item34": {
+   "name": "SumScrl",
+   "text": "I have held SumScrl."
+  },
+  "act2:L10_DC:item35": {
+   "name": "SumScrl",
+   "text": "I have held SumScrl."
+  },
+  "act2:L10_DC:item36": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "act2:L10_DC:item37": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L10_DC:item38": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L10_DC:item39": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L10_DC:item40": {
+   "name": "Reflective p",
+   "text": "I have held Reflective p."
+  },
+  "act2:L10_DC:item41": {
+   "name": "Drac dagger",
+   "text": "I have held Drac dagger."
+  },
+  "act2:L10_DC:item43": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item43:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item43:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item43:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item44": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item44:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item44:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item44:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item45": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item45:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item45:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item45:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item46": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item46:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item46:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item46:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item47": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item47:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item47:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item47:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item48": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item48:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item48:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item48:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item49": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item49:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item49:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item49:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item50": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item50:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item50:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item50:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item51": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item51:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item51:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item51:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item52": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item52:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item52:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item52:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item53": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item53:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item53:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item53:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item54": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item54:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item54:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item54:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item55": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item55:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item55:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item55:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item56": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item56:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item56:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item56:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item57": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item57:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item57:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item57:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item58": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L10_DC:item58:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L10_DC:item58:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L10_DC:item58:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L10_DC:item59": {
+   "name": "Rock",
+   "text": "I have held Rock."
+  },
+  "act2:L12_CM:item0": {
+   "name": "Pyrapod",
+   "text": "I have held Pyrapod."
+  },
+  "act2:L12_CM:item1": {
+   "name": "Acidsac",
+   "text": "I have held Acidsac."
+  },
+  "act2:L12_CM:item2": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L12_CM:item3": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L12_CM:item4": {
+   "name": "G Beozar",
+   "text": "I have held G Beozar."
+  },
+  "act2:L12_CM:item13": {
+   "name": "Br valor",
+   "text": "I have held Br valor."
+  },
+  "act2:L12_CM:item14": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item15": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item16": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item17": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item18": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item19": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item20": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item21": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item22": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item23": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item24": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item25": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item26": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item27": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item28": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item29": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item30": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item31": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item32": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item33": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item34": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L12_CM:item35": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "act2:L13_RC:item0": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L13_RC:item1": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L13_RC:item2": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L13_RC:item3": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item4": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item5": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item6": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item7": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item8": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item9": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item10": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item11": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item12": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item13": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item14": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item15": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item16": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item17": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item18": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item19": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "act2:L13_RC:item20": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L13_RC:item21": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L13_RC:item22": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L13_RC:item23": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L13_RC:item24": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "act2:L13_RC:item25": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "act2:L13_RC:item26": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "act2:L13_RC:item27": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "act2:L13_RC:item28": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "act2:L13_RC:item29": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "act2:L13_RC:item30": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "act2:L13_RC:item31": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item32": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item33": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item34": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item35": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item36": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item37": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item38": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item39": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item40": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L13_RC:item53": {
+   "name": "Mandrake",
+   "text": "I have held Mandrake."
+  },
+  "act2:L13_RC:item54": {
+   "name": "Mandrake",
+   "text": "I have held Mandrake."
+  },
+  "act2:L13_RC:item55": {
+   "name": "Mandrake",
+   "text": "I have held Mandrake."
+  },
+  "act2:L13_RC:item56": {
+   "name": "Mandrake",
+   "text": "I have held Mandrake."
+  },
+  "act2:L13_RC:item57": {
+   "name": "Mandrake",
+   "text": "I have held Mandrake."
+  },
+  "act2:L13_RC:item58": {
+   "name": "Mandrake",
+   "text": "I have held Mandrake."
+  },
+  "act2:L13_RC:item59": {
+   "name": "Mandrake",
+   "text": "I have held Mandrake."
+  },
+  "act2:L13_RC:item60": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L13_RC:item61": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L13_RC:item62": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L13_RC:item63": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L13_RC:item64": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L13_RC:item65": {
+   "name": "Brook flou",
+   "text": "I have held Brook flou."
+  },
+  "act2:L13_RC:item66": {
+   "name": "Brook flou",
+   "text": "I have held Brook flou."
+  },
+  "act2:L13_RC:item67": {
+   "name": "Brook flou",
+   "text": "I have held Brook flou."
+  },
+  "act2:L13_RC:item68": {
+   "name": "Brook flou",
+   "text": "I have held Brook flou."
+  },
+  "act2:L13_RC:item69": {
+   "name": "Brook flou",
+   "text": "I have held Brook flou."
+  },
+  "act2:L13_RC:item70": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L13_RC:item71": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L13_RC:item72": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L13_RC:item73": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L13_RC:item74": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L13_RC:item75": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L13_RC:item76": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L13_RC:item77": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "act2:L13_RC:item78": {
+   "name": "Venom sac",
+   "text": "I have held Venom sac.",
+   "listed_in_hintbook": true
+  },
+  "act2:L13_RC:item79": {
+   "name": "Venom sac",
+   "text": "I have held Venom sac.",
+   "listed_in_hintbook": true
+  },
+  "act2:L13_RC:item80": {
+   "name": "Venom sac",
+   "text": "I have held Venom sac.",
+   "listed_in_hintbook": true
+  },
+  "act2:L13_RC:item81": {
+   "name": "Venom sac",
+   "text": "I have held Venom sac.",
+   "listed_in_hintbook": true
+  },
+  "act2:L13_RC:item82": {
+   "name": "Venom sac",
+   "text": "I have held Venom sac.",
+   "listed_in_hintbook": true
+  },
+  "act2:L13_RC:item83": {
+   "name": "Venom sac",
+   "text": "I have held Venom sac.",
+   "listed_in_hintbook": true
+  },
+  "act2:L13_RC:item84": {
+   "name": "Venom sac",
+   "text": "I have held Venom sac.",
+   "listed_in_hintbook": true
+  },
+  "act2:L13_RC:item85": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L13_RC:item86": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L13_RC:item87": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L13_RC:item88": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L13_RC:item89": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L13_RC:item90": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L13_RC:item91": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "act2:L14_HT:item0": {
+   "name": "Statuette",
+   "text": "I have held Statuette."
+  },
+  "act2:L14_HT:item1": {
+   "name": "Dreamstone",
+   "text": "I have held Dreamstone."
+  },
+  "act2:L14_HT:item2": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L14_HT:item3": {
+   "name": "Cocos Cap",
+   "text": "I have held Cocos Cap.",
+   "listed_in_hintbook": true
+  },
+  "act2:L14_HT:item4": {
+   "name": "Cry shard",
+   "text": "I have held Cry shard."
+  },
+  "act2:L14_HT:item5": {
+   "name": "Jkar idol",
+   "text": "I have held Jkar idol."
+  },
+  "act2:L14_HT:item6": {
+   "name": "Statuette",
+   "text": "I have held Statuette."
+  },
+  "act2:L14_HT:item17": {
+   "name": "Storm",
+   "text": "I have held Storm."
+  },
+  "act2:L14_HT:item18": {
+   "name": "Prsmscrl",
+   "text": "I have held Prsmscrl."
+  },
+  "act2:L14_HT:item19": {
+   "name": "Prsmscrl",
+   "text": "I have held Prsmscrl."
+  },
+  "act2:L14_HT:item20": {
+   "name": "MoDScrl",
+   "text": "I have held MoDScrl."
+  },
+  "act2:L14_HT:item21": {
+   "name": "MoDScrl",
+   "text": "I have held MoDScrl."
+  },
+  "act2:L14_HT:item22": {
+   "name": "SumScrl",
+   "text": "I have held SumScrl."
+  },
+  "act2:L14_HT:item23": {
+   "name": "SumScrl",
+   "text": "I have held SumScrl."
+  },
+  "act2:L14_HT:item24": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item25": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item26": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item27": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item28": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item29": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item30": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item31": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item32": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item33": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "act2:L14_HT:item34": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item35": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item36": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item37": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item38": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item39": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item40": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item41": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item42": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item43": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L14_HT:item44": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L14_HT:item45": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L14_HT:item46": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager."
+  },
+  "act2:L14_HT:item47": {
+   "name": "MoDScrl",
+   "text": "I have held MoDScrl."
+  },
+  "act2:L14_HT:item48": {
+   "name": "MoDScrl",
+   "text": "I have held MoDScrl."
+  },
+  "act2:L14_HT:item49": {
+   "name": "MoDScrl",
+   "text": "I have held MoDScrl."
+  },
+  "act2:L14_HT:item50": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "act2:L14_HT:item51": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "act2:L14_HT:item52": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "act2:L14_HT:item53": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L14_HT:item54": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L14_HT:item55": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L14_HT:item56": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L14_HT:item57": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L14_HT:item58": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L14_HT:item59": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L14_HT:item60": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "act2:L14_HT:item61": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "act2:L14_HT:item62": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "act2:L14_HT:item63": {
+   "name": "Deathsac",
+   "text": "I have held Deathsac.",
+   "listed_in_hintbook": true
+  },
+  "act2:L14_HT:item64": {
+   "name": "N valk crsbw",
+   "text": "I have held N valk crsbw."
+  },
+  "act2:L14_HT:item67": {
+   "name": "Cry shard",
+   "text": "I have held Cry shard."
+  },
+  "act2:L14_HT:item68": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "act2:L14_HT:item70": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "act2:L14_HT:item71": {
+   "name": "Platemail",
+   "text": "I have held Platemail."
+  },
+  "act2:L14_HT:item72": {
+   "name": "Pois paint",
+   "text": "I have held Pois paint."
+  },
+  "act2:L14_HT:item73": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "act2:L14_HT:item74": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "act2:L14_HT:item75": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "act2:L14_HT:item76": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "act2:L14_HT:item77": {
+   "name": "Iron flute",
+   "text": "I have held Iron flute."
+  },
+  "act2:L16_CA:item0": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L16_CA:item1": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L16_CA:item2": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "act2:L16_CA:item3": {
+   "name": "Dreamstone",
+   "text": "I have held Dreamstone."
+  },
+  "act2:L16_CA:item4": {
+   "name": "Iron flute",
+   "text": "I have held Iron flute."
+  },
+  "act2:L16_CA:item9": {
+   "name": "SS12",
+   "text": "I have held SS12."
+  },
+  "act2:L16_CA:item10": {
+   "name": "Cry shard",
+   "text": "I have held Cry shard."
+  },
+  "act2:L16_CA:item11": {
+   "name": "Scarab",
+   "text": "I have held Scarab."
+  },
+  "act2:L16_CA:item12": {
+   "name": "Ivory chip",
+   "text": "I have held Ivory chip."
+  },
+  "act2:L16_CA:item13": {
+   "name": "StGorgon",
+   "text": "I have held StGorgon."
+  },
+  "act2:L16_CA:item14": {
+   "name": "Manafoil",
+   "text": "I have held Manafoil."
+  },
+  "act2:L16_CA:item15": {
+   "name": "Mindcl",
+   "text": "I have held Mindcl."
+  },
+  "act2:L16_CA:item16": {
+   "name": "Pyrapod",
+   "text": "I have held Pyrapod."
+  },
+  "act2:L16_CA:item17": {
+   "name": "Deathsac",
+   "text": "I have held Deathsac.",
+   "listed_in_hintbook": true
+  },
+  "act2:L16_CA:item18": {
+   "name": "Acidsac",
+   "text": "I have held Acidsac."
+  },
+  "act2:L16_CA:item19": {
+   "name": "Warcl",
+   "text": "I have held Warcl."
+  },
+  "act2:L16_CA:item20": {
+   "name": "p paint",
+   "text": "I have held p paint."
+  },
+  "act2:L16_CA:item21": {
+   "name": "ch stone",
+   "text": "I have held ch stone."
+  },
+  "act2:L16_CA:item22": {
+   "name": "Ivory chip",
+   "text": "I have held Ivory chip."
+  },
+  "act2:L16_CA:item23": {
+   "name": "Ivory chip",
+   "text": "I have held Ivory chip."
+  },
+  "act2:L16_CA:item25": {
+   "name": "Prsmscrl",
+   "text": "I have held Prsmscrl."
+  },
+  "act2:L16_CA:item26": {
+   "name": "MoDScrl",
+   "text": "I have held MoDScrl."
+  },
+  "act2:L16_CA:item27": {
+   "name": "SumScrl",
+   "text": "I have held SumScrl."
+  },
+  "act2:L16_CA:item28": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "act2:L16_CA:item29": {
+   "name": "Sk key",
+   "text": "I have held Sk key."
+  },
+  "act2:L20_BB:item0": {
+   "name": "Rng Drakfire",
+   "text": "I have held Rng Drakfire."
+  },
+  "act2:L20_BB:item1": {
+   "name": "DF bracers",
+   "text": "I have held DF bracers."
+  },
+  "act2:L20_BB:item2": {
+   "name": "Dr armor",
+   "text": "I have held Dr armor."
+  },
+  "act2:L20_BB:item3": {
+   "name": "Dr Gaunt",
+   "text": "I have held Dr Gaunt."
+  },
+  "act2:L9_DR:tower_blank": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "act2:L9_DR:tower_blank:charged:yellow": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "act2:L9_DR:tower_blank:charged:white": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "act2:L9_DR:tower_blank:charged:blue": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "act2:L13_RC:item145": {
+   "name": "Cowards sh",
+   "text": "I have held Cowards sh."
+  },
+  "act2:L13_RC:item146": {
+   "name": "Myriad",
+   "text": "I have held Myriad."
+  },
+  "act2:L13_RC:item147": {
+   "name": "Bastion",
+   "text": "I have held Bastion."
+  },
+  "act2:L14_HT:item65": {
+   "name": "Statuette",
+   "text": "I have held Statuette."
+  },
+  "act2:L14_HT:trial_idol371": {
+   "name": "Jkar idol",
+   "text": "I have held Jkar idol."
+  },
+  "act2:L14_HT:trial_idol372": {
+   "name": "Jkar idol",
+   "text": "I have held Jkar idol."
+  },
+  "act2:L14_HT:trial_idol384": {
+   "name": "Jkar idol",
+   "text": "I have held Jkar idol."
+  },
+  "act2:L14_HT:post_shard": {
+   "name": "Cry shard",
+   "text": "I have held Cry shard."
+  },
+  "act2:L16_CA:pad_lichen0": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:pad_lichen1": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:pad_lichen2": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:pad_lichen3": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:pad_lichen4": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:pad_lichen5": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:pad_lichen6": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:pad_lichen7": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:pad_lichen8": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen518": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen521": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen522": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen527": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen528": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen533": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen534": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen539": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen540": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen545": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen546": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen551": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen552": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L16_CA:lichen557": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "act2:L10_DC:silverleaf159": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf160": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf161": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf162": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf163": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf164": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf165": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf166": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf167": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf168": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf169": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L10_DC:silverleaf170": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "act2:L14_HT:hopper_corpse91": {
+   "name": "Hopper corpse",
+   "text": "I have held Hopper corpse."
+  },
+  "act2:L14_HT:hopper_corpse92": {
+   "name": "Hopper corpse",
+   "text": "I have held Hopper corpse."
+  },
+  "act2:L14_HT:hopper_corpse93": {
+   "name": "Hopper corpse",
+   "text": "I have held Hopper corpse."
+  },
+  "act2:L14_HT:hopper_corpse94": {
+   "name": "Hopper corpse",
+   "text": "I have held Hopper corpse."
+  },
+  "act2:L14_HT:hopper_corpse95": {
+   "name": "Hopper corpse",
+   "text": "I have held Hopper corpse."
+  },
+  "act2:L13_RC:dreamstone": {
+   "name": "Dreamstone",
+   "text": "I have held Dreamstone."
+  },
+  "act2:L13_RC:dawn_bestial_disk": {
+   "name": "Bestial Disk",
+   "text": "I have held Bestial Disk."
+  },
+  "act2:L12_CM:kenneth_picture": {
+   "name": "Kenneth’s Picture",
+   "text": "I have held Kenneth’s Picture."
+  },
+  "act2:L12_CM:kenneth_charm": {
+   "name": "Kenneth’s Charm",
+   "text": "I have held Kenneth’s Charm."
+  },
+  "act2:L8_SJ:larkhon_vapors": {
+   "name": "Larkhon Vapors",
+   "text": "I have held Larkhon Vapors."
+  },
+  "act2:L8_SJ:shaman_amaranth": {
+   "name": "Amaranth Serum",
+   "text": "I have held Amaranth Serum."
+  },
+  "act2:L8_SJ:dawn_control_token": {
+   "name": "Control Token",
+   "text": "I have held Control Token."
+  },
+  "act2:L10_DC:priest_urn": {
+   "name": "Caretaker Urn",
+   "text": "I have held Caretaker Urn."
+  },
+  "act2:L10_DC:priest_ankh": {
+   "name": "Ankh",
+   "text": "I have held Ankh."
+  },
+  "act2:L10_DC:emperor_remains": {
+   "name": "Emperor Remains",
+   "text": "I have held Emperor Remains."
+  },
+  "item:def000": {
+   "name": "Stalagmite",
+   "text": "I have held Stalagmite. It fits the weapon hand."
+  },
+  "item:def001": {
+   "name": "Br Mace",
+   "text": "I have held Br Mace. It fits the weapon hand."
+  },
+  "item:def002": {
+   "name": "Halberd",
+   "text": "I have held Halberd. It fits the weapon hand."
+  },
+  "item:def003": {
+   "name": "Hand axe",
+   "text": "I have held Hand axe. It fits the weapon hand."
+  },
+  "item:def004": {
+   "name": "Short swd",
+   "text": "I have held Short swd. It fits the weapon hand."
+  },
+  "item:def005": {
+   "name": "Fine longswd",
+   "text": "I have held Fine longswd. It fits the weapon hand."
+  },
+  "item:def006": {
+   "name": "Long arm",
+   "text": "I have held Long arm. It fits the weapon hand."
+  },
+  "item:def007": {
+   "name": "Prism",
+   "text": "I have held Prism. It fits the weapon hand."
+  },
+  "item:def008": {
+   "name": "Firestorm",
+   "text": "I have held Firestorm. It fits the weapon hand."
+  },
+  "item:def009": {
+   "name": "Th Dagger",
+   "text": "I have held Th Dagger. It fits the weapon hand."
+  },
+  "item:def010": {
+   "name": "Serpent staf",
+   "text": "I have held Serpent staf. It fits the weapon hand."
+  },
+  "item:def011": {
+   "name": "Tho Broken",
+   "text": "I have held Tho Broken."
+  },
+  "item:def012": {
+   "name": "Gaunt strike",
+   "text": "I have held Gaunt strike. It fits the weapon hand."
+  },
+  "item:def013": {
+   "name": "Plasma staff",
+   "text": "I have held Plasma staff. It fits the weapon hand."
+  },
+  "item:def014": {
+   "name": "War blade",
+   "text": "I have held War blade. It fits the weapon hand.",
+   "listed_in_hintbook": true
+  },
+  "item:def015": {
+   "name": "Ax Traitor",
+   "text": "I have held Ax Traitor. It fits the weapon hand."
+  },
+  "item:def016": {
+   "name": "Drac dagger",
+   "text": "I have held Drac dagger. It fits the weapon hand."
+  },
+  "item:def017": {
+   "name": "Reaver of GO",
+   "text": "I have held Reaver of GO. It fits the weapon hand."
+  },
+  "item:def018": {
+   "name": "Blizzard",
+   "text": "I have held Blizzard. It fits the weapon hand."
+  },
+  "item:def019": {
+   "name": "Bastion",
+   "text": "I have held Bastion. It fits the weapon hand."
+  },
+  "item:def020": {
+   "name": "Tho fixed",
+   "text": "I have held Tho fixed. It fits the weapon hand."
+  },
+  "item:def021": {
+   "name": "Darkstorm",
+   "text": "I have held Darkstorm. It fits the weapon hand."
+  },
+  "item:def022": {
+   "name": "Hrn Belial",
+   "text": "I have held Hrn Belial. It fits the weapon hand."
+  },
+  "item:def023": {
+   "name": "Rock",
+   "text": "I have held Rock. It fits the weapon hand."
+  },
+  "item:def024": {
+   "name": "Defender",
+   "text": "I have held Defender. It fits the weapon hand."
+  },
+  "item:def025": {
+   "name": "Net of Exile",
+   "text": "I have held Net of Exile."
+  },
+  "item:def026": {
+   "name": "Snare",
+   "text": "I have held Snare. It fits the weapon hand."
+  },
+  "item:def027": {
+   "name": "Dag Light",
+   "text": "I have held Dag Light. It fits the weapon hand."
+  },
+  "item:def028": {
+   "name": "Lt crosbow",
+   "text": "I have held Lt crosbow. It fits the weapon hand."
+  },
+  "item:def029": {
+   "name": "Empty hand",
+   "text": "I have held Empty hand. It fits the weapon hand."
+  },
+  "item:def030": {
+   "name": "Shift",
+   "text": "I have held Shift. It fits the weapon hand."
+  },
+  "item:def031": {
+   "name": "Shard",
+   "text": "I have held Shard. It fits the weapon hand."
+  },
+  "item:def032": {
+   "name": "Myriad",
+   "text": "I have held Myriad. It fits the weapon hand."
+  },
+  "item:def033": {
+   "name": "Valkryie",
+   "text": "I have held Valkryie. It fits the weapon hand."
+  },
+  "item:def034": {
+   "name": "N valk crsbw",
+   "text": "I have held N valk crsbw. It fits the weapon hand."
+  },
+  "item:def035": {
+   "name": "Darkbow",
+   "text": "I have held Darkbow. It fits the weapon hand."
+  },
+  "item:def036": {
+   "name": "Brnt Chain",
+   "text": "I have held Brnt Chain. It fits the armor place."
+  },
+  "item:def037": {
+   "name": "Guard shield",
+   "text": "I have held Guard shield. It fits the off hand."
+  },
+  "item:def038": {
+   "name": "Orc shield",
+   "text": "I have held Orc shield. It fits the off hand."
+  },
+  "item:def039": {
+   "name": "Brkn Orc sh",
+   "text": "I have held Brkn Orc sh. It fits the off hand."
+  },
+  "item:def040": {
+   "name": "Mail shirt",
+   "text": "I have held Mail shirt. It fits the armor place."
+  },
+  "item:def041": {
+   "name": "Gargoyle br",
+   "text": "I have held Gargoyle br. It fits the off hand."
+  },
+  "item:def042": {
+   "name": "Deathstroke",
+   "text": "I have held Deathstroke. It fits the off hand."
+  },
+  "item:def043": {
+   "name": "Platemail",
+   "text": "I have held Platemail. It fits the armor place."
+  },
+  "item:def044": {
+   "name": "Fire shield",
+   "text": "I have held Fire shield. It fits the off hand."
+  },
+  "item:def045": {
+   "name": "Reflective p",
+   "text": "I have held Reflective p. It fits the armor place."
+  },
+  "item:def046": {
+   "name": "Stone bracrs",
+   "text": "I have held Stone bracrs. It fits the off hand."
+  },
+  "item:def047": {
+   "name": "Gau Might",
+   "text": "I have held Gau Might."
+  },
+  "item:def048": {
+   "name": "Kierans circ",
+   "text": "I have held Kierans circ."
+  },
+  "item:def049": {
+   "name": "Br valor",
+   "text": "I have held Br valor. It fits the off hand."
+  },
+  "item:def050": {
+   "name": "Cowards sh",
+   "text": "I have held Cowards sh. It fits the off hand."
+  },
+  "item:def051": {
+   "name": "Dr Gaunt",
+   "text": "I have held Dr Gaunt."
+  },
+  "item:def052": {
+   "name": "Dr armor",
+   "text": "I have held Dr armor. It fits the armor place."
+  },
+  "item:def053": {
+   "name": "DF bracers",
+   "text": "I have held DF bracers. It fits the off hand."
+  },
+  "item:def054": {
+   "name": "Obs chain",
+   "text": "I have held Obs chain. It fits the armor place."
+  },
+  "item:def055": {
+   "name": "Ltng cr",
+   "text": "I have held Ltng cr."
+  },
+  "item:def056": {
+   "name": "Ltng c brnt",
+   "text": "I have held Ltng c brnt."
+  },
+  "item:def057": {
+   "name": "Fire crstl",
+   "text": "I have held Fire crstl."
+  },
+  "item:def058": {
+   "name": "Fire brnt",
+   "text": "I have held Fire brnt."
+  },
+  "item:def059": {
+   "name": "Br dead",
+   "text": "I have held Br dead. It fits the off hand."
+  },
+  "item:def060": {
+   "name": "Stone cube",
+   "text": "I have held Stone cube."
+  },
+  "item:def061": {
+   "name": "Stroke dager",
+   "text": "I have held Stroke dager. It fits the weapon hand."
+  },
+  "item:def062": {
+   "name": "Guardian orb",
+   "text": "I have held Guardian orb."
+  },
+  "item:def063": {
+   "name": "ice seed",
+   "text": "I have held ice seed."
+  },
+  "item:def064": {
+   "name": "Rng Drakfire",
+   "text": "I have held Rng Drakfire."
+  },
+  "item:def065": {
+   "name": "Rng regen",
+   "text": "I have held Rng regen."
+  },
+  "item:def066": {
+   "name": "Storm",
+   "text": "I have held Storm."
+  },
+  "item:def067": {
+   "name": "Storm brnt",
+   "text": "I have held Storm brnt."
+  },
+  "item:def068": {
+   "name": "Ancients stn",
+   "text": "I have held Ancients stn."
+  },
+  "item:def069": {
+   "name": "Ruby of trth",
+   "text": "I have held Ruby of trth."
+  },
+  "item:def070": {
+   "name": "SS1",
+   "text": "I have held SS1."
+  },
+  "item:def071": {
+   "name": "Tho enchant",
+   "text": "I have held Tho enchant. It fits the weapon hand."
+  },
+  "item:def072": {
+   "name": "Dampen ch",
+   "text": "I have held Dampen ch."
+  },
+  "item:def073": {
+   "name": "Wax",
+   "text": "I have held Wax."
+  },
+  "item:def074": {
+   "name": "Wax runes",
+   "text": "I have held Wax runes."
+  },
+  "item:def075": {
+   "name": "Spkscrl",
+   "text": "I have held Spkscrl."
+  },
+  "item:def076": {
+   "name": "Control tokn",
+   "text": "I have held Control tokn."
+  },
+  "item:def077": {
+   "name": "Emp remains",
+   "text": "I have held Emp remains."
+  },
+  "item:def078": {
+   "name": "Caretk urn",
+   "text": "I have held Caretk urn."
+  },
+  "item:def079": {
+   "name": "Lizard seal",
+   "text": "I have held Lizard seal."
+  },
+  "item:def080": {
+   "name": "Bestial disk",
+   "text": "I have held Bestial disk."
+  },
+  "item:def081": {
+   "name": "Portrait Ken",
+   "text": "I have held Portrait Ken."
+  },
+  "item:def082": {
+   "name": "Kelens ring",
+   "text": "I have held Kelens ring."
+  },
+  "item:def083": {
+   "name": "St of cobra",
+   "text": "I have held St of cobra."
+  },
+  "item:def084": {
+   "name": "Vels fruit",
+   "text": "I have held Vels fruit."
+  },
+  "item:def085": {
+   "name": "Power orb",
+   "text": "I have held Power orb."
+  },
+  "item:def086": {
+   "name": "Dragon gem",
+   "text": "I have held Dragon gem."
+  },
+  "item:def087": {
+   "name": "Colims amult",
+   "text": "I have held Colims amult."
+  },
+  "item:def088": {
+   "name": "Beozar ring",
+   "text": "I have held Beozar ring."
+  },
+  "item:def089": {
+   "name": "G Beozar",
+   "text": "I have held G Beozar."
+  },
+  "item:def090": {
+   "name": "Keneths chrm",
+   "text": "I have held Keneths chrm."
+  },
+  "item:def091": {
+   "name": "Cat ring",
+   "text": "I have held Cat ring."
+  },
+  "item:def092": {
+   "name": "Iron Rod",
+   "text": "I have held Iron Rod."
+  },
+  "item:def093": {
+   "name": "Scarab",
+   "text": "I have held Scarab."
+  },
+  "item:def094": {
+   "name": "Sk key",
+   "text": "I have held Sk key."
+  },
+  "item:def095": {
+   "name": "Skull key",
+   "text": "I have held Skull key."
+  },
+  "item:def096": {
+   "name": "Iron flute",
+   "text": "I have held Iron flute."
+  },
+  "item:def097": {
+   "name": "D Ankh",
+   "text": "I have held D Ankh."
+  },
+  "item:def098": {
+   "name": "E Globe",
+   "text": "I have held E Globe."
+  },
+  "item:def099": {
+   "name": "Y globe",
+   "text": "I have held Y globe."
+  },
+  "item:def100": {
+   "name": "W globe",
+   "text": "I have held W globe."
+  },
+  "item:def101": {
+   "name": "B globe",
+   "text": "I have held B globe."
+  },
+  "item:def102": {
+   "name": "Drac sigil",
+   "text": "I have held Drac sigil."
+  },
+  "item:def103": {
+   "name": "Statuette",
+   "text": "I have held Statuette."
+  },
+  "item:def104": {
+   "name": "Runestone",
+   "text": "I have held Runestone."
+  },
+  "item:def105": {
+   "name": "Cry shard",
+   "text": "I have held Cry shard."
+  },
+  "item:def106": {
+   "name": "Ruby sphere",
+   "text": "I have held Ruby sphere."
+  },
+  "item:def107": {
+   "name": "Ivory chip",
+   "text": "I have held Ivory chip."
+  },
+  "item:def108": {
+   "name": "Jkar idol",
+   "text": "I have held Jkar idol."
+  },
+  "item:def109": {
+   "name": "Aloe",
+   "text": "I have held Aloe."
+  },
+  "item:def110": {
+   "name": "Cave aloe",
+   "text": "I have held Cave aloe."
+  },
+  "item:def111": {
+   "name": "Ironwod sap",
+   "text": "I have held Ironwod sap."
+  },
+  "item:def112": {
+   "name": "Amber",
+   "text": "I have held Amber."
+  },
+  "item:def113": {
+   "name": "Venom sac",
+   "text": "I have held Venom sac.",
+   "listed_in_hintbook": true
+  },
+  "item:def114": {
+   "name": "Lamplt eggs",
+   "text": "I have held Lamplt eggs."
+  },
+  "item:def115": {
+   "name": "Brook flou",
+   "text": "I have held Brook flou. It fits the weapon hand."
+  },
+  "item:def116": {
+   "name": "Gorgonite",
+   "text": "I have held Gorgonite."
+  },
+  "item:def117": {
+   "name": "Silverleaf",
+   "text": "I have held Silverleaf."
+  },
+  "item:def118": {
+   "name": "Mandrake",
+   "text": "I have held Mandrake."
+  },
+  "item:def119": {
+   "name": "Amaranth sr",
+   "text": "I have held Amaranth sr."
+  },
+  "item:def120": {
+   "name": "Tar crystal",
+   "text": "I have held Tar crystal."
+  },
+  "item:def121": {
+   "name": "Rain sulph",
+   "text": "I have held Rain sulph."
+  },
+  "item:def122": {
+   "name": "Black lichn",
+   "text": "I have held Black lichn."
+  },
+  "item:def123": {
+   "name": "Champion st",
+   "text": "I have held Champion st."
+  },
+  "item:def124": {
+   "name": "Arrant prac",
+   "text": "I have held Arrant prac."
+  },
+  "item:def125": {
+   "name": "Pois paint",
+   "text": "I have held Pois paint."
+  },
+  "item:def126": {
+   "name": "War cluster",
+   "text": "I have held War cluster.",
+   "listed_in_hintbook": true
+  },
+  "item:def127": {
+   "name": "Force pod",
+   "text": "I have held Force pod.",
+   "listed_in_hintbook": true
+  },
+  "item:def128": {
+   "name": "Larkhon vap",
+   "text": "I have held Larkhon vap."
+  },
+  "item:def129": {
+   "name": "Death sac",
+   "text": "I have held Death sac.",
+   "listed_in_hintbook": true
+  },
+  "item:def130": {
+   "name": "Acid sac",
+   "text": "I have held Acid sac."
+  },
+  "item:def131": {
+   "name": "Pod of chan",
+   "text": "I have held Pod of chan."
+  },
+  "item:def132": {
+   "name": "Pyra pod",
+   "text": "I have held Pyra pod."
+  },
+  "item:def133": {
+   "name": "Mana foil",
+   "text": "I have held Mana foil."
+  },
+  "item:def134": {
+   "name": "Mind clustr",
+   "text": "I have held Mind clustr."
+  },
+  "item:def135": {
+   "name": "St of gorgn",
+   "text": "I have held St of gorgn."
+  },
+  "item:def136": {
+   "name": "Dreamstone",
+   "text": "I have held Dreamstone."
+  },
+  "item:def137": {
+   "name": "SS2",
+   "text": "I have held SS2."
+  },
+  "item:def138": {
+   "name": "SS3",
+   "text": "I have held SS3."
+  },
+  "item:def139": {
+   "name": "SS4",
+   "text": "I have held SS4."
+  },
+  "item:def140": {
+   "name": "SS5",
+   "text": "I have held SS5."
+  },
+  "item:def141": {
+   "name": "SS6",
+   "text": "I have held SS6."
+  },
+  "item:def142": {
+   "name": "SS7",
+   "text": "I have held SS7."
+  },
+  "item:def143": {
+   "name": "SS8",
+   "text": "I have held SS8."
+  },
+  "item:def144": {
+   "name": "SS9",
+   "text": "I have held SS9."
+  },
+  "item:def145": {
+   "name": "SS10",
+   "text": "I have held SS10."
+  },
+  "item:def146": {
+   "name": "SS11",
+   "text": "I have held SS11."
+  },
+  "item:def147": {
+   "name": "SS12",
+   "text": "I have held SS12."
+  },
+  "item:def148": {
+   "name": "HlScrl",
+   "text": "I have held HlScrl."
+  },
+  "item:def149": {
+   "name": "SumScrl",
+   "text": "I have held SumScrl."
+  },
+  "item:def150": {
+   "name": "MoDScrl",
+   "text": "I have held MoDScrl."
+  },
+  "item:def151": {
+   "name": "Prsmscrl",
+   "text": "I have held Prsmscrl."
+  },
+  "item:def157": {
+   "name": "ch stone",
+   "text": "I have held ch stone."
+  },
+  "item:def158": {
+   "name": "p paint",
+   "text": "I have held p paint."
+  },
+  "item:def159": {
+   "name": "Warcl",
+   "text": "I have held Warcl."
+  },
+  "item:def160": {
+   "name": "Acidsac",
+   "text": "I have held Acidsac."
+  },
+  "item:def161": {
+   "name": "Deathsac",
+   "text": "I have held Deathsac.",
+   "listed_in_hintbook": true
+  },
+  "item:def162": {
+   "name": "Pyrapod",
+   "text": "I have held Pyrapod."
+  },
+  "item:def163": {
+   "name": "Mindcl",
+   "text": "I have held Mindcl."
+  },
+  "item:def164": {
+   "name": "Manafoil",
+   "text": "I have held Manafoil."
+  },
+  "item:def165": {
+   "name": "StGorgon",
+   "text": "I have held StGorgon."
+  },
+  "item:def166": {
+   "name": "Drag Blood",
+   "text": "I have held Drag Blood."
+  },
+  "item:def167": {
+   "name": "Cocos Cap",
+   "text": "I have held Cocos Cap.",
+   "listed_in_hintbook": true
+  },
+  "item:def168": {
+   "name": "Fullurn",
+   "text": "I have held Fullurn."
+  },
+  "item:def169": {
+   "name": "Scroll",
+   "text": "I have held Scroll.",
+   "listed_in_hintbook": true
+  }
+ },
+ "Creatures": {
+  "saar_and_stone_monsters": {
+   "name": "Saar and stone monsters",
+   "text": "Saar and stone monsters."
+  },
+  "saar": {
+   "name": "Saar",
+   "text": "Saar."
+  },
+  "worm": {
+   "name": "Worm",
+   "text": "Worm."
+  },
+  "zombies_and_rat_like_creatures": {
+   "name": "Zombies and rat-like creatures",
+   "text": "Zombies and rat-like creatures."
+  },
+  "hoppers": {
+   "name": "Hoppers",
+   "text": "Hoppers."
+  },
+  "daniel": {
+   "name": "Daniel",
+   "text": "Daniel."
+  },
+  "larkan_larkhon": {
+   "name": "Larkan / Larkhon",
+   "text": "Larkan / Larkhon."
+  },
+  "snow_tiger": {
+   "name": "Snow Tiger",
+   "text": "Snow Tiger."
+  },
+  "ruloi": {
+   "name": "Ruloi",
+   "text": "Ruloi."
+  },
+  "belial_spawn_and_hive_lord": {
+   "name": "Belial spawn and Hive Lord",
+   "text": "Belial spawn and Hive Lord."
+  },
+  "light_swarmers": {
+   "name": "Light Swarmers",
+   "text": "Light Swarmers."
+  },
+  "spiders": {
+   "name": "Spiders",
+   "text": "Spiders."
+  },
+  "faux_belial": {
+   "name": "Faux-Belial",
+   "text": "Faux-Belial."
+  },
+  "third_belial_hive_lord": {
+   "name": "Third Belial, Hive Lord",
+   "text": "Third Belial, Hive Lord."
+  }
+ },
+ "Characters": {
+  "dawn": {
+   "name": "Dawn",
+   "text": "Dawn."
+  },
+  "baccata": {
+   "name": "Baccata",
+   "text": "Baccata."
+  },
+  "the_emperor_s_spirit": {
+   "name": "The Emperor's spirit",
+   "text": "The Emperor's spirit."
+  },
+  "daniel": {
+   "name": "Daniel",
+   "text": "Daniel."
+  },
+  "the_shaman": {
+   "name": "The shaman",
+   "text": "The shaman."
+  },
+  "a_herbologist": {
+   "name": "A herbologist",
+   "text": "A herbologist."
+  },
+  "the_clubhouse_guard": {
+   "name": "The clubhouse guard",
+   "text": "The clubhouse guard."
+  },
+  "the_maidens": {
+   "name": "The maidens",
+   "text": "The maidens."
+  },
+  "the_first_belial_spawn": {
+   "name": "The first Belial spawn",
+   "text": "The first Belial spawn."
+  },
+  "the_hive_lord": {
+   "name": "The Hive Lord",
+   "text": "The Hive Lord."
+  },
+  "the_faux_belial": {
+   "name": "The faux-Belial",
+   "text": "The faux-Belial."
+  },
+  "belial": {
+   "name": "Belial",
+   "text": "Belial."
+  },
+  "the_draracle": {
+   "name": "The Draracle",
+   "text": "The Draracle."
+  }
+ },
+ "Lore": {
+  "savage_jungle_lake_shore": {
+   "name": "Savage Jungle lake shore",
+   "text": "Savage Jungle lake shore."
+  },
+  "savage_jungle": {
+   "name": "Savage Jungle",
+   "text": "Savage Jungle."
+  },
+  "dracoid_cemetery": {
+   "name": "Dracoid Cemetery",
+   "text": "Dracoid Cemetery."
+  },
+  "wild_village": {
+   "name": "Wild Village",
+   "text": "Wild Village."
+  },
+  "building_by_the_huline_temple_entrance": {
+   "name": "Building by the Huline Temple entrance",
+   "text": "Building by the Huline Temple entrance."
+  },
+  "ruloi_citadel": {
+   "name": "Ruloi Citadel",
+   "text": "Ruloi Citadel."
+  },
+  "citadel": {
+   "name": "Citadel",
+   "text": "Citadel."
+  },
+  "huline_temple": {
+   "name": "Huline Temple",
+   "text": "Huline Temple."
+  }
+ }
+}

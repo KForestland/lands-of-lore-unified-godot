@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "source": {
+    "file": "DAT/L1_DC.MIX",
+    "sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345",
+    "geometry_key": 2971673856
+  },
+  "room": 32,
+  "room_name": "cfall_",
+  "archive": {
+    "file": "DAT/CFALL.MIX",
+    "sha256": "a8f0b12bd82585a51f017daa4a558de136ef7fa2450ff508b003282d55746acc",
+    "dll_sha256": "1e7d848c1f73b4df150785c74ee1a7f5034ead413e46d66b661ebe40c40522ce"
+  },
+  "regions": [
+    {
+      "region": 1815,
+      "group": 2040,
+      "archive_offset": 7331267,
+      "commands": [
+        "0c03ca002000",
+        "120100001802922b000085081151000a0000"
+      ],
+      "polygon": [
+        [
+          586.0,
+          -11157.0
+        ],
+        [
+          630.0,
+          -11153.0
+        ],
+        [
+          595.0,
+          -11090.0
+        ],
+        [
+          564.0,
+          -11115.0
+        ]
+      ],
+      "floor_min": -192,
+      "floor_max": -192,
+      "place": {
+        "x": 536,
+        "y": 11154,
+        "h": 0,
+        "flags": 2181,
+        "heading": 20753,
+        "yaw": -1.989668955687
+      }
+    },
+    {
+      "region": 1817,
+      "group": 2070,
+      "archive_offset": 7331275,
+      "commands": [
+        "0c03ca002000",
+        "120100001302952b000085081151000a0000"
+      ],
+      "polygon": [
+        [
+          662.0,
+          -11155.0
+        ],
+        [
+          725.0,
+          -11170.0
+        ],
+        [
+          657.0,
+          -11011.0
+        ],
+        [
+          617.0,
+          -11074.0
+        ]
+      ],
+      "floor_min": -210,
+      "floor_max": -192,
+      "place": {
+        "x": 531,
+        "y": 11157,
+        "h": 0,
+        "flags": 2181,
+        "heading": 20753,
+        "yaw": -1.989668955687
+      }
+    },
+    {
+      "region": 1818,
+      "group": 2100,
+      "archive_offset": 7331283,
+      "commands": [
+        "0c03ca002000",
+        "120100000f02962b000085081151000a0000"
+      ],
+      "polygon": [
+        [
+          630.0,
+          -11153.0
+        ],
+        [
+          662.0,
+          -11155.0
+        ],
+        [
+          617.0,
+          -11074.0
+        ],
+        [
+          595.0,
+          -11090.0
+        ]
+      ],
+      "floor_min": -192,
+      "floor_max": -192,
+      "place": {
+        "x": 527,
+        "y": 11158,
+        "h": 0,
+        "flags": 2181,
+        "heading": 20753,
+        "yaw": -1.989668955687
+      }
+    }
+  ],
+  "hotspots": [
+    [
+      0,
+      334,
+      301,
+      639,
+      399
+    ],
+    [
+      1,
+      158,
+      350,
+      349,
+      399
+    ]
+  ],
+  "heal": 5,
+  "flags": [
+    5,
+    6
+  ],
+  "ambient": [
+    344,
+    130
+  ],
+  "cues": {
+    "2:20": {
+      "request": 298,
+      "trailer_index": 161,
+      "source_name": "0202024e.aud",
+      "audio_sha256": "86aee46e495c82affba676df121c787c13391c92d741e90b94cb3f7339dbc5d0",
+      "rate": 22050,
+      "decoded": 48896,
+      "path": "res://assets/lol2/generated/cave_cfall/cue_2_20.wav",
+      "samples": 24448,
+      "duration": 1.1087528344671203,
+      "wav_sha256": "55365489833c5657a5b3d0a82f1807de98cbd79be39a94099a7a5d7729ae17bc"
+    },
+    "2:26": {
+      "request": 276,
+      "trailer_index": 167,
+      "source_name": "0202624e.aud",
+      "audio_sha256": "ef1bc666e1bd1b1d8ab8271e8652ec6b332adbd0ca7edd66e5020d64373cebf4",
+      "rate": 22050,
+      "decoded": 26752,
+      "path": "res://assets/lol2/generated/cave_cfall/cue_2_26.wav",
+      "samples": 13376,
+      "duration": 0.6066213151927438,
+      "wav_sha256": "f3a60c21873b5ee229add2a3219e64b1adf8b313397566ef72a856b6cf6a933d"
+    },
+    "2:55": {
+      "request": 294,
+      "trailer_index": 196,
+      "source_name": "0205524e.aud",
+      "audio_sha256": "286a12602f7573f41646fa814c2dc20a02c60ae51f0083fabb3a76d5b312b7d9",
+      "rate": 22050,
+      "decoded": 55168,
+      "path": "res://assets/lol2/generated/cave_cfall/cue_2_55.wav",
+      "samples": 27584,
+      "duration": 1.2509750566893425,
+      "wav_sha256": "0b242ab0cad8daa93f6d82369515c86c2cc43fa75d82e3cf3303a6b846734b95"
+    }
+  },
+  "background": {
+    "path": "res://assets/lol2/generated/cave_cfall/cfall_.ogv",
+    "frames": 30,
+    "width": 640,
+    "height": 400,
+    "fps": 15,
+    "source_sha256": "6da0ed3cb91074b0b2f346619152da6a75b7ecdfdb54792c9869aa2bfa9d631d",
+    "sha256": "f5ddf6629e851dd9509aafc8f16939acf96ac8f0a9b7ed6fb4044cb285c49f53"
+  },
+  "scope": "CFALL_.WOM callbacks 1/2/4/8/9 and the three entry regions. Ambient 344 is not hosted (no staged ambient bank)."
+}

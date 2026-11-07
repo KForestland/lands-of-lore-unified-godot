@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/lol2/act2_map.gd" id="1"]
+
+[node name="MapL16_CA" type="Node3D"]
+script = ExtResource("1")
+area_id = "L16_CA"
+geometry_file = "res://assets/lol2/generated/maps/L16_CA/area.json"
+review_title = "City of the Ancients"
+huline_content = false
+area_name = "City of the Ancients"
+area_save_path = "user://saves/map_L16_CA_quicksave.json"
+area_save_format = "lol2-restoration-map-L16_CA"

@@ -1,0 +1,89 @@
+{
+ "archive_sha256": "2abeaa022c28d20c18494661f8195fbe3b688f43f639d19ddb7c6217a525e8ed",
+ "module_sha256": "eb84dac706126385234b1e84af00be7437438bbec5a893751b05dccbd3520555",
+ "room": 30,
+ "hotspot": [
+  194,
+  88,
+  396,
+  218
+ ],
+ "callbacks": {
+  "1": {
+   "offset": 1148,
+   "raw_hex": "6800060000ff15a006000083c40485c0750b6a016a01680f060000eb096a016a016815060000ff15f006000083c40c68da000000688c0100006a5868c20000006a00ff154806000083c414b801000000c3"
+  },
+  "4": {
+   "offset": 1271,
+   "raw_hex": "837c24040075f66800060000ff15c006000083c40485c0743fff15740600006a186a1c6a02ff158406000083c40c6a006a01681c060000ff15f006000083c40c6a016821060000ff15e806000083c408ff159c060000eb2f68a0000000ff158006000083c40485c0752368a0000000ff157806000083c4046a0e6a6b6a02ff158406000083c40cb801000000c368a1000000ff158006000083c40485c00f855affffff68a1000000ff157806000083c4046a0e6a70ebc5"
+  },
+  "9": {
+   "offset": 1463,
+   "raw_hex": "6800060000ff15a006000083c40485c075146affff159006000083c404ff159c06000031c0c36a78685d010000ff156c07000083c408a37407000031c0c3"
+  }
+ },
+ "scope": "Static room byte witness; host item predicates and execution not replayed. Kit consumption and scene binding are separate.",
+ "media": {
+  "voices": {
+   "width": 640,
+   "height": 400,
+   "frames": 450,
+   "fps": 15,
+   "seconds": 30.0,
+   "samples": 672524,
+   "rate": 22050,
+   "source_sha256": "e2edacd2ddc8de0b357864f49da636c815606c637fe00bc4fb9df1f9d39f7492",
+   "sha256": "3049240fc6d431d77d3624c7dd0ccf300655023ed1f423d79198c51e57990229",
+   "file": "voices.ogv"
+  },
+  "city": {
+   "width": 640,
+   "height": 400,
+   "frames": 1540,
+   "fps": 15,
+   "seconds": 102.6667,
+   "samples": 2274824,
+   "rate": 22050,
+   "source_sha256": "1bef3659f3c62fda4bc1fdf1ac0edb250fe6929bee522143e39e5ad43d7036dd",
+   "sha256": "336565198265ed444f11d39201349d5cdf5b1420243900278a2de0b4cd130926",
+   "file": "city.ogv"
+  },
+  "background": {
+   "source_sha256": "a93e5cb02b52ddcc28647376d082142150faa0b5cf573de1317011c9c7af7d5c",
+   "frame": 30,
+   "sha256": "9cadfdd1f316a5759e63664a1e0c4e469f15bc0830e95de07efed98a99260587"
+  },
+  "cues": {
+   "28": {
+    "request": 308,
+    "trailer_index": 169,
+    "source_name": "0202824e.aud",
+    "audio_sha256": "b6c1204189828576c2148e6e6a87b898f64eb016e86fe6bf9e03059d99b4bd40",
+    "rate": 22050,
+    "decoded": 58496,
+    "file": "cue_2_28.wav",
+    "samples": 29248,
+    "sha256": "03737666cc5e294ead8fc12c8478ca484cd3d7b08e70d90800bbb94ba5ee6cc6"
+   }
+  }
+ },
+ "level_side": {
+  "source": "docs/l14-belial-source.json",
+  "door_controls": [
+   78,
+   79
+  ],
+  "groups": [
+   17622,
+   17640
+  ],
+  "room_index": 30,
+  "room_archive": "CHV.MIX",
+  "continuation_prop": 170,
+  "continuation_group": 9210,
+  "predicate_local": 22,
+  "destination_level": 16,
+  "destination_selector": 1
+ },
+ "sound_bank_sha256": "e2d6df9a11a3d5bf6746911eac464c7f90efceaf7535e32a0f582dcea6afc3f6"
+}

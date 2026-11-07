@@ -1,0 +1,1 @@
+| 2026-10-27 | Jungle CHUT | F/Q inside the hut issue messages 7/6 (Anyar's attack branches); the hand selector + Give offer the held item (message 5, the refusal lines 366/367); the two stone piles are GUI sprites over the compositor. | Existing room-input adapters. | approved by owner rule 2026-10-27 |

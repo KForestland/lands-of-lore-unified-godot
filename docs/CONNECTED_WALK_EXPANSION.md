@@ -3,7 +3,7 @@
 User feedback: walking felt slow. Walk speed is now 80 original units/s (was 32,
 2.5× faster); hold Shift for sprint at 144 units/s. These are usability choices,
 not recovered native movement constants. Existing launcher:
-a local launcher (`run_lol2_connected_walk.sh`, not published). Restart an existing running view to load changes.
+`~/run_lol2_connected_walk.sh`. Restart an existing running view to load changes.
 
 Connected geometry expands from 12 to 21 regions. One ring of ordinary reciprocal
 connections with continuous endpoint floor heights is accepted; candidates need

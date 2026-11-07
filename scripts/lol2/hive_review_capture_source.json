@@ -1,0 +1,72 @@
+{
+ "schema": "lol2-hive-review-capture-source-v1",
+ "area": "L5_HC",
+ "file_order_raw_materials": {
+  "13": {
+   "image": "1ccd9271c9e7b5967225c2e18528b95d45a7570d2ce07fb104f1466302e21511",
+   "frames": [
+    "1ccd9271c9e7b5967225c2e18528b95d45a7570d2ce07fb104f1466302e21511",
+    "7a17602e75cdcf9c31f58c1627f4692349eb429344a4ae7095b38d99da2c15b3",
+    "99f7a82a44cc68a9815fd59df9a3ea6c6d3ec5e4ea5f223d1f97a906ca411793"
+   ]
+  },
+  "21": {
+   "image": "a179394ed839fe116a390b49dcdc627fb61a6f248b39c8a77c4266aad37eb6a3",
+   "frames": [
+    "a179394ed839fe116a390b49dcdc627fb61a6f248b39c8a77c4266aad37eb6a3",
+    "0f55a9673d22f53fbfe1ac6a61e9cbc5050f2223fe9ed2967055d0d196f027c4",
+    "9d677d0c1b010708b02f220af99eb757ef71a0fc38df5dba953bf2bdb06df232"
+   ]
+  },
+  "24": {
+   "image": "ca3301a20daa544c84b2ad4617a0266ba04bee19cc1203627fb5d161539e24c4",
+   "frames": [
+    "ca3301a20daa544c84b2ad4617a0266ba04bee19cc1203627fb5d161539e24c4",
+    "6ac7ba7579e4a497b7b96aa956e64728f632a4d478787d550fda4b1dba14073d",
+    "d5a2451afb557284f92460c14fd15e2124ee25d552d4dbbeaa31ec634db8c3fe"
+   ]
+  },
+  "171": {
+   "image": "05d31718e104cbf4be478ff76de82462b9319a1ea8c8948228b446496e38cfbb",
+   "frames": [
+    "05d31718e104cbf4be478ff76de82462b9319a1ea8c8948228b446496e38cfbb",
+    "7945c1e1350d5f30bbc65833def4c3ce8608fa5ff03e76d9ec29def212d23926",
+    "bd871d52502d487e1c48ff90fcfd19ac90b9d0faebb4d38bb50e4e2d36ad62a8",
+    "e146310e9430b5e03c8553cfe1abef38b0173da6983ef8c965f6fd08d79de97e",
+    "52d991729c6c9e7a2b76c5f61b85bbdde9c7fd0d5454b1cd89d84795166fca3d",
+    "a1641238b226012c973a9a07c8bf3d69c3436dbf796134459a41d93d490862e3",
+    "0b207625e6a97c82b6ffd3d8bee2d0b86d0afcc561b2cde46e3c14903b2cbd62",
+    "a470856287e3f2595081834cce7c136c9fdcbb2829af3b2cb62c68271b4ea48d",
+    "a925e9e13913a4db37ad2a8dc1f7008c01a35ec18e69728edc62306cbaa06e12",
+    "67282e699f664714d300bd703b5484e878ae5588083a630d1e556bc8bbffd47b"
+   ]
+  }
+ },
+ "review_fps": {
+  "13": 1.6,
+  "171": 8.0,
+  "21": 1.6,
+  "24": 1.6
+ },
+ "review_start_heights": {
+  "1": 24,
+  "2": -201
+ },
+ "ceiling_deferred_primary": [
+  188,
+  225,
+  248,
+  265,
+  920,
+  939,
+  1232,
+  1250
+ ],
+ "provenance": {
+  "file_order_raw_materials": "HISTORICAL CAPTURE LAYOUT: the 2026-09-14 Hive material capture (hive_materials_20260914/materials.json sha 6c26ae1c3548f7196fe670f83d0a1631d2dcc618d60b4804574b2ff1920b14bc) wrote column_major_raw sources in raw file order as rows of the same width. Hashes are the shipped/captured images. Capture convention, not a native presentation claim.",
+  "review_fps": "AUTHORED REVIEW CHOICE: extended_raw_variants review_fps of the same capture (1.6 for 13/21/24, 8.0 for 171); native timing unverified.",
+  "review_start_heights": "AUTHORED REVIEW CHOICE: route_arrivals.json (sha 92e0fc9e127ab2acea8af87709e344e82b8cc1362e8285a7e007fa77b0ed27ab) review_start heights; equal to the highest floor corner of the arrival region + 34. Native placement height not executed.",
+  "ceiling_deferred_primary": "HISTORICAL NATIVE EVIDENCE: primary regions with a standalone ceiling that the native ceiling selector replay of floor_presets.json (sha 7f1f4687643c4186591d97dfddf96abfeac966046ae84487a5a81f77afaaaddb, native_ceiling_selector_replays=1001) left unbound. Seven are also outside the published preset bound; region 265 (word17 0x010A) is not, and is kept deferred from this record. Not re-derived."
+ },
+ "limits": "Recorded capture/review choices and one recorded native selector result. Everything else is prepared from the original files."
+}

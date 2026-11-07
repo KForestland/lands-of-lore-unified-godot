@@ -1,0 +1,36 @@
+extends SceneTree
+const State=preload("res://scripts/lol2/cave_roach_population_state.gd")
+func _initialize() -> void:
+	var state:=State.initial()
+	State.initialize_visuals(state)
+	assert(State.validate(state).is_empty())
+	assert(state.visuals["26"].action==0)
+	state.visuals["26"]={"action":9,"elapsed":0.0} # Old saved adapter remains readable.
+	State.advance_visuals(state,0.5)
+	assert(State.damage(state,"25",3)==3 and state.actors["25"].health==7)
+	var before:=state.duplicate(true)
+	assert(State.damage(state,"36",100)==0 and State.damage(state,"25",0)==0 and state==before)
+	assert(State.damage(state,"25",100)==7)
+	assert(state.visuals["25"].action==14 and state.visuals["26"].action==9)
+	State.advance_visuals(state,0.5)
+	assert(state.visuals["25"].elapsed==0.5 and state.visuals["26"].action==0)
+	var restored:=State.canonical(JSON.parse_string(JSON.stringify(state)))
+	assert(State.validate(restored).is_empty() and restored==state)
+	State.advance_visuals(state,100)
+	assert(state.visuals["25"].elapsed==2.5 and state.visuals["26"].elapsed==0.0)
+	before=state.duplicate(true)
+	assert(State.damage(state,"25",100)==0 and state==before)
+	for delta in [-1.0,NAN,INF]:State.advance_visuals(state,delta)
+	assert(state==before)
+	var dead_legacy:=state.duplicate(true);dead_legacy.erase("visuals")
+	State.initialize_visuals(dead_legacy)
+	assert(dead_legacy.visuals["25"].elapsed==2.5 and dead_legacy.visuals["26"].action==0)
+	for change in [{"action":14,"elapsed":0.0},{"action":9,"elapsed":1.0},{"action":0,"elapsed":0.5},{"action":9,"elapsed":true},{"action":1,"elapsed":0.0}]:
+		var bad:=state.duplicate(true);bad.visuals["26"]=change
+		assert(not State.validate(bad).is_empty())
+	var bad:=state.duplicate(true);bad.visuals.erase("26")
+	assert(not State.validate(bad).is_empty())
+	bad=state.duplicate(true);bad.visuals["25"]={"action":0,"elapsed":0.0}
+	assert(not State.validate(bad).is_empty())
+	print("PASS: independent Roach startup/death clocks, actual-loss/idempotent damage, JSON/legacy migration and whole-packet visual rejection")
+	quit()

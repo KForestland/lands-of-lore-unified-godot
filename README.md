@@ -18,24 +18,21 @@ game (the GOG release); the project builds its assets from it.
 
 ## State of this repository
 
-The code here is a **September 2026 snapshot** (the Draracle Caverns research build).
-Development continues locally; the current work (Act 1 playable start to finish, all
-Act 2-3 maps walkable, the native script host, HUD, help and journal) is not published
-yet. It will be published as a cleaned snapshot without any original game media.
+**Code snapshot r17 (2026-11-07), work in progress.** This is the current Classic LoL2 code (build r17, which passed the
+project's full qualification: Act 1 campaign chain, packaging and smoke tests). Earlier versions here were a September
+2026 snapshot.
 
-Docs that describe the current local build:
-
-- [Status report 2026-10-31](docs/STATUS_2026-10-31.md): progress per area and estimated time
-- [Restoration status](docs/RESTORATION_STATUS.md): what works, how it is tested, known limits
-- [Deviations ledger](docs/DEVIATIONS.md): every intentional difference from the original
-- [Classic HUD](docs/classic-hud.md), [help system](docs/help-system.md), [My Journal](docs/my-journal.md)
-- [Enhanced edition ideas](docs/ENHANCED_EDITION_IDEAS.md)
-
-Docs that describe the September snapshot in this repository:
-
-- [Executioner combat core](docs/executioner-combat-core.md)
-- [Standalone cave demo packaging](docs/standalone-demo.md)
-- [Full cave walk](docs/FULL_CAVE_WALK.md) and the other Cave reviews in `docs/`
+- **Act 1** plays start to finish. **Act 2** is built and tested. **Act 3** is a walkable *skeleton*: the story steps are
+  in place and chained by tests, but many moments are not visible yet (no movies, no ending sequence); that is the next work.
+- **No original game files are included.** The original game's art, sound, movies and data are not here and never will
+  be: you build them from your own copy of Lands of Lore II (the GOG release) with the project's tools. Some test fixtures
+  hold numbers measured from the original program while it ran; they contain no art, sound or text.
+- Developer notes from the working tree: [docs/DEVELOPER_README_r17.md](docs/DEVELOPER_README_r17.md); every intentional
+  difference from the original: [docs/DEVIATIONS.md](docs/DEVIATIONS.md).
+- How the project works (AI lanes, checks, playtests): [METHOD.md](https://github.com/KForestland/lands-of-lore-ai-comms/blob/main/METHOD.md).
+  Status and plans: [master plan](https://github.com/KForestland/lands-of-lore-ai-comms/blob/main/MASTER_PLAN.md).
+- Modding: not supported yet. A Factorio-style mod system (mods load on top, Classic stays clean) is planned after a stable
+  Classic release. Questions and findings are welcome as issues in the ai-comms repo.
 
 ## Related repositories
 

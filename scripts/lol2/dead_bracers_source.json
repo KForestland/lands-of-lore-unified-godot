@@ -1,0 +1,16 @@
+{
+ "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+ "definition": 59,
+ "name": "58-Br dead",
+ "handler": 70,
+ "address": "0x99b94",
+ "code_hex": "538b1d586e02008b44240c8a003c107238762f3c12753685db740d31c089daa03f330200c6040201b801000000eb2085db741a31c089daa03f330200c6040200eb0bb802000000eb063c0e74e231c0891d586e02005bc3",
+ "code_sha256": "e6c346a17e8a2a8bfbd79f860f7828f7f7c33036fd6045631605aa0394edc0c0",
+ "requests": {
+  "18": "if local bank pointer at0x26e58 exists, set byte indexed by0x2333f to1; return1",
+  "14": "if bank exists, clear same byte; return0",
+  "16": "return2",
+  "other": "return0"
+ },
+ "scope": "Static pinned handler bytes and branch semantics. Native caller selection and level-local index discovery not replayed; modern inventory-derived conversation admission stays explicit."
+}

@@ -1,12 +1,40 @@
-# Standalone cavern walkthrough — 2026-09-11
+# Standalone cavern walkthrough — 2026-09-12
 
-Separate Linux x86_64 and Windows x86_64 release exports open directly into
-cave_walkthrough.tscn. Each ZIP includes the engine executable, adjacent PCK,
+Current Act 1 controls, save locations and named limits are in the [player guide](act-one-player-guide.md). Include that guide with the next candidate alongside its build identifier and verification results. The dated results below describe the September build, not the current Act 1 runtime or a newly qualified package.
+
+Separate Linux x86_64 and Windows x86_64 release exports verify the user's
+original game executable before opening cave_walkthrough.tscn. Each ZIP includes the engine executable, adjacent PCK,
 controls/readme, asset notice, Godot third-party notices and build manifest.
-No editor, Python, original installation or project checkout is needed to run.
+An original game installation is required. No editor, Python or project checkout is needed to run.
 The local ZIPs contain extracted original game artwork and recovered map data;
 these remain excluded from this source repository. Packaging is not a grant of
 redistribution rights for the original game content.
+
+On first launch, select `LOLG.EXE` from the original game installation using
+Browse or enter its path. The supported local GOG baseline is 2847 bytes with
+SHA-256 `cbd225cebc81cfbf06272456492686340d95c0148b5db9a0acca3c58653902f6`.
+This agrees with the RE baseline recorded on 2026-04-25. Other editions are
+rejected until their hashes are independently verified and added. A matching
+filename alone is insufficient. The executable is read locally, never run,
+copied into the package or uploaded. Only its path is saved in
+`user://original_game.cfg`; the bytes are verified again at every launch.
+Missing, unreadable or changed files keep the startup screen open.
+For automated runs, pass `-- --original-game-exe=/path/to/LOLG.EXE`.
+
+Release exports carry `original_game_required`; the walkthrough also checks
+the session verification state before initializing, so selecting that scene
+directly does not skip verification. Source/editor research scenes remain
+available for development. This is a file-possession check, not proof of
+purchase or a tamper-resistant DRM system. Original artwork and map data are
+still included in the PCK; this change does not remove those assets.
+
+2026-09-12 verification: the Godot validator accepts the baseline and rejects
+empty/missing paths, truncation and a same-size one-byte mutation. Linux package
+startup checks cover first launch, valid selection, remembered valid path,
+remembered changed/missing file; the official release template rejects direct
+scene-path overrides before startup. Both
+platforms export successfully. On 2026-09-12, the user reported that the demo
+works as intended on two Windows computers (functional pass).
 
 Preparation from a populated checkout:
 
@@ -38,8 +66,8 @@ Linux standalone validation on Radeon RX9070XT / Mesa25.2.8:
 - All24 camera-relative WASD checks pass; reset clears inherited yaw/roll.
 - Short forward walk stays grounded with zero resets.
 
-Windows export completed, but Wine crashed before engine startup in both the
-existing and a fresh profile. Native Windows validation is pending with the
-user; this is not a Windows runtime pass. No full119-route or broad hardware/
-performance certification. Static dummy positions/scale, lighting and some
+Windows: user-reported functional pass on two computers (2026-09-12).
+OS versions, GPUs and detailed test steps were not supplied. Earlier Wine
+startup failures in existing and fresh profiles remain historical environment
+results. No full119-route or broad hardware/performance certification. Static dummy positions/scale, lighting and some
 materials remain provisional; no combat, AI, interactions or audio.

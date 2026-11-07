@@ -1,7 +1,11 @@
 extends Node3D
 @export var default_full_map := false
-const WALK_SPEED = 80.0
-const SPRINT_SPEED = 144.0
+const WALK_SPEED = preload("res://scripts/lol2/walk_feel.gd").WALK_SPEED
+const SPRINT_SPEED = preload("res://scripts/lol2/walk_feel.gd").RUN_SPEED
+# Modern tuning: 96 with gravity128 rises about 36 units (was 80, about 25; the owner 2026-10-14 "a little larger").
+const JUMP_SPEED := 96.0
+var walk_feel = preload("res://scripts/lol2/walk_feel.gd").new()
+var jump_requested := false
 const ROOT = "res://assets/lol2/generated/original_floors/"
 var fixtures: Array
 var data: Dictionary
@@ -74,9 +78,11 @@ func _load_pair() -> void:
 	var fixture: Dictionary = fixtures[selected]
 	var collision_faces := PackedVector3Array()
 	for i in range(fixture.regions.size()):
+		if not _static_floor_enabled(int(fixture.regions[i])):continue
 		var source: Dictionary = {}
 		for face in data.faces:
 			if int(face.region) == int(fixture.regions[i]): source = face; break
+		source = _floor_source(source)
 		var material: StandardMaterial3D
 		if material_cache.has(source.material): material = material_cache[source.material]
 		else:
@@ -90,7 +96,7 @@ func _load_pair() -> void:
 				material.albedo_texture = ImageTexture.create_from_image(im)
 			else: material.albedo_color = Color(0.85, 0.15, 0.55)
 			material_cache[source.material] = material
-		_add_face(fixture.faces[i], material, collision_faces, source.uv)
+		_add_face(fixture.faces[i], material, collision_faces, source.uv, _region_light(int(fixture.regions[i])))
 	var neutral := StandardMaterial3D.new()
 	neutral.cull_mode = BaseMaterial3D.CULL_DISABLED
 	neutral.albedo_color = Color(0.35, 0.39, 0.43)
@@ -152,21 +158,58 @@ func _load_pair() -> void:
 		label.text = "Full recovered cave — experimental walk\n1,953 floors · complete extracted layout · walls and openings provisional\nWASD: move · Shift: sprint · Mouse: look · Esc: release · R: reset\nF: fly through geometry · Space/Ctrl: fly up/down · N/P: jump to checkpoint\nAmber: special links · Pink: unresolved materials · Objects and hazards incomplete."
 func _show_shell_face(_points: Array) -> bool:
 	return true
-func _add_face(points: Array, material: Material, collision_faces: PackedVector3Array, uv: Array = []) -> void:
+## Render-rate view of the physics-rate player. Movement steps at the physics tick while frames are drawn at the
+## display rate, so a camera copied straight from the body judders on displays faster than the tick (the owner
+## 2026-10-14: stutter while walking). The returned camera transform is shifted back toward the body's previous
+## tick position by the remaining physics fraction. Teleports, several ticks per frame and idle frames use the
+## physics transform unchanged. Gameplay, collision and saves keep reading the physics body.
+var _view_previous := Vector3.ZERO
+var _view_seen := Vector3.ZERO
+var _view_frame := -1
+const VIEW_SNAP_DISTANCE := 32.0
+
+func view_transform() -> Transform3D:
+	var transform := camera.global_transform
+	var position := player.global_position
+	var frame := Engine.get_physics_frames()
+	if frame != _view_frame:
+		_view_previous = _view_seen if frame == _view_frame + 1 else position
+		_view_seen = position
+		_view_frame = frame
+	var offset := _view_previous - position
+	if flying or offset.length() > VIEW_SNAP_DISTANCE or _view_seen != position: return transform
+	transform.origin += offset * (1.0 - Engine.get_physics_interpolation_fraction())
+	return transform
+
+## Subclasses may rebind a floor face to another material key and UV set.
+func _static_floor_enabled(_region: int) -> bool:
+	return true
+
+func _floor_source(source: Dictionary) -> Dictionary:
+	return source
+
+## Classic depth shading sector of a source region (CUSTOM0); the base review draws unshaded.
+func _region_light(_region: int) -> Color:
+	return Color(0, 0, 0, 0)
+
+func _add_face(points: Array, material: Material, collision_faces: PackedVector3Array, uv: Array = [], light := Color(0, 0, 0, 0)) -> void:
 	var key := material.get_instance_id()
 	var surface: SurfaceTool
 	if surface_groups.has(key): surface = surface_groups[key]
 	else:
 		surface = SurfaceTool.new()
 		surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+		surface.set_custom_format(0, SurfaceTool.CUSTOM_RGBA_FLOAT)
 		surface.set_material(material)
 		surface_groups[key] = surface
 	for index in [0, 1, 2, 0, 2, 3]:
 		if not uv.is_empty(): surface.set_uv(Vector2(uv[index][0], uv[index][1]))
+		surface.set_custom(0, light)
 		var p := point(points[index])
 		surface.add_vertex(p)
 		collision_faces.append(p)
 func _reset() -> void:
+	jump_requested = false
 	waypoint = 0
 	route_ticks = 0
 	if connected and checkpoint < 0: target = point(fixtures[selected].waypoints[0])
@@ -186,6 +229,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_SPACE and not flying and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not get_tree().paused and is_physics_processing() and player.is_on_floor():
+			jump_requested = true
 		if event.keycode == KEY_ESCAPE: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		if event.keycode == KEY_R: _reset()
 		if event.keycode == KEY_F and full_map:
@@ -223,14 +268,18 @@ func _physics_process(delta: float) -> void:
 		var remaining := Vector2(target.x - player.position.x, target.z - player.position.z).length()
 		speed = minf(speed, remaining / delta)
 	if flying:
+		jump_requested = false
 		direction = camera.global_basis * Vector3(float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)), 0, float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W))) if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED else Vector3.ZERO
 		direction.y += float(Input.is_physical_key_pressed(KEY_SPACE)) - float(Input.is_physical_key_pressed(KEY_CTRL))
 		player.position += direction.normalized() * speed * 4 * delta
 		return
-	player.velocity.x = direction.x * speed
-	player.velocity.z = direction.z * speed
-	player.velocity.y = 0 if player.is_on_floor() else player.velocity.y - 128 * delta
+	var planar := walk_feel.velocity(Vector2(direction.x, direction.z) * speed, delta)
+	player.velocity.x = planar.x
+	player.velocity.z = planar.y
+	player.velocity.y = JUMP_SPEED if jump_requested and player.is_on_floor() else (0.0 if player.is_on_floor() else player.velocity.y - 128 * delta)
+	jump_requested = false
 	player.move_and_slide()
+	walk_feel.bob(camera, Vector2(player.get_real_velocity().x, player.get_real_velocity().z).length(), player.is_on_floor(), delta)
 	grounded = grounded or player.is_on_floor()
 	var minimum_y: float = fixtures[0].minimum_floor_y if full_map else minf(start.y, target.y)
 	if player.position.y < minimum_y - 256:

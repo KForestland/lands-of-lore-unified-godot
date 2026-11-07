@@ -1,0 +1,758 @@
+{
+ "version": 1,
+ "source": {
+  "area": "L1_DC",
+  "archive_sha256": "6384ec4d4d78f1aadfc1f154d924e1e20636af037cf5af68fe35af8478854345"
+ },
+ "descriptor": 126,
+ "frames": [
+  "126_0_index.png",
+  "126_1_index.png",
+  "126_2_index.png",
+  "126_3_index.png",
+  "126_4_index.png",
+  "126_5_index.png",
+  "126_6_index.png"
+ ],
+ "template_heights": {
+  "69": 250,
+  "70": 150,
+  "71": 75
+ },
+ "props": {
+  "281": {
+   "template": 69,
+   "position": [
+    -886,
+    -440,
+    -13447
+   ],
+   "region": 1564,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 3,
+   "placement_phase": 3
+  },
+  "282": {
+   "template": 69,
+   "position": [
+    344,
+    -450,
+    -13090
+   ],
+   "region": 1506,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 6,
+   "placement_phase": 6
+  },
+  "283": {
+   "template": 69,
+   "position": [
+    -334,
+    -440,
+    -13480
+   ],
+   "region": 1629,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 4,
+   "placement_phase": 4
+  },
+  "284": {
+   "template": 69,
+   "position": [
+    -235,
+    -440,
+    -13871
+   ],
+   "region": 1664,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 4,
+   "placement_phase": 4
+  },
+  "285": {
+   "template": 69,
+   "position": [
+    -203,
+    -440,
+    -13685
+   ],
+   "region": 1649,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 2,
+   "placement_phase": 2
+  },
+  "286": {
+   "template": 69,
+   "position": [
+    507,
+    -440,
+    -13756
+   ],
+   "region": 1718,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 2,
+   "placement_phase": 2
+  },
+  "287": {
+   "template": 69,
+   "position": [
+    523,
+    -440,
+    -13583
+   ],
+   "region": 1767,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 6,
+   "placement_phase": 6
+  },
+  "288": {
+   "template": 69,
+   "position": [
+    480,
+    -440,
+    -13475
+   ],
+   "region": 1708,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 5,
+   "placement_phase": 5
+  },
+  "289": {
+   "template": 71,
+   "position": [
+    724,
+    -440,
+    -13502
+   ],
+   "region": 1774,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 0,
+   "placement_phase": 0
+  },
+  "290": {
+   "template": 71,
+   "position": [
+    263,
+    -450,
+    -13274
+   ],
+   "region": 1487,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 1,
+   "placement_phase": 1
+  },
+  "291": {
+   "template": 71,
+   "position": [
+    -176,
+    -440,
+    -13534
+   ],
+   "region": 1544,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 4,
+   "placement_phase": 4
+  },
+  "292": {
+   "template": 71,
+   "position": [
+    -784,
+    -440,
+    -13155
+   ],
+   "region": 1437,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 6,
+   "placement_phase": 6
+  },
+  "293": {
+   "template": 71,
+   "position": [
+    -757,
+    -440,
+    -13296
+   ],
+   "region": 1428,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 6,
+   "placement_phase": 6
+  },
+  "294": {
+   "template": 71,
+   "position": [
+    -952,
+    -440,
+    -13496
+   ],
+   "region": 1623,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 1,
+   "placement_phase": 1
+  },
+  "295": {
+   "template": 71,
+   "position": [
+    -778,
+    -440,
+    -13399
+   ],
+   "region": 1426,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 0,
+   "placement_phase": 0
+  },
+  "296": {
+   "template": 71,
+   "position": [
+    -263,
+    -440,
+    -13600
+   ],
+   "region": 1569,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 6,
+   "placement_phase": 6
+  },
+  "297": {
+   "template": 71,
+   "position": [
+    -312,
+    -440,
+    -13816
+   ],
+   "region": 1663,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 1,
+   "placement_phase": 1
+  },
+  "298": {
+   "template": 71,
+   "position": [
+    -57,
+    -440,
+    -13686
+   ],
+   "region": 1683,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 5,
+   "placement_phase": 5
+  },
+  "299": {
+   "template": 71,
+   "position": [
+    577,
+    -440,
+    -13605
+   ],
+   "region": 1767,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 4,
+   "placement_phase": 11
+  },
+  "300": {
+   "template": 71,
+   "position": [
+    588,
+    -440,
+    -13724
+   ],
+   "region": 1732,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 4,
+   "placement_phase": 4
+  },
+  "301": {
+   "template": 71,
+   "position": [
+    453,
+    -440,
+    -13518
+   ],
+   "region": 1708,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 1,
+   "placement_phase": 1
+  },
+  "302": {
+   "template": 71,
+   "position": [
+    387,
+    -450,
+    -13149
+   ],
+   "region": 1507,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 5,
+   "placement_phase": 5
+  },
+  "303": {
+   "template": 71,
+   "position": [
+    241,
+    -450,
+    -13052
+   ],
+   "region": 1505,
+   "left": -10.0,
+   "right": 10.0,
+   "bottom": 0,
+   "top": 75,
+   "start_frame": 3,
+   "placement_phase": 3
+  },
+  "304": {
+   "template": 70,
+   "position": [
+    -919,
+    -440,
+    -13529
+   ],
+   "region": 1623,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 4,
+   "placement_phase": 4
+  },
+  "305": {
+   "template": 70,
+   "position": [
+    -832,
+    -440,
+    -13193
+   ],
+   "region": 1437,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 2,
+   "placement_phase": 2
+  },
+  "306": {
+   "template": 70,
+   "position": [
+    -941,
+    -440,
+    -13372
+   ],
+   "region": 1425,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 2,
+   "placement_phase": 2
+  },
+  "307": {
+   "template": 70,
+   "position": [
+    -805,
+    -440,
+    -13486
+   ],
+   "region": 1563,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 6,
+   "placement_phase": 6
+  },
+  "308": {
+   "template": 70,
+   "position": [
+    -724,
+    -440,
+    -13225
+   ],
+   "region": 1436,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 4,
+   "placement_phase": 4
+  },
+  "309": {
+   "template": 70,
+   "position": [
+    -254,
+    -441,
+    -13522
+   ],
+   "region": 1541,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 5,
+   "placement_phase": 5
+  },
+  "310": {
+   "template": 70,
+   "position": [
+    -415,
+    -440,
+    -13572
+   ],
+   "region": 1630,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 1,
+   "placement_phase": 1
+  },
+  "311": {
+   "template": 70,
+   "position": [
+    -220,
+    -440,
+    -13789
+   ],
+   "region": 1649,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 6,
+   "placement_phase": 6
+  },
+  "312": {
+   "template": 70,
+   "position": [
+    -122,
+    -440,
+    -13632
+   ],
+   "region": 1682,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 3,
+   "placement_phase": 3
+  },
+  "313": {
+   "template": 70,
+   "position": [
+    241,
+    -450,
+    -13323
+   ],
+   "region": 1489,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 0,
+   "placement_phase": 0
+  },
+  "314": {
+   "template": 70,
+   "position": [
+    268,
+    -450,
+    -13171
+   ],
+   "region": 1488,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 4,
+   "placement_phase": 4
+  },
+  "315": {
+   "template": 70,
+   "position": [
+    263,
+    -450,
+    -13106
+   ],
+   "region": 1505,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 1,
+   "placement_phase": 1
+  },
+  "316": {
+   "template": 70,
+   "position": [
+    393,
+    -450,
+    -13209
+   ],
+   "region": 1487,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 3,
+   "placement_phase": 3
+  },
+  "317": {
+   "template": 70,
+   "position": [
+    545,
+    -440,
+    -13486
+   ],
+   "region": 1783,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 6,
+   "placement_phase": 6
+  },
+  "318": {
+   "template": 70,
+   "position": [
+    718,
+    -440,
+    -13589
+   ],
+   "region": 1730,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 2,
+   "placement_phase": 2
+  },
+  "319": {
+   "template": 70,
+   "position": [
+    453,
+    -440,
+    -13659
+   ],
+   "region": 1729,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 1,
+   "placement_phase": 1
+  },
+  "320": {
+   "template": 70,
+   "position": [
+    545,
+    -440,
+    -13675
+   ],
+   "region": 1701,
+   "left": -20.0,
+   "right": 20.0,
+   "bottom": 0,
+   "top": 150,
+   "start_frame": 3,
+   "placement_phase": 3
+  },
+  "321": {
+   "template": 69,
+   "position": [
+    400,
+    -440,
+    -13741
+   ],
+   "region": 1727,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 0,
+   "placement_phase": 0
+  },
+  "322": {
+   "template": 69,
+   "position": [
+    -119,
+    -440,
+    -13802
+   ],
+   "region": 1684,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 3,
+   "placement_phase": 3
+  },
+  "323": {
+   "template": 69,
+   "position": [
+    -653,
+    -440,
+    -13153
+   ],
+   "region": 1436,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 1,
+   "placement_phase": 1
+  },
+  "324": {
+   "template": 69,
+   "position": [
+    151,
+    -450,
+    -13097
+   ],
+   "region": 1482,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 4,
+   "placement_phase": 4
+  },
+  "325": {
+   "template": 69,
+   "position": [
+    -863,
+    -440,
+    -13308
+   ],
+   "region": 1428,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 4,
+   "placement_phase": 4
+  },
+  "326": {
+   "template": 69,
+   "position": [
+    -326,
+    -440,
+    -13690
+   ],
+   "region": 1569,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 0,
+   "placement_phase": 0
+  },
+  "327": {
+   "template": 69,
+   "position": [
+    318,
+    -450,
+    -13264
+   ],
+   "region": 1487,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 2,
+   "placement_phase": 2
+  },
+  "328": {
+   "template": 69,
+   "position": [
+    627,
+    -440,
+    -13526
+   ],
+   "region": 1775,
+   "left": -44.0,
+   "right": 44.0,
+   "bottom": 0,
+   "top": 250,
+   "start_frame": 4,
+   "placement_phase": 4
+  }
+ },
+ "files": {
+  "126_0_index.png": "3484c2b9e6f0e24209fde4c50d7fa5cef5c027ccb1c714df0bcf422e5fbb6d2e",
+  "126_1_index.png": "67062c2abb555dd075dcaad16ed34937687f4c66dc3d9ec7fa5205c662dfc208",
+  "126_2_index.png": "cab181ad1690a6eb63e14c28064558c99244d0125b4f2afaa18b16c50ca8f6dd",
+  "126_3_index.png": "56b1b10d2813d27abed695b79ca403da75d316a5b6dff7d6d13dd86a9a31d3dd",
+  "126_4_index.png": "ac431cac9c964c04734671ceb91ee9f034702193e19760dd80cb8b416e18a97b",
+  "126_5_index.png": "dfcdd5d22c61575537e371fd92db56aab93cf08d59099e06e9e6bab595794ac8",
+  "126_6_index.png": "6ce50eb99d7fc273d3509e60959b63fddfbcec2838d4700aeeb738215836a169"
+ },
+ "adapters": [
+  "frames advance at 10 frames/s (native animation clock not replayed)",
+  "placement byte -3 modulo 7 used as the start frame (values 0..11; field meaning not traced natively)",
+  "no collision, hit or damage: none is present in the source records"
+ ]
+}

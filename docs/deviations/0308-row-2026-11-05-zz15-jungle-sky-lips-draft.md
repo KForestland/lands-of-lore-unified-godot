@@ -1,0 +1,1 @@
+| 2026-11-05 | Jungle sky lips (draft) | jungle_review passes face 10239 through _clipped at height 104 and face 9929 through _clipped at height 64, only when geometry_file is jungle.json. No other wall is cut. | grok J09 / O03. 10239 is region 4411 above region 4408's ceiling. 9929 is region 3787 above region 3790's ceiling. | Bug fix (both editions); owner to confirm |

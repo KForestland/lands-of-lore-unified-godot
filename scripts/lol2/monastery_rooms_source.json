@@ -1,0 +1,1258 @@
+{
+ "version": 1,
+ "purpose": "Compact consumed-field recipe for tools/prepare_monastery_rooms.py explicit path (assets/lol2/generated/monastery_rooms). Every media record is re-verified against the pinned original archives before anything is written.",
+ "provenance": {
+  "rooms": {
+   "recorded_audit": "docs/monastery-room-source.json (local, unpublished)",
+   "recorded_sha256": "1ba98429452ad6f47ff66f74779e73fddd069d0bc40c93a1cb8fb5e38f1938ed",
+   "producer": "tools/audit_monastery_rooms.py main()",
+   "producer_sha256": "7d2159b14280e188f349ef6601d1daf95ad3df16d95aee1dfc17780cf169ce97",
+   "method": "Static DLL disassembly; literal calls are not a native execution trace."
+  },
+  "rune_offer": {
+   "recorded_audit": "docs/monastery-rune-offer-checks.json (local, unpublished)",
+   "recorded_sha256": "2293a4bf1fd1597460c6ec5c6e7858f367208eb8062f983e80e6d679d68bed6b",
+   "producer": "tools/verify_monastery_rune_offer.py main()",
+   "producer_sha256": "7ad49ea869d4108bbc603226f1720981b55ebd2d0f014f5926f2709ae72efb7a",
+   "handler": "0x6ea",
+   "scope": "Original DLL instructions replayed with mocked host item/flag/global queries and recorded callback effects. Static movie references verified in original archive. Live held-item dispatch, timing/media and translation effects not yet integrated."
+  }
+ },
+ "limits": [
+  "rooms.*.first_visit_calls are the literal call arguments found by static disassembly of each room DLL setup range (setup_range); they are not a native execution trace and record no branch conditions or call order under live state.",
+  "rooms.*.first_visit_movies are the movie/movie_flags calls of that list mapped to WOMS\\ROOM\\SSLLLNNE.VQA names; the recipe re-verifies each entry record (index/key/offset/size/sha256/VQHD) against the original archive, not the selection itself.",
+  "rune_offer.translation_movies are the movie effects, in order, of one replayed MOFF handler 0x6ea translation case (original DLL instructions with mocked host item/flag/global queries); the case dumps are not carried here and the replay is not re-run by the recipe. Live held-item dispatch and translation effects are outside this recipe.",
+  "Movie flag arguments (0x80/0xa0/0xe0) are carried in first_visit_calls only; their presentation effect is unbound (recorded audit limit).",
+  "Room/rune DLL bindings (dll) and archive_sha256 are checked against the originals; setup_disassembly, image_size/relocations, jungle_entry and handler case dumps are intentionally omitted (not consumed)."
+ ],
+ "rooms": {
+  "MENT": {
+   "archive_sha256": "82e11faf2a4922922048fe446d5b665c70612d709ad689a85fd59c91525478e4",
+   "dll": {
+    "index": 0,
+    "key": 2178726945,
+    "offset": 90,
+    "size": 2916,
+    "name": "WOMS\\MENT_.WOM",
+    "sha256": "095512e650eeade0150e6930584db5b4502314bf8881f85e073b6ab4bf4d30a0"
+   },
+   "setup_range": "0x47c-0x730",
+   "background": {
+    "index": 2,
+    "key": 422890391,
+    "offset": 201127,
+    "size": 759374,
+    "name": "WOMS\\MENT\\MENT_.VQA",
+    "sha256": "d8f6207bbf0dbbbc98bd60a080bcc830babd03c12324af1b5d99cfd008fb5ed7",
+    "frames": 30,
+    "width": 640,
+    "height": 400,
+    "fps": 15,
+    "x": 0,
+    "y": 0
+   },
+   "first_visit_calls": [],
+   "first_visit_movies": []
+  },
+  "MLIB": {
+   "archive_sha256": "507f68e917665df64430a1bac2ec5267af1597ace5aabf9218c86d9861044f94",
+   "dll": {
+    "index": 78,
+    "key": 1845017597,
+    "offset": 954,
+    "size": 6000,
+    "name": "WOMS\\MLIB_.WOM",
+    "sha256": "4489d2ad3b866f7eaadec1e811f3b003d10f57a7f40f54ee9eb7a64e2a8d6696"
+   },
+   "setup_range": "0xb0e-0xc64",
+   "background": {
+    "index": 74,
+    "key": 225224517,
+    "offset": 345955,
+    "size": 755676,
+    "name": "WOMS\\MLIB\\MLIB_.VQA",
+    "sha256": "176cb7259ac87bdd474b9a2b79ac8681dd421ffab19d6a5cd46b3641e58f9a6a",
+    "frames": 30,
+    "width": 640,
+    "height": 400,
+    "fps": 15,
+    "x": 0,
+    "y": 0
+   },
+   "first_visit_calls": [
+    {
+     "address": "0xb13",
+     "kind": "set_flag",
+     "args": [
+      184
+     ]
+    },
+    {
+     "address": "0xb25",
+     "kind": "movie",
+     "args": [
+      3,
+      750,
+      7
+     ]
+    },
+    {
+     "address": "0xb3c",
+     "kind": "movie_flags",
+     "args": [
+      3,
+      751,
+      7,
+      128
+     ]
+    },
+    {
+     "address": "0xb53",
+     "kind": "movie_flags",
+     "args": [
+      3,
+      752,
+      7,
+      128
+     ]
+    },
+    {
+     "address": "0xb65",
+     "kind": "movie",
+     "args": [
+      3,
+      753,
+      7
+     ]
+    },
+    {
+     "address": "0xb77",
+     "kind": "movie",
+     "args": [
+      3,
+      754,
+      7
+     ]
+    },
+    {
+     "address": "0xb85",
+     "kind": "set_flag",
+     "args": [
+      182
+     ]
+    },
+    {
+     "address": "0xb9c",
+     "kind": "movie_flags",
+     "args": [
+      3,
+      755,
+      7,
+      160
+     ]
+    },
+    {
+     "address": "0xbae",
+     "kind": "movie",
+     "args": [
+      3,
+      756,
+      7
+     ]
+    },
+    {
+     "address": "0xbc0",
+     "kind": "movie",
+     "args": [
+      3,
+      757,
+      7
+     ]
+    },
+    {
+     "address": "0xbd7",
+     "kind": "movie_flags",
+     "args": [
+      3,
+      758,
+      7,
+      128
+     ]
+    },
+    {
+     "address": "0xbee",
+     "kind": "movie_flags",
+     "args": [
+      3,
+      759,
+      7,
+      160
+     ]
+    },
+    {
+     "address": "0xc00",
+     "kind": "movie",
+     "args": [
+      3,
+      760,
+      7
+     ]
+    },
+    {
+     "address": "0xc12",
+     "kind": "movie",
+     "args": [
+      3,
+      761,
+      7
+     ]
+    },
+    {
+     "address": "0xc20",
+     "kind": "set_flag",
+     "args": [
+      183
+     ]
+    },
+    {
+     "address": "0xc32",
+     "kind": "movie",
+     "args": [
+      3,
+      762,
+      7
+     ]
+    },
+    {
+     "address": "0xc49",
+     "kind": "movie_flags",
+     "args": [
+      3,
+      763,
+      7,
+      160
+     ]
+    },
+    {
+     "address": "0xc5b",
+     "kind": "movie",
+     "args": [
+      3,
+      764,
+      7
+     ]
+    }
+   ],
+   "first_visit_movies": [
+    {
+     "index": 20,
+     "key": 84886355,
+     "offset": 10916573,
+     "size": 650682,
+     "name": "WOMS\\MLIB\\0375007E.VQA",
+     "sha256": "8471405236c76c6d58ce30076b247e7242b99043255df5f8d8df3902671ee116",
+     "frames": 80,
+     "width": 640,
+     "height": 324,
+     "fps": 15,
+     "x": 0,
+     "y": 76
+    },
+    {
+     "index": 27,
+     "key": 85148499,
+     "offset": 9890675,
+     "size": 144902,
+     "name": "WOMS\\MLIB\\0375107E.VQA",
+     "sha256": "0bb388d974bbdcbde7613c86ee822776f3b0c935e88e7801eb3eaf633f7d3575",
+     "frames": 12,
+     "width": 624,
+     "height": 300,
+     "fps": 15,
+     "x": 4,
+     "y": 100
+    },
+    {
+     "index": 33,
+     "key": 85410643,
+     "offset": 3307361,
+     "size": 422164,
+     "name": "WOMS\\MLIB\\0375207E.VQA",
+     "sha256": "26eee8670c4ab9362cce36b829cab9da81a78f31f4dc8336d7d0099f9d37dfc9",
+     "frames": 53,
+     "width": 640,
+     "height": 316,
+     "fps": 15,
+     "x": 0,
+     "y": 84
+    },
+    {
+     "index": 39,
+     "key": 85672787,
+     "offset": 11567255,
+     "size": 233838,
+     "name": "WOMS\\MLIB\\0375307E.VQA",
+     "sha256": "e705df90609dbebd3dcacfbff3118d657d44e9d1dbdbdf0c8820d8481262904c",
+     "frames": 28,
+     "width": 620,
+     "height": 280,
+     "fps": 15,
+     "x": 20,
+     "y": 120
+    },
+    {
+     "index": 45,
+     "key": 85934931,
+     "offset": 11801093,
+     "size": 522190,
+     "name": "WOMS\\MLIB\\0375407E.VQA",
+     "sha256": "31dc949edaa0f25b9f6af6ec7877bc81793c5498160789702db861f7b55070d2",
+     "frames": 75,
+     "width": 628,
+     "height": 288,
+     "fps": 15,
+     "x": 8,
+     "y": 112
+    },
+    {
+     "index": 51,
+     "key": 86197075,
+     "offset": 3729525,
+     "size": 313156,
+     "name": "WOMS\\MLIB\\0375507E.VQA",
+     "sha256": "9e8df0954844e022611564daeb6a6f36b0f849691031d6ba30bcc9286e231616",
+     "frames": 42,
+     "width": 628,
+     "height": 308,
+     "fps": 15,
+     "x": 12,
+     "y": 92
+    },
+    {
+     "index": 57,
+     "key": 86459219,
+     "offset": 12323283,
+     "size": 247698,
+     "name": "WOMS\\MLIB\\0375607E.VQA",
+     "sha256": "fadf6f3ec7d9d5cdd92112dd5e56d5aabdc4222b40f1c0c24b53eedfde86d09a",
+     "frames": 27,
+     "width": 624,
+     "height": 316,
+     "fps": 15,
+     "x": 16,
+     "y": 84
+    },
+    {
+     "index": 61,
+     "key": 86721363,
+     "offset": 12570981,
+     "size": 270942,
+     "name": "WOMS\\MLIB\\0375707E.VQA",
+     "sha256": "3a1d952b6bef8f0dfb64c6e8a101b103b3c9026373a4fe2cb4e594d2e19b4888",
+     "frames": 32,
+     "width": 636,
+     "height": 300,
+     "fps": 15,
+     "x": 4,
+     "y": 100
+    },
+    {
+     "index": 65,
+     "key": 86983507,
+     "offset": 4042681,
+     "size": 417474,
+     "name": "WOMS\\MLIB\\0375807E.VQA",
+     "sha256": "49e9b86ecee04eb9db38e32687d42d994645ca12adb3cf961547def0e0f0a5f5",
+     "frames": 52,
+     "width": 632,
+     "height": 316,
+     "fps": 15,
+     "x": 8,
+     "y": 84
+    },
+    {
+     "index": 69,
+     "key": 87245651,
+     "offset": 4460155,
+     "size": 228500,
+     "name": "WOMS\\MLIB\\0375907E.VQA",
+     "sha256": "68c1866bf1249badab9a71c0c9cf66d6f51ffae01686d4531346e919c14cb38f",
+     "frames": 25,
+     "width": 628,
+     "height": 316,
+     "fps": 15,
+     "x": 12,
+     "y": 84
+    },
+    {
+     "index": 22,
+     "key": 84887379,
+     "offset": 12841923,
+     "size": 443840,
+     "name": "WOMS\\MLIB\\0376007E.VQA",
+     "sha256": "9fe6e3170e909509955efb5ddce027c8dec5152494cd47223754bf4515184325",
+     "frames": 54,
+     "width": 632,
+     "height": 316,
+     "fps": 15,
+     "x": 8,
+     "y": 84
+    },
+    {
+     "index": 29,
+     "key": 85149523,
+     "offset": 13285763,
+     "size": 975280,
+     "name": "WOMS\\MLIB\\0376107E.VQA",
+     "sha256": "6cf9227ec713377077af99492d17a2c591523fcf110a2eacc787c7c536147c82",
+     "frames": 139,
+     "width": 636,
+     "height": 308,
+     "fps": 15,
+     "x": 4,
+     "y": 92
+    },
+    {
+     "index": 35,
+     "key": 85411667,
+     "offset": 14261043,
+     "size": 480274,
+     "name": "WOMS\\MLIB\\0376207E.VQA",
+     "sha256": "8698a1e1c60fa7d1df9609e1a346cdb3ecfa14126c4b8c950192d9f7fa31eb12",
+     "frames": 63,
+     "width": 632,
+     "height": 316,
+     "fps": 15,
+     "x": 8,
+     "y": 84
+    },
+    {
+     "index": 41,
+     "key": 85673811,
+     "offset": 4688655,
+     "size": 435998,
+     "name": "WOMS\\MLIB\\0376307E.VQA",
+     "sha256": "cacb32a07ca00ad1ea7ea9a568e6de103efbe7a27864ea6b02715fc362f28b9c",
+     "frames": 56,
+     "width": 632,
+     "height": 312,
+     "fps": 15,
+     "x": 4,
+     "y": 88
+    },
+    {
+     "index": 47,
+     "key": 85935955,
+     "offset": 14741317,
+     "size": 508150,
+     "name": "WOMS\\MLIB\\0376407E.VQA",
+     "sha256": "27c044511c6238a519c5ef158ed5cb20d9b157971847cd4e5736ea75421fc9bb",
+     "frames": 70,
+     "width": 616,
+     "height": 312,
+     "fps": 15,
+     "x": 20,
+     "y": 88
+    }
+   ]
+  },
+  "MOFF": {
+   "archive_sha256": "642956adf4ee24c7bf3230ef7521ebcc419a9a076e4674692c8ba3bf63fc2a45",
+   "dll": {
+    "index": 120,
+    "key": 1644477445,
+    "offset": 1458,
+    "size": 6759,
+    "name": "WOMS\\MOFF_.WOM",
+    "sha256": "714989b149d3c0e8b8a477b93e8694aa04a1b9e720c5c23c3e5d943f166eacd3"
+   },
+   "setup_range": "0xfe4-0x1213",
+   "background": {
+    "index": 117,
+    "key": 25472847,
+    "offset": 4266281,
+    "size": 741696,
+    "name": "WOMS\\MOFF\\MOFF_.VQA",
+    "sha256": "dbd164b7b0e5b5bf8e38980684f73696a53a73c866fa813ec65dd3d1eb1b6cd1",
+    "frames": 30,
+    "width": 640,
+    "height": 400,
+    "fps": 15,
+    "x": 0,
+    "y": 0
+   },
+   "first_visit_calls": [
+    {
+     "address": "0xfe9",
+     "kind": "set_flag",
+     "args": [
+      134
+     ]
+    },
+    {
+     "address": "0x1000",
+     "kind": "movie_flags",
+     "args": [
+      22,
+      351,
+      7,
+      128
+     ]
+    },
+    {
+     "address": "0x1017",
+     "kind": "movie_flags",
+     "args": [
+      22,
+      352,
+      7,
+      128
+     ]
+    },
+    {
+     "address": "0x1029",
+     "kind": "movie",
+     "args": [
+      22,
+      353,
+      7
+     ]
+    },
+    {
+     "address": "0x103b",
+     "kind": "movie",
+     "args": [
+      22,
+      354,
+      7
+     ]
+    },
+    {
+     "address": "0x1052",
+     "kind": "movie_flags",
+     "args": [
+      22,
+      355,
+      7,
+      128
+     ]
+    },
+    {
+     "address": "0x1064",
+     "kind": "movie",
+     "args": [
+      22,
+      356,
+      7
+     ]
+    },
+    {
+     "address": "0x1076",
+     "kind": "movie",
+     "args": [
+      22,
+      357,
+      7
+     ]
+    },
+    {
+     "address": "0x108d",
+     "kind": "movie_flags",
+     "args": [
+      22,
+      358,
+      7,
+      224
+     ]
+    },
+    {
+     "address": "0x109f",
+     "kind": "movie",
+     "args": [
+      22,
+      360,
+      7
+     ]
+    },
+    {
+     "address": "0x10b1",
+     "kind": "movie",
+     "args": [
+      22,
+      361,
+      7
+     ]
+    },
+    {
+     "address": "0x10bf",
+     "kind": "set_flag",
+     "args": [
+      135
+     ]
+    },
+    {
+     "address": "0x10d6",
+     "kind": "movie_flags",
+     "args": [
+      22,
+      362,
+      7,
+      160
+     ]
+    },
+    {
+     "address": "0x10e8",
+     "kind": "movie",
+     "args": [
+      22,
+      363,
+      7
+     ]
+    },
+    {
+     "address": "0x10fa",
+     "kind": "movie",
+     "args": [
+      22,
+      364,
+      7
+     ]
+    },
+    {
+     "address": "0x110c",
+     "kind": "movie",
+     "args": [
+      22,
+      365,
+      7
+     ]
+    },
+    {
+     "address": "0x111a",
+     "kind": "set_flag",
+     "args": [
+      136
+     ]
+    },
+    {
+     "address": "0x1131",
+     "kind": "movie_flags",
+     "args": [
+      22,
+      366,
+      7,
+      160
+     ]
+    },
+    {
+     "address": "0x1143",
+     "kind": "movie",
+     "args": [
+      22,
+      367,
+      7
+     ]
+    },
+    {
+     "address": "0x1155",
+     "kind": "movie",
+     "args": [
+      22,
+      368,
+      7
+     ]
+    },
+    {
+     "address": "0x1167",
+     "kind": "movie",
+     "args": [
+      22,
+      369,
+      7
+     ]
+    },
+    {
+     "address": "0x1179",
+     "kind": "movie",
+     "args": [
+      22,
+      370,
+      7
+     ]
+    },
+    {
+     "address": "0x1190",
+     "kind": "movie_flags",
+     "args": [
+      22,
+      371,
+      7,
+      128
+     ]
+    },
+    {
+     "address": "0x11b5",
+     "kind": "movie",
+     "args": [
+      22,
+      372,
+      7
+     ]
+    },
+    {
+     "address": "0x11ce",
+     "kind": "give_item",
+     "args": [
+      4963,
+      "ebx"
+     ]
+    },
+    {
+     "address": "0x11dc",
+     "kind": "set_flag",
+     "args": [
+      138
+     ]
+    },
+    {
+     "address": "0x11ee",
+     "kind": "movie",
+     "args": [
+      22,
+      373,
+      7
+     ]
+    },
+    {
+     "address": "0x1205",
+     "kind": "movie_flags",
+     "args": [
+      22,
+      374,
+      7,
+      128
+     ]
+    }
+   ],
+   "first_visit_movies": [
+    {
+     "index": 48,
+     "key": 3444786020,
+     "offset": 14394847,
+     "size": 169668,
+     "name": "WOMS\\MOFF\\2235107E.VQA",
+     "sha256": "a9d43124fa1962f2d6dadb76467448566ed6ff1a12e76d986e3f0675837f1f14",
+     "frames": 38,
+     "width": 228,
+     "height": 168,
+     "fps": 15,
+     "x": 120,
+     "y": 144
+    },
+    {
+     "index": 58,
+     "key": 3445048164,
+     "offset": 16658805,
+     "size": 163170,
+     "name": "WOMS\\MOFF\\2235207E.VQA",
+     "sha256": "e8501faf93d6d3348a9bd4207feb32ca1bfe08372eaf1141efc9100e7f79f218",
+     "frames": 37,
+     "width": 224,
+     "height": 168,
+     "fps": 15,
+     "x": 124,
+     "y": 144
+    },
+    {
+     "index": 68,
+     "key": 3445310308,
+     "offset": 7122467,
+     "size": 219060,
+     "name": "WOMS\\MOFF\\2235307E.VQA",
+     "sha256": "a6656c07125f0dabaa18118a72502eed97862e69fe388fba571e45c2a9b1cbf0",
+     "frames": 54,
+     "width": 228,
+     "height": 168,
+     "fps": 15,
+     "x": 120,
+     "y": 144
+    },
+    {
+     "index": 77,
+     "key": 3445572452,
+     "offset": 7341527,
+     "size": 257044,
+     "name": "WOMS\\MOFF\\2235407E.VQA",
+     "sha256": "a2e832df52ebb1b06d5e4e2449901f8e2e88b54baa831ce5c4a27c0eb9bf3568",
+     "frames": 67,
+     "width": 228,
+     "height": 164,
+     "fps": 15,
+     "x": 120,
+     "y": 148
+    },
+    {
+     "index": 85,
+     "key": 3445834596,
+     "offset": 18503453,
+     "size": 196114,
+     "name": "WOMS\\MOFF\\2235507E.VQA",
+     "sha256": "713d62d14968ef8699ccd2d62382c7aafcdd0d58aa56fb77c6c82fb4085f7c14",
+     "frames": 49,
+     "width": 228,
+     "height": 160,
+     "fps": 15,
+     "x": 120,
+     "y": 152
+    },
+    {
+     "index": 94,
+     "key": 3446096740,
+     "offset": 7598571,
+     "size": 141330,
+     "name": "WOMS\\MOFF\\2235607E.VQA",
+     "sha256": "515ecf09696833b61c85fd911bdd8f4bf2f7118ad49df7bd596f74be840d462f",
+     "frames": 29,
+     "width": 228,
+     "height": 160,
+     "fps": 15,
+     "x": 120,
+     "y": 152
+    },
+    {
+     "index": 101,
+     "key": 3446358884,
+     "offset": 7739901,
+     "size": 253618,
+     "name": "WOMS\\MOFF\\2235707E.VQA",
+     "sha256": "73a861ebcc5f41041553428ab745f0788e8c95f06d8e5e3afdbc143a90750fba",
+     "frames": 65,
+     "width": 240,
+     "height": 160,
+     "fps": 15,
+     "x": 120,
+     "y": 152
+    },
+    {
+     "index": 107,
+     "key": 3446621028,
+     "offset": 18699567,
+     "size": 212088,
+     "name": "WOMS\\MOFF\\2235807E.VQA",
+     "sha256": "9775eb95f45560ba010bac55b45649bc58f8b4d8dacbe9b6c56f591f97458fe4",
+     "frames": 53,
+     "width": 224,
+     "height": 160,
+     "fps": 15,
+     "x": 136,
+     "y": 152
+    },
+    {
+     "index": 40,
+     "key": 3444524900,
+     "offset": 7993519,
+     "size": 426594,
+     "name": "WOMS\\MOFF\\2236007E.VQA",
+     "sha256": "63e2394f93cc542f112ac426842c67bf98e1c0129eae2573ebbce2b1604e6abc",
+     "frames": 121,
+     "width": 220,
+     "height": 172,
+     "fps": 15,
+     "x": 136,
+     "y": 140
+    },
+    {
+     "index": 50,
+     "key": 3444787044,
+     "offset": 13749055,
+     "size": 296764,
+     "name": "WOMS\\MOFF\\2236107E.VQA",
+     "sha256": "40c207171eddfe8478003b8158d8a909b1fe1c8f65eb83198411a44003794147",
+     "frames": 82,
+     "width": 208,
+     "height": 168,
+     "fps": 15,
+     "x": 148,
+     "y": 144
+    },
+    {
+     "index": 61,
+     "key": 3445049188,
+     "offset": 19135171,
+     "size": 208878,
+     "name": "WOMS\\MOFF\\2236207E.VQA",
+     "sha256": "755c859a76bddd528f4a0db720da2c38b0d2e07bbe765303667445d2c8947017",
+     "frames": 51,
+     "width": 232,
+     "height": 160,
+     "fps": 15,
+     "x": 132,
+     "y": 152
+    },
+    {
+     "index": 71,
+     "key": 3445311332,
+     "offset": 9093767,
+     "size": 226926,
+     "name": "WOMS\\MOFF\\2236307E.VQA",
+     "sha256": "b9259523fb29e34acfed3eee3fdfc0e8ce636796501a85a906d3c47d6f34c4bd",
+     "frames": 57,
+     "width": 232,
+     "height": 160,
+     "fps": 15,
+     "x": 132,
+     "y": 152
+    },
+    {
+     "index": 80,
+     "key": 3445573476,
+     "offset": 9320693,
+     "size": 303182,
+     "name": "WOMS\\MOFF\\2236407E.VQA",
+     "sha256": "d0b984e263727f8ed82ad8b8a0e1fe530f8513fd2688c548771244c5fc52a45a",
+     "frames": 83,
+     "width": 224,
+     "height": 160,
+     "fps": 15,
+     "x": 140,
+     "y": 152
+    },
+    {
+     "index": 87,
+     "key": 3445835620,
+     "offset": 8420113,
+     "size": 673654,
+     "name": "WOMS\\MOFF\\2236507E.VQA",
+     "sha256": "ddaf750e6dba8bdd9e2813dd98e189187bfcfd367606de3257261efe75aff1e4",
+     "frames": 205,
+     "width": 236,
+     "height": 164,
+     "fps": 15,
+     "x": 140,
+     "y": 148
+    },
+    {
+     "index": 96,
+     "key": 3446097764,
+     "offset": 19344049,
+     "size": 170892,
+     "name": "WOMS\\MOFF\\2236607E.VQA",
+     "sha256": "676b0a65bb0ca8ec168aed9fa8069f3b2c61c832a2339cffd64099cfebe66fba",
+     "frames": 41,
+     "width": 228,
+     "height": 164,
+     "fps": 15,
+     "x": 140,
+     "y": 148
+    },
+    {
+     "index": 103,
+     "key": 3446359908,
+     "offset": 20157683,
+     "size": 252034,
+     "name": "WOMS\\MOFF\\2236707E.VQA",
+     "sha256": "95e2f678557a50f6cafd38ce11da7104d6cd04917a8a43c589839a8ddb812d34",
+     "frames": 63,
+     "width": 232,
+     "height": 172,
+     "fps": 15,
+     "x": 140,
+     "y": 140
+    },
+    {
+     "index": 109,
+     "key": 3446622052,
+     "offset": 20409717,
+     "size": 211672,
+     "name": "WOMS\\MOFF\\2236807E.VQA",
+     "sha256": "213cda9c39618bb19b54a51531c078f6a10bfe0c04e22e9b3b0f1e8a58ef9aca",
+     "frames": 51,
+     "width": 236,
+     "height": 172,
+     "fps": 15,
+     "x": 140,
+     "y": 140
+    },
+    {
+     "index": 114,
+     "key": 3446884196,
+     "offset": 20621389,
+     "size": 165448,
+     "name": "WOMS\\MOFF\\2236907E.VQA",
+     "sha256": "d22831e479e80eddd796c116ad3b538fabb11e871d0ea60c532aa914e812ebab",
+     "frames": 36,
+     "width": 232,
+     "height": 168,
+     "fps": 15,
+     "x": 144,
+     "y": 144
+    },
+    {
+     "index": 42,
+     "key": 3444525924,
+     "offset": 20786837,
+     "size": 274750,
+     "name": "WOMS\\MOFF\\2237007E.VQA",
+     "sha256": "cb6833e8afb8e093766b26b852f779c65bde0ea8b1d7959ebe4e16509d427da0",
+     "frames": 72,
+     "width": 232,
+     "height": 164,
+     "fps": 15,
+     "x": 144,
+     "y": 148
+    },
+    {
+     "index": 52,
+     "key": 3444788068,
+     "offset": 19514941,
+     "size": 175392,
+     "name": "WOMS\\MOFF\\2237107E.VQA",
+     "sha256": "dde7a323b9cd64cdbcf84161ced50d6a749b9a80d1f119a1a0d8c90fd469432f",
+     "frames": 40,
+     "width": 252,
+     "height": 160,
+     "fps": 15,
+     "x": 124,
+     "y": 152
+    },
+    {
+     "index": 63,
+     "key": 3445050212,
+     "offset": 21061587,
+     "size": 193802,
+     "name": "WOMS\\MOFF\\2237207E.VQA",
+     "sha256": "80ed1fec9cf6cfe84d895ccdda947f9bed03a4a3af51f1e43f6e8964f6ce7974",
+     "frames": 42,
+     "width": 236,
+     "height": 172,
+     "fps": 15,
+     "x": 140,
+     "y": 140
+    },
+    {
+     "index": 73,
+     "key": 3445312356,
+     "offset": 21255389,
+     "size": 202216,
+     "name": "WOMS\\MOFF\\2237307E.VQA",
+     "sha256": "0d2b5dc30fad25316bc572a1d9d8e9df0df670500b5e5ee4aa573ff92fdb88e3",
+     "frames": 47,
+     "width": 256,
+     "height": 168,
+     "fps": 15,
+     "x": 124,
+     "y": 144
+    },
+    {
+     "index": 82,
+     "key": 3445574500,
+     "offset": 14564515,
+     "size": 149014,
+     "name": "WOMS\\MOFF\\2237407E.VQA",
+     "sha256": "74c18824b621f6d9b9eaa5ba8cb05b3df7d6b7e3459159693d084baa039e32d9",
+     "frames": 32,
+     "width": 240,
+     "height": 160,
+     "fps": 15,
+     "x": 140,
+     "y": 152
+    }
+   ]
+  }
+ },
+ "rune_offer": {
+  "archive_sha256": "642956adf4ee24c7bf3230ef7521ebcc419a9a076e4674692c8ba3bf63fc2a45",
+  "dll": {
+   "index": 120,
+   "key": 1644477445,
+   "offset": 1458,
+   "size": 6759,
+   "name": "WOMS\\MOFF_.WOM",
+   "sha256": "714989b149d3c0e8b8a477b93e8694aa04a1b9e720c5c23c3e5d943f166eacd3"
+  },
+  "translation_movies": [
+   {
+    "index": 39,
+    "key": 3444523884,
+    "offset": 18911655,
+    "size": 223516,
+    "name": "WOMS\\MOFF\\2255007E.VQA",
+    "sha256": "80cbc40263021b7f823f09002b19a482d40369a8b52b41189c76998b1fc804e6",
+    "frames": 59,
+    "width": 232,
+    "height": 164,
+    "fps": 15,
+    "x": 144,
+    "y": 148
+   },
+   {
+    "index": 60,
+    "key": 3445048172,
+    "offset": 12910231,
+    "size": 140922,
+    "name": "WOMS\\MOFF\\2255207E.VQA",
+    "sha256": "b4a9fe272920c23e4758f9c461fee1ad1d85c9f2274050508be1ed2c1d9e0544",
+    "frames": 28,
+    "width": 236,
+    "height": 164,
+    "fps": 15,
+    "x": 144,
+    "y": 148
+   },
+   {
+    "index": 70,
+    "key": 3445310316,
+    "offset": 5007977,
+    "size": 299528,
+    "name": "WOMS\\MOFF\\2255307E.VQA",
+    "sha256": "a1315f4ed836c6c44a42e5f3158400d6fd510e2c5c3686147ce861f9546ecbf4",
+    "frames": 80,
+    "width": 236,
+    "height": 164,
+    "fps": 15,
+    "x": 144,
+    "y": 148
+   },
+   {
+    "index": 79,
+    "key": 3445572460,
+    "offset": 15329221,
+    "size": 94314,
+    "name": "WOMS\\MOFF\\2255407E.VQA",
+    "sha256": "edd56ab7e6ea7f8418f6ffa4866b573e75d57d97a8a93ed092e976db83b4d04a",
+    "frames": 18,
+    "width": 232,
+    "height": 160,
+    "fps": 15,
+    "x": 144,
+    "y": 152
+   },
+   {
+    "index": 86,
+    "key": 3445834604,
+    "offset": 5307505,
+    "size": 95642,
+    "name": "WOMS\\MOFF\\2255507E.VQA",
+    "sha256": "d76a82ffee5830ad7b5711ca9d2a139a31fbdfd95ec38ad0df16f5274ea20494",
+    "frames": 16,
+    "width": 232,
+    "height": 160,
+    "fps": 15,
+    "x": 144,
+    "y": 152
+   },
+   {
+    "index": 95,
+    "key": 3446096748,
+    "offset": 11679369,
+    "size": 951572,
+    "name": "WOMS\\MOFF\\2255607E.VQA",
+    "sha256": "f001c0091fe64ec08e7cace0973a9aa9c87269ea30461d2ce09aae357368e03b",
+    "frames": 292,
+    "width": 236,
+    "height": 164,
+    "fps": 15,
+    "x": 144,
+    "y": 148
+   },
+   {
+    "index": 102,
+    "key": 3446358892,
+    "offset": 15423535,
+    "size": 186496,
+    "name": "WOMS\\MOFF\\2255707E.VQA",
+    "sha256": "550c561581b85e14827e55d4d12d77ff9ca7f7672d3bbcd5a8a75b4153c6ce6b",
+    "frames": 46,
+    "width": 232,
+    "height": 160,
+    "fps": 15,
+    "x": 144,
+    "y": 152
+   },
+   {
+    "index": 108,
+    "key": 3446621036,
+    "offset": 5403147,
+    "size": 260986,
+    "name": "WOMS\\MOFF\\2255807E.VQA",
+    "sha256": "7addcb86d1dc1676e9c62db389a259ea5e2c1f845cc01953e2e1f7c75b151c7b",
+    "frames": 67,
+    "width": 232,
+    "height": 164,
+    "fps": 15,
+    "x": 144,
+    "y": 148
+   },
+   {
+    "index": 113,
+    "key": 3446883180,
+    "offset": 15610031,
+    "size": 205586,
+    "name": "WOMS\\MOFF\\2255907E.VQA",
+    "sha256": "e463fb5e458a7f78886ddca7eaaac53904c8f5a25cc587aa13866079075f564f",
+    "frames": 51,
+    "width": 232,
+    "height": 164,
+    "fps": 15,
+    "x": 148,
+    "y": 148
+   },
+   {
+    "index": 41,
+    "key": 3444524908,
+    "offset": 6044751,
+    "size": 136134,
+    "name": "WOMS\\MOFF\\2256007E.VQA",
+    "sha256": "6f0b6aaa9a37af87789cf0892547ee1d741beacb6c1c514f740ed1ea38793c3e",
+    "frames": 26,
+    "width": 232,
+    "height": 164,
+    "fps": 15,
+    "x": 148,
+    "y": 148
+   },
+   {
+    "index": 51,
+    "key": 3444787052,
+    "offset": 16821975,
+    "size": 558666,
+    "name": "WOMS\\MOFF\\2256107E.VQA",
+    "sha256": "57db0c6859d1a1206b1c6c491382f5869b963a2b709d5099b7e2614772cd564c",
+    "frames": 158,
+    "width": 228,
+    "height": 168,
+    "fps": 15,
+    "x": 152,
+    "y": 144
+   },
+   {
+    "index": 62,
+    "key": 3445049196,
+    "offset": 6180885,
+    "size": 344936,
+    "name": "WOMS\\MOFF\\2256207E.VQA",
+    "sha256": "0876ba2159bcb4608040e458c8513df979aeaf09605390e1c604fde9c9061e39",
+    "frames": 92,
+    "width": 232,
+    "height": 164,
+    "fps": 15,
+    "x": 152,
+    "y": 148
+   },
+   {
+    "index": 72,
+    "key": 3445311340,
+    "offset": 16365319,
+    "size": 293486,
+    "name": "WOMS\\MOFF\\2256307E.VQA",
+    "sha256": "23e7c8ea67de5f230b478e615a84473b807046bb8ec987e39f6667ac0714cbba",
+    "frames": 77,
+    "width": 232,
+    "height": 164,
+    "fps": 15,
+    "x": 152,
+    "y": 148
+   }
+  ]
+ }
+}

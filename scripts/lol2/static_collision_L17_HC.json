@@ -1,0 +1,14 @@
+{
+ "version": 1,
+ "area": "L17_HC",
+ "source": {
+  "executable_sha256": "b27a35341c6e877e40b1540b6482748e7a750c605fefe6452431b18a5d766775",
+  "movables": {
+   "file": "DAT/L17_HC.MIX",
+   "sha256": "23d7cecf44e83515934083ae101eb4b023dfb748d34e5e0b6eb3c8aca75cc793",
+   "geometry_key": 3538495408
+  }
+ },
+ "rule": "solid = placement word8 & 0x80; template byte0x2D&3 != 0 -> oriented box width=byte0x2F, depth=byte0x30, height=byte0x31 from the placement height, rotated by heading (0..65535 = full turn); mode 3: one such box per child record (bounds bytes 0x34..0x39, admitted by mask bit of the assembly mode)",
+ "boxes": {}
+}

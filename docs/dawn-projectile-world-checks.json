@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "run": "dawn_projectile_world_20261007",
+      "sha256": "0eefcdb4a93f88de8f52e3fb88321946784f49fed087867ae3d37fbde3848c78",
+      "tests": [
+        "dawn_projectile_launch_test",
+        "dawn_projectile_world_test"
+      ],
+      "passed": true,
+      "source_stable": true
+    },
+    {
+      "run": "dawn_projectile_hosts_20261007",
+      "sha256": "f68b017032365c364b28ba20ab85cbf1fa25eed6b85d1dec3860e90f1a4645a2",
+      "tests": [
+        "dawn_projectile_hosts_test",
+        "hive_dawn20_live_test",
+        "jungle_dawn_live_test"
+      ],
+      "passed": true,
+      "source_stable": true
+    }
+  ],
+  "files": {
+    "scripts/lol2/dawn_projectile_world.gd": "4e8fb7fcca7a613f9d2d0a04ba0a7ec45ec8d0f84216e3b58082be9fc7593680",
+    "scripts/lol2/hive_boulder_impulse.gd": "2b9a42f828d483fe1db8aad1a4b329a025fcc69df2af4a5a8f19a53644067661",
+    "tests/dawn_projectile_world_test.gd": "75ebe71e89e1d2fcea67998696850217e012281b4c8698abcb3814b7e59fc662",
+    "tests/dawn_projectile_hosts_test.gd": "27fd9a203a76d31483b6bc1af247447c0d71b94567cbc69b7818f8b2dbc622ac"
+  },
+  "native_collision_parity": false,
+  "live_cast_creation": false
+}

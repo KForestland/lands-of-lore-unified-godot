@@ -1,0 +1,13 @@
+{
+ "name": "darker_jungle_resume_test",
+ "suite": "core",
+ "mode": "headless",
+ "order": 575,
+ "needs": {
+  "fixtures": [
+   "user://tests/act1_darker_jungle_arrival.json (verified arrival checkpoint)",
+   "~/lol2_out/museum_capture_20260913/game/LOLG.EXE"
+  ],
+  "chain": "needs the arrival checkpoint written by the L8 arrival walk"
+ }
+}
