@@ -22,8 +22,11 @@ game (the GOG release); the project builds its assets from it.
 project's full qualification: Act 1 campaign chain, packaging and smoke tests). Earlier versions here were a September
 2026 snapshot.
 
-- **Act 1** plays start to finish. **Act 2** is built and tested. **Act 3** is a walkable *skeleton*: the story steps are
-  in place and chained by tests, but many moments are not visible yet (no movies, no ending sequence); that is the next work.
+- **Status 2026-11-11 (the code here is still the r17 snapshot):** about **20% of the finished game**, most likely
+  complete in **July 2027**; see the [LoL2 roadmap](https://github.com/KForestland/lands-of-lore-ai-comms/blob/main/LOL2_ROADMAP.md).
+  Act 1 plays start to finish; Act 2 is built to the Claw Mountains but does not yet hold up for a player without help
+  (the owner's latest playtest stopped in the Dracoid Cemetery); Act 3 is partly built. Combat, items, spells, dialog,
+  music and the game's menus are the larger share of the remaining work.
 - **No original game files are included.** The original game's art, sound, movies and data are not here and never will
   be: you build them from your own copy of Lands of Lore II (the GOG release) with the project's tools. Some test fixtures
   hold numbers measured from the original program while it ran; they contain no art, sound or text.
