@@ -2,7 +2,7 @@
 
 Lands of Lore: Guardians of Destiny (Westwood, 1997) rebuilt in Godot 4.
 
-**Latest status: [status report 2026-11-06](docs/STATUS_2026-11-06.md)** (about 60% of a complete Classic LoL2; previous: [2026-10-31](docs/STATUS_2026-10-31.md)).
+**Latest status (2026-11-12): about 20% of the finished game; see the [LoL2 roadmap](https://github.com/KForestland/lands-of-lore-ai-comms/blob/main/LOL2_ROADMAP.md).** Older reports: [2026-11-06](docs/STATUS_2026-11-06.md) (counted built pieces, about 60%), [2026-10-31](docs/STATUS_2026-10-31.md).
 
 ## What this project is
 
@@ -22,8 +22,9 @@ game (the GOG release); the project builds its assets from it.
 project's full qualification: Act 1 campaign chain, packaging and smoke tests). Earlier versions here were a September
 2026 snapshot.
 
-- **Status 2026-11-11 (the code here is still the r17 snapshot):** about **20% of the finished game**, most likely
-  complete in **July 2027**; see the [LoL2 roadmap](https://github.com/KForestland/lands-of-lore-ai-comms/blob/main/LOL2_ROADMAP.md).
+- **Status 2026-11-12 (the code here is still the r17 snapshot):** about **20% of the finished game**; start to end
+  playable most likely **late January 2027**, version 1.0 most likely **July to August 2027**; see the
+  [LoL2 roadmap](https://github.com/KForestland/lands-of-lore-ai-comms/blob/main/LOL2_ROADMAP.md).
   Act 1 plays start to finish; Act 2 is built to the Claw Mountains but does not yet hold up for a player without help
   (the owner's latest playtest stopped in the Dracoid Cemetery); Act 3 is partly built. Combat, items, spells, dialog,
   music and the game's menus are the larger share of the remaining work.
