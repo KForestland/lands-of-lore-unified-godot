@@ -1,0 +1,194 @@
+diff --git a/tools/chut_attack_media_source.json b/tools/chut_attack_media_source.json
+new file mode 100644
+index 0000000..6883407
+--- /dev/null
++++ b/tools/chut_attack_media_source.json
+@@ -0,0 +1,83 @@
++{
++  "archive_sha256": "d623157008700d95e3e09cd7462c7d7032a06bfdff48b15ece11fc7c79dc4be7",
++  "clip": {
++    "index": 33,
++    "key": 4110332907,
++    "offset": 3005176,
++    "size": 266484,
++    "name": "WOMS\\CHUT\\2999806E.VQA",
++    "sha256": "45510a012bbc41767559f17a4bfc6cc5c6031f6b61bce8bba787ac14bcf7ce10",
++    "frames": 63,
++    "width": 188,
++    "height": 220,
++    "fps": 15,
++    "x": 272,
++    "y": 136
++  },
++  "sound_bank_key": 1570429112,
++  "sound_bank_sha256": "e2d6df9a11a3d5bf6746911eac464c7f90efceaf7535e32a0f582dcea6afc3f6",
++  "cues": {
++    "100:17": {
++      "trailer_index": 285,
++      "request": 268,
++      "bank_record": "0101724e.aud",
++      "sha256": "ac6683f7e3e8eb059cdf32b0d379d6d4c4e42fe82e0cdde80a22375d7c504248",
++      "bytes": 29172,
++      "rate": 22050,
++      "samples": 57408
++    },
++    "2:30": {
++      "trailer_index": 171,
++      "request": 307,
++      "bank_record": "0203024e.aud",
++      "sha256": "e62b0e82fcbbdc94539cd58f1cad6d73c2aa738db398237d9814669ae0a84f3a",
++      "bytes": 6612,
++      "rate": 22050,
++      "samples": 12992
++    }
++  },
++  "scope": "Pinned source contract for supplementary media preparation; no runtime integration or native active-palette owner claim.",
++  "attack_audio_samples": 103634,
++  "shape_bank": {
++    "index": 9,
++    "key": 2793503383,
++    "offset": 28505,
++    "size": 11588,
++    "name": "WOMS\\CHUT\\CHUT.SHP",
++    "sha256": "449f34849b512ae49c666e3a447b3e2fb3de2adb0da91fd43cc69b8b3919e529"
++  },
++  "hotspots": [
++    {
++      "hotspot": 0,
++      "shape": 0,
++      "x": 274,
++      "y": 169,
++      "width": 100,
++      "height": 184,
++      "inclusive_bounds": [
++        274,
++        169,
++        373,
++        352
++      ],
++      "pixel_indices_sha256": "9d89a6afb3c680d5f5a135af5789516229d5644db5849ceb9ad6b6ba07c6addd"
++    },
++    {
++      "hotspot": 1,
++      "shape": 1,
++      "x": 374,
++      "y": 169,
++      "width": 83,
++      "height": 184,
++      "inclusive_bounds": [
++        374,
++        169,
++        456,
++        352
++      ],
++      "pixel_indices_sha256": "ae8095229be257edb8063f52ce2dbdbcc53de0165aeb2e9425428334c1aaa2df"
++    }
++  ],
++  "palette_movie": "WOMS\\CHUT\\CHUT_.VQA",
++  "palette_sha256": "88b404d463520ff41b250d1b5010061dd631ec91502537f55904f438c457533d"
++}
+diff --git a/tools/prepare_chut_attack_media.py b/tools/prepare_chut_attack_media.py
+new file mode 100644
+index 0000000..41ce2fe
+--- /dev/null
++++ b/tools/prepare_chut_attack_media.py
+@@ -0,0 +1,99 @@
++#!/usr/bin/env python3
++"""Stage CHUT direct-attack clip, cues and replacement hotspots from pinned originals.
++
++Outputs a supplementary attack_media.json, NOT rooms.json: runtime integration remains
++separate. No original assets are tracked. Requires ffmpeg and existing published decoders.
++Example: python3 tools/prepare_chut_attack_media.py --game GAME --output-root FRESH
++"""
++import argparse
++import json
++import struct
++import subprocess
++import wave
++from pathlib import Path
++from PIL import Image
++from monastery_media import digest, extract, parse_vqa_chunks, stage_patch
++from prepare_classic_hud import blob
++from prepare_museum_interface import shape
++
++SOURCE = Path(__file__).resolve().with_name('chut_attack_media_source.json')
++
++
++def prepare(game, root, source):
++    archive = (game / 'DAT/CHUT.MIX').read_bytes()
++    assert digest(archive) == source['archive_sha256'], 'CHUT archive mismatch'
++    bank = blob(game, 'LOCALLNG.MIX', source['sound_bank_key'])
++    assert digest(bank) == source['sound_bank_sha256'], 'Sound bank mismatch'
++    out = root / 'assets/lol2/generated/chut_room'
++    cache = root / 'tmp/chut_attack_source'
++    out.mkdir(parents=True)
++    cache.mkdir(parents=True)
++    clip = source['clip']
++    raw, _ = extract(archive, clip['name'])
++    assert digest(raw) == clip['sha256'], 'Attack clip mismatch'
++    path = cache / '2999806E.VQA'
++    path.write_bytes(raw)
++    attack = stage_patch(path, out / '2999806E.ogv', dict(clip, kind='movie'), root)
++    assert attack['audio_samples'] == source['attack_audio_samples']
++    result = {'version': 1, 'attack': attack, 'cues': {}, 'hotspots': []}
++    u32 = lambda data, offset: struct.unpack_from('<I', data, offset)[0]
++    for key, cue in source['cues'].items():
++        request = struct.unpack_from('<H', bank, len(bank)-808+cue['trailer_index']*2)[0]
++        assert request == cue['request'], 'Sound trailer mismatch'
++        row = bank[u32(bank, 0x25c)+request*60:][:60]
++        assert row[16:].split(b'\0')[0].decode('ascii').lower() == cue['bank_record'].lower()
++        raw = bank[u32(row, 0):][:u32(row, 4)]
++        assert digest(raw) == cue['sha256'], 'Cue mismatch'
++        rate, packed, decoded, flags, codec = struct.unpack_from('<HIIBB', raw)
++        assert len(raw) == packed+12 and codec == 99
++        assert rate == cue['rate'] and decoded == cue['samples']*2
++        path = cache / cue['bank_record']
++        path.write_bytes(raw)
++        target = out / (path.stem+'.wav')
++        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(path), '-ac', '1', '-c:a', 'pcm_s16le', str(target)], check=True)
++        with wave.open(str(target)) as audio:
++            assert (audio.getframerate(), audio.getnframes(), audio.getnchannels(), audio.getsampwidth()) == (rate, cue['samples'], 1, 2)
++        result['cues'][key] = {'kind': 'audio_only', 'audio': 'res://'+str(target.relative_to(root)),
++                              'audio_samples': cue['samples'], 'duration': cue['samples']/rate, 'frames': 0, 'fps': 15}
++    shapes, _ = extract(archive, source['shape_bank']['name'])
++    assert digest(shapes) == source['shape_bank']['sha256']
++    background, _ = extract(archive, source['palette_movie'])
++    palette = None
++    for tag, payload in parse_vqa_chunks(background):
++        if tag == b'VQFR':
++            parts = dict(parse_vqa_chunks(b'FORM'+bytes(4)+b'WVQA'+payload))
++            if b'CPL0' in parts:
++                palette = parts[b'CPL0']
++                break
++    assert palette is not None and digest(palette) == source['palette_sha256']
++    for hotspot in source['hotspots']:
++        width, height, pixels = shape(shapes, hotspot['shape'])
++        assert (width, height) == (hotspot['width'], hotspot['height'])
++        assert digest(pixels) == hotspot['pixel_indices_sha256']
++        picture = Image.frombytes('P', (width, height), pixels)
++        picture.putpalette(bytes((v & 63)*4 for v in palette))
++        picture.info['transparency'] = 0
++        rgba = picture.convert('RGBA')
++        target = out / ('stone_hotspot_%d.png' % hotspot['hotspot'])
++        rgba.save(target)
++        with Image.open(target) as reread:
++            assert reread.tobytes() == rgba.tobytes()
++        result['hotspots'].append(dict(hotspot, path='res://'+str(target.relative_to(root))))
++    result['scope'] = 'Prepared media only. Hotspot images depict the seated chief, not loose stones. Native active-palette ownership and rendered/audio fidelity remain unqualified.'
++    result['files'] = {path.name: digest(path.read_bytes()) for path in sorted(out.iterdir())}
++    (out / 'attack_media.json').write_text(json.dumps(result, indent=2)+'\n')
++    print('PASS CHUT attack media: 63 frames, 103634 attack samples, two cues, two source hotspot images')
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--game', type=Path, required=True)
++    parser.add_argument('--output-root', type=Path, required=True)
++    args = parser.parse_args()
++    if args.output_root.exists():
++        parser.error('--output-root must be fresh')
++    prepare(args.game.resolve(), args.output_root.resolve(), json.loads(SOURCE.read_text()))
++
++
++if __name__ == '__main__':
++    main()
