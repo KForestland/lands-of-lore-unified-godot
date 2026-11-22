@@ -1,8 +1,10 @@
 extends "res://tests/l9_chapel_earned_test.gd"
 const Dawn=preload("res://scripts/lol2/l8_dawn_state.gd")
+func shore_path()->String:return "res://tmp/act2_silverleaf_qualified/l8_shore_earned_save.json"
+func pass_line()->String:return "PASS qualified earned shore -> Dawn20 Kit bracer exchange -> original ControlToken -> save/reload; wrong item/form/pause/duplicate/capacity guards"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var input:=Save.read_save("res://tmp/act2_silverleaf_qualified/l8_shore_earned_save.json","lol2-restoration-darker-jungle")
+ var input:=Save.read_save(shore_path(),"lol2-restoration-darker-jungle")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/darker_jungle.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
  for i in 1500:
@@ -25,6 +27,7 @@ func run():
  var result:Dictionary=dawn.interact()
  if not check(result.ok,str(result)):quit(1);return
  check(Dawn.TOKEN in scene.carried_collected and Dawn.BRACERS not in scene.carried_collected,"one source token for actual bracers")
+ for cast in ["curse2","curse3","curse5"]:check(cast in scene.starting_magic.magic_state().spellbook.learned,"Actual token grant learns "+cast)
  check(scene.carried_collected.size()==before.size(),"exchange conserves inventory count")
  before=scene.carried_collected.duplicate()
  check(not dawn.interact().ok and scene.carried_collected==before,"duplicate exchange refused")
@@ -33,6 +36,7 @@ func run():
  check(error.is_empty(),"save earned Dawn exchange: "+error)
  if error.is_empty():check(scene._quickload_unrecorded(path).is_empty(),"reload earned Dawn exchange")
  check(Dawn.completed(dawn.state()) and scene.carried_collected==before,"reload does not replay reward")
+ for cast in ["curse2","curse3","curse5"]:check(cast in scene.starting_magic.magic_state().spellbook.learned,"Reload preserves learned "+cast)
  check(scene.progression.seeds_applied.is_empty(),"no arrival seeds")
  # Capacity checks use pure snapshots only; never inject inventory into campaign.
  var full:Array=[Dawn.BRACERS,"other"]
@@ -40,5 +44,5 @@ func run():
  check(not refused.ok and full==[Dawn.BRACERS,"other"],"capacity refusal atomic")
  check(Dawn.exchange(Dawn.initial(),[Dawn.BRACERS],Dawn.BRACERS,1).ok,"full valid inventory exchanges in vacated slot")
  scene.queue_free();await process_frame
- if failures==0:print("PASS qualified earned shore -> Dawn20 Kit bracer exchange -> original ControlToken -> save/reload; wrong item/form/pause/duplicate/capacity guards")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

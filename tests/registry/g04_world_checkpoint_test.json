@@ -1,0 +1,25 @@
+{
+  "name": "g04_world_checkpoint_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Actual L14 map, synthetic valid/invalid physical checkpoint, held host/progression/creatures. Exact continuation component, no input/earned claim."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 0,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "3f5e14e16cc246297847345584f9b8eef7624e28c23f95ebcf3420cdfb41914f"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 3
+}

@@ -1,0 +1,116 @@
+{
+	"areas": {
+		"L10_DC": {
+			"format": "lol2-restoration-map-L10_DC",
+			"scene": "res://scenes/lol2/maps/L10_DC.tscn",
+			"sha256": "5dd9133e865fdcfb7d5dd16c15dd26ce6031445be836f40f838f2754166d5aec",
+			"version": 1.0
+		},
+		"L12_CM": {
+			"format": "lol2-restoration-map-L12_CM",
+			"scene": "res://scenes/lol2/maps/L12_CM.tscn",
+			"sha256": "f120934703701641f39f014687d622a226f78948e7c979e0c3d890ed915c5ef5",
+			"version": 1.0
+		},
+		"L13_RC": {
+			"format": "lol2-restoration-map-L13_RC",
+			"scene": "res://scenes/lol2/maps/L13_RC.tscn",
+			"sha256": "3f3a6f409d441e4e06f537b3793fd82b66a9546cfb73d8dbf58e35eb7c58b80e",
+			"version": 1.0
+		},
+		"L14_HT": {
+			"format": "lol2-restoration-map-L14_HT",
+			"scene": "res://scenes/lol2/maps/L14_HT.tscn",
+			"sha256": "bafe54855a8e4545fae248f74922c21b7cc178f575ebf8e95249bf80dc65db11",
+			"version": 1.0
+		},
+		"L16_CA": {
+			"format": "lol2-restoration-map-L16_CA",
+			"scene": "res://scenes/lol2/maps/L16_CA.tscn",
+			"sha256": "74326f26522307faba65d25fa932f6beaaa5487888234e6a21a4a20b75dbd2f2",
+			"version": 1.0
+		},
+		"L17_HC": {
+			"format": "lol2-restoration-map-L17_HC",
+			"scene": "res://scenes/lol2/maps/L17_HC.tscn",
+			"sha256": "d6ae956fb508c6c7db185daf3890925a15db7121e1777e3dfadbe4f9c96a3714",
+			"version": 1.0
+		},
+		"L19_BC": {
+			"format": "lol2-restoration-map-L19_BC",
+			"scene": "res://scenes/lol2/maps/L19_BC.tscn",
+			"sha256": "d348ecde4c3cda82f279c840a23000ba594f4b31460bbc35b7f89cb6c4caf14a",
+			"version": 1.0
+		},
+		"L1_DC": {
+			"checkpoint_count": 121,
+			"format": "lol2-restoration-walkthrough",
+			"scene": "res://scenes/lol2/cave_walkthrough.tscn",
+			"sha256": "8b81ca1876c311684fd399588f8ea3ffa7a3556b7cf443e9cf805f9ba45fa67a",
+			"version": 2.0
+		},
+		"L20_BB": {
+			"format": "lol2-restoration-map-L20_BB",
+			"scene": "res://scenes/lol2/maps/L20_BB.tscn",
+			"sha256": "09e706a2195515d29f58c16ab6cc28195c362b901c3cbad7f8048581ce94d058",
+			"version": 1.0
+		},
+		"L3_DH": {
+			"format": "lol2-restoration-museum",
+			"scene": "res://scenes/lol2/museum_walkthrough.tscn",
+			"sha256": "587e836137b94e798872f9e8c50d42fe77b7afa25cc80e583a426a7bb6657865",
+			"version": 1.0
+		},
+		"L4_HJ": {
+			"format": "lol2-restoration-jungle",
+			"scene": "res://scenes/lol2/jungle_walkthrough.tscn",
+			"sha256": "309dfcaa36e4b08d1ede5d570a044b15d00ad0e77d42872cc6389389e06a97f5",
+			"version": 1.0
+		},
+		"L5_HC": {
+			"format": "lol2-restoration-hive",
+			"scene": "res://scenes/lol2/hive_review.tscn",
+			"sha256": "e2456daa6571c21bc13187eebef760fe8cadf21df14888220045e1370818186a",
+			"version": 1.0
+		},
+		"L7_DH": {
+			"format": "lol2-restoration-dark-halls",
+			"scene": "res://scenes/lol2/dark_halls.tscn",
+			"sha256": "d358154203980aea6d58fd2db6a2753e8b9d3ea9542923a17489a9d05349efae",
+			"version": 1.0
+		},
+		"L8_SJ": {
+			"format": "lol2-restoration-darker-jungle",
+			"scene": "res://scenes/lol2/darker_jungle.tscn",
+			"sha256": "065130884961344072cbe5bbba274231e7452313e9fa7d48d89697edcbbd152a",
+			"version": 1.0
+		},
+		"L9_DR": {
+			"format": "lol2-restoration-dragon-preview",
+			"scene": "res://scenes/lol2/dragon_level.tscn",
+			"sha256": "9d609c889d05ffb2a4f3096754b746e97688115dfe009eb56c746e2040fa0a7b",
+			"version": 1.0
+		}
+	},
+	"native_initial_sizes": {
+		"L10_DC": 42079,
+		"L12_CM": 26272,
+		"L13_RC": 24746,
+		"L14_HT": 30511,
+		"L16_CA": 52673,
+		"L17_HC": 16906,
+		"L19_BC": 23492,
+		"L1_DC": 59841,
+		"L20_BB": 20537,
+		"L3_DH": 28527,
+		"L4_HJ": 196245,
+		"L5_HC": 38890,
+		"L7_DH": 85486,
+		"L8_SJ": 63334,
+		"L9_DR": 117410
+	},
+	"source": "d5da60a",
+	"three_level_bank_bytes": 222852,
+	"three_level_encode_us": 14255,
+	"v1_fixture": "derived from actual Cave v2 writer by the exact inverse of existing v1 migration (version=1, no collected)"
+}

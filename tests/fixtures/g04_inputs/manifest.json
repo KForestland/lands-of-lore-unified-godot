@@ -1,0 +1,25 @@
+{
+  "inputs": [
+    {
+      "file": "l12_crevasse_cooldown.json",
+      "sha256": "ff5cc5ec1659c7fefdd9ab0efc4ddd9e1a050d7782e0fa21bd5b41dc0465245e",
+      "bytes": 85079,
+      "source": "~/opus_work/lol2_r18/tmp/l12_crevasse_earned_save.json",
+      "provenance": "Actual existing game-written producer output carrying Curse2 cooldown0.417216; copied unchanged. Local legacy-load + real-input regression, no new earned-walk claim."
+    },
+    {
+      "file": "l9_mid_door_v2.json",
+      "sha256": "6da1fd80c67ac9926b20f548129bf6ba742a6a189688df21a78e68d9538cc265",
+      "bytes": 132523,
+      "source": "~/opus_work/lol2_sol_world_save/tmp/staged_inputs/userdata/lol2-regression-oct17-r19-20261016/saves/slot_01.json",
+      "provenance": "Actual version2 whole-game F5 from local real-E door115 red probe; supplied stand/unlocked selector. Untouched save bytes; no earned-route claim."
+    },
+    {
+      "file": "l10_barrel_switch_legacy.json",
+      "sha256": "928d3b388c393726a8739ca36bd7e6003c9208ca501c4ff8ab4f864a0a40d536",
+      "bytes": 90062,
+      "source": "~/opus_work/lol2_sol_owner_gaps/tmp/l10_white_switch_earned_save.json",
+      "provenance": "Untouched staged game-written white-switch checkpoint; existing producer uses disclosed route/action aids. Local save conservation, no new earned walk claim."
+    }
+  ]
+}

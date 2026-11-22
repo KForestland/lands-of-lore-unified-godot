@@ -21,7 +21,7 @@ func _ready():
   streams[cue]=AudioStreamWAV.load_from_file(clip.path)
  var canvas:=CanvasLayer.new();canvas.layer=34;add_child(canvas);hint=Label.new();hint.position=Vector2(24,430);canvas.add_child(hint)
 func reachable(id:String)->bool:
- if not State.CUES.has(id):return false
+ if not State.CUES.has(id) or id in State.WITHHELD:return false
  var pop=host.act2_creatures
  if not pop.state.actors[id].present or pop.state.actors[id].health<=0:return false
  if id=="23" and host.get_node("L8Tribe").state().phase!="complete":return false
@@ -29,6 +29,10 @@ func reachable(id:String)->bool:
  if delta.length()>160 or delta.length()<0.01 or (-host.camera.global_basis.z).dot(delta.normalized())<0.9:return false
  var ray:=PhysicsRayQueryParameters3D.create(host.camera.global_position,host.camera.global_position+delta,1,[host.player.get_rid()])
  return get_world_3d().direct_space_state.intersect_ray(ray).is_empty()
+## BJ14 F5: during the bout and until Luther leaves the arena, E belongs to the initiation, not to a Huline's speech.
+func arena_busy()->bool:
+ var tribe:=host.get_node_or_null("L8Tribe")
+ return tribe!=null and str(tribe.state().phase) in ["fight","complete"]
 func target()->String:
  for id in State.CUES:
   if id not in state().heard and reachable(id):return id
@@ -46,6 +50,7 @@ func finish():
  if not input_locked():return
  var s:=state().duplicate(true);s.heard.append(s.active);s.active="";s.elapsed=0.0;host.quest_state[State.KEY]=s;play_current()
 func _process(delta):
+ if state().active in State.WITHHELD:finish()
  if input_locked():
   play_current()
   if host.starting_magic.movie_world_active():
@@ -53,12 +58,12 @@ func _process(delta):
    if s.elapsed>=State.duration(s.active):finish()
  else:
   if loaded!="":play_current()
- hint.text="Enter — Skip speech" if input_locked() else ("E — Listen" if host.player_form==0 and host.starting_magic.world_active() and target()!="" else "")
+ hint.text="Enter — Skip speech" if input_locked() else ("E — Listen" if host.player_form==0 and host.starting_magic.world_active() and target()!="" and not arena_busy() else "")
 func _unhandled_input(event:InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo:return
  if input_locked():
   if event.keycode==KEY_ENTER and host.starting_magic.movie_world_active():finish();get_viewport().set_input_as_handled()
   return
- if event.keycode!=KEY_E or Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED:return
+ if event.keycode!=KEY_E or Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED or arena_busy():return
  var id:=target()
  if id!="" and start(id):get_viewport().set_input_as_handled()

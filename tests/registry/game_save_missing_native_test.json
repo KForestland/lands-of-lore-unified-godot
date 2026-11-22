@@ -1,0 +1,17 @@
+{
+  "name": "game_save_missing_native_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1342,
+  "needs": {
+    "chain": "private K92 driver: sol_lane/foundation3_k92_20261111/run.py",
+    "note": "Private project omits L9 native JSON; an admitted host double supplies a valid legacy packet without a VM. Save-boundary proof, no partial-stage gameplay claim."
+  },
+  "count_method": "Audited source sites (K82), not executions. Local fixtures and setup/fault injection are disclosed; no earned-walk claim.",
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ab2036e1510cc177785288370d58642d0d857d8ad21e96e6e3c5c79d71c06aac"
+  }
+}

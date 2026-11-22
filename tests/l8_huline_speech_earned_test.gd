@@ -15,7 +15,9 @@ func run():
  var speech=scene.get_node("L8HulineSpeech");var before:Array=scene.carried_collected.duplicate()
  check(not speech.start("93") and not speech.start("missing"),"remote/invalid speech refused")
  await approach_entry(scene,scene.get_node("L8Journey"))
- for id in ["93","92"]:
+ scene.camera.look_at(scene.act2_creatures.bodies["93"].position+Vector3.UP*45,Vector3.UP)
+ check("93" in Speech.WITHHELD and not speech.start("93") and speech.target()!="93","cue 93 (selector 237) withheld until its clip is verified")
+ for id in ["92"]:
   scene.camera.look_at(scene.act2_creatures.bodies[id].position+Vector3.UP*45,Vector3.UP)
   paused=true;check(not speech.start(id),"paused speech refused");paused=false
   if not check(speech.start(id),"physical original speech actor"+id):quit(1);return
@@ -39,7 +41,7 @@ func run():
  var end:="res://tmp/l8_huline_speech_earned_save.json"
  check(scene._quicksave_unrecorded(end).is_empty(),"heard speech save")
  check(scene._quickload_unrecorded(end).is_empty(),"heard speech reload")
- check(speech.state().heard==["93","92"] and not speech.input_locked(),"reload does not replay completed voices")
+ check(speech.state().heard==["92"] and not speech.input_locked(),"reload does not replay completed voices")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no resets or seeds")
  # Separate actual arena checkpoint: replace the entire scene save, never merge inventories.
  var arena:=Save.read_save("res://tmp/act2_wild_village_qualified/l8_initiation_earned_save.json","lol2-restoration-darker-jungle")
@@ -54,5 +56,5 @@ func run():
  check(speech.state().heard==["23"] and scene.carried_collected==before,"separate arena speech preserves its own earned inventory")
  check(scene._quicksave_unrecorded("res://tmp/l8_huline_arena_speech_earned_save.json").is_empty(),"separate arena speech save")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned first-arrival walk -> original actor93/92 voices -> pause/mid-save/reload/one-shot completion; native conversation triggers remain adapters")
+ if failures==0:print("PASS earned first-arrival walk -> original actor92 voice (93 withheld) -> pause/mid-save/reload/one-shot completion; native conversation triggers remain adapters")
  quit(0 if failures==0 else 1)

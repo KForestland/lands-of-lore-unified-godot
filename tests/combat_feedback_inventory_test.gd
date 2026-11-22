@@ -90,7 +90,7 @@ func run() -> void:
 	if not check(not magic.cast() and magic.notice_text() == "Already at full health", "Full-health refusal: '%s'" % magic.notice_text()): return
 	magic.set_health(20)
 	saved = magic.magic_state().duplicate(true); saved.cooldown = 0.0; saved.player.mana = 0; magic.commit(saved)
-	if not check(not magic.cast() and magic.notice_text() == "Not enough mana", "Mana refusal: '%s'" % magic.notice_text()): return
+	if not check(not magic.cast() and magic.notice_text() == "Not enough mana - it returns over time.", "Mana refusal: '%s'" % magic.notice_text()): return
 	saved = magic.magic_state().duplicate(true); saved.cooldown = 0.0; saved.player.mana = 10; magic.commit(saved)
 	if not check(magic.cast() and magic.notice_text() == "Healing" and magic.health() == 26 and swing.screen_flash.color.a > 0.0, "Healing: notice '%s' health %d flash %s" % [magic.notice_text(), magic.health(), swing.screen_flash.color.a]): return
 	# Classic inventory interactions (fake equip callables; presentation and routing only).

@@ -53,6 +53,7 @@ func run() -> void:
 				break
 			scene.player.look_at(Vector3(target.x,scene.player.position.y,target.y))
 			scene.camera.rotation = Vector3.ZERO
+			preload("res://tests/jungle_bramble_cut.gd").cut(scene)
 			if not check(scene.resets == 0 and not scene.flying and scene.health > 0,"Earned Jungle route reset or died"): return
 		if transitioned: break
 		if not reached:

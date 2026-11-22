@@ -1,0 +1,19 @@
+{
+  "name": "game_session_bank_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1339,
+  "teleports": 0,
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "73e222e34ebe3772f6f6bd6d935cb3bdc7c82a1617e204f0df39b20a6f60a05a"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance.",
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 1
+}

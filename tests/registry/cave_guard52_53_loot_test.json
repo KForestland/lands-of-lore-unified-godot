@@ -1,6 +1,18 @@
 {
- "name": "cave_guard52_53_loot_test",
- "suite": "core",
- "mode": "rendered",
- "order": 197
+  "name": "cave_guard52_53_loot_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 197,
+  "teleports": 3,
+  "test_aids": 27,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "33b23a7edbb911af4db2ac58c150f541fec032e30371766a62d2edbf662361d4"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 27
 }

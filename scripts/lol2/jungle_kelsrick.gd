@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Live Kelsrick64: source dialogue/use/hit chain (jungle_kelsrick_state.gd) presented with his original
 ## in-world VQA segments and voice, plus the unchanged generic creature owner for his body and the hostile fight.
 ## Producers: grounded entry into source regions 2750/3567/3791 (edge, saved); E-use while aimed at him with a
@@ -303,8 +304,8 @@ func collect_loot() -> bool:
 	if not loot_target() or LOOT_ITEM in host.carried_collected: return false
 	if host.carried_collected.size()>=preload("res://scripts/lol2/item_catalog.gd").MAX_CARRIED:
 		host.save_feedback("Your inventory is full.");return false
+	if not Grants.grant(host,LOOT_ITEM,{"cap":false,"duplicate":"allow"}).ok: return false
 	state.loot_taken=true
-	host.carried_collected.append(LOOT_ITEM)
 	host._sync_exit_checkpoint()
 	if is_instance_valid(host.interface_hud): host.interface_hud.refresh_equipment()
 	host.save_feedback("Fine Longsword taken.")

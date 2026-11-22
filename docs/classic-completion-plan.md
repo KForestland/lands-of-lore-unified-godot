@@ -2,11 +2,11 @@
 
 Updated 2026-10-13. Owner: the owner. Integration lead: Codex/Astra.
 
-This revision answers the owner’s overview/research/task-list request and makes cross-location UI, skills, magic and item continuity an explicit release gate. Historical Bob references below refer to the owner.
+This revision answers the owner’s overview/research/task-list request and makes cross-location UI, skills, magic and item continuity an explicit release gate. Historical the owner references below refer to the owner.
 
 The main goal is to finish the complete original Lands of Lore 2 Classic in Godot. The first delivery milestone is a playable Act 1 demo, from Draracle's cave through departure to the darker jungle. The demo is an intermediate release of the same game and codebase.
 
-[Classic Edition](classic-edition.md) remains the fidelity contract. Bob’s 2026-10-07 direction permits modern mechanics when better or faster; exact replication is not required. Enhancements and other games do not displace this plan. Existing dated test results certify their recorded revisions only.
+[Classic Edition](classic-edition.md) remains the fidelity contract. the owner’s 2026-10-07 direction permits modern mechanics when better or faster; exact replication is not required. Enhancements and other games do not displace this plan. Existing dated test results certify their recorded revisions only.
 
 
 ## Approved next iteration: Godot development workflow — 2026-10-12
@@ -100,10 +100,10 @@ Reuse `player_magic_handoff_test.gd`, `cave_fighting_handoff_test.gd`, `captain_
 | 0 Establish the baseline | Inventory current code, pending changes, saves, assets, active owners and reproducible build commands. Reconcile current evidence and content gaps. Preserve a recoverable snapshot. | One identified revision and asset manifest; focused baseline checks; discrepancies recorded without erasing historical evidence. |
 | 1 Prove the shared architecture | Trace item and player state ownership. Pilot shared item registration and validation on one existing item; use the cave captain encounter as the candidate complete encounter. Review health and damage scales together. | Pickup/reward, equipment/use, combat where applicable, save/load, failure/retry and area return retain expected behavior. Save compatibility is demonstrated. |
 | 2 Complete Act 1 content | Close the cave, Museum, Jungle, Hive and connected room requirements. Finish original interactions, encounters, loot, quests, forms, transitions and recovery. | Every required Act 1 behavior has an owner and playable evidence; optional original content is inventoried with explicit status. No progression, crash or save blockers. |
-| 3 Deliver the Act 1 demo | Freeze a candidate, run the fresh campaign and branch checks, fix presentation defects, export and package it, then address Bob's playtest notes. | Demo acceptance checklist below passes on the shipped revision. Bob accepts the demo. |
+| 3 Deliver the Act 1 demo | Freeze a candidate, run the fresh campaign and branch checks, fix presentation defects, export and package it, then address the owner's playtest notes. | Demo acceptance checklist below passes on the shipped revision. the owner accepts the demo. |
 | 4 Expand through the remaining campaign | Bind remaining area names and quest dependencies, then implement complete connected area packages in verified progression order. Extend reusable systems only as needed. | Every original area, interior, quest branch and ending has an implementation status; the entire critical campaign is playable. |
 | 5 Reach whole game alpha | Join the completed packages into a fresh start-to-finish campaign, including ending, saves, deaths, retries and revisits. | A continuous earned playthrough reaches an original ending without debug shortcuts. Other original branches/endings have dedicated checks. Remaining defects are explicit. |
-| 6 Complete Classic fidelity and acceptance | Close missing original content and player-visible defects; tune modern mechanics through playtesting. Verify supported builds and performance. Bob reviews each area and reported fix. | All updated Classic Edition requirements pass. Material modern-mechanics differences are documented; Bob accepts the playable result. |
+| 6 Complete Classic fidelity and acceptance | Close missing original content and player-visible defects; tune modern mechanics through playtesting. Verify supported builds and performance. the owner reviews each area and reported fix. | All updated Classic Edition requirements pass. Material modern-mechanics differences are documented; the owner accepts the playable result. |
 | 7 Release and preserve | Produce the accepted build, source revision, asset preparation instructions, checksums, change notes and recovery archive. | A clean setup reproduces the release; packaged smoke checks pass; shipped artifacts match the accepted candidate. |
 
 Phase 1 is a bounded improvement within delivery. Unrelated architecture work stays queued. Shared-system corrections can continue during content work, but each must remove a demonstrated defect or repeated integration cost.
@@ -140,7 +140,7 @@ The demo uses the production campaign and save model. It must not become a separ
 - Match actual input/output save hashes for every campaign leg. Preserve source and asset fingerprints, logs and screenshots in a unique evidence directory.
 - Perform representative GPU visual checks and audible playback checks. Private Xvfb checks alone do not certify those properties.
 - Export a repeatable build with launch instructions, controls, save location, build ID and concise known issues. Verify launch and save/load from the exported package in a clean user-data location.
-- Bob playtests the candidate; the lead reproduces, fixes and verifies reported blockers before acceptance. Demo acceptance does not imply full Classic acceptance.
+- the owner playtests the candidate; the lead reproduces, fixes and verifies reported blockers before acceptance. Demo acceptance does not imply full Classic acceptance.
 
 The existing [Act 1 content checklist](act-one-completion.md) supplies the detailed scope. Its dated entries must be reconciled before scheduling; older “open” items may already have newer implementation evidence.
 
@@ -157,7 +157,7 @@ For each area package:
 3. Implement complete encounters and quest steps using shared state and behavior systems.
 4. Verify trigger/result, failure/retry, save/load and arrival/departure behavior, including a return visit where original rules allow it.
 5. Extend the earned campaign to the new boundary. Preserve prior branch evidence and run affected regressions.
-6. Review representative original visuals, audio, timing and performance; issue a build for Bob's area review.
+6. Review representative original visuals, audio, timing and performance; issue a build for the owner's area review.
 
 All original spells, forms, equipment effects, enemies, NPC branches, cutscenes and endings must appear in the inventory, including content that has no separate map archive. Whole-game alpha establishes continuity; final Classic acceptance closes the remaining fidelity and content work.
 
@@ -178,7 +178,7 @@ Each extraction must name the repeated edits or defect it removes, retain old sa
 
 ## Team workflow
 
-The lead owns priorities, shared integration, independent review, evidence promotion and releases. Opus handles bounded architecture or content slices. Grok handles bounded source uncertainties and adversarial rule review. Bob owns canon decisions and playtest acceptance; agents own technical QA and reproduction.
+The lead owns priorities, shared integration, independent review, evidence promotion and releases. Opus handles bounded architecture or content slices. Grok handles bounded source uncertainties and adversarial rule review. the owner owns canon decisions and playtest acceptance; agents own technical QA and reproduction.
 
 Maintain at most one implementation assignment per collaborator plus the lead's integration task. Every assignment names the observable behavior, evidence inputs, exact files, deliverable and stop condition. Require acknowledgement before treating a collaborator as active. Checkpoint findings within the first bounded run; if inconclusive, report competing hypotheses and the next discriminating test rather than restarting broad research.
 
@@ -208,7 +208,7 @@ Escalate a research question only when it blocks an implementation or fidelity d
 - Continuous start-to-finish campaign, branch checks, death/retry and cross-area saves verified on the release revision.
 - Intended gameplay, recognizable UI, presentation and audio accepted; temporary rules either resolved or documented as approved modern behavior. Exact timing/pixel parity is not required.
 - Supported platform/rendering configurations recorded and tested; performance and crash/save blockers closed.
-- Bob's area notes resolved and Classic acceptance recorded.
+- the owner's area notes resolved and Classic acceptance recorded.
 - Build and source identifiers, local asset prerequisites, conversion commands and checksums recorded; original media and personal saves excluded from source publication.
 - Clean export/install smoke checks pass; accepted build, evidence and recovery snapshot preserved.
 

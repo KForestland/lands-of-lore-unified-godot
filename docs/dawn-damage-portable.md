@@ -17,7 +17,7 @@ The tests compare 2,048 melee calculations, 5,760 spell calculations, 4,096 mele
 
 Spell inputs are deliberately validated within the verified domain: the six amount/signature pairs produced from the source request, scalar0..128 and magic levels1..30. Controller defense parts currently require nonnegative values. Stable and transitional UI modes must remain distinct; mapping a saved player form directly to a stable mode during a transition is not verified.
 
-These checks establish component behavior, not complete combat fidelity, a rebuilt demo, full Act1 acceptance or Bob's playtest acceptance.
+These checks establish component behavior, not complete combat fidelity, a rebuilt demo, full Act1 acceptance or the owner's playtest acceptance.
 
 `dawn_spell_motion.gd` adds the original update-tail movement request, verified against1,029 numeric cases: native speed200 produces distance(delta×500)/60; signed vertical interpolation uses the original fixed-point floor. The caller supplies the native clock and planar distance. Constructor target binding and generic collision application remain separate; no live projectile is claimed.
 

@@ -1,0 +1,24 @@
+{
+  "name": "combat_hive_real_click_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1332,
+  "teleports": 1,
+  "test_aids": 4,
+  "count_method": "Audited source sites, not executions.",
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ea8774e37c6c384e29fd14bc84245a334752731089182046c99e47aa69ca601e"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 4
+}

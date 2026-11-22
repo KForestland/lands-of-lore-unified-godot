@@ -17,7 +17,7 @@ const VERSION_NOTES := {
 	2: "In this version: M opens the map (the game keeps running). Mouse wheel or -/+ zooms, drag pans, My position centres it.",
 	3: "In this version: Q casts the loaded spell; 1 loads Spark, 2 loads Healing. In Tab mode click the Magic button to cast, right click it to switch.",
 	4: "In this version: left click attacks whatever is in front of you. In Tab mode the Attack button does the same.",
-	5: "In this version: W A S D move, the mouse looks around, Shift runs, Space jumps. F4 switches the modern walk (step bob, smooth start and stop).",
+	5: "In this version: W A S D move, the mouse looks around, Shift runs, Space jumps. C crouches; Ctrl tucks during a running jump. F4 switches the modern walk (step bob, smooth start and stop).",
 	6: "In this version: E uses or picks up what you aim at. F5 saves, F9 loads, F6 changes the interface size.",
 	7: "In this version: look up, down and around with the mouse.",
 	8: "In this version: aim with the centre of the view and left click to attack; Q casts the loaded spell. Tab frees the cursor for the interface.",

@@ -1,0 +1,131 @@
+{
+  "name": "g15_curse3_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 2,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Genuine F2 local control loop; explicit control teaching, held magic clock, final production story request. Real keys and F5/F9; no pose/health/mana writes."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ec35d75c93a5ab404fce5fba06d13927ab010ed58944388f35b3446adc065586"
+  },
+  "context_aid_source_sites": {
+    "count": 15,
+    "sites": [
+      {
+        "path": "tests/g15_curse3_input_test.gd",
+        "line": 7,
+        "column": 16,
+        "kind": "learning_api_fixture",
+        "source": "if not require(magic.learn_spell_group(\"control\"),\"Disclosed learned Control Token fixture\"):return"
+      },
+      {
+        "path": "tests/g15_curse3_input_test.gd",
+        "line": 8,
+        "column": 18,
+        "kind": "component_magic_clock",
+        "source": "await tap(KEY_3);magic.set_process(false)"
+      },
+      {
+        "path": "tests/g15_curse3_input_test.gd",
+        "line": 11,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==2 and scene.curse.state.phase==0 and scene.curse.state.duration==0 and scene.curse.state.remaining==0 and magic.magic_state().player.mana==mana-2,\"Real CtrlQ Curse3 applies persistent lizard at cost2, not the old 60s request\"):return"
+      },
+      {
+        "path": "tests/g15_curse3_input_test.gd",
+        "line": 16,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==2 and scene.curse.state.phase==0 and scene.curse.state.duration==0 and scene.player.get_child(0).shape is CylinderShape3D and scene.player.get_child(0).shape.height==8,\"Actual F5/F9 retains persistent source lizard body\"):return"
+      },
+      {
+        "path": "tests/g15_curse3_input_test.gd",
+        "line": 17,
+        "column": 17,
+        "kind": "component_magic_clock",
+        "source": "await ticks(40);magic.set_process(false);mana=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/g15_curse3_input_test.gd",
+        "line": 19,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==0 and scene.curse.state.phase==0 and magic.magic_state().player.mana==mana-2 and scene.resets==0,\"Second real CtrlQ calls Curse2 and returns human at cost2\"):return"
+      },
+      {
+        "path": "tests/g15_curse3_input_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "story_warning_fixture",
+        "source": "scene.curse.set_requests_enabled(true)"
+      },
+      {
+        "path": "tests/g15_curse3_input_test.gd",
+        "line": 21,
+        "column": 16,
+        "kind": "story_warning_fixture",
+        "source": "if not require(scene.curse.request_timed_form(2,60.0) and scene.curse.state.phase==1,\"Existing story curse can still start after chosen control\"):return"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 14,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l13_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 20,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 23,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 76,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(LOWER_INPUT,Slots.slot_path(1))==OK,\"Install untouched game-written lowerF5 for actualF9\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 17,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

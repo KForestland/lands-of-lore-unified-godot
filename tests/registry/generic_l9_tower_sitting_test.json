@@ -1,0 +1,108 @@
+{
+  "name": "generic_l9_tower_sitting_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "RealF2 then realF9 from untouched game-written first Ruins pit arrival eebc3076f0fab9c0ccd02876cca47ed026d3349b7f38016060d4f7b9f7641242. Ordinary1/60; actualW through bridge/Tower, realQ fields/Saar combat, E existing book-led Tower blank and white charge, Qshield/Ebracers. No supplied pose/health/clock/action handlers; continuation only. Native mirror/alcove warps are gameplay, not test moves. R126 opens BOTH native leaves102/103 by real E, checks native generic travel (legacy travel cache does not change), walks the visible middle outside their swing arcs with real W; existing controller/clock aids remain disclosed. Full sitting has no camera/physics writes on its executed path; inherited legacy-helper sites are conservatively included."
+  },
+  "test_aids": 5,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "640e4369d2cae8a32551c4f90e1d51c3a0880c055d9752f528565168d9acc9d7"
+  },
+  "context_aid_source_sites": {
+    "count": 8,
+    "sites": [
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l9_tower_sitting_test.gd",
+        "line": 82,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(INPUT,Slots.slot_path(1))==OK,\"Install actual F5 output in slot1\"):return"
+      },
+      {
+        "path": "tests/helpers/l9_tower_door_input.gd",
+        "line": 10,
+        "column": 1,
+        "kind": "legacy_view_fixture",
+        "source": "scene.camera.rotation=Vector3(scene.camera.rotation.x,0,0)"
+      },
+      {
+        "path": "tests/helpers/l9_tower_door_input.gd",
+        "line": 39,
+        "column": 55,
+        "kind": "legacy_root_physics_admission",
+        "source": "var was_processing:bool=scene.is_physics_processing();scene.set_physics_process(true)"
+      },
+      {
+        "path": "tests/helpers/l9_tower_door_input.gd",
+        "line": 46,
+        "column": 55,
+        "kind": "legacy_root_physics_admission",
+        "source": "if not await look(tree,scene,goal):key(KEY_W,false);scene.set_physics_process(was_processing);return false"
+      },
+      {
+        "path": "tests/helpers/l9_tower_door_input.gd",
+        "line": 50,
+        "column": 1,
+        "kind": "legacy_root_physics_admission",
+        "source": "scene.set_physics_process(was_processing)"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 13,
+  "count_method": "Audited source sites, not executions. Conservative transitive helpers include overridden and unused paths.",
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "legacy_view_fixture",
+      "pattern": "scene\\.camera\\.rotation\\s*="
+    },
+    {
+      "kind": "legacy_root_physics_admission",
+      "pattern": "scene\\.set_physics_process\\("
+    },
+    {
+      "kind": "private_gate_settings",
+      "pattern": "gate\\.settings_path\\s*="
+    },
+    {
+      "kind": "private_gate_settings_reset",
+      "pattern": "isolated_settings\\.save\\("
+    },
+    {
+      "kind": "original_copy_fixture",
+      "pattern": "gate\\.path_field\\.text\\s*="
+    },
+    {
+      "kind": "install_game_written_slot",
+      "pattern": "DirAccess\\.copy_absolute\\(INPUT,Slots\\.slot_path\\(1\\)\\)"
+    }
+  ]
+}

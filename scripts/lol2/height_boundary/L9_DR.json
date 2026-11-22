@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "area": "L9_DR",
+ "rule": "narrow G-05 class-B adapter (lead 2026-11-12): only walls a walk is known to have crossed into a drop, from Sol's census 2695ec6",
+ "reason": "Grok robot v1.4 (b762eda-v14e, 'mirror doors again'): walked through drawn wall 16343 (region 1205 edge 0, null neighbour, 0..110) into pit region 3999 (floor -110) and the void beyond; fall recovery moved Luther to (3607,-12,-8471)",
+ "faces": [
+  16343
+ ],
+ "band_faces": [],
+ "block_face_keys": [
+  "wall|-3181,-1260|-3243,-1205|0|110"
+ ],
+ "collision_faces": [],
+ "counts": {
+  "block_face_keys": 1,
+  "collision_polygons": 0
+ },
+ "source": {
+  "producer": "tools/prepare_boundary_collision.py",
+  "commit": "2695ec6",
+  "note": "run on a copy of the dragon pack with area L9_DR added (the pack has no area field)"
+ },
+ "inputs": {
+  "map": {
+   "sha256": "fd745683fa2e16e3dfa65920f2a18fb6a70394a4b80919f6a2ca33ac33f37a75"
+  }
+ }
+}

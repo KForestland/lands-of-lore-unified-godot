@@ -1,4 +1,6 @@
 extends "res://scripts/lol2/jungle_walkthrough.gd"
+var area_owners: Node
+var area_id := "L9_DR"
 ## L9 native map and shared Act 2 progression binder.
 const FORMAT := "lol2-restoration-dragon-preview"
 const DEFAULT_PATH := "user://saves/dragon_preview_quicksave.json"
@@ -39,16 +41,43 @@ func _init() -> void:
 	clip_sunken_groups = false
 
 func include_collision_face(face: Dictionary) -> bool:
+	if is_instance_valid(area_owners) and area_owners.claims_collision(face): return false
 	# Floors and ceilings form the terrain shell. Source walls draw only; assembly boxes are separate.
 	return face.kind in ["floor", "ceiling"]
 
+## G-05 class B narrow adapter on L9 (lead 2026-11-12, ledger 0633): drawn native walls a walk crossed into a drop
+## (robot v1.4: 16343, region 1205 edge 0, null neighbour, into pit 3999 and the void). Same packet rules as act2_map:
+## refused loudly on a wrong area or a map-pack hash mismatch. Meta lol2_height_boundary_off = before.
+## The named walls collide through their own body (HeightBoundaryCollision), so the map's terrain shape stays exactly as it
+## was: one added triangle pair in that single trimesh changed contact at an unrelated stair lip (l9_statue_earned_test
+## stalled at route point 40, 5000 units away).
+var height_boundary_keys: Dictionary = {}
+const HeightBoundary=preload("res://scripts/lol2/height_boundary_collision.gd")
+var height_boundary_polygons:Array=[]
+func _height_boundary_body(data:Dictionary)->void:
+	HeightBoundary.attach(self,data,height_boundary_keys,height_boundary_polygons)
+func _load_height_boundary()->void:
+	if get_tree().has_meta("lol2_height_boundary_off"):return
+	var packet:=HeightBoundary.load_packet("L9_DR",geometry_file)
+	if packet.is_empty():return
+	height_boundary_keys=HeightBoundary.keys(packet)
+	height_boundary_polygons=packet.get("collision_faces",[])
+
 func _ready() -> void:
+	area_owners = preload("res://scripts/lol2/area_owner_registry.gd").new()
+	var owner_error: String = area_owners.prepare("L9_DR")
+	assert(owner_error.is_empty(), owner_error)
+	add_child(area_owners)
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(geometry_file))
 	var Binder := preload("res://scripts/lol2/act2_progression.gd")
 	if Binder.assets_ready("L9_DR"): excluded_faces.merge(Binder.hinge_faces("L9_DR", data))
 	for i in data.faces.size():
-		if data.faces[i].get("placement_kind")=="static_assembly" and int(data.faces[i].get("source_index",-1)) in [312,478,479,480,122,82]:excluded_faces[i]=true
+		if area_owners.claims_static(data.faces[i]): excluded_faces[i] = true
+	if Binder.assets_ready("L9_DR"):
+		Binder.claim_moving_floors(self, "L9_DR", data, excluded_faces)
+	_load_height_boundary()
 	super._ready()
+	_height_boundary_body(data)
 	preload("res://scripts/lol2/act2_visuals.gd").apply(self, "L9_DR")
 	var prop_materials: Dictionary = {}
 	var groups: Dictionary = {}
@@ -133,17 +162,8 @@ func _ready() -> void:
 
 	act2_items = preload("res://scripts/lol2/act2_world_items.gd").attach(self, "L9_DR")
 	preload("res://scripts/lol2/act2_chargers.gd").attach(self, "L9_DR")
-	preload("res://scripts/lol2/l9_magic_bridge.gd").attach(self)
-	preload("res://scripts/lol2/l9_tower.gd").attach(self)
-	preload("res://scripts/lol2/l9_dead_bracers.gd").attach(self)
-	preload("res://scripts/lol2/l9_mirrors.gd").attach(self)
-	preload("res://scripts/lol2/l9_noble_rails.gd").attach(self)
-	preload("res://scripts/lol2/l9_pyre.gd").attach(self)
-	preload("res://scripts/lol2/l9_statue.gd").attach(self)
-	preload("res://scripts/lol2/l9_statue_walk.gd").attach(self)
-	preload("res://scripts/lol2/l9_flood.gd").attach(self)
-	preload("res://scripts/lol2/l9_journal_hints.gd").attach(self)
-	preload("res://scripts/lol2/l9_escape.gd").attach(self)
+	preload("res://scripts/lol2/game_session.gd").for_tree(get_tree()).apply_pending(self)
+	area_owners.attach_all(self, "L9_DR")
 
 func apply_save(state: Variant) -> String:
 	var error := preload("res://scripts/lol2/act2_save.gd").validate(state, area_save_format)
@@ -151,8 +171,8 @@ func apply_save(state: Variant) -> String:
 	error = super.apply_save(state)
 	if error.is_empty() and is_instance_valid(act2_creatures): error = act2_creatures.restore_from_quests()
 	if error.is_empty(): error = preload("res://scripts/lol2/act2_items_catalog.gd").restore(self)
-	if error.is_empty() and has_node("L9Escape"): get_node("L9Escape").restore(true)
-	if error.is_empty() and has_node("L9StatueWalk"): get_node("L9StatueWalk").restore()
+	if error.is_empty() and is_instance_valid(area_owners): error = area_owners.restore_all("load")
+	if error.is_empty(): preload("res://scripts/lol2/load_region_rule.gd").apply(self)  # load rule: no entry event, re-arm
 	return error
 
 func apply_area_handoff(state: Variant) -> String:
@@ -163,8 +183,7 @@ func apply_area_handoff(state: Variant) -> String:
 	error = super.apply_area_handoff(state)
 	if error.is_empty() and is_instance_valid(act2_creatures): error = act2_creatures.restore_from_quests()
 	if error.is_empty(): error = preload("res://scripts/lol2/act2_items_catalog.gd").restore(self)
-	if error.is_empty() and has_node("L9Escape"): get_node("L9Escape").restore(true)
-	if error.is_empty() and has_node("L9StatueWalk"): get_node("L9StatueWalk").restore()
+	if error.is_empty() and is_instance_valid(area_owners): error = area_owners.restore_all("arrival")
 	return error
 func _quicksave_unrecorded(path: String = "") -> String:
 	return preload("res://scripts/lol2/act2_save.gd").save_host(self, path)
@@ -179,3 +198,6 @@ func inventory_state() -> Dictionary:
 
 func _jump_input_active()->bool:
 	return super._jump_input_active() or (DisplayServer.get_name()=="headless" and is_instance_valid(starting_magic) and starting_magic.interface_request)
+
+func area_snapshot() -> Dictionary:
+	return preload("res://scripts/lol2/act2_save.gd").snapshot_host(self)

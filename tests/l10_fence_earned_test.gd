@@ -4,9 +4,12 @@ func combat_spark()->bool:return false
 func heal_threshold()->int:return 25
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- check(Fences.admits(true,false,true,true,-1),"high-side running airborne crouch admitted")
+ check(Fences.admits(true,false,true,true,-1),"legacy helper high-side running airborne crouch admitted")
  for args in [[false,false,true,true,-1],[true,true,true,true,-1],[true,false,false,true,-1],[true,false,true,false,-1],[true,false,true,true,1]]:
   check(not Fences.admits(args[0],args[1],args[2],args[3],args[4]),"wrong-side/grounded/walk/unducked/reverse denied")
+ check(Fences.admits(true,false,false,false,-1,true),"modern74/75/174 plain airborne forward jump admitted")
+ for args in [[false,false,-1],[true,true,-1],[true,false,1]]:
+  check(not Fences.admits(args[0],args[1],false,false,args[2],true),"modern rails retain high-side/airborne/forward conditions")
  var input:=Save.read_save("res://tmp/l10_gold_earned_save.json","lol2-restoration-map-L10_DC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  set_meta("lol2_map_start_selector",1)

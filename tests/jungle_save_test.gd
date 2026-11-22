@@ -19,7 +19,7 @@ func run():
  scene.camera.rotation.x = -0.3
  assert(scene.quicksave(path).is_empty())
  scene.interface_hud.save_path = path
- scene.interface_hud.run_save_action(false)
+ scene.interface_hud.run_save_action(false,path)
  assert(scene.interface_hud.hint.text == "Jungle saved.")
  var saved := Save.read_save(path)
  assert(saved.error.is_empty())

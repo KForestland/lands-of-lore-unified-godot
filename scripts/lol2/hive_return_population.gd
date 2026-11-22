@@ -1,4 +1,5 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 ## Seven source return-warrior placements; pursuit/attack clocks are modern adapters.
 const Attack=preload("res://scripts/lol2/hive_warrior_attack.gd")
 const Selection=preload("res://scripts/lol2/hive_warrior_selection.gd")
@@ -168,7 +169,7 @@ func advance(delta: float) -> void:
 				var result: Dictionary=Attack.advance(a.attack_animation,delta,admitted and not Forms.protected(host),15 if defense>0 else 6)
 				if result.has("error"): push_error(result.error);return
 				for event in result.events:
-					if event.type=="damage": host.get_node("Warriors").health=maxi(0,host.get_node("Warriors").health-(preload("res://scripts/lol2/player_defense.gd").damage(int(event.amount),defense,int(event.get("flags",4))) if defense>0 else int(event.amount)))
+					if event.type=="damage": PlayerHealth.lose_host(host,preload("res://scripts/lol2/player_defense.gd").damage(int(event.amount),defense,int(event.get("flags",4))) if defense>0 else int(event.amount))
 				if result.terminal:
 					a.erase("attack_animation");a.cooldown=0.8
 				if host.get_node("Warriors").health==0: present();host.set_physics_process(false);return
@@ -180,7 +181,7 @@ func advance(delta: float) -> void:
 			a.windup=float(a.windup)+delta
 			if a.windup>=1.2:
 				a.windup=0.0;a.cooldown=0.8
-				if not Forms.protected(host): host.get_node("Warriors").health=maxi(0,host.get_node("Warriors").health-preload("res://scripts/lol2/player_defense.gd").incoming(host,15))
+				if not Forms.protected(host): PlayerHealth.lose_host(host,preload("res://scripts/lol2/player_defense.gd").incoming(host,15))
 				if host.get_node("Warriors").health==0: host.set_physics_process(false);return
 		else:
 			a.windup=0.0

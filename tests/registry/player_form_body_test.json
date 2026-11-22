@@ -1,6 +1,19 @@
 {
- "name": "player_form_body_test",
- "suite": "core",
- "mode": "headless",
- "order": 557
+  "name": "player_form_body_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 557,
+  "teleports": 0,
+  "test_aids": 17,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "90821dd877b67e9f5781711078f5533b68f91894cb16914dabf97d821f53cb2a"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 17,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
 }

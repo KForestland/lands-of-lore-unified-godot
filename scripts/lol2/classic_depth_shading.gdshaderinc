@@ -12,6 +12,8 @@ global uniform vec4 lol2_classic_view_sector;
 // Owner direction 2026-10-29: the decoded depth shading is an optional "original darkness" toggle, default OFF
 // (classic_depth_shading.gd set_enabled; the Cave walkthrough's O key). Off = the index passes unchanged.
 global uniform bool lol2_classic_shading_enabled;
+// WO4 guide low-light vision uses the existing full-bright shade row.
+global uniform bool lol2_item_low_light;
 // The original steps the level linearly in screen space along each wall column (0x12FB54 accumulator). Godot has no
 // noperspective varyings: (level * w, w) under perspective-correct interpolation gives the same screen-linear value.
 varying vec2 classic_level;
@@ -19,6 +21,7 @@ varying vec2 classic_level;
 // Native fixed point in 32-bit ints: distance is 16.16, the result is the row in 16.16 clamped to 0..0x3F0000.
 float classic_row(vec3 view_position, vec4 sector) {
 	if (sector.w < 2.0) { return -1.0; }
+	if (lol2_item_low_light) { return 63.0; }
 	// 16.16 like the original; 32767 keeps the product inside int32 (the camera far plane is 30000).
 	int delta = int(min(length(view_position), 32767.0) * 65536.0) - int(sector.y) * 65536;
 	int span = int(sector.z) * 65536;

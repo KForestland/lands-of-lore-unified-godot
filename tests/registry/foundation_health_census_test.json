@@ -1,0 +1,19 @@
+{
+  "name": "foundation_health_census_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1340,
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ed299da943cad8cd5cdd15d03afa5cde1dba17c76514500d2dc879070a56c816"
+  },
+  "count_method": "Audited source sites, not executions.",
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 0
+}

@@ -1,0 +1,22 @@
+{
+  "name": "g04_native_globals_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "note": "Synthetic old/new session packets; no input or earned claim."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "24ffe2440a139f9a1fb84005f41f54d7e65e1971b85eb0ccfcb9829b601f27f8"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 0
+}

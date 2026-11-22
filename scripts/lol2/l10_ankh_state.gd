@@ -1,4 +1,5 @@
 extends RefCounted
+const KEY:="l10_ankh"
 const Kit=preload("res://scripts/lol2/mechanism_transaction.gd")
 const Handlers=preload("res://scripts/lol2/item_handlers.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
@@ -29,6 +30,7 @@ static func act(saved: Dictionary,inventory: Array,target: String,item: String="
  else:
   if committed(saved,target):return Kit.refuse("This exchange is already complete.")
   if target==SLAB and not committed(saved,TRADE):return Kit.refuse("Return the priest's ashes first.")
+  if item not in inventory:return Kit.refuse("Bring back the priest's ashes in the full urn." if target==TRADE else "The slab needs the ankh.")
   r=Kit.offer(snap,recipe(target),item,{"form":"human"})
   if not r.ok:return r
   r=Kit.occupy(snap,r.proposal)

@@ -1,4 +1,5 @@
 extends Node3D
+const RESTORE_ON := ["load"]
 const State=preload("res://scripts/lol2/l12_glacier_state.gd")
 var host:Node3D
 var floor_root:Node3D

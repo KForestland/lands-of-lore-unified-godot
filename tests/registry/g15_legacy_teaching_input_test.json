@@ -1,0 +1,110 @@
+{
+  "name": "g15_legacy_teaching_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 5,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Seven real F2 entries, actual F9 untouched r19i Claw slot; no test teaching or pose/resource writes. Private gate settings and slot install, magic clock for exact debit explicitly disclosed."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "457a5c11e57c3460ae2c1136a4d736eb820d5de2237cb561c9a266ff1bdfc58b"
+  },
+  "context_aid_source_sites": {
+    "count": 12,
+    "sites": [
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 12,
+        "column": 61,
+        "kind": "reset_private_game_session",
+        "source": "preload(\"res://scripts/lol2/game_session.gd\").for_tree(self).reset_legacy()"
+      },
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 14,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/g15_teaching_gate.cfg\""
+      },
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 16,
+        "column": 42,
+        "kind": "private_migration_gate_config",
+        "source": "var cfg:=ConfigFile.new();if not require(cfg.save(gate.settings_path)==OK,\"Reset private F2 gate config\"):return false"
+      },
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 18,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=OS.get_environment(\"LOL2_ORIGINAL_GAME_EXE\")"
+      },
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 36,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==0,\"Control proof starts human: \"+label):return false"
+      },
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 41,
+        "column": 18,
+        "kind": "component_magic_clock",
+        "source": "await tap(KEY_3);magic.set_process(false)"
+      },
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 45,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==2 and magic.magic_state().player.mana==mana-2,\"Real CtrlQ makes lizard with no teaching aid: \"+label):return false"
+      },
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 46,
+        "column": 41,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40);magic.set_process(false);mana=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 48,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==0 and magic.magic_state().player.mana==mana-2 and scene.resets==0,\"Real CtrlQ returns human without recovery: \"+label):return false"
+      },
+      {
+        "path": "tests/g15_legacy_teaching_input_test.gd",
+        "line": 69,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(OLD_INPUT,Slots.slot_path(1))==OK,\"Install unchanged r19i Claw slot for actual F9\"):return"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 17,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

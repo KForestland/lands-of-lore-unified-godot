@@ -1,12 +1,16 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Book behaviour, source prop anchors; authored E interaction and occupied-globe display.
 const State = preload("res://scripts/lol2/act2_charger_state.gd")
 const Items = preload("res://scripts/lol2/act2_items_catalog.gd")
 const ANCHORS := {"L10:yellow":Vector3(1152,-121,-3632),"L10:blue":Vector3(-1456,-121,-4959),"L9:white":Vector3(-3656,150,-833)}
 const AREAS := {"L10:yellow":"L10_DC","L10:blue":"L10_DC","L9:white":"L9_DR"}
+const PROPS := {"L10:yellow":247,"L10:blue":242,"L9:white":1094}
+const SelectorView=preload("res://scripts/lol2/prop_selector_view.gd")
 var host: Node3D
 var area := ""
 var globes: Dictionary = {}
+var selector_views:Dictionary={}
 var hint: Label
 static func attach(map: Node3D, level: String) -> Node3D:
  if level not in ["L10_DC","L9_DR"]: return null
@@ -27,6 +31,9 @@ func _ready():
   sphere.material_override=material
   sphere.position=ANCHORS[id]+Vector3.UP*8+(host.get("native_translation") if host.get("native_translation")!=null else Vector3.ZERO)
   add_child(sphere);globes[id]=sphere
+  var view:Node3D=SelectorView.attach(host,area,int(PROPS[id]))
+  if view!=null:
+   selector_views[id]=view;sphere.layers=0
  var canvas := CanvasLayer.new()
  canvas.layer=34;add_child(canvas)
  hint=Label.new();hint.position=Vector2(24,330);canvas.add_child(hint)
@@ -35,6 +42,9 @@ func state() -> Dictionary: return host.quest_state.get("act2_chargers",State.in
 func restore():
  for id in globes:
   globes[id].visible=not state().slots.get(id,{}).get("occupied","").is_empty()
+  if selector_views.has(id):
+   var slot:Dictionary=state().slots.get(id,{})
+   selector_views[id].show_selector(1 if globes[id].visible else (3 if not slot.get("receipts",[]).is_empty() else 0))
 func reachable(id: String) -> bool:
  if not globes.has(id): return false
  var point: Vector3=globes[id].global_position
@@ -51,8 +61,8 @@ func interact(id: String, action: String, item: String="") -> Dictionary:
  if not reachable(id): return {"ok":false,"reason":"Move closer and face the altar."}
  var result := State.act(state(),host.carried_collected,id,action,item)
  if not result.ok:return result
- host.quest_state.act2_chargers=result.state
- host.carried_collected=result.inventory
+ var admission:=Grants.transition(host,result.inventory,{"act2_chargers":result.state})
+ if not admission.ok:return admission
  Items.sync(host)
  restore()
  return result
@@ -67,11 +77,13 @@ func _unhandled_input(event: InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E:return
  if get_tree().paused or host.flying or Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED or is_instance_valid(host.inventory):return
  if host.has_method("actor_input_locked") and host.actor_input_locked():return
+ if try_use():get_viewport().set_input_as_handled()
+func try_use()->bool:
  var id:=target()
- if id.is_empty():return
+ if id.is_empty():return false
  var item:=""
  for carried in host.carried_collected:
   if Items.definition(carried)==98:item=carried;break
  var result:=interact(id,"retrieve" if globes[id].visible else "insert",item)
  host.save_feedback("Globe retrieved." if result.ok and not globes[id].visible else ("Globe charged." if result.ok else result.reason))
- get_viewport().set_input_as_handled()
+ return true

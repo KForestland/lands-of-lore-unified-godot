@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Huline Jungle world item row 51 only. The other 87 rows are not spawned.
 ## E, 96-unit reach, 0.97 aim and mask-1 occlusion match the Hive wax pickup.
 ## The sprite is the original inventory image on a modern billboard.
@@ -65,7 +66,7 @@ func collect() -> bool:
 		restore()
 		return false
 	if not target(): return false
-	host.carried_collected.append(ITEM)
+	if not Grants.grant(host,ITEM,{"cap":false,"duplicate":"allow"}).ok: return false
 	restore()
 	return true
 

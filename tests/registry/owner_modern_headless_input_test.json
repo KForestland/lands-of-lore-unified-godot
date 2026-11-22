@@ -1,0 +1,52 @@
+{
+  "name": "owner_modern_headless_input_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "count_method": "Audited source sites, not executions. Two local pose/aim fixture executions share one source site. Four detected aids plus three supplemental setup sites include the exit-seed switch and startup hold/release, checked by audit_native_tests.py. No earned-walk claim.",
+  "teleports": 1,
+  "test_aids": 4,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "1813f5d16cb7bb8612cd1efba021fbe6bf522081230b8db03b538b5835e6a50d"
+  },
+  "context_aid_source_sites": {
+    "count": 3,
+    "sites": [
+      {
+        "path": "tests/owner_modern_headless_input_test.gd",
+        "line": 18,
+        "column": 81,
+        "kind": "exit_seed_fixture",
+        "source": "var scene=load(\"res://scenes/lol2/maps/\"+spec.area+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/owner_modern_headless_input_test.gd",
+        "line": 19,
+        "column": 7,
+        "kind": "bootstrap_process_mode_fixture",
+        "source": "scene.process_mode=Node.PROCESS_MODE_DISABLED # Hold startup until the existing deferred magic attachment completes."
+      },
+      {
+        "path": "tests/owner_modern_headless_input_test.gd",
+        "line": 24,
+        "column": 7,
+        "kind": "bootstrap_process_mode_fixture",
+        "source": "scene.process_mode=Node.PROCESS_MODE_INHERIT"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 7,
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "bootstrap_process_mode_fixture",
+      "pattern": "\\.process_mode\\s*="
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+ "format": "lol2-pinned-test-inputs-v1",
+ "version": 1,
+ "scope": "Untouched actualF5 after realF2 C15 Citadel, W/Q/E globe/eye/vent/elevator and lower landing. Same C15 source as robot; its evidence saves/ was empty. No supplied pose/health/clock.",
+ "files": [
+  {
+   "path": "tmp/g03_l13_inputs/lower_f5.json",
+   "sha256": "56c0bad83be98816fc07371c888ec8fca02dfcba8580b8c042e5ec75c0957407",
+   "bytes": 108720,
+   "source_artifact": "~/AI_COMMS/sol_lane/g03_l13_20261113/inputs/lower_f5.json",
+   "source": "~/AI_COMMS/sol_lane/g03_l13_20261113/inputs/lower_f5.json"
+  },
+  {
+   "path": "tmp/g03_l13_inputs/dawn_legacy.json",
+   "sha256": "d6fa35d0d0cb99fc87303a651b33c4011c062df49fb1aaa29c006e900abf8e3d",
+   "bytes": 83756,
+   "source_artifact": "~/AI_COMMS/sol_lane/g03_l13_20261113/inputs/dawn_legacy.json",
+   "note": "Legacy game-written Dawn checkpoint from the old earned test, whose producer uses disclosed direct movement/action aids. Component input proof, not an unaided campaign-chain claim.",
+   "source": "~/AI_COMMS/sol_lane/g03_l13_20261113/inputs/dawn_legacy.json"
+  },
+  {
+   "path": "tmp/g03_l13_inputs/pink_base_f5.json",
+   "sha256": "2564c6e32af3fda29a688d19e4c2f38873759549ab92e6a8ce9a2c87402e6195",
+   "bytes": 109100,
+   "source_artifact": "~/AI_COMMS/sol_lane/g03_l13_20261113/inputs/pink_base_f5.json",
+   "note": "ActualF5 after real-input Dawn-to-ledges approach from disclosed legacy aided-producer save; fast component continuation only.",
+   "source": "~/AI_COMMS/sol_lane/g03_l13_20261113/inputs/pink_base_f5.json"
+  }
+ ]
+}

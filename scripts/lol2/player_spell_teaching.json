@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "rule": "Only legacy magic packets without spellbook are backfilled. A teaching receipt/item or an already-past chapter qualifies. Chapter backfill is the lead-authorized modern migration for former stand-ins, not evidence the old player used a scroll. F2 applies the same teaching table to a detached start copy, also merging missing chapter lessons into a partial modern pin. Normal modern loads, including explicit empty learned sets, stay authoritative. Live chain-safety lessons below apply only at the named existing requirement, including explicit modern books. They teach through the same acquisition API; no spell is cast and no quest flag is advanced.",
+  "lessons": [
+    {
+      "group": "dampen",
+      "casts": [
+        "curse1"
+      ],
+      "teaches": "Monastery Dawn rune translation / Dampen charm",
+      "proofs": [
+        {
+          "path": "quests.monastery.flags.266",
+          "value": 1
+        },
+        {
+          "path": "quests.monastery.globals.GV_DAWN_TRANSLATED_RUNES",
+          "value": 1
+        }
+      ],
+      "items": [
+        "monastery:item70:Dampen_charm"
+      ],
+      "past_teaching_areas": [
+        "L8_SJ",
+        "L9_DR",
+        "L10_DC",
+        "L12_CM",
+        "L13_RC",
+        "L14_HT",
+        "L16_CA",
+        "L17_HC",
+        "L19_BC",
+        "L20_BB"
+      ]
+    },
+    {
+      "group": "control",
+      "casts": [
+        "curse2",
+        "curse3",
+        "curse5"
+      ],
+      "teaches": "Savage Jungle Dawn Control Token shore exchange or live token",
+      "proofs": [
+        {
+          "path": "quests.l8_dawn.slots.dawn:bracers.committed",
+          "value": true
+        }
+      ],
+      "items": [
+        "act2:L8_SJ:dawn_control_token",
+        "act2:L8_SJ:item31"
+      ],
+      "past_teaching_areas": [
+        "L12_CM",
+        "L13_RC",
+        "L14_HT",
+        "L16_CA",
+        "L17_HC",
+        "L19_BC",
+        "L20_BB"
+      ]
+    },
+    {
+      "group": "mists",
+      "casts": [
+        "mists1",
+        "mists3"
+      ],
+      "teaches": "Mists scroll in Temple; the City and later are past that chapter",
+      "proofs": [],
+      "items": [
+        "act2:L14_HT:item20",
+        "act2:L14_HT:item21",
+        "act2:L14_HT:item47",
+        "act2:L14_HT:item48",
+        "act2:L14_HT:item49",
+        "act2:L16_CA:item26"
+      ],
+      "past_teaching_areas": [
+        "L16_CA",
+        "L17_HC",
+        "L19_BC",
+        "L20_BB"
+      ]
+    },
+    {
+      "group": "prism",
+      "casts": [
+        "prism5"
+      ],
+      "teaches": "Prism scroll in Dark Halls / Ruins, before later Act 2 chapters",
+      "proofs": [],
+      "items": [
+        "darkhalls:control971u1:Prsmscrl",
+        "darkhalls:control975u1:Prsmscrl",
+        "darkhalls:control975u2:Prsmscrl",
+        "act2:L9_DR:item12",
+        "act2:L9_DR:item20",
+        "act2:L14_HT:item18",
+        "act2:L14_HT:item19",
+        "act2:L16_CA:item25"
+      ],
+      "past_teaching_areas": [
+        "L8_SJ",
+        "L9_DR",
+        "L10_DC",
+        "L12_CM",
+        "L13_RC",
+        "L14_HT",
+        "L16_CA",
+        "L17_HC",
+        "L19_BC",
+        "L20_BB"
+      ]
+    },
+    {
+      "group": "summon",
+      "casts": [
+        "summon3"
+      ],
+      "teaches": "Summon scroll in Museum secret room; Jungle and later are past Museum",
+      "proofs": [
+        {
+          "path": "quests.museum_scrolls.taken.4",
+          "value": true
+        }
+      ],
+      "items": [
+        "museum:item16:Summon_Scroll",
+        "darkhalls:control976u2:SumScrl",
+        "act2:L9_DR:item5",
+        "act2:L10_DC:item34",
+        "act2:L10_DC:item35",
+        "act2:L14_HT:item22",
+        "act2:L14_HT:item23",
+        "act2:L16_CA:item27"
+      ],
+      "past_teaching_areas": [
+        "L4_HJ",
+        "L5_HC",
+        "L7_DH",
+        "L8_SJ",
+        "L9_DR",
+        "L10_DC",
+        "L12_CM",
+        "L13_RC",
+        "L14_HT",
+        "L16_CA",
+        "L17_HC",
+        "L19_BC",
+        "L20_BB"
+      ]
+    }
+  ],
+  "live_lessons": [
+    {
+      "area": "L9_DR",
+      "owner": "L9StatueWalk",
+      "script": "l9_statue_walk.gd",
+      "group": "dampen",
+      "query": "needs_shape_lesson",
+      "message": "Dampen learned. Press 3, then Q when the curse stirs.",
+      "journal": "spell_lesson_dampen"
+    },
+    {
+      "area": "L9_DR",
+      "owner": "L9StatueWalk",
+      "script": "l9_statue_walk.gd",
+      "group": "control",
+      "query": "needs_shape_lesson",
+      "message": "Curse control learned. Press 3, then Ctrl+Q to change form.",
+      "forms": [
+        2
+      ],
+      "journal": "spell_lesson_control"
+    },
+    {
+      "area": "L12_CM",
+      "owner": "L12Crevasse",
+      "script": "l12_crevasse.gd",
+      "group": "control",
+      "query": "needs_shape_lesson",
+      "message": "Curse control learned. Press 3, then Ctrl+Q to change form.",
+      "journal": "spell_lesson_control"
+    },
+    {
+      "area": "L19_BC",
+      "owner": "L19SewerForms",
+      "script": "l19_sewer_forms.gd",
+      "group": "control",
+      "query": "at_mouth",
+      "message": "Curse control learned. Press 3, then Ctrl+Q to change form.",
+      "journal": "spell_lesson_control"
+    },
+    {
+      "area": "L19_BC",
+      "owner": "L19GhostlyHeads",
+      "script": "l19_ghostly_heads.gd",
+      "group": "mists",
+      "query": "needs_mists_lesson",
+      "message": "Mists learned. Press 4, then Q at each ghostly head.",
+      "journal": "spell_lesson_mists_heads",
+      "echo_cast": "mists1"
+    },
+    {
+      "area": "L16_CA",
+      "owner": "L16FountainFreeze",
+      "script": "l16_fountain_freeze.gd",
+      "group": "mists",
+      "query": "accepts_player_spell",
+      "message": "Mists learned. Press 4, then Ctrl+Q at the fountain.",
+      "cast": "mists3",
+      "journal": "spell_lesson_mists_fountain"
+    },
+    {
+      "area": "L16_CA",
+      "owner": "L16NwTraps",
+      "script": "l16_nw_traps.gd",
+      "group": "summon",
+      "query": "accepts_player_spell",
+      "message": "Summon learned. Press 6, then Ctrl+Q at the white ball.",
+      "cast": "summon3",
+      "journal": "spell_lesson_summon"
+    },
+    {
+      "area": "L20_BB",
+      "owner": "L20Armory",
+      "script": "l20_armory.gd",
+      "group": "summon",
+      "query": "accepts_player_spell",
+      "message": "Summon learned. Press 6, then Ctrl+Q at the white ball.",
+      "cast": "summon3",
+      "journal": "spell_lesson_summon"
+    },
+    {
+      "area": "L20_BB",
+      "owner": "L20PillarsScotia",
+      "script": "l20_pillars_scotia.gd",
+      "group": "prism",
+      "query": "accepts_player_spell",
+      "message": "Trinity learned. Press 5, then Shift+Q at the faux Scotia.",
+      "cast": "prism5",
+      "journal": "spell_lesson_prism"
+    },
+    {
+      "area": "L20_BB",
+      "owner": "L20MotherCurse",
+      "script": "l19_dawn_curse.gd",
+      "group": "control",
+      "query": "accepts_player_spell",
+      "message": "Expel learned. Press 3, then Shift+Q at the mother.",
+      "cast": "curse5",
+      "journal": "spell_lesson_expel"
+    }
+  ]
+}

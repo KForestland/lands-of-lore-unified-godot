@@ -12,6 +12,19 @@ func reachable()->bool:
 func choose_form()->bool:
  if not reachable() or host.curse.state.phase in [1,3]:return false
  return host.curse.request_timed_form(2,60.0) if host.player_form==0 else host.curse.request_human() if host.player_form==2 else false
-func _process(_delta):hint.text=("G — Change to Lizard for the low passage" if host.player_form==0 else "G — Return to Human" if host.player_form==2 else "") if reachable() else ""
+## Grok r19o3 owner-save walk 2026-11-16: under the sunken ritual floor the way back up was not named. Only the Lizard fits
+## the seam, and only from well back (real input on r19o4, Lizard facing the floor: lands from a zone ~50 across x 40-60 along
+## (x 2290-2340, z -3140..-3190); backing up from (2299,-3233) lands 3/3 from 60 units, 0/3 from 40). Text only (row 0287 note).
+const UP_HUMAN:="G — Change to Lizard: only the Lizard can jump back up to the ritual floor"
+const UP_LIZARD:="Too close and you hit the lip: back well away from the ledge, then run and jump up to the ritual floor · G — Return to Human"
+func below_seam()->bool:
+ var p:Vector3=host.player.position
+ return p.y< -30.0 and Vector2(p.x,p.z).distance_to(Vector2(POINT.x,POINT.z))<260.0
+func line()->String:
+ if not reachable():return ""
+ if host.player_form==0:return UP_HUMAN if below_seam() else "G — Change to Lizard for the low passage"
+ if host.player_form==2:return UP_LIZARD if below_seam() else "G — Return to Human"
+ return ""
+func _process(_delta):hint.text=line()
 func _unhandled_key_input(event:InputEvent):
  if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_G and choose_form():get_viewport().set_input_as_handled()

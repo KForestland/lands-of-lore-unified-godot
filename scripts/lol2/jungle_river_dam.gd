@@ -1,4 +1,6 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## Huline Jungle river rock / dam (L4_HJ prop250; longplay 35:36-36:42; tools/prepare_jungle_river_dam.py).
 ## Armed melee on the rock (kind9 value 0x0906 at owner state 0) takes the hit from its durability 50: every hit runs
 ## g4206 (sound 956); the hit that leaves <= 1 runs g3154: rock -> stump (selector2), foam unlinked, 2 x 500 fighting
@@ -17,7 +19,7 @@ const Forms = preload("res://scripts/lol2/player_form_rules.gd")
 const Rewards = preload("res://scripts/lol2/player_property_rewards.gd")
 const Catalog = preload("res://scripts/lol2/jungle_world_items_catalog.gd")
 const Body = preload("res://scripts/lol2/player_form_body.gd")
-const STRIKE_REACH := 140.0
+const STRIKE_REACH := PlayerCombat.REACH_PROP
 const ITEM_REACH := 96.0
 const ITEM_AIM := 0.97
 const MELEE_MASK0 := 2
@@ -254,14 +256,12 @@ func world_active() -> bool:
 func aimed() -> bool:
 	if not world_active() or Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: return false
 	if host.has_method("actor_input_locked") and host.actor_input_locked(): return false
-	var ray := PhysicsRayQueryParameters3D.create(host.camera.global_position, host.camera.global_position - host.camera.global_basis.z * STRIKE_REACH, 1, [host.player.get_rid()])
-	var hit := get_world_3d().direct_space_state.intersect_ray(ray)
+	var hit := PlayerCombat.aim_ray(host,STRIKE_REACH,1)
 	return not hit.is_empty() and hit.collider == rock
 
 func strike() -> bool:
-	if not aimed() or (host.player_form == 0 and str(host.equipped_item) == ""): return false
-	var damage: int = Forms.melee_damage(int(host.player_form), str(host.equipped_item) != "")
-	if host.get("item_effects") != null and is_instance_valid(host.item_effects) and host.item_effects.has_method("melee_damage"): damage = host.item_effects.melee_damage(damage)
+	if not aimed() or not PlayerCombat.may_strike(host,false): return false
+	var damage: int = PlayerCombat.damage(host,true)
 	return receive_hit(MELEE_MASK0, MELEE_MASK2, damage)
 
 ## Native kind9 admission (masks 0x0906/0x0004, predicate owner state 0, mode4 threshold first, else mode1).
@@ -354,7 +354,7 @@ func collect() -> bool:
 	if host.carried_collected.size() >= preload("res://scripts/lol2/item_catalog.gd").MAX_CARRIED:
 		if host.has_method("save_feedback"): host.save_feedback("Inventory full.")
 		return false
-	host.carried_collected.append(id)
+	if not Grants.grant(host,id,{"cap":false,"duplicate":"allow"}).ok: return false
 	host.world_items.history(true).collected.append(row)
 	present()
 	if host.has_method("save_feedback"): host.save_feedback(str(Catalog.ITEMS[id].label) + " taken.")

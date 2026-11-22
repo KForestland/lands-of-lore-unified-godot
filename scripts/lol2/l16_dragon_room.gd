@@ -8,6 +8,10 @@ extends Node3D
 ## for the support-owner change. This module does not move Luther itself. No door id is stored.
 ## U16 73 fits more than one table, so the blood plate is not toggled. The mantle item
 ## is unplaced, and I09 says the telepad command does not store that test.
+## Kind 9 group 6384 is the chop (mask 0x0002, mode 4, predicate 206). The left click admits
+## word0 0x0002, dword_26 0, and global 0x23331 0. The player swing does not export that word.
+## The chop flag is set only when group 6384 runs. Opcode 9 arm 0x15 enqueues u16 73 and does
+## not assign it a door id.
 const KEY := "l16_dragon_room"
 const DRAGON := 241
 const STATUE := 211
@@ -18,6 +22,10 @@ const DEST_LEVEL := 17
 const DEST_SELECTOR := 1
 const DEST_AREA := "L17_HC"
 const DRAGON_AT := Vector3(1625, 52, 4417)
+const CHOP_GROUP := 6384
+## Kind 9 record 0a09f018020000000104. Mask +4 is 0x0002. The port strike word does not share that bit.
+const ADMIT_WORD0 := 0x0002
+var fire_results: Array = []
 const STATUE_AT := Vector3(261, 50, 10600)
 const PAD := Vector3(2100, 15, 4296)
 const DEST_POSE := Vector3(1434, 32, -7075)
@@ -94,10 +102,33 @@ func _process(_delta: float) -> void:
 	elif on_pad:
 		hint.text = "The telepad opens the caverns."
 
+func chop() -> bool:
+	if bool(state().chopped) or not host.starting_magic.world_active(): return false
+	var progression: Variant = host.get("progression")
+	if progression == null or not progression.has_method("fire"): return false
+	var admit: Dictionary = {
+		"word0": ADMIT_WORD0,
+		"word2": 0,
+		"dword_26": 0,
+		"global_23331": 0,
+		"context": "prop:%d" % DRAGON,
+	}
+	fire_results = progression.fire("prop:%d" % DRAGON, 9, admit)
+	var ran: bool = false
+	for row in fire_results:
+		if int(row.get("group", -1)) == CHOP_GROUP and str(row.get("status", "")) == "ran":
+			ran = true
+	if not ran: return false
+	host.quest_state[KEY] = apply_chop(state(), DRAGON)
+	host.save_feedback("The dragon falls; its blood opens the way.")
+	return true
+
+## Headless has no window, so a captured mouse cannot stick. A real window still requires it.
+func _player_click() -> bool:
+	return Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or DisplayServer.get_name() == "headless"
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT): return
-	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED or bool(state().chopped): return
+	if not _player_click() or bool(state().chopped): return
 	if not aimed(DRAGON_AT, 180.0): return
-	host.quest_state[KEY] = apply_chop(state(), DRAGON)
-	host.save_feedback("The dragon is chopped. No door id is stored.")
-	get_viewport().set_input_as_handled()
+	if chop(): get_viewport().set_input_as_handled()

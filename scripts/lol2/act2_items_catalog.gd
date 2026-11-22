@@ -1,5 +1,7 @@
 extends RefCounted
+const NativeGrants=preload("res://scripts/lol2/item_grant_tables.gd")
 ## Placement identities preserve duplicate definitions. Source-only table, no item handlers.
+const BLIZZARD := "act2:L12_CM:blizzard"
 const TOWER_BLANK := "act2:L9_DR:tower_blank"
 ## Lead04:52Z book-led pickup; no original L9 placement exists in the decoded census.
 static func tower_blank() -> Dictionary:
@@ -16,7 +18,20 @@ static func source() -> Dictionary:
 	return _source
 static func base_id(id: String) -> String:
 	return id.get_slice(":charged:",0)
-static func legacy_equipment(id:Variant)->bool:return id in ["act2:L12_CM:blue_bow","act2:L12_CM:item5","act2:L13_RC:dark_sword","act2:L13_RC:enchanted_thohan","act2:L19_BC:horn"] # horn: held to start the finale (2026-11-07)
+static func legacy_equipment(id:Variant)->bool:return id in [BLIZZARD,"act2:L12_CM:blue_bow","act2:L12_CM:item5","act2:L13_RC:dark_sword","act2:L13_RC:enchanted_thohan","act2:L19_BC:horn"] # horn: held to start the finale (2026-11-07)
+## Newly equipped native items travel in the existing inventory slot packet;
+## unequipped later items keep their previous side-bank serialization exactly.
+static func saved_in_legacy(host:Object,id:Variant)->bool:
+	if legacy_equipment(id):return true
+	if not valid(id):return false
+	if id in [host.get("equipped_item"),host.get("equipped_armor")]:return true
+	# Pending slot apply precedes the deferred live controller on a fresh area.
+	# Its validated checkpoint is the same state that controller will own.
+	var effects:Variant=host.get("item_effect_checkpoint")
+	var controller:Variant=host.get("item_effects")
+	if is_instance_valid(controller):effects=controller.state()
+	if not effects is Dictionary:return false
+	return id==effects.get("offhand","") or id in effects.get("accessories",[])
 static func dark_bow() -> Dictionary:
 	source()
 	var found: Array = []
@@ -35,6 +50,8 @@ static func dark_bow() -> Dictionary:
 	return bow
 static func row(id: Variant) -> Dictionary:
 	if not id is String: return {}
+	if id==BLIZZARD:return {"id":id,"definition":18,"name":"19-Blizzard","label":"Blizzard","icon":"res://assets/lol2/generated/items/icons/018.png","handler":84,"identity":4262341118,"position":[3890,-150,-8900],"grade":"owner-approved modern tiger-cave tower reward; original placement/trigger and handler84 cold effect UNKNOWN"}
+	if id.begins_with("act2:") and id.get_slice(":",2).begins_with("grant"):return NativeGrants.inventory_row(id)
 	source()
 	if id.begins_with("act2:L14_HT:hopper_corpse") and id.trim_prefix("act2:L14_HT:hopper_corpse") in ["91","92","93","94","95"]:
 		return {"id":id,"definition":-1,"name":"Hopper corpse","label":"Hopper corpse","icon":"res://assets/lol2/generated/l14_hopper_platform/corpse.png","handler":0,"identity":0,"grade":"modern unique defeated-actor carry adapter; original corpse frame4/palette"}
@@ -62,6 +79,7 @@ static func row(id: Variant) -> Dictionary:
 		return {}
 	if id=="act2:L16_CA:item24": return dark_bow()
 	if id=="act2:L19_BC:horn": return {"id":id,"definition":22,"name":"23-Hrn Belial","label":"Hrn Belial","icon":"res://assets/lol2/generated/items/icons/022.png","handler":0,"identity":213789840,"grade":"opcode 3 identity 0x0CBE2C90 on prop 222; no placed L19 item; adapter grant"}
+	if id=="act2:L19_BC:ruby_of_truth": return {"id":id,"definition":69,"name":"67-Ruby of trth","label":"Ruby of Truth","icon":"res://assets/lol2/generated/items/icons/069.png","handler":101,"identity":4227368151,"grade":"Dawn's third click; definition 69 handler 101; adapter grant, not a placed L19 row"}
 	if id=="act2:L12_CM:blue_bow":return {"id":id,"definition":35,"name":"36-Darkbow","label":"Blue Bow","icon":"res://assets/lol2/generated/items/icons/035.png","handler":58,"identity":3582735614,"grade":"book-led frozen blue bow adapter; native artifact is separately item36 Shard31"}
 	if id=="act2:L12_CM:item5":return {"id":id,"definition":54,"name":"55-Obs chain","label":"Obsidian Chain Mail","icon":"res://assets/lol2/generated/items/icons/054.png","handler":0,"identity":1902058752,"grade":"original dormant item5; prop136 Spark reveal adapter"}
 	if id=="act2:L13_RC:dark_sword":return {"id":id,"definition":21,"name":"22-Darkstorm","label":"Dark Sword","icon":"res://assets/lol2/generated/items/icons/021.png","handler":57,"identity":1694375167,"grade":"source175 award; modern altar identity"}
@@ -105,15 +123,17 @@ static func validate(packet: Variant) -> String:
 	return ""
 static func sync(host: Node) -> void:
 	var packet: Dictionary = host.quest_state.get("act2_items", initial()).duplicate(true)
-	packet.carried = host.carried_collected.filter(func(id): return valid(id) and not legacy_equipment(id))
+	packet.carried = host.carried_collected.filter(func(id): return valid(id) and not saved_in_legacy(host,id))
 	if not packet.carried.is_empty() or host.quest_state.has("act2_items"): host.quest_state.act2_items = packet
 static func restore(host: Node) -> String:
 	var packet: Variant = host.quest_state.get("act2_items", initial())
 	var error := validate(packet)
 	if not error.is_empty(): return error
-	var legacy: Array = host.carried_collected.filter(func(id):return not valid(id) or legacy_equipment(id))
-	if legacy.size()+packet.carried.size()>64: return "Inventory exceeds capacity."
-	host.carried_collected = legacy + packet.carried.duplicate()
+	var legacy: Array = host.carried_collected.filter(func(id):return not valid(id) or saved_in_legacy(host,id))
+	# An item both kept as equipment and listed among the Act 2 items is carried once (r19o11 port, 2026-11-17).
+	var rest: Array = packet.carried.filter(func(id): return id not in legacy)
+	if legacy.size()+rest.size()>64: return "Inventory exceeds capacity."
+	host.carried_collected = legacy + rest
 	if is_instance_valid(host.get("act2_items")): host.act2_items.restore()
 	return ""
 
@@ -130,3 +150,27 @@ static func temple_machine_statue()->Dictionary:
 	var row:Dictionary=_source.areas.L14_HT.excluded.filter(func(r):return int(r.row)==65)[0].duplicate(true)
 	row.erase("reason");row.id="act2:L14_HT:item65";row.definition=103;row.name="101-Statuette";row.label="Statuette";row.icon="res://assets/lol2/generated/items/icons/103.png";row.handler=0;row.grade="original dormant item65; machine3902 receipt adapter"
 	return row
+
+## Finite base/special/charged identities for the native-grant collision census.
+## Enumeration only: gameplay admission still goes through row()/valid().
+static func all_ids() -> Array:
+	source()
+	var result:Array=_items.keys()
+	result.append_array([BLIZZARD,
+		"act2:L14_HT:trial_idol371","act2:L14_HT:trial_idol372","act2:L14_HT:trial_idol384","act2:L14_HT:post_shard","act2:L14_HT:item65",
+		"act2:L16_CA:item24","act2:L19_BC:horn","act2:L19_BC:ruby_of_truth","act2:L12_CM:blue_bow","act2:L12_CM:item5",
+		"act2:L13_RC:dark_sword","act2:L13_RC:enchanted_thohan","act2:L13_RC:dreamstone","act2:L13_RC:dawn_bestial_disk",
+		"act2:L12_CM:kenneth_picture","act2:L12_CM:kenneth_charm","act2:L8_SJ:larkhon_vapors","act2:L8_SJ:shaman_amaranth","act2:L8_SJ:dawn_control_token",
+		"act2:L10_DC:priest_urn","act2:L10_DC:priest_ankh","act2:L10_DC:emperor_remains"])
+	for n in [91,92,93,94,95]:result.append("act2:L14_HT:hopper_corpse"+str(n))
+	for n in range(9):result.append("act2:L16_CA:pad_lichen"+str(n))
+	for n in [518,521,522,527,528,533,534,539,540,545,546,551,552,557]:result.append("act2:L16_CA:lichen"+str(n))
+	for n in range(159,171):result.append("act2:L10_DC:silverleaf"+str(n))
+	for id:String in result.duplicate():
+		if int(row(id).get("definition",-1))==98:
+			for color in ["yellow","white","blue"]:result.append(id+":charged:"+color)
+	var unique:Array=[]
+	for id:String in result:
+		if valid(id) and id not in unique:unique.append(id)
+	unique.sort()
+	return unique

@@ -1,8 +1,14 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l12_logs_approach_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="fb658dded3f142138e4706a83d84c42d2eaef2f043824545e8547f62b02871ff"
+func pass_line() -> String:
+ return "PASS earned return ->ordinary jumps on original glacier logs ->upper floor/save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l12_logs_approach_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="fb658dded3f142138e4706a83d84c42d2eaef2f043824545e8547f62b02871ff","qualified Citadel-exit input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified Citadel-exit input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L12_CM")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L12_CM.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -39,5 +45,5 @@ func run():
  check(scene._quicksave_unrecorded("res://tmp/l12_return_logs_earned_save.json").is_empty() and scene._quickload_unrecorded("res://tmp/l12_return_logs_earned_save.json").is_empty(),"earned log climb save/reload")
  check(scene.equipped_armor=="act2:L12_CM:item5" and "act2:L12_CM:blue_bow" in scene.carried_collected and scene.resets==0 and scene.progression.seeds_applied.is_empty(),"earned items/no seeds/recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned return ->ordinary jumps on original glacier logs ->upper floor/save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

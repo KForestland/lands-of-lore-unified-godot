@@ -1,4 +1,7 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
+const RESTORE_ON := ["load"]
+const WalkAway=preload("res://scripts/lol2/dreamstone_walk_away.gd")
 const State=preload("res://scripts/lol2/l13_exit_lock_state.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
 const SLOT=Vector3(-3391,70,6670)
@@ -29,13 +32,16 @@ func reachable()->bool:
  return d.length()<170 and d.length()>0.01 and (-host.camera.global_basis.z).dot(d.normalized())>0.85
 func can_leave()->bool:return State.unlocked(state()) and State.Kit.slot(state(),State.TARGET).occupied=="" and state().stone in host.carried_collected
 func interact(action:String,item:String="")->Dictionary:
- if not reachable():return State.Kit.refuse("Approach the wall slot.")
- var result:Dictionary=State.insert(state(),host.carried_collected,item) if action=="insert" else State.retrieve(state(),host.carried_collected) if action=="retrieve" else State.Kit.refuse("Unknown slot action.")
+ if action!="walk_away" and not reachable():return State.Kit.refuse("Approach the wall slot.")
+ var result:Dictionary=State.insert(state(),host.carried_collected,item) if action=="insert" else State.retrieve(state(),host.carried_collected) if action in ["retrieve","walk_away"] else State.Kit.refuse("Unknown slot action.")
  if not result.ok:return result
- host.quest_state[State.KEY]=result.state;host.carried_collected=result.inventory
+ var admission:=Grants.transition(host,result.inventory,{State.KEY:result.state})
+ if not admission.ok:return admission
  if action=="insert" and host.hand_item==item:host.hand_item=""
  Items.sync(host);restore()
- return {"ok":true,"reason":"The entrance opens. Take the Dreamstone back." if action=="insert" else "You take back the Dreamstone."}
+ return {"ok":true,"reason":"The entrance opens. Take the Dreamstone back." if action=="insert" else WalkAway.LINE if action=="walk_away" else "You take back the Dreamstone."}
+func _physics_process(_delta):
+ if WalkAway.due(host,State.unlocked(state()),State.Kit.slot(state(),State.TARGET).get("occupied",""),SLOT):host.save_feedback(interact("walk_away").reason)
 func _process(_delta):
  hint.text=""
  if reachable():hint.text="E — Retrieve Dreamstone" if State.Kit.slot(state(),State.TARGET).occupied!="" else "E — Place Dreamstone" if not State.unlocked(state()) else "The way out is open"
@@ -46,7 +52,8 @@ func _unhandled_key_input(event:InputEvent):
   if State.Kit.slot(state(),State.TARGET).occupied!="":result=interact("retrieve")
   else:
    var item:String=host.hand_item
-   if item.is_empty():
+   if Items.definition(item)!=136 or item not in host.carried_collected:
+    item=""
     for id in host.carried_collected:
      if Items.definition(id)==136:item=id;break
    result=interact("insert",item)

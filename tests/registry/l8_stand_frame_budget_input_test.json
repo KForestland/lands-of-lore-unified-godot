@@ -1,0 +1,12 @@
+{
+  "name": "l8_stand_frame_budget_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1403,
+  "timeout_seconds": 300,
+  "count_method": "Wall frame time and script time per physics step, standing 12 s at the owner's L8 F10 pose on the ordinary clock.",
+  "needs": {
+    "clock": "ordinary",
+    "note": "Local owner input tmp/l8_perf_inputs/owner_144731.json (OWNER_DERIVED.md, sha pinned). Ordinary clock (no --fixed-fps). Budgets are for this machine's Xvfb gate."
+  }
+}

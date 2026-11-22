@@ -8,6 +8,8 @@ const MuseumSave = preload("res://scripts/lol2/museum_save.gd")
 const JungleSave = preload("res://scripts/lol2/jungle_save.gd")
 const Captain = preload("res://scripts/lol2/cave_captain_items.gd")
 ## Frozen before-matrix (P04 probe full_before_matrix.log, 2026-10-07): id -> [weapon, armor, offhand, museum, jungle].
+## WO4 new native-mask equipment, with original signed protection bytes.
+const NEW_FIXED_ITEMS:={"jungle:item16:Rock":0,"jungle:item17:Rock":0,"jungle:item73:Rock":0,"jungle:item74:Rock":0,"jungle:item75:Rock":0,"jungle:item76:Rock":0,"jungle:item0:Snare":0,"hive:item8:Kelens_ring":0,"monastery:item83:Power_Orb":0,"museum:item25:Dragon_Gem":10,"darkhalls:control71u1:Colims_amult":0,"museum:item17:Ivory_Chip":0,"museum:item18:Ivory_Chip":0,"museum:item0:Cocos_Cap":0}
 const BEFORE := {
 	"draracle/prop/1108/sample": [
 		0,
@@ -612,7 +614,8 @@ func run() -> void:
 	if not check(unique.size() == all.size(),"Catalog enumeration has duplicates"):return
 	# Before-matrix: every frozen row is reproduced exactly by the catalog and by the live integration guards.
 	for id in BEFORE:
-		var row: Array = BEFORE[id]
+		var row: Array = BEFORE[id].duplicate()
+		if id in NEW_FIXED_ITEMS and Catalog.definition(id) in [23,26]:row[0]=1 # Explicit WO4 native ranged-slot admission.
 		var now := [int(Catalog.slot(id)=="weapon"),int(Catalog.slot(id)=="armor"),int(Catalog.slot(id)=="offhand"),int(Catalog.admitted(id,"museum")),int(Catalog.admitted(id,"jungle"))]
 		if not check(now == row,"Catalog differs from before-matrix for %s: %s != %s" % [id,now,row]):return
 		if not check(id in unique,"Enumeration misses "+id):return
@@ -633,6 +636,9 @@ func run() -> void:
 	var defense_source: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://docs/act-one-item-defenses.json")).items
 	for id in Catalog.ids("jungle"):
 		if Catalog.slot(id).is_empty(): continue
+		if NEW_FIXED_ITEMS.has(id):
+			if not check(Catalog.defense(id)==int(NEW_FIXED_ITEMS[id]),"WO4 native fixed protection differs: "+id):return
+			continue
 		if not check(defense_source.has(id),"Missing source defense: "+id):return
 		if not check(Catalog.defense(id)==int(defense_source[id].defense),"Source defense differs: "+id):return
 		var entries: Array=Catalog.mitigation(id)

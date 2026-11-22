@@ -43,12 +43,16 @@ func _run() -> void:
 		if absf(p.z - previous) < 0.01: stalled += 1
 		else: stalled = 0
 		previous = p.z
+		if stalled > 20 and scene.draracle_door != null and int(scene.draracle_door.travel) == 0:
+			# Grok BG29: the Draracle's double leaf (movables 74/77) is drawn and solid; the player opens it with the use (E).
+			print("Draracle leaves stop the walk at ", p, " aimed ", scene.draracle_door.aimed(), " opened ", scene.draracle_door.try_use())
+			stalled = 0
 		if scene.chamber_arrival_state == "playing": break
 		if stalled > 120 or scene.resets > 0: break
 	key.pressed = false
 	Input.parse_input_event(key)
 	var passed: bool = scene.chamber_arrival_state == "playing" and scene.resets == 0
-	print("River-to-chamber route passed=", passed, " final native=", scene.player.global_position - scene.native_translation)
+	print("River-to-chamber route passed=", passed, " final native=", scene.player.global_position - scene.native_translation, " door ", "unhosted" if scene.draracle_door == null else ("open" if int(scene.draracle_door.travel) != 0 else "closed"))
 	if not passed:
 		for i in range(scene.player.get_slide_collision_count()):
 			var hit = scene.player.get_slide_collision(i)

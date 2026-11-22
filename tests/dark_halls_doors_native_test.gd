@@ -52,6 +52,10 @@ func _initialize() -> void:
 	var error: String = str(doors.call("setup", host))
 	check(error == "", "setup: " + error)
 	check((doors.get("leaves") as Dictionary).size() == 2 and doors.get("native") != null, "both doors and the native host")
+	var region: Array = (doors.get("native") as RefCounted).call("fire_event", "region:83", 2, {}) as Array
+	check(region.size() == 1 and str((region[0] as Dictionary).get("status", "")) == "unhosted", "region 83 group 76 must stay unhosted")
+	check(str((region[0] as Dictionary).get("reasons", [])).contains("local 6"), "region 83 predicate 19 nests to unread local 6")
+	check(field(doors, "56", "travel_0x50") == -1, "region 83 must not shut door 56")
 	check(field(doors, "57", "byte_0x25") == 0 and field(doors, "57", "travel_0x50") == -1 and field(doors, "57", "byte_0x26") == 50, "door 57 native constructor state %d %d %d" % [field(doors, "57", "byte_0x25"), field(doors, "57", "travel_0x50"), field(doors, "57", "byte_0x26")])
 	host.set("ready_for_review", true)
 	var src: Dictionary = doors.get("source")
@@ -92,19 +96,24 @@ func _initialize() -> void:
 	check(field(doors, "57", "travel_0x50") == 21845, "door 57 open before the trap")
 	check(bool(doors.call("spring_trap")) and bool(doors.call("is_locked", "57")) and field(doors, "57", "travel_0x50") == 0, "trap must close and lock door 57")
 	doors.call("use", "57")
-	check(field(doors, "57", "travel_0x50") == 0 and field(doors, "57", "byte_0x25") == 1, "a locked use must not fire kind 4")
+	check(field(doors, "57", "travel_0x50") == 0 and field(doors, "57", "byte_0x25") == 2, "a locked use must not fire kind 4; the trap writes state 2")
+	check(str(doors.get("trap_group")) == "unhosted" and str(doors.get("trap_reason")).contains("index 12"), "group 794 must stop on opcode 13 index 12")
 	doors.call("_check_unlock")
 	check(not bool(doors.call("is_locked", "57")) and field(doors, "57", "byte_0x25") == 0, "SHADE end must unlock and run group 15750 (+0x25 = 0)")
 	doors.call("use", "57")
 	check(bool(doors.call("is_open", "57")) and field(doors, "57", "travel_0x50") == 21845, "door 57 must open after the unlock")
 	check(str(Doors.validate((host.get("quest_state") as Dictionary).dark_halls_doors, src)) == "", "trap state must validate")
-	check((doors.get("sound_log") as Array).is_empty(), "the door 57 open/close groups have no sound request")
+	check(str(doors.get("sound_log")) == str([881]), "the trap prefix logs sound 881 and the open/close groups add none")
+	for _hit in 3:
+		doors.call("bash", "56")
+	check(bool(doors.call("is_open", "56")) and field(doors, "56", "travel_0x50") == 21845 and field(doors, "56", "selector_0x3d") == 3, "three chops must open door 56")
+	check(int(((doors.get("native") as RefCounted).get("locals") as Dictionary).get(6, -1)) == 1, "door 56's third chop sets local 6")
 
 	# A malformed native save is refused.
 	var bad: Dictionary = ((host.get("quest_state") as Dictionary).dark_halls_doors as Dictionary).duplicate(true)
 	(bad.native["movable:57"] as Dictionary)["travel_0x50"] = 1.5
 	check(str(Doors.validate(bad, src)) != "", "fractional native field must be refused")
 	if not failed:
-		print("PASS dark_halls_doors_native_test: kind-4 use through the native host, travel word 21845 -> 119.998 degrees at the earlier speed, JSON save/restore, old-save mapping, trap lock and SHADE unlock group 15750")
+		print("PASS dark_halls_doors_native_test: kind-4 use through the native host, travel word 21845 -> 119.998 degrees at the earlier speed, JSON save/restore, old-save mapping, trap prefix state 2, SHADE unlock group 15750, and three chops open door 56")
 	host.queue_free()
 	quit(1 if failed else 0)

@@ -4,6 +4,8 @@
 python3 tools/test_prepare_playtest_starts.py  [LOL2_GODOT="tmp/godot_host_starts.sh" also runs the game-validator control]
 """
 import json
+import contextlib
+import io
 import os
 import shlex
 import shutil
@@ -54,15 +56,34 @@ class Refusals(unittest.TestCase):
 
     def test_unsafe_name_and_kind(self):
         self.assertIn('unsafe save name', self.refused(self.manifest(dict(self.entry, save='../a.json'))))
-        self.assertIn('unknown resume kind', self.refused(self.manifest(dict(self.entry, resume='map'))))
+        self.assertIn('unknown resume kind', self.refused(self.manifest(dict(self.entry, resume='unknown'))))
         self.assertIn('duplicate', self.refused(self.manifest(self.entry, dict(self.entry, id='b'))))
         self.assertIn('source missing commit', self.refused(self.manifest(dict(self.entry, source={'test': 't', 'input_sha256': None}))))
         self.assertIn('missing identities', self.refused(self.manifest({k: v for k, v in self.entry.items() if k != 'identities'})))
 
     def test_committed_manifest_loads(self):
         entries = tool.load_manifest()
-        self.assertEqual(len(entries), 11)
-        self.assertTrue(all(e['act'] == 1 for e in entries))
+        self.assertEqual(len(entries), 21)
+        self.assertEqual(sum(e['act'] == 1 for e in entries), 11)
+        self.assertEqual({e['area_id'] for e in entries if e['resume'] == 'map'}, set(tool.PROGRESSION_AREAS))
+
+    def test_map_metadata_refused_before_engine(self):
+        entry = dict(self.entry, resume='map', area_id='L16_CA', act=3, full_health=True)
+        self.assertIn('unknown playtest map', self.refused(self.manifest(dict(entry, area_id='../x'))))
+        self.assertIn('act disagrees', self.refused(self.manifest(dict(entry, act=2))))
+        self.assertIn('requires full_health', self.refused(self.manifest(dict(entry, full_health=False))))
+        self.assertEqual(tool.load_manifest(self.manifest(entry)), [entry])
+
+    def test_describe_map_formats(self):
+        for fmt, area in [('lol2-restoration-map-L16_CA', 'L16_CA'),
+                          ('lol2-restoration-dragon-preview', 'L9_DR'),
+                          ('lol2-restoration-darker-jungle', 'L8_SJ')]:
+            self.save.write_text(json.dumps({'format': fmt}))
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                self.assertEqual(tool.describe(self.save), 0)
+            row = json.loads(output.getvalue())
+            self.assertEqual((row['resume'], row['area_id'], row['full_health']), ('map', area, True))
 
     @unittest.skipUnless(os.environ.get('LOL2_GODOT'), 'set LOL2_GODOT to run the game-validator control')
     def test_game_validator_refuses_wrong_format(self):

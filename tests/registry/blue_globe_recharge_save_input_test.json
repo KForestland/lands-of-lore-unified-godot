@@ -1,0 +1,67 @@
+{
+  "name": "blue_globe_recharge_save_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Three two-cast real-input recharge/save rounds at original L10 altar; genuine empty-ID grant and grounded local stand/NPC hold. Blue uses an explicit direct-child Mists lifecycle receiver, not a quest effect; existing item_globes_input tests real head67 dispatch separately. Ordinary1/60, no earned walk claim."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "blue_dispatch_lifecycle_receiver_fixture",
+      "pattern": "RepeatMistReceiver\\.new\\("
+    }
+  ],
+  "teleports": 1,
+  "test_aids": 4,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "68132a9c9206f797b4658c11d53ef5605bc6083246e6d79414b12eb7f790972f"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/globe_recharge_save_input_test.gd",
+        "line": 16,
+        "column": 16,
+        "kind": "blue_dispatch_lifecycle_receiver_fixture",
+        "source": "var receiver:=RepeatMistReceiver.new();receiver.name=\"RepeatMistLifecycleFixture\";scene.add_child(receiver)"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_stored_spell_input.gd",
+        "line": 5,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":true}).ok,\"Disclosed actual-ID scroll grant fixture\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 9
+}

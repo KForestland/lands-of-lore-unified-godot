@@ -1,0 +1,25 @@
+{
+  "name": "generic_l9_pyre_pixel_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Rendered actualF2/F9 chapel pin55785216ca9ed41b4692289ef0c739fb9dbc0a39b3a188686cd23ba63e594e6b. ActualEbody drag/place, realQ1205/1206, viewport pink/red pixels, actual burn/Eurn; no supplied pose/health/clock/selectors/receiver calls. Checkpoint visual component only, not fresh whole sitting."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "dbbca395d91e2e174aa6ff0e1390ad72d39ff8ec14ec94fa99f2c75ca899c79c"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 1,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

@@ -38,6 +38,27 @@ static func valid(value: Variant, form: Variant) -> bool:
 func snapshot() -> Dictionary:
 	return state.duplicate(true)
 
+## G15 Dampen cancels only a warning; control casts apply checked lasting forms.
+## The shared spell owner owns learning, world admission, debit and cooldown.
+func accepts_player_spell(id: String) -> bool:
+	if id == "curse1": return int(state.phase) == 1
+	if int(state.phase) == 1: return false
+	return (id == "curse2" and int(get_parent().player_form) == 2) or (id == "curse3" and int(get_parent().player_form) == 0)
+
+func receive_player_spell(id: String) -> bool:
+	if not accepts_player_spell(id): return false
+	var host := get_parent()
+	if id in ["curse2","curse3"]:
+		var target := 0 if id == "curse2" else 2
+		var previous: int = host.player_form
+		if not Body.apply(host.player,host.camera,target): return false
+		cancel_aura()
+		host.player_form = target
+		state.previous = previous
+		preload("res://scripts/lol2/player_form_rules.gd").on_morphed(host)
+	state.merge({"phase":0,"target":int(host.player_form),"remaining":0.0,"duration":0.0},true)
+	return true
+
 func restore(value: Dictionary) -> void:
 	state = value.duplicate(true)
 	for key in ["phase","previous","target","seed"]: state[key] = int(state[key])

@@ -35,5 +35,12 @@ func run() -> void:
 	var rested: Dictionary = Stack.rest_all(centers, sizes)
 	check(rested[2] == Vector3(0, -185, 0), "the lifted crate stays up")
 	check(Stack.riser_gap(Vector3(564, -205, -12367)) > 10.0, "crate 121 starts off the riser")
+	check(Stack.validate({"version": 1}) != "", "a crate save needs the seven places")
+	var places: Dictionary = {}
+	for id in Stack.IDS:
+		places[str(id)] = [1.0, 2.0, 3.0]
+	check(Stack.validate({"version": 1, "carried": -1, "at": places}) == "", "seven places validate")
+	check(Stack.validate({"version": 1, "carried": 94, "at": places}) == "", "carrying crate 94 validates")
+	check(Stack.validate({"version": 1, "carried": 3, "at": places}) != "", "an unknown crate is refused")
 	if failures == 0: print("PASS cave_crate_stack_test: riser 1485, seven crates, two maces at -130")
 	quit(1 if failures else 0)

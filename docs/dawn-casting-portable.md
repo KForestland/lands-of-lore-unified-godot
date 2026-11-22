@@ -16,4 +16,4 @@ Run these without original media, using `godot --headless --path . --script res:
 
 Use the existing shared world clock: status_gate drives active-list maintenance; fixed drives effect lifetime; delta drives projectile movement. Distances preserve startup53-bit nearest-even arithmetic. A stored spell choice is not proof that admission succeeded; a failed effect allocation is not automatically a reason to skip the original cast-completion tail.
 
-Live condition producers, scorer invocation, actor invocation, effect construction/dispatch, animation, mitigation binding, health scaling, presentation and save ownership still require integration. The main campaign source was held unchanged during its fresh run. Original assets stay local. Full Act1 and Bob acceptance remain open.
+Live condition producers, scorer invocation, actor invocation, effect construction/dispatch, animation, mitigation binding, health scaling, presentation and save ownership still require integration. The main campaign source was held unchanged during its fresh run. Original assets stay local. Full Act1 and the owner acceptance remain open.

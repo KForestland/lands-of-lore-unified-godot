@@ -1,4 +1,7 @@
 extends "res://scripts/lol2/museum_review.gd"
+const Grants=preload("res://scripts/lol2/item_grants.gd")
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
+var area_id := "L3_DH"
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 const Overlay = preload("res://scripts/lol2/cave_video_overlay.gd")
 const INTRO_CLIPS := [4, 5]
@@ -26,7 +29,7 @@ static func validate_cave_transfer(state: Variant, require_current: bool = false
 		if error.is_empty() and not state.item_effects.spent.all(func(id): return Catalog.admitted(id,"cave")): error = "Inconsistent consumed item."
 	if error.is_empty() and state.has("magic"): error = str(preload("res://scripts/lol2/player_magic_state.gd").restore(state.magic).get("error",""))
 	if error.is_empty() and state.has("fighting"): error = str(preload("res://scripts/lol2/player_fighting_transport.gd").restore(state.fighting).get("error",""))
-	if error.is_empty() and state.has("health") and (not Save.within(state.health,1,30) or state.health != int(state.health)): error = "Invalid player health."
+	if error.is_empty() and state.has("health") and (not Save.within(state.health,1,PlayerHealth.MAXIMUM) or state.health != int(state.health)): error = "Invalid player health."
 	if error.is_empty() and state.has("player_form") and not preload("res://scripts/lol2/player_form_body.gd").valid(state.player_form): error = "Invalid player form."
 	if error.is_empty() and state.has("curse") and not preload("res://scripts/lol2/player_curse.gd").valid(state.curse,state.get("player_form",0)): error = "Invalid curse state."
 	if error.is_empty() and state.has("chamber_complete") and not (state.chamber_complete is bool and state.chamber_complete): error = "Invalid cave completion."
@@ -63,12 +66,15 @@ var equipped_item := ""
 var equipped_armor := ""
 var interaction_label: Label
 var pickup_notice_time := 0.0
-var health := 30
+var health:int:
+	get:return player_health_owner.value()
+	set(v):player_health_owner.set_value(v)
 var player_magic_checkpoint := preload("res://scripts/lol2/player_magic_state.gd").initial()
 ## Cave fighting progression carried unchanged to Jungle quests.
 var fighting_checkpoint: Dictionary = {}
 var control96: Node3D
 var static_assemblies: Node3D
+var plank: Node
 var ivory: Node3D
 var empty_urns: Node3D
 var worm: Node3D
@@ -181,7 +187,7 @@ func _ready() -> void:
 	item_effect_checkpoint=preload("res://scripts/lol2/player_item_state.gd").canonical(state.get("item_effects",preload("res://scripts/lol2/player_item_state.gd").initial()))
 	player_magic_checkpoint = preload("res://scripts/lol2/player_magic_state.gd").restore(state.get("magic",preload("res://scripts/lol2/player_magic_state.gd").initial())).checkpoint
 	fighting_checkpoint = preload("res://scripts/lol2/player_fighting_transport.gd").restore(state.get("fighting",{})).get("checkpoint",{})
-	health = int(state.get("health",30))
+	health = int(state.get("health",PlayerHealth.MAXIMUM))
 	player_form = int(state.get("player_form",0))
 	curse.restore(state.get("curse",Curse.initial()))
 	var checkpoint = get_tree().get_meta(CHECKPOINT_KEY, {})
@@ -269,8 +275,13 @@ func _ready() -> void:
 		add_child(preload("res://scripts/lol2/museum_rubble_blocks.gd").new())
 	if preload("res://scripts/lol2/static_assemblies.gd").assets_ready("L3_DH"):
 		static_assemblies=preload("res://scripts/lol2/static_assemblies.gd").new();add_child(static_assemblies)
-		var assemblies_error: String=static_assemblies.setup(self,"L3_DH",[],[77])
+		var assemblies_error: String=static_assemblies.setup(self,"L3_DH",[92],[77])
 		if not assemblies_error.is_empty(): push_error(assemblies_error)
+		plank=preload("res://scripts/lol2/museum_plank_hole.gd").new()
+		plank.name="MuseumPlankHole"
+		add_child(plank)
+		var plank_error: String=plank.setup(self,checkpoint.get("museum_plank") if checkpoint is Dictionary else null)
+		if not plank_error.is_empty(): push_error(plank_error)
 	# Native player-impassable regions (region bit0, tools/prepare_region_blockers.py), as in the Jungle (L3_DH: 493 regions).
 	if region_blockers_enabled: region_blockers_attached=preload("res://scripts/lol2/region_blockers.gd").attach(self,player,"L3_DH")
 	if preload("res://scripts/lol2/museum_ivory.gd").assets_ready():
@@ -370,15 +381,22 @@ func _ready() -> void:
 	dragon_door = preload("res://scripts/lol2/museum_dragon_door.gd").new()
 	add_child(dragon_door)
 	if checkpoint is Dictionary: dragon_door.restore_checkpoint(checkpoint.get("dragon_door", {}))
+	if is_instance_valid(plank): plank.settle_door()
 	get_window().title = "Lands of Lore II — Draracle’s museum"
 	if get_tree().has_meta("lol2_museum_resume"):
 		var resume = get_tree().get_meta("lol2_museum_resume")
 		get_tree().remove_meta("lol2_museum_resume")
 		if Save.validate(resume).is_empty(): apply_save(resume)
+	preload("res://scripts/lol2/game_session.gd").for_tree(get_tree()).apply_pending(self)
 	# Source arrival: control returns at once; the Draracle clips belong to region1220 (start_introduction()).
 	introduction_state = "complete"
+	# The arrival packet is fully applied; revisits use checkpoint_state(), not a pending transfer.
+	if get_tree().has_meta("lol2_cave_completion"):get_tree().remove_meta("lol2_cave_completion")
 	draracle_inside = Draracle.inside(draracle_source, player.position, player.position.y - FormBody.FOOT_OFFSET)
 	if is_instance_valid(draracle_bars): draracle_bars.sync_inside(player.position, player.position.y - FormBody.FOOT_OFFSET, player.is_on_floor())
+	if not atlas_explored is Dictionary:
+		atlas_explored = preload("res://scripts/lol2/atlas_explored.gd").initial()
+	preload("res://scripts/lol2/atlas_explored.gd").attach(self)
 
 ## Lock78's passage faces (regions1237/1477 closed floors and walls) are built by the key-lock owner.
 ## The Prism owner draws the seven panorama source walls (shown until the pickup clears them to transparent 871);
@@ -435,6 +453,9 @@ func check_draracle_entry() -> void:
 	if entered: start_introduction()
 
 func _exit_tree() -> void:
+	# A selected save replaces the session; the outgoing scene must not recreate its cache.
+	var session: Node = preload("res://scripts/lol2/game_session.gd").for_tree(get_tree())
+	if session != null and session.changing_scene: return
 	if not ready_for_review or not is_instance_valid(sword_transfer) or not is_instance_valid(museum_gate): return
 	get_tree().set_meta(CHECKPOINT_KEY, checkpoint_state())
 
@@ -473,7 +494,8 @@ func checkpoint_state() -> Dictionary:
 		"museum_prism": prism.checkpoint() if is_instance_valid(prism) else false,
 		"museum_blood_loot": blood_loot.checkpoint() if is_instance_valid(blood_loot) else null,
 		"skeletons": skeleton_population.checkpoint() if is_instance_valid(skeleton_population) else preload("res://scripts/lol2/museum_skeleton_population_state.gd").initial(),
-		"dragon_door": dragon_door.checkpoint() if is_instance_valid(dragon_door) else {}
+		"dragon_door": dragon_door.checkpoint() if is_instance_valid(dragon_door) else {},
+		"museum_plank": plank.checkpoint() if is_instance_valid(plank) else preload("res://scripts/lol2/museum_plank_hole.gd").initial()
 	}
 
 func can_take_sword() -> bool:
@@ -517,7 +539,7 @@ func can_reach_sprite(sprite: Sprite3D, anchor: Vector3) -> bool:
 func take_sword() -> bool:
 	if not can_take_sword(): return false
 	sword_transfer.collect()
-	if not SWORD_ITEM_ID in carried_collected: carried_collected.append(SWORD_ITEM_ID)
+	Grants.grant(self,SWORD_ITEM_ID,{"cap":false,"duplicate":"skip"})
 	pickup_notice_time = 2.5
 	interaction_label.text = "Fine Longsword added to inventory."
 	interaction_label.show()
@@ -543,8 +565,7 @@ func open_inventory() -> bool:
 ## the ivory urns' human rule: any equipped carried weapon (playtest 2026-10-17, report11-22-24). Cursed forms
 ## keep their existing refusal here.
 func melee_ready() -> bool:
-	if not preload("res://scripts/lol2/player_form_rules.gd").can_use_weapon(player_form): return false
-	return equipped_item in carried_collected and Catalog.slot(equipped_item) == "weapon"
+	return PlayerCombat.may_strike(self,false,PlayerCombat.Armed.CARRIED_WEAPON_SLOT)
 
 func hourglass_in_reach() -> bool:
 	if get_tree().paused or flying or introduction_state != "complete" or mirror_transition_pending: return false
@@ -640,7 +661,7 @@ func can_strike_sword_skeleton() -> bool:
 	if not is_instance_valid(skeleton_population) or not sword_transfer.available: return false
 	if sword_transfer.phase != "complete" or sword_transfer.struck or sword_transfer.replaced: return false
 	if is_instance_valid(interface_hud) and interface_hud.cursor_active: return false
-	if player_form == 0 and equipped_item == "": return false
+	if not PlayerCombat.may_strike(self,false): return false
 	return can_reach_item(sword_transfer.hit_point())
 
 func strike_sword_skeleton() -> bool:
@@ -684,7 +705,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled();return
 	if is_instance_valid(interface_hud) and interface_hud.cursor_active: return
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		if (is_instance_valid(crystal_pickups) and crystal_pickups.strike()) or (is_instance_valid(ivory) and ivory.strike()) or (is_instance_valid(empty_urns) and empty_urns.strike()) or strike_hourglass() or strike_escape_wall() or (is_instance_valid(museum_torches) and museum_torches.strike_pilot()) or strike_sword_skeleton():
+		if (is_instance_valid(crystal_pickups) and crystal_pickups.strike()) or (is_instance_valid(ivory) and ivory.strike()) or (is_instance_valid(empty_urns) and empty_urns.strike()) or strike_hourglass() or strike_escape_wall() or (is_instance_valid(museum_torches) and museum_torches.strike_pilot()) or strike_sword_skeleton() or click_dragon_chamber():
 			get_viewport().set_input_as_handled()
 			return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_I:
@@ -697,7 +718,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 ## Every E action in priority order; actions that need the held item run first, with the hand as it is.
 func _use_world() -> bool:
-	return (is_instance_valid(ivory) and ivory.use()) or (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(orb_switch) and orb_switch.use()) or (is_instance_valid(museum_torches) and museum_torches.use()) or (is_instance_valid(crystal_pickups) and crystal_pickups.use()) or (is_instance_valid(aloe_pickups) and aloe_pickups.use()) or (is_instance_valid(scroll_pickups) and scroll_pickups.use()) or (is_instance_valid(world_items) and world_items.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(belial) and belial.use()) or (is_instance_valid(dragon_heart) and dragon_heart.use()) or (is_instance_valid(prism) and prism.use()) or (is_instance_valid(blood_loot) and blood_loot.use()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or (is_instance_valid(draracle_bars) and draracle_bars.use_control()) or (is_instance_valid(wheel_door) and wheel_door.use()) or (is_instance_valid(curtain) and curtain.use()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1) or (is_instance_valid(lightning_crystal) and lightning_crystal.use())
+	return (is_instance_valid(ivory) and ivory.use()) or (introduction_state == "complete" and broken_thohan.use()) or (is_instance_valid(key_locks) and key_locks.use()) or (is_instance_valid(orb_switch) and orb_switch.use()) or (is_instance_valid(museum_torches) and museum_torches.use()) or (is_instance_valid(crystal_pickups) and crystal_pickups.use()) or (is_instance_valid(aloe_pickups) and aloe_pickups.use()) or (is_instance_valid(scroll_pickups) and scroll_pickups.use()) or (is_instance_valid(world_items) and world_items.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(belial) and belial.use()) or (is_instance_valid(dragon_heart) and dragon_heart.use()) or (is_instance_valid(prism) and prism.use()) or (is_instance_valid(blood_loot) and blood_loot.use()) or (is_instance_valid(plank) and plank.press()) or (is_instance_valid(skeleton_population) and skeleton_population.use_control()) or (is_instance_valid(draracle_bars) and draracle_bars.use_control()) or (is_instance_valid(wheel_door) and wheel_door.use()) or (is_instance_valid(curtain) and curtain.use()) or open_dragon_door() or use_gallery() or enter_dragon() or enter_mirror() or take_sword() or take_mail() or take_stone(0) or take_stone(1) or (is_instance_valid(lightning_crystal) and lightning_crystal.use())
 
 ## Plain item grants and route doors that require an empty hand. Actions with other empty-hand outcomes (sconce burns,
 ## skeleton controls) are deliberately excluded so a held item never triggers them. The curtain and wheel door
@@ -705,7 +726,7 @@ func _use_world() -> bool:
 ## chip and taking the Sk key back out of a lock after the r10 report 2026-10-23 (the chip was seen but E did nothing;
 ## "can't take back the key" with SS1 in hand). A lock insert from the pack is key_locks.use_from_pack (r12h 2026-10-26).
 func _take_plain_item() -> bool:
-	return (is_instance_valid(dragon_heart) and dragon_heart.use()) or (is_instance_valid(ivory) and ivory.use()) or (is_instance_valid(key_locks) and key_locks.use_take()) or (is_instance_valid(aloe_pickups) and aloe_pickups.use()) or (is_instance_valid(scroll_pickups) and scroll_pickups.use()) or (is_instance_valid(world_items) and world_items.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(prism) and prism.use()) or take_sword() or take_mail() or take_stone(0) or take_stone(1) or (is_instance_valid(lightning_crystal) and lightning_crystal.use()) or (is_instance_valid(wheel_door) and wheel_door.use()) or (is_instance_valid(curtain) and curtain.use())
+	return (introduction_state == "complete" and is_instance_valid(broken_thohan) and broken_thohan.use()) or (is_instance_valid(museum_torches) and museum_torches.use()) or (is_instance_valid(dragon_heart) and dragon_heart.use()) or (is_instance_valid(ivory) and ivory.use()) or (is_instance_valid(key_locks) and key_locks.use_take()) or (is_instance_valid(aloe_pickups) and aloe_pickups.use()) or (is_instance_valid(scroll_pickups) and scroll_pickups.use()) or (is_instance_valid(world_items) and world_items.use()) or (is_instance_valid(long_arm) and long_arm.use()) or (is_instance_valid(prism) and prism.use()) or take_sword() or take_mail() or take_stone(0) or take_stone(1) or (is_instance_valid(lightning_crystal) and lightning_crystal.use()) or (is_instance_valid(wheel_door) and wheel_door.use()) or (is_instance_valid(curtain) and curtain.use())
 
 ## Modern adapter (owner r3 report 2026-10-20): the plain pickups (Prism group6590, Long arm, Fine Longsword...)
 ## require an empty hand, and a carried item left in the hand silently refused them. When no action uses the held
@@ -824,6 +845,11 @@ func _show_world_hint() -> void:
 			interaction_label.text = door_hint
 			interaction_label.show()
 			return
+	var plank_hint: String = plank.interaction_hint() if is_instance_valid(plank) else ""
+	if not plank_hint.is_empty():
+		interaction_label.text = plank_hint
+		interaction_label.show()
+		return
 	var control_hint: String = skeleton_population.control_hint() if is_instance_valid(skeleton_population) else ""
 	if not control_hint.is_empty():
 		interaction_label.text = control_hint
@@ -857,7 +883,7 @@ func _show_world_hint() -> void:
 	var sword_ready := can_take_sword()
 	var mail_ready := can_take_mail()
 	interaction_label.visible = can_enter_dragon() or can_enter_mirror() or sword_ready or mail_ready or can_take_stone(0) or can_take_stone(1)
-	interaction_label.text = "E — Travel with the dragon" if can_enter_dragon() else "E — Enter Shining Path" if can_enter_mirror() else "E — Take Fine Longsword" if sword_ready else ("E — Take Mail Shirt" if mail_ready else "E — Take Champion Stone")
+	interaction_label.text = "Click — Travel with the dragon" if can_enter_dragon() else "E — Enter Shining Path" if can_enter_mirror() else "E — Take Fine Longsword" if sword_ready else ("E — Take Mail Shirt" if mail_ready else "E — Take Champion Stone")
 
 func set_equipped_item(item_id: String) -> bool:
 	if item_id != "" and ((Catalog.slot(item_id) != "weapon" or not Catalog.admitted(item_id,"museum")) or not item_id in carried_collected): return false
@@ -878,20 +904,27 @@ func save_feedback(message: String) -> void:
 	interaction_label.show()
 
 ## Diagnostics record every outcome, including early refusals that show no message (docs/dev-diagnostics.md).
-func quicksave(path: String = Save.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", _quicksave_unrecorded(path))
-func quickload(path: String = Save.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", _quickload_unrecorded(path))
+func quicksave(path: String = "") -> String:
+	var error: String = preload("res://scripts/lol2/game_save.gd").quicksave(self) if path.is_empty() else _quicksave_unrecorded(path)
+	return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", error)
+func quickload(path: String = "") -> String:
+	var error: String = preload("res://scripts/lol2/game_save.gd").quickload(self) if path.is_empty() else _quickload_unrecorded(path)
+	return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", error)
 func _quicksave_unrecorded(path: String = Save.DEFAULT_PATH) -> String:
 	if introduction_state != "complete" or get_tree().paused: return "Close the current overlay before saving."
 	if flying:
 		save_feedback("Return to walking mode before saving.")
 		return "Return to walking mode before saving."
+	var error := Save.write_save(path,area_snapshot())
+	save_feedback("Museum saved." if error.is_empty() else "Save failed: " + error)
+	return error
+
+func area_snapshot() -> Dictionary:
 	var state := {"format": Save.FORMAT, "version": 1, "checkpoint": checkpoint_state(),
 		"atlas_explored": preload("res://scripts/lol2/atlas_explored.gd").stored(self),
 		"player": {"position": [player.position.x,player.position.y,player.position.z],
 		"yaw": wrapf(player.rotation.y,-PI,PI), "pitch": camera.rotation.x}}
-	var error := Save.write_save(path,state)
-	save_feedback("Museum saved." if error.is_empty() else "Save failed: " + error)
-	return error
+	return state
 
 func _quickload_unrecorded(path: String = Save.DEFAULT_PATH) -> String:
 	if get_tree().paused: return "Close the current overlay before loading."
@@ -921,6 +954,10 @@ func apply_save(state: Dictionary) -> void:
 	restore_escape_wall(saved)
 	gallery.restore_checkpoint(saved.get("gallery", {}))
 	dragon_door.restore_checkpoint(saved.get("dragon_door", {}))
+	if is_instance_valid(plank):
+		var plank_error: String = plank.restore(saved.get("museum_plank", preload("res://scripts/lol2/museum_plank_hole.gd").initial()))
+		if not plank_error.is_empty(): push_error(plank_error)
+		plank.settle_door()
 	sword_transfer.restore_checkpoint(saved.sword)
 	museum_gate.restore_checkpoint(saved.gate)
 	item_effect_checkpoint=preload("res://scripts/lol2/player_item_state.gd").canonical(saved.get("item_effects",preload("res://scripts/lol2/player_item_state.gd").initial()))
@@ -977,7 +1014,7 @@ func apply_save(state: Dictionary) -> void:
 	if is_instance_valid(blood_loot):blood_loot.restore(saved.get("museum_blood_loot"))
 	if is_instance_valid(prism):prism.restore(saved.get("museum_prism",false))
 	if is_instance_valid(control96): control96.restore_checkpoint(saved.get("museum_control96",preload("res://scripts/lol2/museum_control96_state.gd").initial()))
-	health = int(saved.get("health",30))
+	health = int(saved.get("health",PlayerHealth.MAXIMUM))
 	player_form = int(saved.get("player_form",0))
 	curse.restore(saved.get("curse",Curse.initial()))
 	FormBody.apply(player,camera,player_form,false)
@@ -1000,7 +1037,7 @@ func can_take_mail() -> bool:
 
 func take_mail() -> bool:
 	if not can_take_mail(): return false
-	carried_collected.append(MAIL_ITEM_ID)
+	Grants.grant(self,MAIL_ITEM_ID,{"cap":false,"duplicate":"allow"})
 	mail_shirt.hide()
 	save_feedback("Mail Shirt added to inventory.")
 	return true
@@ -1012,7 +1049,7 @@ func can_take_stone(index: int) -> bool:
 
 func take_stone(index: int) -> bool:
 	if not can_take_stone(index): return false
-	carried_collected.append(Stones.IDS[index])
+	Grants.grant(self,Stones.IDS[index],{"cap":false,"duplicate":"allow"})
 	champion_stones.sprites[index].hide()
 	save_feedback("Champion Stone added to inventory.")
 	return true
@@ -1105,6 +1142,11 @@ func click_dragon(pixel: Vector2) -> bool:
 func _pointer_pixel() -> Vector2:
 	return get_viewport().get_visible_rect().size*0.5 if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED else get_viewport().get_mouse_position()
 
+## Owner r17 16-37-59 (BG12): the hotspot alone missed a click looking into the alcove. A captured-mouse click
+## anywhere in the authored dragon chamber also starts the journey (adapter, ledger row e11).
+func click_dragon_chamber() -> bool:
+	return enter_dragon() if can_enter_dragon() else false
+
 func enter_dragon() -> bool:
 	if not can_enter_dragon(): return false
 	return _start_dragon_journey()
@@ -1148,3 +1190,12 @@ func use_inventory_item(id: String) -> bool:
 	var used: bool = item_effects.use(id)
 	if used and id not in carried_collected and hand_item == id: hand_item = ""
 	return used
+
+func can_save() -> String:
+	return preload("res://scripts/lol2/save_admission.gd").reason(self)
+
+func apply_slot_state(state: Variant) -> String:
+	var error := Save.validate(state)
+	if not error.is_empty(): return error
+	apply_save(state)
+	return ""

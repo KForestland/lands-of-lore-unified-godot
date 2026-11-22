@@ -1,9 +1,26 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## Stationary review guardians: source poses, authored health/reach/timing.
 const CombatFeedback := preload("res://scripts/lol2/combat_feedback.gd")
 const POSITIONS := [Vector3(-1052,-235,-8435),Vector3(-906,-235,-7308)]
 const ACTORS := [32,34]
-var health := 30
+var _standalone_health:=PlayerHealth.MAXIMUM
+var _pending_health:=false
+func _enter_tree()->void:_player_health()
+func _player_health()->Node:
+	var owner:=PlayerHealth.owner_for(get_parent())
+	if owner!=null and _pending_health:
+		owner.set_value(_standalone_health);_pending_health=false
+	return owner
+var health:int:
+	get:
+		var owner:=_player_health()
+		return owner.value() if owner!=null else _standalone_health
+	set(v):
+		var owner:=_player_health()
+		if owner!=null:owner.set_value(v)
+		else:_standalone_health=v;_pending_health=true
 var enemies := [24,24]
 var windups := [0.0,0.0]
 var cooldown := 0.0
@@ -64,32 +81,29 @@ func clear_path(target: Vector3, mask: int = 1) -> bool:
 	var query := PhysicsRayQueryParameters3D.create(review.camera.global_position,target,mask,[review.player.get_rid()])
 	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
 func strike() -> bool:
-	if not active() or cooldown > 0: return false
-	cooldown = 0.45
+	if not active() or not PlayerCombat.cooldown_ready(cooldown): return false
+	cooldown = PlayerCombat.COOLDOWN
 	var review = get_parent()
 	var hit := aimed_hit()
 	if not hit.is_empty() and hit.collider.has_meta("hive_chasm"):
 		return review.get_node("Chasm").activate()
 	if not hit.is_empty() and hit.collider.has_meta("hive_return_actor"):
-		var damage := preload("res://scripts/lol2/player_form_rules.gd").melee_damage(review.player_form,preload("res://scripts/lol2/player_equipment.gd").weapon(review.carried_inventory.equipped_item))
+		var damage := PlayerCombat.damage(review,true,PlayerCombat.Armed.EQUIPMENT_WEAPON)
 		var owner = hit.collider.get_meta("hive_population_owner")
 		var id := str(hit.collider.get_meta("hive_return_actor"))
-		if not owner.receive_damage(id,review.item_effects.melee_damage(damage)): return false
-		preload("res://scripts/lol2/item_handlers.gd").record_hit(str(review.carried_inventory.equipped_item))
-		if owner.has_method("net_hit"): owner.net_hit(id,str(review.carried_inventory.equipped_item))
-		if owner.has_method("prism_hit"): owner.prism_hit(id,str(review.carried_inventory.equipped_item))
-		return CombatFeedback.landed(true)
+		if not owner.receive_damage(id,damage): return false
+		return PlayerCombat.after_landed(review,owner,id,{"poison":false,"record":true,"net":true,"prism":true,"armed_rule":PlayerCombat.Armed.EQUIPMENT_WEAPON})
 	if not hit.is_empty() and hit.collider.has_meta("hive_executioner_live"):
-		var damage := preload("res://scripts/lol2/player_form_rules.gd").melee_damage(review.player_form,preload("res://scripts/lol2/player_equipment.gd").weapon(review.carried_inventory.equipped_item))
-		return CombatFeedback.landed(review.executioner_live.receive_strike(review.item_effects.melee_damage(damage)))
+		var damage := PlayerCombat.damage(review,true,PlayerCombat.Armed.EQUIPMENT_WEAPON)
+		return CombatFeedback.landed(review.executioner_live.receive_strike(damage))
 	if not hit.is_empty() and hit.collider.has_meta("hive_hit_receiver"):
 		return hit.collider.get_meta("hive_hit_receiver").receive_hit()
 	if hit.is_empty() or not hit.collider.has_meta("hive_guardian"): return false
 	var index := int(hit.collider.get_meta("hive_guardian"))
 	if enemies[index] <= 0: return false
 	# Unarmed review attacks remain usable without granting inventory items.
-	var damage := preload("res://scripts/lol2/player_form_rules.gd").melee_damage(review.player_form,preload("res://scripts/lol2/player_equipment.gd").weapon(review.carried_inventory.equipped_item))
-	return CombatFeedback.landed(damage_guardian(index,review.item_effects.melee_damage(damage)))
+	var damage := PlayerCombat.damage(review,true,PlayerCombat.Armed.EQUIPMENT_WEAPON)
+	return CombatFeedback.landed(damage_guardian(index,damage))
 
 func damage_guardian(index: int, damage: int, effect: int = -1) -> bool:
 	if index<0 or index>=enemies.size() or damage<=0 or enemies[index]<=0: return false
@@ -106,9 +120,7 @@ func damage_guardian(index: int, damage: int, effect: int = -1) -> bool:
 
 func aimed_hit() -> Dictionary:
 	var review = get_parent()
-	var origin: Vector3 = review.camera.global_position
-	var query := PhysicsRayQueryParameters3D.create(origin,origin-review.camera.global_basis.z*96,7,[review.player.get_rid()])
-	return get_world_3d().direct_space_state.intersect_ray(query)
+	return PlayerCombat.aim_ray(review,PlayerCombat.REACH_HIVE,7)
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if active() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -127,9 +139,9 @@ func _process_body(delta: float) -> void:
 	# Normal play: below the top-centre coordinate overlay, at the other areas' population-label height.
 	label.position.y = 125 if get_parent().development_mode else (48 if classic_hud() else 16)
 	if classic_hud() and health > 0: label.text = ""
-	else: label.text = "Health %d/30 · Left click: strike" % health if health > 0 else "Defeated · F9: load or R: retry guardians"
+	else: label.text = "Health %d/%d · Left click: strike" % [health,PlayerHealth.MAXIMUM] if health > 0 else "Defeated · F9: load or R: retry guardians"
 	if not active(): return
-	cooldown = maxf(0,cooldown-delta)
+	cooldown = PlayerCombat.cooldown_tick(cooldown,delta)
 	var review = get_parent()
 	var hit := aimed_hit()
 	if not hit.is_empty() and hit.collider.has_meta("hive_chasm"):
@@ -153,7 +165,7 @@ func _process_body(delta: float) -> void:
 		label.text += " · Guardian preparing to strike"
 		if windups[i] >= 1.5:
 			windups[i] = 0.0
-			if not preload("res://scripts/lol2/player_form_rules.gd").protected(review): health = maxi(0,health-preload("res://scripts/lol2/player_defense.gd").incoming(review,15))
+			if not preload("res://scripts/lol2/player_form_rules.gd").protected(review): PlayerHealth.lose_host(review,preload("res://scripts/lol2/player_defense.gd").incoming(review,15))
 			if health == 0:
 				review.set_physics_process(false)
 				return

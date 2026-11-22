@@ -1,4 +1,5 @@
 extends RefCounted
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## Fifteen source L4_HJ DINO placements: saved health, position and live behavior.
 ## Source: 150HP, reward scale4, selector4 bite (frame9, native request24). Adapters:
 ## perception range/reach, speed, 8fps clip clocks (docs/jungle-dino-population.md).
@@ -31,7 +32,7 @@ static func validate(state: Variant) -> String:
 	if not state is Dictionary or not Values.integer(state.get("version"),1) or state.version!=1 or not state.get("actors") is Dictionary or not state.get("live") is Dictionary: return "Invalid Jungle DINO population."
 	if state.has("strike_remaining"):
 		var strike=state.strike_remaining
-		if not (strike is int or strike is float) or not is_finite(float(strike)) or strike<0 or strike>0.45: return "Invalid Jungle DINO strike cooldown."
+		if not (strike is int or strike is float) or not is_finite(float(strike)) or strike<0 or strike>PlayerCombat.COOLDOWN: return "Invalid Jungle DINO strike cooldown."
 	var expected: Dictionary=initial()
 	if state.actors.size()!=expected.actors.size() or state.live.size()!=expected.live.size(): return "Incomplete Jungle DINO identities."
 	var r:=rules()

@@ -26,13 +26,13 @@ Current source beyond R16: diagnostics, named isolated checkpoints, verification
 
 The actor inventory records111 partial bindings,80 staging placements and3 unactivated by direct scripts. A binding is not proof of complete behavior, and these counts are not completion percentages. Historical notes below describe earlier revisions; their old missing-feature and campaign claims do not override the current evidence above.
 
-Bob confirmed on 2026-09-14: complete Act 1 through leaving the Huline Jungle for the darker jungle beyond. Jungle arrival is an intermediate milestone. Enhanced content remains deferred.
+the owner confirmed on 2026-09-14: complete Act 1 through leaving the Huline Jungle for the darker jungle beyond. Jungle arrival is an intermediate milestone. Enhanced content remains deferred.
 
-Bob reaffirmed on 2026-09-23 and 2026-09-24: continue until Act One is complete. This expands
+the owner reaffirmed on 2026-09-23 and 2026-09-24: continue until Act One is complete. This expands
 the current cave-to-Museum work into the full milestone below; a cave milestone
 does not close the requested goal.
 
-Completion requires a continuous playthrough from Draracle’s cave to that outbound transition, with required quests, areas, encounters, puzzles and form abilities functioning. Walking through otherwise empty maps is insufficient. Preserve original content and dependency rules; modern engine implementations and explicitly documented provisional tuning are authorized. Bob reaffirmed on2026-09-24: determine the function, then emulate it when that saves time; prioritize playable behavior over unnecessary instruction-level reproduction.
+Completion requires a continuous playthrough from Draracle’s cave to that outbound transition, with required quests, areas, encounters, puzzles and form abilities functioning. Walking through otherwise empty maps is insufficient. Preserve original content and dependency rules; modern engine implementations and explicitly documented provisional tuning are authorized. the owner reaffirmed on2026-09-24: determine the function, then emulate it when that saves time; prioritize playable behavior over unnecessary instruction-level reproduction.
 
 Historical implementation checkpoint (2026-10-03): Roach pursuit/bites and melee progression, eight cave guards, thirteen Museum skeleton/Rat actors, fifteen Jungle dinosaurs and eighteen Huline villagers now have live implementation bindings. Guard and Museum audio share one reusable owner, with focused save/pause/legacy-load checks. The actor inventory has been reconciled against the numeric population contracts: [coverage audit](act-one-actor-coverage.md). Its 97 bindings among 194 placements are **not a completion percentage**; unmatched placements include story actors and staging pools, and bindings may be partial. Older dated entries below describe historical checkpoints.
 
@@ -40,7 +40,7 @@ Earlier R2 checkpoint (2026-10-07): Museum control96/sword skeleton21 and the ca
 
 Earlier actor reconciliation recorded **106 partial implementation bindings, 80 inert staging placements at load, three actors unactivated by direct scripts, and five concrete unbound actors** among194 placements; these are not completion percentages. The staging classification is supported by independently replayed constructor flags and inspected native update-gate bytes, with computed-target script linking still a residual uncertainty ([evidence](act-one-actor-staging.json)). Opus verified that cave actors36/37 already have the live lurking-Roach owner; their coverage omission is corrected. The TIG_ROG36–38 classification was independently reproduced against the original archive; computed-target activation remains possible ([evidence](act-one-actor-unactivated.json)). Opus is implementing the pre-exit L4WW0/66 branch in isolation; Bacatta57/65 and Hive Dawn20 remain unbound. Original loot/treasure producers, hostile story branches, provisional rules and required-content acceptance remain open.
 
-Candidate `~/lol2_act1_candidate_20261007_r2` has source/asset fingerprints and successful Linux/Windows exports. The actual Linux package passes ordinary-key movement, disk quicksave/load and process-restart loading in isolated user data. Actual packaged Jungle launcher resume also passes from an unchanged earned save, with53.33 units of movement and full saved-packet equality after reload. All14296 packaged assets match source-manifest hashes from an empty audit project. This private-Xvfb check does not certify representative GPU output or audible playback. Windows execution under Wine9.0 faults before the Godot banner, including a version-only check; native Windows remains untested. Clean-machine reproduction and **Bob's playtest acceptance remain open**. Use the [completion plan](classic-completion-plan.md) and [current assignments](~/AI_COMMS/ACT1_CURRENT_ASSIGNMENTS.txt); dated entries below are history, not current missing-feature declarations.
+Candidate `~/lol2_act1_candidate_20261007_r2` has source/asset fingerprints and successful Linux/Windows exports. The actual Linux package passes ordinary-key movement, disk quicksave/load and process-restart loading in isolated user data. Actual packaged Jungle launcher resume also passes from an unchanged earned save, with53.33 units of movement and full saved-packet equality after reload. All14296 packaged assets match source-manifest hashes from an empty audit project. This private-Xvfb check does not certify representative GPU output or audible playback. Windows execution under Wine9.0 faults before the Godot banner, including a version-only check; native Windows remains untested. Clean-machine reproduction and **the owner's playtest acceptance remain open**. Use the [completion plan](classic-completion-plan.md) and [current assignments](~/AI_COMMS/ACT1_CURRENT_ASSIGNMENTS.txt); dated entries below are history, not current missing-feature declarations.
 
 | Work package | Current state | Acceptance |
 | --- | --- | --- |
@@ -202,7 +202,7 @@ fixture-tested slices; **none is earned-route or owner acceptance**.
   `audit_fresh_chain_progress.py`. Leg 07 now crosses world Dawn (HAS_RUNES): the earned route waits out her hold
   and records it.
 
-Still required: the fresh chain on current source, a frozen full suite, and Bob's visual/audio/playtest acceptance.
+Still required: the fresh chain on current source, a frozen full suite, and the owner's visual/audio/playtest acceptance.
 
 2026-10-04 certification. The fresh 11-leg earned broken-sword chain run j passed every leg with `CHAIN COMPLETE`.
 `audit_fresh_chain_progress.py` reports **complete=True** (11/11 verified, 0 source changes) against the frozen,
@@ -214,5 +214,5 @@ source-stable suite #6 (211/211). Evidence is in `tmp/handover_evidence/opus_cer
   - Walker realism fixes: face the walk direction, back off when cramped by a curse, jump at ledges, re-select the
     previous spell after a self-heal.
   - The rune-copy mana invariant now allows a level-up.
-- **Not yet complete:** Bob's playtest/visual/audio acceptance is still required. Known gaps: hostile Dawn spells,
+- **Not yet complete:** the owner's playtest/visual/audio acceptance is still required. Known gaps: hostile Dawn spells,
   Huline wander movement, Kelsrick external controls, Jungle item uses, the Museum value19 treasure.

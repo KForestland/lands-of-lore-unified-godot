@@ -34,6 +34,10 @@ KIND_BY_FORMAT = {
     'lol2-restoration-darker-jungle': 'darker',
     'lol2-restoration-dark-halls': 'dark_halls',
 }
+MAP_AREAS = ('L10_DC', 'L12_CM', 'L13_RC', 'L14_HT', 'L16_CA', 'L17_HC', 'L19_BC', 'L20_BB')
+KIND_BY_FORMAT.update({'lol2-restoration-map-' + area: 'map' for area in MAP_AREAS})
+KIND_BY_FORMAT['lol2-restoration-dragon-preview'] = 'map'
+PROGRESSION_AREAS = ('L8_SJ', 'L9_DR', *MAP_AREAS)
 MARKER = 'PLAYTEST_STARTS_VALIDATION '
 
 
@@ -60,6 +64,15 @@ def load_manifest(path=MANIFEST):
                 raise Refused(f'manifest entry {entry["id"]}: source missing {field}')
         if entry['resume'] not in KIND_BY_FORMAT.values():
             raise Refused(f'manifest entry {entry["id"]}: unknown resume kind {entry["resume"]!r}')
+        if entry['resume'] == 'map':
+            area = entry.get('area_id')
+            if area not in PROGRESSION_AREAS:
+                raise Refused(f'manifest entry {entry["id"]}: unknown playtest map')
+            act = 3 if area in ('L16_CA', 'L17_HC', 'L19_BC', 'L20_BB') else 2
+            if entry['act'] != act:
+                raise Refused(f'manifest entry {entry["id"]}: map act disagrees with area')
+            if entry.get('full_health') is not True:
+                raise Refused(f'manifest entry {entry["id"]}: map start requires full_health')
         name = entry['save']
         if Path(name).name != name or not name.endswith('.json') or name.startswith(('.', '_')):
             raise Refused(f'manifest entry {entry["id"]}: unsafe save name {name!r}')
@@ -74,7 +87,11 @@ def describe(path):
     data = json.loads(Path(path).read_text())
     fmt = data.get('format') if isinstance(data, dict) else None
     kind = KIND_BY_FORMAT.get(fmt)
-    print(json.dumps({'save': Path(path).name, 'sha256': digest(path), 'format': fmt,
+    if fmt == 'lol2-restoration-darker-jungle': kind = 'map'
+    area = fmt.removeprefix('lol2-restoration-map-') if kind == 'map' else None
+    if fmt == 'lol2-restoration-dragon-preview': area = 'L9_DR'
+    if fmt == 'lol2-restoration-darker-jungle': area = 'L8_SJ'
+    print(json.dumps({**({'area_id': area, 'full_health': True} if area else {}), 'save': Path(path).name, 'sha256': digest(path), 'format': fmt,
                       'source': {'test': 'FILL', 'commit': 'FILL (40 hex)', 'input_sha256': 'FILL or null'},
                       'identities': {'contains': {'inventory.collected': []}, 'excludes': {}, 'values': {}},
                       'resume': kind or f'UNSUPPORTED ({fmt}): needs a gate resume branch first'}, indent=2))

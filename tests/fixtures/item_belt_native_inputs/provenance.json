@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "scope": "R130 immutable inputs; four existing pinned Cemetery bytes preserved; Larkhon re-pinned to genuine current sweep producer output. Local development only; not publication approval.",
+  "rows": {
+    "emperor_slab": {
+      "producer": "l10_ankh_earned_test",
+      "source_path": "~/opus_work/lol2_sol_r19p_item_repairs/tmp/l10_ankh_earned_save.json",
+      "old_sha256": "47e57b20b031dc975b86d277eeaf545af06d38b6a148587813dd016a24966dd3",
+      "sha256": "47e57b20b031dc975b86d277eeaf545af06d38b6a148587813dd016a24966dd3",
+      "owner_bundle": false,
+      "copy": "byte-for-byte game-written test checkpoint; no packet edits",
+      "aids": "Producer/controller walks, accelerated clock, isolated NPC/story/inventory fixtures and seam aids where declared by the producer chain; not an unaided campaign save. Consumer stand/aim/item/NPC fixtures declared separately in item_belt_native_target_input.gd."
+    },
+    "emperor_door": {
+      "producer": "l10_emperor_earned_test",
+      "source_path": "~/opus_work/lol2_sol_r19p_item_repairs/tmp/l10_emperor_125_occupied_earned_save.json",
+      "old_sha256": "92a6d4a48c5c762a1617bcf456c14ea8adb9c9a5c4c773492f6e90166c07bb8b",
+      "sha256": "92a6d4a48c5c762a1617bcf456c14ea8adb9c9a5c4c773492f6e90166c07bb8b",
+      "owner_bundle": false,
+      "copy": "byte-for-byte game-written test checkpoint; no packet edits",
+      "aids": "Producer/controller walks, accelerated clock, isolated NPC/story/inventory fixtures and seam aids where declared by the producer chain; not an unaided campaign save. Consumer stand/aim/item/NPC fixtures declared separately in item_belt_native_target_input.gd."
+    },
+    "emperor_socket": {
+      "producer": "l10_emperor_supply_earned_test",
+      "source_path": "~/opus_work/lol2_sol_r19p_item_repairs/tmp/l10_emperor_three_globes_earned_save.json",
+      "old_sha256": "d558703dbe420938165a57937a5d2c68351ec47b7307b5a5aad77f3baad2a586",
+      "sha256": "d558703dbe420938165a57937a5d2c68351ec47b7307b5a5aad77f3baad2a586",
+      "owner_bundle": false,
+      "copy": "byte-for-byte game-written test checkpoint; no packet edits",
+      "aids": "Producer/controller walks, accelerated clock, isolated NPC/story/inventory fixtures and seam aids where declared by the producer chain; not an unaided campaign save. Consumer stand/aim/item/NPC fixtures declared separately in item_belt_native_target_input.gd."
+    },
+    "priest_ashes": {
+      "producer": "l10_ashes_return_earned_test",
+      "source_path": "~/opus_work/lol2_sol_r19p_item_repairs/tmp/l10_ashes_return_earned_save.json",
+      "old_sha256": "fd9773d66a488e7a1965af6ed4c58002a72b3845de54fc6c8025fd0245e1fcf8",
+      "sha256": "fd9773d66a488e7a1965af6ed4c58002a72b3845de54fc6c8025fd0245e1fcf8",
+      "owner_bundle": false,
+      "copy": "byte-for-byte game-written test checkpoint; no packet edits",
+      "aids": "Producer/controller walks, accelerated clock, isolated NPC/story/inventory fixtures and seam aids where declared by the producer chain; not an unaided campaign save. Consumer stand/aim/item/NPC fixtures declared separately in item_belt_native_target_input.gd."
+    },
+    "larkhon": {
+      "producer": "l8_larkhon_earned_test",
+      "source_path": "~/opus_work/shards_r130/lol2_shard_1/tmp/l8_larkhon_active_earned_save.json",
+      "old_sha256": "d29bedd17f3ce5f4394237fc6353570ad645ca848b337ad7d0d151b61c6ef2f8",
+      "sha256": "80a4dea2c9563e3ab2bb4934d5f1bae98077eb91c4063ec223c0d784ece4f7f3",
+      "owner_bundle": false,
+      "copy": "byte-for-byte game-written test checkpoint; no packet edits",
+      "aids": "Producer/controller walks, accelerated clock, isolated NPC/story/inventory fixtures and seam aids where declared by the producer chain; not an unaided campaign save. Consumer stand/aim/item/NPC fixtures declared separately in item_belt_native_target_input.gd."
+    }
+  }
+}

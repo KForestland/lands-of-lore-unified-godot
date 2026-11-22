@@ -60,6 +60,8 @@ func step(name: String, start: Dictionary, departed: float, remainder: float, wa
 	receipt.snapshots[name] = now
 	return compare(name, start, now, allowed)
 func run() -> void:
+	# A failed first phase must not leave a staged/previous receipt available to restart.
+	if FileAccess.file_exists(DIR+"room_phase1.json"):DirAccess.remove_absolute(DIR+"room_phase1.json")
 	DirAccess.make_dir_recursive_absolute(DIR)
 	var earned := OS.get_environment("LOL2_EARNED_SAVES")
 	if not check(not earned.is_empty() and FileAccess.file_exists(earned.path_join(SAVE)),"LOL2_EARNED_SAVES with %s required" % SAVE): return
@@ -70,6 +72,7 @@ func run() -> void:
 		"supplied": ["S1 main village gate open (local24=1, pose 100)", "S2 start at village_to_followup point 0"]}
 	scene = await open_fresh("res://scenes/lol2/jungle_walkthrough.tscn")
 	if not await load_click(scene, copy): return
+	scene = current_scene
 	rooms = scene.monastery
 	routes = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/hive_quest_walk_routes.json"))
 	Engine.time_scale = 4.0; Engine.physics_ticks_per_second = 240

@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Museum urn189/195 activate placed items17/18. Source, art, and native filter: museum_ivory_source.json.
 ## Uses existing melee/E/Spark controls. Original sounds and non-Spark spell hits remain unhosted.
 ## Both decoded selector images are identical; hide the spent urn as a clear modern break presentation.
@@ -81,6 +82,6 @@ func interaction_hint() -> String: return "E — Take Ivory Chip" if offered()>=
 func use() -> bool:
 	var i:=offered()
 	if i<0: return false
-	if not State.take(state,i,host.carried_collected,Catalog.MAX_CARRIED):
+	if not State.take(state,i,Grants.pack(host),Catalog.MAX_CARRIED):
 		host.save_feedback("You cannot carry more.");return true
 	present();host.save_feedback("Ivory Chip added to inventory.");return true

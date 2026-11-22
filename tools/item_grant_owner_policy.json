@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "default": "log",
+  "rule": "No automatic live grants; named existing-owner overlaps remain owner. No interpretation of argument bytes. Prop99 serum must never become an extra free serum.",
+  "owners": [
+    {
+      "area": "L19_BC",
+      "object": "prop:222",
+      "definition": 22,
+      "owner": "l19_belial_horn.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L12_CM",
+      "object": "prop:4",
+      "definition": 81,
+      "owner": "l12_citadel.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L8_SJ",
+      "group": 4340,
+      "definition": 76,
+      "owner": "l8_dawn.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L8_SJ",
+      "group": 2530,
+      "definition": 119,
+      "owner": "l8_shaman_trade.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L8_SJ",
+      "group": 12234,
+      "definition": 119,
+      "owner": "l8_shaman_trade.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L8_SJ",
+      "group": 2358,
+      "definition": 128,
+      "owner": "l8_larkhon.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L13_RC",
+      "object": "prop:174",
+      "owner": "l13_altar.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L13_RC",
+      "object": "prop:175",
+      "owner": "l13_altar.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L13_RC",
+      "object": "prop:326",
+      "definition": 136,
+      "owner": "l13_altar.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L14_HT",
+      "group": 15150,
+      "owner": "l14_trials.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L14_HT",
+      "group": 15210,
+      "owner": "l14_trials.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L14_HT",
+      "group": 15378,
+      "owner": "l14_trials.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    },
+    {
+      "area": "L14_HT",
+      "group": 16904,
+      "owner": "l14_post_shard.gd",
+      "evidence": "ITEM_GRANT_PLAN rev4 section2.6: existing hand-written counterpart; overlap safeguard only. Original argument meaning UNKNOWN."
+    }
+  ]
+}

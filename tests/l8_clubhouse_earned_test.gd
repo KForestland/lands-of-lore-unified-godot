@@ -12,6 +12,7 @@ func run():
  prepare(scene)
  var club=scene.get_node("L8Clubhouse")
  check(not club.interact().ok,"remote clubhouse refused")
+ check(not Club.guard_due(false,{"health":500}) and not Club.guard_due(true,{"health":0}) and Club.guard_due(true,{"health":500}),"guard21 only for a member, and never again once dead")
  check(not Club.validate({"version":1,"opened":true},{}).is_empty(),"membership required in saved admission")
  for id in Club.STONES:check(not scene.act2_items.take(id),"closed clubhouse refuses stone pickup")
  var route:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/l8_clubhouse_walk.json"))

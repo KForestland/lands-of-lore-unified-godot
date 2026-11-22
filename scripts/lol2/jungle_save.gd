@@ -1,4 +1,5 @@
 extends RefCounted
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 ## Restoration jungle save; isolated from museum and original DOS save files.
 const FORMAT := "lol2-restoration-jungle"
@@ -17,7 +18,7 @@ static func validate_inventory(state: Variant) -> String:
 	if state.has("fighting"):
 		var fighting := preload("res://scripts/lol2/player_fighting_transport.gd").restore(state.fighting)
 		if fighting.has("error"): return fighting.error
-	if state.has("health") and (not Museum.within(state.health,1,30) or state.health != int(state.health)): return "Invalid player health."
+	if state.has("health") and (not Museum.within(state.health,1,PlayerHealth.limit_from_effects(state.get("item_effects",{}))) or state.health != int(state.health)): return "Invalid player health."
 	if state.has("player_form") and not preload("res://scripts/lol2/player_form_body.gd").valid(state.player_form): return "Invalid player form."
 	if state.has("curse") and not preload("res://scripts/lol2/player_curse.gd").valid(state.curse,state.get("player_form",0)): return "Invalid curse state."
 	var ids = state.get("collected")

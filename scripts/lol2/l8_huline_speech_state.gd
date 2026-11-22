@@ -1,6 +1,10 @@
 extends RefCounted
 const KEY:="l8_huline_speech"
 const CUES:={"93":237,"92":1012,"23":1016,"82":1016}
+## Withheld cues are never started (lead 2026-11-17): the owner heard cue 93 (selector 237) on the good path as an evil-Luther
+## line ('I took it from your mother's corpse', r19p F10 14-48-12), so its selector -> clip binding is unverified. Saves that
+## already hold it stay valid; a save caught mid-line on it ends the line at once.
+const WITHHELD:=["93"]
 const SAMPLES:={237:37632,1012:31296,1016:53696}
 static func duration(id:String)->float:return float(SAMPLES[CUES[id]])/22050.0
 static func initial()->Dictionary:return {"version":1,"heard":[],"active":"","elapsed":0.0}

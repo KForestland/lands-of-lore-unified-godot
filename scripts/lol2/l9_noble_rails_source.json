@@ -17,7 +17,7 @@
      "kind": 5,
      "offset": 8376,
      "predicate": null,
-     "raw_hex": "060596430100",
+     "raw_hex": "omitted 6 bytes sha256:d268c0c9b7fae063ab545b83e5916f9c36fc34f4deace28ba4f4ee63150d1957",
      "stream": 1,
      "value": 1
     }
@@ -26,7 +26,7 @@
    "index": 478,
    "list_file_offset": 23249618,
    "list_offset": 8376,
-   "placement_hex": "7903c51500007d008104f211b8207f000000000001000000000000003400a40016",
+   "placement_hex": "omitted 33 bytes sha256:ec4b6603f9a60417ba3924ff478c9d7b65c28b6385f1bc8d852592c12618d6fb",
    "ref": "control:478",
    "table": "control",
    "terminator_offset": 8382
@@ -40,7 +40,7 @@
      "kind": 5,
      "offset": 8384,
      "predicate": null,
-     "raw_hex": "0605a8430100",
+     "raw_hex": "omitted 6 bytes sha256:34f216df773af5a57487ec9001f085b090fb9ea4141593414435a0ba84a34150",
      "stream": 1,
      "value": 1
     }
@@ -49,7 +49,7 @@
    "index": 479,
    "list_file_offset": 23249626,
    "list_offset": 8384,
-   "placement_hex": "8501c51500007d008104f711c0207f000000000001000000000000003400a40016",
+   "placement_hex": "omitted 33 bytes sha256:5a0facb797721b03026833440a5400b8b5d3811b812749a62c76b696dc7df018",
    "ref": "control:479",
    "table": "control",
    "terminator_offset": 8390
@@ -63,7 +63,7 @@
      "kind": 5,
      "offset": 8392,
      "predicate": null,
-     "raw_hex": "0605ba430100",
+     "raw_hex": "omitted 6 bytes sha256:d8b63ceb6125c41187849fb804b68ebe6f57cf5c2feb4af4d761449b13d15955",
      "stream": 1,
      "value": 1
     }
@@ -72,7 +72,7 @@
    "index": 480,
    "list_file_offset": 23249634,
    "list_offset": 8392,
-   "placement_hex": "7f02c51500007d008104f011c8207f000000000001000000000000003400a40016",
+   "placement_hex": "omitted 33 bytes sha256:afb0d9e8e59abf5727c3ab1886f6818fcede2f0e3c6ff73bde2d3fdda4f2278d",
    "ref": "control:480",
    "table": "control",
    "terminator_offset": 8398
@@ -86,7 +86,7 @@
      "kind": 16,
      "offset": 17308,
      "opcode": 9,
-     "raw_hex": "0910de010b00",
+     "raw_hex": "omitted 6 bytes sha256:6db34cb11226f5987425558b7dc7858f374dc92a6ba3013ab7d9026fa04d4965",
      "target": 478
     },
     {
@@ -94,15 +94,15 @@
      "kind": 16,
      "offset": 17314,
      "opcode": 5,
-     "raw_hex": "0510de010100",
+     "raw_hex": "omitted 6 bytes sha256:56ddc910b1b734805fda3d81958c0c3e8d29b815a6bcaa9ca95a8e6960039e19",
      "target": 478
     }
    ],
    "count": 2,
    "file_offset": 23237636,
    "group": 17302,
-   "header_hex": "f00000000200",
-   "raw_hex": "f000000002000910de010b000510de010100",
+   "header_hex": "omitted 6 bytes sha256:7b35f3960229e148cb5d4e144d36cdcfb242dd8be83d9ec3ef78b8b5c09f3ea4",
+   "raw_hex": "omitted 18 bytes sha256:0ddd513768971eb6482687bb086a9e049e193024447c481979b977f3beb9841e",
    "stream": 1
   },
   {
@@ -112,7 +112,7 @@
      "kind": 16,
      "offset": 17326,
      "opcode": 9,
-     "raw_hex": "0910df010b00",
+     "raw_hex": "omitted 6 bytes sha256:fe4b6eeeebfa0f078c8eff29e1144e2979398ec5c048b7972b7e0dbfa640c24c",
      "target": 479
     },
     {
@@ -120,15 +120,15 @@
      "kind": 16,
      "offset": 17332,
      "opcode": 5,
-     "raw_hex": "0510df010100",
+     "raw_hex": "omitted 6 bytes sha256:bd26245e1e86e482f5e63a896cec3bd33b4bb26b227ff04fc2d7ceae211cf463",
      "target": 479
     }
    ],
    "count": 2,
    "file_offset": 23237654,
    "group": 17320,
-   "header_hex": "f00000000200",
-   "raw_hex": "f000000002000910df010b000510df010100",
+   "header_hex": "omitted 6 bytes sha256:7b35f3960229e148cb5d4e144d36cdcfb242dd8be83d9ec3ef78b8b5c09f3ea4",
+   "raw_hex": "omitted 18 bytes sha256:066c1cc49b8f1e7d42c5ca15086470af8cfcf6797690424ae60bc043d4ea8366",
    "stream": 1
   },
   {
@@ -138,7 +138,7 @@
      "kind": 16,
      "offset": 17344,
      "opcode": 9,
-     "raw_hex": "0910e0010b00",
+     "raw_hex": "omitted 6 bytes sha256:16a58b1da336c998dcc656ff7f4c56fd52eb4c8176c3bdc60fb7d64dac44ced7",
      "target": 480
     },
     {
@@ -146,15 +146,15 @@
      "kind": 16,
      "offset": 17350,
      "opcode": 5,
-     "raw_hex": "0510e0010100",
+     "raw_hex": "omitted 6 bytes sha256:81a389aebfb42adfddff6dc509c1a124c672a7a94c9d80133c043d08a38c4c70",
      "target": 480
     }
    ],
    "count": 2,
    "file_offset": 23237672,
    "group": 17338,
-   "header_hex": "f00000000200",
-   "raw_hex": "f000000002000910e0010b000510e0010100",
+   "header_hex": "omitted 6 bytes sha256:7b35f3960229e148cb5d4e144d36cdcfb242dd8be83d9ec3ef78b8b5c09f3ea4",
+   "raw_hex": "omitted 18 bytes sha256:8401078923438dc3a8f969f15037f16fd7d4374c8f14ab6d497ca10b25281f27",
    "stream": 1
   }
  ],

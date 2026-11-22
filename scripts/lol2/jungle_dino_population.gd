@@ -1,4 +1,6 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## Live L4_HJ DINO herds. State: quests.jungle_dino_population (travels with quests).
 ## Source positions/150HP/scale4, original indexed selectors and bite damage request;
 ## perception, steering and clip clocks are documented adapters.
@@ -11,8 +13,8 @@ const Net=preload("res://scripts/lol2/net_exile_hold.gd")
 const Prism=preload("res://scripts/lol2/prism_blind.gd")
 ## Same creature pixel scale as the cave Roach presentation (adapter).
 const UNITS_PER_PIXEL:=0.21818181818181817
-const STRIKE_COOLDOWN:=0.45
-const STRIKE_REACH:=110.0
+const STRIKE_COOLDOWN:=PlayerCombat.COOLDOWN
+const STRIKE_REACH:=PlayerCombat.REACH_CREATURE
 var host: Node3D
 var bodies: Dictionary={}
 var sprites: Dictionary={}
@@ -109,7 +111,7 @@ func advance(delta: float) -> void:
 		for id in bodies: bodies[id].velocity=Vector3.ZERO
 		return
 	if strike_remaining>0:
-		strike_remaining=maxf(0.0,snappedf(strike_remaining-delta,1.0/1024))
+		strike_remaining=PlayerCombat.cooldown_tick(strike_remaining,delta,1.0/1024)
 	# Work on the read view; quests gain the packet only once something changes.
 	var s:=view()
 	var changed:=false
@@ -238,25 +240,18 @@ func receive_damage(id: String, amount: int, melee: bool=true, effect: int=20) -
 	return true
 
 func aimed() -> String:
-	var origin: Vector3=host.camera.global_position
-	var forward: Vector3=-host.camera.global_basis.z
-	var query:=PhysicsRayQueryParameters3D.create(origin,origin+forward*STRIKE_REACH,3,[host.player.get_rid()])
-	var hit: Dictionary=get_world_3d().direct_space_state.intersect_ray(query)
+	var hit: Dictionary=PlayerCombat.aim_ray(host,STRIKE_REACH,3)
 	if hit.is_empty() or not hit.collider.has_meta("population_owner") or hit.collider.get_meta("population_owner")!=self: return ""
 	return str(hit.collider.get_meta("population_actor"))
 
 func strike() -> bool:
-	if not world_active() or strike_remaining>0: return false
+	if not world_active() or not PlayerCombat.cooldown_ready(strike_remaining): return false
 	strike_remaining=STRIKE_COOLDOWN  # unarmed human melee allowed (manual printed 7/39 hand attack; melee_damage gives 4)
 	var id:=aimed()
 	if id.is_empty(): return false
-	var damage: int=Forms.melee_damage(host.player_form,host.equipped_item!="")
-	if host.get("item_effects")!=null and host.item_effects.has_method("melee_damage"): damage=host.item_effects.melee_damage(damage)
+	var damage: int=PlayerCombat.damage(host,true)
 	if not receive_damage(id,damage): return false
-	preload("res://scripts/lol2/item_handlers.gd").record_hit(str(host.equipped_item))
-	net_hit(id,str(host.equipped_item))
-	prism_hit(id,str(host.equipped_item))
-	return CombatFeedback.landed(true)
+	return PlayerCombat.after_landed(host,self,id,{"poison":false,"record":true,"net":true,"prism":true})
 
 ## Net of Exile on a landed hit (net_exile_hold.gd).
 func net_hit(id: String, item: String) -> bool:
@@ -283,7 +278,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if aimed()!="" and strike(): get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_R and host.starting_magic!=null and host.starting_magic.health()==0:
 		# Retry like the Hive: recover here, creature defeats and positions retained.
-		host.starting_magic.set_health(30)
+		host.starting_magic.set_health(PlayerHealth.MAXIMUM)
 		for id in bodies: state().live[id].merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false},true)
 		get_viewport().set_input_as_handled()
 

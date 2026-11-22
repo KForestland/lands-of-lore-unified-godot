@@ -1,0 +1,32 @@
+{
+  "name": "generic_l13_rollout_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Three rendered components on pinned C15, supplied grounded stands, held root/NPC clocks, actual native vault/pickups/F5F9. Native root/pad API preserved; no earned campaign claim."
+  },
+  "teleports": 1,
+  "test_aids": 9,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "9646dfbba4746026835476fe6d05b6fd1d9bf3b1c0930644a5e6ed39e20740bc"
+  },
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 26,
+        "column": 37,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(file).instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 10
+}

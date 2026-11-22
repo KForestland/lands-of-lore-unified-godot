@@ -138,8 +138,8 @@ func run() -> void:
 		if not check(not ctrl.restore(packet).is_empty() and ctrl.checkpoint()==good,"Malformed packet %d accepted or mutated"%bad.find(packet)):return
 	# Wax runes held through the production inventory, offered with a real E: rewards, consumption, farewell.
 	if not check(await face_dawn(),"No open approach to Dawn"):return
-	# Modern prompt (owner r12h 2026-10-26): runes carried but not in hand -> "hold them"; held -> "E — give".
-	if not check(ctrl.interaction_hint().begins_with("Hold the Wax runes"),"Carried-runes prompt '%s'"%ctrl.interaction_hint()):return
+	# The smart belt now offers E for carried runes; this direct legacy-owner call still needs a held item.
+	if not check(ctrl.interaction_hint()=="E — give the Wax runes to Dawn","Carried-runes prompt '%s'"%ctrl.interaction_hint()):return
 	ctrl._process(0.0)
 	if not check(scene.interface_hud.hint.text==ctrl.interaction_hint(),"Prompt not on the hint line"):return
 	press_e()
@@ -176,5 +176,5 @@ func run() -> void:
 	ctrl.advance(1.0/30.0)
 	if not check(int(ctrl.state.health)==0 and ctrl.targets().is_empty() and ctrl.state.hit_latches==[30266],"Hostile Dawn not killable"):return
 	if not save_roundtrip("Dead"):return
-	print("PASS: live Dawn63 on the Jungle host: rune-gated spawn at 2812, frustum/ray first sighting idle loop, 2842 talk seg1..3 with full input hold, waiting held in place with inventory/E live, host save/JSON/quest validation/atomic restore, malformed rejected unchanged; empty E none; modern hint 'Hold the Wax runes' then 'E — give the Wax runes to Dawn' (gone after the offer); inventory-held wax runes: Soul+2 (5→7), Dawn+1 capped 2, GAVE_DAWN_RUNES, +500 fighting/+500 magic XP, runes taken → farewell release; second run (never looked at her before 2842: region entry counts as noticing, talk plays, no soft-lock): real sword strike → one-shot hit Soul-1 Dawn-1 seg12 → hostile state50 with her own item (no loot), spell/strike target, killable, saved")
+	print("PASS: live Dawn63 on the Jungle host: rune-gated spawn at 2812, frustum/ray first sighting idle loop, 2842 talk seg1..3 with full input hold, waiting held in place with inventory/E live, host save/JSON/quest validation/atomic restore, malformed rejected unchanged; empty E none; modern hint 'E — give the Wax runes to Dawn' for carried or held runes (gone after the offer); inventory-held wax runes: Soul+2 (5→7), Dawn+1 capped 2, GAVE_DAWN_RUNES, +500 fighting/+500 magic XP, runes taken → farewell release; second run (never looked at her before 2842: region entry counts as noticing, talk plays, no soft-lock): real sword strike → one-shot hit Soul-1 Dawn-1 seg12 → hostile state50 with her own item (no loot), spell/strike target, killable, saved")
 	quit()

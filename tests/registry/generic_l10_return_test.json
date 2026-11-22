@@ -1,0 +1,54 @@
+{
+  "name": "generic_l10_return_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Checkpoint continuation only: realF2 then installs SHA-pinned untouched yellow44 game-written F5 document into slot1 and realF9. Subsequent realW/E native travel/F5, ordinary1/60, no supplied pose/health/action-handler/clock aids. Incoming checkpoint upstream provenance in AI_COMMS generic_l10_20261112/earned_checkpoints; not the final fresh-F2 whole-pilot sitting. Original LOLG.EXE env is mandatory at runtime: missing fails, never skips."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "c4358f902a4e94e9d1d12a0380db8c12796c40064af3e0156971abd8780d01d7"
+  },
+  "context_aid_source_sites": {
+    "count": 4,
+    "sites": [
+      {
+        "path": "tests/generic_l10_return_test.gd",
+        "line": 10,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(INPUT,Slots.slot_path(1))==OK,\"Install the genuine checkpoint into player slot1\"):return"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 5,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

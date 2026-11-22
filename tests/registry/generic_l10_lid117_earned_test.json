@@ -1,0 +1,54 @@
+{
+  "name": "generic_l10_lid117_earned_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "test_aids": 1,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Untouched actual v4 yellow44 F5 SHAa57ae908a289c44d2be4593327d19c8dbb7295ac4c63b99aa66bdb76768eba09 installed for actual F2/F9 continuation. Real W returns up stairs, real E spends earned yellow44 at socket99/open100, then walks to former stand and east-side lid117 use. Wall204 retained; ordinary1/60, live NPCs, continuous read-only body trace, actualF5 checkpoints. No supplied pose/health/clock/action writes. Conservative inherited unused until.call is counted as a source-site aid, not an execution."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "87f753c7ce2cb5ad2c80c6015c60f32fb7672b3d8f59757b0e7c77d0227955b1"
+  },
+  "context_aid_source_sites": {
+    "count": 4,
+    "sites": [
+      {
+        "path": "tests/generic_l10_lid117_earned_test.gd",
+        "line": 22,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(INPUT,Slots.slot_path(1))==OK,\"Install earned yellow44 checkpoint for actualF9\"):return"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 5,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

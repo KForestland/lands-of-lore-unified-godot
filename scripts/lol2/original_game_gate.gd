@@ -1,4 +1,5 @@
 extends Control
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 
 const Check = preload("res://scripts/lol2/original_game_check.gd")
 const MuseumSave = preload("res://scripts/lol2/museum_save.gd")
@@ -17,6 +18,8 @@ var museum_save_path := MuseumSave.DEFAULT_PATH
 var jungle_save_path := JungleSave.DEFAULT_PATH
 var hive_save_path := HiveSave.DEFAULT_PATH
 var darker_save_path := Darker.DEFAULT_PATH
+## True only inside start_playtest for an entry that pins "full_health" (owner 2026-11-10: the F2 darker start arrives at full health).
+var start_full_health := false
 var dark_halls_save_path := DarkHalls.DEFAULT_PATH
 var path_field: LineEdit
 var status: Label
@@ -61,6 +64,12 @@ func _ready() -> void:
 		starts.focus_mode = Control.FOCUS_NONE
 		starts.pressed.connect(show_playtest_starts)
 		column.add_child(starts)
+	var saves := HBoxContainer.new();column.add_child(saves)
+	var continue_button:=Button.new();continue_button.name="Continue";continue_button.text="Continue"
+	continue_button.disabled=preload("res://scripts/lol2/game_save.gd").newest().is_empty()
+	continue_button.pressed.connect(_continue_save);saves.add_child(continue_button)
+	var load_button:=Button.new();load_button.name="LoadGame";load_button.text="Load game"
+	load_button.pressed.connect(_show_save_slots);saves.add_child(load_button)
 	var buttons := HBoxContainer.new()
 	column.add_child(buttons)
 	var browse := Button.new()
@@ -145,6 +154,10 @@ func _ready() -> void:
 		_verify_and_start.bind(false, false, false, false, false, false, "", true).call_deferred()
 		return
 	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--load-bundle=") and not path_field.text.is_empty():
+			load_bundle.bind(argument.trim_prefix("--load-bundle=")).call_deferred()
+			return
+	for argument in OS.get_cmdline_user_args():
 		if argument.begins_with("--playtest-start=") and not path_field.text.is_empty():
 			start_playtest.bind(argument.trim_prefix("--playtest-start=")).call_deferred()
 			return
@@ -157,7 +170,7 @@ func _ready() -> void:
 				if str(entry.area) == argument.trim_prefix("--map-preview="):
 					_verify_and_start.bind(false, false, false, false, false, false, str(entry.scene)).call_deferred()
 					return
-	if not path_field.text.is_empty() and not FileAccess.file_exists(museum_save_path) and not FileAccess.file_exists(jungle_save_path) and not FileAccess.file_exists(hive_save_path) and not FileAccess.file_exists(darker_save_path) and not FileAccess.file_exists(dark_halls_save_path):
+	if not path_field.text.is_empty() and not preload("res://scripts/lol2/game_save.gd").has_slot_files() and not FileAccess.file_exists(museum_save_path) and not FileAccess.file_exists(jungle_save_path) and not FileAccess.file_exists(hive_save_path) and not FileAccess.file_exists(darker_save_path) and not FileAccess.file_exists(dark_halls_save_path):
 		_verify_and_start.call_deferred()
 
 ## Playtest starts (docs/playtest-starts.md): F2 or the button opens a plain list of story checkpoints. Each is a real
@@ -198,9 +211,10 @@ func _build_playtest_starts() -> void:
 	column.add_child(heading)
 	var help := Label.new()
 	help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	help.text = "Start at a story point. Each start is a real save earned by the automated playthrough tests and opens through the normal Resume. Your own saves are not changed until you save (F5). F2 or Esc closes this list."
+	help.text = "Story checkpoints earned by automated route tests. Act 2/3 starts restore full health; older checkpoints can reset native puzzles on other maps. Manual slots are kept; normal autosaves apply. F2 or Esc closes this list."
 	column.add_child(help)
 	var scroll := ScrollContainer.new()
+	scroll.follow_focus = true
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	column.add_child(scroll)
@@ -231,6 +245,20 @@ func _build_playtest_starts() -> void:
 
 ## Start one manifest entry through the gate's own resume branch for its area: the branch's save path is pointed at the
 ## staged res:// file for this one call (reader, validator, resume meta and scene unchanged), then restored.
+## G-08: open an F10 bundle's save.json (or its report folder) after verifying the original game, like a slot load.
+func load_bundle(path: String) -> void:
+	if DirAccess.dir_exists_absolute(path): path = path.path_join("save.json")
+	if not _verify_save_access().is_empty(): return
+	var tree := get_tree()  # the gate leaves the tree when the load changes scene
+	var error: String = preload("res://scripts/lol2/game_save.gd").load_file(tree, path)
+	if not error.is_empty():
+		status.text = error
+		print("Bundle load blocked: ", error)
+		return
+	# --hold-after-load: stay paused at the loaded spot until the first key press (load_hold.gd, on the root).
+	if "--hold-after-load" in OS.get_cmdline_user_args():
+		tree.root.add_child(preload("res://scripts/lol2/load_hold.gd").new())
+
 func start_playtest(id: String) -> void:
 	var entry := {}
 	for candidate in Starts.manifest().entries:
@@ -246,6 +274,18 @@ func start_playtest(id: String) -> void:
 	if not error.is_empty():
 		report.call(error)
 		return
+	if str(entry.resume) == "map":
+		var read := Starts.read(entry)
+		if not read.error.is_empty(): report.call(read.error); return
+		var identity := Starts.identity_error(entry,read.state)
+		if not identity.is_empty(): report.call(identity); return
+		# Recheck the pin after reading, before any session/scene mutation.
+		var pin_error := Starts.file_error(entry)
+		if not pin_error.is_empty(): report.call(pin_error); return
+		if not _verify_save_access().is_empty(): return
+		var resumed: String = preload("res://scripts/lol2/game_save.gd").resume_checkpoint(get_tree(),entry.area_id,read.state,true)
+		if not resumed.is_empty(): report.call(resumed)
+		return
 	var path := Starts.save_path(entry)
 	var kept := [museum_save_path, jungle_save_path, hive_save_path, darker_save_path, dark_halls_save_path]
 	match str(entry.resume):
@@ -255,7 +295,9 @@ func start_playtest(id: String) -> void:
 		"darker": darker_save_path = path
 		"dark_halls": dark_halls_save_path = path
 	print("Playtest start: ", entry.id, " (", entry.save, ")")
+	start_full_health = bool(entry.get("full_health", false))
 	_verify_and_start(entry.resume == "museum", entry.resume == "jungle", entry.resume == "hive", entry.resume == "darker", entry.resume == "dark_halls")
+	start_full_health = false
 	museum_save_path = kept[0]; jungle_save_path = kept[1]; hive_save_path = kept[2]; darker_save_path = kept[3]; dark_halls_save_path = kept[4]
 	if starts_status != null and not status.text.is_empty(): starts_status.text = status.text
 
@@ -264,17 +306,8 @@ func start_playtest(id: String) -> void:
 ## --l8-preview still starts it at once. The Classic Act 1 chain itself reaches that scene only through act_one_departure.
 
 func _verify_and_start(resume_museum: bool = false, resume_jungle: bool = false, resume_hive: bool = false, resume_darker: bool = false, resume_dark_halls: bool = false, preview_darker: bool = false, preview_map_scene: String = "", preview_dragon: bool = false) -> void:
-	get_tree().set_meta("original_game_verified", false)
-	var error := Check.verify(path_field.text)
-	if not error.is_empty():
-		status.text = error
-		print("Original game verification blocked: ", error)
-		return
-	var config := ConfigFile.new()
-	config.set_value("original_game", "exe_path", path_field.text)
-	config.save(settings_path) # Only the path is remembered; never cache approval.
-	get_tree().set_meta("original_game_verified", true)
-	print("Original game executable verified (SHA-256).")
+	if not _verify_save_access().is_empty(): return
+	preload("res://scripts/lol2/game_session.gd").for_tree(get_tree()).reset_legacy()
 	var scene_path := "res://scenes/lol2/cave_walkthrough.tscn"
 	if resume_museum:
 		var saved := MuseumSave.read_save(museum_save_path)
@@ -314,6 +347,7 @@ func _verify_and_start(resume_museum: bool = false, resume_jungle: bool = false,
 		if not Darker.arrival_assets_ready():
 			status.text = "Darker jungle assets are missing from this build."
 			return
+		if start_full_health: saved.state.inventory.health = PlayerHealth.MAXIMUM
 		get_tree().set_meta("lol2_darker_resume",saved.state)
 		scene_path = "res://scenes/lol2/darker_jungle.tscn"
 	elif preview_darker:
@@ -355,3 +389,28 @@ func _verify_and_start(resume_museum: bool = false, resume_jungle: bool = false,
 		if resume_darker: get_tree().remove_meta("lol2_darker_resume")
 		if resume_dark_halls: get_tree().remove_meta("lol2_dark_halls_resume")
 		status.text = "Could not load the game. Extract the complete demo ZIP and try again."
+
+func _verify_save_access() -> String:
+	get_tree().set_meta("original_game_verified", false)
+	var error := Check.verify(path_field.text)
+	if not error.is_empty():
+		status.text = error
+		print("Original game verification blocked: ", error)
+		return error
+	var config := ConfigFile.new()
+	config.set_value("original_game", "exe_path", path_field.text)
+	config.save(settings_path) # Only the path is remembered; never cache approval.
+	get_tree().set_meta("original_game_verified", true)
+	print("Original game executable verified (SHA-256).")
+	return ""
+
+func _continue_save() -> void:
+	if not _verify_save_access().is_empty():return
+	var row:=preload("res://scripts/lol2/game_save.gd").newest()
+	if row.is_empty():status.text="No valid save found.";return
+	status.text=preload("res://scripts/lol2/game_save.gd").load(get_tree(),row.id,row.get("use_backup",false))
+
+func _show_save_slots() -> void:
+	var panel:=preload("res://scripts/lol2/save_slots_panel.gd").new()
+	panel.verify_load=_verify_save_access
+	add_child(panel)

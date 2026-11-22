@@ -1,6 +1,6 @@
 extends "res://tests/l12_logs_approach_earned_test.gd"
-## STORY-068: earned L16 ground save -> avenue route from build_nav_walk.py -> pad click breaks prop 210.
-## Region 9806 is bit0, so the tool route ends on region 9732. The click stands on the pad.
+## STORY-068: earned L16 ground save -> south avenue -> west ledge to region 9810 -> aimed click breaks prop 210.
+## Region 9806 (the pad) is bit0. The open ledge is 9741, 9765, corridor 9768, then the stair 9809-9811.
 func key(code: Key) -> void:
 	var e := InputEventKey.new(); e.keycode = code; e.pressed = true
 	Input.parse_input_event(e); Input.flush_buffered_events(); await process_frame
@@ -45,9 +45,11 @@ func run():
 	if not await walk(scene, route, "ground save to the south avenue"):
 		await stop(scene, 1); return
 	print("AVENUE ", scene.player.position)
-	# Floor 50, body origin 82. This stands inside region 9806 and clear of the orb.
-	scene.player.position = Vector3(438, 82, 10390)
-	scene.player.velocity = Vector3.ZERO
+	# Pad 9806 is bit0. The west ledge stays open: avenue 9732, ledge 9765, corridor 9768, stair to 9810.
+	var ledge: Array = [[429, 9755], [230, 9755], [29.5, 9755], [20, 9755], [7.5, 9849.5], [-65.5, 9871.5], [-115, 9930], [-115, 10250], [-115, 10295], [-115, 10350], [20, 10435], [50, 10435], [180, 10435], [360, 10415]]
+	if not await walk(scene, ledge, "west ledge to the fountain"):
+		await stop(scene, 1); return
+	print("LEDGE ", scene.player.position, " region ", scene.progression.region_at(scene.player.position))
 	scene.camera.look_at(fountain.ORB, Vector3.UP)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	await process_frame
@@ -92,5 +94,5 @@ func run():
 	var kept: bool = fountain.state().broken and fountain.state().taken.map(func(v): return int(v)) == [0]
 	if not check(kept, "save keeps the break"):
 		await stop(scene, 1); return
-	print("PASS earned L16 ground -> south avenue -> prop 210 breaks -> water -> one black lichen -> save/reload")
+	print("PASS earned L16 ground -> south avenue -> west ledge -> prop 210 breaks -> water -> one black lichen -> save/reload")
 	await stop(scene, 0)

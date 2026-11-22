@@ -1,14 +1,14 @@
 extends Node3D
 ## STORY-091 (HINTBOOK 5535-5546). Actor 46 is the only DRARACLE placement.
-## No kill flag is stored. Crystal Keys 0, 1, and 2 opcode 1 door pairs.
-## Opcode 1 was not entered, so the doors stay at current travel.
-## Actor 75 is the BELIAL placement in region 177. No speech cstring was copied.
+## Crystal Keys 0, 1, and 2 follow the kill. Opcode 1 was not entered, so the
+## moving leaf is an adapter. Actor 75 is the BELIAL placement in region 177.
+## No speech cstring was copied. The line below is the book sentence, logged.
 const KEY := "l20_faux_draracle"
 const DRARACLE := 46
 const BELIAL := 75
 const GATEWAY := 52
 const KEYS := [0, 1, 2]
-const SPEECH := ""
+const SPEECH := "Fight him any way you please."
 const AT_46 := Vector3(-6921, -50, -4828)
 const AT_0 := Vector3(-4636, -30, -4913)
 const AT_1 := Vector3(-3485, -50, -4749)
@@ -17,19 +17,22 @@ const AT_75 := Vector3(-1238, -10, -3207)
 const REACH := 20.0
 var host: Node3D
 var hint: Label
+var stage: Label
+var body: MeshInstance3D
+var door: MeshInstance3D
 
 static func initial() -> Dictionary:
 	return {"version": 1, "struck": false, "killed": false, "keys": [], "room": false, "belial_seen": false}
 
-static func moves_doors() -> bool:
-	return false
+func moves_doors() -> bool:
+	return bool(state().room)
 
 static func validate(s: Variant, _quests: Dictionary = {}) -> String:
 	if not s is Dictionary or s.size() != 6: return "Invalid draracle state."
 	var version: Variant = s.get("version")
 	if not (version is int or version is float) or int(version) != 1: return "Invalid draracle state."
 	if not (s.get("struck") is bool) or not (s.get("killed") is bool) or not (s.get("room") is bool) or not (s.get("belial_seen") is bool): return "Invalid draracle state."
-	if s.get("killed") != false: return "Invalid draracle state."
+	if bool(s.get("killed")) and not bool(s.get("struck")): return "Invalid draracle state."
 	var listed: Variant = s.get("keys")
 	if not listed is Array: return "Invalid draracle state."
 	var expect: int = 0
@@ -39,7 +42,8 @@ static func validate(s: Variant, _quests: Dictionary = {}) -> String:
 	var room: bool = bool(s.get("room"))
 	if room != (expect == 3): return "Invalid draracle state."
 	if bool(s.get("belial_seen")) and not room: return "Invalid draracle state."
-	if bool(s.get("room")) and not bool(s.get("struck")): return "Invalid draracle state."
+	if room and not bool(s.get("killed")): return "Invalid draracle state."
+	if expect > 0 and not bool(s.get("killed")): return "Invalid draracle state."
 	return ""
 
 static func attach(map: Node3D) -> Node:
@@ -57,8 +61,10 @@ func state() -> Dictionary:
 	if listed is Array:
 		for id in listed:
 			keys.append(int(id))
-	var room: bool = keys.size() == 3
-	return {"version": int(raw.get("version", 1)), "struck": bool(raw.get("struck", false)), "killed": false, "keys": keys, "room": room and bool(raw.get("struck", false)), "belial_seen": bool(raw.get("belial_seen", false)) and room}
+	var struck: bool = bool(raw.get("struck", false))
+	var killed: bool = bool(raw.get("killed", false)) and struck
+	var room: bool = keys.size() == 3 and killed
+	return {"version": int(raw.get("version", 1)), "struck": struck, "killed": killed, "keys": keys, "room": room, "belial_seen": bool(raw.get("belial_seen", false)) and room}
 
 func flat_to(point: Vector3) -> float:
 	var p: Vector3 = host.player.global_position
@@ -77,19 +83,51 @@ func _ready() -> void:
 	hint = Label.new()
 	hint.position = Vector2(24, 564)
 	canvas.add_child(hint)
+	stage = Label.new()
+	stage.name = "Stage"
+	stage.position = Vector2(24, 532)
+	canvas.add_child(stage)
+	body = _box("FauxBody", AT_46, Color(0.45, 0.2, 0.55))
+	door = _box("DoorLeaf", Vector3(AT_0.x, 0, AT_0.z), Color(0.55, 0.45, 0.2))
+
+func _box(node_name: String, at: Vector3, color: Color) -> MeshInstance3D:
+	var mesh_node := MeshInstance3D.new()
+	mesh_node.name = node_name
+	var box := BoxMesh.new()
+	box.size = Vector3(12, 24, 12)
+	mesh_node.mesh = box
+	mesh_node.position = at
+	var mat := StandardMaterial3D.new()
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.albedo_color = color
+	mesh_node.material_override = mat
+	add_child(mesh_node)
+	return mesh_node
+
+func _show() -> void:
+	var s: Dictionary = state()
+	body.visible = not bool(s.killed)
+	door.position.y = 3.0 if bool(s.room) else 0.0
+	if bool(s.belial_seen):
+		stage.text = "Belial begins to speak."
+	elif bool(s.killed):
+		stage.text = SPEECH
+	else:
+		stage.text = ""
 
 func _process(_delta: float) -> void:
 	hint.text = ""
+	if not host.flying and host.starting_magic.world_active():
+		if bool(state().room) and flat_to(AT_75) < REACH and not bool(state().belial_seen):
+			var seen: Dictionary = state()
+			seen.belial_seen = true
+			host.quest_state[KEY] = seen
+	_show()
 	if host.flying or not host.starting_magic.world_active(): return
-	if bool(state().room) and flat_to(AT_75) < REACH and not bool(state().belial_seen):
-		var seen: Dictionary = state()
-		seen.belial_seen = true
-		seen.killed = false
-		host.quest_state[KEY] = seen
-	if flat_to(AT_46) < REACH:
-		hint.text = "E — strike actor 46. The kill stays false."
-	elif near_key() >= 0 and bool(state().struck):
-		hint.text = "E — record the next key. The doors stay still."
+	if flat_to(AT_46) < REACH and not bool(state().killed):
+		hint.text = "E — Strike the faux Draracle"
+	elif near_key() >= 0 and bool(state().killed):
+		hint.text = "E — Set the crystal key"
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is not InputEventKey or not event.pressed or event.echo or event.keycode != KEY_E: return
@@ -97,12 +135,13 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if flat_to(AT_46) < REACH:
 		if int(host.player_form) != 0 or str(host.equipped_item) == "": return
 		var hit: Dictionary = state()
+		if bool(hit.killed): return
 		hit.struck = true
-		hit.killed = false
+		hit.killed = true
 		host.quest_state[KEY] = hit
 		get_viewport().set_input_as_handled()
 		return
-	if not bool(state().struck): return
+	if not bool(state().killed): return
 	var key: int = near_key()
 	if key < 0: return
 	var s: Dictionary = state()
@@ -111,6 +150,5 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	keys.append(key)
 	s.keys = keys
 	s.room = keys.size() == 3
-	s.killed = false
 	host.quest_state[KEY] = s
 	get_viewport().set_input_as_handled()

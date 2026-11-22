@@ -1,0 +1,23 @@
+{
+  "name": "g15_l13_pad_membership_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "args": [],
+    "note": "Inert source-polygon/grounding unit vectors; no gameplay or earned claim."
+  },
+  "teleports": 4,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "258e51c4f1f555cdaddd94a2708ee89613eacdab9670da7d1699e98ddb827ad4"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 0,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

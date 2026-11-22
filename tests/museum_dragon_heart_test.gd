@@ -38,7 +38,10 @@ func run() -> void:
 	if not scene.SWORD_ITEM_ID in scene.carried_collected: scene.carried_collected.append(scene.SWORD_ITEM_ID)
 	var inventory:Array=scene.carried_collected.duplicate()
 	scene.hand_item=scene.SWORD_ITEM_ID
-	scene.carried_collected.resize(scene.Catalog.MAX_CARRIED);await press_e()
+	# Synthetic full-capacity vector of valid IDs (duplicates); never saved.
+	# Array.resize used to create nulls; no player action produced those nulls.
+	while scene.carried_collected.size()<scene.Catalog.MAX_CARRIED:scene.carried_collected.append(scene.SWORD_ITEM_ID)
+	await press_e()
 	if not check(not owner.state.taken,"Full inventory consumed gem"):return
 	scene.carried_collected=inventory;scene.hand_item=scene.SWORD_ITEM_ID
 	await RenderingServer.frame_post_draw;root.get_texture().get_image().save_png("user://tests/dragon_heart_revealed.png")

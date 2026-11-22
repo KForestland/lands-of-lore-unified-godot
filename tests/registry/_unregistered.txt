@@ -64,3 +64,15 @@ jungle_interface_test
 cave_encounter_integration
 #  chamber_location_review: same as cave_encounter_integration: completes ('views captured') but prints no PASS word (r12w round 2).
 chamber_location_review
+
+# Shared walk-input base, exercised by registered earned object tests.
+dark_halls_object_walk_input
+
+# Shared native-arrival Atlas walk; nine registered area wrappers exercise it.
+atlas_remaining_walk_test
+# BK17 chain reporter. It boots four maps and prints the stop list. The asserting host test is registered.
+bk17_main_chain_fire_test
+act2_body_fit_walk
+
+# Shared rendered real-event walks for BJ14 F1/F2/F6.
+bj14_sol_input_walk

@@ -1,0 +1,166 @@
+{
+  "name": "g15_dampen_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 4,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Local real-input cast, not campaign/statue walk: C15 F2, explicit learned-group fixture, production request_timed_form and admission fixture, held magic clock; no pose/health/mana writes."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "d5116f4153d97b9930ac95fe5328c28333835f41aa4bfb311b1242a37899c4cd"
+  },
+  "context_aid_source_sites": {
+    "count": 20,
+    "sites": [
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 8,
+        "column": 16,
+        "kind": "learning_api_fixture",
+        "source": "if not require(magic.learn_spell_group(\"dampen\"),\"Disclosed learned Dampen fixture; actual grant qualified separately\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 9,
+        "column": 1,
+        "kind": "story_warning_fixture",
+        "source": "scene.curse.set_requests_enabled(true)"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 10,
+        "column": 16,
+        "kind": "story_warning_fixture",
+        "source": "if not require(scene.curse.request_timed_form(2,60.0),\"Disclosed production story-warning request\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 12,
+        "column": 1,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(false)"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 14,
+        "column": 47,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.curse.state.phase==0 and scene.player_form==0 and magic.magic_state().player.mana==mana-1,\"Real Q Dampen cancels warning at cost1 and keeps human\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 16,
+        "column": 47,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.curse.state.phase==0 and scene.player_form==0 and scene.resets==0,\"Beyond original warning, still human without recovery\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 18,
+        "column": 41,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40);magic.set_process(false)"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 25,
+        "column": 101,
+        "kind": "form_admission_fixture",
+        "source": "if not require(\"curse1\" in magic.magic_state().spellbook.learned and scene.curse.state.phase==0 and scene.player_form==0,\"Real F5/F9 retains learned Dampen and canceled warning\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 26,
+        "column": 1,
+        "kind": "story_warning_fixture",
+        "source": "scene.curse.set_requests_enabled(true)"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 27,
+        "column": 16,
+        "kind": "story_warning_fixture",
+        "source": "if not require(scene.curse.request_timed_form(2,60.0),\"Second disclosed warning for phase2 negative\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 29,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==2 and scene.curse.state.phase==2,\"Uncancelled story warning still morphs naturally\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 30,
+        "column": 1,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(false);before=magic.magic_state().duplicate(true)"
+      },
+      {
+        "path": "tests/g15_dampen_input_test.gd",
+        "line": 32,
+        "column": 47,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.curse.state.phase==2 and scene.player_form==2 and magic.magic_state()==before,\"Phase2 Dampen does not undo a landed morph or debit mana\"):return"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 14,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l13_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 20,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 23,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 76,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(LOWER_INPUT,Slots.slot_path(1))==OK,\"Install untouched game-written lowerF5 for actualF9\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 24,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

@@ -1,4 +1,5 @@
 extends "res://scripts/lol2/l10_oil.gd"
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Book-led Holy Switch66. Source11480 supplies the exact raised surface list/words.
 const Ankh=preload("res://scripts/lol2/l10_ankh_state.gd")
 const SLAB_AIM:=Vector3(3207,45,-2321)
@@ -10,6 +11,7 @@ var stair_holes: Array=[]
 var original_static_edges: Array=[]
 var original_dynamic_edges: Array=[]
 var slab: Node3D
+var hint: Label
 static func entry_owns(face: Dictionary)->bool:
  var region:=int(face.get("region",-1)) if face.get("region")!=null else -1
  return (face.kind=="floor" and (region in RAISED or region in CLIPPED)) or (face.kind=="ceiling" and (region==3937 or region in LOWER_CEILINGS)) or (face.get("placement_kind")=="static_assembly" and int(face.get("source_index",-1))==66)
@@ -48,6 +50,7 @@ func _ready():
  var blockers=host.get_node("RegionBlockers")
  original_static_edges=blockers.static_edges.duplicate(true);original_dynamic_edges=blockers.dynamic_edges.duplicate(true)
  restore()
+ hint=preload("res://scripts/lol2/interaction_hint_label.gd").attach(self,Vector2(24,430))
 func restore():
  var value:=opened()
  if presented==value:return
@@ -68,10 +71,19 @@ func offer(item: String)->Dictionary:
  if get_tree().paused or host.flying or not host.starting_magic.world_active() or host.player_form!=0 or not reachable():return Ankh.Kit.refuse("Approach and face the slab as Human.")
  var result:=Ankh.act(host.quest_state.get("l10_ankh",Ankh.initial()),host.carried_collected,Ankh.SLAB,item)
  if not result.ok:return result
- host.carried_collected=result.inventory;host.quest_state.l10_ankh=result.state
+ var admission:=Grants.transition(host,result.inventory,{"l10_ankh":result.state})
+ if not admission.ok:return admission
  preload("res://scripts/lol2/act2_items_catalog.gd").sync(host);restore()
  return {"ok":true,"reason":"The Emperor's tomb opens. Take the ankh back from the slab."}
-func _process(_delta):restore()
+func _process(_delta):
+ restore();hint.text=""
+ if get_tree().paused or host.flying or is_instance_valid(host.inventory):return
+ if host.player_form!=0 or not host.starting_magic.world_active():return
+ if host.has_method("actor_input_locked") and host.actor_input_locked():return
+ if reachable():
+  var slot:Dictionary=Ankh.Kit.slot(host.quest_state.get("l10_ankh",Ankh.initial()),Ankh.SLAB)
+  if not str(slot.occupied).is_empty():hint.text="E — Retrieve the ankh"
+  elif not opened():hint.text="E — Use the ankh on the slab" if Ankh.ANKH in host.carried_collected else "The slab has an ankh-shaped hollow."
 func _unhandled_input(event: InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E:return
  if Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED or is_instance_valid(host.inventory) or not reachable():return

@@ -41,6 +41,9 @@ func _run() -> void:
 	assert(hud.sheet.visible and hud.atlas.visible and not hud.atlas.edges.is_empty())
 	assert(Input.mouse_mode == Input.MOUSE_MODE_VISIBLE)
 	var map = hud.atlas
+	# Allow the container and explored-area auto-fit to settle before the wheel fixture.
+	for _frame in 4: await process_frame
+	map.overview()
 	var anchor: Vector2 = map.size * Vector2(0.3, 0.4)
 	var reference: Vector2 = map.bounds.position
 	var before: Vector2 = map.map_point(reference)
@@ -67,7 +70,8 @@ func _run() -> void:
 	var player_position: Vector3 = scene.player.global_position
 	assert(map.map_point(Vector2(player_position.x, player_position.z)).is_equal_approx(map.size / 2))
 	map.zoom_at(1000, anchor)
-	assert(map.zoom == 12.0)
+	# Fresh Cave regions need the expanded Atlas zoom range.
+	assert(map.zoom == 512.0)
 	map.zoom_at(0.0001, anchor)
 	assert(map.zoom == 1.0)
 	hud.atlas_controls.get_child(3).pressed.emit()

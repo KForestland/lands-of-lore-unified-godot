@@ -1,0 +1,22 @@
+{
+  "name": "player_spell_book_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 0,
+  "needs": {
+    "note": "G15 shared foundation only. Explicit learned API and inert receiver/clock fixture in rendered component; actual keys/UI/F5/F9, not earned quest casts."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "b95fb9705fdd9a5f174e0e99f3ab46ddfc289e97e6a720bfdd8ec186fdefe923"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 0,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

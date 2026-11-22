@@ -1,6 +1,26 @@
 {
- "name": "l16_item_test",
- "suite": "core",
- "mode": "headless",
- "order": 527
+  "name": "l16_item_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 527,
+  "teleports": 1,
+  "test_aids": 20,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ed2b6ad64bfdfcbbd8b586933c1b9fff2cf36223bfd6c8a990a4ea1f638b6acc"
+  },
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/act2_item_case.gd",
+        "line": 19,
+        "column": 18,
+        "kind": "scene_change_context",
+        "source": "scene.progression.change_scene_enabled = false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 21
 }

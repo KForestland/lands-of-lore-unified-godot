@@ -3,6 +3,7 @@ func combat_candidate(_scene:Node,id:String)->bool:return id!="76"
 func reached_waypoint(scene:Node,label:String,index:int)->void:
  if label=="low roof" and index in [3,17]:check(scene.request_jump(),"ordinary jump over source seam")
 func input_save()->String:return "res://tmp/dampen_qualified/l9_statue_fight_earned_save.json"
+func pass_line()->String:return "PASS qualified statue fight -> rising water -> low roof -> ordinary table jump -> saved lift ride -> ordinary tunnel jump -> physical raft -> native L8/5 exit; inventory unchanged"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
  var input:=Save.read_save(input_save(),"lol2-restoration-dragon-preview")
@@ -56,5 +57,5 @@ func run():
  path="res://tmp/l9_flood_escape_earned_save.json"
  check(scene._quicksave_unrecorded(path).is_empty() and scene._quickload_unrecorded(path).is_empty(),"escaped receipt persists")
  scene.queue_free();await process_frame
- if failures==0:print("PASS qualified statue fight -> rising water -> low roof -> ordinary table jump -> saved lift ride -> ordinary tunnel jump -> physical raft -> native L8/5 exit; inventory unchanged")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

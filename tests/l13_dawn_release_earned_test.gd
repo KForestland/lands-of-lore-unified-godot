@@ -1,8 +1,14 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l13_return_descent_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="b0c5d2c2e38f275169cae11aa7223358f7057e9b4b5e7f9e9236462553323dca"
+func pass_line() -> String:
+ return "PASS earned altar stone ->physical elevator return/walk ->Dawn jump ->full release ->same stone and gift/save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_return_descent_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="b0c5d2c2e38f275169cae11aa7223358f7057e9b4b5e7f9e9236462553323dca","qualified physical descent input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified physical descent input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -44,5 +50,5 @@ func run():
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seed/recovery")
  print("DAWN released at ",scene.player.position)
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned altar stone ->physical elevator return/walk ->Dawn jump ->full release ->same stone and gift/save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

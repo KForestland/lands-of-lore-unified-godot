@@ -59,8 +59,17 @@ func talk()->bool:
  host.act2_creatures.sync_quests()
  host.save_feedback("The Hive Lord challenges you. Remember Dawn's warning: fight in Beast form.")
  return true
+## Grok r19o3 04:02Z (owner's save): G started the change on a step edge of the stepped arena floor, the Beast body had no
+## room, and the curse waited with nothing on screen. Both refusals now say why (lead 2026-11-16).
+const NO_STONE:="The Beast will not come without the Dreamstone."
+const NO_ROOM:="The Beast has no room on this step edge: move onto open floor and the change comes."
+func waiting_for_room()->bool:
+ var c:Dictionary=host.curse.state
+ return near_boss() and host.player_form==0 and int(c.phase)==1 and int(c.get("target",0))==1 and float(c.remaining)<=0.0
 func choose_form()->bool:
- if not near_boss() or "act2:L13_RC:dreamstone" not in host.carried_collected or host.curse.state.phase in [1,3]:return false
+ if not near_boss():return false
+ if "act2:L13_RC:dreamstone" not in host.carried_collected:host.save_feedback(NO_STONE);return true
+ if host.curse.state.phase in [1,3]:return false
  return host.curse.request_timed_form(1,120.0) if host.player_form==0 else host.curse.request_human() if host.player_form==1 else false
 func permits_hit(melee:bool,amount:int)->bool:
  if amount<=0 or not state().spoken or not host.starting_magic.world_active():return false
@@ -71,8 +80,9 @@ func permits_hit(melee:bool,amount:int)->bool:
   host.save_feedback("Only the Beast can wound this Hive Lord.");return false
  return true
 func _process(_delta):
- hint.text="F — Descend to the Chamber of Voices" if can_enter() else ""
+ hint.text="E — Descend to the Chamber of Voices" if can_enter() else ""
  if near_boss():hint.text="G — Change form"+("    E — Confront the Hive Lord" if not state().spoken else "")
+ if waiting_for_room():hint.text=NO_ROOM
 func _unhandled_key_input(event:InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo:return
- if (event.keycode==KEY_F and enter()) or (event.keycode==KEY_E and talk()) or (event.keycode==KEY_G and choose_form()):get_viewport().set_input_as_handled()
+ if (event.keycode==KEY_E and enter()) or (event.keycode==KEY_E and talk()) or (event.keycode==KEY_G and choose_form()):get_viewport().set_input_as_handled()

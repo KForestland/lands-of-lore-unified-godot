@@ -1,6 +1,27 @@
 {
- "name": "l10_progression_test",
- "suite": "core",
- "mode": "headless",
- "order": 463
+  "name": "l10_progression_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 463,
+  "teleports": 0,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "d46241efcd7a7fa6a100767dee094c55122e7803274174fd6d91c0793efe32de"
+  },
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/l10_progression_test.gd",
+        "line": 21,
+        "column": 2,
+        "kind": "scene_change_context",
+        "source": "p.change_scene_enabled = false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 4,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
 }

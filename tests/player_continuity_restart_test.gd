@@ -21,15 +21,25 @@ func open_fresh(path: String) -> Node:
 	for i in 2: await process_frame
 	return area
 func load_click(area, path: String) -> bool:
-	var hud = area.interface_hud
-	hud.save_path = path
-	await cursor(hud, true)
-	if not hud.sheet.visible or hud.atlas.visible: await click(hud.buttons[0])
+	var destination:String=area.scene_file_path
+	var id:=preload("res://scripts/lol2/game_areas.gd").id_for(area)
+	# Stage a read-only source copy at the catalogued old path so the actual legacy-list row loads it.
+	var legacy:String=preload("res://scripts/lol2/game_areas.gd").ROWS[id].legacy
+	var bytes:=FileAccess.get_file_as_bytes(path)
+	DirAccess.make_dir_recursive_absolute(legacy.get_base_dir())
+	var staged:=FileAccess.open(legacy,FileAccess.WRITE);staged.store_buffer(bytes);staged.close()
+	var hud=area.interface_hud
+	await cursor(hud,true)
+	if not hud.sheet.visible or hud.atlas.visible:await click(hud.buttons[0])
 	await click(hud.load_button)
-	var ok: bool = not "failed" in hud.save_status.text and "loaded" in hud.save_status.text
-	hud.close_sheet()
-	await cursor(hud, false)
-	return check(ok,"%s load click: '%s'" % [path, hud.save_status.text])
+	var panel=hud.slot_panel
+	if not check(is_instance_valid(panel),"legacy load list opens"):return false
+	var button:Button=panel.rows.get_node("Legacy_"+id)
+	button.get_parent().get_parent().ensure_control_visible(button)
+	for i in 3:await process_frame
+	await click(button)
+	var resumed=await wait_scene(destination)
+	return check(is_instance_valid(resumed) and resumed.scene_file_path==destination,"legacy list resumes "+path)
 func finish(area) -> void:
 	area.queue_free()
 	for i in 3: await process_frame
@@ -46,6 +56,7 @@ func run() -> void:
 		var area = await open_fresh(entry[1])
 		var fresh := Continuity.from_host(area)
 		if not await load_click(area, saved.path): return
+		area = current_scene
 		var loaded := Continuity.from_host(area)
 		var errors := Continuity.compare(Continuity._normalized(saved.snapshot), loaded)
 		result.restart[entry[0]] = {"errors": errors, "fresh_differs": not Continuity.compare(fresh, loaded).is_empty()}
@@ -65,6 +76,7 @@ func run() -> void:
 			var expected := Continuity.from_save(JSON.parse_string(bytes.get_string_from_utf8()))
 			var area = await open_fresh(entry[1])
 			if not await load_click(area, copy): return
+			area = current_scene
 			var errors := Continuity.compare(expected, Continuity.from_host(area))
 			result.compatibility[entry[0]] = {"sha256": ctx.finish().hex_encode(), "errors": errors, "fields": expected.size()}
 			if not check(errors.is_empty(),"%s loaded with differences: %s" % [entry[0], errors]): return

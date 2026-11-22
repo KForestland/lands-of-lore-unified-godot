@@ -1,0 +1,23 @@
+{
+  "name": "item_belt_state_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "note": "WO5 real input component with disclosed grant/stand fixtures; no earned route claim.",
+    "args": []
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "526aa9d7fdee56909e86946dfcab1e826eac5605b06fd01da2df5609bb4c7747"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 2
+}

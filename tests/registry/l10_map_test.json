@@ -1,6 +1,19 @@
 {
- "name": "l10_map_test",
- "suite": "core",
- "mode": "headless",
- "order": 447
+  "name": "l10_map_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 447,
+  "teleports": 0,
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "1724422c8760307d2d7a7370b709706f869a3200979fe6fb8e1ef7b48a7945ec"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 1,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
 }

@@ -1,0 +1,23 @@
+{
+  "name": "dark_halls_puzzles_entry_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1033,
+  "needs": {
+    "env": [
+      "LOL2_DH_INPUT_SHA",
+      "LOL2_DH_PUZZLE"
+    ],
+    "fixtures": [
+      "user://tests/act1_broken_repaired_monastery.json"
+    ],
+    "note": "Common harness case for atrium/iron/orb/bash. Dedicated escape wrapper supplies its specialized input driver."
+  },
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "01ac69fcde0aee6bbefcec19cd30d4d791fd19fbe27273d7c644b6994948e6ec"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
+}

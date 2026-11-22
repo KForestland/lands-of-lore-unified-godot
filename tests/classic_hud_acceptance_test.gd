@@ -7,14 +7,15 @@ extends SceneTree
 ## - Magic Button casts Heal (health +6, mana -2; the health/mana fills follow);
 ## - portrait opens the one Character page: health, mana, form, spell, weapon/armor, fighting and magic level/XP; the
 ##   page is on screen and clear of the cluster, hint and coordinates;
-## - Save button writes the area's existing save format; health is then changed and the Load button restores it and
-##   returns to play in every area; the notice stays on screen;
+## - Save button opens the ten-slot panel and writes slot01 with its area packet; health is changed and Load rebuilds it and
+##   returns to play in every area; the slot panel shows the save notice;
 ## - Open inventory is modal (paused): the Magic Button and portrait are refused; Escape closes it;
 ## - Attack Button returns to play and sends one ordinary attack click;
 ## - a cursed Beast form hides the weapon (hand shown) and refuses the cast; human form shows the equipped weapon icon.
 ## Supplied, labelled: Museum introduction complete; Hive rescue-return fixture (conversation completed, as
 ## classic_hud_actions_test); health/mana/cooldown values; one carried Stalagmite weapon; Beast form assigned directly.
 ## Screenshots: user://tests/hud_acceptance/<area>_<width>_{play,character}.png
+const Slots = preload("res://scripts/lol2/game_save.gd")
 const Continuity = preload("res://scripts/lol2/player_continuity.gd")
 const WEAPON := "cave:prop641:harvest1:Stalagmite"
 var failed := false
@@ -52,6 +53,14 @@ func supply_weapon(area) -> void:
 	elif WEAPON not in area.carried_collected: area.carried_collected.append(WEAPON)
 func enter_cursor(hud) -> void:
 	if not hud.cursor_active: await key(KEY_TAB)
+
+func settle_for_save(area) -> bool:
+	area.set_physics_process(true)
+	for tick in 600:
+		await physics_frame
+		if area.player.is_on_floor():break
+	area.set_physics_process(false)
+	return check(area.player.is_on_floor(),"HUD fixture must stand on real solid ground before slot save: "+str(area.player.position))
 
 func area_acceptance(area, label: String, size: Vector2i) -> bool:
 	var tag := "%s %dx%d" % [label, size.x, size.y]
@@ -110,21 +119,42 @@ func area_acceptance(area, label: String, size: Vector2i) -> bool:
 	if not check(hud.atlas.visible and view.encloses(sheet) and not sheet.intersects(hud.cluster.get_global_rect()) and not sheet.intersects(hud.hint.get_global_rect()) and (not coords.has_area() or not sheet.intersects(coords)),"%s: Atlas page %s overlaps/off screen" % [tag, sheet]): return false
 	await click(hud.buttons[0])
 	# ---- Save / Load buttons ----
-	var path := "user://tests/hud_acceptance/%s_%d_save.json" % [label.to_lower(), size.x]
-	if FileAccess.file_exists(path): DirAccess.remove_absolute(path)
-	hud.save_path = path
 	var before := Continuity.from_host(area)
 	await click(hud.save_button)
-	if not check(FileAccess.file_exists(path) and not "failed" in hud.save_status.text,"%s: Save click '%s'" % [tag, hud.save_status.text]): return false
-	var format = JSON.parse_string(FileAccess.get_file_as_string(path)).get("format")
-	if not check(view.encloses(hud.hint.get_global_rect()) and hud.hint.text == hud.save_status.text,"%s: save notice hidden '%s'" % [tag, hud.hint.text]): return false
+	var panel = hud.slot_panel
+	if not check(is_instance_valid(panel) and panel.rows.get_child_count()==11,"%s: Save opens ten slots plus autosave"%tag):return false
+	await click(panel.rows.get_node("Slot_01"))
+	if panel.confirmation.visible:await click(panel.confirm_yes)
+	if not check(panel.message.text.begins_with("Saved to slot"),"%s: Save slot click '%s'"%[tag,panel.message.text]):return false
+	var document:=Slots.read_document(Slots.slot_path(1))
+	if not check(document.error.is_empty(),"%s: Saved slot envelope validates"%tag):return false
+	var format:String=document.state.area_save.format
+	if not check(panel.message.is_visible_in_tree() and view.encloses(panel.message.get_global_rect()),"%s: slot save notice is on screen"%tag):return false
+	await key(KEY_ESCAPE)
 	magic.set_health(9)
-	if not hud.cursor_active: await enter_cursor(hud)
-	if not hud.sheet.visible: await click(hud.buttons[0])
+	if not hud.cursor_active:await enter_cursor(hud)
+	if not hud.sheet.visible:await click(hud.buttons[0])
+	var old_instance:int=area.get_instance_id()
 	await click(hud.load_button)
+	panel=hud.slot_panel
+	if not check(is_instance_valid(panel),"%s: Load opens slot list"%tag):return false
+	await click(panel.rows.get_node("Slot_01"))
+	for i in 1800:
+		await process_frame
+		if is_instance_valid(current_scene) and current_scene.get_instance_id()!=old_instance and current_scene.get("starting_magic")!=null:
+			var session:Node=preload("res://scripts/lol2/game_session.gd").for_tree(self)
+			if session.pending_resume.is_empty() and not session.changing_scene:break
+	if not check(is_instance_valid(current_scene) and current_scene.get_instance_id()!=old_instance,"%s: slot load rebuilds the area"%tag):return false
+	area=current_scene
+	if not await settle_for_save(area):return false
+	if area.get("return_population")!=null:area.return_population.set_physics_process(false)
+	hud=area.interface_hud;magic=area.starting_magic
+	get_root().size=size
+	for i in 6:await process_frame
+	view=hud.get_viewport().get_visible_rect()
 	var after := Continuity.from_host(area)
 	var diff := Continuity.compare(before, after)
-	if not check(magic.health() == 21 and diff.is_empty() and not "failed" in hud.hint.text,"%s: Load click health %d diff %s '%s'" % [tag, magic.health(), diff, hud.hint.text]): return false
+	if not check(magic.health() == 21 and diff.is_empty() and not "failed" in hud.hint.text,"%s: Load slot health %d diff %s '%s'" % [tag, magic.health(), diff, hud.hint.text]): return false
 	if not check(not hud.cursor_active and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED,"%s: Load did not return to play" % tag): return false
 	# ---- Inventory modal ----
 	await enter_cursor(hud)
@@ -185,6 +215,9 @@ func open(path: String):
 		if not check(area.apply_area_handoff(fixture).is_empty(),"Hive return fixture"): return null
 		area.set_physics_process(false)
 		area.return_population.set_physics_process(false)
+	# The initial test completion packet is a startup fixture, not an in-flight area transition.
+	if has_meta("lol2_cave_completion"):remove_meta("lol2_cave_completion")
+	if not await settle_for_save(area):return null
 	await process_frame
 	return area
 
@@ -196,8 +229,9 @@ func run() -> void:
 		if area == null or not check(is_instance_valid(area.get("interface_hud")),"%s: no classic shell" % entry[0]): return
 		for size in [Vector2i(960,540), Vector2i(1280,720)]:
 			if not await area_acceptance(area, entry[0], size): return
+			area=current_scene # Each slot load replaces/frees the previous host.
 		area.queue_free(); await process_frame; await process_frame
-	remove_meta("lol2_cave_completion")
+	if has_meta("lol2_cave_completion"):remove_meta("lol2_cave_completion")
 	get_root().size = Vector2i(1280,720)
-	print("PASS classic_hud_acceptance: Cave/Museum/Jungle/Hive at 960x540 and 1280x720 with real clicks/keys — Blue Button drawn, Spell Bar Heal/Spark selection, Magic Heal +6/-2 with fills, one Character page with health/mana/form/spell/equipment/fighting+magic level/XP on screen without overlap, Save/Load buttons round-trip (no semantic diff), inventory modal refuses cast/page and Escape closes it, equipped weapon and Beast restriction on the Attack ring, Attack click returns to play. " + "; ".join(summary))
+	print("PASS classic_hud_acceptance: Cave/Museum/Jungle/Hive at 960x540 and 1280x720 with real clicks/keys — Blue Button drawn, Spell Bar Heal/Spark selection, Magic Heal +6/-2 with fills, one Character page with health/mana/form/spell/equipment/fighting+magic level/XP on screen without overlap, ten-slot Save/Load panels rebuild each host and round-trip its area packet (no semantic diff), inventory modal refuses cast/page and Escape closes it, equipped weapon and Beast restriction on the Attack ring, Attack click returns to play. " + "; ".join(summary))
 	quit()

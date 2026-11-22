@@ -26,7 +26,10 @@ func run() -> void:
 	if larkhon_open != 2: return fail("Expected the 2 faces of Larkhon facade 111 open, got %d" % larkhon_open)
 	# 930 = 944 before astra minus facade 111 (2, STORY-035) minus tree door movable 50 (12, owned by l8_tree.gd, STORY-053);
 	# 834 = 930 minus the standing tree 114 and the log bridge 116 (48 faces each, owned by l8_tree_bridge.gd, grok Y02 2026-11-06).
-	if kept != 834: return fail("Other assembly faces changed: %d collide" % kept)
+	# 762 = 834 minus straw-pit ramps 93 and 94 (36 faces each, owned by l8_straw_trap.gd).
+	# 756 = 762 minus straw cover 95 (6 faces). Word +8 is 0x401, solid bit clear, so the
+	# quads stay drawn and do not form a floor. The walk lid is the cover.
+	if kept != 756: return fail("Other assembly faces changed: %d collide" % kept)
 	# Ordinary grounded walking (gravity, step and move_and_slide via the shared move_grounded), from the owner's pose
 	# east through the arch at x -4434.
 	var player: CharacterBody3D = scene.player
@@ -46,5 +49,5 @@ func run() -> void:
 		await physics_frame
 		scene.move_grounded(Vector3.ZERO, 1.0 / 60.0)
 	if not player.is_on_floor() or scene.resets != resets: return fail("Not grounded past the arch: %s" % player.global_position)
-	print("PASS darker_jungle_tunnel_arch: arch 99 open (4 faces), 944 other assembly faces still collide; walked grounded from the owner pose through the arch to x %.1f" % player.global_position.x)
+	print("PASS darker_jungle_tunnel_arch: arch 99 open (4 faces), other assembly faces still collide; walked grounded from the owner pose through the arch to x %.1f" % player.global_position.x)
 	quit(0)

@@ -54,11 +54,11 @@ func run():
 	scene.camera.look_at(tower.DOOR + Vector3(0, -8, -40), Vector3.UP)
 	await process_frame
 	await process_frame
-	var at_door: bool = bool(tower.state().at_doors) and tower.hint.text == "The disk and the box are not placed. The centre stays down."
+	var at_door: bool = bool(tower.state().at_doors) and tower.hint.text == "The lift carries you up."
 	if not check(at_door, "door quad records the entrance: '%s'" % tower.hint.text):
 		await stop(scene, 1); return
-	var stayed: bool = not tower.relocates_player() and scene.player.position.distance_to(tower.ARRIVAL) > 1000.0
-	if not check(stayed, "Luther stays on the door quad"):
+	var stayed: bool = tower.relocates_player() and scene.player.position.distance_to(tower.ARRIVAL) < 1.0
+	if not check(stayed, "the lift adapter carries Luther to the upper floor"):
 		await stop(scene, 1); return
 	var row: Variant = scene.prop_placements.get(615)
 	if not check(row is Array, "prop 615 placement"):
@@ -76,6 +76,6 @@ func run():
 	var kept: bool = bool(tower.state().at_doors) and tower.SECTIONS == 0
 	if not check(kept, "save keeps the door record"):
 		await stop(scene, 1); return
-	print("PASS earned greenhouse -> region 6079 -> door quad, centre stays down")
+	print("PASS earned greenhouse -> region 6079 -> the lift adapter reaches the upper floor")
 	await stop(scene, 0)
 

@@ -1,0 +1,95 @@
+{
+  "name": "item_war_cluster_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Actual inventory use/form keys/F5F9/ordinary full60s expiry; supplied genuine source identities, source pickup record, learned Control and held NPCs, not earned campaign."
+  },
+  "teleports": 0,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "89c4f2304c6b7cdcdb4614b40abf7fb33a12470c86d3ea4a181d87b0444c2a94"
+  },
+  "context_aid_source_sites": {
+    "count": 9,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_stored_spell_input.gd",
+        "line": 5,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":true}).ok,\"Disclosed actual-ID scroll grant fixture\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/item_consumables_input_test.gd",
+        "line": 31,
+        "column": 37,
+        "kind": "component_magic_clock",
+        "source": "var magic:Node=scene.starting_magic;magic.set_process(false)"
+      },
+      {
+        "path": "tests/item_war_cluster_input_test.gd",
+        "line": 17,
+        "column": 1,
+        "kind": "legacy_control_teaching",
+        "source": "scene.starting_magic.learn_spell_group(\"control\")"
+      },
+      {
+        "path": "tests/item_war_cluster_input_test.gd",
+        "line": 17,
+        "column": 21,
+        "kind": "learned_control_fixture",
+        "source": "scene.starting_magic.learn_spell_group(\"control\")"
+      },
+      {
+        "path": "tests/item_war_cluster_input_test.gd",
+        "line": 20,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==2 and scene.starting_magic.health()==36 and Health.limit_for(scene)==36,\"Actual form change preserves borrowed health in Lizard form\"):return"
+      },
+      {
+        "path": "tests/item_war_cluster_input_test.gd",
+        "line": 22,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==2 and scene.starting_magic.health()==36 and Health.limit_for(scene)==36 and scene.item_effects.state().war_cluster.remaining>0,\"F5/F9 admits and preserves the active temporary maximum\"):return"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 12,
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "learned_control_fixture",
+      "pattern": "\\.learn_spell_group\\s*\\("
+    }
+  ],
+  "count_method": "Audited source sites, not executions."
+}

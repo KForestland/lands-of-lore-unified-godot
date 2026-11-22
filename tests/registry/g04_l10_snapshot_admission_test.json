@@ -1,0 +1,24 @@
+{
+  "name": "g04_l10_snapshot_admission_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 1,
+  "test_aids": 8,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "4e5f50b28b40253d5f7601dc8b4683d74282ab47cecf1050c60c2339f8defb42"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 8
+}

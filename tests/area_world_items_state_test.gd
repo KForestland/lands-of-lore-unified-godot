@@ -27,14 +27,14 @@ func run() -> void:
 			check(S.valid(id) and S.area_of(id) == area and S.row_of(id) == data.rows[i] and S.definition(id) == data.definitions[i] and S.source_name(id) == data.names[i], "%s resolves through the state" % id)
 			check(C.definition(id) == data.definitions[i] and C.definition_name(id) == data.names[i] and N.source_name(id) == data.names[i], "%s resolves through the catalog and the Act 1 names" % id)
 			check(C.label(id) == D.label(data.definitions[i]) and FileAccess.file_exists(C.icon(id)) and FileAccess.file_exists(C.inventory_icon(id)), "%s label + icons" % id)
-			check(C.slot(id) == D.slot(data.definitions[i]) and C.use_kind(id) == "", "%s slot from the class byte (%s), no use" % [id, C.slot(id)])
+			check(C.slot(id) == D.slot(data.definitions[i]) and C.use_kind(id) == preload("res://tests/helpers/item_use_contract.gd").use_kind(data.definitions[i]), "%s slot from source class (%s), approved use contract" % [id, C.slot(id)])
 			check(C.ids("jungle").count(id) == 1, "%s enumerated once" % id)
 			var origin: String = str(data.origin)
 			check(C.admitted(id, origin) and C.admitted(id, "jungle") and not C.admitted(id, "cave") and (origin == "museum") == C.admitted(id, "museum"), "%s admitted in %s and Jungle only" % [id, origin])
 	# The equippable rows carry the pinned source defense (prepare_act_one_item_defenses.py).
 	check(C.slot("darkhalls:item28:Orc_shield") == "offhand" and C.defense("darkhalls:item28:Orc_shield") == 4, "Orc shield: offhand, defense 4 (%s %d)" % [C.slot("darkhalls:item28:Orc_shield"), C.defense("darkhalls:item28:Orc_shield")])
 	check(C.slot("darkhalls:item5:Gaunt_strike") == "weapon" and C.defense("darkhalls:item5:Gaunt_strike") == 10, "Gaunt strike: weapon, defense byte 10 (%s %d)" % [C.slot("darkhalls:item5:Gaunt_strike"), C.defense("darkhalls:item5:Gaunt_strike")])
-	check(C.slot("museum:item0:Cocos_Cap") == "" and C.slot("darkerjungle:item10:Lamplt_eggs") == "" and C.slot("darkerjungle:item28:Manafoil") == "", "cap, eggs and recipe carry no slot")
+	check(C.slot("museum:item0:Cocos_Cap") == "accessory" and C.slot("darkerjungle:item10:Lamplt_eggs") == "" and C.slot("darkerjungle:item28:Manafoil") == "", "cap is wearable; eggs and recipe keep no slot")
 	check(C.validate_carried(S.all_ids(), "jungle").is_empty() and not C.validate_carried(S.ids("darkhalls"), "museum").is_empty() and C.validate_carried(S.ids("museum"), "museum").is_empty(), "scope validation")
 	# Histories: absent (older saves) valid; shapes checked per area in both validators.
 	var quests: Dictionary = Q.initial()

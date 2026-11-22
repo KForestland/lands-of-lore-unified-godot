@@ -1,4 +1,8 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+var player_health_owner:Node=PlayerHealth.new()
+func _notification(what:int)->void:
+	if what==NOTIFICATION_PREDELETE:PlayerHealth.dispose_unattached(player_health_owner)
 ## Development review only; not connected to the cavern exit.
 const ROOT := "res://assets/lol2/generated/museum_review/"
 ## Resource 21 "Sludge" floors the review capture left unresolved (tools/prepare_museum_sludge_floor.py).
@@ -33,6 +37,7 @@ func excluded_faces() -> Dictionary: return {}
 func render_owned_face(_face: Dictionary) -> bool: return false
 
 func _ready() -> void:
+	PlayerHealth.attach(self)
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(ROOT + "museum.json"))
 	start = Vector3(data.start[0], data.start[1], data.start[2])
 	var groups: Dictionary = {}
@@ -209,22 +214,11 @@ func player_fallen() -> bool:
 	return magic != null and is_instance_valid(magic) and magic.has_method("health") and int(magic.health()) <= 0
 
 func set_crouch(want: bool, check_space: bool = true) -> bool:
-	var form := 0
-	if get("player_form") != null:
-		form = int(get("player_form"))
-	var applied: bool = preload("res://scripts/lol2/player_form_body.gd").apply(player, camera, form, check_space, want)
-	if applied:
-		crouched = want
-	return applied
+	return preload("res://scripts/lol2/player_crouch.gd").set_crouch(self, want, check_space)
 
 func _physics_process(delta: float) -> void:
 	if not ready_for_review: return
-	var form := 0
-	if get("player_form") != null:
-		form = int(get("player_form"))
-	var want_crouch := Input.is_physical_key_pressed(KEY_C) and form == 0 and not flying
-	if want_crouch != crouched:
-		set_crouch(want_crouch)
+	preload("res://scripts/lol2/player_crouch.gd").update(self)
 	var direction := Vector3.ZERO
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		var axis := Vector3(float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)), 0, float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W)))

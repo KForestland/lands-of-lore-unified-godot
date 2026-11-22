@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Prop280/group6590: one empty-hand Prism grant, then remove the display. The same group's seven op204
 ## commands clear the alcove's painted panorama (wall records 1743..1772, descriptors 430..424 -> transparent
 ## 871; museum_prism_panorama.json, docs/prism-effects.md): shown while the Prism is on display, cleared by the
@@ -80,7 +81,7 @@ func use() -> bool:
 func _collect() -> bool:
 	if host.carried_collected.size()>=Catalog.MAX_CARRIED:
 		host.save_feedback("You cannot carry more.");return true
-	host.carried_collected.append(ITEM);restore(true);host.save_feedback("Prism added to inventory.")
+	Grants.grant(host,ITEM,{"cap":false,"duplicate":"allow"});restore(true);host.save_feedback("Prism added to inventory.")
 	return true
 
 ## Cursor mode uses the clicked opaque sprite pixel, not the camera-centre aim cone.

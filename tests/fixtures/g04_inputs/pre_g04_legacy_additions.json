@@ -1,0 +1,581 @@
+{
+  "base": "a95a90cc4e131c75ee8b36ca1e4dcb2e17a36b86",
+  "evidence": "g04/legacy_base_observation/all/report.json all15 actual loaders/writers unchanged production/source-stable. Original golden bytes untouched. Eight enumerated pre-G04 differences: two movement stamps, Temple region hint, L10 generic state, L19 floor transport, Cave crates/help/demo display. No arbitrary normalization.",
+  "areas": {
+    "L10_DC": {
+      "original_sha256": "a578c42903bc5c4147a5828ce00113dfdb79ceb1e2cbfd3058a1234997f649f4",
+      "base_writer_sha256": "11be43ee056a354b0dbb4f6e8f82abbc107be1239a7d7be09a6d0105aef24eb2",
+      "additions": [
+        {
+          "path": "/quests/generic_objects",
+          "was_missing": true,
+          "value": {
+            "areas": {
+              "L10_DC": {
+                "breakables": {
+                  "241": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "242": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "243": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "244": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "245": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "246": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "247": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "248": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "249": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "250": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "251": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "252": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "253": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "254": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "255": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "256": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "262": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "263": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "264": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "265": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "266": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "267": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "268": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "269": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "270": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "271": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "272": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "273": {
+                    "life": 100,
+                    "selector": 0
+                  },
+                  "5": {
+                    "life": 80,
+                    "selector": 0
+                  }
+                },
+                "movables": {
+                  "104": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "105": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "106": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "107": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "108": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "109": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "110": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "111": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "112": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "113": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "114": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "115": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "116": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "117": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "118": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "119": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "120": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "121": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "122": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "123": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "124": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "125": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "126": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "127": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "50": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "51": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "52": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "53": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "54": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "55": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "56": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "57": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "58": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "59": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "60": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "61": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "62": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "63": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "64": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "65": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "66": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "68": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "69": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "75": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "76": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "77": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "78": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "79": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "80": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "81": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "82": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "83": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "84": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "85": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "86": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  }
+                }
+              }
+            },
+            "version": 1
+          }
+        },
+        {
+          "path": "/player/geometry_move",
+          "was_missing": true,
+          "value": "62e94c550083530f7c3f6508711bdeec2008ba3da2b4c370e64b13955e79442b"
+        }
+      ]
+    },
+    "L14_HT": {
+      "original_sha256": "15d28fcb62fd424398e366422e0b7c4ee41dff275bcea6b2fc26e8fb5787cb04",
+      "base_writer_sha256": "3693dd476b6c1e745eb8614786839adcfb2fb36dbaf5b43c93f859836a6b21a8",
+      "additions": [
+        {
+          "path": "/player/region",
+          "was_missing": true,
+          "value": 796
+        },
+        {
+          "path": "/player/geometry_move",
+          "was_missing": true,
+          "value": "88df268cbdb73fd6bcfea689ec5366eed1bcdc406148ea3a8b25c22b3361d28a"
+        }
+      ]
+    },
+    "L1_DC": {
+      "original_sha256": "8b81ca1876c311684fd399588f8ea3ffa7a3556b7cf443e9cf805f9ba45fa67a",
+      "base_writer_sha256": "07b55489f3288169d7f721a1ef20f0b3e1792b0fbed9a794e2c6579b2a75db3f",
+      "additions": [
+        {
+          "path": "/cave_crates",
+          "was_missing": true,
+          "value": {
+            "at": {
+              "112": [
+                597.0,
+                225.0,
+                444.0
+              ],
+              "121": [
+                568.0,
+                225.0,
+                427.0
+              ],
+              "122": [
+                639.0,
+                225.0,
+                523.0
+              ],
+              "94": [
+                433.0,
+                220.0,
+                516.0
+              ],
+              "95": [
+                416.0,
+                220.0,
+                530.0
+              ],
+              "96": [
+                654.0,
+                225.0,
+                551.0
+              ],
+              "97": [
+                627.0,
+                225.0,
+                576.0
+              ]
+            },
+            "carried": -1,
+            "version": 1
+          }
+        },
+        {
+          "path": "/display/creatures",
+          "was_missing": false,
+          "before": true,
+          "value": false
+        },
+        {
+          "path": "/help",
+          "was_missing": true,
+          "value": {
+            "enabled": true,
+            "seen": 0,
+            "version": 1
+          }
+        }
+      ]
+    },
+    "L19_BC": {
+      "original_sha256": "abe34534bc89afcd5c28df4dd44141058023373ffe7dbd2262c8f1db813659d1",
+      "base_writer_sha256": "ce76c5048d62a710249ad88b46ccd8f4ece8218046aaf173568897c4ba4e306a",
+      "additions": [
+        {
+          "path": "/floor_motion",
+          "was_missing": true,
+          "value": {
+            "clock": 0.0,
+            "motions": {},
+            "version": 1
+          }
+        }
+      ]
+    }
+  }
+}

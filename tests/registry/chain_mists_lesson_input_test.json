@@ -1,0 +1,85 @@
+{
+  "name": "chain_mists_lesson_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Fresh modern explicit unlearned book; supplied grounded approach then actual W/4/Q; other heads supplied stands, real E negative and F5/F9, held magic clock only around cost assertions. Not an earned chain."
+  },
+  "teleports": 1,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "907968b4333b11cd15c243153dd0ea753a78bab1c8dfe162e005502e953de277"
+  },
+  "context_aid_source_sites": {
+    "count": 6,
+    "sites": [
+      {
+        "path": "tests/chain_mists_lesson_input_test.gd",
+        "line": 9,
+        "column": 58,
+        "kind": "whole_game_checkpoint_context",
+        "source": "if not require(preload(\"res://scripts/lol2/game_save.gd\").load_file(self,input).is_empty(),\"Actual whole-game loader accepts the genuine continuous life\"):return"
+      },
+      {
+        "path": "tests/chain_mists_lesson_input_test.gd",
+        "line": 30,
+        "column": 2,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40);magic.set_process(false)"
+      },
+      {
+        "path": "tests/chain_mists_lesson_input_test.gd",
+        "line": 30,
+        "column": 42,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40);magic.set_process(false)"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 48,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 9,
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "component_magic_clock",
+      "pattern": "\\bmagic\\.set_process\\("
+    },
+    {
+      "kind": "legacy_checkpoint_or_validation_vector",
+      "pattern": "\\.apply_save\\("
+    },
+    {
+      "kind": "item_grant_fixture",
+      "pattern": "\\bGrants\\.grant\\("
+    },
+    {
+      "kind": "whole_game_checkpoint_context",
+      "pattern": "\\.load_file\\("
+    }
+  ]
+}

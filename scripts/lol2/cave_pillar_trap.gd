@@ -1,4 +1,5 @@
 extends Node3D
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## L1_DC colonnade pillar trap (tools/prepare_cave_pillar_trap.py; playtest 2026-10-17 report10:58:48 "2 pillars that
 ## you can hit and bring down the stones on the guard pursuing you"). The six intact template30 pillars and the cracked
 ## template31 prop878 were never drawn (legacy preview template set / animated). Hitting prop878 (melee masks
@@ -309,9 +310,9 @@ func aimed() -> bool:
 ## Armed melee (context 2/4) at the aimed pillar in reach.
 func strike() -> bool:
 	if host.flying or host.get_tree().paused or Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: return false
-	if host.player_form == 0 and host.equipped_item == "": return false
+	if not PlayerCombat.may_strike(host,false): return false
 	if not aimed(): return false
-	return receive_hit(2, 4, Forms.melee_damage(int(host.player_form), host.equipped_item != ""))
+	return receive_hit(2, 4, PlayerCombat.damage(host,false))
 
 ## Kind4 value0 (use) at state0.
 func use() -> bool:

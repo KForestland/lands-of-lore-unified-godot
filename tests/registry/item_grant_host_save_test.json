@@ -1,0 +1,33 @@
+{
+  "name": "item_grant_host_save_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1348,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Actual production scenes, grant methods, legacy writers and fresh loaders; all13named sites have post-grant saves, and all36existing golden packets have actual loaded-state records (15original,15roundtrip,Cavev1,5Plan1). Explicit synthetic source-contact/death/owner/prerequisite/spatial/view fixtures, not earned saves or real-input evidence. Generation only LOL2_WRITE_ITEM_BASELINES=1; regular comparison writes only a private user test save."
+  },
+  "count_method": "Audited source sites, not executions. Counts use the approved F02 engine/player-mutation categories; all component prerequisites, doubles and direct business/writer/reader calls are explicit in this test and its needs note. No earned gameplay claim.",
+  "teleports": 0,
+  "test_aids": 56,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "fe05e654069366b71363cfb0e081f94994e5921da337faae31596f0406765aa0"
+  },
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/item_grant_host_save_test.gd",
+        "line": 23,
+        "column": 18,
+        "kind": "completed_intro_fixture",
+        "source": "if area==\"L3_DH\":scene.introduction_state=\"complete\""
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 57
+}

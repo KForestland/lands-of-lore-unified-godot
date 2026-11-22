@@ -33,7 +33,7 @@ func run() -> void:
 	for row in Hints.JOURNAL_HINTS:
 		check(str(row.hint).length() <= 130, "short %s" % row.when)
 		check(MyJournal.hints().has(row.when), "registered %s" % row.when)
-	check(MyJournal.hints().size() == 45, "45 notes after M01, M02, and Act 3")
+	check(preload("res://tests/helpers/journal_original_contract.gd").preserved(MyJournal.hints()),"All original56 notes retained alongside approved new lessons")
 	var hive := Node3D.new()
 	Hints.attach(hive, "pit")
 	check(hive.get_node_or_null("HivePitJournalHints") != null, "pit attach")
@@ -42,5 +42,5 @@ func run() -> void:
 	Hints.attach(jungle, "river")
 	check(jungle.get_node_or_null("JungleRiverJournalHints") != null, "river attach")
 	jungle.free()
-	if failures == 0: print("PASS act1_journal_hints_test: flute note only at the bottom stop, river note on the drown, 45 notes")
+	if failures == 0: print("PASS act1_journal_hints_test: flute note only at the bottom stop, river note on the drown, 48 notes")
 	quit(1 if failures else 0)

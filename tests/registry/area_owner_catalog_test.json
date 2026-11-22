@@ -1,0 +1,19 @@
+{
+  "name": "area_owner_catalog_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1344,
+  "teleports": 0,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "763450680b4aed6ad72e6f9b778d7fc9b1b6c0de41a31e98f6d54f3acc82ce1d"
+  },
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged.",
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 3
+}

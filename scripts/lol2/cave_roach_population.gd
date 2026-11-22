@@ -1,4 +1,6 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## Source positions/health and original indexed presentation, plus the live
 ## perception/pursuit/bite adapter in cave_roach_population_state.gd.
 const CombatFeedback := preload("res://scripts/lol2/combat_feedback.gd")
@@ -134,6 +136,7 @@ func advance(delta: float) -> void:
 func _behave(delta: float) -> void:
 	var target: Vector3=host.player.global_position
 	var protected: bool=Forms.protected(host)
+	var defense: int=preload("res://scripts/lol2/player_defense.gd").scalar(host) # once per step (see scripted_creature_population)
 	var space:=get_world_3d().direct_space_state
 	for id in bodies:
 		var body: CharacterBody3D=bodies[id]
@@ -148,10 +151,10 @@ func _behave(delta: float) -> void:
 			ray.hit_from_inside=true
 			sight=space.intersect_ray(ray).is_empty()
 		var health: int=host.roach.model.player_health
-		var disposed:=State.advance_disposed(host.roach_population,id,delta,distance,sight,protected,health,preload("res://scripts/lol2/player_defense.gd").scalar(host),int(host.player_form))
+		var disposed:=State.advance_disposed(host.roach_population,id,delta,distance,sight,protected,health,defense,int(host.player_form))
 		var damage:=int(disposed.damage)
 		if damage>0:
-			host.roach.model.player_health=maxi(0,health-damage)
+			PlayerHealth.lose_host(host,damage)
 			host._save_feedback("You fell. R returns to the checkpoint; F9 loads your save." if host.roach.model.player_health==0 else "You were hit.")
 		var live: Dictionary=host.roach_population.live[id]
 		var direction: Vector3
@@ -262,7 +265,7 @@ func receive_damage(id: String, amount: int, melee: bool=true, effect: int=20) -
 
 func strike() -> bool:
 	if host.starting_magic==null or not host.starting_magic.world_active() or host.roach==null: return false
-	if host.roach.model.strike_remaining>0: return false  # unarmed human melee allowed (manual printed 7/39 hand attack; melee_damage gives 4)
+	if not PlayerCombat.cooldown_ready(host.roach.model.strike_remaining): return false  # unarmed human melee allowed (manual printed 7/39 hand attack; melee_damage gives 4)
 	var selected:=""
 	var closest:=INF
 	var origin: Vector3=host.camera.global_position
@@ -271,12 +274,8 @@ func strike() -> bool:
 		var point: Vector3=bodies[id].global_position+Vector3(0,6,0)
 		var delta: Vector3=point-origin
 		var distance:=delta.length()
-		if distance<=0.01 or distance>96 or distance>=closest or (-host.camera.global_basis.z).dot(delta/distance)<0.9: continue
-		var query:=PhysicsRayQueryParameters3D.create(origin,point,3,[host.player.get_rid()])
-		query.hit_from_inside=true
-		var hit: Dictionary=get_world_3d().direct_space_state.intersect_ray(query)
-		if not hit.is_empty() and hit.collider!=bodies[id]: continue
+		if distance>=closest or not PlayerCombat.aim_cone(host,point,PlayerCombat.REACH_CAVE,3,[host.player.get_rid()],bodies[id]): continue
 		selected=id;closest=distance
 	if selected.is_empty(): return false
 	host.roach.model.strike_remaining=host.roach.Model.STRIKE_COOLDOWN
-	return CombatFeedback.landed(receive_damage(selected,Forms.melee_damage(host.player_form,host.equipped_item!="")))
+	return CombatFeedback.landed(receive_damage(selected,PlayerCombat.damage(host,false)))

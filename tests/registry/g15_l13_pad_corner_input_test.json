@@ -1,0 +1,68 @@
+{
+  "name": "g15_l13_pad_corner_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Local physical-pad component; supplied stand/controller-bootstrap aids before actual F5/F9, then stationary/looking negatives and real W. Not an earned campaign walk."
+  },
+  "teleports": 1,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7b46d424cb5bc110ee1de5dec12ecb0948df4f0906a8cea7c7bfcc1aa157372d"
+  },
+  "context_aid_source_sites": {
+    "count": 6,
+    "sites": [
+      {
+        "path": "tests/g15_l13_pad_corner_input_test.gd",
+        "line": 14,
+        "column": 2,
+        "kind": "pad_controller_bootstrap",
+        "source": "actions.set_physics_process(false) # Supplied-stand bootstrap only; discarded by actual F9."
+      },
+      {
+        "path": "tests/g15_l13_pad_corner_input_test.gd",
+        "line": 16,
+        "column": 2,
+        "kind": "pad_controller_bootstrap",
+        "source": "actions.restore();actions.set_physics_process(true)"
+      },
+      {
+        "path": "tests/g15_l13_pad_corner_input_test.gd",
+        "line": 16,
+        "column": 20,
+        "kind": "pad_controller_bootstrap",
+        "source": "actions.restore();actions.set_physics_process(true)"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 9,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

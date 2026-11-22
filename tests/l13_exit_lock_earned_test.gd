@@ -1,8 +1,14 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l13_dawn_release_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="6ace2f6b19e8821944137b8225e154d6b5b1925e071f639330daa6f7209b1c4c"
+func pass_line() -> String:
+ return "PASS earned Dawn stone ->physical elevator rise ->slot commit/retrieve ->native Claw Mountains exit/save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_dawn_release_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="6ace2f6b19e8821944137b8225e154d6b5b1925e071f639330daa6f7209b1c4c","qualified Dawn-release input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified Dawn-release input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -54,10 +60,19 @@ func run():
   if scene.ready_for_review:break
  prepare(scene)
  check(scene.carried_collected.count(stone)==1 and scene.equipped_item=="act2:L13_RC:dark_sword" and scene.carried_collected.count("act2:L13_RC:dawn_bestial_disk")==1,"stone/sword/gift survive actual exit")
+ # Lead 2026-11-15: carrying the Dreamstone into the Claw Mountains, the screen, the Journal and the Atlas say where it goes.
+ var Journal=preload("res://scripts/lol2/my_journal.gd")
+ var said:=false
+ for i in 600:
+  await process_frame
+  if is_instance_valid(scene.interface_hud) and str(scene.interface_hud.hint.text)==scene.DREAMSTONE_HOME_LINE:said=true;break
+ check(said,"arrival line names the way home (got '%s')"%str(scene.interface_hud.hint.text))
+ check("l13_dreamstone_home" in Journal.notes(scene),"Journal note: carry the Dreamstone back to the Huline Temple")
+ check(preload("res://scripts/lol2/atlas_places.gd").active_plot("L12_CM",Journal.notes(scene),scene.quest_state).any(func(r):return r.place=="icy_gulch"),"Atlas plot pin at the icy gulch exit")
  error=scene._quicksave_unrecorded("res://tmp/l13_exit_lock_earned_save.json")
  check(error.is_empty(),"Claw Mountains save: "+error)
  check(scene._quickload_unrecorded("res://tmp/l13_exit_lock_earned_save.json").is_empty(),"Claw Mountains reload")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seeds/recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned Dawn stone ->physical elevator rise ->slot commit/retrieve ->native Claw Mountains exit/save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

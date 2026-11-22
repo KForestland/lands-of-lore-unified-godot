@@ -1,0 +1,33 @@
+{
+  "name": "generic_l16_owned_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Unchanged pinned earned City ground checkpoint; wait idle with live player/curse clock for the saved Beast curse to expire naturally. Local grounded component stands and held NPC clocks, actual E/left/F5/F9; no form injection or earned-route claim. R126 input is repository-owned tests/fixtures/g03_l16_ground_b387ca96.json, unchanged b387ca96 SHA; no shared tmp output can rewrite it."
+  },
+  "teleports": 1,
+  "test_aids": 9,
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 26,
+        "column": 37,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(file).instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 10,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "a2ab08147f4aa7d80d3cac6161f80dbd65b7cad2b141fa0a8f2d95a5ea2e31aa"
+  },
+  "count_method": "Audited source sites, not executions. Conservative transitive helpers include overridden and unused paths."
+}

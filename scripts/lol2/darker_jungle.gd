@@ -1,4 +1,5 @@
 extends "res://scripts/lol2/jungle_walkthrough.gd"
+var area_owners: Node
 ## Original L8_SJ terrain/initial scenery; the connected Act1 arrival and (Phase A, 2026-10-30) the full darker-jungle map at the
 ## Act 1 Jungle standard: the pack's floors (incl. the 44 floorless collision floors), ceilings, source walls, static assemblies and
 ## movables, 1765 props as batched fixed-Y billboards with the native frame flips, the original night panorama
@@ -19,6 +20,9 @@ static func arrival_assets_ready() -> bool:
 ## opening; the original lists no solid box for it (placement word8 bit 0x80 clear). Every other face still collides.
 ## Larkhon cave facade111 also has no native solid box; its original dynamic regions own admission (STORY035).
 const OPEN_ASSEMBLIES := [99,111]
+## Owner r17 17-50-18, 17-50-38 and 17-50-53. Material 130 source walls from the hedge ceiling
+## 60 up to the region ceiling 200. The builder stores that span. These five risers are not drawn.
+const HEDGE_RISER_SKIP: Array[int] = [7526, 7540, 7542, 7544, 7546]
 ## The native solid boxes of the static assemblies (static_collision_L8_SJ.json, collision only: the pack already draws every
 ## assembly face) and the native player-impassable regions (region_blockers/L8_SJ.json); the l8-preview lane gated them, Phase A
 ## attaches them always (the Act 1 Jungle rule). The gate's "Preview: Act 2 start" entry is offered in both editions (owner, 2026-10-30).
@@ -62,8 +66,7 @@ static func preview_mode() -> bool:
 	if preload("res://scripts/lol2/enhanced/enhanced_edition.gd").enabled(): return true
 	return Engine.get_main_loop() is SceneTree and (Engine.get_main_loop() as SceneTree).has_meta("lol2_darker_preview")
 func include_collision_face(face: Dictionary) -> bool:
-	if preload("res://scripts/lol2/l8_tree.gd").owns(face):return false
-	if preload("res://scripts/lol2/l8_tree_bridge.gd").owns(face):return false
+	if is_instance_valid(area_owners) and area_owners.claims_collision(face): return false
 	return not (face.kind == "movable" and face.get("placement_kind") == "static_assembly" and int(face.get("source_index", -1)) in OPEN_ASSEMBLIES)
 
 func _init() -> void:
@@ -109,6 +112,7 @@ func _apply_night() -> void:
 			var material := Night.material_for(source, Night.SOURCE_INSTANCE, Night.FULL_BRIGHT, night_fog_only)
 			child.multimesh.mesh.material = material
 			night_materials.append(material)
+	_apply_torch_lights()
 
 func set_night(enabled: bool, fog_only: bool) -> void:
 	night_enabled = enabled
@@ -116,11 +120,44 @@ func set_night(enabled: bool, fog_only: bool) -> void:
 	for material in night_materials:
 		material.set_shader_parameter("night_enabled", enabled)
 		material.set_shader_parameter("fog_only", fog_only)
+	_apply_torch_lights()
+
+## Owner r18 F10 15-37-14 at (-1712,1218) "way too dark here" and the lighting rule (2026-10-30: light sources, not a player
+## cone): the pack's 13 flaming skull torches (prop template 19, prop_288, animated flame) light their surroundings. The
+## native light records (0xFD8C4 list) are not traced; colour, intensity, range and the quadratic falloff are presentation
+## adapters (docs/DEVIATIONS.md). The two torches at (-1685,1041) and (-1827,1045) stand 180 units from the owner's spot.
+const TORCH_TEMPLATE := 19
+const TORCH_FLAME_HEIGHT := 85.0
+const TORCH_RANGE := 560.0
+const TORCH_LIGHT := Vector3(1.0, 0.74, 0.42)
+var torch_lights_enabled := true
+var torch_lights: PackedVector3Array = []
+
+func _collect_torches(data: Dictionary) -> void:
+	torch_lights = []
+	for prop in data.props:
+		if int(prop.get("template", -1)) != TORCH_TEMPLATE: continue
+		var p: Array = prop.position
+		torch_lights.append(Vector3(float(p[0]), float(p[1]) + TORCH_FLAME_HEIGHT, float(p[2])))
+
+func _apply_torch_lights() -> void:
+	var positions: PackedVector3Array = torch_lights if (torch_lights_enabled and night_enabled) else PackedVector3Array()
+	var colors: Array = []
+	for i in positions.size(): colors.append(Vector4(TORCH_LIGHT.x, TORCH_LIGHT.y, TORCH_LIGHT.z, TORCH_RANGE))
+	Night.apply_lights(night_materials, positions, colors)
+
+func set_torch_lights(enabled: bool) -> void:
+	torch_lights_enabled = enabled
+	_apply_torch_lights()
 
 var area_world_items: Node3D
 
 
 func _ready() -> void:
+	area_owners = preload("res://scripts/lol2/area_owner_registry.gd").new()
+	var owner_error: String = area_owners.prepare("L8_SJ")
+	assert(owner_error.is_empty(), owner_error)
+	add_child(area_owners)
 	if get_tree().has_meta("lol2_l8_night"):
 		var wanted: Variant = get_tree().get_meta("lol2_l8_night")
 		get_tree().remove_meta("lol2_l8_night")
@@ -128,6 +165,7 @@ func _ready() -> void:
 			night_enabled = bool(wanted.get("enabled", true))
 			night_fog_only = bool(wanted.get("fog_only", false))
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(geometry_file))
+	_collect_torches(data)
 	for face in data.faces:
 		if face.kind == "floor" and (face.get("region") is float or face.get("region") is int) and face.get("sector_light") is Array:
 			_region_light[int(face.region)] = Color(float(face.sector_light[0]), float(face.sector_light[1]), float(face.sector_light[2]), float(face.sector_light[3]))
@@ -144,8 +182,17 @@ func _ready() -> void:
 	var Binder := preload("res://scripts/lol2/act2_progression.gd")
 	if Binder.assets_ready("L8_SJ"): excluded_faces.merge(Binder.hinge_faces("L8_SJ", data))
 	for i in data.faces.size():
-		if preload("res://scripts/lol2/l8_tree.gd").owns(data.faces[i]):excluded_faces[i]=true
-		if preload("res://scripts/lol2/l8_tree_bridge.gd").owns(data.faces[i]):excluded_faces[i]=true
+		if area_owners.claims_static(data.faces[i]): excluded_faces[i] = true
+	for index in HEDGE_RISER_SKIP:
+		skipped_faces[index] = true
+	# Owner r17 17-59-34 (hedge at (1842, 2499)). The hedges (material 276) on a neighbour-less region edge with no floor
+	# beyond them stop the walk (tools/prepare_l8_boundary_hedges.py, 118 of the pack's 5101 wall records). Grok BG26
+	# made every neighbour-less wall solid (2906): the region neighbour words are not fully decoded, so that also closed
+	# the pit mouth, the tree-room steps and the temple path. Linked edges and walls with floor beyond stay open.
+	boundary_source_walls_collide = true
+	boundary_edges_file = "res://scripts/lol2/l8_boundary_hedges.json"
+	if Binder.assets_ready("L8_SJ"):
+		Binder.claim_moving_floors(self, "L8_SJ", data, excluded_faces)
 	super._ready()
 	# Drowning in this area's water regions (liquid_drowning.gd, owner 2026-10-31): staged by tools/prepare_liquid_regions.py.
 	if preload("res://scripts/lol2/liquid_drowning.gd").assets_ready("L8_SJ"):
@@ -167,10 +214,10 @@ func _ready() -> void:
 	if preload("res://scripts/lol2/static_assemblies.gd").assets_ready("L8_SJ") and FileAccess.file_exists("res://scripts/lol2/static_collision_L8_SJ.json"):
 		preview_assemblies = preload("res://scripts/lol2/static_assemblies.gd").new()
 		add_child(preview_assemblies)
-		var collision_error: String = preview_assemblies.setup(self, "L8_SJ", [], [], [114, 116], false)
+		var collision_error: String = preview_assemblies.setup(self, "L8_SJ", [], [], [93, 94, 114, 116], false)
 		if not collision_error.is_empty(): push_error(collision_error)
 		else:
-			var solid_error: String = preview_assemblies.add_scripted_solids("L8_SJ", [114, 116])
+			var solid_error: String = preview_assemblies.add_scripted_solids("L8_SJ", [93, 94, 114, 116])
 			if not solid_error.is_empty(): push_error(solid_error)
 	if region_blockers_enabled: preview_blockers = preload("res://scripts/lol2/region_blockers.gd").attach(self, player, "L8_SJ")
 	if get_tree().has_meta("lol2_darker_preview"): get_tree().remove_meta("lol2_darker_preview")
@@ -204,26 +251,12 @@ func _ready() -> void:
 		if error.is_empty(): get_tree().remove_meta("lol2_darker_resume")
 		else: push_error(error)
 
+	preload("res://scripts/lol2/game_session.gd").for_tree(get_tree()).apply_pending(self)
 	act2_creatures = preload("res://scripts/lol2/act2_creatures.gd").attach(self, "L8_SJ")
+	preload("res://scripts/lol2/debug_kill.gd").attach(self)
 
 	act2_items = preload("res://scripts/lol2/act2_world_items.gd").attach(self, "L8_SJ")
-	var journey = preload("res://scripts/lol2/l8_journey.gd").new()
-	journey.host = self
-	add_child(journey)
-	preload("res://scripts/lol2/l8_village_hints.gd").attach(self)
-	preload("res://scripts/lol2/l8_shore.gd").attach(self)
-	preload("res://scripts/lol2/l8_dawn.gd").attach(self)
-	preload("res://scripts/lol2/l8_baccata.gd").attach(self)
-	preload("res://scripts/lol2/l8_tribe.gd").attach(self)
-	preload("res://scripts/lol2/l8_tribe_dawn_hints.gd").attach(self, "tribe")
-	preload("res://scripts/lol2/l8_clubhouse.gd").attach(self)
-	preload("res://scripts/lol2/l8_huline_speech.gd").attach(self)
-	preload("res://scripts/lol2/l8_larkhon.gd").attach(self)
-	preload("res://scripts/lol2/l8_temple_door.gd").attach(self)
-	preload("res://scripts/lol2/l13_journal_hints.gd").attach(self, "temple")
-	preload("res://scripts/lol2/l8_tree_bridge.gd").attach(self)
-	preload("res://scripts/lol2/l8_cache_ladder.gd").attach(self)
-	preload("res://scripts/lol2/l8_tree.gd").attach(self)
+	area_owners.attach_all(self, "L8_SJ")
 
 func apply_save(state: Variant) -> String:
 	var error := preload("res://scripts/lol2/act2_save.gd").validate(state, area_save_format)
@@ -231,10 +264,8 @@ func apply_save(state: Variant) -> String:
 	error = super.apply_save(state)
 	if error.is_empty() and is_instance_valid(act2_creatures): error = act2_creatures.restore_from_quests()
 	if error.is_empty(): error = preload("res://scripts/lol2/act2_items_catalog.gd").restore(self)
-	if error.is_empty() and has_node("L8Clubhouse"):get_node("L8Clubhouse").restore()
-	if error.is_empty() and has_node("L8Larkhon"):get_node("L8Larkhon").restore()
-	if error.is_empty() and has_node("L8TreeBridge"):get_node("L8TreeBridge").restore()
-	if error.is_empty() and has_node("L8CacheLadder"):get_node("L8CacheLadder").restore()
+	if error.is_empty() and is_instance_valid(area_owners): error = area_owners.restore_all("load")
+	if error.is_empty(): preload("res://scripts/lol2/load_region_rule.gd").apply(self)  # load rule: no entry event, re-arm
 	return error
 
 func apply_area_handoff(state: Variant) -> String:
@@ -245,11 +276,12 @@ func apply_area_handoff(state: Variant) -> String:
 	error = super.apply_area_handoff(state)
 	if error.is_empty() and is_instance_valid(act2_creatures): error = act2_creatures.restore_from_quests()
 	if error.is_empty(): error = preload("res://scripts/lol2/act2_items_catalog.gd").restore(self)
-	if error.is_empty() and has_node("L8Clubhouse"):get_node("L8Clubhouse").restore()
-	if error.is_empty() and has_node("L8Larkhon"):get_node("L8Larkhon").restore()
-	if error.is_empty() and has_node("L8TreeBridge"):get_node("L8TreeBridge").restore()
-	if error.is_empty() and has_node("L8CacheLadder"):get_node("L8CacheLadder").restore()
+	if error.is_empty() and is_instance_valid(area_owners): error = area_owners.restore_all("arrival")
 	return error
+func move_grounded(direction: Vector3, delta: float, sprint: bool = false) -> void:
+	super.move_grounded(direction, delta, sprint)
+	if has_node("L8StrawTrap"): get_node("L8StrawTrap").watch()
+
 func _quicksave_unrecorded(path: String = "") -> String:
 	return preload("res://scripts/lol2/act2_save.gd").save_host(self, path)
 func _quickload_unrecorded(path: String = "") -> String:
@@ -258,7 +290,7 @@ func _quickload_unrecorded(path: String = "") -> String:
 func inventory_state() -> Dictionary:
 	preload("res://scripts/lol2/act2_items_catalog.gd").sync(self)
 	var result := super.inventory_state()
-	result.collected = result.collected.filter(func(id): return not preload("res://scripts/lol2/act2_items_catalog.gd").valid(id) or preload("res://scripts/lol2/act2_items_catalog.gd").legacy_equipment(id))
+	result.collected = result.collected.filter(func(id): return not preload("res://scripts/lol2/act2_items_catalog.gd").valid(id) or preload("res://scripts/lol2/act2_items_catalog.gd").saved_in_legacy(self,id))
 	return result
 
 func actor_input_locked() -> bool:
@@ -285,3 +317,6 @@ func jump_launch_speed(sprint: bool = false) -> float:
 	var rise:float=0.0-(player.position.y-32.0)+24.0
 	var travel:float=Vector2(player.position.x,player.position.z).distance_to(Vector2(5100,1880))/144.0
 	return maxf(sqrt(640.0*rise),(rise+160.0*travel*travel)/travel)
+
+func area_snapshot() -> Dictionary:
+	return preload("res://scripts/lol2/act2_save.gd").snapshot_host(self)

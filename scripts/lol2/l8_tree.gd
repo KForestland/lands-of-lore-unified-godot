@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const Slot=preload("res://scripts/lol2/l8_tree_slot_state.gd")
 const KEY="l8_tree"
 const FLOORS={"663":[0,210],"664":[10,200],"662":[20,190],"661":[30,180],"670":[40,170],"689":[50,160],"667":[60,150],"669":[70,140],"666":[80,130],"668":[90,120],"665":[100,110]}
@@ -69,7 +70,8 @@ func interact(action:String,item:String="")->Dictionary:
  var s:=state().duplicate(true)
  var result:Dictionary=Slot.insert(s.lock,host.carried_collected,item) if action=="insert" else Slot.retrieve(s.lock,host.carried_collected) if action=="retrieve" else Slot.Kit.refuse("Unknown slot action.")
  if not result.ok:return result
- s.lock=result.state;host.quest_state[KEY]=s;host.carried_collected=result.inventory
+ s.lock=result.state;var admission:=Grants.transition(host,result.inventory,{KEY:s})
+ if not admission.ok:return admission
  if action=="insert" and host.hand_item==item:host.hand_item=""
  Slot.Items.sync(host);restore()
  return {"ok":true,"reason":"The bamboo door opens. Retrieve the shard." if action=="insert" else "You take back the same crystal shard."}
@@ -99,7 +101,8 @@ func _unhandled_key_input(event:InputEvent):
   if Slot.Kit.slot(state().lock,Slot.TARGET).occupied!="":result=interact("retrieve")
   else:
    var item:String=host.hand_item
-   if item.is_empty():
+   if Slot.Items.definition(item)!=105 or item not in host.carried_collected:
+    item=""
     for id in host.carried_collected:
      if Slot.Items.definition(id)==105:item=id;break
    result=interact("insert",item)

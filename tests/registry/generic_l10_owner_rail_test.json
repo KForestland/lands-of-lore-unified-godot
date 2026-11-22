@@ -1,0 +1,86 @@
+{
+  "name": "generic_l10_owner_rail_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "note": "Two unchanged game-written fixtures: owner F10 report01-36-15 and fresh3033v4 two-blue F5. ActualF2/F9/W/Space/E/F5 only. Owner slot retains its original adapter_exit_seeds=true option; inherited unused mains and modifiers are source-audited conservatively. No fresh-campaign claim."
+  },
+  "teleports": 0,
+  "test_aids": 1,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged.",
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "4d0c9b79b107bbb77c358959f2aecc33f2ba2b83d125422fd2d4be47fc00a239"
+  },
+  "context_aid_source_sites": {
+    "count": 9,
+    "sites": [
+      {
+        "path": "tests/generic_l10_barrel_sitting_test.gd",
+        "line": 38,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(WHITE_RETURN_INPUT,Slots.slot_path(1))==OK,\"Install actual two-white return F5 for realF9\"):return"
+      },
+      {
+        "path": "tests/generic_l10_blue_priest_test.gd",
+        "line": 68,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(OIL_INPUT,Slots.slot_path(1))==OK,\"Install untouched oil F5 for actualF9\"):return"
+      },
+      {
+        "path": "tests/generic_l10_bracers_return_test.gd",
+        "line": 58,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(BRACERS_INPUT,Slots.slot_path(1))==OK,\"Install untouched actualF5 in slot1\"):return"
+      },
+      {
+        "path": "tests/generic_l10_owner_rail_test.gd",
+        "line": 11,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(path,Slots.slot_path(1))==OK,\"Install disclosed genuine input for actualF9\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l10_white_return_test.gd",
+        "line": 40,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(TWO_EMPTY_INPUT,Slots.slot_path(1))==OK,\"Install actual two-empty F5 for realF9\"):return"
+      },
+      {
+        "path": "tests/generic_l9_tower_sitting_test.gd",
+        "line": 75,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(INPUT,Slots.slot_path(1))==OK,\"Install actual F5 output in slot1\"):return"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 10
+}

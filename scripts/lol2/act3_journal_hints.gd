@@ -1,8 +1,8 @@
 extends Node
 ## Act 3 journal notes for six hosted gaps (grok AA04). Text only. Quest state is never changed.
-## L16DryFountain is on this base. The L17, L19, and L20 nodes are the unapplied S/T/W/X hosts.
+## Main-road directions read saved owner stages; only Journal discovery is written.
 const MyJournal = preload("res://scripts/lol2/my_journal.gd")
-const JOURNAL_HINTS := [
+const ORIGINAL_HINTS := [
 	{"when": "l16_south_fountain", "flag": "l16_dry_fountain", "hint": "The dry fountain is at the south end of the avenue. The ball over it is what I break.", "enhanced_guard": "HINTBOOK (grok AA04). Not shown."},
 	{"when": "l17_cavern_exit", "flag": "l17_cavern_run", "hint": "The caverns can be a straight run for the exit. The map shows the heading.", "enhanced_guard": "HINTBOOK (grok AA04). Not shown."},
 	{"when": "l19_horn_keep", "flag": "l19_belial_horn", "hint": "Baccata gives me Belial's horn, and then he is gone. I keep the horn.", "enhanced_guard": "HINTBOOK (grok AA04). Not shown."},
@@ -10,6 +10,36 @@ const JOURNAL_HINTS := [
 	{"when": "l19_ghostly_heads", "flag": "l19_ghostly_heads", "hint": "Four ghostly heads take a level-one mist of doom each. The demon's body goes on the white circle, and I stay out of the fountain.", "enhanced_guard": "HINTBOOK (grok AA04). Not shown."},
 	{"when": "l19_curse_mother", "flag": "l19_dawn_curse", "hint": "The curse spell goes in at ancient-magic level five. A purple glob should enter the mother.", "enhanced_guard": "HINTBOOK (grok AA04). Not shown."},
 ]
+const JOURNAL_HINTS := ORIGINAL_HINTS + ROAD.L17_HC + ROAD.L19_BC + ROAD.L20_BB
+const ROAD := {
+ "L17_HC": [
+  {"when":"l17_road_arrival","place":"red_strands","hint":"Hidden Caverns: follow the passages to the red strands in the west wall. Cut them with a weapon; that way leads to Belial's Laboratory."},
+  {"when":"l17_road_exit","place":"laboratory_exit","hint":"The red strands are cut. Continue through the west-wall passage to Belial's Laboratory."}],
+ "L19_BC": [
+  {"when":"l19_road_arrival","place":"baccata_horn","hint":"Belial's Laboratory: Baccata and Belial's Horn are by the pipe south of the arrival. Look down from the rim and take the Horn."},
+  {"when":"l19_road_bars","place":"bars_gutter","hint":"You carry Belial's Horn. Go back along the corridor to the barred door. Strike the bars as the Human; the Lizard can take the gutter beyond."},
+  {"when":"l19_road_switches","place":"guck_switches","hint":"Beyond the gutter, change back to the Human. Shoot the three switches over the guck with the Blue Bow or the Dark Bow to raise the channel."},
+  {"when":"l19_road_golden","place":"golden_door","hint":"The channel is raised. Open its door and follow the passage through the rapids toward the Golden Door; E opens the door."},
+  {"when":"l19_road_heads","place":"ghostly_heads","hint":"Beyond the Golden Door, find the summoning room. Cast Mists 1 at each of its four ghostly heads (4, then Q)."},
+  {"when":"l19_road_circle","place":"white_circle","hint":"All four heads are marked. Put the demon's body on the white circle beside the red fountain; stay out of the fountain."},
+  {"when":"l19_road_dawn","place":"dawn_lift","hint":"Leave the summoning room for the lift to Dawn. Ride up and speak with her until she explains the curse and offers the Ruby of Truth."},
+  {"when":"l19_road_birth","place":"birthing_exit","hint":"Dawn has offered the Ruby of Truth. Follow the passage beyond her to the Birthing Chamber; the mother beast is next."}],
+ "L20_BB": [
+  {"when":"l20_road_dawn","place":"laboratory_return","hint":"Before confronting the mother, return to Dawn in Belial's Laboratory and hear what she says about the curse."},
+  {"when":"l20_road_arrival","place":"mother_beast","hint":"Birthing Chamber: approach the mother beast. Expel the curse into her with Curse 5 (3, then Shift+Q), as Dawn explained."},
+  {"when":"l20_road_demons","place":"mother_beast","hint":"The curse has entered the mother. Press E for the demons' fall; then take the way toward the five pillars."},
+  {"when":"l20_road_pillars","place":"pillar_path","hint":"Next, the five pillars. Shoot all five with your bow to open the crossing."},
+  {"when":"l20_road_scotia","place":"scotia","hint":"The pillar crossing is open. Reach Scotia's chamber and cast Prism 5 (5, then Shift+Q); the moving carrier opens the way on."},
+  {"when":"l20_road_armory","place":"armory","hint":"Continue to the Armory. Break the brick at the westernmost block with your weapon."},
+  {"when":"l20_road_ball","place":"armory_ball","hint":"The brick is broken. Break the white ball with Summon 3 (6, then Ctrl+Q)."},
+  {"when":"l20_road_fire","place":"armory_fire","hint":"Now shoot the fireball with the Blue Bow or the Dark Bow. Brick, white ball and fireball must all be broken to stop the pillars."},
+  {"when":"l20_road_draracle","place":"false_draracle","hint":"The pillars are stopped. Continue to the false Draracle and defeat him; the three Crystal Keys open the way to Belial."},
+  {"when":"l20_road_key0","place":"crystal_key0","hint":"Take the first Crystal Key, then the second and third in order, to open Belial's room."},
+  {"when":"l20_road_key1","place":"crystal_key1","hint":"The first Crystal Key is taken. Find the second Crystal Key next."},
+  {"when":"l20_road_key2","place":"crystal_key2","hint":"The second Crystal Key is taken. Find the third Crystal Key to open Belial's room."},
+  {"when":"l20_road_belial","place":"belial","hint":"The three Crystal Keys open Belial's room. Confront him with Belial's Horn, the Blue Bow or the Dark Sword."},
+  {"when":"l20_road_finished","place":"","hint":"Belial is defeated. The journey is finished."}]
+}
 const FOUNTAIN_AT := Vector3(440, 85, 10438)
 const FOUNTAIN_RADIUS := 800.0
 const CAVERN_AT := Vector3(-5436, 32, 5802)
@@ -126,3 +156,48 @@ func _near_curse(pos: Vector3) -> bool:
 
 func _process(_delta: float) -> void:
 	check()
+	check_road()
+
+## Presentation projection of the same owner receipts used by the earned chain.
+static func road_stage(area:String, quests:Dictionary)->int:
+	if area=="L17_HC":return 1 if quests.get("l17_beast_blade",{}).get("cut",false) else 0
+	if area=="L19_BC":
+		if quests.get("l19_dawn_curse",{}).get("ruby_offered",false):return 7
+		var heads:Dictionary=quests.get("l19_ghostly_heads",{})
+		if heads.get("dragged",false):return 6
+		if heads.get("shot",[]).size()==4:return 5
+		if quests.get("l19_drain_path",{}).get("door_clicked",false):return 4
+		var sewer:Dictionary=quests.get("l19_sewer_forms",{})
+		if sewer.get("switches",[]).size()==3:return 3
+		if sewer.get("lizard_at_wall",false):return 2
+		return 1 if quests.get("l19_belial_horn",{}).get("taken",false) else 0
+	if area=="L20_BB":
+		if quests.get("l20_finale",{}).get("game_finished",false):return 13
+		var drar:Dictionary=quests.get("l20_faux_draracle",{})
+		if drar.get("room",false):return 12
+		if drar.get("killed",false):return 9+mini(2,drar.get("keys",[]).size())
+		var arm:Dictionary=quests.get("l20_armory",{})
+		if arm.get("stopped",false):return 8
+		if arm.get("hacked",false):return 7 if arm.get("ball",false) else 6
+		var pillars:Dictionary=quests.get("l20_pillars_scotia",{})
+		if pillars.get("trinity",false):return 5
+		if pillars.get("path_open",false):return 4
+		var mother:Dictionary=quests.get("l19_dawn_curse",{})
+		if mother.get("demons_killed",false):return 3
+		if mother.get("glob_entered",false):return 2
+		return 1 if mother.get("curse_said",false) else 0
+	return -1
+
+func check_road()->void:
+	if not is_instance_valid(host) or not host.get("quest_state") is Dictionary:return
+	var area:String=str(host.get("area_id"))
+	if not ROAD.has(area) or not is_instance_valid(host.get("player")):return
+	var magic:Variant=host.get("starting_magic")
+	if is_instance_valid(magic) and not magic.world_active():return
+	# Cast/use feedback owns its visible lifetime. Discover also writes a Journal
+	# notice, so defer BOTH writes until it ends, then project the current stage.
+	# The existing once-only Journal receipt prevents a repeat after load.
+	var hud:Variant=host.get("interface_hud")
+	if is_instance_valid(hud) and float(hud.get("save_notice_remaining"))>0:return
+	var row:Dictionary=ROAD[area][road_stage(area,host.quest_state)]
+	if MyJournal.discover(host,row.when):host.save_feedback(row.hint)

@@ -6,12 +6,14 @@ extends RefCounted
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 const BRACERS := "jungle:weapon_shop:Gargoyle_Bracers"
 static func scalar(host: Node) -> int:
-	if host == null or host.get("player_form") != 0: return 0
+	if host == null or host.get("player_form") != 0 or preload("res://scripts/lol2/player_food_effects.gd").sleeping(host): return 0
 	var controller = host.get("item_effects")
 	if controller == null: return 0
 	var carried: Array=controller.carried()
 	var offhand=controller.state().get("offhand", "")
 	var value:=Catalog.defense(offhand) if offhand is String and Catalog.slot(offhand)=="offhand" and offhand in carried else 0
+	for accessory:String in controller.state().get("accessories",[]):
+		if accessory in carried and Catalog.slot(accessory)=="accessory":value+=Catalog.defense(accessory)
 	var armor=host.get("equipped_armor")
 	if armor is String and armor in carried:
 		if Catalog.slot(armor)=="armor":value+=Catalog.defense(armor)

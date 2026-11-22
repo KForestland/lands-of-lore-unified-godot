@@ -1,0 +1,30 @@
+{
+  "name": "game_save_quit_load_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1339,
+  "needs": {
+    "chain": "private two-process profile driver: sol_lane/foundation3_20261111/private_case.py --pair --rendered"
+  },
+  "teleports": 1,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "4581f06cf2f94aeec8877085c2cbf7ebf8b81c461f535f49d0f988270df4dce0"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance.",
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/game_save_quit_load_test.gd",
+        "line": 43,
+        "column": 71,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/dragon_level.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 3
+}

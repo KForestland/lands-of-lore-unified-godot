@@ -87,7 +87,8 @@ static func commit(snapshot: Dictionary, recipe: Dictionary, event_id: String) -
 	var output: String = recipe.get("output", "")
 	if not output.is_empty(): changed.occupied = output.replace("{item}", entry.occupied)
 	var receipts: Array = changed.receipts
-	receipts.append(event_id)
+	# Receipts mark unique events, including when a repeatable slot is reused.
+	if event_id not in receipts: receipts.append(event_id)
 	next.slots[target] = changed
 	return {"ok": true, "snapshot": next}
 

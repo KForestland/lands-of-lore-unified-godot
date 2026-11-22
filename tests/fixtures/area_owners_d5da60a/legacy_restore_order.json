@@ -1,0 +1,134 @@
+{
+  "act2_map.gd": {
+    "load": [
+      {
+        "name": "L10Fences",
+        "args": []
+      },
+      {
+        "name": "L12FrozenBow",
+        "args": []
+      },
+      {
+        "name": "L12Crevasse",
+        "args": []
+      },
+      {
+        "name": "L12NicheArmor",
+        "args": []
+      },
+      {
+        "name": "L12RiverRafts",
+        "args": []
+      },
+      {
+        "name": "L12Glacier",
+        "args": []
+      },
+      {
+        "name": "L13EggDoor",
+        "args": []
+      },
+      {
+        "name": "L13Eggs",
+        "args": []
+      },
+      {
+        "name": "L13Elevator",
+        "args": []
+      },
+      {
+        "name": "L13Spires",
+        "args": []
+      },
+      {
+        "name": "L13Bridge",
+        "args": []
+      },
+      {
+        "name": "L13Altar",
+        "args": []
+      },
+      {
+        "name": "L13ExitLock",
+        "args": []
+      },
+      {
+        "name": "L19DawnElevator",
+        "args": []
+      }
+    ]
+  },
+  "darker_jungle.gd": {
+    "load": [
+      {
+        "name": "L8Clubhouse",
+        "args": []
+      },
+      {
+        "name": "L8Larkhon",
+        "args": []
+      },
+      {
+        "name": "L8TreeBridge",
+        "args": []
+      },
+      {
+        "name": "L8StrawTrap",
+        "args": []
+      },
+      {
+        "name": "L8CacheLadder",
+        "args": []
+      }
+    ],
+    "arrival": [
+      {
+        "name": "L8Clubhouse",
+        "args": []
+      },
+      {
+        "name": "L8Larkhon",
+        "args": []
+      },
+      {
+        "name": "L8TreeBridge",
+        "args": []
+      },
+      {
+        "name": "L8StrawTrap",
+        "args": []
+      },
+      {
+        "name": "L8CacheLadder",
+        "args": []
+      }
+    ]
+  },
+  "dragon_level.gd": {
+    "load": [
+      {
+        "name": "L9Escape",
+        "args": [
+          true
+        ]
+      },
+      {
+        "name": "L9StatueWalk",
+        "args": []
+      }
+    ],
+    "arrival": [
+      {
+        "name": "L9Escape",
+        "args": [
+          true
+        ]
+      },
+      {
+        "name": "L9StatueWalk",
+        "args": []
+      }
+    ]
+  }
+}

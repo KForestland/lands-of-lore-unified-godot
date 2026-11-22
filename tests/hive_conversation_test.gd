@@ -28,7 +28,7 @@ func run() -> void:
 	actor.check_room_contact()
 	assert(actor.room_entered)
 	scene.player.position = Vector3(-1174,-203,-8843)
-	scene.camera.look_at(actor.global_position+Vector3(0,64,0))
+	scene.camera.look_at(actor.aim_point())
 	for i in range(2): await physics_frame
 	assert(actor.can_begin())
 	paused = true
@@ -57,7 +57,7 @@ func run() -> void:
 	if "--capture-conversation" in OS.get_cmdline_user_args():
 		scene.set_physics_process(false)
 		scene.player.position = Vector3(-1174,-203,-8843)
-		scene.camera.look_at(actor.global_position+Vector3(0,64,0))
+		scene.camera.look_at(actor.aim_point())
 		actor._set_frame(30)
 		for i in range(3): await process_frame
 		await RenderingServer.frame_post_draw

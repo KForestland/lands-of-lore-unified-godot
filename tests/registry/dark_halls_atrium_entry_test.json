@@ -1,0 +1,21 @@
+{
+  "name": "dark_halls_atrium_entry_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1028,
+  "needs": {
+    "env": [
+      "LOL2_DH_INPUT_SHA"
+    ],
+    "fixtures": [
+      "user://tests/act1_broken_repaired_monastery.json"
+    ]
+  },
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "67aba49340971644c19f17c6d0ce236e0202e367da37cf8a1d53448c9ae24f43"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
+}

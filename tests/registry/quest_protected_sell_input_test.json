@@ -1,0 +1,86 @@
+{
+  "name": "quest_protected_sell_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 3,
+  "count_method": "Audited source sites, not executions.",
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Real keys/mouse from pinned untouched earned Temple save. No pose/resources/health/clock edits. Mauri cases explicitly add his actual idle room/price state as a UI component; not an earned route from Temple to Mauri. Drop tests the actual drag boundary (no ground-drop feature); sell tests actual item-price barter (no gold-sale feature). Conservative transitive audit: primary aid sites and six additional fixture contexts are recorded separately, including overridden/unexecuted branches; total_disclosed_test_aid_source_sites is their sum, never an execution count."
+  },
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "room_state_component_fixture",
+      "pattern": "scene\\.quest_state\\.thieves_den\\s*="
+    },
+    {
+      "kind": "room_owner_component_fixture",
+      "pattern": "scene\\.thieves_den\\s*="
+    },
+    {
+      "kind": "room_attachment_component_fixture",
+      "pattern": "scene\\.add_child\\(scene\\.thieves_den\\)"
+    },
+    {
+      "kind": "room_activation_component_fixture",
+      "pattern": "den\\.restore\\("
+    }
+  ],
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "37b5df983f459def259ca7f0dc847b3e5bc40a039d0e5353120c1956a4b29ee0"
+  },
+  "context_aid_source_sites": {
+    "count": 6,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/quest_loss_paths_input.gd",
+        "line": 81,
+        "column": 1,
+        "kind": "room_state_component_fixture",
+        "source": "scene.quest_state.thieves_den=initial"
+      },
+      {
+        "path": "tests/helpers/quest_loss_paths_input.gd",
+        "line": 83,
+        "column": 2,
+        "kind": "room_owner_component_fixture",
+        "source": "scene.thieves_den=preload(\"res://scripts/lol2/thieves_den_rooms.gd\").new()"
+      },
+      {
+        "path": "tests/helpers/quest_loss_paths_input.gd",
+        "line": 84,
+        "column": 38,
+        "kind": "room_attachment_component_fixture",
+        "source": "scene.thieves_den.name=\"ThievesDen\";scene.add_child(scene.thieves_den)"
+      },
+      {
+        "path": "tests/helpers/quest_loss_paths_input.gd",
+        "line": 86,
+        "column": 1,
+        "kind": "room_activation_component_fixture",
+        "source": "den.restore();await frames(4)"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 9
+}

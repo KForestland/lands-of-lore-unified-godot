@@ -1,0 +1,61 @@
+{
+  "name": "g04_native_cells_save_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Synthetic proven opcode199/204 VM seeding is an explicit aid; real F5/F9 tests storage. No earned script-mutation or decoded player-trigger claim."
+  },
+  "count_method": "Audited source sites, not executions; VM fixture contexts enumerated separately.",
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "703d02efb2094a2eeae5250e1a95026cc5c37cf96480d263c7d518825aa8667a"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/g04_floor_input_test.gd",
+        "line": 41,
+        "column": 69,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/L14_HT.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/g04_native_cells_save_input_test.gd",
+        "line": 5,
+        "column": 69,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/L14_HT.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/g04_native_cells_save_input_test.gd",
+        "line": 11,
+        "column": 18,
+        "kind": "synthetic_vm_group_fixture",
+        "source": "scene.progression.native.groups[\"s1:65000\"]=commands"
+      },
+      {
+        "path": "tests/g04_native_cells_save_input_test.gd",
+        "line": 12,
+        "column": 18,
+        "kind": "synthetic_vm_group_fixture",
+        "source": "scene.progression.native.group_files[\"s1:65000\"]=650000"
+      },
+      {
+        "path": "tests/g04_native_cells_save_input_test.gd",
+        "line": 13,
+        "column": 40,
+        "kind": "native_group_vector",
+        "source": "var result:Dictionary=scene.progression.native.execute_group(1,65000)"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 7
+}

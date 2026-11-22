@@ -22,12 +22,14 @@ func _ready() -> void:
 		var error := apply_area_handoff(tree.get_meta("lol2_act2_handoff"))
 		if not error.is_empty(): push_error(error)
 		tree.remove_meta("lol2_act2_handoff")
+	preload("res://scripts/lol2/game_session.gd").for_tree(get_tree()).apply_pending(self)
 
 func apply_save(state: Variant) -> String:
 	var error := preload("res://scripts/lol2/act2_save.gd").validate(state, area_save_format)
 	if not error.is_empty(): return error
 	error = super.apply_save(state)
 	if error.is_empty(): error = preload("res://scripts/lol2/act2_items_catalog.gd").restore(self)
+	if error.is_empty(): preload("res://scripts/lol2/load_region_rule.gd").apply(self)  # load rule: no entry event, re-arm
 	return error
 func apply_area_handoff(state: Variant) -> String:
 	if not state is Dictionary: return "Invalid area handoff."
@@ -47,3 +49,6 @@ func inventory_state() -> Dictionary:
 	var result := super.inventory_state()
 	result.collected = result.collected.filter(func(id): return not preload("res://scripts/lol2/act2_items_catalog.gd").valid(id) or preload("res://scripts/lol2/act2_items_catalog.gd").legacy_equipment(id))
 	return result
+
+func area_snapshot() -> Dictionary:
+	return preload("res://scripts/lol2/act2_save.gd").snapshot_host(self)

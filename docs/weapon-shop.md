@@ -25,8 +25,8 @@ stay local and are not for publication.
 Godot admission matches the fixture. Kityara’s outdoor meeting/knife, death and
 orb-offer producers are now integrated; see [jungle-kityara.md](jungle-kityara.md).
 The Firestorm exchange is covered by the later offer extension below. Remaining
-later-visit absence stories, in-shop hostile interactions, native ambient cadence
-and original hotspot/item presentation remain open. The current action buttons
+later-visit absence stories, in-shop hostile interactions, and native ambient cadence
+remain open. The bow, the sword, and the bracer are pictures placed from longplay frame f_00580. A click uses the existing action, and the grants are unchanged. Native hotspot rectangles stay unread. The current action buttons
 are a modern functional interface.
 
 The room test supplies only the initial nearby position. It verifies detector

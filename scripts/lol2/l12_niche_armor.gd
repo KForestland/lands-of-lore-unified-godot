@@ -1,4 +1,6 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
+const RESTORE_ON := ["load"]
 const KEY="l12_niche_armor"
 const ITEM="act2:L12_CM:item5"
 const POINT=Vector3(-55,-1130,-14164)
@@ -39,8 +41,8 @@ func take(capacity:int=64)->Dictionary:
  if state().taken or ITEM in host.carried_collected:return Kit.refuse("The armor has already been taken.")
  if host.carried_collected.size()>=capacity:return Kit.refuse("Inventory full.")
  var s:=state().duplicate(true);s.taken=true;host.quest_state[KEY]=s
- var packet:Dictionary=host.quest_state.get("act2_items",Items.initial()).duplicate(true);packet.collected.append(ITEM);host.quest_state.act2_items=packet
- host.carried_collected.append(ITEM);Items.sync(host);host.set_equipped_armor(ITEM);restore()
+ Grants.grant(host,ITEM,{"cap":false,"duplicate":"allow","history":"act2","sync":true})
+ host.set_equipped_armor(ITEM);restore()
  return {"ok":true,"reason":"You put on the obsidian chain mail."}
 func _process(_delta):hint.text="E — Take and wear obsidian chain mail" if active() and reachable() and state().revealed and not state().taken else ""
 func _unhandled_key_input(event:InputEvent):

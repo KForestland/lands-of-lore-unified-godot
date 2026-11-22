@@ -1,0 +1,16 @@
+{
+  "name": "save_keys_real_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1339,
+  "needs": {
+    "chain": "private profile driver: sol_lane/foundation3_20261111/private_case.py --rendered"
+  },
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "2e218e5cf48d4a13875d84d25f2b2949d330ca11662989d51d2a53e257c661f9"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
+}

@@ -1,6 +1,43 @@
 {
- "name": "museum_crystal_live_test",
- "suite": "core",
- "mode": "rendered",
- "order": 354
+  "name": "museum_crystal_live_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 354,
+  "needs": {
+    "note": " Full-capacity probe temporarily repeats a valid sword ID, restores the original pack before saving; synthetic capacity fixture, not an earned or saveable inventory."
+  },
+  "teleports": 2,
+  "test_aids": 10,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "d8cf09bd13e48e6f86add196dc4b4dacb7404ba54205d1518f5bdce5d6b4df62"
+  },
+  "context_aid_source_sites": {
+    "count": 3,
+    "sites": [
+      {
+        "path": "tests/museum_crystal_live_test.gd",
+        "line": 5,
+        "column": 1,
+        "kind": "completed_intro_fixture",
+        "source": "scene.introduction_state=\"complete\";root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/museum_ivory_live_test.gd",
+        "line": 17,
+        "column": 21,
+        "kind": "completed_intro_fixture",
+        "source": "await process_frame;scene.introduction_state=\"complete\""
+      },
+      {
+        "path": "tests/museum_prism_test.gd",
+        "line": 12,
+        "column": 21,
+        "kind": "completed_intro_fixture",
+        "source": "await process_frame;scene.introduction_state=\"complete\""
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 13
 }

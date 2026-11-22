@@ -1,0 +1,28 @@
+{
+  "base": "9d1061c",
+  "note": "Pre-migration actual base writer outputs; ONLY added player.geometry_move stamps. Original20c golden bytes/loaded records remain untouched. These two originals are also fresh-loaded in the gate.",
+  "areas": {
+    "L14_HT": {
+      "path": "res://tests/fixtures/item_grant_writer_overrides_9d1061c/L14_HT.json",
+      "sha256": "4800c2e5233f879e72289fb1c14b35472954fd1a578f52a15543dd6d2aba2809",
+      "diff": [
+        {
+          "path": "/player/geometry_move",
+          "before": null,
+          "after": "88df268cbdb73fd6bcfea689ec5366eed1bcdc406148ea3a8b25c22b3361d28a"
+        }
+      ]
+    },
+    "L10_DC": {
+      "path": "res://tests/fixtures/item_grant_writer_overrides_9d1061c/L10_DC.json",
+      "sha256": "bc36180d24e1f3c9fc34aea3df40015f44a83788caead2df46f736afffe28919",
+      "diff": [
+        {
+          "path": "/player/geometry_move",
+          "before": null,
+          "after": "62e94c550083530f7c3f6508711bdeec2008ba3da2b4c370e64b13955e79442b"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "l13_owner_door_hint_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Local untouched owner04-56-17 F10; actual mouse ray hits door106, realE then globe E/1/Q/J/F5/F9, no supplied pose/resources/clock. Source-site counts include inherited first-save branch."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "owner_whole_save_admission",
+      "pattern": "Save\\.load_file\\(self,input\\)"
+    },
+    {
+      "kind": "disable_unused_input_guard",
+      "pattern": "use_guard\\s*=\\s*false"
+    }
+  ],
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "83514b310ffd23623f50d1e5673bc94b92ebebb56ceae37484b5304b7d4d28f0"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "disable_unused_input_guard",
+        "source": "use_guard=false"
+      },
+      {
+        "path": "tests/l13_owner_spark_hint_input_test.gd",
+        "line": 14,
+        "column": 16,
+        "kind": "owner_whole_save_admission",
+        "source": "if not require(Save.load_file(self,input).is_empty(),\"Actual whole-game owner loader\"):return"
+      },
+      {
+        "path": "tests/l13_owner_spark_hint_input_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "disable_unused_input_guard",
+        "source": "use_guard=false;await adopt()"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 5
+}

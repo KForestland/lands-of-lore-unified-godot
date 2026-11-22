@@ -37,9 +37,10 @@ func run():
 	scene.area_save_path = partial
 	scene.interface_hud.save_path = partial
 	key(KEY_F5)
-	if not check(FileAccess.file_exists(partial),"Movie F5 save failed"): return
+	if not check(not scene.can_save().is_empty(),"Movie slot must be refused"):return
+	if not check(scene.quicksave(partial).is_empty() and FileAccess.file_exists(partial),"Legacy movie save failed"):return
 	scene.departure.advance(2)
-	key(KEY_F9)
+	if not check(scene.quickload(partial).is_empty(),"Legacy movie read failed"):return
 	if not check(is_equal_approx(scene.departure.state().elapsed,3.25),"Movie F9 clock rollback failed"): return
 	if not check(scene.departure.atlas.region==Rect2(0,0,640,400) and scene.departure.page==3,"Movie frame did not resume at48"): return
 	await process_frame

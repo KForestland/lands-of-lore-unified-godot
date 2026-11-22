@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## HIVE-FLUTE-FLOOR (owner-reported Act 1 gap, 2026-11-02). Hive L5_HC storey below lift stop -1579: the iron flute put
 ## into the slanted slot (control 122, template 28 "Flute Grabber", region 792) slides the four green Pit Covers (movables
 ## 68-71, template 25, regions 904-906) out of their wall pocket over the oily floor (Puddle controls 53-58; oil floors
@@ -209,10 +210,8 @@ func _snapshot() -> Dictionary:
 	return snapshot
 
 ## Accept a transaction result: the carried list is updated in place (other owners hold the same array).
-func _apply(snapshot: Dictionary) -> void:
-	var collected: Array = host.carried_inventory.collected
-	collected.assign(snapshot.inventory)
-	state = canonical({"slot": M.slot(snapshot, TARGET)})
+func _apply(snapshot: Dictionary) -> Dictionary:
+	return Grants.owner_transition(host,snapshot.inventory,self,canonical({"slot": M.slot(snapshot, TARGET)}),{"preserve_alias":true})
 
 func _feedback(text: String) -> void:
 	if not is_instance_valid(host.get("interface_hud")): return
@@ -235,7 +234,8 @@ func offer_item(id: String) -> Dictionary:
 		var done := M.commit(result.snapshot, RECIPE, EVENT)
 		if not done.ok: return done
 		result = done
-	_apply(result.snapshot)
+	var admitted:=_apply(result.snapshot)
+	if not admitted.ok:_feedback(admitted.reason);return admitted
 	if first:
 		slide_progress = 0.0
 		_lift_player()
@@ -249,7 +249,8 @@ func retrieve() -> Dictionary:
 	if not result.ok:
 		_feedback("You cannot carry more." if occupied() else "Nothing happens.")
 		return result
-	_apply(result.snapshot)
+	var admitted:=_apply(result.snapshot)
+	if not admitted.ok:_feedback(admitted.reason);return admitted
 	_feedback("Iron flute taken back.")
 	present()
 	return result

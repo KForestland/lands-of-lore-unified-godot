@@ -52,7 +52,7 @@ func run() -> void:
 			if flip_x == -1.0: flipped_batches += 1
 			else: plain_batches += 1
 	check(flipped_batches > 0 and plain_batches > 0, "prop materials: both flipped (0x40) and plain batches (%d, %d)" % [flipped_batches, plain_batches])
-	check(scene.preview_assemblies != null and scene.preview_assemblies.solid_bodies.size() == 16 and scene.preview_blockers == 859, "native solids 16 (14 + tree 114 / bridge 116, grok Y02) and 859 blocker edges always on (%d)" % scene.preview_blockers)
+	check(scene.preview_assemblies != null and scene.preview_assemblies.solid_bodies.size() == 18 and scene.preview_blockers == 859, "native solids 18 (14 + tree 114 / bridge 116, grok Y02, + straw-pit ramps 93/94 hosted by BI10, kept non-solid by the trap host) and 859 blocker edges always on (%d)" % scene.preview_blockers)
 	check(scene.get_node_or_null("JungleSkyEnvironment") != null and scene.sky_pack == scene.DARKER_SKY, "the night panorama environment is the scene's sky")
 	check(scene.player.position == Vector3(-4577, 32, 1168), "start at the native arrival")
 	# Region 41 (selector 255, floor 70, not bit0): a floorless floor the Act 1 rule keeps as collision.
@@ -66,7 +66,12 @@ func run() -> void:
 			shell_triangles = (child.get_child(0).shape as ConcavePolygonShape3D).get_faces().size() / 3
 			break
 	var non_wall_faces: int = area.faces.size() - int(kinds.get("source_wall", 0))
-	check(shell_triangles > 0 and shell_triangles <= 2 * non_wall_faces, "scene: shell collision %d triangles <= 2 x %d non-wall faces (source walls drawn only)" % [shell_triangles, non_wall_faces])
+	# Plus the boundary hedges (owner r17 17-59-34): material-276 walls on a neighbour-less edge with no floor beyond them
+	# are on the movement body too (scripts/lol2/l8_boundary_hedges.json, tools/prepare_l8_boundary_hedges.py).
+	var hedges: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/l8_boundary_hedges.json"))
+	var boundary_hedges: int = (hedges.edges as Array).size() if hedges is Dictionary and hedges.has("edges") else 0
+	check(boundary_hedges > 0 and boundary_hedges < 200, "boundary hedge list present and narrow (%d)" % boundary_hedges)
+	check(shell_triangles > 0 and shell_triangles <= 2 * (non_wall_faces + boundary_hedges), "scene: shell collision %d triangles <= 2 x (%d non-wall faces + %d boundary hedges); other source walls drawn only" % [shell_triangles, non_wall_faces, boundary_hedges])
 	var ray := PhysicsRayQueryParameters3D.create(from, from + Vector3.DOWN * 600.0, 1, [scene.player.get_rid()])
 	var hit: Dictionary = scene.get_world_3d().direct_space_state.intersect_ray(ray)
 	check(not hit.is_empty() and absf(hit.position.y - 70.0) < 1.0, "floorless region 41 collides at its native floor 70 (%s)" % [hit.position.y if not hit.is_empty() else "no hit"])

@@ -1,0 +1,61 @@
+{
+  "name": "generic_l10_bracers_return_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "RealF2+realF9 from untouched actualF5 bracers/first-white output5ce68d1ea57d57d803920eeaa7a6738a405445c69ae348b51a749dce3ebedd46. Ordinary1/60; actualW descent/mirrors/Qdoors, Egold91, Ecrypt67 and original56/8. No supplied pose/health/clock/action handlers; continuation only."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "a8f0e7037e7743c9115bbd370f0e3cd2c0cea1ed9dcc24d75afd9f7a1e40a12c"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/generic_l10_bracers_return_test.gd",
+        "line": 58,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(BRACERS_INPUT,Slots.slot_path(1))==OK,\"Install untouched actualF5 in slot1\"):return"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l9_tower_sitting_test.gd",
+        "line": 75,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(INPUT,Slots.slot_path(1))==OK,\"Install actual F5 output in slot1\"):return"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 6,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

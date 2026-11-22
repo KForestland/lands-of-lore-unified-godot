@@ -1,6 +1,6 @@
 # Museum Long arm chute: tiny-form enclosure (softlock adapter)
 
-Owner r3 playtest report `report_2026-10-20T11-20-57_790051341` (Museum, X −1764.7 Y −1089.8): stuck human in a low
+Owner r3 playtest report `report_(owner F10, omitted)` (Museum, X −1764.7 Y −1089.8): stuck human in a low
 sloped tunnel with a magenta floor. The quicksave from 13:19 holds the same spot (−1771.8, −10.56, −1088.0), human,
 no transformation pending.
 

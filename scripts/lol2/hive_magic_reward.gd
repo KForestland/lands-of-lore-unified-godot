@@ -2,6 +2,7 @@ extends RefCounted
 ## Original D8B94 magic experience and mana growth. RNG draws supplied by caller.
 const CAST_REGEN_SECONDS := 3.0 # Provisional playable regeneration clock.
 const Numbers = preload("res://scripts/lol2/hive_clock_runtime.gd")
+const SpellBook = preload("res://scripts/lol2/player_spell_book.gd")
 static func validate(player: Variant) -> String:
 	if not player is Dictionary: return "Invalid magic progression."
 	for field in ["experience","maximum","mana"]:
@@ -32,7 +33,8 @@ static func restore(saved: Variant) -> Dictionary:
 	if not saved is Dictionary or not Numbers._integer(saved.get("version"),1) or int(saved.version) != 1: return {"error":"Invalid magic reward checkpoint."}
 	var error := validate(saved.get("player"))
 	if not error.is_empty(): return {"error":error}
-	if saved.has("spell") and saved.spell not in ["spark","heal"]: return {"error":"Invalid selected spell."}
+	if saved.has("spell") and saved.spell not in SpellBook.SCHOOLS: return {"error":"Invalid selected spell."}
+	if saved.has("spellbook") and not SpellBook.validate(saved.spellbook).is_empty(): return {"error":"Invalid learned spells."}
 	if saved.has("cooldown") and (not (saved.cooldown is int or saved.cooldown is float) or not is_finite(float(saved.cooldown)) or saved.cooldown<0 or saved.cooldown>0.5): return {"error":"Invalid spell cooldown."}
 	if saved.has("regen_elapsed") and (not (saved.regen_elapsed is int or saved.regen_elapsed is float) or not is_finite(float(saved.regen_elapsed)) or saved.regen_elapsed<0 or saved.regen_elapsed>=CAST_REGEN_SECONDS): return {"error":"Invalid mana regeneration clock."}
 	if saved.has("spark_reward_seed") and not Numbers._integer(saved.spark_reward_seed,0x7fffffff): return {"error":"Invalid Spark reward RNG."}
@@ -44,6 +46,7 @@ static func restore(saved: Variant) -> Dictionary:
 	var checkpoint := {"version":1,"player":state}
 	if saved.has("spark_reward_seed"): checkpoint.spark_reward_seed=int(saved.spark_reward_seed)
 	if saved.has("spell"): checkpoint.spell=saved.spell
+	if saved.has("spellbook"): checkpoint.spellbook=SpellBook.canonical(saved.spellbook)
 	if saved.has("cooldown"): checkpoint.cooldown=float(saved.cooldown)
 	if saved.has("regen_elapsed"): checkpoint.regen_elapsed=float(saved.regen_elapsed)
 	if saved.has("spark_aura"): checkpoint.spark_aura = preload("res://scripts/lol2/player_spark_aura_state.gd").canonical(saved.spark_aura)

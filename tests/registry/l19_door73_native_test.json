@@ -1,0 +1,22 @@
+{
+  "name": "l19_door73_native_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 0,
+  "needs": {
+    "note": "Native-only source vectors, no player or earned walk."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "c247eae432c388f85472ce95b9fde8b126fd47988785d4bfbd8c3b6a864ae9ee"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 0,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

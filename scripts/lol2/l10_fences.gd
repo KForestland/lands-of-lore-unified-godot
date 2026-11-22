@@ -1,7 +1,11 @@
 extends Node3D
+const RESTORE_ON := ["load"]
 ## Prima99-100 direction rule, approved lead04:22; original template17 solids.
 const Assemblies=preload("res://scripts/lol2/static_assemblies.gd")
 const SIGNS={74:1,75:-1,174:1}
+# Owner 2026-11-13: all three reachable lower rails admit a plain jump.
+# Keep their original high-to-low direction rule and source geometry.
+const ORDINARY_JUMP_RAILS=[74,75,174]
 var host: Node3D
 var rows: Dictionary={}
 var passes:=0
@@ -20,6 +24,7 @@ func _ready():
 func prepare(direction: Vector3,sprint: bool):
  for id in rows:
   var row: Dictionary=rows[id]
+  var ordinary:bool=int(id) in ORDINARY_JUMP_RAILS
   var delta: Vector3=host.player.position-row.center
   var side: float=delta.dot(row.normal)
   var feet: float=host.player.position.y-32
@@ -30,14 +35,22 @@ func prepare(direction: Vector3,sprint: bool):
   if host.player.is_on_floor():
    row.high=side>8 and absf(feet-row.height)<18
    row.passing=false
-  if not row.passing and admits(row.high,host.player.is_on_floor(),sprint,Input.is_physical_key_pressed(KEY_CTRL),direction.dot(row.normal)):
+  if not row.passing and admits(row.high,host.player.is_on_floor(),sprint,Input.is_physical_key_pressed(KEY_CTRL),direction.dot(row.normal),ordinary):
    row.passing=true;passes+=1
-  if row.passing and (side < -55 or not sprint or not Input.is_physical_key_pressed(KEY_CTRL) or direction.dot(row.normal)>=0):row.passing=false;row.high=false
+  if row.passing and (side < -55 or (not ordinary and (not sprint or not Input.is_physical_key_pressed(KEY_CTRL))) or direction.dot(row.normal)>=0):row.passing=false;row.high=false
   row.body.collision_layer=0 if row.passing else Assemblies.SCENERY_LAYER
 
 func restore():
  for row in rows.values():
   row.high=false;row.passing=false;row.body.collision_layer=Assemblies.SCENERY_LAYER
 
-static func admits(high: bool,grounded: bool,sprint: bool,crouch: bool,direction: float)->bool:
- return high and not grounded and sprint and crouch and direction < -0.5
+static func admits(high: bool,grounded: bool,sprint: bool,crouch: bool,direction: float,ordinary:bool=false)->bool:
+ return high and not grounded and direction < -0.5 and (ordinary or (sprint and crouch))
+
+## Text-only first-approach discovery. Same stacked-floor exclusion as prepare().
+func nearby()->bool:
+ for row in rows.values():
+  var delta:Vector3=host.player.position-row.center
+  var feet:float=host.player.position.y-32
+  if absf(feet-row.height)<=85 and absf(delta.dot(row.normal))<=180 and absf(delta.dot(row.body.basis.x))<=row.width/2+60:return true
+ return false

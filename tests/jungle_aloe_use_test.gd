@@ -34,7 +34,7 @@ func ids_of(host) -> Array:
 	return host.carried_inventory.collected if host.get("carried_inventory")!=null else host.carried_collected
 
 ## Production inventory UI: select the item, require "Use Aloe", press it.
-func consume(host, id: String) -> bool:
+func consume(host, id: String, expected := true) -> bool:
 	if not check(host.open_inventory(),"Inventory did not open"): return false
 	await process_frame
 	var index:=-1
@@ -47,7 +47,10 @@ func consume(host, id: String) -> bool:
 	await process_frame
 	await process_frame
 	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
-	return check(id in host.item_effects.state().spent and id not in ids_of(host),"Use did not consume "+id)
+	if expected:return check(id in host.item_effects.state().spent and id not in ids_of(host),"Use did not consume "+id)
+	var kept:bool=id not in host.item_effects.state().spent and id in ids_of(host) and host.inventory.detail_text.text=="You are not hurt."
+	host.inventory.close();await process_frame
+	return check(kept,"Full-health Aloe must remain with its reason")
 
 func run() -> void:
 	var path:="user://tests/jungle_aloe_use.json"
@@ -59,8 +62,26 @@ func run() -> void:
 		var verified: String={111:"ironwood_sap",84:"vels_fruit"}.get(int(row.definition),"")
 		if int(row.row) not in ROWS and not check(Catalog.use_kind(World.id_of(int(row.row)))==verified,"Row %d use differs from its source handler"%int(row.row)):return
 	var consumables:=Catalog.consumables()
+	# Keep the old source pools exact; the later game-wide definition adapter
+	# adds other Aloe/Sap/Vels identities. This reference came from untouched
+	# 787c707, not a snapshot of the new registry.
+	var reference:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/jungle_original_consumable_scope_787c707.json"))
+	if not check(FileAccess.get_sha256(Catalog.Definitions.PATH)==reference.definitions_sha256,"Original definition table changed; re-audit native consumable handlers"):return
+	var original_ids:Array=[]
+	for kind:String in reference.kinds:
+		for id:String in reference.kinds[kind]:
+			if not check(id in consumables and Catalog.use_kind(id)==kind,"Original consumable identity/kind missing: "+id):return
+			original_ids.append(id)
 	var kinds:={}
-	for id in consumables: kinds[Catalog.use_kind(id)]=int(kinds.get(Catalog.use_kind(id),0))+1
+	for id:String in consumables:
+		var kind:String=Catalog.use_kind(id)
+		if reference.kinds.has(kind) and id not in original_ids:
+			var definition:int=Catalog.definition(id)
+			var source_kinds:Dictionary={109:"aloe",110:"aloe",111:"ironwood_sap",84:"vels_fruit"}
+			var source_handlers:Dictionary={109:9,110:9,111:98,84:20}
+			if not check(source_kinds.get(definition,"")==kind and Catalog.Definitions.handler(definition)==source_handlers.get(definition,-1),"New consumable must match its original definition and handler: "+id):return
+			continue
+		kinds[kind]=int(kinds.get(kind,0))+1
 	var jungle_rows:={}
 	# Hosted Jungle rows: the original13 plus the61 staged rows (jungle_world_items.gd reads both catalogs).
 	var hosted: Array=source.items+JSON.parse_string(FileAccess.get_file_as_string("res://assets/lol2/generated/jungle_missing_items/items.json")).items.filter(func(r): return World.valid(r.id))
@@ -108,9 +129,9 @@ func run() -> void:
 	# No respawn: history keeps the consumed row.
 	items.restore()
 	if not check(63 in scene.quest_state.jungle_world_items.collected and not items.sprites[63].visible and items.target()!=63,"Consumed row63 respawned"):return
-	# Full-health use still consumes.
+	# Owner modern policy: full-health use refuses without consumption.
 	scene.starting_magic.set_health(30);scene.item_effects.advance(1)
-	if not await consume(scene,World.id_of(64)):return
+	if not await consume(scene,World.id_of(64),false):return
 	scene.item_effects.advance(1)
 	if not check(scene.starting_magic.health()==30 and scene.item_effects.state().aloe.pending==0,"Full-health Aloe differs"):return
 	# Validation: history-backed consumption, duplicates, derived cap.
@@ -152,5 +173,5 @@ func run() -> void:
 	if not check(darker.quicksave(path).is_empty() and darker.quickload(path).is_empty() and World.id_of(67) in darker.carried_collected,"Darker jungle use/disk differs"):return
 	await finish(darker)
 	DirAccess.remove_absolute(path)
-	print("PASS Jungle Aloe rows63-67: source identity110/9, E pickups, UI Use Aloe, form gate, pending+5 gradual heal, full-health consumption, disk rollback, no respawn, history-backed/duplicate/unverified/cap validation (registered consumables including renewable harvest pools), Jungle→Hive→darker uses and saves. Supplied approach; not earned.")
+	print("PASS Jungle Aloe rows63-67: source identity110/9, E pickups, UI Use Aloe, form gate, pending+5 gradual heal, full-health refusal/kept item, disk rollback, no respawn, history-backed/duplicate/unverified/cap validation (registered consumables including renewable harvest pools), Jungle→Hive→darker uses and saves. Supplied approach; not earned.")
 	quit()

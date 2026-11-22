@@ -1,11 +1,12 @@
 extends RefCounted
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 ## Cave waterfall room CFALL (room 32, CFALL_.WOM) as ordered host effects, one function per native callback, and its
 ## saved state. Source contract: scripts/lol2/cave_cfall_source.json (tools/prepare_cave_cfall_room.py); report
 ## AI_COMMS/act1_completion_20261017/CAVE_CFALL_BUILD_20261028.md. Inputs come from the caller; nothing is applied here.
 ## Saved by the Cave host as "cave_cfall": host flags 5 (first-visit quip said) and 6 (drunk from the pool; written,
 ## never read by any room or host site).
 const SOURCE := "res://scripts/lol2/cave_cfall_source.json"
-const HEAL_MAXIMUM := 30 # Port maximum health, as the Morgan orb heal (the same native D6A08 routine).
+const HEAL_MAXIMUM := PlayerHealth.MAXIMUM # Port maximum health, as the Morgan orb heal (the same native D6A08 routine).
 
 static func source() -> Dictionary:
 	if not FileAccess.file_exists(SOURCE): return {}

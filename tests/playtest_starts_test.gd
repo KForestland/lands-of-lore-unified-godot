@@ -55,7 +55,7 @@ func run() -> void:
 	# 1. Manifest and staged files.
 	var listed := Starts.manifest()
 	check(listed.error.is_empty(), "manifest parses: " + str(listed.error))
-	var entries: Array = listed.entries
+	var entries: Array = listed.entries.filter(func(e): return int(e.act) == 1)
 	check(entries.size() == 11, "11 Act 1 starts (%d)" % entries.size())
 	var states := {}
 	for entry in entries:
@@ -79,8 +79,8 @@ func run() -> void:
 	var good := {"id": "x", "title": "x", "act": 2, "area": "x", "resume": "hive", "save": "x.json", "sha256": "0".repeat(64),
 		"source": {"test": "t", "commit": "0".repeat(40), "input_sha256": null}, "identities": {"contains": {"a": ["b"]}, "excludes": {}, "values": {}}}
 	check(Starts.entry_error(good) == "", "control entry is well formed: " + Starts.entry_error(good))
-	var bad: Dictionary = good.duplicate(true); bad.resume = "map"
-	check(Starts.entry_error(bad).begins_with("unknown resume kind"), "an unknown resume kind (Act 2 map save) is refused")
+	var bad: Dictionary = good.duplicate(true); bad.resume = "unknown"
+	check(Starts.entry_error(bad).begins_with("unknown resume kind"), "an unknown resume kind is refused")
 	bad = good.duplicate(true); bad.save = "../x.json"
 	check(Starts.entry_error(bad) == "unsafe save name", "a path in the save name is refused")
 	bad = good.duplicate(true); bad.source.erase("commit")
@@ -100,7 +100,7 @@ func run() -> void:
 	if gate.starts_panel != null:
 		for node in gate.starts_panel.find_children("Start_*", "Button", true, false): rows.append(node)
 	var titles: Array = rows.map(func(row: Button) -> String: return row.text)
-	var expected: Array = entries.map(func(entry: Dictionary) -> String: return str(entry.title))
+	var expected: Array = listed.entries.map(func(entry: Dictionary) -> String: return str(entry.title))
 	check(titles == expected, "list rows are the manifest titles in order: %s" % [titles])
 	check(rows.all(func(row: Button) -> bool: return not row.disabled), "every row is enabled (all saves staged)")
 	await key(KEY_F2)

@@ -13,7 +13,7 @@ extends "res://tests/player_continuity_restart_test.gd"
 ## - the Copy report button puts exactly that text on the clipboard; opening did not;
 ## - F7 closes the panel and restores the previous pause and mouse state;
 ## - one screenshot per host with the panel open.
-## r2 additions: with the opt-in off, F7 does nothing; each wrapper returns exactly what the unrecorded function returns
+## r2 additions: with the opt-in off, F7 does nothing; each explicit legacy-path wrapper returns exactly what the unrecorded function returns
 ## in the same state (save and load); Hive at zero health shows "Vitals: health 0, dead" after a real Refresh click on
 ## an already-paused tree, which stays paused after F7 (prior pause true), while the travel projection still omits
 ## health; Jungle: the panel opens and closes over an open monastery room (supplied entry to MENT), leaving the room
@@ -37,6 +37,7 @@ func f7() -> void:
 	for i in 3: await process_frame
 func run() -> void:
 	DirAccess.make_dir_recursive_absolute(DIR)
+	var legacy_probe := DIR + "diagnostics_legacy_probe.json"
 	var overlay = root.get_node_or_null("PlaytestLocation")
 	if not check(overlay != null, "PlaytestLocation autoload missing"): return
 	# Opt-in off: F7 does nothing.
@@ -55,8 +56,12 @@ func run() -> void:
 		var loading := Diagnostics.capture(area)
 		if kind == "Cave":
 			if not check(loading.status == "loading" and loading.player.is_empty(), "Cave while loading: %s" % [loading]): return
-			if not check(area._quicksave_unrecorded() == area.quicksave() and area._quickload_unrecorded() == area.quickload(), "Cave wrapper changed a return value"): return
-			if not check(area.quicksave() == "The cavern is still loading." and Diagnostics.last_operation.reason == "The cavern is still loading." and Diagnostics.last_operation.area == "Cave", "Cave loading refusal not recorded: %s" % [Diagnostics.last_operation]): return
+			if not check(area._quicksave_unrecorded(legacy_probe) == area.quicksave(legacy_probe) and area._quickload_unrecorded(legacy_probe) == area.quickload(legacy_probe), "Cave wrapper changed a return value"): return
+			var legacy_refusal: String = area.quicksave(legacy_probe)
+			if not check(legacy_refusal == "The cavern is still loading." and Diagnostics.last_operation.reason == legacy_refusal and Diagnostics.last_operation.area == "Cave" and Diagnostics.last_operation.outcome == "refused", "Cave legacy loading refusal changed: %s" % [Diagnostics.last_operation]): return
+			var expected_slot_refusal: String = area.can_save()
+			var slot_refusal: String = area.quicksave()
+			if not check(not slot_refusal.is_empty() and slot_refusal == expected_slot_refusal and Diagnostics.last_operation.reason == slot_refusal and Diagnostics.last_operation.area == "Cave" and Diagnostics.last_operation.outcome == "refused", "Cave slot loading refusal not recorded: %s" % [Diagnostics.last_operation]): return
 		for i in 900:
 			await process_frame
 			if area.get("walkthrough_ready") == null or area.walkthrough_ready: break
@@ -66,10 +71,11 @@ func run() -> void:
 			var copy := DIR + "diagnostics_" + SAVE
 			var out := FileAccess.open(copy, FileAccess.WRITE); out.store_buffer(FileAccess.get_file_as_bytes(OS.get_environment("LOL2_EARNED_SAVES").path_join(SAVE))); out.close()
 			if not await load_click(area, copy): return
+			area = current_scene
 		for i in 4: await physics_frame
 		if kind != "Cave":
 			paused = true
-			var pairs := [[area.quickload(), area._quickload_unrecorded()], [area.quicksave(), area._quicksave_unrecorded()]]
+			var pairs := [[area.quickload(legacy_probe), area._quickload_unrecorded(legacy_probe)], [area.quicksave(legacy_probe), area._quicksave_unrecorded(legacy_probe)]]
 			var refusal: String = area.quicksave()
 			paused = false
 			if not check(pairs[0][0] == pairs[0][1] and pairs[1][0] == pairs[1][1] and not pairs[0][0].is_empty(), "%s wrapper changed a return value: %s" % [kind, pairs]): return

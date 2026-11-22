@@ -23,8 +23,11 @@ func run():
 			check(value==int(row[4]) if enabled else p.seeds_applied.is_empty(),"L%d/%d flag%s value%d" % [row[0],row[1],enabled,value])
 			if int(row[0])==19:
 				p.enter_region(2369)
-				check(p.level_changes.size()==1 if enabled else p.level_changes.is_empty(),"native conditional branch retained")
-				if enabled: check(int(p.level_changes[0].selector)==int(row[1]),"entry/return chooses corresponding native edge")
+				check(p.level_changes.size()==1,"native conditional branch retained")
+				if enabled: check(int(p.level_changes.back().selector)==int(row[1]),"entry/return chooses corresponding native edge")
+				# Seeds off: since 0661 (adapter L19_to_L20_history) the door takes the unknown cell 52 from the player's own L20
+				# history; this fixture has none, so cell 0 -> arrival 1 (the native branch still decides).
+				else: check(int(p.level_changes.back().selector)==1 and p.seeds_applied.any(func(r): return str(r.get("adapter"))=="L19_to_L20_history" and int(r.value)==0),"seeds off: history adapter cell 0 -> arrival 1 (%s)" % [p.seeds_applied])
 			scene.queue_free();await process_frame
 	if failures==0:print("PASS arrival-only predicate adapters ON/OFF, original conditional evaluation retained")
 	quit(0 if failures==0 else 1)

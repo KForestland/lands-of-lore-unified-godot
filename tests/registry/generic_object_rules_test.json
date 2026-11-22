@@ -1,0 +1,19 @@
+{
+  "name": "generic_object_rules_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1348,
+  "teleports": 0,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged.",
+  "test_aids": 11,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "862a7be35f8605b4b13df0c2804b56318c5d78964fe3679e5a45ae0e1d5c936a"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 11
+}

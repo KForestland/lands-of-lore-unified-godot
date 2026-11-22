@@ -1,4 +1,5 @@
 extends Node3D
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## L1_DC control136, the dying old orc (tools/prepare_cave_old_orc.py: template20 -> resource311 orc-diee.vqa).
 ## Playtest 2026-10-17 report11:02:43 "here should be the old ork speaking to Luther": no owner hosted it.
 ## Source groups only: entering region1350/1859 (local3==0) loads the movie and loops its Loiter loop0; regions838/1349
@@ -305,8 +306,8 @@ func receive_hit(damage: int) -> bool:
 
 func strike() -> bool:
 	if host.flying or not _world_active() or not aimed(): return false
-	if host.player_form == 0 and host.equipped_item == "": return false
-	return receive_hit(Forms.melee_damage(int(host.player_form), host.equipped_item != ""))
+	if not PlayerCombat.may_strike(host,false): return false
+	return receive_hit(PlayerCombat.damage(host,false))
 
 func _input(event: InputEvent) -> void:
 	if locked() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion: get_viewport().set_input_as_handled()

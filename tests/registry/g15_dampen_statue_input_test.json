@@ -1,0 +1,89 @@
+{
+  "name": "g15_dampen_statue_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 3,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Untouched game-written aided legacy midwalk; original loader, learned Dampen and timed-warning/admission component fixtures. Real Q and W produce human movie54 entry; no pose/health/mana writes."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "48db29b63561a553bb24eba934ceb208243f8e95152e014f98230fe097864003"
+  },
+  "context_aid_source_sites": {
+    "count": 9,
+    "sites": [
+      {
+        "path": "tests/g15_dampen_statue_input_test.gd",
+        "line": 6,
+        "column": 81,
+        "kind": "form_admission_fixture",
+        "source": "if not require(not walker.state().arrived and not walker.state().fight_done and scene.player_form==0,\"Genuine midwalk still requires human statue arrival\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_statue_input_test.gd",
+        "line": 10,
+        "column": 16,
+        "kind": "learning_api_fixture",
+        "source": "if not require(magic.learn_spell_group(\"dampen\"),\"Explicit legacy-checkpoint learning fixture\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_statue_input_test.gd",
+        "line": 11,
+        "column": 1,
+        "kind": "story_warning_fixture",
+        "source": "scene.curse.set_requests_enabled(true)"
+      },
+      {
+        "path": "tests/g15_dampen_statue_input_test.gd",
+        "line": 12,
+        "column": 16,
+        "kind": "story_warning_fixture",
+        "source": "if not require(scene.curse.request_timed_form(2,60.0),\"Disclosed natural warning request, no form write\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_statue_input_test.gd",
+        "line": 13,
+        "column": 1,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(false);var mana:int=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/g15_dampen_statue_input_test.gd",
+        "line": 15,
+        "column": 47,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.curse.state.phase==0 and scene.player_form==0 and magic.magic_state().player.mana==mana-1,\"Actual Q preserves human through Dampen\"):return"
+      },
+      {
+        "path": "tests/g15_dampen_statue_input_test.gd",
+        "line": 27,
+        "column": 51,
+        "kind": "form_admission_fixture",
+        "source": "if not require(walker.movie_active and paused and scene.player_form==0 and scene.resets==0,\"Actual human arrival starts original fight movie after Dampen\"):return"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 12,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

@@ -1,0 +1,10 @@
+{
+  "name": "hive_locks_r139_source_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "timeout_seconds": 90,
+  "needs": {
+    "note": "Pinned original source and a minimal host; synthetic flat/wrong-space assembly and tampered state fixtures, explicit quarter-second clock unit samples. No earned/input claim."
+  }
+}

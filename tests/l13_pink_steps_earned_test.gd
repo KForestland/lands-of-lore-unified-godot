@@ -1,8 +1,15 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l13_dawn_recess_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="d6fa35d0d0cb99fc87303a651b33c4011c062df49fb1aaa29c006e900abf8e3d"
+func pass_line() -> String:
+ return "PASS earned Dawn exit -> physical side ledge jumps beside original pink plates -> upper bridge approach -> actual save/reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- if not check(FileAccess.get_sha256("res://tmp/l13_dawn_recess_qualified_save.json")=="d6fa35d0d0cb99fc87303a651b33c4011c062df49fb1aaa29c006e900abf8e3d","qualified Dawn input"):quit(1);return
- var input=Save.read_save("res://tmp/l13_dawn_recess_qualified_save.json","lol2-restoration-map-L13_RC")
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified Dawn input"):quit(1);return
+ var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
  for i in 1500:
@@ -29,5 +36,5 @@ func run():
  check(scene._quicksave_unrecorded("res://tmp/l13_pink_steps_earned_save.json").is_empty() and scene._quickload_unrecorded("res://tmp/l13_pink_steps_earned_save.json").is_empty(),"earned top save/reload")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seed/recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned Dawn exit -> physical side ledge jumps beside original pink plates -> upper bridge approach -> actual save/reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

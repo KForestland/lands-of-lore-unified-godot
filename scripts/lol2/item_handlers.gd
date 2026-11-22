@@ -16,6 +16,19 @@ static func record_hit(item_id: Variant) -> Dictionary:
 	return last_hit_route
 ## Handler index -> the port module hosting it (contract A section 3, rows marked PORT; the family modules own the calls).
 const HOSTED := {
+	69:{"module":"res://scripts/lol2/player_item_sight.gd","modes":[1],"note":"WO4 Brady41 Lamplight eggs60s; existing native full-bright shade row presentation, not native status maintenance claim"},
+	46:{"module":"res://scripts/lol2/player_food_effects.gd","modes":[1],"note":"Brady43 modern literal20% of fixed base30 for60s; bonus removed on expiry, no stacking"},
+	38:{"module":"res://scripts/lol2/player_food_effects.gd","modes":[1],"note":"Brady41:5% Beast for60s; existing saved curse RNG/form owner"},
+	67:{"module":"res://scripts/lol2/player_food_effects.gd","modes":[1],"note":"Brady42:heal40/mana20/sleep5s, current health/mana caps"},
+	94:{"module":"res://scripts/lol2/player_food_effects.gd","modes":[1],"note":"Failed mixture consumed without a benefit"},
+	89:{"module":"res://scripts/lol2/player_food_effects.gd","modes":[1],"note":"Brady44:reveal current automap"},
+	11:{"module":"res://scripts/lol2/weapon_poison.gd","modes":[12],"note":"Death Sac existing native greater-coat counter; no new poison damage formula"},
+	41:{"module":"res://scripts/lol2/player_item_controller.gd","modes":[1],"note":"Brady printed42: Black Lichen heals20; no native timing/formula claim"},
+	31: {"module":"res://scripts/lol2/player_item_controller.gd","modes":[1],"note":"WO3 modern stored Heal scroll: existing basic Healing1, already learned; no new level or native callee claim"},
+	12: {"module":"res://scripts/lol2/player_item_controller.gd","modes":[1],"note":"G15 modern stored Summon scroll: learn, then shared Summon3; native shared callee remains UNKNOWN"},
+	32: {"module":"res://scripts/lol2/player_item_controller.gd","modes":[1],"note":"G15 modern stored Spark scroll: shared Spark3; native shared callee remains UNKNOWN"},
+	33: {"module":"res://scripts/lol2/player_item_controller.gd","modes":[1],"note":"G15 modern stored Prism scroll: learn, then shared Trinity5; native shared callee remains UNKNOWN"},
+	34: {"module":"res://scripts/lol2/player_item_controller.gd","modes":[1],"note":"G15 modern stored Mists scroll: learn1/3, then shared Mists1; native shared callee remains UNKNOWN"},
 	70: {"module":"res://scripts/lol2/dead_bracers_item.gd","modes":[14,16,18],"note":"Dead bracers: request18 sets indexed local,14 clears,16 returns2; modern inventory-derived dead-speech admission, no native bank writes"},
 	2: {"module": "res://scripts/lol2/player_item_controller.gd", "modes": [1], "note": "Fire crystals: charge spent per use, burns out to Fire brnt"},
 	4: {"module": "res://scripts/lol2/player_item_effects.gd", "modes": [1, 8], "note": "Champion stone: stat +20 with its timer (mode 8 maintenance)"},
@@ -36,7 +49,7 @@ const HOSTED := {
 }
 ## The dispatcher mode each of the port's use kinds corresponds to (contract A section 2): a coat is dropped on the weapon circle
 ## (12), dragon blood is the hand item applied to a world object (16), everything else is "use on Luther" (1).
-const USE_KIND_MODES := {"poison_paint": 12, "dragon_blood": 16}
+const USE_KIND_MODES := {"poison_paint": 12,"death_sac":12, "dragon_blood": 16}
 
 static func mode_for_use_kind(kind: String) -> int:
 	return int(USE_KIND_MODES.get(kind, 1))

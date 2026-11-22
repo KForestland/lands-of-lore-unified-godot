@@ -1,5 +1,6 @@
 extends CanvasLayer
-## Local owner feedback. No network, save writes or gameplay packer calls.
+## Local owner feedback. No network or gameplay packer calls; the only save written is the report bundle's own
+## save.json (G-08, playtest_bundle.gd), never a player slot.
 var saved_notice: Label
 var notice_until := 0
 var input_owners: Array = []
@@ -15,6 +16,7 @@ var pending := {}
 var screenshot: Image
 var last_saved := ""
 var output_root := "user://playtest_feedback"
+var recorder: Node
 
 func _ready() -> void:
 	var configured_root := OS.get_environment("LOL2_FEEDBACK_DIR")
@@ -22,6 +24,9 @@ func _ready() -> void:
 	layer = 110
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_build_panel()
+	recorder = preload("res://scripts/lol2/playtest_bundle.gd").new()
+	recorder.name = "PlaytestBundle"
+	add_child(recorder)
 	saved_notice = Label.new()
 	saved_notice.position = Vector2(20, 42)
 	saved_notice.add_theme_color_override("font_shadow_color", Color.BLACK)
@@ -67,6 +72,8 @@ func open_feedback() -> void:
 	panel.get_parent().show()
 	panel.show()
 	note.grab_focus()
+	# Last, after the panel is up: a failure while snapshotting can never leave the game paused with no panel.
+	recorder.freeze()
 
 func _suspend_other_input(node: Node) -> void:
 	if node == self: return
@@ -125,6 +132,7 @@ func close_feedback() -> void:
 	panel.hide()
 	panel.get_parent().hide()
 	active = false
+	recorder.thaw()
 	get_tree().paused = prior_paused
 	Input.mouse_mode = prior_mouse
 	for owner in input_owners:
@@ -169,6 +177,15 @@ func save_feedback() -> bool:
 			return false
 		record.screenshot = "screenshot.png"
 		record.screenshot_status = "captured"
+	# G-08 full bundle: save of the moment, input history, frames, log tail, hashes and the first error line.
+	var bundle: Dictionary = recorder.write_into(path)
+	var bundle_file := FileAccess.open(path.path_join("bundle.json"), FileAccess.WRITE)
+	if bundle_file != null:
+		bundle_file.store_string(JSON.stringify(bundle, "\t") + "\n")
+		bundle_file.close()
+		record.bundle = "bundle.json"
+	record.first_error = bundle.get("first_error", {})
+	record.build_commit = bundle.build.commit
 	# A completed report appears in the inbox only after its entire JSON has been written.
 	var temporary := path.path_join("report.json.tmp")
 	var file := FileAccess.open(temporary, FileAccess.WRITE)
@@ -190,7 +207,7 @@ func save_feedback() -> bool:
 	var where := str(record.area)
 	if not record.position.is_empty():
 		where += " | X %.1f Y %.1f H %.1f" % [record.position.x, record.position.y, record.position.h]
-	DisplayServer.clipboard_set("LoL2 feedback: " + path + "\n" + where + "\n" + note.text)
+	DisplayServer.clipboard_set("LoL2 feedback: " + preload("res://scripts/lol2/playtest_bundle.gd").shorten_paths(path) + "\n" + where + "\n" + note.text)
 	print("PLAYTEST FEEDBACK SAVED: ", path)
 	close_feedback()
 	saved_notice.text = "Feedback saved. Report location copied — thank you!"

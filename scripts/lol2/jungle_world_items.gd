@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Huline Jungle world items:13 prior rows plus61 private additions (docs/jungle-missing-pickups.md). Row51 (dagger) is
 ## jungle_source_pickups.gd. Same E, 96-unit reach, 0.97 aim and mask-1 occlusion as the dagger/Hive wax pickups;
 ## each sprite is the original inventory image on a modern fixed-Y billboard. Each row is collected once: saved
@@ -97,7 +98,7 @@ func collect() -> bool:
 	if host.carried_collected.size() >= preload("res://scripts/lol2/item_catalog.gd").MAX_CARRIED:
 		if host.has_method("save_feedback"): host.save_feedback("Inventory full.")
 		return false
-	host.carried_collected.append(id)
+	if not Grants.grant(host,id,{"cap":false,"duplicate":"allow"}).ok: return false
 	history(true).collected.append(row)
 	restore()
 	if host.has_method("save_feedback"): host.save_feedback(str(Catalog.ITEMS[id].label)+" taken.")

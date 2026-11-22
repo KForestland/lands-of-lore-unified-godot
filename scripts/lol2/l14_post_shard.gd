@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const KEY="l14_post_shard"
 const ITEM="act2:L14_HT:post_shard"
 const POINT=Vector3(3043,30,-5684)
@@ -30,8 +31,8 @@ func take(capacity:int=64)->Dictionary:
  if not reachable():return Kit.refuse("Approach the crystal in the post.")
  if state().taken:return Kit.refuse("The crystal has already been taken.")
  if host.carried_collected.size()>=capacity:return Kit.refuse("Inventory full.")
- var packet:Dictionary=host.quest_state.get("act2_items",Items.initial()).duplicate(true);packet.collected.append(ITEM)
- host.quest_state[KEY]={"version":1,"taken":true};host.quest_state.act2_items=packet;host.carried_collected.append(ITEM);Items.sync(host);restore()
+ host.quest_state[KEY]={"version":1,"taken":true}
+ Grants.grant(host,ITEM,{"cap":false,"duplicate":"allow","history":"act2","sync":true});restore()
  return {"ok":true,"reason":"You take the green crystal shard from the post."}
 func restore():
  if is_instance_valid(sprite):sprite.visible=not state().taken

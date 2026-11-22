@@ -7,6 +7,8 @@ func enter_tower(scene: Node,points: Array)->bool:
    await physics_frame
    if not tower.transports.is_empty():return true
    if not await fight_nearby(scene):return false
+   if not await preload("res://tests/helpers/l9_tower_door_input.gd").legacy(self,scene):return check(false,"Tower door real E/W")
+   if not tower.transports.is_empty():return true
    var delta: Vector3=goal-scene.player.position;delta.y=0
    if delta.length()<2:reached=true;break
    scene.move_grounded(delta.normalized(),scene.player.get_physics_process_delta_time())

@@ -1,0 +1,22 @@
+{
+  "name": "game_save_migration_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1339,
+  "needs": {
+    "chain": "private profile driver: sol_lane/foundation3_20261111/private_case.py"
+  },
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "611263e029bdb95b713c56baad010ffe25dbd0db83adb52f49b50499341f53ad"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance.",
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 0
+}

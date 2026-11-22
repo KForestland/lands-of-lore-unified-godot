@@ -1,6 +1,13 @@
 {
- "name": "village_doorway_load_test",
- "suite": "core",
- "mode": "rendered",
- "order": 189
+  "name": "village_doorway_load_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 189,
+  "count_method": "Audited source sites (K82), not executions. Existing supplied setup, explicit legacy API comparisons and fresh-scene HUD Load helpers remain declared local test scope; assertions retain their original meanings.",
+  "teleports": 1,
+  "test_aids": 5,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "8ae2f2cd6bf48bfee5bb03e113156f9094818041918030fb3198e5313cefc0cc"
+  }
 }

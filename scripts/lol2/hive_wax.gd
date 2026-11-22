@@ -1,7 +1,8 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Source Hive item0. E, aim/range, pivot and scale are modern pickup controls.
 const ROOT := "res://assets/lol2/generated/hive_wax/"
-const ITEM := "hive:item0:Wax"
+const ITEM = preload("res://scripts/lol2/hive_wax_identity.gd").ITEM
 var collected := false
 var sprite: Sprite3D
 var host: Node3D
@@ -32,7 +33,7 @@ func target() -> bool:
 	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
 func collect() -> bool:
 	if not target() or ITEM in host.carried_inventory.collected: return false
-	host.carried_inventory.collected.append(ITEM)
+	Grants.grant(host,ITEM,{"cap":false,"duplicate":"allow"})
 	restore(true)
 	return true
 func restore(value: bool) -> void:

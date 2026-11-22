@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Live Hive owner for the Reaver alcove (control121), its ceiling collapse and the Amber vein (control123).
 ## Saved as quests.hive_reaver_amber. E at an aimed control in reach takes the sword / one Amber. Corridor
 ## regions 364..370 get moving prisms (ceiling slabs hanging from the original ceiling, the alcove floor block) with
@@ -211,7 +212,7 @@ func _feedback(text: String) -> void:
 func use() -> bool:
 	var key := target()
 	if key.is_empty(): return false
-	var collected: Array = host.carried_inventory.collected
+	var collected: Array = Grants.pack(host)
 	if key == "121":
 		if int(state.reaver.state) != 0: return false
 		if State.alcove_sealed(state): _feedback("The alcove has sealed over the sword."); return true

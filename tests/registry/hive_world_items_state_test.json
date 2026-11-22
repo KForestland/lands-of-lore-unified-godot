@@ -1,6 +1,18 @@
 {
- "name": "hive_world_items_state_test",
- "suite": "core",
- "mode": "headless",
- "order": 362
+  "name": "hive_world_items_state_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 362,
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "6de272fbfd25c3681c4465d08be8c3709c1a07949e5da76d1b74f891e37f844b"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 2
 }

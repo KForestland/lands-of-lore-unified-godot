@@ -51,8 +51,10 @@ func run() -> void:
 	for i in range(6):await physics_frame
 	if Input.mouse_mode!=Input.MOUSE_MODE_VISIBLE or cave.guard_encounter.checkpoint()!=paused:return fail("Escape failed to pause guard movie")
 	await key(KEY_F5)
+	if cave.can_save().is_empty():return fail("midmovie slot was admitted")
+	if not cave._quicksave(Save.DEFAULT_PATH).is_empty():return fail("explicit legacy movie writer")
 	var read:=Save.read_save(Save.DEFAULT_PATH,cave._checkpoint_count())
-	if not read.error.is_empty() or not read.state.has("guard_encounter"):return fail("F5 did not save guard packet: "+str(read.error))
+	if not read.error.is_empty() or not read.state.has("guard_encounter"):return fail("legacy writer did not save guard packet: "+str(read.error))
 	DirAccess.make_dir_recursive_absolute("user://tests")
 	var fixture:=FileAccess.open("user://tests/cave_guard_midmovie.json",FileAccess.WRITE);fixture.store_string(JSON.stringify(read.state));fixture.close()
 	var witness:=FileAccess.open("user://tests/cave_guard_restart_receipt.json",FileAccess.WRITE);witness.store_string(JSON.stringify({"path":"user://tests/cave_guard_midmovie.json","sha256":FileAccess.get_sha256("user://tests/cave_guard_midmovie.json")}));witness.close()
@@ -63,14 +65,15 @@ func run() -> void:
 	var release:=InputEventMouseButton.new();release.button_index=MOUSE_BUTTON_LEFT;release.pressed=false;Input.parse_input_event(release)
 	for i in range(12):await physics_frame
 	if Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED or cave.guard_encounter.state.sequence.elapsed<=saved.encounter.sequence.elapsed:return fail("Click failed to resume guard clock")
-	await key(KEY_ESCAPE);await key(KEY_F9)
-	if cave.guard_encounter.state.sequence.elapsed!=saved.encounter.sequence.elapsed or cave.player.global_position.distance_to(pos)>0.1:return fail("F9 did not restore saved guard clock/position")
+	await key(KEY_ESCAPE)
+	if not cave._quickload(Save.DEFAULT_PATH).is_empty():return fail("explicit legacy movie reader")
+	if cave.guard_encounter.state.sequence.elapsed!=saved.encounter.sequence.elapsed or cave.player.global_position.distance_to(pos)>0.1:return fail("legacy reader did not restore saved guard clock/position")
 	var bad: Dictionary=read.state.duplicate(true);bad.cave_local7=2
 	DirAccess.make_dir_recursive_absolute("user://tests")
 	var file:=FileAccess.open("user://tests/cave_guard_invalid.json",FileAccess.WRITE);file.store_string(JSON.stringify(bad));file.close()
 	var before: Dictionary=cave.guard_encounter.checkpoint()
 	if cave._quickload("user://tests/cave_guard_invalid.json").is_empty() or cave.guard_encounter.checkpoint()!=before:return fail("Invalid Cave local bank mutated live encounter")
-	print("PASS main Cave automatic grounded entry, movement/spell lock, actual Escape/click pause/resume, F5/F9 midmovie clock/position continuity, atomic invalid local bank. No full approach/campaign claim.")
+	print("PASS main Cave automatic grounded entry, movement/spell lock, actual Escape/click pause/resume, slot refusal plus explicit legacy midmovie clock/position continuity, atomic invalid local bank. No full approach/campaign claim.")
 	cave.guard_encounter.movie.voice.stop();cave.guard_encounter.delayed_voice.stop()
 	await physics_frame;await physics_frame
 	cave.queue_free();await process_frame;await process_frame;quit()

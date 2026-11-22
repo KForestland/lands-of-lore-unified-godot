@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const KEY="l14_hopper_platform"
 const IDS=["91","92","93","94","95"]
 const POINT=Vector3(41,310,5919)
@@ -75,8 +76,8 @@ func take(id:String,capacity:int=64)->Dictionary:
  if id not in IDS or not state().activated or pop.state.actors[id].health>0 or id in state().collected:return Kit.refuse("That is not an uncollected hopper corpse.")
  if not reach(pop.bodies[id].global_position+Vector3.UP*8):return Kit.refuse("Approach the fallen hopper.")
  if host.carried_collected.size()>=capacity:return Kit.refuse("Make room for the corpse.")
- var s:=state().duplicate(true);s.collected.append(id);host.quest_state[KEY]=s;host.carried_collected.append(item(id))
- var inventory:Dictionary=host.quest_state.get("act2_items",Items.initial()).duplicate(true);inventory.collected.append(item(id));host.quest_state.act2_items=inventory;Items.sync(host);restore()
+ var s:=state().duplicate(true);s.collected.append(id);host.quest_state[KEY]=s
+ Grants.grant(host,item(id),{"cap":false,"duplicate":"allow","history":"act2","sync":true});restore()
  return {"ok":true,"reason":"You carry the hopper corpse."}
 func place(body_item:String,capacity:int=64)->Dictionary:
  if not reach(POINT):return Kit.refuse("Approach the wooden platform from its side.")
@@ -90,7 +91,8 @@ func place(body_item:String,capacity:int=64)->Dictionary:
  if not result.ok:return result
  result=Kit.commit(result.snapshot,recipe(id),id)
  if not result.ok:return result
- s.slots=result.snapshot.slots;host.quest_state[KEY]=s;host.carried_collected=result.snapshot.inventory
+ s.slots=result.snapshot.slots;var admission:=Grants.transition(host,result.snapshot.inventory,{KEY:s})
+ if not admission.ok:return admission
  if host.hand_item==body_item:host.hand_item=""
  Items.sync(host);restore();return {"ok":true,"reason":"Five bodies weigh down the platform. Step aboard." if complete(s) else "The body rests on the platform."}
 func restore():
@@ -143,7 +145,8 @@ func _unhandled_key_input(event:InputEvent):
   if host.act2_creatures.state.actors[id].health==0 and id not in state().collected and reach(host.act2_creatures.bodies[id].global_position+Vector3.UP*8):host.save_feedback(take(id).reason);get_viewport().set_input_as_handled();return
  if reach(POINT):
   var candidate:String=host.hand_item
-  if candidate.is_empty():
+  if candidate not in IDS.map(func(id):return item(id)) or candidate not in host.carried_collected:
+   candidate=""
    for id in IDS:
     if item(id) in host.carried_collected:candidate=item(id);break
   host.save_feedback(place(candidate).reason);get_viewport().set_input_as_handled()

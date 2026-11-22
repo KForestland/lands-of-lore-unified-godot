@@ -52,7 +52,7 @@ func _run() -> void:
 		return
 	await open_cave()
 	if "--collection-restart-read" in OS.get_cmdline_user_args():
-		await press(KEY_F9)
+		check(view._quickload(Save.DEFAULT_PATH).is_empty(),"explicit legacy reader")
 		check(view.collectible.collected and not view.collectible.mesh.visible, "Restart restores collected object")
 		check(view._save_state().collected == [Item.ID], "Restart restores exactly one item")
 		await aim_at_sample()
@@ -75,7 +75,7 @@ func _run() -> void:
 	var original_pose: Transform3D = view.player.global_transform
 	var original_camera: Transform3D = view.camera.transform
 	await capture_state("before")
-	await press(KEY_F5)
+	check(view._quicksave(Save.DEFAULT_PATH).is_empty(),"explicit legacy writer")
 	var uncollected_bytes := FileAccess.get_file_as_bytes(Save.DEFAULT_PATH)
 	view.player.position += (view.camera.global_position - view.collectible.target_position()).normalized() * 200
 	await interact()
@@ -122,19 +122,19 @@ func _run() -> void:
 	await press(KEY_B)
 	await press(KEY_B)
 	check(not view.collectible.mesh.visible, "Reset and visibility toggles do not respawn sample")
-	await press(KEY_F5)
+	check(view._quicksave(Save.DEFAULT_PATH).is_empty(),"explicit legacy writer")
 	var collected_bytes := FileAccess.get_file_as_bytes(Save.DEFAULT_PATH)
 	var file := FileAccess.open(Save.DEFAULT_PATH, FileAccess.WRITE)
 	file.store_buffer(uncollected_bytes)
 	file.close()
-	await press(KEY_F9)
+	check(view._quickload(Save.DEFAULT_PATH).is_empty(),"explicit legacy reader")
 	check(not view.collectible.collected and view.collectible.mesh.visible, "Earlier save restores uncollected object")
 	check(view.light_materials.all(func(material): return material.get_shader_parameter("glow_active")[glow_index] == 1.0), "Earlier save restores spill light")
 	await capture_state("restored")
 	file = FileAccess.open(Save.DEFAULT_PATH, FileAccess.WRITE)
 	file.store_buffer(collected_bytes)
 	file.close()
-	await press(KEY_F9)
+	check(view._quickload(Save.DEFAULT_PATH).is_empty(),"explicit legacy reader")
 	check(view.collectible.collected and not view.collectible.mesh.visible, "Collected save removes object again")
 	print("Collection integration: %d checks, %d failures" % [checks, failures])
 	# Leave the isolated slot for the next process to verify.

@@ -36,7 +36,7 @@ POPULATIONS = [
     ('L4_HJ', 'jungle_bacatta57', 'scripts/lol2/jungle_bacatta57.gd', 'jungle_bacatta57_population_source.json',
      'relationship-zero village return seals threshold and closes doors, peaceful linked body, hostile-on-strike, removal and disk return; independent pause, actual damage and corpse persistence checks; supplied branch conditions, modern timing/combat; alarm effects separately owned'),
     ('L4_HJ', 'jungle_bacatta65', 'scripts/lol2/jungle_bacatta65.gd', 'jungle_bacatta65_population_source.json',
-     'alert-before-first-meeting trigger, original conversation/media, idle offer/walk-away/hit, peaceful/hostile body, pause and disk persistence; independent actual damage and corpse check passes; supplied approach, modern combat/timing and no Bob acceptance'),
+     'alert-before-first-meeting trigger, original conversation/media, idle offer/walk-away/hit, peaceful/hostile body, pause and disk persistence; independent actual damage and corpse check passes; supplied approach, modern combat/timing and no the owner acceptance'),
     ('L5_HC', 'hive_dawn20', 'scripts/lol2/hive_dawn20.gd', 'hive_dawn20_population_source.json',
      'alternate translation after library attack, queued RUNES admission, dialogue/offers/hit, saved body and removal on re-entry; eight focused checks pass; hostile attacks, region478 unload and kind5 producer remain open'),
     ('L4_HJ', 'jungle_exit_woman', 'scripts/lol2/jungle_exit_woman.gd', 'jungle_exit_woman_population_source.json',

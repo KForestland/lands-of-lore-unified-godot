@@ -1,0 +1,2568 @@
+{
+  "aloe": [],
+  "atlas_explored": {
+    "areas": {
+      "L1_DC": {
+        "full": false,
+        "regions": [
+          1231
+        ]
+      }
+    },
+    "version": 1
+  },
+  "bridge": {
+    "cuts": [],
+    "sections": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "warning_played": false
+  },
+  "captain": {
+    "contact": {
+      "owner": -1,
+      "version": 1
+    },
+    "movie": -1.0,
+    "movie_done": false,
+    "pose": 0.0,
+    "receipts": [],
+    "region": -1,
+    "source": {
+      "captain": {
+        "b5": 0,
+        "defeated": false,
+        "health": 200,
+        "items": [],
+        "present": false,
+        "selector": -1,
+        "state": 0
+      },
+      "granted": [],
+      "locals": {
+        "16": 0,
+        "18": 0,
+        "50": 0
+      },
+      "objects": {
+        "control120": {
+          "present": true,
+          "state": 0
+        },
+        "control89": {
+          "present": true,
+          "state": 0
+        }
+      },
+      "rng": 1,
+      "ticks_fraction": 0.0,
+      "timer": {
+        "flags": 1,
+        "remaining": 60,
+        "version": 1
+      },
+      "version": 1
+    },
+    "speech": -1.0,
+    "version": 1
+  },
+  "cave_boulder1333": {
+    "clock": 0.0,
+    "state": 0
+  },
+  "cave_cfall": {
+    "flags": {
+      "5": 0,
+      "6": 0
+    },
+    "version": 1
+  },
+  "cave_crates": {
+    "at": {
+      "112": [
+        597.0,
+        225.0,
+        444.0
+      ],
+      "121": [
+        568.0,
+        225.0,
+        427.0
+      ],
+      "122": [
+        639.0,
+        225.0,
+        523.0
+      ],
+      "94": [
+        433.0,
+        220.0,
+        516.0
+      ],
+      "95": [
+        416.0,
+        220.0,
+        530.0
+      ],
+      "96": [
+        654.0,
+        225.0,
+        551.0
+      ],
+      "97": [
+        627.0,
+        225.0,
+        576.0
+      ]
+    },
+    "carried": -1,
+    "version": 1
+  },
+  "cave_draracle_door": {
+    "travel": 0,
+    "uses": {
+      "74": 0,
+      "77": 0
+    },
+    "version": 1
+  },
+  "cave_local7": 0,
+  "cave_old_orc": {
+    "clip": {
+      "elapsed": 0.0,
+      "repeat": false,
+      "segment": -1
+    },
+    "inside": {
+      "1349": false,
+      "1350": false,
+      "1859": false,
+      "838": false
+    },
+    "local3": 0,
+    "local51": 0,
+    "locked": false,
+    "receipts": [],
+    "shared0": 0,
+    "spent": [],
+    "state": 0,
+    "timer": {
+      "enabled": false,
+      "left": 0
+    },
+    "version": 1
+  },
+  "cave_pillar_trap": {
+    "collapse_state": 0,
+    "guard_inside": [],
+    "inside": [],
+    "local14": false,
+    "local24": false,
+    "local31": false,
+    "local6": 0,
+    "local9": false,
+    "pillar": {
+      "durability": 2,
+      "selector": 0,
+      "state": 0
+    },
+    "rng": 151,
+    "rubble": false,
+    "timer": {
+      "enabled": false,
+      "remaining": 0.0,
+      "state": 0
+    },
+    "version": 1
+  },
+  "cave_shrine_doors": {
+    "clock": 0.0,
+    "group": 0,
+    "state": 0,
+    "version": 1
+  },
+  "cave_stalactites": {
+    "local10": false,
+    "props": {
+      "359": {
+        "durability": 10,
+        "selector": 0,
+        "state": 0,
+        "used": false
+      },
+      "632": {
+        "durability": 10,
+        "selector": 0,
+        "state": 0,
+        "used": false
+      },
+      "633": {
+        "durability": 10,
+        "selector": 0,
+        "state": 0,
+        "used": false
+      },
+      "634": {
+        "durability": 10,
+        "selector": 0,
+        "state": 0,
+        "used": false
+      }
+    },
+    "version": 1
+  },
+  "cave_tar_fires": {
+    "props": {
+      "440": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "441": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "442": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "443": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "444": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "445": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "446": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "465": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "466": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "467": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "468": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "469": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "470": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "471": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "575": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "576": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "577": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "578": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "579": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "580": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "581": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "582": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "583": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "584": {
+        "clock": 0.0,
+        "durability": 1,
+        "selector": 0,
+        "state": 0
+      },
+      "585": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "586": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      },
+      "640": {
+        "clock": 0.0,
+        "durability": 0,
+        "selector": 0,
+        "state": 0
+      }
+    },
+    "sequencers": {
+      "439": {
+        "enabled": false,
+        "left": 6912,
+        "seed": 3476442,
+        "selector": 0,
+        "state": 0
+      },
+      "464": {
+        "enabled": false,
+        "left": 5888,
+        "seed": 3674417,
+        "selector": 0,
+        "state": 0
+      }
+    },
+    "version": 1
+  },
+  "chain_doors": {
+    "doors": [
+      0,
+      0
+    ],
+    "elapsed": 0.0,
+    "started": false
+  },
+  "checkpoint": 120,
+  "collected": [],
+  "curse": {
+    "cave_triggered": false,
+    "duration": 0.0,
+    "phase": 0,
+    "previous": 0,
+    "remaining": 0.0,
+    "seed": 3088806349,
+    "target": 0
+  },
+  "display": {
+    "creatures": false,
+    "glow": true,
+    "lighting": true,
+    "props": true,
+    "roof": true
+  },
+  "equipped_armor": "",
+  "equipped_item": "",
+  "eyes": {
+    "animation": 0.0,
+    "clock": 0.0,
+    "index": 0,
+    "phase": "idle",
+    "position": [
+      -1993.0,
+      44.0,
+      -5677.0
+    ],
+    "sound_sample": 0.0,
+    "version": 1
+  },
+  "fighting": {
+    "cave_melee_seed": 324508639,
+    "player_reward_state": {
+      "player": {
+        "condition": 0,
+        "experience": 45,
+        "health": 8,
+        "level": 1,
+        "maximum": 8,
+        "stat151": 5,
+        "stat155": 10
+      },
+      "version": 1
+    }
+  },
+  "format": "lol2-restoration-walkthrough",
+  "guard38_loot": {
+    "elapsed": 5.0,
+    "taken": true
+  },
+  "guard_controls": {
+    "actor39": {
+      "action": 9,
+      "b5": 0,
+      "goal": 14,
+      "path_index": 0,
+      "present": false,
+      "region": -1,
+      "removed": false
+    },
+    "actor52": {
+      "b5": 0,
+      "selector": -1
+    },
+    "branch109": "none",
+    "clips": {
+      "actor52": {
+        "done": false,
+        "elapsed": 0.0,
+        "loaded": false,
+        "playing": false,
+        "resource": 1914
+      },
+      "control119": {
+        "done": false,
+        "elapsed": 0.0,
+        "loaded": false,
+        "playing": false,
+        "resource": 1916
+      },
+      "prop533": {
+        "done": false,
+        "elapsed": 0.0,
+        "loaded": false,
+        "playing": false,
+        "resource": 1912
+      }
+    },
+    "contact": {
+      "owner": -1,
+      "version": 1
+    },
+    "control119_present": true,
+    "controls": {
+      "109": 0,
+      "114": 0
+    },
+    "events": {},
+    "groups": [],
+    "hidden39": {},
+    "prop1333": 0,
+    "version": 1,
+    "walk_clock": 0.0
+  },
+  "guard_encounter": {
+    "applied_pending": 0,
+    "encounter": {
+      "definition_flags": {},
+      "definition_release_at": -1,
+      "delayed": {
+        "audio": -1.0,
+        "fired": false,
+        "left": 120,
+        "started": false
+      },
+      "focus": false,
+      "groups": [],
+      "input_locked": false,
+      "movable_states": {
+        "64": 0,
+        "65": 0,
+        "66": 0,
+        "67": 0,
+        "68": 0,
+        "69": 0,
+        "70": 0,
+        "71": 0,
+        "72": 0,
+        "73": 0
+      },
+      "movement": {
+        "objects": {
+          "64": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          },
+          "65": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          },
+          "66": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          },
+          "67": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          },
+          "68": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          },
+          "69": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          },
+          "70": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          },
+          "71": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          },
+          "72": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          },
+          "73": {
+            "current": 0,
+            "status": 0,
+            "target": 0
+          }
+        },
+        "version": 1
+      },
+      "pending": [],
+      "prop_present": true,
+      "region_flags": {
+        "10": 3,
+        "29": 35
+      },
+      "sequence": {
+        "contact": {
+          "owner": -1,
+          "version": 1
+        },
+        "control_state": 0,
+        "elapsed": 0.0,
+        "groups": [],
+        "phase": "idle",
+        "selector": 0,
+        "version": 1
+      },
+      "version": 1
+    },
+    "tick_fraction": 0.0,
+    "version": 1
+  },
+  "guards": {
+    "actors": {
+      "1": {
+        "death": 0.0,
+        "health": 140,
+        "position": [
+          17.0,
+          -285.0,
+          -16493.0
+        ],
+        "present": false,
+        "rise": 1.125,
+        "woken": true
+      },
+      "2": {
+        "death": 0.0,
+        "health": 140,
+        "position": [
+          -48.0,
+          -285.0,
+          -16609.0
+        ],
+        "present": false,
+        "rise": 1.125,
+        "woken": true
+      },
+      "38": {
+        "death": 0.0,
+        "health": 0,
+        "position": [
+          -532.0,
+          -200.0,
+          -10347.0
+        ],
+        "present": true,
+        "rise": 0.0,
+        "woken": true
+      },
+      "39": {
+        "death": 0.0,
+        "health": 150,
+        "position": [
+          -1051.0,
+          0.0,
+          -5871.0
+        ],
+        "present": false,
+        "rise": -1.0,
+        "woken": false
+      },
+      "52": {
+        "death": 0.0,
+        "health": 150,
+        "position": [
+          -163.0,
+          -10.0,
+          -7834.0
+        ],
+        "present": true,
+        "rise": -1.0,
+        "woken": false
+      },
+      "53": {
+        "death": 0.0,
+        "health": 150,
+        "position": [
+          159.0,
+          -215.0,
+          -12009.0
+        ],
+        "present": false,
+        "rise": 1.125,
+        "woken": true
+      },
+      "54": {
+        "death": 0.0,
+        "health": 150,
+        "position": [
+          -264.0,
+          -270.0,
+          -15435.0
+        ],
+        "present": false,
+        "rise": 1.125,
+        "woken": true
+      },
+      "56": {
+        "death": 0.0,
+        "health": 200,
+        "position": [
+          -2057.0,
+          63.0,
+          -4430.0
+        ],
+        "present": false,
+        "rise": -1.0,
+        "woken": false
+      }
+    },
+    "audio": {
+      "1": {
+        "request": 0,
+        "sample": 0,
+        "selector": -1,
+        "time": 0.0
+      },
+      "2": {
+        "request": 0,
+        "sample": 0,
+        "selector": -1,
+        "time": 0.0
+      },
+      "38": {
+        "request": 0,
+        "sample": 0,
+        "selector": 8,
+        "time": 0.0
+      },
+      "39": {
+        "request": 0,
+        "sample": 0,
+        "selector": -1,
+        "time": 0.0
+      },
+      "52": {
+        "request": 0,
+        "sample": 0,
+        "selector": -1,
+        "time": 0.0
+      },
+      "53": {
+        "request": 0,
+        "sample": 0,
+        "selector": -1,
+        "time": 0.0
+      },
+      "54": {
+        "request": 0,
+        "sample": 0,
+        "selector": -1,
+        "time": 0.0
+      },
+      "56": {
+        "request": 0,
+        "sample": 0,
+        "selector": -1,
+        "time": 0.0
+      }
+    },
+    "contacts": [
+      1941
+    ],
+    "controls": {
+      "109": 0,
+      "114": 0
+    },
+    "counter": 0,
+    "live": {
+      "1": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 0,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      },
+      "2": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 0,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      },
+      "38": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 4187,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      },
+      "39": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 9466,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      },
+      "52": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 32039,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      },
+      "53": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 39685,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      },
+      "54": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 11832,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      },
+      "56": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 41324,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      }
+    },
+    "prop93": 0,
+    "regions": [
+      1941
+    ],
+    "version": 1,
+    "wake_groups": {
+      "local34": false
+    }
+  },
+  "help": {
+    "enabled": true,
+    "seen": 0,
+    "version": 1
+  },
+  "item_effects": {
+    "aloe": {
+      "base": 0,
+      "clock": 0,
+      "fraction": 0.0,
+      "pending": 0
+    },
+    "ancient_charges": 0,
+    "champion": {
+      "active": false,
+      "timer": 0,
+      "version": 1
+    },
+    "fraction": 0.0,
+    "spent": [],
+    "version": 1
+  },
+  "lurking_roach": {
+    "actors": {
+      "36": {
+        "death": 0.0,
+        "health": 150,
+        "position": [
+          -655.0,
+          -430.0,
+          -13734.0
+        ],
+        "present": true,
+        "rise": 1.0,
+        "woken": true
+      },
+      "37": {
+        "death": 0.0,
+        "health": 150,
+        "position": [
+          272.0,
+          -430.0,
+          -14004.0
+        ],
+        "present": true,
+        "rise": 1.0,
+        "woken": true
+      }
+    },
+    "counter": 0,
+    "live": {
+      "36": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 32768,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      },
+      "37": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 36044,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      }
+    },
+    "marker59": 59,
+    "prop93": 0,
+    "regions": [],
+    "version": 1
+  },
+  "magic": {
+    "player": {
+      "experience": 0,
+      "level": 1,
+      "mana": 20,
+      "maximum": 20
+    },
+    "version": 1
+  },
+  "map": "draracle-caverns-v1",
+  "player": {
+    "camera_rotation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "flying": false,
+    "position": [
+      -949.0,
+      494.0,
+      8492.0
+    ],
+    "yaw": 0.6632549166679382
+  },
+  "player_form": 0,
+  "prop83_lift": {
+    "local25": 0,
+    "opened": false,
+    "shaft": -1000.0,
+    "sound": 0.0,
+    "state": 0,
+    "version": 1
+  },
+  "rapids_controls": {
+    "state": {
+      "controls": {
+        "100": {
+          "complete": false,
+          "elapsed": 0,
+          "flags": 257,
+          "heading": 26942,
+          "pitch": 0,
+          "position": [
+            69533696,
+            1125449728,
+            -25886720
+          ],
+          "speed": 0
+        },
+        "101": {
+          "complete": false,
+          "elapsed": 0,
+          "flags": 257,
+          "heading": 22755,
+          "pitch": 0,
+          "position": [
+            59179008,
+            1135738880,
+            -25886720
+          ],
+          "speed": 0
+        },
+        "102": {
+          "complete": false,
+          "elapsed": 0,
+          "flags": 2305,
+          "heading": 19842,
+          "pitch": 0,
+          "position": [
+            33685504,
+            1146945536,
+            -25886720
+          ],
+          "speed": 0
+        },
+        "103": {
+          "complete": false,
+          "elapsed": 0,
+          "flags": 2305,
+          "heading": 19842,
+          "pitch": 0,
+          "position": [
+            20643840,
+            1151533056,
+            -25886720
+          ],
+          "speed": 0
+        },
+        "99": {
+          "complete": false,
+          "elapsed": 0,
+          "flags": 2305,
+          "heading": 20024,
+          "pitch": 0,
+          "position": [
+            46530560,
+            1142292480,
+            -25886720
+          ],
+          "speed": 0
+        }
+      },
+      "rounding_mode": 0,
+      "started": false,
+      "version": 1
+    },
+    "tick_fraction": 0.0,
+    "version": 1
+  },
+  "rapids_floors": {
+    "state": {
+      "floors": {
+        "10": {
+          "completed": false,
+          "derived_byte39": 0,
+          "fraction": 0,
+          "height": -395,
+          "material": 5,
+          "remaining": 0,
+          "speed": 100
+        },
+        "11": {
+          "completed": false,
+          "derived_byte39": 0,
+          "fraction": 0,
+          "height": -395,
+          "material": 5,
+          "remaining": 0,
+          "speed": 100
+        },
+        "7": {
+          "completed": false,
+          "derived_byte39": 0,
+          "fraction": 0,
+          "height": -395,
+          "material": 5,
+          "remaining": 0,
+          "speed": 100
+        }
+      },
+      "started": false,
+      "version": 1
+    },
+    "tick_fraction": 0.0,
+    "version": 1
+  },
+  "rapids_trigger": {
+    "sound_time": 0.0,
+    "state": {
+      "control_flags": 17585,
+      "hit_mode": 129,
+      "prop453_selector": 0,
+      "version": 1
+    },
+    "version": 1,
+    "view_effect_pending": false
+  },
+  "roach": {
+    "actor": 23,
+    "animation_elapsed": 0.0,
+    "enemy_health": 24,
+    "facing": [
+      -0.81912761926651,
+      -0.573611319065094
+    ],
+    "phase": 0,
+    "phase_remaining": 0.0,
+    "player_health": 30,
+    "position": [
+      -1896.0,
+      434.0,
+      7167.0
+    ],
+    "startup_active": false,
+    "startup_elapsed": 0.0,
+    "strike_remaining": 0.0
+  },
+  "roach_population": {
+    "actors": {
+      "25": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          498.0,
+          -215.0,
+          -12286.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "26": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          510.0,
+          -215.0,
+          -12255.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "27": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          538.0,
+          -215.0,
+          -12248.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "28": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          537.0,
+          -215.0,
+          -12243.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "29": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          529.0,
+          -215.0,
+          -12276.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "30": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          506.0,
+          -215.0,
+          -12292.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "31": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          599.0,
+          -215.0,
+          -12314.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "32": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          609.0,
+          -215.0,
+          -12270.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "33": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          620.0,
+          -215.0,
+          -12263.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "34": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          667.0,
+          -215.0,
+          -12244.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "35": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          619.0,
+          -215.0,
+          -12287.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "40": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          895.0,
+          -215.0,
+          -11594.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "41": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          859.0,
+          -215.0,
+          -12028.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "42": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          -545.0,
+          -195.0,
+          -9991.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "43": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          587.0,
+          -215.0,
+          -12332.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "44": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          -155.0,
+          -265.0,
+          -14685.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "45": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          -107.0,
+          0.0,
+          -6465.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "46": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          -253.0,
+          0.0,
+          -7233.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "47": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          -1431.0,
+          0.0,
+          -5957.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "48": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          -2186.0,
+          9.0,
+          -5057.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "49": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          -2371.0,
+          9.0,
+          -5089.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "50": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          -2352.0,
+          9.0,
+          -5361.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      },
+      "51": {
+        "a8": 14,
+        "a9": 14,
+        "aa": 9,
+        "ab": 9,
+        "b5": 0,
+        "b8": 1,
+        "b9": 0,
+        "ba": 0,
+        "bb": 0,
+        "health": 10,
+        "position": [
+          -2233.0,
+          9.0,
+          -5238.0
+        ],
+        "stats": [
+          75,
+          0,
+          50,
+          50,
+          255,
+          0,
+          0,
+          0,
+          0,
+          150,
+          0,
+          0,
+          0,
+          30,
+          50,
+          10,
+          20,
+          100,
+          50,
+          0,
+          0,
+          200,
+          20,
+          255,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "word7c": 0
+      }
+    },
+    "live": {
+      "25": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "26": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "27": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "28": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "29": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "30": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "31": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "32": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "33": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "34": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "35": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "40": {
+        "elapsed": 0.0,
+        "heading": 61531,
+        "hit": false,
+        "mode": 0
+      },
+      "41": {
+        "elapsed": 0.0,
+        "heading": 35134,
+        "hit": false,
+        "mode": 0
+      },
+      "42": {
+        "elapsed": 0.0,
+        "heading": 36408,
+        "hit": false,
+        "mode": 0
+      },
+      "43": {
+        "elapsed": 0.0,
+        "heading": 35680,
+        "hit": false,
+        "mode": 0
+      },
+      "44": {
+        "elapsed": 0.0,
+        "heading": 24576,
+        "hit": false,
+        "mode": 0
+      },
+      "45": {
+        "elapsed": 0.0,
+        "heading": 45875,
+        "hit": false,
+        "mode": 0
+      },
+      "46": {
+        "elapsed": 0.0,
+        "heading": 36772,
+        "hit": false,
+        "mode": 0
+      },
+      "47": {
+        "elapsed": 0.0,
+        "heading": 42780,
+        "hit": false,
+        "mode": 0
+      },
+      "48": {
+        "elapsed": 0.0,
+        "heading": 32950,
+        "hit": false,
+        "mode": 0
+      },
+      "49": {
+        "elapsed": 0.0,
+        "heading": 32950,
+        "hit": false,
+        "mode": 0
+      },
+      "50": {
+        "elapsed": 0.0,
+        "heading": 32950,
+        "hit": false,
+        "mode": 0
+      },
+      "51": {
+        "elapsed": 0.0,
+        "heading": 32950,
+        "hit": false,
+        "mode": 0
+      }
+    },
+    "regions": [],
+    "version": 1,
+    "visuals": {
+      "25": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "26": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "27": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "28": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "29": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "30": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "31": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "32": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "33": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "34": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "35": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "40": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "41": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "42": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "43": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "44": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "45": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "46": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "47": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "48": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "49": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "50": {
+        "action": 0,
+        "elapsed": 0.0
+      },
+      "51": {
+        "action": 0,
+        "elapsed": 0.0
+      }
+    }
+  },
+  "roach_population_schema": 1,
+  "scenic_guard": {
+    "actor_mode": 0,
+    "actor_state": 0,
+    "effects": {
+      "burst": false,
+      "durability": 3,
+      "events": {},
+      "fire_time": 0.0,
+      "flags17": [],
+      "health": {},
+      "local11": false,
+      "movie_done": false,
+      "movie_loaded": false,
+      "movie_time": -1.0,
+      "prop223": {
+        "durability": 3,
+        "movie_done": false,
+        "movie_loaded": false,
+        "movie_time": -1.0
+      },
+      "reward_issued": false,
+      "selectors": {},
+      "sounds": {},
+      "started": false
+    },
+    "elapsed": 0.0,
+    "local0": 0,
+    "movables": {
+      "21": false,
+      "22": false
+    },
+    "pending": [],
+    "present": true,
+    "prop223_present": false,
+    "prop223_state": 0,
+    "prop_present": true,
+    "prop_state": 0,
+    "seen": [],
+    "selector": 0,
+    "version": 1
+  },
+  "stalagmites": [],
+  "stone_manafoil": [],
+  "version": 2,
+  "wild_roach": {
+    "actors": {
+      "0": {
+        "death": 0.0,
+        "health": 100,
+        "position": [
+          177.0,
+          -250.0,
+          -10282.0
+        ],
+        "present": true,
+        "rise": 1.0,
+        "woken": true
+      }
+    },
+    "counter": 0,
+    "live": {
+      "0": {
+        "attack": 0,
+        "elapsed": 0.0,
+        "heading": 42234,
+        "hit": false,
+        "hits": 0,
+        "mode": 0
+      }
+    },
+    "prop93": 0,
+    "regions": [],
+    "version": 1
+  }
+}

@@ -97,6 +97,10 @@ func run() -> void:
 	await press_e()
 	if not check(jungle.carried_collected == bare and int(plant().state) == 3, "Bare plant harvested"): return
 	# Aloe use: the existing handler9 adapter (+5 pending heal), id consumed and recorded as spent.
+	var full_pack: Array = jungle.carried_collected.duplicate()
+	var full_effects: Dictionary = jungle.item_effects.state().duplicate(true)
+	if not check(not await use_item(A1) and jungle.item_effects.item_refusal == "You are not hurt." and jungle.carried_collected == full_pack and jungle.item_effects.state() == full_effects, "Full-health Aloe retained without effect"): return
+	jungle.starting_magic.set_health(jungle.starting_magic.health() - 5) # Disclosed injury fixture for actual healing.
 	var pending0: int = int(jungle.item_effects.state().aloe.pending)
 	if not check(await use_item(A1) and not A1 in jungle.carried_collected and A1 in jungle.item_effects.state().spent and int(jungle.item_effects.state().aloe.pending) == pending0 + 5, "Aloe use: %s" % [jungle.item_effects.state()]): return
 	if not cycle("bare"): return
@@ -158,8 +162,10 @@ func run() -> void:
 	if not check(int(tree().state) == 4 and (Items.SAP_PREFIX + "4") in jungle.carried_collected, "Sap after regrowth: %s" % [tree()]): return
 	harvest._physics_process(State.TREE_PERIOD * 4 + 1.0)
 	if not check(int(tree().state) == 0 and not tree().timer.on and harvest.sprites["261"].texture == harvest.textures.tree[0], "Tree closes after regrowth: %s" % [tree()]): return
-	# Sap use through the controller (handler98 consumes).
-	if not check(await use_item(S1) and not S1 in jungle.carried_collected and S1 in jungle.item_effects.state().spent, "Sap use"): return
+	# Unknown standalone sap effect: retain it, per the approved no-effect rule.
+	var sap_pack: Array = jungle.carried_collected.duplicate()
+	var sap_spent: Array = jungle.item_effects.state().spent.duplicate()
+	if not check(not await use_item(S1) and jungle.item_effects.item_refusal == "That has no useful effect now. Keep it." and jungle.carried_collected == sap_pack and jungle.item_effects.state().spent == sap_spent, "Ineffective sap use retains item and receipts"): return
 	# ---- Barrel1464 ----
 	if not check(await view("1464"), "No vantage for barrel1464"): return
 	for k in 3:
@@ -194,5 +200,5 @@ func run() -> void:
 	if not check(not Items.valid(Items.ALOE_PREFIX + "28") and not Items.valid(Items.ALOE_PREFIX + "01") and not Items.valid(Items.SAP_PREFIX + "25"), "Out-of-pool id accepted"): return
 	if not check(preload("res://scripts/lol2/jungle_save.gd").validate_inventory(jungle.inventory_state()).is_empty(), "Inventory with harvest items rejected"): return
 	if not cycle("final"): return
-	print("PASS jungle_harvest_live: plant254 3x E (107-Aloe, timers 0..s), busy/bare refused, Aloe use + reuse clears spent, reload no farming, live clock, timer order 3->2->1->0; tree261 closed/unarmed refused, armed LMB opens, 3 saps, dry, regrow 4->3, closes at 0; sap use; barrel1464 3 Aloe then broken; MAX_CARRIED atomic; validation; identities.")
+	print("PASS jungle_harvest_live: plant254 3x E (107-Aloe, timers 0..s), busy/bare refused, Aloe use + reuse clears spent, reload no farming, live clock, timer order 3->2->1->0; tree261 closed/unarmed refused, armed LMB opens, 3 saps, dry, regrow 4->3, closes at 0; ineffective sap retained; barrel1464 3 Aloe then broken; MAX_CARRIED atomic; validation; identities.")
 	quit()

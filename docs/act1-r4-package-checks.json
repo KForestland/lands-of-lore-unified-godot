@@ -10,7 +10,7 @@
     "archive": "~/AI_COMMS/classic_review_20261007/lead/act1_full256_20261007T061146Z",
     "archive_manifest_sha256": "6dde6f425550cb37347dbbdd9c3142e80d5e95ef8c6e0e83acad911a9c926a94",
     "report_sha256": "07ba8b21048af1534bf8c3772cafd122bde81ae9e915969cb8bd2999153601f8",
-    "scope": "Full registered256-test suite on the three-spell source, matching R4 staged provenance. Not a completed R4 campaign, packaged runtime, native Windows/GPU/audio or Bob acceptance."
+    "scope": "Full registered256-test suite on the three-spell source, matching R4 staged provenance. Not a completed R4 campaign, packaged runtime, native Windows/GPU/audio or the owner acceptance."
   },
   "linux_export": {
     "exit_code": 0,
@@ -229,7 +229,7 @@
       ],
       "scope": "Fresh single-day Europe/Berlin receipts, clean PASS logs, proof/save timestamps, actual linked hashes, branch inventory/quest checks and source endpoint comparison. Media excluded. Endpoint equality cannot exclude intervening edits. Content completeness, rendering quality and original-game parity require separate acceptance."
     },
-    "scope": "R4 three-spell source: eleven fresh linked campaign legs with zero source drift. Content completeness and Bob acceptance remain open."
+    "scope": "R4 three-spell source: eleven fresh linked campaign legs with zero source drift. Content completeness and the owner acceptance remain open."
   },
   "bob_acceptance": "open",
   "asset_audit": {
@@ -252,7 +252,7 @@
     "LoL2-Cavern.x86_64": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
     "LoL2-Cavern.pck": "adee24ea8f4c80dc2f001388d18a1bcffb87113ec4f918e03611c6e77deaea45"
   },
-  "scope": "R4 full256, fresh eleven-leg campaign, both exports, Linux cave/restart and Jungle resume/save checks, and all packed asset hashes passed. Remaining content, native Windows/GPU/audio and Bob acceptance remain open.",
+  "scope": "R4 full256, fresh eleven-leg campaign, both exports, Linux cave/restart and Jungle resume/save checks, and all packed asset hashes passed. Remaining content, native Windows/GPU/audio and the owner acceptance remain open.",
   "artifacts": {
     "Linux/LoL2-Cavern.x86_64": {
       "sha256": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",

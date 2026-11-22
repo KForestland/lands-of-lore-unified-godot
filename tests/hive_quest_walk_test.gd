@@ -75,6 +75,7 @@ func walk(name: String, allow_exit: bool = false, destination_room: String = "")
 			var delta: float = scene.player.get_physics_process_delta_time()
 			var direction := offset.normalized()*minf(1,offset.length()/(80*delta))
 			before_walk_step(name,i,step)
+			preload("res://tests/jungle_bramble_cut.gd").cut(scene)
 			scene.move_grounded(Vector3(direction.x,0,direction.y),delta)
 			if not check(scene.resets == 0 and not scene.flying,"Walk reset or entered flight"): return false
 			if scene.has_node("Warriors"):
@@ -162,7 +163,7 @@ func run() -> void:
 	actor.check_room_contact()
 	if not check(actor.room_entered,"Walk failed to admit room1001"): return
 	if not await walk("room_to_conversation"): return
-	scene.camera.look_at(actor.global_position+Vector3(0,64,0))
+	scene.camera.look_at(actor.aim_point())
 	if not check(actor.can_begin(),"Walked conversation approach not admitted"): return
 	var speak := InputEventKey.new()
 	speak.keycode = KEY_E

@@ -1,4 +1,6 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## Original actor23 placement/art; modern combat tuning and direct pursuit.
 const CombatFeedback := preload("res://scripts/lol2/combat_feedback.gd")
 const Model = preload("res://scripts/lol2/cave_encounter_state.gd")
@@ -30,6 +32,7 @@ var startup_elapsed := 0.0
 
 func setup(walkthrough: Node3D) -> void:
 	host = walkthrough
+	model.bind_health(host.player_health_owner)
 	var source: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/lol2/generated/cave_roach/actor.json"))
 	assert(animation.load_assets().is_empty())
 	assert(animation.load_extra_roach_actions().is_empty())
@@ -71,16 +74,14 @@ func setup(walkthrough: Node3D) -> void:
 	assert(audio.setup(self,audio_contract(),"res://assets/lol2/generated/cave_roach_audio/audio.json").is_empty())
 
 func clear_ray(start: Vector3, end: Vector3) -> bool:
-	var query := PhysicsRayQueryParameters3D.create(start,end,1,[host.player.get_rid(),body.get_rid()])
-	query.hit_from_inside = true
-	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
+	return PlayerCombat.ray_between(host,start,end,1,[host.player.get_rid(),body.get_rid()],true).is_empty()
 
 func strike() -> bool:
 	if host.flying or host.get_tree().paused or Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: return false  # unarmed human melee allowed (manual printed 7/39 hand attack; melee_damage gives 4)
 	var target := body.global_position+Vector3.UP*6
 	var delta: Vector3 = target-host.camera.global_position
-	var aimed: bool = delta.length()>0.01 and (-host.camera.global_basis.z).dot(delta.normalized())>=0.9
-	return CombatFeedback.landed(receive_strike(delta.length()<=96,aimed,clear_ray(host.camera.global_position,target),preload("res://scripts/lol2/player_form_rules.gd").melee_damage(host.player_form,host.equipped_item != "")))
+	var aimed: bool = PlayerCombat.facing_point(host,target)
+	return CombatFeedback.landed(receive_strike(delta.length()<=PlayerCombat.REACH_CAVE,aimed,clear_ray(host.camera.global_position,target),PlayerCombat.damage(host,false)))
 
 func receive_strike(in_reach: bool, aimed: bool, unobstructed: bool, damage: int) -> bool:
 	if damage<=0: return false
@@ -160,7 +161,7 @@ func _sync(delta: float, moving: bool) -> void:
 	if is_instance_valid(audio) and not restoring_audio: audio.sync(delta)
 
 func recover() -> void:
-	model.player_health = Model.PLAYER_HEALTH
+	PlayerHealth.restore_host(host)
 	model.strike_remaining = 0.0
 	if model.enemy_health>0:
 		model.phase = Model.Phase.IDLE
@@ -183,10 +184,10 @@ static func validate(value: Variant) -> bool:
 		if not vector is Array or vector.size() != (3 if key=="position" else 2): return false
 		for number in vector:
 			if not _number(number) or absf(float(number))>1000000: return false
-	for entry in [["player_health",30],["enemy_health",24],["phase",4]]:
+	for entry in [["player_health",PlayerHealth.MAXIMUM],["enemy_health",24],["phase",4]]:
 		var number = value.get(entry[0])
 		if not _number(number) or number != floorf(float(number)) or number<0 or number>entry[1]: return false
-	for entry in [["phase_remaining",1.5],["strike_remaining",0.45],["animation_elapsed",1000000.0]]:
+	for entry in [["phase_remaining",1.5],["strike_remaining",PlayerCombat.COOLDOWN],["animation_elapsed",1000000.0]]:
 		var number = value.get(entry[0])
 		if not _number(number) or number<0 or number>entry[1]: return false
 	if (value.enemy_health==0) != (value.phase==Model.Phase.DEFEATED): return false

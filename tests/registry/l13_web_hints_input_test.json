@@ -1,0 +1,40 @@
+{
+  "name": "l13_web_hints_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Pinned game-written ring checkpoint with original controller/clock aids from producer; actual E/Escape/F5/F9 at ordinary1/60. Explicit actor21 health1 then original0 and NPC physics hold test component guards, not earned walking."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 0,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "8dc03a1a060da184bff28b2c586bd1540aa4d52617a52cac1bd598f3934ae9c7"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 5
+}

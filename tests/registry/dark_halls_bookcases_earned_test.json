@@ -1,0 +1,22 @@
+{
+  "name": "dark_halls_bookcases_earned_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1012,
+  "needs": {
+    "env": [
+      "LOL2_DH_INPUT_SHA"
+    ],
+    "fixtures": [
+      "user://tests/act1_broken_repaired_monastery.json"
+    ],
+    "note": "r17 qualification pinned earned monastery save; see docs/dark-halls-slides-sol.md"
+  },
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "14f39e0fe667f85355480f367ceac247a861e7e773a3535ef51bc5deed23c9b3"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
+}

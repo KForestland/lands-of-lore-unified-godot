@@ -1,0 +1,12 @@
+{
+  "base": "415ca7b",
+  "note": "Integration added the existing OF6 globe-door owner. Preserve the immutable d5da60a capture; overlay only this reviewed registration and node name. No new restore calls.",
+  "source_sha256": "a6a8d922ffa1ff063266a5438edd96eaaea6e9625359a8a3cf971d8a72dadb1e",
+  "area": "L10_DC",
+  "index": 10,
+  "declaration": {
+    "script": "l10_globe_door.gd",
+    "phase": "early"
+  },
+  "node_name": "L10GlobeDoor"
+}

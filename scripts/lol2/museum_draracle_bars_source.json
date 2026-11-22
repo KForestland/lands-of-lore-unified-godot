@@ -8,28 +8,28 @@
  },
  "movable_export_sha256": "6c2938f8d659c21e49ba66d7cfb404c84edae1d78a10d43b2d9ffe54b52cc0ae",
  "region": 1174,
- "record": "080c540596040200",
+ "record": "omitted 8 bytes sha256:143cce15326043c2a5166b3e5932abf739ca079d44bf7af5fc26619d93c1c5cd",
  "group": 1364,
  "commands": [
-  "ce00000000ff",
-  "d20000000800",
-  "061052000200",
-  "090388001000",
-  "091052001000",
-  "090389001000",
-  "09038b001000",
-  "09038a001000",
-  "012047006400",
-  "012048006400",
-  "012049006400",
-  "01204a006400",
-  "06038a000200",
-  "060389000200",
-  "060388000200",
-  "06038b000200",
-  "c60000001101",
-  "0810520001000000",
-  "01204d000000"
+  "omitted 6 bytes sha256:dd500185061d0b522de3638bbef25ea0b4176e625275eee0ddb1be218ab8ec1f",
+  "omitted 6 bytes sha256:c65e5441e522e0ef0975d339135e2e0b0d593774b391bd81f06571a4ebdf3bff",
+  "omitted 6 bytes sha256:593ce973b352c8759b518aadb4eb610a08e995240a3748d2cc1e9a8494f7b887",
+  "omitted 6 bytes sha256:b474457bedf8bc8d98609a5a2de1136824e2be896ed0bd5bd4ef0e2228de698d",
+  "omitted 6 bytes sha256:b0527084e8a2e58e845222012709d02ef1fa8a2717d6f11f01cdfea7603eb4b8",
+  "omitted 6 bytes sha256:1bc701385232ea6167fb1ba40d2015b1610fd370600a7a1c7a8fcb90abc66aec",
+  "omitted 6 bytes sha256:8d5666b8cfa967323daeaa6d5c50228448ce5133e52baa10290b08cb3e2e9cbf",
+  "omitted 6 bytes sha256:6a47e5540c81bff16d59fb55420b3612d2b3874460e35ccaa6daf11efacf6dd8",
+  "omitted 6 bytes sha256:982fb744a6f24399aad8af17685a2d38a4a140639cf331f19fa17511bb570222",
+  "omitted 6 bytes sha256:6aa924f83f4166ffc01c4c0e58cf53ac48623904396782d879593b5ad3fa6c1a",
+  "omitted 6 bytes sha256:75ca2cc57a130480ab82426d33b25cf3312fc884c8354d1a62efc57086959d9c",
+  "omitted 6 bytes sha256:be29ce4fc4b9ef47cd41844277d9095a792fd6239c85ab83b6cdff98b7fff9b9",
+  "omitted 6 bytes sha256:73a04d3f3a318eb423539fc88ca9c958791897ae2c20f91b311b453a5f5b870f",
+  "omitted 6 bytes sha256:a3f81c9d9f079dc25fa0e5c2c4f140bc668eb6820efdb2ef1d861741c584a378",
+  "omitted 6 bytes sha256:d93c4d3767c5d390bf8c2d6058dd4418f2f6adb7bb27a9c6b5ad9d5c453661ec",
+  "omitted 6 bytes sha256:353a36add95caed72fda52bf583db657d4a92ec840f24f2fd6ccd9fbee7e6fa1",
+  "omitted 6 bytes sha256:6edf1f78f500e74d4f3d970f67682086c8c33366441ab8d584182cb4a20a64cc",
+  "omitted 8 bytes sha256:f06ff4009fb9dfda950998b4048eb0d411edf19eb5106d7eb4cfca19fedfd4aa",
+  "omitted 6 bytes sha256:d4956baf1449e7c51987138246fd23694f33342ac574abc5d31882c82f639f89"
  ],
  "hosted_command_indices": [
   8,
@@ -82,7 +82,7 @@
    "motion": {
     "index": 71,
     "archive_offset": 5880871,
-    "raw_hex": "33f16204000088ff81017f04000000007c745a0014747f000000000001003e00370100016428000000",
+    "raw_hex": "omitted 41 bytes sha256:7bd3ad40625fab1aae316b262abbc7dcdba6db0f28cd59a3e0cf38531a7ed9bd",
     "template": 55,
     "mode": 0,
     "height": -120,
@@ -368,7 +368,7 @@
    "motion": {
     "index": 72,
     "archive_offset": 5880912,
-    "raw_hex": "33f14c04000088ff81018504000000007c745a0014747f000000000001003e00370100016428000000",
+    "raw_hex": "omitted 41 bytes sha256:68c4ff3f7ab4496647e9167545951e0de12ebb095d771e25497561a3707f06a0",
     "template": 55,
     "mode": 0,
     "height": -120,
@@ -654,7 +654,7 @@
    "motion": {
     "index": 73,
     "archive_offset": 5880953,
-    "raw_hex": "33f13404000088ff81018b04000000007c745a0014747f000000000001003e00370100016428000000",
+    "raw_hex": "omitted 41 bytes sha256:37b0885b25f6833520946b2dcff3b3b68c252a7921468bc3c9dc5a8c8dd58b23",
     "template": 55,
     "mode": 0,
     "height": -120,
@@ -940,7 +940,7 @@
    "motion": {
     "index": 74,
     "archive_offset": 5880994,
-    "raw_hex": "33f11c04000088ff81019104000000007c745a0014747f000000000001003e00370100016428000000",
+    "raw_hex": "omitted 41 bytes sha256:ced89c59768b40a916b15c6ee17f8bb5290b785a4b5ebe8fef2a581eaae33873",
     "template": 55,
     "mode": 0,
     "height": -120,
@@ -1240,11 +1240,11 @@
   "next_local19": 3,
   "groups": {
    "6976": [
-    "14104f008a0180000a14",
-    "c60000001303"
+    "omitted 10 bytes sha256:e6159f7bd74ab2be463fc9f7a8b3424f69d147ba100569996a8e745ff65bba30",
+    "omitted 6 bytes sha256:3c3b67374fc36b3692c7dc8b24ca25ffca524539c57f01ef646d7f741e09067f"
    ],
    "6998": [
-    "14104f003801ff811200"
+    "omitted 10 bytes sha256:b128d39f4b03b127b3c02c264018e1be268af6fa5360f9f0ebf174ec2039ff71"
    ]
   },
   "first_sound": 394,

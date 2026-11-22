@@ -1,4 +1,5 @@
 extends Node3D
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## L1_DC template72 dripping stalactites, props 359/632/633/634 (tools/prepare_cave_stalactites.py), omitted by the
 ## recovered prop preview (playtest 2026-10-17, report10:55:42 "rock alcoves" looks straight at prop633).
 ## A landed hit runs the native AE2C8 scan over the prop's own kind9 records in source order; the first admitted
@@ -206,10 +207,10 @@ func aimed() -> String:
 ## Armed melee (context 2/4) at an aimed stalactite in reach; the shared melee cooldown is not involved (prop hit).
 func strike() -> bool:
 	if host.flying or host.get_tree().paused or Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: return false
-	if host.player_form == 0 and host.equipped_item == "": return false
+	if not PlayerCombat.may_strike(host,false): return false
 	var id := aimed()
 	if id.is_empty(): return false
-	return receive_hit(id, 2, 4, Forms.melee_damage(int(host.player_form), host.equipped_item != ""))
+	return receive_hit(id, 2, 4, PlayerCombat.damage(host,false))
 
 func use() -> bool:
 	if host.flying or host.get_tree().paused or Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: return false

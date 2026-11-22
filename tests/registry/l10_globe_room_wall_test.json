@@ -1,0 +1,33 @@
+{
+  "name": "l10_globe_room_wall_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 669,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "OF6 local component, supplied yard/catacomb poses and held NPCs. Real W/mouse/E, generic maus leaves124/125, sealed south walls, underfloor refusal and globe46 pickup. No earned-chain claim."
+  },
+  "teleports": 1,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "170f379d959f6d8791369e6ec1a5ba4d0fbe3fd0a58ce4a884cf24188358cca2"
+  },
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/l10_globe_room_wall_test.gd",
+        "line": 40,
+        "column": 6,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds = false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 3,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

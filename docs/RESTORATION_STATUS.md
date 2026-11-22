@@ -23,7 +23,7 @@ checkpoint routes; they do not prove every cave connection is traversable.
 
 Generated game assets and screenshots are excluded from Git. A fresh clone is
 not yet a self-contained extraction pipeline or playable cave download.
-The Python exporters currently consume evidence artifacts from Bob's local
+The Python exporters currently consume evidence artifacts from the owner's local
 `~/lol2_out` workspace, including decoded geometry, descriptor bindings,
 replayed setup values and recovered lookup tables. Several extraction tools and
 the original game files live outside this repository. The exporter defaults

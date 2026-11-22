@@ -49,7 +49,8 @@ func run():
 	var carried: bool = bool(horn.state().taken) and horn.ITEM in scene.carried_collected and horn.ITEM in scene.quest_state.act2_items.collected
 	if not check(carried, "E grants act2:L19_BC:horn"):
 		await stop(scene, 1); return
-	if not check(horn.ACTOR_REGION != horn.PIPE_REGION, "actor 32 stays off the pipe"):
+	var card: Label = horn.find_child("Stage", true, false) as Label
+	if not check(horn.ACTOR_REGION != horn.PIPE_REGION and not horn.death_stored() and card != null and "Baccata is dead." in card.text, "the caption ties the horn to Baccata and no death flag is stored"):
 		await stop(scene, 1); return
 	var save := "res://tmp/l19_belial_horn_earned_save.json"
 	if not check(scene._quicksave_unrecorded(save).is_empty(), "horn save"):
@@ -60,5 +61,5 @@ func run():
 	await process_frame
 	if not check(bool(horn.state().taken) and horn.ITEM in scene.carried_collected, "save keeps the horn"):
 		await stop(scene, 1); return
-	print("PASS earned Belial's Horn from the beast-wall save")
+	print("PASS earned Belial's Horn, with Baccata named and no death flag")
 	await stop(scene, 0)

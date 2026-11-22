@@ -1,6 +1,5 @@
 extends SceneTree
 const Ladder = preload("res://scripts/lol2/l8_cache_ladder.gd")
-const Feet = preload("res://scripts/lol2/player_form_body.gd")
 var failures: int = 0
 
 func check(ok: bool, label: String) -> void:
@@ -40,11 +39,14 @@ func run() -> void:
 	check(not ladder.use(), "flying stays off the ladder")
 	scene.flying = false
 	var climbed: bool = ladder.use()
-	var expected := Vector3(Ladder.DEST.x, Ladder.DEST.y + Feet.FOOT_OFFSET, Ladder.DEST.z)
-	check(climbed and scene.player.position.is_equal_approx(expected), "owner point climbs to the opcode 18 ledge")
+	check(climbed and Ladder.on_ledge(scene.player.position), "owner point climbs to the opcode 18 ledge")
 	check(bool(scene.quest_state.l8_cache_ladder.climbed), "the climb is saved")
-	var again: Vector3 = scene.player.position
-	check(ladder.use() and scene.player.position.is_equal_approx(again), "a second E stays on the ledge")
+	for _frame in 40:
+		scene.move_grounded(Vector3.ZERO, 1.0 / 60.0)
+		await physics_frame
+	check(Ladder.on_ledge(scene.player.position), "physics keeps the body on the ledge at %s" % scene.player.position)
+	check(ladder.use() and ladder._at_base() and not Ladder.on_ledge(scene.player.position), "a second E climbs back down")
+	check(ladder.use() and Ladder.on_ledge(scene.player.position), "a third E climbs up again")
 	check(preload("res://scripts/lol2/act_one_quest_state.gd").validate(scene.quest_state).is_empty(), "quest validate")
 	if failures == 0: print("PASS l8 cache ladder: E at control 69 moves to the stored ledge")
 	await stop(scene, 1 if failures else 0)

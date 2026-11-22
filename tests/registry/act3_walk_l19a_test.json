@@ -1,0 +1,42 @@
+{
+  "name": "act3_walk_l19a_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1344,
+  "needs": {
+    "env": [
+      "LOL2_BODY_FIT_ARRIVAL_SAVE"
+    ],
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "C10 sitting: SHA-pinned carried-state handoff at native arrival1; production W/mouse/E/click to horn and bars, then F9 pool-approach repeat. Ordinary clock. B1 physical rim/cap above614, not native floor band near-25. No route pose writes or direct movement/interaction calls. K99: clock asserted1/60 (rapids now ordinary too). Additional context aids: native arrival selector1/3 and adapter_exit_seeds=false, separately counted. The sitting entry asserts native -40 floors before each bars click."
+  },
+  "teleports": 0,
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7752079ea34e4bda2dab4af69a03a2cded63be48b2335ea7fc006ffa3dd59e1e"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/act2_body_fit_walk.gd",
+        "line": 143,
+        "column": 1,
+        "setting": "lol2_map_start_selector",
+        "source": "set_meta(\"lol2_map_start_selector\",1 if scenario()==\"blood\" else 3)"
+      },
+      {
+        "path": "tests/act2_body_fit_walk.gd",
+        "line": 144,
+        "column": 64,
+        "setting": "adapter_exit_seeds",
+        "source": "scene=load(\"res://scenes/lol2/maps/L19_BC.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Audited source sites, not execution counts. Exact inherited contexts checked by handoff check_context_aids.py; inherited F02 checker does not classify these settings."
+  },
+  "total_disclosed_test_aid_source_sites": 3
+}

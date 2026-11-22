@@ -1,4 +1,5 @@
 extends Node3D
+const RESTORE_ON := ["load", "arrival"]
 ## Original actor76/path0. One motion owner; movement speed and steering are modern.
 const Bowl=preload("res://scripts/lol2/l9_statue_state.gd")
 const Generic=preload("res://scripts/lol2/scripted_creature_state.gd")
@@ -82,3 +83,8 @@ func finish_fight():
  host.player.position=Vector3(4111,12,-9959);host.player.velocity=Vector3.ZERO
  movie_active=false;overlay.queue_free();get_tree().paused=false
  Input.mouse_mode=Input.MOUSE_MODE_CAPTURED;host.save_feedback("Water begins to rise in the ruins.")
+
+## Modern chain teaching: the existing Human-only fight region, no actor,
+## offering or fight event is fired by this read-only query.
+func needs_shape_lesson()->bool:
+ return not bool(state().fight_done) and in_fight_region()

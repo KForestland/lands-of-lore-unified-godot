@@ -1,0 +1,32 @@
+{
+  "name": "generic_l14_owned_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Real left refusal on C15 then original game-written qualified spiral checkpoint; supplied grounded trial stand and held root/NPC clocks. F5/F9. Existing staged tmp input pin, no edited story packet."
+  },
+  "teleports": 1,
+  "test_aids": 7,
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 26,
+        "column": 37,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(file).instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 8,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7d5ed8a13b3eca4a082e51f895c319f6e70f9ceeb23c23aa1a746349ab5f18ca"
+  }
+}

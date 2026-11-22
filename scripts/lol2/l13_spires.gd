@@ -1,4 +1,5 @@
 extends Node3D
+const RESTORE_ON := ["load"]
 ## Original Spire hit groups/locals and final selector2; modern Spark binding and instant completion.
 const KEY="l13_spires"
 const LOCALS={151:5,170:16,171:17,266:11,267:12,268:13,294:7,295:8,296:9,297:10,298:0,299:1,300:2,301:3,302:4,303:5,351:6}

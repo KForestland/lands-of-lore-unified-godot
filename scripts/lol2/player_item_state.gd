@@ -17,6 +17,12 @@ static func canonical(saved: Dictionary) -> Dictionary:
 	for key in ["pending","base","clock"]: aloe[key] = int(aloe[key])
 	aloe.fraction = float(aloe.fraction)
 	var result := {"version":1,"champion":Effects.restore(saved.champion).state,"spent":saved.spent.duplicate(),"fraction":float(saved.fraction),"aloe":aloe,"ancient_charges":int(saved.get("ancient_charges",0))}
+	if saved.has("accessories"):result.accessories=saved.accessories.duplicate()
+	if saved.has("belt"):result.belt=preload("res://scripts/lol2/item_belt_state.gd").canonical(saved.belt)
+	if saved.has("low_light"):result.low_light=float(saved.low_light)
+	if saved.has("thrown_items"):result.thrown_items=saved.thrown_items.duplicate(true)
+	if saved.has("war_cluster"):result.war_cluster={"remaining":float(saved.war_cluster.remaining),"bonus":int(saved.war_cluster.bonus)}
+	if saved.has("mandrake_sleep"):result.mandrake_sleep=float(saved.mandrake_sleep)
 	if saved.has("dragon_blood"): result.dragon_blood=saved.dragon_blood.duplicate(true)
 	if saved.has("offhand"): result.offhand = saved.offhand
 	if saved.has("dampened"): result.dampened = bool(saved.dampened)
@@ -27,6 +33,18 @@ static func canonical(saved: Dictionary) -> Dictionary:
 	return result
 static func validate(saved: Variant, collected: Array = []) -> String:
 	if not saved is Dictionary or saved.get("version")!=1: return "Invalid item effects."
+	if saved.has("accessories"):
+		var worn=saved.accessories
+		if not worn is Array or worn.size()!=2:return "Invalid accessory slots."
+		var seen_accessories:Array=[]
+		for id in worn:
+			if not id is String:return "Invalid accessory."
+			if id=="":continue
+			if Catalog.slot(id)!="accessory" or id not in collected or id in seen_accessories:return "Invalid accessory ownership."
+			seen_accessories.append(id)
+	if saved.has("belt"):
+		var belt_error:String=preload("res://scripts/lol2/item_belt_state.gd").validate(saved.belt)
+		if not belt_error.is_empty():return belt_error
 	var offhand = saved.get("offhand", "")
 	if not offhand is String or (offhand != "" and (not preload("res://scripts/lol2/player_equipment.gd").offhand(offhand) or offhand not in collected)): return "Invalid offhand equipment."
 	var effect := Effects.restore(saved.get("champion"))
@@ -36,14 +54,28 @@ static func validate(saved: Variant, collected: Array = []) -> String:
 	for id in saved.spent:
 		if Catalog.use_kind(id) == "" or id in seen or id in collected: return "Inconsistent consumed item."
 		seen.append(id)
+	var thrown_error:String=preload("res://scripts/lol2/item_throw_rules.gd").validate(saved.get("thrown_items",[]),saved.spent,collected)
+	if not thrown_error.is_empty():return thrown_error
 	var blood_error:=preload("res://scripts/lol2/dragon_blood_state.gd").validate(saved.get("dragon_blood",[]),saved.spent)
 	if not blood_error.is_empty():return blood_error
+	var sight=saved.get("low_light",0.0)
+	if not (sight is int or sight is float) or not is_finite(float(sight)) or sight<0 or sight>60:return "Invalid low-light timer."
+	if sight>0 and not saved.spent.any(func(id):return Catalog.definition(id)==114):return "Low-light vision lacks consumed eggs."
+	if saved.has("war_cluster"):
+		var war=saved.war_cluster
+		if not war is Dictionary or war.size()!=2 or war.get("bonus")!=6:return "Invalid War Cluster."
+		var remaining=war.get("remaining")
+		if not (remaining is int or remaining is float) or not is_finite(float(remaining)) or remaining<=0 or remaining>60:return "Invalid War Cluster timer."
+		if not saved.spent.any(func(id):return Catalog.definition(id)==126):return "War Cluster lacks consumed item."
+	var sleep=saved.get("mandrake_sleep",0.0)
+	if not (sleep is int or sleep is float) or not is_finite(float(sleep)) or sleep<0.0 or sleep>5.0:return "Invalid Mandrake sleep."
+	if sleep>0 and not saved.spent.any(func(id):return Catalog.definition(id)==118):return "Mandrake sleep lacks consumed root."
 	var charges = saved.get("ancient_charges",0)
 	if not (charges is int or charges is float) or not is_finite(float(charges)) or charges != floorf(float(charges)) or charges < 0 or charges > 9: return "Invalid Ancient Stone charges."
 	if charges > 0 and not saved.spent.any(func(id): return Catalog.use_kind(id) == "ancient"): return "Ancient charges lack consumed item history."
 	# Dampen charm (handler27): the dampened flag (native player byte 0x23ABD bit0) only follows its consumption.
 	var dampened = saved.get("dampened",false)
-	if not dampened is bool or (dampened and preload("res://scripts/lol2/monastery_conversation.gd").DAMPEN not in saved.spent): return "Invalid Dampen charm state."
+	if not dampened is bool or (dampened and not saved.spent.any(func(id):return Catalog.definition(id)==72)): return "Invalid Dampen charm state."
 	if saved.has("fire_crystals"):
 		var crystals = saved.fire_crystals
 		if not crystals is Dictionary: return "Invalid fire crystal charges."

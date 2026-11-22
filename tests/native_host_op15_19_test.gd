@@ -1,6 +1,6 @@
 extends SceneTree
 ## Grok backlog 4 item 4 (host adapters round 3, step 6): opcodes 15, 18, 19 and 208 in their Act 1 forms. Opcode 15 forms
-## (byte 4 <= 0x70) emit effect_request(form, object, lookup) and store nothing; opcode 18 fills the 0xB7D5E slot once;
+## (byte 4 <= 0x70) emit effect_request(form, object, lookup) and store nothing; opcode 18 stores into 0xB7D5E and the reader clears it;
 ## opcode 19 (byte 9 not 1/2) emits the 0x66130 record for slot +0x80; opcode 208 byte 4 == 0 raises/clears the 0x26B4E/0x26B52
 ## cells. Real groups: L4 s1:14784 (the Jungle tar prop 1350: 15 form 0x66 + 208 3/1 + 2/9/16/6/14), L4 s1:25286 (bramble control
 ## 109: 19 form 8 word 0x1C value 1), L5 s1:4170 (opcode 19 byte 9 = 1 stays refused).
@@ -56,12 +56,11 @@ func run() -> void:
 	var five = fresh("L5_HC")
 	r = five.execute_group(1, 4170)
 	check(str(r.status) == "unhosted" and reason(r).contains("opcode 19") and reason(r).contains("+0x8C"), "L5 s1:4170 stays blocked by its opcode-19 percentage form (%s)" % reason(r))
-	# --- Opcode 18: the 0xB7D5E slot takes the first command and keeps it.
+	# --- Opcode 18: the reader clears 0xB7D5E after the command, so the next command can store.
 	r = one(host, "1203350556fb9d1800000908000000230000", 970010)
-	var first: int = host.field("0xb7d5e", "command_file_offset")
-	check(str(r.status) == "ran" and r.adapters.has("opcode18_pending_slot") and first > 0, "opcode 18 fills the empty 0xB7D5E slot with the command (%d)" % first)
+	check(str(r.status) == "ran" and r.adapters.has("opcode18_pending_slot") and host.field("0xb7d5e", "command_file_offset") == 0, "opcode 18 runs and the reader clears the 0xB7D5E slot")
 	r = one(host, "1201000057f175010000050800c0000a0000", 970011)
-	check(str(r.status) == "ran" and host.field("0xb7d5e", "command_file_offset") == first, "a second opcode 18 leaves the filled slot")
+	check(str(r.status) == "ran" and host.field("0xb7d5e", "command_file_offset") == 0, "a second opcode 18 runs after the reader cleared the slot")
 	check(reason(one(host, "1201000057f175010000250800c0000a0000")).contains("0x660F8"), "opcode 18 with bit 5 of the word +0xA set is refused (0x660F8 not modelled)")
 	# --- Opcode 15: byte 4 above 0x70 is the epilogue (PROVEN no-op); a form on a control with a lookup of another kind.
 	effects.clear()
@@ -76,5 +75,5 @@ func run() -> void:
 	check(reason(one(host, "1301000008001c000100")).contains("opcode19_effect_record off"), "opcode 19 refuses with its adapter off")
 	check(reason(one(host, "d090000000030100")).contains("opcode208_cells off"), "opcode 208 refuses with its adapter off")
 	print("Native host opcodes 15/18/19/208: %d failures" % failures)
-	if failures == 0: print("PASS native host op15/18/19/208: tar group 14784 and bramble group 25286 run whole on adapters (effect_request 0x66, record 8/0x1C/1, cells 60<<16 / 3); opcode 18 slot once; percentage forms and byte 4 > 0 of 208 refused")
+	if failures == 0: print("PASS native host op15/18/19/208: tar group 14784 and bramble group 25286 run whole on adapters (effect_request 0x66, record 8/0x1C/1, cells 60<<16 / 3); opcode 18 slot clears after the command; percentage forms and byte 4 > 0 of 208 refused")
 	quit(0 if failures == 0 else 1)

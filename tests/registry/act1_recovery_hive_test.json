@@ -1,6 +1,13 @@
 {
- "name": "act1_recovery_hive_test",
- "suite": "core",
- "mode": "rendered",
- "order": 257
+  "name": "act1_recovery_hive_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 257,
+  "teleports": 1,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "44b9012804a6e4f0f8f8556ff5ffbe79be4978d633fd7f6b90b9c2061a9ffcce"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
 }

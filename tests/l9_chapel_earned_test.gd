@@ -5,6 +5,21 @@ func fight_nearby(scene: Node)->bool:
 func reached_waypoint(scene: Node,label: String,index: int)->void:
  if not check(scene.resets==0,"no fall recovery in earned route"):return
  super.reached_waypoint(scene,label,index)
+ # G03 makes source door101 a real click-bit door. This route formerly
+ # walked through its closed, noncolliding artwork. At the same earned
+ # approach stand, use the visible door through the real E handler.
+ if label=="Noble north upstairs" and index==73 and scene.has_node("GenericObjects"):
+  var binding:Node=scene.progression
+  var phase:int=binding.native.field("movable:101",preload("res://scripts/lol2/generic_object_rules.gd").PHASE,0)
+  if phase in [0,5]:
+   var center:Vector3=binding.hinges[101].transform*binding.mover_bounds[101].get_center()
+   scene.camera.look_at(center,Vector3.UP)
+   var world:Node=scene.get_node("GenericObjects")
+   check(world.aimed().get("id",-1)==101,"Earned approach aims at actual closed door101")
+   for down in [true,false]:
+    var event:=InputEventKey.new();event.keycode=KEY_E;event.pressed=down
+    Input.parse_input_event(event);Input.flush_buffered_events()
+   check(binding.native.field("movable:101",preload("res://scripts/lol2/generic_object_rules.gd").PHASE,0)==2,"Real E opens the new solid source door on the earned route")
  if label=="Noble north upstairs" and Vector2(scene.player.position.x,scene.player.position.z).distance_to(Vector2(-1050,-5940))<9:
   check(scene.request_jump(),"real jump from lower channel lip")
  if label=="west bank" and Vector2(scene.player.position.x,scene.player.position.z).distance_to(Vector2(2540,-7855))<9:

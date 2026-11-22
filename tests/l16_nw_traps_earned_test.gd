@@ -1,8 +1,8 @@
 extends "res://tests/l12_logs_approach_earned_test.gd"
-func key(code: Key) -> void:
-	var e := InputEventKey.new(); e.keycode = code; e.pressed = true
+func key(code: Key, ctrl: bool = false) -> void:
+	var e := InputEventKey.new(); e.keycode = code; e.ctrl_pressed = ctrl; e.pressed = true
 	Input.parse_input_event(e); Input.flush_buffered_events(); await process_frame
-	e = InputEventKey.new(); e.keycode = code; e.pressed = false
+	e = InputEventKey.new(); e.keycode = code; e.ctrl_pressed = ctrl; e.pressed = false
 	Input.parse_input_event(e); Input.flush_buffered_events(); await process_frame
 
 func click() -> void:
@@ -72,10 +72,17 @@ func run():
 		await stop(scene, 1); return
 	scene.player.position = Vector3(-8900, 132, -3286)
 	scene.player.velocity = Vector3.ZERO
-	var receiver = traps.bodies[90].get_meta("spark_receiver")
-	var low: bool = not receiver.receive_spark_level(1)
-	var high: bool = receiver.receive_spark_level(3) and bool(traps.state().ice)
-	if not check(low and high, "level-three spark breaks the white ball"):
+	scene.camera.look_at(traps.ICE_AT,Vector3.UP)
+	if not check(scene.starting_magic.learn_spell_group("summon"), "Legacy Summon teaching fixture"):
+		await stop(scene,1); return
+	await key(KEY_1)
+	await key(KEY_Q,true)
+	var low: bool = not bool(traps.state().ice)
+	await create_timer(0.6).timeout
+	await key(KEY_6)
+	await key(KEY_Q,true)
+	var high: bool = bool(traps.state().ice)
+	if not check(low and high, "Real Spark3 refuses ice; real Summon3 breaks the same white ball"):
 		await stop(scene, 1); return
 	if not check(travel_of(scene, traps.DOORS) == doors_before, "tower doors stay shut"):
 		await stop(scene, 1); return
@@ -89,6 +96,6 @@ func run():
 	var kept: bool = bool(traps.state().brick) and bool(traps.state().fireball) and bool(traps.state().ice)
 	if not check(kept, "save keeps the three breaks"):
 		await stop(scene, 1); return
-	print("PASS earned SE oil save -> brick, blue bow, level-three spark")
+	print("PASS legacy NW component brick/bluebow/Spark3 negative/Summon3; explicit teaching, pose, gear, clock aids, not new earned walk")
 	await stop(scene, 0)
 

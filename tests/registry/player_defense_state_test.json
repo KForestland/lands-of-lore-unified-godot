@@ -1,6 +1,18 @@
 {
- "name": "player_defense_state_test",
- "suite": "core",
- "mode": "headless",
- "order": 55
+  "name": "player_defense_state_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 55,
+  "teleports": 0,
+  "test_aids": 4,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ededa8565d4b0182de2bd69f1edcacead0d9e9d63d0f089abd8900e880925030"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 4
 }

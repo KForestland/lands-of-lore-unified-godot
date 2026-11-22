@@ -35,7 +35,8 @@ func _ready() -> void:
 		var material: StandardMaterial3D = materials[str(int(record.descriptor))]
 		# Native 129AC8 frame setup (special_placed_prop_review.gd, hive_jungle_scenery.gd): frame flag 0x40 reverses the
 		# columns and 0x80 the rows. Flipped records get their own copy of the shared material (owner r12q 09-27-28: the
-		# ceiling dust props, flag 0x80). The row flip stays. Flag 0x80 lies flat and drops the billboard.
+		# ceiling dust props, flag 0x80). The row flip stays. The quads stay upright in the gap under the ceiling.
+		# Y06 laid flag 0x80 flat; owner r17 16-36-49 asked for that hanging drop back.
 		var flags := int(record.get("frame_flags", 0)) & 0xC0
 		if flags != 0:
 			var key := "%d|%d" % [int(record.descriptor), flags]
@@ -43,14 +44,12 @@ func _ready() -> void:
 				var flipped: StandardMaterial3D = material.duplicate()
 				flipped.uv1_scale = Vector3(-1.0 if flags & 0x40 else 1.0, -1.0 if flags & 0x80 else 1.0, 1.0)
 				flipped.uv1_offset = Vector3(1.0 if flags & 0x40 else 0.0, 1.0 if flags & 0x80 else 0.0, 0.0)
-				if flags & 0x80: flipped.billboard_mode = BaseMaterial3D.BILLBOARD_DISABLED
 				materials[key] = flipped
 				for animation in animations:
 					if animation.material == material: animations.append({"material": flipped, "textures": animation.textures, "fps": animation.fps, "frame": 0}); break
 			material = materials[key]
 		instance.material_override = material
 		instance.position = Vector3(record.position[0], record.position[1], record.position[2])
-		if flags & 0x80: instance.rotation.x = -PI / 2.0
 		instance.set_meta("source_record", int(record.record))
 		add_child(instance)
 		instances.append(instance)

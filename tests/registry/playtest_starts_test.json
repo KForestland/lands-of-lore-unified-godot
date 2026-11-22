@@ -1,11 +1,18 @@
 {
- "name": "playtest_starts_test",
- "suite": "core",
- "mode": "headless",
- "order": 628,
- "needs": {
-  "env": [
-   "LOL2_ORIGINAL_GAME_EXE"
-  ]
- }
+  "name": "playtest_starts_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 628,
+  "needs": {
+    "env": [
+      "LOL2_ORIGINAL_GAME_EXE"
+    ]
+  },
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "3d1ba42057cc75ed9fed1c65d56f8924bc9ebe37dc943204e95679cf572906aa"
+  },
+  "count_method": "Audited source sites (K82), not executions. Load/UI tests, not new earned walks; post-apply clocks/private autosave held. Producer aids for the original immutable checkpoints are disclosed separately in the manifest."
 }

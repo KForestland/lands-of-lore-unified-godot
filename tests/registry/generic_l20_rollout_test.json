@@ -1,0 +1,45 @@
+{
+  "name": "generic_l20_rollout_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Pinned C15, local supplied grounded stands and held root/NPC clocks; explicit per-frame melee cooldown aid. Real left on three original prop billboards, full native threshold1 on144, F5/F9. No walk collision, invented selector, deletion or earned-route claim."
+  },
+  "teleports": 1,
+  "test_aids": 9,
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/generic_l20_rollout_test.gd",
+        "line": 33,
+        "column": 22,
+        "kind": "melee_cooldown_fixture",
+        "source": "scene.act2_creatures.strike_remaining=Combat.cooldown_tick(scene.act2_creatures.strike_remaining,1.0/60.0)"
+      },
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 26,
+        "column": 37,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(file).instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 11,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "1f1452f8d09e4ab36591340bb824f0829fea658f6abb2a3e1ca419ca624e29cb"
+  },
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "melee_cooldown_fixture",
+      "pattern": "\\.strike_remaining\\s*="
+    }
+  ]
+}

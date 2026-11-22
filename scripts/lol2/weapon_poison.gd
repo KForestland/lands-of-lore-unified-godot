@@ -64,10 +64,17 @@ static func spend(host: Object) -> int:
 	return flag
 ## The inventory's Use on Poison Paint (the port's stand-in for the weapon-circle drop, docs/DEVIATIONS.md).
 static func use(host: Object, id: String) -> bool:
-	if id != PAINT: return false
+	var definition:int=load("res://scripts/lol2/item_catalog.gd").definition(id)
+	if definition not in [125,129]:return false
 	var state := bank(host)
-	if state.is_empty() or not id in host.carried_collected or not apply_paint(state): return false
-	host.carried_collected.erase(id)
+	if state.is_empty() or not id in host.carried_collected or coats(state)>=MAX_COATS:return false
+	if definition==129:state.sac=int(state.sac)+1
+	else:apply_paint(state)
+	var next:Array=host.carried_collected.duplicate();next.erase(id)
+	if not preload("res://scripts/lol2/item_grants.gd").commit(host,next).ok:
+		if definition==129:state.sac=int(state.sac)-1
+		else:state.paint=int(state.paint)-1
+		return false
 	if host.get("hand_item") == id: host.hand_item = ""
 	if host.get("interface_hud") != null and is_instance_valid(host.interface_hud) and host.interface_hud.has_method("refresh_equipment"): host.interface_hud.refresh_equipment()
 	return true

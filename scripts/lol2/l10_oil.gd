@@ -40,26 +40,64 @@ func polygon(face: Dictionary)->PackedVector2Array:
  var points:=PackedVector2Array()
  for p in face.points:points.append(Vector2(p[0],p[2]))
  return points
-func _ready():
- intact=Node3D.new();intact.name="IntactTomb";add_child(intact)
- collapsed=Node3D.new();collapsed.name="RemainingCeiling";add_child(collapsed)
- var pack: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(host.geometry_file))
- var holes: Array=[]
- for face in pack.faces:
-  if face.kind=="floor" and source().floors.has(int(face.region)):holes.append(polygon(face))
+## Split convex pieces along a cut's edges instead of treating a polygon
+## difference's inner-hole contour as another filled polygon.
+func _half_plane(part: PackedVector2Array,a: Vector2,b: Vector2,side: float)->PackedVector2Array:
+ var result:=PackedVector2Array()
+ if part.is_empty():return result
+ var prior:Vector2=part[-1];var prior_distance:float=side*(b-a).cross(prior-a)
+ for point in part:
+  var distance:float=side*(b-a).cross(point-a)
+  if (distance>=0)!=(prior_distance>=0):
+   var crossing:Vector2=prior+(point-prior)*(prior_distance/(prior_distance-distance))
+   if result.is_empty() or result[-1].distance_squared_to(crossing)>0.000001:result.append(crossing)
+  if distance>=0 and (result.is_empty() or result[-1].distance_squared_to(point)>0.000001):result.append(point)
+  prior=point;prior_distance=distance
+ if result.size()>1 and result[0].distance_squared_to(result[-1])<0.000001:result.remove_at(result.size()-1)
+ return result
+func _subtract_triangle(part: PackedVector2Array,cut: PackedVector2Array)->Array:
+ if Geometry2D.intersect_polygons(part,cut).is_empty():return [part]
+ var outside:Array=[];var remaining:=part
+ var side:float=signf((cut[1]-cut[0]).cross(cut[2]-cut[0]))
+ for i in 3:
+  var a:Vector2=cut[i];var b:Vector2=cut[(i+1)%3]
+  var piece:=_half_plane(remaining,a,b,-side)
+  if piece.size()>=3 and Geometry2D.triangulate_polygon(piece).size()>0:outside.append(piece)
+  remaining=_half_plane(remaining,a,b,side)
+  if remaining.size()<3:break
+ return outside
+func _triangles(poly: PackedVector2Array)->Array:
+ var result:Array=[];var indices:=Geometry2D.triangulate_polygon(poly)
+ for i in range(0,indices.size(),3):result.append(PackedVector2Array([poly[indices[i]],poly[indices[i+1]],poly[indices[i+2]]]))
+ return result
+## Only remove upper floor above an existing native landing. The source
+## selected footprint extends beyond the catacomb sheet at its north rim;
+## deleting that whole footprint made an ordinary close cast bottomless.
+## Retain that original upper floor and art; never invent a lower platform.
+func collapse_geometry(faces: Array)->Dictionary:
+ var landings: Array=[];var upper: Array=[];var holes: Array=[]
+ for face in faces:
+  if face.kind!="floor":continue
+  if source().lower_ceilings.has(int(face.region)):landings.append(polygon(face))
+  if source().floors.has(int(face.region)):upper.append(polygon(face))
+ for top in upper:
+  for landing in landings:
+   holes.append_array(Geometry2D.intersect_polygons(top,landing))
+ var cuts:Array=[]
+ for hole in holes:cuts.append_array(_triangles(hole))
  var before: Array=[];var after: Array=[]
- for face in pack.faces:
+ for face in faces:
   if not owns(face):continue
   before.append(face)
-  if face.kind!="ceiling":continue
-  var parts: Array=[polygon(face)]
-  for hole in holes:
-   var next: Array=[]
-   for part in parts:next.append_array(Geometry2D.clip_polygons(part,hole))
+  if face.kind not in ["floor","ceiling"]:continue
+  var parts:Array=_triangles(polygon(face))
+  for cut in cuts:
+   var next:Array=[]
+   for part in parts:next.append_array(_subtract_triangle(part,cut))
    parts=next
   for part in parts:
    if part.size()<3:continue
-   var row: Dictionary=face.duplicate(true);row.points=[];row.uv=[]
+   var row: Dictionary=face.duplicate(true);row.points=[];row.uv=[];row.oil_clipped=true
    var origin:=Vector2(face.points[0][0],face.points[0][2])
    var u:=Vector2(face.points[1][0],face.points[1][2])-origin
    var v:=Vector2(face.points[3][0],face.points[3][2])-origin
@@ -72,7 +110,13 @@ func _ready():
     var uv:=Vector2(face.uv[0][0],face.uv[0][1])+a*(Vector2(face.uv[1][0],face.uv[1][1])-Vector2(face.uv[0][0],face.uv[0][1]))+b*(Vector2(face.uv[3][0],face.uv[3][1])-Vector2(face.uv[0][0],face.uv[0][1]))
     row.uv.append([uv.x,uv.y])
    after.append(row)
- build(intact,before,pack);build(collapsed,after,pack)
+ return {"before":before,"after":after,"holes":holes}
+func _ready():
+ intact=Node3D.new();intact.name="IntactTomb";add_child(intact)
+ collapsed=Node3D.new();collapsed.name="RemainingCeiling";add_child(collapsed)
+ var pack: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(host.geometry_file))
+ var geometry:=collapse_geometry(pack.faces)
+ build(intact,geometry.before,pack);build(collapsed,geometry.after,pack)
  receiver=StaticBody3D.new();receiver.position=AIM;receiver.collision_layer=1;receiver.collision_mask=0
  receiver.set_meta("spark_receiver",Receiver.new(self))
  var shape:=CollisionShape3D.new();var box:=BoxShape3D.new();box.size=Vector3(36,24,14);shape.shape=box;receiver.add_child(shape);add_child(receiver)
@@ -83,7 +127,7 @@ func build(parent: Node3D,faces: Array,pack: Dictionary):
  var groups:={};var collision:=PackedVector3Array()
  for face in faces:
   var indices: PackedInt32Array
-  if face.points.size()==4:indices=PackedInt32Array([0,1,2,0,2,3])
+  if face.points.size()==4 and not face.get("oil_clipped",false):indices=PackedInt32Array([0,1,2,0,2,3])
   else:indices=Geometry2D.triangulate_polygon(polygon(face))
   if not groups.has(face.material):
    var surface:=SurfaceTool.new();surface.begin(Mesh.PRIMITIVE_TRIANGLES);groups[face.material]=surface
@@ -108,7 +152,10 @@ func restore():
  for id in source().removed_controls:
   if host.preview_assemblies.solid_bodies.has(id):host.preview_assemblies.solid_bodies[id].collision_layer=0 if value else 256
 func ignite(level: int)->bool:
- if level not in [1,3,5] or burned() or host.get_node("L10Barrel").state().phase!=2 or not host.starting_magic.world_active():return false
+ if burned() or host.get_node("L10Barrel").state().phase!=2 or not host.starting_magic.world_active():return false
+ if level!=3:
+  if level in [1,2]:host.save_feedback("A stronger Spark is needed.")
+  return false
  host.quest_state[KEY]={"version":1,"burned":true};restore()
  # Damage precedes the geometry change's next physics frame; a close caster is caught in the blast.
  if host.player.global_position.distance_to(AIM)<BLAST_RADIUS and not host.starting_magic.protected():host.starting_magic.set_health(maxi(0,host.starting_magic.health()-BLAST_DAMAGE))

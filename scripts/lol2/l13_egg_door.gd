@@ -1,4 +1,5 @@
 extends Node3D
+const RESTORE_ON := ["load"]
 ## Original prop420 / control106 / region1226; modern Spark-to-use and instant opening.
 const KEY="l13_egg_door"
 const AIM=Vector3(-3254,43.5,5330)

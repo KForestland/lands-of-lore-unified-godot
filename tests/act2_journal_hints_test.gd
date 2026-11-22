@@ -1,5 +1,5 @@
 extends SceneTree
-## grok M01 / Kimi K18. Fourteen Act 2 journal notes. The hopper when-id is not the quest key.
+## grok M01 / Kimi K18. 19 Act 2 journal notes including BJ14 Dawn and three puzzle hints. The hopper when-id is not the quest key.
 const L10 = preload("res://scripts/lol2/l10_journal_hints.gd")
 const L9 = preload("res://scripts/lol2/l9_journal_hints.gd")
 const Tribe = preload("res://scripts/lol2/l8_tribe_dawn_hints.gd")
@@ -15,6 +15,11 @@ func check(ok: bool, m: String) -> void:
 	if not ok: failures += 1; print("FAIL ", m)
 func _initialize() -> void: run.call_deferred()
 func run() -> void:
+	check(L10.stuck_id({}, "fence") == "l10_fence_tuck", "first fence approach")
+	check(L9.stuck_id({}, "rail") == "l9_rotten_rail", "first intact rail approach")
+	check(L9.stuck_id({}, "rising") == "", "no flood note before fight")
+	check(L9.stuck_id({"l9_statue_walk":{"fight_done":true}}, "rising") == "l9_flood_table", "flood starts after fight")
+	check(L9.stuck_id({"l9_statue_walk":{"fight_done":true},"l9_escape":{"escaped":true}}, "rising") == "", "escaped flood stays quiet")
 	var oil := {"l10_oil": {"burned": false}, "l10_barrel": {"phase": 2}}
 	check(L10.stuck_id(oil, "oil") == "l10_tomb_oil", "oil near the barrel after the roll")
 	oil.l10_oil.burned = true
@@ -28,6 +33,10 @@ func run() -> void:
 	check(L10.stuck_id({}, "priest", {"door_shut": false, "urn_missing": true}) == "", "door already open")
 	check(L10.stuck_id({}, "priest", {"door_shut": true, "urn_missing": false, "ashes_missing": false, "ankh_missing": false}) == "", "door shut but nothing missing")
 	check(L10.stuck_id({}, "oil", door) == "", "door facts at the oil are not the door note")
+	check(L10.catacomb_note(-118.0, true) == "l10_catacomb_braziers", "underground beside an unlit basket")
+	check(L10.catacomb_note(32.0, true) == "", "the surface is not the catacomb note")
+	check(L10.catacomb_note(-118.0, false) == "", "no unlit basket nearby")
+	check(L10.stuck_id({}, "catacomb", {"height": -118.0, "near_unlit": true}) == "l10_catacomb_braziers", "catacomb place")
 	check(L9.stuck_id({}, "alcove", {"form": 1}) == "l9_statue_human", "beast in the alcove")
 	check(L9.stuck_id({}, "alcove", {"form": 0}) == "", "human in the alcove")
 	var fight := {"l9_statue_walk": {"arrived": true, "fight_done": false}}
@@ -120,7 +129,7 @@ func run() -> void:
 	Tribe.attach(dawn, "remains")
 	check(dawn.get_node_or_null("L10DawnTreeHints") != null, "remains role attach")
 	dawn.free()
-	check(seen.size() == 14, "fourteen notes")
+	check(seen.size() == 34, "34 notes (11 City road + 15 existing + BJ14 Dawn + 3 puzzle hints + OF7 braziers + G2 Claw arrival + G3 mirror + Dreamstone home)")
 	check(not MyJournal.hints().has("l14_hopper_platform"), "quest key is not a journal id")
-	if failures == 0: print("PASS act2_journal_hints_test: 14 M01 notes, hopper id l14_hopper_bodies, registered once")
+	if failures == 0: print("PASS act2_journal_hints_test: 19 notes (M01, Silverleaf, Dawn, three puzzle hints), hopper id l14_hopper_bodies, registered once")
 	quit(1 if failures else 0)

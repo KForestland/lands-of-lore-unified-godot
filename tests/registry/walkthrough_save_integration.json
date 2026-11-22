@@ -1,12 +1,19 @@
 {
- "name": "walkthrough_save_integration",
- "suite": "core",
- "mode": "headless",
- "order": 579,
- "needs": {
-  "fixtures": [
-   "isolated user data (project.godot config/use_custom_user_dir)"
-  ],
-  "chain": "two processes --restart-write then --restart-read in one isolated user dir"
- }
+  "name": "walkthrough_save_integration",
+  "suite": "core",
+  "mode": "headless",
+  "order": 579,
+  "needs": {
+    "fixtures": [
+      "isolated user data (project.godot config/use_custom_user_dir)"
+    ],
+    "chain": "two processes --restart-write then --restart-read in one isolated user dir"
+  },
+  "teleports": 1,
+  "test_aids": 5,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "9abc1dd6e206d4006ecaace7eeaf7f09fb2dda08544a57e0133f8aaf05210ab2"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
 }

@@ -1,5 +1,5 @@
 extends "res://tests/jungle_aloe_use_test.gd"
-## Local pickup approaches, real inventory UI and saved consumption; not an earned route.
+## Local pickup approaches, real inventory UI and saved no-effect refusal; not an earned route.
 func use_sap(host, id: String) -> bool:
 	if not check(host.open_inventory(), "Sap inventory did not open"): return false
 	await process_frame
@@ -13,7 +13,9 @@ func use_sap(host, id: String) -> bool:
 	await process_frame
 	await process_frame
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	return check(id in host.item_effects.state().spent and id not in ids_of(host), "Sap was not consumed")
+	var kept:bool=id not in host.item_effects.state().spent and id in ids_of(host) and host.inventory.detail_text.text=="That has no useful effect now. Keep it."
+	host.inventory.close();await process_frame;await process_frame
+	return check(kept,"No-effect sap must remain with its reason")
 
 func run() -> void:
 	var path := "user://tests/jungle_sap_use.json"
@@ -40,7 +42,7 @@ func run() -> void:
 	if not check(not scene.item_effects.use(first), "Transformed player consumed sap"): return
 	scene.player_form = 0
 	if not await use_sap(scene, first): return
-	var expected: Dictionary = before.duplicate(true); expected.spent.append(first)
+	var expected: Dictionary = before.duplicate(true)
 	if not check(scene.item_effects.state() == expected and scene.starting_magic.health() == 17, "Sap added an unsupported effect"): return
 	if not check(not scene.item_effects.use(first), "Repeated sap use succeeded"): return
 	if not check(scene.quicksave(path).is_empty(), "Sap save rejected"): return
@@ -51,8 +53,11 @@ func run() -> void:
 	var saved: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(path))
 	var bad: Dictionary = saved.duplicate(true)
 	bad.quests.jungle_world_items.collected.erase(52.0); bad.quests.jungle_world_items.collected.erase(52)
+	# Existing legacy consumed saves still need their pickup history. The new
+	# no-op use keeps the live item, so construct that old-format negative probe.
+	bad.inventory.item_effects.spent.append(first);bad.inventory.collected.erase(first)
 	if not check(not Save.validate(bad).is_empty(), "Consumed sap without pickup history accepted"): return
-	bad = saved.duplicate(true); bad.inventory.item_effects.spent.append(first)
+	bad = saved.duplicate(true); bad.inventory.item_effects.spent.append_array([first,first]);bad.inventory.collected.erase(first)
 	if not check(not Save.validate(bad).is_empty(), "Duplicate sap consumption accepted"): return
 	var handoff: Dictionary = scene.area_handoff()
 	await finish(scene)
@@ -71,8 +76,8 @@ func run() -> void:
 	for i in range(5): await process_frame
 	freeze(darker)
 	if not check(darker.apply_area_handoff(JSON.parse_string(JSON.stringify(back))).is_empty(), "Darker jungle rejected sap state"): return
-	if not check(first in darker.item_effects.state().spent and World.id_of(53) in darker.item_effects.state().spent, "Sap history lost on travel"): return
+	if not check(first in darker.carried_collected and World.id_of(53) in darker.carried_collected and first not in darker.item_effects.state().spent and World.id_of(53) not in darker.item_effects.state().spent, "Kept sap ownership lost on travel"): return
 	await finish(darker)
 	DirAccess.remove_absolute(path)
-	print("PASS sap source identity, E pickups, UI use, form gate, no stat effect, no repeated use, disk rollback, no respawn, invalid history rejection and Jungle/Hive/darker transport; supplied approaches.")
+	print("PASS sap source identity, E pickups, UI refusal/kept item, form gate, no stat effect, disk rollback, no respawn, invalid history rejection and Jungle/Hive/darker transport; supplied approaches.")
 	quit()

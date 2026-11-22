@@ -1,0 +1,22 @@
+{
+  "name": "item_fixed_stats_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "note": "All170 I03 original signed weapon/worn terms as fixed adapters and original protection bytes; flat8 only where base/projectile damage is unrecovered. Accessory ownership and F08 removal negatives."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 0,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "a537a14f58702665c9b2f2182f2ea04da8aaa5dbb41def801ce4e844c46ccb02"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 3
+}

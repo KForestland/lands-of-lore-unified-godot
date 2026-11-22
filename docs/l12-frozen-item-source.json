@@ -4,19 +4,19 @@
   {
    "events": [
     {
-     "extra_hex": "0000000204",
+     "extra_hex": "omitted 5 bytes sha256:8dd50ff3bc1319ef04b83f03efa4de534ebeb10cb03c261fd1e69bfe2579bdcc",
      "file_offset": 9828836,
      "group": 3048,
      "kind": 9,
      "offset": 922,
      "predicate": {
       "entry_file_offset": 10014534,
-      "entry_hex": "0005000000",
+      "entry_hex": "omitted 5 bytes sha256:1ad2f82b4edfc1d7e0e3df7b745eded28daae530594f76346c0a9b2b932a22d7",
       "index": 206,
       "trailer_file_offset": 9828846,
-      "trailer_hex": "0413ce00"
+      "trailer_hex": "omitted 4 bytes sha256:6b794423c604478e0152ac22d66115263d69c6e46c71db17c981cdaccfc1b487"
      },
-     "raw_hex": "0a09e80b110000000204",
+     "raw_hex": "omitted 10 bytes sha256:35eb022885eeab90aeb92b49c3094dd9c140b6569f6d1396eca9d37348ad9d7a",
      "stream": 1,
      "value": 17
     },
@@ -24,7 +24,7 @@
      "file_offset": 9828846,
      "kind": 19,
      "offset": 932,
-     "raw_hex": "0413ce00"
+     "raw_hex": "omitted 4 bytes sha256:6b794423c604478e0152ac22d66115263d69c6e46c71db17c981cdaccfc1b487"
     },
     {
      "extra_hex": "00",
@@ -33,7 +33,7 @@
      "kind": 6,
      "offset": 936,
      "predicate": null,
-     "raw_hex": "0606040c0000",
+     "raw_hex": "omitted 6 bytes sha256:b3e30a70e61bc59900973012251e022ba26702ee4a3cc5b80959e61bee01e6e0",
      "stream": 1,
      "value": 0
     }
@@ -42,7 +42,7 @@
    "index": 89,
    "list_file_offset": 9828836,
    "list_offset": 922,
-   "placement_hex": "350d2539d227aafb8244ae0a9a037f00000000000100000000000000f400030010",
+   "placement_hex": "omitted 33 bytes sha256:2a36627c7600a1133704f059efa5005b62bc0bd304b4b194b509c8464b6bd5cc",
    "ref": "control:89",
    "table": "control",
    "terminator_offset": 942
@@ -56,7 +56,7 @@
      "kind": 16,
      "offset": 3054,
      "opcode": 16,
-     "raw_hex": "101059000100",
+     "raw_hex": "omitted 6 bytes sha256:8a40688c519d96a27d8dc41eba016c1d397769a816fdb8f404a88a6e09e11649",
      "target": 89
     },
     {
@@ -64,7 +64,7 @@
      "kind": 16,
      "offset": 3060,
      "opcode": 8,
-     "raw_hex": "0810590000000000",
+     "raw_hex": "omitted 8 bytes sha256:76c3df137f79067b9af638386709123fd82b264cd2eb7c045d6804b7341f4bcb",
      "target": 89
     },
     {
@@ -72,15 +72,15 @@
      "kind": 16,
      "offset": 3068,
      "opcode": 8,
-     "raw_hex": "0810590002000000",
+     "raw_hex": "omitted 8 bytes sha256:e1d589a005a3a86dfcb29a8c6ca7fd5506ce90a6a631ba116077f73d463952a3",
      "target": 89
     }
    ],
    "count": 3,
    "file_offset": 9824120,
    "group": 3048,
-   "header_hex": "f00000000300",
-   "raw_hex": "f0000000030010105900010008105900000000000810590002000000",
+   "header_hex": "omitted 6 bytes sha256:161f3a2c4fc6e1f851c1c0991fae6acaeadbc254dcd11df1f55611de9baf7cb5",
+   "raw_hex": "omitted 28 bytes sha256:3aed22649b5ee22bedc042e3f3e652dba5cfd6dcd8d4ea9dd954559d506ac441",
    "stream": 1
   },
   {
@@ -90,7 +90,7 @@
      "kind": 3,
      "offset": 3082,
      "opcode": 14,
-     "raw_hex": "0e03810103000000",
+     "raw_hex": "omitted 8 bytes sha256:9f581e86b569063b63fed38c2289ccb4cc5eaafadb793b32ba9ed2ad62d32bb8",
      "target": 385
     },
     {
@@ -98,7 +98,7 @@
      "kind": 4,
      "offset": 3090,
      "opcode": 9,
-     "raw_hex": "090424000300",
+     "raw_hex": "omitted 6 bytes sha256:aba44c49d694bcff94b98332c1020aa9cd96bd270c21259ea8d042ce714a4f3f",
      "target": 36
     },
     {
@@ -106,7 +106,7 @@
      "kind": 16,
      "offset": 3096,
      "opcode": 8,
-     "raw_hex": "0810590001000000",
+     "raw_hex": "omitted 8 bytes sha256:c0a0b07e30a163669736cdd3e6f01b618a4ebaf8a576308ab7ba392a36e7761f",
      "target": 89
     },
     {
@@ -114,15 +114,15 @@
      "kind": 16,
      "offset": 3104,
      "opcode": 5,
-     "raw_hex": "051059000100",
+     "raw_hex": "omitted 6 bytes sha256:50d18dd612b9bf258bf93432e87d2c9050fe08fef45601dcee6a88a80c71bff1",
      "target": 89
     }
    ],
    "count": 4,
    "file_offset": 9824148,
    "group": 3076,
-   "header_hex": "f00000000400",
-   "raw_hex": "f000000004000e038101030000000904240003000810590001000000051059000100",
+   "header_hex": "omitted 6 bytes sha256:6468374136092cbae2dd03f9ca67d76e363565a2c7ce9eecfa34355d7e239ff6",
+   "raw_hex": "omitted 34 bytes sha256:3778ac2c5ffed141f127b1cc220271368417b243a1ebe673859ec87b3364bc4d",
    "stream": 1
   }
  ],
@@ -137,7 +137,7 @@
    -14610
   ],
   "heading": 0,
-  "placement_hex": "1c0d12390000befb1214ae0a0004000000000000f4737f00397c5a00f4007800cec5cc0a00",
+  "placement_hex": "omitted 37 bytes sha256:2ab381e061df90e13d12b473f1eaf9660b4fb3af5c9397bea7c56d053cb5f508",
   "file_offset": 9855277,
   "reason": "dormant placement"
  }

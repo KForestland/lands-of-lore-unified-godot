@@ -8,6 +8,7 @@ func _initialize() -> void: run.call_deferred()
 func run() -> void:
 	check(Oil.FOUNTAIN_RECORD == 392, "oil is prop 392")
 	check(Oil.DOORS == [80, 81, 98], "named fire doors stay listed")
+	check(int(Oil.DOOR_TRAVEL[80]) == 40 and int(Oil.DOOR_TRAVEL[81]) == 100 and int(Oil.DOOR_TRAVEL[98]) == 150, "opcode 1 travel words")
 	check(Oil.validate(Oil.initial()).is_empty(), "initial state")
 	var row: Dictionary = Items.row(Oil.BOW)
 	check(int(row.get("definition", -1)) == 35, "Dark Bow definition 35")

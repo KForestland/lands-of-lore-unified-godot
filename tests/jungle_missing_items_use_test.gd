@@ -9,6 +9,12 @@ func run() -> void:
 	if not check(error.is_empty(),"producer: "+error):return
 	if not check(scene.open_inventory(),"open inventory"):return
 	await process_frame
+	# Disclosed injury fixture: full-health Aloe must refuse without consumption.
+	var aloe_id: String=Catalog.id_of(78)
+	var full_pack: Array=scene.carried_collected.duplicate()
+	var full_effects: Dictionary=scene.item_effects.state().duplicate(true)
+	if not check(not scene.item_effects.use(aloe_id) and scene.item_effects.item_refusal=="You are not hurt." and scene.carried_collected==full_pack and scene.item_effects.state()==full_effects,"Full-health Aloe is retained without effect"):return
+	scene.starting_magic.set_health(scene.starting_magic.health()-5)
 	for row in [2,78]:
 		var id: String=Catalog.id_of(row)
 		if not check(scene.item_effects.use(id),"consume row "+str(row)):return

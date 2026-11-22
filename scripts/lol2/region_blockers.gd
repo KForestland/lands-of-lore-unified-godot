@@ -207,7 +207,7 @@ static func _append_edge(faces: PackedVector3Array, edge: Dictionary, origin: Ve
 static func path_for(area: String) -> String: return "res://assets/lol2/generated/region_blockers/%s.json" % area
 
 ## Builds the blockers under `host` and lets `player` collide with them. Returns the static edge count (0 when not prepared).
-static func attach(host: Node3D, player: CollisionObject3D, area: String, origin := Vector3.ZERO) -> int:
+static func attach(host: Node3D, player: CollisionObject3D, area: String, origin := Vector3.ZERO, skip_regions: Dictionary = {}) -> int:
 	if not FileAccess.file_exists(path_for(area)): return 0
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(path_for(area)))
 	var body: StaticBody3D = load("res://scripts/lol2/region_blockers.gd").new()
@@ -231,10 +231,21 @@ static func attach(host: Node3D, player: CollisionObject3D, area: String, origin
 	body._dynamic_outlines = data.get("dynamic_outlines", {})
 	body._dynamic_heights = data.get("dynamic_heights", {})
 	body.static_edges = data.edges
+	if not skip_regions.is_empty():
+		# Liquid regions (act2_map, BK03): the native bit0 keeps creatures out of the guck; the player may wade in.
+		var kept: Array = []
+		for edge in data.edges:
+			# An edge keeps the player out of `blocked` (the bit0 region) from `region` (its walkable neighbour).
+			if not skip_regions.has(int(edge.get("blocked", -1))): kept.append(edge)
+		body.static_edges = kept
 	if area=="L8_SJ":
 		for edge in body.static_edges:
-			if int(edge.get("blocked",-1))==2417:
-				edge.ceiling=220.0;edge["headroom"]=0.0 # Original upper floor; lower strip stays blocked.
+			# Ground strips under upper rooms: their walls end at the room's floor, so the room is walkable and the strip stays
+			# blocked. 2414, 2417, 2419 lie under the raised tree hut (floor 220; owner F10 2026-11-15 04-41-43 was walled
+			# off its table at 2419), 2397 under room 3817 (floor 250). Every L8 blocker whose wall rose through a walkable floor.
+			var upper:Dictionary={2414:220.0,2417:220.0,2419:220.0,2397:250.0}
+			if upper.has(int(edge.get("blocked",-1))):
+				edge.ceiling=upper[int(edge.blocked)];edge["headroom"]=0.0
 	# Cemetery catacombs lie below walkable surface regions. Their walls must end
 	# at the source ceiling instead of projecting through the upper floor.
 	if area == "L10_DC":

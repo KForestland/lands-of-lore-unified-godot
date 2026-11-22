@@ -1,4 +1,5 @@
 extends RefCounted
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 ## Manual printed42: neither cursed form uses weapons; Beast cannot cast;
 ## every successful morph restores health. Natural attack numbers are provisional.
 static func can_use_weapon(form: int) -> bool:
@@ -14,11 +15,6 @@ static func protected(host: Node) -> bool:
 static func on_morphed(host: Node) -> void:
 	# All currently playable health models cap at30. Reward-stat health is a
 	# separate unintegrated native model; do not silently overwrite its maximum.
-	if host.get("roach") != null:
-		host.roach.model.player_health=host.roach.Model.PLAYER_HEALTH
-	elif host.has_node("Warriors"):
-		host.get_node("Warriors").health=30
-	elif host.get("health") != null:
-		host.health=30
+	PlayerHealth.restore_host(host)
 	if host.get("interface_hud") != null and is_instance_valid(host.interface_hud):
 		host.interface_hud.refresh_equipment()

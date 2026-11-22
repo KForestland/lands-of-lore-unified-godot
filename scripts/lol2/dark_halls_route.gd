@@ -55,8 +55,10 @@ func _physics_process(_delta: float) -> void:
 	if transitioning or routes.is_empty() or get_tree().current_scene != parent or not parent.ready_for_review: return
 	var found := false
 	for candidate in routes:
+		# Track outside contact while locked, so completing the seven-window puzzle inside its exit still works.
 		if not inside_route(candidate): armed_regions[int(candidate.region)] = true
 		else:
+			if area == "dark_halls" and candidate.has("workaround_for") and not parent.windows.done(): continue
 			route = candidate
 			found = true
 	if not found or not armed_regions.get(int(route.region), false): return

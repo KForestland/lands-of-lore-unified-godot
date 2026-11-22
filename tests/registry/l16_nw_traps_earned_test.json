@@ -1,1 +1,69 @@
-{"name":"l16_nw_traps_earned_test","suite":"core","mode":"rendered","order":791}
+{
+  "name": "l16_nw_traps_earned_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 791,
+  "teleports": 3,
+  "test_aids": 12,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "605fc56f747a494ca821038365694f16072f7f18aa2be77a12d68bbc4e202a21"
+  },
+  "context_aid_source_sites": {
+    "count": 7,
+    "sites": [
+      {
+        "path": "tests/l10_barrel_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 67,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l12_logs_approach_earned_test.gd",
+        "line": 37,
+        "column": 73,
+        "kind": "exit_seed_fixture",
+        "source": "var scene=load(\"res://scenes/lol2/maps/L12_CM.tscn\").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l16_nw_traps_earned_test.gd",
+        "line": 32,
+        "column": 82,
+        "kind": "exit_seed_fixture",
+        "source": "var scene: Node = load(\"res://scenes/lol2/maps/L16_CA.tscn\").instantiate(); scene.adapter_exit_seeds = false"
+      },
+      {
+        "path": "tests/l9_chapel_earned_test.gd",
+        "line": 41,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_mirror_return_earned_test.gd",
+        "line": 31,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_opening_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 19,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

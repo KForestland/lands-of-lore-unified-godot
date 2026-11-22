@@ -42,9 +42,10 @@ static func drain_required() -> bool:
 static func moves_doors() -> bool:
 	return true
 
-## The door click opens both Golden Doors. Their native kind-4 use toggles open (group 3854, travel 16384) and close (3998), and
+## The door click opens both Golden Doors. Kind 4 on movable 51 runs group 3854 when byte +0x25 is 0:
+## local 4 is written 0, the cab is recalled, and opcode 1 stores travel 16384 (mode 6, angle byte 45).
 ## Act 2 saves do not keep native travel, so the open pose is set directly and re-applied after a load while door_clicked is
-## true (adapter, same pattern as the L16 greenhouse FireWall doors).
+## true (adapter, same pattern as the L16 greenhouse FireWall doors). The click also calls use(51) so that group runs.
 const OPEN_TRAVEL := 16384
 func open_doors() -> void:
 	var pr: Variant = host.get("progression")
@@ -92,7 +93,13 @@ func near_drain() -> int:
 	return -1
 
 func at_door() -> bool:
-	return flat_to(DOOR_AT) < REACH
+	# The closed leaf is 10 by 60 units; centre distance20 is inside its
+	# collision-expanded footprint. Measure the same reach from the real face.
+	var pr:Variant=host.get("progression")
+	if pr==null or not pr.hinges.has(51):return flat_to(DOOR_AT)<REACH
+	var bounds:AABB=pr.hinges[51].global_transform*pr.mover_bounds[51]
+	var p:Vector3=host.player.global_position
+	return Vector2(p.x-clampf(p.x,bounds.position.x,bounds.end.x),p.z-clampf(p.z,bounds.position.z,bounds.end.z)).length()<REACH
 
 func _ready() -> void:
 	var canvas := CanvasLayer.new()
@@ -107,13 +114,24 @@ func _process(_delta: float) -> void:
 	if bool(state().door_clicked) and not doors_open(): open_doors()
 	if host.flying or not host.starting_magic.world_active(): return
 	if at_door() and not bool(state().door_clicked):
-		hint.text = "E — Click the door. The drain stays optional."
+		hint.text = "E — Open the door"
 	elif near_drain() >= 0 and not drained():
-		hint.text = "E — Throw this switch. Draining the guck stays optional."
+		hint.text = "E — Throw the switch (drains the guck)"
 
-func _unhandled_key_input(event: InputEvent) -> void:
-	if event is not InputEventKey or not event.pressed or event.echo or event.keycode != KEY_E: return
-	if host.flying or not host.starting_magic.world_active(): return
+func generic_owned_movers() -> Array:
+	return DOORS
+func generic_target() -> Dictionary:
+	if host.flying or not host.starting_magic.world_active():return {}
+	var slot:int=near_drain()
+	if slot>=0 and slot not in state().drain_switches:
+		return {"point":AT_50 if slot==50 else (AT_71 if slot==71 else AT_72)}
+	if at_door() and not bool(state().door_clicked):
+		var point:Vector3=DOOR_AT
+		if host.progression.hinges.has(51):point=host.progression.hinges[51].global_transform*host.progression.mover_bounds[51].get_center()
+		return {"point":point,"accept_body":host.progression.mover_bodies.get(51)}
+	return {}
+func try_use() -> bool:
+	if host.flying or not host.starting_magic.world_active():return false
 	var s: Dictionary = state()
 	var slot: int = near_drain()
 	if slot >= 0 and not slot in s.drain_switches:
@@ -121,10 +139,16 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		ids.append(slot)
 		s.drain_switches = ids
 		host.quest_state[KEY] = s
-		get_viewport().set_input_as_handled()
-		return
+		return true
 	if at_door() and not bool(s.door_clicked):
 		s.door_clicked = true
 		host.quest_state[KEY] = s
+		var pr: Variant = host.get("progression")
+		if pr != null and pr.has_method("use"):
+			pr.use(51)
 		open_doors()
-		get_viewport().set_input_as_handled()
+		return true
+	return false
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event is not InputEventKey or not event.pressed or event.echo or event.keycode != KEY_E:return
+	if try_use():get_viewport().set_input_as_handled()

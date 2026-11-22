@@ -34,7 +34,7 @@ Status: **integrated slice, fixture-tested; not an earned route and not owner-ac
   `tmp/regressions/act1_story_resume_20261007`. This remains fixture coverage, not an earned approach.
 - Receipts (control98 etc.) are not bound to consumers.
 - Death presentation uses the generic def7 death/corpse clips.
-- Bob still has to review the clip scale and framing (the reposition puts the camera low and close).
+- the owner still has to review the clip scale and framing (the reposition puts the camera low and close).
 
 ## Tests
 `tests/jungle_kelsrick_state_test.gd` (portable) and `tests/jungle_kelsrick_live_test.gd` (rendered, production host).

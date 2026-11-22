@@ -1,0 +1,1 @@
+| 2026-11-07 | L19 horn caption (STORY-081) | Taking the horn shows Baccata is dead. The pipe yields Belial's Horn. No Baccata death flag is stored, and the grant is not gated on one. The held hand slot from the lead's horn fix stays. | HINTBOOK 5410-5413. | Adapter (owner rule 2026-10-30) |

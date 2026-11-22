@@ -1,0 +1,21 @@
+{
+  "name": "dark_halls_orb_entry_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1031,
+  "needs": {
+    "env": [
+      "LOL2_DH_INPUT_SHA"
+    ],
+    "fixtures": [
+      "user://tests/act1_broken_repaired_monastery.json"
+    ]
+  },
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "0d5f69bbb357a2d67a4f8ba90fdbeb4e97948220a4729c96207f851bea1d582a"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
+}

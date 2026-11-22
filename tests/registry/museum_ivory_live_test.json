@@ -1,6 +1,36 @@
 {
- "name": "museum_ivory_live_test",
- "suite": "core",
- "mode": "rendered",
- "order": 144
+  "name": "museum_ivory_live_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 144,
+  "needs": {
+    "note": " Full-capacity probe temporarily repeats a valid sword ID, restores the original pack before saving; synthetic capacity fixture, not an earned or saveable inventory."
+  },
+  "teleports": 2,
+  "test_aids": 11,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7acb36e796b087d7e096302bc740c678ae611e0d4b652bd4c546ab9336ee5ea8"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/museum_ivory_live_test.gd",
+        "line": 17,
+        "column": 21,
+        "kind": "completed_intro_fixture",
+        "source": "await process_frame;scene.introduction_state=\"complete\""
+      },
+      {
+        "path": "tests/museum_prism_test.gd",
+        "line": 12,
+        "column": 21,
+        "kind": "completed_intro_fixture",
+        "source": "await process_frame;scene.introduction_state=\"complete\""
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 13
 }

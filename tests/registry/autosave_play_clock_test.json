@@ -1,0 +1,16 @@
+{
+  "name": "autosave_play_clock_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1345,
+  "needs": {
+    "chain": "Private profile, sole guard, --autosave; sol_lane/f18_autosave_20261111/private_case.py --rendered --autosave"
+  },
+  "count_method": "Audited source sites (fixed K82 checker), not runtime executions. Explicit production clock hook, isolated pause/movie/conversation/drowning state probes, live rendered scene; no earned-water-walk claim.",
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "bb8a953967127960bdfaad75a214025dc61a7e3198a71c0aa668afc742640503"
+  }
+}

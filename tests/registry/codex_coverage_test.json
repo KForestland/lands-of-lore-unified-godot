@@ -1,6 +1,18 @@
 {
- "name": "codex_coverage_test",
- "suite": "core",
- "mode": "headless",
- "order": 860
+  "name": "codex_coverage_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 860,
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "6c685f9dce56cc1f47c25f1ea0507a80d64d562edda315c26bc4c025a014e61e"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 0
 }

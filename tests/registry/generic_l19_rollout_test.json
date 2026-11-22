@@ -1,0 +1,52 @@
+{
+  "name": "generic_l19_rollout_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Local component stands on pinned C15; held NPC/root clocks and scene transitions disabled so a supplied return-passage stand does not leave the test area. Original E horn rim adapter/left occlusion negative, E55/left56/left Golden51 and real W to the original prefix end/F5/F9. No earned route."
+  },
+  "teleports": 1,
+  "test_aids": 12,
+  "context_aid_source_sites": {
+    "count": 3,
+    "sites": [
+      {
+        "path": "tests/generic_l10_input_test.gd",
+        "line": 22,
+        "column": 18,
+        "kind": "local_area_transition_fixture",
+        "source": "scene.progression.change_scene_enabled=false"
+      },
+      {
+        "path": "tests/generic_l19_rollout_test.gd",
+        "line": 35,
+        "column": 18,
+        "kind": "local_area_transition_fixture",
+        "source": "scene.progression.change_scene_enabled=false # Isolate supplied local stands from the real return-to-Caverns trigger."
+      },
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 26,
+        "column": 37,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(file).instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 15,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "9f19b919d80a3dc66e478c67f97f3fff8b9a1fe8f219e7059ecf9838a1ca5fb3"
+  },
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "local_area_transition_fixture",
+      "pattern": "\\.change_scene_enabled\\s*=\\s*false"
+    }
+  ]
+}

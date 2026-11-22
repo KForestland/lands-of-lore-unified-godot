@@ -1,4 +1,6 @@
 extends CanvasLayer
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## Collected items and independent weapon/armor selection; the host owns combat.
 var item_ids: Array = []
 var previous_mouse := Input.MOUSE_MODE_VISIBLE
@@ -175,6 +177,8 @@ func _ready() -> void:
 		# Generic catalog presentation for identities without a dedicated branch (e.g. cave guard drops).
 		if name_text == "Unidentified item" and preload("res://scripts/lol2/item_catalog.gd").known(id):
 			name_text = preload("res://scripts/lol2/item_catalog.gd").label(id)
+		# BJ13: the Larkhon recipe items read by their catalog names, not the raw definition labels ("Amaranth sr").
+		if _larkhon_recipe(id) >= 0: name_text = str(preload("res://scripts/lol2/act2_items_catalog.gd").row(id).get("label", name_text))
 		# Every picture comes from the catalog's original 24x24 inventory icon (the branches above set labels
 		# only); the ground sprite remains for world billboards and for identities without a definition.
 		var icon_path := preload("res://scripts/lol2/item_catalog.gd").inventory_icon(id)
@@ -182,11 +186,20 @@ func _ready() -> void:
 		item_list.add_item(name_text,icon)
 		item_list.set_item_metadata(item_list.item_count - 1, id)
 	item_list.item_activated.connect(activate_item)
+	# BJ14 F7: with more than four rows of items the grid scrolls; show the newest item (the last gained) and say so.
+	if item_list.item_count > 20:
+		var more := Label.new()
+		more.name = "ScrollHint"
+		more.text = "Mouse wheel: more items"
+		more.add_theme_font_size_override("font_size", 11)
+		box.add_child(more)
+		box.move_child(more, columns.get_index() + 1)
+		(func(): if is_instance_valid(item_list): item_list.get_v_scroll_bar().value = item_list.get_v_scroll_bar().max_value).call_deferred()
 	item_list.item_clicked.connect(func(index, _at, button):
 		if button == MOUSE_BUTTON_RIGHT:
 			select_item(index)
-			if use_button.visible: use_selected_item())
-	item_list.set_drag_forwarding(func(at): return _drag_item(at), Callable(), Callable())
+			show_item_menu())
+	item_list.set_drag_forwarding(func(at): return _drag_item(at), func(at, data): return _can_combine(at, data), func(at, data): _combine(at, data))
 	var details := HBoxContainer.new()
 	details.add_theme_constant_override("separation", 6)
 	box.add_child(details)
@@ -223,7 +236,7 @@ func _ready() -> void:
 	if get_parent().has_node("L8Larkhon"):
 		mix_button=Button.new();mix_button.text="Mix with Silverleaf";mix_button.hide();actions.add_child(mix_button)
 		mix_button.pressed.connect(func():
-			if selected_index>=0 and get_parent().get_node("L8Larkhon").mix(str(item_list.get_item_metadata(selected_index))):close())
+			if selected_index>=0 and _try_larkhon_mix(str(item_list.get_item_metadata(selected_index))):close())
 	hold_button = Button.new()
 	hold_button.hide()
 	hold_button.pressed.connect(func():
@@ -233,6 +246,13 @@ func _ready() -> void:
 	close_button.text = "Close · I"
 	close_button.pressed.connect(close)
 	actions.add_child(close_button)
+	# BJ13: the panel docks to the right edge and grows left, so a wider button row would slide the grid out from under a drag.
+	# Where the Mix button exists (the widest row), reserve that width once.
+	if is_instance_valid(mix_button):
+		use_button.show(); mix_button.show(); hold_button.show(); hold_button.text = hold_label
+		box.custom_minimum_size.x = actions.get_combined_minimum_size().x
+		detail_text.custom_minimum_size.y = detail_text.get_line_height() * 3
+		use_button.hide(); mix_button.hide(); hold_button.hide()
 	item_list.item_selected.connect(select_item)
 	if item_list.item_count > 0:
 		var initial_index := 0
@@ -246,7 +266,7 @@ func _ready() -> void:
 		detail_name.text = "No items collected."
 		detail_text.text = "Items you collect will appear here."
 	var note := Label.new()
-	note.text = "Double-click: equip or use · Right-click: use · Drag to a slot"
+	note.text = "Double-click: equip or use · Right-click: item menu · Drag to a slot"
 	note.add_theme_font_size_override("font_size", 12)
 	box.add_child(note)
 	if item_list.item_count > 0: item_list.grab_focus()
@@ -257,6 +277,7 @@ func _ready() -> void:
 	panel.minimum_size_changed.connect(_dock_panel.bind(panel), CONNECT_DEFERRED)
 	get_viewport().size_changed.connect(_dock_panel.bind(panel), CONNECT_DEFERRED)
 	_dock_panel(panel)
+	build_inventory_belt()
 
 var docked_panel: Control
 func dock() -> void: _dock_panel(docked_panel)
@@ -283,6 +304,10 @@ func _dock_panel(panel: Control) -> void:
 	panel.offset_top = panel.offset_bottom - panel_size.y
 
 func _input(event: InputEvent) -> void:
+	if is_instance_valid(item_menu) and item_menu.visible:
+		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:
+			item_menu.hide();get_viewport().set_input_as_handled();return
+		if event is InputEventMouseButton and event.pressed and not item_menu.get_global_rect().has_point(event.position):item_menu.hide()
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_TAB:
 		if return_to_game.is_valid():
 			return_to_game.call()
@@ -309,12 +334,17 @@ func select_item(index: int) -> void:
 	var id := str(item_list.get_item_metadata(index))
 	hold_button.visible = hold_item.is_valid()
 	hold_button.text = "Put away" if id == held_item_id else ("Hold Sk key" if id == "museum:control87:Sk_key" else hold_label)
-	use_button.visible = (id == preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM or id == preload("res://scripts/lol2/monastery_conversation.gd").FLUTE or preload("res://scripts/lol2/item_catalog.gd").use_kind(id) != "") and use_item.is_valid()
+	use_button.visible = (id == preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM or id == preload("res://scripts/lol2/monastery_conversation.gd").FLUTE or preload("res://scripts/lol2/item_catalog.gd").use_kind(id) != "" or not preload("res://scripts/lol2/item_catalog.gd").target_hint(id).is_empty()) and use_item.is_valid()
 	if is_instance_valid(mix_button):mix_button.visible=get_parent().get_node("L8Larkhon").can_mix(id)
 	if get_parent().has_node("L12Citadel") and id==preload("res://scripts/lol2/l12_citadel_state.gd").PICTURE:use_button.visible=true
 	if get_parent().has_node("L8Larkhon") and id==preload("res://scripts/lol2/l8_larkhon_state.gd").VAPORS:use_button.visible=true
 	use_button.text = "Use Aloe" if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "aloe" else "Use stone" if id == preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM or preload("res://scripts/lol2/player_item_effects.gd").is_champion_stone(id) else "Play flute"
+	if use_button.text == "Play flute" and id != preload("res://scripts/lol2/monastery_conversation.gd").FLUTE: use_button.text = "Use"
+	if not preload("res://scripts/lol2/item_catalog.gd").target_hint(id).is_empty():use_button.text="Prepare throw" if preload("res://scripts/lol2/item_throw_rules.gd").supported(preload("res://scripts/lol2/item_catalog.gd").definition(id)) else "Use on target"
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "mana_foil": use_button.text = "Use Mana Foil"
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) in ["black_lichen","mandrake","gorgonite","inert_food"]:use_button.text="Eat"
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id)=="mind_cluster":use_button.text="Use Mind Cluster"
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id)=="death_sac":use_button.text="Apply to weapon"
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "ironwood_sap": use_button.text = "Use sap"
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "vels_fruit": use_button.text = "Eat fruit"
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "fire_crystal": use_button.text = "Use crystal"
@@ -330,6 +360,10 @@ func select_item(index: int) -> void:
 		var controller = get_parent().get("item_effects")
 		supported = controller != null and get_parent().player_form == 0
 		selected = str(controller.state().get("offhand", "")) if controller != null else ""
+	if preload("res://scripts/lol2/player_equipment.gd").accessory(id):
+		var controller=get_parent().get("item_effects")
+		supported=is_instance_valid(controller) and get_parent().player_form==0
+		selected=id if id in _accessories() else ""
 	equip_button.disabled = not supported
 	equip_button.text = "Unequip" if id == selected else "Equip"
 	detail_name.text = item_list.get_item_text(index)
@@ -354,22 +388,64 @@ func select_item(index: int) -> void:
 		_:
 			detail_text.text = "Picked in Draracle’s caves. Item use is not available yet." if preload("res://scripts/lol2/cave_aloe.gd").valid_item(id) else (preload("res://scripts/lol2/item_catalog.gd").use_hint(id) if preload("res://scripts/lol2/item_catalog.gd").use_hint(id) != "" else "This item has not been identified.")
 
+	var stored_school := preload("res://scripts/lol2/item_catalog.gd").stored_school(id)
+	if not stored_school.is_empty():
+		var cast_names := {"spark":"Spark III","mists":"Lesser Apparitions","prism":"Trinity","summon":"Ancient Imp"}
+		if stored_school == "heal":
+			detail_text.text = "Stored Healing. Use heals Luther; consumed only if the spell succeeds."
+		elif stored_school == "spark":
+			detail_text.text = "Stored Spark III. Use casts the spell; the scroll is consumed on a successful use."
+		else:
+			detail_text.text = "Stored %s. First use teaches the school; later uses cast %s. Consumed on a successful use." % [{"mists":"Mists","prism":"Prism","summon":"Summon"}[stored_school],cast_names[stored_school]]
+
+	var target_hint:String=preload("res://scripts/lol2/item_catalog.gd").target_hint(id)
+	if not target_hint.is_empty():detail_text.text=target_hint if preload("res://scripts/lol2/item_throw_rules.gd").supported(preload("res://scripts/lol2/item_catalog.gd").definition(id)) else target_hint+" Aim at the target, then press E. The item is kept until the target accepts it."
+	if preload("res://scripts/lol2/item_catalog.gd").definition(id)==114:detail_text.text="Eat for one minute of low-light vision. Extra eggs are kept while it is active."
+	var food_description:String=preload("res://scripts/lol2/item_consumables.gd").description(preload("res://scripts/lol2/item_catalog.gd").definition(id))
+	if not food_description.is_empty():detail_text.text=food_description
 	if preload("res://scripts/lol2/cave_captain_items.gd").valid(id):detail_text.text="Given by the surrendered captain."
 	if id == preload("res://scripts/lol2/hive_ancient_stone.gd").ITEM: detail_text.text = "Grants one free highest-charge attack spell."
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "mana_foil": detail_text.text = "Restores up to 50 mana. Consumed even when your mana is full."
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "fire_crystal": detail_text.text = "A fire crystal. Each use hurls fire along your view and spends a charge; a burnt crystal can be rekindled at a lit sconce."
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id)=="fire_crystal" and is_instance_valid(get_parent().get("item_effects")):
+		var charges:int=get_parent().item_effects.crystal_charges(id)
+		detail_text.text+=" Charges: "+str(charges)+(". Burnt out; it must be rekindled." if charges==0 else ".")
+	var device_hint:String=preload("res://scripts/lol2/item_device_status.gd").description(preload("res://scripts/lol2/item_catalog.gd").definition(id))
+	if not device_hint.is_empty():detail_text.text=device_hint
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "dampen_charm": detail_text.text = "Given by Dawn after she translated the runes. Using it consumes the charm and calms a stirring curse."
+	if not preload("res://scripts/lol2/player_stored_globes.gd").spell(id).is_empty():
+		use_button.text="Cast globe"
+		detail_text.text="A stored spell: use to cast, leaving an empty glass globe. It also fits its matching tomb socket."
 	if preload("res://scripts/lol2/hive_rune_items.gd").valid(id): detail_text.text = "An impression of the Hive inscription in wax."
+	match _larkhon_recipe(id):
+		117: detail_text.text = "A leaf from the cemetery's trees. Offer one in the Wild Village. One mixes with the Amaranth Serum."
+		119: detail_text.text = "It does nothing on its own. Drag it onto a Silverleaf to mix them."
+		128: detail_text.text = "Activate the vapors, then use them on the Larkhon's upper chest."
 	if preload("res://scripts/lol2/cave_stalagmite.gd").valid_item(id): detail_text.text = "Taken from a crystal formation in Draracle’s caves. Select it as your weapon."
-	if preload("res://scripts/lol2/player_equipment.gd").offhand(id): detail_text.text = "Equip in your offhand. Defense +%d. Stored while transformed." % preload("res://scripts/lol2/item_catalog.gd").defense(id)
+	if preload("res://scripts/lol2/player_equipment.gd").offhand(id): detail_text.text = "Equip in your offhand. Stored while transformed."
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) == "poison_paint": detail_text.text = "Mauri's poison. Applying it coats the weapon for one strike; the weapon can hold nine coats."
 	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id)=="dragon_blood":detail_text.text="Place an explosive ahead of you. Six-second fuse; blast harms nearby creatures and you. Move away after use."
 	if id=="hive:control121:Reaver_of_GO":detail_text.text="Equip as a weapon. Reduces total defense by 50 while equipped."
-	if id.begins_with("cave:guard"): detail_text.text = "Dropped by a defeated cave guard. " + ("Equip in your offhand. Defense +%d. Stored while transformed." % preload("res://scripts/lol2/item_catalog.gd").defense(id) if preload("res://scripts/lol2/player_equipment.gd").offhand(id) else "Select it as your weapon.")
+	if id.begins_with("cave:guard"): detail_text.text = "Dropped by a defeated cave guard. " + ("Equip in your offhand. Stored while transformed." if preload("res://scripts/lol2/player_equipment.gd").offhand(id) else "Select it as your weapon.")
+	var catalog=preload("res://scripts/lol2/item_catalog.gd")
+	if catalog.slot(id)!="":
+		if detail_text.text=="This item has not been identified.":detail_text.text="Equip in the "+catalog.slot(id)+" slot."
+		if catalog.slot(id)=="weapon":detail_text.text+=" Fixed damage: %d."%preload("res://scripts/lol2/player_combat.gd").base_damage(0,true)
+		detail_text.text+=" Protection %d."%catalog.defense(id)
+		if catalog.slot(id)=="accessory":detail_text.text+=" Worn in either accessory slot; special powers are not available yet."
+
+
+	var protected:String=preload("res://scripts/lol2/quest_resource_protection.gd").removing(get_parent(),preload("res://scripts/lol2/item_grants.gd").pack(get_parent()),id)
+	if not protected.is_empty():detail_text.text+="\n"+protected
 
 func toggle_equipment() -> void:
 	if equip_button.disabled or selected_index < 0: return
 	var id := str(item_list.get_item_metadata(selected_index))
+	if preload("res://scripts/lol2/player_equipment.gd").accessory(id):
+		if get_parent().item_effects.equip_accessory(id):
+			select_item(selected_index);refresh_classic()
+		elif "" not in _accessories():detail_text.text="Both accessory slots are full. Unequip one first."
+		return
 	if preload("res://scripts/lol2/player_equipment.gd").offhand(id):
 		var controller = get_parent().get("item_effects")
 		if controller != null and controller.equip_offhand("" if controller.state().get("offhand", "") == id else id):
@@ -389,12 +465,16 @@ func toggle_equipment() -> void:
 func use_selected_item() -> void:
 	if selected_index < 0 or not use_item.is_valid(): return
 	if use_item.call(str(item_list.get_item_metadata(selected_index))): close()
-	else: detail_text.text = "Nothing happens."
+	else:
+		var owner:=get_parent()
+		var effects:Variant=owner.get("item_effects") if is_instance_valid(owner) else null
+		var reason:String=str(effects.get("item_refusal")) if is_instance_valid(effects) and effects.get("item_refusal") is String else ""
+		detail_text.text=reason if not reason.is_empty() else "Nothing happens."
 
 ## --- Original-style presentation helpers (classic_interface pack) ---------------------------------------------------
 const INTERFACE := "res://assets/lol2/generated/classic_interface/"
 ## Equipment block (2x3, intrface.shp ghosts 87-92). Roles of the empty slots are presentation adapters.
-const SLOT_ROLES := ["offhand", "", "weapon", "", "armor", ""]
+const SLOT_ROLES := ["offhand", "accessory0", "weapon", "accessory1", "armor", ""]
 var stat_bars := {}
 var equipment_slots: Array = []
 
@@ -426,24 +506,23 @@ func _icon_for(id: String) -> Texture2D:
 	return null
 
 func refresh_classic() -> void:
-	var worn := {"weapon": equipped_item, "armor": equipped_armor, "offhand": _offhand()}
+	var worn := _worn()
 	for index in equipment_slots.size():
 		var role: String = SLOT_ROLES[index]
 		var icon_rect: TextureRect = equipment_slots[index].get_node("Worn")
 		icon_rect.texture = _icon_for(str(worn.get(role, ""))) if str(worn.get(role, "")) != "" else null
 	var host := get_parent()
 	if host == null: return
-	var catalog := preload("res://scripts/lol2/item_catalog.gd")
-	var defense := 0
-	for id in [equipped_armor, _offhand()]:
-		if str(id) != "" and catalog.known(str(id)): defense += int(catalog.defense(str(id)))
+	var defense:int=preload("res://scripts/lol2/player_defense.gd").scalar(host)
 	var magic = host.get("starting_magic")
-	var health := 30.0
+	var health := float(PlayerHealth.MAXIMUM)
 	if magic != null and is_instance_valid(magic) and magic.has_method("health"): health = float(magic.health())
 	var form := int(host.get("player_form")) if host.get("player_form") != null else 0
-	var attack: int = preload("res://scripts/lol2/player_form_rules.gd").melee_damage(form, equipped_item != "")
+	# This panel also runs as a standalone overlay (e.g. an F10 report).
+	# Only a gameplay host supplies combat state; the root Window is not Luther.
+	var attack:int=PlayerCombat.damage(host,true) if host.get("player_form")!=null and host.get("equipped_item") is String else 0
 	if stat_bars.has("Defense"): stat_bars["Defense"].value = clampf(defense * 2.0, 0, 100); stat_bars["Defense"].tooltip_text = "Defense %d" % defense
-	if stat_bars.has("Health"): stat_bars["Health"].value = clampf(health / 30.0 * 100.0, 0, 100); stat_bars["Health"].tooltip_text = "Health %d / 30" % int(health)
+	if stat_bars.has("Health"): stat_bars["Health"].value = clampf(health / float(PlayerHealth.limit_for(host)) * 100.0, 0, 100); stat_bars["Health"].tooltip_text = "Health %d / %d" % [int(health),PlayerHealth.limit_for(host)]
 	if stat_bars.has("Attack"): stat_bars["Attack"].value = clampf(attack / 12.0 * 100.0, 0, 100); stat_bars["Attack"].tooltip_text = "Melee damage %d" % attack
 	if stat_bars.has("Ranged"): stat_bars["Ranged"].value = 0; stat_bars["Ranged"].tooltip_text = "No ranged weapon"
 
@@ -465,26 +544,65 @@ func _drag_item(at: Vector2) -> Variant:
 	item_list.set_drag_preview(preview)
 	return {"inventory_item": str(item_list.get_item_metadata(index)), "index": index}
 
+## Definition (117 Silverleaf, 119 Amaranth Serum, 128 Larkhon Vapors) of a Larkhon recipe item, else -1.
+func _larkhon_recipe(id: String) -> int:
+	var definition := preload("res://scripts/lol2/act2_items_catalog.gd").definition(id)
+	return definition if definition in [117, 119, 128] else -1
+
+## BJ13, book "combine the potion and the leaf": one pack item dropped on the other. Only this pair; there is no general alchemy.
+func _combine_serum(at: Vector2, data: Variant) -> String:
+	if not data is Dictionary or not data.has("inventory_item") or not get_parent().has_node("L8Larkhon"): return ""
+	var index := item_list.get_item_at_position(at, true)
+	if index < 0: return ""
+	var pair: Array = [str(data.inventory_item), str(item_list.get_item_metadata(index))]
+	var kinds: Array = pair.map(func(id): return _larkhon_recipe(id))
+	if not (117 in kinds and 119 in kinds): return ""
+	var serum: String = pair[kinds.find(119)]
+	return serum if get_parent().get_node("L8Larkhon").can_mix(serum) else ""
+
+func _can_combine(at: Vector2, data: Variant) -> bool:
+	return not _combine_serum(at, data).is_empty()
+
+func _combine(at: Vector2, data: Variant) -> void:
+	var serum := _combine_serum(at, data)
+	if not serum.is_empty(): _finish_combine.call_deferred(serum) # After the viewport has finished its drop.
+
+func _try_larkhon_mix(serum: String) -> bool:
+	var guardian:Node=get_parent().get_node("L8Larkhon")
+	if guardian.mix(serum):return true
+	var reason:Variant=guardian.get("mix_refusal")
+	detail_text.text=reason if reason is String and not reason.is_empty() else "The mix needs the Amaranth Serum and a Silverleaf, as a man."
+	return false
+
+func _finish_combine(serum: String) -> void:
+	if not _try_larkhon_mix(serum): return
+	await get_tree().process_frame # Freeing the pack in the frame of its own drop raises an engine list error.
+	close()
+
 func _slot_for(id: String) -> String:
 	var equipment := preload("res://scripts/lol2/player_equipment.gd")
+	if equipment.accessory(id):return "accessory"
 	if equipment.offhand(id): return "offhand"
 	if equipment.armor(id): return "armor"
 	if equipment.weapon(id): return "weapon"
 	return ""
 
 func _can_drop(role: String, data: Variant) -> bool:
-	return role != "" and data is Dictionary and data.has("inventory_item") and _slot_for(str(data.inventory_item)) == role
+	return role != "" and data is Dictionary and data.has("inventory_item") and (_slot_for(str(data.inventory_item)) == role or (role.begins_with("accessory") and _slot_for(str(data.inventory_item))=="accessory"))
 
 func _drop(role: String, data: Variant) -> void:
 	if not _can_drop(role, data): return
 	select_item(int(data.index))
 	var id := str(data.inventory_item)
+	if role.begins_with("accessory"):
+		if get_parent().item_effects.equip_accessory(id,int(role.trim_prefix("accessory"))):select_item(int(data.index));refresh_classic()
+		return
 	var already := (role == "weapon" and equipped_item == id) or (role == "armor" and equipped_armor == id) or (role == "offhand" and _offhand() == id)
 	if not already and not equip_button.disabled: toggle_equipment()
 
 ## Clicking a worn slot takes the item off (selects it in the grid, then the existing toggle).
 func unequip_slot(role: String) -> void:
-	var id: String = str({"weapon": equipped_item, "armor": equipped_armor, "offhand": _offhand()}.get(role, ""))
+	var id: String = str(_worn().get(role,""))
 	if id == "": return
 	for index in item_list.item_count:
 		if str(item_list.get_item_metadata(index)) == str(id):
@@ -492,3 +610,44 @@ func unequip_slot(role: String) -> void:
 			select_item(index)
 			if not equip_button.disabled: toggle_equipment()
 			return
+
+func _accessories()->Array:
+	var controller:Variant=get_parent().get("item_effects")
+	return controller.accessories() if is_instance_valid(controller) and controller.has_method("accessories") else ["",""]
+func _worn()->Dictionary:
+	var accessories:Array=_accessories()
+	return {"weapon":equipped_item,"armor":equipped_armor,"offhand":_offhand(),"accessory0":accessories[0],"accessory1":accessories[1]}
+## Right click opens an explicit choice; it never consumes merely by browsing.
+var item_menu:PanelContainer
+var belt_view:Control
+func show_item_menu():
+	if selected_index<0:return
+	if is_instance_valid(item_menu):item_menu.queue_free()
+	item_menu=PanelContainer.new();item_menu.name="ItemMenu";item_menu.z_index=100
+	var menu_style:=StyleBoxFlat.new();menu_style.bg_color=Color("21190f");menu_style.border_color=Color("ad8e55");menu_style.set_border_width_all(2);menu_style.set_content_margin_all(6)
+	item_menu.add_theme_stylebox_override("panel",menu_style)
+	add_child(item_menu)
+	var choices:=VBoxContainer.new();choices.name="Choices";item_menu.add_child(choices)
+	var put:=Button.new();put.name="PutOnBelt";put.text="Put on belt";choices.add_child(put)
+	put.pressed.connect(func():
+		var id:=str(item_list.get_item_metadata(selected_index))
+		var controller=get_parent().get("item_effects")
+		if is_instance_valid(controller) and controller.put_on_belt(id):detail_text.text="Put on belt."
+		item_menu.hide())
+	if use_button.visible:
+		var use:=Button.new();use.name="UseItem";use.text="Use";choices.add_child(use)
+		use.pressed.connect(func():item_menu.hide();use_selected_item())
+	if hold_item.is_valid() and not preload("res://scripts/lol2/player_stored_globes.gd").spell(str(item_list.get_item_metadata(selected_index))).is_empty():
+		var hold:=Button.new();hold.name="UseOnTarget";hold.text="Use on target";choices.add_child(hold)
+		hold.pressed.connect(func():
+			item_menu.hide()
+			if hold_item.call(str(item_list.get_item_metadata(selected_index))):close())
+	item_menu.position=get_viewport().get_mouse_position().min(get_viewport().get_visible_rect().size-Vector2(200,100))
+	put.grab_focus()
+func build_inventory_belt():
+	var controller=get_parent().get("item_effects")
+	if not is_instance_valid(controller):return
+	belt_view=preload("res://scripts/lol2/item_belt_view.gd").new();belt_view.controller=controller;belt_view.interactive=true
+	add_child(belt_view)
+	belt_view.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
+	belt_view.offset_left=24;belt_view.offset_right=352;belt_view.offset_top=-138;belt_view.offset_bottom=-8

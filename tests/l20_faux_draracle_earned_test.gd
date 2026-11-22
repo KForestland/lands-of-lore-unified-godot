@@ -70,7 +70,8 @@ func run():
 	scene.equipped_item = "act2:L13_RC:dark_sword"
 	await process_frame
 	await key(KEY_E)
-	if not check(bool(drar.state().struck) and not bool(drar.state().killed), "actor 46 records a strike and stays alive"):
+	var body: MeshInstance3D = drar.get_node("FauxBody") as MeshInstance3D
+	if not check(bool(drar.state().struck) and bool(drar.state().killed) and not body.visible and drar.SPEECH == "Fight him any way you please.", "actor 46 falls and the line shows"):
 		await stop(scene, 1); return
 	scene.player.position = drar.AT_2
 	scene.player.velocity = Vector3.ZERO
@@ -84,14 +85,16 @@ func run():
 		await process_frame
 		await key(KEY_E)
 	var keys: Array = key_ids(drar)
-	var ordered: bool = keys.size() == 3 and int(keys[0]) == 0 and int(keys[1]) == 1 and int(keys[2]) == 2 and bool(drar.state().room) and not drar.moves_doors()
-	if not check(ordered, "keys 0, 1, and 2 record in order and the doors stay still"):
+	var leaf: MeshInstance3D = drar.get_node("DoorLeaf") as MeshInstance3D
+	var ordered: bool = keys.size() == 3 and int(keys[0]) == 0 and int(keys[1]) == 1 and int(keys[2]) == 2 and bool(drar.state().room) and drar.moves_doors() and leaf.position.y > 1.0
+	if not check(ordered, "keys 0, 1, and 2 open the door leaf"):
 		await stop(scene, 1); return
 	scene.player.position = drar.AT_75
 	scene.player.velocity = Vector3.ZERO
 	await process_frame
 	await process_frame
-	if not check(bool(drar.state().belial_seen) and drar.SPEECH == "" and drar.BELIAL == 75, "actor 75 is seen and no speech is stored"):
+	var card: Label = drar.find_child("Stage", true, false) as Label
+	if not check(bool(drar.state().belial_seen) and drar.BELIAL == 75 and card != null and "Belial begins to speak." in card.text, "actor 75 is seen and Belial begins to speak"):
 		await stop(scene, 1); return
 	var save := "res://tmp/l20_faux_draracle_earned_save.json"
 	if not check(scene._quicksave_unrecorded(save).is_empty(), "draracle save"):
@@ -100,7 +103,9 @@ func run():
 		await stop(scene, 1); return
 	drar = scene.get_node("L20FauxDraracle")
 	await process_frame
-	if not check(bool(drar.state().room) and bool(drar.state().belial_seen) and not bool(drar.state().killed), "save keeps the room and the strike"):
+	body = drar.get_node("FauxBody") as MeshInstance3D
+	leaf = drar.get_node("DoorLeaf") as MeshInstance3D
+	if not check(bool(drar.state().room) and bool(drar.state().belial_seen) and bool(drar.state().killed) and not body.visible and leaf.position.y > 1.0, "save keeps the kill, the room, and the open leaf"):
 		await stop(scene, 1); return
-	print("PASS earned actor 46 and keys 0, 1, and 2")
+	print("PASS earned actor 46 falls, keys 0, 1, and 2, and the door leaf rises")
 	await stop(scene, 0)

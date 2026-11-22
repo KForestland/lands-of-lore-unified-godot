@@ -1,6 +1,13 @@
 {
- "name": "act1_recovery_jungle_test",
- "suite": "core",
- "mode": "rendered",
- "order": 256
+  "name": "act1_recovery_jungle_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 256,
+  "teleports": 1,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "c5863bceb7a57f955f647913b8c6d4c4ef6daf7e443380d4e1dc2877c336b18f"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
 }

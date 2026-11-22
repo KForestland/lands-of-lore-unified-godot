@@ -1,0 +1,68 @@
+{
+  "name": "g15_summon_armory_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Local real-input Summon component; explicit stand/learning/clock and (armory) valid equipment/grant fixtures, not an earned walk."
+  },
+  "teleports": 1,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "2ac5f2872d3244cc2cde2a98d92cbd2958880f5d71e77d7e4d4f5eecf28ed62c"
+  },
+  "context_aid_source_sites": {
+    "count": 6,
+    "sites": [
+      {
+        "path": "tests/g15_summon_armory_input_test.gd",
+        "line": 10,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\",\"sync\":true}).ok,\"Disclosed valid equipment grant fixture\"):return"
+      },
+      {
+        "path": "tests/g15_summon_armory_input_test.gd",
+        "line": 12,
+        "column": 16,
+        "kind": "learning_api_fixture",
+        "source": "if not require(magic.learn_spell_group(\"summon\"),\"Disclosed Summon learning fixture\"):return"
+      },
+      {
+        "path": "tests/g15_summon_armory_input_test.gd",
+        "line": 13,
+        "column": 18,
+        "kind": "component_magic_clock",
+        "source": "await tap(KEY_6);magic.set_process(false)"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 9,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

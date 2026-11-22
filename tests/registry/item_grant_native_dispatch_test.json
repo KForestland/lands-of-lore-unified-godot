@@ -1,0 +1,100 @@
+{
+  "name": "item_grant_native_dispatch_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "note": "Synthetic VM/table fixtures, actual progression.fire. Not player-input or earned evidence."
+  },
+  "teleports": 0,
+  "test_aids": 7,
+  "count_method": "Audited source sites, not executions; fixture contexts separately enumerated.",
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "9588af7cfab3cee7acdaabac379a13a5bfae632357dab94696658828f9739626"
+  },
+  "context_aid_source_sites": {
+    "count": 11,
+    "sites": [
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 55,
+        "column": 1,
+        "kind": "isolated_table_fixture",
+        "source": "Tables._cache[\"L8_SJ\"]={\"version\":1,\"area\":\"L8_SJ\",\"commands\":rows}"
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 60,
+        "column": 11,
+        "kind": "synthetic_vm_fixture",
+        "source": "check(prog.native.load_area_data(data)==\"\",\"fixture VM loads\")"
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 61,
+        "column": 5,
+        "kind": "native_gate_fixture",
+        "source": "prog.native.set_adapter_enabled(\"opcode3_item_grant\",true);prog.native.set_global(0x223D4,0)"
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 61,
+        "column": 64,
+        "kind": "native_gate_fixture",
+        "source": "prog.native.set_adapter_enabled(\"opcode3_item_grant\",true);prog.native.set_global(0x223D4,0)"
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 62,
+        "column": 5,
+        "kind": "synthetic_vm_fixture",
+        "source": "prog.native.bind_target(\"0x03:2\",\"prop:2\")"
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 92,
+        "column": 1,
+        "kind": "isolated_policy_fixture",
+        "source": "Tables._cache.L8_SJ.commands[\"4006\"].blocked_by=[]"
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 96,
+        "column": 34,
+        "kind": "native_gate_fixture",
+        "source": "var disabled:=host(data);disabled.native.set_adapter_enabled(\"opcode3_item_grant\",false)"
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 98,
+        "column": 32,
+        "kind": "native_unknown_fixture",
+        "source": "var unknown:=host(data);unknown.native.globals.erase(0x223D4)"
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 100,
+        "column": 38,
+        "kind": "native_gate_fixture",
+        "source": "var suppressed:=host(data);suppressed.native.set_global(0x223D4,1)"
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 109,
+        "column": 1,
+        "kind": "isolated_policy_fixture",
+        "source": "Tables._cache.L8_SJ.commands[\"1006\"].action=\"log\""
+      },
+      {
+        "path": "tests/item_grant_native_dispatch_test.gd",
+        "line": 111,
+        "column": 1,
+        "kind": "isolated_table_fixture",
+        "source": "Tables._cache.erase(\"L8_SJ\")"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 18
+}

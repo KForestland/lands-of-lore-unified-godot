@@ -1,0 +1,43 @@
+{
+  "name": "act2_body_fit_blood_earned_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1301,
+  "teleports": 0,
+  "needs": {
+    "env": [
+      "LOL2_BODY_FIT_ARRIVAL_SAVE"
+    ],
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Pinned L19 native-arrival checkpoint; physical rim/cap over614, real movement/input, F5/F9 repeat. No upstream-chain acceptance. K99: clock asserted1/60 (rapids now ordinary too). Additional context aids: native arrival selector1/3 and adapter_exit_seeds=false, separately counted. No bars-click assertion is claimed by this passage-only entry."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "1f38a6063d4cd0fca48b9c8c8441ae05cd294f688fbc18ad0373f3374fa6ec83"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/act2_body_fit_walk.gd",
+        "line": 143,
+        "column": 1,
+        "setting": "lol2_map_start_selector",
+        "source": "set_meta(\"lol2_map_start_selector\",1 if scenario()==\"blood\" else 3)"
+      },
+      {
+        "path": "tests/act2_body_fit_walk.gd",
+        "line": 144,
+        "column": 64,
+        "setting": "adapter_exit_seeds",
+        "source": "scene=load(\"res://scenes/lol2/maps/L19_BC.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Audited source sites, not execution counts. Exact inherited contexts checked by handoff check_context_aids.py; inherited F02 checker does not classify these settings."
+  },
+  "total_disclosed_test_aid_source_sites": 3,
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
+}

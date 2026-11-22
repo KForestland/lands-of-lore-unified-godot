@@ -1,0 +1,49 @@
+{
+  "name": "chain_spell_lessons_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "note": "Read-only production-query/table matrix with isolated fake owners; numeric form2 fixture, pinned actual sixth-life modern save. Not a gameplay run."
+  },
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "isolated_form_query_fixture",
+      "pattern": "host\\.player_form\\s*="
+    }
+  ],
+  "teleports": 0,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "1bf72f9360a0bae7a7b16f55511b28d2380bae4c7dad7d0e22608b7c9d021161"
+  },
+  "context_aid_source_sites": {
+    "count": 3,
+    "sites": [
+      {
+        "path": "tests/chain_spell_lessons_test.gd",
+        "line": 26,
+        "column": 2,
+        "kind": "isolated_form_query_fixture",
+        "source": "host.player_form=2 if row.has(\"forms\") else 0 # Fixture only; no body/form change claim."
+      },
+      {
+        "path": "tests/chain_spell_lessons_test.gd",
+        "line": 34,
+        "column": 3,
+        "kind": "isolated_form_query_fixture",
+        "source": "host.player_form=0"
+      },
+      {
+        "path": "tests/chain_spell_lessons_test.gd",
+        "line": 36,
+        "column": 3,
+        "kind": "isolated_form_query_fixture",
+        "source": "host.player_form=2"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 6
+}

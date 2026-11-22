@@ -120,6 +120,12 @@ func run() -> void:
 	assert(after.hive_curse.remaining > 0 and after.hive_curse.remaining < expected.hive_curse.remaining)
 	after.erase("hive_curse")
 	expected.erase("hive_curse")
+	# The Jungle cat ladies host (BG14) adds its own presentation packet when the route passes the Jungle.
+	if after.has("jungle_cat_ladies"):
+		assert(preload("res://scripts/lol2/jungle_cat_ladies.gd").validate(after.jungle_cat_ladies).is_empty(), "Cat ladies packet invalid")
+		after.erase("jungle_cat_ladies")
+	if is_instance_valid(jungle.bramble):
+		expected.jungle_bramble = jungle.bramble.initial()
 	for key in after:
 		if not expected.has(key) or after[key] != expected[key]: print("Handoff mismatch ",key,": ",after[key]," expected ",expected.get(key))
 	if after != expected:

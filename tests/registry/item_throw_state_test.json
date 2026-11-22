@@ -1,0 +1,22 @@
+{
+  "name": "item_throw_state_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "note": "Physical throw component; real input/source history fixtures, ordinary clock; no earned route claim."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "afa1aa441c7997797e8ec97021c48fbcb0db97c58e84b42a434021e094e1d1b3"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 2
+}

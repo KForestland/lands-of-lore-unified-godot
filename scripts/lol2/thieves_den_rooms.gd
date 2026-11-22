@@ -1,4 +1,5 @@
 extends CanvasLayer
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## The Thieves' Den room chain on the Jungle host: TEXT (yard) from L4_HJ region 3642, then TCEL, TDOOR and TINT through
 ## the DLLs' own room calls, sharing the monastery compositor. Clicks follow the host router (actor rect, then
 ## sprites, then hotspots); the hand selector stands in for the original held item (docs/thieves-den.md,
@@ -19,6 +20,7 @@ const FELL := "You fell. R: recover here · F9: load save"
 var view: Control
 var backdrop: ColorRect
 var back: Button
+var item_notice:Label
 var held: OptionButton
 var input_layer: Control
 var sprite_nodes := {}
@@ -76,6 +78,15 @@ func _ready() -> void:
 	held.position = Vector2(16,365)
 	held.size = Vector2(220,28)
 	held.tooltip_text = "Item in hand when clicking Mauri"
+	item_notice=Label.new();item_notice.name="ItemNotice"
+	item_notice.position=Vector2(16,314);item_notice.size=Vector2(608,44)
+	item_notice.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	item_notice.add_theme_font_size_override("font_size",14)
+	item_notice.add_theme_color_override("font_color",Color(1,0.9,0.7))
+	item_notice.add_theme_color_override("font_shadow_color",Color.BLACK)
+	item_notice.add_theme_constant_override("shadow_offset_x",1);item_notice.add_theme_constant_override("shadow_offset_y",1)
+	view.canvas.add_child(item_notice)
+	held.item_selected.connect(func(_index):item_notice.text="")
 	view.canvas.add_child(held)
 	restore()
 func active() -> bool:
@@ -146,14 +157,7 @@ func restore() -> void:
 	_refresh_hand()
 	refresh_speech()
 func _refresh_hand() -> void:
-	var previous := str(held.get_item_metadata(held.selected)) if held.selected >= 0 and held.selected < held.item_count else ""
-	held.clear()
-	held.add_item("Empty hand")
-	held.set_item_metadata(0,"")
-	for item in preload("res://scripts/lol2/hand_selector_order.gd").wanted_first(get_parent().carried_collected,is_magic_item):
-		held.add_item(Catalog.label(item) if not Catalog.label(item).is_empty() else str(item))
-		held.set_item_metadata(held.item_count-1,item)
-		if item == previous: held.select(held.item_count-1)
+	preload("res://scripts/lol2/item_choice_menu.gd").populate(held,preload("res://scripts/lol2/hand_selector_order.gd").wanted_first(get_parent().carried_collected,is_magic_item),get_parent())
 ## Host 0xA8: the held definition's byte +0x43 bit 0 (24 "magic" items; THIEVES_DEN_DECODE §6).
 static func is_magic_item(id: String) -> bool:
 	var index := Catalog.definition(id)
@@ -235,10 +239,10 @@ func _apply(effects: Array) -> void:
 func grant(name: String) -> void:
 	var s := state()
 	var id: String = State.ITEMS.get(name,"")
-	var carried: Array = get_parent().carried_collected
+	var carried: Array = Grants.pack(get_parent())
 	if id.is_empty() or id in carried: return
 	if _inventory_accepts(carried+[id]):
-		carried.append(id)
+		Grants.grant(get_parent(),id,{"cap":false,"duplicate":"allow"})
 		if is_instance_valid(get_parent().interface_hud): get_parent().interface_hud.refresh_equipment()
 		return
 	if not name in s.pending_items: s.pending_items.append(name)
@@ -288,8 +292,13 @@ func click(point: Vector2i) -> bool:
 	return false
 ## Message 5: a click on Mauri with `id` (a carried inventory entry, or "") in hand.
 func offer_item(id: String) -> bool:
-	if not active() or State.active(state()): return false
+	if not active() or state().room!="TINT" or State.active(state()): return false
 	if not id.is_empty() and not id in get_parent().carried_collected: return false
+	var plan:Dictionary=Den.tint_offer(0,state().flags,not id.is_empty(),is_magic_item(id) if not id.is_empty() else false,false)
+	if plan.effects.any(func(effect):return effect[0]=="take_held_item"):
+		var reason:String=preload("res://scripts/lol2/quest_resource_protection.gd").removing(get_parent(),Grants.pack(get_parent()),id)
+		if not reason.is_empty():item_notice.text=reason;get_parent().save_feedback(reason);return false
+	item_notice.text=""
 	if not State.offer(state(),id,is_magic_item(id) if not id.is_empty() else false): return false
 	_apply(State.advance(state(),0.0,context()))
 	if active(): refresh_speech()

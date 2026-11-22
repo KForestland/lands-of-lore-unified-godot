@@ -1,0 +1,96 @@
+{
+  "name": "heal_stored_scroll_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Real I/rightclick/F5/F9; two original-ID grant fixtures, health24 through the single health owner, held magic regen/cooldown clock; no earned pickup/walk claim. Existing basic Heal1 only, no new charge or learned flag."
+  },
+  "teleports": 0,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "1da9f3b1b141674c82b8847101da87ab37d4b0a0d3666197e73f0dd6493fe439"
+  },
+  "context_aid_source_sites": {
+    "count": 8,
+    "sites": [
+      {
+        "path": "tests/heal_stored_scroll_input_test.gd",
+        "line": 9,
+        "column": 32,
+        "kind": "component_magic_clock",
+        "source": "var magic=scene.starting_magic;magic.set_process(false)"
+      },
+      {
+        "path": "tests/heal_stored_scroll_input_test.gd",
+        "line": 9,
+        "column": 32,
+        "kind": "component_magic_clock",
+        "source": "var magic=scene.starting_magic;magic.set_process(false)"
+      },
+      {
+        "path": "tests/heal_stored_scroll_input_test.gd",
+        "line": 17,
+        "column": 1,
+        "kind": "component_health_fixture",
+        "source": "magic.set_health(24) # Disclosed health fixture through the single health owner."
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_stored_spell_input.gd",
+        "line": 5,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":true}).ok,\"Disclosed actual-ID scroll grant fixture\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_stored_spell_input.gd",
+        "line": 5,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":true}).ok,\"Disclosed actual-ID scroll grant fixture\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 11,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged.",
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "component_health_fixture",
+      "pattern": "magic\\.set_health\\("
+    },
+    {
+      "kind": "component_magic_clock",
+      "pattern": "magic\\.set_process\\(false\\)"
+    },
+    {
+      "kind": "item_grant_fixture",
+      "pattern": "Grants\\.grant\\("
+    }
+  ]
+}

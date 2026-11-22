@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const State = preload("res://scripts/lol2/museum_scroll_state.gd")
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 const Definitions = preload("res://scripts/lol2/item_definitions.gd")
@@ -27,6 +28,7 @@ func setup(owner: Node3D, saved: Variant = null) -> String:
 	return restore_checkpoint(saved)
 func checkpoint() -> Dictionary: return state.duplicate(true)
 func restore_checkpoint(saved: Variant) -> String:
+	if saved == null: saved = State.from_inventory(host.carried_collected,host.item_effect_checkpoint.get("spent",[]))
 	var error := State.validate(saved,host.carried_collected)
 	if not error.is_empty(): return error
 	state=State.canonical(saved)
@@ -51,7 +53,7 @@ func use() -> bool:
 	if host.carried_collected.size()>=Catalog.MAX_CARRIED:
 		host.save_feedback("You cannot carry more.")
 		return true
-	if not State.take(state,host.carried_collected,i): return false
+	if not State.take(state,Grants.pack(host),i): return false
 	present()
 	host.save_feedback(Catalog.entry(State.IDS[i]).label+" added to inventory.")
 	return true

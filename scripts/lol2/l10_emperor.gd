@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const DeadBracers=preload("res://scripts/lol2/dead_bracers_item.gd")
 const State=preload("res://scripts/lol2/l10_emperor_state.gd")
 const Assemblies=preload("res://scripts/lol2/static_assemblies.gd")
@@ -51,7 +52,9 @@ func active()->bool:return not get_tree().paused and not host.flying and host.pl
 func reachable(target: String)->bool:
  if target=="remains":
   var p: Vector3=host.player.global_position
-  return p.y>=-30 and p.y<=0 and Geometry2D.is_point_in_polygon(Vector2(p.x,p.z),PackedVector2Array([Vector2(3154,-1297),Vector2(3256,-1297),Vector2(3256,-1244),Vector2(3154,-1241)]))
+  # Under the Emperor tomb floor move (geometry_moves/L10_DC.json, floor -50 -> -66) the body stands lower by the move.
+  var low:=-30.0+preload("res://scripts/lol2/geometry_move.gd").delta("L10_DC",3789,p.x,p.z)
+  return p.y>=low and p.y<=0 and Geometry2D.is_point_in_polygon(Vector2(p.x,p.z),PackedVector2Array([Vector2(3154,-1297),Vector2(3256,-1297),Vector2(3256,-1244),Vector2(3154,-1241)]))
  if not AIMS.has(target):return false
  var delta: Vector3=AIMS[target]-host.camera.global_position
  if delta.length()>140 or delta.length()<0.01 or (-host.camera.global_basis.z).dot(delta.normalized())<0.8:return false
@@ -63,11 +66,8 @@ func interact(target: String,item: String="")->Dictionary:
  if target=="remains":return enter_room()
  var result:=State.act(state(),host.carried_collected,target,item)
  if not result.ok:return result
- host.quest_state.l10_emperor=result.state;host.carried_collected=result.inventory
- if result.state.remains:
-  var history: Dictionary=host.quest_state.act2_items.duplicate(true)
-  if State.REMAINS not in history.collected:history.collected.append(State.REMAINS)
-  host.quest_state.act2_items=history
+ var admission:=Grants.transition(host,result.inventory,{"l10_emperor":result.state},{"history":"act2_once","history_id":State.REMAINS} if result.state.remains else {})
+ if not admission.ok:return admission
  Items.sync(host);restore();return {"ok":true,"reason":"You take the Emperor's remains." if target=="remains" else "The tomb mechanism responds."}
 func target()->String:
  if State.opened(state()) and reachable("remains"):return "remains"
@@ -87,15 +87,19 @@ func _process(_delta):
   if not id.is_empty():hint.text="E — Speak with the Emperor" if id=="remains" else "E — Use the ankh" if id=="143" else "E — Place or retrieve the matching globe"
 func _unhandled_input(event: InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E:return
- if not active() or Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED or is_instance_valid(host.inventory):return
- if host.has_method("actor_input_locked") and host.actor_input_locked():return
+ if Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED:return
+ if try_use():get_viewport().set_input_as_handled()
+func try_use()->bool:
+ if not active() or is_instance_valid(host.inventory):return false
+ if host.has_method("actor_input_locked") and host.actor_input_locked():return false
  var id:=target()
- if id.is_empty():return
+ if id.is_empty():return false
  var item:=State.Ankh.ANKH if id=="143" else ""
  if State.COLORS.has(id):
   for carried in host.carried_collected:
    if Items.definition(carried)==State.COLORS[id]:item=carried;break
- var result:=interact(id,item);host.save_feedback(result.reason);get_viewport().set_input_as_handled()
+ var result:=interact(id,item);host.save_feedback(result.reason)
+ return true
 
 func setup_room():
  var root_path:="res://assets/lol2/generated/l10_emperor/"
@@ -121,10 +125,9 @@ func collect_remains()->Dictionary:
  if not room_active:return State.Kit.refuse("Enter the Emperor's tomb first.")
  var result:=State.take(state(),host.carried_collected)
  if not result.ok:return result
- host.quest_state.l10_emperor=result.state;host.carried_collected=result.inventory
- var history: Dictionary=host.quest_state.act2_items.duplicate(true)
- if State.REMAINS not in history.collected:history.collected.append(State.REMAINS)
- host.quest_state.act2_items=history;Items.sync(host);leave_room();restore()
+ var admission:=Grants.transition(host,result.inventory,{"l10_emperor":result.state},{"history":"act2_once","history_id":State.REMAINS})
+ if not admission.ok:return admission
+ Items.sync(host);leave_room();restore()
  return {"ok":true,"reason":"You take the Emperor's remains."}
 func _input(event: InputEvent):
  if not room_active or event is not InputEventKey or not event.pressed or event.echo:return

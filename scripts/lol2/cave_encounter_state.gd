@@ -1,19 +1,34 @@
 extends RefCounted
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 
 # Prototype values, not recovered Lands of Lore II combat rules.
 enum Phase { IDLE, PURSUING, WINDUP, RECOVERY, DEFEATED }
-const PLAYER_HEALTH := 30
+const PLAYER_HEALTH := PlayerHealth.MAXIMUM
 const ENEMY_HEALTH := 24
-const PLAYER_DAMAGE := 8
+const PLAYER_DAMAGE := PlayerCombat.DEFAULT_DAMAGE
 const ENEMY_DAMAGE := 6
-const STRIKE_COOLDOWN := 0.45
+const STRIKE_COOLDOWN := PlayerCombat.COOLDOWN
 # Default source marker12 / prototype8fps; scene configures from verified assets.
 const WINDUP_TIME := 1.5
 const RECOVERY_TIME := 0.5
 const ALERT_RANGE := 180.0
 const ENEMY_REACH := 40.0
 
-var player_health := PLAYER_HEALTH
+var _health_owner:Node
+var _standalone_player_health:int=PLAYER_HEALTH
+var player_health:int:
+	get:return _health_owner.value() if is_instance_valid(_health_owner) else _standalone_player_health
+	set(v):
+		if is_instance_valid(_health_owner):_health_owner.set_value(v)
+		else:_standalone_player_health=v
+func bind_health(owner:Node,preserve_live:bool=true)->void:
+	_health_owner=owner
+	if not preserve_live:_health_owner.set_value(_standalone_player_health)
+func lose_health(amount:int)->int:
+	if is_instance_valid(_health_owner):return _health_owner.lose(amount)
+	_standalone_player_health=maxi(0,_standalone_player_health-amount)
+	return _standalone_player_health
 var enemy_health := ENEMY_HEALTH
 var phase := Phase.IDLE
 var phase_remaining := 0.0
@@ -36,7 +51,7 @@ func attack_elapsed() -> float:
 	return 0.0
 
 func strike(in_reach: bool, aimed: bool, unobstructed: bool, damage: int = PLAYER_DAMAGE) -> bool:
-	if player_health <= 0 or enemy_health <= 0 or strike_remaining > 0.0:
+	if player_health <= 0 or enemy_health <= 0 or not PlayerCombat.cooldown_ready(strike_remaining):
 		return false
 	strike_remaining = STRIKE_COOLDOWN
 	if not (in_reach and aimed and unobstructed):
@@ -48,7 +63,7 @@ func strike(in_reach: bool, aimed: bool, unobstructed: bool, damage: int = PLAYE
 	return true
 
 func advance(delta: float, distance: float, unobstructed: bool, invulnerable: bool = false, defense: int = 0) -> int:
-	strike_remaining = maxf(0.0, strike_remaining - delta)
+	strike_remaining = PlayerCombat.cooldown_tick(strike_remaining,delta)
 	if player_health <= 0 or enemy_health <= 0:
 		return 0
 	if phase == Phase.WINDUP:
@@ -59,7 +74,7 @@ func advance(delta: float, distance: float, unobstructed: bool, invulnerable: bo
 		phase_remaining = recovery_time
 		if unobstructed and distance <= ENEMY_REACH and not invulnerable:
 			var damage := mini(preload("res://scripts/lol2/player_defense.gd").damage(15,defense), player_health)
-			player_health -= damage
+			lose_health(damage)
 			return damage
 		return 0
 	if phase == Phase.RECOVERY:

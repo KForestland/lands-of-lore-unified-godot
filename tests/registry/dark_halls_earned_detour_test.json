@@ -1,19 +1,26 @@
 {
- "name": "dark_halls_earned_detour_test",
- "suite": "core",
- "mode": "headless",
- "order": 574,
- "needs": {
-  "env": [
-   "LOL2_ORIGINAL_GAME_EXE",
-   "LOL2_EARNED_SAVES"
-  ],
-  "args": [
-   "--phase=enter"
-  ],
-  "fixtures": [
-   "earned repaired-monastery save (hash-pinned)"
-  ],
-  "chain": "four processes --phase=enter|finish|depart|resume (tools/audit_dark_halls_detour_chain.py); the CORE dark_halls_earned_detour_* wrappers cover it"
- }
+  "name": "dark_halls_earned_detour_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 574,
+  "needs": {
+    "env": [
+      "LOL2_ORIGINAL_GAME_EXE",
+      "LOL2_EARNED_SAVES"
+    ],
+    "args": [
+      "--phase=enter"
+    ],
+    "fixtures": [
+      "earned repaired-monastery save (hash-pinned)"
+    ],
+    "chain": "four rendered OS processes --phase=enter|finish|depart|resume share a private profile and hash-linked phase receipts; tools/audit_dark_halls_detour_chain.py audits those receipts, not a launcher; no registered phase-wrapper entries exist"
+  },
+  "teleports": 0,
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "10e8eeece3aa8a74d8debde02828cb547a0a576ec169baac1f6e87290d892427"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
 }

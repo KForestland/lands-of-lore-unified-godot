@@ -1,4 +1,5 @@
 extends Node
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Dark Halls item-giving controls (scripts/lol2/dark_halls_loot_source.json): E while facing one within reach takes
 ## its next grant (native event4 use: predicate206 first, 207 second). Uses taken per control are saved in
 ## quests.dark_halls_loot. Aiming is a modern adapter (reach and facing cone; the native click-on-object hit is not used).
@@ -58,7 +59,7 @@ func take() -> bool:
 	if host.carried_collected.size() >= preload("res://scripts/lol2/item_catalog.gd").MAX_CARRIED:
 		if host.has_method("save_feedback"): host.save_feedback("Inventory full.")
 		return false
-	host.carried_collected.append(grant.id)
+	if not Grants.grant(host,grant.id,{"cap":false,"duplicate":"allow"}).ok: return false
 	taken()[key] = used + 1
 	if host.has_method("save_feedback"): host.save_feedback(preload("res://scripts/lol2/dark_halls_items.gd").ITEMS[grant.id].label + " taken.")
 	return true

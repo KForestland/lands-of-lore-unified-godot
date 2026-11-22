@@ -1,4 +1,9 @@
 extends "res://scripts/lol2/special_placed_prop_review.gd"
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+var player_health_owner:Node=PlayerHealth.new()
+func _notification(what:int)->void:
+	if what==NOTIFICATION_PREDELETE:PlayerHealth.dispose_unattached(player_health_owner)
+var area_id := "L1_DC"
 
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 const WalkthroughSave = preload("res://scripts/lol2/walkthrough_save.gd")
@@ -63,6 +68,8 @@ var static_assemblies: Node3D
 var shrine_doors: Node3D
 ## Movable 55: the crack-cut rock slab in the scenic-guard doorway (report 10:51:27).
 var crack_movable: Node3D
+## Movables 74 and 77: the double leaf across the arch in front of the Draracle.
+var draracle_door: Node3D
 ## L1_DC help triggers (cave_help.gd) for the shared HUD help system.
 var cave_help: Node
 var rapids_trigger: Node3D
@@ -163,6 +170,7 @@ func attach_starting_magic() -> void:
 	add_child(item_effects)
 
 func _ready() -> void:
+	PlayerHealth.attach(self)
 	if OS.has_feature("original_game_required") and not get_tree().get_meta("original_game_verified", false):
 		set_process(false)
 		set_physics_process(false)
@@ -209,7 +217,12 @@ func _ready() -> void:
 	drowning_notice.hide()
 	ui.add_child(drowning_notice)
 	drowning_overlay = preload("res://scripts/lol2/drowning_overlay.gd").new() as Control
-	ui.add_child(drowning_overlay)
+	# Its own layer above the portrait interface (layer 20) and the prompts (21), so the veil spans the full width.
+	var veil_layer := CanvasLayer.new()
+	veil_layer.layer = 23
+	veil_layer.name = "DrowningVeilLayer"
+	add_child(veil_layer)
+	veil_layer.add_child(drowning_overlay)
 	defeat_notice = Label.new()
 	defeat_notice.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	defeat_notice.position = Vector2(-300,-110)
@@ -386,6 +399,10 @@ func _ready() -> void:
 		crack_movable=preload("res://scripts/lol2/cave_crack_movable.gd").new();add_child(crack_movable)
 		var crack_error: String=crack_movable.setup(self)
 		if not crack_error.is_empty():push_error(crack_error)
+	if preload("res://scripts/lol2/cave_draracle_door.gd").assets_ready():
+		draracle_door=preload("res://scripts/lol2/cave_draracle_door.gd").new();add_child(draracle_door)
+		var door_error: String=draracle_door.setup(self)
+		if not door_error.is_empty():push_error(door_error)
 	_build_lighting()
 	lighting_enabled = not ("--walkthrough-capture" in OS.get_cmdline_user_args() or "--reference-lighting" in OS.get_cmdline_user_args())
 	_set_lighting(lighting_enabled)
@@ -446,6 +463,10 @@ func _ready() -> void:
 	flight_label.visible = development_mode
 	if not development_mode and not is_instance_valid(interface_hud): _attach_interface()
 	walkthrough_ready = true
+	preload("res://scripts/lol2/game_session.gd").for_tree(get_tree()).apply_when_ready.call_deferred(self)
+	if not atlas_explored is Dictionary:
+		atlas_explored = preload("res://scripts/lol2/atlas_explored.gd").initial()
+	preload("res://scripts/lol2/atlas_explored.gd").attach(self)
 
 func _attach_interface() -> void:
 	interface_hud = preload("res://scripts/lol2/cave_interface.gd").new()
@@ -466,8 +487,8 @@ func _attach_interface() -> void:
 		cave_help.rebase.call_deferred()
 
 ## Shared-HUD hooks (the other area hosts expose the same names).
-func quicksave(path: String = WalkthroughSave.DEFAULT_PATH) -> String: return _quicksave(path)
-func quickload(path: String = WalkthroughSave.DEFAULT_PATH) -> String: return _quickload(path)
+func quicksave(path: String = "") -> String: return _quicksave(path)
+func quickload(path: String = "") -> String: return _quickload(path)
 func save_feedback(message: String) -> void: _save_feedback(message)
 func open_inventory() -> bool:
 	if is_instance_valid(inventory) or is_instance_valid(video_overlay): return false
@@ -635,14 +656,32 @@ func _input(event: InputEvent) -> void:
 		_recover_after_defeat()
 		get_viewport().set_input_as_handled()
 
+## Crate E uses the same guards as the door: a captured mouse, no open overlay, and no lock.
+func _crate_e_allowed() -> bool:
+	# Headless Godot leaves the mouse visible, so the earned test cannot capture it.
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED and DisplayServer.get_name() != "headless":
+		return false
+	if is_instance_valid(inventory) or is_instance_valid(video_overlay):
+		return false
+	if drowning_menu != null and drowning_menu.visible:
+		return false
+	if guard_encounter != null and guard_encounter.input_locked():
+		return false
+	if guard_controls != null and guard_controls.input_locked():
+		return false
+	if captain != null and captain.intro_active():
+		return false
+	return true
+
 func _unhandled_input(event: InputEvent) -> void:
 	if guard_encounter!=null and guard_encounter.input_locked():
+		get_viewport().set_input_as_handled()
 		if event is InputEventKey and event.pressed and not event.echo:
 			if event.keycode==KEY_F5:_quicksave()
 			elif event.keycode==KEY_F9:_quickload()
 			elif event.keycode==KEY_ESCAPE:Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
 		if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
-		get_viewport().set_input_as_handled();return
+		return
 	if guard_controls!=null and guard_controls.input_locked(): return
 	if roach != null and roach.model.player_health <= 0:
 		if event is InputEventKey and event.pressed and not event.echo:
@@ -706,6 +745,11 @@ func _unhandled_input(event: InputEvent) -> void:
 					get_viewport().set_input_as_handled();return
 			if captain!=null and captain.loot!=null and captain.loot.collect():
 				get_viewport().set_input_as_handled();return
+			if draracle_door!=null and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED and draracle_door.try_use():
+				get_viewport().set_input_as_handled();return
+			var crates: Node = get_node_or_null("CaveCrateStack")
+			if crates != null and _crate_e_allowed() and crates.has_method("try_use") and bool(crates.call("try_use")):
+				get_viewport().set_input_as_handled();return
 			interaction_requested = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
 			get_viewport().set_input_as_handled()
 			return
@@ -714,8 +758,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			return
 		if event.keycode == KEY_F9:
-			_quickload()
 			get_viewport().set_input_as_handled()
+			_quickload()
 			return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_L:
 		_set_lighting(not lighting_enabled)
@@ -789,7 +833,7 @@ func carried_items() -> Array:
 
 func _completion_state() -> Dictionary:
 	return {"cave_transfer_version":1, "collected": carried_items(), "item_effects":item_effect_checkpoint.duplicate(true),
-		"equipped_item": equipped_item, "equipped_armor": equipped_armor, "health": roach.model.player_health if roach != null else 30,
+		"equipped_item": equipped_item, "equipped_armor": equipped_armor, "health": roach.model.player_health if roach != null else PlayerHealth.MAXIMUM,
 		"curse": curse.snapshot(), "magic":player_magic_checkpoint.duplicate(true), "player_form": player_form, "chamber_complete": true,
 		"fighting":preload("res://scripts/lol2/player_fighting_transport.gd").pack(quest_state)}
 
@@ -923,13 +967,16 @@ func _process(_delta: float) -> void:
 	if roach != null:
 		hud.text += "\nHealth: %d/%d · Left click: strike" % [roach.model.player_health,roach.Model.PLAYER_HEALTH]
 		if roach.model.player_health<=0: hud.text += "\nYou fell · R: recover · F9: load save"
-	interaction_prompt.visible = not drowning.dead and (hud.visible or is_instance_valid(interface_hud)) and interaction_available and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	var door_prompt := ""
+	if draracle_door != null: door_prompt = draracle_door.prompt()
+	interaction_prompt.visible = not drowning.dead and (hud.visible or is_instance_valid(interface_hud)) and (interaction_available or not door_prompt.is_empty()) and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
 	interaction_prompt.text = "E · Strike chain" if (indexed_chain != null and indexed_chain.can_strike()) or (river_chains != null and river_chains.target_chain() >= 0) else "E · Collect cavern sample"
 	# Owner F10 2026-11-03 17:05:51: on lever 72 the prompt read "Collect cavern sample", so the lever looked dead.
 	if guard_encounter != null and guard_encounter.target_lever() >= 0: interaction_prompt.text = "E · Pull lever"
 	if aloe != null and aloe.target() >= 0: interaction_prompt.text = "E · Pick Cave Aloe"
 	if stalagmites != null and stalagmites.target() >= 0: interaction_prompt.text = "E · Take Stalagmite"
 	if stone_manafoil != null and not stone_manafoil.prompt().is_empty(): interaction_prompt.text = stone_manafoil.prompt()
+	if not door_prompt.is_empty(): interaction_prompt.text = door_prompt
 	if indexed_chain != null:
 		if development_mode:
 			hud.text += "\nV: video review"
@@ -991,7 +1038,7 @@ func _physics_process(delta: float) -> void:
 	if walkthrough_ready:
 		_sample_recovery_trail(delta)
 		if roach != null and not flying and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not is_instance_valid(video_overlay) and lava.contact(player.global_position-native_translation,player.is_on_floor()) >= 0:
-			roach.model.player_health = 0
+			PlayerHealth.write_host(self,0)
 			player.velocity = Vector3.ZERO
 			jump_requested = false
 			_save_feedback("The lava killed you. R returns to the checkpoint; F9 loads your save.")
@@ -1009,7 +1056,10 @@ func _physics_process(delta: float) -> void:
 			var native_body: Vector3 = player.global_position-native_translation
 			var in_river := river_water.region_at(native_body) >= 0
 			var under_river := river_water.submerged_form(native_body,player_form)
-			var airborne := not player.is_on_floor() or absf(player.velocity.y) > 30.0
+			# Owner r18 14-42-37: a jump on the bridge over the river ran the clock. Only a jump from the water counts:
+			# the feet must be near the surface (within 20 of the authored plane), not on the deck above it.
+			var near_surface: bool = native_body.y - 32.0 < river_water.PLANE + 20.0
+			var airborne := (not player.is_on_floor() or absf(player.velocity.y) > 30.0) and near_surface
 			drowning.advance(delta,not flying and drowning.counting(under_river,in_river,airborne),Input.mouse_mode == Input.MOUSE_MODE_CAPTURED)
 			drowning_notice.text = drowning.message()
 			drowning_notice.visible = drowning.active or drowning.dead
@@ -1033,7 +1083,7 @@ func _physics_process(delta: float) -> void:
 ## Control135 group: owner state 1, op2 sub0x39 immediate death, op21 form movie. R recovery (a modern adapter) must not
 ## return the player onto the plate, so trail anchors inside it are dropped.
 func _die_at_entrance(movie: int) -> void:
-	roach.model.player_health = 0
+	PlayerHealth.write_host(self,0)
 	player.velocity = Vector3.ZERO
 	jump_requested = false
 	interaction_requested = false
@@ -1175,6 +1225,7 @@ func _save_state() -> Dictionary:
 	if pillar_trap != null: result.cave_pillar_trap = pillar_trap.checkpoint()
 	if is_instance_valid(interface_hud) and interface_hud.get("help") != null: result.help = interface_hud.help.checkpoint()
 	if shrine_doors != null: result.cave_shrine_doors = shrine_doors.checkpoint()
+	if draracle_door != null: result.cave_draracle_door = draracle_door.checkpoint()
 	if tar_fires != null: result.cave_tar_fires = tar_fires.checkpoint()
 	if old_orc != null: result.cave_old_orc = old_orc.checkpoint()
 	if boulder1333 != null: result.cave_boulder1333 = boulder1333.checkpoint()
@@ -1205,6 +1256,8 @@ func _save_state() -> Dictionary:
 	result.item_effects = item_effect_checkpoint.duplicate(true)
 	var fighting:=preload("res://scripts/lol2/player_fighting_transport.gd").pack(quest_state)
 	if not fighting.is_empty(): result.fighting=fighting
+	var crates: Node = get_node_or_null("CaveCrateStack")
+	if crates != null: result.cave_crates = crates.call("checkpoint")
 	result.atlas_explored = preload("res://scripts/lol2/atlas_explored.gd").stored(self)
 	return result
 
@@ -1233,8 +1286,12 @@ func _save_feedback(message: String) -> void:
 	print(message)
 
 ## Diagnostics record every outcome, including early refusals that show no message (docs/dev-diagnostics.md).
-func _quicksave(path: String = WalkthroughSave.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", _quicksave_unrecorded(path))
-func _quickload(path: String = WalkthroughSave.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", _quickload_unrecorded(path))
+func _quicksave(path: String = "") -> String:
+	var error: String = preload("res://scripts/lol2/game_save.gd").quicksave(self) if path.is_empty() else _quicksave_unrecorded(path)
+	return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", error)
+func _quickload(path: String = "") -> String:
+	var error: String = preload("res://scripts/lol2/game_save.gd").quickload(self) if path.is_empty() else _quickload_unrecorded(path)
+	return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", error)
 func _quicksave_unrecorded(path: String = WalkthroughSave.DEFAULT_PATH) -> String:
 	if not walkthrough_ready:
 		return "The cavern is still loading."
@@ -1254,9 +1311,17 @@ func _quickload_unrecorded(path: String = WalkthroughSave.DEFAULT_PATH) -> Strin
 	if not result.error.is_empty():
 		_save_feedback("Load failed: " + result.error)
 		return result.error
+	return _apply_save_state(result.state)
+
+func apply_slot_state(value: Dictionary) -> String:
+	var error := WalkthroughSave.validate(value, _checkpoint_count())
+	if not error.is_empty(): return error
+	if not walkthrough_ready: return "The cavern is still loading."
+	return _apply_save_state(WalkthroughSave.migrate_loaded(value))
+
+func _apply_save_state(state: Dictionary) -> String:
 	# Validation completes before any live state changes. Reset the checkpoint
 	# anchors first so R and N/P continue from the restored checkpoint.
-	var state: Dictionary = result.state
 	if state.has("roach") and roach == null: return "This save needs cave combat enabled."
 	if (state.has("bridge") and river_deck == null) or (state.has("chain_doors") and indexed_chain == null):
 		var message := "This save needs the cave bridge route enabled."
@@ -1295,6 +1360,7 @@ func _quickload_unrecorded(path: String = WalkthroughSave.DEFAULT_PATH) -> Strin
 	if is_instance_valid(interface_hud) and interface_hud.get("help") != null: interface_hud.help.restore(state.get("help", null))
 	if cave_help != null: cave_help.rebase.call_deferred()
 	if shrine_doors != null: shrine_doors.restore(state.get("cave_shrine_doors", null))
+	if draracle_door != null: draracle_door.restore(state.get("cave_draracle_door", null))
 	if tar_fires != null: tar_fires.restore(state.get("cave_tar_fires", null))
 	if old_orc != null: old_orc.restore(state.get("cave_old_orc", null))
 	if boulder1333 != null: boulder1333.restore(state.get("cave_boulder1333", null))
@@ -1330,11 +1396,14 @@ func _quickload_unrecorded(path: String = WalkthroughSave.DEFAULT_PATH) -> Strin
 		if state.has("roach"): roach.restore(state.roach)
 		else:
 			roach.model = roach.Model.new()
+			roach.model.bind_health(player_health_owner,false)
 			roach.body.position = roach.spawn
 			roach.restore(roach.snapshot())
 	if state.has("bridge"):
 		preload("res://scripts/lol2/cave_bridge_save.gd").restore(state.bridge, river_deck, river_chains, bridge_warning)
 	if state.has("chain_doors"): indexed_chain.restore_save(state.chain_doors)
+	var crates: Node = get_node_or_null("CaveCrateStack")
+	if crates != null and state.has("cave_crates"): crates.call("restore", state.cave_crates)
 	_sync_collected_visuals()
 	interaction_requested = false
 	interaction_available = false
@@ -1680,3 +1749,9 @@ func _check_chamber_arrival() -> void:
 
 func _static_floor_enabled(region: int) -> bool:
 	return not full_route_enabled or region not in [7,10,11]
+
+func area_snapshot() -> Dictionary:
+	return _save_state()
+
+func can_save() -> String:
+	return preload("res://scripts/lol2/save_admission.gd").reason(self)

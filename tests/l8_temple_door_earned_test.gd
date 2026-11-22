@@ -1,8 +1,14 @@
 extends "res://tests/l12_logs_approach_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l8_river_return_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="38782a29b9e87b96a48fd64e08b18a98f9f3974a1b0542cb7c7cacec67e6ef56"
+func pass_line() -> String:
+ return "PASS earned river corridor -> Temple approach -> Kit Dreamstone insert/save/retrieve -> original L14 arrival/save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l8_river_return_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="38782a29b9e87b96a48fd64e08b18a98f9f3974a1b0542cb7c7cacec67e6ef56","qualified river return input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified river return input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-darker-jungle")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/darker_jungle.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -48,5 +54,5 @@ func run():
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seeds or recovery")
  print("TEMPLE ARRIVAL ",scene.player.position)
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned river corridor -> Temple approach -> Kit Dreamstone insert/save/retrieve -> original L14 arrival/save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## STORY-070 NE greenhouse (Prima p.148-149, hintbook 4866-4900): put a silverleaf into the glass pyramid, use the
 ## hourglass; a plant bursts from the pyramid and a fireball drifts to the tower in the middle of the round room; when it
 ## hits the doors they open. Native ids (source_ids_066_075.md STORY-070): Silverleaf plate control 75 (kind 4 group 42062:
@@ -61,7 +62,7 @@ func aimed(point: Vector3, reach: float) -> bool:
 	return d.length() < reach and d.length() > 0.01 and (-host.camera.global_basis.z).dot(d.normalized()) > 0.9
 
 func carried_silverleaf() -> String:
-	if Items.definition(str(host.hand_item)) == 117: return str(host.hand_item)
+	if host.hand_item in host.carried_collected and Items.definition(str(host.hand_item)) == 117: return str(host.hand_item)
 	for id in host.carried_collected:
 		if Items.definition(str(id)) == 117: return str(id)
 	return ""
@@ -70,10 +71,12 @@ func place_silverleaf() -> Dictionary:
 	if not state().silverleaf.is_empty(): return {"ok":false,"reason":"A silverleaf already rests in the glass pyramid."}
 	var leaf := carried_silverleaf()
 	if leaf.is_empty(): return {"ok":false,"reason":"The glass pyramid needs a silverleaf."}
-	host.carried_collected.erase(leaf)
+	var next:Array=host.carried_collected.duplicate();next.erase(leaf)
+	var s := state().duplicate(true); s.silverleaf = leaf
+	var admitted:=Grants.transition(host,next,{KEY:s})
+	if not admitted.ok:return admitted
 	if host.hand_item == leaf: host.hand_item = ""
 	Items.sync(host)
-	var s := state().duplicate(true); s.silverleaf = leaf; host.quest_state[KEY] = s
 	host.progression.fire("control:75", 4, {"arg_c":3})
 	return {"ok":true,"reason":"You set the silverleaf into the glass pyramid."}
 
@@ -103,10 +106,18 @@ func _process(_delta: float) -> void:
 	if aimed(PLATE, 150.0) and state().silverleaf.is_empty(): hint.text = "E — Put a silverleaf into the glass pyramid"
 	elif aimed(HOURGLASS, 130.0): hint.text = "E — Turn the hourglass"
 
+func generic_target() -> Dictionary:
+	if aimed(PLATE,150.0) and state().silverleaf.is_empty(): return {"point":PLATE,"plate":true}
+	if aimed(HOURGLASS,130.0): return {"point":HOURGLASS}
+	return {}
+
+func try_use() -> bool:
+	var target := generic_target()
+	if target.is_empty(): return false
+	var result: Dictionary = place_silverleaf() if target.get("plate",false) else use_hourglass()
+	host.save_feedback(result.reason)
+	return true
+
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is not InputEventKey or not event.pressed or event.echo or event.keycode != KEY_E: return
-	var r: Dictionary
-	if aimed(PLATE, 150.0) and state().silverleaf.is_empty(): r = place_silverleaf()
-	elif aimed(HOURGLASS, 130.0): r = use_hourglass()
-	else: return
-	host.save_feedback(r.reason); get_viewport().set_input_as_handled()
+	if try_use(): get_viewport().set_input_as_handled()

@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Modern interaction/summary; original Dawn20 remains the sole visible actor.
 const State=preload("res://scripts/lol2/l8_dawn_state.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
@@ -23,11 +24,12 @@ func interact(item:String=State.BRACERS)->Dictionary:
  if not available() or not reachable():return {"ok":false,"reason":"Approach Dawn in human form."}
  var result:=State.exchange(state(),host.carried_collected,item)
  if not result.ok:return result
- var history:Dictionary=host.quest_state.act2_items.duplicate(true)
- history.collected.append(State.TOKEN)
- host.carried_collected=result.inventory;host.quest_state.act2_items=history;host.quest_state[State.KEY]=result.state
+ var admission:=Grants.transition(host,result.inventory,{State.KEY:result.state},{"history":"act2","history_id":State.TOKEN})
+ if not admission.ok:return admission
  if host.equipped_item==State.BRACERS:host.equipped_item=""
  Items.sync(host)
+ host.starting_magic.learn_spell_group("control")
+ preload("res://scripts/lol2/my_journal.gd").discover(host,"l8_dawn_sends_to_emperor")
  return {"ok":true,"reason":"Dawn accepts the bracers and explains reflecting magic. She gives you a Control Token, another piece of magic for controlling the curse."}
 func _process(_delta):
  hint.text="E — Give Dawn the Bracers of the Dead" if available() and reachable() and not State.completed(state()) else ""

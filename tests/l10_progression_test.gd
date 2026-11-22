@@ -19,14 +19,15 @@ func run() -> void:
 	check(p != null and p.native != null and p.area_id == "L10_DC", "the binder is attached with the L10 scripts loaded")
 	if p == null or p.native == null: quit(1); return
 	p.change_scene_enabled = false
-	check(p.regions.size() == 4320 and p.scripted_movables == [87, 88, 89] and p.hinges.size() == 20, "4320 nav regions; scripted movables 87/88 (rotary, on hinges) and 89 (%s, %d hinges)" % [p.scripted_movables, p.hinges.size()])
+	check(p.regions.size() == 4320 and p.scripted_movables == [87, 88, 89] and p.hinges.size() == 76, "4320 nav regions; 20 native + 56 decoded click-bit hinges; scripted movables 87/88 (rotary, on hinges) and 89 (%s, %d hinges)" % [p.scripted_movables, p.hinges.size()])
 	var geometry: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(scene.geometry_file))
 	var expected_excluded: Dictionary = p.hinge_faces("L10_DC", geometry)
+	# G02 adds 56 decoded click-bit movers and owns the decoded breakable cover assemblies.
 	# astra 029b7ae/c981337: tomb doors (l10_tomb_state.gd doors()) and assembly 70 are drawn by their owners, not the static mesh.
 	var tomb_doors: Array = preload("res://scripts/lol2/l10_tomb_state.gd").doors()
 	for i in geometry.faces.size():
 		var face: Dictionary = geometry.faces[i]
-		if preload("res://scripts/lol2/l10_oil.gd").owns(face) or preload("res://scripts/lol2/l10_emperor_entry.gd").entry_owns(face) or preload("res://scripts/lol2/l10_emperor.gd").owns(face):expected_excluded[i]=true
+		if preload("res://scripts/lol2/l10_tombs.gd").owns(face) or preload("res://scripts/lol2/generic_object_world.gd").owns(face) or preload("res://scripts/lol2/l10_oil.gd").owns(face) or preload("res://scripts/lol2/l10_emperor_entry.gd").entry_owns(face) or preload("res://scripts/lol2/l10_emperor.gd").owns(face) or preload("res://scripts/lol2/l10_globe_door.gd").owns(face):expected_excluded[i]=true
 		if face.get("placement_kind") == "static_assembly" and (int(face.get("source_index",-1)) in [61,70,165,166,167,168,169,170,171,172,173] or int(face.get("source_index",-1)) in tomb_doors): expected_excluded[i] = true
 	check(scene.excluded_faces == expected_excluded, "all source mover + tomb-door faces left the static mesh (%d vs %d)" % [scene.excluded_faces.size(), expected_excluded.size()])
 	# Arrival 2 (-542, 856) is region 65; the player's region is tracked from the nav quads.

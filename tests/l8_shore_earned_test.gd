@@ -12,6 +12,7 @@ func run():
  if not check(scene.apply_save(input.state).is_empty(),"actual completed raft save"):quit(1);return
  prepare(scene)
  var carried:Array=scene.carried_collected.duplicate()
+ var soul_before:int=int(scene.quest_state.monastery.globals.get("GV_LUTHERS_SOUL",5))
  scene.progression.change_scene_enabled=true
  await scene_changed
  scene=current_scene
@@ -25,9 +26,12 @@ func run():
  check(scene.act2_creatures.state.actors["20"].present,"original Dawn20 linked")
  check(scene.act2_creatures.bodies["20"].visible,"Dawn physically present")
  check(scene.carried_collected==carried,"no bracer duplication or item loss")
+ var soul_after:int=int(scene.quest_state.monastery.globals.get("GV_LUTHERS_SOUL",5))
+ check(soul_after==mini(10,soul_before+1),"group 7888 soul +1 on the shore arrival (%d -> %d)"%[soul_before,soul_after])
  var path:="res://tmp/l8_shore_earned_save.json"
  check(scene._quicksave_unrecorded(path).is_empty() and scene._quickload_unrecorded(path).is_empty(),"shore/Dawn save reload")
  check(scene.act2_creatures.state.actors["20"].present and scene.get_node("L8Shore").closed(scene.quest_state),"presence and closure persist")
+ check(int(scene.quest_state.monastery.globals.get("GV_LUTHERS_SOUL",5))==soul_after,"soul stays on reload")
  var original_scene:int=scene.get_instance_id()
  scene.progression.change_scene_enabled=true
  # Exercise the shared destination gate used by every original Ruins entrance.
@@ -37,5 +41,5 @@ func run():
   check(current_scene.get_instance_id()==original_scene,"flooded Ruins entrance refused "+str(selector))
  check(scene.carried_collected==carried and scene.progression.seeds_applied.is_empty(),"closure refusal preserves earned inventory, no seeds")
  scene.queue_free();await process_frame
- if failures==0:print("PASS actual raft save -> native shore5 -> Dawn20 -> permanent Ruins closure -> save/reload; no duplicate bracers or inventory merge")
+ if failures==0:print("PASS actual raft save -> native shore5 -> Dawn20 -> soul +1 -> permanent Ruins closure -> save/reload; no duplicate bracers or inventory merge")
  quit(0 if failures==0 else 1)

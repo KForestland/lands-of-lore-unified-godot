@@ -39,6 +39,16 @@ func open(path: String) -> Node3D:
 	scene.set_physics_process(false)
 	return scene
 func run() -> void:
+	# Named dynamic water sets must replace, clear and preserve authored water.
+	var dynamic:=Liquid.new()
+	var original:Dictionary={"id":1,"polygon":PackedVector2Array([Vector2(0,0),Vector2(50,0),Vector2(50,50),Vector2(0,50)]),"floor":-100.0,"surface":0.0,"bit0":false}
+	var added:Dictionary={"id":2,"polygon":PackedVector2Array([Vector2(300,0),Vector2(350,0),Vector2(350,50),Vector2(300,50)]),"floor":-500.0,"surface":0.0,"bit0":true}
+	dynamic.source_regions=[original]
+	for i in 3:dynamic.set_dynamic_regions("test_shaft",[added])
+	check(dynamic.regions.size()==2 and dynamic.column_at(Vector3(325,-20,25)).id==2,"Dynamic restore is idempotent and uses ordinary water queries")
+	dynamic.set_dynamic_regions("test_shaft",[])
+	check(dynamic.regions.size()==1 and dynamic.column_at(Vector3(325,-20,25)).is_empty() and dynamic.column_at(Vector3(25,-20,25)).id==1,"Reverting water set preserves authored regions and removes only its own query")
+	dynamic.free()
 	# --- Cave rule (no scene): the authored plane -295, feet 32 under the origin, heads 46 / 69.
 	var q := Query.new()
 	var bed := Vector3(-1100, -395 + Form.FOOT_OFFSET, -17150)  # region 6 centre, standing on the bed (depth 100)

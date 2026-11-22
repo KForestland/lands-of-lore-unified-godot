@@ -1,8 +1,14 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l13_bridge_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="5340ed14935bd51506533cfdcbeadafe58f9de3b59a739dcbf34cc6dea0b6875"
+func pass_line() -> String:
+ return "PASS earned bridge -> physical upper ring -> original103 approach/save-reload; encounter admission not exercised"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_bridge_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="5340ed14935bd51506533cfdcbeadafe58f9de3b59a739dcbf34cc6dea0b6875","qualified bridge input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified bridge input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -20,5 +26,5 @@ func run():
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seed/recovery")
  print("RING approach ",scene.player.position)
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned bridge -> physical upper ring -> original103 approach/save-reload; encounter admission not exercised")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

@@ -15,23 +15,14 @@ static func arrival_assets_ready() -> bool:
 ## Off by default (lead, r12r 2026-10-30): the native bit0 blockers ignore regions the original opens by script (the Museum escape run crosses region 1422), so outside the Jungle they wait until dynamic unblocking is hosted.
 var dark_halls_blockers_enabled := true  ## native bit0 blockers ON (lead 2026-10-31 blockers-on; own flag so this host can revert alone)
 var region_blockers_attached := 0
-## Vel's fruit garden (owner report 10-16-31; longplay 81:30 f_00978/f_00979): the round bed is green grass with grown plants in
-## the original. The pack binds the bed's 24 floors (every floor that uses material 96 in L7_DH) to the brown soil texture and
-## the 12 prop_114 plants to a 25-frame growth sprite whose first frame is empty, so the bed drew bare and brown. Adapter: the
-## bed takes the level's own grass material 97 and the plants their grown frame; the growth itself (op14 timers) stays with the
-## native host. DEVIATIONS 2026-10-31.
+## The round bed starts as the pack's brown soil. dark_halls_atrium.gd turns it to grass and grows the fruit
+## when the chain is pulled. The longplay frame is that open bed (81:30, f_00978/f_00979).
 const GARDEN_BED_REGIONS := [1429, 1435, 1439, 1442, 1445, 1446, 1448, 1452, 1455, 1459, 1462, 1465, 1469, 1470, 1471, 1474, 1476, 1478, 1489, 1491, 1493, 1495, 1502, 1504]
 const GARDEN_BED_SOIL := "96__front"
 const GARDEN_BED_GRASS := "97__front"
-const GROWN_PROPS := ["prop_114"]
+const PIT_FLOOR_REGIONS := [1688, 1689, 1690, 1691, 1692, 1693, 1694]
 var garden_bed_faces := 0
 var grown_props := 0
-
-func static_face_material(index: int, face: Dictionary) -> String:
-	if face.kind == "floor" and face.get("material", "") == GARDEN_BED_SOIL and int(face.region) in GARDEN_BED_REGIONS:
-		garden_bed_faces += 1
-		return GARDEN_BED_GRASS
-	return super.static_face_material(index, face)
 
 func _init() -> void:
 	super._init()
@@ -56,9 +47,6 @@ func _ready() -> void:
 		if not prop_materials.has(key):
 			var material := StandardMaterial3D.new()
 			var image: String = data.materials[key]
-			if key in GROWN_PROPS and data.get("animations", {}).has(key):
-				image = data.animations[key].frames[-1]
-				grown_props += 1
 			material.albedo_texture = ImageTexture.create_from_image(Image.load_from_file(geometry_file.get_base_dir()+"/"+image))
 			material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 			material.billboard_mode = BaseMaterial3D.BILLBOARD_FIXED_Y
@@ -97,6 +85,27 @@ func _ready() -> void:
 		add_child(windows)
 		var windows_error: String = windows.setup(self)
 		if not windows_error.is_empty(): push_error(windows_error); windows.queue_free(); windows = null
+	bookcases = preload("res://scripts/lol2/dark_halls_bookcases.gd").new()
+	add_child(bookcases)
+	var bookcases_error: String = bookcases.setup(self)
+	if not bookcases_error.is_empty(): push_error(bookcases_error)
+	slides = preload("res://scripts/lol2/dark_halls_slides.gd").new()
+	add_child(slides)
+	var slides_error: String = slides.setup(self)
+	if not slides_error.is_empty(): push_error(slides_error)
+	crates = preload("res://scripts/lol2/dark_halls_crates.gd").new()
+	crates.name = "DarkHallsCrates"
+	add_child(crates)
+	var crates_error: String = crates.setup(self)
+	if not crates_error.is_empty(): push_error(crates_error)
+	atrium = preload("res://scripts/lol2/dark_halls_atrium.gd").new()
+	add_child(atrium)
+	var atrium_error: String = atrium.setup(self)
+	if not atrium_error.is_empty(): push_error(atrium_error)
+	orb = preload("res://scripts/lol2/dark_halls_orb.gd").new()
+	add_child(orb)
+	var orb_error: String = orb.setup(self)
+	if not orb_error.is_empty(): push_error(orb_error)
 	var route = preload("res://scripts/lol2/dark_halls_route.gd").new()
 	route.name = "DarkHallsRoute"
 	route.area = "dark_halls"
@@ -110,6 +119,7 @@ func _ready() -> void:
 		var error := apply_save(get_tree().get_meta("lol2_dark_halls_resume"))
 		if error.is_empty(): get_tree().remove_meta("lol2_dark_halls_resume")
 		else: push_error(error)
+	preload("res://scripts/lol2/game_session.gd").for_tree(get_tree()).apply_pending(self)
 
 ## Modern stand-in for the original depth shade table (docs/DEVIATIONS.md): a dim brown tint on every unshaded surface
 ## and black distance fog; no sky indoors. Longplay 75:18-85:38 reference.
@@ -131,13 +141,19 @@ func _darken(extra: Array) -> void:
 
 ## Object faces (static assemblies and movables: shelves, frames, doors) are drawn but their faces do not collide;
 ## solidity comes from the native per-assembly boxes (tools/prepare_static_collision.py --area L7_DH) through the
-## shared static_assemblies.gd box builder: unscripted solids at least MIN_SOLID_HEIGHT tall. Scripted ones (crates,
-## windows, the Iron Door ...) and the movables (doors, sliding bookcases) stay walk-through (docs/DEVIATIONS.md).
+## shared static_assemblies.gd box builder: unscripted solids at least MIN_SOLID_HEIGHT tall. Scripted windows
+## stay walk-through. Crystal crates and the Iron Door are solid in dark_halls_crates.gd.
 func include_collision_face(face: Dictionary) -> bool:
 	return face.kind != "movable"
-## Hosted doors (dark_halls_doors.gd) draw their own leaves.
+## Hosted doors (dark_halls_doors.gd) draw their own leaves. Crates and Iron Door 84 are drawn by dark_halls_crates.gd.
 func include_static_face(face: Dictionary) -> bool:
 	if face.kind == "movable" and str(face.get("placement_kind", "")) == "movable" and int(face.source_index) in door_movables: return false
+	if face.get("placement_kind", "") == "movable" and int(face.get("source_index", -1)) in [51, 58, 59]: return false
+	if face.get("placement_kind", "") == "static_assembly" and int(face.get("source_index", -1)) in [236, 890, 891, 1013, 1015, 1041]: return false
+	if str(face.get("placement_kind", "")) == "static_assembly" and preload("res://scripts/lol2/dark_halls_crates.gd").claims(int(face.get("source_index", -1))): return false
+	if str(face.get("placement_kind", "")) == "movable" and int(face.get("source_index", -1)) in [52, 53, 54, 55]: return false
+	if face.kind == "floor" and str(face.get("material", "")) == GARDEN_BED_SOIL and int(face.get("region", -1)) in GARDEN_BED_REGIONS: return false
+	if face.kind == "floor" and int(face.get("region", -1)) in PIT_FLOOR_REGIONS: return false
 	return super.include_static_face(face)
 var door_movables: Array = preload("res://scripts/lol2/dark_halls_doors.gd").movables()
 const COLLISION := "res://scripts/lol2/static_collision_L7_DH.json"
@@ -166,14 +182,22 @@ var creatures: Node3D
 var loot: Node
 var rix: Node
 var windows: Node
+var bookcases: Node3D
+var slides: Node3D
+var crates: Node
+var atrium: Node
+var orb: Node
 var doors: Node
 var prop_nodes: Dictionary = {}
-## The Dark Halls exits open once the window puzzle is done (exit window 246, dark_halls_route.gd).
+## The Dark Halls exits open once the window puzzle is done, or a crate blast marks window 246 (dark_halls_route.gd).
 func exits_open() -> bool:
-	return windows == null or not is_instance_valid(windows) or windows.done()
+	if windows == null or not is_instance_valid(windows): return true
+	if windows.done(): return true
+	var bag: Variant = quest_state.get("dark_halls_crates")
+	return bag is Dictionary and int(bag.get("blast_exit", 0)) == 1
 func _add_creatures() -> void:
 	if not FileAccess.file_exists(str(CREATURE_CONFIG.root)+"sprites.json"): return
-	creatures = preload("res://scripts/lol2/scripted_creature_population.gd").new()
+	creatures = preload("res://scripts/lol2/dark_halls_population.gd").new()
 	creatures.name = "DarkHallsCreatures"
 	creatures.configure(CREATURE_CONFIG)
 	add_child(creatures)
@@ -183,11 +207,19 @@ func apply_save(state: Variant) -> String:
 	var error := super.apply_save(state)
 	if error.is_empty() and is_instance_valid(creatures): error = creatures.restore_from_quests()
 	if error.is_empty() and doors != null and is_instance_valid(doors): doors.restore_from_quests()
+	if error.is_empty() and is_instance_valid(bookcases): bookcases.restore_from_quests()
+	if error.is_empty() and is_instance_valid(slides): slides.restore_from_quests()
 	if error.is_empty() and windows != null and is_instance_valid(windows): windows.restore_from_quests()
+	if error.is_empty() and crates != null and is_instance_valid(crates): crates.restore_from_quests()
+	if error.is_empty() and atrium != null and is_instance_valid(atrium): atrium.restore_from_quests()
 	return error
 func apply_area_handoff(state: Variant) -> String:
 	var error := super.apply_area_handoff(state)
 	if error.is_empty() and is_instance_valid(creatures): error = creatures.restore_from_quests()
 	if error.is_empty() and doors != null and is_instance_valid(doors): doors.restore_from_quests()
+	if error.is_empty() and is_instance_valid(bookcases): bookcases.restore_from_quests()
+	if error.is_empty() and is_instance_valid(slides): slides.restore_from_quests()
 	if error.is_empty() and windows != null and is_instance_valid(windows): windows.restore_from_quests()
+	if error.is_empty() and crates != null and is_instance_valid(crates): crates.restore_from_quests()
+	if error.is_empty() and atrium != null and is_instance_valid(atrium): atrium.restore_from_quests()
 	return error

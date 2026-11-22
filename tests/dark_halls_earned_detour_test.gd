@@ -78,10 +78,17 @@ func release_keys() -> void:
 	for code in keys.keys(): set_key(code, false)
 
 func tap(code: Key) -> void:
+	await process_frame
+	var prior:int=scene.get_instance_id() if is_instance_valid(scene) else 0
 	set_key(code, true)
 	await process_frame
 	set_key(code, false)
 	await process_frame
+	if code==KEY_F9:
+		for i in 1800:
+			await process_frame
+			if is_instance_valid(current_scene) and current_scene.get_instance_id()!=prior and current_scene.get("ready_for_review")==true and current_scene.get("starting_magic")!=null:break
+		scene=current_scene
 
 func click_at(position: Vector2) -> void:
 	for pressed in [true, false]:
@@ -351,6 +358,15 @@ func open_window_by_e(control: int) -> bool:
 func f5() -> void:
 	await tap(KEY_F5)
 	for i in 3: await process_frame
+	var read:=preload("res://scripts/lol2/game_save.gd").read_document(preload("res://scripts/lol2/game_save.gd").slot_path(1))
+	if not check_slot(read):return
+	# Derived legacy test artifact for the archived phase/resume contracts; no second gameplay action.
+	var file:=FileAccess.open(scene.area_save_path,FileAccess.WRITE)
+	file.store_string(JSON.stringify(read.state.area_save,"  ",true,true)+"\n");file.close()
+
+func check_slot(read:Dictionary)->bool:
+	if not str(read.error).is_empty():return fail("real F5 slot: "+str(read.error))
+	return true
 
 func population_summary() -> Dictionary:
 	var p := pop()

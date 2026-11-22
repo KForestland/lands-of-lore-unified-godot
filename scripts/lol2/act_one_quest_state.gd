@@ -1,4 +1,6 @@
 extends RefCounted
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 ## Shared Act 1 state. Source flag38 is written at conversation start.
 const Numbers = preload("res://scripts/lol2/walkthrough_save.gd")
 const DURATIONS := [242.0/15.0,358.0/15.0,208.0/15.0,75.0/15.0]
@@ -28,11 +30,11 @@ static func validate_chasm(state: Variant) -> String:
 	if not state.activated and elapsed != 0: return "Inactive chasm cannot be moving."
 	return ""
 static func initial_encounter() -> Dictionary:
-	return {"health":30,"enemies":[24,24],"windups":[0.0,0.0],"cooldown":0.0,"pillar_elapsed":0.0}
+	return {"health":PlayerHealth.MAXIMUM,"enemies":[24,24],"windups":[0.0,0.0],"cooldown":0.0,"pillar_elapsed":0.0}
 static func validate_encounter(state: Variant) -> String:
 	if not state is Dictionary: return "Invalid Hive encounter."
 	var health = state.get("health")
-	if not Numbers._number(health) or health != floor(health) or health < 0 or health > 30: return "Invalid encounter health."
+	if not Numbers._number(health) or health != floor(health) or health < 0 or health > PlayerHealth.MAXIMUM: return "Invalid encounter health."
 	var enemies = state.get("enemies")
 	var windups = state.get("windups")
 	if not enemies is Array or enemies.size() != 2 or not windups is Array or windups.size() != 2: return "Invalid guardians."
@@ -42,7 +44,7 @@ static func validate_encounter(state: Variant) -> String:
 		if enemies[i] == 0 and windups[i] != 0: return "Defeated guardian cannot attack."
 	for key in ["cooldown","pillar_elapsed"]:
 		var value = state.get(key)
-		if not Numbers._number(value) or not is_finite(value) or value < 0 or value > (0.45 if key == "cooldown" else 1.0): return "Invalid encounter timing."
+		if not Numbers._number(value) or not is_finite(value) or value < 0 or value > (PlayerCombat.COOLDOWN if key == "cooldown" else 1.0): return "Invalid encounter timing."
 	if state.pillar_elapsed > 0 and enemies[0] > 0 and enemies[1] > 0: return "Pillar requires a defeated guardian."
 	return ""
 static func validate(state: Variant) -> String:
@@ -53,6 +55,9 @@ static func validate(state: Variant) -> String:
 	if state.has("l8_cache_ladder"):
 		var ladder_error: String = preload("res://scripts/lol2/l8_cache_ladder.gd").validate(state.l8_cache_ladder, state)
 		if not ladder_error.is_empty(): return ladder_error
+	if state.has("l8_straw_trap"):
+		var trap_error: String = preload("res://scripts/lol2/l8_straw_trap.gd").validate(state.l8_straw_trap, state)
+		if not trap_error.is_empty(): return trap_error
 	if state.has("l14_quill"):
 		var quill_error: String = preload("res://scripts/lol2/l14_quill.gd").validate(state.l14_quill, state)
 		if not quill_error.is_empty(): return quill_error
@@ -92,6 +97,9 @@ static func validate(state: Variant) -> String:
 	if state.has("l17_beast_blade"):
 		var blade_error: String = preload("res://scripts/lol2/l17_beast_blade.gd").validate(state.l17_beast_blade,state)
 		if not blade_error.is_empty(): return blade_error
+	if state.has("l17_beast_carry"):
+		var carry_error: String = preload("res://scripts/lol2/l17_beast_carry.gd").validate(state.l17_beast_carry,state)
+		if not carry_error.is_empty(): return carry_error
 	if state.has("l19_belial_horn"):
 		var horn_error: String = preload("res://scripts/lol2/l19_belial_horn.gd").validate(state.l19_belial_horn,state)
 		if not horn_error.is_empty(): return horn_error
@@ -101,6 +109,9 @@ static func validate(state: Variant) -> String:
 	if state.has("l19_drain_path"):
 		var path_error: String = preload("res://scripts/lol2/l19_drain_path.gd").validate(state.l19_drain_path,state)
 		if not path_error.is_empty(): return path_error
+	if state.has("l19_dawn_elevator"):
+		var lift_error: String = preload("res://scripts/lol2/l19_dawn_elevator.gd").validate(state.l19_dawn_elevator,state)
+		if not lift_error.is_empty(): return lift_error
 	if state.has("l19_ghostly_heads"):
 		var head_error: String = preload("res://scripts/lol2/l19_ghostly_heads.gd").validate(state.l19_ghostly_heads,state)
 		if not head_error.is_empty(): return head_error
@@ -119,6 +130,9 @@ static func validate(state: Variant) -> String:
 	if state.has("l20_finale"):
 		var finale_error: String = preload("res://scripts/lol2/l20_finale.gd").validate(state.l20_finale,state)
 		if not finale_error.is_empty(): return finale_error
+	if state.has("act2_struck"):
+		var struck_error: String = preload("res://scripts/lol2/act2_progression.gd").validate_struck(state.act2_struck, state)
+		if not struck_error.is_empty(): return struck_error
 	if state.has("l16_fountain_ball"):
 		var ball_error:=preload("res://scripts/lol2/l16_fountain_ball.gd").validate(state.l16_fountain_ball,state)
 		if not ball_error.is_empty(): return ball_error
@@ -424,6 +438,12 @@ static func validate(state: Variant) -> String:
 	if state.has("jungle_drunk"):
 		var drunk_error:=preload("res://scripts/lol2/jungle_drunk_packet.gd").validate(state.jungle_drunk)
 		if not drunk_error.is_empty(): return drunk_error
+	if state.has("jungle_cat_ladies"):
+		var ladies_error:=preload("res://scripts/lol2/jungle_cat_ladies.gd").validate(state.jungle_cat_ladies)
+		if not ladies_error.is_empty(): return ladies_error
+	if state.has("jungle_bramble"):
+		var bramble_error:=preload("res://scripts/lol2/jungle_bramble.gd").validate(state.jungle_bramble)
+		if not bramble_error.is_empty(): return bramble_error
 	if state.has("jungle_kityara"):
 		var kityara_error:=preload("res://scripts/lol2/jungle_kityara_packet.gd").validate(state.jungle_kityara)
 		if not kityara_error.is_empty(): return kityara_error
@@ -442,6 +462,9 @@ static func validate(state: Variant) -> String:
 	if state.has("hive_reaver_amber"):
 		var reaver_error:=preload("res://scripts/lol2/hive_reaver_amber_state.gd").validate(state.hive_reaver_amber)
 		if not reaver_error.is_empty(): return reaver_error
+	if state.has("hive_decoded_locks"):
+		var locks_error:String=preload("res://scripts/lol2/hive_decoded_locks.gd").validate(state.hive_decoded_locks)
+		if not locks_error.is_empty():return locks_error
 	if state.has("hive_flute_floor"):
 		var flute_floor_error:=preload("res://scripts/lol2/hive_flute_floor.gd").validate(state.hive_flute_floor)
 		if not flute_floor_error.is_empty(): return flute_floor_error
@@ -483,6 +506,12 @@ static func validate(state: Variant) -> String:
 	if state.has("dark_halls_rix"):
 		var rix_error := preload("res://scripts/lol2/dark_halls_rix.gd").validate(state.dark_halls_rix)
 		if not rix_error.is_empty(): return rix_error
+	if state.has("dark_halls_bookcases"):
+		var bookcases_error: String = preload("res://scripts/lol2/dark_halls_bookcases.gd").validate(state.dark_halls_bookcases)
+		if not bookcases_error.is_empty(): return bookcases_error
+	if state.has("dark_halls_slides"):
+		var slides_error: String = preload("res://scripts/lol2/dark_halls_slides.gd").validate(state.dark_halls_slides)
+		if not slides_error.is_empty(): return slides_error
 	if state.has("dark_halls_loot"):
 		var loot_error := preload("res://scripts/lol2/dark_halls_loot.gd").validate(state.dark_halls_loot, JSON.parse_string(FileAccess.get_file_as_string(preload("res://scripts/lol2/dark_halls_loot.gd").SOURCE)))
 		if not loot_error.is_empty(): return loot_error
@@ -501,6 +530,12 @@ static func validate(state: Variant) -> String:
 	if state.has("dark_halls_doors"):
 		var doors_error := preload("res://scripts/lol2/dark_halls_doors.gd").validate(state.dark_halls_doors, JSON.parse_string(FileAccess.get_file_as_string(preload("res://scripts/lol2/dark_halls_doors.gd").SOURCE)))
 		if not doors_error.is_empty(): return doors_error
+	if state.has("dark_halls_crates"):
+		var crates_error := preload("res://scripts/lol2/dark_halls_crates.gd").validate(state.dark_halls_crates)
+		if not crates_error.is_empty(): return crates_error
+	if state.has("dark_halls_atrium"):
+		var atrium_error := preload("res://scripts/lol2/dark_halls_atrium.gd").validate(state.dark_halls_atrium)
+		if not atrium_error.is_empty(): return atrium_error
 	if state.has("jungle_dino_population"):
 		var dino_error := preload("res://scripts/lol2/jungle_dino_population_state.gd").validate(state.jungle_dino_population)
 		if not dino_error.is_empty(): return dino_error

@@ -16,6 +16,20 @@ func load_json(path: String) -> Variant:
 
 func _initialize() -> void: run.call_deferred()
 
+func terrain_faces(scene: Node) -> PackedVector3Array:
+	for child in scene.get_children():
+		if not child is StaticBody3D or child.name in ["HeightBoundaryCollision", "ProjectileWalls"]: continue
+		for shape in child.get_children():
+			if shape is CollisionShape3D and shape.shape is ConcavePolygonShape3D:
+				return shape.shape.get_faces()
+	return PackedVector3Array()
+
+func sha256(bytes: PackedByteArray) -> String:
+	var digest := HashingContext.new()
+	digest.start(HashingContext.HASH_SHA256)
+	digest.update(bytes)
+	return digest.finish().hex_encode()
+
 func run() -> void:
 	# 1. Pack contract (two producer runs byte-identical, see the handoff).
 	var area: Dictionary = load_json(PACK)
@@ -87,7 +101,10 @@ func run() -> void:
 	if scene.preview_assemblies != null:
 		var meshes := 0
 		var bodies := 0
-		for child in scene.preview_assemblies.get_children():
+		# Since Sol 46d2231 controlled-assembly meshes sit under per-room parents (static_assemblies.room_parents).
+		var nodes: Array = scene.preview_assemblies.get_children()
+		for parent: Node3D in scene.preview_assemblies.room_parents.values(): nodes.append_array(parent.get_children())
+		for child in nodes:
 			if child is MeshInstance3D: meshes += 1
 			elif child is StaticBody3D: bodies += 1
 		# Barrel and puddle states now use this renderer; generic pack faces must stay unduplicated.
@@ -100,15 +117,42 @@ func run() -> void:
 	check(scene.get_node_or_null("JungleSkyEnvironment") != null, "scene: the panorama sky environment")
 	check(scene.player.position == Vector3(-542, 32, -856), "scene: player at the native arrival (%s)" % scene.player.position)
 	check(is_equal_approx(scene.player.rotation.y, -TAU * 24758.0 / 65536.0), "scene: arrival heading 24758 -> yaw %.3f" % scene.player.rotation.y)
-	# Source walls are drawn only (S1 rule; kind "source_wall" since 2026-10-31): the shell's collision triangles are bounded by the
-	# non-wall faces (two per quad), so a wall with collision would push the count past the bound.
-	var shell_triangles := 0
-	for child in scene.get_children():
-		if child is StaticBody3D and child.get_child_count() > 0 and child.get_child(0) is CollisionShape3D and child.get_child(0).shape is ConcavePolygonShape3D:
-			shell_triangles = (child.get_child(0).shape as ConcavePolygonShape3D).get_faces().size() / 3
-			break
+	# A new wall must not change distant floor contact by changing the terrain's
+	# trimesh/BVH. All selected source walls live in a separate movement body.
+	var terrain_on := terrain_faces(scene).to_byte_array()
+	var terrain_hash := sha256(terrain_on)
+	var shell_triangles := terrain_on.size() / 36
 	var non_wall_faces: int = area.faces.size() - int(kinds.get("source_wall", 0))
-	check(shell_triangles > 0 and shell_triangles <= 2 * non_wall_faces, "scene: shell collision %d triangles <= 2 x %d non-wall faces (source walls drawn only)" % [shell_triangles, non_wall_faces])
+	var void_walls := int(scene.edge_rule_counts.get("l10_void_walls", 0))
+	check(void_walls == 3532 and scene.height_boundary_keys.size() == 3532, "scene: boundary source walls selected (%d)" % void_walls)
+	check(shell_triangles > 0 and shell_triangles <= 2 * non_wall_faces, "scene: terrain excludes boundary triangles (%d)" % shell_triangles)
+	var boundary: Node = scene.get_node_or_null("HeightBoundaryCollision")
+	check(boundary is StaticBody3D, "scene: boundary walls have a separate body")
+	var boundary_count:=0
+	for child in scene.get_children():
+		if str(child.name).begins_with("HeightBoundaryCollision"):boundary_count+=1
+	check(boundary_count==1,"scene: exactly one shared boundary body")
+	if boundary is StaticBody3D:
+		check(boundary.collision_layer == 1, "scene: boundary body keeps movement/ray layer 1")
+		var wall_shape: ConcavePolygonShape3D = boundary.get_child(0).shape
+		var expected := PackedVector3Array()
+		# The scene's live pack: under the Emperor tomb floor move (geometry_moves/L10_DC.json, DEVIATIONS 0656) 22 of the
+		# selected walls are the moved ones (keys matched through the spec's key_moves).
+		var live: Dictionary = load_json(scene.geometry_file)
+		for index in live.faces.size():
+			var face: Dictionary = live.faces[index]
+			if face.get("kind") != "source_wall" or not scene.region_edge_blocks(face): continue
+			check(not scene.include_collision_face(face), "scene: selected wall stays out of terrain")
+			if not scene.include_static_face(face) or scene.excluded_faces.has(index) or scene.retired_faces.has(index) or scene.skipped_faces.has(index) or scene.area_owners.claims_collision(face): continue
+			for i in [0, 1, 2, 0, 2, 3]: expected.append(Vector3(face.points[i][0], face.points[i][1], face.points[i][2]))
+		# Then the packet's named collision polygons in fan order (the colour box-top fences, tools/prepare_l10_boundary_packet.py).
+		for polygon in scene.height_boundary_polygons:
+			var pts: Array = polygon.get("points", [])
+			for i in range(1, pts.size() - 1):
+				for point in [pts[0], pts[i], pts[i + 1]]: expected.append(Vector3(float(point[0]), float(point[1]), float(point[2])))
+		check(scene.height_boundary_polygons.size() == 12, "scene: the 12 colour box-top fence quads (%d)" % scene.height_boundary_polygons.size())
+		check(not expected.is_empty() and wall_shape.get_faces().to_byte_array() == expected.to_byte_array(), "scene: separate body contains exact selected native triangles in source order, then the fence quads")
+		check(wall_shape.backface_collision, "scene: boundary body keeps two-sided contacts")
 	var space: PhysicsDirectSpaceState3D = scene.get_world_3d().direct_space_state
 	var query := PhysicsRayQueryParameters3D.create(Vector3(-542, 60, -856), Vector3(-542, -200, -856))
 	query.collision_mask = preload("res://scripts/lol2/region_blockers.gd").RAY_MASK
@@ -116,6 +160,16 @@ func run() -> void:
 	var hit: Dictionary = space.intersect_ray(query)
 	check(not hit.is_empty() and absf(hit.position.y) < 1.0, "scene: floor under the arrival at 0 (%s)" % [hit.get("position", "miss")])
 	scene.queue_free()
+	for i in 3: await process_frame
+	var without = load("res://scenes/lol2/maps/L10_DC.tscn").instantiate()
+	without.boundary_walls_enabled = false
+	root.add_child(without)
+	for i in 5: await process_frame
+	var terrain_off := terrain_faces(without).to_byte_array()
+	check(without.edge_block_keys.is_empty() and without.height_boundary_keys.is_empty() and without.get_node_or_null("HeightBoundaryCollision") == null, "scene: adapter-off control has no boundary selection or body")
+	check(not terrain_off.is_empty() and terrain_on == terrain_off and terrain_hash == sha256(terrain_off), "scene: terrain trimesh exact bytes and SHA256 unchanged with boundary adapter on")
+	print("L10 terrain boundary OFF/ON bytes=", terrain_on.size(), " sha256=", terrain_hash, " identical=", terrain_on == terrain_off)
+	without.queue_free()
 	for i in 3: await process_frame
 	# 4. Gate: registry button in both editions.
 	var registry: Array = preload("res://scripts/lol2/act2_map.gd").registry()

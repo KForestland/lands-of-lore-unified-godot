@@ -1,8 +1,14 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l12_crevasse_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="914c3c190cdb784a4eb1896f84ef06be019eaebaf3c4a56cc76ae7f605ce3731"
+func pass_line() -> String:
+ return "PASS earned Lizard grotto ->actual ice Spark ->missed window/retry ->timed bow catch/save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l12_crevasse_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="914c3c190cdb784a4eb1896f84ef06be019eaebaf3c4a56cc76ae7f605ce3731","qualified Citadel-exit input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified Citadel-exit input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L12_CM")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L12_CM.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -42,5 +48,5 @@ func run():
  check(bow.state().taken and scene.carried_collected.count(bow.ITEM)==1 and scene.equipped_armor=="act2:L12_CM:item5" and scene.equipped_item=="act2:L13_RC:dark_sword","earned armor/sword/bow persist once")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seeds/recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned Lizard grotto ->actual ice Spark ->missed window/retry ->timed bow catch/save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

@@ -14,6 +14,8 @@ All of this is pinned in `scripts/lol2/jungle_kityara_source.json` by `tools/pre
   (808,-1802) or control83 near (-3765,-2551). Unconditional regions unlink her again.
 - **Start.** Start regions under p151 (local21==0, local35==1, runes translated, `GV_KITYARA_DEAD`==0) do the
   following. Locations: control0 regions 1257/1315/1324; control83 regions 870/876/892/899/900/914/915.
+  Port (BI06, owner r18 15-24-21): each start region also accepts a foot within START_PAD 96 of its polygon (and a
+  little above it), so walking up fires the talk without a jump (adapter, ledger 0347).
   - set local21 (Has_Kityara_been_triggered);
   - start the 19 s kind2 timer on prop65/66;
   - hold and reposition Luther;

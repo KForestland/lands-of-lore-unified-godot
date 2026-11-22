@@ -28,6 +28,17 @@ import argparse, hashlib, json, math, shutil, struct, subprocess, sys, tempfile,
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def _span_ok(data, want):
+    """want is hex text, or ('sha256', length, digest) for a long span kept out of the public copy."""
+    if isinstance(want, tuple):
+        return len(data) == want[1] and hashlib.sha256(data).hexdigest() == want[2]
+    return data.hex() == want
+
+
+def _span_sha(want):
+    return want[2] if isinstance(want, tuple) else hashlib.sha256(bytes.fromhex(want)).hexdigest()
 sys.path.insert(0, str(ROOT / 'tools'))
 from build_game_atlas import parse_mix, section
 from audit_game_transition_owners import collect_owners
@@ -53,10 +64,10 @@ AMBIENT = [344, 130]
 HEAL = 5
 # Module bytes of the callbacks this contract depends on (offsets are module offsets after the 48-byte header).
 CODE = {
-    0x47C: '688f010000687f020000682d010000684e0100006a00ff15ac05000083c414688f010000684d010000685e010000689e0000006a01ff15ac05000083c414b801000000c3',
+    0x47C: ('sha256', 68, 'f3825ddd717fe8b054201a82395d7776f2607ce449b4cd0ea8342bb1621527c2'),
     0x4F5: '8b54240485d27405' '83fa0175f0' '6a05ff15f005000083c404' '6a186a376a02ff15e805000083c40c' '6a186a146a02ff15e805000083c40c' '6a06ff15dc05000083c404eb82',
     0x538: 'ff150006000031c0c3',
-    0x541: '68820000006858010000ff15d006000083c408a3d80600006a05ff15e405000083c40485c075206a05ff15dc05000083c4046a186a1a6a02ff15e805000083c40cb801000000c331c0c3',
+    0x541: ('sha256', 74, '0f5f0afb9a5f13d9f19bb6bc29d97faaf91a76bcff4ffcb9a47c27138702262a'),
 }
 # Host slot 0x58 (EF3AC, VA B6388): push player 0x22574, call 0x9D9E4 (A D6A08: hit points + n, capped at the maximum;
 # no change when dead or player+0x229 bit 1). Slot 0x54 = EE784 movie, 0x48 = EF32C set_flag, 0x50 = EF380 get_flag.
@@ -127,7 +138,8 @@ def main():
         assert dll[:32] == b'This is a linear executable dll\n'
         module = dll[48:48 + u32(dll, 36)]
         for offset, code in CODE.items():
-            assert module[offset:offset + len(code) // 2].hex() == code, hex(offset)
+            size = code[1] if isinstance(code, tuple) else len(code) // 2
+            assert _span_ok(module[offset:offset + size], code), hex(offset)
         table = [u32(module, 4 * i) for i in range(13)]
         assert table == [0x51, 0x5F, 0x69, 0x73, 0x87, 0x95, 0xA3, 0xAD, 0xB7, 0xC1, 0xCB, 0xD5, 0xE2], [hex(t) for t in table]
         vqa_row = keyed[ww_hash_v1('WOMS\\CFALL\\CFALL_.VQA')]

@@ -13,7 +13,7 @@ const MagicShop = preload("res://scripts/lol2/magic_shop_state.gd")
 const ShopItems = preload("res://scripts/lol2/shop_item_inventory.gd")
 const WorldItems = preload("res://scripts/lol2/jungle_world_items_catalog.gd")
 const Runes = preload("res://scripts/lol2/hive_rune_items.gd")
-const Wax = preload("res://scripts/lol2/hive_wax.gd")
+const Wax = preload("res://scripts/lol2/hive_wax_identity.gd")
 const Amber = preload("res://scripts/lol2/hive_amber_items.gd")
 const BeeWax = preload("res://scripts/lol2/jungle_beehive_wax.gd")
 const Harvest = preload("res://scripts/lol2/jungle_harvest_items.gd")
@@ -55,7 +55,11 @@ const FIXED_NAMES := {
 const MAX_CARRIED := 64
 const GENERATED := "res://assets/lol2/generated/"
 const FIXED := {
+	"act2:L12_CM:blizzard":{"slot":"weapon","label":"Blizzard","icon":"res://assets/lol2/generated/items/icons/018.png","origin":"jungle","definition":18},
 	"act2:L12_CM:blue_bow":{"slot":"weapon","label":"Blue Bow","icon":"res://assets/lol2/generated/items/icons/035.png","origin":"jungle","definition":35},
+	# Grok 2026-11-16 19:53Z (owner road, r19o8): the City's Dark Bow (dormant L16 row 24, the same definition 35 "36-Darkbow" as
+	# the Blue Bow) had the empty slot of every Act 2 world row, so it could not be held and Belial's slotted switches refused.
+	"act2:L16_CA:item24":{"slot":"weapon","label":"Dark Bow","icon":"res://assets/lol2/generated/items/icons/035.png","origin":"jungle","definition":35},
 	"act2:L12_CM:item5":{"slot":"armor","label":"Obsidian Chain Mail","icon":"res://assets/lol2/generated/items/icons/054.png","origin":"jungle","definition":54},
 	"act2:L13_RC:dark_sword":{"slot":"weapon","label":"Dark Sword","icon":GENERATED+"items/icons/021.png","origin":"jungle","definition":21},
 	# Belial's Horn (definition 22) is held in the hand to start the final fight like the blue bow and the Dark Sword (book
@@ -201,7 +205,9 @@ static func entry(id: Variant) -> Dictionary:
 			return den_entry
 	var index := generic_index(id)
 	if index >= 0:
-		var result := {"slot":"" if Act2Items.valid(id) else Definitions.slot(index),"label":Definitions.label(index),"icon":Definitions.icon(index),"origin":"world","definition":index}
+		var native_slot:String=Definitions.slot(index)
+		var source_equipment:bool=Act2Items.valid(id) and not native_slot.is_empty()
+		var result := {"slot":native_slot,"label":Definitions.label(index),"icon":Definitions.icon(index),"origin":"jungle" if source_equipment else "world","definition":index}
 		if index == 117: result.use = "silverleaf" # Brady printed41: +5 Magic Points.
 		if index == 119: result.use = "amaranth_serum" # Brady printed42: no effect alone; handler98 consumes.
 		return result
@@ -249,17 +255,34 @@ static func definition_name(id: Variant) -> String:
 	return Definitions.name(index) if index >= 0 else ""
 
 ## Definition index (0..169) behind any carried identity, or -1.
+## Remembered per id once the definitions are loaded: an id's definition never changes, and the name search runs per
+## carried item from per-frame code (the belt's slot resolve, player_defense.scalar from every creature tick) - on L8
+## with 35 items that was 5+ ms a frame in r19p (owner 2026-11-17 'framerate goes down', Darker Jungle).
+static var _definitions: Dictionary = {}
 static func definition(id: Variant) -> int:
+	if id is String and _definitions.has(id): return _definitions[id]
 	var index := generic_index(id)
-	return index if index >= 0 else Definitions.by_name(definition_name(id))
+	var result: int = index if index >= 0 else Definitions.by_name(definition_name(id))
+	if id is String and Definitions.ready(): _definitions[id] = result
+	return result
 
 ## Shown when an item has no traced use and is not equipment.
+static func target_hint(id:Variant)->String:
+	if preload("res://scripts/lol2/item_throw_rules.gd").supported(definition(id)):return "Right click in the world to throw "+label(id)+"."
+	# The canonical Act1 flute keeps its existing Play action; Hold remains separate.
+	if id == Monastery.FLUTE:return ""
+	return preload("res://scripts/lol2/item_world_targets.gd").hint(definition(id))
+
 static func use_hint(id: Variant) -> String:
-	if use_kind(id) != "" or slot(id) != "": return ""
+	if use_kind(id) != "" or slot(id) != "" or not target_hint(id).is_empty(): return ""
 	return "No inventory use is known for this item yet." if definition(id) >= 0 else "This item has not been identified."
 
 static func known(id: Variant) -> bool: return not entry(id).is_empty()
-static func slot(id: Variant) -> String: return str(entry(id).get("slot",""))
+static func slot(id: Variant) -> String:
+	var info:Dictionary=entry(id)
+	if info.is_empty():return ""
+	var existing:String=str(info.get("slot",""))
+	return existing if not existing.is_empty() else Definitions.slot(definition(id))
 static func label(id: Variant) -> String: return str(entry(id).get("label",""))
 ## Ground sprite: the picture of the item lying in the world (world billboards).
 static func icon(id: Variant) -> String: return str(entry(id).get("icon",""))
@@ -268,15 +291,34 @@ static func icon(id: Variant) -> String: return str(entry(id).get("icon",""))
 static func inventory_icon(id: Variant) -> String:
 	var path := Definitions.inventory_icon(definition(id)) if Definitions.ready() else ""
 	return path if not path.is_empty() else icon(id)
+static func fixed_damage(id:Variant)->int:
+	return int(preload("res://scripts/lol2/item_fixed_stats.gd").row(definition(id)).get("damage",0))
 static func defense(id: Variant) -> int:
-	if generic_index(id) >= 0: return Definitions.defense(generic_index(id))
-	return int(Defenses.ITEMS.get(id,{}).get("defense",0)) if id is String else 0
+	return Definitions.defense(definition(id))
 static func mitigation(id: Variant) -> Array:
 	return Defenses.ITEMS.get(id,{}).get("descriptors",[]).duplicate(true) if id is String else []
 ## Implemented inventory use; empty means no verified use.
-static func use_kind(id: Variant) -> String: return str(entry(id).get("use",""))
+const STORED_SPELL_DEFINITIONS := {148:"heal",75:"spark",149:"summon",150:"mists",151:"prism"}
+static func stored_school(id: Variant) -> String:
+	return str(STORED_SPELL_DEFINITIONS.get(definition(id),""))
+static func use_kind(id: Variant) -> String:
+	if definition(id)==114:return "lamplight_eggs"
+	if preload("res://scripts/lol2/item_throw_rules.gd").supported(definition(id)):return "physical_throw"
+	if not stored_school(id).is_empty():return "stored_spell"
+	var existing:String=str(entry(id).get("use",""))
+	return existing if not existing.is_empty() else preload("res://scripts/lol2/item_consumables.gd").kind(definition(id))
 ## Every identity with an implemented use; bounds the saved consumed-item history.
-static func consumables() -> Array: return ids("jungle").filter(func(id): return use_kind(id) != "") + [generic_id(117),generic_id(119)]
+static var _consumable_ids:Array=[]
+static func consumables() -> Array:
+	if not _consumable_ids.is_empty():return _consumable_ids.duplicate()
+	var result:Array=ids("jungle").filter(func(id):return use_kind(id)!="")
+	for index in Definitions.COUNT:
+		var id:=generic_id(index)
+		if not use_kind(id).is_empty() and id not in result:result.append(id)
+	for id:String in Act2Items.all_ids():
+		if not use_kind(id).is_empty() and id not in result:result.append(id)
+	_consumable_ids=result.duplicate()
+	return result
 
 ## Known and obtainable no later than `scope` (cave < museum < jungle).
 static func admitted(id: Variant, scope: String) -> bool:

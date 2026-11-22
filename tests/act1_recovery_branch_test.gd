@@ -14,6 +14,8 @@ extends SceneTree
 ##     quest summary unchanged, development_mode still false, held W moves the player.
 const Continuity = preload("res://scripts/lol2/player_continuity.gd")
 const Diagnostics = preload("res://scripts/lol2/dev_diagnostics.gd")
+const Atlas = preload("res://scripts/lol2/atlas_explored.gd")
+const Visibility = preload("res://scripts/lol2/region_visibility.gd")
 const GATE := "res://scenes/lol2/original_game_gate.tscn"
 const HOSTS := {
 	"cave": {"button": "Verify and start cavern", "kind": "Cave", "scene": "res://scenes/lol2/cave_walkthrough.tscn"},
@@ -52,10 +54,76 @@ var host_name := OS.get_environment("LOL2_RECOVERY_HOST")
 var receipt := {"host": host_name, "labels": {"supplied": [], "earned": [], "production": []}, "steps": {}}
 var area: Node = null
 var seconds := 0.0
+var observed_atlas: Dictionary = {}
+var observe_alive_atlas := false
 func _initialize() -> void: run.call_deferred()
 func _process(delta: float) -> bool:
 	seconds += delta
+	observe_atlas()
 	return false
+
+## R is followed by forty frames of held W. Newly stood/seen regions are live presentation state, not quest changes.
+## Observe positions independently of the saved discovery packet, so an arbitrary reveal or a lost region still fails.
+var observed_centres: Array = []
+func observe_atlas() -> void:
+	if not is_instance_valid(area): return
+	if observe_alive_atlas and health() <= 0: return
+	var tracker = area.get_node_or_null("AtlasExplored")
+	if tracker == null or not is_instance_valid(area.get("player")): return
+	var id := Atlas.area_of(area)
+	if not observed_atlas.has(id): observed_atlas[id] = {}
+	var region := Visibility.region_at_nav(tracker.nav, tracker.stand_point())
+	if region >= 0: observed_atlas[id][region] = true
+	var sight = area.get("region_visibility")
+	if sight != null and sight.get("visible_regions") is Dictionary:
+		for key in sight.visible_regions: observed_atlas[id][int(key)] = true
+	elif area.get("progression") == null and not id in Atlas.REVEAL_SKIP:
+		# r19p2 (owner 2026-11-17): without a visible set the Atlas also reveals regions whose centre lies within
+		# REVEAL_RADIUS flat and REVEAL_HEIGHT of the feet. Recomputed here from the nav, not from the tracker.
+		var stand: Vector3 = tracker.stand_point()
+		if observed_centres.is_empty():
+			for row in tracker.nav:
+				var c := Vector3(INF, INF, INF)
+				if row is Array and row.size() >= 2 and row[0] is Array and not (row[0] as Array).is_empty():
+					var flat := Vector2.ZERO
+					for v in row[0]: flat += Vector2(float(v[0]), float(v[1]))
+					flat /= float((row[0] as Array).size())
+					c = Vector3(flat.x, float(row[1]), flat.y)
+				observed_centres.append(c)
+		for i in observed_centres.size():
+			var c: Vector3 = observed_centres[i]
+			if Vector2(c.x - stand.x, c.z - stand.z).length() <= Atlas.REVEAL_RADIUS and absf(c.y - stand.y) <= Atlas.REVEAL_HEIGHT:
+				observed_atlas[id][i] = true
+
+func atlas_packet(state: Dictionary) -> Variant:
+	if state.has(Atlas.KEY): return state[Atlas.KEY]
+	var quests = state.get("quests", {})
+	return quests.get(Atlas.KEY) if quests is Dictionary else null
+
+func atlas_region_paths() -> Array:
+	var path := Atlas.KEY + ".areas." + Atlas.area_of(area) + ".regions"
+	return [path, "quests." + path] # the Hive's in-memory packer uses the established handoff-only key
+
+func atlas_violations(before: Dictionary, after: Dictionary) -> Array:
+	observe_atlas()
+	var old = atlas_packet(before); var now = atlas_packet(after)
+	if old == null and now == null: return []
+	var bad: Array = []
+	if not Atlas.validate(old, {}).is_empty() or not Atlas.validate(now, {}).is_empty(): return ["invalid exploration packet"]
+	for id in old.areas:
+		if not now.areas.has(id): bad.append("lost area " + id); continue
+		if old.areas[id].full != now.areas[id].full: bad.append("changed full flag " + id)
+		var retained := {}
+		for region in now.areas[id].regions: retained[int(region)] = true
+		for region in old.areas[id].regions:
+			if not retained.has(int(region)): bad.append("lost %s region%d" % [id, int(region)])
+	for id in now.areas:
+		var previous := {}
+		for region in old.areas.get(id, {}).get("regions", []): previous[int(region)] = true
+		for region in now.areas[id].regions:
+			if not previous.has(int(region)) and not observed_atlas.get(id, {}).has(int(region)):
+				bad.append("unobserved %s region%d" % [id, int(region)])
+	return bad
 func check(ok: bool, message: String) -> bool:
 	if not ok and not failed:
 		failed = true; receipt.failure = message; save_receipt(); push_error(message); print("FAIL act1_recovery ", host_name, ": ", message); quit(1)
@@ -307,8 +375,7 @@ func run() -> void:
 		await click_at(root.get_visible_rect().size / 2.0)
 	if not check(Input.mouse_mode == Input.MOUSE_MODE_CAPTURED, "a real click did not capture the mouse"): return
 	# 1. Real F5.
-	var save_path: String = cfg.get("resume", "user://saves/cave_walkthrough.json")
-	if host_name == "cave": save_path = preload("res://scripts/lol2/walkthrough_save.gd").DEFAULT_PATH
+	var save_path: String = preload("res://scripts/lol2/game_save.gd").slot_path(1)
 	var before_save := FileAccess.get_file_as_bytes(save_path) if FileAccess.file_exists(save_path) else PackedByteArray()
 	await key(KEY_F5)
 	for i in 6: await process_frame
@@ -334,13 +401,15 @@ func run() -> void:
 	# from the F5 snapshot is recorded separately. F9 must still restore the F5 quest state exactly.
 	var quest_at_death := quests()
 	receipt.steps.fight_quest_changes = quest_at_death != quest_snapshot
-	var f5_state = JSON.parse_string(saved.get_string_from_utf8())
+	var f5_state = JSON.parse_string(saved.get_string_from_utf8()).area_save
 	var dead_save := packed("dead_attempt")
 	receipt.steps.save_while_dead = dead_save.get("__error", "accepted")
 	var pre_r := memory_state()
 	var pre_r_seconds := seconds
 	receipt.steps.fight_changes_since_f5 = diff(f5_state, pre_r) # encounter mutations, recorded explicitly
 	# 4. Real R.
+	observed_atlas.clear()
+	observe_alive_atlas = true
 	var recover_start := seconds
 	await key(KEY_R)
 	for i in 4: await physics_frame
@@ -363,13 +432,24 @@ func run() -> void:
 	receipt.steps.recover.persisted_changes = r_paths
 	receipt.steps.recover.owners_equal = owners_of(pre_r) == owners_of(post_r)
 	if not check(owners_of(pre_r) == owners_of(post_r), "R changed the set of quest owners: %s -> %s" % [owners_of(pre_r), owners_of(post_r)]): return
-	var r_unexpected := outside(r_paths, LIVE_WORLD[host_name])
+	var r_atlas := atlas_violations(pre_r, post_r)
+	receipt.steps.recover.atlas_errors = r_atlas
+	if not check(r_atlas.is_empty(), "R lost or invented explored regions: %s" % [r_atlas]): return
+	var r_unexpected := outside(r_paths, LIVE_WORLD[host_name] + atlas_region_paths())
 	receipt.steps.recover.compared_paths_changed = r_unexpected
 	if not check(r_unexpected.is_empty(), "R changed persisted state outside the live-world owners: %s" % [r_unexpected]): return
 	# 5. Die again, then real F9.
 	if not await die("load"): return
+	# Only post-load observations may extend the F5 map; memories from the death walk must not excuse a failed rewind.
+	observed_atlas.clear()
 	var load_start := seconds
 	await key(KEY_F9)
+	for i in 2400:
+		await process_frame
+		var loaded_area:=current_scene
+		if is_instance_valid(loaded_area) and loaded_area.scene_file_path==cfg.scene and loaded_area.get("starting_magic")!=null and (loaded_area.get("walkthrough_ready")==null or loaded_area.walkthrough_ready):
+			area=loaded_area;break
+	if not check(is_instance_valid(area),"F9 scene replacement did not finish"):return
 	for i in 30: await physics_frame
 	var loaded := fields()
 	var post_f9 := packed("post_f9")
@@ -383,7 +463,10 @@ func run() -> void:
 	await shot("loaded")
 	if not check(l_errors.is_empty(), "F9 state differs from the F5 save: %s" % [l_errors]): return
 	# F9 must restore the saved semantics: only clocks that run in the frames after the load may differ.
-	var f9_unexpected := outside(f9_paths, F9_ALLOWED[host_name])
+	var f9_atlas := atlas_violations(f5_state, post_f9)
+	receipt.steps.load.atlas_errors = f9_atlas
+	if not check(f9_atlas.is_empty(), "F9 lost or invented saved exploration: %s" % [f9_atlas]): return
+	var f9_unexpected := outside(f9_paths, F9_ALLOWED[host_name] + atlas_region_paths())
 	if not check(f9_unexpected.is_empty(), "F9 persisted state differs from the F5 file: %s" % [f9_unexpected]): return
 	if not check(quests() == quest_snapshot, "F9 quest state differs: %s -> %s" % [quest_snapshot, quests()]): return
 	if not check(not dev_mode(), "development_mode true after F9"): return

@@ -1,1 +1,62 @@
-{"name":"l8_dawn_earned_test","suite":"core","mode":"headless","order":662}
+{
+  "name": "l8_dawn_earned_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 662,
+  "teleports": 0,
+  "test_aids": 14,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "2053b902172db83fcc09ab8413d90a14643f2e40a2254fd1a06a09492c8665b2"
+  },
+  "context_aid_source_sites": {
+    "count": 6,
+    "sites": [
+      {
+        "path": "tests/l10_barrel_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 67,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l8_dawn_earned_test.gd",
+        "line": 9,
+        "column": 75,
+        "kind": "exit_seed_fixture",
+        "source": "var scene=load(\"res://scenes/lol2/darker_jungle.tscn\").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_chapel_earned_test.gd",
+        "line": 41,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_mirror_return_earned_test.gd",
+        "line": 31,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_opening_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 20,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

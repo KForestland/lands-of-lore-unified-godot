@@ -1,0 +1,7 @@
+{
+ "name": "playtest_temple_f2_bundle_smoke_test",
+ "suite": "core",
+ "mode": "rendered",
+ "order": 1346,
+ "needs": {"env": ["LOL2_ORIGINAL_GAME_EXE"], "args": ["--debug-mode"]}
+}

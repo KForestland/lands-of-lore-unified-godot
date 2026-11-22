@@ -1,0 +1,541 @@
+{
+  "area": "L7_DH",
+  "catalog_facts_sha256": "a15b9552dd0f2bf990aadef8a1a98c2c87637d67382ac805534aa8226dc5fee5",
+  "commands": {
+    "4860741": {
+      "action": "log",
+      "arg": 5,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 5,
+          "object": "prop:212",
+          "record_kind": 5
+        }
+      ],
+      "definition": 55,
+      "event": 5,
+      "evidence": "",
+      "file_offset": 4860741,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 328,
+      "id": "act2:L7_DH:grant4860741",
+      "identity": 2228495501,
+      "note": "",
+      "object": "prop:212",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4860753": {
+      "action": "log",
+      "arg": 0,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 5,
+          "object": "prop:212",
+          "record_kind": 5
+        }
+      ],
+      "definition": 48,
+      "event": 5,
+      "evidence": "",
+      "file_offset": 4860753,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 328,
+      "id": "act2:L7_DH:grant4860753",
+      "identity": 2782378123,
+      "note": "",
+      "object": "prop:212",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4860765": {
+      "action": "log",
+      "arg": 0,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 5,
+          "object": "prop:212",
+          "record_kind": 5
+        }
+      ],
+      "definition": 86,
+      "event": 5,
+      "evidence": "",
+      "file_offset": 4860765,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 328,
+      "id": "act2:L7_DH:grant4860765",
+      "identity": 2849335507,
+      "note": "",
+      "object": "prop:212",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4860777": {
+      "action": "log",
+      "arg": 0,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 5,
+          "object": "prop:212",
+          "record_kind": 5
+        }
+      ],
+      "definition": 37,
+      "event": 5,
+      "evidence": "",
+      "file_offset": 4860777,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 328,
+      "id": "act2:L7_DH:grant4860777",
+      "identity": 2657655315,
+      "note": "",
+      "object": "prop:212",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4860789": {
+      "action": "log",
+      "arg": 0,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 5,
+          "object": "prop:212",
+          "record_kind": 5
+        }
+      ],
+      "definition": 28,
+      "event": 5,
+      "evidence": "",
+      "file_offset": 4860789,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 328,
+      "id": "act2:L7_DH:grant4860789",
+      "identity": 163263158,
+      "note": "",
+      "object": "prop:212",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4860801": {
+      "action": "log",
+      "arg": 0,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 5,
+          "object": "prop:212",
+          "record_kind": 5
+        }
+      ],
+      "definition": 7,
+      "event": 5,
+      "evidence": "",
+      "file_offset": 4860801,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 328,
+      "id": "act2:L7_DH:grant4860801",
+      "identity": 3842887129,
+      "note": "",
+      "object": "prop:212",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4867473": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:58",
+          "record_kind": 4
+        }
+      ],
+      "definition": 46,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4867473,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 7044,
+      "id": "act2:L7_DH:grant4867473",
+      "identity": 4068191763,
+      "note": "",
+      "object": "control:58",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4867513": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:59",
+          "record_kind": 4
+        }
+      ],
+      "definition": 44,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4867513,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 7084,
+      "id": "act2:L7_DH:grant4867513",
+      "identity": 2110957721,
+      "note": "",
+      "object": "control:59",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4868021": {
+      "action": "log",
+      "arg": 0,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:71",
+          "record_kind": 4
+        }
+      ],
+      "definition": 87,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4868021,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 7608,
+      "id": "act2:L7_DH:grant4868021",
+      "identity": 2856716505,
+      "note": "",
+      "object": "control:71",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4872495": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:968",
+          "record_kind": 4
+        }
+      ],
+      "definition": 148,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4872495,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 12082,
+      "id": "act2:L7_DH:grant4872495",
+      "identity": 2071991751,
+      "note": "",
+      "object": "control:968",
+      "same_definition": [
+        "act2:L7_DH:grant4872519",
+        "act2:L7_DH:grant4872745"
+      ],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4872519": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:968",
+          "record_kind": 4
+        }
+      ],
+      "definition": 148,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4872519,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 12106,
+      "id": "act2:L7_DH:grant4872519",
+      "identity": 2071991751,
+      "note": "",
+      "object": "control:968",
+      "same_definition": [
+        "act2:L7_DH:grant4872495",
+        "act2:L7_DH:grant4872745"
+      ],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4872543": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:971",
+          "record_kind": 4
+        }
+      ],
+      "definition": 151,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4872543,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 12130,
+      "id": "act2:L7_DH:grant4872543",
+      "identity": 4231928024,
+      "note": "",
+      "object": "control:971",
+      "same_definition": [
+        "act2:L7_DH:grant4872685",
+        "act2:L7_DH:grant4872715"
+      ],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4872637": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:974",
+          "record_kind": 4
+        }
+      ],
+      "definition": 68,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4872637,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 12224,
+      "id": "act2:L7_DH:grant4872637",
+      "identity": 3764690106,
+      "note": "",
+      "object": "control:974",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4872661": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:974",
+          "record_kind": 4
+        }
+      ],
+      "definition": 75,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4872661,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 12248,
+      "id": "act2:L7_DH:grant4872661",
+      "identity": 328994862,
+      "note": "",
+      "object": "control:974",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4872685": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:975",
+          "record_kind": 4
+        }
+      ],
+      "definition": 151,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4872685,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 12272,
+      "id": "act2:L7_DH:grant4872685",
+      "identity": 4231928024,
+      "note": "",
+      "object": "control:975",
+      "same_definition": [
+        "act2:L7_DH:grant4872543",
+        "act2:L7_DH:grant4872715"
+      ],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4872715": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:975",
+          "record_kind": 4
+        }
+      ],
+      "definition": 151,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4872715,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 12302,
+      "id": "act2:L7_DH:grant4872715",
+      "identity": 4231928024,
+      "note": "",
+      "object": "control:975",
+      "same_definition": [
+        "act2:L7_DH:grant4872543",
+        "act2:L7_DH:grant4872685"
+      ],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4872745": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:976",
+          "record_kind": 4
+        }
+      ],
+      "definition": 148,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4872745,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 12332,
+      "id": "act2:L7_DH:grant4872745",
+      "identity": 2071991751,
+      "note": "",
+      "object": "control:976",
+      "same_definition": [
+        "act2:L7_DH:grant4872495",
+        "act2:L7_DH:grant4872519"
+      ],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4872769": {
+      "action": "log",
+      "arg": 4,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "control:976",
+          "record_kind": 4
+        }
+      ],
+      "definition": 149,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4872769,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 12356,
+      "id": "act2:L7_DH:grant4872769",
+      "identity": 1545874894,
+      "note": "",
+      "object": "control:976",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    },
+    "4874921": {
+      "action": "log",
+      "arg": 1,
+      "arg_grade": "UNKNOWN meaning; raw byte retained, never interpreted",
+      "blocked_by": [],
+      "callers": [
+        {
+          "event": 4,
+          "object": "actor:57",
+          "record_kind": 4
+        }
+      ],
+      "definition": 13,
+      "event": 4,
+      "evidence": "",
+      "file_offset": 4874921,
+      "grade": "UNKNOWN callee 0x95B68 / vtable +0x6C; DEVIATIONS0191; log only",
+      "group": 14496,
+      "id": "act2:L7_DH:grant4874921",
+      "identity": 545508956,
+      "note": "",
+      "object": "actor:57",
+      "same_definition": [],
+      "stream": 1,
+      "target": 0,
+      "text": ""
+    }
+  },
+  "native_sha256": "cfbe086e6ec5bf31dd19270ee650de0f14fbebe8726f0cebf7979cac93da3d7b",
+  "policy_sha256": "1bf45f0cc5bdf006800747abaa3c74c938b529aee294e8c734448ec429824803",
+  "rule": "Default log only; named hand-written overlaps owner. Argument meaning UNKNOWN. No live native grants enabled.",
+  "version": 1
+}

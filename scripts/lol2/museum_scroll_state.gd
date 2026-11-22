@@ -33,3 +33,10 @@ static func record_consumption(state: Dictionary, carried: Array, index: int) ->
 	state.consumed[index]=true
 	carried.erase(IDS[index])
 	return true
+
+static func from_inventory(carried: Array, spent: Array) -> Dictionary:
+	var result := initial()
+	for index in IDS.size():
+		result.taken[index] = IDS[index] in carried or IDS[index] in spent
+		result.consumed[index] = IDS[index] in spent
+	return result

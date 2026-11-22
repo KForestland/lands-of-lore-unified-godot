@@ -1,4 +1,6 @@
 extends CanvasLayer
+const Grants=preload("res://scripts/lol2/item_grants.gd")
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 ## Jungle room entry and first-visit conversations; source event and DLL ordering.
 const State = preload("res://scripts/lol2/monastery_quest_state.gd")
 const Speech = preload("res://scripts/lol2/monastery_conversation.gd")
@@ -222,14 +224,16 @@ func leave_room() -> void:
 ## Item grants from room speech. The orb waits in `pending_items` until the shared
 ## inventory format admits its ID; the flute is already admitted.
 func grant(item: String) -> void:
-	var carried: Array = get_parent().carried_collected
+	var carried: Array = Grants.pack(get_parent())
 	if item in carried: return
 	var s := state()
 	if item in [Speech.ORB,Speech.DAMPEN] and not preload("res://scripts/lol2/jungle_save.gd").validate_inventory({"collected":carried+[item],"equipped_item":"","equipped_armor":""}).is_empty():
 		if not s.has("pending_items"): s.pending_items = []
 		if not item in s.pending_items: s.pending_items.append(item)
 		return
-	carried.append(item)
+	Grants.grant(get_parent(),item,{"cap":false,"duplicate":"allow"})
+	if item == Speech.DAMPEN and is_instance_valid(get_parent().starting_magic):
+		get_parent().starting_magic.learn_spell_group("dampen")
 	if s.has("pending_items"): s.pending_items.erase(item)
 func restore() -> void:
 	if not available: return
@@ -240,16 +244,8 @@ func restore() -> void:
 	shown_room = room
 	held.visible = room == "MOFF" or (room == "MGAR" and s.get("side_actor_present",false)) or room == "CHUT"
 	give.visible = held.visible
-	var previous_item := str(held.get_item_metadata(held.selected)) if held.selected >= 0 and held.selected < held.item_count else ""
-	held.clear()
-	held.add_item("Empty hand")
-	held.set_item_metadata(0,"")
-	# Presentation adapter (owner r12e report 1): with a full pack the selector list scrolls, so rune copies come first.
 	var runes := preload("res://scripts/lol2/hive_rune_items.gd")
-	for item in preload("res://scripts/lol2/hand_selector_order.gd").wanted_first(get_parent().carried_collected,runes.valid):
-		held.add_item("Wax runes" if runes.valid(item) else str(item).get_slice(":",2).replace("_"," "))
-		held.set_item_metadata(held.item_count-1,item)
-		if item == previous_item: held.select(held.item_count-1)
+	preload("res://scripts/lol2/item_choice_menu.gd").populate(held,preload("res://scripts/lol2/hand_selector_order.gd").wanted_first(get_parent().carried_collected,runes.valid),get_parent())
 	shown_cursor = -1
 	get_parent().set_physics_process(room.is_empty())
 	if is_instance_valid(get_parent().interface_hud): get_parent().interface_hud.visible = room.is_empty()
@@ -332,7 +328,7 @@ func advance(delta: float) -> void:
 			return
 		elif item is Dictionary and item.has("morgan_heal"):
 			# Playable health currently caps at30; native progression health is separate.
-			get_parent().health = preload("res://scripts/lol2/morgan_orb_blessing.gd").heal(get_parent().health,30)
+			PlayerHealth.write_host(get_parent(),preload("res://scripts/lol2/morgan_orb_blessing.gd").heal(PlayerHealth.read_host(get_parent()),PlayerHealth.MAXIMUM))
 		else: grant(item)
 	if not rewards.is_empty(): restore()
 	var speech: Dictionary = state().get("conversation",Speech.initial())
@@ -407,13 +403,13 @@ func _left_village(from: int, to: int) -> bool:
 func take_wax() -> bool:
 	var s := state()
 	if not active() or s.room != "LIZ" or Speech.active(s.get("conversation",Speech.initial())) or s.flags.get("162",0) != 0: return false
-	var carried: Array = get_parent().carried_collected
+	var carried: Array = Grants.pack(get_parent())
 	var id: String = preload("res://scripts/lol2/jungle_beehive_wax.gd").next_free(carried)
 	if id.is_empty() or carried.size() >= preload("res://scripts/lol2/item_catalog.gd").MAX_CARRIED:
 		get_parent().save_feedback("You cannot carry more.")
 		return true
 	s.flags["162"] = 1
-	carried.append(id)
+	Grants.grant(get_parent(),id,{"cap":false,"duplicate":"allow"})
 	s.conversation = {"sequence":"LIZ_WAX","cursor":0,"elapsed":0.0}
 	get_parent().save_feedback("Wax added to inventory.")
 	restore()
@@ -459,12 +455,12 @@ func take_stone() -> bool:
 	for index in range(CHUT_STONE_FLAGS.size()):
 		if s.flags.get(CHUT_STONE_FLAGS[index],0) != 0: continue
 		var id: String = CHUT_STONE_IDS[index]
-		var carried: Array = get_parent().carried_collected
+		var carried: Array = Grants.pack(get_parent())
 		if id in carried or not preload("res://scripts/lol2/jungle_save.gd").validate_inventory({"collected":carried+[id],"equipped_item":"","equipped_armor":""}).is_empty():
 			get_parent().save_feedback("You cannot carry more.")
 			return true
 		s.flags[CHUT_STONE_FLAGS[index]] = 1
-		carried.append(id)
+		Grants.grant(get_parent(),id,{"cap":false,"duplicate":"allow"})
 		if index == 0: s.conversation = {"sequence":"CHUT_STONE","cursor":0,"elapsed":0.0}
 		get_parent().save_feedback("Ancients' Stone added to inventory.")
 		restore()

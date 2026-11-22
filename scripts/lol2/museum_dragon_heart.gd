@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Source prop216 movie and item25. Sprite keying, collision box, E aim and RNG stream are modern adapters.
 const State=preload("res://scripts/lol2/museum_dragon_heart_state.gd")
 const Catalog=preload("res://scripts/lol2/item_catalog.gd")
@@ -101,4 +102,4 @@ func interaction_hint() -> String:return "E — Take Dragon Gem" if reachable() 
 func use() -> bool:
 	if not reachable():return false
 	if host.carried_collected.size()>=Catalog.MAX_CARRIED:host.save_feedback("You cannot carry more.");return true
-	host.carried_collected.append(State.ITEM);state.taken=true;present();host.save_feedback("Dragon Gem added to inventory.");return true
+	Grants.grant(host,State.ITEM,{"cap":false,"duplicate":"allow"});state.taken=true;present();host.save_feedback("Dragon Gem added to inventory.");return true

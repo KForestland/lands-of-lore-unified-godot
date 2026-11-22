@@ -53,7 +53,8 @@ func setup(owner_host: Node3D, supplied_hooks: Dictionary={}, saved: Variant=nul
 		var material:=ShaderMaterial.new();material.shader=shader;mesh.material_override=material
 		mesh.visible=false;add_child(mesh);meshes[owner]=mesh
 		# Speech reach as the other Jungle talkers (300; the default 10 was 20-25 dB quieter at escort distance, owner F10
-		# 2026-11-03 17:55:37 "cant hear what he says").
+		# 2026-11-03 17:55:37 "cant hear what he says"). The player stays on this host until the line starts,
+		# then moves onto that speaker. Left here, (3539,-4154) is past max_distance.
 		var voice:=AudioStreamPlayer3D.new();voice.unit_size=preload("res://scripts/lol2/jungle_kelsrick.gd").VOICE_UNIT_SIZE;voice.attenuation_model=AudioStreamPlayer3D.ATTENUATION_DISABLED;voice.max_distance=1200.0;add_child(voice);voices[owner]=voice
 	prop_body=StaticBody3D.new();prop_body.collision_layer=1;prop_body.collision_mask=0
 	var shape:=CollisionShape3D.new();var cylinder:=CylinderShape3D.new();cylinder.radius=28;cylinder.height=90
@@ -342,7 +343,14 @@ func _start_voice(owner: String) -> void:
 	if row.audio==null: return
 	var start: float=float(clip.elapsed)+(float(row.segments[int(clip.segment)].first)/float(row.fps) if int(clip.segment)>=0 else 0.0)
 	voice.stream=AudioStreamWAV.load_from_file(str(row.audio))
+	_place_voice(owner)
 	if start<float(voice.stream.get_length()): voice.play(start)
+
+## Dawn's talk parks the voice on her body. Left on this host, the player at (3539,-4154) is past max_distance.
+func _place_voice(owner: String) -> void:
+	var anchor: Variant=_owner_anchor(owner)
+	if not anchor is Vector3: return
+	voices[owner].global_position=(anchor as Vector3)+Vector3.UP*40.0
 
 func _play_sound(request: int, elapsed: float) -> void:
 	var row: Dictionary=media.sounds.get(str(request),{})
@@ -384,6 +392,7 @@ func _present() -> void:
 		var quad: QuadMesh=mesh.mesh
 		quad.size=Vector2(float(row.width),float(row.height))*CLIP_SCALE;quad.center_offset=Vector3(0,quad.size.y/2.0,0)
 		mesh.global_position=anchor
+		_place_voice(owner)
 		mesh.material_override.set_shader_parameter("frame",_texture(str(row.frame_files[clip_frame(owner)])))
 
 func targets() -> Dictionary:

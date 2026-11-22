@@ -16,6 +16,8 @@ var elapsed:=0.0
 var atlas_path:=""
 var atlas:Texture2D
 var button:Button
+## Owner F10 01-22-38 (lead 2026-11-16): after a refusal, on leaving, the screen says how many Ruloi live and what holds them.
+var refused_line:=""
 static func initial()->Dictionary:return {"version":1,"visited":false,"released":false}
 static func validate(s:Variant,quests:Dictionary)->String:
  if not s is Dictionary or s.size()!=3 or s.get("version")!=1 or not s.get("visited") is bool or not s.get("released") is bool:return "Invalid citadel prison state."
@@ -29,6 +31,7 @@ static func attach(map:Node3D)->Node:
 func state()->Dictionary:return host.quest_state.get(KEY,initial())
 func _ready():
  process_mode=Node.PROCESS_MODE_ALWAYS
+ preload("res://scripts/lol2/l13_ruloi_counter.gd").attach(self,host) # Original HUD "Remaining Ruloi N/19".
  if not FileAccess.file_exists(ROOT+"prison.json"):return
  media=JSON.parse_string(FileAccess.get_file_as_string(ROOT+"prison.json"))
  room=CanvasLayer.new();room.layer=90;add_child(room)
@@ -58,7 +61,9 @@ func play(next:String):
  button.disabled=cue!="999" or state().released
 func use_switch()->bool:
  if not entered or state().released or cue!="999":return false
- play("release" if all_ruloi_dead() else "11");return all_ruloi_dead()
+ play("release" if all_ruloi_dead() else "11")
+ if not all_ruloi_dead():refused_line=preload("res://scripts/lol2/l13_action_hint_targets.gd").maidens_line(host)
+ return all_ruloi_dead()
 func finish():
  if cue=="release":
   if not all_ruloi_dead():leave();return
@@ -67,6 +72,10 @@ func finish():
 func leave():
  if not entered:return
  entered=false;room.visible=false;voice.stop();get_tree().paused=false
+ if not refused_line.is_empty():
+  host.save_feedback(refused_line);refused_line=""
+  var hud:Variant=host.get("interface_hud")
+  if hud!=null and is_instance_valid(hud):hud.save_notice_remaining=8.0
  if DisplayServer.get_name()!="headless":Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
 func _physics_process(_delta):
  if entered:return

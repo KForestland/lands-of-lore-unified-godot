@@ -1,0 +1,74 @@
+{
+  "name": "item_choice_menu_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "note": "Production monastery Give-item picker UI at1280/960 with25 distinct types/26 genuine source ids, room/no-speech fixture; actual clicks/wheel/arrows, no item offer or earned story claim.",
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7191f4a50ab14cee4aee5c2433dfe24f778bf93dfe674759c30778d355d717e4"
+  },
+  "context_aid_source_sites": {
+    "count": 6,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_stored_spell_input.gd",
+        "line": 5,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":true}).ok,\"Disclosed actual-ID scroll grant fixture\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/item_choice_menu_input_test.gd",
+        "line": 31,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false}).ok,\"Genuine item fixture for choice pack\"):return"
+      },
+      {
+        "path": "tests/item_choice_menu_input_test.gd",
+        "line": 36,
+        "column": 1,
+        "kind": "ui_room_fixture",
+        "source": "rooms.state().room=\"MOFF\";rooms.restore();Input.mouse_mode=Input.MOUSE_MODE_VISIBLE"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 8,
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "ui_room_fixture",
+      "pattern": "rooms\\.state\\(\\)\\.room\\s*="
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 extends Node
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Original tree props159..170; book-led Emperor/no-bracers activation.
 const KEY:="l10_silverleaf"
 const TREES:=[159,160,161,162,163,164,165,166,167,168,169,170]
@@ -34,6 +35,7 @@ func revisit()->Dictionary:
  if not host.quest_state.get("l10_emperor",{}).get("remains",false) or not preload("res://scripts/lol2/l8_dawn_state.gd").completed(host.quest_state.get("l8_dawn",{})):return {"ok":false,"reason":"Complete the Emperor's errand and meet Dawn first."}
  if state().grown:return {"ok":false,"reason":"You cannot understand the Emperor. Silverleaf is already growing on the cemetery trees."}
  host.quest_state[KEY]={"version":1,"grown":true};restore()
+ preload("res://scripts/lol2/my_journal.gd").discover(host,"l10_silverleaf_grows")
  return {"ok":true,"reason":"Without the bracers, you cannot understand the Emperor. Silverleaf begins growing on the cemetery's dead trees."}
 func harvest_state()->Dictionary:return host.quest_state.get(Harvest.KEY,Harvest.initial())
 func aim(target:String)->Vector3:return host.prop_placements[int(target)][2]+Vector3.UP*42
@@ -52,7 +54,9 @@ func pick(target_id:String)->Dictionary:
  if not host.get_node("L10Emperor").active() or not state().grown or not reachable(target_id):return {"ok":false,"reason":"Approach a grown Silverleaf tree in human form."}
  var result:=Harvest.pick(harvest_state(),host.carried_collected,host.quest_state.act2_items,target_id)
  if not result.ok:return result
- host.quest_state[Harvest.KEY]=result.state;host.carried_collected=result.inventory;host.quest_state.act2_items=result.items;Items.sync(host);restore()
+ var admission:=Grants.transition(host,result.inventory,{Harvest.KEY:result.state,"act2_items":result.items})
+ if not admission.ok:return admission
+ Items.sync(host);restore()
  return {"ok":true,"reason":result.reason}
 func _process(_delta):
  restore();hint.text=""

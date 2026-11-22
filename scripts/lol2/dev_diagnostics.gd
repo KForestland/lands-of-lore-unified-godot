@@ -1,9 +1,11 @@
 extends RefCounted
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 ## Development diagnostics (docs/dev-diagnostics.md). capture() is READ-ONLY: it reads the existing player projection
 ## (player_continuity.gd) and a few named quest values; it never calls a save/transfer packer that writes (the Hive's
 ## area_handoff() stores curse.requests_enabled() into its curse checkpoint, so the Hive is read from its owners).
 ## record() keeps the last save/load/transfer outcome per process, including early refusals that show no message.
 const Continuity = preload("res://scripts/lol2/player_continuity.gd")
+const Places = preload("res://scripts/lol2/atlas_places.gd")
 const HOSTS := {
 	"res://scripts/lol2/cave_walkthrough.gd": "Cave",
 	"res://scripts/lol2/museum_walkthrough.gd": "Museum",
@@ -29,13 +31,20 @@ static func script_kind(script: Variant) -> String:
 	return ""
 
 ## Player-facing map identity; host_kind remains the dispatch key for shared state owners.
+## An Act 2 map extends the Jungle host, so the script walk used to report "Jungle" for every one of them.
+## That map's area_id plus the Atlas title is the F10 name. host_kind stays Jungle.
+## Cave and Museum already have their own host names. Their area_id values stay off the report.
 static func area_name(scene: Node) -> String:
 	if scene == null or not is_instance_valid(scene): return ""
 	var script: Variant = scene.get_script()
 	while script is Script:
 		if AREA_LABELS.has(script.resource_path): return AREA_LABELS[script.resource_path]
 		script = script.get_base_script()
-	return host_kind(scene)
+	var kind := host_kind(scene)
+	var area_id: Variant = scene.get("area_id")
+	if kind == "Jungle" and area_id is String and not str(area_id).is_empty() and Places.AREA_NAMES.has(area_id):
+		return "%s %s" % [area_id, str(Places.AREA_NAMES[area_id])]
+	return kind
 
 ## Record one operation outcome and return the error unchanged, so callers can wrap a return value.
 static func record(host: Node, operation: String, error: String) -> String:
@@ -123,9 +132,9 @@ static func vitals(scene: Node, kind: String) -> Dictionary:
 		"Cave":
 			var dead: bool = scene.drowning != null and bool(scene.drowning.dead)
 			if scene.roach == null: return vitals_from(null, "no cave combat (roach)", dead)
-			return vitals_from(scene.roach.model.player_health, "roach.model.player_health", dead)
-		"Hive": return vitals_from(scene.get_node("Warriors").health, "Warriors.health")
-		_: return vitals_from(scene.health, "health")
+			return vitals_from(PlayerHealth.read_host(scene), "roach.model.player_health", dead)
+		"Hive": return vitals_from(PlayerHealth.read_host(scene), "Warriors.health")
+		_: return vitals_from(PlayerHealth.read_host(scene), "health")
 
 ## Pending transfer refusal kept by a HiveRoute node (it does not show a message).
 static func route_error(scene: Node) -> String:

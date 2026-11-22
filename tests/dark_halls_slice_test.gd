@@ -120,6 +120,23 @@ func run() -> void:
 			var p: Vector3 = halls.player.position
 			var d := Vector2(target.x - p.x, target.y - p.z)
 			if d.length() < 6: reached = true; break
+			# P4 now hosts solid native bookcases. The earlier slice walked through
+			# their unhosted leaves. Use visible reachable gates ahead before crossing;
+			# separate live-input earned tests cover the individual approaches.
+			for row in halls.bookcases.source.controls:
+				var shelf_id := str(int(row.control))
+				var shelf_point := Vector3(row.center[0], row.center[1], row.center[2])
+				var offset: Vector3 = shelf_point - halls.camera.global_position
+				if halls.bookcases.is_open(shelf_id) or offset.length() >= 100.0: continue
+				if Vector2(offset.x, offset.z).normalized().dot(d.normalized()) < 0.2: continue
+				halls.camera.look_at(shelf_point)
+				if halls.bookcases.aimed() != shelf_id: continue
+				for pressed in [true, false]:
+					var use_key := InputEventKey.new()
+					use_key.keycode = KEY_E; use_key.pressed = pressed
+					Input.parse_input_event(use_key)
+					await physics_frame
+				if not halls.bookcases.is_open(shelf_id): return fail("Route E did not open bookcase" + shelf_id)
 			# The host's own grounded movement (sprint speed, step-up, gravity), as the W key uses it.
 			halls.move_grounded(Vector3(d.normalized().x, 0, d.normalized().y), 1.0 / 60.0, true)
 			await physics_frame

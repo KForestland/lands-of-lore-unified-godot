@@ -79,6 +79,7 @@ func _bounded_index_size(window_size: Vector2i) -> Vector2i:
 	return Vector2i(maxi(1, int(round(float(window_size.x) / divisor))), maxi(1, int(round(float(window_size.y) / divisor))))
 
 func _resize_index_view() -> void:
+	if not is_inside_tree(): return # A pending slot load retains the previous area off-tree.
 	var window_size := get_window().size
 	index_view.size = _bounded_index_size(window_size)
 	resolve_surface.size = Vector2(window_size)

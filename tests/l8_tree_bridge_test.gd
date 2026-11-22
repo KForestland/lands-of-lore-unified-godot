@@ -41,9 +41,14 @@ func run() -> void:
 	scene.flying = true
 	check(not bridge.use(), "flying leaves the tree standing")
 	scene.flying = false
-	check(bridge.use() and bool(scene.quest_state.l8_tree_bridge.knocked), "the owner point knocks the tree")
+	scene.player_form = 0
+	scene.equipped_item = ""
+	check(not bridge.use() and not scene.quest_state.has("l8_tree_bridge"), "a bare hand leaves the tree standing")
+	scene.equipped_item = "jungle:kelsrick:Fine_Longsword"
+	check(bridge.use() and bool(scene.quest_state.l8_tree_bridge.knocked), "a held weapon at the owner point knocks the tree")
 	check(not assemblies.is_present(Bridge.TREE) and assemblies.is_present(Bridge.BRIDGE), "assembly 114 unlinks and assembly 116 links")
-	check(assemblies.solid_bodies[Bridge.TREE].collision_layer == 0 and assemblies.solid_bodies[Bridge.BRIDGE].collision_layer == 1 << 8, "the log becomes the solid")
+	check(assemblies.solid_bodies[Bridge.TREE].collision_layer == 0 and assemblies.solid_bodies[Bridge.BRIDGE].collision_layer == 0, "the narrow log slab steps aside")
+	check(bridge.get_node("WalkDeck").collision_layer == 1 << 8, "the walk deck is the solid")
 	check(preload("res://scripts/lol2/act_one_quest_state.gd").validate(scene.quest_state).is_empty(), "quest validate")
 	if failures == 0: print("PASS l8 tree bridge: E at control 114 links the placed log")
 	await stop(scene, 1 if failures else 0)

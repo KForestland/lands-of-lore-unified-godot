@@ -2,7 +2,9 @@ extends Node3D
 ## Prima101 ordering with original switch61/movable74 and barrel477/177/176.
 ## Timed tipping/rolling and oil presentation are modern adapters, not opcode18 replay.
 const KEY:="l10_barrel"
-const SWITCH:=Vector3(-1515,43,-2984)
+# Published static61 child236 handle centre, in front of wall6301 at z−2987.
+# The former z−2984 aim point was behind that wall and failed its occlusion ray.
+const SWITCH:=Vector3(-1515,40,-2992)
 const TOP:=Vector3(-1458,82,-1952)
 const START:=Vector3(-1440,50,-1950)
 const END:=Vector3(-1435,0,-3376)

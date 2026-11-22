@@ -1,6 +1,43 @@
 {
- "name": "museum_dragon_heart_test",
- "suite": "core",
- "mode": "rendered",
- "order": 139
+  "name": "museum_dragon_heart_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 139,
+  "needs": {
+    "note": " Full-capacity probe temporarily repeats a valid sword ID, restores the original pack before saving; synthetic capacity fixture, not an earned or saveable inventory."
+  },
+  "teleports": 2,
+  "test_aids": 12,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "4140c52afe6cd2ee83f0d3c392a05cd3a533e21149941b2e16f63830561fb397"
+  },
+  "context_aid_source_sites": {
+    "count": 3,
+    "sites": [
+      {
+        "path": "tests/museum_dragon_heart_test.gd",
+        "line": 4,
+        "column": 1,
+        "kind": "completed_intro_fixture",
+        "source": "scene.introduction_state=\"complete\";root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/museum_ivory_live_test.gd",
+        "line": 17,
+        "column": 21,
+        "kind": "completed_intro_fixture",
+        "source": "await process_frame;scene.introduction_state=\"complete\""
+      },
+      {
+        "path": "tests/museum_prism_test.gd",
+        "line": 12,
+        "column": 21,
+        "kind": "completed_intro_fixture",
+        "source": "await process_frame;scene.introduction_state=\"complete\""
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 15
 }

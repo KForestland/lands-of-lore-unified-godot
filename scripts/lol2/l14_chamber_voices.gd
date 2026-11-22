@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## STORY-066 Chamber of Voices (L14 -> L16). Original CHV room (room30, CHV.MIX): background frame 30, the voices movie,
 ## the golden-chalice hotspot0 (194,88,396,218 on 640x400), speaker2 cue28, the CITY movie, then local22
 ## go_to_level_16 = 1 and the native prop170 kind-6 event (caller 0x14, group 9210 predicate 50) whose opcode 2 arm 0x1C
@@ -61,7 +62,7 @@ func door_in_reach() -> bool:
 	return false
 
 func carried_dreamstone() -> String:
-	if host.hand_item == DREAMSTONE or Items.definition(str(host.hand_item)) == 136: return str(host.hand_item)
+	if host.hand_item in host.carried_collected and (host.hand_item == DREAMSTONE or Items.definition(str(host.hand_item)) == 136): return str(host.hand_item)
 	for id in host.carried_collected:
 		if id == DREAMSTONE or Items.definition(str(id)) == 136: return str(id)
 	return ""
@@ -96,9 +97,11 @@ func offer() -> Dictionary:
 	var item := carried_dreamstone()
 	if item.is_empty():
 		note.text = "The voices wait for the Dreamstone."; return {"ok":false,"reason":"The voices wait for the Dreamstone."}
-	host.carried_collected.erase(item)
+	var next:Array=host.carried_collected.duplicate();next.erase(item)
+	var s := state().duplicate(true); s.offered = true
+	var admitted:=Grants.transition(host,next,{KEY:s})
+	if not admitted.ok:return admitted
 	if host.hand_item == item: host.hand_item = ""
-	var s := state().duplicate(true); s.offered = true; host.quest_state[KEY] = s
 	Items.sync(host)
 	cue.play(); note.text = ""
 	_play("city", ROOT+"city.ogv")
@@ -127,17 +130,23 @@ func _process(_delta: float) -> void:
 	elif door_in_reach() and assets_ready():
 		hint.text = "E — Enter the Chamber of Voices"
 
+func show_offer() -> void:
+	var result:=offer()
+	if not result.ok and not str(result.get("reason","")).is_empty():
+		note.text=result.reason
+		host.save_feedback(result.reason)
+
 func _input(event: InputEvent) -> void:
 	if not inside: return
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var local: Vector2 = (event.position - panel.position) / panel.scale.x
-		if HOTSPOT.has_point(local): offer()
+		if HOTSPOT.has_point(local): show_offer()
 	elif event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_ESCAPE:
 			if phase == "city": skip()
 			else: leave()
 		elif event.keycode in [KEY_SPACE, KEY_ENTER]: skip()
-		elif event.keycode == KEY_E: offer()
+		elif event.keycode == KEY_E: show_offer()
 		else: return
 	else: return
 	get_viewport().set_input_as_handled()

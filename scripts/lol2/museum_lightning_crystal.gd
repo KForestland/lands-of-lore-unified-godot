@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Source item row7 "56a-Ltng cr" behind the rubble-room blocks (region1010). E/range and inventory are modern;
 ## the item's handler 8 (use) is not replayed.
 const ROOT := "res://assets/lol2/generated/museum_lightning_crystal/"
@@ -29,7 +30,7 @@ func interaction_hint() -> String:
 	return "E — Take Lightning crystal" if can_take() else ""
 func use() -> bool:
 	if not can_take(): return false
-	host.carried_collected.append(ID)
+	Grants.grant(host,ID,{"cap":false,"duplicate":"allow"})
 	sprite.hide()
 	host.save_feedback("Lightning crystal added to inventory.")
 	return true

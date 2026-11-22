@@ -87,13 +87,13 @@ func run() -> void:
 	if not check(is_instance_valid(cave.inventory),"Shell I did not open the cave inventory"): return
 	cave.inventory.queue_free(); await process_frame
 	paused = false; hud.set_cursor(false)
-	# F5/F9 through the shell: one save, notice on the hint.
+	# Explicit legacy feedback API; production slot keys/list are covered by save_keys_real_input_test.
 	var path: String = hud.save_path
 	DirAccess.remove_absolute(path)
-	key(hud, KEY_F5)
-	if not check(FileAccess.file_exists(path) and hud.hint.text == "Cave saved." and hud.save_notice_remaining > 0,"Shell F5: '%s'" % hud.hint.text): return
-	key(hud, KEY_F9)
-	if not check(hud.hint.text == "Cave save loaded.","Shell F9: '%s'" % hud.hint.text): return
+	hud.run_save_action(false,path)
+	if not check(FileAccess.file_exists(path) and hud.hint.text == "Cave saved." and hud.save_notice_remaining > 0,"Legacy shell save: '%s'" % hud.hint.text): return
+	hud.run_save_action(true,path)
+	if not check(hud.hint.text == "Cave save loaded.","Legacy shell load: '%s'" % hud.hint.text): return
 	cave.set_physics_process(false)
 	# Equipment -> hand icon.
 	cave.collectible.collected = cave.collectible.collected

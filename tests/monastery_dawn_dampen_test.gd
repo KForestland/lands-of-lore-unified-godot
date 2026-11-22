@@ -56,7 +56,9 @@ func run() -> void:
 	if not cycle("midsequence"): return
 	for i in 4: rooms.advance(Speech.duration("MLIB_EXIT_RUNES",int(mon().conversation.cursor)) + 0.01)
 	if not check(jungle.carried_collected.count(Speech.DAMPEN) == 1, "Dampen not granted after 666"): return
+	if not check(jungle.starting_magic.magic_state().spellbook.learned == ["curse1"], "Actual Dawn charm grant learns Dampen only"): return
 	if not cycle("granted"): return
+	if not check(jungle.starting_magic.magic_state().spellbook.learned == ["curse1"], "Learned Dampen survives the real save/load"): return
 	for i in 3: rooms.advance(Speech.duration("MLIB_EXIT_RUNES",mini(int(mon().conversation.cursor),5)) + 0.01)
 	if not check(mon().room == "MENT" and int(mon().globals.GV_RUNES_TRANSLATED) == 1 and int(mon().globals.GV_DAWN_TRANSLATED_RUNES) == 1 and int(mon().flags["266"]) == 1 and jungle.carried_collected.count(Speech.DAMPEN) == 1, "Translation end state: %s" % [mon().globals]): return
 	# Dawn now absent; leaving the library again grants nothing.

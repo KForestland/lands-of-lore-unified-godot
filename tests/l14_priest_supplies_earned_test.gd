@@ -12,7 +12,7 @@ func run():
  if not check(scene.apply_save(input.state).is_empty(),"earned Temple input"):quit(1);return
  prepare(scene)
  for i in 5:await physics_frame
- var points:Array=[[2500,-3328],[2600,-3400],[2800,-3450],[3000,-3500],[3100,-3750],[3000,-3900],[3000,-4050],[3000,-4300],[2950,-4550]]
+ var points:Array=[[2436,-3445],[2540,-3420],[2600,-3400],[2800,-3450],[3000,-3500],[3100,-3750],[3000,-3900],[3000,-4050],[3000,-4300],[2950,-4550]]
  if not await walk(scene,points,"east then north pew room"):quit(1);return
  for id in ["act2:L14_HT:item68","act2:L14_HT:item72"]:
   var item=scene.act2_items

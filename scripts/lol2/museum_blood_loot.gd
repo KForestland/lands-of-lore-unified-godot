@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Actor20 arrival group12578 owns two separate Drag Blood items, property4 each.
 ## Modern five-active-second corpse retirement and aimed E pickup.
 const ITEMS := ["museum:skeleton20:Dragon_Blood_1","museum:skeleton20:Dragon_Blood_2","museum:item1:Dragon_Blood","museum:item2:Dragon_Blood","museum:item3:Dragon_Blood"]
@@ -68,7 +69,7 @@ func aimed() -> int:
 func use() -> bool:
 	var i:=aimed()
 	if i<0 or host.carried_collected.size()>=64:return false
-	state.taken[i]=true;host.carried_collected.append(ITEMS[i]);present()
+	state.taken[i]=true;Grants.grant(host,ITEMS[i],{"cap":false,"duplicate":"allow"});present()
 	host.pickup_notice_time=2.5;host.interaction_label.text="Dragon Blood taken. Use it to place a delayed explosive."
 	return true
 func interaction_hint() -> String:return "E — Take Dragon Blood" if aimed()>=0 else ""

@@ -117,7 +117,11 @@ func opcode_arms() -> void:
 	r = arm("070205000100")
 	check(status_of(r) == "ran" and int((r.host as RefCounted).call("field", "0x02:5", "bit_0xb5_0x02")) == 1 and int((r.host as RefCounted).call("field", "0x02:5", "word_0x7c")) == 0, "op 7 actor arm 1")
 	r = arm("072005000000")
-	check(status_of(r) == "unhosted", "op 7 on a movable writes through UNKNOWN pointers")
+	check(status_of(r) == "ran" and (r["adapters"] as Array).has("opcode7_movable_records") and int((r.host as RefCounted).call("field", "0x20:5:records", "bit_0x03_0x02")) == 1, "op 7 index 0 on a movable ORs bit 1 of the record byte")
+	r = arm("072005000000", func(h: RefCounted) -> void: h.call("set_adapter_enabled", "opcode7_movable_records", false))
+	check(status_of(r) == "unhosted" and reasons_text(r).contains("opcode7_movable_records"), "op 7 on a movable stays unhosted with the adapter off")
+	r = arm("072005000100")
+	check(status_of(r) == "unhosted" and reasons_text(r).contains("index 1"), "op 7 index 1 on a movable was not entered")
 	r = arm("020100001c45")
 	check(status_of(r) == "unhosted" and reasons_text(r).contains("0x223D6"), "op 2 needs global 0x223D6")
 	r = arm("020100001c45", func(h: RefCounted) -> void: h.call("set_global", 0x223D6, 0))
@@ -165,6 +169,15 @@ func _initialize() -> void:
 	check(int((placements[DOOR] as PackedByteArray)[0x22]) == 6 and int((placements[DOOR] as PackedByteArray)[0x24]) == 60, "movable 57 placement bytes 0x22/0x24")
 	check(str((host.get("attributes") as Dictionary)[DOOR]) == str({"mode": 6, "angle_word": 21845}), "movable 57 derived angle word " + str((host.get("attributes") as Dictionary)[DOOR]))
 	check(int(host.call("field", DOOR, "byte_0x26")) == 50, "movable 57 +0x26 = placement +0x1E = 50")
+	var prop_count := 0
+	for ref: String in placements:
+		if not ref.begins_with("prop:"):
+			continue
+		prop_count += 1
+		if int(host.call("field", ref, "byte_0x25")) != 0:
+			check(false, ref + " constructor +0x25 is not 0")
+			break
+	check(prop_count > 0, "L7 has placed props")
 
 	# 2. Group 13798 is unhosted while one of its opcodes has no handler; nothing runs.
 	host.call("unregister_opcode", 1)
@@ -230,7 +243,11 @@ func _initialize() -> void:
 	check(str((host.call("_evaluate_predicate", 2, ctx, ok) as Dictionary)["status"]) == "unhosted", "left type 2 unseeded must be unhosted")
 	host.call("set_local_e58", 4, 1)
 	check(str((host.call("_evaluate_predicate", 2, ctx, ok) as Dictionary)["status"]) == "match" and (host.get("locals") as Dictionary).is_empty(), "left type 2 reads 0x26E58, not locals")
-	check(str((host.call("_evaluate_predicate", 3, ctx, ok) as Dictionary)["status"]) == "unhosted" and str((host.call("_evaluate_predicate", 4, ctx, ok) as Dictionary)["status"]) == "unhosted", "left/right type 4 must stay unhosted")
+	# Type 4 now calls 0x66AB0 again (file 0x9DB47 / 0x9DBEC). Index 3 nests predicate 0 (2 would be < 3, and +0x25 is 0, so the nest is 1) against literal 0. Index 4 reads +0x25 against that same nest.
+	var type4_left: Dictionary = host.call("_evaluate_predicate", 3, ctx, ok) as Dictionary
+	var type4_right: Dictionary = host.call("_evaluate_predicate", 4, ctx, ok) as Dictionary
+	check(str(type4_left["status"]) == "rejected" and str(type4_left["reason"]).contains("left 1, operator 0, right 0"), "left type 4 nests predicate 0: " + str(type4_left["reason"]))
+	check(str(type4_right["status"]) == "rejected" and str(type4_right["reason"]).contains("left 0, operator 0, right 1"), "right type 4 nests predicate 0: " + str(type4_right["reason"]))
 
 	# 4. Door 57 kind-9 records: masks 0x010E/0x0004, mode 4 thresholds 0x28/0x1E/0x14, then 13832 mode 1. 0xAE2C8 enqueues one
 	# record per hit (Grok backlog 4 item 3 PROVEN: a nonzero success count leaves before the next record is tested) and bit 7 of
@@ -281,10 +298,11 @@ func _initialize() -> void:
 	check(summary(host.call("fire_event", "movable:57", 9, kind9_input(0xFF, 1, 0)) as Array).ends_with("13832:rejected"), "13832 with local 2 = 1 must be rejected")
 	check(summary(host.call("fire_event", "movable:57", 9, kind9_input(0xFF, 0, 0)) as Array).ends_with("13832:rejected"), "13832 mode 1 byte +8 1 > dword_1e 0 must be rejected")
 
-	# 6. Region 83 event 2: byte +7 is 0; its trailer predicate 19 (0604120405) is operator 6 with left and right type 4 (unhosted).
+	# 6. Region 83 event 2: byte +7 is 0. Predicate 19 (0604120405) is operator 6 with both sides type 4.
+	# The left nest is predicate 18, local 6 == 0, and that local is not seeded, so the group stays unhosted.
 	host = door_host()
 	var region: Array = host.call("fire_event", "region:83", 2, {}) as Array
-	check(summary(region) == "76:unhosted" and reasons_text(region[0] as Dictionary).contains("right type 4"), "region 83 event 2: " + summary(region))
+	check(summary(region) == "76:unhosted" and reasons_text(region[0] as Dictionary).contains("local 6"), "region 83 event 2: " + summary(region))
 	region = host.call("fire_event", "region:1338", 4, {}) as Array
 	check(summary(region) == "794:unhosted" and reasons_text(region[0] as Dictionary).contains("event slot 4"), "region 1338 event 4: " + summary(region))
 	check(signals.is_empty(), "unhosted region events changed state")
@@ -374,5 +392,5 @@ func _initialize() -> void:
 	check((s.get("unhosted") as Array).size() == 6, "synthetic unhosted log size %d" % (s.get("unhosted") as Array).size())
 	opcode_arms()
 	if not failed:
-		print("PASS native_script_host_test: L7_DH load + G97 predicate table, door 57 kind-4 predicates 206/207/208, kind-9 masks/mode 4/mode 1/bit 7, trailer predicate 2 on locals[2], G97 2b constructor state, derived angle word, default kind-4 context, operators 5/6, left type 2, region 83 type 4 unhosted, no partial execution, mode-6 travel 0 and 21845")
+		print("PASS native_script_host_test: L7_DH load + G97 predicate table, door 57 kind-4 predicates 206/207/208, kind-9 masks/mode 4/mode 1/bit 7, trailer predicate 2 on locals[2], G97 2b constructor state, prop +0x25 = 0, derived angle word, default kind-4 context, operators 5/6, left type 2, type 4 nests, region 83 stops on local 6, no partial execution, mode-6 travel 0 and 21845")
 	quit(1 if failed else 0)

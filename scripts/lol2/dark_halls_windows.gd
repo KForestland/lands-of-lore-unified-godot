@@ -17,6 +17,7 @@ var centre := Vector3.ZERO
 var glows: Dictionary = {}
 var counter: Label
 var counter_hold := 0.0
+var exit_body: StaticBody3D
 
 class Receiver:
 	extends RefCounted
@@ -86,6 +87,15 @@ func opened() -> Array:
 
 func done() -> bool: return bool(_saved().done)
 
+func exit_center() -> Vector3:
+	return _vec(by_control[int(source.exit.window)].center)
+
+## Group 8280 breaks this pane. It does not run the orb end.
+func break_exit() -> void:
+	var row: Dictionary = by_control.get(int(source.exit.window), {})
+	if not row.is_empty(): _light(row, true)
+	if exit_body != null: exit_body.collision_layer = 0
+
 ## Facing normal of a window's pane (horizontal, toward the dome side).
 func _inward(w: Dictionary) -> Vector3:
 	var edge := _vec(w.front[1]) - _vec(w.front[0])
@@ -101,6 +111,9 @@ func _add_receiver(w: Dictionary) -> void:
 	var body := StaticBody3D.new()
 	body.name = "Window%d" % int(w.control)
 	body.collision_layer = 2
+	if int(w.control) == int(source.exit.window):
+		exit_body = body
+		body.collision_layer |= 256
 	body.collision_mask = 0
 	var shape := CollisionShape3D.new()
 	var box := BoxShape3D.new()
@@ -166,10 +179,11 @@ func _present_end() -> void:
 	var orb = host.get("prop_nodes")
 	if orb is Dictionary and orb.has(int(source.orb.prop)): orb[int(source.orb.prop)].visible = false
 	var exit_window: Dictionary = by_control.get(int(source.exit.window), {})
-	if not exit_window.is_empty(): _light(exit_window, true)
+	if not exit_window.is_empty(): break_exit()
 
 ## Re-apply the saved state (load, handoff).
 func restore_from_quests() -> void:
+	if exit_body != null: exit_body.collision_layer = 2 | 256
 	for key in glows.keys():
 		for node in glows[key]: node.queue_free()
 	glows.clear()

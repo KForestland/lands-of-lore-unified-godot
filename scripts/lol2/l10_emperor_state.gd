@@ -1,4 +1,5 @@
 extends RefCounted
+const KEY:="l10_emperor"
 const DeadBracers=preload("res://scripts/lol2/dead_bracers_item.gd")
 const Kit=preload("res://scripts/lol2/mechanism_transaction.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
@@ -49,6 +50,7 @@ static func act(saved: Dictionary,inventory: Array,target: String,item: String="
  if not Kit.slot(snap,target).occupied.is_empty():result=Kit.retrieve(snap,recipe)
  else:
   if inner and count(saved)!=3:return Kit.refuse("Place one globe of each colour first.")
+  if item not in inventory:return Kit.refuse("The inner door needs the ankh." if inner else "This socket needs a %s glass globe."%{99:"yellow",100:"white",101:"blue"}[COLORS[target]])
   result=Kit.offer(snap,recipe,item,{"form":"human"})
   if not result.ok:return result
   result=Kit.occupy(snap,result.proposal)

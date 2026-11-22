@@ -27,7 +27,13 @@ func run() -> void:
 	check(not hall.get_child(0) is CollisionObject3D, "the clear has no collision")
 	var mesh := hall.get_child(0) as MeshInstance3D
 	var mat := mesh.material_override as StandardMaterial3D
-	check(mat.albedo_color.is_equal_approx(Color(0, 0, 0, 1)) and mat.cull_mode == BaseMaterial3D.CULL_DISABLED, "unshaded black, both sides")
+	check(mat.albedo_color.is_equal_approx(Color(0, 0, 0, 1)) and mat.cull_mode == BaseMaterial3D.CULL_BACK, "unshaded black, one-sided (G-14 fix 3, ledger 0628)")
+	# Godot draws the side opposite the right-hand normal (jungle_review _winding); the owner's 06-25-52 view must be on the
+	# normal side, where the quad is culled, so he sees the room behind it.
+	var verts: PackedVector3Array = mesh.mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX]
+	var normal := (verts[1] - verts[0]).cross(verts[2] - verts[0])
+	var hall_script = load("res://scripts/lol2/l14_hall_clear.gd")
+	check(normal.dot(hall_script.OWNER_VIEW - verts[0]) > 0.0, "culled from the owner's 06-25-52 side")
 	hall.queue_free()
 	map.queue_free()
 	await process_frame

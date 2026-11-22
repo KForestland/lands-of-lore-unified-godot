@@ -1,0 +1,11 @@
+{
+  "name": "l8_script_time_budget_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1398,
+  "timeout_seconds": 300,
+  "count_method": "Measured script time per frame (process + physics brackets) on the owner's L8 save during a real-key walk.",
+  "needs": {
+    "note": "Local owner input tmp/l8_perf_inputs/owner_144731.json (OWNER_DERIVED.md, sha pinned). Script-time budget (process+physics, rendering not measured): mean 20 / worst 27 ms a frame on a 20 s walk from the owner's pose, Xvfb gate at --fixed-fps 60."
+  }
+}

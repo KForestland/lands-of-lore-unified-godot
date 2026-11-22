@@ -64,7 +64,12 @@ static func validate(state: Variant, src: Dictionary) -> String:
 		var actor=state.actors.get(id)
 		var row:=actor_row(src,id)
 		if not actor is Dictionary or not Values.integer(actor.get("health"),int(row.health)) or not Values.vector(actor.get("position"),32768) or not actor.get("woken") is bool or not actor.get("present",bool(row.present)) is bool: return "Invalid creature actor."
-		if not actor.get("present",bool(row.present)) and (actor.health!=int(row.health) or float(actor.death)!=0 or int(state.live.get(id,{}).get("mode",0))!=Live.IDLE): return "Absent creature has live state."
+		# A creature the source never placed must stay quiet. A host may remove one the source
+		# did place (the L20 birth clear) and leave its health, death clock, and mode.
+		var source_present: bool = bool(row.present)
+		var shown: bool = bool(actor.get("present", source_present))
+		if not shown and not source_present and (int(actor.health) != int(row.health) or float(actor.death) != 0.0 or int(state.live.get(id, {}).get("mode", 0)) != Live.IDLE):
+			return "Absent creature has live state."
 		var death=actor.get("death");var rise=actor.get("rise")
 		var death_max:=clip_seconds(int(src.definitions[str(int(row.definition))].clips.death.frames))
 		if not (death is int or death is float) or not is_finite(float(death)) or death<0 or death>death_max: return "Invalid creature death clock."
@@ -72,9 +77,20 @@ static func validate(state: Variant, src: Dictionary) -> String:
 		if not (rise is int or rise is float) or not is_finite(float(rise)) or rise<-1 or rise>clip_seconds(int(src.definitions[str(int(row.definition))].clips.rise.frames)): return "Invalid creature rise clock."
 		if not actor.woken and rise!=-1: return "Dormant creature has a rise clock."
 		var live=state.live.get(id)
-		if not live is Dictionary or not Values.integer(live.get("attack"),2) or not Values.integer(live.get("hits"),2): return "Invalid creature attack variant."
+		# Live rotation uses every source clip (the L14/L17 HIVEW tables have four).
+		# Preserve 0..2 aliases accepted by older saves for shorter tables.
+		var attacks: Array = src.definitions[str(int(row.definition))].clips.attacks
+		if not live is Dictionary or not Values.integer(live.get("attack"),maxi(2,attacks.size()-1)) or not Values.integer(live.get("hits"),2): return "Invalid creature attack variant."
 		var rules:=attack_rules(src,id,int(live.attack))
-		var error:=Live.validate(live,actor.health>0,rules)
+		# A cleared corpse can still be in pursue or attack. The absence is the saved fact.
+		var checking: Dictionary = live
+		if not shown and source_present and int(actor.health) <= 0 and int(live.get("mode", 0)) != Live.IDLE:
+			checking = live.duplicate()
+			checking.mode = Live.IDLE
+			checking.elapsed = 0.0
+			checking.hit = false
+			checking.erase("cooldown")
+		var error:=Live.validate(checking,actor.health>0,rules)
 		if not error.is_empty(): return error
 		var ready: bool=actor.woken and rise>=clip_seconds(int(src.definitions[str(int(row.definition))].clips.rise.frames))
 		if actor.health>0 and not ready and int(live.mode)!=Live.IDLE: return "Dormant or rising creature is active."

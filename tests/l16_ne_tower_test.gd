@@ -9,7 +9,7 @@ func run() -> void:
 	check(Tower.LIP_REGION == 6079, "lip region")
 	check(Tower.SECTIONS == 0, "no rise is hosted")
 	check(Tower.TOWER_RECORD == 615, "centre tower is prop 615")
-	check(Tower.ARRIVAL == Vector3(16082, 100, 3886), "arrival words stay data")
+	check(Tower.ARRIVAL == Vector3(16082, 132, 3886), "opcode xz on floor 100, body origin")
 	check(Tower.validate(Tower.initial()).is_empty(), "initial state")
 	var bad: Dictionary = Tower.initial()
 	bad.erase("at_doors")

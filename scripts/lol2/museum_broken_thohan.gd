@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Museum control 181. Group 11954 gives 12-Tho Broken from a null hand at owner state 0.
 ## Group 11984 takes that held item at owner state 1. Reach and E are the museum adapter.
 const ITEM := "museum:control181:Tho_Broken"
@@ -74,8 +75,7 @@ func run_source_group() -> bool:
 	if group == "" or not host.get("carried_collected") is Array:
 		return false
 	if group == "grant":
-		if not ITEM in host.carried_collected:
-			host.carried_collected.append(ITEM)
+		Grants.grant(host,ITEM,{"cap":false,"duplicate":"skip"})
 		host.hand_item = ITEM
 		# My Journal: the broken blade is in Luther's hands and Rashar's price (GV_KNOWLEDGE_OF_POWER_ORB) is not yet known.
 		var quest = host.get("quest_state")
@@ -101,7 +101,11 @@ func use() -> bool:
 
 func interaction_hint() -> String:
 	if _blocked() or not _reached(): return ""
-	match source_group():
+	var group := source_group()
+	# A different item in the hand still offers the take. E stows that item, then grants.
+	if group == "" and owner_state == 0 and _hand() != "":
+		group = "grant"
+	match group:
 		"grant": return "E — Take Broken Thohan"
 		"put_back": return "E — Return Broken Thohan"
 	return ""
@@ -159,12 +163,47 @@ func _overlay_blocks() -> bool:
 func _reached() -> bool:
 	if sword == null:
 		return false
-	var delta: Vector3 = aim_point() - host.camera.global_position
+	var origin: Vector3 = host.camera.global_position
+	var aim: Vector3 = aim_point()
+	var delta: Vector3 = aim - origin
 	if delta.length() < 0.01 or delta.length() > REACH:
 		return false
-	if (-host.camera.global_basis.z).dot(delta.normalized()) < AIM:
+	var forward: Vector3 = -host.camera.global_basis.z
+	# The centre cone still returns the blade. A level look from the case front
+	# (owner r17 16-30-49) meets the drawn quad instead, the same pixel rule as
+	# the other Museum sprites.
+	if forward.dot(delta.normalized()) >= AIM:
+		return _clear_ray(aim)
+	if not sword.visible:
 		return false
-	var query := PhysicsRayQueryParameters3D.create(host.camera.global_position, aim_point(), preload("res://scripts/lol2/region_blockers.gd").RAY_MASK)
+	return _on_blade(origin, forward, aim)
+
+func _on_blade(origin: Vector3, direction: Vector3, center: Vector3) -> bool:
+	var normal: Vector3 = origin - center
+	normal.y = 0
+	if normal.length() < 0.01:
+		return false
+	normal = normal.normalized()
+	var point: Variant = Plane(normal, normal.dot(center)).intersects_ray(origin, direction)
+	if point == null:
+		return false
+	var hit: Vector3 = point
+	if origin.distance_to(hit) > REACH:
+		return false
+	var offset: Vector3 = hit - center
+	var right := Vector3(normal.z, 0.0, -normal.x)
+	var margin: float = origin.distance_to(hit) * tan(deg_to_rad(4.0))
+	var quad := sword.mesh as QuadMesh
+	if quad == null:
+		return false
+	if absf(offset.dot(right)) > quad.size.x * 0.5 + margin:
+		return false
+	if absf(offset.y) > quad.size.y * 0.5 + margin:
+		return false
+	return _clear_ray(hit)
+
+func _clear_ray(at: Vector3) -> bool:
+	var query := PhysicsRayQueryParameters3D.create(host.camera.global_position, at, preload("res://scripts/lol2/region_blockers.gd").RAY_MASK)
 	var excluded: Array[RID] = [host.player.get_rid()]
 	var exhibit = host.get_node_or_null("BrokenCase")
 	if exhibit != null:

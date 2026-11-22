@@ -15,6 +15,10 @@ func run() -> void:
 	check(not Heads.validate(bad).is_empty(), "the fifth skull is refused")
 	bad = Heads.initial()
 	bad.dragged = true
-	check(not Heads.validate(bad).is_empty(), "a drag is refused")
-	if failures == 0: print("PASS l19_ghostly_heads_test: four skulls, imp 31, drag stays unbound")
+	check(not Heads.validate(bad).is_empty(), "a drag before the four shots is refused")
+	var dragged: Dictionary = Heads.initial()
+	dragged.shot = [67, 69, 68, 70]
+	dragged.dragged = true
+	check(Heads.validate(dragged).is_empty(), "four shots drag the token")
+	if failures == 0: print("PASS l19_ghostly_heads_test: four skulls, imp 31, the token drags")
 	quit(1 if failures else 0)

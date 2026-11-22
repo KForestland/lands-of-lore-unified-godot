@@ -33,7 +33,18 @@ func run():
  if not await fight_nearby(scene):quit(1);return
  for i in 3:await physics_frame
  check(encounter.state().kills==2,"second actual combat death")
- check(scene._quicksave_unrecorded("res://tmp/l14_spider_earned_save.json").is_empty() and scene._quickload_unrecorded("res://tmp/l14_spider_earned_save.json").is_empty(),"original encounter save/reload")
+ var save_error:String=scene._quicksave_unrecorded("res://tmp/l14_spider_earned_save.json")
+ check(save_error.is_empty(),"original encounter save: "+save_error)
+ if save_error.is_empty():
+  var load_error:String=scene._quickload_unrecorded("res://tmp/l14_spider_earned_save.json")
+  check(load_error.is_empty(),"original encounter reload: "+load_error)
+ var whole_save=preload("res://scripts/lol2/game_save.gd")
+ var slot_error:String=whole_save.save(scene,10)
+ check(slot_error.is_empty(),"whole-game slot after actual spider fights: "+slot_error)
+ if slot_error.is_empty():
+  var slot:Dictionary=whole_save.read_document(whole_save.slot_path(10))
+  check(slot.error.is_empty(),"whole-game spider slot reader: "+slot.error)
+  if slot.error.is_empty():check(slot.state.area_save==JSON.parse_string(JSON.stringify(scene.area_snapshot(),"",true,true)),"whole-game spider packet equals current legacy snapshot")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seeds/recovery")
  print("SPIDER END ",scene.player.position)
  scene.queue_free();await process_frame

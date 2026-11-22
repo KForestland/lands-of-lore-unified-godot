@@ -63,6 +63,13 @@ func run() -> void:
 	paused=true
 	audio._process(0)
 	audio._physics_process(3)
+	if not check(same(stable,audio.checkpoint()),"Pause advanced saved audio clocks immediately"): return
+	# AudioStreamPlayer3D.play queues playback for a physics frame. The pause
+	# flag may still describe the pending voice here (reproduced on unchanged f6c6a3e).
+	# process_frame precedes callbacks: two signals include one completed pause update.
+	for i in 2:
+		await process_frame
+		if not check(same(stable,audio.checkpoint()),"Paused frame advanced saved audio clocks"): return
 	if not check(same(stable,audio.checkpoint()) and audio.players["30"].stream_paused,"Pause advanced or played rolling audio"): return
 	paused=false
 	audio._process(0)
@@ -78,10 +85,14 @@ func run() -> void:
 	bad=scene.area_handoff()
 	bad.quests.erase("hive_boulder_audio")
 	if not check(not scene.apply_area_handoff(bad).is_empty(),"New missing audio packet accepted as legacy"): return
+	# The independent mixer may finish before the controlled physics clock.
+	# An explicit stop emits no natural-finish signal, so it must still fail this check.
+	var exit_observation := {"finished":false}
+	audio.players.exit.finished.connect(func(): exit_observation.finished=true)
 	for i in range(1100):
 		await step(1)
 		if scene.boulder_surfaces.state.phase==3 and scene.boulder_surfaces.state.elapsed==2: break
-	if not check(audio.players.exit.playing and Audio.active(audio.state,"exit"),"Surface cap cut the original exit sound tail"): return
+	if not check(Audio.active(audio.state,"exit") and (audio.players.exit.playing or exit_observation.finished),"Surface cap cut the original exit sound tail before natural completion"): return
 	if not check(not audio.players["30"].playing and not audio.players["31"].playing,"Stopped owners kept rolling sounds"): return
 	var tail_path:="user://tests/hive_boulder_audio_exit_tail.json"
 	if not check(scene.quicksave(tail_path).is_empty(),"Exit-tail save failed"): return

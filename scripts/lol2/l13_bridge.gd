@@ -1,4 +1,5 @@
 extends Node3D
+const RESTORE_ON := ["load"]
 ## Original eleven plates and counter180; modern reveal wave and 60Hz lifetime.
 const KEY="l13_bridge"
 const ORDER=[90,100,95,99,94,98,93,97,92,96,91]
@@ -25,6 +26,13 @@ func _ready():
   for f in pack.faces:
    if owns(f) and int(f.source_index)==id:faces.append(f)
   host.get_node("L13Eggs").build(plate,faces)
+ restore()
+## Native193's decoded relay starts the first bridge plate. The existing
+## modern9s wave remains the presentation; approach auto-start stays available.
+func activate_from_switch()->void:
+ var s:=state().duplicate(true)
+ if s.started:return
+ s.started=true;host.quest_state[KEY]=s
  restore()
 func lit(id:int)->bool:
  if id==84:return not host.get_node("L13Spires").dawn_ready()

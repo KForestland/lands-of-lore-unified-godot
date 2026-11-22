@@ -1,0 +1,14 @@
+{
+  "area": "L13_RC",
+  "declaration": {
+    "script": "generic_object_actions.gd",
+    "phase": "late",
+    "needs": "progression"
+  },
+  "node_name": "GenericObjects",
+  "restore_on": [
+    "load",
+    "arrival"
+  ],
+  "note": "G03 control53 step-on and prop250 aimed native events. Native bank owns persistent fields; restores reset only transient step latches. No static/collision claim."
+}

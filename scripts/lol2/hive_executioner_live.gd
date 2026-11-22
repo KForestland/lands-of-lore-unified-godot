@@ -1,4 +1,5 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 ## Playable emulation adapter. Source actor36, 300 health and selector11/frame8;
 ## steering, awareness, damage and seconds are provisional, not native AI parity.
 const SPAWN := Vector3(-642,-235,-6462)
@@ -112,7 +113,7 @@ func advance(delta: float) -> void:
 			state.hit_sent=true
 			if in_reach():
 				var guards = host.get_node("Warriors")
-				if not preload("res://scripts/lol2/player_form_rules.gd").protected(host): guards.health=maxi(0,guards.health-preload("res://scripts/lol2/player_defense.gd").incoming(host,15))
+				if not preload("res://scripts/lol2/player_form_rules.gd").protected(host): PlayerHealth.lose_host(host,preload("res://scripts/lol2/player_defense.gd").incoming(host,15))
 				if guards.health==0: host.set_physics_process(false)
 		if state.elapsed>=ATTACK_DURATION:
 			state.mode="idle";state.elapsed=0.0;state.hit_sent=false;state.cooldown=0.8

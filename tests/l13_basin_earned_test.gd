@@ -1,8 +1,14 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l13_egg_door_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="f5450e1574da3a93ec9add223282a7c1484f85975979e01bd3de8a1fe608313c"
+func pass_line() -> String:
+ return "PASS earned first iris -> source eye/paired irises -> actual Spark vent -> saved modern drainage -> original145/146/147 physical pickups/reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_egg_door_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="f5450e1574da3a93ec9add223282a7c1484f85975979e01bd3de8a1fe608313c","qualified first iris input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified first iris input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -43,5 +49,5 @@ func run():
  check(scene._quicksave_unrecorded("res://tmp/l13_basin_earned_save.json").is_empty() and scene._quickload_unrecorded("res://tmp/l13_basin_earned_save.json").is_empty(),"actual basin loot save/reload")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seeds or recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned first iris -> source eye/paired irises -> actual Spark vent -> saved modern drainage -> original145/146/147 physical pickups/reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

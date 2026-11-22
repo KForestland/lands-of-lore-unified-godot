@@ -81,6 +81,14 @@ func run() -> void:
 	for i in range(3): await process_frame
 	cave._quickload()
 	for i in range(3): await process_frame
+	# The whole-game load (Plan 3) rebuilds the area scene: read the plate from the scene that is current after the load.
+	if not is_instance_valid(cave) and is_instance_valid(current_scene): cave = current_scene
+	for i in range(600):
+		if is_instance_valid(cave) and cave.walkthrough_ready and cave.entrance_death != null: break
+		await process_frame
+		if not is_instance_valid(cave) and is_instance_valid(current_scene): cave = current_scene
+	if not is_instance_valid(cave) or cave.entrance_death == null: return fail("No Cave after load")
+	death = cave.entrance_death
 	if death.owner_state != 0: return fail("Load did not re-arm the plate")
 	print("PASS cave entrance death: actual W walk out of the mouth, human luthrdie overlay, defeat, R off-plate re-arm, beast/lizard/grounded admissions, load re-arm")
 	quit()

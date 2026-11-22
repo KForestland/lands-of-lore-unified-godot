@@ -64,7 +64,7 @@ func _initialize() -> void:
 	var offered: Dictionary = row_for(used, 20782)
 	check(str(offered.get("status", "")) == "unhosted" and str(offered.get("reasons", [])).contains("0x80"), "group 20782 mode 1 admits arg_c 1 and stops at the unread bit (%s)" % [offered.get("reasons", [])])
 	var predicated: Dictionary = row_for(used, 21132)
-	check(str(predicated.get("status", "")) == "unhosted" and str(predicated.get("reasons", [])).contains("right type 4"), "group 21132 mode 1 admits arg_c 1 and stops on predicate 42 (%s)" % [predicated.get("reasons", [])])
+	check(str(predicated.get("status", "")) == "unhosted" and str(predicated.get("reasons", [])).contains("0x26E58 + 33"), "group 21132 mode 1 admits arg_c 1 and predicate 42 nests to the unread 0x26E58 byte (%s)" % [predicated.get("reasons", [])])
 	var key := talk.group_key(1, 980001)
 	talk.groups[key] = []
 	(talk.objects["actor:113"] as Array).append({"kind": 4, "stream": 1, "group": 980001, "file_offset": -2, "bytes": PackedByteArray([0x0a, 4, 0x71, 0x00, 1, 1, 0, 0, 0, 0]), "predicate": -1})

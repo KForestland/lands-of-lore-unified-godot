@@ -4,6 +4,10 @@ signal conversation_started
 signal conversation_finished
 const Quests = preload("res://scripts/lol2/act_one_quest_state.gd")
 const ROOT := "res://assets/lol2/generated/hive_conversation/"
+## Owner r12l F10 2026-10-28 15:30:39 scaled Dawn to about 44 units, the player's height.
+## Owner r17 16-49-32 at Hive (-1179, -8839) says this woman is a 3-metre cat and should be the same or lower.
+## The pack stays at its authored 128-unit height. Native sprite projection is unread.
+const VISUAL_HEIGHT := 44.0
 var data: Dictionary
 # Source region1001/event4/group6598. Admission is authored, not a full opcode9 replay.
 const ROOM_POLYGON := [Vector2(-1248,-8688),Vector2(-1271,-8721),Vector2(-1180,-8753),Vector2(-1175,-8740)]
@@ -23,10 +27,12 @@ var prompt: Label3D
 func _ready() -> void:
 	data = JSON.parse_string(FileAccess.get_file_as_string(ROOT + "conversation.json"))
 	position = Vector3(data.position[0], data.position[1], data.position[2])
+	var authored_height := float(data.size[1])
+	var fit := VISUAL_HEIGHT / authored_height
 	var quad := QuadMesh.new()
-	quad.size = Vector2(data.size[0], data.size[1])
-	quad.center_offset.y = quad.size.y / 2
-	quad.center_offset.x = float(data.get("center_offset_x",0))
+	quad.size = Vector2(float(data.size[0]) * fit, VISUAL_HEIGHT)
+	quad.center_offset.y = quad.size.y / 2.0
+	quad.center_offset.x = float(data.get("center_offset_x",0)) * fit
 	mesh = quad
 	var material := StandardMaterial3D.new()
 	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
@@ -41,7 +47,7 @@ func _ready() -> void:
 	add_child(audio)
 	prompt = Label3D.new()
 	prompt.text = "E — Speak"
-	prompt.position.y = 140
+	prompt.position.y = quad.size.y + 12.0
 	prompt.font_size = 32
 	prompt.pixel_size = 0.3
 	prompt.billboard = BaseMaterial3D.BILLBOARD_ENABLED
@@ -49,12 +55,18 @@ func _ready() -> void:
 	add_child(prompt)
 	_set_frame(242) # Source named loiter section; static until review interaction.
 
+func aim_point() -> Vector3:
+	var height := VISUAL_HEIGHT
+	if mesh is QuadMesh:
+		height = (mesh as QuadMesh).size.y
+	return global_position + Vector3(0.0, height * 0.5, 0.0)
+
 func can_begin() -> bool:
 	if not room_entered or started or get_tree().paused: return false
 	if get_parent().has_node("Warriors") and get_parent().get_node("Warriors").health <= 0: return false
 	var review = get_parent()
 	if not review.ready_for_review or review.flying: return false
-	var target := global_position + Vector3(0,64,0)
+	var target := aim_point()
 	var camera: Camera3D = review.camera
 	var offset := target-camera.global_position
 	if offset.length() > 160 or offset.normalized().dot(-camera.global_basis.z) < 0.9: return false

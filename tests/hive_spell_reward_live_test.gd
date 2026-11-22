@@ -77,7 +77,11 @@ func run() -> void:
 	assert(jungle.apply_area_handoff(handoff).is_empty())
 	assert(jungle.starting_magic.magic_state() == final)
 	assert(jungle.quicksave(path).is_empty())
-	assert(jungle.quickload(path).is_empty() and jungle.starting_magic.magic_state() == final)
+	# 5bcd609: the Jungle load releases the saved cast lock; every reward,
+	# mana value and spell-state field must still match the saved checkpoint.
+	var loaded_final: Dictionary = final.duplicate(true)
+	loaded_final.cooldown = 0.0
+	assert(jungle.quickload(path).is_empty() and jungle.starting_magic.magic_state() == loaded_final)
 	await finish(jungle)
-	print("PASS actual Spark ray hits award magic only, debit/cooldown retained, miss/corpse grant nothing, level growth, kill without melee multiplier and disk rollback")
+	print("PASS actual Spark hits award magic only, debit/cast lock, miss/corpse grant nothing, level growth and disk rollback; Jungle load releases only the cast lock")
 	quit()
