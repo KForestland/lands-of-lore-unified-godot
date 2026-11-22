@@ -127,6 +127,11 @@ static func validate(value: Variant, checkpoint_count: int) -> String:
 		if shrine_source.is_empty(): return "Missing shrine doors source."
 		var shrine_error: String = preload("res://scripts/lol2/cave_shrine_doors.gd").validate(value.cave_shrine_doors, shrine_source)
 		if not shrine_error.is_empty(): return shrine_error
+	if value.has("cave_draracle_door"):
+		var door_source: Dictionary = preload("res://scripts/lol2/cave_draracle_door.gd").source()
+		if door_source.is_empty(): return "Missing Draracle door source."
+		var door_error: String = preload("res://scripts/lol2/cave_draracle_door.gd").validate(value.cave_draracle_door, door_source)
+		if not door_error.is_empty(): return door_error
 	if value.has("cave_tar_fires"):
 		var tar_source: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/cave_tar_fires_source.json"))
 		if not tar_source is Dictionary: return "Missing tar fires source."
@@ -143,6 +148,9 @@ static func validate(value: Variant, checkpoint_count: int) -> String:
 	if value.has("cave_boulder1333"):
 		var boulder_error: String = preload("res://scripts/lol2/cave_boulder1333.gd").validate(value.cave_boulder1333)
 		if not boulder_error.is_empty(): return boulder_error
+	if value.has("cave_crates"):
+		var crate_error: String = preload("res://scripts/lol2/cave_crate_stack.gd").validate(value.cave_crates)
+		if not crate_error.is_empty(): return crate_error
 	if value.has("stone_manafoil") and not preload("res://scripts/lol2/cave_stone_manafoil.gd").validate_ids(value.stone_manafoil):
 		return "Save Ancient Stone/Mana foil state is invalid."
 	if value.has("item_effects"):
@@ -232,11 +240,14 @@ static func read_save(path: String, checkpoint_count: int) -> Dictionary:
 	var error := validate(parser.data, checkpoint_count)
 	if not error.is_empty():
 		return {"error": error}
-	var state: Dictionary = parser.data
+	return {"error": "", "state": migrate_loaded(parser.data)}
+
+static func migrate_loaded(value: Dictionary) -> Dictionary:
+	var state := value.duplicate(true)
 	if state.version == 1:
 		state.version = VERSION
 		state.collected = []
-	return {"error": "", "state": state}
+	return state
 
 static func write_save(path: String, state: Dictionary, checkpoint_count: int) -> String:
 	var error := validate(state, checkpoint_count)

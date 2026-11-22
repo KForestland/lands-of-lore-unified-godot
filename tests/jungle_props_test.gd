@@ -21,6 +21,10 @@ func run() -> void:
 		for row in group.instances:
 			if int(row[3]) in owned: return fail("Host-owned prop %d drawn twice" % int(row[3]))
 	var sa = scene.static_assemblies
-	if sa == null or str(sa.data.area) != "L4_HJ" or sa.data.drawn.size() != 171 or sa.solid_bodies.size() != 54 + scene.JUNGLE_BRIDGE.size() + (scene.causeway.src.unlink.size() if scene.get("causeway") != null else 0): return fail("L4 scenery assemblies/boxes missing")
-	print("PASS jungle_props: 5830 sprite props in 68 batches, no host-owned prop drawn twice, 171 L4 scenery assemblies with 53 native solid boxes")
+	var decks: int = preload("res://scripts/lol2/static_assemblies.gd").BRIDGE_DECKS["L4_HJ"].size()
+	var causeway: int = scene.causeway.src.unlink.size() if scene.get("causeway") != null else 0
+	# 54 native boxes + bridge solids + stream decks (BG07/BI02) + causeway + 9 bramble solids (BI01).
+	var solids: int = 54 + scene.JUNGLE_BRIDGE.size() + decks + causeway + 9
+	if sa == null or str(sa.data.area) != "L4_HJ" or sa.data.drawn.size() != 171 or sa.solid_bodies.size() != solids: return fail("L4 scenery assemblies/boxes missing")
+	print("PASS jungle_props: 5830 sprite props in 68 batches, no host-owned prop drawn twice, 171 L4 scenery assemblies, stream decks 219, 221, 222, 223, 224 solid, 9 bramble solids")
 	quit(0)

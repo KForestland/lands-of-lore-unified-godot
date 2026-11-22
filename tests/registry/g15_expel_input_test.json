@@ -1,0 +1,103 @@
+{
+  "name": "g15_expel_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 1,
+  "test_aids": 9,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Local real-input receiver component; explicit stand placement, valid Dawn speech prerequisite, control teaching and magic clock. Not an earned walk; native birth relocation is production behavior."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "f3a254c7e7b387b96bd018d34abb719c08c867c69378b6bd669f548dd8e67918"
+  },
+  "context_aid_source_sites": {
+    "count": 11,
+    "sites": [
+      {
+        "path": "tests/g15_expel_input_test.gd",
+        "line": 11,
+        "column": 16,
+        "kind": "learning_api_fixture",
+        "source": "if not require(magic.learn_spell_group(\"control\"),\"Disclosed learned Control Token fixture\"):return"
+      },
+      {
+        "path": "tests/g15_expel_input_test.gd",
+        "line": 12,
+        "column": 18,
+        "kind": "component_magic_clock",
+        "source": "await tap(KEY_3);magic.set_process(false)"
+      },
+      {
+        "path": "tests/g15_expel_input_test.gd",
+        "line": 16,
+        "column": 1,
+        "kind": "valid_prerequisite_fixture",
+        "source": "scene.quest_state[mother.KEY]=prerequisite"
+      },
+      {
+        "path": "tests/g15_expel_input_test.gd",
+        "line": 22,
+        "column": 52,
+        "kind": "form_admission_fixture",
+        "source": "if not require(not mother.state().glob_entered and scene.player_form==2,\"Curse3 changes form but cannot perform Expel\"):return"
+      },
+      {
+        "path": "tests/g15_expel_input_test.gd",
+        "line": 23,
+        "column": 41,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40);magic.set_process(false)"
+      },
+      {
+        "path": "tests/g15_expel_input_test.gd",
+        "line": 25,
+        "column": 52,
+        "kind": "form_admission_fixture",
+        "source": "if not require(not mother.state().glob_entered and scene.player_form==0,\"Curse2 also leaves the mother unchanged\"):return"
+      },
+      {
+        "path": "tests/g15_expel_input_test.gd",
+        "line": 26,
+        "column": 41,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40);magic.set_process(false)"
+      },
+      {
+        "path": "tests/g15_expel_input_test.gd",
+        "line": 35,
+        "column": 41,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40);magic.set_process(false);mana=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 20,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

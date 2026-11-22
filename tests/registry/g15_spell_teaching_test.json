@@ -1,0 +1,22 @@
+{
+  "name": "g15_spell_teaching_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 0,
+  "needs": {
+    "note": "Pure teaching contract and new-owner fallback; explicit legacy/modern/receipt vectors, no gameplay route claim."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "6053604991cf815e417e1ba4296a28f2bb73941571452fedf995b0cc336864f5"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 0,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

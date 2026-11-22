@@ -150,8 +150,8 @@ func run() -> void:
 	if not check(has_meta("lol2_cave_completion") and Museum.validate_cave_transfer(get_meta("lol2_cave_completion")).is_empty(),"Valid cave completion not handed over"):return
 	for i in 6: await process_frame
 	if not check(current_scene!=null and current_scene.scene_file_path=="res://scenes/lol2/museum_walkthrough.tscn","Museum not entered after retry"):return
+	if not check(not has_meta("lol2_cave_completion"),"Museum did not consume the applied handoff"):return
 	await finish(current_scene)
-	remove_meta("lol2_cave_completion")
 	if failed: return
 	print("PASS cave→Museum transfer: validator %d malformed classes rejected, version1 all10 missing-field and malformed-version controls, full/partial unversioned compatibility, current captain/legacy packets applied in full, malformed packets rejected whole on Museum entry, real cave refuses to leave with an unowned weapon (state unchanged, retryable) refuses all11 version/field omissions without mutation, and leaves after correction. Supplied states; not earned." % bad_cases.size())
 	quit()

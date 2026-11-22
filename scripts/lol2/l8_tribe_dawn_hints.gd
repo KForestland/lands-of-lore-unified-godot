@@ -5,6 +5,7 @@ const MyJournal = preload("res://scripts/lol2/my_journal.gd")
 const Journey = preload("res://scripts/lol2/l8_journey.gd")
 const Bracers = preload("res://scripts/lol2/dead_bracers_item.gd")
 const JOURNAL_HINTS := [
+	{"when":"l8_dawn_sends_to_emperor","flag":"l8_dawn","hint":"Dawn has the bracers now. The Emperor in the Dracoid Cemetery may know why the trees there are dead.","enhanced_guard":"same note in both editions (BJ14 F4)"},
 	{"when":"l8_not_initiated","flag":"l8_tribe","hint":"The tribe's fight, and a silver leaf still in my pack, are what the shaman asks before he calls me one of them.","enhanced_guard":"same note in both editions (grok K09)"},
 	{"when":"l10_trees_need_dawn","flag":"l10_silverleaf","hint":"Dawn on the river wants the bracers from the ruins. While I still carry them, the cemetery trees stay dead.","enhanced_guard":"same note in both editions (grok K09)"}]
 var host: Node3D

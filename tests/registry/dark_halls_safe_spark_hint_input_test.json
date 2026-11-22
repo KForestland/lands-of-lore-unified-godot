@@ -1,0 +1,19 @@
+{
+  "name": "dark_halls_safe_spark_hint_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Original owner corridor save, actual E/S/mouse/ControlQ/F5F9 at 1/60; held actors/slot from helper, no supplied player stand or health/pack/story edits. Not an earned campaign."
+  },
+  "teleports": 0,
+  "test_aids": 7,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "8a1998a1a349e19ad2ba92948b2687038018167cc8bfbbacedca44cd5248d8fd"
+  },
+  "count_method": "Audited source sites, not executions; helper actor/slot/root-process holds and real S movement are disclosed in the test."
+}

@@ -54,10 +54,12 @@ func run():
 	if not check(oil.aimed(oil.FOUNTAIN, 180.0), "aimed at prop 392"):
 		await stop(scene, 1); return
 	await click()
-	if not check(bool(oil.state().burned) and oil.flame.visible, "the oil catches"):
+	if not check(bool(oil.state().burned) and oil.flame.visible and oil.drain.visible, "the oil catches and the pool shows"):
 		await stop(scene, 1); return
 	var doors_after: Array = travel_of(scene, oil.DOORS)
-	if not check(doors_after == doors_before, "fire doors stay"):
+	var group_ran: bool = oil.fire_results.size() == 1 and str(oil.fire_results[0].get("status", "")) == "ran"
+	if not check(group_ran and doors_after == [40, 100, 150] and doors_after != doors_before, "group 14558 opens doors 80, 81, and 98"):
+		print("DOORS ", doors_before, " -> ", doors_after, " ", oil.fire_results)
 		await stop(scene, 1); return
 	scene.player.position = Vector3(-2500, 27, 12858)
 	scene.player.velocity = Vector3.ZERO
@@ -80,6 +82,8 @@ func run():
 	var kept: bool = bool(oil.state().burned) and oil.BOW in collected and oil.BLUE in scene.carried_collected
 	if not check(kept, "save keeps the burn and both bows"):
 		await stop(scene, 1); return
-	print("PASS earned NE tower save -> prop 392 burns -> Dark Bow taken, blue bow stays")
+	if not check(travel_of(scene, oil.DOORS) == [40, 100, 150], "reload keeps the fire-door travel"):
+		await stop(scene, 1); return
+	print("PASS earned NE tower save -> prop 392 burns, doors 80/81/98 open, Dark Bow taken, blue bow stays")
 	await stop(scene, 0)
 

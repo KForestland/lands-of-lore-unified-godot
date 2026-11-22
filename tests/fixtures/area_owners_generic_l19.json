@@ -1,0 +1,14 @@
+{
+  "area": "L19_BC",
+  "declaration": {
+    "script": "generic_object_actions.gd",
+    "phase": "late",
+    "needs": "progression"
+  },
+  "node_name": "GenericObjects",
+  "restore_on": [
+    "load",
+    "arrival"
+  ],
+  "note": "Guide door73 input; native bank owns persistent state, no new validator/static/collision claim."
+}

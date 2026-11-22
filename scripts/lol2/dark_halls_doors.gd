@@ -4,11 +4,16 @@ extends Node
 ## E fires the door's kind-4 records (context = the door, arg_c = 0); predicates 206/207 on the door's +0x25 pick the
 ## open group (opcode 1 percent 100, +0x25 = 1) or the close group (percent 0, +0x25 = 0). The leaf turns to
 ## sign * travel word * 360 / 65536 degrees on its native hinge. Sound requests are logged, not played.
-## Door 57's trap: grounded entry into region1338 slams and locks it and brings grid SHADE 73 next to the trap; the
-## SHADE's death fires actor73 kind6 value10 (group 15750: door 57 +0x25 = 0) and unlocks it.
+## Door 57's trap: grounded entry into region 1338 slams and locks it and brings grid SHADE 73 next to the trap; the
+## SHADE's death fires actor 73 kind 6 value 10 (group 15750: door 57 +0x25 = 0) and unlocks it. Group 794 does not
+## run as a unit: opcode 13 index 12 on actor 73 was not entered, and a refusal drops the whole group. The host applies
+## the proven prefix (sound 881, travel 0, state 2). Opcode 18 only parks the command, so the shade is moved here.
+## A left click fires kind 9. Three hits open the leaf (travel 21845). The swing words are an adapter: the player does
+## not produce them. Group 13798 does not clear the quest lock. Region 83's stream-0 group 76 would shut door 56 and
+## set state 3, but predicate 19 nests to local 6, which is not seeded, so the group stays unhosted.
 ## Modern adapters (docs/DEVIATIONS.md): E as the use (arg_c 0), kind-0x20 slot N = movable N, the earlier swing
-## speed, the lock and trap closing (group 794 is not hosted), old-save mapping, E within reach and facing, the native
-## template box as the leaf's collider; door bashing (kind9) and region83's door56 lock are not hosted.
+## speed, the trap prefix and the shade move, old-save mapping, E within reach and facing, the native template box
+## as the leaf's collider, and the kind-9 swing words.
 ## State: quests.dark_halls_doors {"56": {"open","locked"}, "57": {...}, "trap": bool, optional "native": {"movable:56":
 ## {fields}, "movable:57": {fields}, "locals": {index: value}}}. "open" mirrors travel != 0; saves without "native"
 ## load as open -> +0x25 1 and the full travel word.
@@ -19,6 +24,13 @@ const NATIVE_FIELDS: Array[String] = ["byte_0x25", "selector_0x3d", "byte_0x26",
 const REACH := 120.0
 const FACING := 0.7
 const SWING_SECONDS := 1.0
+## Kind-9 admit words. Door 57's third record needs dword_26 <= 20; door 56's needs <= 10. One strength of 10
+## opens either door. A strength of 20 opens only door 57. The player swing does not write these words.
+const BASH_WORD0 := 0x0002
+const BASH_WORD2 := 0x0004
+const BASH_DWORD := 10
+const TRAP_SOUND := 881
+const TRAP_STATE := 2
 const Form = preload("res://scripts/lol2/player_form_body.gd")
 const Assemblies = preload("res://scripts/lol2/static_assemblies.gd")
 var host: Node3D
@@ -28,6 +40,8 @@ var angle: Dictionary = {}    # id -> current unsigned leaf angle in degrees
 var target_word: Dictionary = {}  # id -> travel word from the native host
 var native: RefCounted = null
 var sound_log: Array[int] = []
+var trap_group: String = ""
+var trap_reason: String = ""
 
 static func assets_ready() -> bool: return FileAccess.file_exists(SOURCE)
 
@@ -215,6 +229,14 @@ func use(id: String) -> bool:
 	_store_native()
 	return true
 
+## Kind 9. One click enqueues one record. The third hit on either door writes travel 21845. The quest lock is untouched.
+func bash(id: String) -> bool:
+	if not leaves.has(id) or native == null: return false
+	var hit: Dictionary = {"word0": BASH_WORD0, "word2": BASH_WORD2, "dword_26": BASH_DWORD, "dword_1e": 0, "global_23331": 0}
+	native.call("fire_event", "movable:" + str(id), 9, hit)
+	_store_native()
+	return true
+
 ## The door leaf in front of the camera within reach, or "".
 func aimed() -> String:
 	var cam: Camera3D = host.camera
@@ -244,10 +266,23 @@ func spring_trap() -> bool:
 	state().trap = true
 	state()[door].open = false
 	state()[door].locked = true
-	# Adapter: native group 794 (opcodes 18/13 not hosted) also closes the door; only the closing is applied here.
+	# Group 794's region slot was not entered, and opcode 13 index 12 drops the group. Apply the proven prefix.
 	if native != null:
-		native.call("set_field", "movable:" + door, "travel_0x50", 0)
-		target_word[door] = 0
+		var ran: Dictionary = native.call("execute_group", 0, int(t.group)) as Dictionary
+		trap_group = str(ran.get("status", ""))
+		trap_reason = ""
+		var reasons: Variant = ran.get("reasons", [])
+		if reasons is Array:
+			for item in reasons:
+				trap_reason += str(item) + " "
+		if trap_group == "ran":
+			target_word[door] = int(native.call("field", "movable:" + door, "travel_0x50", 0))
+		else:
+			native.call("set_field", "movable:" + door, "travel_0x50", 0)
+			native.call("set_field", "movable:" + door, "byte_0x25", TRAP_STATE)
+			target_word[door] = 0
+			sound_log.append(TRAP_SOUND)
+			print("Dark Halls doors: native sound request %d (logged; the group did not run)" % TRAP_SOUND)
 		_store_native()
 	var pop = host.get("creatures")
 	if pop != null and is_instance_valid(pop) and pop.state.actors.has(t.actor) and int(pop.state.actors[t.actor].health) > 0:
@@ -284,7 +319,16 @@ func _physics_process(delta: float) -> void:
 		_pose(id)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED or get_tree().paused or host.flying: return
+	if get_tree().paused or host.flying: return
+	var captured := Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	# Headless has no window, so a captured mouse cannot stick. A real window still requires it.
+	var headless := DisplayServer.get_name() == "headless"
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
+		if not captured: return
 		var id := aimed()
 		if not id.is_empty() and use(id): get_viewport().set_input_as_handled()
+		return
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if not captured and not headless: return
+		var chop := aimed()
+		if not chop.is_empty() and bash(chop): get_viewport().set_input_as_handled()

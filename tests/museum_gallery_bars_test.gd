@@ -20,6 +20,15 @@ func run() -> void:
 	var cap = bar.mesh.surface_get_material(1)
 	check(side != null and cap != null and side != cap, "431 and 433 are different materials")
 	check(side.albedo_texture != null and cap.albedo_texture != null, "both bar textures load")
+	var side_uv: PackedVector2Array = bar.mesh.surface_get_arrays(0)[Mesh.ARRAY_TEX_UV]
+	var cap_uv: PackedVector2Array = bar.mesh.surface_get_arrays(1)[Mesh.ARRAY_TEX_UV]
+	check(side_uv.size() == 24 and cap_uv.size() == 12, "each bar face has UVs")
+	var side_span := Rect2(side_uv[0], Vector2.ZERO)
+	for uv in side_uv: side_span = side_span.expand(uv)
+	check(side_span.position.is_equal_approx(Vector2.ZERO) and side_span.size.is_equal_approx(Vector2.ONE), "side faces span resource 431")
+	var cap_span := Rect2(cap_uv[0], Vector2.ZERO)
+	for uv in cap_uv: cap_span = cap_span.expand(uv)
+	check(cap_span.position.is_equal_approx(Vector2.ZERO) and cap_span.size.is_equal_approx(Vector2.ONE), "caps span resource 433")
 	check(gallery.grate.get_node("MuseumGrateBar13").mesh == bar.mesh, "the grate shares one bar mesh")
 	var left: MeshInstance3D = gallery.get_node("MuseumBar62")
 	var right: MeshInstance3D = gallery.get_node("MuseumBar78")

@@ -1,0 +1,96 @@
+{
+  "name": "l13_pink_ledge_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1357,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Disclosed direct load of untouched game-written legacy Dawn checkpoint, produced by older tests with direct movement/action aids. Component proof only: actual W/Space/Shift, ordinary1/60, source tread interiors, no pose/health/jump-request writes. Not an unaided earned campaign claim."
+  },
+  "teleports": 0,
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "4e3f9dcf4197dc7ccf68f4e70e049820fc8fa06d1c6a0a740550722625fc65a4"
+  },
+  "context_aid_source_sites": {
+    "count": 10,
+    "sites": [
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 14,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l13_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 20,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 23,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 76,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(LOWER_INPUT,Slots.slot_path(1))==OK,\"Install untouched game-written lowerF5 for actualF9\"):return false"
+      },
+      {
+        "path": "tests/l13_pink_ledge_input_test.gd",
+        "line": 15,
+        "column": 17,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(path, Slots.slot_path(1)) == OK, \"Install actualF5 pink-base component slot\"): return"
+      },
+      {
+        "path": "tests/l13_pink_ledge_input_test.gd",
+        "line": 21,
+        "column": 7,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds = false"
+      },
+      {
+        "path": "tests/l13_pink_ledge_input_test.gd",
+        "line": 26,
+        "column": 17,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.apply_save(saved.state).is_empty(), \"Disclosed legacy component load, no edited fields\"): return"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 11,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

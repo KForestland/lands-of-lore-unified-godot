@@ -1,0 +1,162 @@
+{
+  "name": "chain_lesson_refusals_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Eight actual E-reminder then Q-refusal components at real receivers. Supplied grounded stands, learned groups, depleted-mana and production warning fixtures, held magic regeneration/teaching/notice clocks. Ordinary1/60, no earned-route claim. Source-site counts, not executions."
+  },
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "learned_group_fixture",
+      "pattern": "\\.learn_spell_group\\("
+    },
+    {
+      "kind": "depleted_mana_fixture",
+      "pattern": "\\.player\\.mana\\s*=|\\.cooldown\\s*="
+    },
+    {
+      "kind": "magic_clock_fixture",
+      "pattern": "\\.set_process\\("
+    },
+    {
+      "kind": "story_warning_fixture",
+      "pattern": "\\.set_requests_enabled\\(|\\.request_timed_form\\("
+    }
+  ],
+  "teleports": 1,
+  "test_aids": 4,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "c954bacdf40d86102fe6bd5e22fea352a5096ef44767cc977439350f40183723"
+  },
+  "context_aid_source_sites": {
+    "count": 17,
+    "sites": [
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 12,
+        "column": 70,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/dragon_level.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 28,
+        "column": 6,
+        "kind": "magic_clock_fixture",
+        "source": "magic.set_process(false) # Hold only regeneration/teaching/notice clocks for exact fixture debit."
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 30,
+        "column": 68,
+        "kind": "depleted_mana_fixture",
+        "source": "var drained:Dictionary=magic.magic_state().duplicate(true);drained.player.mana=0;drained.cooldown=0;magic.commit(drained)"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 30,
+        "column": 90,
+        "kind": "depleted_mana_fixture",
+        "source": "var drained:Dictionary=magic.magic_state().duplicate(true);drained.player.mana=0;drained.cooldown=0;magic.commit(drained)"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 40,
+        "column": 67,
+        "kind": "depleted_mana_fixture",
+        "source": "if not require(magic.refusal_serial>serial and magic.magic_state().player.mana==mana,\"Refused actual cast has no debit: \"+id):return false"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 48,
+        "column": 21,
+        "kind": "learned_group_fixture",
+        "source": "scene.starting_magic.learn_spell_group(\"dampen\")"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 49,
+        "column": 12,
+        "kind": "story_warning_fixture",
+        "source": "scene.curse.set_requests_enabled(true)"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 50,
+        "column": 27,
+        "kind": "story_warning_fixture",
+        "source": "if not require(scene.curse.request_timed_form(2,60.0),\"Disclosed real warning request for Dampen eligibility\"):return"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 54,
+        "column": 21,
+        "kind": "learned_group_fixture",
+        "source": "scene.starting_magic.learn_spell_group(\"control\")"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 60,
+        "column": 21,
+        "kind": "learned_group_fixture",
+        "source": "scene.starting_magic.learn_spell_group(\"control\")"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 64,
+        "column": 21,
+        "kind": "learned_group_fixture",
+        "source": "scene.starting_magic.learn_spell_group(\"mists\")"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 69,
+        "column": 21,
+        "kind": "learned_group_fixture",
+        "source": "scene.starting_magic.learn_spell_group(\"mists\")"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 74,
+        "column": 21,
+        "kind": "learned_group_fixture",
+        "source": "scene.starting_magic.learn_spell_group(\"summon\")"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 78,
+        "column": 21,
+        "kind": "learned_group_fixture",
+        "source": "scene.starting_magic.learn_spell_group(\"prism\")"
+      },
+      {
+        "path": "tests/chain_lesson_refusals_input_test.gd",
+        "line": 82,
+        "column": 21,
+        "kind": "learned_group_fixture",
+        "source": "scene.starting_magic.learn_spell_group(\"control\")"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 21
+}

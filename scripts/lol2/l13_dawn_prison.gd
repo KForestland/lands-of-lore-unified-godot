@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Original DSLAVE idle/background; modern Spire gate and jump entry.
 const Release=preload("res://scripts/lol2/l13_dawn_release.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
@@ -58,9 +59,7 @@ func can_enter()->bool:
 func enter()->bool:
  if not can_enter():return false
  var s:=state().duplicate(true);s.visited=true;host.quest_state[KEY]=s
- choice.clear();choice.add_item("Examine recess");choice.set_item_metadata(0,"")
- for item in host.carried_collected:
-  choice.add_item(str(Items.row(item).get("label",item)));choice.set_item_metadata(choice.item_count-1,item)
+ preload("res://scripts/lol2/item_choice_menu.gd").populate(choice,host.carried_collected,host,"Examine recess")
  entered=true;entry_latched=true;room.visible=true;get_tree().paused=true;Input.mouse_mode=Input.MOUSE_MODE_VISIBLE;play("999");return true
 func play(next:String):
  cue=next;elapsed=0;atlas_path="";voice.stop();patch.visible=not state().released
@@ -84,8 +83,10 @@ func finish():
  if cue=="999":return
  var result:=Release.offer(host.quest_state.get(Release.KEY,Release.initial()),host.carried_collected,str(pending.get("item","")))
  if not result.ok:pending={};play("999");button.text=result.reason;return
- var s:=state().duplicate(true);s.released=true;host.quest_state[KEY]=s;host.quest_state[Release.KEY]=result.state
- host.carried_collected=result.inventory;host.quest_state.act2_items.collected.append(Release.REWARD);Items.sync(host)
+ var s:=state().duplicate(true);s.released=true
+ var admission:=Grants.transition(host,result.inventory,{KEY:s,Release.KEY:result.state},{"history":"act2","history_id":Release.REWARD})
+ if not admission.ok:pending={};play("999");button.text=admission.reason;return
+ Items.sync(host)
  pending={};leave();host.save_feedback("Dawn is free. She gives you the Bestial Disk. You keep the Dreamstone.")
 func leave():
  if not entered:return

@@ -1,0 +1,278 @@
+{
+	"children": [
+		{
+			"name": "Act3JournalHints",
+			"script": "res://scripts/lol2/act3_journal_hints.gd"
+		},
+		{
+			"name": "<automatic>",
+			"script": "res://scripts/lol2/act2_sector_light.gd"
+		},
+		{
+			"name": "PlayerHealth",
+			"script": "res://scripts/lol2/player_health.gd"
+		},
+		{
+			"name": "<automatic>",
+			"script": "res://scripts/lol2/surface_animation.gd"
+		},
+		{
+			"name": "<automatic>",
+			"script": "res://scripts/lol2/player_curse.gd"
+		},
+		{
+			"name": "<automatic>",
+			"script": "res://scripts/lol2/museum_interface.gd"
+		},
+		{
+			"name": "AtlasExplored",
+			"script": "res://scripts/lol2/atlas_explored.gd"
+		},
+		{
+			"name": "StaticAssemblies_L19_BC",
+			"script": "res://scripts/lol2/static_assemblies.gd"
+		},
+		{
+			"name": "LiquidDrowning",
+			"script": "res://scripts/lol2/liquid_drowning.gd"
+		},
+		{
+			"name": "RegionBlockers",
+			"script": "res://scripts/lol2/region_blockers.gd"
+		},
+		{
+			"name": "Act2Progression",
+			"script": "res://scripts/lol2/act2_progression.gd"
+		},
+		{
+			"name": "Act2Creatures",
+			"script": "res://scripts/lol2/act2_creatures.gd"
+		},
+		{
+			"name": "Act2WorldItems",
+			"script": "res://scripts/lol2/act2_world_items.gd"
+		},
+		{
+			"name": "RegionVisibility",
+			"script": "res://scripts/lol2/region_visibility.gd"
+		},
+		{
+			"name": "L19BeastWall",
+			"script": "res://scripts/lol2/l19_beast_wall.gd"
+		},
+		{
+			"name": "L19BelialHorn",
+			"script": "res://scripts/lol2/l19_belial_horn.gd"
+		},
+		{
+			"name": "L19SewerForms",
+			"script": "res://scripts/lol2/l19_sewer_forms.gd"
+		},
+		{
+			"name": "L19DrainPath",
+			"script": "res://scripts/lol2/l19_drain_path.gd"
+		},
+		{
+			"name": "L19GhostlyHeads",
+			"script": "res://scripts/lol2/l19_ghostly_heads.gd"
+		},
+		{
+			"name": "L19DawnCurse",
+			"script": "res://scripts/lol2/l19_dawn_curse.gd"
+		},
+		{
+			"name": "L19DawnElevator",
+			"script": "res://scripts/lol2/l19_dawn_elevator.gd"
+		},
+		{
+			"name": "L19E224e",
+			"script": "res://scripts/lol2/placed_vqa_billboard.gd"
+		},
+		{
+			"name": "GenericObjects",
+			"script": "res://scripts/lol2/generic_object_actions.gd"
+		},
+		{
+			"name": "StartingMagic",
+			"script": "res://scripts/lol2/player_starting_magic.gd"
+		},
+		{
+			"name": "<automatic>",
+			"script": "res://scripts/lol2/player_item_controller.gd"
+		},
+		{
+			"name": "TargetStatus",
+			"script": "res://scripts/lol2/target_status.gd"
+		}
+	],
+	"collision_excluded": [],
+	"face_count": 9753,
+	"mesh_excluded": [
+		9033,
+		9034,
+		9035,
+		9036,
+		9037,
+		9038,
+		9039,
+		9040,
+		9041,
+		9042,
+		9043,
+		9044,
+		9045,
+		9046,
+		9047,
+		9048,
+		9049,
+		9050,
+		9051,
+		9052,
+		9053,
+		9054,
+		9055,
+		9056,
+		9057,
+		9058,
+		9059,
+		9060,
+		9061,
+		9062,
+		9063,
+		9064,
+		9065,
+		9066,
+		9067,
+		9068,
+		9069,
+		9070,
+		9071,
+		9072,
+		9073,
+		9074,
+		9075,
+		9076,
+		9077,
+		9078,
+		9079,
+		9080,
+		9081,
+		9082,
+		9083,
+		9084,
+		9085,
+		9086,
+		9087,
+		9088,
+		9089,
+		9090,
+		9091,
+		9092,
+		9093,
+		9094,
+		9095,
+		9096,
+		9097,
+		9098,
+		9099,
+		9100,
+		9101,
+		9102,
+		9103,
+		9104,
+		9105,
+		9106,
+		9107,
+		9108,
+		9109,
+		9110,
+		9111,
+		9112,
+		9113,
+		9114,
+		9115,
+		9116,
+		9117,
+		9118,
+		9119,
+		9120,
+		9121,
+		9122,
+		9123,
+		9124,
+		9125,
+		9126,
+		9127,
+		9128,
+		9129,
+		9130,
+		9131,
+		9132,
+		9133,
+		9134,
+		9135,
+		9136,
+		9137,
+		9138,
+		9139,
+		9140,
+		9141,
+		9142,
+		9143,
+		9144,
+		9145,
+		9146,
+		9147,
+		9148,
+		9149,
+		9150,
+		9151,
+		9152,
+		9153,
+		9154,
+		9155,
+		9156,
+		9157,
+		9158,
+		9159,
+		9160,
+		9161,
+		9162,
+		9163,
+		9164,
+		9165,
+		9166,
+		9167,
+		9168,
+		9169,
+		9170,
+		9171,
+		9172,
+		9173,
+		9174,
+		9175,
+		9176,
+		9177,
+		9178,
+		9179,
+		9180,
+		9181,
+		9182,
+		9183,
+		9184,
+		9185,
+		9186,
+		9187,
+		9188,
+		9189,
+		9190,
+		9191,
+		9192,
+		9193,
+		9194,
+		9195,
+		9196,
+		9197,
+		9198
+	]
+}

@@ -25,7 +25,9 @@ func run():
  if not await walk(scene,route.points,"original STAT alcove3185"):quit(1);return
  var statue=scene.get_node("L9Statue")
  var before: Array=scene.carried_collected.duplicate()
- var entry: Dictionary=statue.enter()
+ # The source walk-in owner may have already opened STAT on its process
+ # frame. Do not call enter again while that legitimate room has paused play.
+ var entry:Dictionary={"ok":true,"reason":"Original walk-in admission"} if statue.room_active and paused else statue.enter()
  if not check(entry.ok,"physical original alcove entry: "+entry.reason):quit(1);return
  if question_only():
   check(entry.get("question",false) and entry.reason=="Huh?" and not statue.room_active,"before remains only question")

@@ -15,11 +15,22 @@ from verify_hive_executioner import GAME, EXE_HASH, u32
 from verify_special_pixel_table_binding import fixups
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def _span_ok(data, want):
+    """want is hex text, or ('sha256', length, digest) for a long span kept out of the public copy."""
+    if isinstance(want, tuple):
+        return len(data) == want[1] and hashlib.sha256(data).hexdigest() == want[2]
+    return data.hex() == want
+
+
+def _span_sha(want):
+    return want[2] if isinstance(want, tuple) else hashlib.sha256(bytes.fromhex(want)).hexdigest()
 SPANS = {
     (0x649b3, 0x649bb): '3cc40f848ffeffff',
     (0x64fba, 0x64fe3): '8a4306a80174058b5714eb038b5712c1fa108a4306a8087406668b4304eb06668b430429d06689430a',
-    (0x64fee, 0x65068): '8a4306a80174378b4308c1f81085c00f9ec00402804f28800fbec05057e8b0df080083c4088a57286a0d80ca8057885728e89cdf080083c408e9a30100008b43088a4f28c1f81080c94085c00f9ec0884f2825ff0000005057e874df080083c4088a6f286a0c80cd4057886f28e860df080083c408e967010000',
-    (0x651da, 0x6524f): '8a4306a8017435837df8007e0e8a67286a0680e47f57886728eb0b8a47286a07247f57884728e8bbdd080083c4088a57286a1180e27f57885728eb34837df8007e0e8a4f286a0480e1bf57884f28eb0c8a77286a0580e6bf57887728e885dd080083c4088a6f286a1080e5bf57886f28e871dd0800',
+    (0x64fee, 0x65068): ('sha256', 122, '3fa0511bcbbd2a9a1eac6896905c04328abdaa79e677c5dfaca7373dfbb2373d'),
+    (0x651da, 0x6524f): ('sha256', 117, '5c8f238d868c0283a4adf442c8a88dcf9cedec26e33e77d793091916f23a224b'),
     (0xf3015, 0xf303f): '8a530180fa0b0f85ad00000031c0668b430489df39c50f859d0000008b4c241531c0c1f9188a430639c1',
     (0x972af, 0x972d1): '8a150e27020080ca08b80100000088150e270200c380250e270200f7b801000000c3',
     (0x972d4, 0x972e7): '8b4424088a003c0a720676cf3c0b74e031c0c3',
@@ -30,13 +41,13 @@ SPANS = {
 def main():
     exe = (GAME / 'LOLG.DAT').read_bytes(); assert hashlib.sha256(exe).hexdigest() == EXE_HASH
     for (a, z), want in SPANS.items():
-        assert exe[a + 0x37000:z + 0x37000].hex() == want, hex(a)
+        assert _span_ok(exe[a + 0x37000:z + 0x37000], want), hex(a)
     # 6484A calls the handler 64DDC.
     assert exe[0x6484c + 0x37000] == 0xe8 and (0x6484c + 5 + int.from_bytes(exe[0x6484d + 0x37000:0x64851 + 0x37000], 'little', signed=True)) == 0x64ddc
     le = 0x39024 + u32(exe, 0x39060); first = u32(exe, le + u32(exe, le + 0x40) + 108)
     rel = fixups(exe, le, first - 1 + (0xc860 + 18 * 4) // 4096)[(0xc860 + 18 * 4) % 4096]
     assert rel['target_object'] == 2 and rel['target_offset'] + 0x59024 == 0x972d4
-    report = dict(executable_sha256=EXE_HASH, spans={hex(a): hashlib.sha256(bytes.fromhex(w)).hexdigest() for (a, _), w in SPANS.items()},
+    report = dict(executable_sha256=EXE_HASH, spans={hex(a): _span_sha(w) for (a, _), w in SPANS.items()},
                   op196=dict(dispatch='649B3 -> 6484A -> 64DDC', byte6_bit0='ceiling (1) / floor (0)', byte6_bit3='relative', byte7='speed'),
                   region_events=dict(start={'floor_up': 0, 'floor_down': 1, 'ceiling_up': 2, 'ceiling_down': 3, 'then': [12, 13]},
                                      end={'floor_up': 4, 'floor_down': 5, 'ceiling_up': 6, 'ceiling_down': 7, 'then': [16, 17]},

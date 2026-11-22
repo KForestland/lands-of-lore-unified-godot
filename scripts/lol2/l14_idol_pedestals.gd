@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const KEY="l14_idol_pedestals"
 const Kit=preload("res://scripts/lol2/mechanism_transaction.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
@@ -65,6 +66,7 @@ func reachable(id:String)->bool:
 func offer(id:String,item:String,capacity:int=64)->Dictionary:
  if not reachable(id):return Kit.refuse("Approach the idol pedestal.")
  if host.carried_collected.size()>=capacity:return Kit.refuse("Make room before placing the idol.")
+ if item not in host.carried_collected:return Kit.refuse("The pedestal needs a Jkar idol.")
  var s:=state().duplicate(true);var snap:=Kit.empty_snapshot(host.carried_collected,capacity);snap.slots=s.slots
  var result:=Kit.offer(snap,recipe(id),item,{"form":"human"})
  if not result.ok:return result
@@ -72,7 +74,8 @@ func offer(id:String,item:String,capacity:int=64)->Dictionary:
  if not result.ok:return result
  result=Kit.commit(result.snapshot,recipe(id),id)
  if not result.ok:return result
- s.slots=result.snapshot.slots;host.quest_state[KEY]=s;host.carried_collected=result.snapshot.inventory
+ s.slots=result.snapshot.slots;var admission:=Grants.transition(host,result.snapshot.inventory,{KEY:s})
+ if not admission.ok:return admission
  if host.hand_item==item:host.hand_item=""
  Items.sync(host);restore();return {"ok":true,"reason":"The stairs form a crossing." if complete(s) else "The idol rests on its pedestal."}
 func restore():
@@ -95,7 +98,8 @@ func _unhandled_key_input(event:InputEvent):
  for id in CASES:
   if reachable(id) and not Kit.slot(state(),id).committed:
    var item:String=host.hand_item
-   if item.is_empty():
+   if item not in IDOLS or item not in host.carried_collected:
+    item=""
     for candidate in IDOLS:
      if candidate in host.carried_collected:item=candidate;break
    host.save_feedback(offer(id,item).reason);get_viewport().set_input_as_handled();return

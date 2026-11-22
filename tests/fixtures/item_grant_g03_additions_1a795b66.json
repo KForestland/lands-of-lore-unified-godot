@@ -1,0 +1,3241 @@
+{
+  "catalog_sha256": {
+    "scripts/lol2/generic_objects_l10.json": "1510d83433560a495a74ab637cb5ba221cd3c4919f6273c95e78c27332dfce3d",
+    "scripts/lol2/generic_objects_l12.json": "851661704339a888a37120dc687e5c4699c1a6d866d3dd901a36eee188378c6f",
+    "scripts/lol2/generic_objects_l13.json": "6e3888e09eac46fc31941b98d07018e0c3b026ec39e3611d05cbe46b0d67cb1c",
+    "scripts/lol2/generic_objects_l14.json": "6140377a025a7f5b5b7d9ca60a603960f84c55f459467d3ffb763271694a250a",
+    "scripts/lol2/generic_objects_l16.json": "cbcf1b1adc9abf387bb69092b143912593648fb2d6549f63c5ae5fd24a4c1cdc",
+    "scripts/lol2/generic_objects_l17.json": "3a4744a1f75c8c8381065dc91c2901291e7a00231159bdba031977e62c79da57",
+    "scripts/lol2/generic_objects_l19.json": "05545f93964685b48daa4c0b2298c8ad5b60ee6a84e8bb8216e41ff5c807a919",
+    "scripts/lol2/generic_objects_l20.json": "f0e74076ef3cb293b14b0ef5de1bdb9f4cf748111e30476734696983173cea56",
+    "scripts/lol2/generic_objects_l8.json": "4d721547309cdbb3165c7d27c6daa05ddf7ba05d6441b25b0757e9e27790b3cc",
+    "scripts/lol2/generic_objects_l9.json": "8eb14cbd91ded21750aac03e0b2b2f2508963c34d50ef6fd8340a88d5beaf69d"
+  },
+  "diffs": [
+    {
+      "added_paths": [
+        [
+          "quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_raw",
+      "name": "L12_CM"
+    },
+    {
+      "added_paths": [
+        [
+          "quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_raw",
+      "name": "L14_HT"
+    },
+    {
+      "added_paths": [
+        [
+          "quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_raw",
+      "name": "L16_CA"
+    },
+    {
+      "added_paths": [
+        [
+          "quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_raw",
+      "name": "L19_BC"
+    },
+    {
+      "added_paths": [
+        [
+          "quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_raw",
+      "name": "L9_DR"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_loaded",
+      "name": "L12_CM"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_loaded",
+      "name": "L14_HT"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_loaded",
+      "name": "L16_CA"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_loaded",
+      "name": "L19_BC"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "post_loaded",
+      "name": "L9_DR"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_loaded",
+      "name": "L12_CM"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_loaded",
+      "name": "L14_HT"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_loaded",
+      "name": "L16_CA"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_loaded",
+      "name": "L17_HC"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_loaded",
+      "name": "L19_BC"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_loaded",
+      "name": "L20_BB"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_loaded",
+      "name": "L9_DR"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_variants",
+      "name": "L12_CM_roundtrip"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_variants",
+      "name": "L14_HT_roundtrip"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_variants",
+      "name": "L16_CA_roundtrip"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_variants",
+      "name": "L17_HC_roundtrip"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_variants",
+      "name": "L19_BC_roundtrip"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_variants",
+      "name": "L20_BB_roundtrip"
+    },
+    {
+      "added_paths": [
+        [
+          "grant_quests",
+          "generic_objects"
+        ]
+      ],
+      "kind": "legacy_variants",
+      "name": "L9_DR_roundtrip"
+    }
+  ],
+  "normalizations": {
+    "legacy_loaded": {
+      "L12_CM": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L12_CM": {
+                "breakables": {},
+                "movables": {
+                  "54": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "68": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "69": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "70": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "71": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "72": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "73": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L14_HT": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L14_HT": {
+                "breakables": {},
+                "movables": {
+                  "58": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "59": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "60": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "61": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "62": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "63": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "64": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "65": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "66": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "82": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "83": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "84": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "91": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L16_CA": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L16_CA": {
+                "breakables": {},
+                "movables": {
+                  "0": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "101": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "102": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "104": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "105": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "106": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "107": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "108": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "109": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "110": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "111": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "53": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "71": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "72": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "73": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "74": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "78": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L17_HC": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L17_HC": {
+                "breakables": {},
+                "movables": {
+                  "50": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L19_BC": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L19_BC": {
+                "breakables": {},
+                "movables": {
+                  "55": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "56": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L20_BB": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L20_BB": {
+                "breakables": {
+                  "144": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "145": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "146": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "153": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "154": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "155": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  }
+                },
+                "movables": {}
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L9_DR": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L9_DR": {
+                "breakables": {},
+                "movables": {
+                  "0": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "1": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "100": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "101": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "102": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "103": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "104": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "105": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "106": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "107": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "108": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "109": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "110": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "111": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "112": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "113": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "114": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "116": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "117": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "118": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "119": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "120": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "121": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "122": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "123": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "124": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "125": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "126": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "127": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "128": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "129": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "130": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "133": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "134": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "2": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "3": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "4": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "55": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "58": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "59": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "61": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "62": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "63": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "64": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "68": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "69": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "70": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "86": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "87": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "88": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "89": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "90": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "91": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "92": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "93": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "94": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "95": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "96": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "97": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "98": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "99": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ]
+    },
+    "legacy_variants": {
+      "L12_CM_roundtrip": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L12_CM": {
+                "breakables": {},
+                "movables": {
+                  "54": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "68": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "69": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "70": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "71": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "72": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "73": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L14_HT_roundtrip": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L14_HT": {
+                "breakables": {},
+                "movables": {
+                  "58": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "59": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "60": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "61": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "62": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "63": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "64": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "65": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "66": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "82": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "83": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "84": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "91": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L16_CA_roundtrip": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L16_CA": {
+                "breakables": {},
+                "movables": {
+                  "0": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "101": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "102": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "104": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "105": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "106": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "107": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "108": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "109": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "110": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "111": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "53": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "71": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "72": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "73": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "74": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "78": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L17_HC_roundtrip": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L17_HC": {
+                "breakables": {},
+                "movables": {
+                  "50": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L19_BC_roundtrip": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L19_BC": {
+                "breakables": {},
+                "movables": {
+                  "55": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "56": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L20_BB_roundtrip": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L20_BB": {
+                "breakables": {
+                  "144": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "145": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "146": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "153": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "154": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  },
+                  "155": {
+                    "life": 255.0,
+                    "selector": 0.0
+                  }
+                },
+                "movables": {}
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L9_DR_roundtrip": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L9_DR": {
+                "breakables": {},
+                "movables": {
+                  "0": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "1": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "100": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "101": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "102": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "103": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "104": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "105": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "106": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "107": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "108": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "109": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "110": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "111": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "112": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "113": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "114": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "116": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "117": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "118": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "119": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "120": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "121": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "122": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "123": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "124": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "125": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "126": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "127": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "128": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "129": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "130": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "133": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "134": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "2": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "3": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "4": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "55": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "58": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "59": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "61": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "62": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "63": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "64": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "68": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "69": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "70": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "86": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "87": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "88": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "89": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "90": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "91": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "92": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "93": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "94": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "95": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "96": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "97": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "98": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "99": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ]
+    },
+    "post_loaded": {
+      "L12_CM": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L12_CM": {
+                "breakables": {},
+                "movables": {
+                  "54": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "68": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "69": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "70": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "71": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "72": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "73": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L14_HT": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L14_HT": {
+                "breakables": {},
+                "movables": {
+                  "58": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "59": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "60": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "61": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "62": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "63": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "64": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "65": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "66": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "82": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "83": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "84": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "91": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L16_CA": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L16_CA": {
+                "breakables": {},
+                "movables": {
+                  "0": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "101": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "102": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "104": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "105": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "106": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "107": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "108": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "109": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "110": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "111": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "53": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "71": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "72": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "73": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "74": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "78": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L19_BC": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L19_BC": {
+                "breakables": {},
+                "movables": {
+                  "55": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "56": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ],
+      "L9_DR": [
+        {
+          "path": [
+            "grant_quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L9_DR": {
+                "breakables": {},
+                "movables": {
+                  "0": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "1": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "100": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "101": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "102": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "103": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "104": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "105": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "106": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "107": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "108": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "109": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "110": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "111": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "112": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "113": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "114": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "116": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "117": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "118": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "119": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "120": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "121": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "122": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "123": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "124": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "125": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "126": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "127": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "128": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "129": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "130": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "133": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "134": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "2": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "3": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "4": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "55": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "58": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "59": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "61": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "62": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "63": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "64": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "68": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "69": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "70": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "86": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "87": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "88": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "89": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "90": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "91": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "92": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "93": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "94": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "95": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "96": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "97": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "98": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  },
+                  "99": {
+                    "generic_tick_fraction_16": 0.0,
+                    "position_0x48": 0.0,
+                    "state_0x55": 0.0,
+                    "travel_0x50": 0.0
+                  }
+                }
+              }
+            },
+            "version": 1.0
+          }
+        }
+      ]
+    },
+    "post_raw": {
+      "L12_CM": [
+        {
+          "path": [
+            "quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L12_CM": {
+                "breakables": {},
+                "movables": {
+                  "54": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "68": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "69": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "70": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "71": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "72": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "73": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  }
+                }
+              }
+            },
+            "version": 1
+          }
+        }
+      ],
+      "L14_HT": [
+        {
+          "path": [
+            "quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L14_HT": {
+                "breakables": {},
+                "movables": {
+                  "58": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "59": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "60": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "61": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "62": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "63": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "64": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "65": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "66": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "82": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "83": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "84": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "91": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  }
+                }
+              }
+            },
+            "version": 1
+          }
+        }
+      ],
+      "L16_CA": [
+        {
+          "path": [
+            "quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L16_CA": {
+                "breakables": {},
+                "movables": {
+                  "0": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "101": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "102": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "104": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "105": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "106": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "107": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "108": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "109": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "110": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "111": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "53": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "71": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "72": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "73": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "74": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "78": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  }
+                }
+              }
+            },
+            "version": 1
+          }
+        }
+      ],
+      "L19_BC": [
+        {
+          "path": [
+            "quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L19_BC": {
+                "breakables": {},
+                "movables": {
+                  "55": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "56": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  }
+                }
+              }
+            },
+            "version": 1
+          }
+        }
+      ],
+      "L9_DR": [
+        {
+          "path": [
+            "quests",
+            "generic_objects"
+          ],
+          "value": {
+            "areas": {
+              "L9_DR": {
+                "breakables": {},
+                "movables": {
+                  "0": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "1": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "100": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "101": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "102": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "103": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "104": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "105": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "106": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "107": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "108": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "109": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "110": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "111": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "112": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "113": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "114": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "116": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "117": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "118": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "119": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "120": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "121": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "122": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "123": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "124": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "125": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "126": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "127": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "128": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "129": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "130": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "133": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "134": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "2": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "3": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "4": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "55": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "58": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "59": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "61": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "62": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "63": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "64": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "67": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "68": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "69": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "70": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "86": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "87": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "88": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "89": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "90": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "91": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "92": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "93": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "94": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "95": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "96": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "97": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "98": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  },
+                  "99": {
+                    "generic_tick_fraction_16": 0,
+                    "position_0x48": 0,
+                    "state_0x55": 0,
+                    "travel_0x50": 0
+                  }
+                }
+              }
+            },
+            "version": 1
+          }
+        }
+      ]
+    }
+  },
+  "original_manifest_sha256": "38cceff5ec4995ecbf371d5fc5675aa8645b09e60db32f31544f95590549b545",
+  "raw_pins": {
+    "L12_CM": "b06b310a597eef1a4007a3a19e12f7670b3ec97b2a0d96fa9ebdc87d9d1894bf",
+    "L14_HT": "8051d88e0080ebafaa7a657bdd58c116db24b8ca86b05ef56ae9591a4b223d3d",
+    "L16_CA": "24dfda286a0cb15b90123e7891ce2937fbf04cf40efd0b7f700dd4ecd0b2777b",
+    "L19_BC": "8e0697005687cec4d04f6fc95dbca96f255f4d6d8cf676b105c1c850645da85c",
+    "L9_DR": "57809b8f64769c1cb45b4fcd46337c4a3862de3d013061e8d2b366348a3fffa0"
+  },
+  "scope": "Independent pre-WO4/W05 G03 host observations. Only added generic_objects world fields may be projected when comparing unchanged original F08 goldens. No inventory/history/owner removal, event replay, or repository golden rewrite.",
+  "source_head": "1a795b665830564243a2a08ac68fdcc86b4c17f3",
+  "version": 1
+}

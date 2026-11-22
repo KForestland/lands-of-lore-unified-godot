@@ -6,7 +6,7 @@ Dense source extraction is read-only, headless video decoding; it does not acqui
 
 ```sh
 ffmpeg -hide_banner -loglevel error -threads 1 -ss 12304 \
-  -i '<owner-media> stuff/Lands of Lore 2_ Guardians of Destiny longplay - Most Difficult.mp4' \
+  -i '<owner-media>/ARCHIVE/new stuff/Lands of Lore 2_ Guardians of Destiny longplay - Most Difficult.mp4' \
   -t 16 -vf 'fps=4,scale=640:360' -threads 1 tmp/dense_l13_door/d_%05d.png
 python3 tools/measure_longplay_motion.py \
   --frames tmp/dense_l13_door --pattern 'd_*.png' \

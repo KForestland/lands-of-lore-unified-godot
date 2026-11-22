@@ -1,0 +1,6425 @@
+{
+  "base": "20c7797",
+  "cases": {
+    "cave_guard38_loot:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Short Sword taken."
+        ],
+        "owner": {
+          "elapsed": 5.0,
+          "taken": true
+        },
+        "pack": [
+          "cave:guard38:Short_Sword"
+        ],
+        "presentations": [
+          "cave-loot"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "elapsed": 0.0,
+          "taken": false
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Short Sword taken."
+        ],
+        "owner": {
+          "elapsed": 5.0,
+          "taken": true
+        },
+        "pack": [
+          "cave:guard38:Short_Sword"
+        ],
+        "presentations": [
+          "cave-loot"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": true
+    },
+    "cave_guard38_loot:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Short Sword taken."
+        ],
+        "owner": {
+          "elapsed": 5.0,
+          "taken": true
+        },
+        "pack": [
+          "cave:guard38:Short_Sword"
+        ],
+        "presentations": [
+          "cave-loot"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "elapsed": 0.0,
+          "taken": false
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Short Sword taken."
+        ],
+        "owner": {
+          "elapsed": 5.0,
+          "taken": true
+        },
+        "pack": [
+          "cave:guard38:Short_Sword"
+        ],
+        "presentations": [
+          "cave-loot"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": true
+    },
+    "dark_halls_loot:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Inventory full."
+        ],
+        "owner": {},
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "dark_halls_loot": {}
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {},
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Inventory full.",
+          "Inventory full."
+        ],
+        "owner": {},
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "dark_halls_loot": {}
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": false
+    },
+    "dark_halls_loot:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Stone bracers taken."
+        ],
+        "owner": {
+          "58": 1.0
+        },
+        "pack": [
+          "darkhalls:control58u1:Stone_bracrs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "dark_halls_loot": {
+            "58": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {},
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Stone bracers taken."
+        ],
+        "owner": {
+          "58": 1.0
+        },
+        "pack": [
+          "darkhalls:control58u1:Stone_bracrs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "dark_halls_loot": {
+            "58": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": true
+    },
+    "hive_wax:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "collected": true
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs",
+          "hive:item0:Wax"
+        ],
+        "presentations": [
+          "wax:true"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "collected": false
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "collected": true
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs",
+          "hive:item0:Wax"
+        ],
+        "presentations": [
+          "wax:true"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": true
+    },
+    "hive_wax:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "collected": true
+        },
+        "pack": [
+          "hive:item0:Wax"
+        ],
+        "presentations": [
+          "wax:true"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "collected": false
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "collected": true
+        },
+        "pack": [
+          "hive:item0:Wax"
+        ],
+        "presentations": [
+          "wax:true"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": true
+    },
+    "jungle_world_item:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Inventory full."
+        ],
+        "owner": {
+          "collected": [],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "collected": [],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Inventory full.",
+          "Inventory full."
+        ],
+        "owner": {
+          "collected": [],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": false
+    },
+    "jungle_world_item:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Storm taken."
+        ],
+        "owner": {
+          "collected": [
+            1.0
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "jungle:item1:Storm"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "jungle_world_items": {
+            "collected": [
+              1.0
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "collected": [],
+          "version": 1.0
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Storm taken."
+        ],
+        "owner": {
+          "collected": [
+            1.0
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "jungle:item1:Storm"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "jungle_world_items": {
+            "collected": [
+              1.0
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": true
+    },
+    "kityara_knife:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 1.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "identity": 3959297008.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs",
+          "jungle:kityara:Empty_hand"
+        ],
+        "presentations": [],
+        "quests": {
+          "act_one_departure": {
+            "elapsed": 0.0,
+            "local55": 0.0,
+            "phase": "idle"
+          },
+          "conversation": {
+            "completed": false,
+            "elapsed": 0.0,
+            "section_cursor": 0.0,
+            "started": false
+          },
+          "hive_chasm": {
+            "activated": false,
+            "elapsed": 0.0
+          },
+          "hive_curse": {
+            "enabled": false,
+            "human_return_used": [],
+            "region": -1.0,
+            "remaining": 120.0,
+            "running": true,
+            "seed": 324508639.0
+          },
+          "hive_elevator": {
+            "armed": false,
+            "flute_signal": 0.0,
+            "height": -1579.0,
+            "played_flute": false,
+            "poll_elapsed": 0.0,
+            "target": 7.0
+          },
+          "hive_nest": {
+            "elapsed": 0.0,
+            "phase": 0.0
+          },
+          "hive_room_entered": false,
+          "hive_wax_collected": false,
+          "jungle_dagger_collected": false,
+          "jungle_village": {
+            "dialogue": {
+              "elapsed": 0.0,
+              "local15": 0.0,
+              "local46": 0.0,
+              "started": false
+            },
+            "elapsed": 0.0,
+            "followup": {
+              "elapsed": 0.0,
+              "local18": 0.0,
+              "shared18": 0.0,
+              "speech": 0.0
+            },
+            "local24": 0.0,
+            "shared29": 0.0
+          },
+          "magic_shop": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "301": 0.0,
+              "46": 0.0,
+              "47": 0.0,
+              "48": 0.0,
+              "49": 0.0,
+              "50": 0.0,
+              "51": 0.0,
+              "52": 0.0,
+              "53": 0.0,
+              "54": 0.0,
+              "55": 0.0,
+              "56": 0.0,
+              "57": 0.0,
+              "58": 0.0
+            },
+            "globals": {
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0
+            },
+            "pending_items": [],
+            "quip_mask": 0.0,
+            "quip_seed": 20260927.0,
+            "reward_seed": 324508639.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            },
+            "timer_armed": false,
+            "timer_left": 0.0
+          },
+          "monastery": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "134": 0.0,
+              "135": 0.0,
+              "136": 0.0,
+              "138": 0.0,
+              "140": 0.0,
+              "141": 0.0,
+              "142": 0.0,
+              "143": 0.0,
+              "144": 0.0,
+              "145": 0.0,
+              "146": 0.0,
+              "148": 0.0,
+              "150": 0.0,
+              "151": 0.0,
+              "152": 0.0,
+              "153": 0.0,
+              "154": 0.0,
+              "155": 0.0,
+              "156": 0.0,
+              "157": 0.0,
+              "158": 0.0,
+              "159": 0.0,
+              "162": 0.0,
+              "170": 0.0,
+              "171": 0.0,
+              "172": 0.0,
+              "176": 0.0,
+              "177": 0.0,
+              "178": 0.0,
+              "181": 0.0,
+              "182": 0.0,
+              "183": 0.0,
+              "184": 0.0,
+              "191": 0.0,
+              "192": 0.0,
+              "258": 0.0,
+              "259": 0.0,
+              "260": 0.0,
+              "264": 0.0,
+              "265": 0.0,
+              "266": 0.0,
+              "267": 0.0,
+              "268": 0.0,
+              "269": 0.0,
+              "283": 0.0,
+              "288": 0.0,
+              "32": 0.0,
+              "33": 0.0,
+              "34": 0.0,
+              "37": 0.0,
+              "41": 0.0,
+              "42": 0.0,
+              "43": 0.0,
+              "44": 0.0,
+              "45": 0.0
+            },
+            "globals": {
+              "GV_BACATTA_RELATIONSHIP": 1.0,
+              "GV_DAWN_RELATIONSHIP": 1.0,
+              "GV_HAS_RUNES": 0.0,
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0,
+              "GV_MET_BACATTA": 0.0,
+              "GV_RIX_DEAD": 0.0,
+              "GV_RUNES_TRANSLATED": 0.0
+            },
+            "locals": {
+              "Dawn_dam_out_cave": 0.0,
+              "Gave_Dawn_Runes": 0.0,
+              "Left_Village": 0.0,
+              "Met_Dawn": 0.0,
+              "Met_Morgan": 0.0
+            },
+            "room": "",
+            "side_actor_present": false
+          },
+          "shared_flag_38": 0.0,
+          "thieves_den": {
+            "flags": {
+              "131": 0.0,
+              "132": 0.0,
+              "133": 0.0,
+              "17": 0.0,
+              "18": 0.0,
+              "19": 0.0,
+              "20": 0.0,
+              "21": 0.0,
+              "22": 0.0,
+              "23": 0.0,
+              "24": 0.0,
+              "25": 0.0,
+              "27": 0.0,
+              "270": 0.0,
+              "271": 0.0,
+              "28": 0.0,
+              "29": 0.0,
+              "30": 0.0,
+              "308": 0.0,
+              "31": 0.0,
+              "63": 0.0
+            },
+            "next_room": "",
+            "pending_items": [],
+            "reward_seed": 324508639.0,
+            "rng_seed": 20261027.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            }
+          },
+          "weapon_poison": {
+            "paint": 0.0,
+            "sac": 0.0,
+            "version": 1.0
+          },
+          "weapon_shop": {
+            "cursor": 0.0,
+            "elapsed": 0.0,
+            "flags": {},
+            "globals": {},
+            "locals": {},
+            "orb_seen": false,
+            "room": "",
+            "sequence": ""
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "identity": 3959297008.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act_one_departure": {
+            "elapsed": 0.0,
+            "local55": 0.0,
+            "phase": "idle"
+          },
+          "conversation": {
+            "completed": false,
+            "elapsed": 0.0,
+            "section_cursor": 0.0,
+            "started": false
+          },
+          "hive_chasm": {
+            "activated": false,
+            "elapsed": 0.0
+          },
+          "hive_curse": {
+            "enabled": false,
+            "human_return_used": [],
+            "region": -1.0,
+            "remaining": 120.0,
+            "running": true,
+            "seed": 324508639.0
+          },
+          "hive_elevator": {
+            "armed": false,
+            "flute_signal": 0.0,
+            "height": -1579.0,
+            "played_flute": false,
+            "poll_elapsed": 0.0,
+            "target": 7.0
+          },
+          "hive_nest": {
+            "elapsed": 0.0,
+            "phase": 0.0
+          },
+          "hive_room_entered": false,
+          "hive_wax_collected": false,
+          "jungle_dagger_collected": false,
+          "jungle_village": {
+            "dialogue": {
+              "elapsed": 0.0,
+              "local15": 0.0,
+              "local46": 0.0,
+              "started": false
+            },
+            "elapsed": 0.0,
+            "followup": {
+              "elapsed": 0.0,
+              "local18": 0.0,
+              "shared18": 0.0,
+              "speech": 0.0
+            },
+            "local24": 0.0,
+            "shared29": 0.0
+          },
+          "magic_shop": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "301": 0.0,
+              "46": 0.0,
+              "47": 0.0,
+              "48": 0.0,
+              "49": 0.0,
+              "50": 0.0,
+              "51": 0.0,
+              "52": 0.0,
+              "53": 0.0,
+              "54": 0.0,
+              "55": 0.0,
+              "56": 0.0,
+              "57": 0.0,
+              "58": 0.0
+            },
+            "globals": {
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0
+            },
+            "pending_items": [],
+            "quip_mask": 0.0,
+            "quip_seed": 20260927.0,
+            "reward_seed": 324508639.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            },
+            "timer_armed": false,
+            "timer_left": 0.0
+          },
+          "monastery": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "134": 0.0,
+              "135": 0.0,
+              "136": 0.0,
+              "138": 0.0,
+              "140": 0.0,
+              "141": 0.0,
+              "142": 0.0,
+              "143": 0.0,
+              "144": 0.0,
+              "145": 0.0,
+              "146": 0.0,
+              "148": 0.0,
+              "150": 0.0,
+              "151": 0.0,
+              "152": 0.0,
+              "153": 0.0,
+              "154": 0.0,
+              "155": 0.0,
+              "156": 0.0,
+              "157": 0.0,
+              "158": 0.0,
+              "159": 0.0,
+              "162": 0.0,
+              "170": 0.0,
+              "171": 0.0,
+              "172": 0.0,
+              "176": 0.0,
+              "177": 0.0,
+              "178": 0.0,
+              "181": 0.0,
+              "182": 0.0,
+              "183": 0.0,
+              "184": 0.0,
+              "191": 0.0,
+              "192": 0.0,
+              "258": 0.0,
+              "259": 0.0,
+              "260": 0.0,
+              "264": 0.0,
+              "265": 0.0,
+              "266": 0.0,
+              "267": 0.0,
+              "268": 0.0,
+              "269": 0.0,
+              "283": 0.0,
+              "288": 0.0,
+              "32": 0.0,
+              "33": 0.0,
+              "34": 0.0,
+              "37": 0.0,
+              "41": 0.0,
+              "42": 0.0,
+              "43": 0.0,
+              "44": 0.0,
+              "45": 0.0
+            },
+            "globals": {
+              "GV_BACATTA_RELATIONSHIP": 1.0,
+              "GV_DAWN_RELATIONSHIP": 1.0,
+              "GV_HAS_RUNES": 0.0,
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0,
+              "GV_MET_BACATTA": 0.0,
+              "GV_RIX_DEAD": 0.0,
+              "GV_RUNES_TRANSLATED": 0.0
+            },
+            "locals": {
+              "Dawn_dam_out_cave": 0.0,
+              "Gave_Dawn_Runes": 0.0,
+              "Left_Village": 0.0,
+              "Met_Dawn": 0.0,
+              "Met_Morgan": 0.0
+            },
+            "room": "",
+            "side_actor_present": false
+          },
+          "shared_flag_38": 0.0,
+          "thieves_den": {
+            "flags": {
+              "131": 0.0,
+              "132": 0.0,
+              "133": 0.0,
+              "17": 0.0,
+              "18": 0.0,
+              "19": 0.0,
+              "20": 0.0,
+              "21": 0.0,
+              "22": 0.0,
+              "23": 0.0,
+              "24": 0.0,
+              "25": 0.0,
+              "27": 0.0,
+              "270": 0.0,
+              "271": 0.0,
+              "28": 0.0,
+              "29": 0.0,
+              "30": 0.0,
+              "308": 0.0,
+              "31": 0.0,
+              "63": 0.0
+            },
+            "next_room": "",
+            "pending_items": [],
+            "reward_seed": 324508639.0,
+            "rng_seed": 20261027.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            }
+          },
+          "weapon_poison": {
+            "paint": 0.0,
+            "sac": 0.0,
+            "version": 1.0
+          },
+          "weapon_shop": {
+            "cursor": 0.0,
+            "elapsed": 0.0,
+            "flags": {},
+            "globals": {},
+            "locals": {},
+            "orb_seen": false,
+            "room": "",
+            "sequence": ""
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 2.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "identity": 3959297008.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs",
+          "jungle:kityara:Empty_hand"
+        ],
+        "presentations": [],
+        "quests": {
+          "act_one_departure": {
+            "elapsed": 0.0,
+            "local55": 0.0,
+            "phase": "idle"
+          },
+          "conversation": {
+            "completed": false,
+            "elapsed": 0.0,
+            "section_cursor": 0.0,
+            "started": false
+          },
+          "hive_chasm": {
+            "activated": false,
+            "elapsed": 0.0
+          },
+          "hive_curse": {
+            "enabled": false,
+            "human_return_used": [],
+            "region": -1.0,
+            "remaining": 120.0,
+            "running": true,
+            "seed": 324508639.0
+          },
+          "hive_elevator": {
+            "armed": false,
+            "flute_signal": 0.0,
+            "height": -1579.0,
+            "played_flute": false,
+            "poll_elapsed": 0.0,
+            "target": 7.0
+          },
+          "hive_nest": {
+            "elapsed": 0.0,
+            "phase": 0.0
+          },
+          "hive_room_entered": false,
+          "hive_wax_collected": false,
+          "jungle_dagger_collected": false,
+          "jungle_village": {
+            "dialogue": {
+              "elapsed": 0.0,
+              "local15": 0.0,
+              "local46": 0.0,
+              "started": false
+            },
+            "elapsed": 0.0,
+            "followup": {
+              "elapsed": 0.0,
+              "local18": 0.0,
+              "shared18": 0.0,
+              "speech": 0.0
+            },
+            "local24": 0.0,
+            "shared29": 0.0
+          },
+          "magic_shop": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "301": 0.0,
+              "46": 0.0,
+              "47": 0.0,
+              "48": 0.0,
+              "49": 0.0,
+              "50": 0.0,
+              "51": 0.0,
+              "52": 0.0,
+              "53": 0.0,
+              "54": 0.0,
+              "55": 0.0,
+              "56": 0.0,
+              "57": 0.0,
+              "58": 0.0
+            },
+            "globals": {
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0
+            },
+            "pending_items": [],
+            "quip_mask": 0.0,
+            "quip_seed": 20260927.0,
+            "reward_seed": 324508639.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            },
+            "timer_armed": false,
+            "timer_left": 0.0
+          },
+          "monastery": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "134": 0.0,
+              "135": 0.0,
+              "136": 0.0,
+              "138": 0.0,
+              "140": 0.0,
+              "141": 0.0,
+              "142": 0.0,
+              "143": 0.0,
+              "144": 0.0,
+              "145": 0.0,
+              "146": 0.0,
+              "148": 0.0,
+              "150": 0.0,
+              "151": 0.0,
+              "152": 0.0,
+              "153": 0.0,
+              "154": 0.0,
+              "155": 0.0,
+              "156": 0.0,
+              "157": 0.0,
+              "158": 0.0,
+              "159": 0.0,
+              "162": 0.0,
+              "170": 0.0,
+              "171": 0.0,
+              "172": 0.0,
+              "176": 0.0,
+              "177": 0.0,
+              "178": 0.0,
+              "181": 0.0,
+              "182": 0.0,
+              "183": 0.0,
+              "184": 0.0,
+              "191": 0.0,
+              "192": 0.0,
+              "258": 0.0,
+              "259": 0.0,
+              "260": 0.0,
+              "264": 0.0,
+              "265": 0.0,
+              "266": 0.0,
+              "267": 0.0,
+              "268": 0.0,
+              "269": 0.0,
+              "283": 0.0,
+              "288": 0.0,
+              "32": 0.0,
+              "33": 0.0,
+              "34": 0.0,
+              "37": 0.0,
+              "41": 0.0,
+              "42": 0.0,
+              "43": 0.0,
+              "44": 0.0,
+              "45": 0.0
+            },
+            "globals": {
+              "GV_BACATTA_RELATIONSHIP": 1.0,
+              "GV_DAWN_RELATIONSHIP": 1.0,
+              "GV_HAS_RUNES": 0.0,
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0,
+              "GV_MET_BACATTA": 0.0,
+              "GV_RIX_DEAD": 0.0,
+              "GV_RUNES_TRANSLATED": 0.0
+            },
+            "locals": {
+              "Dawn_dam_out_cave": 0.0,
+              "Gave_Dawn_Runes": 0.0,
+              "Left_Village": 0.0,
+              "Met_Dawn": 0.0,
+              "Met_Morgan": 0.0
+            },
+            "room": "",
+            "side_actor_present": false
+          },
+          "shared_flag_38": 0.0,
+          "thieves_den": {
+            "flags": {
+              "131": 0.0,
+              "132": 0.0,
+              "133": 0.0,
+              "17": 0.0,
+              "18": 0.0,
+              "19": 0.0,
+              "20": 0.0,
+              "21": 0.0,
+              "22": 0.0,
+              "23": 0.0,
+              "24": 0.0,
+              "25": 0.0,
+              "27": 0.0,
+              "270": 0.0,
+              "271": 0.0,
+              "28": 0.0,
+              "29": 0.0,
+              "30": 0.0,
+              "308": 0.0,
+              "31": 0.0,
+              "63": 0.0
+            },
+            "next_room": "",
+            "pending_items": [],
+            "reward_seed": 324508639.0,
+            "rng_seed": 20261027.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            }
+          },
+          "weapon_poison": {
+            "paint": 0.0,
+            "sac": 0.0,
+            "version": 1.0
+          },
+          "weapon_shop": {
+            "cursor": 0.0,
+            "elapsed": 0.0,
+            "flags": {},
+            "globals": {},
+            "locals": {},
+            "orb_seen": false,
+            "room": "",
+            "sequence": ""
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": null,
+      "result": null
+    },
+    "kityara_knife:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 1.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "identity": 3959297008.0
+        },
+        "pack": [
+          "jungle:kityara:Empty_hand"
+        ],
+        "presentations": [],
+        "quests": {
+          "act_one_departure": {
+            "elapsed": 0.0,
+            "local55": 0.0,
+            "phase": "idle"
+          },
+          "conversation": {
+            "completed": false,
+            "elapsed": 0.0,
+            "section_cursor": 0.0,
+            "started": false
+          },
+          "hive_chasm": {
+            "activated": false,
+            "elapsed": 0.0
+          },
+          "hive_curse": {
+            "enabled": false,
+            "human_return_used": [],
+            "region": -1.0,
+            "remaining": 120.0,
+            "running": true,
+            "seed": 324508639.0
+          },
+          "hive_elevator": {
+            "armed": false,
+            "flute_signal": 0.0,
+            "height": -1579.0,
+            "played_flute": false,
+            "poll_elapsed": 0.0,
+            "target": 7.0
+          },
+          "hive_nest": {
+            "elapsed": 0.0,
+            "phase": 0.0
+          },
+          "hive_room_entered": false,
+          "hive_wax_collected": false,
+          "jungle_dagger_collected": false,
+          "jungle_village": {
+            "dialogue": {
+              "elapsed": 0.0,
+              "local15": 0.0,
+              "local46": 0.0,
+              "started": false
+            },
+            "elapsed": 0.0,
+            "followup": {
+              "elapsed": 0.0,
+              "local18": 0.0,
+              "shared18": 0.0,
+              "speech": 0.0
+            },
+            "local24": 0.0,
+            "shared29": 0.0
+          },
+          "magic_shop": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "301": 0.0,
+              "46": 0.0,
+              "47": 0.0,
+              "48": 0.0,
+              "49": 0.0,
+              "50": 0.0,
+              "51": 0.0,
+              "52": 0.0,
+              "53": 0.0,
+              "54": 0.0,
+              "55": 0.0,
+              "56": 0.0,
+              "57": 0.0,
+              "58": 0.0
+            },
+            "globals": {
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0
+            },
+            "pending_items": [],
+            "quip_mask": 0.0,
+            "quip_seed": 20260927.0,
+            "reward_seed": 324508639.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            },
+            "timer_armed": false,
+            "timer_left": 0.0
+          },
+          "monastery": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "134": 0.0,
+              "135": 0.0,
+              "136": 0.0,
+              "138": 0.0,
+              "140": 0.0,
+              "141": 0.0,
+              "142": 0.0,
+              "143": 0.0,
+              "144": 0.0,
+              "145": 0.0,
+              "146": 0.0,
+              "148": 0.0,
+              "150": 0.0,
+              "151": 0.0,
+              "152": 0.0,
+              "153": 0.0,
+              "154": 0.0,
+              "155": 0.0,
+              "156": 0.0,
+              "157": 0.0,
+              "158": 0.0,
+              "159": 0.0,
+              "162": 0.0,
+              "170": 0.0,
+              "171": 0.0,
+              "172": 0.0,
+              "176": 0.0,
+              "177": 0.0,
+              "178": 0.0,
+              "181": 0.0,
+              "182": 0.0,
+              "183": 0.0,
+              "184": 0.0,
+              "191": 0.0,
+              "192": 0.0,
+              "258": 0.0,
+              "259": 0.0,
+              "260": 0.0,
+              "264": 0.0,
+              "265": 0.0,
+              "266": 0.0,
+              "267": 0.0,
+              "268": 0.0,
+              "269": 0.0,
+              "283": 0.0,
+              "288": 0.0,
+              "32": 0.0,
+              "33": 0.0,
+              "34": 0.0,
+              "37": 0.0,
+              "41": 0.0,
+              "42": 0.0,
+              "43": 0.0,
+              "44": 0.0,
+              "45": 0.0
+            },
+            "globals": {
+              "GV_BACATTA_RELATIONSHIP": 1.0,
+              "GV_DAWN_RELATIONSHIP": 1.0,
+              "GV_HAS_RUNES": 0.0,
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0,
+              "GV_MET_BACATTA": 0.0,
+              "GV_RIX_DEAD": 0.0,
+              "GV_RUNES_TRANSLATED": 0.0
+            },
+            "locals": {
+              "Dawn_dam_out_cave": 0.0,
+              "Gave_Dawn_Runes": 0.0,
+              "Left_Village": 0.0,
+              "Met_Dawn": 0.0,
+              "Met_Morgan": 0.0
+            },
+            "room": "",
+            "side_actor_present": false
+          },
+          "shared_flag_38": 0.0,
+          "thieves_den": {
+            "flags": {
+              "131": 0.0,
+              "132": 0.0,
+              "133": 0.0,
+              "17": 0.0,
+              "18": 0.0,
+              "19": 0.0,
+              "20": 0.0,
+              "21": 0.0,
+              "22": 0.0,
+              "23": 0.0,
+              "24": 0.0,
+              "25": 0.0,
+              "27": 0.0,
+              "270": 0.0,
+              "271": 0.0,
+              "28": 0.0,
+              "29": 0.0,
+              "30": 0.0,
+              "308": 0.0,
+              "31": 0.0,
+              "63": 0.0
+            },
+            "next_room": "",
+            "pending_items": [],
+            "reward_seed": 324508639.0,
+            "rng_seed": 20261027.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            }
+          },
+          "weapon_poison": {
+            "paint": 0.0,
+            "sac": 0.0,
+            "version": 1.0
+          },
+          "weapon_shop": {
+            "cursor": 0.0,
+            "elapsed": 0.0,
+            "flags": {},
+            "globals": {},
+            "locals": {},
+            "orb_seen": false,
+            "room": "",
+            "sequence": ""
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "identity": 3959297008.0
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act_one_departure": {
+            "elapsed": 0.0,
+            "local55": 0.0,
+            "phase": "idle"
+          },
+          "conversation": {
+            "completed": false,
+            "elapsed": 0.0,
+            "section_cursor": 0.0,
+            "started": false
+          },
+          "hive_chasm": {
+            "activated": false,
+            "elapsed": 0.0
+          },
+          "hive_curse": {
+            "enabled": false,
+            "human_return_used": [],
+            "region": -1.0,
+            "remaining": 120.0,
+            "running": true,
+            "seed": 324508639.0
+          },
+          "hive_elevator": {
+            "armed": false,
+            "flute_signal": 0.0,
+            "height": -1579.0,
+            "played_flute": false,
+            "poll_elapsed": 0.0,
+            "target": 7.0
+          },
+          "hive_nest": {
+            "elapsed": 0.0,
+            "phase": 0.0
+          },
+          "hive_room_entered": false,
+          "hive_wax_collected": false,
+          "jungle_dagger_collected": false,
+          "jungle_village": {
+            "dialogue": {
+              "elapsed": 0.0,
+              "local15": 0.0,
+              "local46": 0.0,
+              "started": false
+            },
+            "elapsed": 0.0,
+            "followup": {
+              "elapsed": 0.0,
+              "local18": 0.0,
+              "shared18": 0.0,
+              "speech": 0.0
+            },
+            "local24": 0.0,
+            "shared29": 0.0
+          },
+          "magic_shop": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "301": 0.0,
+              "46": 0.0,
+              "47": 0.0,
+              "48": 0.0,
+              "49": 0.0,
+              "50": 0.0,
+              "51": 0.0,
+              "52": 0.0,
+              "53": 0.0,
+              "54": 0.0,
+              "55": 0.0,
+              "56": 0.0,
+              "57": 0.0,
+              "58": 0.0
+            },
+            "globals": {
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0
+            },
+            "pending_items": [],
+            "quip_mask": 0.0,
+            "quip_seed": 20260927.0,
+            "reward_seed": 324508639.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            },
+            "timer_armed": false,
+            "timer_left": 0.0
+          },
+          "monastery": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "134": 0.0,
+              "135": 0.0,
+              "136": 0.0,
+              "138": 0.0,
+              "140": 0.0,
+              "141": 0.0,
+              "142": 0.0,
+              "143": 0.0,
+              "144": 0.0,
+              "145": 0.0,
+              "146": 0.0,
+              "148": 0.0,
+              "150": 0.0,
+              "151": 0.0,
+              "152": 0.0,
+              "153": 0.0,
+              "154": 0.0,
+              "155": 0.0,
+              "156": 0.0,
+              "157": 0.0,
+              "158": 0.0,
+              "159": 0.0,
+              "162": 0.0,
+              "170": 0.0,
+              "171": 0.0,
+              "172": 0.0,
+              "176": 0.0,
+              "177": 0.0,
+              "178": 0.0,
+              "181": 0.0,
+              "182": 0.0,
+              "183": 0.0,
+              "184": 0.0,
+              "191": 0.0,
+              "192": 0.0,
+              "258": 0.0,
+              "259": 0.0,
+              "260": 0.0,
+              "264": 0.0,
+              "265": 0.0,
+              "266": 0.0,
+              "267": 0.0,
+              "268": 0.0,
+              "269": 0.0,
+              "283": 0.0,
+              "288": 0.0,
+              "32": 0.0,
+              "33": 0.0,
+              "34": 0.0,
+              "37": 0.0,
+              "41": 0.0,
+              "42": 0.0,
+              "43": 0.0,
+              "44": 0.0,
+              "45": 0.0
+            },
+            "globals": {
+              "GV_BACATTA_RELATIONSHIP": 1.0,
+              "GV_DAWN_RELATIONSHIP": 1.0,
+              "GV_HAS_RUNES": 0.0,
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0,
+              "GV_MET_BACATTA": 0.0,
+              "GV_RIX_DEAD": 0.0,
+              "GV_RUNES_TRANSLATED": 0.0
+            },
+            "locals": {
+              "Dawn_dam_out_cave": 0.0,
+              "Gave_Dawn_Runes": 0.0,
+              "Left_Village": 0.0,
+              "Met_Dawn": 0.0,
+              "Met_Morgan": 0.0
+            },
+            "room": "",
+            "side_actor_present": false
+          },
+          "shared_flag_38": 0.0,
+          "thieves_den": {
+            "flags": {
+              "131": 0.0,
+              "132": 0.0,
+              "133": 0.0,
+              "17": 0.0,
+              "18": 0.0,
+              "19": 0.0,
+              "20": 0.0,
+              "21": 0.0,
+              "22": 0.0,
+              "23": 0.0,
+              "24": 0.0,
+              "25": 0.0,
+              "27": 0.0,
+              "270": 0.0,
+              "271": 0.0,
+              "28": 0.0,
+              "29": 0.0,
+              "30": 0.0,
+              "308": 0.0,
+              "31": 0.0,
+              "63": 0.0
+            },
+            "next_room": "",
+            "pending_items": [],
+            "reward_seed": 324508639.0,
+            "rng_seed": 20261027.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            }
+          },
+          "weapon_poison": {
+            "paint": 0.0,
+            "sac": 0.0,
+            "version": 1.0
+          },
+          "weapon_shop": {
+            "cursor": 0.0,
+            "elapsed": 0.0,
+            "flags": {},
+            "globals": {},
+            "locals": {},
+            "orb_seen": false,
+            "room": "",
+            "sequence": ""
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 2.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "identity": 3959297008.0
+        },
+        "pack": [
+          "jungle:kityara:Empty_hand"
+        ],
+        "presentations": [],
+        "quests": {
+          "act_one_departure": {
+            "elapsed": 0.0,
+            "local55": 0.0,
+            "phase": "idle"
+          },
+          "conversation": {
+            "completed": false,
+            "elapsed": 0.0,
+            "section_cursor": 0.0,
+            "started": false
+          },
+          "hive_chasm": {
+            "activated": false,
+            "elapsed": 0.0
+          },
+          "hive_curse": {
+            "enabled": false,
+            "human_return_used": [],
+            "region": -1.0,
+            "remaining": 120.0,
+            "running": true,
+            "seed": 324508639.0
+          },
+          "hive_elevator": {
+            "armed": false,
+            "flute_signal": 0.0,
+            "height": -1579.0,
+            "played_flute": false,
+            "poll_elapsed": 0.0,
+            "target": 7.0
+          },
+          "hive_nest": {
+            "elapsed": 0.0,
+            "phase": 0.0
+          },
+          "hive_room_entered": false,
+          "hive_wax_collected": false,
+          "jungle_dagger_collected": false,
+          "jungle_village": {
+            "dialogue": {
+              "elapsed": 0.0,
+              "local15": 0.0,
+              "local46": 0.0,
+              "started": false
+            },
+            "elapsed": 0.0,
+            "followup": {
+              "elapsed": 0.0,
+              "local18": 0.0,
+              "shared18": 0.0,
+              "speech": 0.0
+            },
+            "local24": 0.0,
+            "shared29": 0.0
+          },
+          "magic_shop": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "301": 0.0,
+              "46": 0.0,
+              "47": 0.0,
+              "48": 0.0,
+              "49": 0.0,
+              "50": 0.0,
+              "51": 0.0,
+              "52": 0.0,
+              "53": 0.0,
+              "54": 0.0,
+              "55": 0.0,
+              "56": 0.0,
+              "57": 0.0,
+              "58": 0.0
+            },
+            "globals": {
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0
+            },
+            "pending_items": [],
+            "quip_mask": 0.0,
+            "quip_seed": 20260927.0,
+            "reward_seed": 324508639.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            },
+            "timer_armed": false,
+            "timer_left": 0.0
+          },
+          "monastery": {
+            "conversation": {
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "sequence": ""
+            },
+            "flags": {
+              "134": 0.0,
+              "135": 0.0,
+              "136": 0.0,
+              "138": 0.0,
+              "140": 0.0,
+              "141": 0.0,
+              "142": 0.0,
+              "143": 0.0,
+              "144": 0.0,
+              "145": 0.0,
+              "146": 0.0,
+              "148": 0.0,
+              "150": 0.0,
+              "151": 0.0,
+              "152": 0.0,
+              "153": 0.0,
+              "154": 0.0,
+              "155": 0.0,
+              "156": 0.0,
+              "157": 0.0,
+              "158": 0.0,
+              "159": 0.0,
+              "162": 0.0,
+              "170": 0.0,
+              "171": 0.0,
+              "172": 0.0,
+              "176": 0.0,
+              "177": 0.0,
+              "178": 0.0,
+              "181": 0.0,
+              "182": 0.0,
+              "183": 0.0,
+              "184": 0.0,
+              "191": 0.0,
+              "192": 0.0,
+              "258": 0.0,
+              "259": 0.0,
+              "260": 0.0,
+              "264": 0.0,
+              "265": 0.0,
+              "266": 0.0,
+              "267": 0.0,
+              "268": 0.0,
+              "269": 0.0,
+              "283": 0.0,
+              "288": 0.0,
+              "32": 0.0,
+              "33": 0.0,
+              "34": 0.0,
+              "37": 0.0,
+              "41": 0.0,
+              "42": 0.0,
+              "43": 0.0,
+              "44": 0.0,
+              "45": 0.0
+            },
+            "globals": {
+              "GV_BACATTA_RELATIONSHIP": 1.0,
+              "GV_DAWN_RELATIONSHIP": 1.0,
+              "GV_HAS_RUNES": 0.0,
+              "GV_KNOWLEDGE_OF_POWER_ORB": 0.0,
+              "GV_LUTHERS_SOUL": 5.0,
+              "GV_MET_BACATTA": 0.0,
+              "GV_RIX_DEAD": 0.0,
+              "GV_RUNES_TRANSLATED": 0.0
+            },
+            "locals": {
+              "Dawn_dam_out_cave": 0.0,
+              "Gave_Dawn_Runes": 0.0,
+              "Left_Village": 0.0,
+              "Met_Dawn": 0.0,
+              "Met_Morgan": 0.0
+            },
+            "room": "",
+            "side_actor_present": false
+          },
+          "shared_flag_38": 0.0,
+          "thieves_den": {
+            "flags": {
+              "131": 0.0,
+              "132": 0.0,
+              "133": 0.0,
+              "17": 0.0,
+              "18": 0.0,
+              "19": 0.0,
+              "20": 0.0,
+              "21": 0.0,
+              "22": 0.0,
+              "23": 0.0,
+              "24": 0.0,
+              "25": 0.0,
+              "27": 0.0,
+              "270": 0.0,
+              "271": 0.0,
+              "28": 0.0,
+              "29": 0.0,
+              "30": 0.0,
+              "308": 0.0,
+              "31": 0.0,
+              "63": 0.0
+            },
+            "next_room": "",
+            "pending_items": [],
+            "reward_seed": 324508639.0,
+            "rng_seed": 20261027.0,
+            "room": "",
+            "script": {
+              "args": {},
+              "cursor": 0.0,
+              "elapsed": 0.0,
+              "handler": ""
+            }
+          },
+          "weapon_poison": {
+            "paint": 0.0,
+            "sac": 0.0,
+            "version": 1.0
+          },
+          "weapon_shop": {
+            "cursor": 0.0,
+            "elapsed": 0.0,
+            "flags": {},
+            "globals": {},
+            "locals": {},
+            "orb_seen": false,
+            "room": "",
+            "sequence": ""
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": null,
+      "result": null
+    },
+    "l10_priest_urn:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "urn_given": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L9_DR:item55",
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L9_DR:item55"
+            ],
+            "collected": [
+              "act2:L9_DR:item55"
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "urn_given": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L9_DR:item55",
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L9_DR:item55"
+            ],
+            "collected": [
+              "act2:L9_DR:item55"
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "urn_given": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L9_DR:item55",
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L9_DR:item55"
+            ],
+            "collected": [
+              "act2:L9_DR:item55"
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "Make room for the urn."
+      },
+      "result": {
+        "ok": false,
+        "reason": "Make room for the urn."
+      }
+    },
+    "l10_priest_urn:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "urn_given": true,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L9_DR:item55",
+          "act2:L10_DC:priest_urn"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L9_DR:item55",
+              "act2:L10_DC:priest_urn"
+            ],
+            "collected": [
+              "act2:L9_DR:item55",
+              "act2:L10_DC:priest_urn"
+            ],
+            "version": 1.0
+          },
+          "l10_priest": {
+            "urn_given": true,
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [
+              "act2:L9_DR:item55"
+            ],
+            "collected": [
+              "act2:L9_DR:item55",
+              "act2:L10_DC:priest_urn"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [
+              "act2:L9_DR:item55"
+            ],
+            "collected": [
+              "act2:L9_DR:item55",
+              "act2:L10_DC:priest_urn"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "urn_given": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L9_DR:item55"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L9_DR:item55"
+            ],
+            "collected": [
+              "act2:L9_DR:item55"
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "urn_given": true,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L9_DR:item55",
+          "act2:L10_DC:priest_urn"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L9_DR:item55",
+              "act2:L10_DC:priest_urn"
+            ],
+            "collected": [
+              "act2:L9_DR:item55",
+              "act2:L10_DC:priest_urn"
+            ],
+            "version": 1.0
+          },
+          "l10_priest": {
+            "urn_given": true,
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [
+              "act2:L9_DR:item55"
+            ],
+            "collected": [
+              "act2:L9_DR:item55",
+              "act2:L10_DC:priest_urn"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [
+              "act2:L9_DR:item55"
+            ],
+            "collected": [
+              "act2:L9_DR:item55",
+              "act2:L10_DC:priest_urn"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "Bring back the priest's ashes in the full urn."
+      },
+      "result": {
+        "ok": true,
+        "reason": "Take this urn to the chapel. Burn my body and bring back my ashes."
+      }
+    },
+    "l12_frozen_bow:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "remaining": 1.0,
+          "taken": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l12_frozen_bow": {
+            "remaining": 1.0,
+            "taken": false,
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "remaining": 1.0,
+          "taken": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l12_frozen_bow": {
+            "remaining": 1.0,
+            "taken": false,
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "remaining": 1.0,
+          "taken": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l12_frozen_bow": {
+            "remaining": 1.0,
+            "taken": false,
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "Inventory full."
+      },
+      "result": {
+        "ok": false,
+        "reason": "Inventory full."
+      }
+    },
+    "l12_frozen_bow:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "remaining": 0.0,
+          "taken": true,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:blue_bow"
+        ],
+        "presentations": [
+          "bow"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [
+              "act2:L12_CM:blue_bow"
+            ],
+            "version": 1.0
+          },
+          "l12_frozen_bow": {
+            "remaining": 0.0,
+            "taken": true,
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [],
+            "collected": [
+              "act2:L12_CM:blue_bow"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L12_CM:blue_bow"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L12_CM:blue_bow"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "remaining": 1.0,
+          "taken": false,
+          "version": 1.0
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l12_frozen_bow": {
+            "remaining": 1.0,
+            "taken": false,
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "remaining": 0.0,
+          "taken": true,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:blue_bow"
+        ],
+        "presentations": [
+          "bow"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [
+              "act2:L12_CM:blue_bow"
+            ],
+            "version": 1.0
+          },
+          "l12_frozen_bow": {
+            "remaining": 0.0,
+            "taken": true,
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [],
+            "collected": [
+              "act2:L12_CM:blue_bow"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L12_CM:blue_bow"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L12_CM:blue_bow"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "The bow is not within reach."
+      },
+      "result": {
+        "ok": true,
+        "reason": "You catch the blue bow."
+      }
+    },
+    "l14_trial_idol:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "doors": [
+            "90"
+          ],
+          "idols": [],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l14_spiral": {
+            "raised": 4.0
+          },
+          "l14_trials": {
+            "doors": [
+              "90"
+            ],
+            "idols": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "doors": [
+            "90"
+          ],
+          "idols": [],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l14_spiral": {
+            "raised": 4.0
+          },
+          "l14_trials": {
+            "doors": [
+              "90"
+            ],
+            "idols": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "doors": [
+            "90"
+          ],
+          "idols": [],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l14_spiral": {
+            "raised": 4.0
+          },
+          "l14_trials": {
+            "doors": [
+              "90"
+            ],
+            "idols": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "Inventory full."
+      },
+      "result": {
+        "ok": false,
+        "reason": "Inventory full."
+      }
+    },
+    "l14_trial_idol:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "doors": [
+            "90"
+          ],
+          "idols": [
+            "371"
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L14_HT:trial_idol371"
+        ],
+        "presentations": [
+          "trials"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L14_HT:trial_idol371"
+            ],
+            "collected": [
+              "act2:L14_HT:trial_idol371"
+            ],
+            "version": 1.0
+          },
+          "l14_spiral": {
+            "raised": 4.0
+          },
+          "l14_trials": {
+            "doors": [
+              "90"
+            ],
+            "idols": [
+              "371"
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [],
+            "collected": [
+              "act2:L14_HT:trial_idol371"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L14_HT:trial_idol371"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "doors": [
+            "90"
+          ],
+          "idols": [],
+          "version": 1.0
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l14_spiral": {
+            "raised": 4.0
+          },
+          "l14_trials": {
+            "doors": [
+              "90"
+            ],
+            "idols": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "doors": [
+            "90"
+          ],
+          "idols": [
+            "371"
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L14_HT:trial_idol371"
+        ],
+        "presentations": [
+          "trials"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L14_HT:trial_idol371"
+            ],
+            "collected": [
+              "act2:L14_HT:trial_idol371"
+            ],
+            "version": 1.0
+          },
+          "l14_spiral": {
+            "raised": 4.0
+          },
+          "l14_trials": {
+            "doors": [
+              "90"
+            ],
+            "idols": [
+              "371"
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [],
+            "collected": [
+              "act2:L14_HT:trial_idol371"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L14_HT:trial_idol371"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "The statue has already been taken."
+      },
+      "result": {
+        "ok": true,
+        "reason": "You take the trial statue."
+      }
+    },
+    "l16_fountain_ball:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "broken": true,
+          "taken": [],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l16_fountain_ball": {
+            "broken": true,
+            "taken": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "broken": true,
+          "taken": [],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l16_fountain_ball": {
+            "broken": true,
+            "taken": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "broken": true,
+          "taken": [],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l16_fountain_ball": {
+            "broken": true,
+            "taken": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "Make room for the lichen."
+      },
+      "result": {
+        "ok": false,
+        "reason": "Make room for the lichen."
+      }
+    },
+    "l16_fountain_ball:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "broken": true,
+          "taken": [
+            518.0
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L16_CA:lichen518"
+        ],
+        "presentations": [
+          "ball"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L16_CA:lichen518"
+            ],
+            "collected": [
+              "act2:L16_CA:lichen518"
+            ],
+            "version": 1.0
+          },
+          "l16_fountain_ball": {
+            "broken": true,
+            "taken": [
+              518.0
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        ]
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "broken": true,
+          "taken": [],
+          "version": 1.0
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          "l16_fountain_ball": {
+            "broken": true,
+            "taken": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "broken": true,
+          "taken": [
+            518.0
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L16_CA:lichen518"
+        ],
+        "presentations": [
+          "ball"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L16_CA:lichen518"
+            ],
+            "collected": [
+              "act2:L16_CA:lichen518"
+            ],
+            "version": 1.0
+          },
+          "l16_fountain_ball": {
+            "broken": true,
+            "taken": [
+              518.0
+            ],
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        ]
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "Nothing to take."
+      },
+      "result": {
+        "ok": true,
+        "reason": "Black Lichen (1 taken)."
+      }
+    },
+    "l19_horn:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": false,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": false
+    },
+    "l19_horn:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": true,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L19_BC:horn"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [
+              "act2:L19_BC:horn"
+            ],
+            "version": 1.0
+          },
+          "l19_belial_horn": {
+            "taken": true,
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [],
+            "collected": [
+              "act2:L19_BC:horn"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L19_BC:horn"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L19_BC:horn"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": false,
+          "version": 1.0
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": true,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L19_BC:horn"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [
+              "act2:L19_BC:horn"
+            ],
+            "version": 1.0
+          },
+          "l19_belial_horn": {
+            "taken": true,
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [],
+            "collected": [
+              "act2:L19_BC:horn"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L19_BC:horn"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [],
+            "collected": [
+              "act2:L19_BC:horn"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "repeat_result": false,
+      "result": true
+    },
+    "l8_tree_slot:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "act2:L14_HT:post_shard",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "lit": [
+            "1338",
+            "1339",
+            "1340",
+            "1341",
+            "1342"
+          ],
+          "lock": {
+            "slots": {},
+            "stone": "",
+            "version": 1.0
+          },
+          "rise": 2.0,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L14_HT:post_shard",
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          "l8_tree": {
+            "lit": [
+              "1338",
+              "1339",
+              "1340",
+              "1341",
+              "1342"
+            ],
+            "lock": {
+              "slots": {},
+              "stone": "",
+              "version": 1.0
+            },
+            "rise": 2.0,
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "act2:L14_HT:post_shard",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "lit": [
+            "1338",
+            "1339",
+            "1340",
+            "1341",
+            "1342"
+          ],
+          "lock": {
+            "slots": {},
+            "stone": "",
+            "version": 1.0
+          },
+          "rise": 2.0,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L14_HT:post_shard",
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          "l8_tree": {
+            "lit": [
+              "1338",
+              "1339",
+              "1340",
+              "1341",
+              "1342"
+            ],
+            "lock": {
+              "slots": {},
+              "stone": "",
+              "version": 1.0
+            },
+            "rise": 2.0,
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "act2:L14_HT:post_shard",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "lit": [
+            "1338",
+            "1339",
+            "1340",
+            "1341",
+            "1342"
+          ],
+          "lock": {
+            "slots": {},
+            "stone": "",
+            "version": 1.0
+          },
+          "rise": 2.0,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L14_HT:post_shard",
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          "l8_tree": {
+            "lit": [
+              "1338",
+              "1339",
+              "1340",
+              "1341",
+              "1342"
+            ],
+            "lock": {
+              "slots": {},
+              "stone": "",
+              "version": 1.0
+            },
+            "rise": 2.0,
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "Make room before using the slot."
+      },
+      "result": {
+        "ok": false,
+        "reason": "Make room before using the slot."
+      }
+    },
+    "l8_tree_slot:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "lit": [
+            "1338",
+            "1339",
+            "1340",
+            "1341",
+            "1342"
+          ],
+          "lock": {
+            "slots": {
+              "tree:slot66": {
+                "committed": true,
+                "occupied": "act2:L14_HT:post_shard",
+                "receipts": [
+                  "tree:slot66"
+                ]
+              }
+            },
+            "stone": "act2:L14_HT:post_shard",
+            "version": 1.0
+          },
+          "rise": 2.0,
+          "version": 1.0
+        },
+        "pack": [],
+        "presentations": [
+          "tree"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          "l8_tree": {
+            "lit": [
+              "1338",
+              "1339",
+              "1340",
+              "1341",
+              "1342"
+            ],
+            "lock": {
+              "slots": {
+                "tree:slot66": {
+                  "committed": true,
+                  "occupied": "act2:L14_HT:post_shard",
+                  "receipts": [
+                    "tree:slot66"
+                  ]
+                }
+              },
+              "stone": "act2:L14_HT:post_shard",
+              "version": 1.0
+            },
+            "rise": 2.0,
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "act2:L14_HT:post_shard",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "lit": [
+            "1338",
+            "1339",
+            "1340",
+            "1341",
+            "1342"
+          ],
+          "lock": {
+            "slots": {},
+            "stone": "",
+            "version": 1.0
+          },
+          "rise": 2.0,
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L14_HT:post_shard"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          "l8_tree": {
+            "lit": [
+              "1338",
+              "1339",
+              "1340",
+              "1341",
+              "1342"
+            ],
+            "lock": {
+              "slots": {},
+              "stone": "",
+              "version": 1.0
+            },
+            "rise": 2.0,
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "lit": [
+            "1338",
+            "1339",
+            "1340",
+            "1341",
+            "1342"
+          ],
+          "lock": {
+            "slots": {
+              "tree:slot66": {
+                "committed": true,
+                "occupied": "act2:L14_HT:post_shard",
+                "receipts": [
+                  "tree:slot66"
+                ]
+              }
+            },
+            "stone": "act2:L14_HT:post_shard",
+            "version": 1.0
+          },
+          "rise": 2.0,
+          "version": 1.0
+        },
+        "pack": [],
+        "presentations": [
+          "tree"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          "l8_tree": {
+            "lit": [
+              "1338",
+              "1339",
+              "1340",
+              "1341",
+              "1342"
+            ],
+            "lock": {
+              "slots": {
+                "tree:slot66": {
+                  "committed": true,
+                  "occupied": "act2:L14_HT:post_shard",
+                  "receipts": [
+                    "tree:slot66"
+                  ]
+                }
+              },
+              "stone": "act2:L14_HT:post_shard",
+              "version": 1.0
+            },
+            "rise": 2.0,
+            "version": 1.0
+          }
+        },
+        "sync_packets": [
+          {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          },
+          {
+            "carried": [
+              "act2:L14_HT:post_shard"
+            ],
+            "collected": [
+              "act2:L14_HT:post_shard"
+            ],
+            "version": 1.0
+          }
+        ]
+      },
+      "repeat_result": {
+        "ok": false,
+        "reason": "The exit is already open."
+      },
+      "result": {
+        "ok": true,
+        "reason": "The bamboo door opens. Retrieve the shard."
+      }
+    },
+    "museum_aloe_rule:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "You cannot carry more."
+        ],
+        "owner": {
+          "taken": [
+            false,
+            false
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": [
+            false,
+            false
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "You cannot carry more.",
+          "You cannot carry more."
+        ],
+        "owner": {
+          "taken": [
+            false,
+            false
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": true,
+      "result": true
+    },
+    "museum_aloe_rule:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Cave aloe added to inventory."
+        ],
+        "owner": {
+          "taken": [
+            true,
+            false
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "museum:item19:Cave_Aloe"
+        ],
+        "presentations": [
+          "aloe"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": [
+            false,
+            false
+          ],
+          "version": 1.0
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Cave aloe added to inventory."
+        ],
+        "owner": {
+          "taken": [
+            true,
+            false
+          ],
+          "version": 1.0
+        },
+        "pack": [
+          "museum:item19:Cave_Aloe"
+        ],
+        "presentations": [
+          "aloe"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": true
+    },
+    "museum_prism:full64": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "You cannot carry more."
+        ],
+        "owner": {
+          "taken": false
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": false
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "You cannot carry more.",
+          "You cannot carry more."
+        ],
+        "owner": {
+          "taken": false
+        },
+        "pack": [
+          "act2:L12_CM:item5",
+          "act2:L13_RC:dark_sword",
+          "act2:L13_RC:enchanted_thohan",
+          "museum:item4:Fire_Crystal",
+          "museum:item5:Fire_Crystal",
+          "museum:item6:Fire_Crystal",
+          "museum:item1:Dragon_Blood",
+          "museum:item2:Dragon_Blood",
+          "museum:item3:Dragon_Blood",
+          "museum:skeleton20:Dragon_Blood_1",
+          "museum:skeleton20:Dragon_Blood_2",
+          "cave:guard39:Short_Sword",
+          "cave:guard52:Short_Sword",
+          "cave:guard52:Guard_Shield",
+          "cave:guard53:Short_Sword",
+          "cave:guard53:Guard_Shield",
+          "cave:guard54:prop1013:Short_Sword",
+          "cave:guard54:actor54:Short_Sword",
+          "draracle/prop/1108/sample",
+          "jungle:kelsrick:Fine_Longsword",
+          "museum:item11:Fine_Longsword",
+          "museum:item25:Dragon_Gem",
+          "museum:item17:Ivory_Chip",
+          "museum:item18:Ivory_Chip",
+          "museum:item10:Mail_Shirt",
+          "museum:item8:Champion_Stone",
+          "museum:item9:Champion_Stone",
+          "museum:item7:Lightning_Crystal",
+          "museum:control181:Tho_Broken",
+          "museum:control87:Sk_key",
+          "museum:prop153:Long_arm",
+          "museum:movable55:SS1",
+          "hive:control121:Reaver_of_GO",
+          "hive:prop214:Net_of_Exile",
+          "cave:prop1050:Ancients_Stone",
+          "cave:control75:Mana_foil",
+          "jungle:item51:Th_Dagger",
+          "jungle:weapon_shop:Gargoyle_Bracers",
+          "monastery:item70:Dampen_charm",
+          "hive:runes:Ancients_Stone",
+          "jungle:chut:Ancients_Stone_1",
+          "jungle:chut:Ancients_Stone_2",
+          "jungle:chut:Ancients_Stone_3",
+          "jungle:chut:Ancients_Stone_4",
+          "jungle:chut:Ancients_Stone_5",
+          "jungle:chut:Ancients_Stone_6",
+          "cave:captain:Short_Sword",
+          "cave:captain:Burnt_Chain",
+          "museum:item12:Spark_Scroll",
+          "museum:item13:Spark_Scroll",
+          "museum:item14:Healing_Scroll",
+          "museum:item15:Healing_Scroll",
+          "museum:item16:Summon_Scroll",
+          "museum:item20:Cave_Aloe",
+          "hive:item5:HlScrl",
+          "hive:item6:Ltng_cr",
+          "hive:item7:Ltng_cr",
+          "hive:item8:Kelens_ring",
+          "hive:item9:SS4",
+          "museum:item0:Cocos_Cap",
+          "darkhalls:item4:SS6",
+          "darkhalls:item5:Gaunt_strike",
+          "darkhalls:item28:Orc_shield",
+          "darkerjungle:item10:Lamplt_eggs"
+        ],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": true,
+      "result": true
+    },
+    "museum_prism:normal": {
+      "after": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Prism added to inventory."
+        ],
+        "owner": {
+          "taken": true
+        },
+        "pack": [
+          "museum:prop280:Prism"
+        ],
+        "presentations": [
+          "prism:true"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "before": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [],
+        "owner": {
+          "taken": false
+        },
+        "pack": [],
+        "presentations": [],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat": {
+        "equipped_armor": "",
+        "equipped_item": "",
+        "hand_item": "",
+        "hud_refreshes": 0.0,
+        "journal": [],
+        "messages": [
+          "Prism added to inventory."
+        ],
+        "owner": {
+          "taken": true
+        },
+        "pack": [
+          "museum:prop280:Prism"
+        ],
+        "presentations": [
+          "prism:true"
+        ],
+        "quests": {
+          "act2_items": {
+            "carried": [],
+            "collected": [],
+            "version": 1.0
+          }
+        },
+        "sync_packets": []
+      },
+      "repeat_result": false,
+      "result": true
+    }
+  },
+  "scope": "Original production methods; isolated spatial/presentation doubles; no real-input or earned claim",
+  "version": 1.0
+}

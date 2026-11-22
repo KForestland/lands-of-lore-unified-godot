@@ -36,9 +36,13 @@ func run() -> void:
 			check(not owner.sprites.has(id) and owner.target() != id and not owner.take(id), "twin left to area_world_items " + id)
 			continue
 		check(Catalog.known(id) and Catalog.label(id) == str(row.label) and Catalog.icon(id) == str(row.icon), "original catalog identity " + id)
-		var expected_use: String = {117:"silverleaf",119:"amaranth_serum"}.get(int(row.definition), "")
-		check(Catalog.slot(id).is_empty() and Catalog.use_kind(id) == expected_use, "placed item handler contract " + id)
-		if expected_use.is_empty(): check(not Catalog.use_hint(id).is_empty(), "unhosted handler explains refusal " + id)
+		var Contract=preload("res://tests/helpers/item_use_contract.gd")
+		var definition:int=int(row.definition)
+		var expected_use:String=Contract.use_kind(definition)
+		var expected_slot:String=Contract.slot(definition,preload("res://scripts/lol2/item_definitions.gd").item_class(definition))
+		check(Catalog.slot(id)==expected_slot and Catalog.use_kind(id)==expected_use,"placed item handler contract "+id)
+		if expected_use.is_empty() and expected_slot.is_empty():
+			check(not Catalog.use_hint(id).is_empty() or not Catalog.target_hint(id).is_empty(),"Unknown use is explained, or known target action is offered "+id)
 		var point: Vector3 = owner.aim_point(id)
 		var found := false
 		for offset in [Vector3(0,20,32),Vector3(32,20,0),Vector3(0,20,-32),Vector3(-32,20,0),Vector3(0,2,16),Vector3(16,2,0),Vector3(0,2,-16),Vector3(-16,2,0),Vector3(0,40,8)]:

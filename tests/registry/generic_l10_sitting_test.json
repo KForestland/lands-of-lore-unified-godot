@@ -1,0 +1,47 @@
+{
+  "name": "generic_l10_sitting_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "B sitting under development: FIRST RUINS ARRIVAL ONLY, canonical SHA-pinned C15 F2 Cemetery start (upstream aids disclosed in playtest_starts.json). Production W/mouse/E/combat; ordinary1/60; no runtime pose, health, clock or action-handler aids. Gate path field/private settings and no-autosave are fixture setup. Full chain not yet qualified. Original LOLG.EXE env is mandatory at runtime: missing fails, never skips."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "8713d6c4ac8eee4748d77ce185834f69a5425bbe9745e82f77620e734c9ff5ac"
+  },
+  "context_aid_source_sites": {
+    "count": 3,
+    "sites": [
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 4,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## E interaction adapts source control0/event4. Source group5244 is staged intact.
 ## Rune pit: the region506 floor tiles carry region event1 groups with the same room sequence (hive_rune_pit_source.json).
 ## Arriving grounded on a room-11 tile runs it, so walking or jumping into the pit opens RUNES (original longplay
@@ -188,15 +189,8 @@ func refresh() -> void:
 		else: view.show_runes(checkpoint.lights,checkpoint.flag7)
 		for hit in hotspots: hit.visible = not busy() and hit.get_meta("room") == checkpoint.room
 		held.visible = checkpoint.room == "RUNECL" and not busy()
-		held.clear()
-		held.add_item("Empty hand")
-		held.set_item_metadata(0,"")
-		# Presentation adapter (owner r12e report 1): the selector stands in for the original held cursor; with a full pack
-		# its list scrolls at the bottom of the screen and wax could sit out of view, so carried wax is listed first.
 		var transaction := preload("res://scripts/lol2/hive_rune_transaction.gd")
-		for item in preload("res://scripts/lol2/hand_selector_order.gd").wanted_first(host.carried_inventory.collected,transaction.is_wax):
-			held.add_item("Wax" if transaction.is_wax(item) else ("Wax runes" if preload("res://scripts/lol2/hive_rune_items.gd").valid(item) else str(item).get_slice(":",2).replace("_"," ")))
-			held.set_item_metadata(held.item_count-1,item)
+		preload("res://scripts/lol2/item_choice_menu.gd").populate(held,preload("res://scripts/lol2/hand_selector_order.gd").wanted_first(host.carried_inventory.collected,transaction.is_wax),host)
 		notice.text = "" if busy() else ("Escape — Back" if checkpoint.room == "RUNECL" else "Escape — Return to the cavern")
 		if Speech.active(checkpoint):
 			view.voice.stream = AudioStreamWAV.load_from_file(Speech.media()[checkpoint.speech_key].path)
@@ -243,7 +237,7 @@ func activate_hotspot(index: int) -> bool:
 				refresh()
 			return true
 		if index == 4:
-			if not Stone.begin(checkpoint,host.carried_inventory.collected): return false
+			if not Stone.begin(checkpoint,Grants.pack(host)): return false
 			refresh()
 			return true
 		return false
@@ -256,7 +250,10 @@ func activate_hotspot(index: int) -> bool:
 	if not transaction.is_wax(selected):
 		start_speech("2:51" if selected.is_empty() else "2:35")
 		return true
-	var result: Dictionary = transaction.copy_wax(host.area_handoff().quests,host.carried_inventory,selected)
+	var quests:Dictionary=host.area_handoff().quests
+	var inventory:Dictionary=host.carried_inventory.duplicate()
+	inventory.collected=Grants.pack(host)
+	var result: Dictionary = transaction.copy_wax(quests,inventory,selected)
 	if result.has("error"):
 		notice.text = result.error
 		return false
@@ -275,7 +272,7 @@ func _process(delta: float) -> void:
 		if Speech.advance(checkpoint,delta): refresh()
 		return
 	if not checkpoint.stone_playing: return
-	if Stone.advance(checkpoint,host.carried_inventory.collected,delta):
+	if Stone.advance(checkpoint,Grants.pack(host),delta):
 		if checkpoint.flag7: start_speech("100:2")
 		else:
 			refresh()

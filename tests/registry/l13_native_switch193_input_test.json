@@ -1,0 +1,40 @@
+{
+  "name": "l13_native_switch193_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 0,
+  "count_method": "Audited source sites, not executions.",
+  "needs": {
+    "fixtures": [
+      "tmp/l13_native_use_inputs/owner_011552.json"
+    ],
+    "note": "Local-only unedited owner F10 bootstrap through real loader (twice); actual E/mouse/leftclick/F5/F9 at ordinary1/60. No pose/health/resources/clock writes; bootstrap saves disclosed, not a new campaign-chain claim."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "d05f0336706d3776392712f5cfb5d700e43f07d6e1e3473c82fcaca2a70e35a7"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 2
+}

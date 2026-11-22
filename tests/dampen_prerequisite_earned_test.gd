@@ -57,6 +57,7 @@ func walk_return(route: Dictionary, allow_exit := false, destination_room := "")
 			var direction := offset.normalized()*minf(1,offset.length()/(80*delta))
 			# Face the walking direction, as a player does (only the view turns; movement is unchanged).
 			if offset.length()>1: scene.player.rotation.y=atan2(-offset.x,-offset.y)
+			preload("res://tests/jungle_bramble_cut.gd").cut(scene)
 			scene.move_grounded(Vector3(direction.x,0,direction.y),delta)
 			if scene.has_node("Warriors"): tick_curse(delta)
 			else: scene.curse.advance(delta)

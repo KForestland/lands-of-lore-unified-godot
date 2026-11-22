@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "scope": "23 source-entry real-input components. Existing game-written test checkpoints pinned unchanged, with their original disclosed producer aids; not an unaided campaign claim. Fresh cases disclose genuine grants/story/NPC/grounded-stand/selection fixtures.",
+  "rows": {
+    "hive_flute": {
+      "area": "L5_HC",
+      "node": "@flute_floor",
+      "target": "flute",
+      "grant": [
+        "monastery:item94:Iron_Flute"
+      ]
+    },
+    "charger": {
+      "area": "L10_DC",
+      "node": "Act2Chargers",
+      "target": "L10:yellow",
+      "grant": [
+        "act2:L10_DC:item44"
+      ]
+    },
+    "cemetery_gate": {
+      "area": "L10_DC",
+      "node": "L10MainGate",
+      "target": "sigil",
+      "grant": [
+        "l8:shaman:Dracoid_sigil"
+      ]
+    },
+    "tomb": {
+      "area": "L10_DC",
+      "node": "L10Tombs",
+      "target": "154",
+      "grant": [
+        "act2:L10_DC:item44:charged:blue"
+      ]
+    },
+    "emperor_slab": {
+      "area": "L10_DC",
+      "node": "L10EmperorEntry",
+      "target": "ankh",
+      "grant": [],
+      "checkpoint": "tests/fixtures/item_belt_native_inputs/l10_ankh_earned_save.json",
+      "sha256": "47e57b20b031dc975b86d277eeaf545af06d38b6a148587813dd016a24966dd3",
+      "format": "lol2-restoration-map-L10_DC"
+    },
+    "emperor_door": {
+      "area": "L10_DC",
+      "node": "L10Emperor",
+      "target": "143",
+      "grant": [],
+      "checkpoint": "tests/fixtures/item_belt_native_inputs/l10_emperor_125_occupied_earned_save.json",
+      "sha256": "92a6d4a48c5c762a1617bcf456c14ea8adb9c9a5c4c773492f6e90166c07bb8b",
+      "format": "lol2-restoration-map-L10_DC"
+    },
+    "emperor_socket": {
+      "area": "L10_DC",
+      "node": "L10Emperor",
+      "target": "125",
+      "grant": [],
+      "checkpoint": "tests/fixtures/item_belt_native_inputs/l10_emperor_three_globes_earned_save.json",
+      "sha256": "d558703dbe420938165a57937a5d2c68351ec47b7307b5a5aad77f3baad2a586",
+      "format": "lol2-restoration-map-L10_DC"
+    },
+    "priest_ashes": {
+      "area": "L10_DC",
+      "node": "L10Priest",
+      "target": "ashes",
+      "grant": [],
+      "checkpoint": "tests/fixtures/item_belt_native_inputs/l10_ashes_return_earned_save.json",
+      "sha256": "fd9773d66a488e7a1965af6ed4c58002a72b3845de54fc6c8025fd0245e1fcf8",
+      "format": "lol2-restoration-map-L10_DC"
+    },
+    "citadel_exit": {
+      "area": "L13_RC",
+      "node": "L13ExitLock",
+      "target": "stone",
+      "grant": [],
+      "checkpoint": "tmp/l13_dawn_release_qualified_save.json",
+      "sha256": "6ace2f6b19e8821944137b8225e154d6b5b1925e071f639330daa6f7209b1c4c",
+      "format": "lol2-restoration-map-L13_RC",
+      "unrelated_hand": true
+    },
+    "temple_flute": {
+      "area": "L14_HT",
+      "node": "L14FluteSlot",
+      "target": "flute",
+      "grant": [],
+      "checkpoint": "tmp/l14_flute_approach_qualified_save.json",
+      "sha256": "d691b1ffa7f4de91c7fdc2cafa72771414573f9f179ac1d8f20c0850ed2fb22e",
+      "format": "lol2-restoration-map-L14_HT",
+      "unrelated_hand": true
+    },
+    "idol_pedestal": {
+      "area": "L14_HT",
+      "node": "L14IdolPedestals",
+      "target": "85",
+      "grant": [],
+      "checkpoint": "tmp/l14_idol_room_qualified_save.json",
+      "sha256": "222f13ddfeba61e4bef15544cf167e19c21a76558a850a3b81c3df9230998655",
+      "format": "lol2-restoration-map-L14_HT",
+      "unrelated_hand": true
+    },
+    "shard_bowl": {
+      "area": "L14_HT",
+      "node": "L14ShardBowls",
+      "target": "406",
+      "grant": [],
+      "checkpoint": "tmp/l14_shard_bowls_approach_qualified_save.json",
+      "sha256": "172747e16f69e735da0a97cd8ff5435a158b5888cb389dbacb4843a1b819f6b6",
+      "format": "lol2-restoration-map-L14_HT",
+      "unrelated_hand": true
+    },
+    "greenhouse": {
+      "area": "L16_CA",
+      "node": "L16Greenhouse",
+      "target": "leaf",
+      "grant": [
+        "act2:L10_DC:silverleaf159"
+      ]
+    },
+    "ivory_pedestal": {
+      "area": "L16_CA",
+      "node": "L16SwChips",
+      "target": "0",
+      "grant": [
+        "act2:L16_CA:item12"
+      ]
+    },
+    "temple_entrance": {
+      "area": "L8_SJ",
+      "node": "L8TempleDoor",
+      "target": "stone",
+      "grant": [],
+      "checkpoint": "tmp/l8_river_return_qualified_save.json",
+      "sha256": "38782a29b9e87b96a48fd64e08b18a98f9f3974a1b0542cb7c7cacec67e6ef56",
+      "format": "lol2-restoration-darker-jungle",
+      "unrelated_hand": true
+    },
+    "tree_slot": {
+      "area": "L8_SJ",
+      "node": "L8Tree",
+      "target": "shard",
+      "grant": [],
+      "checkpoint": "tmp/l8_tree_raised_qualified_save.json",
+      "sha256": "424f9f1809a2cfa2b1bcfb41ed24e3d58116040d7677b11bf2f5cf97640e8e60",
+      "format": "lol2-restoration-darker-jungle",
+      "preferred_xz": [
+        -1335,
+        -2520
+      ],
+      "unrelated_hand": true
+    },
+    "larkhon": {
+      "area": "L8_SJ",
+      "node": "L8Larkhon",
+      "target": "vapors",
+      "grant": [],
+      "checkpoint": "tests/fixtures/item_belt_native_inputs/l8_larkhon_active_earned_save.json",
+      "sha256": "80a4dea2c9563e3ab2bb4934d5f1bae98077eb91c4063ec223c0d784ece4f7f3",
+      "format": "lol2-restoration-darker-jungle"
+    },
+    "spiral_slot": {
+      "area": "L14_HT",
+      "node": "L14Spiral",
+      "target": "stone",
+      "grant": [],
+      "checkpoint": "tmp/l14_shard_bowls_qualified_save.json",
+      "sha256": "451c0688afcf2025991114469695bf24753d735565b59d446cb9ace70818e1bc",
+      "format": "lol2-restoration-map-L14_HT",
+      "unrelated_hand": true
+    },
+    "ritual_bowl": {
+      "area": "L14_HT",
+      "node": "L14PriestRitual",
+      "target": "369",
+      "grant": [],
+      "checkpoint": "tmp/l14_priest_supplies_qualified_save.json",
+      "sha256": "f83523a56f2884e1b0766dfbf8d6db565bf349737110e65f729080f5de36c196",
+      "format": "lol2-restoration-map-L14_HT",
+      "unrelated_hand": true
+    },
+    "hopper_weight": {
+      "area": "L14_HT",
+      "node": "L14HopperPlatform",
+      "target": "bodies",
+      "grant": [],
+      "checkpoint": "tmp/l14_hopper_corpses_qualified_save.json",
+      "sha256": "1c679ec79729de8e14a9aff9a7f8b12aa5ec2e279c12a157287fadd7e3b36b6d",
+      "format": "lol2-restoration-map-L14_HT",
+      "unrelated_hand": true
+    },
+    "daniel": {
+      "area": "L8_SJ",
+      "node": "L8Journey",
+      "target": "daniel",
+      "grant": [
+        "jungle:kityara:Empty_hand"
+      ]
+    },
+    "village_guard": {
+      "area": "L8_SJ",
+      "node": "L8Journey",
+      "target": "guard",
+      "grant": [
+        "jungle:kityara:Empty_hand"
+      ]
+    },
+    "museum_lock": {
+      "area": "L3_DH",
+      "node": "@key_locks",
+      "target": "88",
+      "grant": []
+    }
+  }
+}

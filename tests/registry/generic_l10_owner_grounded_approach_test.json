@@ -1,0 +1,58 @@
+{
+  "name": "generic_l10_owner_grounded_approach_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 1,
+  "needs": {
+    "note": "Exact owner ok-here F10 viaF9, then recorded key/look events; report UI omitted. Native aperture uses read-only6x8x6 component query; not an earned whole-chain claim. Audit pending before READY."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "d4b44e19528b8197d4f1d11af71852af4f7cdcdf42f7e8a151395e312ba42c8f"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/generic_l10_owner_grounded_approach_test.gd",
+        "line": 11,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(INPUT,Slots.slot_path(1))==OK,\"Disclosed genuine F10 installation for actualF9\"):return"
+      },
+      {
+        "path": "tests/generic_l10_owner_grounded_approach_test.gd",
+        "line": 31,
+        "column": 5,
+        "kind": "read_only_aperture_probe",
+        "source": "var aperture:=BoxShape3D.new();aperture.size=Vector3(6,8,6)"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 6,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

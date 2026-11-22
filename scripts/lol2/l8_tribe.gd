@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Original offer speech/arena placement, modern saved nonlethal bout.
 const State=preload("res://scripts/lol2/l8_tribe_state.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
@@ -22,7 +23,9 @@ func offer(item:String)->Dictionary:
  if not host.quest_state.get("l8_journey",{}).get("admitted",false) or not host.quest_state.get("l10_silverleaf",{}).get("grown",false):return State.Kit.refuse("Bring Silverleaf from the cemetery after meeting the shaman.")
  var result:=State.offer(state(),host.carried_collected,item)
  if not result.ok:return result
- host.quest_state[State.KEY]=result.state;host.carried_collected=result.inventory;Items.sync(host)
+ var admission:=Grants.transition(host,result.inventory,{State.KEY:result.state})
+ if not admission.ok:return admission
+ Items.sync(host)
  return {"ok":true,"reason":"The shaman accepts the Silverleaf and prepares your initiation."}
 func play_current():
  if not input_locked():voice.stop();loaded=-1;return
@@ -56,7 +59,7 @@ func receive_strike(amount:int,melee:bool)->bool:
 func yield_bout()->bool:
  if state().phase!="fight" or not host.starting_magic.world_active():return false
  var s:=state().duplicate(true)
- if s.player==State.PLAYER_STAMINA and s.daniel==State.DANIEL_STAMINA:return false
+ if s.player==State.PLAYER_STAMINA and s.daniel==State.DANIEL_STAMINA:host.save_feedback("Daniel waits for your first move.");return false
  s.player=0;finish(s);return true
 func _physics_process(delta):
  if state().phase!="fight" or not host.starting_magic.world_active():return
@@ -97,19 +100,17 @@ func offer_shaman(item:String)->Dictionary:
  if not host.starting_magic.world_active() or host.player_form!=0 or host.get_node("L8Journey").target()!="village" or not State.member(state()):return State.Kit.refuse("Return to the shaman after your initiation.")
  var result:Dictionary=Trade.exchange(host.quest_state.get(Trade.KEY,Trade.initial()),host.carried_collected,item)
  if not result.ok:return result
- var history:Dictionary=host.quest_state.act2_items.duplicate(true);history.collected.append(Trade.SERUM)
- host.carried_collected=result.inventory;host.quest_state[Trade.KEY]=result.state;host.quest_state.act2_items=history;Items.sync(host)
+ var admission:=Grants.transition(host,result.inventory,{Trade.KEY:result.state},{"history":"act2","history_id":Trade.SERUM})
+ if not admission.ok:return admission
+ Items.sync(host)
  return {"ok":true,"reason":"The shaman accepts another Silverleaf and gives you Amaranth Serum. Keep it for the journey ahead."}
 
 func leave_arena()->bool:
  if state().phase!="complete" or not host.starting_magic.world_active() or host.player_form!=0:return false
- var point:Vector3=host.act2_creatures.bodies["23"].position+Vector3.UP*45
- var direction:Vector3=point-host.camera.global_position
- if direction.length()>180 or direction.length()<0.01 or (-host.camera.global_basis.z).dot(direction.normalized())<0.8:return false
- var ray:=PhysicsRayQueryParameters3D.create(host.camera.global_position,point,1,[host.player.get_rid()])
- if not host.get_world_3d().direct_space_state.intersect_ray(ray).is_empty():return false
+ # BJ12: the prompt "E — Return to the village" shows wherever Luther stands in the arena, so E answers there too
+ # (it used to need Daniel in the crosshair within 180, and said nothing when he was not).
  var s:=state().duplicate(true);s.phase="departed";host.quest_state[State.KEY]=s
  # Collapse the unhosted settlement views to original SETTLE1 world exit531/4414.
  host.player.position=Vector3(531,32,-4414);host.player.velocity=Vector3.ZERO;host.player.rotation.y=deg_to_rad(90.0);host.camera.rotation.x=0;host.player.reset_physics_interpolation()
- host.save_feedback("You return to the Wild Village after your initiation.")
+ host.save_feedback("You return to the Wild Village after your initiation. The shaman will trade for another Silverleaf.")
  return true

@@ -8,10 +8,16 @@ func reached_waypoint(scene:Node,label:String,index:int)->void:
  super.reached_waypoint(scene,label,index)
  if label=="east river bank" and index==94:check(scene._quicksave_unrecorded("res://tmp/l8_larkhon_approach_earned_save.json").is_empty(),"earned river approach checkpoint")
  if label=="east river bank" and index==95:check(scene.request_jump(),"ordinary jump over low bank roots")
+func clubhouse_path() -> String:
+ return "res://tmp/act2_wild_village_qualified/l8_clubhouse_earned_save.json"
+func clubhouse_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="02cfe975f0e0dcf98e60d23b4b9e403ef2ce701f200c01115be704568c0c58f6"
+func pass_line() -> String:
+ return "PASS qualified clubhouse -> physical east river Human jump -> inventory Kit recipe/activation -> original115 chest dose/sleep/reload -> native L12/1"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/act2_wild_village_qualified/l8_clubhouse_earned_save.json"
- if not check(FileAccess.get_sha256(path)=="02cfe975f0e0dcf98e60d23b4b9e403ef2ce701f200c01115be704568c0c58f6","qualified milestone2 anchor"):quit(1);return
+ var path: String=clubhouse_path()
+ if not check(clubhouse_ready(path),"qualified milestone2 anchor"):quit(1);return
  var input:=Save.read_save(path,"lol2-restoration-darker-jungle")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/darker_jungle.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -69,8 +75,11 @@ func run():
  paused=true;check(not guardian.offer(Guardian.VAPORS).ok,"paused offering refused");paused=false
  var gate_ray:=PhysicsRayQueryParameters3D.create(Vector3(7240,32,2160),Vector3(7340,32,2040),1<<9)
  check(not scene.get_world_3d().direct_space_state.intersect_ray(gate_ray).is_empty(),"awake original passage collision blocks entry")
- var result:Dictionary=guardian.offer(Guardian.VAPORS)
- if not check(result.ok,str(result)):quit(1);return
+ # BJ12: the dose goes through the real right mouse button, as the hint tells the player.
+ for pressed in [true,false]:
+  var click:=InputEventMouseButton.new();click.button_index=MOUSE_BUTTON_RIGHT;click.pressed=pressed;click.position=Vector2(640,360);click.global_position=click.position
+  Input.parse_input_event(click);Input.flush_buffered_events();await process_frame
+ if not check(Guardian.used(guardian.state()),"a real right click applies the dose (%s)"%str(guardian.state())):quit(1);return
  await physics_frame
  check(scene.get_world_3d().direct_space_state.intersect_ray(gate_ray).is_empty(),"actual dose clears original passage collision")
  check(guardian.asleep() and Guardian.VAPORS not in scene.carried_collected,"original guardian sleeps after actual dose")
@@ -97,5 +106,5 @@ func run():
  check(scene._quicksave_unrecorded("res://tmp/l12_larkhon_arrival_earned_save.json").is_empty(),"earned Claw Mountains arrival saved")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no resets or seeds")
  scene.queue_free();await process_frame
- if failures==0:print("PASS qualified clubhouse -> physical east river Human jump -> inventory Kit recipe/activation -> original115 chest dose/sleep/reload -> native L12/1")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

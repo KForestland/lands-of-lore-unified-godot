@@ -1,0 +1,908 @@
+{
+  "owner_host_base": "d5da60a",
+  "capture_stack": "323aec52884118a6d095950bd851485c5a00b72b",
+  "note": "Three owner hosts unchanged from d5da60a. Plan1 adds PlayerHealth among host children; owners and face claims are unchanged. Classic quiescent initial scenes; actual host save writers. Not earned gameplay. 2026-11-12 (Opus): L10 adds l10_globe_door.gd (OF6/K86, already on da76748 before the registry merge): one early declaration after l10_silverleaf.gd, child L10GlobeDoor, and its 12 faces 14766-14777 in mesh and collision exclusions, computed from l10_globe_door.owns(). 2026-11-14 (Opus): L16 adds child L16FountainFreeze (Sol c437c8d, l16_fountain_freeze.gd; its declaration is pinned apart in area_owners_g15_fountain.json); no face claims, save unchanged.",
+  "host_sha256": {
+    "act2_map.gd": "ee0d2b14f0c6bd5acf034cc1a4436e5f91435f9716293a8b3d5205920d938cec",
+    "darker_jungle.gd": "9fbc4ae75c9d36b99775f21302d21b746eee90c88fa679ca360e255abf0ad7fb",
+    "dragon_level.gd": "5ab3904bc52e6d472a1a4b70cecbc5645605f46484400b13651222f5b375f61c"
+  },
+  "files": {
+    "L10_DC.json": "8dd7d79d773215c115d81dc96627d98055f6bd569e2a58ffe168aea004e6c7cc",
+    "L10_DC_save.json": "6b23c5802af60af04dca7e589bc9fdb47980659f3dc3475e6c1475fe80dfa9fc",
+    "L12_CM.json": "1f683cffadb8a34ee7defe03be9be406aba9c6e295e3525c7846be21c8624c78",
+    "L12_CM_save.json": "c86cd40ea416ab895814182d87b6e645642650ce2a1fe5e7f7e033b369579c9f",
+    "L13_RC.json": "1346cdc41ba92e326e9b7a23d002d44836f763e1ea57c2f511f755ba46ed99c7",
+    "L13_RC_save.json": "61d3b6a95b7e9bfd0ac1d93c3d81c380e32c59cbae4891b2828280a2a6b3d01c",
+    "L14_HT.json": "8b9b7cafbb0601efc45305c4988695f82fb78ab58115d0962cfab24c21b333bd",
+    "L14_HT_save.json": "b1fcff8c92d8ae002f5995af3c14285ab94c77bc9aae912ef7f6a46d10b1294e",
+    "L16_CA.json": "a2620a1f005f5e98236832383f13501a7ef7c48d047e642f724a416758e9c039",
+    "L16_CA_save.json": "a4a2bc2b3cfb64e550a26d22afa9fdfaf097f0f3b717821d2a1bb1dc9f2b48a2",
+    "L17_HC.json": "81269293f0310789741610502ff59e18a9dfb3364b19a7cdea676c2a4887372e",
+    "L17_HC_save.json": "9a2c5eff0bcd6fb726dd7cc98a02986e024c3e8d5072230c51e596e8e41c8ff5",
+    "L19_BC.json": "64be9c22a72d1992d624c66d3eba92ff5a1c739f569c13373a8505fa405ea52c",
+    "L19_BC_save.json": "a5f5182ed7e611eeea2cb1dd1613fb7cb61b97dfe6c2cde84cb09d01b06b1c6c",
+    "L20_BB.json": "a8ad192bf7298d26f2acdbc78b1c527e5c7ab3e07dab406594fbe5185225bbc9",
+    "L20_BB_save.json": "7d6b6f84867b9945e7e1a2ec2102a0f000a3ba6a4bf685a6f62068653971f6dd",
+    "L8_SJ.json": "cc982d1a557f1965402299ce57e5cc3a7ae6404bff8945664efc8402443f519d",
+    "L8_SJ_save.json": "2d6f646e032b90193654b5f5ba58cef2273776dc05aca92af9c244fbfcc65dd9",
+    "L9_DR.json": "dcc8c99585e76bd3f4411353b44a011627fb1ddff69345ca10621651d77437a6",
+    "L9_DR_save.json": "fd352e92759e36b7d8ef93528dbd341c092a24a29239aa937663e098983c179f"
+  },
+  "declarations": {
+    "L8_SJ": [
+      {
+        "script": "l8_journey.gd",
+        "factory": "new",
+        "host_property": "host",
+        "phase": "default",
+        "line": 258,
+        "declared_key_expression": "\"l8_journey\""
+      },
+      {
+        "script": "l8_village_hints.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 261,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_shore.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 262,
+        "declared_key_expression": "\"l8_shore\""
+      },
+      {
+        "script": "l8_dawn.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 263,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_baccata.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 264,
+        "declared_key_expression": "\"l8_baccata\""
+      },
+      {
+        "script": "l8_tribe.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 265,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_tribe_dawn_hints.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 266,
+        "args": [
+          "tribe"
+        ],
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_clubhouse.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 267,
+        "declared_key_expression": "\"l8_clubhouse\""
+      },
+      {
+        "script": "l8_huline_speech.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 268,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_larkhon.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 269,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_temple_door.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 270,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l13_journal_hints.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 271,
+        "args": [
+          "temple"
+        ],
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_tree_bridge.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 272,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_straw_trap.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 273,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_cache_ladder.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 274,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_tree.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 275,
+        "declared_key_expression": "\"l8_tree\""
+      }
+    ],
+    "L9_DR": [
+      {
+        "script": "l9_magic_bridge.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 139,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l9_tower.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 140,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l9_dead_bracers.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 141,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l9_mirrors.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 142,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l9_noble_rails.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 143,
+        "declared_key_expression": "\"l9_noble_rails\""
+      },
+      {
+        "script": "l9_pyre.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 144,
+        "declared_key_expression": "\"l9_pyre\""
+      },
+      {
+        "script": "l9_statue.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 145,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l9_statue_walk.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 146,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l9_flood.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 147,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l9_journal_hints.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 148,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l9_escape.gd",
+        "attach": "attach",
+        "phase": "default",
+        "line": 149,
+        "declared_key_expression": null
+      }
+    ],
+    "L10_DC": [
+      {
+        "script": "l10_main_gate.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 213,
+        "declared_key_expression": "\"l10_main_gate\""
+      },
+      {
+        "script": "l10_tombs.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 214,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l10_braziers.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 215,
+        "declared_key_expression": "\"l10_braziers\""
+      },
+      {
+        "script": "l10_fences.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 216,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l10_barrel.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 217,
+        "declared_key_expression": "\"l10_barrel\""
+      },
+      {
+        "script": "l10_oil.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 218,
+        "declared_key_expression": "\"l10_oil\""
+      },
+      {
+        "script": "l10_priest.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 219,
+        "declared_key_expression": "\"l10_priest\""
+      },
+      {
+        "script": "l10_emperor_entry.gd",
+        "attach": "attach_entry",
+        "phase": "early",
+        "line": 220,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l10_emperor.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 221,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l10_silverleaf.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 222,
+        "declared_key_expression": "\"l10_silverleaf\""
+      },
+      {
+        "script": "l10_globe_door.gd",
+        "phase": "early"
+      },
+      {
+        "script": "l10_journal_hints.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 223,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l8_tribe_dawn_hints.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 224,
+        "args": [
+          "remains"
+        ],
+        "declared_key_expression": null
+      }
+    ],
+    "L12_CM": [
+      {
+        "script": "l12_glacier.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 311,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l12_river_rafts.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 312,
+        "declared_key_expression": "\"l12_river_rafts\""
+      },
+      {
+        "script": "l12_niche_armor.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 313,
+        "declared_key_expression": "\"l12_niche_armor\""
+      },
+      {
+        "script": "l12_crevasse.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 314,
+        "declared_key_expression": "\"l12_crevasse\""
+      },
+      {
+        "script": "l12_frozen_bow.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 315,
+        "declared_key_expression": "\"l12_frozen_bow\""
+      },
+      {
+        "script": "l12_citadel.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 316,
+        "declared_key_expression": null
+      }
+    ],
+    "L13_RC": [
+      {
+        "script": "l13_egg_door.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 226,
+        "declared_key_expression": "\"l13_egg_door\""
+      },
+      {
+        "script": "l13_eggs.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 227,
+        "declared_key_expression": "\"l13_eggs\""
+      },
+      {
+        "script": "l13_elevator.gd",
+        "attach": "attach_lift",
+        "phase": "early",
+        "line": 228,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l13_prison.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 229,
+        "declared_key_expression": "\"l13_prison\""
+      },
+      {
+        "script": "l13_spires.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 230,
+        "declared_key_expression": "\"l13_spires\""
+      },
+      {
+        "script": "l13_dawn_prison.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 231,
+        "declared_key_expression": "\"l13_dawn_prison\""
+      },
+      {
+        "script": "l13_bridge.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 232,
+        "declared_key_expression": "\"l13_bridge\""
+      },
+      {
+        "script": "l13_belial.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 233,
+        "declared_key_expression": "\"l13_belial\""
+      },
+      {
+        "script": "l13_altar.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 234,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l13_return_pad.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 235,
+        "declared_key_expression": "\"l13_return_pad\""
+      },
+      {
+        "script": "l13_exit_lock.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 236,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l13_journal_hints.gd",
+        "attach": "attach",
+        "phase": "early",
+        "line": 237,
+        "args": [
+          "citadel"
+        ],
+        "declared_key_expression": null
+      }
+    ],
+    "L14_HT": [
+      {
+        "script": "l14_temple_doors.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 268,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l14_hall_clear.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 269,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l14_priest_body.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 270,
+        "declared_key_expression": "\"l14_priest_body\""
+      },
+      {
+        "script": "l14_priest_ritual.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 271,
+        "declared_key_expression": "\"l14_priest_ritual\""
+      },
+      {
+        "script": "l14_post_shard.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 272,
+        "declared_key_expression": "\"l14_post_shard\""
+      },
+      {
+        "script": "l14_hanging.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 273,
+        "declared_key_expression": "\"l14_hanging\""
+      },
+      {
+        "script": "l14_bedroom.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 274,
+        "declared_key_expression": "\"l14_bedroom\""
+      },
+      {
+        "script": "l14_library.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 275,
+        "declared_key_expression": "\"l14_library\""
+      },
+      {
+        "script": "l14_quill.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 276,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l14_niche.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 277,
+        "declared_key_expression": "\"l14_niche\""
+      },
+      {
+        "script": "l14_shard_bowls.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 278,
+        "declared_key_expression": "\"l14_shard_bowls\""
+      },
+      {
+        "script": "l14_spiral.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 279,
+        "declared_key_expression": "\"l14_spiral\""
+      },
+      {
+        "script": "l14_trials.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 280,
+        "declared_key_expression": "\"l14_trials\""
+      },
+      {
+        "script": "l14_tilt.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 281,
+        "declared_key_expression": "\"l14_tilt\""
+      },
+      {
+        "script": "l14_fire_paths.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 282,
+        "declared_key_expression": "\"l14_fire_paths\""
+      },
+      {
+        "script": "l14_flute_slot.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 283,
+        "declared_key_expression": "\"l14_flute_slot\""
+      },
+      {
+        "script": "l14_chamber_voices.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 284,
+        "declared_key_expression": "\"l14_chamber_voices\""
+      },
+      {
+        "script": "l14_trap_route.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 285,
+        "declared_key_expression": "\"l14_trap_route\""
+      },
+      {
+        "script": "l14_idol_pedestals.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 286,
+        "declared_key_expression": "\"l14_idol_pedestals\""
+      },
+      {
+        "script": "l14_hopper_platform.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 287,
+        "declared_key_expression": "\"l14_hopper_platform\""
+      },
+      {
+        "script": "l14_journal_hints.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 288,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l14_belial.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 289,
+        "declared_key_expression": "\"l14_belial\""
+      },
+      {
+        "script": "l14_spider_passage.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 290,
+        "declared_key_expression": "\"l14_spider_passage\""
+      },
+      {
+        "script": "l14_spider_burrow.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 291,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l14_lower_passage.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 292,
+        "declared_key_expression": null
+      },
+      {
+        "script": "l14_machines.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 293,
+        "declared_key_expression": "\"l14_machines\""
+      }
+    ],
+    "L16_CA": [
+      {
+        "script": "l16_nw_traps.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 252,
+        "needs": "progression",
+        "declared_key_expression": "\"l16_nw_traps\""
+      },
+      {
+        "script": "l16_arrival_elevator.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 253,
+        "needs": "progression",
+        "declared_key_expression": "\"l16_arrival_doorway\""
+      },
+      {
+        "script": "l16_greenhouse.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 254,
+        "needs": "progression",
+        "declared_key_expression": "\"l16_greenhouse\""
+      },
+      {
+        "script": "l16_sw_chips.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 255,
+        "needs": "progression",
+        "declared_key_expression": "\"l16_sw_chips\""
+      },
+      {
+        "script": "l16_dry_fountain.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 256,
+        "needs": "progression",
+        "declared_key_expression": "\"l16_dry_fountain\""
+      },
+      {
+        "script": "l16_ne_tower.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 257,
+        "needs": "progression",
+        "declared_key_expression": "\"l16_ne_tower\""
+      },
+      {
+        "script": "l16_centre_tower.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 258,
+        "needs": "progression",
+        "declared_key_expression": "\"l16_centre_tower\""
+      },
+      {
+        "script": "l16_terrace_lips.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 259,
+        "needs": "progression",
+        "declared_key_expression": null
+      },
+      {
+        "script": "l16_centre_pads.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 260,
+        "needs": "progression",
+        "declared_key_expression": null
+      },
+      {
+        "script": "l16_centre_switches.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 261,
+        "needs": "progression",
+        "declared_key_expression": null
+      },
+      {
+        "script": "l16_journal_hints.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 262,
+        "needs": "progression",
+        "declared_key_expression": null
+      },
+      {
+        "script": "l16_se_oil.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 263,
+        "needs": "progression",
+        "declared_key_expression": "\"l16_se_oil\""
+      },
+      {
+        "script": "l16_dragon_room.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 264,
+        "needs": "progression",
+        "declared_key_expression": "\"l16_dragon_room\""
+      },
+      {
+        "script": "l16_dragon_mouth.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 265,
+        "needs": "progression",
+        "declared_key_expression": null
+      },
+      {
+        "script": "l16_dragon_tapestry.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 266,
+        "needs": "progression",
+        "declared_key_expression": null
+      }
+    ],
+    "L17_HC": [
+      {
+        "script": "l17_cavern_run.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 248,
+        "needs": "progression",
+        "declared_key_expression": "\"l17_cavern_run\""
+      },
+      {
+        "script": "l17_beast_blade.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 249,
+        "needs": "progression",
+        "declared_key_expression": "\"l17_beast_blade\""
+      },
+      {
+        "script": "l17_beast_carry.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 250,
+        "needs": "progression",
+        "declared_key_expression": "\"l17_beast_carry\""
+      }
+    ],
+    "L19_BC": [
+      {
+        "script": "l19_beast_wall.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 295,
+        "needs": "progression",
+        "declared_key_expression": "\"l19_beast_wall\""
+      },
+      {
+        "script": "l19_belial_horn.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 296,
+        "needs": "progression",
+        "declared_key_expression": "\"l19_belial_horn\""
+      },
+      {
+        "script": "l19_sewer_forms.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 297,
+        "needs": "progression",
+        "declared_key_expression": "\"l19_sewer_forms\""
+      },
+      {
+        "script": "l19_drain_path.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 298,
+        "needs": "progression",
+        "declared_key_expression": "\"l19_drain_path\""
+      },
+      {
+        "script": "l19_ghostly_heads.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 299,
+        "needs": "progression",
+        "declared_key_expression": "\"l19_ghostly_heads\""
+      },
+      {
+        "script": "l19_dawn_curse.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 300,
+        "needs": "progression",
+        "declared_key_expression": "\"l19_dawn_curse\""
+      },
+      {
+        "script": "l19_dawn_elevator.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 301,
+        "needs": "progression",
+        "declared_key_expression": "\"l19_dawn_elevator\""
+      },
+      {
+        "script": "placed_vqa_billboard.gd",
+        "attach": "attach_dawn",
+        "phase": "late",
+        "line": 302,
+        "needs": "progression",
+        "declared_key_expression": null
+      }
+    ],
+    "L20_BB": [
+      {
+        "script": "l19_dawn_curse.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 304,
+        "needs": "progression",
+        "declared_key_expression": "\"l19_dawn_curse\""
+      },
+      {
+        "script": "l20_pillars_scotia.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 305,
+        "needs": "progression",
+        "declared_key_expression": "\"l20_pillars\""
+      },
+      {
+        "script": "l20_armory.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 306,
+        "needs": "progression",
+        "declared_key_expression": "\"l20_armory\""
+      },
+      {
+        "script": "l20_faux_draracle.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 307,
+        "needs": "progression",
+        "declared_key_expression": "\"l20_faux_draracle\""
+      },
+      {
+        "script": "l20_finale.gd",
+        "attach": "attach",
+        "phase": "late",
+        "line": 308,
+        "needs": "progression",
+        "declared_key_expression": "\"l20_finale\""
+      },
+      {
+        "script": "placed_vqa_billboard.gd",
+        "attach": "attach_placenta",
+        "phase": "late",
+        "line": 309,
+        "needs": "progression",
+        "declared_key_expression": null
+      }
+    ]
+  }
+}

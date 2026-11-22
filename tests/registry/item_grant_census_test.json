@@ -1,0 +1,16 @@
+{
+  "name": "item_grant_census_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1348,
+  "teleports": 0,
+  "test_aids": 0,
+  "needs": {
+    "note": "Source census only, including copies and histories; invokes Python 3 checker and throwaway source mutation probes. No gameplay state or earned-walk claim."
+  },
+  "count_method": "Audited source sites, not executions. Counts use the approved F02 engine/player-mutation categories; all component prerequisites, doubles and direct business/writer/reader calls are explicit in this test and its needs note. No earned gameplay claim.",
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "8440472247b1b40e0893ccbd9464c72c4db81f62c3e1f69c5bb628fd21ba78ad"
+  }
+}

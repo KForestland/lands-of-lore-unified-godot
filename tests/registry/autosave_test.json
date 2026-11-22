@@ -1,0 +1,30 @@
+{
+  "name": "autosave_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1339,
+  "needs": {
+    "chain": "private profile driver: sol_lane/foundation3_20261111/private_case.py --rendered --autosave"
+  },
+  "teleports": 0,
+  "test_aids": 7,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "0412d600290438898b62aab5a8e592d8d5658537de45dd6b50aefa4c7b1d7b5b"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance.",
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/game_save_quit_load_test.gd",
+        "line": 43,
+        "column": 71,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/dragon_level.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 8
+}

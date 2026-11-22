@@ -1,4 +1,6 @@
 extends CanvasLayer
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+const SpellBook=preload("res://scripts/lol2/player_spell_book.gd")
 ## Shared area HUD (Cave/Museum/Jungle/Hive; docs/classic-hud.md): the original bottom-right cluster from the manual
 ## (intrface.shp shape 2 with portrait, Attack/Magic Buttons, health/mana slots, Blue Button + Spell Bar) and the
 ## original cursor. The Character/Atlas sheet and the prompt line are modern.
@@ -7,6 +9,54 @@ var geometry_path := "res://assets/lol2/generated/museum_review/museum.json"
 var location_name := "Draracle’s museum"
 var saves_enabled := true
 var save_notice_remaining := 0.0
+const LESSON_SECONDS:=6.0
+var lesson_started_msec:=0
+var lesson_remaining:=0.0
+var lesson_text:=""
+var lesson_queue:Array[String]=[]
+var lesson_status:=""
+func _begin_lesson(text:String):
+	lesson_text=text;lesson_remaining=LESSON_SECONDS;lesson_started_msec=Time.get_ticks_msec()
+	hint.text=text;save_notice_remaining=LESSON_SECONDS
+func show_lesson(text:String):
+	if lesson_text==text:
+		_begin_lesson(text);return
+	if not lesson_text.is_empty():
+		if text not in lesson_queue:lesson_queue.append(text)
+		return
+	_begin_lesson(text)
+## A completed action removes only its own reminder; other lessons/status survive.
+func finish_action_lesson(text:String):
+	lesson_queue.erase(text)
+	if lesson_text!=text:return
+	lesson_text="";lesson_remaining=0.0
+	if not lesson_queue.is_empty():_begin_lesson(lesson_queue.pop_front())
+	elif not lesson_status.is_empty():
+		hint.text=lesson_status;lesson_status="";save_notice_remaining=4.0
+	else:hint.text="";save_notice_remaining=0.0
+
+func dismiss_lesson_for_cast():
+	if lesson_text.is_empty():return
+	# The player's cast is the next conversation beat. Its result/refusal must
+	# replace the reminder; the exact lesson remains available in the Journal.
+	lesson_text="";lesson_remaining=0.0;lesson_queue.clear();lesson_status=""
+	save_notice_remaining=0.0
+func queue_lesson_status(text:String)->bool:
+	if lesson_text.is_empty():return false
+	lesson_status=text
+	return true
+func advance_lesson(delta:float)->bool:
+	if lesson_text.is_empty():return false
+	if not is_inside_tree() or not get_tree().paused:lesson_remaining=maxf(0.0,lesson_remaining-delta)
+	# Fixed-fps test drivers must not turn six readable seconds into a few
+	# fast frames. Production also preserves six unpaused gameplay seconds.
+	if lesson_remaining>0.0 or Time.get_ticks_msec()-lesson_started_msec<6000:
+		hint.text=lesson_text;save_notice_remaining=maxf(save_notice_remaining,1.0);return true
+	lesson_text=""
+	if not lesson_queue.is_empty():_begin_lesson(lesson_queue.pop_front());return true
+	if not lesson_status.is_empty():
+		hint.text=lesson_status;lesson_status="";save_notice_remaining=4.0
+	return false
 var save_location_name := "Museum"
 var cursor_active := false
 var atlas_opened_from_game := false
@@ -49,6 +99,7 @@ var save_button: Button
 var load_button: Button
 var save_status: Label
 var inventory_button: Button
+var slot_panel: CanvasLayer
 var save_path := preload("res://scripts/lol2/museum_save.gd").DEFAULT_PATH
 var atlas_offset := Vector2.ZERO
 
@@ -79,6 +130,7 @@ func _ready() -> void:
 	hint.add_theme_color_override("font_shadow_color", Color.BLACK)
 	hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(hint)
+	add_child(preload("res://scripts/lol2/item_belt_view.gd").new())
 	sheet = PanelContainer.new()
 	sheet.theme = shared_theme
 	sheet.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
@@ -98,6 +150,9 @@ func _ready() -> void:
 	margin.add_child(box)
 	sheet_title = Label.new()
 	sheet_title.add_theme_font_size_override("font_size", 24)
+	# The Atlas title names the area: wrapped, so a long name never widens the sheet past the room beside the HUD cluster
+	# (classic_hud_acceptance_test at 960x540: a 687-wide sheet scaled down still overlapped the cluster).
+	sheet_title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	box.add_child(sheet_title)
 	atlas = preload("res://scripts/lol2/museum_atlas.gd").new()
 	atlas.walkthrough = walkthrough
@@ -140,13 +195,13 @@ func _ready() -> void:
 	save_button.text = "Save · F5"
 	save_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	save_button.visible = saves_enabled
-	save_button.pressed.connect(func(): run_save_action(false))
+	save_button.pressed.connect(func(): show_save_slots(false))
 	save_row.add_child(save_button)
 	load_button = Button.new()
 	load_button.text = "Load · F9"
 	load_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	load_button.visible = saves_enabled
-	load_button.pressed.connect(func(): run_save_action(true))
+	load_button.pressed.connect(func(): show_save_slots(true))
 	save_row.add_child(load_button)
 	save_status = Label.new()
 	save_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -165,13 +220,13 @@ func _ready() -> void:
 ## UI size (ui_scale.gd): the cluster grows up-left from its bottom-right corner, the prompt line stops at its left
 ## edge with a larger font, and the centred sheet grows but always fits the window.
 func apply_ui_scale() -> void:
+	if not is_inside_tree(): return # A pending slot load retains the previous area off-tree.
 	if not is_instance_valid(cluster) or not is_instance_valid(hint): return
 	var view := get_viewport().get_visible_rect().size
 	var s := UiScale.cluster_scale(view, cluster_size)
 	cluster.pivot_offset = cluster_size
 	cluster.scale = Vector2(s, s)
 	place_hint()
-	hint.offset_top = -12 - 32 * s
 	hint.add_theme_font_size_override("font_size", int(round(16 * s)))
 	# Leave the top line (coordinates overlay) and the bottom hint band free above and below the centred sheet.
 	var room := Vector2(view.x - 24, view.y - 2.0 * (20.0 + 32.0 * s))
@@ -195,6 +250,7 @@ func set_cursor(active: bool, update_mouse_mode := true) -> void:
 	if not active:
 		sheet.hide()
 		atlas_opened_from_game = false
+	place_hint()
 
 func open_page(page: String) -> void:
 	if not cursor_active or get_tree().paused: return
@@ -204,29 +260,59 @@ func open_page(page: String) -> void:
 		walkthrough.open_inventory()
 		return
 	sheet.show()
-	# The map takes what the window leaves, so the sheet stays clear of the coordinates and the hint line.
-	atlas.custom_minimum_size.y = clampf(get_viewport().get_visible_rect().size.y - 380.0, 140.0, 320.0)
+	# The Atlas page takes most of the window (owner 2026-11-08: the map must be readable); the other pages keep the
+	# 480x380 sheet. The map keeps clear of the coordinates line above and the hint line below.
+	var window: Vector2 = get_viewport().get_visible_rect().size
+	# The room apply_ui_scale() leaves between the coordinates line, the hint band and the HUD cluster.
+	var s := UiScale.cluster_scale(window, cluster_size)
+	var room := Vector2(window.x - 24, window.y - 2.0 * (20.0 + 32.0 * s))
+	room.x = minf(room.x, 2.0 * (window.x / 2.0 - cluster_size.x * s - 12 - 24))
+	# A small window (960x540 beside the cluster: classic_hud_acceptance_test) keeps the classic 480x380 sheet; the big
+	# Atlas page needs room for a readable map.
+	if page == "atlas" and room.x >= 640.0 and room.y >= 380.0:
+		# Unscaled sheet size that fills that room at the UI scale (the fit then lands on that scale).
+		# The map wants pixels more than the UI step wants size: the Atlas sheet runs at 80% of the UI scale (never under 1),
+		# so apply_ui_scale's fit lands on that scale and the sheet still fills the room.
+		var k: float = maxf(1.0, UiScale.effective(window) * 0.8)
+		var half_w: float = clampf(room.x / k / 2.0, 240.0, 1100.0)
+		var half_h: float = clampf(room.y / k / 2.0, 190.0, 800.0)
+		sheet.offset_left = -half_w; sheet.offset_right = half_w
+		sheet.offset_top = -half_h; sheet.offset_bottom = half_h
+		atlas.custom_minimum_size = Vector2(half_w * 2.0 - 40.0, clampf(half_h * 2.0 - 150.0, 140.0, 1200.0))
+	else:
+		sheet.offset_left = -240; sheet.offset_right = 240
+		sheet.offset_top = -190; sheet.offset_bottom = 190
+		atlas.custom_minimum_size = Vector2(420, clampf(window.y - 380.0, 140.0, 320.0))
+	apply_ui_scale.call_deferred()
+	if page == "atlas": atlas.fit_explored.call_deferred()
 	atlas.visible = page == "atlas"
 	atlas_controls.visible = atlas.visible
 	character_controls.visible = not atlas.visible
 	save_status.text = ""
-	sheet_title.text = "Magic Atlas" if page == "atlas" else "My Journal" if page == "journal" else "Character"
-	if page == "atlas": sheet_body.text = location_name + " · Local map\nScroll to zoom · Drag to move · PgUp and PgDn change storey · Gold marker: you\nSection steps through a piled room. Floor is the open ground. Inside 1 is the next room piled on it."
+	var atlas_area: String = preload("res://scripts/lol2/atlas_explored.gd").area_of(walkthrough) if walkthrough != null else ""
+	var atlas_title: String = preload("res://scripts/lol2/atlas_places.gd").area_title(atlas_area, location_name)
+	sheet_title.text = ("Magic Atlas · " + atlas_title + " · what I have explored") if page == "atlas" else "My Journal" if page == "journal" else "Character"
+	# The Atlas page gives the map the room: the usage line is the map's tooltip.
+	sheet_body.visible = page != "atlas"
+	if page == "atlas": sheet_body.text = ""
 	elif page == "journal": sheet_body.text = MyJournal.page_text(MyJournal.notes(walkthrough))
 	else: sheet_body.text = character_text()
 	shown_page = page
 
 func _input(event: InputEvent) -> void:
+	if is_instance_valid(slot_panel): return
 	# Modal inventory and story overlays own input while the tree is paused.
 	if get_tree().paused: return
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT: show_swing()
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var generic: Node = walkthrough.get_node_or_null("GenericObjects") if walkthrough != null else null
+		if generic == null or not generic.would_use(): show_swing()
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_F5 and saves_enabled:
+			get_viewport().set_input_as_handled()
 			run_save_action(false)
-			get_viewport().set_input_as_handled()
 		elif event.keycode == KEY_F9 and saves_enabled:
-			run_save_action(true)
 			get_viewport().set_input_as_handled()
+			run_save_action(true)
 		elif event.keycode == KEY_M:
 			toggle_atlas()
 			get_viewport().set_input_as_handled()
@@ -284,6 +370,7 @@ var spell_buttons: Dictionary = {}
 var health_fill: TextureRect
 var mana_fill: TextureRect
 var spell_textures: Dictionary = {}
+var spell_word: Label
 var attack_swing: Control
 func _texture(path: String) -> ImageTexture: return ImageTexture.create_from_image(Image.load_from_file(path))
 func _shape(index: int) -> ImageTexture: return _texture(HUD_ROOT + str(hud_source.shapes[str(index)].file))
@@ -344,14 +431,19 @@ func build_cluster() -> void:
 	cluster.add_child(weapon_button)
 	hand_icon = _icon(weapon_button, _shape(6), Rect2(Vector2.ZERO, attack.size))
 	weapon_icon = _icon(weapon_button, _texture("res://assets/lol2/generated/museum_sword_transfer/sword.png"), Rect2(Vector2.ZERO, attack.size).grow(-2))
-	# Magic Button: left click casts the loaded spell, right click cycles Spark/Heal (manual printed 10/39).
+	# Magic Button: left click casts the loaded school, right click cycles schools.
 	magic_button = Button.new(); magic_button.name = "MagicButton"; _flat(magic_button)
 	var magic := _rect(cluster, g.magic_ring, k); magic_button.position = magic.position; magic_button.size = magic.size
-	magic_button.tooltip_text="Cast · Ctrl-click: level 3 Spark · Shift-click: maximum Spark"
+	magic_button.tooltip_text="Cast · Ctrl-click: charge 3 · Shift-click: charge 5"
 	magic_button.gui_input.connect(_magic_input)
 	cluster.add_child(magic_button)
 	spell_textures = {"spark": _shape(65), "heal": _shape(63)}
 	magic_icon = _icon(magic_button, spell_textures.spark, Rect2(Vector2.ZERO, magic.size))
+	# No unverified original icon assignment for the four newly hosted schools.
+	spell_word=Label.new(); spell_word.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	spell_word.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER; spell_word.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+	spell_word.add_theme_font_size_override("font_size",11); spell_word.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	magic_button.add_child(spell_word)
 	# Swing/hit/heal/cast feedback (attack_swing.gd; presentation only).
 	attack_swing = preload("res://scripts/lol2/attack_swing.gd").new()
 	add_child(attack_swing)
@@ -378,27 +470,35 @@ func build_cluster() -> void:
 	spell_bar.hide()
 	cluster.add_child(spell_bar)
 	var rings: Array = hud_source.spell_bar.rings
-	for entry in [["heal", 0], ["spark", 1]]:
+	for entry in [["heal", 0], ["spark", 1], ["curse",2], ["mists",3], ["prism",4], ["summon",5]]:
 		var r: Rect2 = _rect(spell_bar, rings[entry[1]], k)
 		_icon(spell_bar, _shape(1), r)
 		var pick := Button.new(); _flat(pick); pick.position = r.position; pick.size = r.size
-		pick.tooltip_text = "Healing" if entry[0] == "heal" else "Spark"
+		pick.tooltip_text = SpellBook.NAMES[entry[0]]
 		var spell: String = entry[0]
 		pick.pressed.connect(func(): load_spell(spell))
 		spell_bar.add_child(pick); spell_buttons[spell] = pick
-		_icon(pick, spell_textures[spell], Rect2(Vector2.ZERO, r.size))
+		if spell_textures.has(spell): _icon(pick, spell_textures[spell], Rect2(Vector2.ZERO, r.size))
+		else: pick.text=SpellBook.NAMES[spell]; pick.add_theme_font_size_override("font_size",11)
 	refresh_vitals()
 
 func _magic_input(event: InputEvent) -> void:
 	if not cursor_active or not event is InputEventMouseButton or not event.pressed: return
 	var magic = walkthrough.get("starting_magic")
 	if magic == null or not is_instance_valid(magic): return
-	if event.button_index == MOUSE_BUTTON_LEFT and magic.cast_from_interface(5 if event.shift_pressed else 3 if event.ctrl_pressed else 1):
-		# Cursor mode keeps the hint for the shell, so show the cast feedback here; a save/area notice keeps priority.
-		if save_notice_remaining <= 0 and not magic.notice_text().is_empty():
+	if event.button_index == MOUSE_BUTTON_LEFT:
+		var previous_notice: String = magic.notice_text()
+		var previous_refusal: int = magic.refusal_serial
+		var casted: bool = magic.cast_from_interface(5 if event.shift_pressed else 3 if event.ctrl_pressed else 1)
+		var fresh_notice: bool = magic.refusal_serial!=previous_refusal
+		# A refusal is visible too. Silent world locks do not replay old text;
+		# an actual save/area notice still wins over spell feedback.
+		if (casted or fresh_notice) and (save_notice_remaining <= 0 or hint.text == previous_notice) and not magic.notice_text().is_empty():
 			hint.text = magic.notice_text()
 			save_notice_remaining = 1.5
-	elif event.button_index == MOUSE_BUTTON_RIGHT: load_spell("heal" if loaded_spell() == "spark" else "spark")
+	elif event.button_index == MOUSE_BUTTON_RIGHT:
+		var schools := SpellBook.schools(magic.magic_state().get("spellbook",SpellBook.initial()))
+		load_spell(schools[(schools.find(loaded_spell())+1)%schools.size()])
 	refresh_vitals()
 
 ## Attack Button (manual printed 7/10): the port has no single attack API; each host's hit owners take an ordinary
@@ -448,6 +548,9 @@ func toggle_spell_bar() -> void:
 ## The cluster and its Spell Bar child are scaled by the UI size from the cluster's bottom-right corner.
 func place_hint() -> void:
 	var s := cluster.scale.x
+	var page_open:bool=is_instance_valid(sheet) and sheet.visible
+	hint.offset_top=(-12 if page_open else -164)-32*s
+	hint.offset_bottom=-12 if page_open else -148
 	var left := -cluster_size.x * s - 12.0
 	if is_instance_valid(spell_bar) and spell_bar.visible: left += spell_bar.position.x * s
 	hint.offset_right = left - 16
@@ -458,13 +561,18 @@ func refresh_vitals() -> void:
 	var magic = walkthrough.get("starting_magic")
 	var health := 1.0; var mana := 1.0
 	if magic != null and is_instance_valid(magic):
-		health = clampf(float(magic.health()) / 30.0, 0.0, 1.0)
+		health = clampf(float(magic.health()) / float(PlayerHealth.limit_for(walkthrough)), 0.0, 1.0)
 		var saved: Dictionary = magic.magic_state() if magic.has_method("magic_state") else {}
 		if saved.get("player") is Dictionary and float(saved.player.maximum) > 0: mana = clampf(float(saved.player.mana) / float(saved.player.maximum), 0.0, 1.0)
 	var k: float = float(hud_source.scale)
 	health_fill.size.x = float(hud_source.cluster.health_slot.width) * k * health
 	mana_fill.size.x = float(hud_source.cluster.mana_slot.width) * k * mana
 	magic_icon.texture = spell_textures.get(loaded_spell(), spell_textures.spark)
+	var learned := SpellBook.schools(magic.magic_state().get("spellbook",SpellBook.initial())) if is_instance_valid(magic) else ["spark","heal"]
+	for school in spell_buttons: spell_buttons[school].visible = school in learned
+	magic_icon.visible = spell_textures.has(loaded_spell())
+	spell_word.visible = not magic_icon.visible
+	spell_word.text = str(SpellBook.NAMES.get(loaded_spell(),"Spark"))
 
 func _exit_tree() -> void:
 	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
@@ -492,6 +600,7 @@ func toggle_journal() -> void:
 
 func close_sheet() -> void:
 	sheet.hide()
+	place_hint()
 	if atlas_opened_from_game: set_cursor(false)
 	atlas_opened_from_game = false
 
@@ -510,11 +619,11 @@ func character_text() -> String:
 func vitals_text() -> String:
 	var magic = walkthrough.get("starting_magic")
 	if magic == null or not is_instance_valid(magic): return ""
-	var text := "Health: %d / 30" % int(magic.health())
+	var text := "Health: %d / %d" % [int(magic.health()),PlayerHealth.limit_for(walkthrough)]
 	var saved = magic.magic_state() if magic.has_method("magic_state") else {}
 	if saved is Dictionary and saved.get("player") is Dictionary: text += " · Mana: %d / %d" % [int(saved.player.mana),int(saved.player.maximum)]
 	var form: String = walkthrough.curse.message() if walkthrough.get("curse") != null else "Human"
-	text += "\nForm: %s · Spell: %s (Q to cast)\n" % [form, "Healing" if loaded_spell() == "heal" else "Spark"]
+	text += "\nForm: %s · Spell: %s (Q to cast)\n" % [form, SpellBook.NAMES.get(loaded_spell(),"Spark")]
 	return text
 
 ## Fighting and magic levels/experience (the same owners the area handoffs and saves carry).
@@ -548,12 +657,13 @@ func refresh_equipment() -> void:
 		var icon_path := preload("res://scripts/lol2/player_equipment.gd").inventory_icon(walkthrough.equipped_item)
 		weapon_icon.texture = ImageTexture.create_from_image(Image.load_from_file(icon_path))
 		weapon_icon.modulate = weapon_tint
-	if is_instance_valid(sheet) and sheet.visible and not atlas.visible:
+	if is_instance_valid(sheet) and sheet.visible and shown_page == "character":
 		sheet_body.text = character_text()
 
 var equipment_signature := ""
 func _process(delta: float) -> void:
-	if save_notice_remaining > 0:
+	var reading:bool=advance_lesson(delta)
+	if not reading and save_notice_remaining > 0:
 		save_notice_remaining = maxf(0, save_notice_remaining - delta)
 		if save_notice_remaining == 0:
 			hint.text = "Tab — Return to game" if cursor_active else ("Tab — Interface · M — Atlas · J — Journal" + (" · F5/F9 — Save/Load" if saves_enabled else ""))
@@ -578,8 +688,9 @@ func _process(delta: float) -> void:
 		equipment_signature = signature
 		refresh_equipment()
 	# The open Character page follows casts, rewards and loads instead of showing the values from when it opened.
-	if sheet.visible and not atlas.visible: sheet_body.text = character_text()
+	if sheet.visible and shown_page == "character": sheet_body.text = character_text()
 	magic_hint()
+	if not lesson_text.is_empty():hint.text=lesson_text
 
 ## Cast notices, the aura timer and item status on the shared hint line (replacing the modern spell panel). Area
 ## prompts (Hive/Cave subclasses) are applied after this and take priority.
@@ -630,12 +741,25 @@ func advance_blink(delta: float) -> void:
 		var index := mini(int((blink_elapsed - 4.5) / 0.1), 2)
 		blink.texture = blink_textures[index]
 
-func run_save_action(load_game: bool) -> void:
+func run_save_action(load_game: bool, legacy_path: String = "") -> void:
 	if not saves_enabled: return
-	var error: String = walkthrough.quickload(save_path) if load_game else walkthrough.quicksave(save_path)
+	# A successful synchronous load detaches this HUD before returning.
+	var session:Node=ResourceLoader.load("res://scripts/lol2/game_session.gd").for_tree(get_tree())
+	var error: String = walkthrough.quickload(legacy_path) if load_game else walkthrough.quicksave(legacy_path)
 	if not error.is_empty():
 		save_status.text = ("Load failed: " if load_game else "Save failed: ") + error
+	elif load_game and is_instance_valid(session) and session.manual_load_pending():
+		save_status.text = "Loading…"
+	elif not load_game and is_instance_valid(session) and session.manual_save_pending():
+		save_status.text = "Saving…"
 	else:
 		save_status.text = save_location_name + (" save loaded." if load_game else " saved.")
-	hint.text = save_status.text
-	save_notice_remaining = 4.0
+	if not queue_lesson_status(save_status.text):
+		hint.text = save_status.text
+		save_notice_remaining = 4.0
+
+func show_save_slots(load_game: bool) -> void:
+	if not saves_enabled or is_instance_valid(slot_panel):return
+	slot_panel=preload("res://scripts/lol2/save_slots_panel.gd").new()
+	slot_panel.host=walkthrough;slot_panel.saving=not load_game
+	add_child(slot_panel)

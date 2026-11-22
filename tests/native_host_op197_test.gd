@@ -54,8 +54,8 @@ func run() -> void:
 	r = host.execute_group(1, 970010)
 	check(str(r.status) == "unhosted" and str(r.reasons[0]).contains("opcode197_list_mark"), "arm 10 refuses with the adapters off (%s)" % [r.reasons])
 	host.set_adapters_enabled(true)
-	# Real groups. L10 stream 1 group 11480: nine arm-4 sets, then opcode 196 (no handler) and opcode 9: the group stays
-	# unhosted, but opcode 197 is no longer among its reasons.
+	# Real groups. L10 stream 1 group 11480: nine arm-4 sets, nine opcode 196 with byte 6 = 0,
+	# then opcode 196 byte 6 = 1 on region 3937, then opcode 9. Byte 6 other than 0 keeps the group unhosted.
 	changes.clear(); r = host.execute_group(1, 11480)
 	var about_197 := false
 	for reason in r.reasons: if str(reason).contains("197"): about_197 = true

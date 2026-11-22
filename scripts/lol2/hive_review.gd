@@ -36,6 +36,7 @@ var rune_light: Node3D
 var dawn20: Node3D
 var reaver_amber: Node3D
 var net_exile: Node3D
+var decoded_locks: Node3D
 var flute_floor: Node3D  ## HIVE-FLUTE-FLOOR: flute slot (control 122) + Pit Covers over the oil (hive_flute_floor.gd)
 ## Ambient Hive scenery props the port did not draw before (hive_jungle_scenery.gd, G58/G71).
 var scenery: Node3D
@@ -76,7 +77,12 @@ static func skips_roof(path: String) -> bool:
 func _ready() -> void:
 	dynamic_floor_regions = [772,773,774]
 	indoor_background = true
-	if skips_roof(geometry_file): excluded_faces[ROOF_SKIP] = true
+	# The grey/green planes (owner r17 17-27-27, 17-30-51, 17-32-57) were untextured floors/ceilings drawn in the placeholder
+	# colour; they take the nearest same-height neighbour's material (the lava river runs on, the roof matches its neighbours).
+	fill_untextured_surfaces = true
+	draw_untextured_surfaces = false
+	# ROOF_SKIP 654 (r16) is an untextured ceiling; with fill_untextured_surfaces it is drawn like its neighbours again (MAPFIX 2026-11-07).
+	# if skips_roof(geometry_file): excluded_faces[ROOF_SKIP] = true
 	if skips_roof(geometry_file) and not get_tree().has_meta("lol2_portal_visibility_off"):
 		portal_regions = preload("res://scripts/lol2/region_visibility.gd").load_regions(PORTAL_AREA)
 		if not portal_regions.is_empty():
@@ -85,6 +91,7 @@ func _ready() -> void:
 	if not portal_regions.is_empty():
 		var portal_vis = preload("res://scripts/lol2/region_visibility.gd").new()
 		add_child(portal_vis)
+		portal_vis.seed_radius = 600.0  # chasm platforms share no region edge with the hall around them (owner r17 17-28-43)
 		portal_vis.setup(self, PORTAL_AREA, portal_regions, region_cluster, cluster_meshes)
 	# Original L5_HC static assemblies (tools/prepare_static_assemblies.py --area L5_HC) on the generic renderer.
 	if preload("res://scripts/lol2/static_assemblies.gd").assets_ready("L5_HC"):
@@ -176,6 +183,10 @@ func _ready() -> void:
 	add_child(flute_floor)
 	var flute_floor_error: String=flute_floor.setup(self)
 	if not flute_floor_error.is_empty(): push_error(flute_floor_error)
+	decoded_locks=preload("res://scripts/lol2/hive_decoded_locks.gd").new()
+	add_child(decoded_locks)
+	var locks_error:String=decoded_locks.setup(self)
+	if not locks_error.is_empty():push_error(locks_error)
 	get_window().title = "Lands of Lore II — Hive Caves"
 	if get_tree().has_meta("lol2_hive_resume"):
 		var error := apply_save(get_tree().get_meta("lol2_hive_resume"))
@@ -183,6 +194,10 @@ func _ready() -> void:
 			get_tree().remove_meta("lol2_hive_resume")
 			set_development_mode(false)
 		else: push_error(error)
+	preload("res://scripts/lol2/game_session.gd").for_tree(get_tree()).apply_pending(self)
+	if not atlas_explored is Dictionary:
+		atlas_explored = preload("res://scripts/lol2/atlas_explored.gd").initial()
+	preload("res://scripts/lol2/atlas_explored.gd").attach(self)
 func attach_hive_route() -> void:
 	var route = preload("res://scripts/lol2/hive_route.gd").new()
 	route.name = "HiveRoute"
@@ -205,7 +220,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var actor = get_node("ConversationReview")
 		if actor.started and not actor.completed and event.keycode in [KEY_F,KEY_R,KEY_E,KEY_SPACE,KEY_G]: return
 		if event.keycode == KEY_R and get_node("Warriors").health == 0:
-			get_node("Warriors").health=30 # Retry preserves defeated and reused source slots.
+			PlayerHealth.restore_host(self) # Retry preserves defeated and reused source slots.
 			set_physics_process(true)
 			reset_position()
 			get_viewport().set_input_as_handled()
@@ -225,6 +240,7 @@ func area_handoff() -> Dictionary:
 		quests.monastery = monastery_checkpoint.duplicate(true)
 	if not jungle_village_checkpoint.is_empty():
 		quests.jungle_village = jungle_village_checkpoint.duplicate(true)
+	if is_instance_valid(decoded_locks) and (quests.has(decoded_locks.KEY) or decoded_locks.checkpoint()!=decoded_locks.initial()):quests[decoded_locks.KEY]=decoded_locks.checkpoint()
 	quests.hive_rune_population=rune_population.checkpoint()
 	quests.hive_rune_population_schema=1
 	quests.hive_return_population = return_population.checkpoint()
@@ -279,6 +295,8 @@ func area_handoff() -> Dictionary:
 	# A death checkpoint retains zero in hive_encounter; it is not a travel state.
 	if get_node("Warriors").health > 0: inventory_state.health = get_node("Warriors").health
 	else: inventory_state.erase("health")
+	# Shared with the Jungle/Act2 handoff reader; removed from runtime quests and stored separately in disk saves.
+	quests[preload("res://scripts/lol2/atlas_explored.gd").KEY] = preload("res://scripts/lol2/atlas_explored.gd").stored(self)
 	return {"inventory":inventory_state,"quests":quests}
 func apply_area_handoff(state: Variant, entering: bool = true) -> String:
 	if not state is Dictionary: return "Invalid area handoff."
@@ -396,6 +414,9 @@ func apply_area_handoff(state: Variant, entering: bool = true) -> String:
 	if is_instance_valid(flute_floor):
 		var flute_floor_error: String=flute_floor.restore(state.quests.get("hive_flute_floor",flute_floor.initial()))
 		if not flute_floor_error.is_empty(): return flute_floor_error
+	if is_instance_valid(decoded_locks):
+		var locks_error:String=decoded_locks.restore(state.quests.get(decoded_locks.KEY))
+		if not locks_error.is_empty():return locks_error
 	return_population.restore(state.quests.get("hive_return_population",return_population.State.initial()))
 	ambush_population.restore(state.quests.get("hive_ambush",ambush_population.Ambush.initial()))
 	rune_population.restore(state.quests.get("hive_rune_population",rune_population.RuneState.initial()))
@@ -412,17 +433,25 @@ func apply_area_handoff(state: Variant, entering: bool = true) -> String:
 		rune_population.arrive(state.quests)
 	return error
 ## Diagnostics record every outcome, including early refusals that show no message (docs/dev-diagnostics.md).
-func quicksave(path: String = Save.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", _quicksave_unrecorded(path))
-func quickload(path: String = Save.DEFAULT_PATH) -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", _quickload_unrecorded(path))
+func quicksave(path: String = "") -> String:
+	var error: String = preload("res://scripts/lol2/game_save.gd").quicksave(self) if path.is_empty() else _quicksave_unrecorded(path)
+	return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", error)
+func quickload(path: String = "") -> String:
+	var error: String = preload("res://scripts/lol2/game_save.gd").quickload(self) if path.is_empty() else _quickload_unrecorded(path)
+	return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", error)
 func _quicksave_unrecorded(path: String = Save.DEFAULT_PATH) -> String:
 	if get_tree().paused: return "Close the current overlay before saving."
 	if flying: return "Return to walking mode before saving."
+	return Save.write_save(path, area_snapshot())
+
+func area_snapshot() -> Dictionary:
 	var state := area_handoff()
 	state.quests = preload("res://scripts/lol2/atlas_explored.gd").release(state.quests.duplicate(true))
 	state.merge({"format":Save.FORMAT,"version":1,"atlas_explored":preload("res://scripts/lol2/atlas_explored.gd").stored(self),"player":{
 		"position":[player.position.x,player.position.y,player.position.z],
 		"yaw":wrapf(player.rotation.y,-PI,PI),"pitch":camera.rotation.x}})
-	return Save.write_save(path,state)
+	return state
+
 func _quickload_unrecorded(path: String = Save.DEFAULT_PATH) -> String:
 	if get_tree().paused: return "Close the current overlay before loading."
 	var result := Save.read_save(path)
@@ -674,7 +703,7 @@ func executioner_refresh_material_region(context: Variant) -> Dictionary:
 func use_inventory_item(id: String) -> bool:
 	# Any item used while the flute slot is aimed at goes to the slot: only the iron flute fits; others are refused and kept.
 	if is_instance_valid(flute_floor) and flute_floor.in_reach(): return bool(flute_floor.offer_item(id).ok)
-	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) != "": return item_effects.use(id)
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) != "" or not preload("res://scripts/lol2/item_catalog.gd").target_hint(id).is_empty(): return item_effects.use(id)
 	if id != preload("res://scripts/lol2/monastery_conversation.gd").FLUTE: return false
 	if not elevator.play_flute(): return false
 	interface_hud.hint.text = "You play the flute."
@@ -715,3 +744,17 @@ func move_grounded(direction: Vector3, delta: float, sprint: bool = false) -> vo
 func reset_position() -> void:
 	super.reset_position()
 	if is_instance_valid(boulders): boulders.restore_contact(boulders.Contact.initial())
+
+func can_save() -> String:
+	return preload("res://scripts/lol2/save_admission.gd").reason(self)
+
+func apply_slot_state(state: Variant) -> String:
+	var error := apply_save(state)
+	if error.is_empty(): set_development_mode(false)
+	return error
+
+## Shared item/belt feedback contract, as on the other playable roots.
+func save_feedback(message:String)->void:
+	if not is_instance_valid(interface_hud):return
+	interface_hud.hint.text=message
+	interface_hud.save_notice_remaining=3.0

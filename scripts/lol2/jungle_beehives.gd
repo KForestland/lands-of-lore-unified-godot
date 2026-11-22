@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Live owner for the Jungle beehives (props251-253). Saved as quest_state.jungle_beehives. Empty-hand E at an aimed,
 ## reachable, unoccluded hive harvests one Wax (source kind4 mode0 at fullness 0/1) into the hand; regrowth runs on
 ## the active world clock. The empty hive's op15 swarm (player status 0x27) is not hosted: E is refused with a hint.
@@ -92,7 +93,7 @@ func use() -> bool:
 		if host.has_method("save_feedback"): host.save_feedback("The hive is empty.")
 		return true
 	var held: String = host.hand_item
-	var inventory := {"collected":host.carried_collected,"hand":""}
+	var inventory := {"collected":Grants.pack(host),"hand":""}
 	if State.harvest(state, id, inventory).is_empty():
 		if host.has_method("save_feedback"): host.save_feedback("You cannot carry more wax.")
 		return true

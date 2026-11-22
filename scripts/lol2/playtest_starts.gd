@@ -4,15 +4,16 @@ extends RefCounted
 ## order, each pinned by sha256. tools/prepare_playtest_starts.py stages the files into SAVE_DIR (generated media,
 ## git-ignored, exported through the assets/*.json include filter). The original-game gate shows the list and starts an
 ## entry through its existing "Resume <area>" branch with the staged res:// file as the save path: the same reader,
-## validator, resume meta and scene as a normal resume. Nothing is injected and the player's own quicksaves are not touched.
+## validator, resume meta and scene as a normal resume. F2 applies detached full-health and chapter spell-capability adapters; source pins and player quicksaves are untouched.
 const MANIFEST := "res://scripts/lol2/playtest_starts.json"
 const SAVE_DIR := "res://assets/lol2/generated/playtest_starts/"
+const Areas = preload("res://scripts/lol2/game_areas.gd")
 const MuseumSave = preload("res://scripts/lol2/museum_save.gd")
 const JungleSave = preload("res://scripts/lol2/jungle_save.gd")
 const HiveSave = preload("res://scripts/lol2/hive_save.gd")
-## Resume kinds = the gate's existing resume branches. A manifest entry with any other kind is refused (Act 2 map saves
-## need a production map-save resume branch first; docs/playtest-starts.md).
+## Fixed Act1 branches and the whole-game checkpoint resume for whitelisted Act2/3 maps.
 const KINDS := {
+	"map": {}, # area_id resolves format/scene through the whole-game area catalog.
 	"museum": {"format": "lol2-restoration-museum", "scene": "res://scenes/lol2/museum_walkthrough.tscn", "area": "Museum"},
 	"jungle": {"format": "lol2-restoration-jungle", "scene": "res://scenes/lol2/jungle_walkthrough.tscn", "area": "Jungle"},
 	"hive": {"format": "lol2-restoration-hive", "scene": "res://scenes/lol2/hive_review.tscn", "area": "Hive"},
@@ -46,6 +47,12 @@ static func entry_error(entry: Variant) -> String:
 	for field in FIELDS:
 		if not entry.has(field): return "missing " + field
 	if not KINDS.has(str(entry.resume)): return "unknown resume kind " + str(entry.resume)
+	if str(entry.resume) == "map":
+		if entry.get("area_id", "") not in Areas.PROGRESSION_AREAS: return "unknown playtest map"
+		var expected_act := 3 if str(entry.area_id) in ["L16_CA","L17_HC","L19_BC","L20_BB"] else 2
+		if entry.get("act") != expected_act: return "map act disagrees with area"
+		if entry.get("full_health") != true: return "map start requires full_health"
+	if entry.has("full_health") and not entry.full_health is bool: return "full_health is not boolean"
 	var save := str(entry.save)
 	if not save.is_valid_filename() or not save.ends_with(".json"): return "unsafe save name"
 	var sha := str(entry.sha256)
@@ -92,6 +99,11 @@ static func identity_error(entry: Dictionary, state: Dictionary) -> String:
 		if not same(at_path(state, str(path)), ids.values[path]): return "%s = %s, expected %s" % [path, at_path(state, str(path)), ids.values[path]]
 	return ""
 
+static func format_for(entry: Dictionary) -> String:
+	return Areas.ROWS[entry.area_id].format if str(entry.resume) == "map" else KINDS[str(entry.resume)].format
+static func scene_for(entry: Dictionary) -> String:
+	return Areas.ROWS[entry.area_id].scene if str(entry.resume) == "map" else KINDS[str(entry.resume)].scene
+
 static func save_path(entry: Dictionary) -> String: return SAVE_DIR + str(entry.save)
 
 ## Staged file present and byte-identical to the manifest pin ("" = ok).
@@ -105,6 +117,7 @@ static func file_error(entry: Dictionary) -> String:
 static func read(entry: Dictionary, path: String = "") -> Dictionary:
 	if path.is_empty(): path = save_path(entry)
 	match str(entry.resume):
+		"map": return load("res://scripts/lol2/game_save.gd").read_legacy(entry.area_id,path)
 		"museum": return MuseumSave.read_save(path)
 		"jungle": return JungleSave.read_save(path)
 		"hive": return HiveSave.read_save(path)

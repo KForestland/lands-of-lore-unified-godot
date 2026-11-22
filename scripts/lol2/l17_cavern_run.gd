@@ -6,7 +6,9 @@ extends Node3D
 ## Movable 50, byte 0x50, is level 16 arrival 2 (L16_CA). Region 1318, byte 0x70,
 ## is level 16 arrival 3 (L16_CA). This module records the region and does not
 ## change the scene. Killing is optional and nothing is spawned. Opcode 18 on
-## region 1293, target u16 0, flags 0x0005, stays unused.
+## region 1293 is kind 1, target 0, flags 0x0005. The host poses those horizontal
+## words when that region enter runs. This module does not pose. The BK04 carry
+## still poses that landing until its walk passes on the native path.
 const KEY := "l17_cavern_run"
 const KILL_REQUIRED := false
 const FORWARD_REGIONS := [1312, 1313]
@@ -88,6 +90,6 @@ func _process(_delta: float) -> void:
 		s.exit_region = region
 		host.quest_state[KEY] = s
 	if region == 1312 or region == 1313:
-		hint.text = "Killing stays optional. Regions 1312 and 1313 decode to level 19, arrival 1. Luther stays."
+		hint.text = "The way on to Belial's chamber lies here, but not yet."
 	else:
-		hint.text = "Killing stays optional. This exit stays on the progression host. Luther stays."
+		hint.text = "The way back to the City of the Ancients."

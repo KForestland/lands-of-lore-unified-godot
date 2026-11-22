@@ -1,0 +1,40 @@
+{
+  "name": "generic_l10_robot_socket_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Rendered component: untouched robot v13c area-save6b0efe3607f3f27777e674fbe2ab616d80b3de398627acdb63c783a806f27aa0. Disclosed apply_save and capture setup; live physics/NPCs, actualE158 and actualW through159. Not earned/full campaign proof."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ab056e78b336226b80b3cbe53908124d9c743ac41b769d248d196ca8ba99c3f4"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/generic_l10_robot_socket_test.gd",
+        "line": 13,
+        "column": 69,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/L10_DC.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/generic_l10_robot_socket_test.gd",
+        "line": 19,
+        "column": 41,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(saved.error.is_empty() and scene.apply_save(saved.state).is_empty(),\"Actual game-written robot area-save fixture applies\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 3,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

@@ -40,7 +40,14 @@ static func apply(body: CharacterBody3D, camera: Camera3D, form: int, check_spac
 		var query := PhysicsShapeQueryParameters3D.new()
 		# Grounded saves can rest a fraction below the support plane. Match the
 		# mover's contact tolerance at the feet, retaining full top/side clearance.
-		var contact_margin := minf(body.safe_margin,0.05) if body.is_on_floor() else 0.0
+		var restored_pose:bool=bool(body.get_meta("lol2_pose_recheck",false))
+		var contact_margin := minf(body.safe_margin,0.05) if body.is_on_floor() or restored_pose else 0.0
+		# The lizard is a flat-based cylinder (radius 8, height 8). On a sloped floor the rim of that base reaches into the
+		# rising side of the ground (F2 Claw Mountains arrival, lead 2026-11-14: Ctrl+Q refused 'no effect here'), where
+		# the human capsule's rounded base does not. For a body standing on the floor the lizard's check starts at its
+		# radius above the feet (a 45-degree floor): the sides and the top keep full clearance, so a roof still refuses.
+		if form == 2 and (body.is_on_floor() or restored_pose) and not crouched:
+			contact_margin = maxf(contact_margin, minf(RADII[2], used_height - 1.0))
 		var probe := shape.duplicate() as Shape3D
 		probe.height -= contact_margin
 		query.shape = probe
@@ -48,6 +55,9 @@ static func apply(body: CharacterBody3D, camera: Camera3D, form: int, check_spac
 		query.collision_mask = body.collision_mask
 		query.exclude = [body.get_rid()]
 		if not body.get_world_3d().direct_space_state.intersect_shape(query).is_empty(): return false
+	body.set_meta("lol2_form", form)
+	body.set_meta("lol2_crouched", crouched)
+	if not check_space: body.set_meta("lol2_pose_recheck", true)
 	collider.shape = shape
 	collider.position = offset
 	camera.position.y = used_eye - FOOT_OFFSET

@@ -1,4 +1,6 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
+const RESTORE_ON := ["load"]
 ## Book-led blue bow on original Melt man89; native item36 is separately pinned as Shard31.
 const KEY="l12_frozen_bow"
 const ITEM="act2:L12_CM:blue_bow"
@@ -52,7 +54,7 @@ func take(capacity:int=64)->Dictionary:
  if not active() or not reachable() or state().remaining<=0 or state().taken:return Kit.refuse("The bow is not within reach.")
  if host.carried_collected.size()>=capacity:return Kit.refuse("Inventory full.")
  var s:=state().duplicate(true);s.taken=true;s.remaining=0.0;host.quest_state[KEY]=s
- var packet:Dictionary=host.quest_state.get("act2_items",Items.initial()).duplicate(true);packet.collected.append(ITEM);host.quest_state.act2_items=packet;host.carried_collected.append(ITEM);Items.sync(host);restore()
+ Grants.grant(host,ITEM,{"cap":false,"duplicate":"allow","history":"act2","sync":true});restore()
  return {"ok":true,"reason":"You catch the blue bow."}
 func _physics_process(delta:float):
  if host.starting_magic.world_active() and state().remaining>0:

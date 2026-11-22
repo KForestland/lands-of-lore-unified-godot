@@ -1,0 +1,22 @@
+{
+  "name": "generic_mover_contact_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1348,
+  "teleports": 2,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged.",
+  "test_aids": 11,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "1fc8d71f7e3ca883cac905c85c8d81013f6c1e6860fadf8ef7a0ebfb97c81c98"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 11,
+  "needs": {
+    "note": "Pure physics fixtures with explicit body/geometry placement and direct move_and_slide only to establish support. No earned-world or real-input claim."
+  }
+}

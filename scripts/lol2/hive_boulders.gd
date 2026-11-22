@@ -1,4 +1,5 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 ## Saved visual/path actors and contact response; native scheduler parity remains open.
 const State=preload("res://scripts/lol2/hive_boulder_actor_state.gd")
 const PathControl=preload("res://scripts/lol2/hive_path_control.gd")
@@ -154,6 +155,6 @@ func resolve_contact(id: String, player_mover: bool) -> bool:
 		# Existing playable health adapter: normal mode, no equipment descriptors.
 		var result:=Damage.calculate({"mode":1,"scalar":0,"current":warriors.health,"descriptors":[]})
 		assert(not result.has("error"))
-		warriors.health=result.remaining
+		PlayerHealth.lose_host(host,int(result.loss))
 		if warriors.health==0: host.set_physics_process(false)
 	return true

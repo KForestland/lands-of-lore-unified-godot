@@ -1,0 +1,33 @@
+{
+  "name": "g04_floor_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Local source-control fixture: supplied stand and held host/creatures. Real mouse/E/F5/F9. No earned-walk claim."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 1,
+  "test_aids": 5,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "02940041c62474b8de523c9a3b0b3f2529baab72dc6fc87777f51d2710529950"
+  },
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/g04_floor_input_test.gd",
+        "line": 41,
+        "column": 69,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/L14_HT.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 6
+}

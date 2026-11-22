@@ -30,10 +30,10 @@ func run() -> void:
 		if face.kind == "movable":
 			if face.get("placement_kind") == "static_assembly": static_assemblies[int(face.source_index)] = true
 			else: movables += 1
-	check(area.faces.size() == 5230, "pack faces 5230 (%d)" % area.faces.size())
+	check(area.faces.size() == 5340, "pack faces 5340 (%d)" % area.faces.size())
 	check(int(kinds.get("floor", 0)) == 1381 and floorless == 0, "1381 floors = every native floor record, none floorless (%d/%d)" % [int(kinds.get("floor", 0)), floorless])
 	check(int(kinds.get("ceiling", 0)) == 1391, "1391 ceiling faces (every region with a native ceiling selector, subdivision pieces included) (%d)" % int(kinds.get("ceiling", 0)))
-	check(int(kinds.get("source_wall", 0)) == 1755, "1755 source walls = every wall record the original renders (%d)" % int(kinds.get("source_wall", 0)))
+	check(int(kinds.get("source_wall", 0)) == 1865, "1865 source walls = every wall record the original renders, ceiling-child bottoms by the child flag 0x20 (%d)" % int(kinds.get("source_wall", 0)))
 	check(int(kinds.get("movable", 0)) == 699 and movables == 466 and static_assemblies.size() == 59, "699 placement faces: 59 static assemblies drawn + 466 movable faces (%d/%d/%d)" % [int(kinds.get("movable", 0)), static_assemblies.size(), movables])
 	check(int(kinds.get("emulated_boundary", 0)) == 4, "4 emulated boundary quads, labelled (%d)" % int(kinds.get("emulated_boundary", 0)))
 	var flipped := 0
@@ -127,5 +127,5 @@ func run() -> void:
 		gate.queue_free(); await process_frame
 	Engine.set_meta("lol2_enhanced", false)
 	print("L13 map: %d failures" % failures)
-	if failures == 0: print("PASS l13 map: pack 5230 faces (1381 floors, 1391 ceilings, 1755 source walls, 59 assemblies + 466 movables, 4 boundaries), 364 props (2 row-flipped), sky origin 0, 43 scripted collision boxes, 37 blockers, nav 1449; scene hosts all of it from arrival 0; gate button in both editions")
+	if failures == 0: print("PASS l13 map: pack 5340 faces (1381 floors, 1391 ceilings, 1865 source walls, 59 assemblies + 466 movables, 4 boundaries), 364 props (2 row-flipped), sky origin 0, 43 scripted collision boxes, 37 blockers, nav 1449; scene hosts all of it from arrival 0; gate button in both editions")
 	quit(0 if failures == 0 else 1)

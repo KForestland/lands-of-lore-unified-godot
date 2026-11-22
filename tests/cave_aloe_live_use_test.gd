@@ -1,6 +1,6 @@
 extends "res://tests/player_magic_handoff_test.gd"
 const Aloe = preload("res://scripts/lol2/cave_aloe.gd")
-func consume(scene, id: String, cave := false) -> void:
+func consume(scene, id: String, cave := false, expected := true) -> void:
 	if cave:
 		var event := InputEventKey.new()
 		event.keycode = KEY_I
@@ -18,7 +18,11 @@ func consume(scene, id: String, cave := false) -> void:
 	scene.inventory.use_button.pressed.emit()
 	await process_frame
 	await process_frame
-	assert(id in scene.item_effects.state().spent and id not in scene.item_effects.carried())
+	if expected:assert(id in scene.item_effects.state().spent and id not in scene.item_effects.carried())
+	else:
+		assert(id not in scene.item_effects.state().spent and id in scene.item_effects.carried())
+		assert(scene.inventory.detail_text.text=="You are not hurt.")
+		scene.inventory.close();await process_frame
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 func run() -> void:
 	var path := "user://tests/aloe_live_use.json"
@@ -115,9 +119,9 @@ func run() -> void:
 	assert(hive.starting_magic.health() <= 30 and hive.item_effects.state().aloe.pending == 0)
 	assert(hive.quickload(path).is_empty() and hive.item_effects.state() == queued)
 	hive.starting_magic.set_health(30)
-	await consume(hive,Aloe.item_id(792,2))
+	await consume(hive,Aloe.item_id(792,2),false,false)
 	hive.item_effects.advance(1)
 	assert(hive.starting_magic.health() == 30 and hive.item_effects.state().aloe.pending == 0)
 	await finish(hive)
-	print("PASS Aloe actual harvest/UI consumption, gradual health/no mana effect, full-health consumption, form gate, cave no-respawn, partial disk rollback and four-area healing transport")
+	print("PASS Aloe actual harvest/UI consumption, gradual health/no mana effect, full-health refusal/kept item, form gate, cave no-respawn, partial disk rollback and four-area healing transport")
 	quit()

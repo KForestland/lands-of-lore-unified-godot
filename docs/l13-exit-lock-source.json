@@ -4,19 +4,19 @@
   {
    "events": [
     {
-     "extra_hex": "00e3ae20ce",
+     "extra_hex": "omitted 5 bytes sha256:4f391642cc6d3c4ebd631d9467eec215b0be43e9924ceb8b526570302906ce68",
      "file_offset": 6854599,
      "group": 8870,
      "kind": 4,
      "offset": 4330,
      "predicate": {
       "entry_file_offset": 6934142,
-      "entry_hex": "0005000000",
+      "entry_hex": "omitted 5 bytes sha256:1ad2f82b4edfc1d7e0e3df7b745eded28daae530594f76346c0a9b2b932a22d7",
       "index": 206,
       "trailer_file_offset": 6854609,
-      "trailer_hex": "0413ce00"
+      "trailer_hex": "omitted 4 bytes sha256:6b794423c604478e0152ac22d66115263d69c6e46c71db17c981cdaccfc1b487"
      },
-     "raw_hex": "0a04a6220300e3ae20ce",
+     "raw_hex": "omitted 10 bytes sha256:2d45bfe006afaabaef70b6533163c1eee6ebf6dc766361461eaa17e951a5cb98",
      "stream": 1,
      "value": 3
     },
@@ -24,22 +24,22 @@
      "file_offset": 6854609,
      "kind": 19,
      "offset": 4340,
-     "raw_hex": "0413ce00"
+     "raw_hex": "omitted 4 bytes sha256:6b794423c604478e0152ac22d66115263d69c6e46c71db17c981cdaccfc1b487"
     },
     {
-     "extra_hex": "0000000000",
+     "extra_hex": "omitted 5 bytes sha256:8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
      "file_offset": 6854613,
      "group": 8922,
      "kind": 4,
      "offset": 4344,
      "predicate": {
       "entry_file_offset": 6934147,
-      "entry_hex": "0005000001",
+      "entry_hex": "omitted 5 bytes sha256:e383821956d61571d630c9defa6df353be174d6b3ec241ecad1e5d1e570e4b28",
       "index": 207,
       "trailer_file_offset": 6854623,
-      "trailer_hex": "0413cf00"
+      "trailer_hex": "omitted 4 bytes sha256:6059bb25d5bbdd224f7114cdcbfa709f0627d11400fc04db5e9483c9724d86fa"
      },
-     "raw_hex": "0a04da22000000000000",
+     "raw_hex": "omitted 10 bytes sha256:aab44525e578771af8b5e7272e5d72113b633bd113ddeb0abfb4e5a6041f1eec",
      "stream": 1,
      "value": 0
     },
@@ -47,7 +47,7 @@
      "file_offset": 6854623,
      "kind": 19,
      "offset": 4354,
-     "raw_hex": "0413cf00"
+     "raw_hex": "omitted 4 bytes sha256:6059bb25d5bbdd224f7114cdcbfa709f0627d11400fc04db5e9483c9724d86fa"
     },
     {
      "extra_hex": "00",
@@ -56,7 +56,7 @@
      "kind": 6,
      "offset": 4358,
      "predicate": null,
-     "raw_hex": "0606f8220900",
+     "raw_hex": "omitted 6 bytes sha256:f31dc2c1e03b8ef7b857a0a43778f6cade083b02472e883c37514b04360c3ab0",
      "stream": 1,
      "value": 9
     }
@@ -65,7 +65,7 @@
    "index": 104,
    "list_file_offset": 6854599,
    "list_offset": 4330,
-   "placement_hex": "c1f2f2e5719c46000204e801ea107f000000000001000000000000002400d40007",
+   "placement_hex": "omitted 33 bytes sha256:f566c88b713b461161c9ddb8cf63874f8de432eec3f69e25520666452200e304",
    "ref": "control:104",
    "table": "control",
    "terminator_offset": 4364
@@ -76,7 +76,7 @@
    "index": 105,
    "list_file_offset": 6850269,
    "list_offset": 0,
-   "placement_hex": "41f3d4e5008000008240e70100007f000000000001000000000000002400e40005",
+   "placement_hex": "omitted 33 bytes sha256:2034ae8a6619f17faec4a2f28d25a4dfc7f826a00cbfc010e97ec198b5ea1a73",
    "ref": "control:105",
    "table": "control",
    "terminator_offset": 0
@@ -94,7 +94,7 @@
      "kind": 12,
      "offset": 190,
      "predicate": null,
-     "raw_hex": "080cc202e9010200",
+     "raw_hex": "omitted 8 bytes sha256:9c85febaac62cf8b48996b7be7ebbcaf1d5c5bcc9f7e884a9c658af5c795f753",
      "region": 489,
      "stream": 0,
      "value": 0
@@ -113,7 +113,7 @@
      "kind": 1,
      "offset": 706,
      "opcode": 2,
-     "raw_hex": "020100001c4c",
+     "raw_hex": "omitted 6 bytes sha256:54e538daa063342d499ef160ceb91ef717dd207a33a14bb4361e9b3bd6b74f7c",
      "target": 0
     }
    ],
@@ -121,7 +121,7 @@
    "file_offset": 6888546,
    "group": 706,
    "header_hex": null,
-   "raw_hex": "020100001c4c",
+   "raw_hex": "omitted 6 bytes sha256:54e538daa063342d499ef160ceb91ef717dd207a33a14bb4361e9b3bd6b74f7c",
    "stream": 0
   },
   {
@@ -131,7 +131,7 @@
      "kind": 16,
      "offset": 8876,
      "opcode": 5,
-     "raw_hex": "051068000100",
+     "raw_hex": "omitted 6 bytes sha256:efd2deaf07c42cd4e464205589fc79e0f4d6c8c39eb96b0b6988361e40a46c0d",
      "target": 104
     },
     {
@@ -139,7 +139,7 @@
      "kind": 16,
      "offset": 8882,
      "opcode": 20,
-     "raw_hex": "141069005c0150000a14",
+     "raw_hex": "omitted 10 bytes sha256:2298e7cf7eff834515ecd943649152f3a64fa1af518968a0b614e9cf12e554ab",
      "target": 105
     },
     {
@@ -147,7 +147,7 @@
      "kind": 16,
      "offset": 8892,
      "opcode": 7,
-     "raw_hex": "071069000200",
+     "raw_hex": "omitted 6 bytes sha256:8cb9ca907c5ce96f11db35190e481564c640258f58ea3b2f7bc9a76cb4b78f6d",
      "target": 105
     },
     {
@@ -155,7 +155,7 @@
      "kind": 16,
      "offset": 8898,
      "opcode": 7,
-     "raw_hex": "071069000000",
+     "raw_hex": "omitted 6 bytes sha256:bad298d92417a1bf3065ed68a37c94005f866225f64cee69b4de77ecf6af07d1",
      "target": 105
     },
     {
@@ -163,7 +163,7 @@
      "kind": 16,
      "offset": 8904,
      "opcode": 9,
-     "raw_hex": "091069000800",
+     "raw_hex": "omitted 6 bytes sha256:73018822874656dabb2d5b947b8c2ba8e1d873fe48cd0f30ed1b0dcdeb021ca6",
      "target": 105
     },
     {
@@ -171,7 +171,7 @@
      "kind": 16,
      "offset": 8910,
      "opcode": 16,
-     "raw_hex": "101068000100",
+     "raw_hex": "omitted 6 bytes sha256:1954d0f0788e176f1063b43f380aef81eae86dd7994b7abbcba95e5c24fbf972",
      "target": 104
     },
     {
@@ -179,15 +179,15 @@
      "kind": 1,
      "offset": 8916,
      "opcode": 2,
-     "raw_hex": "020100001800",
+     "raw_hex": "omitted 6 bytes sha256:b87c326849680a66bacd53fec218d2be3bdebd2396af2a9b3622293e6b816cab",
      "target": 0
     }
    ],
    "count": 7,
    "file_offset": 6848043,
    "group": 8870,
-   "header_hex": "f00000000700",
-   "raw_hex": "f00000000700051068000100141069005c0150000a14071069000200071069000000091069000800101068000100020100001800",
+   "header_hex": "omitted 6 bytes sha256:83e2b636f141143bdb18dfbf899b90acfa23b39f50706b228a8cafea59f20298",
+   "raw_hex": "omitted 52 bytes sha256:8c8faa090202105e885f49b021708d7df33dcd58b8ffe7781a12f5481d9470d0",
    "stream": 1
   },
   {
@@ -197,7 +197,7 @@
      "kind": 16,
      "offset": 8928,
      "opcode": 5,
-     "raw_hex": "051068000000",
+     "raw_hex": "omitted 6 bytes sha256:a0b336be9b528267b8f0e6b87dca91f7133f7038e084f97b4e037957deefbc51",
      "target": 104
     },
     {
@@ -205,7 +205,7 @@
      "kind": 1,
      "offset": 8934,
      "opcode": 3,
-     "raw_hex": "03010000e3ae20ce04000000",
+     "raw_hex": "omitted 12 bytes sha256:c70fdb8b5c08952d736c0ef3751fcb63d23425cd1ce28b1fc08f763b48a95074",
      "target": 0
     },
     {
@@ -213,15 +213,15 @@
      "kind": 16,
      "offset": 8946,
      "opcode": 16,
-     "raw_hex": "101068000200",
+     "raw_hex": "omitted 6 bytes sha256:c39b026ebca2885dbe4004a52c1d7544621dc3cb77efcc079dbafbefaf67b578",
      "target": 104
     }
    ],
    "count": 3,
    "file_offset": 6848095,
    "group": 8922,
-   "header_hex": "f00000000300",
-   "raw_hex": "f0000000030005106800000003010000e3ae20ce04000000101068000200",
+   "header_hex": "omitted 6 bytes sha256:161f3a2c4fc6e1f851c1c0991fae6acaeadbc254dcd11df1f55611de9baf7cb5",
+   "raw_hex": "omitted 30 bytes sha256:2f551c61782abc2a9d65ad74e6a8a4bbf373336a99628ce8ee2ad87b0082e37f",
    "stream": 1
   }
  ]

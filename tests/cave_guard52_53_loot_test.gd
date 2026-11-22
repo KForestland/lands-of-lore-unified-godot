@@ -112,7 +112,7 @@ func run() -> void:
 		if str(inv.item_list.get_item_metadata(i)) == "cave:guard52:Guard_Shield": shield_index = i
 	if not check(shield_index >= 0 and inv.item_list.get_item_text(shield_index) == "Guard Shield" and inv.item_list.get_item_icon(shield_index) != null,"Shield listed with label/icon"): return
 	inv.select_item(shield_index)
-	if not check(not inv.equip_button.disabled and inv.detail_text.text.contains("Defense +5"),"Shield equip offered: " + inv.detail_text.text): return
+	if not check(not inv.equip_button.disabled and inv.detail_text.text.contains("Protection 5") and inv.detail_text.text.count("Protection")==1 and not inv.detail_text.text.contains("damage"),"Shield equip offered: " + inv.detail_text.text): return
 	inv.equip_button.pressed.emit(); await process_frame
 	if not check(cave.item_effects.state().get("offhand","") == "cave:guard52:Guard_Shield" and Defense.scalar(cave) == before + 5 and inv.detail_name.text.ends_with("· Equipped"),"Shield equip/defense %d -> %d" % [before, Defense.scalar(cave)]): return
 	if not check(cave.set_equipped_item("cave:guard53:Short_Sword"),"Guard sword equips"): return

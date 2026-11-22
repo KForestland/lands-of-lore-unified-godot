@@ -44,11 +44,11 @@ func marker(host: Host, node_name: String) -> void:
 	host.add_child(mark)
 
 func run() -> void:
-	for row in Hints.JOURNAL_HINTS:
+	for row in Hints.ORIGINAL_HINTS:
 		var text := str(row.hint)
 		check(text.length() >= 20 and text.length() <= 130, "length %s %d" % [row.when, text.length()])
 		check(MyJournal.hints().has(row.when), "registered %s" % row.when)
-	check(MyJournal.hints().size() == 45, "45 notes")
+	check(preload("res://tests/helpers/journal_original_contract.gd").preserved(MyJournal.hints()),"All original56 notes retained alongside approved new lessons")
 	var quiet := make("L8_SJ")
 	var skipped: Node = Hints.attach(quiet)
 	check(skipped == null and quiet.get_node_or_null("Act3JournalHints") == null, "other areas stay quiet")

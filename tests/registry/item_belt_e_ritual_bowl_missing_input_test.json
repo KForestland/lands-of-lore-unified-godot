@@ -1,0 +1,170 @@
+{
+  "name": "item_belt_e_ritual_bowl_missing_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Real E with required item carried but NOT active; actual owner result and F5/F9. Pinned existing game-written checkpoint (producer aids retained) or fresh story/genuine-grant component, held NPCs, ray-selected settled stand, empty active slot. No earned-walk claim. Nine existing hand-preferring owners also receive an explicitly selected unrelated carried hand item; no item added for that control. Missing-material variant loads an explicitly incomplete initial save packet through the actual loader; live F08 refuses discarding protected materials, validates the complete save BEFORE E, then checks refusal/conservation/F5F9. Not a legal-loss or earned-route witness."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "guard_story_component_fixture",
+      "pattern": "scene\\.quest_state\\.l8_journey\\s*="
+    },
+    {
+      "kind": "unrelated_owned_hand_selection_fixture",
+      "pattern": "scene\\.hand_item\\s*="
+    },
+    {
+      "kind": "synthetic_missing_material_fixture",
+      "pattern": "scene\\.apply_save\\(initial\\)"
+    },
+    {
+      "kind": "belt_selection_fixture",
+      "pattern": "\\bbelt\\.(?:active|slots\\[[^\\]]+\\]|ages\\[[^\\]]+\\])\\s*="
+    }
+  ],
+  "teleports": 1,
+  "test_aids": 8,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "3b4d3fd1d3ef919d3e47619d9731c379d1236f99e7d7483c6aab296bbb1893c5"
+  },
+  "context_aid_source_sites": {
+    "count": 18,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_stored_spell_input.gd",
+        "line": 5,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":true}).ok,\"Disclosed actual-ID scroll grant fixture\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 107,
+        "column": 28,
+        "kind": "completed_intro_fixture",
+        "source": "if row_data.area==\"L3_DH\":scene.introduction_state=\"complete\""
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 108,
+        "column": 48,
+        "kind": "exit_seed_context",
+        "source": "if scene.get(\"adapter_exit_seeds\")!=null:scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 123,
+        "column": 65,
+        "kind": "scene_change_context",
+        "source": "if is_instance_valid(scene.get(\"progression\")):scene.progression.change_scene_enabled=false"
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 127,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":sync}).ok,\"Disclosed genuine-ID item fixture\"):return false"
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 130,
+        "column": 2,
+        "kind": "guard_story_component_fixture",
+        "source": "scene.quest_state.l8_journey=initial"
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 137,
+        "column": 47,
+        "kind": "form_admission_fixture",
+        "source": "return require(hp()>0 and scene.resets==0 and scene.player_form==0,\"Living Human input component, no recovery\")"
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 148,
+        "column": 16,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.apply_save(initial).is_empty(),\"Disclosed missing-material initial save fixture admitted by actual loader\"):return false"
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 148,
+        "column": 16,
+        "kind": "synthetic_missing_material_fixture",
+        "source": "if not require(scene.apply_save(initial).is_empty(),\"Disclosed missing-material initial save fixture admitted by actual loader\"):return false"
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 181,
+        "column": 39,
+        "kind": "unrelated_owned_hand_selection_fixture",
+        "source": "if not Discovery.accepts(target,id):scene.hand_item=id;selected=true;break"
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 187,
+        "column": 2,
+        "kind": "belt_selection_fixture",
+        "source": "belt.active=0 # Existing disclosed belt-selection component fixture."
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 195,
+        "column": 1,
+        "kind": "belt_selection_fixture",
+        "source": "belt.slots[4]=-1;belt.ages[4]=0;belt.active=4 # Deliberate belt-selection fixture, not pack/story mutation."
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 195,
+        "column": 18,
+        "kind": "belt_selection_fixture",
+        "source": "belt.slots[4]=-1;belt.ages[4]=0;belt.active=4 # Deliberate belt-selection fixture, not pack/story mutation."
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 195,
+        "column": 33,
+        "kind": "belt_selection_fixture",
+        "source": "belt.slots[4]=-1;belt.ages[4]=0;belt.active=4 # Deliberate belt-selection fixture, not pack/story mutation."
+      },
+      {
+        "path": "tests/helpers/item_belt_native_target_input.gd",
+        "line": 196,
+        "column": 16,
+        "kind": "belt_selection_fixture",
+        "source": "if not require(belt.active==4 and not Discovery.accepts(target,scene.item_effects.BeltState.resolve(belt,4,scene.item_effects.carried())),\"Active slot does NOT fit the target\"):return"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 26
+}

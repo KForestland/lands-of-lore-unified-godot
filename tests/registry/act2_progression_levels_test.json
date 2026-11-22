@@ -1,6 +1,54 @@
 {
- "name": "act2_progression_levels_test",
- "suite": "core",
- "mode": "headless",
- "order": 464
+  "name": "act2_progression_levels_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 464,
+  "teleports": 0,
+  "test_aids": 5,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "adb52f8cc4492f258abe4c104465d9b3aca8a5f65fd9783879a2e98e4960dd7c"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/act2_progression_levels_test.gd",
+        "line": 16,
+        "column": 6,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds = false # This test exercises the unresolved native/preview gates."
+      },
+      {
+        "path": "tests/act2_progression_levels_test.gd",
+        "line": 26,
+        "column": 2,
+        "kind": "scene_change_context",
+        "source": "p.change_scene_enabled = false"
+      },
+      {
+        "path": "tests/act2_progression_levels_test.gd",
+        "line": 34,
+        "column": 2,
+        "kind": "scene_change_context",
+        "source": "p.change_scene_enabled = false"
+      },
+      {
+        "path": "tests/act2_progression_levels_test.gd",
+        "line": 54,
+        "column": 2,
+        "kind": "scene_change_context",
+        "source": "p.change_scene_enabled = false"
+      },
+      {
+        "path": "tests/act2_progression_levels_test.gd",
+        "line": 80,
+        "column": 2,
+        "kind": "scene_change_context",
+        "source": "p.change_scene_enabled = false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 10
 }

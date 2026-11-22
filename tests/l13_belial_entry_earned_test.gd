@@ -1,8 +1,14 @@
 extends "res://tests/l13_upper_ruloi_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l13_belial_ring_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="2801b3e6957b91b0a578bd7873d9f266bc81cda8f09ed91c305015ee14541aab"
+func pass_line() -> String:
+ return "PASS earned source103 -> full original movie31 -> approved arena admission -> first action HealingIII -> save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_belial_ring_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="2801b3e6957b91b0a578bd7873d9f266bc81cda8f09ed91c305015ee14541aab","qualified upper ring input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified upper ring input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -33,5 +39,5 @@ func run():
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seed/recovery")
  print("ARENA at ",scene.player.position," boss ",scene.act2_creatures.bodies["40"].position)
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned source103 -> full original movie31 -> approved arena admission -> first action HealingIII -> save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

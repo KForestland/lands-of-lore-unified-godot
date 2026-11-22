@@ -251,8 +251,13 @@ func _jump_checkpoint(index: int) -> void:
 	target = point(entry.end)
 	_reset()
 	flight_label.text = "Walk mode · checkpoint %d · regions %s" % [checkpoint + 1, entry.regions]
+var crouched := false
+func set_crouch(want: bool, check_space: bool = true) -> bool:
+	return preload("res://scripts/lol2/player_crouch.gd").set_crouch(self, want, check_space)
+
 func _physics_process(delta: float) -> void:
 	if player == null: return
+	preload("res://scripts/lol2/player_crouch.gd").update(self)
 	ticks += 1
 	route_ticks += 1
 	var direction := Vector3.ZERO
@@ -273,6 +278,7 @@ func _physics_process(delta: float) -> void:
 		direction.y += float(Input.is_physical_key_pressed(KEY_SPACE)) - float(Input.is_physical_key_pressed(KEY_CTRL))
 		player.position += direction.normalized() * speed * 4 * delta
 		return
+	if preload("res://scripts/lol2/player_food_effects.gd").sleeping(self):direction=Vector3.ZERO;jump_requested=false
 	var planar := walk_feel.velocity(Vector2(direction.x, direction.z) * speed, delta)
 	player.velocity.x = planar.x
 	player.velocity.z = planar.y

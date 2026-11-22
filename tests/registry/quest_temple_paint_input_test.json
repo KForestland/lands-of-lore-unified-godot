@@ -1,0 +1,15 @@
+{
+  "name": "quest_temple_paint_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 2,
+  "count_method": "Audited source sites, not executions.",
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Untouched pinned legacy earned checkpoint (prior producer aids disclosed); real W/E/I/mouse/belt/F/F5/F9 at 1/60; no post-load pose, item, health, story, clock or NPC edits. Audited setup sites: adapter_exit_seeds=false and apply_save(pinned checkpoint); no inherited stand/grant helpers."
+  }
+}

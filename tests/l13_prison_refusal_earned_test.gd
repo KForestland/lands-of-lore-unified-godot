@@ -1,8 +1,14 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l13_elevator_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="87959d2b6238a1f6fe73eb243f687f18f320e9af79bd7b06f8a082503b41b23e"
+func pass_line() -> String:
+ return "PASS earned lower route/combat -> Human jump into original plate52 -> original maiden refusal while Ruloi live -> actual visit save/reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_elevator_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="87959d2b6238a1f6fe73eb243f687f18f320e9af79bd7b06f8a082503b41b23e","qualified basin input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified basin input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -37,5 +43,5 @@ func run():
  check(prison.state().visited and not prison.state().released,"visit persists without premature release")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seed or recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned lower route/combat -> Human jump into original plate52 -> original maiden refusal while Ruloi live -> actual visit save/reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

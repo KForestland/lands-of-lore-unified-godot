@@ -1,0 +1,71 @@
+{
+  "name": "item_belt_bad_ids_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "All15 actual gameplay hosts/packs; explicit temporary null/empty/unknown/non-string placeholders and cold-belt/UI pause fixtures, restored before unpause. Cave mixed-copy contract preserves its derived pack. No walk or earned-item claim."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "mixed_carried_list_component_fixture",
+      "pattern": "owned\\.append_array\\(BAD\\)|owned\\.assign\\(prior\\)"
+    },
+    {
+      "kind": "cold_belt_state_component_fixture",
+      "pattern": "effects\\.erase\\(\"belt\"\\)|effects\\.belt=prior_belt"
+    }
+  ],
+  "teleports": 0,
+  "test_aids": 5,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "b263136a451c0570f8640b8010c1edc02ae13e4022ac91468bd5be18c9e04631"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/item_belt_bad_ids_test.gd",
+        "line": 52,
+        "column": 14,
+        "kind": "mixed_carried_list_component_fixture",
+        "source": "if writable:owned.append_array(BAD)"
+      },
+      {
+        "path": "tests/item_belt_bad_ids_test.gd",
+        "line": 56,
+        "column": 2,
+        "kind": "cold_belt_state_component_fixture",
+        "source": "effects.erase(\"belt\")"
+      },
+      {
+        "path": "tests/item_belt_bad_ids_test.gd",
+        "line": 67,
+        "column": 14,
+        "kind": "mixed_carried_list_component_fixture",
+        "source": "if writable:owned.assign(prior)"
+      },
+      {
+        "path": "tests/item_belt_bad_ids_test.gd",
+        "line": 68,
+        "column": 22,
+        "kind": "cold_belt_state_component_fixture",
+        "source": "if prior_belt==null:effects.erase(\"belt\")"
+      },
+      {
+        "path": "tests/item_belt_bad_ids_test.gd",
+        "line": 69,
+        "column": 7,
+        "kind": "cold_belt_state_component_fixture",
+        "source": "else:effects.belt=prior_belt"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 10
+}

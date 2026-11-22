@@ -1,0 +1,54 @@
+{
+  "name": "generic_l10_jungle_return_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "RealF2 then actualF9 installs untouched actualF5 yellow44 output sha d6fbdb73645b2bc6cdc934474d912f6b569c7d0181d429f91eec3bbc7f738ad0. RealW via Cemetery exit/Jungle/pit into native Ruins1. No supplied pose/health/clock/action handlers. Continuation proof, not a fresh full sitting."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "799a3d2d44ab43d3c30bfcf7484b14fe711fd39ee26110e158f05ca114357c0b"
+  },
+  "context_aid_source_sites": {
+    "count": 4,
+    "sites": [
+      {
+        "path": "tests/generic_l10_jungle_return_test.gd",
+        "line": 9,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(YELLOW_INPUT,Slots.slot_path(1))==OK,\"Install untouched earned F5 output in slot1\"):return"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 5,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

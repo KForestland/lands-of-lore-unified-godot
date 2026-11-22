@@ -30,6 +30,7 @@ static func validate(state: Variant, quests: Dictionary) -> String:
  return ""
 static func offer(state: Dictionary, inventory: Array, target: String, item: String) -> Dictionary:
  if not ROWS.has(target): return Kit.refuse("Unknown tomb receptacle.")
+ if item not in inventory:return Kit.refuse("This tomb needs a %s glass globe."%{99:"yellow",100:"white",101:"blue"}[ROWS[target][1]])
  var data: Dictionary={"version":1,"inventory":inventory.duplicate(),"capacity":64,"slots":state.slots.duplicate(true)}
  var recipe: Dictionary={"target":target,"accepts":inventory.filter(func(id):return Items.definition(id)==ROWS[target][1]),"retrievable":false}
  var result:=Kit.offer(data,recipe,item)

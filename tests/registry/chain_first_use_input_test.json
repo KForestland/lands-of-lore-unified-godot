@@ -1,0 +1,127 @@
+{
+  "name": "chain_first_use_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Fresh modern books; supplied grounded component stands, three separate area boots, live acquisition then actual keys/aim, held magic clocks for cost assertions; existing mother talk refusal. Not a campaign route."
+  },
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "component_magic_clock",
+      "pattern": "\\bmagic\\.set_process\\("
+    },
+    {
+      "kind": "legacy_checkpoint_or_validation_vector",
+      "pattern": "\\.apply_save\\("
+    },
+    {
+      "kind": "item_grant_fixture",
+      "pattern": "\\bGrants\\.grant\\("
+    },
+    {
+      "kind": "whole_game_checkpoint_context",
+      "pattern": "\\.load_file\\("
+    }
+  ],
+  "teleports": 1,
+  "test_aids": 10,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7be096d7a8aec17f34f83081f90f25d4e8b733f83a0a32877a336ad267b2426a"
+  },
+  "context_aid_source_sites": {
+    "count": 12,
+    "sites": [
+      {
+        "path": "tests/chain_first_use_input_test.gd",
+        "line": 16,
+        "column": 18,
+        "kind": "component_magic_clock",
+        "source": "await tap(KEY_3);magic.set_process(false)"
+      },
+      {
+        "path": "tests/chain_first_use_input_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40);magic.set_process(false);mana=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/chain_first_use_input_test.gd",
+        "line": 20,
+        "column": 41,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40);magic.set_process(false);mana=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/chain_first_use_input_test.gd",
+        "line": 28,
+        "column": 45,
+        "kind": "component_magic_clock",
+        "source": "magic=scene.starting_magic;await tap(KEY_4);magic.set_process(false);mana=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/chain_first_use_input_test.gd",
+        "line": 31,
+        "column": 1,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await ticks(40)"
+      },
+      {
+        "path": "tests/chain_first_use_input_test.gd",
+        "line": 36,
+        "column": 18,
+        "kind": "component_magic_clock",
+        "source": "await tap(KEY_6);magic.set_process(false);mana=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/chain_first_use_input_test.gd",
+        "line": 44,
+        "column": 45,
+        "kind": "component_magic_clock",
+        "source": "magic=scene.starting_magic;await tap(KEY_3);magic.set_process(false);mana=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/chain_first_use_input_test.gd",
+        "line": 47,
+        "column": 1,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true)"
+      },
+      {
+        "path": "tests/chain_first_use_input_test.gd",
+        "line": 51,
+        "column": 18,
+        "kind": "component_magic_clock",
+        "source": "await tap(KEY_5);magic.set_process(false);mana=magic.magic_state().player.mana"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 48,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 22
+}

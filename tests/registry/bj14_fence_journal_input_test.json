@@ -1,0 +1,22 @@
+{
+  "name": "bj14_fence_journal_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1321,
+  "teleports": 0,
+  "test_aids": 3,
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance.",
+  "needs": {
+    "env": [
+      "LOL2_PROMPT_INPUTS"
+    ],
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Unchanged hash-pinned BJ14/prepared checkpoint inputs; upstream aids not credited. Local full-scene real W/mouse/E/Space/Ctrl/F5/F9, no pose/resource edits or direct game actions."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "12075320a61acfd48d738fc60fb3926e6be0d4ace3a60528f502efdecfb3644a"
+  }
+}

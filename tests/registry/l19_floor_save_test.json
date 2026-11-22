@@ -1,0 +1,15 @@
+{
+  "name": "l19_floor_save_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1347,
+  "needs": {
+    "note": "Component only: host physics held, direct native movable77 group and controlled floor ticks; no earned route claim."
+  },
+  "teleports": 3,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "6688daac8116dfe0ceed063c0e2ccb6e130d00dfe06361adba8e908a2ca1916c"
+  }
+}

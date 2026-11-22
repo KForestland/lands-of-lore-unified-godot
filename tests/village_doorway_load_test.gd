@@ -44,6 +44,7 @@ func run() -> void:
 		var copy := DIR + "doorway_start_" + SAVE
 		var out := FileAccess.open(copy, FileAccess.WRITE); out.store_buffer(FileAccess.get_file_as_bytes(earned.path_join(SAVE))); out.close()
 		if not await load_click(area, copy): return
+		area = current_scene
 		receipt.labels.start = SAVE
 	area.set_process_unhandled_input(true)
 	area.village_gate.state().local24 = 1; area.village_gate.state().elapsed = VillageState.DURATION; area.village_gate.restore()
@@ -68,6 +69,7 @@ func run() -> void:
 	var disk_magic: Dictionary = disk.inventory.get("magic", disk.get("quests", {}).get("player_magic_reward_state", {}))
 	var load_started := simulated_seconds
 	if not await load_click(area, saved.path): return
+	area = current_scene
 	area.set_process_unhandled_input(true)
 	for i in 60: await physics_frame
 	# Mana may regenerate during the 60 frames; allowed only when the save carries magic (a fresh start has none).

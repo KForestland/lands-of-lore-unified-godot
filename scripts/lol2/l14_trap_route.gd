@@ -61,7 +61,15 @@ func _process(_delta):
  hint.text=""
  for id in DOORS:
   if reachable(id) and id not in state().doors:hint.text="E — Open side door";return
+func generic_target()->Dictionary:
+ for id in DOORS:
+  if reachable(id) and id not in state().doors:return {"point":DOORS[id],"id":id}
+ return {}
+func try_use()->bool:
+ var target:=generic_target()
+ if target.is_empty():return false
+ host.save_feedback(open_door(target.id).reason)
+ return true
 func _unhandled_key_input(event:InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E:return
- for id in DOORS:
-  if reachable(id) and id not in state().doors:host.save_feedback(open_door(id).reason);get_viewport().set_input_as_handled();return
+ if try_use():get_viewport().set_input_as_handled()

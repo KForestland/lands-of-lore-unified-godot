@@ -24,12 +24,12 @@
     4
    ],
    "use_open": [
-    "012038006400",
-    "102038000100"
+    "omitted 6 bytes sha256:bff3608f60fae17b5e4d0c989bff52abef6b03080a701f055443f8bf15f4bee9",
+    "omitted 6 bytes sha256:2cd6171199e05a83aba0a8e117d6c76b2a624dada4b29b40d063ad2b58836901"
    ],
    "use_close": [
-    "012038000000",
-    "102038000000"
+    "omitted 6 bytes sha256:e7160442c4059140c3a71d4d12a46c6267bb2da1101a0a690cb9e1d8aebf28c4",
+    "omitted 6 bytes sha256:a1cd28edb5ad23c00298568d5f5bf0025633a5f1b693c11fffa7216052af655d"
    ],
    "speed_byte": 45
   },
@@ -55,12 +55,12 @@
     4
    ],
    "use_open": [
-    "012039006400",
-    "102039000100"
+    "omitted 6 bytes sha256:d765064516c25fc266f2c1c903bda8aac5a7cca0491a93292815c99c582db8ee",
+    "omitted 6 bytes sha256:24f91e7ff19f6a40c6858e4ae16a763f25958bfcdf555b4450c6ee71449686ab"
    ],
    "use_close": [
-    "012039000000",
-    "102039000000"
+    "omitted 6 bytes sha256:58ab9ffd5ee2a93199733cd0bca1f4b7128dbbc73a9f3dc93753c1c19855ffcb",
+    "omitted 6 bytes sha256:39ae747694bde0061c256cceff920829562c7df3ca78ea5ecf718bf65ef9365b"
    ],
    "speed_byte": 30
   }
@@ -69,12 +69,12 @@
   "region": 1338,
   "group": 794,
   "commands": [
-   "142039007103ff000a14",
-   "012039000000",
-   "102039000200",
-   "1202490099f8a406000085080080000a0000",
-   "0d0249000c000000",
-   "0d02490007000000"
+   "omitted 10 bytes sha256:bc047d490855a8e295c79a1e45db981026fb430dce651bcf4d5ec4383868ebab",
+   "omitted 6 bytes sha256:58ab9ffd5ee2a93199733cd0bca1f4b7128dbbc73a9f3dc93753c1c19855ffcb",
+   "omitted 6 bytes sha256:09b0252733b2f1a23ffc68a853909f650adc88195d716db57c5af6e2e8a6f5d2",
+   "omitted 18 bytes sha256:c6f938301113c0610a9ab73625f577f132fc5f735511114d834664d92c4b7af5",
+   "omitted 8 bytes sha256:ad2d84c0175b331bb703ac64e990421374fe928613788d166844e1d1a4e8711a",
+   "omitted 8 bytes sha256:09401328980cbad0cbc9dd7551d4b7a71d4c6be8d64407874c706513183d86fa"
   ],
   "polygon": [
    [
@@ -104,14 +104,14 @@
   "actor_heading": 32768,
   "unlock_group": 15750,
   "locked_use": [
-   "142039007303ff000a14",
-   "102039000300"
+   "omitted 10 bytes sha256:9b6b284fc4cd2b0fa74aa69baad3f15255b3b964ec3b3185af3c2036ce750a98",
+   "omitted 6 bytes sha256:c975997e4f94c3b1a72cdd5d374635f9e5fb047a691e39496f55fe20ff3e3a9b"
   ]
  },
  "not_hosted": [
-  "kind9 hit sequence: selectors 1/2/3; group13798 requests percent100 (hit-filter producer not replayed)",
-  "region83 g76 (local6 == 0 AND local4 == 1): door56 shut, state 3",
-  "door57 locked use: sound 883 then state 3 without travel; no state3 use row; actor73 event6/value10 group15750 resets state0"
+  "kind 9 swing words are an adapter (word0 0x0002, word2 0x0004, dword_26 10, dword_1e 0, global 0). The player swing does not produce them. dword_26 20 admits door 57's third record and rejects door 56's byte 10.",
+  "region 83 event 2 is stream 0 group 76: opcode 1 percent 0 and opcode 16 state 3 on movable 56. Predicate 19 is 0604120405, operator 6 with left and right type 4, so the group does not run. Stream 1 group 76 targets prop 65 and is not this event.",
+  "group 794 does not run: opcode 13 index 12 on actor 73 was not entered. The prefix is sound 881, travel 0, state 2. Opcode 18 parks the command. Door 57's locked use is still not group 13738. A bash does not clear the quest lock. Actor 73 kind 6 value 10 is group 15750."
  ],
- "scope": "Doors 56/57 E toggle and native hinge; door57 Shade trap (region1338) and its actor73 unlock. Swing time, reach and leaf box are modern adapters."
+ "scope": "Doors 56/57 E toggle, kind-9 chop, and native hinge; door 57 shade trap (region 1338) and its actor 73 unlock. Swing words, swing time, reach, the trap prefix, and the leaf box are modern adapters. Region 83 does not lock door 56."
 }

@@ -9,6 +9,7 @@ var host: Node3D
 var data: Dictionary = {}
 var materials: Dictionary = {}
 var stateful_meshes: Dictionary = {}  # assembly -> Array[MeshInstance3D]
+var room_parents: Dictionary = {} # selected assembly -> independent room draw parent
 var modes: Dictionary = {}            # assembly -> mode set by a host (absent = initial)
 ## Presence of the assemblies a host manages (setup `presence`): placement flags word +8 bit 0x1000 marks an assembly
 ## absent at load; source op9 property3 links it and property2 unlinks it. Managed assemblies get their own meshes and
@@ -30,6 +31,7 @@ func setup(owner_host: Node3D, area: String, separate: Array = [], own_collision
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(ROOT + area + "/assemblies.json"))
 	if not parsed is Dictionary or str(parsed.get("area", "")) != area: return "Static assemblies for %s missing or invalid." % area
 	data = parsed
+	_carry_moved(area)
 	var stateful: Dictionary = {}
 	for id in data.stateful: stateful[int(id)] = true
 	for id in separate: stateful[int(id)] = true
@@ -56,6 +58,48 @@ func setup(owner_host: Node3D, area: String, separate: Array = [], own_collision
 			if own.has(int(id)): _build_assembly(int(id), own[int(id)])
 	return _build_collision(area, separate + own_collision)
 
+## Draw only explicitly managed assemblies; caller owns their collision and selectors.
+## Used by the generic layer so the map pack never retains a duplicate static frame.
+func setup_selected(owner_host: Node3D, area: String, ids: Array) -> String:
+	host=owner_host
+	var parsed:Variant=JSON.parse_string(FileAccess.get_file_as_string(ROOT+area+"/assemblies.json"))
+	if not parsed is Dictionary or str(parsed.get("area",""))!=area:return "Invalid managed assembly source."
+	data=parsed
+	_carry_moved(area)
+	for id in ids:
+		if not data.placements.has(str(int(id))):return "Missing managed assembly."
+		presence[int(id)]=initially_present(data,int(id))
+		var faces:Array=[]
+		for face in data.faces:
+			if int(face.assembly)==int(id) and face.initial:faces.append(face)
+		_build_assembly(int(id),faces)
+	return ""
+
+## Assemblies a geometry move carries (scripts/lol2/geometry_moves, kind floor_lower: L10 doors 143/175 on the Emperor
+## tomb floor): id -> [floor_from, floor_to]. Their points at floor_from go to floor_to; their tops stay (kept ceiling).
+static func carried(area: String) -> Dictionary:
+	var out: Dictionary = {}
+	var s: Dictionary = preload("res://scripts/lol2/geometry_move.gd").spec(area)
+	for zone in s.get("zones", []):
+		for id in zone.get("carry_assemblies", []): out[int(id)] = [float(zone.floor_from), float(zone.floor_to)]
+	return out
+
+func _carry_moved(area: String) -> void:
+	var carry := carried(area)
+	if carry.is_empty(): return
+	for face in data.faces:
+		if not carry.has(int(face.assembly)): continue
+		var span: Array = carry[int(face.assembly)]
+		for p in face.points:
+			if absf(float(p[1]) - float(span[0])) < 0.01: p[1] = float(span[1])
+
+static func carried_box(area: String, id: int, b: Dictionary) -> Dictionary:
+	var carry := carried(area)
+	if not carry.has(id) or absf(float(b.get("h", 0)) - float(carry[id][0])) > 0.01: return b
+	var out := b.duplicate()
+	out.h = float(carry[id][1]); out.height = float(b.height) + float(carry[id][0]) - float(carry[id][1])
+	return out
+
 ## Native solid boxes (tools/prepare_static_collision.py): placement word8 bit 0x80 plus a box template shape. Only
 ## assemblies this renderer draws; host-owned ones and `skip` build their own. Modern adapter: boxes lower than
 ## MIN_SOLID_HEIGHT stay walkable (the original steps over them; a Godot body cannot).
@@ -64,9 +108,22 @@ const MIN_SOLID_HEIGHT := 16
 ## above the floor under its centre than the tallest player form (beast, 69), so no walk beneath it can be obstructed.
 ## Measured by tests/static_raised_decks_test.gd: only Jungle deck 227 over the stream (owner r12h F10 2026-10-26: fell
 ## through it). L9 Noble balcony481..483 likewise stand112 above floor0; their source tops join the upstairs floor120.
-## Lower thin decks (221-224, 219: 20-25 above the stream bed) keep the walkable adapter.
+## The lower slabs 219 and 221-224 are the same source decks, a few units above the floor under them.
+## Owner r17 16-54-13: Human and Lizard fall through them (the grey sheet in that shot was the withdrawn
+## AV04 water). BRIDGE_DECKS keeps those source boxes. They stay out of RAISED_DECKS: the clearance under
+## them is already shorter than a body, and the raised-deck measurement remains deck 227 only.
 const RAISED_DECKS := {"L4_HJ": [227], "L9_DR": [481,482,483]}
+const BRIDGE_DECKS := {"L4_HJ": [219, 221, 222, 223, 224]}
 static func raised_deck(area: String, id: int) -> bool: return id in RAISED_DECKS.get(area, [])
+static func bridge_deck(area: String, id: int) -> bool: return id in BRIDGE_DECKS.get(area, [])
+## Bridge decks lie along the stream: their tops stand 10-11 above the banks (a step) but 35-36 above the stream bed
+## (regions at -25 under them), more than the 32-unit step (walk_step.gd). The shop and village-escape walks follow the
+## bed, so a plain box stops them at the deck's side (Fable BI02, 2026-11-08). Adapter: the deck's collider is a prism
+## whose top is the source deck top and whose base is the footprint widened by DECK_SKIRT_RUN, DECK_SKIRT_DROP lower
+## (a 34-degree invisible ramp on every side, inside the 45-degree floor limit); a body on the bed climbs onto the deck
+## and walks off the far side. The drawn deck is unchanged. Not applied to RAISED_DECKS (the beast walks under 227).
+const DECK_SKIRT_DROP := 40.0
+const DECK_SKIRT_RUN := 60.0
 ## Scenery boxes use their own layer (9): bodies that move (player, creatures) add it to their masks, while the many
 ## aim/line-of-sight ray queries on layer 1 keep ignoring them (a post beside the cave chain must not hide it).
 const SCENERY_LAYER := 1 << 8
@@ -81,11 +138,11 @@ func _build_collision(area: String, skip: Array) -> String:
 	for face in data.faces: drawn[int(face.assembly)] = true
 	for key in parsed.boxes:
 		var id := int(key)
-		var b: Dictionary = parsed.boxes[key]
+		var b: Dictionary = carried_box(area, id, parsed.boxes[key])
 		# Scripted assemblies move or unlink at run time: their hosts own any collision.
-		var deck := raised_deck(area, id)
+		var deck := raised_deck(area, id) or bridge_deck(area, id)
 		if not drawn.has(id) or id in skip or bool(b.get("scripted", false)) or (int(b.height) < MIN_SOLID_HEIGHT and not deck): continue
-		var body := box_body(id, b, offset, deck)
+		var body := box_body(id, b, offset, deck, bridge_deck(area, id))
 		if body == null: continue
 		add_child(body)
 		solid_bodies[id] = body
@@ -101,7 +158,7 @@ func add_scripted_solids(area: String, ids: Array) -> String:
 	for id in ids:
 		var b: Variant = parsed.boxes.get(str(id))
 		if not b is Dictionary or not bool(b.get("scripted", false)) or solid_bodies.has(int(id)): return "Assembly %s is not a scripted solid." % id
-		var body := box_body(int(id), b, offset)
+		var body := box_body(int(id), carried_box(area, int(id), b), offset)
 		if body == null: return "Assembly %s has no solid box." % id
 		add_child(body)
 		solid_bodies[int(id)] = body
@@ -149,17 +206,15 @@ func restore_presence(saved: Dictionary) -> String:
 
 ## One static_collision_AREA.json box record as a body on SCENERY_LAYER (null when nothing is solid enough). Also used
 ## by hosts that draw the assemblies themselves (dark_halls.gd).
-static func box_body(id: int, b: Dictionary, offset: Vector3, deck: bool = false) -> StaticBody3D:
-	if int(b.get("mode", 2)) == 3: return _child_box_body(id, b, offset, deck)
+## `skirt`: a bridge deck (BRIDGE_DECKS) gets the ramped prism instead of the box.
+static func box_body(id: int, b: Dictionary, offset: Vector3, deck: bool = false, skirt: bool = false) -> StaticBody3D:
+	if int(b.get("mode", 2)) == 3: return _child_box_body(id, b, offset, deck, skirt)
 	var body := StaticBody3D.new()
 	body.name = "Solid%d" % id
 	body.collision_layer = SCENERY_LAYER
 	body.collision_mask = 0
-	var shape := CollisionShape3D.new()
-	var box := BoxShape3D.new()
-	box.size = Vector3(float(b.width), float(b.height), maxf(float(b.depth), 1.0))
-	shape.shape = box
-	body.add_child(shape)
+	var size := Vector3(float(b.width), float(b.height), maxf(float(b.depth), 1.0))
+	body.add_child(_skirted_shape(size, Vector3.ZERO) if skirt else _box_shape(size, Vector3.ZERO))
 	# Native y -> Godot -z; heading H turns the width axis to map angle H, i.e. Godot Y rotation -H.
 	body.position = Vector3(float(b.x), float(b.h) + float(b.height) / 2.0, -float(b.y)) + offset
 	body.rotation.y = -float(b.heading) / 65536.0 * TAU
@@ -171,7 +226,7 @@ static func box_body(id: int, b: Dictionary, offset: Vector3, deck: bool = false
 ## bytes 0x38/0x39 above the placement), in the same heading frame as whole boxes; type 1 children (not drawn by the
 ## exporter, e.g. Cave table 156 child 12) included (Codex OPUS_CAVE156_CHILD_COLLISION). Children whose top is under
 ## MIN_SOLID_HEIGHT stay walkable, as for whole boxes.
-static func _child_box_body(id: int, b: Dictionary, offset: Vector3, deck: bool = false) -> StaticBody3D:
+static func _child_box_body(id: int, b: Dictionary, offset: Vector3, deck: bool = false, skirt: bool = false) -> StaticBody3D:
 	var body := StaticBody3D.new()
 	body.name = "Solid%d" % id
 	body.collision_layer = SCENERY_LAYER
@@ -179,19 +234,43 @@ static func _child_box_body(id: int, b: Dictionary, offset: Vector3, deck: bool 
 	for c in b.get("children", []):
 		var r: Array = c.bounds
 		if (int(c.mask) & 1) == 0 or (int(r[5]) < MIN_SOLID_HEIGHT and not deck): continue
-		var shape := CollisionShape3D.new()
-		var box := BoxShape3D.new()
-		box.size = Vector3(maxf(float(r[1]) - float(r[0]), 1.0), maxf(float(r[5]) - float(r[4]), 1.0), maxf(float(r[3]) - float(r[2]), 1.0))
-		shape.shape = box
+		var size := Vector3(maxf(float(r[1]) - float(r[0]), 1.0), maxf(float(r[5]) - float(r[4]), 1.0), maxf(float(r[3]) - float(r[2]), 1.0))
 		# Native local y -> body-local -z (the frame of the whole boxes above).
-		shape.position = Vector3((float(r[0]) + float(r[1])) / 2.0, (float(r[4]) + float(r[5])) / 2.0, -(float(r[2]) + float(r[3])) / 2.0)
-		body.add_child(shape)
+		var centre := Vector3((float(r[0]) + float(r[1])) / 2.0, (float(r[4]) + float(r[5])) / 2.0, -(float(r[2]) + float(r[3])) / 2.0)
+		body.add_child(_skirted_shape(size, centre) if skirt else _box_shape(size, centre))
 	if body.get_child_count() == 0:
 		body.free()
 		return null
 	body.position = Vector3(float(b.x), float(b.h), -float(b.y)) + offset
 	body.rotation.y = -float(b.heading) / 65536.0 * TAU
 	return body
+
+static func _box_shape(size: Vector3, centre: Vector3) -> CollisionShape3D:
+	var shape := CollisionShape3D.new()
+	var box := BoxShape3D.new()
+	box.size = size
+	shape.shape = box
+	shape.position = centre
+	return shape
+
+## The bridge-deck prism (see DECK_SKIRT_DROP): top = the source box top, base = the footprint widened by
+## DECK_SKIRT_RUN on every side, DECK_SKIRT_DROP below the top.
+static func _skirted_shape(size: Vector3, centre: Vector3) -> CollisionShape3D:
+	var shape := CollisionShape3D.new()
+	var hull := ConvexPolygonShape3D.new()
+	var top := size.y / 2.0
+	var base := top - DECK_SKIRT_DROP
+	var hx := size.x / 2.0
+	var hz := size.z / 2.0
+	var points: PackedVector3Array = []
+	for sx in [-1.0, 1.0]:
+		for sz in [-1.0, 1.0]:
+			points.append(Vector3(sx * hx, top, sz * hz))
+			points.append(Vector3(sx * (hx + DECK_SKIRT_RUN), base, sz * (hz + DECK_SKIRT_RUN)))
+	hull.points = points
+	shape.shape = hull
+	shape.position = centre
+	return shape
 
 ## Select faces by child mask (renderer test mask & (1 << mode)), as the original assembly mode byte does.
 func set_mode(assembly: int, mode: int) -> void:
@@ -220,11 +299,26 @@ func set_offset(assembly: int, offset: Vector3) -> void:
 
 func drawn_face_count() -> int:
 	var count := 0
-	for child in get_children():
-		if child is MeshInstance3D and child.layers != 4 and child.mesh != null: count += child.mesh.get_faces().size() / 6
+	var nodes: Array = get_children()
+	for parent: Node3D in room_parents.values(): nodes.append_array(parent.get_children())
+	for child in nodes:
+		if child is MeshInstance3D and not child.is_queued_for_deletion() and child.layers != 4 and child.mesh != null: count += child.mesh.get_faces().size() / 6
 	return count
 
 func _build_assembly(id: int, faces: Array) -> void:
+	# Central hook covers selected generic fronts AND feature-owned Emperor,
+	# tomb and slab parts that build source assemblies directly.
+	if str(data.get("area","")) == "L10_DC" and preload("res://scripts/lol2/object_room_visibility.gd").enabled(host) and not room_parents.has(id):
+		var parent := Node3D.new()
+		parent.name = "ObjectRoomAssembly%d" % id
+		add_child(parent)
+		room_parents[id] = parent
+		var room_faces: Array = []
+		for face: Dictionary in data.faces:
+			if int(face.assembly)==id: room_faces.append(face.points)
+		var bytes := str(data.placements[str(id)].placement_hex).hex_decode()
+		var bound := preload("res://scripts/lol2/object_room_visibility.gd").bind(host,parent,bytes,room_faces)
+		assert(bound,"Every source L10 controlled assembly needs a room")
 	var by_material: Dictionary = {}
 	for face in faces:
 		if not by_material.has(face.material): by_material[face.material] = []
@@ -232,7 +326,7 @@ func _build_assembly(id: int, faces: Array) -> void:
 	stateful_meshes[id] = []
 	for key in by_material:
 		var mesh := _mesh(by_material[key], key)
-		_add(mesh, "Assembly%d_%s" % [id, str(key).get_basename()])
+		_add(mesh, "Assembly%d_%s" % [id, str(key).get_basename()],room_parents.get(id))
 		mesh.visible = bool(presence.get(id, true))
 		stateful_meshes[id].append(mesh)
 
@@ -271,9 +365,10 @@ func _mesh(faces: Array, key: String) -> MeshInstance3D:
 	if str(data.render) == "indexed": mesh.layers = 2
 	return mesh
 
-func _add(mesh: MeshInstance3D, label: String) -> void:
+func _add(mesh: MeshInstance3D, label: String, parent: Node3D = null) -> void:
 	mesh.name = label
-	add_child(mesh)
+	if parent == null: add_child(mesh)
+	else: parent.add_child(mesh)
 	if str(data.render) == "indexed" and host.has_method("_copy_occluders"): host._copy_occluders(mesh)
 
 ## Index 1 is the original's shadow marker (palette entry 1 is pure green); the native renderer darkens with it.

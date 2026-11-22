@@ -10,10 +10,16 @@ func land(scene:Node):
  for i in 120:
   scene.move_grounded(Vector3.ZERO,1.0/60);await physics_frame
   if scene.player.is_on_floor():break
+func input_path() -> String:
+ return "res://tmp/l13_ruloi_cleared_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="be33f4bd95dbf874bc1f31bc4da0d6f9408d66fa79f91556650bdd43781ceee0"
+func pass_line() -> String:
+ return "PASS physical ground Spires/Spark -> Dawn jump/recess -> maidens jump/full original release -> earned save/reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_ruloi_cleared_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="be33f4bd95dbf874bc1f31bc4da0d6f9408d66fa79f91556650bdd43781ceee0","qualified nineteen Ruloi input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified nineteen Ruloi input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -51,5 +57,5 @@ func run():
  check(dawn.state().visited and prison.state().released and spires.dawn_ready(),"earned room/gate states persist")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seed or recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS physical ground Spires/Spark -> Dawn jump/recess -> maidens jump/full original release -> earned save/reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

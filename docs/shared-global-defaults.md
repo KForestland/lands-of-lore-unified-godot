@@ -6,4 +6,4 @@ Fresh games now start Luther’s soul at5, Dawn’s relationship at1 and Bacatta
 
 Reward expectations consequently change from soul0→1 to5→6, and Bacatta’s first offer changes relationship1→2. Existing story actions still explicitly set relationship to zero where specified. Native timing and other mechanics are unchanged by this correction.
 
-Focused verification and source extraction are recorded in `shared-global-defaults-checks.json`. This change requires a new full suite, continuous campaign and demo candidate; R4 binaries retain the older defaults. Bacatta57 integration and Bob’s playtest acceptance remain separate gates.
+Focused verification and source extraction are recorded in `shared-global-defaults-checks.json`. This change requires a new full suite, continuous campaign and demo candidate; R4 binaries retain the older defaults. Bacatta57 integration and the owner’s playtest acceptance remain separate gates.

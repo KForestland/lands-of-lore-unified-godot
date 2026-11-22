@@ -1,7 +1,7 @@
 {
   "source": {
     "status": "source_diagnosis_runtime_missing",
-    "report": "report_2026-10-17T11-19-00_2349619532",
+    "report": "report_(owner F10, omitted)",
     "source": {
       "file": "DAT/L3_DH.MIX",
       "sha256": "bd85c12d4a2cff0cc200309e72a7771745ce5c78f1a83da4d60cba81d831ccac",
@@ -14,13 +14,13 @@
         "kind": 9,
         "group": 4536,
         "predicate": 24,
-        "predicate_raw": "0003080000",
+        "predicate_raw": "omitted 5 bytes sha256:75058c849d32d9cfdfbb9ae527def44086198719dd2f0d7f0520e8d130183c0e",
         "commands": [
-          "020100000a05",
-          "0803d80000000000",
-          "0803d80002000000"
+          "omitted 6 bytes sha256:47c06ac020395c30f30d8d8a45477a84823c987e67c7071bd72af9a472a1128a",
+          "omitted 8 bytes sha256:ed73faa70429596758a8b2bc008e3738cc0b7cf55ca7bad95bf9858953897c33",
+          "omitted 8 bytes sha256:93a33642f9306b19403a5c8aa4f7cfba9d4b963854a74b51b21dce8e537150d8"
         ],
-        "raw": "0a09b811010003000284"
+        "raw": "omitted 10 bytes sha256:11209978729c8a4a4706439d2f0f3786bbe79c406b93350ca07c46f771ba02ec"
       },
       {
         "kind": 6,
@@ -28,11 +28,11 @@
         "predicate": null,
         "predicate_raw": null,
         "commands": [
-          "0903d8001000",
-          "090419000300",
-          "c60000000802"
+          "omitted 6 bytes sha256:62f30ae522cb04b611c621ca40b8e9ac7f140069d99d06933a037ebe0bceb663",
+          "omitted 6 bytes sha256:520f1b12046433cf5d200015ef46290b0d9f646857f7ff3a28ee1b8f8e8843ac",
+          "omitted 6 bytes sha256:2c6c5c2b93be7b35bd3bac34ed14a0a5fa2abc54399f05aafd4f6c519346dfb0"
         ],
-        "raw": "0606d4110000"
+        "raw": "omitted 6 bytes sha256:90303ace6858f5d884f14c5af7a425b63c9cfc77f7cb0adec946743a154dbced"
       }
     ],
     "groups": [
@@ -54,15 +54,15 @@
         "commands": [
           {
             "archive_offset": 5838924,
-            "raw_hex": "020100000a05"
+            "raw_hex": "omitted 6 bytes sha256:47c06ac020395c30f30d8d8a45477a84823c987e67c7071bd72af9a472a1128a"
           },
           {
             "archive_offset": 5838930,
-            "raw_hex": "0803d80000000000"
+            "raw_hex": "omitted 8 bytes sha256:ed73faa70429596758a8b2bc008e3738cc0b7cf55ca7bad95bf9858953897c33"
           },
           {
             "archive_offset": 5838938,
-            "raw_hex": "0803d80002000000"
+            "raw_hex": "omitted 8 bytes sha256:93a33642f9306b19403a5c8aa4f7cfba9d4b963854a74b51b21dce8e537150d8"
           }
         ]
       },
@@ -84,15 +84,15 @@
         "commands": [
           {
             "archive_offset": 5838952,
-            "raw_hex": "0903d8001000"
+            "raw_hex": "omitted 6 bytes sha256:62f30ae522cb04b611c621ca40b8e9ac7f140069d99d06933a037ebe0bceb663"
           },
           {
             "archive_offset": 5838958,
-            "raw_hex": "090419000300"
+            "raw_hex": "omitted 6 bytes sha256:520f1b12046433cf5d200015ef46290b0d9f646857f7ff3a28ee1b8f8e8843ac"
           },
           {
             "archive_offset": 5838964,
-            "raw_hex": "c60000000802"
+            "raw_hex": "omitted 6 bytes sha256:2c6c5c2b93be7b35bd3bac34ed14a0a5fa2abc54399f05aafd4f6c519346dfb0"
           }
         ]
       },
@@ -117,15 +117,15 @@
         "commands": [
           {
             "archive_offset": 5882754,
-            "raw_hex": "0803d80001000000"
+            "raw_hex": "omitted 8 bytes sha256:218d8b354079697df0dc57424b1e18e8d2629604593ba5e1a118c4e0db2804e1"
           },
           {
             "archive_offset": 5882762,
-            "raw_hex": "0903d8000200"
+            "raw_hex": "omitted 6 bytes sha256:f6b21d647acc6ee8eb5db597b88aea0383865286682bed37ebcf86f91ea5e5e6"
           },
           {
             "archive_offset": 5882768,
-            "raw_hex": "0903d7000300"
+            "raw_hex": "omitted 6 bytes sha256:f708a43a833423fe267cf31674c6b0df3ec822de7844d069e5043aff18ce148f"
           }
         ]
       },
@@ -150,15 +150,15 @@
         "commands": [
           {
             "archive_offset": 5883108,
-            "raw_hex": "0803d80001000000"
+            "raw_hex": "omitted 8 bytes sha256:218d8b354079697df0dc57424b1e18e8d2629604593ba5e1a118c4e0db2804e1"
           },
           {
             "archive_offset": 5883116,
-            "raw_hex": "0903d8000200"
+            "raw_hex": "omitted 6 bytes sha256:f6b21d647acc6ee8eb5db597b88aea0383865286682bed37ebcf86f91ea5e5e6"
           },
           {
             "archive_offset": 5883122,
-            "raw_hex": "0903d7000300"
+            "raw_hex": "omitted 6 bytes sha256:f708a43a833423fe267cf31674c6b0df3ec822de7844d069e5043aff18ce148f"
           }
         ]
       }
@@ -172,7 +172,7 @@
         "right": {
           "immediate": 0
         },
-        "raw": "0003080000"
+        "raw": "omitted 5 bytes sha256:75058c849d32d9cfdfbb9ae527def44086198719dd2f0d7f0520e8d130183c0e"
       },
       "28": {
         "op": "==",
@@ -182,7 +182,7 @@
         "right": {
           "immediate": 2
         },
-        "raw": "0003080002"
+        "raw": "omitted 5 bytes sha256:647812f0aa048eedd76bb1b895fd8f4755a4c544d4e8a313f1a43f2c78ef8c0e"
       }
     },
     "item": {
@@ -190,9 +190,9 @@
       "identity": 2849335507,
       "definition": 86,
       "name": "84-Dragon gem",
-      "raw": "7efb89080000000002108e01000000000000000014747f00d97b5a0014000000d368d5a900",
+      "raw": "omitted 37 bytes sha256:74a0a55435d59425fecc2ff84da5e4e714511c3c2355b2d0dbb368e4e17f30f0",
       "archive_offset": 5877923,
-      "definition_hex": "000000000000000000000000000000000000000000000000d368d5a9080000006300388324e451ff00080b0905040100000f04002400004b013d010000000043000a00000000000000000000000000000000000000000000000000"
+      "definition_hex": "omitted 91 bytes sha256:8e2edba10937a9e18f09d338b0ff260a844a2499ccbe22ae015da0bf54e133ef"
     },
     "pending": [
       "Native hit filter admission decode/replay; Spark versus other attack contexts.",
@@ -210,7 +210,7 @@
         "geometry_key": 3106551060
       },
       "filename": "drgnhrt.vqa",
-      "raw_hex": "42034001c80016006472676e6872742e767161000000",
+      "raw_hex": "omitted 22 bytes sha256:be81d1cb034123c4bb6c391bce61588ff1d405881587d93b90fd9b37b2b10d09",
       "descriptor": 478,
       "status": "exact",
       "binding": "unique_hash_header_witness",
@@ -263,7 +263,7 @@
           "top_trim": 0,
           "right_sub": 0,
           "bottom": 0,
-          "frame_hex": "de0100080800000000000000"
+          "frame_hex": "omitted 12 bytes sha256:659fc35ff0ae989427fac46b6ab89086c50a4914c1bcb2e1ef5a355820a8bb91"
         },
         "placement": {
           "record": 216,
@@ -279,7 +279,7 @@
             0,
             -2207
           ],
-          "placement_hex": "8bfb9f080000000002448b01a0080000000000008802ffffffffb800230003001b00000003"
+          "placement_hex": "omitted 37 bytes sha256:4d43680b4e60783950762139360e00afbdd1cb9848c4610194cbaa2b98d58ac0"
         },
         "vqhd": {
           "width": 304,
@@ -299,8 +299,8 @@
           0,
           1
         ],
-        "state_hex": "000000000000040000008c000101643c",
-        "frame_hex": "790000050000000000000000",
+        "state_hex": "omitted 16 bytes sha256:546af6001595a12c9a2f40c2680d787cfc46d3ea7e74469c3fd4b73efdb229e5",
+        "frame_hex": "omitted 12 bytes sha256:d850bc061f144f87bc8ef8eaab71a8a1d6f0e098a7bd2185ae5114a79edc4570",
         "scope": "Pre-script display with movie override inactive; original movie assets retained."
       }
     },
@@ -381,19 +381,19 @@
         0,
         -2207
       ],
-      "placement_hex": "8bfb9f080000000002448b01a0080000000000008802ffffffffb800230003001b00000003"
+      "placement_hex": "omitted 37 bytes sha256:4d43680b4e60783950762139360e00afbdd1cb9848c4610194cbaa2b98d58ac0"
     },
     "template": {
       "index": 27,
       "selector_count": 2,
       "flags": 0,
-      "template_hex": "000000000000000000000000000000000000000000000000530739a24b00e5000000000001000000004b789800010101000f000026657f",
+      "template_hex": "omitted 55 bytes sha256:b64bafe364f8cfddb9da9566f5ae27d3babbe4c668e660623cdddf1d3b14bc63",
       "selectors": [
         {
           "selector": 0,
           "frame_count": -1,
           "state_height": 75,
-          "state_hex": "000000000000040000008c0001ff784b",
+          "state_hex": "omitted 16 bytes sha256:c288b88afe6f5420e7ffcf701688c8c8d62b762175696f44fbfacb7107bf22f9",
           "state_offset": 4663,
           "frames": [
             {
@@ -403,7 +403,7 @@
               "bottom": 0,
               "top_trim": 0,
               "frame_flags": 0,
-              "frame_hex": "de0100080800000000000000",
+              "frame_hex": "omitted 12 bytes sha256:659fc35ff0ae989427fac46b6ab89086c50a4914c1bcb2e1ef5a355820a8bb91",
               "frame_offset": 5739
             }
           ]
@@ -412,7 +412,7 @@
           "selector": 1,
           "frame_count": 1,
           "state_height": 60,
-          "state_hex": "000000000000040000008c000101643c",
+          "state_hex": "omitted 16 bytes sha256:546af6001595a12c9a2f40c2680d787cfc46d3ea7e74469c3fd4b73efdb229e5",
           "state_offset": 4679,
           "frames": [
             {
@@ -422,7 +422,7 @@
               "bottom": 0,
               "top_trim": 0,
               "frame_flags": 0,
-              "frame_hex": "790000050000000000000000",
+              "frame_hex": "omitted 12 bytes sha256:d850bc061f144f87bc8ef8eaab71a8a1d6f0e098a7bd2185ae5114a79edc4570",
               "frame_offset": 5751
             }
           ]

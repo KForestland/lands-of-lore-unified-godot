@@ -1,0 +1,40 @@
+{
+  "name": "g04_shared_cells_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Inherited real ShiftQ Expel +F5/F9. Dawn/teaching/stand/clock fixtures inherited and disclosed; explicit native framework transfers L20/L14/L20 test shared cells, not an earned cross-level route."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 1,
+  "test_aids": 10,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "08a7ef18209874bdb0fd0a38d81fb210c693e404fcc816f7d8af877c95c2adfe"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 12
+}

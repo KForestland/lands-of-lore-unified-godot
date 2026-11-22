@@ -9,7 +9,7 @@
 config_version=5
 
 [application]
-config/version="act1_opus_20261107_r17"
+config/version="act1_opus_20261108_r18"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="lol2-regression-oct17-r19-20261016"
 
@@ -18,6 +18,8 @@ run/main_scene="res://scenes/lol2/setup.tscn"
 config/features=PackedStringArray("4.6")
 
 [autoload]
+
+GameSession="*res://scripts/lol2/game_session.gd"
 
 PlaytestFeedback="*res://scripts/lol2/playtest_feedback.gd"
 
@@ -51,6 +53,11 @@ lol2_classic_view_sector={
 "value": Vector4(0, 0, 0, -1)
 }
 lol2_classic_shading_enabled={
+"type": "bool",
+"value": false
+}
+
+lol2_item_low_light={
 "type": "bool",
 "value": false
 }

@@ -25,7 +25,9 @@ def main():
         'darkhalls:actor57:Plasma_staff':(13,'14-Plasma staff'),
         'darkhalls:item5:Gaunt_strike':(12,'13-Gaunt strike'),'darkhalls:item28:Orc_shield':(38,'39-Orc shield'),
         # Act 2 story equipment carried in the jungle scope (astra STORY-043/045/046).
-        'act2:L12_CM:blue_bow':(35,'36-Darkbow'),'act2:L12_CM:item5':(54,'55-Obs chain'),
+        'act2:L12_CM:blizzard':(18,'19-Blizzard'),'act2:L12_CM:blue_bow':(35,'36-Darkbow'),'act2:L12_CM:item5':(54,'55-Obs chain'),
+        # The City's Dark Bow (dormant L16 row 24): the same definition 35 as the Blue Bow (Grok 2026-11-16, Belial's switches).
+        'act2:L16_CA:item24':(35,'36-Darkbow'),
         'act2:L13_RC:dark_sword':(21,'22-Darkstorm'),'act2:L13_RC:enchanted_thohan':(71,'69-Tho enchant'),
         'act2:L19_BC:horn':(22,'23-Hrn Belial')}
     for record in [144,145,146,147,148,149,641]:mapping[f'cave:prop{record}:harvest1:Stalagmite']=(0,'1-Stalagmite')

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "scope": "L17_HC published census; absent/copy-block rows excluded",
+  "census_sha256": "03e4a6e0ef36c4fa06e0d8c2bf980f4925150c2d84e7d3713aadcdafa992e30d",
+  "native_sha256": "857998f2b229a784d2185029fb8e14d40a09891fd16f54d9c09eee44c96b1600",
+  "rows": [
+    {
+      "area": "L17_HC",
+      "native_class": "movable",
+      "class_code": "0x20",
+      "index": 50,
+      "kind": "scripted door",
+      "kind_grade": "LIKELY",
+      "position": {
+        "x": 1439,
+        "height": 135,
+        "z": -7256
+      },
+      "template": 7,
+      "flags": 1409,
+      "mode": 1,
+      "span": 145,
+      "step": 10,
+      "state": 0,
+      "start_life": null,
+      "life_thresholds": [],
+      "script_groups": [
+        3878,
+        3896
+      ],
+      "definition": null,
+      "name": null,
+      "on_main_chain": "unknown",
+      "chain_note": "",
+      "port_owner": "l17_cavern_run.gd",
+      "in_162": false,
+      "in_57": false,
+      "placement_hex": "omitted 41 bytes sha256:424a7dc18221d8714ec25b4819feaa78eca906b36593b85f92f35d1765533a00",
+      "generic_motion": true,
+      "use_event": {
+        "kind": 6,
+        "input": {
+          "caller_byte": 20,
+          "context": "movable:50"
+        }
+      }
+    }
+  ]
+}

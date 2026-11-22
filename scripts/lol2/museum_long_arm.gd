@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Live owner for Museum prop153 (Long arm pedestal) and its floor trap. Saved as checkpoint "museum_long_arm".
 ## Floors: shipped faces of the 20 walkway regions are replaced by the builder's dropped variant (floors.json).
 ## Group2052's player op2 sub0x3A (form2) is kept owed until applied: modern forced-form adapter (bypasses the
@@ -131,7 +132,7 @@ func use() -> bool:
 		if host.has_method("save_feedback"): host.save_feedback(refusal())
 		return true
 	if not can_take(): return false
-	var inventory := {"collected":host.carried_collected,"hand":host.hand_item}
+	var inventory := {"collected":Grants.pack(host),"hand":host.hand_item}
 	if not State.take(state, inventory): return false
 	host.hand_item = inventory.hand
 	present()

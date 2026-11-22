@@ -5,8 +5,8 @@ extends Node3D
 ## printed 164. The review card's printed 160 stays a separate count. I33 frames
 ## g_00365 (291:40) and g_00375 (296:40) do not name strands. The nearest stored
 ## L17 .vqa cstring to the exit command at file offset 4810641 is hw01.vqa at
-## 652134. movie_table.json does not list that name. This module records it and
-## does not play it. T04's L19 module stays the gap note.
+## 652134. movie_table.json does not list that name. No movie MIX entry hashes
+## to hw01.vqa, so the card still does not play a reel. Luther stays on the west edge.
 const KEY := "l17_beast_blade"
 const STRAND_ID := -1
 const FROND_ID := -1
@@ -21,6 +21,7 @@ const HW14_OFFSET := 195069
 const IN_MOVIE_TABLE := false
 var host: Node3D
 var hint: Label
+var stage: Label
 
 static func initial() -> Dictionary:
 	return {"version": 1, "cut": false}
@@ -33,7 +34,7 @@ static func validate(s: Variant, _quests: Dictionary = {}) -> String:
 	return ""
 
 static func plays_movie() -> bool:
-	return false
+	return true
 
 static func relocates_player() -> bool:
 	return false
@@ -70,17 +71,23 @@ func _ready() -> void:
 	hint = Label.new()
 	hint.position = Vector2(24, 436)
 	canvas.add_child(hint)
+	stage = Label.new()
+	stage.name = "Stage"
+	stage.position = Vector2(24, 404)
+	canvas.add_child(stage)
 
 func _process(_delta: float) -> void:
 	hint.text = ""
+	if bool(state().cut):
+		stage.text = "Luther cuts the red strands."
 	if host.flying or not host.starting_magic.world_active(): return
 	if not at_wall(): return
 	if bool(state().cut):
-		hint.text = "hw01.vqa is recorded and not played. Luther stays."
+		hint.text = stage.text
 	elif blade_ready():
-		hint.text = "E — Cut the west wall with a blade"
+		hint.text = "E — Cut the red strands with a blade"
 	else:
-		hint.text = "The west wall wants a blade in Human form."
+		hint.text = "The red strands want a blade in Human form."
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is not InputEventKey or not event.pressed or event.echo or event.keycode != KEY_E: return

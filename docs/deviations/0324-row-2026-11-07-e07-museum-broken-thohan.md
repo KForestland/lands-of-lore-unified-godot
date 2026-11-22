@@ -1,0 +1,1 @@
+| 2026-11-07 | Museum broken Thohan comes away | A level look at the drawn blade from the case front takes 12-Tho Broken. A different item in the hand is put away, then the blade is granted. The centre cone still returns it. | OWNER r17 16-30-49 at (985,-2515). Reach and E are the museum adapter, not an event-record field. | Adapter (owner rule 2026-10-30) |

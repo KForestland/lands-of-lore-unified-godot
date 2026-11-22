@@ -14,6 +14,12 @@ const ROOT := "res://assets/lol2/generated/museum_torches/"
 const FPS := 10.0
 const SPARK_DAMAGE := 8
 const PILOT := "61"
+## The source plate is material 31, the same stone as the wall, and only one unit inset.
+## A warm copy of that texture is the closed panel the owner could not see (r17 16-33-54).
+const PLATE_TINT := Color(1.45, 1.2, 0.7)
+## The opening in the wall is the plate's own 15 units. Sliding up by that clears it.
+## The travel word that would move movable 52 is not in the record.
+const PLATE_LIFT := 15.0
 ## My Journal (owner 2026-10-28): Classic keeps the native order (the niche plate first, then Spark on the small flame);
 ## Sparking the flame before the plate does nothing, so a vague hint, data only for the journal. Enhanced: undecided.
 const JOURNAL_HINTS := [
@@ -174,13 +180,17 @@ func _plate() -> MeshInstance3D:
 	surface.generate_normals()
 	var mesh := MeshInstance3D.new(); mesh.name = "TorchSwitchPlate"; mesh.mesh = surface.commit()
 	var shared = host.get("materials")
-	if shared is Dictionary and shared.has("31"): mesh.material_override = shared["31"]
+	var m := StandardMaterial3D.new()
+	if shared is Dictionary and shared.get("31") is StandardMaterial3D:
+		m = (shared["31"] as StandardMaterial3D).duplicate() as StandardMaterial3D
 	else:
-		var m := StandardMaterial3D.new(); m.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-		m.cull_mode = BaseMaterial3D.CULL_DISABLED; m.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+		m.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		m.cull_mode = BaseMaterial3D.CULL_DISABLED
+		m.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
 		var path := "res://assets/lol2/generated/museum_review/material_31.png"
 		if FileAccess.file_exists(path): m.albedo_texture = ImageTexture.create_from_image(Image.load_from_file(path))
-		mesh.material_override = m
+	m.albedo_color = PLATE_TINT
+	mesh.material_override = m
 	return mesh
 
 func checkpoint() -> Dictionary: return canonical(state)
@@ -193,6 +203,7 @@ func restore_checkpoint(saved: Variant) -> String:
 	if all_voice != null: all_voice.stop()
 	frame = -1
 	present()
+	_place_plate()
 	return ""
 
 func is_lit(id: Variant) -> bool: return int(id) in state.lit
@@ -292,8 +303,15 @@ func can_reach_switch() -> bool:
 	query.exclude = skip
 	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
 
+func plate_ready() -> bool:
+	return int(state.pilot_state) == 0 and not state.pilot_spent and _ready_for_use() and can_reach_switch()
+
 func offered() -> bool:
-	return not state.pilot_spent and _ready_for_use() and str(host.hand_item) == "" and can_reach_switch()
+	return plate_ready() and str(host.hand_item) == ""
+
+func _place_plate() -> void:
+	if plate == null: return
+	plate.position = Vector3(0, PLATE_LIFT, 0) if int(state.pilot_state) == 1 else Vector3.ZERO
 
 ## One aimed melee strike after the plate click. Spark stays on the same receive_hit path.
 func strike_pilot() -> bool:
@@ -312,8 +330,10 @@ func strike_pilot() -> bool:
 func use() -> bool:
 	if not offered(): return false
 	state.pilot_state = 1
+	_place_plate()
 	if host.has_method("save_feedback"): host.save_feedback("The plate gives with a click.")
 	return true
 
 func interaction_hint() -> String:
-	return "E — Press the wall plate" if offered() else ""
+	# A held item still offers the plate. E puts that item away, then presses.
+	return "E — Press the wall plate" if plate_ready() else ""

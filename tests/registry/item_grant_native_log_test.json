@@ -1,0 +1,54 @@
+{
+  "name": "item_grant_native_log_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Actual fresh L8 host/VM group vector; exit-seed suppression and explicit native adapter/global setup are disclosed fixture contexts. A supported log-only group must run twice and emit the original item signal before unchanged pack/history is asserted. Not real-input or earned evidence."
+  },
+  "teleports": 0,
+  "test_aids": 0,
+  "count_method": "Audited source sites, not executions; extra fixture contexts declared separately.",
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "fbc1306b5fefbe96f015b4e3d2b9f2a10173bb4ab320aa673f137deb05548eaa"
+  },
+  "context_aid_source_sites": {
+    "count": 4,
+    "sites": [
+      {
+        "path": "tests/item_grant_native_log_test.gd",
+        "line": 13,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/item_grant_native_log_test.gd",
+        "line": 20,
+        "column": 5,
+        "kind": "native_gate_fixture",
+        "source": "prog.native.set_adapter_enabled(\"opcode3_item_grant\",true) # Explicit VM vector; not a newly decoded callee."
+      },
+      {
+        "path": "tests/item_grant_native_log_test.gd",
+        "line": 21,
+        "column": 5,
+        "kind": "native_gate_fixture",
+        "source": "prog.native.set_global(0x223D4,0)"
+      },
+      {
+        "path": "tests/item_grant_native_log_test.gd",
+        "line": 36,
+        "column": 28,
+        "kind": "native_group_vector",
+        "source": "var result:Dictionary=prog.native.execute_group(int(group.stream),int(group.group))"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 4
+}

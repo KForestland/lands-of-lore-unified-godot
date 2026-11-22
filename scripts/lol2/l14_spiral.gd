@@ -1,9 +1,11 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const KEY="l14_spiral"
 const TARGET="temple:dreamstone_slot72"
 const POINT=Vector3(606,40,-3464)
 const Kit=preload("res://scripts/lol2/mechanism_transaction.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
+const WalkAway=preload("res://scripts/lol2/dreamstone_walk_away.gd")
 const TARGETS={1010:200,965:200,1011:200,963:200,1008:200,1007:200,1006:200,1009:190,1005:180,1004:170,1003:160,1002:150,1001:140,1000:130,999:120,998:110,997:100,996:90,995:80,994:70,993:60,992:50,991:40,990:30,989:20,988:10,987:0,986:-10,985:-20,984:-30,983:-40,982:-50,981:-60,980:-70,979:-80,978:-90,977:-100,976:-110,975:-120}
 var host:Node3D
 var parts:Dictionary={}
@@ -49,7 +51,7 @@ func reachable()->bool:
  var hit:Dictionary=host.get_world_3d().direct_space_state.intersect_ray(ray)
  return hit.is_empty() or hit.position.distance_to(POINT)<18
 func interact(action:String,item:String="",capacity:int=64)->Dictionary:
- if not reachable():return Kit.refuse("Approach the Dreamstone slot.")
+ if action!="walk_away" and not reachable():return Kit.refuse("Approach the Dreamstone slot.")
  if host.quest_state.get("l14_shard_bowls",{}).get("opened",0)!=2:return Kit.refuse("Open the passage behind the bowls first.")
  var s:=state().duplicate(true);var snap:=Kit.empty_snapshot(host.carried_collected,capacity);snap.slots=s.slots
  var result:Dictionary
@@ -64,16 +66,18 @@ func interact(action:String,item:String="",capacity:int=64)->Dictionary:
   result=Kit.commit(result.snapshot,recipe(item),TARGET)
   if not result.ok:return result
   s.stone=item
- elif action=="retrieve":result=Kit.retrieve(snap,recipe(s.stone))
+ elif action in ["retrieve","walk_away"]:result=Kit.retrieve(snap,recipe(s.stone))
  else:return Kit.refuse("Unknown slot action.")
  if not result.ok:return result
- s.slots=result.snapshot.slots;host.quest_state[KEY]=s;host.carried_collected=result.snapshot.inventory
+ s.slots=result.snapshot.slots;var admission:=Grants.transition(host,result.snapshot.inventory,{KEY:s})
+ if not admission.ok:return admission
  if action=="insert" and host.hand_item==item:host.hand_item=""
  Items.sync(host);restore()
- return {"ok":true,"reason":"The spiral staircase rises. Take back the Dreamstone." if action=="insert" else "You take back the Dreamstone."}
+ return {"ok":true,"reason":"The spiral staircase rises. Take back the Dreamstone." if action=="insert" else WalkAway.LINE if action=="walk_away" else "You take back the Dreamstone."}
 func restore():
  for id in parts:parts[id].position.y=float(TARGETS[id])*float(state().raised)/4
 func _physics_process(delta):
+ if WalkAway.due(host,committed(state()),Kit.slot(state(),TARGET).get("occupied",""),POINT):host.save_feedback(interact("walk_away").reason)
  if host.starting_magic.world_active() and committed(state()) and state().raised<4:
   var s:=state().duplicate(true);s.raised=minf(4,s.raised+delta);host.quest_state[KEY]=s
  restore()
@@ -86,7 +90,8 @@ func _unhandled_key_input(event:InputEvent):
  if Kit.slot(state(),TARGET).occupied!="":result=interact("retrieve")
  else:
   var item:String=host.hand_item
-  if item.is_empty():
+  if Items.definition(item)!=136 or item not in host.carried_collected:
+   item=""
    for id in host.carried_collected:
     if Items.definition(id)==136:item=id;break
   result=interact("insert",item)

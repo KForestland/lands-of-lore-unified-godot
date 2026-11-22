@@ -31,13 +31,15 @@ func heal_click(area) -> Dictionary:
 	var hud = area.interface_hud; var magic = area.starting_magic
 	var saved: Dictionary = magic.magic_state().duplicate(true); saved.cooldown = 0.0; magic.commit(saved)
 	var before := Continuity.from_host(area)
+	var departed:=simulated_seconds
+	var remainder:float=float(magic.magic_state().get("regen_elapsed",0.0))
 	await cursor(hud, true)
 	if not hud.spell_bar.visible: await click(hud.blue_button)
 	await click(hud.spell_buttons.heal)
 	await click(hud.blue_button)
 	await click(hud.magic_button)
 	await cursor(hud, false)
-	return {"before": before, "after": Continuity.from_host(area), "cast": magic.health() > int(before.get("health", 0))}
+	return {"before": before, "after": Continuity.from_host(area), "cast": magic.health() > int(before.get("health", 0)),"elapsed":simulated_seconds-departed+2.0*last_frame_seconds,"remainder":remainder}
 func agrees(area, tag: String) -> bool:
 	var hud = area.interface_hud; var magic = area.starting_magic
 	await cursor(hud, true)
@@ -52,6 +54,8 @@ func agrees(area, tag: String) -> bool:
 	await cursor(hud, false)
 	return true
 func run() -> void:
+	# A failed first phase must not leave a staged/previous receipt available to restart.
+	if FileAccess.file_exists(DIR+"hive_return_phase1.json"):DirAccess.remove_absolute(DIR+"hive_return_phase1.json")
 	DirAccess.make_dir_recursive_absolute(DIR)
 	var earned := OS.get_environment("LOL2_EARNED_SAVES")
 	if not check(not earned.is_empty() and FileAccess.file_exists(earned.path_join(SAVE)),"LOL2_EARNED_SAVES with %s required" % SAVE): return
@@ -65,11 +69,12 @@ func run() -> void:
 	# ---- Jungle, from the earned save ----
 	var jungle = await open_fresh(JUNGLE)
 	if not await load_click(jungle, start_copy): return
+	jungle = current_scene
 	var loaded := Continuity.from_host(jungle)
 	if not check(Continuity.compare(Continuity.from_save(JSON.parse_string(bytes.get_string_from_utf8())), loaded).is_empty(),"earned save did not load exactly"): return
 	var heal := await heal_click(jungle)
 	if not check(heal.cast,"Jungle Heal click did not cast"): return
-	if not compare("jungle_heal", heal.before, heal.after, {"health": int(heal.before.health) + 6, "magic.mana": int(heal.before["magic.mana"]) - 2, "magic.spell": "heal"} if heal.before.get("magic.spell") != "heal" else {"health": int(heal.before.health) + 6, "magic.mana": int(heal.before["magic.mana"]) - 2}): return
+	if not compare("jungle_heal",heal.before,heal.after,heal_allowed(heal)):return
 	if not await agrees(jungle, "Jungle"): return
 	var at_jungle := Continuity.from_host(jungle)
 	var remainder: float = float(jungle.starting_magic.magic_state().get("regen_elapsed", 0.0))
@@ -99,7 +104,7 @@ func run() -> void:
 	hive.starting_magic.set_health(maxi(1, hive.starting_magic.health() - 6))
 	var hive_heal := await heal_click(hive)
 	if not check(hive_heal.cast,"Hive Heal click did not cast"): return
-	if not compare("hive_heal", hive_heal.before, hive_heal.after, {"health": int(hive_heal.before.health) + 6, "magic.mana": int(hive_heal.before["magic.mana"]) - 2}): return
+	if not compare("hive_heal",hive_heal.before,hive_heal.after,heal_allowed(hive_heal)):return
 	if not await save_click(hive, "hive_return_hive"): return
 	var at_hive_departure := Continuity.from_host(hive)
 	remainder = float(hive.starting_magic.magic_state().get("regen_elapsed", 0.0))
@@ -117,3 +122,9 @@ func run() -> void:
 	file.store_string(JSON.stringify(receipt, "  ", true)); file.close()
 	print("PASS player_continuity_hive_return: R13 earned Jungle save -> Heal click -> Jungle->Hive by HiveRoute (no diff beyond time-bounded regen) -> Hive Heal click -> Hive->Jungle (no diff); HUD agrees in each; Hive saves; negative controls fail: %s / %s." % [dropped_item, dropped_xp])
 	quit()
+
+func heal_allowed(heal:Dictionary)->Dictionary:
+	var allowed:Dictionary={"health":int(heal.before.health)+6,
+		"magic.mana":Continuity.mana_allowance(int(heal.before["magic.mana"])-2,int(heal.before["magic.maximum"]),heal.elapsed,heal.remainder)}
+	if heal.before.get("magic.spell")!="heal":allowed["magic.spell"]="heal"
+	return allowed

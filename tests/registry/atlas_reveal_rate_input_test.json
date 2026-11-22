@@ -1,0 +1,11 @@
+{
+  "name": "atlas_reveal_rate_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1399,
+  "timeout_seconds": 300,
+  "count_method": "Atlas regions revealed on a real-W Jungle walk from the owner's save with the Jungle record emptied.",
+  "needs": {
+    "note": "Local owner input tmp/atlas_rate_inputs/owner_141130.json (OWNER_DERIVED.md, sha pinned). At least 9 regions on a 600+ walk (old rule: 4)."
+  }
+}

@@ -29,6 +29,10 @@ func _ready():
   material.albedo_texture=ImageTexture.create_from_image(Image.load_from_file(host.geometry_file.get_base_dir()+"/"+pack.materials[face.material]))
   material.cull_mode=BaseMaterial3D.CULL_DISABLED;material.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED
   material.texture_filter=BaseMaterial3D.TEXTURE_FILTER_NEAREST
+  # Assembly 70 is drawn here, not in the static mesh. Clear texels of a cut-out material otherwise paint as a black slab.
+  if str(face.material) in pack.get("alpha_cutout_materials", []):
+   material.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
+   material.alpha_scissor_threshold=0.5
   mesh.material_override=material;panel.add_child(mesh)
   var shape:=CollisionShape3D.new();shape.shape=mesh.mesh.create_trimesh_shape();panel_body.add_child(shape)
  var canvas:=CanvasLayer.new();canvas.layer=34;add_child(canvas)
@@ -65,7 +69,8 @@ func _process(_delta):
  hint.text="E — Unlock with the Dracoid Sigil" if not get_tree().paused and not host.flying and not opened() and reachable() else ""
 func _unhandled_input(event: InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E:return
- if get_tree().paused or host.flying or Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED or is_instance_valid(host.inventory):return
+ # Headless has no window, so a captured mouse cannot stick (as l8_journey). A real window still requires it.
+ if get_tree().paused or host.flying or (Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED and DisplayServer.get_name()!="headless") or is_instance_valid(host.inventory):return
  if host.has_method("actor_input_locked") and host.actor_input_locked():return
  if not reachable() or opened():return
  var result:=unlock(SIGIL)

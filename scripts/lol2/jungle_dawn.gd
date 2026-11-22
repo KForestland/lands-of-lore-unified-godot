@@ -81,6 +81,7 @@ func setup(owner_host: Node3D, supplied_hooks: Dictionary={}, saved: Variant=nul
 	# Speech reach as the other Jungle talkers (300; the default 10 was 20-25 dB quieter at talking distance, owner F10
 	# 2026-11-03 17:48:05 "dawn do not speak no sound").
 	voice=AudioStreamPlayer3D.new();voice.unit_size=preload("res://scripts/lol2/jungle_kelsrick.gd").VOICE_UNIT_SIZE;voice.attenuation_model=AudioStreamPlayer3D.ATTENUATION_DISABLED;voice.max_distance=1200.0;add_child(voice)
+	# This node sits at the origin. max_distance still silences a voice past 1200, and her talk spot is about 7000 away.
 	if media.clip.get("audio")!=null: voice_stream=AudioStreamWAV.load_from_file(str(media.clip.audio))
 	combat=preload("res://scripts/lol2/dawn_modern_combat.gd").new();combat.dawn=self;combat.name="Combat";add_child(combat)
 	return restore(saved if saved!=null else initial())
@@ -226,16 +227,66 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_E and use():
 		get_viewport().set_input_as_handled()
 
-## Modern prompt (owner r12h F10 2026-10-26 "can't hand over the runes"): aimed at Dawn while carrying Wax runes that
-## the source offer would accept now (dry run on a copy), the hint line says to give them, or to hold them first.
-## The native trigger (E with the runes as the hand item) is unchanged.
-func interaction_hint() -> String:
-	if not can_use(): return ""
-	var carried: Variant=host.get("carried_collected")
-	if not carried is Array or not (carried as Array).any(func(id): return Runes.valid(id)): return ""
-	if State.offer(state.duplicate(true),src,WAX_IDENTITY,context()).is_empty(): return ""
-	if Runes.valid(held_item()): return "E — give the Wax runes to Dawn"
-	return "Hold the Wax runes (Tab — inventory), then E to give them to Dawn"
+## One read-only offer preview supplies both the belt and the hint. Cache
+## native evaluation across callers in a frame; changed aim/form/pack/state
+## invalidates it. Explicit E still preflights and verifies the transaction.
+const OfferPreview=preload("res://scripts/lol2/npc_offer_preview.gd")
+var wax_preview_runs:=0 # Transient diagnostic, never part of a save.
+var _wax_key:Array=[]
+var _wax_preview:Dictionary={"item":"","hint":""}
+func belt_aimed()->bool:
+	if not is_instance_valid(population) or not population.bodies.has(ID):return false
+	var hit:=_ray_to_body(host.camera.global_position,REACH,259)
+	return not hit.is_empty() and hit.collider==population.bodies[ID]
+func _wax_admits(ctx:Dictionary)->bool:
+	var copy:=OfferPreview.packet(state,src,ctx)
+	if copy.is_empty():return false
+	var effects:=State.offer(copy.state,copy.source,WAX_IDENTITY,copy.context)
+	return effects.any(func(e):return e.get("type")=="group" and int(e.get("group",-1))==29704)
+func wax_preview()->Dictionary:
+	var ctx:=context()
+	if not OfferPreview.plain(ctx):
+		_wax_key=[];_wax_preview={"item":"","hint":""};return _wax_preview
+	var carried:Variant=host.get("carried_collected")
+	if not carried is Array:return {"item":"","hint":""}
+	var camera:Variant=host.get("camera")
+	var view:Transform3D=camera.global_transform if is_instance_valid(camera) else Transform3D.IDENTITY
+	var held:=held_item()
+	var key:Array=[Engine.get_process_frames(),int(host.player_form),view,hash(carried),hash(state),hash(ctx),held,Input.mouse_mode,get_tree().paused]
+	if key==_wax_key:return _wax_preview
+	_wax_key=key;_wax_preview={"item":"","hint":""}
+	if not can_use() or not belt_aimed():return _wax_preview
+	var candidate:=""
+	for id in carried:
+		if Runes.valid(id):candidate=id;break
+	if candidate.is_empty():return _wax_preview
+	wax_preview_runs+=1
+	if not _wax_admits(ctx):return _wax_preview
+	var human:bool=int(host.player_form)==0
+	# The original held-item route remains valid; the smart belt, like its
+	# controller, supplies an item only in Human form.
+	_wax_preview.hint="E — give the Wax runes to Dawn" if human or (Runes.valid(held) and held in carried) else "Return to Human form to give Dawn the Wax runes."
+	if human:_wax_preview.item=candidate
+	return _wax_preview
+func belt_wax()->String:return str(wax_preview().item)
+func interaction_hint()->String:return str(wax_preview().hint)
+func _wax_refuse(line:String)->Dictionary:return {"ok":false,"reason":line}
+func belt_offer_wax(id:String)->Dictionary:
+	var owned:Array=host.item_effects.carried()
+	if not Runes.valid(id) or id not in owned:return _wax_refuse("You do not carry those Wax runes.")
+	if int(host.player_form)!=0:return _wax_refuse("Return to Human form to give Dawn the Wax runes.")
+	if int(state.locals.get("17",0))!=0:return _wax_refuse("Dawn already has the Wax runes.")
+	if talking():return _wax_refuse("Wait until Dawn finishes speaking.")
+	if not can_use() or not belt_aimed():return _wax_refuse("Aim at Dawn within reach to give her the Wax runes.")
+	if not _wax_admits(context()):return _wax_refuse("Dawn cannot take those Wax runes.")
+	var before_count:int=owned.filter(func(item):return Runes.valid(item)).size()
+	# use -> State.offer -> _apply -> property18/consume_held is synchronous.
+	# held_call restores only an item still owned; no await/coroutine window.
+	preload("res://scripts/lol2/item_belt_targets.gd").held_call(host,id,use)
+	_wax_key=[]
+	var after:Array=host.item_effects.carried()
+	var given:bool=id not in after and after.filter(func(item):return Runes.valid(item)).size()==before_count-1 and not _wax_admits(context())
+	return {"ok":given,"reason":"You give the Wax runes to Dawn." if given else "Dawn did not take those Wax runes."}
 
 func _process(_delta: float) -> void:
 	if host==null or not is_instance_valid(host.get("interface_hud")): return
@@ -378,8 +429,16 @@ func _start_voice() -> void:
 	var seg:=_segment()
 	if seg.is_empty() or bool(state.clip.repeat) or voice_stream==null: return
 	voice.stream=voice_stream
+	_place_voice()
 	var start: float=float(seg.first)/float(media.clip.fps)+float(state.clip.elapsed)
 	if start<float(voice_stream.get_length()): voice.play(start)
+
+## Other Jungle talkers already park the voice on the body. Left here, the player at (-5761, 4004) hears nothing.
+func _place_voice() -> void:
+	if population==null or not population.bodies.has(ID): return
+	var body:=population.bodies[ID] as Node3D
+	if body==null: return
+	voice.global_position=body.global_position+Vector3.UP*40
 
 func _texture(path: String) -> Texture2D:
 	if not textures.has(path):
@@ -400,6 +459,7 @@ func _present() -> void:
 	var quad: QuadMesh=mesh.mesh
 	quad.size=Vector2(float(media.clip.width),float(media.clip.height))*CLIP_SCALE;quad.center_offset=Vector3(0,quad.size.y/2.0,0)
 	mesh.global_position=population.bodies[ID].global_position
+	_place_voice()
 	mesh.material_override.set_shader_parameter("frame",_texture(str(media.clip.frame_files[clip_frame()])))
 
 func targets() -> Dictionary:

@@ -1,9 +1,12 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const Kit=preload("res://scripts/lol2/mechanism_transaction.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
 const KEY="l14_priest_ritual"
 const FLOORS={"861":-10,"840":-10,"833":-10,"839":-20,"841":-20,"834":-20,"801":-30,"831":-30,"855":-30,"830":-30,"836":-30,"821":-30,"856":-30,"812":-30,"816":-30,"815":-30,"814":-30,"828":-30,"851":-30,"853":-30,"845":-30,"813":-30}
-const LOWER_CEILINGS=[163, 164, 780, 781, 3236, 3237, 3238, 3239, 3240, 3241, 3242, 3243, 3244, 3245, 3246, 3247, 3248, 3253, 3419, 3420, 3421, 3422, 3425, 3427, 3429, 3431]
+const LOWER_CEILINGS=[163, 164, 780, 781, 3236, 3237, 3238, 3239, 3240, 3241, 3242, 3243, 3244, 3245, 3246, 3247, 3248, 3253, 3419, 3420, 3421, 3422, 3425, 3427, 3429, 3431,
+	# the upper way's lower ceilings (tools/build_l14_ritual_ceiling_collision.py UPPER_CEILINGS; slab-to-pew 2026-11-13)
+	3254, 3255, 3256, 3257, 3258, 3259, 3260, 3261, 3262, 3263, 3264, 3267, 3270, 3274, 3278, 3282, 3283, 3287, 3345, 3346, 3347, 3348, 3349, 3350, 3351, 3352, 3353, 3354, 3355, 3356, 3358, 3359, 3360, 3361, 3362, 3363, 3364, 3365, 3366, 3368, 3872, 3876, 3877, 3885, 3886, 3887, 3888, 3891, 3895, 3899, 3903]
 const BOWLS={"369":Vector3(2441,30,-3691),"370":Vector3(2375,30,-3691)}
 const INGREDIENTS={"369":"act2:L14_HT:item72","370":"act2:L14_HT:item68"}
 const SPARK=Vector3(2413,9,-3328)
@@ -44,12 +47,12 @@ func _ready():
   var faces:Array=[]
   for f in pack.faces:
    if f.get("kind")=="floor" and owns(f) and str(int(f.region))==id:faces.append(f)
-  build(floor_node,faces)
+  build(floor_node,faces,Vector3.UP)
  var ceilings:=Node3D.new();ceilings.name="OriginalLowerRoomCeilings";add_child(ceilings)
  var ceiling_faces:Array=[]
  for f in pack.faces:
   if f.get("kind")=="ceiling" and owns(f):ceiling_faces.append(f)
- build(ceilings,ceiling_faces)
+ build(ceilings,ceiling_faces,Vector3.DOWN)
  var clipped:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://scripts/lol2/l14_ritual_ceiling_collision.json"))
  var collision_points:=PackedVector3Array()
  for p in clipped.points:collision_points.append(Vector3(p[0],p[1],p[2]))
@@ -65,6 +68,7 @@ func reach(point:Vector3)->bool:
 func offer(id:String,item:String)->Dictionary:
  if not BOWLS.has(id) or not reach(BOWLS[id]):return Kit.refuse("Approach the ritual bowl.")
  if host.quest_state.get("l14_priest_body",{}).get("phase")!="placed":return Kit.refuse("Place the priest on the stone rectangle first.")
+ if item not in host.carried_collected:return Kit.refuse("The bowl needs Poison Paint." if id=="369" else "The bowl needs aloe.")
  var s:=state().duplicate(true);var snap:=Kit.empty_snapshot(host.carried_collected,64);snap.slots=s.slots
  var result:=Kit.offer(snap,recipe(id),item,{"form":"human"})
  if not result.ok:return result
@@ -72,7 +76,8 @@ func offer(id:String,item:String)->Dictionary:
  if not result.ok:return result
  result=Kit.commit(result.snapshot,recipe(id),id)
  if not result.ok:return result
- s.slots=result.snapshot.slots;host.quest_state[KEY]=s;host.carried_collected=result.snapshot.inventory
+ s.slots=result.snapshot.slots;var admission:=Grants.transition(host,result.snapshot.inventory,{KEY:s})
+ if not admission.ok:return admission
  if host.hand_item==item:host.hand_item=""
  Items.sync(host)
  return {"ok":true,"reason":"The floor begins to descend." if complete(s) else "The bowl holds the offering."}
@@ -93,19 +98,35 @@ func _unhandled_key_input(event:InputEvent):
  if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_E:
   for id in BOWLS:
    if reach(BOWLS[id]) and not Kit.slot(state(),id).committed:
-    host.save_feedback(offer(id,host.hand_item if not host.hand_item.is_empty() else INGREDIENTS[id]).reason);get_viewport().set_input_as_handled();return
-func build(parent:Node3D,faces:Array)->void:
- var groups:Dictionary={};var points:=PackedVector3Array()
+    host.save_feedback(offer(id,host.hand_item if host.hand_item==INGREDIENTS[id] and host.hand_item in host.carried_collected else INGREDIENTS[id]).reason);get_viewport().set_input_as_handled();return
+## G-14 (owner report 2026-11-12 06-29-47): the descended ritual floors were drawn double-sided and outside portal drawing,
+## so from the lower room they showed their undersides as planes in the air. Each mesh now faces `toward` only (floors
+## seen from above, ceilings from below, like the 2.5D original) and joins its room's portal batch (host.cluster_meshes)
+## so it hides with that room. Collision keeps the source order.
+func build(parent:Node3D,faces:Array,toward:=Vector3.ZERO)->void:
+ var groups:Dictionary={};var points:=PackedVector3Array();var group_room:Dictionary={}
  for face in faces:
-  if not groups.has(face.material):
-   var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES);groups[face.material]=tool
-  for i in [0,1,2,0,2,3]:
-   var p:=Vector3(face.points[i][0],face.points[i][1],face.points[i][2]);groups[face.material].set_uv(Vector2(face.uv[i][0],face.uv[i][1]));groups[face.material].add_vertex(p);points.append(p)
+  var room:int=int(host.region_cluster.get(int(face.get("region",-1)),-1)) if host.get("region_cluster") is Dictionary else -1
+  var key:=str(face.material)+"@"+str(room)
+  if not groups.has(key):
+   var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES);groups[key]=tool;group_room[key]=room
+  var order:=[0,1,2,0,2,3]
+  if toward!=Vector3.ZERO:
+   var a:=Vector3(face.points[0][0],face.points[0][1],face.points[0][2]);var b:=Vector3(face.points[1][0],face.points[1][1],face.points[1][2]);var c:=Vector3(face.points[2][0],face.points[2][1],face.points[2][2])
+   order=[0,2,1,0,3,2] if (b-a).cross(c-a).dot(toward)>0 else [0,1,2,0,2,3]
+  for i in order:
+   var p:=Vector3(face.points[i][0],face.points[i][1],face.points[i][2]);groups[key].set_uv(Vector2(face.uv[i][0],face.uv[i][1]));groups[key].add_vertex(p)
+  for i in [0,1,2,0,2,3]:points.append(Vector3(face.points[i][0],face.points[i][1],face.points[i][2]))
  for key in groups:
   groups[key].generate_normals();var mesh:=MeshInstance3D.new();mesh.mesh=groups[key].commit()
-  if not materials.has(key):
-   var mat:=StandardMaterial3D.new();mat.albedo_texture=ImageTexture.create_from_image(Image.load_from_file(host.geometry_file.get_base_dir()+"/"+pack.materials[key]));mat.cull_mode=BaseMaterial3D.CULL_DISABLED;mat.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED;mat.texture_filter=BaseMaterial3D.TEXTURE_FILTER_NEAREST;materials[key]=mat
-  mesh.material_override=materials[key];parent.add_child(mesh)
+  var mat_key:=str(key).get_slice("@",0)+("|one" if toward!=Vector3.ZERO else "")
+  if not materials.has(mat_key):
+   var mat:=StandardMaterial3D.new();mat.albedo_texture=ImageTexture.create_from_image(Image.load_from_file(host.geometry_file.get_base_dir()+"/"+pack.materials[str(key).get_slice("@",0)]));mat.cull_mode=BaseMaterial3D.CULL_BACK if toward!=Vector3.ZERO else BaseMaterial3D.CULL_DISABLED;mat.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED;mat.texture_filter=BaseMaterial3D.TEXTURE_FILTER_NEAREST;materials[mat_key]=mat
+  mesh.material_override=materials[mat_key];parent.add_child(mesh)
+  var listed:Variant=host.get("cluster_meshes")
+  if listed is Dictionary and int(group_room[key])>=0:
+   if not listed.has(int(group_room[key])):listed[int(group_room[key])]=[]
+   listed[int(group_room[key])].append(mesh)
  var body:=AnimatableBody3D.new();body.name="Collision";body.sync_to_physics=false;body.collision_mask=0
  var shape:=ConcavePolygonShape3D.new();shape.backface_collision=true;shape.set_faces(points)
  var collision:=CollisionShape3D.new();collision.shape=shape;body.add_child(collision);parent.add_child(body)

@@ -5,6 +5,8 @@ extends RefCounted
 const BLADE := "jungle:kityara:Empty_hand"
 const KEY := "l8:shaman:Dracoid_sigil" # Original definition102 = 100-Drac sigil.
 const LIMIT := 64
+## The darker start carries the blade, but the guard accepts it only after Daniel has taken it and dropped it.
+const NEED_DANIEL := "Daniel has not given the blade back yet. Meet him at the entry, offer the blade, and pick it up after he drops it."
 static func initial() -> Dictionary:
 	return {"version":1,"gift":"unoffered","temple_visited":false,"admitted":false,"key_awarded":false}
 static func validate(value: Variant) -> String:
@@ -56,7 +58,8 @@ static func act(value: Dictionary, carried: Array, action: String, offered: Stri
 			notice = "At the temple, a creature seizes the priest."
 		"show_guard":
 			if state.admitted: return {"ok":false,"reason":"The guard has already admitted you."}
-			if not state.temple_visited or state.gift != "recovered": return {"ok":false,"reason":"The village encounter is not ready."}
+			if not state.temple_visited: return {"ok":false,"reason":"Visit the Huline Temple first."}
+			if state.gift != "recovered": return {"ok":false,"reason":NEED_DANIEL}
 			if offered!=BLADE or BLADE not in inventory: return {"ok":false,"reason":"Show the guard Daniel's blade."}
 			state.admitted = true
 			notice = "The guard recognizes the blade and admits you to the village."

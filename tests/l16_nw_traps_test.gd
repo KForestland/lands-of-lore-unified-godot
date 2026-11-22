@@ -8,6 +8,7 @@ func run() -> void:
 	check(Traps.BRICK == 88 and Traps.FIRE == 89 and Traps.ICE == 90, "props 88, 89, 90")
 	check(Traps.DOORS == [86, 87, 88], "firewall doors stay listed")
 	check(Traps.accepts_fire(Traps.BLUE), "the blue bow meets the fireball")
+	check(Traps.accepts_fire("act2:L16_CA:item24"), "the City's Dark Bow (same definition 35) meets the fireball")
 	check(not Traps.accepts_fire("act2:L13_RC:dark_sword"), "the dark sword is a different weapon")
 	check(not Traps.accepts_fire(""), "an empty hand leaves the fireball")
 	check(Traps.validate(Traps.initial()).is_empty(), "initial state")

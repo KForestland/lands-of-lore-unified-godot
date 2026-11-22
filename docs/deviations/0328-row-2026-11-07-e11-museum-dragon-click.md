@@ -1,0 +1,1 @@
+| 2026-11-07 | Museum dragon click | A click in the dragon chamber starts the journey. E still starts it. | OWNER r17 16-37-59 at (3049, -1114), looking into the alcove. The gate is the authored region 1422 chamber. The original hotspot dispatch stays unread. | Adapter (owner rule 2026-10-30) |

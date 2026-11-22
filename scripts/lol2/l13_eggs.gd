@@ -1,4 +1,5 @@
 extends Node3D
+const RESTORE_ON := ["load"]
 ## Book-led eye switch and basin. Original command bytes do not prove the drain world effect.
 const KEY="l13_eggs"
 const EYE=Vector3(-3270,-26.5,4210)

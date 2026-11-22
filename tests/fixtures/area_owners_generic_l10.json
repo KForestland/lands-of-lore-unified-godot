@@ -1,0 +1,15 @@
+{
+  "base": "415ca7b",
+  "area": "L10_DC",
+  "replace_script": "l10_globe_door.gd",
+  "declaration": {
+    "script": "generic_object_world.gd",
+    "phase": "late",
+    "needs": "progression"
+  },
+  "node_name": "GenericObjects",
+  "restore_on": [
+    "load",
+    "arrival"
+  ]
+}

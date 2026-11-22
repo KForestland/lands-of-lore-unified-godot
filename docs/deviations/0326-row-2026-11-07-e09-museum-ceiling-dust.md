@@ -1,0 +1,1 @@
+| 2026-11-07 | Museum ceiling dust hangs | Flag 0x80 dust stays upright under the ceiling, the hang from before Y06 laid it flat. The row flip stays. From (2557, 20) the pile fills the gap from its anchor up to the 90 ceiling. | OWNER r17 16-36-49 and 16-36-57 at (2557, 20). Template 13 at height 80. The lie-flat turn is not in the frame flag. | Adapter (owner rule 2026-10-30) |

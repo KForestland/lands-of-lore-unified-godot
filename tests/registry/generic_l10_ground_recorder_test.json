@@ -1,0 +1,40 @@
+{
+  "name": "generic_l10_ground_recorder_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Rendered component from disclosed original robot socket158save pin. Synchronous recorder read purity, actual contact bounds and actualW dense poses; setup apply_save/capture disclosed, not earned whole-chain proof."
+  },
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7be7fd569c30067a6afb1e0947d11f31cef229543ac8f155ec32a386c06a397d"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/generic_l10_robot_socket_test.gd",
+        "line": 13,
+        "column": 69,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/L10_DC.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/generic_l10_robot_socket_test.gd",
+        "line": 19,
+        "column": 41,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(saved.error.is_empty() and scene.apply_save(saved.state).is_empty(),\"Actual game-written robot area-save fixture applies\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 2,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

@@ -1,9 +1,10 @@
 extends "res://scripts/lol2/cave_walkthrough.gd"
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 
 const Encounter = preload("res://scripts/lol2/cave_encounter_state.gd")
 const ActorAnimation = preload("res://scripts/lol2/cave_actor_animation.gd")
 const ENEMY_SPEED := 42.0
-const PLAYER_REACH := 96.0
+const PLAYER_REACH := PlayerCombat.REACH_CAVE
 var encounter := Encounter.new()
 var animation := ActorAnimation.new()
 var animation_materials: Array[ShaderMaterial] = []
@@ -132,14 +133,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	super._unhandled_input(event)
 
 func _clear_ray(from: Vector3, to: Vector3) -> bool:
-	var ray := PhysicsRayQueryParameters3D.create(from, to, 1, [player.get_rid(), enemy.get_rid()])
-	ray.hit_from_inside = true
-	return get_world_3d().direct_space_state.intersect_ray(ray).is_empty()
+	return PlayerCombat.ray_between(self,from,to,1,[player.get_rid(),enemy.get_rid()],true).is_empty()
 
 func _try_player_strike() -> bool:
 	var destination := enemy.global_position + Vector3.UP * 6
 	var delta := destination - camera.global_position
-	var aimed := delta.length() > 0.01 and (-camera.global_basis.z).dot(delta.normalized()) >= 0.9
+	var aimed := PlayerCombat.facing_point(self,destination)
 	var hit := encounter.strike(delta.length() <= PLAYER_REACH, aimed, _clear_ray(camera.global_position, destination))
 	if hit:
 		_save_feedback("Creature defeated." if encounter.enemy_health == 0 else "Strike landed.")

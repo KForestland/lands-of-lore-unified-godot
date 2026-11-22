@@ -1,0 +1,16 @@
+{
+  "name": "game_save_whole_game_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1339,
+  "needs": {
+    "chain": "private two-process profile driver: sol_lane/foundation3_20261111/private_case.py --pair --rendered"
+  },
+  "teleports": 1,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "a294b9196686ba335907e32b4b03b9ff24dfc2d566d32b74d6c86c1ac579ae80"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
+}

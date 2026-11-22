@@ -1,0 +1,14 @@
+{
+  "name": "player_foundation_source_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1338,
+  "note": "Static source policy plus in-memory mutation probes, no game execution.",
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "56e4339bce520e2b7ee0efe1036ca4cf29fe18e41aa71a8ba0d4c7c235fc8e21"
+  },
+  "count_method": "audited-source-sites-v1 (K82 checker); not execution counts. Contract setup/receivers and local real-click setup/top-ups are disclosed; no earned campaign claim."
+}

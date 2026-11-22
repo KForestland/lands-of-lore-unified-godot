@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Live owner for the renewable Jungle harvests (jungle_harvest_state.gd). Saved as quest_state.jungle_harvest.
 ## Empty-hand E at an aimed, reachable, unoccluded plant/tree/barrel harvests one item into the hand (kind4 mode0);
 ## an armed melee strike is the kind9 producer (context masks 2/4, damage 1: opens a closed sap tree, breaks the
@@ -122,7 +123,7 @@ func use() -> bool:
 		return true
 	var held: String = host.hand_item
 	var spent: Array = host.item_effects.state().spent if is_instance_valid(host.get("item_effects")) else []
-	var inventory := {"collected":host.carried_collected,"hand":"","spent":spent}
+	var inventory := {"collected":Grants.pack(host),"hand":"","spent":spent}
 	var item := State.harvest(state, kind, id, inventory)
 	if item.is_empty():
 		_feedback("You cannot carry more.")

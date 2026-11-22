@@ -223,14 +223,21 @@ def _special_render_scale(raw, wall_offset, first, index, code):
 
 
 def _owner_height_fixed(regions, region_id):
-    """Caller walk at 0xf5901 and 0x11557c: previous region until flag 0x80 clears."""
+    """Caller walk at 0xf5901 and 0x11557c: previous region until flag 0x80 clears.
+
+    The word is chosen by the CHILD's flag 0x20 (0x11557c tests edi, the child; 0xf5912 tests the current region):
+    set -> owner word 10, clear -> owner word 11 (Grok G14_CEILING_CHILD_WALLS_20261112, PROVEN). Testing the owner's
+    flag picked the wrong word for a ceiling child (no 0x20) under an owner with 0x20: L13 479 (-40 instead of 147),
+    L5 214/215 (-235 instead of 0).
+    """
+    child = struct.unpack('<22H', bytes.fromhex(regions[region_id]['raw_hex']))
     index = region_id
     for _ in range(len(regions) + 1):
         if index < 0 or index >= len(regions):
             raise ValueError('child owner walk left the region table')
         words = struct.unpack('<22H', bytes.fromhex(regions[index]['raw_hex']))
         if not words[14] & 0x80:
-            chosen = words[10] if words[14] & 0x20 else words[11]
+            chosen = words[10] if child[14] & 0x20 else words[11]
             return _signed_word(chosen) << 16
         index -= 1
     raise ValueError('child owner walk left the region table')

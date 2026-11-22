@@ -1,4 +1,5 @@
 extends Node3D
+const RESTORE_ON := ["load"]
 ## Original raft meshes and opcode18 X/Z words; modern continuous motion and carry.
 const KEY="l12_river_rafts"
 const IDS=[50,51,55]

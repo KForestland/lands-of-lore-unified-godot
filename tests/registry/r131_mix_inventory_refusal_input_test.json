@@ -1,0 +1,140 @@
+{
+  "name": "r131_mix_inventory_refusal_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 1,
+  "test_aids": 5,
+  "count_method": "Audited source sites, not executions. Explicit fresh-map/grant/admitted-story/NPC-hold/stand and invalid-policy component fixtures, followed by real input and positive F5/F9; not an earned campaign.",
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "0d3f8f8f5140855b4ac875ef6e4cb0e50b2efd068c296918404a3a23519b4d41"
+  },
+  "context_aid_source_sites": {
+    "count": 15,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_stored_spell_input.gd",
+        "line": 5,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":true}).ok,\"Disclosed actual-ID scroll grant fixture\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 22,
+        "column": 71,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/darker_jungle.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 29,
+        "column": 66,
+        "kind": "scene_change_context",
+        "source": "scene.act2_creatures.set_physics_process(false);scene.progression.change_scene_enabled=false"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 32,
+        "column": 18,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":true}).ok,\"Genuine-ID component grant \"+id):return"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 33,
+        "column": 30,
+        "kind": "admitted_journey_state_context",
+        "source": "var story:=Journey.initial();story.gift=\"recovered\";story.temple_visited=true;story.admitted=true"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 33,
+        "column": 53,
+        "kind": "admitted_journey_state_context",
+        "source": "var story:=Journey.initial();story.gift=\"recovered\";story.temple_visited=true;story.admitted=true"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 33,
+        "column": 79,
+        "kind": "admitted_journey_state_context",
+        "source": "var story:=Journey.initial();story.gift=\"recovered\";story.temple_visited=true;story.admitted=true"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 34,
+        "column": 1,
+        "kind": "admitted_journey_state_context",
+        "source": "scene.quest_state.l8_journey=story"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 41,
+        "column": 1,
+        "kind": "invalid_policy_and_restore_context",
+        "source": "Guard.policy={};Guard.policy_loaded=true;Guard.policy_warning=true"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 41,
+        "column": 17,
+        "kind": "invalid_policy_and_restore_context",
+        "source": "Guard.policy={};Guard.policy_loaded=true;Guard.policy_warning=true"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 41,
+        "column": 42,
+        "kind": "invalid_policy_and_restore_context",
+        "source": "Guard.policy={};Guard.policy_loaded=true;Guard.policy_warning=true"
+      },
+      {
+        "path": "tests/helpers/r131_mix_refusal_input.gd",
+        "line": 62,
+        "column": 1,
+        "kind": "invalid_policy_and_restore_context",
+        "source": "Guard.policy=valid"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 20,
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "invalid_policy_and_restore_context",
+      "pattern": "Guard\\.(?:policy|policy_loaded|policy_warning)\\s*="
+    },
+    {
+      "kind": "admitted_journey_state_context",
+      "pattern": "(?:scene\\.quest_state\\.l8_journey|story\\.(?:gift|temple_visited|admitted))\\s*="
+    }
+  ]
+}

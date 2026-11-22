@@ -6,12 +6,18 @@ extends Node3D
 ## (23/35/41/54) and globals through hooks and receives grants, shared writes, holds and repositions.
 ## Modern adapters (docs/jungle-kityara.md): region edges are not evaluated while she holds Luther; the idle plane
 ## shows segment0's first frame while she is present and silent; one clip callback per update; body/aim reach.
+## Walk-up pad: a start region also accepts a foot within START_PAD of its polygon and up to START_RAISE above the
+## native floor. Presence and unlink regions stay on the exact polygon. The source polygons are unchanged.
 const State=preload("res://scripts/lol2/jungle_kityara_state.gd")
 const Packet=preload("res://scripts/lol2/jungle_kityara_packet.gd")
 const MEDIA:="res://assets/lol2/generated/jungle_kityara_media/"
 const ICON:="res://assets/lol2/generated/jungle_kityara/empty_hand.png"
 const SHADER=preload("res://scripts/lol2/jungle_bacatta65.gd").SHADER
 const REACH:=140.0
+## Owner r18 F10 15-24-21 at (669,-1590): the walk to control 0 stands on region 1323, 67 from start region 1324.
+## A moving jump covers that gap. The pad lets the same start group run from the walk.
+const START_PAD:=96.0
+const START_RAISE:=48.0
 const FPS:=15.0
 var host: Node3D
 var hooks: Dictionary={}
@@ -105,14 +111,38 @@ func advance(delta: float) -> void:
 func _regions() -> void:
 	var now: Array=[];var pos: Vector3=host.player.global_position-origin()
 	var foot: float=pos.y-preload("res://scripts/lol2/player_form_body.gd").FOOT_OFFSET
+	var point: Vector2=Vector2(pos.x,pos.z)
 	for region in src.regions:
-		if foot<float(region.floor_min)-4 or foot>float(region.floor_max)+6: continue
+		var id: int=int(region.id)
+		var start: bool=_start_region(id)
+		var top: float=START_RAISE if start else 6.0
+		if foot<float(region.floor_min)-4.0 or foot>float(region.floor_max)+top: continue
 		var poly:=PackedVector2Array()
 		for v in region.polygon: poly.append(Vector2(v[0],v[1]))
-		if not Geometry2D.is_point_in_polygon(Vector2(pos.x,pos.z),poly): continue
-		now.append(int(region.id))
-		if int(region.id) not in inside: apply(State.enter_region(state,src,int(region.id),context()))
+		var hit: bool=Geometry2D.is_point_in_polygon(point,poly)
+		if not hit and (not start or _edge_distance(point,poly)>START_PAD): continue
+		now.append(id)
+		if id not in inside: apply(State.enter_region(state,src,id,context()))
 	inside=now
+
+func _start_region(id: int) -> bool:
+	for row in src.start_regions:
+		if int(row)==id: return true
+	return false
+
+func _edge_distance(point: Vector2, poly: PackedVector2Array) -> float:
+	var best: float=INF
+	var n: int=poly.size()
+	if n<2: return best
+	for i in n:
+		var a: Vector2=poly[i]
+		var b: Vector2=poly[(i+1)%n]
+		var edge: Vector2=b-a
+		var length2: float=edge.length_squared()
+		var u: float=0.0
+		if length2>0.0: u=clampf((point-a).dot(edge)/length2,0.0,1.0)
+		best=minf(best,point.distance_to(a+edge*u))
+	return best
 
 func _aimed() -> Dictionary:
 	if not live() or speaking()!="": return {}

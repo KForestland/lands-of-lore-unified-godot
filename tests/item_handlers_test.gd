@@ -56,6 +56,11 @@ func run() -> void:
 		var kind: String = Catalog.use_kind(id)
 		if kind == "": continue
 		usable += 1
+		# Physical throw selection is a modern world action, not a claim that the
+		# native missile handler is decoded/hosted for mode1.
+		if kind=="physical_throw":
+			check(Catalog.definition(id) in [6,9,23] and not Catalog.target_hint(id).is_empty() and FileAccess.file_exists("res://scripts/lol2/player_thrown_items.gd"),"Modern throw selection has its named world dispatcher: "+id)
+			continue
 		var r: Dictionary = Handlers.route(Catalog.definition(id), Handlers.mode_for_use_kind(kind))
 		if int(r.handler) > 0 and not r.hosted: not_hosted.append("%s (%s handler %d mode %d)" % [id, kind, r.handler, Handlers.mode_for_use_kind(kind)])
 	check(usable > 0 and not_hosted.is_empty(), "every usable catalog identity (%d) routes hosted for its mode (%s)" % [usable, not_hosted])

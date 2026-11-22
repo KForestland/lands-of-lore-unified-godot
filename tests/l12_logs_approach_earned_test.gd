@@ -22,10 +22,16 @@ func walk(scene:Node,points:Array,label:String)->bool:
   if not check(reached,label+" point"+str(index)+" at "+str(scene.player.position)):return false
   if label=="return Lizard crawl" and index==4:check(scene.request_jump(),"real Lizard jump before original20-unit upward floor seam")
  return true
+func input_path() -> String:
+ return "res://tmp/l12_frozen_bow_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="0d98d5cb6598a599a549a6c8cbd16772ff639847922f74c5121b1b14d1198c09"
+func pass_line() -> String:
+ return "PASS old earned bow + disclosed control teaching ->physical return Lizard crawl ->Human bridge crossing ->original log approach/save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l12_frozen_bow_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="0d98d5cb6598a599a549a6c8cbd16772ff639847922f74c5121b1b14d1198c09","qualified Citadel-exit input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified Citadel-exit input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L12_CM")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L12_CM.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -34,15 +40,17 @@ func run():
   if scene.ready_for_review:break
  if not check(scene.apply_save(input.state).is_empty(),"earned Citadel-exit input"):quit(1);return
  prepare(scene)
+ # Disclosed teaching fixture: this pinned old route predates the spell book.
+ if not check(preload("res://tests/helpers/curse_control_input.gd").teach_legacy_fixture(scene),"Legacy route control teaching fixture"):quit(1);return
  var cave=scene.get_node("L12Crevasse")
- if not check(cave.choose_form(),"production return Lizard request"):quit(1);return
+ if not check(await preload("res://tests/helpers/curse_control_input.gd").cast(self,scene,2),"Actual Curse3 keys choose return Lizard"):quit(1);return
  for i in 600:
   scene.curse.advance(1.0/60);scene.move_grounded(Vector3.ZERO,1.0/60);await physics_frame
   if scene.player_form==2:break
  if not check(scene.player_form==2,"actual return Lizard body"):quit(1);return
  var points:Array=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/l12_crevasse_crawl.json"));points.reverse();points.append([3000,-13600])
  if not await walk(scene,points,"return Lizard crawl"):quit(1);return
- if not check(cave.choose_form(),"production Human request at outer entrance"):quit(1);return
+ if not check(await preload("res://tests/helpers/curse_control_input.gd").cast(self,scene,0),"Actual Curse2 keys choose Human at outer entrance"):quit(1);return
  for i in 120:
   scene.curse.advance(1.0/60);scene.move_grounded(Vector3.ZERO,1.0/60);await physics_frame
   if scene.player_form==0:break
@@ -56,5 +64,5 @@ func run():
  check(scene.equipped_armor=="act2:L12_CM:item5" and "act2:L12_CM:blue_bow" in scene.carried_collected and scene.resets==0 and scene.progression.seeds_applied.is_empty(),"earned items/no seeds/recovery")
  print("LOGS APPROACH ",scene.player.position)
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned bow ->physical return Lizard crawl ->Human bridge crossing ->original log approach/save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

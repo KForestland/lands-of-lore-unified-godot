@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const KEY="l14_trials"
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
 const Kit=preload("res://scripts/lol2/mechanism_transaction.gd")
@@ -61,8 +62,8 @@ func take(capacity:int=64,prop:String="371")->Dictionary:
  if host.carried_collected.size()>=capacity:return Kit.refuse("Inventory full.")
  var item:="act2:L14_HT:trial_idol"+prop
  var s:=state().duplicate(true);s.idols.append(prop)
- var packet:Dictionary=host.quest_state.get("act2_items",Items.initial()).duplicate(true);packet.collected.append(item)
- host.quest_state[KEY]=s;host.quest_state.act2_items=packet;host.carried_collected.append(item);Items.sync(host);restore()
+ host.quest_state[KEY]=s
+ Grants.grant(host,item,{"cap":false,"duplicate":"allow","history":"act2","sync":true});restore()
  return {"ok":true,"reason":"You take the trial statue."}
 func restore():
  for id in parts:parts[id].position.y=80 if id in state().doors else 0
@@ -75,9 +76,18 @@ func _process(_delta):
   if reachable(PRIZES[prop]) and prop not in state().idols:hint.text="E — Take statue";return
  for id in DOORS:
   if reachable(DOORS[id]) and id not in state().doors:hint.text="E — Open trial door";return
+func generic_target()->Dictionary:
+ for prop in PRIZES:
+  if reachable(PRIZES[prop]) and prop not in state().idols:return {"point":PRIZES[prop],"id":prop,"prize":true}
+ for id in DOORS:
+  if reachable(DOORS[id]) and id not in state().doors:return {"point":DOORS[id],"id":id}
+ return {}
+func try_use()->bool:
+ var target:=generic_target()
+ if target.is_empty():return false
+ var result:Dictionary=take(64,target.id) if target.get("prize",false) else open_door(target.id)
+ host.save_feedback(result.reason)
+ return true
 func _unhandled_key_input(event:InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E:return
- for prop in PRIZES:
-  if reachable(PRIZES[prop]) and prop not in state().idols:host.save_feedback(take(64,prop).reason);get_viewport().set_input_as_handled();return
- for id in DOORS:
-  if reachable(DOORS[id]) and id not in state().doors:host.save_feedback(open_door(id).reason);get_viewport().set_input_as_handled();return
+ if try_use():get_viewport().set_input_as_handled()

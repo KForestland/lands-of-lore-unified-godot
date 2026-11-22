@@ -1,0 +1,1 @@
+| 2026-11-07 | L16 SE drain mouth (STORY-071) | Burning prop 392 still reveals the Dark Bow and still does not move doors 80, 81, and 98. A drain mouth opens with the flame. Opcode 1 on those doors stays unread, so the mouth is an adapter. The burn flag is unchanged. | HINTBOOK 4911-4936. | Adapter (owner rule 2026-10-30) |

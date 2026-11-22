@@ -1,1 +1,62 @@
-{"name": "l10_fence_earned_test", "suite": "core", "mode": "headless", "order": 621}
+{
+  "name": "l10_fence_earned_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 621,
+  "teleports": 0,
+  "test_aids": 17,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "37972e18e80bb598387e558b9382734b238d93b372d65784e60a1cd30ca31f89"
+  },
+  "context_aid_source_sites": {
+    "count": 6,
+    "sites": [
+      {
+        "path": "tests/l10_fence_earned_test.gd",
+        "line": 17,
+        "column": 6,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_fence_earned_test.gd",
+        "line": 21,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(input.state).is_empty(),\"earned gold load\"):quit(1);return"
+      },
+      {
+        "path": "tests/l10_fence_earned_test.gd",
+        "line": 23,
+        "column": 62,
+        "kind": "scene_change_context",
+        "source": "scene.starting_magic.interface_request=true;scene.progression.change_scene_enabled=false"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 67,
+        "column": 6,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 71,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(input.state).is_empty(),\"load earned gate input\"):quit(1);return"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 76,
+        "column": 18,
+        "kind": "scene_change_context",
+        "source": "scene.progression.change_scene_enabled=false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 23,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

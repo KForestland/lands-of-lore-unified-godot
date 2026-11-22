@@ -1,4 +1,5 @@
 extends "res://scripts/lol2/jungle_review.gd"
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const GlobalDefaults = preload("res://scripts/lol2/shared_global_defaults.gd")
 ## Playable jungle staging with the human-sized Hive route.
 const Save = preload("res://scripts/lol2/jungle_save.gd")
@@ -20,6 +21,8 @@ var bacatta65: Node3D
 var bacatta57: Node3D
 var village_alarm: Node3D
 var drunk: Node3D
+var cat_ladies: Node3D
+var bramble: Node3D
 var inner_gate: Node3D
 var chief_hut: Node3D
 var beehives: Node3D
@@ -47,7 +50,9 @@ var followup_gate: Node3D
 var followup_dialogue: MeshInstance3D
 var carried_collected: Array = []
 var equipped_item := ""
-var health := 30
+var health:int:
+	get:return player_health_owner.value()
+	set(v):player_health_owner.set_value(v)
 const FormBody = preload("res://scripts/lol2/player_form_body.gd")
 var player_form := 0
 const Curse = preload("res://scripts/lol2/player_curse.gd")
@@ -113,6 +118,8 @@ func _init() -> void:
 	# backdrop. Clear texels and wall backs are truly transparent; the sky shows only where nothing lies behind.
 	backdrop_edges = false
 	fill_untextured_edges = true
+	# Owner r18 F10 14-55-28/48 + 15-18-02: headers between two open-sky regions are not drawn (jungle_review.gd skip_sky_headers).
+	skip_sky_headers = true
 	clip_sunken_groups = true
 
 func _ready() -> void:
@@ -142,7 +149,9 @@ func _ready() -> void:
 		add_child(static_assemblies)
 		var managed: Array = preload("res://scripts/lol2/jungle_causeway.gd").managed_assemblies() if preload("res://scripts/lol2/jungle_causeway.gd").assets_ready() else []
 		# Plank 210 must stay separate so its selector/mode change takes effect; 211 is linked in by the plank break.
-		var assemblies_error: String = static_assemblies.setup(self, "L4_HJ", [210], [], managed + [211])
+		# Fallen leaves 80 and 81 (template 74, flags 0x1082, bit 0x1000) start absent. The batch was drawing
+		# them on the ground in front of the standing doors. The gate-leaf host draws them after the break.
+		var assemblies_error: String = static_assemblies.setup(self, "L4_HJ", [210], [], managed + [211, 80, 81])
 		if not assemblies_error.is_empty(): push_error(assemblies_error)
 		# Native plank solids stay after selector1 removes the deck faces; support events are hosted below.
 		var bridge_error: String = static_assemblies.add_scripted_solids("L4_HJ", JUNGLE_BRIDGE)
@@ -152,6 +161,12 @@ func _ready() -> void:
 		add_child(plank_bridge)
 		var plank_error: String = plank_bridge.setup(self)
 		if not plank_error.is_empty(): push_error(plank_error)
+	if huline_content and is_instance_valid(static_assemblies):
+		bramble = preload("res://scripts/lol2/jungle_bramble.gd").new()
+		bramble.name = "JungleBramble"
+		add_child(bramble)
+		var bramble_error: String = bramble.setup(self, quest_state.get("jungle_bramble"))
+		if not bramble_error.is_empty(): push_error(bramble_error)
 	if huline_content and preload("res://scripts/lol2/jungle_props.gd").assets_ready():
 		props = preload("res://scripts/lol2/jungle_props.gd").new()
 		add_child(props)
@@ -226,10 +241,10 @@ func _ready() -> void:
 			var liquid_error: String = liquid_drowning.setup(self, "L4_HJ")
 			if not liquid_error.is_empty(): push_warning(liquid_error)
 			else:
-				var skirts: Node3D = preload("res://scripts/lol2/jungle_water_skirts.gd").new()
-				skirts.name = "JungleWaterSkirts"
-				add_child(skirts)
-				skirts.build(self)
+				var stream: Node3D = preload("res://scripts/lol2/jungle_stream_surface.gd").new()
+				stream.name = "JungleStreamSurface"
+				add_child(stream)
+				stream.build(self)
 			preload("res://scripts/lol2/act1_journal_hints.gd").attach(self, "river")
 		dino_population = preload("res://scripts/lol2/jungle_dino_population.gd").new()
 		dino_population.name = "DinoPopulation"
@@ -306,6 +321,10 @@ func _ready() -> void:
 			drunk=preload("res://scripts/lol2/jungle_drunk.gd").new();drunk.name="DrunkVillager";add_child(drunk)
 			var drunk_error: String=drunk.setup(self,quest_state.get("jungle_drunk"))
 			if not drunk_error.is_empty():push_error(drunk_error)
+		if preload("res://scripts/lol2/jungle_cat_ladies.gd").assets_ready():
+			cat_ladies=preload("res://scripts/lol2/jungle_cat_ladies.gd").new();cat_ladies.name="CatLadies";add_child(cat_ladies)
+			var ladies_error: String=cat_ladies.setup(self,quest_state.get("jungle_cat_ladies"))
+			if not ladies_error.is_empty():push_error(ladies_error)
 		if preload("res://scripts/lol2/jungle_inner_gate.gd").assets_ready():
 			inner_gate=preload("res://scripts/lol2/jungle_inner_gate.gd").new()
 			inner_gate.name="JungleInnerGate"
@@ -345,6 +364,10 @@ func _ready() -> void:
 	if get_tree().has_meta("lol2_jungle_resume"):
 		var resume = get_tree().get_meta("lol2_jungle_resume")
 		if apply_save(resume).is_empty(): get_tree().remove_meta("lol2_jungle_resume")
+
+	# Derived hosts apply their slot after their progression/items setup.
+	if get_script().resource_path == "res://scripts/lol2/jungle_walkthrough.gd":
+		preload("res://scripts/lol2/game_session.gd").for_tree(get_tree()).apply_pending(self)
 
 	if huline_content:
 		departure = preload("res://scripts/lol2/act_one_departure.gd").new()
@@ -436,7 +459,7 @@ func apply_inventory_handoff(state: Variant) -> String:
 	if is_instance_valid(river_dam): river_dam.present()
 	if is_instance_valid(causeway): causeway.present()
 	if is_instance_valid(plank_bridge): plank_bridge.restore()
-	health = int(state.get("health",30))
+	health = int(state.get("health",PlayerHealth.MAXIMUM))
 	jump_requested = false
 	player_form = int(state.get("player_form",0))
 	curse.restore(state.get("curse",Curse.initial()))
@@ -447,18 +470,25 @@ func apply_inventory_handoff(state: Variant) -> String:
 	return ""
 
 ## Diagnostics record every outcome, including early refusals that show no message (docs/dev-diagnostics.md).
-func quicksave(path: String = "") -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", _quicksave_unrecorded(path))
-func quickload(path: String = "") -> String: return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", _quickload_unrecorded(path))
+func quicksave(path: String = "") -> String:
+	var error: String = preload("res://scripts/lol2/game_save.gd").quicksave(self) if path.is_empty() else _quicksave_unrecorded(path)
+	return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "save", error)
+func quickload(path: String = "") -> String:
+	var error: String = preload("res://scripts/lol2/game_save.gd").quickload(self) if path.is_empty() else _quickload_unrecorded(path)
+	return preload("res://scripts/lol2/dev_diagnostics.gd").record(self, "load", error)
 func _quicksave_unrecorded(path: String = "") -> String:
 	if path.is_empty(): path = area_save_path
 	if get_tree().paused: return "Close the current overlay before saving."
 	if flying: return "Return to walking mode before saving."
+	return Save.write_save(path, area_snapshot(), area_save_format)
+
+func area_snapshot() -> Dictionary:
 	_sync_exit_checkpoint()
 	var quests: Dictionary = preload("res://scripts/lol2/atlas_explored.gd").release(quest_state.duplicate(true))
-	return Save.write_save(path,{"format":area_save_format,"version":1,"inventory":inventory_state(),"quests":quests,
+	return {"format":area_save_format,"version":1,"inventory":inventory_state(),"quests":quests,
 		"atlas_explored":preload("res://scripts/lol2/atlas_explored.gd").stored(self),
 		"player":{"position":[player.position.x,player.position.y,player.position.z],
-		"yaw":wrapf(player.rotation.y,-PI,PI),"pitch":camera.rotation.x}},area_save_format)
+		"yaw":wrapf(player.rotation.y,-PI,PI),"pitch":camera.rotation.x}}
 
 func _quickload_unrecorded(path: String = "") -> String:
 	if path.is_empty(): path = area_save_path
@@ -487,6 +517,8 @@ func apply_save(state: Variant) -> String:
 	if quest_state.has("jungle_dino_population"): quest_state.jungle_dino_population = preload("res://scripts/lol2/jungle_dino_population_state.gd").canonical(quest_state.jungle_dino_population)
 	if quest_state.has("player_magic_reward_state"): quest_state.player_magic_reward_state = preload("res://scripts/lol2/player_magic_state.gd").restore(quest_state.player_magic_reward_state).checkpoint
 	if state.inventory.has("magic"): quest_state.player_magic_reward_state = preload("res://scripts/lol2/player_magic_state.gd").restore(state.inventory.magic).checkpoint
+	if is_instance_valid(starting_magic) and starting_magic.has_method("finish_load"):starting_magic.finish_load()
+	elif not is_instance_valid(starting_magic):set_meta("lol2_loaded_magic_clock",true)
 	set_development_mode(false)
 	player.position = Vector3(state.player.position[0],state.player.position[1],state.player.position[2])
 	player.rotation.y = state.player.yaw
@@ -526,6 +558,8 @@ func apply_save(state: Variant) -> String:
 	if is_instance_valid(bacatta57): bacatta57.restore(quest_state.get("jungle_bacatta57",bacatta57.initial()))
 	if is_instance_valid(village_alarm): village_alarm.restore(quest_state.get("jungle_village_alarm",village_alarm.initial()))
 	if is_instance_valid(drunk): drunk.restore(quest_state.get("jungle_drunk",drunk.initial()))
+	if is_instance_valid(cat_ladies): cat_ladies.restore(quest_state.get("jungle_cat_ladies",cat_ladies.initial()))
+	if is_instance_valid(bramble): bramble.restore(quest_state.get("jungle_bramble",bramble.initial()))
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
 	if is_instance_valid(chief_hut): chief_hut.restore(quest_state.get("jungle_chief_hut",chief_hut.initial()))
 	if is_instance_valid(beehives): beehives.restore(quest_state.get("jungle_beehives",beehives.initial()))
@@ -538,7 +572,10 @@ func apply_save(state: Variant) -> String:
 # Validated inventory and quest transport for the Hive route.
 func area_handoff() -> Dictionary:
 	_sync_exit_checkpoint()
-	return {"inventory":inventory_state(),"quests":quest_state.duplicate(true)}
+	var quests := quest_state.duplicate(true)
+	# The established receiver extracts this transport-only key; runtime quests and disk saves keep it separate.
+	quests[preload("res://scripts/lol2/atlas_explored.gd").KEY] = preload("res://scripts/lol2/atlas_explored.gd").stored(self)
+	return {"inventory":inventory_state(),"quests":quests}
 
 func apply_area_handoff(state: Variant) -> String:
 	if not state is Dictionary: return "Invalid area handoff."
@@ -597,6 +634,8 @@ func apply_area_handoff(state: Variant) -> String:
 	if is_instance_valid(bacatta57): bacatta57.restore(quest_state.get("jungle_bacatta57",bacatta57.initial()))
 	if is_instance_valid(village_alarm): village_alarm.restore(quest_state.get("jungle_village_alarm",village_alarm.initial()))
 	if is_instance_valid(drunk): drunk.restore(quest_state.get("jungle_drunk",drunk.initial()))
+	if is_instance_valid(cat_ladies): cat_ladies.restore(quest_state.get("jungle_cat_ladies",cat_ladies.initial()))
+	if is_instance_valid(bramble): bramble.restore(quest_state.get("jungle_bramble",bramble.initial()))
 	if is_instance_valid(inner_gate): inner_gate.restore(_inner_gate_packet())
 	if is_instance_valid(chief_hut): chief_hut.restore(quest_state.get("jungle_chief_hut",chief_hut.initial()))
 	if is_instance_valid(beehives): beehives.restore(quest_state.get("jungle_beehives",beehives.initial()))
@@ -621,7 +660,7 @@ func save_feedback(message: String) -> void:
 	interface_hud.save_notice_remaining = 3.0
 
 func use_inventory_item(id: String) -> bool:
-	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) != "": return item_effects.use(id)
+	if preload("res://scripts/lol2/item_catalog.gd").use_kind(id) != "" or not preload("res://scripts/lol2/item_catalog.gd").target_hint(id).is_empty(): return item_effects.use(id)
 	if id != preload("res://scripts/lol2/monastery_conversation.gd").FLUTE or id not in carried_collected: return false
 	var Lift = preload("res://scripts/lol2/hive_elevator_state.gd")
 	if not quest_state.has("hive_elevator"): quest_state.hive_elevator = Lift.initial()
@@ -640,6 +679,8 @@ func _sync_exit_checkpoint() -> void:
 	if is_instance_valid(bacatta57): quest_state.jungle_bacatta57=bacatta57.checkpoint()
 	if is_instance_valid(village_alarm): quest_state.jungle_village_alarm=village_alarm.checkpoint()
 	if is_instance_valid(drunk): quest_state.jungle_drunk=drunk.checkpoint()
+	if is_instance_valid(cat_ladies): quest_state.jungle_cat_ladies=cat_ladies.checkpoint()
+	if is_instance_valid(bramble): quest_state.jungle_bramble=bramble.checkpoint()
 	if is_instance_valid(inner_gate): quest_state.jungle_inner_gate=inner_gate.checkpoint()
 	if is_instance_valid(chief_hut): quest_state.jungle_chief_hut=chief_hut.checkpoint()
 	if is_instance_valid(beehives): quest_state.jungle_beehives=beehives.checkpoint()
@@ -848,7 +889,7 @@ func _kityara_shared(e: Dictionary) -> void:
 func _kityara_grant(identity: int) -> void:
 	if identity!=int(kityara.src.item.identity): return
 	var id: String=str(kityara.src.item.catalog_id)
-	if id not in carried_collected: carried_collected.append(id)
+	Grants.grant(self,id,{"cap":false,"duplicate":"skip"})
 	if is_instance_valid(interface_hud): interface_hud.refresh_equipment()
 
 ## Held-item source identity for her kind4 mode3 offers (Power orb, Amber, Ironwood sap).
@@ -884,3 +925,9 @@ func _confidante_shared(e: Dictionary) -> void:
 func _gate_leaves_context() -> Dictionary:
 	var killed: int=int(confidante.state.locals["39"]) if is_instance_valid(confidante) and not confidante.state.is_empty() else 0
 	return {"locals":{"39":killed},"shared":{"29":int(village_gate.state().shared29) if is_instance_valid(village_gate) else 0}}
+
+func can_save() -> String:
+	return preload("res://scripts/lol2/save_admission.gd").reason(self)
+
+func apply_slot_state(state: Variant) -> String:
+	return apply_save(state)

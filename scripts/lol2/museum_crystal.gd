@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Prop297 hit groups6692/6720/6748 reveal original placed items6/5/4.
 ## Native AE2C8 filter replay: positive melee admitted, Spark1/1 refused.
 const State = preload("res://scripts/lol2/museum_crystal_state.gd")
@@ -57,7 +58,7 @@ func use() -> bool:
 	if i<0:return false
 	if host.carried_collected.size()>=Catalog.MAX_CARRIED:host.save_feedback("You cannot carry more.");return true
 	if State.IDS[i] in host.carried_collected:return false
-	host.carried_collected.append(State.IDS[i]);state.taken[i]=true
+	Grants.grant(host,State.IDS[i],{"cap":false,"duplicate":"allow"});state.taken[i]=true
 	var effects:Dictionary=host.item_effects.state()
 	if not effects.has("fire_crystals"):effects.fire_crystals={}
 	effects.fire_crystals[State.IDS[i]]=0

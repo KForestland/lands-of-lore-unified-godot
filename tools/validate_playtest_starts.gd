@@ -22,7 +22,7 @@ func _initialize() -> void:
 		var row: Dictionary = {"id": entry.id, "save": entry.save, "resume": entry.resume, "sha256": FileAccess.get_sha256(path)}
 		var read: Dictionary = Starts.read(entry, path)
 		row.error = str(read.error)
-		if row.error.is_empty() and str(read.state.get("format")) != str(Starts.KINDS[str(entry.resume)].format):
+		if row.error.is_empty() and str(read.state.get("format")) != Starts.format_for(entry):
 			row.error = "format differs from the resume kind"
 		if row.error.is_empty() and row.sha256 != str(entry.sha256): row.error = "sha256 differs from the manifest"
 		if row.error.is_empty(): row.error = Starts.identity_error(entry, read.state)

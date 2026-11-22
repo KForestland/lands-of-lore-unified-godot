@@ -1,6 +1,13 @@
 {
- "name": "cave_guard_approach_test",
- "suite": "core",
- "mode": "rendered",
- "order": 384
+  "name": "cave_guard_approach_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 384,
+  "teleports": 1,
+  "test_aids": 4,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "98a72da29bcad69950c7d7a686036b25a9f48a4f2a7f6b63881f1574e481b64b"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
 }

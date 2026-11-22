@@ -10,10 +10,16 @@ func land(scene:Node):
  for i in 120:
   scene.move_grounded(Vector3.ZERO,1.0/60);await physics_frame
   if scene.player.is_on_floor():break
+func input_path() -> String:
+ return "res://tmp/l13_prisons_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="4dbbfb934155d84b532babcc6e3eec36680cd05a9321e8f2a2a385a638a3bfc7"
+func pass_line() -> String:
+ return "PASS earned return to Dawn recess -> all actual wrong items refused atomically -> save/reload; positive release awaits earned Dreamstone"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_prisons_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="4dbbfb934155d84b532babcc6e3eec36680cd05a9321e8f2a2a385a638a3bfc7","qualified prison input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified prison input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -35,5 +41,5 @@ func run():
  check(scene._quicksave_unrecorded("res://tmp/l13_dawn_recess_earned_save.json").is_empty() and scene._quickload_unrecorded("res://tmp/l13_dawn_recess_earned_save.json").is_empty(),"earned recess save reload")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seed or recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned return to Dawn recess -> all actual wrong items refused atomically -> save/reload; positive release awaits earned Dreamstone")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

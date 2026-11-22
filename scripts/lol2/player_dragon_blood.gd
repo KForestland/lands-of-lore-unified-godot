@@ -21,12 +21,29 @@ func place(id: String) -> bool:
 	if not hit.is_empty():end=hit.position+hit.normal*5.0
 	var down:=PhysicsRayQueryParameters3D.create(end,end+Vector3.DOWN*100.0,1,[host.player.get_rid()])
 	var floor_hit: Dictionary=get_world_3d().direct_space_state.intersect_ray(down)
-	if floor_hit.is_empty():return false
-	end=floor_hit.position+Vector3.UP*10
+	var crates:=host.get_node_or_null("DarkHallsCrates")
+	if floor_hit.is_empty() and not is_instance_valid(crates):return false
+	if not floor_hit.is_empty():end=floor_hit.position+Vector3.UP*10
+	if is_instance_valid(crates):
+		if floor_hit.is_empty() or crates.blood_targets(end,RADIUS).is_empty():
+			# Visible hand placement through a slot; never target a hidden centre.
+			var aimed:=PhysicsRayQueryParameters3D.create(start,start-host.camera.global_basis.z*float(crates.REACH),259,[host.player.get_rid()])
+			var visible:=get_world_3d().direct_space_state.intersect_ray(aimed)
+			if visible.is_empty() or not visible.collider.has_meta("dark_halls_crate"):
+				return controller.refuse_item("No exposed crystals within reach of the blast.")
+			var target:=int(visible.collider.get_meta("dark_halls_crate"))
+			if crates.state_of(target)!=1:return controller.refuse_item("Expose the crystals first (E).")
+			end=crates.blood_placement(target,visible.position,visible.normal)
+			var slot_floor:=PhysicsRayQueryParameters3D.create(end,end+Vector3.DOWN*100.0,1,[host.player.get_rid()])
+			floor_hit=get_world_3d().direct_space_state.intersect_ray(slot_floor)
+			if floor_hit.is_empty():return controller.refuse_item("No safe place for Dragon's Blood by the exposed crystals.")
+			end=floor_hit.position+Vector3.UP*10
+			if crates.blood_targets(end,RADIUS).is_empty():return controller.refuse_item("No exposed crystals within reach of the blast.")
+		if not controller.consume_item(id):return false
 	var saved: Dictionary=controller.state()
 	if not saved.has("dragon_blood"):saved.dragon_blood=[]
 	saved.dragon_blood.append({"id":id,"area":host.scene_file_path,"position":[end.x,end.y,end.z],"remaining":State.FUSE})
-	saved.spent.append(id);controller.carried().erase(id)
+	if not is_instance_valid(crates):saved.spent.append(id);controller.carried().erase(id)
 	present();return true
 func advance(delta: float) -> void:
 	if not is_finite(delta) or delta<=0:return
@@ -52,8 +69,19 @@ func explode(point: Vector3) -> void:
 		if point.distance_to(target.point)>RADIUS or not clear_to(point,target.point,target.body):continue
 		# Existing aura receiver dispatch supports every live Act1 creature and magic progression.
 		aura.hit(id,23,target) # Its highest modern attack is20 damage; no mana is charged.
-	if point.distance_to(host.player.global_position)<=RADIUS and clear_to(point,host.camera.global_position,host.player) and not host.starting_magic.protected():
-		host.starting_magic.set_health(maxi(0,host.starting_magic.health()-DAMAGE))
+	# Cache all reach and health decisions before any crate removes collision.
+	var player_hit:bool=point.distance_to(host.player.global_position)<=RADIUS and clear_to(point,host.camera.global_position,host.player) and not host.starting_magic.protected()
+	var crates:=host.get_node_or_null("DarkHallsCrates")
+	var reached:Array=[]
+	var damage:=DAMAGE if player_hit else 0
+	if is_instance_valid(crates):
+		reached=crates.blood_targets(point,RADIUS).keys()
+		if not reached.is_empty():damage=crates.blood_player_damage(reached)
+		for id in reached:crates.receive_dragon_blood(id,false)
+	# One crate blast replaces Blood damage; simultaneous crates use the
+	# strongest existing native falloff, never multiple health deductions.
+	if not reached.is_empty():crates.apply_player_blast(damage)
+	elif damage>0:host.starting_magic.set_health(maxi(0,host.starting_magic.health()-damage))
 	var visual:=MeshInstance3D.new();var sphere:=SphereMesh.new();sphere.radius=3;sphere.height=6;visual.mesh=sphere
 	var material:=StandardMaterial3D.new();material.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED;material.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA;material.albedo_color=Color(1,0.25,0.02,0.5);visual.material_override=material
 	add_child(visual);visual.global_position=point;flashes.append({"node":visual,"remaining":0.3})

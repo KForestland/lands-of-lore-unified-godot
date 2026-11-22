@@ -1,4 +1,6 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## Live source-scripted creature population (Museum skeletons/Rat, cave guards).
 ## Configured with a sprite manifest, population source and per-definition look.
 ## Source spawn/wake/rise/attack/death structure; perception, steering, scale and
@@ -10,8 +12,8 @@ const Library=preload("res://scripts/lol2/creature_sprite_library.gd")
 const Forms=preload("res://scripts/lol2/player_form_rules.gd")
 const Net=preload("res://scripts/lol2/net_exile_hold.gd")
 const Prism=preload("res://scripts/lol2/prism_blind.gd")
-const STRIKE_COOLDOWN:=0.45
-const STRIKE_REACH:=110.0
+const STRIKE_COOLDOWN:=PlayerCombat.COOLDOWN
+const STRIKE_REACH:=PlayerCombat.REACH_CREATURE
 var config: Dictionary={}
 const NAV_RANGE:=1200.0
 var navigation: RefCounted
@@ -130,9 +132,23 @@ func world_active() -> bool:
 func _physics_process(delta: float) -> void: advance(delta)
 
 func peaceful_actor(_id: String) -> bool: return false
+## Hook for a population that scales creature blows on the player (1.0 = as computed).
+func damage_to_player_scale(_id: String) -> float: return 1.0
+
+## A held actor attacks from its placement. The default population still hunts.
+func anchored(_id: String) -> bool:
+	return false
+
+func anchor_point(id: String) -> Vector3:
+	var row: Dictionary = State.actor_row(src, id)
+	var spot: Array = row.position
+	return Vector3(float(spot[0]), float(spot[1]), float(spot[2])) + origin()
+
+func on_anchor_impact(_id: String) -> void:
+	pass
 
 func advance(delta: float) -> void:
-	strike_remaining=maxf(0.0,strike_remaining-delta)
+	strike_remaining=PlayerCombat.cooldown_tick(strike_remaining,delta)
 	if not world_active():
 		for id in bodies: bodies[id].velocity=Vector3.ZERO
 		return
@@ -142,6 +158,9 @@ func advance(delta: float) -> void:
 	if host.player.is_on_floor(): State.contact(state,src,local,local.y-preload("res://scripts/lol2/player_form_body.gd").FOOT_OFFSET,int(host.player_form))
 	State.advance_clocks(state,src,delta)
 	var protected: bool=Forms.protected(host)
+	# Once per step, not per creature: it rebuilds the carried list (0.1 ms; 97 creatures on L8 made the step 10 ms,
+	# owner r19p/r19p2 'framerate goes down' at his Darker Jungle stand). Equipment, form and sleep cannot change in this loop.
+	var defense: int=preload("res://scripts/lol2/player_defense.gd").scalar(host)
 	var space:=get_world_3d().direct_space_state
 	for id in bodies:
 		var body: CharacterBody3D=bodies[id]
@@ -167,13 +186,30 @@ func advance(delta: float) -> void:
 			sight=space.intersect_ray(ray).is_empty()
 		var health: int=host.starting_magic.health()
 		var previous: int=live.mode
-		var damage:=State.advance_live(state,src,id,delta,distance,sight,protected,health,preload("res://scripts/lol2/player_defense.gd").scalar(host))
+		var actor_id: String = str(id)
+		var step_distance: float = distance
+		# In sight, a held actor uses the melee reach so the clip starts without a chase.
+		if anchored(actor_id) and sight and distance <= State.ALERT_RANGE:
+			step_distance = minf(distance, State.REACH)
+		var was_hitting: bool = bool(live.hit)
+		var damage: int = State.advance_live(state,src,id,delta,step_distance,sight,protected,health,defense)
+		if anchored(actor_id):
+			var placed: Vector3 = anchor_point(actor_id)
+			body.velocity = Vector3.ZERO
+			body.position = placed
+			state.actors[actor_id].position = Live.saved_position(placed - origin())
+			if int(live.mode) == Live.PURSUE:
+				live.mode = Live.IDLE
+			if bool(live.hit) and not was_hitting:
+				on_anchor_impact(actor_id)
+			damage = 0
 		if damage>0:
+			damage = maxi(1, int(round(float(damage) * damage_to_player_scale(id))))
 			host.starting_magic.set_health(maxi(0,health-damage))
 			if host.has_method("save_feedback"): host.save_feedback("You fell. R: recover here · F9: load save" if host.starting_magic.health()==0 else name_of(id)+" struck you.")
 		var steer: Vector3=separation
 		# Out of sight but within range: follow the region-portal graph (adapter).
-		if live.mode==Live.IDLE and not sight and navigation!=null and health>0 and distance<=NAV_RANGE and not live.has("cooldown"):
+		if not anchored(actor_id) and live.mode==Live.IDLE and not sight and navigation!=null and health>0 and distance<=NAV_RANGE and not live.has("cooldown"):
 			var waypoint=_waypoint(id,body.global_position-origin(),target-origin(),delta)
 			if waypoint!=null:
 				live.mode=Live.PURSUE
@@ -325,27 +361,19 @@ func receive_damage(id: String, amount: int, melee: bool=true, effect: int=20) -
 	return true
 
 func aimed() -> String:
-	var origin: Vector3=host.camera.global_position
-	var query:=PhysicsRayQueryParameters3D.create(origin,origin-host.camera.global_basis.z*STRIKE_REACH,3,[host.player.get_rid()])
-	var hit: Dictionary=get_world_3d().direct_space_state.intersect_ray(query)
+	var hit: Dictionary=PlayerCombat.aim_ray(host,STRIKE_REACH,3)
 	if hit.is_empty() or not hit.collider.has_meta("population_owner") or hit.collider.get_meta("population_owner")!=self: return ""
 	return str(hit.collider.get_meta("population_actor"))
 
 func strike() -> bool:
 	if host.get("bacatta")!=null and is_instance_valid(host.bacatta) and host.bacatta.input_locked(): return false
-	if not world_active() or strike_remaining>0: return false
+	if not world_active() or not PlayerCombat.cooldown_ready(strike_remaining): return false
 	strike_remaining=STRIKE_COOLDOWN  # unarmed human melee allowed (manual printed 7/39 hand attack; melee_damage gives 4)
 	var id:=aimed()
 	if id.is_empty(): return false
-	var damage: int=Forms.melee_damage(host.player_form,host.equipped_item!="")
-	if host.get("item_effects")!=null and host.item_effects.has_method("melee_damage"): damage=host.item_effects.melee_damage(damage)
+	var damage: int=PlayerCombat.damage(host,true)
 	if not receive_damage(id,damage): return false
-	# The coat is spent by the landed armed strike (native: once the swing reaches, 0x88FD0).
-	last_poison=preload("res://scripts/lol2/weapon_poison.gd").spend(host)
-	preload("res://scripts/lol2/item_handlers.gd").record_hit(str(host.equipped_item))
-	net_hit(id,str(host.equipped_item))
-	prism_hit(id,str(host.equipped_item))
-	return CombatFeedback.landed(true)
+	return PlayerCombat.after_landed(host,self,id,{"poison":true,"record":true,"net":true,"prism":true})
 
 ## Net of Exile on a landed hit (net_exile_hold.gd).
 func net_hit(id: String, item: String) -> bool:
@@ -371,7 +399,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED:
 		if aimed()!="" and strike(): get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_R and host.starting_magic!=null and host.starting_magic.health()==0:
-		host.starting_magic.set_health(30)
+		host.starting_magic.set_health(PlayerHealth.MAXIMUM)
 		for id in bodies: state.live[id].merge({"mode":Live.IDLE,"elapsed":0.0,"hit":false,"hits":0},true)
 		get_viewport().set_input_as_handled()
 

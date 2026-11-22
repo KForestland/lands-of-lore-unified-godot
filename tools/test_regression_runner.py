@@ -6,9 +6,16 @@ import tempfile
 import time
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
-from run_regressions import run_one
+from run_regressions import run_one, effective_timeout
+from unittest.mock import patch
 
 class RunnerTests(unittest.TestCase):
+    def test_registered_long_walk_budget_is_used_without_shortening_other_limits(self):
+        with patch('run_regressions.TIMEOUTS', {'walk': 14400}):
+            self.assertEqual(effective_timeout('walk', 1500), 14400)
+            self.assertEqual(effective_timeout('walk', 18000), 18000)
+            self.assertEqual(effective_timeout('ordinary', 1500), 1500)
+
     def run_script(self, code, timeout=5):
         return run_one([sys.executable, '-u', '-c', code], timeout, os.environ.copy())
     def test_success(self):

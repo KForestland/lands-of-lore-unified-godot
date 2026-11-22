@@ -1,8 +1,14 @@
 extends "res://tests/l12_logs_approach_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l12_gulch_return_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="6cb1e4ba6ad38bad11bf75e69aaf66636f16cefb42c07f2eaa4658b41cc956db"
+func pass_line() -> String:
+ return "PASS earned gulch return -> reverse rise -> physical uphill river jump -> original corridor/save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l12_gulch_return_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="6cb1e4ba6ad38bad11bf75e69aaf66636f16cefb42c07f2eaa4658b41cc956db","qualified gulch return input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified gulch return input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-darker-jungle")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/darker_jungle.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -35,5 +41,5 @@ func run():
  check(scene.carried_collected.count("act2:L13_RC:dreamstone")==1 and scene.equipped_armor=="act2:L12_CM:item5","earned stone and armor retained")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seeds or recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned gulch return -> reverse rise -> physical uphill river jump -> original corridor/save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

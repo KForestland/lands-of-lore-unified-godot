@@ -1,0 +1,25 @@
+{
+  "name": "generic_l10_emperor_sitting_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "ActualF2/F9 untouched earned ankh eb599c4dc42e7befc1581d8167404908a761a15f96f4a5c6b3798d8f4612cb3a. ActualE slab66 and ankh retrieval, original supply43/gold via breach and both physical fences, actualE boxes126/127/125/inner143, original coffin GUI click/remains/F5. Ordinary1/60, continuation only; no supplied pose/health/clock/action handlers."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "189b32718981f8ab2bc4b97aaf5af4d9dd2d6f67f0899c7ff9e934ac09f541f8"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 1,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

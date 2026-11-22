@@ -1,0 +1,22 @@
+{
+  "name": "generic_l13_native_actions_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 0,
+  "needs": {
+    "note": "Explicit native VM transaction/predicate vectors, no player scene or earned-input claim."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "74818efe382d5a15ce7c9ae0e7f759489616a513ba01e19ad95f032394b52566"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 0,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

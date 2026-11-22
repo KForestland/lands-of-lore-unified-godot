@@ -1,0 +1,11 @@
+{
+  "name": "l8_clubhouse_guard_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1400,
+  "timeout_seconds": 300,
+  "count_method": "Guard21 presence, collision, door hint and E refusal on the owner's non-member L8 save.",
+  "needs": {
+    "note": "Local owner input tmp/l8_club_inputs/owner_145030.json (OWNER_DERIVED.md, sha pinned)."
+  }
+}

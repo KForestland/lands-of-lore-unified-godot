@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Hive original item rows 5-9 (hive_world_items_state.gd). Same E, 96-unit reach, 0.97 aim, mask-1 occlusion and
 ## overlay guards as the Hive wax pickup; each sprite is the original ground sprite (definitions pack) on a modern
 ## fixed-Y billboard at the wax's half-pixel scale. Saved history quests.hive_world_items.collected (rows) is written
@@ -90,7 +91,7 @@ func collect() -> bool:
 	if carried.size() >= preload("res://scripts/lol2/item_catalog.gd").MAX_CARRIED:
 		notice("Inventory full.")
 		return true
-	carried.append(id)
+	if not Grants.grant(host,id,{"cap":false,"duplicate":"allow"}).ok: return false
 	collected.append(row)
 	sprites[row].visible = false
 	notice(Definitions.label(State.DEFINITIONS[State.ROWS.find(row)]) + " taken.")

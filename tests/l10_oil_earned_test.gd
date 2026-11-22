@@ -56,7 +56,10 @@ func run():
  oil=scene.get_node("L10Oil");scene.camera.look_at(oil.AIM,Vector3.UP);scene.starting_magic.select_spell("spark")
  for i in 180:await physics_frame
  health=scene.starting_magic.health()
- check(scene.starting_magic.cast(1) and oil.burned(),"short Spark ignites when actually in range")
+ check(scene.starting_magic.cast(1) and not oil.burned(),"close charge1 Spark is refused by the oil")
+ check(scene.starting_magic.health()==health,"refused charge1 causes no blast")
+ for i in 180:await physics_frame
+ check(scene.starting_magic.cast(3) and oil.burned(),"close charge3 Spark ignites oil")
  check(scene.starting_magic.health()==maxi(0,health-oil.BLAST_DAMAGE),"close caster caught in real blast")
  scene.queue_free();await process_frame
  if failures==0:print("PASS earned oil -> retreat -> range-limited basic refusal -> level3 real Spark/mana -> scoped source collapse -> actual catacomb landing save; isolated close-cast blast branch never merged")

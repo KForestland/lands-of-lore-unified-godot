@@ -1,6 +1,13 @@
 {
- "name": "jungle_exit_scene_test",
- "suite": "core",
- "mode": "rendered",
- "order": 248
+  "name": "jungle_exit_scene_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 248,
+  "teleports": 1,
+  "test_aids": 22,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "597e5b586812b1022204d5ab9bd562f24844902cea606eecf38f0f06dffa2c3b"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
 }

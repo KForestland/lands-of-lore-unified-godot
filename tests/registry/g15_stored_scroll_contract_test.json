@@ -1,0 +1,20 @@
+{
+  "name": "g15_stored_scroll_contract_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {},
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "9d85b5bdde0ac6dcddd2d0caac0936c9c9f3d88510ce3caed15c8e30343e2cd0"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 2,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## STORY-068 southern dry fountain (HINTBOOK 4788-4814, H22). Prop 210, template 5, native (440, -10438),
 ## height 85, region 9806. It has no events. An aimed melee click or a spark hides the orb, shows a water
 ## plane on the pad, and grows nine black-lichen clumps. Prop 602, group 37776, and the 14 greenhouse
@@ -131,11 +132,11 @@ func aimed(point: Vector3, reach: float) -> bool:
 	if d.length() < 0.01 or d.length() >= reach: return false
 	return (-host.camera.global_basis.z).dot(d.normalized()) > 0.9
 
-func break_orb(how: String) -> bool:
+func break_orb(_how: String) -> bool:
 	if state().broken or not host.starting_magic.world_active(): return false
 	host.quest_state[KEY] = apply_break(state())
 	restore()
-	host.save_feedback("The ball cracks open and water flows back into the fountain. Black lichen grows on the pad. (%s)" % how)
+	host.save_feedback("The ball cracks open and water flows back into the fountain. Black lichen grows on the pad.")
 	return true
 
 func clump_aimed() -> int:
@@ -153,9 +154,7 @@ func take(index: int) -> Dictionary:
 	if host.carried_collected.size() >= 64: return {"ok": false, "reason": "Make room for the lichen."}
 	var id := clump_id(index)
 	host.quest_state[KEY] = nxt
-	host.carried_collected.append(id)
-	Items.sync(host)
-	if not host.quest_state.act2_items.collected.has(id): host.quest_state.act2_items.collected.append(id)
+	Grants.grant(host,id,{"cap":false,"duplicate":"allow","history":"act2_once","sync":true,"sync_first":true})
 	restore()
 	return {"ok": true, "reason": "Black Lichen (%d taken)." % nxt.taken.size()}
 

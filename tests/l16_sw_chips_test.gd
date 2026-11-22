@@ -13,7 +13,7 @@ func run() -> void:
 	var s: Dictionary = Foyer.initial()
 	for index in 4:
 		s = Foyer.apply_place(s, index, str(Foyer.CHIP_IDS[index]))
-	check(s.placed.size() == 4 and int(s.placed[0]) == 0 and int(s.placed[1]) == 1 and int(s.placed[2]) == 2 and int(s.placed[3]) == 3, "four pedestals take four known chips")
+	check(s.placed.size() == 4 and int(s.placed[0]) == 0 and int(s.placed[1]) == 1 and int(s.placed[2]) == 2 and int(s.placed[3]) == 3 and Foyer.field_ready(s), "four pedestals take four known chips and the field is ready")
 	check(Foyer.apply_place(s, 0, str(Foyer.CHIP_IDS[4])) == s, "a filled pedestal stays")
 	check(Foyer.validate(s).is_empty(), "four chips validate")
 	var floats: Dictionary = s.duplicate(true)

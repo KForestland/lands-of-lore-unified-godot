@@ -1,1 +1,54 @@
-{"name":"l9_chapel_earned_test","suite":"core","mode":"headless","order":635}
+{
+  "name": "l9_chapel_earned_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 635,
+  "teleports": 0,
+  "test_aids": 32,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7ce4152ac61556d70e2158ab47f411014c69504a25e94a1dfae7971ceb96a7b0"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/l10_barrel_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 67,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_chapel_earned_test.gd",
+        "line": 41,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_mirror_return_earned_test.gd",
+        "line": 31,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_opening_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 37
+}

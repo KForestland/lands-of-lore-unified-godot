@@ -1,0 +1,35 @@
+extends SceneTree
+const Health=preload("res://scripts/lol2/player_health.gd")
+const Model=preload("res://scripts/lol2/cave_encounter_state.gd")
+const Spies=preload("res://tests/foundation/strike_spies.gd")
+class Host extends Node3D:
+	var player_health_owner:Node=Health.new()
+	func _ready():Health.attach(self)
+func _initialize():run.call_deferred()
+func run():
+	var data=Health.new();root.add_child(data)
+	var events:Array=[];data.changed.connect(func(before:int,after:int):events.append([before,after]))
+	assert(data.value()==30 and not data.fallen())
+	data.current=46;assert(data.value()==46 and data.lose(6)==40)
+	data.set_value(-3);assert(data.value()==-3 and data.fallen())
+	data.restore_full();data.set_value(29);assert(data.heal(6)==30 and data.lose(100)==0)
+	assert(data.fallen());data.restore_full()
+	var size=events.size();data.set_value(30);assert(events.size()==size,"unchanged writes have no false changed event")
+	assert(events[0]==[30,46] and events[1]==[46,40] and events[2]==[40,-3])
+	var model=Model.new();model.player_health=17;assert(model.player_health==17,"standalone model")
+	data.set_value(19);model.bind_health(data);assert(model.player_health==19,"existing live owner wins during setup")
+	model.set("player_health",23.0);assert(model.player_health==23 and data.value()==23,"legacy set() calls the forwarding setter")
+	data.current=11;assert(model.player_health==11,"canonical writes reach model alias")
+	var fresh=Model.new();fresh.bind_health(data,false);assert(data.value()==30,"legacy no-roach load resets its replacement model")
+	data.free()
+	# A pre-tree assignment to the Hive alias must reach the owner on entry.
+	var host=Host.new();var warriors=Spies.Hive.new();warriors.name="Warriors";warriors.health=17;host.add_child(warriors)
+	root.add_child(host);assert(host.player_health_owner.value()==17 and Health.read_host(host)==17)
+	warriors.health=12;assert(host.player_health_owner.value()==12)
+	host.player_health_owner.set_value(8);assert(warriors.health==8)
+	host.free()
+	# The preconstructed node also has a bounded lifetime for off-tree previews.
+	var preview=load("res://scripts/lol2/jungle_review.gd").new();var node:Node=preview.player_health_owner
+	preview.free();assert(not is_instance_valid(node),"unattached owner leaked")
+	print("PASS player_health_owner: raw writes/bounds/signals, standalone/bound model/set(), Hive pre-tree alias, legacy reset and off-tree cleanup")
+	quit()

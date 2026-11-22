@@ -74,6 +74,8 @@ func run() -> void:
 	assert(host.player_form == 2 and curse.state.phase == 3)
 	assert(Curse.valid(curse.snapshot(),2))
 	var blocked := curse.snapshot()
+	assert(curse.accepts_player_spell("curse2") and not curse.receive_player_spell("curse2"),"Chosen human return still needs physical headroom")
+	assert(curse.snapshot()==blocked and host.player_form==2 and host.health==7,"Blocked control cast has no state, shape or health effect")
 	curse.advance(10)
 	assert(curse.snapshot() == blocked)
 	assert(host.health == 7,"Blocked morph must not heal")

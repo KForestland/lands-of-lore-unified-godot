@@ -10,7 +10,7 @@ extends SceneTree
 ## - mana/selected spell: real Spell Bar click loads Heal and a real Magic Button click casts it;
 ## - Museum -> Jungle: the real E key at the Shining Path approach (production enter_mirror).
 ## SUPPLIED, labelled: two Aloe and one Stalagmite in the cave owners (their world pickups are not walked); the player
-## placed beside the roach and aimed; health 14 before the Heal; the cave chamber movie skipped (chamber_arrival_state
+## placed beside the roach and aimed; health 25 before Aloe and 14 before the Heal; the cave chamber movie skipped (chamber_arrival_state
 ## "complete", then the production _enter_museum transfer); the Museum introduction skipped; the player placed at the
 ## mirror approach.
 ## Every comparison uses player_continuity.gd with explicit allowed changes only (Heal in the Museum; mana
@@ -41,6 +41,7 @@ func click_at(position: Vector2, button := MOUSE_BUTTON_LEFT) -> void:
 	for i in 2: await process_frame
 func click(control: Control) -> void: await click_at(control.get_global_rect().get_center())
 func key(code: Key) -> void:
+	await process_frame
 	for pressed in [true, false]:
 		var e := InputEventKey.new(); e.keycode = code; e.physical_keycode = code; e.pressed = pressed
 		Input.parse_input_event(e)
@@ -99,7 +100,17 @@ func save_click(area, name: String) -> bool:
 	if not hud.sheet.visible or hud.atlas.visible: await click(hud.buttons[0])
 	var snapshot := Continuity.from_host(area)
 	await click(hud.save_button)
-	if not check(FileAccess.file_exists(path) and not "failed" in hud.save_status.text,"%s save click '%s'" % [name, hud.save_status.text]): return false
+	var panel=hud.slot_panel
+	if not check(is_instance_valid(panel),"%s slot list opens"%name):return false
+	await click(panel.rows.get_node("Slot_01"))
+	if panel.confirmation.visible:await click(panel.confirm_yes)
+	if not check(panel.message.text.begins_with("Saved to slot"),"%s slot save click: %s"%[name,panel.message.text]):return false
+	var document=preload("res://scripts/lol2/game_save.gd").read_document(preload("res://scripts/lol2/game_save.gd").slot_path(1))
+	if not check(document.error.is_empty(),"read saved envelope"):return false
+	# Derived test artifact: retain the inner legacy packet for old continuity projections/readers.
+	# This copies test output only; the production slot file remains the save being exercised.
+	var out:=FileAccess.open(path,FileAccess.WRITE);out.store_string(JSON.stringify(document.state.area_save,"  ",true,true)+"\n");out.close()
+	await key(KEY_ESCAPE)
 	var bytes := FileAccess.get_file_as_bytes(path)
 	var ctx := HashingContext.new(); ctx.start(HashingContext.HASH_SHA256); ctx.update(bytes)
 	receipt.saves[name] = {"path": path, "sha256": ctx.finish().hex_encode(), "format": JSON.parse_string(bytes.get_string_from_utf8()).get("format"), "snapshot": snapshot}
@@ -115,9 +126,11 @@ func mana_drift(before: Dictionary, departed: float, remainder: float) -> Dictio
 	return Continuity.mana_allowance(int(before["magic.mana"]), int(before["magic.maximum"]), simulated_seconds - departed + 2.0 * last_frame_seconds, remainder)
 
 func run() -> void:
+	# A failed first phase must not leave a staged/previous receipt available to restart.
+	if FileAccess.file_exists(DIR+"phase1.json"):DirAccess.remove_absolute(DIR+"phase1.json")
 	DirAccess.make_dir_recursive_absolute(DIR)
 	receipt.labels = {"earned": ["fighting XP by real Attack Button hits on a cave roach (population owner)", "magic XP by real Spark click on that roach", "Aloe consumed by real inventory clicks", "Stalagmite equipped by real inventory clicks", "Heal selected and cast by real Spell Bar/Magic Button clicks", "Museum->Jungle by real E key at the mirror approach"],
-		"supplied": ["2 Aloe + 1 Stalagmite placed in cave owners", "player placed/aimed at the roach and at the mirror approach", "health 14 before the cave Heal", "cave chamber movie skipped; production _enter_museum transfer", "Museum introduction skipped"]}
+		"supplied": ["2 Aloe + 1 Stalagmite placed in cave owners", "player placed/aimed at the roach and at the mirror approach", "health 25 before Aloe; health 14 before the cave Heal", "cave chamber movie skipped; production _enter_museum transfer", "Museum introduction skipped"]}
 	# ---------------- Cave ----------------
 	var cave = load("res://scenes/lol2/cave_walkthrough.tscn").instantiate()
 	root.add_child(cave); current_scene = cave
@@ -129,6 +142,8 @@ func run() -> void:
 	var hud = cave.interface_hud; var magic = cave.starting_magic
 	var aloe1 := Aloe.item_id(Aloe.RECORDS[0], 1); var aloe2 := Aloe.item_id(Aloe.RECORDS[1], 1)
 	cave.aloe.collected.append_array([aloe1, aloe2]); cave.stalagmites.collected.append(WEAPON)
+	# Supplied injury: an Aloe has no effect at full health and stays carried.
+	magic.set_health(25)
 	var initial := Continuity.from_host(cave)
 	receipt.snapshots.cave_initial = initial
 	# Inventory first (population melee needs a weapon): use one Aloe, equip the Stalagmite (real clicks).

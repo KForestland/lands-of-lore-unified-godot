@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const DeadBracers=preload("res://scripts/lol2/dead_bracers_item.gd")
 ## Prima103/113: bracers permit the priest's errand. Original prop158 gift identity is def78.
 const Ankh=preload("res://scripts/lol2/l10_ankh_state.gd")
@@ -42,7 +43,9 @@ func speak()->Dictionary:
   return exchange_ashes(Ankh.FULL)
  var result:=grant(state(),host.carried_collected,host.quest_state.get("act2_items",Items.initial()),64)
  if not result.ok:return result
- host.carried_collected=result.inventory;host.quest_state.act2_items=result.items;host.quest_state[KEY]=result.state;Items.sync(host)
+ var admission:=Grants.transition(host,result.inventory,{"act2_items":result.items,KEY:result.state})
+ if not admission.ok:return admission
+ Items.sync(host)
  return {"ok":true,"reason":"Take this urn to the chapel. Burn my body and bring back my ashes."}
 static func grant(saved: Dictionary,inventory: Array,items: Dictionary,capacity: int)->Dictionary:
  if not DeadBracers.available(inventory):return {"ok":false,"reason":"You need the Bracers of the Dead to speak with him."}
@@ -60,17 +63,26 @@ func _process(delta):
  if available() and reachable():hint.text="E — Speak with the priest" if visible_ghost else "A silent presence waits here"
 func _unhandled_input(event: InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E:return
- if not available() or Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED or is_instance_valid(host.inventory) or not reachable():return
- if host.has_method("actor_input_locked") and host.actor_input_locked():return
- var result:=speak();host.save_feedback(result.reason);get_viewport().set_input_as_handled()
+ if Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED:return
+ if try_use():get_viewport().set_input_as_handled()
+func try_use()->bool:
+ if not available() or is_instance_valid(host.inventory) or not reachable():return false
+ if host.has_method("actor_input_locked") and host.actor_input_locked():return false
+ var result:=speak();host.save_feedback(result.reason)
+ return true
 
 func exchange_ashes(item: String)->Dictionary:
  if not available() or host.player_form!=0 or not reachable() or not host.get_node("L10Tombs").opened("154") or not DeadBracers.available(host.carried_collected):return {"ok":false,"reason":"Approach the priest with the Bracers of the Dead."}
  if not state().urn_given:return {"ok":false,"reason":"Accept the priest's errand first."}
  var result:=Ankh.act(host.quest_state.get("l10_ankh",Ankh.initial()),host.carried_collected,Ankh.TRADE,item)
  if not result.ok:return result
- host.carried_collected=result.inventory;host.quest_state.l10_ankh=result.state
- var history: Dictionary=host.quest_state.act2_items.duplicate(true)
- if Ankh.ANKH not in history.collected:history.collected.append(Ankh.ANKH)
- host.quest_state.act2_items=history;Items.sync(host)
+ # Compute both pure steps before publishing either. A failed retrieval or
+ # admission leaves the original ashes, trade slot, history and pack intact.
+ if Ankh.ANKH not in result.inventory:
+  var taken:=Ankh.act(result.state,result.inventory,Ankh.TRADE)
+  if not taken.ok:return taken
+  result=taken
+ var admission:=Grants.transition(host,result.inventory,{Ankh.KEY:result.state},{"history":"act2_once","history_id":Ankh.ANKH})
+ if not admission.ok:return admission
+ Items.sync(host)
  return {"ok":true,"reason":"Take the ankh. Use it on the slab beside my tomb."}

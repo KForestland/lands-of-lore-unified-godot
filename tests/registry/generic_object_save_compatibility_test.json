@@ -1,0 +1,22 @@
+{
+  "name": "generic_object_save_compatibility_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1348,
+  "teleports": 0,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged.",
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "d399a5d62d6ce95b873f907c27606b20aa4f86dc70136ca09328bb250e830d97"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 0,
+  "needs": {
+    "note": "Pure compatibility vectors; no game host or input aids. Unknown future rows must not invalidate a whole-game save."
+  }
+}

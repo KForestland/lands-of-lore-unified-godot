@@ -49,7 +49,7 @@ func run() -> void:
 		if face.kind == "wall" and bool(face.get("source_wall", false)):
 			hive_appended += 1
 			if int(face.region) == 838 and int(face.edge) == 0 and int(face.wall_record) in [1609, 1610]: brazier += 1
-	check(hive.faces.size() == 4305 and int(hive.interior_audit.span_start) == 3495 and hive_appended == 304 and brazier == 2 and hive.source_walls.skipped_special.size() == 15, "hive.json: 4305 faces, 304 appended source walls (15 bit-0x10 records skipped) incl. the brazier room's edge 838/0 records 1609+1610 (%d, %d)" % [hive_appended, brazier])
+	check(hive.faces.size() == 4327 and int(hive.interior_audit.span_start) == 3495 and hive_appended == 326 and brazier == 2 and hive.source_walls.skipped_special.size() == 15, "hive.json: 4327 faces, 326 appended source walls (304 + 22 ceiling-child walls, pack regenerated with 32c4e41) (15 bit-0x10 records skipped) incl. the brazier room's edge 838/0 records 1609+1610 (%d, %d)" % [hive_appended, brazier])
 	for face in hive.faces:
 		if face.kind == "wall" and bool(face.get("source_wall", false)) and int(face.surface_code) >= 16: check(false, "bit-0x10 record appended")
 	# 4. Region blockers staged for every Act 1 area.

@@ -20,13 +20,24 @@ from verify_special_pixel_table_binding import fixups
 from prepare_museum_key_locks import definitions
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def _span_ok(data, want):
+    """want is hex text, or ('sha256', length, digest) for a long span kept out of the public copy."""
+    if isinstance(want, tuple):
+        return len(data) == want[1] and hashlib.sha256(data).hexdigest() == want[2]
+    return data.hex() == want
+
+
+def _span_sha(want):
+    return want[2] if isinstance(want, tuple) else hashlib.sha256(bytes.fromhex(want)).hexdigest()
 SPANS = {(0x96080, 0x960b9): '53568b5c240c8b4424108a003c01740531c05e5bc38a630484e4740788e228c2885304680000000368a4270200e816b1040083c40885c074d9',
-         (0x960e4, 0x96129): '807b0400753fa1046909008b0005880000008b40046bd05ba1f42c02008b4402185068d82c02008b1d573c0200e8468a000083c4085368483302008903e8a619feff83c408'}
+         (0x960e4, 0x96129): ('sha256', 69, 'edb407e05731d20b7dff8b6db01f981bedeb3578a105cf8238178a5ce8fe5b25')}
 
 
 def main():
     exe = (GAME / 'LOLG.DAT').read_bytes(); assert hashlib.sha256(exe).hexdigest() == EXE_HASH
-    for (a, z), want in SPANS.items(): assert exe[a + 0x37000:z + 0x37000].hex() == want, hex(a)
+    for (a, z), want in SPANS.items(): assert _span_ok(exe[a + 0x37000:z + 0x37000], want), hex(a)
     le = 0x39024 + u32(exe, 0x39060); first = u32(exe, le + u32(exe, le + 0x40) + 108)
     rel = fixups(exe, le, first - 1 + (0xc860 + 2 * 4) // 4096)[(0xc860 + 2 * 4) % 4096]
     assert rel['target_object'] == 2 and rel['target_offset'] + 0x59024 == 0x96080
@@ -54,7 +65,7 @@ def main():
         raw = geo[offset:offset+37]
         assert u32(raw,32)==0xDDC02377
         placed.append(dict(item=item,group=group,command=commands[-1],archive_offset=entry['offset']+offset,placement_hex=raw.hex(),identity='0xddc02377',definition=58))
-    report = dict(executable_sha256=EXE_HASH, handler=dict(index=2, address='0x96080', spans={hex(a): hashlib.sha256(bytes.fromhex(w)).hexdigest() for (a, _), w in SPANS.items()}),
+    report = dict(executable_sha256=EXE_HASH, handler=dict(index=2, address='0x96080', spans={hex(a): _span_sha(w) for (a, _), w in SPANS.items()}),
                   definitions={'57': dict(name=names[57], identity=hex(u32(d57, 24)), handler=2), '58': dict(name=names[58], identity=hex(u32(d58, 24)), handler=0)},
                   sconce_recharge=dict(controls='117..139', records=23, held='57b-Fire brnt', grant='57a-Fire crstl', property=1),
                   shop=dict(grants=3, property=4),

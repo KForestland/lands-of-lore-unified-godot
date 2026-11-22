@@ -1,10 +1,10 @@
 extends Node3D
 ## STORY-072 NW tower traps (HINTBOOK 4824-4841; I05). Prop 88 is the Block trap, prop 89 the
 ## Fire trap, prop 90 the Ice trap. A click breaks the brick. The carried blue bow, in hand,
-## breaks the fireball and stays in the pack. A spark of charge 3 or more breaks the ice ball.
+## breaks the fireball and stays in the pack. Shared Summon3 breaks the ice ball.
 ## Hintbook 4831-4832 names a third-level summoned imp or a pyrapod-altered spark fireball.
-## Neither piece is hosted: the cast table is spark and heal, and pyrapod handler group 32
-## stays UNKNOWN. The charge test is the logged adapter. Brady printed 233 names other
+## The shared imp cast is a named modern quest adapter; pyrapod handler group 32
+## stays UNKNOWN. No summon damage or autonomous imp actor is invented. Brady printed 233 names other
 ## weapons; those checks stay off this module. Props 641 and 600
 ## stay. FireWall doors 86, 87, and 88 stay shut. The battlement floors stay put.
 const KEY := "l16_nw_traps"
@@ -25,7 +25,7 @@ class IceReceiver:
 	var owner: Node
 	func _init(n: Node): owner = n
 	func receive_spark() -> bool: return false
-	func receive_spark_level(level: int) -> bool: return owner.break_ice(int(level))
+	func receive_spark_level(_level: int) -> bool: return false
 
 static func initial() -> Dictionary:
 	return {"version": 1, "brick": false, "fireball": false, "ice": false}
@@ -37,8 +37,9 @@ static func validate(s: Variant, _quests: Dictionary = {}) -> String:
 	if not s.get("brick") is bool or not s.get("fireball") is bool or not s.get("ice") is bool: return "Invalid NW trap state."
 	return ""
 
+## Either bow: the Blue Bow and the City's Dark Bow are the same definition 35 "36-Darkbow" (Grok 2026-11-16).
 static func accepts_fire(hand: String) -> bool:
-	return hand == BLUE
+	return hand in [BLUE, "act2:L16_CA:item24"]
 
 static func attach(map: Node3D) -> Node:
 	var n: Node = load("res://scripts/lol2/l16_nw_traps.gd").new()
@@ -116,8 +117,8 @@ func break_brick() -> bool:
 
 func break_fire() -> bool:
 	if not aimed(FIRE_AT, 180.0): return false
-	if not accepts_fire(str(host.hand_item)): return false
-	return _mark("fireball", "The blue bow breaks the fireball.")
+	if not (accepts_fire(str(host.hand_item)) or accepts_fire(str(host.equipped_item))): return false
+	return _mark("fireball", "The bow breaks the fireball.")
 
 func break_ice(level: int) -> bool:
 	if level < 3: return false
@@ -127,12 +128,25 @@ func _process(_delta: float) -> void:
 	hint.text = ""
 	var s := state()
 	if not bool(s.brick) and aimed(BRICK_AT, 180.0): hint.text = "Left click — Strike the brick"
-	elif not bool(s.fireball) and aimed(FIRE_AT, 180.0) and accepts_fire(str(host.hand_item)): hint.text = "Left click — Loose the blue bow"
+	elif not bool(s.fireball) and aimed(FIRE_AT, 180.0) and (accepts_fire(str(host.hand_item)) or accepts_fire(str(host.equipped_item))): hint.text = "Left click — Loose the bow"
 	elif not bool(s.fireball) and aimed(FIRE_AT, 180.0): hint.text = "The blue bow meets this fireball."
-	elif not bool(s.ice) and aimed(ICE_AT, 180.0): hint.text = "A level-three spark breaks the white ball."
+	elif not bool(s.ice) and aimed(ICE_AT, 180.0): hint.text = "Summon — Ctrl+Q: Ancient Imp at the white ball."
 	restore()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton or not event.pressed or event.button_index != MOUSE_BUTTON_LEFT: return
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: return
 	if break_brick() or break_fire(): get_viewport().set_input_as_handled()
+
+func aimed_ice() -> bool:
+	if not aimed(ICE_AT, 180.0) or bool(state().ice): return false
+	var origin: Vector3 = host.camera.global_position
+	var query := PhysicsRayQueryParameters3D.create(origin,origin-host.camera.global_basis.z*180.0,1,[host.player.get_rid()])
+	var hit := get_world_3d().direct_space_state.intersect_ray(query)
+	return not hit.is_empty() and hit.collider == bodies[ICE]
+
+func accepts_player_spell(id: String) -> bool:
+	return id == "summon3" and aimed_ice()
+
+func receive_player_spell(id: String) -> bool:
+	return accepts_player_spell(id) and break_ice(3)

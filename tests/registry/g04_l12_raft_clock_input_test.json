@@ -1,0 +1,40 @@
+{
+  "name": "g04_l12_raft_clock_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Real W/play clock/F5/F9; raft clock held at capture and new-node restore boundary for exact comparison. Local arrival, not earned river route."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 0,
+  "test_aids": 6,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "78ffe47653a95c9d770ba7d898a8deb2443c22621ac0989184bbcaa547604e7f"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/g04_floor_input_test.gd",
+        "line": 41,
+        "column": 69,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/L14_HT.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/g04_l12_raft_clock_input_test.gd",
+        "line": 12,
+        "column": 69,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/L12_CM.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 8
+}

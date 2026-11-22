@@ -8,6 +8,24 @@ extends Node
 const KEY: String = "atlas_explored"
 const CREATURE_AREAS: Array[String] = ["L8_SJ", "L9_DR", "L10_DC", "L12_CM", "L13_RC", "L14_HT", "L16_CA", "L17_HC", "L19_BC", "L20_BB"]
 const REGION_LIMIT := 12000
+## Owner r19p 2026-11-17 (F10 14-11-30, Jungle): 'the map discovery rate is a bit low, perhaps 2x or 3x'. A map without
+## a renderer visible set (the Act 1 maps: Jungle, Hive, Dark Halls; not Cave or Museum, see REVEAL_SKIP) revealed only the region under the feet - a
+## trail about one region wide (median region 130 across). It now also reveals every region whose centre lies within
+## REVEAL_RADIUS of the feet and REVEAL_HEIGHT of their height: a trail about 400 wide, three times the old one.
+const REVEAL_RADIUS := 200.0
+const REVEAL_HEIGHT := 96.0
+const REVEAL_STEP := 32.0
+const BUCKET := 256.0
+## Cave and Museum keep the stood-region rule for now: on the Cave a 200 radius opens the Atlas zoomed out so far that
+## the arrival floor is a dot, and on the Museum it reveals every room the arrival walk can reach (atlas_readable_cave and
+## atlas_readable_museum). The owner's report was the Jungle.
+const REVEAL_SKIP := ["L1_DC", "L3_DH"]
+var centres: PackedVector3Array = PackedVector3Array()
+var buckets: Dictionary = {}
+var near: Array = []
+var near_at := Vector3(INF, INF, INF)
+var known: Dictionary = {}
+var known_for: Variant = null
 var host: Node
 var nav: Array = []
 var last_stand := Vector3(INF, INF, INF)
@@ -152,7 +170,21 @@ func _ready() -> void:
 	var area := area_of(host)
 	if area != "":
 		nav = preload("res://scripts/lol2/region_visibility.gd").load_regions(area)
-	note()
+	centres.resize(nav.size())
+	for i in nav.size():
+		var row: Variant = nav[i]
+		centres[i] = Vector3(INF, INF, INF)
+		if not row is Array or row.size() < 2 or not row[0] is Array or (row[0] as Array).is_empty(): continue
+		var c := Vector2.ZERO
+		for v in row[0]: c += Vector2(float(v[0]), float(v[1]))
+		c /= float((row[0] as Array).size())
+		centres[i] = Vector3(c.x, float(row[1]), c.y)
+		var cell := Vector2i(floori(c.x / BUCKET), floori(c.y / BUCKET))
+		if not buckets.has(cell): buckets[cell] = PackedInt32Array()
+		buckets[cell].append(i)
+	# Derived hosts finish native arrival placement after the base attaches this node.
+	# Sampling inline here recorded the temporary pack spawn as explored.
+	note.call_deferred()
 
 func mapped_count() -> int:
 	var count := 0
@@ -160,6 +192,22 @@ func mapped_count() -> int:
 		if row is Array and row.size() > 0 and row[0] is Array and not (row[0] as Array).is_empty():
 			count += 1
 	return count
+
+## Regions whose centre is within REVEAL_RADIUS (flat) and REVEAL_HEIGHT of the point; recomputed after REVEAL_STEP.
+func near_regions(point: Vector3) -> Array:
+	if point.distance_to(near_at) < REVEAL_STEP: return near
+	near_at = point
+	near = []
+	var r := ceili(REVEAL_RADIUS / BUCKET)
+	var home := Vector2i(floori(point.x / BUCKET), floori(point.z / BUCKET))
+	for dx in range(-r, r + 1):
+		for dz in range(-r, r + 1):
+			var cell := home + Vector2i(dx, dz)
+			if not buckets.has(cell): continue
+			for i in buckets[cell]:
+				var c: Vector3 = centres[i]
+				if Vector2(c.x - point.x, c.z - point.z).length() <= REVEAL_RADIUS and absf(c.y - point.y) <= REVEAL_HEIGHT: near.append(i)
+	return near
 
 func stand_point() -> Vector3:
 	var body: Variant = host.get("player")
@@ -197,10 +245,26 @@ func note() -> void:
 	if vis != null and vis.get("visible_regions") is Dictionary:
 		for key in vis.visible_regions.keys():
 			ids.append(int(key))
+	elif prog == null and not nav.is_empty() and not area in REVEAL_SKIP:
+		ids.append_array(near_regions(stand_point()))
 	var saved: Dictionary = host.get(KEY)
+	# Nothing new in sight: skip the whole-record copy and compare (it ran every frame and grows with the explored set).
+	if is_same(saved, known_for):
+		var fresh := false
+		for raw in ids:
+			if int(raw) >= 0 and not known.has(int(raw)): fresh = true; break
+		if not fresh: return
 	var next := reveal(saved, area, ids, mapped_count())
 	if JSON.stringify(next) != JSON.stringify(saved):
 		host.set(KEY, next)
+		saved = next
+	known_for = saved
+	known = {}
+	var row: Variant = (saved.get("areas", {}) as Dictionary).get(area)
+	if row is Dictionary:
+		if bool(row.get("full", false)):
+			for i in nav.size(): known[i] = true
+		for raw in row.get("regions", []): known[int(raw)] = true
 
 func _process(_delta: float) -> void:
 	note()

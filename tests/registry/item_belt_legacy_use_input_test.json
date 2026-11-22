@@ -1,0 +1,67 @@
+{
+  "name": "item_belt_legacy_use_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "note": "Actual F canonical flute/play and Larkhon F activation/E dose from untouched SHA-pinned input; only unactivated recipe state in memory, component stand and held NPC are explicit aids. Not an earned walk.",
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 1,
+  "test_aids": 4,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "3aa1cacec5dc7e436c1ba641bda495e0b1e1f2359c4a347d2a51683cbc00d14b"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_stored_spell_input.gd",
+        "line": 5,
+        "column": 17,
+        "kind": "item_grant_fixture",
+        "source": "if not require(Grants.grant(scene,id,{\"cap\":false,\"history\":\"act2_once\" if id.begins_with(\"act2:\") else \"none\",\"sync\":true}).ok,\"Disclosed actual-ID scroll grant fixture\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/item_belt_legacy_use_input_test.gd",
+        "line": 17,
+        "column": 1,
+        "kind": "unactivated_recipe_fixture",
+        "source": "scene.quest_state[guardian.State.KEY]=prepared"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 9,
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "unactivated_recipe_fixture",
+      "pattern": "scene\\.quest_state\\[guardian\\.State\\.KEY\\]\\s*="
+    }
+  ]
+}

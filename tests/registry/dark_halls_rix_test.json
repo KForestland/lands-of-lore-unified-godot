@@ -1,6 +1,19 @@
 {
- "name": "dark_halls_rix_test",
- "suite": "core",
- "mode": "rendered",
- "order": 280
+  "name": "dark_halls_rix_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 280,
+  "needs": {
+    "env": [
+      "LOL2_EARNED_SAVES"
+    ],
+    "note": "Requires staged act1_broken_repaired_monastery.json; F03 supplies it in private userdata/tests. Existing rendered real-input Rix check."
+  },
+  "teleports": 1,
+  "test_aids": 7,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "aea89c5f446b934dcae44c93f8674b9f170bf912fafee60a7f4cf7b3cd1ff1ee"
+  },
+  "count_method": "Audited source sites, not executions."
 }

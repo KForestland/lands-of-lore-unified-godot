@@ -24,7 +24,11 @@ func run() -> void:
 	if lift.target_control() != 127: return fail("Post127 not targeted from the owner's spot (got %d)" % lift.target_control())
 	var e := InputEventKey.new(); e.keycode = KEY_E; e.physical_keycode = KEY_E; e.pressed = true
 	Input.parse_input_event(e); Input.flush_buffered_events()
+	# Source388.wav lasts35ms; three60fps frames can legitimately outlast the
+	# whole clip. Observe playback at E dispatch, then check the persistent
+	# click/stop contract after the frames. No sound duration or lift rule changes.
+	var playback_started: bool = lift.click != null and lift.click.playing
 	for i in 3: await process_frame
-	if lift.clicks != 1 or not lift.click.playing or int(lift.checkpoint.target) != 1: return fail("E did not click (clicks %d, target %s)" % [lift.clicks, lift.checkpoint.target])
+	if lift.clicks != 1 or not playback_started or int(lift.checkpoint.target) != 1: return fail("E did not click (clicks %d, target %s, audio_started %s)" % [lift.clicks, lift.checkpoint.target, playback_started])
 	print("PASS hive_elevator_post_click: E at post127 from the owner's spot plays the original button click (388); stop stays 1")
 	quit(0)

@@ -1,0 +1,61 @@
+{
+  "name": "l10_door127_owner_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Untouched owner bundle03-45-34 full F5 afc5734e SHA; actual F9/W/E from both sides/F5/F9/repeat. Private slot install only; no body, resource or clock injection. Ordinary1/60, leaf collision retained."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "unchanged_owner_checkpoint_admission",
+      "pattern": "Save\\.load_file\\(self,INPUT\\)"
+    },
+    {
+      "kind": "install_game_written_private_slot",
+      "pattern": "DirAccess\\.copy_absolute\\(INPUT,Save\\.slot_path\\(1\\)\\)"
+    },
+    {
+      "kind": "disable_unused_guard",
+      "pattern": "use_guard\\s*=\\s*false"
+    }
+  ],
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "5a9e06daa792ad0ac1c392fa33304df5fe6a752d88c9237ce4e0087888cff563"
+  },
+  "context_aid_source_sites": {
+    "count": 3,
+    "sites": [
+      {
+        "path": "tests/l10_door127_owner_input_test.gd",
+        "line": 36,
+        "column": 16,
+        "kind": "unchanged_owner_checkpoint_admission",
+        "source": "if not require(Save.load_file(self,INPUT).is_empty(),\"Full owner save loader\"):return"
+      },
+      {
+        "path": "tests/l10_door127_owner_input_test.gd",
+        "line": 37,
+        "column": 21,
+        "kind": "disable_unused_guard",
+        "source": "await scene_changed;use_guard=false;await adopt()"
+      },
+      {
+        "path": "tests/l10_door127_owner_input_test.gd",
+        "line": 39,
+        "column": 16,
+        "kind": "install_game_written_private_slot",
+        "source": "if not require(DirAccess.copy_absolute(INPUT,Save.slot_path(1))==OK,\"Install untouched owner save in private slot1\"):return"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 3
+}

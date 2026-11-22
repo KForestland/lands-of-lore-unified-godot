@@ -4,8 +4,11 @@ extends Node
 const MyJournal = preload("res://scripts/lol2/my_journal.gd")
 const Egg = preload("res://scripts/lol2/l13_egg_door.gd")
 const JOURNAL_HINTS := [
+	{"when":"l12_claw_arrival","flag":"l12_arrival","hint":"The Claw Mountains. The path climbs northeast out of the gulch; past the ice tunnel lies the citadel.","enhanced_guard":"same note in both editions (BJ14 G2)"},
 	{"when":"l13_citadel_sealed","flag":"l13_egg_door","hint":"Something in the citadel is still sealed. A charged globe, then the upper halls, stand between me and the stone.","enhanced_guard":"same note in both editions (grok K09)"},
-	{"when":"l13_dreamstone","flag":"l13_exit_lock","hint":"The Dreamstone is past the Hive Lord. Dawn's lock and the temple door both take it, and both give it back.","enhanced_guard":"same note in both editions (grok K09)"}]
+	{"when":"l13_dreamstone","flag":"l13_exit_lock","hint":"The Dreamstone is past the Hive Lord. Dawn's lock and the temple door both take it, and both give it back.","enhanced_guard":"same note in both editions (grok K09)"},
+	{"when":"l13_dreamstone_home","flag":"l8_temple_door","hint":"Carry the Dreamstone to the Huline Temple: at the ice opening, jump onto a floe or climb down to the gulch, then on to the jungle.","enhanced_guard":"same note in both editions (lead 2026-11-15, Grok r19o3 owner-save walk)"}]
+const DREAMSTONE := 136
 var host: Node3D
 var role := "citadel"
 
@@ -46,8 +49,21 @@ func places() -> Array:
 	if lock != null and lock.has_method("reachable") and lock.reachable() and _lock_closed("L13ExitLock"): out.append("exit")
 	return out
 
+## Lead 2026-11-15: once Luther carries the Dreamstone, the Journal says where it goes (until the temple door has it).
+static func carrying_dreamstone(host: Node) -> bool:
+	var carried = host.get("carried_collected")
+	if not carried is Array: return false
+	for id in carried:
+		if id is String and preload("res://scripts/lol2/act2_items_catalog.gd").definition(id) == DREAMSTONE: return true
+	return false
+
+static func dreamstone_home_open(host: Node) -> bool:
+	var door: Dictionary = host.quest_state.get("l8_temple_door", {}) if host.get("quest_state") is Dictionary else {}
+	return carrying_dreamstone(host) and not preload("res://scripts/lol2/l8_temple_door_state.gd").unlocked(door)
+
 func check() -> String:
 	if not is_instance_valid(host) or not host.get("quest_state") is Dictionary: return ""
+	if role == "citadel" and dreamstone_home_open(host): MyJournal.discover(host, "l13_dreamstone_home")
 	var facts := {"form": int(host.get("player_form")), "can_leave": false}
 	var found := ""
 	for where in places():
@@ -58,3 +74,9 @@ func check() -> String:
 
 func _process(_delta: float) -> void:
 	check()
+
+func _ready():
+	if role!="citadel":return
+	var helper:Node=load("res://scripts/lol2/player_action_hints.gd").new()
+	helper.host=host;helper.provider=load("res://scripts/lol2/l13_action_hint_targets.gd").new()
+	helper.name="ChainActionHints";add_child(helper)

@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Original body2406, pyre301 children223/225/224 and orb1205/1206; book-led action admission.
 const State=preload("res://scripts/lol2/l9_pyre_state.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
@@ -69,10 +70,9 @@ func urn(action: String,item: String="")->Dictionary:
  if not active() or not reachable(ALTAR+Vector3.UP*12):return {"ok":false,"reason":"Approach and face the ashes."}
  var result:=State.act(state(),host.carried_collected,action,item)
  if not result.ok:return result
- host.quest_state[KEY]=result.state;host.carried_collected=result.inventory
- var packet: Dictionary=host.quest_state.get("act2_items",Items.initial()).duplicate(true)
- if State.FULL not in packet.collected:packet.collected.append(State.FULL)
- host.quest_state.act2_items=packet;Items.sync(host);host.act2_items.restore();present()
+ var admission:=Grants.transition(host,result.inventory,{KEY:result.state},{"history":"act2_once","history_id":State.FULL})
+ if not admission.ok:return admission
+ Items.sync(host);host.act2_items.restore();present()
  return {"ok":true,"reason":"The urn holds the priest's ashes."}
 func present():
  var s:=state()
@@ -110,4 +110,5 @@ func _unhandled_input(event: InputEvent):
  elif state().phase==3:
   var occupied: String=state().slots.get(State.TARGET,{}).get("occupied","");result=urn("retrieve") if not occupied.is_empty() else urn("insert",State.URN)
  else:return
- if result.ok:host.save_feedback(result.reason);get_viewport().set_input_as_handled()
+ if result.ok or (state().phase==3 and reachable(ALTAR+Vector3.UP*12)):
+  host.save_feedback(result.reason);get_viewport().set_input_as_handled()

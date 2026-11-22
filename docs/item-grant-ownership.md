@@ -1,0 +1,13 @@
+# Item grant ownership
+
+F08 commits2–8 route grants and transaction writebacks through item_grants.gd. Existing Way-B state rules still receive the live pack through pack(); their named callees are reviewed and semantically pinned. The Cave keeps its derived pack; no ordinary commit can write it. Known loaders retain their existing assignment contracts.
+
+check_item_grant_ownership.py scans every production GDScript, including inner-class functions. It resolves preload names, follows local live aliases in source order, detects direct/alias/get/StringName/API writes and live arguments to unlisted callees. Dictionary literals carrying live arrays remain live arguments. Array duplicates are fresh; shallow inventory dictionaries still share their collected array, while replacing the copied field is safe. Parameters of pure builders do not become live simply because of their spelling. The complete, separately enforced census catches new parameter writers and pins existing rule behavior.
+
+The policy lists seven writer functions (two API methods and five existing loaders), exact reviewed callees with semantic hashes, and two exact dynamic loader calls. Builders, serializers and five known read-only getter sites are checked for presence and for no live write. Eighteen throwaway probes cover the seven plan failure/report cases, a copy-builder pass, additional StringName/wrapper/shallow/deep/index/deferred cases and quoted/commented code. Removal is reported; the same erase probe must fail when enforcement is enabled.
+
+Optional commit10 is deferred to I-01. Twenty existing removal source sites in thirteen functions are reported by this guard after loader exclusions; these are not per-run counts. New additions still fail immediately. The original historical save bytes and all loaded-state records remain unchanged. The final host-save gate independently loads all36 old packets plus two pre-stamp post-grant packets and checks exact current post-grant writer bytes against the pre-migration qualification.
+
+No source or save-fixture baseline is regenerated to make this refactor pass. Test metadata now explicitly declares the existing Rix test dependency on staged earned saves; the initial missing-env failure and same-source correction are retained in the handoff.
+
+Qualification: final six targeted gates pass, including18 throwaway probes and all36 old-save loaded records. Capacity wording remains per-owner; the current r19k scan lists19 distinct refusals/templates (including the rune-copy wording), plus silent refusals at unchanged owners. Full source references are in the F08 handoff capacity-text inventory. No unified refusal text was introduced.

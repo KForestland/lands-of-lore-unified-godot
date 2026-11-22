@@ -1,0 +1,54 @@
+{
+  "name": "manual_save_queue_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "chain": "Private autosave driver with --autosave, ordinary time_scale 1; no shared player profile"
+  },
+  "count_method": "Audited source sites, not executions. Supplied grounded stand, pinned C15 packet, held root/NPC setup and session entry admission; actual automatic writer and real input.",
+  "teleports": 1,
+  "test_aids": 9,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "8ba38b8ef344c113d023200ebc13539e5a61a3d7d3820270c2f85884e6066c00"
+  },
+  "context_aid_source_sites": {
+    "count": 3,
+    "sites": [
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 26,
+        "column": 37,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/manual_save_queue_input_test.gd",
+        "line": 67,
+        "column": 8,
+        "kind": "async_writer_error_fixture",
+        "source": "session._save_thread=Thread.new()"
+      },
+      {
+        "path": "tests/manual_save_queue_input_test.gd",
+        "line": 75,
+        "column": 8,
+        "kind": "private_slot_selector_fixture",
+        "source": "session.last_slot=2"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 12,
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "async_writer_error_fixture",
+      "pattern": "\\.\\_save_thread\\s*="
+    },
+    {
+      "kind": "private_slot_selector_fixture",
+      "pattern": "\\.last_slot\\s*="
+    }
+  ]
+}

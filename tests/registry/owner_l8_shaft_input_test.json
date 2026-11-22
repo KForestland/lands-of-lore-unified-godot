@@ -1,0 +1,39 @@
+{
+  "name": "owner_l8_shaft_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "count_method": "Audited source sites, not executions. Immutable owner save, actual keys; setup/slot selection and local pose aids explicitly disclosed.",
+  "teleports": 0,
+  "test_aids": 4,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "9fec0bd9fac76f2dd6b18d5e7e0012a71f4c8c9c5c963fc786393de7c8c60381"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/g04_floor_input_test.gd",
+        "line": 41,
+        "column": 69,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/L14_HT.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/owner_gaps_input.gd",
+        "line": 11,
+        "column": 93,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(preload(\"res://scripts/lol2/game_areas.gd\").ROWS[area].scene).instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 6
+}

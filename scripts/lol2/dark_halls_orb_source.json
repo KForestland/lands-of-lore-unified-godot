@@ -1,0 +1,22 @@
+{
+  "region": 1596,
+  "floor": 750,
+  "group": 1066,
+  "polygon": [[-1400.0, -410.0], [-1408.0, 57.0], [-1518.21, 15.18], [-1520.11, -379.44]],
+  "orb": {"prop": 242, "to": [-2155, 900, -208], "sound": 881},
+  "pulls": [
+    {"state": 1, "group": 2406, "actor": 67},
+    {"state": 3, "group": 2442, "actor": 68},
+    {"state": 5, "group": 2478, "actor": 69},
+    {"state": 7, "group": 2514, "actor": 70},
+    {"state": 9, "group": 2550, "actor": 64},
+    {"state": 11, "group": 2586, "actor": 63},
+    {"state": 13, "group": 2622, "actor": 62},
+    {"state": 15, "group": 2658, "actor": 61},
+    {"state": 17, "group": 2694, "actor": 60},
+    {"state": 19, "group": 2730, "actor": 59}
+  ],
+  "pull_to": [-2158, 370, -213],
+  "pit": {"group": 2792, "from": 370, "to": 740, "speed": 50, "sound": 702,
+    "regions": [1688, 1689, 1690, 1691, 1692, 1693, 1694]}
+}

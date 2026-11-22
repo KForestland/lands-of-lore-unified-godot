@@ -1,8 +1,14 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l12_river_niche_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="8ce68e0b9955215e583b7863e7395edd46a57d0905ea992dd902b9136e8fc308"
+func pass_line() -> String:
+ return "PASS earned raft niche ->actual Spark prop136 ->original armor5 equipped/save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l12_river_niche_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="8ce68e0b9955215e583b7863e7395edd46a57d0905ea992dd902b9136e8fc308","qualified Citadel-exit input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified Citadel-exit input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L12_CM")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L12_CM.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -42,5 +48,5 @@ func run():
  check(armor.state().taken and not armor.sprite.visible and scene.equipped_armor==armor.ITEM and scene.carried_collected.count(armor.ITEM)==1,"armor persists equipped once")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seeds/recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned raft niche ->actual Spark prop136 ->original armor5 equipped/save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

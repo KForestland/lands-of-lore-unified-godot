@@ -5,7 +5,7 @@ extends SceneTree
 ## (so the preview builds collision only, nothing twice); Classic scene unchanged (no preview nodes); preview scene with
 ## the native solid boxes and the region blockers; the gate offers the "Preview: Act 2 start" button in both editions (owner 2026-10-30).
 const ROOT := "res://assets/lol2/generated/"
-const EXPECTED_SOLIDS := [62, 67, 68, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 114, 116, 136]  # unscripted, drawn, height >= 16; + tree 114 / log bridge 116 as scripted solids (l8_tree_bridge.gd, grok Y02 2026-11-06)
+const EXPECTED_SOLIDS := [62, 67, 68, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 114, 116, 136]  # unscripted, drawn, height >= 16; + tree 114 / log 116 and straw ramps 93 / 94 as scripted solids
 var failures := 0
 
 func check(condition: bool, message: String) -> void:
@@ -64,12 +64,12 @@ func run() -> void:
 		for child in preview.preview_assemblies.get_children():
 			if child is MeshInstance3D: meshes += 1
 			elif child is StaticBody3D: bodies += 1
-		# The pack draws every assembly except the tree 114 and the log bridge 116, whose presence l8_tree_bridge.gd drives
-		# (managed presence builds their meshes here; grok Y02 2026-11-06).
+		# The pack draws every assembly except the tree 114, the log 116, and the straw-pit ramps 93 and 94.
 		var managed: int = 0
 		for child in preview.preview_assemblies.get_children():
-			if child is MeshInstance3D and (str(child.name).contains("114") or str(child.name).contains("116")): managed += 1
-		check(meshes == managed and managed > 0, "preview: only the tree/bridge assembly meshes (the pack draws the rest) (%d, %d)" % [meshes, managed])
+			var mesh_name := str(child.name)
+			if child is MeshInstance3D and (mesh_name.begins_with("Assembly93_") or mesh_name.begins_with("Assembly94_") or mesh_name.begins_with("Assembly114_") or mesh_name.begins_with("Assembly116_")): managed += 1
+		check(meshes == managed and managed > 0, "preview: only the managed assembly meshes (the pack draws the rest) (%d, %d)" % [meshes, managed])
 		var ids: Array = preview.preview_assemblies.solid_bodies.keys(); ids.sort()
 		check(ids == EXPECTED_SOLIDS and bodies == EXPECTED_SOLIDS.size(), "preview: %d native solid boxes %s" % [bodies, ids])
 		check((preview.player.collision_mask & preview.preview_assemblies.SCENERY_LAYER) != 0, "preview: the player collides with the scenery layer")
@@ -92,5 +92,5 @@ func run() -> void:
 	gate_enhanced.queue_free(); await process_frame
 	Engine.set_meta("lol2_enhanced", false)
 	print("L8 preview: %d failures" % failures)
-	if failures == 0: print("PASS l8 preview: L8_SJ producers (assemblies 114 drawn = pack faces, collision 35/18, blockers 1085/859, nav 3961); Classic and preview both carry the 14 solids + blockers; gate button in both editions")
+	if failures == 0: print("PASS l8 preview: L8_SJ producers (assemblies 114 drawn = pack faces, collision 35/18, blockers 1085/859, nav 3961); Classic and preview both carry the 18 solids + blockers; gate button in both editions")
 	quit(0 if failures == 0 else 1)

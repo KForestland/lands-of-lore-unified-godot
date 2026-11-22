@@ -264,7 +264,7 @@ def main():
     for area in areas: totals.update(area['counts'])
     table = ['# Original game coverage', '', 'Generated from `game-coverage.json` and the local source archives by `tools/build_game_atlas.py`.', '',
              'Mapped source records are not completed gameplay. Partial means some behavior exists, not full-area fidelity.', '',
-             '| Area | Regions | Actors / props | Geometry | Content | Routes | Saves | Bob QA |', '| --- | ---: | ---: | --- | --- | --- | --- | --- |']
+             '| Area | Regions | Actors / props | Geometry | Content | Routes | Saves | the owner QA |', '| --- | ---: | ---: | --- | --- | --- | --- | --- |']
     for a in areas:
         s,c = a['status'],a['counts']
         table.append(f'| {a["id"]}: {a["name"]} | {c["regions"]} | {c["actors"]} / {c["props"]} | {s["geometry"]} | {s["content"]} | {s["routes"]} | {s["saves"]} | {s["qa"]} |')

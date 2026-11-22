@@ -1,4 +1,5 @@
 extends RefCounted
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 ## Restoration-owned museum save, separate from cavern quicksave and DOS files.
 const FORMAT := "lol2-restoration-museum"
@@ -25,7 +26,7 @@ static func validate(state: Variant) -> String:
 	if checkpoint.has("fighting"):
 		var fighting := preload("res://scripts/lol2/player_fighting_transport.gd").restore(checkpoint.fighting)
 		if fighting.has("error"): return fighting.error
-	if checkpoint.has("health") and (not within(checkpoint.health,1,30) or checkpoint.health != int(checkpoint.health)): return "Invalid player health."
+	if checkpoint.has("health") and (not within(checkpoint.health,1,PlayerHealth.limit_from_effects(checkpoint.get("item_effects",{}))) or checkpoint.health != int(checkpoint.health)): return "Invalid player health."
 	if checkpoint.has("player_form") and not preload("res://scripts/lol2/player_form_body.gd").valid(checkpoint.player_form): return "Invalid player form."
 	if checkpoint.has("curse") and not preload("res://scripts/lol2/player_curse.gd").valid(checkpoint.curse,checkpoint.get("player_form",0)): return "Invalid curse state."
 	if checkpoint.has("museum_draracle"):
@@ -149,6 +150,9 @@ static func validate(state: Variant) -> String:
 		var door = checkpoint.dragon_door
 		if not door is Dictionary or not door.get("opened") is bool or not within(door.get("progress"),0,1): return "Invalid dragon door state."
 		if not door.opened and door.progress != 0: return "Inconsistent dragon door state."
+	if checkpoint.has("museum_plank"):
+		var plank_error: String = preload("res://scripts/lol2/museum_plank_hole.gd").validate(checkpoint.museum_plank)
+		if not plank_error.is_empty(): return plank_error
 	var player = state.get("player")
 	if not player is Dictionary or not Numbers._vector(player.get("position"),1000000):
 		return "Invalid player position."

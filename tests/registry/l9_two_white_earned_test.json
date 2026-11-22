@@ -1,1 +1,113 @@
-{"name": "l9_two_white_earned_test", "suite": "core", "mode": "headless", "order": 627}
+{
+  "name": "l9_two_white_earned_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 627,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "R126: original controller-driven earned route with its original clock/fixtures retained; doors102/103 opened by actual E and crossed by actual W on live root physics. View-only camera yaw reset is disclosed, no terrain or body relocation. R126 opens BOTH native leaves102/103 by real E, checks native generic travel (legacy travel cache does not change), walks the visible middle outside their swing arcs with real W; existing controller/clock aids remain disclosed. Full sitting has no camera/physics writes on its executed path; inherited legacy-helper sites are conservatively included."
+  },
+  "count_method": "Audited source sites, not executions. Conservative transitive helpers include overridden and unused paths.",
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "legacy_view_fixture",
+      "pattern": "scene\\.camera\\.rotation\\s*="
+    },
+    {
+      "kind": "legacy_root_physics_admission",
+      "pattern": "scene\\.set_physics_process\\("
+    }
+  ],
+  "teleports": 0,
+  "test_aids": 30,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "a92f376b954414ac48c797e224515c3c537b6a6e3df84890082ddae8eeba47aa"
+  },
+  "context_aid_source_sites": {
+    "count": 11,
+    "sites": [
+      {
+        "path": "tests/helpers/l9_tower_door_input.gd",
+        "line": 10,
+        "column": 1,
+        "kind": "legacy_view_fixture",
+        "source": "scene.camera.rotation=Vector3(scene.camera.rotation.x,0,0)"
+      },
+      {
+        "path": "tests/helpers/l9_tower_door_input.gd",
+        "line": 39,
+        "column": 55,
+        "kind": "legacy_root_physics_admission",
+        "source": "var was_processing:bool=scene.is_physics_processing();scene.set_physics_process(true)"
+      },
+      {
+        "path": "tests/helpers/l9_tower_door_input.gd",
+        "line": 46,
+        "column": 55,
+        "kind": "legacy_root_physics_admission",
+        "source": "if not await look(tree,scene,goal):key(KEY_W,false);scene.set_physics_process(was_processing);return false"
+      },
+      {
+        "path": "tests/helpers/l9_tower_door_input.gd",
+        "line": 50,
+        "column": 1,
+        "kind": "legacy_root_physics_admission",
+        "source": "scene.set_physics_process(was_processing)"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 67,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 72,
+        "column": 41,
+        "kind": "legacy_root_physics_admission",
+        "source": "scene.player.set_physics_process(false);scene.set_physics_process(false)"
+      },
+      {
+        "path": "tests/l9_mirror_return_earned_test.gd",
+        "line": 3,
+        "column": 41,
+        "kind": "legacy_root_physics_admission",
+        "source": "scene.player.set_physics_process(false);scene.set_physics_process(false)"
+      },
+      {
+        "path": "tests/l9_mirror_return_earned_test.gd",
+        "line": 31,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_opening_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_opening_earned_test.gd",
+        "line": 17,
+        "column": 41,
+        "kind": "legacy_root_physics_admission",
+        "source": "scene.player.set_physics_process(false);scene.set_physics_process(false)"
+      },
+      {
+        "path": "tests/l9_two_white_earned_test.gd",
+        "line": 26,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 41
+}

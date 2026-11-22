@@ -1,4 +1,5 @@
 extends Node3D
+const RESTORE_ON := ["load", "arrival"]
 const KEY:="l8_clubhouse"
 const Tribe=preload("res://scripts/lol2/l8_tribe_state.gd")
 const STONES:=["act2:L8_SJ:item32","act2:L8_SJ:item33","act2:L8_SJ:item34"]
@@ -22,9 +23,22 @@ func _ready():
  hint=Label.new();hint.position=Vector2(24,455);canvas.add_child(hint)
  build_doors()
  restore()
+## Owner r19p 2026-11-17 (F10 14-50-30, -1733, 1088): 'this guy should not be here and should not block the rest of the
+## game'. Lead decision: guard21 appears only for a tribe member (as the welcome); before that the doors answer E with his
+## line; once dead he stays dead (his saved health, no respawn). An older save holding him present for a non-member puts
+## him away again.
+static func guard_due(member:bool,actor:Dictionary)->bool:return member and int(actor.get("health",0))>0
+func member()->bool:return Tribe.member(host.quest_state.get(Tribe.KEY,{}))
+func guard_here()->bool:
+ var actor:Dictionary=host.act2_creatures.state.actors["21"]
+ return actor.present and int(actor.health)>0
 func restore_guard():
  var pop=host.act2_creatures
- if not pop.state.actors["21"].present and (state().opened or host.player.position.distance_to(Vector3(-1791,32,1068))<300):
+ var actor:Dictionary=pop.state.actors["21"]
+ if not member():
+  if actor.present and int(actor.health)>0:actor.present=false;pop.sync_quests();pop.present()
+  return
+ if not actor.present and guard_due(true,actor) and (state().opened or host.player.position.distance_to(Vector3(-1791,32,1068))<300):
   pop.State.spawn(pop.state,"21");pop.sync_quests();pop.present()
 func restore():
  restore_guard()
@@ -64,14 +78,19 @@ func reachable()->bool:
  var ray:=PhysicsRayQueryParameters3D.create(host.camera.global_position,AIM,1,[host.player.get_rid()])
  return get_world_3d().direct_space_state.intersect_ray(ray).is_empty()
 func interact()->Dictionary:
- if not available() or not reachable():return {"ok":false,"reason":"Approach the clubhouse guard in human form."}
- if not Tribe.member(host.quest_state.get(Tribe.KEY,{})):return {"ok":false,"reason":"The clubhouse is reserved for members of the tribe."}
+ if not available() or not reachable():return {"ok":false,"reason":"Approach the clubhouse doors in human form."}
+ if not member():return {"ok":false,"reason":"The clubhouse is reserved for members of the tribe."}
  if state().opened:return {"ok":false,"reason":"The clubhouse is already open."}
+ var welcomed:=guard_here()
  host.quest_state[KEY]={"version":1,"opened":true};restore()
- return {"ok":true,"reason":"The guard welcomes you as a tribe member and opens the clubhouse. The Ancients' Stones inside are yours to take."}
+ if welcomed:return {"ok":true,"reason":"The guard welcomes you as a tribe member and opens the clubhouse. The Ancients' Stones inside are yours to take."}
+ return {"ok":true,"reason":"The clubhouse doors open for a tribe member. The Ancients' Stones inside are yours to take."}
 func _process(_delta):
  restore_guard()
- hint.text="E — Speak to the clubhouse guard" if available() and reachable() and not state().opened else ""
+ # Grok r19p2 2026-11-17: a door that will refuse must not promise to open. A non-member sees the reason, not an E.
+ if not (available() and reachable() and not state().opened):hint.text=""
+ elif not member():hint.text="The clubhouse is reserved for members of the tribe."
+ else:hint.text="E — Speak to the clubhouse guard" if guard_here() else "E — Open the door"
 func _unhandled_input(event:InputEvent):
  if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E:return
  if not available() or Input.mouse_mode!=Input.MOUSE_MODE_CAPTURED or is_instance_valid(host.inventory) or not reachable():return

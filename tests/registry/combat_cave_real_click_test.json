@@ -1,0 +1,24 @@
+{
+  "name": "combat_cave_real_click_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1331,
+  "teleports": 1,
+  "test_aids": 4,
+  "count_method": "Audited source sites, not executions.",
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ccf846199ee69f8e2efc6a587834cf5039954a2d5f0ea38816b2d71e4148f81a"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 4
+}

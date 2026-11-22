@@ -1,0 +1,19 @@
+{
+  "name": "area_face_claims_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1343,
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "5153aeea1ffc1fbab843e14550d7a6fe36b5ae06bde8e0e5f0d8cc91c395849e"
+  },
+  "count_method": "Audited source sites (K82), not executions. Structural/fixture/dummy/spies; quiescent scenes and save-contract health perturbation disclosed. No earned gameplay claim.",
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 0
+}

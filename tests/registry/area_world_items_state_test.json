@@ -1,6 +1,18 @@
 {
- "name": "area_world_items_state_test",
- "suite": "core",
- "mode": "headless",
- "order": 476
+  "name": "area_world_items_state_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 476,
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7603cf310bd17dd13fbc2e939c1fc089d8e577c1d01b39b22066960dc9bc5cbb"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 2
 }

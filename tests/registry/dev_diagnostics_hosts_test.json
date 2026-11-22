@@ -1,6 +1,13 @@
 {
- "name": "dev_diagnostics_hosts_test",
- "suite": "core",
- "mode": "rendered",
- "order": 252
+  "name": "dev_diagnostics_hosts_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 252,
+  "count_method": "Audited source sites (K82), not executions. Existing supplied setup, explicit legacy API comparisons and fresh-scene HUD Load helpers remain declared local test scope; assertions retain their original meanings.",
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "912531e1a6e609090b6d331c79dfe546fc6cbdf273ed9311e43f18892ce66f58"
+  }
 }

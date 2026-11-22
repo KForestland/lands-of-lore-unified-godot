@@ -1,0 +1,131 @@
+{
+  "name": "player_spell_book_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 6,
+  "needs": {
+    "note": "G15 shared foundation only. Explicit learned API and inert receiver/clock fixture in rendered component; actual keys/UI/F5/F9, not earned quest casts.",
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "e9922781945b608a32b3f3e09f199e1be0c2c2b80b3a74c20c726b4a213ac6a3"
+  },
+  "context_aid_source_sites": {
+    "count": 15,
+    "sites": [
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_context",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 43,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(false)"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 21,
+        "column": 17,
+        "kind": "inert_receiver_fixture",
+        "source": "var receiver := Receiver.new();scene.add_child(receiver)"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 25,
+        "column": 1,
+        "kind": "modern_panel_presentation_fixture",
+        "source": "magic.panel.show()"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 38,
+        "column": 20,
+        "kind": "modern_panel_presentation_fixture",
+        "source": "await tap(KEY_TAB);magic.panel.hide()"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 39,
+        "column": 16,
+        "kind": "learning_api_fixture",
+        "source": "if not require(magic.learn_spell_group(\"dampen\"),\"Explicit learning API fixture\"):return"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 43,
+        "column": 16,
+        "kind": "stored_api_fixture",
+        "source": "if not require(magic.use_stored_spell(\"mists\")=={\"used\":true,\"learned\":true} and magic.magic_state().spell==\"curse\" and magic.magic_state().player.mana==mana_before,\"Stored API first use learns without a cast, debit or changing selection\"):return"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 44,
+        "column": 16,
+        "kind": "stored_api_fixture",
+        "source": "if not require(magic.use_stored_spell(\"mists\").used==false and receiver.received.is_empty() and magic.magic_state().player.mana==mana_before,\"Later stored use shares target refusal and leaves consumption to the inventory owner\"):return"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 48,
+        "column": 1,
+        "kind": "receiver_admission_fixture",
+        "source": "receiver.accepts=true"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 59,
+        "column": 42,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(true);await frames(40);magic.set_process(false)"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 60,
+        "column": 16,
+        "kind": "learning_api_fixture",
+        "source": "if not require(magic.learn_spell_group(\"prism\"),\"Explicit Prism learning fixture\"):return"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 61,
+        "column": 1,
+        "kind": "ancient_charge_fixture",
+        "source": "scene.item_effects.state().ancient_charges=1"
+      },
+      {
+        "path": "tests/player_spell_book_input_test.gd",
+        "line": 71,
+        "column": 28,
+        "kind": "component_magic_clock",
+        "source": "magic=scene.starting_magic;magic.set_process(false)"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 21,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

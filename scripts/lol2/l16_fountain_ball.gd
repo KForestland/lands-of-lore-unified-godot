@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## NOT ATTACHED (lead correction 2026-11-05): prop 602 is the NE greenhouse fireball (STORY-070), not the dry-fountain ball;
 ## the lichen placements are the greenhouse planters. Kept as a draft for STORY-070; the dry-fountain ball is unidentified (Grok H22).
 ## STORY-068 southern dry fountain (Prima p.146, hintbook 4800-4815): the ball floating over the raised dry fountain is
@@ -82,8 +83,7 @@ func take(record: int) -> Dictionary:
 	if host.carried_collected.size() >= 64: return {"ok":false,"reason":"Make room for the lichen."}
 	var id := "act2:L16_CA:lichen%d" % record
 	var s := state().duplicate(true); s.taken.append(record); host.quest_state[KEY] = s
-	host.carried_collected.append(id); Items.sync(host)
-	if not id in host.quest_state.act2_items.collected: host.quest_state.act2_items.collected.append(id)
+	Grants.grant(host,id,{"cap":false,"duplicate":"allow","history":"act2_once","sync":true,"sync_first":true})
 	restore()
 	return {"ok":true,"reason":"Black Lichen (%d taken)." % s.taken.size()}
 

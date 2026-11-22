@@ -1,14 +1,27 @@
 extends CanvasLayer
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Original WPNEXT/WPN entry and first-visit interactions, with modern action buttons.
 const State = preload("res://scripts/lol2/weapon_shop_state.gd")
 const View = preload("res://scripts/lol2/monastery_room_view.gd")
 const MANIFEST := "res://assets/lol2/generated/weapon_shop/rooms.json"
+## Longplay f_00580, side bars cropped, scaled onto the 640 by 400 room.
+## Sword: the bright blade on the chest. Bow: decoded Firestorm icon, right end on the red tip.
+## Bracer: top shelf, above the dagger blades. Clicks use the existing actions.
+const SHELF_ACTION: Array[String] = ["shortsword", "orb", "gargoyle"]
+const SHELF_RECT: Array[Rect2] = [Rect2(0, 249, 155, 27), Rect2(120, 340, 94, 12), Rect2(400, 136, 66, 25)]
+const SHELF_ICON: Array[String] = [
+	"res://assets/lol2/generated/weapon_shop/Short_Sword.png",
+	"res://assets/lol2/generated/weapon_shop/Firestorm.png",
+	"res://assets/lol2/generated/weapon_shop/Gargoyle_Bracers.png",
+]
+const SHELF_GONE: Array[int] = [62, 63, 64]
 var data: Dictionary
 var view: Control
 var back: Button
 var held: OptionButton
 var offer_button: Button
 var actions: Dictionary = {}
+var shelf: Array[TextureRect] = []
 var available := false
 var was_inside := false
 var shown_cursor := -1
@@ -65,17 +78,27 @@ func _ready() -> void:
 	view.canvas.add_child(offer_button)
 	offer_button.pressed.connect(func():
 		if held.selected>=0: offer_item(str(held.get_item_metadata(held.selected))))
+	for index in SHELF_ACTION.size():
+		var picture := TextureRect.new()
+		picture.texture = ImageTexture.create_from_image(Image.load_from_file(SHELF_ICON[index]))
+		picture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		picture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		picture.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		picture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		picture.position = SHELF_RECT[index].position
+		picture.size = SHELF_RECT[index].size
+		picture.visible = false
+		var action_name: String = SHELF_ACTION[index]
+		picture.gui_input.connect(_shelf_input.bind(action_name))
+		view.canvas.add_child(picture)
+		view.canvas.move_child(picture, view.patch.get_index())
+		shelf.append(picture)
 	restore()
 	refresh_hand()
 func refresh_hand() -> void:
 	if not is_instance_valid(held): return
-	var previous := str(held.get_item_metadata(held.selected)) if held.selected>=0 else ""
-	held.clear()
-	for id in get_parent().carried_collected:
-		if preload("res://scripts/lol2/act_one_item_names.gd").source_name(id) not in ["83-Power orb","10-Th Dagger"]: continue
-		held.add_item(str(id).get_slice(":",2).replace("_"," "))
-		held.set_item_metadata(held.item_count-1,id)
-		if id==previous: held.select(held.item_count-1)
+	var offered:Array=get_parent().carried_collected.filter(func(id):return preload("res://scripts/lol2/act_one_item_names.gd").source_name(id) in ["83-Power orb","10-Th Dagger"])
+	preload("res://scripts/lol2/item_choice_menu.gd").populate(held,offered,get_parent(),"")
 func offer_item(id: String) -> bool:
 	if not active() or state().room!="WPN" or State.active(state()) or id not in get_parent().carried_collected: return false
 	var source := preload("res://scripts/lol2/act_one_item_names.gd").source_name(id)
@@ -111,7 +134,7 @@ func apply_effects(effects: Array) -> void:
 	for effect in effects:
 		if effect[0] == "give_item":
 			var id: String = State.ITEMS[effect[1]]
-			if id not in host.carried_collected: host.carried_collected.append(id)
+			Grants.grant(host,id,{"cap":false,"duplicate":"skip"})
 		elif effect[0] == "set_global":
 			host.quest_state.monastery.globals[effect[1]] = effect[2]
 	if not effects.is_empty(): refresh_hand()
@@ -155,10 +178,21 @@ func restore() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	view.enter_room(state().room)
 	refresh()
+func _shelf_input(event: InputEvent, action_name: String) -> void:
+	if not event is InputEventMouseButton: return
+	var button := event as InputEventMouseButton
+	if button.button_index != MOUSE_BUTTON_LEFT or not button.pressed: return
+	if interact(action_name): view.canvas.accept_event()
+func _show_shelf(present: bool) -> void:
+	for index in shelf.size():
+		var show_picture: bool = present and state().room == "WPN" and not State.flag(state(), SHELF_GONE[index])
+		shelf[index].visible = show_picture
+		shelf[index].mouse_filter = Control.MOUSE_FILTER_STOP if show_picture else Control.MOUSE_FILTER_IGNORE
 func refresh() -> void:
 	var speaking := State.active(state())
 	var absent: bool=state().room=="WPN" and state().globals.get("GV_KITYARA_DEAD",0)!=0
 	view.patch.visible=not absent
+	_show_shelf(not absent)
 	held.visible=state().room=="WPN"
 	offer_button.visible=held.visible
 	held.disabled=speaking

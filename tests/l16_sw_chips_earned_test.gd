@@ -69,7 +69,18 @@ func run():
 	if not check(row is Array, "prop 604 placement"):
 		await stop(scene, 1); return
 	var whole: bool = (row[0] as MultiMesh).get_instance_transform(int(row[1])).basis.get_scale().length() > 0.5
-	if not check(whole and travel_of(scene, foyer.DOORS) == doors_before, "the pyramid stays whole"):
+	if not check(whole and travel_of(scene, foyer.DOORS) == doors_before and not foyer.field_visible(), "the pyramid stays whole and the field stays hidden"):
+		await stop(scene, 1); return
+	var staged: Dictionary = foyer.state().duplicate(true)
+	for index in 4:
+		staged = foyer.apply_place(staged, index, str(foyer.CHIP_IDS[index]))
+	scene.quest_state[foyer.KEY] = staged
+	foyer.restore()
+	var field_on: bool = foyer.field_visible() and foyer.get_node("ForceField").visible
+	scene.quest_state[foyer.KEY] = {"version": 1, "placed": []}
+	foyer.restore()
+	var field_off: bool = not foyer.field_visible() and foyer.state().placed.is_empty()
+	if not check(field_on and field_off, "four chips show the field and the chain save stays empty"):
 		await stop(scene, 1); return
 	var save := "res://tmp/l16_sw_chips_earned_save.json"
 	if not check(scene._quicksave_unrecorded(save).is_empty(), "pedestal save"):
@@ -81,6 +92,6 @@ func run():
 	var kept: bool = foyer.state().placed.map(func(v): return int(v)) == []
 	if not check(kept, "save keeps the empty pedestals"):
 		await stop(scene, 1); return
-	print("PASS earned NW trap save -> SW pedestals stay clear, pyramid stays whole")
+	print("PASS earned NW trap save -> empty pedestals hide the field, four chips show it, pyramid stays whole")
 	await stop(scene, 0)
 

@@ -1,18 +1,30 @@
 extends Node
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
 ## Manual-backed starting spell access; costs/effects/range are provisional.
 ## Basic Spark uses a collision trace; maximum Spark saves its homing bolts.
 const CombatFeedback := preload("res://scripts/lol2/combat_feedback.gd")
 const Magic = preload("res://scripts/lol2/player_magic_state.gd")
 const Forms = preload("res://scripts/lol2/player_form_rules.gd")
+const SpellBook = preload("res://scripts/lol2/player_spell_book.gd")
+const Teaching = preload("res://scripts/lol2/player_spell_teaching.gd")
 var aura: Node3D
 var host: Node3D
-var fallback: Dictionary=Magic.initial()
+static func fresh_magic() -> Dictionary:
+	var saved:=Magic.initial()
+	saved.spellbook=SpellBook.initial()
+	return saved
+var fallback: Dictionary=fresh_magic()
 var label: Label
 var notice := ""
+## Lead 2026-11-16 (owner Citadel F10 01-15-52, mana bar empty): a mana refusal says that mana comes back.
+const LOW_MANA := "Not enough mana - it returns over time."
+const SPARK_WANTED := "This answers only to Spark (1, then Q)."
 var notice_time := 0.0
+var refusal_serial := 0 # Transient UI response identity; never part of a save.
 ## Modern spell panel (top right). In normal play the classic HUD cluster (docs/classic-hud.md) replaces it: the
 ## Magic Button/Spell Bar select and cast; notices, aura and item status go to the shared hint and Character page.
 var panel: VBoxContainer
+var school_buttons: Dictionary = {}
 func classic_hud_present() -> bool:
 	var hud = host.get("interface_hud")
 	return hud != null and is_instance_valid(hud) and hud.has_method("refresh_vitals") and not bool(host.get("development_mode"))
@@ -41,13 +53,32 @@ func _ready() -> void:
 	layer.add_child(panel)
 	label=Label.new()
 	panel.add_child(label)
-	var row:=HBoxContainer.new()
+	var row:=GridContainer.new()
+	row.columns=2
 	panel.add_child(row)
-	for entry in [["Spark [1]","spark"],["Healing [2]","heal"]]:
+	for index in SpellBook.SCHOOLS.size():
+		var school: String = SpellBook.SCHOOLS[index]
 		var button:=Button.new()
-		button.text=entry[0]
-		button.pressed.connect(select_spell.bind(entry[1]))
+		button.text="%s [%d]" % [SpellBook.NAMES[school],index+1]
+		button.pressed.connect(select_spell.bind(school))
 		row.add_child(button)
+		school_buttons[school]=button
+	refresh_spell_buttons()
+	if host.has_meta("lol2_loaded_magic_clock"):
+		host.remove_meta("lol2_loaded_magic_clock")
+		finish_load()
+
+## A successful load is a fresh input opportunity. Preserve the saved spell,
+## mana and effect clocks; only the transient half-second cast lock is released.
+func finish_load() -> void:
+	var saved:Dictionary=magic_state()
+	if float(saved.get("cooldown",0))<=0:return
+	saved=saved.duplicate(true);saved.cooldown=0.0
+	commit(saved)
+
+func refresh_spell_buttons() -> void:
+	var learned := SpellBook.schools(magic_state().get("spellbook",SpellBook.initial()))
+	for school in school_buttons: school_buttons[school].visible = school in learned
 func magic_state() -> Dictionary:
 	if host.get("player_magic_checkpoint") != null:
 		return host.player_magic_checkpoint if not host.player_magic_checkpoint.is_empty() else fallback
@@ -79,14 +110,8 @@ func protected() -> bool:
 	return is_instance_valid(aura) and aura.protected()
 func cancel_aura() -> void:
 	if is_instance_valid(aura): aura.cancel()
-func health() -> int:
-	if host.get("roach") != null: return host.roach.model.player_health
-	if host.has_node("Warriors"): return host.get_node("Warriors").health
-	return int(host.get("health")) if host.get("health") != null else 30
-func set_health(value: int) -> void:
-	if host.get("roach") != null: host.roach.model.player_health=value
-	elif host.has_node("Warriors"): host.get_node("Warriors").health=value
-	else: host.health=value
+func health() -> int:return PlayerHealth.read_host(host)
+func set_health(value: int) -> void:PlayerHealth.write_host(host,value)
 ## The locked fullscreen hut movie freezes every world consumer; only its owner keeps a clock (movie_world_active()).
 func world_active() -> bool:
 	if host.has_node("L8HulineSpeech") and host.get_node("L8HulineSpeech").input_locked():return false
@@ -125,34 +150,125 @@ func movie_world_active() -> bool:
 		if actor.started and not actor.completed: return false
 	return true
 func available() -> bool:
+	if preload("res://scripts/lol2/player_food_effects.gd").sleeping(host):return false
 	if host.get("chief_hut")!=null and is_instance_valid(host.chief_hut) and host.chief_hut.input_locked(): return false
 	if host.get("bacatta")!=null and is_instance_valid(host.bacatta) and host.bacatta.input_locked(): return false
 	return world_active() and Forms.can_cast(host.player_form)
 func select_spell(spell: String) -> void:
-	if spell not in ["spark","heal"] or get_tree().paused: return
+	if spell not in SpellBook.SCHOOLS or get_tree().paused: return
+	if spell not in SpellBook.schools(magic_state().get("spellbook",SpellBook.initial())):
+		refuse("That spell is not learned")
+		return
 	var saved: Dictionary=magic_state().duplicate(true)
 	saved.spell=spell
 	commit(saved)
+## Acquisition/scroll owners use this same optional saved packet. Wiring those
+## producers and actual quest receivers is the next G15 delivery, not implied here.
+func learn_spell_group(group: String) -> bool:
+	var saved := magic_state().duplicate(true)
+	var learned := SpellBook.learn(saved.get("spellbook",SpellBook.initial()),group)
+	if learned.is_empty(): return false
+	saved.spellbook=learned
+	commit(saved)
+	refresh_spell_buttons()
+	if is_instance_valid(host.get("interface_hud")): host.interface_hud.refresh_vitals()
+	return true
+
+## Inventory owners consume only when used=true. First use learns without a
+## cast; subsequent use goes through the same cast() admission/receiver path.
+## The loaded panel school is preserved. No item identities or pack writes here.
+func use_stored_spell(school: String) -> Dictionary:
+	if not SpellBook.STORED_CHARGES.has(school) or not available(): return {"used":false}
+	var book: Dictionary = magic_state().get("spellbook",SpellBook.initial())
+	if school not in SpellBook.schools(book):
+		return {"used":learn_spell_group(school), "learned":true}
+	return {"used":cast(int(SpellBook.STORED_CHARGES[school]),school), "learned":false}
+
+## Scroll UI closes before this request. Reuse the existing HUD cursor waiver;
+## inventory, pause, death, movies, form, target and cooldown guards all remain.
+func use_stored_spell_from_interface(school: String) -> Dictionary:
+	var previous := interface_request
+	interface_request = true
+	var result := use_stored_spell(school)
+	interface_request = previous
+	return result
+
+## An item holds a single cast, not a permanent lesson. Receiver/cost/cooldown
+## admission is shared with learned casts; the temporary authorization never saves.
+var stored_charge_id := ""
+func use_stored_charge_from_interface(school:String,charge:int)->bool:
+	if not {"spark":3,"prism":3,"mists":1}.has(school) or charge!={"spark":3,"prism":3,"mists":1}[school]:return false
+	if school=="prism":return refuse("The white globe holds a spell that does nothing here yet.")
+	var previous:=interface_request
+	interface_request=true
+	stored_charge_id=school+str(charge)
+	var used:=cast(charge,school)
+	stored_charge_id=""
+	interface_request=previous
+	return used
+
+## An admitting receiver must be a direct area child, with a read-only target/
+## phase query and a commit that returns false without effects when refused.
+func cast_quest_spell(saved: Dictionary, spell: String, charge: int) -> bool:
+	var request := SpellBook.request(saved.get("spellbook",SpellBook.initial()),spell,charge,host.player_form)
+	if stored_charge_id==spell+str(charge) and spell=="mists" and charge==1:
+		request={"id":"mists1","cost":int(SpellBook.CASTS.mists1)}
+	if request.has("error"): return refuse(request.error)
+	var phase := int(host.curse.state.phase)
+	if phase in [1,3] and charge in [3,5] and not (spell == "curse" and charge == 3): return refuse("The curse is changing your form")
+	var free: bool = charge == 5 and int(host.item_effects.state().get("ancient_charges",0)) > 0
+	var cost: int = 0 if free else int(request.cost)
+	if int(saved.player.mana) < cost: return refuse(LOW_MANA)
+	# Lead 2026-11-16 (owner Citadel F10): in the Citadel every cast receiver wants Spark; another spell aimed at one says so.
+	if str(host.get("area_id")) == "L13_RC":
+		var aimed: Dictionary = preload("res://scripts/lol2/player_combat.gd").aim_ray(host, 384.0, 3)
+		if not aimed.is_empty() and aimed.collider is Object and (aimed.collider as Object).has_meta("spark_receiver"): return refuse(SPARK_WANTED)
+	for receiver in host.get_children():
+		if not receiver.has_method("accepts_player_spell") or not receiver.has_method("receive_player_spell"): continue
+		if not receiver.accepts_player_spell(str(request.id)): continue
+		if not receiver.receive_player_spell(str(request.id)):
+			return refuse(str(receiver.spell_refusal()) if receiver.has_method("spell_refusal") else "The spell has no effect here")
+		# A form receiver may cancel aura through the same magic owner. Retain
+		# that update instead of restoring our pre-effect copy over it.
+		var next := magic_state().duplicate(true)
+		if free: host.item_effects.state().ancient_charges -= 1
+		next.player.mana -= cost
+		next.cooldown=0.5
+		commit(next)
+		if host.get("interface_hud") != null and is_instance_valid(host.interface_hud): host.interface_hud.cast_flash()
+		notice="%s %s" % [SpellBook.NAMES[spell],str(request.id).trim_prefix(spell)]
+		notice_time=0.8
+		return true
+	return refuse("The spell has no effect here")
 ## A refused cast says why on the hint line (playtest 2026-10-14: refusals were silent). World locks stay silent.
 func refuse(text: String) -> bool:
+	refusal_serial += 1
 	notice=text
 	notice_time=1.2
 	return false
-func cast(charge: int = 1) -> bool:
+func dismiss_lesson_for_cast() -> void:
+	var hud:Variant=host.get("interface_hud")
+	if is_instance_valid(hud) and hud.has_method("dismiss_lesson_for_cast"):hud.dismiss_lesson_for_cast()
+func cast(charge: int = 1, stored_school: String = "") -> bool:
 	if charge not in [1,3,5]: return false
-	if world_active() and not Forms.can_cast(host.player_form): return refuse("This form cannot cast")
+	if not stored_school.is_empty() and not SpellBook.STORED_CHARGES.has(stored_school): return false
+	if world_active() and not Forms.can_cast(host.player_form):
+		dismiss_lesson_for_cast()
+		return refuse("This form cannot cast")
 	if not available(): return false
+	dismiss_lesson_for_cast()
 	var saved: Dictionary=magic_state().duplicate(true)
-	if float(saved.get("cooldown",0))>0: return false
-	var spell: String=saved.get("spell","spark")
+	if float(saved.get("cooldown",0))>0: return refuse("Wait a moment before casting again")
+	var spell: String=saved.get("spell","spark") if stored_school.is_empty() else stored_school
+	if spell not in ["spark","heal"]: return cast_quest_spell(saved,spell,charge)
 	var citadel_cure: bool = charge == 3 and spell == "heal" and host.has_node("L13Belial") and host.get_node("L13Belial").cure_available()
 	if charge in [3,5] and ((spell != "spark" and not citadel_cure) or int(host.curse.state.phase) in [1,3]): return false
 	if spell == "heal" and protected(): return refuse("Healing is blocked")
 	var free: bool = charge == 5 and int(host.item_effects.state().get("ancient_charges",0)) > 0
 	# Basic cost1 and highest cost10 retained. Level3 cost3/range768/damage16 are modern adapters.
 	var cost:=0 if free else 10 if charge == 5 else 3 if charge == 3 else 2 if spell=="heal" else 1
-	if spell=="heal" and health()>=30 and not citadel_cure: return refuse("Already at full health")
-	if saved.player.mana<cost: return refuse("Not enough mana")
+	if spell=="heal" and health()>=PlayerHealth.limit_for(host) and not citadel_cure: return refuse("Already at full health")
+	if saved.player.mana<cost: return refuse(LOW_MANA)
 	if charge == 1 and spell=="spark" and host.get("rune_light")!=null and host.rune_light.target():
 		# The existing prop transaction owns its single mana debit.
 		if not host.rune_light.cast(): return false
@@ -161,7 +277,7 @@ func cast(charge: int = 1) -> bool:
 		saved.player.mana-=cost
 		if spell=="heal":
 			if citadel_cure:host.get_node("L13Belial").cure()
-			set_health(mini(30,health()+6))
+			set_health(mini(PlayerHealth.limit_for(host),health()+6))
 			if host.get("interface_hud") != null and is_instance_valid(host.interface_hud) and host.interface_hud.has_method("heal_flash"): host.interface_hud.heal_flash()
 		else:
 			# Commit the debit before the hit can award magic progression.
@@ -227,12 +343,46 @@ func crystal_fire() -> String:
 	return struck
 func _unhandled_input(event: InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo: return
+	if event.keycode==KEY_E:
+		if repeat_required_lesson():get_viewport().set_input_as_handled()
+		return
 	if event.keycode==KEY_1: select_spell("spark")
 	elif event.keycode==KEY_2: select_spell("heal")
+	elif event.keycode==KEY_3: select_spell("curse")
+	elif event.keycode==KEY_4: select_spell("mists")
+	elif event.keycode==KEY_5: select_spell("prism")
+	elif event.keycode==KEY_6: select_spell("summon")
 	elif event.keycode==KEY_Q: cast(5 if event.shift_pressed else 3 if event.ctrl_pressed else 1)
 	else: return
 	get_viewport().set_input_as_handled()
+func show_required_lesson(lesson:Dictionary) -> void:
+	preload("res://scripts/lol2/my_journal.gd").discover(host,str(lesson.journal))
+	var hud:Variant=host.get("interface_hud")
+	if is_instance_valid(hud) and hud.has_method("show_lesson"):hud.show_lesson(str(lesson.message))
+	elif host.has_method("save_feedback"):host.save_feedback(str(lesson.message))
+func repeat_required_lesson()->bool:
+	if not available():return false
+	var lessons:Array=Teaching.echo_candidates(host,magic_state().get("spellbook",SpellBook.initial()))
+	if lessons.is_empty():return false
+	show_required_lesson(lessons[0]);return true
+func teach_required_casts() -> void:
+	if not available():return
+	var book:Dictionary=magic_state().get("spellbook",SpellBook.initial())
+	var candidates:Array=Teaching.live_candidates(host,book)
+	if candidates.is_empty():return
+	var lesson:Dictionary=candidates[0]
+	if learn_spell_group(str(lesson.group)):show_required_lesson(lesson)
+
 func _process(delta: float) -> void:
+	# Run after the host's synchronous load is complete, never against the old
+	# world's partially replaced quests. New-game fallback already has a book.
+	if not magic_state().has("spellbook"):
+		var quests: Dictionary=host.quest_state if host.get("quest_state") is Dictionary else {}
+		var effects: Variant=host.get("item_effects")
+		var carried: Array=effects.carried() if is_instance_valid(effects) else []
+		var spent: Array=effects.state().get("spent",[]) if is_instance_valid(effects) else []
+		commit(Teaching.migrate(magic_state(),quests,preload("res://scripts/lol2/atlas_explored.gd").area_of(host),carried,spent))
+	teach_required_casts()
 	if world_active(): aura.advance(delta)
 	else: aura.present(aura.state())
 	var saved: Dictionary=magic_state()
@@ -246,8 +396,9 @@ func _process(delta: float) -> void:
 			saved.regen_elapsed=fmod(elapsed,period) if saved.player.mana<saved.player.maximum else 0.0
 		commit(saved)
 	notice_time=maxf(0,notice_time-delta)
+	refresh_spell_buttons()
 	if is_instance_valid(panel): panel.visible = not classic_hud_present()
-	label.text="%s · Mana %d/%d\nQ — Cast%s" % ["Healing" if saved.get("spell","spark")=="heal" else "Spark",saved.player.mana,saved.player.maximum," · "+notice if notice_time>0 else ""]
+	label.text="%s · Mana %d/%d\nQ — Cast%s" % [SpellBook.NAMES.get(saved.get("spell","spark"),"Spark"),saved.player.mana,saved.player.maximum," · "+notice if notice_time>0 else ""]
 
 	if saved.get("spell","spark") == "spark": label.text += "\nCtrl+Q — Level 3 Spark · Shift+Q — Max Spark"
 	if protected(): label.text += "\nLightning aura · %ds" % ceili(float(aura.state().timer)/65536.0/aura.State.TICKS_PER_SECOND)

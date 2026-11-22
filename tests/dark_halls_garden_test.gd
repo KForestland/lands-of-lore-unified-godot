@@ -1,5 +1,5 @@
 extends SceneTree
-## Vel's fruit garden adapter (report 10-16-31): the bed's 24 soil floors draw as grass and the 12 plants show their grown frame.
+## The bed starts as soil and the fruit starts bare. The chain pull grows them.
 var failures := 0
 func check(c: bool, m: String) -> void:
 	if not c: failures += 1; print("FAIL: " + m)
@@ -15,19 +15,26 @@ func run() -> void:
 	var scene = load("res://scenes/lol2/dark_halls.tscn").instantiate()
 	root.add_child(scene)
 	for i in 5: await process_frame
-	check(scene.garden_bed_faces == 24, "scene: 24 bed floors drawn with the grass material (%d)" % scene.garden_bed_faces)
-	check(scene.grown_props == 1, "scene: the plant material uses the grown frame (%d)" % scene.grown_props)
-	var grown := Image.load_from_file("res://assets/lol2/generated/dark_halls/" + pack.animations.prop_114.frames[24])
+	check(scene.garden_bed_faces == 0, "scene: the bed is not grass before the pull (%d)" % scene.garden_bed_faces)
+	check(scene.grown_props == 0, "scene: the plants are not forced grown (%d)" % scene.grown_props)
+	var grown := Image.load_from_file("res://assets/lol2/generated/dark_halls/" + pack.animations.prop_114.frames[20])
 	var first := Image.load_from_file("res://assets/lol2/generated/dark_halls/" + pack.materials.prop_114)
-	check(first.get_used_rect().size == Vector2i.ZERO and grown.get_used_rect().size.y > 100, "the first frame is empty, the grown frame is a plant")
+	check(first.get_used_rect().size == Vector2i.ZERO and grown.get_used_rect().size.y > 100, "frame 0 is empty and frame 20 is a plant")
 	var node: MeshInstance3D = scene.prop_nodes.get(220)
-	check(node != null and (node.mesh.material as StandardMaterial3D).albedo_texture.get_image().get_used_rect() == grown.get_used_rect(), "scene: plant record 220 carries the grown frame")
+	check(node != null and (node.mesh.material as StandardMaterial3D).albedo_texture.get_image().get_used_rect() == first.get_used_rect(), "scene: plant record 220 starts bare")
 	var bed_floor: Dictionary = {}
 	for face in pack.faces:
 		if face.kind == "floor" and int(face.region) == 1493: bed_floor = face; break
-	check(scene.static_face_material(0, bed_floor) == "97__front", "hook: a bed floor maps to grass")
-	check(scene.static_face_material(0, {"kind": "floor", "material": "96__front", "region": 5}) == "96__front", "hook: material 96 outside the bed stays (none exist, rule is explicit)")
+	check(scene.static_face_material(0, bed_floor) == "96__front", "hook: a bed floor stays soil until the pull")
+	var atrium: Node = scene.get_node("DarkHallsAtrium")
+	check(not bool(atrium.call("is_open")), "the roof starts shut")
+	check(bool(atrium.call("open_roof")), "the pull runs")
+	check(bool(atrium.call("is_open")), "the roof stays open")
+	check((node.mesh.material as StandardMaterial3D).albedo_texture.get_image().get_used_rect() == grown.get_used_rect(), "the pull shows fruit frame 20")
+	var meshes: Array = atrium.get("bed_meshes")
+	var bed := meshes[0] as MeshInstance3D
+	check(bed != null and bed.material_override == atrium.get("grass"), "the pull turns the bed to grass")
 	scene.queue_free(); await process_frame
 	print("Dark Halls garden: %d failures" % failures)
-	if failures == 0: print("PASS dark halls garden: 24 bed floors as grass, 12 plants grown")
+	if failures == 0: print("PASS dark halls garden: the pull opens the roof, turns the bed to grass, and grows frame 20")
 	quit(0 if failures == 0 else 1)

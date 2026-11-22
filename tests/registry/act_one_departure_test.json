@@ -1,12 +1,19 @@
 {
- "name": "act_one_departure_test",
- "suite": "core",
- "mode": "headless",
- "order": 572,
- "needs": {
-  "fixtures": [
-   "user://tests/act1_departure_ready.json with sha docs/act-one-departure-walk-checks.json output_sha256 (earned by the departure walk chain)"
-  ],
-  "chain": "earned-save chain: the departure walk writes the hash-pinned input save first"
- }
+  "name": "act_one_departure_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 572,
+  "needs": {
+    "fixtures": [
+      "user://tests/act1_departure_ready.json with sha docs/act-one-departure-walk-checks.json output_sha256 (earned by the departure walk chain)"
+    ],
+    "chain": "earned-save chain: the departure walk writes the hash-pinned input save first"
+  },
+  "teleports": 0,
+  "test_aids": 10,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "14f5fdb49beee634f13408847b1415201b1159bdff268923f23a431d2d7a41e0"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
 }

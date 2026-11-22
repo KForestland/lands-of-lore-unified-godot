@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const KEY="l14_niche"
 const STATUE="act2:L14_HT:item65"
 const SHARD="act2:L14_HT:item67"
@@ -57,7 +58,8 @@ func offer(item:String=STATUE,capacity:int=64)->Dictionary:
  if not result.ok:return result
  result=Kit.commit(result.snapshot,recipe(),TARGET)
  if not result.ok:return result
- s.slots=result.snapshot.slots;host.quest_state[KEY]=s;host.carried_collected=result.snapshot.inventory
+ s.slots=result.snapshot.slots;var admission:=Grants.transition(host,result.snapshot.inventory,{KEY:s})
+ if not admission.ok:return admission
  if host.hand_item==item:host.hand_item=""
  Items.sync(host);restore()
  return {"ok":true,"reason":"The statue fits. A crystal rises on the pedestal."}

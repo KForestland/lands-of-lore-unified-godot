@@ -142,7 +142,7 @@ func run() -> void:
 	print("NICHE_DIAG hand=",museum.hand_item," collected=",museum.carried_collected," reach=",museum.can_reach_item(locks.aim_point(87))," mouse=",Input.mouse_mode," flying=",museum.flying," processing=",museum.is_processing_unhandled_input()," active=",museum.starting_magic.world_active())
 	if not check(museum.carried_collected.count(KEY) == 1 and museum.hand_item == KEY and not locks.key_markers[87].visible, "Take niche key"): return
 	var plate87: Node = locks.get_node("LockPlate_87")
-	if not check(plate87.visible, "Empty niche plate hidden"): return
+	if not check(not plate87.visible and plate87.get_child_count() == 0, "Flat lock plate still draws"): return
 	if not museum.hold_for_exhibit(KEY):
 		if not check(false, "Put away failed"): return
 	if not check(museum.hand_item == "" and museum.carried_collected.count(KEY) == 1, "Key left the hand"): return
@@ -165,7 +165,7 @@ func run() -> void:
 		if str(museum.inventory.item_list.get_item_metadata(i)) == KEY: selected = i
 	if not check(selected >= 0, "Sk key missing from inventory"): return
 	museum.inventory.select_item(selected)
-	if not check(museum.inventory.hold_button.text == "Hold Sk key" and museum.inventory.detail_text.text.contains("skeleton key"), "Hold label: " + museum.inventory.hold_button.text): return
+	if not check(museum.inventory.hold_button.text == "Hold Sk key" and museum.inventory.detail_text.text.contains("matching skull lock"), "Hold label: " + museum.inventory.hold_button.text): return
 	museum.inventory.hold_button.pressed.emit()
 	await process_frame
 	if not check(museum.hand_item == KEY and museum.carried_collected.count(KEY) == 1 and not paused, "Hold button did not take the key in hand"): return

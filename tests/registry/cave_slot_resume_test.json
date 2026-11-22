@@ -1,0 +1,16 @@
+{
+  "name": "cave_slot_resume_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1339,
+  "needs": {
+    "chain": "private two-process profile driver: sol_lane/foundation3_20261111/private_case.py --pair --rendered"
+  },
+  "teleports": 2,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ddce517abb0500a623dd45770d0e4558844a6771b72489792b8b807864cd5f52"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
+}

@@ -1,6 +1,13 @@
 {
- "name": "classic_hud_live_test",
- "suite": "core",
- "mode": "rendered",
- "order": 178
+  "name": "classic_hud_live_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 178,
+  "teleports": 0,
+  "test_aids": 12,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ebc33e85b1ab64cb41c5f94d45f7012ba3931d4befd320343571f0767e62fc0b"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
 }

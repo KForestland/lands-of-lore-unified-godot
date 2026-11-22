@@ -1,0 +1,380 @@
+{
+  "producer": "tools/prepare_generic_prop_media.py",
+  "command": "python3 tools/prepare_generic_prop_media.py --game /path/to/own/game --output /fresh/output",
+  "source": {
+    "file": "DAT/L20_BB.MIX",
+    "geometry_key": 3128497026,
+    "geometry_sha256": "d1c61a0d6084d29e75520037e2f55b9bf17e70368379fab70ced098a7b541318",
+    "sha256": "ea3c167f95626dab4bb509429edae6fed903f80b3364757d0b951001de2f8490"
+  },
+  "files": {
+    "manifest.json": {
+      "sha256": "bfe3ddcb0c06070a7e90917bc8e881afa2abd540e2e05c793da0189a71a239be",
+      "bytes": 71668
+    },
+    "L20_BB/selectors.json": {
+      "bytes": 5891,
+      "sha256": "d8192c05c4dab2eed70c811ed035b694b9994d16631fd24f29b7c3c7340e8067"
+    },
+    "L20_BB/sprites/prop_415_frame_0.png": {
+      "bytes": 7772,
+      "sha256": "4d7bb2d1d17068ef7f23143e7929c9319ecde52c328d36098b09cfa02e9958cb"
+    },
+    "L20_BB/sprites/prop_415_frame_0_index.png": {
+      "bytes": 5989,
+      "sha256": "520bc700b28633a99fa90048757582f2e21117d8161cd4ba79e0f81b44b435bf"
+    },
+    "L20_BB/sprites/prop_415_frame_0_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_415_frame_1.png": {
+      "bytes": 7707,
+      "sha256": "89664d7d96b49af587b6f1a028a58955318974f62f26d1dc4657a6f2c9cdc967"
+    },
+    "L20_BB/sprites/prop_415_frame_1_index.png": {
+      "bytes": 6065,
+      "sha256": "0a8daf9cd3bf6cec567e71e66e37d3252c8a3f7f08f83f4758b8097869def8c0"
+    },
+    "L20_BB/sprites/prop_415_frame_1_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_415_frame_2.png": {
+      "bytes": 7744,
+      "sha256": "d547f43868562713dc1c9040541e479bc373ec8adfa4f23d66ed91624320eefc"
+    },
+    "L20_BB/sprites/prop_415_frame_2_index.png": {
+      "bytes": 6071,
+      "sha256": "8f01e57203fbdcdae70b255c49bce623ccb305047d02fc3b52116d65fc441964"
+    },
+    "L20_BB/sprites/prop_415_frame_2_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_415_frame_3.png": {
+      "bytes": 7545,
+      "sha256": "3a9ea3c268bac4b90ffdc2d4bfa634ea3c07b3706431edcc9ca85cc5ac0702aa"
+    },
+    "L20_BB/sprites/prop_415_frame_3_index.png": {
+      "bytes": 5841,
+      "sha256": "7ee43f7243ea278b45d9d65f302bbb1c9d5fd439c634546a680e2431ab7a83ba"
+    },
+    "L20_BB/sprites/prop_415_frame_3_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_415_frame_4.png": {
+      "bytes": 7757,
+      "sha256": "0b1dc85874c378ff6b513481425fadef515492dd0038d6b9c3a1766b467a8e16"
+    },
+    "L20_BB/sprites/prop_415_frame_4_index.png": {
+      "bytes": 5964,
+      "sha256": "37d125996225cae0c4bcc403d8cf211c1dd1ee0d81df2da6c58cdc8d6ac38328"
+    },
+    "L20_BB/sprites/prop_415_frame_4_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_415_frame_5.png": {
+      "bytes": 7454,
+      "sha256": "3007fa0cfba270bc050d50fdc1b7af934bda69928d277d1c843e9330e7ed5c94"
+    },
+    "L20_BB/sprites/prop_415_frame_5_index.png": {
+      "bytes": 5712,
+      "sha256": "f0569e981ae6234b75033d2e3a11d322b8064b9a833ae6cd4e92326a330cb2c5"
+    },
+    "L20_BB/sprites/prop_415_frame_5_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_415_frame_6.png": {
+      "bytes": 8093,
+      "sha256": "a9b74bd056386204f5bbce6dcfad19c79fa0c3f4c736d193fac872bbcfff099b"
+    },
+    "L20_BB/sprites/prop_415_frame_6_index.png": {
+      "bytes": 6269,
+      "sha256": "94345901a1dd7962486bc924e00bc813d1b30a3206936223cfa1ff01ff9d2323"
+    },
+    "L20_BB/sprites/prop_415_frame_6_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_415_frame_7.png": {
+      "bytes": 7953,
+      "sha256": "07b142771bd24d6cb96bec73822e3b21b8c188311e323df101b11ae0dbb9a4de"
+    },
+    "L20_BB/sprites/prop_415_frame_7_index.png": {
+      "bytes": 6192,
+      "sha256": "b1184b608ed05b7285101d6b5e9d8ae6e04fba2c8ce05f647f4391422cb50d2d"
+    },
+    "L20_BB/sprites/prop_415_frame_7_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_415_frame_8.png": {
+      "bytes": 8033,
+      "sha256": "a20d9bb6bc4caa0806fe2a38d03298d49f702ad155489974d8c7acf6f7c51389"
+    },
+    "L20_BB/sprites/prop_415_frame_8_index.png": {
+      "bytes": 6375,
+      "sha256": "7064ef9b68bd278821d05bd030b825026dd65f7c07f957ee97585c37038285cf"
+    },
+    "L20_BB/sprites/prop_415_frame_8_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_415_frame_9.png": {
+      "bytes": 8063,
+      "sha256": "4b4ed0d4d29a64648cf1af015bb243800734053ad7ec1f840150d87a1d798d9a"
+    },
+    "L20_BB/sprites/prop_415_frame_9_index.png": {
+      "bytes": 6312,
+      "sha256": "ac67f4f2c18e5daa78737c46b358e9462542eee19fdecf880ec34c073a8dd59a"
+    },
+    "L20_BB/sprites/prop_415_frame_9_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_0.png": {
+      "bytes": 2732,
+      "sha256": "4f31a64262d6dec5b61aa39426723372c0598daf0f8b1dcb806edb29bb0fe282"
+    },
+    "L20_BB/sprites/prop_425_frame_0_index.png": {
+      "bytes": 2379,
+      "sha256": "36de1b6492402448f80072a8e5607632cf20d4747438b2b2505aa44967af44d4"
+    },
+    "L20_BB/sprites/prop_425_frame_0_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_1.png": {
+      "bytes": 2885,
+      "sha256": "283217c7330ca4e5d15d088b73abf68c28be71b713862f7743857a699a09f9fa"
+    },
+    "L20_BB/sprites/prop_425_frame_10.png": {
+      "bytes": 4150,
+      "sha256": "91705d51cd655f6005d7ba7561f366950f2f243b1954d28f5172467bd01bda53"
+    },
+    "L20_BB/sprites/prop_425_frame_10_index.png": {
+      "bytes": 3765,
+      "sha256": "da14eb6969ec654b4da1f418153e71981f460472f8b2d78059ac3921af27a05e"
+    },
+    "L20_BB/sprites/prop_425_frame_10_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_11.png": {
+      "bytes": 4351,
+      "sha256": "0858a40040a9d4c44e483ad23550e6fac9fc28cf8ab333c27d8262d1a3cc5943"
+    },
+    "L20_BB/sprites/prop_425_frame_11_index.png": {
+      "bytes": 4025,
+      "sha256": "9858f99434e704aa558b103aaf0cc13e2d2884511f7ff5d210d3471a16131eb7"
+    },
+    "L20_BB/sprites/prop_425_frame_11_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_12.png": {
+      "bytes": 4207,
+      "sha256": "a72bc18900ef648e18ced5b4a16072a5d531912061fdb14d85a515e19e0ba6b3"
+    },
+    "L20_BB/sprites/prop_425_frame_12_index.png": {
+      "bytes": 3974,
+      "sha256": "7ac96ae7660c0ec5b2ea156553b8877e0179388c3bed4c0c3fc2be95a218de3d"
+    },
+    "L20_BB/sprites/prop_425_frame_12_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_13.png": {
+      "bytes": 4249,
+      "sha256": "99a08d549bea6533cf62479e9b75ead2c65070cebec05736fbeb47efd4957175"
+    },
+    "L20_BB/sprites/prop_425_frame_13_index.png": {
+      "bytes": 4018,
+      "sha256": "29e93a503c565835692a33450b72e36827e02b1e752ea818846a9136b61dfa12"
+    },
+    "L20_BB/sprites/prop_425_frame_13_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_14.png": {
+      "bytes": 4370,
+      "sha256": "1126684878bd4798e534853746d1a8689d74860d20ab1a9c1ff83fa7efbc0f79"
+    },
+    "L20_BB/sprites/prop_425_frame_14_index.png": {
+      "bytes": 4045,
+      "sha256": "ba13075210ae3719b444b04a043992782c54430ef4b62ba0f7d4f171145d44e7"
+    },
+    "L20_BB/sprites/prop_425_frame_14_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_15.png": {
+      "bytes": 4096,
+      "sha256": "11770b57db0511bdd93e248f23da3f2929751c9ef71712bad64384d6c3b0c000"
+    },
+    "L20_BB/sprites/prop_425_frame_15_index.png": {
+      "bytes": 3598,
+      "sha256": "c6c352e47733458aed1b409e8569d6c6834f8ee53bfede3507106670e621c5fb"
+    },
+    "L20_BB/sprites/prop_425_frame_15_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_16.png": {
+      "bytes": 3975,
+      "sha256": "86ae35407fdb519cf8e0b67193286582069667a3329b0e7e0c768128a85684e9"
+    },
+    "L20_BB/sprites/prop_425_frame_16_index.png": {
+      "bytes": 3487,
+      "sha256": "3a10e6fdf40ad360d33b89ecbe95a95f2c5dea705df20f3a30faa33f510286e7"
+    },
+    "L20_BB/sprites/prop_425_frame_16_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_17.png": {
+      "bytes": 3856,
+      "sha256": "a201c5df8a32b71741063d2ffa447c332d71e2e4599f32cd56f6d3dc4edc260e"
+    },
+    "L20_BB/sprites/prop_425_frame_17_index.png": {
+      "bytes": 3386,
+      "sha256": "1b5165d1382af271ce4a1955b05322ce75c52bda4c3cecba2efd9f074f6c4427"
+    },
+    "L20_BB/sprites/prop_425_frame_17_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_18.png": {
+      "bytes": 3370,
+      "sha256": "7ccab17e6ccd8c651aa1c205e1a1baf7da6d81ebd6cdca866542ddac16aa9de4"
+    },
+    "L20_BB/sprites/prop_425_frame_18_index.png": {
+      "bytes": 2944,
+      "sha256": "0fe9390abe72321a2facb9441649b53a1891cd33e34eea94a5d43ef597375bd5"
+    },
+    "L20_BB/sprites/prop_425_frame_18_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_19.png": {
+      "bytes": 2906,
+      "sha256": "4150fc7081146d9293f55350359fc3f13249d43949b4dbfc1223fc15da2d6fae"
+    },
+    "L20_BB/sprites/prop_425_frame_19_index.png": {
+      "bytes": 2530,
+      "sha256": "62cddaababcffd16ed4f2b75b61e25e0acccac27b342eaa72add605bb6060b85"
+    },
+    "L20_BB/sprites/prop_425_frame_19_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_1_index.png": {
+      "bytes": 2515,
+      "sha256": "8075401988676dbb60d240e349c19e0117077d2d21429d1dc179e981098af546"
+    },
+    "L20_BB/sprites/prop_425_frame_1_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_2.png": {
+      "bytes": 3286,
+      "sha256": "cd7acc83f6d129dde664b50dcd4259025cc166e8a7cb24195a7190cc27433cce"
+    },
+    "L20_BB/sprites/prop_425_frame_2_index.png": {
+      "bytes": 2925,
+      "sha256": "0727227937e33288a7f85d96d47e6a31882d51ebb83ad542dbe37c140ecea35a"
+    },
+    "L20_BB/sprites/prop_425_frame_2_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_3.png": {
+      "bytes": 3939,
+      "sha256": "f1efe17d84ceba7a0e1ea48d06d021e1ee99c77098a0a54c6d07a63f94b34bb6"
+    },
+    "L20_BB/sprites/prop_425_frame_3_index.png": {
+      "bytes": 3436,
+      "sha256": "c0c8bcc5d0d7ef754875bb4b5b1daf3a17d3d44a0f1c4efff8e042f3d19084f7"
+    },
+    "L20_BB/sprites/prop_425_frame_3_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_4.png": {
+      "bytes": 4033,
+      "sha256": "d1d3f31347c843c8b43b03c3a9bc7dc0a406d65417407a275eddca1ab9f6a1e2"
+    },
+    "L20_BB/sprites/prop_425_frame_4_index.png": {
+      "bytes": 3526,
+      "sha256": "39d0b8f08f259843e62c595aca7e3061f9a48666aeb51f04b8bebd69d79fe687"
+    },
+    "L20_BB/sprites/prop_425_frame_4_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_5.png": {
+      "bytes": 4105,
+      "sha256": "4f3295043d40c20f0f3e64feb096fc00085b22bdfb68d9a904c614f3f4aebd8e"
+    },
+    "L20_BB/sprites/prop_425_frame_5_index.png": {
+      "bytes": 3692,
+      "sha256": "a3c7c82fe3f7fdf87b9f6ecc841df1475e19a4099f9666a49cb3cefbcb65ce36"
+    },
+    "L20_BB/sprites/prop_425_frame_5_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_6.png": {
+      "bytes": 4124,
+      "sha256": "628bf9383d766b1ed7ed3c352bc6df4f6379e80e3500fc8d88f486677ddc2f68"
+    },
+    "L20_BB/sprites/prop_425_frame_6_index.png": {
+      "bytes": 3665,
+      "sha256": "ded7b40d8eeaf966feced40825fc04ccbd876b87955c3ffc6aa6e9150ac00dd2"
+    },
+    "L20_BB/sprites/prop_425_frame_6_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_7.png": {
+      "bytes": 4253,
+      "sha256": "1e8f2a52479854fe49a806a5be8eae781e4e373f047d6d604daf26c7af3fbe1c"
+    },
+    "L20_BB/sprites/prop_425_frame_7_index.png": {
+      "bytes": 3952,
+      "sha256": "d319ee9879db190f64fccdd1ac748994d087ca85e6fba9fff5c4f53af12ed87d"
+    },
+    "L20_BB/sprites/prop_425_frame_7_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_8.png": {
+      "bytes": 4476,
+      "sha256": "70eb99b04e0b2c38e219313a1b8c078a2b34c96087e99c86f3b7fc4c9d521861"
+    },
+    "L20_BB/sprites/prop_425_frame_8_index.png": {
+      "bytes": 4026,
+      "sha256": "c8f02a353cf6ff76a26a2bfb9ea75b522682f63bbbd9dccb25f6adb7b2fcff75"
+    },
+    "L20_BB/sprites/prop_425_frame_8_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    },
+    "L20_BB/sprites/prop_425_frame_9.png": {
+      "bytes": 4480,
+      "sha256": "9132fb30bc9c8ffb928a285095ba6834695560a308c539455124518299b0b9ad"
+    },
+    "L20_BB/sprites/prop_425_frame_9_index.png": {
+      "bytes": 4102,
+      "sha256": "87c0b201b6089e06349568714ad60f8363b7fa628b90fd0076347c6e6e89c474"
+    },
+    "L20_BB/sprites/prop_425_frame_9_shadow.png": {
+      "bytes": 109,
+      "sha256": "f73afee8eece4f87de7c1157aa6b128b14b0c53e72844ce164a7fbc38d957538"
+    }
+  }
+}

@@ -1,8 +1,14 @@
 extends "res://tests/l9_chapel_earned_test.gd"
+func input_path() -> String:
+ return "res://tmp/l13_pink_steps_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="cbc1aaee8444612f78eca25e00b4f87e1660238cdce73e9392f47366d56666a6"
+func pass_line() -> String:
+ return "PASS earned staircase landing -> timed visible source plates90..100 -> physical upper ring/save-reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_pink_steps_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="cbc1aaee8444612f78eca25e00b4f87e1660238cdce73e9392f47366d56666a6","qualified pink ledges input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified pink ledges input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -36,5 +42,5 @@ func run():
  check(scene._quicksave_unrecorded("res://tmp/l13_bridge_earned_save.json").is_empty() and scene._quickload_unrecorded("res://tmp/l13_bridge_earned_save.json").is_empty(),"earned bridge save/reload")
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seed/recovery")
  scene.queue_free();await process_frame
- if failures==0:print("PASS earned staircase landing -> timed visible source plates90..100 -> physical upper ring/save-reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

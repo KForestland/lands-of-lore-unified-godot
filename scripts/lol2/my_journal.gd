@@ -5,6 +5,7 @@ extends RefCounted
 ## they travel with every save and area handoff; older saves have none. Reading never changes quest state, and the
 ## developer "enhanced_guard" text is never shown. LoL2 has no journal of its own: the page is a presentation adapter.
 const SOURCES := [
+	["res://scripts/lol2/dark_halls_rix.gd", "JOURNAL_HINTS"],
 	["res://scripts/lol2/jungle_village_state.gd", "JOURNAL_HINTS"],
 	["res://scripts/lol2/monastery_quest_state.gd", "CAN_JOURNAL_HINTS"],
 	["res://scripts/lol2/monastery_quest_state.gd", "CHUT_JOURNAL_HINTS"],
@@ -19,6 +20,7 @@ const SOURCES := [
 	["res://scripts/lol2/l9_journal_hints.gd", "JOURNAL_HINTS"],
 	["res://scripts/lol2/l8_tribe_dawn_hints.gd", "JOURNAL_HINTS"],
 	["res://scripts/lol2/l13_journal_hints.gd", "JOURNAL_HINTS"],
+	["res://scripts/lol2/l13_action_hint_targets.gd", "JOURNAL_HINTS"],
 	["res://scripts/lol2/l14_journal_hints.gd", "JOURNAL_HINTS"],
 	["res://scripts/lol2/l16_journal_hints.gd", "JOURNAL_HINTS"],
 	["res://scripts/lol2/act1_journal_hints.gd", "JOURNAL_HINTS"],
@@ -33,6 +35,11 @@ static func hints() -> Dictionary:
 		for source in SOURCES:
 			var rows: Array = (load(source[0]) as Script).get_script_constant_map()[source[1]]
 			for row in rows: _hints[str(row.when)] = str(row.hint)
+		# Same source sentence as the live lesson; shared messages have one id.
+		for row:Dictionary in load("res://scripts/lol2/player_spell_teaching.gd").table().live_lessons:
+			var id:String=row.journal
+			assert(not _hints.has(id) or _hints[id]==str(row.message),"Conflicting spell lesson note")
+			_hints[id]=str(row.message)
 	return _hints
 
 static func validate(value: Variant) -> String:

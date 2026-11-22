@@ -1,0 +1,1312 @@
+{
+  "version": 1,
+  "scope": "Hosted main-road protection; counts from audited finite reserve_frontier; no whole-game softlock certificate.",
+  "solver_sha256": "ae8320412951043e63b6d9026d306d4a0383f7870adb03cac3cda0146cf5a22b",
+  "source_pins": {
+    "scripts/lol2/l14_priest_ritual.gd": "ca59a18853aa1c1fd308a19d7b8c5bf11b9eee1618d42bc3005126734a2c2e56",
+    "scripts/lol2/l14_niche.gd": "8c8f887256f18978b8f0f6f83b017c4f21d3f568ea7ef8687a0813690bc3710f",
+    "scripts/lol2/l14_shard_bowls.gd": "80cf09f45ed3ccb7c49b82d55986f19a2ff6decce3af3de2503e631b9b87061d",
+    "scripts/lol2/l14_idol_pedestals.gd": "c675ecf3f7f3cf400a801c2c6c36dfa9b556701ffd0786708cd0abbd2889af40",
+    "scripts/lol2/l14_hopper_platform.gd": "15571d08b260f0a7db3e1be5a54e2a7fc284d1dd200316bc96b89ad6cc32f564",
+    "scripts/lol2/l14_flute_slot.gd": "8f63e8e2868e5b933aad876ebf8221d905b03d29de7294e78265d32aac0db84e",
+    "scripts/lol2/hive_flute_floor.gd": "0369d46b7f6514ed97824475ca4fc16a2b9383b46e948bab613081d0e23a570b",
+    "scripts/lol2/l13_altar_state.gd": "df8caf8f64f8f40e7e3e697694ef9df91cf9f816263e8d974e4e4a1ef5f48410",
+    "scripts/lol2/l14_chamber_voices.gd": "3c0f52aa883737339f9b37210a98849d982495beafe147f8129336008bdf057e",
+    "scripts/lol2/l10_ankh_state.gd": "2a9a55f95d59807c4b6f88909a2c63e1c2f830df6d0d9a7f242924741e2757dd",
+    "scripts/lol2/l10_emperor_state.gd": "626636c5c492bc00274f3aba86f709d7a039361b74d365d372aaeb61845d25db",
+    "scripts/lol2/l20_finale.gd": "c315845db61ce1a153d1708ceab58ce0186779fa9bc9d6b775b72bc1ac93518c",
+    "scripts/lol2/l20_armory.gd": "f4b56af105edad769261dd7e8bb538e5b78f105783dd34cbfc2a57543ece2380",
+    "scripts/lol2/l16_greenhouse.gd": "8ce87e49493d8cea386b465417c2b0dc425558eb37aca660d68f08b8ee83badc",
+    "scripts/lol2/l8_tribe_state.gd": "5dcbd4013f69fd6da3bb525e1c39aecd4982a25d35fcd0bfb424b1be797cd7ee",
+    "scripts/lol2/l8_shaman_trade.gd": "cd4cd10908e889574f03cb9bab2130b1d671a8d254b0789e33d20d417310cf00",
+    "scripts/lol2/l8_larkhon_state.gd": "e2b899caf03294c5658a059c89245e2e3dc5196d2aaa4b95dcb1c951492b7872",
+    "scripts/lol2/l10_silverleaf.gd": "e1aa9730de78270ddb85308a889fe162664773f02f55040a07ea42a0acb0a4f7",
+    "scripts/lol2/l10_silverleaf_harvest.gd": "f3143893d79325f235057f308445c9d1d2a75736aa4bf3b5dd8a4702178146b1",
+    "scripts/lol2/l13_exit_lock_state.gd": "50ed08e903d0a05fef14c5463ae5afb6bb289750fdb7989dd83551dc159a8a29",
+    "scripts/lol2/l14_spiral.gd": "01f7cb799e62c00625adfbd63e86044a4ab6f2c6e2cdb73bf857975828711b43",
+    "scripts/lol2/l8_temple_door_state.gd": "78289dfa057b4e2e4182bae5e46ce6427251daa648a811cc705be18b1ccedfc3",
+    "scripts/lol2/l8_tree.gd": "c1a6a04f0c67ed7ddceb8e65d3708deb905f0f1fb8e3a83ebba4c9ff674eaa99",
+    "scripts/lol2/l8_tree_slot_state.gd": "9b2d1b0f249001b285952727f7a3ad95453481ced55f388e4af619a7e8aef6a1",
+    "scripts/lol2/act2_items_catalog.gd": "733047a4a139a154b5c9c20299fc9af85f5c6b6d731d7247395e7e771972200b",
+    "scripts/lol2/item_catalog.gd": "2ae1951eded5806b653c842ca1476babc7d66361e632af55467f9d9b17544916",
+    "scripts/lol2/mechanism_transaction.gd": "f5bd0ea4a88e1f37bf286d973bdf16b82c29a1030658035dff3e64ac2f42ad1b"
+  },
+  "obligations": [
+    {
+      "name": "Temple offering 369",
+      "items": [
+        "act2:L14_HT:item72"
+      ],
+      "definitions": false,
+      "need": 1,
+      "goal_targets": [
+        "369"
+      ],
+      "done": [
+        {
+          "path": [
+            "l14_priest_ritual",
+            "slots",
+            "369",
+            "committed"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep this Poison Paint for the Temple priest's ritual.",
+      "slots": [],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Temple offering 370",
+      "items": [
+        "act2:L14_HT:item68"
+      ],
+      "definitions": false,
+      "need": 1,
+      "goal_targets": [
+        "370"
+      ],
+      "done": [
+        {
+          "path": [
+            "l14_priest_ritual",
+            "slots",
+            "370",
+            "committed"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep this aloe for the Temple priest's ritual.",
+      "slots": [],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Temple statue",
+      "items": [
+        "act2:L14_HT:item65"
+      ],
+      "definitions": false,
+      "need": 1,
+      "goal_targets": [
+        "temple:niche126"
+      ],
+      "done": [
+        {
+          "path": [
+            "l14_niche",
+            "slots",
+            "temple:niche126",
+            "committed"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep the statue for the Temple niche.",
+      "slots": [],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Temple shards",
+      "items": [
+        "act2:L14_HT:post_shard",
+        "act2:L14_HT:item67"
+      ],
+      "definitions": false,
+      "need": 2,
+      "goal_targets": [
+        "405",
+        "406"
+      ],
+      "done": [
+        {
+          "path": [
+            "l14_shard_bowls",
+            "slots"
+          ],
+          "all_committed": true,
+          "targets": [
+            "405",
+            "406"
+          ]
+        }
+      ],
+      "reason": "Keep these shards for the Temple passage.",
+      "slots": [
+        "l14_shard_bowls"
+      ],
+      "recoverable": [
+        [
+          "l8_tree",
+          "lock"
+        ]
+      ],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0",
+            "held:1"
+          ],
+          "counts": {
+            "resource": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Temple idols",
+      "items": [
+        "act2:L14_HT:trial_idol371",
+        "act2:L14_HT:trial_idol372",
+        "act2:L14_HT:trial_idol384"
+      ],
+      "definitions": false,
+      "need": 3,
+      "goal_targets": [
+        "85",
+        "86",
+        "87"
+      ],
+      "done": [
+        {
+          "path": [
+            "l14_idol_pedestals",
+            "slots"
+          ],
+          "all_committed": true,
+          "targets": [
+            "85",
+            "86",
+            "87"
+          ]
+        }
+      ],
+      "reason": "Keep the Jkaran idols for the Temple crossing.",
+      "slots": [
+        "l14_idol_pedestals"
+      ],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0",
+            "held:1",
+            "held:2"
+          ],
+          "counts": {
+            "resource": 3
+          }
+        }
+      ]
+    },
+    {
+      "name": "Temple platform",
+      "items": [
+        "act2:L14_HT:hopper_corpse91",
+        "act2:L14_HT:hopper_corpse92",
+        "act2:L14_HT:hopper_corpse93",
+        "act2:L14_HT:hopper_corpse94",
+        "act2:L14_HT:hopper_corpse95"
+      ],
+      "definitions": false,
+      "need": 5,
+      "goal_targets": [
+        "91",
+        "92",
+        "93",
+        "94",
+        "95"
+      ],
+      "done": [
+        {
+          "path": [
+            "l14_hopper_platform",
+            "slots"
+          ],
+          "all_committed": true,
+          "targets": [
+            "91",
+            "92",
+            "93",
+            "94",
+            "95"
+          ]
+        }
+      ],
+      "reason": "Keep the Hopper bodies for the Temple elevator.",
+      "slots": [
+        "l14_hopper_platform"
+      ],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0",
+            "held:1",
+            "held:2",
+            "held:3",
+            "held:4"
+          ],
+          "counts": {
+            "resource": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "Temple flute",
+      "items": [
+        "monastery:item94:Iron_Flute",
+        96
+      ],
+      "definitions": true,
+      "need": 1,
+      "goal_targets": [
+        "temple:flute_slot76"
+      ],
+      "done": [
+        {
+          "path": [
+            "l14_flute_slot",
+            "slots",
+            "temple:flute_slot76",
+            "committed"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep the Iron Flute for the Temple oil passage.",
+      "slots": [],
+      "recoverable": [
+        "l14_flute_slot",
+        {
+          "path": [
+            "hive_flute_floor"
+          ],
+          "area": "L5_HC"
+        }
+      ],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:1"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Citadel altar sword",
+      "items": [
+        4,
+        5,
+        14,
+        17,
+        20,
+        21,
+        71
+      ],
+      "definitions": true,
+      "need": 1,
+      "goal_targets": [
+        "citadel:sword_altar"
+      ],
+      "done": [
+        {
+          "path": [
+            "l13_altar",
+            "output"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep a sword for the Ruloi Citadel altar.",
+      "slots": [],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:1"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:2"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:3"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:4"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:5"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:6"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dreamstone",
+      "items": [
+        "act2:L13_RC:dreamstone",
+        136
+      ],
+      "definitions": true,
+      "need": 1,
+      "goal_targets": [
+        "l14_chamber_voices:offered"
+      ],
+      "done": [
+        {
+          "path": [
+            "l14_chamber_voices",
+            "offered"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep the Dreamstone for the Chamber of Voices.",
+      "slots": [],
+      "recoverable": [
+        "l13_exit_lock",
+        "l14_spiral",
+        "l8_temple_door"
+      ],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:1"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Priest ashes",
+      "items": [
+        "act2:L9_DR:item0"
+      ],
+      "definitions": false,
+      "need": 1,
+      "goal_targets": [
+        "priest:ashes"
+      ],
+      "done": [
+        {
+          "path": [
+            "l10_ankh",
+            "slots",
+            "priest:ashes",
+            "committed"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep the ashes to return them to the Cemetery priest.",
+      "slots": [],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Emperor ankh",
+      "items": [
+        "act2:L10_DC:priest_ankh"
+      ],
+      "definitions": false,
+      "need": 1,
+      "goal_targets": [
+        "143"
+      ],
+      "done": [
+        {
+          "path": [
+            "l10_emperor",
+            "slots",
+            "143",
+            "committed"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep the ankh for the Emperor's tomb.",
+      "slots": [],
+      "recoverable": [
+        "l10_ankh"
+      ],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Belial ending",
+      "items": [
+        "act2:L12_CM:blue_bow",
+        "act2:L13_RC:dark_sword",
+        "act2:L19_BC:horn"
+      ],
+      "definitions": false,
+      "need": 1,
+      "goal_targets": [
+        "l20_finale:started"
+      ],
+      "done": [
+        {
+          "path": [
+            "l20_finale",
+            "started"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep a Blue Bow, Dark Sword or Belial horn for Belial.",
+      "slots": [],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:1"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        },
+        {
+          "held": [
+            "held:2"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Armory fireball",
+      "items": [
+        "act2:L12_CM:blue_bow"
+      ],
+      "definitions": false,
+      "need": 1,
+      "goal_targets": [
+        "l20_armory:fire"
+      ],
+      "done": [
+        {
+          "path": [
+            "l20_armory",
+            "fire"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep the Blue Bow for the fireball in Belial's fortress.",
+      "slots": [],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Larkhon Serum",
+      "items": [
+        119
+      ],
+      "definitions": true,
+      "need": 1,
+      "goal_targets": [
+        "mix:serum"
+      ],
+      "done": [
+        {
+          "path": [
+            "l8_larkhon",
+            "slots",
+            "mix:serum",
+            "committed"
+          ],
+          "truthy": true
+        },
+        {
+          "path": [
+            "l13_altar",
+            "stone_taken"
+          ],
+          "truthy": true
+        },
+        {
+          "path": [
+            "l14_chamber_voices",
+            "offered"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep the Amaranth Serum for the Larkhon mixture.",
+      "slots": [],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "held:0"
+          ],
+          "counts": {
+            "resource": 1
+          }
+        }
+      ],
+      "before_larkhon_only": true
+    },
+    {
+      "name": "City pyramid",
+      "items": [
+        117
+      ],
+      "definitions": true,
+      "need": 4,
+      "goal_targets": [
+        "l16_greenhouse:silverleaf"
+      ],
+      "done": [
+        {
+          "path": [
+            "l16_greenhouse",
+            "silverleaf"
+          ],
+          "truthy": true
+        }
+      ],
+      "reason": "Keep a Silverleaf for the glass pyramid in the City.",
+      "slots": [],
+      "recoverable": [],
+      "model_frontier": [
+        {
+          "held": [
+            "leaf:0",
+            "leaf:1",
+            "leaf:2",
+            "leaf:3"
+          ],
+          "counts": {
+            "silverleaf": 4
+          }
+        }
+      ],
+      "quantity_profiles": {
+        "before_initiation": {
+          "need": 4,
+          "frontier": [
+            {
+              "held": [
+                "leaf:0",
+                "leaf:1",
+                "leaf:2",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 4
+              }
+            }
+          ],
+          "goals": [
+            "tribe:initiation",
+            "shaman:silverleaf",
+            "mix:leaf",
+            "l16_greenhouse:silverleaf"
+          ]
+        },
+        "after_initiation": {
+          "need": 3,
+          "frontier": [
+            {
+              "held": [
+                "leaf:0",
+                "leaf:1",
+                "leaf:2"
+              ],
+              "counts": {
+                "silverleaf": 3
+              }
+            },
+            {
+              "held": [
+                "leaf:0",
+                "leaf:1",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 3
+              }
+            },
+            {
+              "held": [
+                "leaf:0",
+                "leaf:2",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 3
+              }
+            },
+            {
+              "held": [
+                "leaf:1",
+                "leaf:2",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 3
+              }
+            }
+          ],
+          "goals": [
+            "shaman:silverleaf",
+            "mix:leaf",
+            "l16_greenhouse:silverleaf"
+          ]
+        },
+        "with_serum_before_initiation": {
+          "need": 3,
+          "frontier": [
+            {
+              "held": [
+                "leaf:0",
+                "leaf:1",
+                "leaf:2"
+              ],
+              "counts": {
+                "silverleaf": 3
+              }
+            },
+            {
+              "held": [
+                "leaf:0",
+                "leaf:1",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 3
+              }
+            },
+            {
+              "held": [
+                "leaf:0",
+                "leaf:2",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 3
+              }
+            },
+            {
+              "held": [
+                "leaf:1",
+                "leaf:2",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 3
+              }
+            }
+          ],
+          "goals": [
+            "tribe:initiation",
+            "mix:leaf",
+            "l16_greenhouse:silverleaf"
+          ]
+        },
+        "with_serum": {
+          "need": 2,
+          "frontier": [
+            {
+              "held": [
+                "leaf:0",
+                "leaf:1"
+              ],
+              "counts": {
+                "silverleaf": 2
+              }
+            },
+            {
+              "held": [
+                "leaf:0",
+                "leaf:2"
+              ],
+              "counts": {
+                "silverleaf": 2
+              }
+            },
+            {
+              "held": [
+                "leaf:0",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 2
+              }
+            },
+            {
+              "held": [
+                "leaf:1",
+                "leaf:2"
+              ],
+              "counts": {
+                "silverleaf": 2
+              }
+            },
+            {
+              "held": [
+                "leaf:1",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 2
+              }
+            },
+            {
+              "held": [
+                "leaf:2",
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 2
+              }
+            }
+          ],
+          "goals": [
+            "mix:leaf",
+            "l16_greenhouse:silverleaf"
+          ]
+        },
+        "after_mix": {
+          "need": 1,
+          "frontier": [
+            {
+              "held": [
+                "leaf:0"
+              ],
+              "counts": {
+                "silverleaf": 1
+              }
+            },
+            {
+              "held": [
+                "leaf:1"
+              ],
+              "counts": {
+                "silverleaf": 1
+              }
+            },
+            {
+              "held": [
+                "leaf:2"
+              ],
+              "counts": {
+                "silverleaf": 1
+              }
+            },
+            {
+              "held": [
+                "leaf:3"
+              ],
+              "counts": {
+                "silverleaf": 1
+              }
+            }
+          ],
+          "goals": [
+            "l16_greenhouse:silverleaf"
+          ]
+        },
+        "complete": {
+          "need": 0,
+          "frontier": [
+            {
+              "held": [],
+              "counts": {}
+            }
+          ],
+          "goals": []
+        }
+      }
+    }
+  ],
+  "leaf_chain": {
+    "serum_definition": 119,
+    "mix_path": [
+      "l8_larkhon",
+      "slots",
+      "mix:serum",
+      "committed"
+    ],
+    "tribe_path": [
+      "l8_tribe",
+      "slots",
+      "tribe:initiation",
+      "committed"
+    ],
+    "trade_path": [
+      "l8_shaman_trade",
+      "slots",
+      "shaman:silverleaf",
+      "committed"
+    ],
+    "growth_key": "l10_silverleaf",
+    "harvest_key": "l10_silverleaf_harvest",
+    "trees": [
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170
+    ],
+    "steps": [
+      {
+        "receipt": [
+          "l8_tribe",
+          "slots",
+          "tribe:initiation",
+          "committed"
+        ],
+        "leaf": [
+          "l8_tribe",
+          "slots",
+          "tribe:initiation",
+          "occupied"
+        ],
+        "output": ""
+      },
+      {
+        "receipt": [
+          "l8_shaman_trade",
+          "slots",
+          "shaman:silverleaf",
+          "committed"
+        ],
+        "leaf": [
+          "l8_shaman_trade",
+          "leaf"
+        ],
+        "output": "act2:L8_SJ:shaman_amaranth"
+      },
+      {
+        "receipt": [
+          "l8_larkhon",
+          "slots",
+          "mix:serum",
+          "committed"
+        ],
+        "leaf": [
+          "l8_larkhon",
+          "leaf"
+        ],
+        "output": "act2:L8_SJ:larkhon_vapors"
+      }
+    ]
+  },
+  "owner_shapes": {
+    "l14_priest_ritual": {
+      "file": "l14_priest_ritual.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "lowered": 0.0,
+        "vanished": false
+      },
+      "targets": [
+        "369",
+        "370"
+      ]
+    },
+    "l14_niche": {
+      "file": "l14_niche.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "raised": 0.0
+      },
+      "targets": [
+        "temple:niche126"
+      ]
+    },
+    "l14_shard_bowls": {
+      "file": "l14_shard_bowls.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "opened": 0.0
+      },
+      "targets": [
+        "405",
+        "406"
+      ]
+    },
+    "l14_idol_pedestals": {
+      "file": "l14_idol_pedestals.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "assembled": 0.0
+      },
+      "targets": [
+        "85",
+        "86",
+        "87"
+      ]
+    },
+    "l14_hopper_platform": {
+      "file": "l14_hopper_platform.gd",
+      "initial": {
+        "version": 1,
+        "activated": false,
+        "collected": [],
+        "slots": {},
+        "stepped": false,
+        "lowered": 0.0
+      },
+      "targets": [
+        "91",
+        "92",
+        "93",
+        "94",
+        "95"
+      ]
+    },
+    "l14_flute_slot": {
+      "file": "l14_flute_slot.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "flute": "",
+        "covered": 0.0
+      },
+      "targets": [
+        "temple:flute_slot76"
+      ]
+    },
+    "l13_altar": {
+      "file": "l13_altar_state.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "sword": "",
+        "output": "",
+        "stone_taken": false
+      },
+      "targets": [
+        "citadel:sword_altar"
+      ]
+    },
+    "l14_chamber_voices": {
+      "file": "l14_chamber_voices.gd",
+      "initial": {
+        "version": 1,
+        "offered": false
+      },
+      "targets": []
+    },
+    "l10_ankh": {
+      "file": "l10_ankh_state.gd",
+      "initial": {
+        "version": 1,
+        "slots": {}
+      },
+      "targets": [
+        "priest:ashes",
+        "emperor:slab66"
+      ]
+    },
+    "l10_emperor": {
+      "file": "l10_emperor_state.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "remains": false
+      },
+      "targets": [
+        "143"
+      ]
+    },
+    "l20_finale": {
+      "file": "l20_finale.gd",
+      "initial": {
+        "version": 1,
+        "started": false,
+        "weapon": "",
+        "chasm": -1,
+        "slumped": false,
+        "draracle_seen": false,
+        "appeared": false,
+        "vanished": false,
+        "dawn_here": false,
+        "game_finished": false
+      },
+      "targets": []
+    },
+    "l20_armory": {
+      "file": "l20_armory.gd",
+      "initial": {
+        "version": 1,
+        "hacked": false,
+        "ball": false,
+        "fire": false,
+        "stopped": false
+      },
+      "targets": []
+    },
+    "l13_exit_lock": {
+      "file": "l13_exit_lock_state.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "stone": ""
+      },
+      "targets": [
+        "citadel:exit_lock104"
+      ]
+    },
+    "l14_spiral": {
+      "file": "l14_spiral.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "stone": "",
+        "raised": 0.0
+      },
+      "targets": [
+        "temple:dreamstone_slot72"
+      ]
+    },
+    "l8_temple_door": {
+      "file": "l8_temple_door_state.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "stone": ""
+      },
+      "targets": [
+        "temple:entrance1198"
+      ]
+    },
+    "l8_tree": {
+      "file": "l8_tree.gd",
+      "initial": {
+        "version": 1,
+        "lit": [],
+        "rise": 0.0,
+        "lock": {
+          "version": 1,
+          "slots": {},
+          "stone": ""
+        }
+      },
+      "targets": []
+    },
+    "hive_flute_floor": {
+      "file": "hive_flute_floor.gd",
+      "initial": {
+        "version": 1,
+        "slot": {
+          "occupied": "",
+          "committed": false,
+          "receipts": []
+        }
+      },
+      "targets": []
+    },
+    "l8_tribe": {
+      "file": "l8_tribe_state.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "phase": "idle",
+        "index": 0,
+        "elapsed": 0.0,
+        "player": 0,
+        "daniel": 0,
+        "counter": 0.0
+      },
+      "targets": [
+        "tribe:initiation"
+      ]
+    },
+    "l8_shaman_trade": {
+      "file": "l8_shaman_trade.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "leaf": ""
+      },
+      "targets": [
+        "shaman:silverleaf"
+      ]
+    },
+    "l8_larkhon": {
+      "file": "l8_larkhon_state.gd",
+      "initial": {
+        "version": 1,
+        "slots": {},
+        "leaf": "",
+        "serum": "",
+        "active": false,
+        "sleep": 0.0
+      },
+      "targets": [
+        "mix:leaf",
+        "mix:serum",
+        "larkhon:chest"
+      ]
+    },
+    "l10_silverleaf": {
+      "file": "l10_silverleaf.gd",
+      "initial": {
+        "version": 1,
+        "grown": false
+      },
+      "targets": []
+    },
+    "l10_silverleaf_harvest": {
+      "file": "l10_silverleaf_harvest.gd",
+      "initial": {
+        "version": 1,
+        "picked": []
+      },
+      "targets": []
+    },
+    "l16_greenhouse": {
+      "file": "l16_greenhouse.gd",
+      "initial": {
+        "version": 1,
+        "silverleaf": "",
+        "fireball": 0.0,
+        "opened": false
+      },
+      "targets": []
+    }
+  }
+}

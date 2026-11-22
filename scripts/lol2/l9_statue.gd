@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Original region3185/group3774 -> prop2622/STAT room20. The source bowl hotspot owns Kit offering.
 const State=preload("res://scripts/lol2/l9_statue_state.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
@@ -43,7 +44,9 @@ func offer(item: String)->Dictionary:
  if not room_active:return State.Kit.refuse("Enter the statue room first.")
  var result:=State.offer(state(),host.carried_collected,item)
  if not result.ok:return result
- host.quest_state.l9_statue=result.state;host.carried_collected=result.inventory;Items.sync(host);leave()
+ var admission:=Grants.transition(host,result.inventory,{"l9_statue":result.state})
+ if not admission.ok:return admission
+ Items.sync(host);leave()
  return {"ok":true,"reason":"The remains settle in the bowl. The statue begins to stir."}
 func leave():
  room_active=false;room.visible=false;get_tree().paused=false

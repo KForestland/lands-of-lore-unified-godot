@@ -1,4 +1,5 @@
 extends Node3D
+const PlayerCombat=preload("res://scripts/lol2/player_combat.gd")
 ## Live village Confidante on the Jungle host (jungle_confidante_state.gd): controls 112/123 show their original
 ## E103E/E102E.VQA segments on in-world planes with the original voices and sounds 227/269.
 ## Producers: a starter prop coming into sight (kind5; 1465 for 123, 492 for 112), grounded entry edges into the source
@@ -167,9 +168,8 @@ func _aimed() -> Dictionary:
 ## Armed melee strike aimed at a visible control body.
 func strike() -> bool:
 	var aim:=_aimed()
-	if not aim.has("control") or (int(host.player_form)==0 and str(host.equipped_item)==""): return false
-	var damage: int=preload("res://scripts/lol2/player_form_rules.gd").melee_damage(host.player_form,host.equipped_item!="")
-	if host.get("item_effects")!=null and host.item_effects.has_method("melee_damage"): damage=host.item_effects.melee_damage(damage)
+	if not aim.has("control") or not PlayerCombat.may_strike(host,false): return false
+	var damage: int=PlayerCombat.damage(host,true)
 	var e:=State.hit(state,src,int(aim.control),context(),damage);apply(e);return not e.is_empty()
 
 ## Population-style hit callback (basic Spark through player_starting_magic's population_actor ray). The amount is the

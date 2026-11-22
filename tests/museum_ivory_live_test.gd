@@ -47,7 +47,10 @@ func run() -> void:
 	if not check(await aim(owner.chips[0].global_position),"Chip17 reach after rewind"):return
 	scene.hand_item=""
 	var original: Array=scene.carried_collected.duplicate()
-	scene.carried_collected.resize(scene.Catalog.MAX_CARRIED);await press_e()
+	# Synthetic full-capacity vector of valid IDs (duplicates); never saved.
+	# Array.resize used to create nulls; no player action produced those nulls.
+	while scene.carried_collected.size()<scene.Catalog.MAX_CARRIED:scene.carried_collected.append(scene.SWORD_ITEM_ID)
+	await press_e()
 	if not check(owner.state.stages[0]==1 and owner.chips[0].visible,"Full inventory consumed pickup"):return
 	scene.carried_collected=original;await press_e();await press_e()
 	if not check(owner.state.stages==[2,0] and scene.carried_collected.count(Ivory.IDS[0])==1,"Chip17 duplicate or missing"):return

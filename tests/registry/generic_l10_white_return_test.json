@@ -1,0 +1,68 @@
+{
+  "name": "generic_l10_white_return_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "RealF2/F9 from actualF5 two-empty output 0bd320b98ae3ac837f0fecc304a6d39a66e716a95495165543ced0fa470c510a. Ordinary1/60 realW/E statue, native mirrors, Tower stair climb, actualEcharge/retrieve56+8white, on-foot return and F5. Continuation only; no supplied pose/health/clock/action handler."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "463e9fc4d60e3c7cf6c97c41ce7fe8590153f5eed106750f2aa0bde20c5e406e"
+  },
+  "context_aid_source_sites": {
+    "count": 6,
+    "sites": [
+      {
+        "path": "tests/generic_l10_bracers_return_test.gd",
+        "line": 58,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(BRACERS_INPUT,Slots.slot_path(1))==OK,\"Install untouched actualF5 in slot1\"):return"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l10_white_return_test.gd",
+        "line": 40,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(TWO_EMPTY_INPUT,Slots.slot_path(1))==OK,\"Install actual two-empty F5 for realF9\"):return"
+      },
+      {
+        "path": "tests/generic_l9_tower_sitting_test.gd",
+        "line": 75,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(INPUT,Slots.slot_path(1))==OK,\"Install actual F5 output in slot1\"):return"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 7,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

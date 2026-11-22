@@ -11,8 +11,8 @@ const INVENTORY_ICONS_PATH := "res://assets/lol2/generated/items/inventory_icons
 ## Native +0x3F is a slot mask: 8FD40 tests (1 << slot) across original slots0..5.
 ## Cocos definition167 mask0x43 admits original slots0/1 (native entry replay, AI_COMMS Cocos contract).
 ## The mapping below to modern weapon/armor/offhand remains an adapter (docs/DEVIATIONS.md).
-## Original slots0/1 and handler equip/unequip hooks are not hosted here; 0x43 items remain carried only.
-const CLASS_SLOTS := {0x44:"weapon",0x48:"weapon",0x50:"offhand",0x53:"offhand",0x60:"armor"}
+## Slots0/1 map to two accessory slots; special equip/unequip hooks remain with their owners or unhosted.
+const CLASS_SLOTS := {0x43:"accessory",0x44:"weapon",0x48:"weapon",0x50:"offhand",0x53:"offhand",0x60:"armor"}
 
 static var _rows: Array = []
 static var _by_name: Dictionary = {}
@@ -67,6 +67,9 @@ static func raw_byte(index: int, offset: int) -> int:
 	var hex := str(row(index).get("record_hex", ""))
 	if offset < 0 or hex.length() < (offset + 1) * 2: return -1
 	return hex.substr(offset * 2, 2).hex_to_int()
-static func slot(index: int) -> String: return str(CLASS_SLOTS.get(item_class(index), ""))
-## Ghost rows 152..156 have no inventory picture; they are projectile/spell placeholders, never carried.
+static func slot(index: int) -> String:
+	# Brady35: Kieran's Circlet excludes body armour; one modern armor slot enforces it.
+	if index==48:return "armor"
+	return str(CLASS_SLOTS.get(item_class(index), ""))
+## Rows152..156 have no inventory picture; their exact runtime purpose is unproven. Current policy does not carry them.
 static func carriable(index: int) -> bool: return not row(index).is_empty() and not bool(row(index).get("ghost", true))

@@ -1,0 +1,1 @@
+| 2026-11-07 | L19 ghostly token (STORY-085) | Four head shots drag a token onto a white circle beside a red fountain. No circle or fountain cstring is stored, so both are adapters. The demon, the plate, the fountain id, and the Ancients' Stone stay unbound. Opcode 18 does not move Luther. | HINTBOOK 5460-5468. | Adapter (owner rule 2026-10-30) |

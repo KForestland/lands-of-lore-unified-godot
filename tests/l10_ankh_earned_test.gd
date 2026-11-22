@@ -25,10 +25,8 @@ func run():
  if not check(priest.speak().ok,"actual earned full urn offered through Kit"):quit(1);return
  var occupied:="res://tmp/l10_ankh_occupied_earned_save.json"
  check(scene._quicksave_unrecorded(occupied).is_empty() and scene._quickload_unrecorded(occupied).is_empty(),"occupied priest ankh save/reload")
- var full:=Ankh.act(scene.quest_state.l10_ankh,scene.carried_collected,Ankh.TRADE,"",scene.carried_collected.size())
- check(not full.ok,"occupied ankh capacity refusal")
- scene.camera.look_at(priest.AIM,Vector3.UP)
- check(priest.speak().ok,"retrieve source ankh97")
+ # BJ14 F3: one E hands the ankh over (it used to take a second E to retrieve it).
+ check(Ankh.ANKH in scene.carried_collected,"one E gives source ankh97")
  check(not priest.speak().ok and Ankh.FULL not in scene.carried_collected and Ankh.ANKH in scene.carried_collected,"once-only urn exchange")
  check(scene._quicksave_unrecorded("res://tmp/l10_ankh_earned_save.json").is_empty(),"earned ankh checkpoint")
  var leave: Array=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/l10_priest_walk.json")).priest.points

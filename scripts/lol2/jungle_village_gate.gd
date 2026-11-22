@@ -59,7 +59,12 @@ func prepare_pose(percent: int) -> void:
 			for index in [0,1,2,0,2,3]:
 				var p: Array = face.vertices[index]
 				var point := Vector3(p[0],p[1],p[2])
-				surface.set_uv(Vector2(face.uv[index][0],face.uv[index][1]))
+				var uv := Vector2(face.uv[index][0],face.uv[index][1])
+				# OF1. Template 6 (leaf 78) stores surface byte +6 = 0x40 on box face 2 and 0 on face 3.
+				# The bake mirrors face 3 only, so both broad faces read backwards. Mirroring U restores the flag.
+				if int(leaf.index) == 78 and str(face.material) == "material_0742.png":
+					uv.x = 1.0 - uv.x
+				surface.set_uv(uv)
 				surface.add_vertex(point)
 				vertices.append(point)
 			surface.commit(mesh)

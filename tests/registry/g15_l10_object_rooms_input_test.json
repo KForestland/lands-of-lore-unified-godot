@@ -1,0 +1,187 @@
+{
+  "name": "g15_l10_object_rooms_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Local rendered room-draw proof + actual E107; inherited grounded vantage/NPC/root clocks and controlled visibility/presence/selector fixtures, no earned-walk claim."
+  },
+  "teleports": 1,
+  "test_aids": 15,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "5413cd930b020474ee49b192149b74aa26be94edcf7ea1932f8266f08bfd33cd"
+  },
+  "context_aid_source_sites": {
+    "count": 23,
+    "sites": [
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 33,
+        "column": 1,
+        "kind": "controlled_room_fixture",
+        "source": "vis.set_process(false) # Controlled draw fixture, no collision/world writes."
+      },
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 35,
+        "column": 1,
+        "kind": "controlled_room_fixture",
+        "source": "vis.apply({})"
+      },
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 67,
+        "column": 1,
+        "kind": "controlled_room_fixture",
+        "source": "vis.apply(shown)"
+      },
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 70,
+        "column": 1,
+        "kind": "cover_presentation_fixture",
+        "source": "world.renderer.set_present(5,false)"
+      },
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 71,
+        "column": 1,
+        "kind": "controlled_room_fixture",
+        "source": "vis.apply(shown)"
+      },
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 74,
+        "column": 1,
+        "kind": "controlled_room_fixture",
+        "source": "vis.apply({})"
+      },
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 75,
+        "column": 1,
+        "kind": "cover_presentation_fixture",
+        "source": "world.renderer.set_mode(247,1) # Rebuild selector meshes while their room is hidden."
+      },
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 78,
+        "column": 1,
+        "kind": "cover_presentation_fixture",
+        "source": "world.renderer.set_present(5,true)"
+      },
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 80,
+        "column": 1,
+        "kind": "controlled_room_fixture",
+        "source": "vis.last_pose=Transform3D() # Invalidate the camera cache after explicit draw fixtures."
+      },
+      {
+        "path": "tests/g15_l10_object_rooms_input_test.gd",
+        "line": 81,
+        "column": 1,
+        "kind": "controlled_room_fixture",
+        "source": "vis.set_process(true)"
+      },
+      {
+        "path": "tests/generic_l10_input_test.gd",
+        "line": 22,
+        "column": 18,
+        "kind": "scene_change_context",
+        "source": "scene.progression.change_scene_enabled=false"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 72,
+        "column": 44,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(incoming.error.is_empty() and scene.apply_save(incoming.state).is_empty(),\"Genuine starting packet applies\"):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 106,
+        "column": 15,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(area_packet).is_empty() and int(state(id)[Rules.PHASE])==1 and scene.progression.hinges[id].transform.is_equal_approx(opened),\"Per-area packet restores the same opened presentation %d\"%id):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 110,
+        "column": 19,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(not scene.apply_save(bad).is_empty() and scene.player.position==prior and scene.progression.hinges[id].transform.is_equal_approx(opened),\"Malformed object packet refuses before pose/geometry mutation %d\"%id):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 118,
+        "column": 16,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(mid).is_empty() and motion_matches(id,motion),\"Per-area restore recreates exact in-flight clock/position/phase\"):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 131,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(pre_pilot).is_empty(),\"Pre-pilot packet shape without generic key loads after objects moved\"):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 135,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(opened_packet).is_empty() and int(state(126)[Rules.PHASE])==1,\"Restore the moved positive control before testing a census omission\"):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 140,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(partial).is_empty(),\"Partial census and unknown ids/areas load into a live host\"):return"
+      },
+      {
+        "path": "tests/generic_l10_table_input_test.gd",
+        "line": 111,
+        "column": 4,
+        "kind": "form_admission_fixture",
+        "source": "scene.player_form=form"
+      },
+      {
+        "path": "tests/generic_l10_table_input_test.gd",
+        "line": 114,
+        "column": 3,
+        "kind": "form_admission_fixture",
+        "source": "scene.player_form=0"
+      },
+      {
+        "path": "tests/generic_l10_table_input_test.gd",
+        "line": 125,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(bonus_fixture).is_empty(),\"Declared Champion-state fixture validates\"):return"
+      },
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 26,
+        "column": 37,
+        "kind": "exit_seed_context",
+        "source": "scene=load(file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 33,
+        "column": 40,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(read.error.is_empty() and scene.apply_save(read.state).is_empty(),\"Game-written component checkpoint applies\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 38,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

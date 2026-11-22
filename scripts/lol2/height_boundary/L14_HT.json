@@ -1,0 +1,193 @@
+{
+ "version": 1,
+ "area": "L14_HT",
+ "rule": "narrow G-05 class-B adapter (lead 2026-11-12): only the walls the owner reports name, from Sol's census 2695ec6; the wide census is held until it passes the walked-ground replay",
+ "reason": "owner F10 06-24-14: walked through the east map edge of the pocket regions 3859-3863 (13912; 13906 stepped out and back; 13919 mid-fall) and fell; the whole edge 13921/13912/13915/13906/13919/13916 (all null neighbour, static floors). The r36 e3 lower bands (8259/8260/8261) are NOT applied: region 3890 (floor -80) overlaps r36 across that edge, so the ground-level path there (the owner's crossing and the l14 machines / bedroom-approach earned chains) is inside a valid native region.; l14_temple_chain_a (baseline failure 'fall recovery invalidates earned route'): the pew-room route stepped through region 163's null edge 1 (wall 8416) into the void under region 821 at the lower level; 8416 collides from -80 to 0 (band), the route goes through region 3237 as the original links it; owner r19g 14-08-18 'cant opend doors can cheat around tho' (Grok, OWNER_R19G_REPORTS_20261113.md): with doors 92/93 closed he walked round the east end of door 92 on the ritual's lower-room ceiling sheet (y 20), through wall 9490 (region 792 edge 1) and wall 9692 (region 957 edge 1), which meet at the door's east jamb (2483, -3025); both edges have no neighbour in the original, so both whole walls collide",
+ "faces": [
+  13921,
+  13912,
+  13915,
+  13906,
+  13919,
+  13916,
+  9490,
+  9692
+ ],
+ "band_faces": [
+  8416
+ ],
+ "block_face_keys": [
+  "wall|3606,-3527|3585,-3474|-80|20",
+  "wall|3638,-3586|3606,-3527|-80|20",
+  "wall|3638,-3599|3638,-3586|-80|20",
+  "wall|3639,-3631|3638,-3599|-80|20",
+  "wall|3639,-3640|3639,-3631|-80|20",
+  "wall|3615,-3702|3639,-3640|-80|20",
+  "wall|2547,-3101|2483,-3025|0|80",
+  "wall|2483,-3025|2527,-2975|0|150"
+ ],
+ "collision_faces": [
+  {
+   "face": 8416,
+   "region": 163,
+   "edge": 1,
+   "native_neighbour": null,
+   "points": [
+    [
+     2488.0,
+     -80.0,
+     -3431.0
+    ],
+    [
+     2488.0,
+     0.0,
+     -3431.0
+    ],
+    [
+     2496.0,
+     0.0,
+     -3272.0
+    ],
+    [
+     2496.0,
+     -80.0,
+     -3272.0
+    ]
+   ],
+   "note": "adapter band -80..0 only: region 163 edge 1 has no neighbour at the lower level (the void under upper region 821, floor 0); the face's top 0..20 would stand above 821's floor, where the owner walks (06-28-49), so only the part below 0 collides"
+  },
+  {
+   "face": null,
+   "region": 33,
+   "edge": 2,
+   "native_neighbour": 34,
+   "points": [
+    [
+     3298.0,
+     55.0,
+     -3793.0
+    ],
+    [
+     3298.0,
+     75.0,
+     -3793.0
+    ],
+    [
+     3301.0,
+     75.0,
+     -3699.0
+    ],
+    [
+     3301.0,
+     55.0,
+     -3699.0
+    ]
+   ],
+   "note": "player-only fix (lead 2026-11-13, with the T14 move): the 20-high sill opening 33->34 into the trench 34/36/38/40 is solid for the player; a lizard (16) fits through it and the trench has no way out (exits only these sills, 135 up in the original) - an original no-exit trap. Drawing unchanged."
+  },
+  {
+   "face": null,
+   "region": 35,
+   "edge": 0,
+   "native_neighbour": 36,
+   "points": [
+    [
+     3298.0,
+     55.0,
+     -3611.0
+    ],
+    [
+     3298.0,
+     75.0,
+     -3611.0
+    ],
+    [
+     3298.0,
+     75.0,
+     -3517.0
+    ],
+    [
+     3298.0,
+     55.0,
+     -3517.0
+    ]
+   ],
+   "note": "player-only fix (lead 2026-11-13, with the T14 move): the 20-high sill opening 35->36 into the trench 34/36/38/40 is solid for the player; a lizard (16) fits through it and the trench has no way out (exits only these sills, 135 up in the original) - an original no-exit trap. Drawing unchanged."
+  },
+  {
+   "face": null,
+   "region": 37,
+   "edge": 2,
+   "native_neighbour": 38,
+   "points": [
+    [
+     3265.0,
+     55.0,
+     -3410.0
+    ],
+    [
+     3265.0,
+     75.0,
+     -3410.0
+    ],
+    [
+     3193.0,
+     75.0,
+     -3340.0
+    ],
+    [
+     3193.0,
+     55.0,
+     -3340.0
+    ]
+   ],
+   "note": "player-only fix (lead 2026-11-13, with the T14 move): the 20-high sill opening 37->38 into the trench 34/36/38/40 is solid for the player; a lizard (16) fits through it and the trench has no way out (exits only these sills, 135 up in the original) - an original no-exit trap. Drawing unchanged."
+  },
+  {
+   "face": null,
+   "region": 39,
+   "edge": 2,
+   "native_neighbour": 40,
+   "points": [
+    [
+     3091.0,
+     55.0,
+     -3269.0
+    ],
+    [
+     3091.0,
+     75.0,
+     -3269.0
+    ],
+    [
+     3003.0,
+     75.0,
+     -3238.0
+    ],
+    [
+     3003.0,
+     55.0,
+     -3238.0
+    ]
+   ],
+   "note": "player-only fix (lead 2026-11-13, with the T14 move): the 20-high sill opening 39->40 into the trench 34/36/38/40 is solid for the player; a lizard (16) fits through it and the trench has no way out (exits only these sills, 135 up in the original) - an original no-exit trap. Drawing unchanged."
+  }
+ ],
+ "counts": {
+  "block_face_keys": 8,
+  "collision_polygons": 5
+ },
+ "source": {
+  "producer": "tools/prepare_boundary_collision.py",
+  "commit": "2695ec6",
+  "producer_sha256": "eceb5df297ebece0e84160e9a96f26912472a3002be3d5c444244682bffe9dc3"
+ },
+ "inputs": {
+  "geometry": {
+   "sha256": "4227d0273ff1aa08348dde50b512921bf0da0afd0b67e86cb874b189aa4d1e0c"
+  },
+  "map": {
+   "sha256": "0653fedcb349bda3f9e51b4a6640056d31efa4caa0e25f5e0a4addf2ec5332a1"
+  }
+ }
+}

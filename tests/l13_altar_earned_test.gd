@@ -18,10 +18,16 @@ func walk(scene:Node,points:Array,label:String)->bool:
    if tick%300==0:print("ALTAR WALK ",label," point",index," ",scene.player.position)
   if not check(reached,label+" point"+str(index)+" at "+str(scene.player.position)):return false
  return true
+func input_path() -> String:
+ return "res://tmp/l13_belial_combat_qualified_save.json"
+func input_ready(path: String) -> bool:
+ return FileAccess.get_sha256(path)=="aca45000e5b33d3ac4209a7d5a6b29672d0973b317585203ea693ce108d74689"
+func pass_line() -> String:
+ return "PASS actual boss-death route -> premature stone refusal -> equipped sword Kit conversion -> Dreamstone -> equipped save/reload"
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
- var path:="res://tmp/l13_belial_combat_qualified_save.json"
- if not check(FileAccess.get_sha256(path)=="aca45000e5b33d3ac4209a7d5a6b29672d0973b317585203ea693ce108d74689","qualified boss combat input"):quit(1);return
+ var path: String = input_path()
+ if not check(input_ready(path),"qualified boss combat input"):quit(1);return
  var input=Save.read_save(path,"lol2-restoration-map-L13_RC")
  if not check(input.error.is_empty(),input.error):quit(1);return
  var scene=load("res://scenes/lol2/maps/L13_RC.tscn").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene
@@ -55,5 +61,5 @@ func run():
  check(scene.resets==0 and scene.progression.seeds_applied.is_empty(),"no seed/recovery")
  print("ALTAR completed ",scene.player.position)
  scene.queue_free();await process_frame
- if failures==0:print("PASS actual boss-death route -> premature stone refusal -> equipped sword Kit conversion -> Dreamstone -> equipped save/reload")
+ if failures==0:print(pass_line())
  quit(0 if failures==0 else 1)

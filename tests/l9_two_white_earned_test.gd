@@ -1,4 +1,22 @@
 extends "res://tests/l9_mirror_return_earned_test.gd"
+func walk_transport(scene: Node,controller: Node,points: Array,label: String)->bool:
+ var count: int=controller.transports.size()
+ for n in points.size():
+  var p: Array=points[n];var goal:=Vector3(p[0],0,p[1]);var reached:=false
+  for tick in 900:
+   await physics_frame
+   if controller.transports.size()>count:return true
+   if not await fight_nearby(scene):return false
+   if not await preload("res://tests/helpers/l9_tower_door_input.gd").legacy(self,scene):return check(false,"Tower revisit door real E/W")
+   if controller.transports.size()>count:return true
+   var delta: Vector3=goal-scene.player.position;delta.y=0
+   if delta.length()<(2 if n==points.size()-1 else 8):reached=true;break
+   scene.move_grounded(delta.normalized(),scene.player.get_physics_process_delta_time())
+  if not reached and scene.player.get_slide_collision_count()>0:
+   var hit=scene.player.get_slide_collision(0);print("TRANSPORT HIT ",hit.get_collider().get_path()," ",hit.get_normal())
+  if not check(reached,label+" waypoint"+str(n)+" at"+str(scene.player.position)+" goal"+str(goal)):return false
+  if n%20==0:print("TRANSPORT WALK ",label," ",n," ",scene.player.position)
+ return check(false,label+" did not trigger source region")
 func run():
  Engine.time_scale=4;Engine.physics_ticks_per_second=240
  var input:=Save.read_save("res://tmp/l10_two_empty_earned_save.json","lol2-restoration-map-L10_DC")

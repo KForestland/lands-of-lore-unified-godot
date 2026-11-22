@@ -1,0 +1,131 @@
+{
+  "name": "g15_curse2_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "teleports": 0,
+  "test_aids": 1,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "C15 F2 local cast; explicit control learning/admission/timed warning and held magic clock. Real CtrlQ and F5/F9, no pose/health/mana writes."
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "6568a8b49540b0be34f6b42153634283058602990835f38f375112e8dbaeffc8"
+  },
+  "context_aid_source_sites": {
+    "count": 15,
+    "sites": [
+      {
+        "path": "tests/g15_curse2_input_test.gd",
+        "line": 8,
+        "column": 16,
+        "kind": "learning_api_fixture",
+        "source": "if not require(magic.learn_spell_group(\"control\"),\"Disclosed learned Control Token fixture\"):return"
+      },
+      {
+        "path": "tests/g15_curse2_input_test.gd",
+        "line": 9,
+        "column": 1,
+        "kind": "story_warning_fixture",
+        "source": "scene.curse.set_requests_enabled(true)"
+      },
+      {
+        "path": "tests/g15_curse2_input_test.gd",
+        "line": 10,
+        "column": 16,
+        "kind": "story_warning_fixture",
+        "source": "if not require(scene.curse.request_timed_form(2,60.0),\"Disclosed normal story warning\"):return"
+      },
+      {
+        "path": "tests/g15_curse2_input_test.gd",
+        "line": 12,
+        "column": 1,
+        "kind": "component_magic_clock",
+        "source": "magic.set_process(false);var initial:Dictionary=magic.magic_state().duplicate(true)"
+      },
+      {
+        "path": "tests/g15_curse2_input_test.gd",
+        "line": 14,
+        "column": 47,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.curse.state.phase==1 and scene.player_form==0 and magic.magic_state()==initial,\"CtrlQ during phase1 refuses with no debit\"):return"
+      },
+      {
+        "path": "tests/g15_curse2_input_test.gd",
+        "line": 16,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==2 and scene.curse.state.phase==2,\"Normal warning produces a live lizard\"):return"
+      },
+      {
+        "path": "tests/g15_curse2_input_test.gd",
+        "line": 19,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==0 and scene.curse.state.phase==0 and scene.curse.state.remaining==0 and scene.curse.state.duration==0 and magic.magic_state().player.mana==mana-2,\"Real CtrlQ Curse2 returns lizard to human at cost2 with no timer\"):return"
+      },
+      {
+        "path": "tests/g15_curse2_input_test.gd",
+        "line": 24,
+        "column": 16,
+        "kind": "form_admission_fixture",
+        "source": "if not require(scene.player_form==0 and scene.curse.state.phase==0 and scene.curse.state.duration==0 and \"curse2\" in scene.starting_magic.magic_state().spellbook.learned and scene.resets==0,\"Actual F5/F9 keeps controlled human, book and no recovery\"):return"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 14,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l13_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 20,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 23,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l13_chain_input_test.gd",
+        "line": 76,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(LOWER_INPUT,Slots.slot_path(1))==OK,\"Install untouched game-written lowerF5 for actualF9\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 16,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

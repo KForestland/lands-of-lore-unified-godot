@@ -84,7 +84,8 @@ func run() -> void:
 	var save_key:=InputEventKey.new();save_key.keycode=KEY_F5;save_key.pressed=true
 	Input.parse_input_event(save_key);await process_frame
 	scene.interface_hud.save_path=old_path
-	if not check(Save.read_save(movie_path).state.quests.jungle_exit_encounter.movie.phase=="playing","F5 did not preserve active movie"):return
+	if not check(not scene.can_save().is_empty(),"new slot must refuse active movie"):return
+	if not check(scene.quicksave(movie_path).is_empty() and Save.read_save(movie_path).state.quests.jungle_exit_encounter.movie.phase=="playing","explicit legacy API preserves active movie"):return
 	ctrl.advance(20.0);scene.set_physics_process(false)
 	# Legacy packet without optional encounter resets it to source absence.
 	var legacy: Dictionary=Save.read_save(path).state.duplicate(true)

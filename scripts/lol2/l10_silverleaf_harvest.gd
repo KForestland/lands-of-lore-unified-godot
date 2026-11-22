@@ -23,4 +23,4 @@ static func pick(s:Dictionary,inventory:Array,items:Dictionary,target:String,cap
  var next:=s.duplicate(true);next.picked.append(target)
  var history:=items.duplicate(true);history.collected.append(id)
  var carried:=inventory.duplicate();carried.append(id)
- return {"ok":true,"state":next,"inventory":carried,"items":history,"reason":"You pick a Silverleaf."}
+ return {"ok":true,"state":next,"inventory":carried,"items":history,"reason":"You pick a Silverleaf (%d of 9)."%next.picked.size() if next.picked.size()<=9 else "You pick a Silverleaf."}

@@ -61,11 +61,11 @@ func run():
 	var before_pos: Vector3 = scene.player.position
 	await process_frame
 	await process_frame
-	var gap: bool = wall.STRAND_ID == -1 and wall.MOVIE == -1 and wall.ARRIVAL_SELECTOR == -1
-	if not check(gap, "strand, movie, and beast arrival stay unbound"):
+	var gap: bool = wall.STRAND_ID == -1 and wall.MOVIE == -1 and wall.ARRIVAL_SELECTOR == 1 and wall.ARRIVAL_REGION == 25
+	if not check(gap, "strand and movie stay unbound; the arrival is selector 1 region 25"):
 		await stop(scene, 1); return
-	var still: bool = bool(wall.state().noted) and not wall.plays_movie() and scene.player.position.distance_to(before_pos) < 1.0
-	if not check(still, "the gap is noted and Luther stays: '%s'" % wall.hint.text):
+	var still: bool = bool(wall.state().noted) and wall.plays_movie() and wall.get_node("RedStrand").visible and wall.get_node("BeastFrond").visible and scene.player.position.distance_to(wall.STEP_AT) < 1.0 and scene.player.position.distance_to(before_pos) > 10.0
+	if not check(still, "the beast card plays and Luther steps through: '%s'" % wall.hint.text):
 		await stop(scene, 1); return
 	if not check(scene.get_node_or_null("BeastMovie") == null, "no beast movie node"):
 		await stop(scene, 1); return
@@ -76,7 +76,34 @@ func run():
 		await stop(scene, 1); return
 	wall = scene.get_node("L19BeastWall")
 	await process_frame
-	if not check(bool(wall.state().noted) and wall.MOVIE == -1, "save keeps the gap"):
+	var parked: Vector3 = wall.STEP_AT + Vector3(36, 0, 0)
+	scene.set_physics_process(false)
+	scene.player.position = parked
+	scene.player.velocity = Vector3.ZERO
+	await process_frame
+	await process_frame
+	if not check(bool(wall.state().noted) and wall.MOVIE == -1 and scene.player.position.distance_to(parked) < 2.0, "a reload does not step again"):
 		await stop(scene, 1); return
-	print("PASS earned blade save -> region 1312 -> L19 arrival 1, beast arrival stays unbound")
-	await stop(scene, 0)
+	scene.queue_free()
+	await process_frame
+	var other: Node = load("res://scenes/lol2/maps/L19_BC.tscn").instantiate()
+	other.adapter_exit_seeds = false
+	root.add_child(other)
+	current_scene = other
+	for i in 1500:
+		await process_frame
+		if other.ready_for_review: break
+	if not check(other.ready_for_review, "plain L19 ready"):
+		await stop(other, 1); return
+	prepare(other)
+	other.arrived_by_level_change = false
+	other.set_physics_process(false)
+	var stood: Vector3 = other.player.position
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	await process_frame
+	await process_frame
+	var other_wall = other.get_node("L19BeastWall")
+	if not check(not bool(other_wall.state().noted) and other.player.position.distance_to(stood) < 2.0 and other.player.position.distance_to(other_wall.STEP_AT) > 10.0, "another L19 entry stays at %s" % other.player.position):
+		await stop(other, 1); return
+	print("PASS earned blade save -> region 1312 -> L19 arrival 1, Luther steps through the strands; another L19 entry stays put")
+	await stop(other, 0)

@@ -1,0 +1,24 @@
+{
+  "name": "combat_act2_real_click_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1334,
+  "teleports": 1,
+  "test_aids": 4,
+  "count_method": "Audited source sites, not executions.",
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "da4962ecaaa67d4161190c9516cedabc8c0a17e7f3cc2a06d9c2ed23cd8c06fd"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 4
+}

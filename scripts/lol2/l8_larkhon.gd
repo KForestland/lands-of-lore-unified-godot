@@ -1,4 +1,6 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
+const RESTORE_ON := ["load", "arrival"]
 const State=preload("res://scripts/lol2/l8_larkhon_state.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
 const Tribe=preload("res://scripts/lol2/l8_tribe_state.gd")
@@ -6,6 +8,7 @@ const Trade=preload("res://scripts/lol2/l8_shaman_trade.gd")
 const MyJournal=preload("res://scripts/lol2/my_journal.gd")
 const NEAR:=600.0 # Guidance radius around the guardian (modern presentation, DEVIATIONS 0306).
 var host:Node3D
+var mix_refusal:=""
 var hint:Label
 var gate_signature:=""
 static func attach(map:Node3D)->Node:
@@ -44,19 +47,24 @@ func _ready():
 func inventory_allowed()->bool:return host.player_form==0 and not host.flying and is_instance_valid(host.inventory) and host.starting_magic.health()>0
 func can_mix(serum:String)->bool:
  return not State.mixed(state()) and Items.definition(serum)==119 and serum in host.carried_collected and not host.carried_collected.filter(func(id):return Items.definition(id)==117).is_empty()
-func mix(serum:String)->bool:
- if not inventory_allowed() or not can_mix(serum):return false
+## `station`: the shaman's table in the village panel (BJ12): the pack is not open there; the man and his health still count.
+func mix(serum:String,station:bool=false)->bool:
+ mix_refusal=""
+ if station:
+  if host.player_form!=0 or host.flying or host.starting_magic.health()<=0 or not can_mix(serum):return false
+ elif not inventory_allowed() or not can_mix(serum):return false
  var leaf:String=host.carried_collected.filter(func(id):return Items.definition(id)==117)[0]
  var result:=State.mix(state(),host.carried_collected,leaf,serum)
- if not result.ok:host.save_feedback(result.reason);return false
- var history:Dictionary=host.quest_state.act2_items.duplicate(true);history.collected.append(State.VAPORS)
- host.quest_state.act2_items=history;host.carried_collected=result.inventory;host.quest_state[State.KEY]=result.state
+ if not result.ok:mix_refusal=result.reason;host.save_feedback(result.reason);return false
+ var admission:=Grants.transition(host,result.inventory,{State.KEY:result.state},{"history":"act2","history_id":State.VAPORS})
+ if not admission.ok:mix_refusal=admission.reason;return false
  if host.hand_item in [leaf,serum]:host.hand_item=""
  Items.sync(host);host.save_feedback("You mix Silverleaf with Amaranth Serum to make Larkhon Vapors.");return true
-func activate(item:String)->bool:
- if item!=State.VAPORS or not inventory_allowed() or item not in host.carried_collected or not State.mixed(state()) or State.used(state()) or state().active:return false
+func activate(item:String,world_request:bool=false)->bool:
+ var allowed:bool=host.player_form==0 and host.starting_magic.world_active() if world_request else inventory_allowed()
+ if item!=State.VAPORS or not allowed or item not in host.carried_collected or not State.mixed(state()) or State.used(state()) or state().active:return false
  var s:=state().duplicate(true);s.active=true;host.quest_state[State.KEY]=s
- host.save_feedback("The vapors are active. Aim at the Larkhon's upper chest and use the right mouse button.");return true
+ host.save_feedback("The vapors are active. Aim at the Larkhon's upper chest, then press E or the right mouse button.");return true
 func aim()->Vector3:
  var pop=host.act2_creatures
  return pop.bodies["115"].position+Vector3.UP*float(pop.config.look["7"].height)*0.65
@@ -71,7 +79,8 @@ func offer(item:String)->Dictionary:
  if host.player_form!=0 or not host.starting_magic.world_active() or not reachable():return State.Kit.refuse("Aim the activated vapors at the Larkhon's upper chest.")
  var result:=State.apply(state(),host.carried_collected,item)
  if not result.ok:return result
- host.carried_collected=result.inventory;host.quest_state[State.KEY]=result.state
+ var admission:=Grants.transition(host,result.inventory,{State.KEY:result.state})
+ if not admission.ok:return admission
  if host.hand_item==item:host.hand_item=""
  Items.sync(host);restore()
  return {"ok":true,"reason":"The Larkhon falls asleep. The cave entrance is clear."}

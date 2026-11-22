@@ -1,0 +1,22 @@
+{
+  "name": "item_world_targets_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "note": "Definition target selection, unknown exclusions and legacy flute compatibility."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 0,
+  "test_aids": 2,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "c5dababb527687586c57abef4c337f94e1a49af3b3b402b35a1c4f411c6fb8f1"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 2
+}

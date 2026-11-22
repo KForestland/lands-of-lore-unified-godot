@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "Playtest start points (docs/playtest-starts.md). Ordered story checkpoints; each is a REAL earned save written by the automated campaign/route tests, pinned by sha256, with the producing test, its commit, the input save sha256 and the persistent identities the save must carry (identities: contains/excludes = lists that must / must not appear at a dotted path; values = dotted path -> exact value, numbers compared numerically). tools/prepare_playtest_starts.py stages the files into res://assets/lol2/generated/playtest_starts/ (generated, git-ignored); the original-game gate lists the titles and starts one through its existing area-resume branch. resume = museum | jungle | hive | darker | dark_halls (scripts/lol2/playtest_starts.gd KINDS). Act 2 map saves need a production map-save resume branch first (docs/playtest-starts.md).",
+  "scope": "SHA256-pinned game-written campaign/earned-route checkpoints. Act2/3 map starts use Plan3 checkpoint resume, disable preview seeds and set full health on a detached copy. Some producer tests have disclosed aids; no unaided whole-campaign claim. Original bytes/quest/items/poses remain unchanged.",
   "entries": [
     {
       "id": "act1-museum-arrival",
@@ -380,6 +380,7 @@
       "resume": "darker",
       "save": "act1_dark_halls_darker_arrival.json",
       "sha256": "9606beab57fdb8d246e3f322ba328a1ae965dba1027dda7b4eef5cb55d4c6425",
+      "full_health": true,
       "source": {
         "test": "dark_halls_earned_detour_test",
         "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
@@ -411,6 +412,470 @@
           "quests.dark_halls_windows.done": true,
           "quests.act_one_departure.phase": "arrived",
           "quests.act_one_departure.local55": 1
+        }
+      }
+    },
+    {
+      "id": "act2-l8",
+      "title": "Act 2 - Savage Jungle, arrival (full health)",
+      "act": 2,
+      "area": "Savage Jungle",
+      "resume": "map",
+      "save": "c15_l8_sj.json",
+      "sha256": "9606beab57fdb8d246e3f322ba328a1ae965dba1027dda7b4eef5cb55d4c6425",
+      "full_health": true,
+      "source": {
+        "test": "dark_halls_earned_detour_test",
+        "commit": "1b775ba8cee72ebee1da4c6cb0f807be6f4d8c9a",
+        "campaign": "r12z qualification campaign 2026-11-02 (AI_COMMS/act1_completion_20261017/r12z_qualification, source 1b775ba)",
+        "leg": "11-13_dark_halls",
+        "proof": "AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/dark_halls_earned/depart.json (kept output depart_output_darker_arrival.json has this sha256); audit_dark_halls_detour_chain.txt PASS",
+        "path": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/act1_dark_halls_darker_arrival.json",
+        "input_save": "~/AI_COMMS/act1_completion_20261017/r12z_qualification/campaign/userdata/dark_halls_earned/finish_output_jungle_quicksave.json",
+        "input_sha256": "3eb93c33de97fbfc631b7aaffd356b985e8cd98f41bed513fb80656a576a846b",
+        "input_note": "phase depart resumed the phase-finish F5 Jungle save; the detour chain started from act1_broken_repaired_monastery.json (ee4a4e45...)",
+        "scope": "Original qualified Act1 departure checkpoint reused byte-for-byte; no unaided whole-campaign claim added."
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "jungle:magic_shop:Tho_fixed",
+            "darkhalls:control968u1:HlScrl",
+            "darkhalls:control968u2:HlScrl",
+            "darkhalls:control971u1:Prsmscrl"
+          ]
+        },
+        "excludes": {
+          "inventory.collected": [
+            "museum:control181:Tho_Broken"
+          ]
+        },
+        "values": {
+          "quests.monastery.globals.GV_LUTHERS_SOUL": 8,
+          "quests.monastery.globals.GV_RIX_DEAD": 0,
+          "quests.dark_halls_windows.done": true,
+          "quests.act_one_departure.phase": "arrived",
+          "quests.act_one_departure.local55": 1
+        }
+      },
+      "area_id": "L8_SJ"
+    },
+    {
+      "id": "act2-l9",
+      "title": "Act 2 - Dracoid Ruins, pit arrival (full health)",
+      "act": 2,
+      "area": "Dracoid Ruins",
+      "area_id": "L9_DR",
+      "resume": "map",
+      "save": "c15_l9_dr.json",
+      "sha256": "02de1113c40d183c3fdd780f205d4c41643a7df6149b857bc68d8f21b5375eda",
+      "full_health": true,
+      "source": {
+        "test": "l8_pit_earned_test",
+        "commit": "fc1b45c2c44c921e86b8a665dd299593c6f3b6df",
+        "input_sha256": "3373d698a0deb9c8a615ee0b092dd0141de8403f7365ee10fb8faffceb228add",
+        "path": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/earned_saves_and_drafts.tar.gz",
+        "proof": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/final_qualification/report.json",
+        "proof_sha256": "f75577355f3cb1eaf8c101435aa63afb0d6797a75d74b4316aaa402194345224",
+        "scope": "Qualified game-written earned-route checkpoint; not an unaided campaign chain.",
+        "test_aids": [
+          "Clock/camera ownership and production action helper calls; grounded route movement. See pinned producer source."
+        ],
+        "archive_member": "tmp/l9_pit_arrival_earned_save.json",
+        "archive_manifest_sha256": "976d6e10db6633e35d084796cf355f8f225d711810f29b158bf15d63dba2af38",
+        "input_member": "tmp/l8_pit_rim_earned_save.json"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword"
+          ],
+          "quests.act2_items.carried": [
+            "act2:L10_DC:item44:charged:yellow"
+          ]
+        },
+        "excludes": {},
+        "values": {
+          "format": "lol2-restoration-dragon-preview",
+          "player.position": [
+            81.0,
+            44.79999923706055,
+            603.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "act2-l10",
+      "title": "Act 2 - Cemetery, main gate opened (full health)",
+      "act": 2,
+      "area": "Cemetery",
+      "area_id": "L10_DC",
+      "resume": "map",
+      "save": "c15_l10_dc.json",
+      "sha256": "6f9d174047977927af32457ccbb2e9df1ef332974e02b7adcf915854d25ea49f",
+      "full_health": true,
+      "source": {
+        "test": "l10_gate_earned_test",
+        "commit": "fc1b45c2c44c921e86b8a665dd299593c6f3b6df",
+        "input_sha256": "065d4b814569c069490c0b4625177862918b2798ea504acf6ae89172b83baa92",
+        "path": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/earned_saves_and_drafts.tar.gz",
+        "proof": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/final_qualification/report.json",
+        "proof_sha256": "f75577355f3cb1eaf8c101435aa63afb0d6797a75d74b4316aaa402194345224",
+        "scope": "Qualified game-written earned-route checkpoint; not an unaided campaign chain.",
+        "test_aids": [
+          "Clock/camera ownership and production action helper calls; grounded route movement. See pinned producer source."
+        ],
+        "archive_member": "tmp/l10_gate_earned_save.json",
+        "archive_manifest_sha256": "976d6e10db6633e35d084796cf355f8f225d711810f29b158bf15d63dba2af38",
+        "input_witness": "tests/l8_gift_earned_test.gd INPUT/HASH (r12w earned Act1 departure)"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword"
+          ]
+        },
+        "excludes": {},
+        "values": {
+          "format": "lol2-restoration-map-L10_DC",
+          "player.position": [
+            -115.85588073730469,
+            45.99988555908203,
+            -1002.9994506835938
+          ]
+        }
+      }
+    },
+    {
+      "id": "act2-l12",
+      "title": "Act 2 - Claw Mountains, Larkhon arrival (full health)",
+      "act": 2,
+      "area": "Claw Mountains",
+      "area_id": "L12_CM",
+      "resume": "map",
+      "save": "c15_l12_cm.json",
+      "sha256": "689badf57fb9f5bb34dad52c98a76026868bac407013b04ec40fcec56a1f38b5",
+      "full_health": true,
+      "source": {
+        "test": "l8_larkhon_earned_test",
+        "commit": "fc1b45c2c44c921e86b8a665dd299593c6f3b6df",
+        "input_sha256": "02cfe975f0e0dcf98e60d23b4b9e403ef2ce701f200c01115be704568c0c58f6",
+        "path": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/earned_saves_and_drafts.tar.gz",
+        "proof": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/final_qualification/report.json",
+        "proof_sha256": "f75577355f3cb1eaf8c101435aa63afb0d6797a75d74b4316aaa402194345224",
+        "scope": "Qualified game-written earned-route checkpoint; not an unaided campaign chain.",
+        "test_aids": [
+          "Clock/camera ownership and production action helper calls; grounded route movement. See pinned producer source."
+        ],
+        "archive_member": "tmp/l12_larkhon_arrival_earned_save.json",
+        "archive_manifest_sha256": "976d6e10db6633e35d084796cf355f8f225d711810f29b158bf15d63dba2af38",
+        "input_witness": "fc1b45c tests/l8_larkhon_earned_test.gd immutable02cfe975... input equality; qualified input is not included in the pack-up tar."
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword"
+          ],
+          "quests.act2_items.carried": [
+            "act2:L8_SJ:dawn_control_token",
+            "act2:L10_DC:silverleaf167"
+          ]
+        },
+        "excludes": {},
+        "values": {
+          "format": "lol2-restoration-map-L12_CM",
+          "player.position": [
+            -344.6979064941406,
+            -30.678823471069336,
+            -5603.11962890625
+          ]
+        }
+      }
+    },
+    {
+      "id": "act2-l13",
+      "title": "Act 2 - Citadel of the Ruloi, arrival (full health)",
+      "act": 2,
+      "area": "Citadel of the Ruloi",
+      "area_id": "L13_RC",
+      "resume": "map",
+      "save": "c15_l13_rc.json",
+      "sha256": "21db5d3f9596650ad96df594e103eca6eb79dea299d91e585e610b146622b948",
+      "full_health": true,
+      "source": {
+        "test": "l12_citadel_earned_test",
+        "commit": "fc1b45c2c44c921e86b8a665dd299593c6f3b6df",
+        "input_sha256": "8611777502d189ccbcf3f7d8a2d4c95a98133d16d7e77eac827d51bbb2c4f79a",
+        "path": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/earned_saves_and_drafts.tar.gz",
+        "proof": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/final_qualification/report.json",
+        "proof_sha256": "f75577355f3cb1eaf8c101435aa63afb0d6797a75d74b4316aaa402194345224",
+        "scope": "Qualified game-written earned-route checkpoint; not an unaided campaign chain.",
+        "test_aids": [
+          "Clock/camera ownership and production action helper calls; grounded route movement. See pinned producer source."
+        ],
+        "archive_member": "tmp/l13_citadel_arrival_earned_save.json",
+        "archive_manifest_sha256": "976d6e10db6633e35d084796cf355f8f225d711810f29b158bf15d63dba2af38",
+        "input_member": "tmp/l12_gulch_qualified_save.json"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword"
+          ],
+          "quests.act2_items.carried": [
+            "act2:L8_SJ:dawn_control_token",
+            "act2:L10_DC:silverleaf167"
+          ]
+        },
+        "excludes": {},
+        "values": {
+          "format": "lol2-restoration-map-L13_RC",
+          "player.position": [
+            -3260.0,
+            32.0,
+            6631.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "act2-l14",
+      "title": "Act 2 - Huline Temple, arrival (full health)",
+      "act": 2,
+      "area": "Huline Temple",
+      "area_id": "L14_HT",
+      "resume": "map",
+      "save": "c15_l14_ht.json",
+      "sha256": "761850f60b460772b31566ff0eb4201caba6e3d6d120ccc590bc64addb317c2f",
+      "full_health": true,
+      "source": {
+        "test": "l8_temple_door_earned_test",
+        "commit": "fc1b45c2c44c921e86b8a665dd299593c6f3b6df",
+        "input_sha256": "38782a29b9e87b96a48fd64e08b18a98f9f3974a1b0542cb7c7cacec67e6ef56",
+        "path": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/earned_saves_and_drafts.tar.gz",
+        "proof": "~/AI_COMMS/astra_lane/packup_20261103T122345Z/final_qualification/report.json",
+        "proof_sha256": "f75577355f3cb1eaf8c101435aa63afb0d6797a75d74b4316aaa402194345224",
+        "scope": "Qualified game-written earned-route checkpoint; not an unaided campaign chain.",
+        "test_aids": [
+          "Clock/camera ownership and production action helper calls; grounded route movement. See pinned producer source."
+        ],
+        "archive_member": "tmp/l14_temple_arrival_earned_save.json",
+        "archive_manifest_sha256": "976d6e10db6633e35d084796cf355f8f225d711810f29b158bf15d63dba2af38",
+        "input_member": "tmp/l8_river_return_qualified_save.json"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword"
+          ],
+          "quests.act2_items.carried": [
+            "act2:L8_SJ:dawn_control_token",
+            "act2:L10_DC:silverleaf167"
+          ]
+        },
+        "excludes": {},
+        "values": {
+          "format": "lol2-restoration-map-L14_HT",
+          "player.position": [
+            2406.712158203125,
+            32.03944778442383,
+            -2415.70458984375
+          ]
+        }
+      }
+    },
+    {
+      "id": "act3-l16",
+      "title": "Act 3 - City of the Ancients, arrival (full health)",
+      "act": 3,
+      "area": "City of the Ancients",
+      "area_id": "L16_CA",
+      "resume": "map",
+      "save": "c15_l16_ca.json",
+      "sha256": "f2c469da0b4a477c3f6aa391d2a313993ce1a1ef6d5eb44ff3cbc3e28c771ccb",
+      "full_health": true,
+      "source": {
+        "test": "l14_chamber_voices_earned_test",
+        "commit": "b3e384ed90df4b900c5ee45f160847fe6571af11",
+        "input_sha256": "5e9533fb4636329c424cd6972cbedb41eb6b5c9e6170640d357860193eef7ace",
+        "path": "~/opus_work/lol2_r18/tmp/l16_arrival_earned_save.json",
+        "proof": "~/opus_work/lol2_r18/tmp/regressions/doors/report.json",
+        "proof_sha256": "9c22b4bdbeb8112ac3c2514c4dfdcaa8099a1af6389f0844d7fc827d4b065a51",
+        "scope": "Qualified game-written earned-route checkpoint; not an unaided campaign chain.",
+        "test_aids": [
+          "Clock/camera ownership, production action calls and explicitly stepped transition; route movement remains physical."
+        ],
+        "input_path": "~/opus_work/lol2_r18/tmp/l14_belial_combat_qualified_save.json",
+        "input_mtime_utc": "2026-11-03T05:57:19.791397+00:00",
+        "output_mtime_utc": "2026-11-09T23:15:54.046689+00:00"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword"
+          ],
+          "quests.act2_items.carried": [
+            "act2:L8_SJ:dawn_control_token",
+            "act2:L10_DC:silverleaf167"
+          ]
+        },
+        "excludes": {},
+        "values": {
+          "format": "lol2-restoration-map-L16_CA",
+          "player.position": [
+            -3860.0,
+            32.0,
+            -1341.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "act3-l17",
+      "title": "Act 3 - Huline Caverns, arrival (full health)",
+      "act": 3,
+      "area": "Huline Caverns",
+      "area_id": "L17_HC",
+      "resume": "map",
+      "save": "c15_l17_hc.json",
+      "sha256": "678e3076befc3ff44ab183353448f1a664f99f900a33a14c8ad191622d411839",
+      "full_health": true,
+      "source": {
+        "test": "l16_exit_earned_test",
+        "commit": "b3e384ed90df4b900c5ee45f160847fe6571af11",
+        "input_sha256": "4e56745b3a90c94ffbce317dece089fdd70880a2643cb89f1a90d83bf04538a3",
+        "path": "~/opus_work/lol2_r18/tmp/l17_arrival_earned_save.json",
+        "proof": "~/opus_work/lol2_r18/tmp/regressions/doors/report.json",
+        "proof_sha256": "9c22b4bdbeb8112ac3c2514c4dfdcaa8099a1af6389f0844d7fc827d4b065a51",
+        "scope": "Qualified game-written earned-route checkpoint; not an unaided campaign chain.",
+        "test_aids": [
+          "Clock/camera ownership, production action calls and explicitly stepped transition; route movement remains physical."
+        ],
+        "input_path": "~/opus_work/lol2_r18/tmp/l16_se_oil_chain_earned_save.json",
+        "input_mtime_utc": "2026-11-10T00:01:13.516751+00:00",
+        "output_mtime_utc": "2026-11-10T00:07:42.578549+00:00"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword"
+          ],
+          "quests.act2_items.carried": [
+            "act2:L8_SJ:dawn_control_token",
+            "act2:L10_DC:silverleaf167"
+          ]
+        },
+        "excludes": {},
+        "values": {
+          "format": "lol2-restoration-map-L17_HC",
+          "player.position": [
+            1434.0,
+            32.0,
+            -7075.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "act3-l19",
+      "title": "Act 3 - Belial\u2019s Laboratory, after the beast (full health)",
+      "act": 3,
+      "area": "Belial\u2019s Laboratory",
+      "area_id": "L19_BC",
+      "resume": "map",
+      "save": "c15_l19_bc.json",
+      "sha256": "f2cdf6b46a4701cc06a8987899f1510059f42eb4bc0400dd9a7e65fcf0017755",
+      "full_health": true,
+      "source": {
+        "test": "l19_beast_wall_earned_test",
+        "commit": "b3e384ed90df4b900c5ee45f160847fe6571af11",
+        "input_sha256": "4324651bc76cafc58f440a5098e501590b1510e42d37e8d21f7d8023e141743e",
+        "path": "~/opus_work/lol2_r18/tmp/l19_beast_wall_earned_save.json",
+        "proof": "~/opus_work/lol2_r18/tmp/regressions/doors/report.json",
+        "proof_sha256": "9c22b4bdbeb8112ac3c2514c4dfdcaa8099a1af6389f0844d7fc827d4b065a51",
+        "scope": "Qualified game-written earned-route checkpoint; not an unaided campaign chain.",
+        "test_aids": [
+          "Inherited clock/camera ownership and local position/transition aids; see pinned producer source."
+        ],
+        "input_path": "~/opus_work/lol2_r18/tmp/l17_beast_blade_earned_save.json",
+        "input_mtime_utc": "2026-11-09T14:19:26.825932+00:00",
+        "output_mtime_utc": "2026-11-09T23:24:09.954126+00:00"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword"
+          ],
+          "quests.act2_items.carried": [
+            "act2:L8_SJ:dawn_control_token",
+            "act2:L10_DC:silverleaf169"
+          ]
+        },
+        "excludes": {},
+        "values": {
+          "format": "lol2-restoration-map-L19_BC",
+          "player.position": [
+            84.0,
+            22.0,
+            80.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "act3-l20",
+      "title": "Act 3 - Birthing Chamber, after birth (full health)",
+      "act": 3,
+      "area": "Birthing Chamber",
+      "area_id": "L20_BB",
+      "resume": "map",
+      "save": "c15_l20_bb.json",
+      "sha256": "576d17bb004fd11521770ffbc6a125cb6925806df508442c3ab44c7e408a43e5",
+      "full_health": true,
+      "source": {
+        "test": "l19_dawn_curse_earned_test",
+        "commit": "97dce7eb4c676a64798762b81cb5ff9f7f51d867",
+        "input_sha256": "5208e4bb2be46d7a472c41ab31edc3a290467462ab23be08b721c2b0c460f6ee",
+        "path": "~/opus_work/lol2_r18/tmp/l20_dawn_curse_earned_save.json",
+        "proof": "~/opus_work/lol2_r18/tmp/regressions/merge_97dce7e/report.json",
+        "proof_sha256": "f835c02686e0d0bb7290d87d3b1316efdeed8889ab340e3b287944d9c4452b62",
+        "scope": "Qualified game-written earned-route checkpoint; not an unaided campaign chain.",
+        "test_aids": [
+          "Inherited clock/camera ownership and local position/transition aids; see pinned producer source.",
+          "Native first-visit index52=0 supplied for the L19-to-L20 predicate; mother.cast_level4/5 refusal probe and birth-skip clock. Packet is after birth, not initial L20 arrival."
+        ],
+        "input_path": "~/opus_work/lol2_r18/tmp/l19_ghostly_heads_earned_save.json",
+        "input_mtime_utc": "2026-11-09T23:25:13.133449+00:00",
+        "output_mtime_utc": "2026-11-10T04:46:52.666653+00:00"
+      },
+      "identities": {
+        "contains": {
+          "inventory.collected": [
+            "cave:prop641:harvest1:Stalagmite",
+            "cave:captain:Short_Sword"
+          ],
+          "quests.act2_items.carried": [
+            "act2:L8_SJ:dawn_control_token",
+            "act2:L10_DC:silverleaf169"
+          ]
+        },
+        "excludes": {},
+        "values": {
+          "format": "lol2-restoration-map-L20_BB",
+          "player.position": [
+            -1382.0,
+            -106.6637191772461,
+            -3213.0
+          ]
         }
       }
     }

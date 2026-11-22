@@ -21,7 +21,6 @@ static func validate(s:Variant,quests:Dictionary)->String:
  elif not s.slots.is_empty() or CHARM in collected or (s.searched and PICTURE not in carried) or (s.armed and not s.searched):return "Unbroken picture history disagrees."
  if s.baccata_seen and quests.get("l8_baccata",{}).get("phase",0)!=3:return "Friendly mountain Baccata requires the earned rescue."
  if s.talked and not s.baccata_seen:return "Baccata talk precedes meeting."
- if s.movie_seen and not s.talked:return "Citadel movie precedes talk."
  return ""
 static func impact(s:Dictionary,inventory:Array,item:String,capacity:int=64)->Dictionary:
  if not s.searched or not s.armed or broken(s):return Kit.refuse("Ready Kenneth's picture first.")

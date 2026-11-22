@@ -1,0 +1,93 @@
+{
+  "name": "l10_crypt_top_globe_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 668,
+  "needs": {
+    "note": "G02 changed eventless crypt83 into its decoded click-bit use and closed lid51 now occludes55. Supplied settled component vantages/held NPC+root setup inherited; actual E for both lids/pickup, no earned-walk claim."
+  },
+  "teleports": 1,
+  "test_aids": 6,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "9e49f62cbb0f157ba73559c42d7a924d105c313c97cc3df71e33a154988c2ec7"
+  },
+  "context_aid_source_sites": {
+    "count": 10,
+    "sites": [
+      {
+        "path": "tests/generic_l10_input_test.gd",
+        "line": 22,
+        "column": 18,
+        "kind": "scene_change_context",
+        "source": "scene.progression.change_scene_enabled=false"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 72,
+        "column": 44,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(incoming.error.is_empty() and scene.apply_save(incoming.state).is_empty(),\"Genuine starting packet applies\"):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 106,
+        "column": 15,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(area_packet).is_empty() and int(state(id)[Rules.PHASE])==1 and scene.progression.hinges[id].transform.is_equal_approx(opened),\"Per-area packet restores the same opened presentation %d\"%id):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 110,
+        "column": 19,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(not scene.apply_save(bad).is_empty() and scene.player.position==prior and scene.progression.hinges[id].transform.is_equal_approx(opened),\"Malformed object packet refuses before pose/geometry mutation %d\"%id):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 118,
+        "column": 16,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(mid).is_empty() and motion_matches(id,motion),\"Per-area restore recreates exact in-flight clock/position/phase\"):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 131,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(pre_pilot).is_empty(),\"Pre-pilot packet shape without generic key loads after objects moved\"):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 135,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(opened_packet).is_empty() and int(state(126)[Rules.PHASE])==1,\"Restore the moved positive control before testing a census omission\"):return"
+      },
+      {
+        "path": "tests/generic_l10_persistence_test.gd",
+        "line": 140,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(partial).is_empty(),\"Partial census and unknown ids/areas load into a live host\"):return"
+      },
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 26,
+        "column": 37,
+        "kind": "exit_seed_context",
+        "source": "scene=load(file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 33,
+        "column": 40,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(read.error.is_empty() and scene.apply_save(read.state).is_empty(),\"Game-written component checkpoint applies\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 16,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

@@ -26,8 +26,13 @@ func run() -> void:
 	if not check(scene.inventory.use_button.visible and scene.inventory.use_button.text=="Use Aloe","Use Aloe action"):return
 	scene.inventory.use_button.pressed.emit()
 	await process_frame;await process_frame
+	if not check(S.IDS[0] in scene.carried_collected and S.IDS[0] not in scene.item_effect_checkpoint.spent and scene.inventory.detail_text.text=="You are not hurt.","Full-health Aloe kept with its reason"):return
+	# Explicit wounded fixture retains the original positive healing coverage.
+	scene.starting_magic.set_health(17)
+	scene.inventory.use_button.pressed.emit()
+	await process_frame;await process_frame
 	if not check(scene.item_effect_checkpoint.aloe.pending==5 and S.IDS[0] in scene.item_effect_checkpoint.spent and S.IDS[0] not in scene.carried_collected,"Shared native Aloe effect"):return
-	if is_instance_valid(scene.inventory):scene.close_inventory()
+	if is_instance_valid(scene.inventory):scene.inventory.close()
 	DirAccess.make_dir_recursive_absolute("user://tests")
 	var path:="user://tests/museum_aloe_used.json"
 	if not check(scene.quicksave(path).is_empty() and scene.quickload(path).is_empty(),"Consumed Aloe host save/load"):return

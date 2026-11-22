@@ -1,0 +1,27 @@
+{
+  "name": "generic_l10_ashes_ankh_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "RealF2/F9 from untouched actual priest-urn F5 3fb4c360a3af123be3682cfab7ce3fcb1a80af02b0dec3cf0d60a92717aa4267. ActualW/E statue/mirrors, left rail480, on-foot original chapel, Ebody/pyre/Qorbs/Eurn, on-foot return/Eankh. Ordinary1/60 continuation only. Output-only floor ray records actual camera clearance; no supplied pose/health/clock/action handlers."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "9257b5a9accd5e0ba0705897a1814b30c3e15c18ef985adeb526f19833a8cbf7"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 1,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged.",
+  "timeout_seconds": 5400,
+  "timeout_reason": "3372.88s rendered earned continuation PASS; default1500 is shorter than the proven real-input walk."
+}

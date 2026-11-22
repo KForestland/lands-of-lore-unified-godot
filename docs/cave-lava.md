@@ -1,6 +1,6 @@
 # Cave lava contact
 
-Bob confirmed on 2026-09-24 that the purple surfaces in the late cave chamber
+the owner confirmed on 2026-09-24 that the purple surfaces in the late cave chamber
 are lethal lava. The recovered all-map floor bindings identify material135
 on86 floor regions. These are86 of the old cave scene's93 purple unresolved
 floor patches. The seven remaining patches are deliberately excluded.

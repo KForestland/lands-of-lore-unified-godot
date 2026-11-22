@@ -1,4 +1,5 @@
 extends Node3D
+const RESTORE_ON := ["load", "arrival"]
 ## Modern physical lift adapter, original table122 and raft82 geometry.
 const State=preload("res://scripts/lol2/l9_escape_state.gd")
 const Assemblies=preload("res://scripts/lol2/static_assemblies.gd")

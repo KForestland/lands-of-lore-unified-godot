@@ -49,6 +49,7 @@ signal movie_request(index: int, name: String, byte5: int)
 signal event_enqueued(ref: String, event_kind: int, caller_byte: int)
 ## Opcode 3 kind 1 (adapter opcode3_item_grant): the item definition identity and the command's byte 8.
 signal item_request(ref: String, identity: int, arg: int)
+signal item_source(source: Dictionary)
 ## Opcode 12 (adapter opcode12_room): the room-archive stem slot (scripts/lol2/room_stems.json).
 signal room_request(index: int, stem: String, archive: String)
 ## Opcode 15 (adapter opcode15_effect_request): form = byte 4, ref = the command's object, lookup = the (byte 5, word +6) object.
@@ -62,9 +63,13 @@ const FIELD_BYTE25 := "byte_0x25"        ## object byte +0x25 (opcode 16; predic
 const FIELD_SELECTOR := "selector_0x3d"  ## object byte +0x3D (opcode 5 with byte5 == 0)
 const FIELD_BYTE26 := "byte_0x26"        ## object byte +0x26 (constructor copy of placement byte +0x1E)
 const FIELD_BYTE30 := "byte_0x30"        ## spatial byte +0x30 (opcode 5, kind 3 / 2 adapter)
+const FIELD_BYTE31 := "byte_0x31"        ## prop byte +0x31 (opcode 7 index 2 stores 0)
+const FIELD_BYTE37 := "byte_0x37"        ## prop byte +0x37 (opcode 7 index 10)
 const FIELD_WORD7C := "word_0x7c"        ## actor word +0x7C (opcode 7; opcode 5 adapter)
 const FIELD_BYTE22 := "byte_0x22"        ## byte +0x22 of a [0x22D0C] 44-byte record (opcode 204)
 const FIELD_WORD00 := "word_0x00"        ## word +0 of a [0x22D08] 8-byte record (opcode 204)
+const FIELD_FLOOR_TARGET := "floor_target" ## opcode 196 signed word +4, absolute floor, byte 6 = 0
+const FIELD_FLOOR_RATE := "floor_rate"     ## opcode 196 byte 7, the step rate
 const KIND_CELL := 0x20                  ## kind byte of cell 0x2B500 (movable constructor 0x62FD4)
 ## Kind byte -> class whose constructor fills that resolver cell (G97 step_opcode5 / step4_vtables).
 const CLASS_BY_KIND := {0x10: "control", 0x20: "movable", 0x03: "prop", 0x02: "actor", 0x04: "kind4"}
@@ -102,11 +107,15 @@ const ADAPTERS := {
 	"opcode210_arm9": "opcode 210 arm 9 (0x65B37, entered): stores ((byte 5 << 15) - byte 5) >> 8 into the word at 0x26D1E, and into 0x26D1C too when the dword at 0x26D2C differs from 0x26D1A (not read); byte 4 above 0xB is a PROVEN no-op; the host stages 0x26d1e and, as the LIKELY other path, 0x26d1c (backlog6 item1c LIKELY)",
 	"opcode2_arm3c": "opcode 2 arm 0x3C (0xD7F5D, PROVEN: every branch returns 1, so the group goes on): with bit 0x10 of the 0x22574 object's +0x228 clear it calls 0x80064(0x23819, 1) (not entered, no store known); with it set and byte +0x1AB nonzero, byte 5 == 0 calls 0xD6B20(object, 0, 0), whose entered stores are dword +0x1A2 = 0 (unless bit 2 of +0x229) and, when the host global byte 0x223D4 is 0, byte +0x199 = 0 (the 0x223D0-gated +0x195 store not staged); byte 5 != 0 calls 0xD6D2C (not entered). The host stages those two zeros when the bit is set or not known and takes +0x1AB as nonzero (backlog6 item1d LIKELY); off = the PROVEN return without stores",
 	"opcode2_arm57": "opcode 2 arm 57 sets bit 0 of byte +0x16 of the 0x22574 object when the host global byte 0x223D4 is 0, then calls 0xB3B04 (0xB7D70), 0xB3AC4 (0xB7D6C) and 0xD8D48, which were not entered; the host stages the bit only (backlog4 item0 LIKELY)",
+	"opcode2_arm0_clear": "opcode 2 arm 0 (0xB5BAC byte 4 below 5 reaches 0xD7890, then 0xD7910) tests bit 0x40 of byte +0x227 on the 0x22574 object: a clear bit returns 1 and stores nothing. The bit's image was not read, so the host takes an unknown bit as clear. A set bit still refuses, because 0x7555C, 0x83018, 0x83158, and 0xACAFC were not entered",
 	"opcode7_control_records": "opcode 7 on a control (slot 0x5D5F8): nothing when the control's word +0x36 is 0xFFFF, else every record of the [0x273E4] + word list whose dword +0x3A >> 24 matches gets byte 4 == 0: bit 1 / byte 4 == 7: bit 2 ORed into its byte +3; the host does not hold that list and stages the bits on ref <control>:records (backlog4 item9 LIKELY)",
+	"opcode7_movable_records": "opcode 7 on a movable uses the same slot 0x5D5F8 as a control: nothing when word +0x36 is 0xFFFF, else index 0 ORs bit 1 and index 7 ORs bit 2 into byte +3 of each matching record; the host does not hold that list or the word and stages the bits on ref <movable>:records (backlog4 item9 LIKELY, shared function)",
+	"opcode7_prop_frame": "opcode 7 prop index 2 (file 0x129202, 6a0050) pushes 0 and calls 0xF2814; argument 0 is never above unsigned byte +0x32, so file 0x12982E stores 0 at +0x31, then calls 0xB3B8C, which was not entered (G97 index 2 PROVEN store, callee UNKNOWN). Indexes 3 through 6 stay unhosted",
 	"opcode15_effect_request": "opcode 15 byte 4 <= 0x70 (0xB5C82 -> the 0xB56D8 slot table): the slot looks up the (byte 5, word +6) object through 0x5FBC8/0xA1864 and calls one of 0x101F74/0xFA640/0x10519C/0x1071D4/0xF9920/0xF7030/0x1012C4 (0xDD104 on the player object for 0x6C), whose effects (0xFB838/0xF8AAC/0xE3924) were not entered; the host emits effect_request(form, ref, lookup) and stores nothing (backlog4 item4 LIKELY)",
-	"opcode18_pending_slot": "opcode 18 (0xB59CE, no byte-4 read): when the dword at 0xB7D5E is 0 the command pointer is stored there (host ref 0xb7d5e, field command_file_offset), a nonzero dword leaves it; the cell's start value and its reader (0xB2A54 via 0x65BB0) were not entered, so the host takes the cell as empty at start (backlog4 item4 LIKELY)",
+	"opcode18_pending_slot": "opcode 18 (0xB59CE, no byte-4 read): when the dword at 0xB7D5E is 0 the command pointer is stored there (host ref 0xb7d5e, field command_file_offset), a nonzero dword leaves it; the cell's image value was not read, so the host takes it as empty at start. The direct arm of 0x65BB0 (flag 0x0004) writes horizontal words +4/+6, word +8 only when flag 0x0100 is set, and heading word +12. The host emits player_pose for kind 1 target 0 on the command that filled the slot. The reader clears the slot after every consumed command (0xB2AC5 zeros esi, 0xB2ACA stores it). The world clears it again after it moves Luther (backlog4 item4 LIKELY cell; direct arm DECODED)",
 	"opcode19_effect_record": "opcode 19 (0xB6B5F -> 0x66130): a cleared 0x36-byte record gets the object at +4, 0 at +8, 4 at +0x14, 0xFF at +0x15, command word +4 at +0, word +6 at +2 and at +0x16 byte 8 (byte 9 == 0) or the dispatcher object (byte 9 not 0/1/2), then goes to the object's vtable slot +0x80, which was not entered; the host emits effect_record_request and stores nothing; byte 9 == 1/2 (a vtable percentage) is refused (backlog4 item4 PROVEN record, LIKELY call)",
 	"opcode208_cells": "opcode 208 byte 4 == 0 (0x65535): a nonzero byte 5 raises the dword at 0x26B4E to byte 6 * 60 << 16 and the byte at 0x26B52 to byte 5 when the stored values are lower; byte 5 == 0 clears both; the cells' start values and readers were not entered, so the host takes them as 0 at start (refs 0x26b4e / 0x26b52) (backlog4 item4 PROVEN arm, LIKELY cells)",
+	"opcode196_word_select": "opcode 196 byte 6 == 0x01 (the bit-0 word select of 0x64DDC, not entered): L19 group 2166 pairs it with a byte-6-0 floor store on the same region at the same rate (1932 floor -100, then 1932 and 2010 to 40, the slot's ceiling); the host stages the word as field ceiling_target of the region record and the world moves no ceiling (lead 2026-11-14, L19 cab, LIKELY ceiling word); only L19 regions 1932/2010 (WORD_SELECT_REGIONS), every other byte-6 command stays unhosted",
 	"opcode13_actor_a8": "opcode 13 actor slots 0, 6, 7, 10 and 0x0D (and byte 4 above 0x16) are PROVEN stores skipped when actor byte +0xA8 is 0x0F; slot 0 writes command byte 5 at +0xA8 and +0xA9 and ORs 1 into +0xB8; the host takes +0xA8 as not 0x0F when not known (backlog4 item0, backlog6 item12)",
 }
 ## The opcode-21 operand table (tools/prepare_movie_table.py); index -> name. Empty when the file is absent.
@@ -141,7 +150,8 @@ var state: Dictionary = {}
 var locals: Dictionary = {}
 ## record file offset -> {"byte8": int, "byte9": int}: kind-9 record bytes the matcher rewrote
 var record_state: Dictionary = {}
-## second byte array at [0x26E58]: index -> value (predicate left type 2); only seeded values
+## second byte array at [0x26E58]: index -> value (predicate left type 2). Opcode 199 stores
+## byte 5 when it is 0, 1, or 2. An unread index stays unknown and is not treated as 0.
 var locals_e58: Dictionary = {}
 ## ref -> {"mode": int, "angle_word": int}; derived from movable placements, or set_target_attributes
 var attributes: Dictionary = {}
@@ -170,7 +180,9 @@ var _enqueue_depth: int = 0
 const ENQUEUE_DEPTH_LIMIT := 8
 var _stage_state: Dictionary = {}
 var _stage_locals: Dictionary = {}
+var _stage_e58: Dictionary = {}
 var _stage_effects: Array[Dictionary] = []
+var _item_source_context: Dictionary = {}
 var _stage_records: Dictionary = {}
 var _stage_globals: Dictionary = {}
 var _stage_adapters: Array[String] = []
@@ -227,6 +239,7 @@ func load_area_data(data: Dictionary) -> String:
 	if str(data.get("format", "")) != FORMAT:
 		return "unsupported format " + str(data.get("format", ""))
 	area = str(data.get("area", ""))
+	_item_source_context.clear()
 	source = data.get("source", {}) as Dictionary
 	groups.clear()
 	group_files.clear()
@@ -256,7 +269,7 @@ func load_area_data(data: Dictionary) -> String:
 			if bytes.size() < 4 or bytes[0] != int(c["opcode"]):
 				return "command bytes do not match opcode at file %d" % int(c["file_offset"])
 			commands.append({"opcode": int(c["opcode"]), "kind": int(c["kind"]), "target": int(c["target"]),
-				"file_offset": int(c["file_offset"]), "bytes": bytes, "raw_hex": hex})
+				"file_offset": int(c["file_offset"]), "bytes": bytes, "raw_hex": hex, "group": int(g["group"]), "stream": int(g["stream"])})
 		groups[key] = commands
 		group_files[key] = int(g["file_offset"])
 	for raw_object: Variant in data.get("objects", []) as Array:
@@ -297,6 +310,9 @@ func load_area_data(data: Dictionary) -> String:
 ## constructor values (G97 step 2b) for every movable and control placement:
 ## - 0xAE990 (from 0x5B634) stores 0 at +0x25 and copies placement byte +0x1E to +0x26;
 ##   0x5B634 stores 0 at +0x3D.
+## A placed prop gets the same +0x25 immediate. Its constructor 0xF2064 calls 0xAE990, and that
+## function stores 0 at +0x25 on each return (c6432500 at file 0xE59EE, 0xE5A66, and 0xE5B21).
+## The +0x26 copy is not seeded on props.
 ## - Movables (0x62FD4): placement byte +0x22 is the mode (object +0x53). On mode 6 the word at
 ##   +0x4E is 0x605F0(byte +0x24 * 2): remainder of idiv by 360, shifted left 16, idiv by 360.
 ##   Byte 60 gives 21845, the G95 percent-100 value, so the host uses it as the opcode-1 angle word. On other modes the word is the
@@ -316,6 +332,65 @@ func _patched_bytes(bytes: PackedByteArray, file_offset: int, object_ref: String
 	return bytes
 
 
+## Disk-safe VM data only; bindings, source tables and event contexts are reconstructed.
+## JSON turns integer dictionary keys into strings; restore converts VM indices back.
+const SNAPSHOT_FIELDS := ["state", "locals", "locals_e58", "record_state"]
+const SNAPSHOT_ROWS := 65536
+static func snapshot_error(value: Variant) -> String:
+	if not value is Dictionary or value.size() != SNAPSHOT_FIELDS.size(): return "Invalid native snapshot."
+	var leaves := 0
+	for field in SNAPSHOT_FIELDS:
+		var rows: Variant = value.get(field)
+		if not rows is Dictionary or rows.size() > SNAPSHOT_ROWS: return "Invalid native snapshot rows."
+		for key in rows:
+			if not key is String or key.is_empty() or key.length() > 128: return "Invalid native snapshot key."
+			if field != "state" and (not key.is_valid_int() or key != str(int(key)) or int(key) < 0 or int(key) > (2147483647 if field == "record_state" else 65535)): return "Invalid native index."
+			if field in ["state", "record_state"]:
+				if not rows[key] is Dictionary or rows[key].size() > 64: return "Invalid native object fields."
+				for member in rows[key]:
+					if not member is String or member.is_empty() or member.length() > 128 or not _snapshot_integer(rows[key][member]): return "Invalid native field."
+					leaves += 1
+			else:
+				if not _snapshot_integer(rows[key]): return "Invalid native local."
+				leaves += 1
+			if leaves > 262144: return "Native snapshot is too large."
+	return ""
+
+static func _snapshot_integer(value: Variant) -> bool:
+	return (value is int or value is float) and is_finite(float(value)) and value == int(value) and value >= -2147483648 and value <= 4294967295
+
+## Canonicalizes the old in-memory bank's integer keys without changing values.
+static func snapshot_fields(fields: Dictionary) -> Dictionary:
+	var result := {}
+	for field in SNAPSHOT_FIELDS:
+		var rows: Dictionary = {}
+		for key in fields.get(field, {}):
+			var value: Variant = fields[field][key]
+			rows[str(key)] = value.duplicate(true) if value is Dictionary else value
+		result[field] = rows
+	return result
+
+func snapshot() -> Dictionary:
+	return snapshot_fields({"state": state, "locals": locals, "locals_e58": locals_e58, "record_state": record_state})
+
+func restore(value: Variant) -> String:
+	var error := snapshot_error(value)
+	if not error.is_empty(): return error
+	var next := {}
+	for field in SNAPSHOT_FIELDS:
+		var rows := {}
+		for key in value[field]:
+			var index: Variant = key if field == "state" else int(key)
+			if value[field][key] is Dictionary:
+				var members := {}
+				for member in value[field][key]: members[member] = int(value[field][key][member])
+				rows[index] = members
+			else: rows[index] = int(value[field][key])
+		next[field] = rows
+	# No live mutation or event emission until the entire packet has passed validation.
+	state = next.state; locals = next.locals; locals_e58 = next.locals_e58; record_state = next.record_state
+	return ""
+
 func reset_state() -> void:
 	state.clear()
 	locals.clear()
@@ -328,6 +403,10 @@ func reset_state() -> void:
 		var is_control: bool = ref.begins_with("control:") and p.size() >= 33
 		if ref.begins_with("actor:"):
 			# The actor constructor's 0xAE990 stores 0 at +0x25 (backlog 4 item 3 PROVEN, c6432500).
+			state[ref] = {FIELD_BYTE25: 0}
+			continue
+		if ref.begins_with("prop:"):
+			# 0xF2064 calls 0xAE990, which stores 0 at +0x25 (the three c6432500 sites above).
 			state[ref] = {FIELD_BYTE25: 0}
 			continue
 		if not (is_movable or is_control):
@@ -386,8 +465,12 @@ func register_builtins() -> void:
 	register_opcode(16, _op_byte25)
 	register_opcode(20, _op_sound)
 	register_opcode(21, _op_movie)
+	register_opcode(22, _op_unread_22)
+	register_opcode(196, _op_one_nine_six)
 	register_opcode(197, _op_one_nine_seven)
 	register_opcode(198, _op_local)
+	register_opcode(199, _op_one_nine_nine)
+	register_opcode(207, _op_two_oh_seven)
 	register_opcode(204, _op_two_oh_four)
 
 
@@ -460,8 +543,8 @@ func set_global(address: int, value: int) -> void:
 	globals[address] = value
 
 
-## World side: a known value of the second byte array at [0x26E58] (predicate left type 2). Nothing
-## PROVEN writes it, so it is unknown unless seeded.
+## World side: a known value of the second byte array at [0x26E58] (predicate left type 2).
+## Opcode 199 is the native store for byte 5 in 0..2. An unread index stays unknown.
 func set_local_e58(index: int, value: int) -> void:
 	locals_e58[index] = value
 
@@ -509,6 +592,12 @@ func stage_write(ref: String, name: String, value: int) -> void:
 func stage_local(index: int, value: int) -> void:
 	_stage_locals[index] = value
 	_stage_effects.append({"type": "local", "index": index, "value": value})
+
+
+## Stages one [0x26E58] byte. A later command in the same group reads _stage_e58. A refusal drops it.
+func stage_e58(index: int, value: int) -> void:
+	_stage_e58[index] = value
+	_stage_effects.append({"type": "e58", "index": index, "value": value})
 
 
 func stage_sound(request: int) -> void:
@@ -606,7 +695,10 @@ func fire_event(object_ref: String, event_kind: int, input: Dictionary = {}) -> 
 		var gates: Array[String] = []
 		for name: Variant in row["adapters"] as Array:
 			gates.append(str(name))
+		var previous_item_context := _item_source_context
+		_item_source_context = {"object":object_ref,"event":event_kind}
 		var ran: Dictionary = _run(int(result["stream"]), int(result["group"]), empty, gates)
+		_item_source_context = previous_item_context
 		result["status"] = ran["status"]
 		result["reasons"] = ran["reasons"]
 		if ran.has("effects"):
@@ -623,7 +715,10 @@ func fire_event(object_ref: String, event_kind: int, input: Dictionary = {}) -> 
 ## Runs one group with no owner record (for a group reached another way). No matcher applies.
 func execute_group(stream: int, group: int) -> Dictionary:
 	var empty: Array[String] = []
+	var previous_item_context := _item_source_context
+	_item_source_context = {} # Bare groups have no proved object/event owner.
 	var result: Dictionary = _run(stream, group, empty)
+	_item_source_context = previous_item_context
 	result["record_file_offset"] = -1
 	if str(result["status"]) == "unhosted":
 		_log_unhosted("", -1, result)
@@ -788,7 +883,16 @@ func _match_kind9(record: Dictionary, input: Dictionary) -> Dictionary:
 	if mode > 4:
 		return _verdict("rejected", "kind 9 mode %d > 4" % mode)
 	var verdict: Dictionary
-	if mode == 4:
+	if mode == 3:
+		# 0xAE3A6: remaining <= threshold < old cap. The event walk still runs only its first successful row.
+		if byte8 == UNKNOWN:return _verdict("unhosted", "kind 9 mode3 threshold is unknown")
+		missing = _need(input, "dword_22", 0, 2147483647, got)
+		if missing != "":return _verdict("unhosted", missing)
+		var old_cap: int = int(got.v)
+		missing = _need(input, "dword_26", 0, 2147483647, got)
+		if missing != "":return _verdict("unhosted", missing)
+		if int(got.v) > byte8 or byte8 >= old_cap:return _verdict("rejected", "kind9 mode3 does not cross the durability threshold")
+	elif mode == 4:
 		# 0xE53BD/0xE53C0: reject when zero-extended byte +8 < input dword +0x26 (signed).
 		if byte8 == UNKNOWN:
 			return _verdict("unhosted", "kind 9 byte +8 was written back with a value that is not stated")
@@ -828,6 +932,75 @@ func _match_kind9(record: Dictionary, input: Dictionary) -> Dictionary:
 
 ## Region kind 12 (0x129D94..0x129DA8): u16 +4 == region index and byte +6 == event are the
 ## selection above. Event 2 (fixup VA 0xF2DFD) accepts when byte +7 == 0; other events are not entered.
+## Load rule (scripts/lol2/load_region_rule.gd): the loaded region's entry records (kind 12, event 2) are matched and their
+## predicates read as on entry, but no record write is made and only the commands whose opcode is in `allowed` run
+## (on a synthetic stream-3 key). Returns one row per record: group, status, kept and dropped opcode counts.
+var _dry_run := false
+var _dry_effects: Array = []
+
+## Load rule, SAVED STATE WINS (lead 2026-11-14 after Grok R118: L4 record 3805 bit put back after control 82 cleared it):
+## the targets one command would write - record fields, locals, [0x26E58] cells, record bytes - found by a dry run of that
+## command alone; a target the loaded save already holds is the save's, so the command is skipped.
+func _rearm_targets(stream: int, group: int, command: Dictionary) -> Array:
+	var key := group_key(stream, group)
+	groups[key] = [command]
+	_dry_run = true; _dry_effects = []
+	var empty: Array[String] = []
+	var ran: Dictionary = _run(stream, group, empty)
+	_dry_run = false
+	groups.erase(key)
+	if str(ran["status"]) != "dry": return []
+	return _dry_effects.duplicate()
+
+func _saved_holds(effect: Dictionary) -> bool:
+	match str(effect.get("type", "")):
+		"field": return state.has(str(effect["ref"])) and (state[str(effect["ref"])] as Dictionary).has(str(effect["field"]))
+		"local": return locals.has(int(effect["index"]))
+		"e58": return locals_e58.has(int(effect["index"]))
+		"record": return record_state.has(int(effect["record"])) and (record_state[int(effect["record"])] as Dictionary).has(str(effect["field"]))
+	return false
+
+func rearm_region(region_index: int, allowed: Array) -> Array:
+	var rows: Array = []
+	var ref := "region:%d" % region_index
+	for raw_record: Variant in objects.get(ref, []) as Array:
+		var record: Dictionary = raw_record as Dictionary
+		var bytes: PackedByteArray = record["bytes"] as PackedByteArray
+		if int(record["kind"]) != 12 or bytes.size() < 8 or bytes.decode_u16(4) != region_index or int(bytes[6]) != 2:
+			continue
+		var row := {"group": int(record["group"]), "stream": int(record["stream"])}
+		var verdict: Dictionary = _match_region(record, 2)
+		if str(verdict["status"]) == "match" and int(record["predicate"]) >= 0:
+			verdict = _evaluate_predicate(int(record["predicate"]), {}, verdict)
+		if str(verdict["status"]) != "match":
+			row["status"] = "not_rearmed:" + str(verdict["status"]); rows.append(row); continue
+		var kept: Array = []
+		var dropped := 0
+		for command: Variant in groups.get(group_key(int(record["stream"]), int(record["group"])), []) as Array:
+			if int((command as Dictionary)["opcode"]) in allowed: kept.append(command)
+			else: dropped += 1
+		# Saved state wins: drop a re-arm write whose target the loaded save already holds.
+		var unsaved: Array = []
+		var saved_skips := 0
+		for command: Variant in kept:
+			var held := false
+			for effect: Variant in _rearm_targets(3, int(record["group"]), command as Dictionary):
+				if _saved_holds(effect as Dictionary): held = true
+			if held: saved_skips += 1
+			else: unsaved.append(command)
+		kept = unsaved
+		row["kept"] = kept.size(); row["dropped"] = dropped; row["saved_skips"] = saved_skips
+		if kept.is_empty():
+			row["status"] = "saved_state_wins" if saved_skips > 0 else "nothing_to_rearm"; rows.append(row); continue
+		groups[group_key(3, int(record["group"]))] = kept
+		var empty: Array[String] = []
+		var ran: Dictionary = _run(3, int(record["group"]), empty)
+		groups.erase(group_key(3, int(record["group"])))
+		row["status"] = str(ran["status"]); row["reasons"] = ran.get("reasons", [])
+		rows.append(row)
+	return rows
+
+
 func _match_region(record: Dictionary, event_kind: int) -> Dictionary:
 	var bytes: PackedByteArray = record["bytes"] as PackedByteArray
 	if event_kind != 2:
@@ -844,38 +1017,35 @@ func _match_region(record: Dictionary, event_kind: int) -> Dictionary:
 ## ESI are both nonzero (VA 0x66C10). Right type 0 = literal byte 4 (VA 0x66B77). Left types: 5 =
 ## byte +0x25 of the object in 0xB7D80 (VA 0x66B3B; input "context"); 3 = byte at [0x26E54 + operand]
 ## (VA 0x66B15; the opcode-198 array); 2 = byte at [0x26E58 + operand] (VA 0x66B2A; locals_e58).
-## Left and right type 4 and every other path stay unhosted.
+## Left type 4 (file 0x9DB47) and right type 4 (file 0x9DBEC) zero-extend entry byte 2 or byte 4 and call
+## 0x66AB0 again. The nested EAX is 1 or 0. Operator 6 is 1 only when both sides are nonzero. A nested
+## path the host cannot read stays unhosted. The nest stops at depth 8.
+const PREDICATE_NEST_LIMIT := 8
 func _evaluate_predicate(index: int, input: Dictionary, matched: Dictionary) -> Dictionary:
+	var got: Dictionary = _predicate_eax(index, input, 0)
+	if str(got.get("status", "")) != "value":
+		return _verdict("unhosted", str(got.get("reason", "")))
+	if int(got["value"]) == 0:
+		return _verdict("rejected", str(got.get("reason", "")))
+	return matched
+
+
+func _predicate_eax(index: int, input: Dictionary, depth: int) -> Dictionary:
+	if depth > PREDICATE_NEST_LIMIT:
+		return {"status": "unhosted", "reason": "predicate nest deeper than %d" % PREDICATE_NEST_LIMIT}
 	if index >= predicates.size():
-		return _verdict("unhosted", "predicate %d is outside the %d-entry table" % [index, predicates.size()])
+		return {"status": "unhosted", "reason": "predicate %d is outside the %d-entry table" % [index, predicates.size()]}
 	var entry: PackedByteArray = predicates[index]
 	var label: String = "predicate %d (%s)" % [index, entry.hex_encode()]
 	var op: int = int(entry[0])
 	if op != 0 and op != 5 and op != 6:
-		return _verdict("unhosted", "%s operator %d is not decoded" % [label, op])
-	if int(entry[3]) != 0:
-		return _verdict("unhosted", "%s right type %d is not decoded" % [label, int(entry[3])])
-	var right: int = int(entry[4])
-	var left: int = -1
-	match int(entry[1]):
-		5:
-			if not input.has("context") or not (input["context"] is String):
-				return _verdict("unhosted", "%s reads the 0xB7D80 object; input context not supplied" % label)
-			var ref: String = resolve(str(input["context"]))
-			var fields: Dictionary = state.get(ref, {}) as Dictionary
-			if not fields.has(FIELD_BYTE25):
-				return _verdict("unhosted", "%s reads %s +0x25, which is not known" % [label, ref])
-			left = int(fields[FIELD_BYTE25])
-		3:
-			if not locals.has(int(entry[2])):
-				return _verdict("unhosted", "%s reads local %d, which is not known" % [label, int(entry[2])])
-			left = int(locals[int(entry[2])])
-		2:
-			if not locals_e58.has(int(entry[2])):
-				return _verdict("unhosted", "%s reads [0x26E58 + %d], which is not known" % [label, int(entry[2])])
-			left = int(locals_e58[int(entry[2])])
-		_:
-			return _verdict("unhosted", "%s left type %d is not decoded" % [label, int(entry[1])])
+		return {"status": "unhosted", "reason": "%s operator %d is not decoded" % [label, op]}
+	var left: int = _predicate_side(entry, 1, int(entry[2]), input, depth, label)
+	if left < 0:
+		return {"status": "unhosted", "reason": _side_reason}
+	var right: int = _predicate_side(entry, 3, int(entry[4]), input, depth, label)
+	if right < 0:
+		return {"status": "unhosted", "reason": _side_reason}
 	var truth: bool = false
 	match op:
 		0:
@@ -885,8 +1055,49 @@ func _evaluate_predicate(index: int, input: Dictionary, matched: Dictionary) -> 
 		6:
 			truth = left != 0 and right != 0
 	if not truth:
-		return _verdict("rejected", "%s is false (left %d, operator %d, right %d)" % [label, left, op, right])
-	return matched
+		return {"status": "value", "value": 0, "reason": "%s is false (left %d, operator %d, right %d)" % [label, left, op, right]}
+	return {"status": "value", "value": 1, "reason": ""}
+
+
+var _side_reason := ""
+func _predicate_side(entry: PackedByteArray, type_at: int, operand: int, input: Dictionary, depth: int, label: String) -> int:
+	_side_reason = ""
+	var side: int = int(entry[type_at])
+	if side == 4:
+		var nested: Dictionary = _predicate_eax(operand, input, depth + 1)
+		if str(nested.get("status", "")) != "value":
+			_side_reason = str(nested.get("reason", ""))
+			return -1
+		return int(nested["value"])
+	if type_at == 3 and side != 0:
+		_side_reason = "%s right type %d is not decoded" % [label, side]
+		return -1
+	if type_at == 3:
+		return operand
+	match side:
+		5:
+			if not input.has("context") or not (input["context"] is String):
+				_side_reason = "%s reads the 0xB7D80 object; input context not supplied" % label
+				return -1
+			var ref: String = resolve(str(input["context"]))
+			var fields: Dictionary = state.get(ref, {}) as Dictionary
+			if not fields.has(FIELD_BYTE25):
+				_side_reason = "%s reads %s +0x25, which is not known" % [label, ref]
+				return -1
+			return int(fields[FIELD_BYTE25])
+		3:
+			if not locals.has(operand):
+				_side_reason = "%s reads local %d, which is not known" % [label, operand]
+				return -1
+			return int(locals[operand])
+		2:
+			if not locals_e58.has(operand):
+				_side_reason = "%s reads [0x26E58 + %d], which is not known" % [label, operand]
+				return -1
+			return int(locals_e58[operand])
+		_:
+			_side_reason = "%s left type %d is not decoded" % [label, side]
+			return -1
 
 
 func _record_write(record: Dictionary, write: Dictionary) -> void:
@@ -919,6 +1130,7 @@ func _run(stream: int, group: int, gate_reasons: Array[String], gate_adapters: A
 	if reasons.is_empty():
 		_stage_state = state.duplicate(true)
 		_stage_locals = locals.duplicate()
+		_stage_e58 = locals_e58.duplicate()
 		_stage_records = record_state.duplicate(true)
 		_stage_globals = globals.duplicate()
 		_stage_effects = []
@@ -933,13 +1145,21 @@ func _run(stream: int, group: int, gate_reasons: Array[String], gate_adapters: A
 			if refusal != "":
 				reasons.append("opcode %d at file %d: %s" % [int(command["opcode"]), int(command["file_offset"]), refusal])
 				break
+			_clear_pending_slot()
 	if not reasons.is_empty():
 		_clear_stage()
 		result["status"] = "unhosted"
 		result["reasons"] = reasons
 		return result
+	if _dry_run:
+		# rearm_region's target probe: report what the group would write, commit nothing, emit nothing.
+		_dry_effects = _stage_effects.duplicate(true)
+		_clear_stage()
+		result["status"] = "dry"
+		return result
 	state = _stage_state
 	locals = _stage_locals
+	locals_e58 = _stage_e58
 	record_state = _stage_records
 	globals = _stage_globals
 	var effects: Array[Dictionary] = _stage_effects
@@ -965,6 +1185,7 @@ func _run(stream: int, group: int, gate_reasons: Array[String], gate_adapters: A
 				effect_record_request.emit(str(effect["ref"]), int(effect["word0"]), int(effect["word2"]), int(effect["value"]), int(effect["byte9"]))
 			"item":
 				item_request.emit(str(effect["ref"]), int(effect["identity"]), int(effect["arg"]))
+				item_source.emit(effect.duplicate(true))
 			"room":
 				room_request.emit(int(effect["index"]), str(effect["stem"]), str(effect["archive"]))
 			"enqueue":
@@ -983,9 +1204,18 @@ func _run(stream: int, group: int, gate_reasons: Array[String], gate_adapters: A
 	return result
 
 
+## Native reader 0xB2ACA writes 0 to [0xB7D5E] after 0x65BB0. The movement routine is not hosted for a
+## command that does not pose, so a consumed command clears the staged slot before the next command.
+func _clear_pending_slot() -> void:
+	if stage_read("0xb7d5e", "command_file_offset", 0) == 0:
+		return
+	stage_write("0xb7d5e", "command_file_offset", 0)
+
+
 func _clear_stage() -> void:
 	_stage_state = {}
 	_stage_locals = {}
+	_stage_e58 = {}
 	_stage_records = {}
 	_stage_globals = {}
 	_stage_effects = []
@@ -1152,6 +1382,8 @@ func _op_two(_host: Object, command: Dictionary) -> String:
 	var bytes: PackedByteArray = command["bytes"] as PackedByteArray
 	var arm: int = int(bytes[4])
 	match arm:
+		0:
+			return _op_two_arm0()
 		0x1C:
 			if not _stage_globals.has(0x223D6):
 				return "global byte 0x223D6 is not known"
@@ -1199,7 +1431,19 @@ func _op_two(_host: Object, command: Dictionary) -> String:
 			return _op_two_counter(arm, int(bytes[5]))
 		57:
 			return _op_two_arm57()
-	return "byte 4 %d: arm not decoded (0x1C PROVEN; 0x26/0x27/5/0x0B/0x0C/57 on adapters)" % arm
+	return "byte 4 %d: arm not decoded (0 and 0x1C PROVEN when the gate is known; 0x26/0x27/5/0x0B/0x0C/57 on adapters)" % arm
+
+
+## Arm 0 (0xD7910). A clear bit 0x40 of byte +0x227 returns 1 with no store (je 0xD89F6: mov eax, 1; ret).
+## A set bit calls 0x7555C, 0x83018, 0x83158, and 0xACAFC, which were not entered, so that path refuses.
+## The image of the bit was not read. Adapter opcode2_arm0_clear takes an unknown bit as clear.
+func _op_two_arm0() -> String:
+	var bit: int = _stage_bit(OBJ_22574, 0x227, 0x40)
+	if bit == 1:
+		return "opcode 2 arm 0 with byte +0x227 bit 0x40 set calls 0x7555C, 0x83018, 0x83158, and 0xACAFC (not entered)"
+	if bit == UNKNOWN and not use_adapter("opcode2_arm0_clear"):
+		return "opcode 2 arm 0 reads byte +0x227 bit 0x40 of the 0x22574 object, which is not known (adapter opcode2_arm0_clear off)"
+	return ""
 
 
 ## 0xD0138(object, 1) (backlog 4 item 0, entered): zeroes bytes +0x1B6..+0x1BD, +0x22, +0x23, +0x1BE..+0x1C1, the low byte
@@ -1345,9 +1589,12 @@ func _op_selector(_host: Object, command: Dictionary) -> String:
 
 ## Opcode 7 (0xB5997): [vtable+0xB4](object, signed byte 4, byte 5). Per class (G97 step4_vtables):
 ## prop 0xF21A4: 0 -> +0x36 |= 0x05; 1 -> &= 0xFE; 7 -> |= 0x02; 8 -> &= 0xFD; 9 -> ^= 0x02;
-## 10 -> +0x37 = (+0x37 & 0xF0) | byte 5 (refused, +0x37 is not known); 2..6 and > 10 enter UNKNOWN
-## callees. Actor 0xA2558: every arm stores 0 at word +0x7C; 0 -> +0xB5 &= 0xFD; 1 -> |= 0x02;
-## 2..6 call 0xF2814 (UNKNOWN). Movable/control 0x5D5F8 write through a vtable+0xF8 pointer (UNKNOWN).
+## 10 -> +0x37 = (+0x37 & 0xF0) | byte 5 (file 0x129282). The prop constructor stores template
+## byte +0x30 & 0x0F at +0x37 (file 0x129111), so an unstaged high nibble is 0. Index 2 pushes 0
+## and calls 0xF2814, which stores 0 at +0x31 and then calls 0xB3B8C (adapter opcode7_prop_frame).
+## Indexes 3..6 and the default above 10 stay unhosted. Actor 0xA2558: every arm stores 0 at word
+## +0x7C; 0 -> +0xB5 &= 0xFD; 1 -> |= 0x02; 2..6 call 0xF2814 (UNKNOWN). Movable/control 0x5D5F8
+## write through a vtable+0xF8 pointer (UNKNOWN).
 func _op_seven(_host: Object, command: Dictionary) -> String:
 	var bytes: PackedByteArray = command["bytes"] as PackedByteArray
 	var out: Dictionary = {}
@@ -1371,6 +1618,20 @@ func _op_seven(_host: Object, command: Dictionary) -> String:
 					if bit == UNKNOWN:
 						return "xor of +0x36 bit 0x02 with the bit unknown"
 					_stage_bits(ref, 0x36, 0x02, 1 - bit)
+				2:
+					# Table entry for index 2 is file 0x129202 (6a0050e80a060000): push 0, push the object, call 0xF2814.
+					# 0xF2821 compares that 0 with unsigned +0x32 and 0xF282E stores DL, which is 0. 0xF2832 then calls 0xB3B8C.
+					if not use_adapter("opcode7_prop_frame"):
+						return "opcode 7 prop index 2 stores 0 at +0x31 and then calls 0xB3B8C, which was not entered"
+					stage_write(ref, FIELD_BYTE31, 0)
+				10:
+					# File 0x129282: DH = +0x37 & 0xF0, then BL = DH | DL. DL is command byte 5, high bits included.
+					# Constructor file 0x129111 stores template[+0x30] & 0x0F, so an unstaged high nibble is 0.
+					var held: int = stage_read(ref, FIELD_BYTE37, UNKNOWN)
+					var high: int = 0
+					if held != UNKNOWN:
+						high = held & 0xF0
+					stage_write(ref, FIELD_BYTE37, high | int(bytes[5]))
 				_:
 					return "prop slot +0xB4 index %d is not decoded" % index
 			return ""
@@ -1384,18 +1645,25 @@ func _op_seven(_host: Object, command: Dictionary) -> String:
 			stage_write(ref, FIELD_WORD7C, 0)
 			return ""
 		"control":
-			# 0x5D5F8 (backlog 4 item 9 LIKELY): word +0x36 == 0xFFFF -> return 0, no store; otherwise [vtable+0xF8] = 0x5DA20 gives
-			# [0x273E4] + that word and the loop over the control's records ORs bit 1 (index 0) or bit 2 (index 7) into byte +3 of
-			# each record whose dword +0x3A >> 24 matches. Indexes 1-6, 8, 9 were not entered; above 9 skips the record.
-			if index > 9:
-				return ""
-			if not index in [0, 7]:
-				return "control slot +0xB4 index %d was not entered" % index
-			if not use_adapter("opcode7_control_records"):
-				return "opcode 7 on a control ORs bits into its records' byte +3 (LIKELY, adapter opcode7_control_records off)"
-			_stage_bits(ref + ":records", 0x03, 0x02 if index == 0 else 0x04, 1)
-			return ""
+			return _op_seven_record_bits(ref, index, "control", "opcode7_control_records")
+		"movable":
+			# The movable slot is the same 0x5D5F8 (G97 step4_vtables). The record list and word +0x36 stay unheld.
+			return _op_seven_record_bits(ref, index, "movable", "opcode7_movable_records")
 	return "slot +0xB4 of kind 0x%02x writes through UNKNOWN pointers" % int(command["kind"])
+
+
+func _op_seven_record_bits(ref: String, index: int, cls: String, adapter: String) -> String:
+	# 0x5D5F8 (backlog 4 item 9 LIKELY): word +0x36 == 0xFFFF -> return 0, no store; otherwise [vtable+0xF8] = 0x5DA20 gives
+	# [0x273E4] + that word and the loop over the object's records ORs bit 1 (index 0) or bit 2 (index 7) into byte +3 of
+	# each record whose dword +0x3A >> 24 matches. Indexes 1-6, 8, 9 were not entered; above 9 skips the record.
+	if index > 9:
+		return ""
+	if not index in [0, 7]:
+		return "%s slot +0xB4 index %d was not entered" % [cls, index]
+	if not use_adapter(adapter):
+		return "opcode 7 on a %s ORs bits into its records' byte +3 (LIKELY, adapter %s off)" % [cls, adapter]
+	_stage_bits(ref + ":records", 0x03, 0x02 if index == 0 else 0x04, 1)
+	return ""
 
 
 ## Opcode 9 (0xB59B3 -> 0xB50C0), switch on byte 4 (G97 step3, step4_vtables, step4_b49ec).
@@ -1531,7 +1799,10 @@ func _op_three_item(command: Dictionary) -> String:
 		return "global byte 0x223D4 is not known"
 	if int(_stage_globals[0x223D4]) != 0:
 		return ""
-	_stage_effects.append({"type": "item", "ref": target_ref(1, int(command["target"])), "identity": bytes.decode_u32(4), "arg": int(bytes[8])})
+	_stage_effects.append({"type": "item", "ref": target_ref(1, int(command["target"])), "identity": bytes.decode_u32(4), "arg": int(bytes[8]),
+		"area":area,"group":int(command["group"]),"stream":int(command["stream"]),"file_offset":int(command["file_offset"]),
+		"object":str(_item_source_context.get("object","")),"event":int(_item_source_context.get("event",-1)),
+		"opcode3_item_grant":true,"global_223d4":int(_stage_globals[0x223D4])})
 	return ""
 
 
@@ -1594,15 +1865,27 @@ func _op_fifteen(_host: Object, command: Dictionary) -> String:
 
 ## Opcode 18 (0xB59CE; backlog 4 item 4 PROVEN arm): a zero dword at 0xB7D5E takes the command pointer, a nonzero one is left;
 ## bit 5 of the word at command +0xA (clear on every Act 1 command) would run 0x660F8, which edits the command (not modelled).
-## The cell's start value and its reader were not entered: adapter opcode18_pending_slot takes the cell as empty at start.
+## The cell's image value was not read: adapter opcode18_pending_slot takes the cell as empty at start.
+## Direct arm of 0x65BB0 (flag 0x0004, 0x65C34): words +4 and +6 are an absolute horizontal position, word +8 is
+## written only when flag 0x0100 is set (0x65C67), and word +12 is the heading (0x65C7A). That arm does not read
+## the target word. The player consumer is the lead's gate: kind byte 1 and target word 0, and only the command
+## that filled the empty slot. The reader then clears the slot, so the next command sees it empty.
+## The world also clears the slot after it applies player_pose. Gradual motion, the byte-14
+## auxiliary, and the 0x22C38 store stay unhosted.
 func _op_eighteen(_host: Object, command: Dictionary) -> String:
 	var bytes: PackedByteArray = command["bytes"] as PackedByteArray
 	if bytes.size() >= 12 and (int(bytes[10]) & 0x20) != 0:
 		return "opcode 18 with bit 5 of the word +0xA set runs 0x660F8 (edits the command; not modelled)"
 	if not use_adapter("opcode18_pending_slot"):
 		return "opcode 18 stores the command into the 0xB7D5E slot whose start value and reader were not entered (LIKELY, adapter opcode18_pending_slot off)"
+	var stored: bool = false
 	if stage_read("0xb7d5e", "command_file_offset", 0) == 0:
 		stage_write("0xb7d5e", "command_file_offset", int(command["file_offset"]))
+		stored = true
+	if stored and bytes.size() >= 14 and int(bytes[1]) == 1 and bytes.decode_u16(2) == 0:
+		var flags: int = bytes.decode_u16(10)
+		if (flags & 0x0004) != 0:
+			_stage_effects.append({"type": "player_pose", "x": bytes.decode_s16(4), "y": bytes.decode_s16(6), "height": bytes.decode_s16(8), "apply_height": (flags & 0x0100) != 0, "heading": bytes.decode_u16(12), "flags": flags})
 	return ""
 
 
@@ -1732,6 +2015,16 @@ func _op_sound(_host: Object, command: Dictionary) -> String:
 	var bytes: PackedByteArray = command["bytes"] as PackedByteArray
 	stage_sound(int(bytes[4]) | (int(bytes[5]) << 8))
 	return ""
+
+
+## Opcode 22 was not entered (I23). L20 group 12732 pairs one command with the grate travel.
+## Accepting every opcode 22 would commit the other commands in 53 L20 groups. This handler
+## accepts only that grate command and stores nothing. Every other opcode 22 command still refuses.
+const GRATE_OPCODE_22 := "1603830030313735363230650000ff9dfa00"
+func _op_unread_22(_host: Object, command: Dictionary) -> String:
+	if str(command.get("raw_hex", "")) == GRATE_OPCODE_22:
+		return ""
+	return "opcode 22 was not entered"
 
 
 ## Opcode 6 (backlog3 item3): 0xB3EC8 on command byte 4, on P = the pointer slot +0xB8 returns (0xB71A0: [0xB7D74] +
@@ -1864,6 +2157,56 @@ func _op_movie(_host: Object, command: Dictionary) -> String:
 func _op_local(_host: Object, command: Dictionary) -> String:
 	var bytes: PackedByteArray = command["bytes"] as PackedByteArray
 	stage_local(int(bytes[4]), int(bytes[5]))
+	return ""
+
+
+## Opcode 199 (byte 0xC7, callee 0x64A8C). LOLG file 0x9bb11 stores unsigned command byte 5 at
+## [0x26E58] + command byte 4 (item4, item9, G06). The clamps rewrite byte 5 only when it is above
+## 0xA or above 2 and the index equals runtime byte 0x23342, 0x23343, or 0x23344. Those indexes
+## are not known. Values 0, 1, and 2 are not rewritten, so they store. A higher byte 5 stays unresolved.
+func _op_one_nine_nine(_host: Object, command: Dictionary) -> String:
+	var bytes: PackedByteArray = command["bytes"] as PackedByteArray
+	if bytes.size() < 6:
+		return "opcode 199 command is shorter than 6 bytes"
+	var value := int(bytes[5])
+	if value > 2:
+		return "opcode 199 byte 5 is %d; a value above 2 depends on the runtime index clamps" % value
+	stage_e58(int(bytes[4]), value)
+	return ""
+
+
+## Opcode 207. H13 did not re-enter the callee. Byte 4 is the opcode-198 slot and byte 5 is a
+## signed addend (the H13 counter note). An unread slot starts at 0. The sum is stored in that byte.
+func _op_two_oh_seven(_host: Object, command: Dictionary) -> String:
+	var bytes: PackedByteArray = command["bytes"] as PackedByteArray
+	if bytes.size() < 6:
+		return "opcode 207 command is shorter than 6 bytes"
+	var slot := int(bytes[4])
+	var current := int(_stage_locals.get(slot, 0))
+	stage_local(slot, (current + bytes.decode_s8(5)) & 0xFF)
+	return ""
+
+
+## Regions whose byte-6 = 1 opcode-196 commands run by adapter opcode196_word_select (L19 group 2166: the cab slot).
+const WORD_SELECT_REGIONS := [1932, 2010]
+## Opcode 196 (0xC4, callee 0x64DDC, G97 step4_op196). Word +2 indexes the 44-byte record at [0x22D0C]
+## (PROVEN). Byte 6 = 0 stages signed word +4 as the absolute floor and byte 7 as the rate. Group 6182's
+## per-region word +4 matches the native floors, so the world treats that word as the target height and
+## steps it (byte 7 * 10 / 4). S30 and S34, the region-word stores, stay open, and a nonzero byte 6
+## (the bit-2/3 swap and the bit-0 word select) stays unhosted.
+func _op_one_nine_six(_host: Object, command: Dictionary) -> String:
+	var bytes: PackedByteArray = command["bytes"] as PackedByteArray
+	if bytes.size() < 8:
+		return "opcode 196 command is shorter than 8 bytes"
+	var flags := int(bytes[6])
+	if flags == 0x01 and area == "L19_BC" and bytes.decode_u16(2) in WORD_SELECT_REGIONS and use_adapter("opcode196_word_select"):
+		stage_write("0x22d0c:%d" % bytes.decode_u16(2), "ceiling_target", bytes.decode_s16(4))
+		return ""
+	if flags != 0:
+		return "opcode 196 byte 6 is 0x%02X; the bit path is not closed" % flags
+	var record := "0x22d0c:%d" % bytes.decode_u16(2)
+	stage_write(record, FIELD_FLOOR_RATE, int(bytes[7]))
+	stage_write(record, FIELD_FLOOR_TARGET, bytes.decode_s16(4))
 	return ""
 
 

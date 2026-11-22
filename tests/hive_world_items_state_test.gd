@@ -12,7 +12,7 @@ func _initialize() -> void:
 		var id: String = S.IDS[i]
 		assert(D.by_identity(S.IDENTITIES[i]) == S.DEFINITIONS[i] and D.name(S.DEFINITIONS[i]).strip_edges() == S.NAMES[i])
 		assert(C.definition(id) == S.DEFINITIONS[i] and C.definition_name(id) == S.NAMES[i] and N.source_name(id) == S.NAMES[i])
-		assert(C.slot(id) == "" and C.use_kind(id) == "" and C.label(id) == D.label(S.DEFINITIONS[i]))
+		assert(C.slot(id)==preload("res://tests/helpers/item_use_contract.gd").slot(S.DEFINITIONS[i],D.item_class(S.DEFINITIONS[i])) and C.use_kind(id)==preload("res://tests/helpers/item_use_contract.gd").use_kind(S.DEFINITIONS[i]) and C.label(id) == D.label(S.DEFINITIONS[i]))
 		assert(FileAccess.file_exists(C.icon(id)) and FileAccess.file_exists(C.inventory_icon(id)))
 		assert(C.admitted(id,"jungle") and not C.admitted(id,"museum") and not C.admitted(id,"cave"))
 		assert(C.ids("jungle").count(id) == 1)

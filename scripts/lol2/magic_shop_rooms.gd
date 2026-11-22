@@ -1,4 +1,5 @@
 extends CanvasLayer
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Rashar's MAGIC_ room entered from L4_HJ region2636 (group4858), sharing the
 ## monastery compositor. Clicks follow host router EFC74 (Rashar, then sprites,
 ## then hotspots); the hand selector stands in for the original held item.
@@ -118,14 +119,7 @@ func restore() -> void:
 	_refresh_hand()
 	refresh_speech()
 func _refresh_hand() -> void:
-	var previous := str(held.get_item_metadata(held.selected)) if held.selected >= 0 and held.selected < held.item_count else ""
-	held.clear()
-	held.add_item("Empty hand")
-	held.set_item_metadata(0,"")
-	for item in get_parent().carried_collected:
-		held.add_item(str(item).get_slice(":",2).replace("_"," ") if str(item).get_slice_count(":") > 2 else str(item))
-		held.set_item_metadata(held.item_count-1,item)
-		if item == previous: held.select(held.item_count-1)
+	preload("res://scripts/lol2/item_choice_menu.gd").populate(held,get_parent().carried_collected,get_parent())
 func sprite_sizes() -> Dictionary:
 	var sizes := {}
 	for id in Shop.SPRITES:
@@ -214,11 +208,11 @@ func _apply(effects: Array) -> void:
 func grant(name: String) -> void:
 	var s := state()
 	var ids: Array = State.ITEMS.get(name,[])
-	var carried: Array = get_parent().carried_collected
+	var carried: Array = Grants.pack(get_parent())
 	for id in ids:
 		if id in carried: continue
 		if _inventory_accepts(carried+[id]):
-			carried.append(id)
+			Grants.grant(get_parent(),id,{"cap":false,"duplicate":"allow"})
 			return
 		break
 	s.pending_items.append(name)

@@ -25,7 +25,7 @@
     "right": 40.0,
     "bottom": 0,
     "top": 149,
-    "state_hex": "00000000000004004d00f400010150a0"
+    "state_hex": "omitted 16 bytes sha256:ffe4d40aad082c2de1f374e7e753abc3d99f4285f492ef481a6f6ab9b046ad45"
    },
    {
     "selector": 1,
@@ -46,7 +46,7 @@
     "right": 40.0,
     "bottom": 0,
     "top": 149,
-    "state_hex": "00000000000004000000f400010150a0"
+    "state_hex": "omitted 16 bytes sha256:edb25f322fcd0407c8a6ffed4d3572cca8997af43cddb7f216eaedfb1de0b92e"
    },
    {
     "selector": 2,
@@ -62,7 +62,7 @@
     "right": 40.0,
     "bottom": 0,
     "top": 149,
-    "state_hex": "00000000000004004700f401010150a0"
+    "state_hex": "omitted 16 bytes sha256:ebae4791d0638478a199541a6d4fc80e8f873c08ce704e9cc95b37b1b4f520bf"
    },
    {
     "selector": 3,
@@ -83,7 +83,7 @@
     "right": 40.0,
     "bottom": 0,
     "top": 160,
-    "state_hex": "00000000000004000000f400010150a0"
+    "state_hex": "omitted 16 bytes sha256:edb25f322fcd0407c8a6ffed4d3572cca8997af43cddb7f216eaedfb1de0b92e"
    },
    {
     "selector": 4,
@@ -104,7 +104,7 @@
     "right": 40.0,
     "bottom": 0,
     "top": 149,
-    "state_hex": "00000000000004004900f400010150a0"
+    "state_hex": "omitted 16 bytes sha256:ed39f80d903a5dab4f804c555086f6922079d1c4fdd135339d2fc13a4342adf4"
    }
   ]
  },
@@ -127,7 +127,7 @@
     {
      "group": 3100,
      "kind": 9,
-     "raw": "0a091c0c070900000904",
+     "raw": "omitted 10 bytes sha256:96b34f3e4062e5b9d0e9825deeeff25432c4ec358706f019f094576e5e080cd7",
      "predicate": {
       "op": "==",
       "left": {
@@ -136,18 +136,18 @@
       "right": {
        "immediate": 0
       },
-      "raw": "0005000000"
+      "raw": "omitted 5 bytes sha256:1ad2f82b4edfc1d7e0e3df7b745eded28daae530594f76346c0a9b2b932a22d7"
      },
      "commands": [
-      "050367010100",
-      "100367010100",
-      "14036701ce0280000a14"
+      "omitted 6 bytes sha256:d7ab759db5afc4702bdf07d1abba5c174770b0974205d13b3ee5144966c3f63e",
+      "omitted 6 bytes sha256:356d2cf45fda349d02821ede1a31a3b84c4f65ce71e8a37182c3043b996ea9d5",
+      "omitted 10 bytes sha256:58393cd5b9b9f55cd2391c11886d4ad98a76fbf79ef5f9058ad62bb5de3a054a"
      ]
     },
     {
      "group": 3128,
      "kind": 9,
-     "raw": "0a09380c070900000504",
+     "raw": "omitted 10 bytes sha256:7128eea7c147c63bd99ad8680e0f24b89f67780809e0ac92d2119476c7325f9a",
      "predicate": {
       "op": "==",
       "left": {
@@ -156,18 +156,18 @@
       "right": {
        "immediate": 1
       },
-      "raw": "0005000001"
+      "raw": "omitted 5 bytes sha256:e383821956d61571d630c9defa6df353be174d6b3ec241ecad1e5d1e570e4b28"
      },
      "commands": [
-      "050367010200",
-      "100367010300",
-      "14036701ce0280000a14"
+      "omitted 6 bytes sha256:c84d4caa218bd8d8779b77d9a362b2ab1cd482715aa67cd63011d533815b0407",
+      "omitted 6 bytes sha256:8126d6445217dc11e2a03d9aa6fe6ccef55a4cc30a86c406d07e805d2eb9a0e8",
+      "omitted 10 bytes sha256:58393cd5b9b9f55cd2391c11886d4ad98a76fbf79ef5f9058ad62bb5de3a054a"
      ]
     },
     {
      "group": 3156,
      "kind": 9,
-     "raw": "0a09540c060904000904",
+     "raw": "omitted 10 bytes sha256:ef8bc24c68b783029ce43e97347ca04cead4bc81b7b22ceb358e786459378c5a",
      "predicate": {
       "op": "==",
       "left": {
@@ -176,18 +176,18 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00030a0000"
+      "raw": "omitted 5 bytes sha256:3709503b081e876653e1f12383261a727f67078d95d805631bb4c18f95dfe671"
      },
      "commands": [
-      "c60000000a01",
-      "02010000070a",
-      "14036701dd00fffdfa00"
+      "omitted 6 bytes sha256:66444724a009f1b3d70152e0a65e17267a4e1d0589f20210d42d0379831de93c",
+      "omitted 6 bytes sha256:600620f262c0667b30425fa6e34f839f0f7a0288bd75ef4956a8f2b1368f7602",
+      "omitted 10 bytes sha256:e03dc029b8a01ce61db4f0d3d5c463d38cec16aa0235354da435cb60d6368990"
      ]
     },
     {
      "group": 3184,
      "kind": 9,
-     "raw": "0a09700c010001000904",
+     "raw": "omitted 10 bytes sha256:b367add0a0ecffa31ac0269aa64d327c89f04133332c57d1226572fa82cc77d0",
      "predicate": {
       "op": "==",
       "left": {
@@ -196,45 +196,45 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00030a0000"
+      "raw": "omitted 5 bytes sha256:3709503b081e876653e1f12383261a727f67078d95d805631bb4c18f95dfe671"
      },
      "commands": [
-      "c60000000a01",
-      "02010000080a",
-      "14036701dd00fffdfa00"
+      "omitted 6 bytes sha256:66444724a009f1b3d70152e0a65e17267a4e1d0589f20210d42d0379831de93c",
+      "omitted 6 bytes sha256:9bf02d089e33c9d2aae2b15aaf161638f8dc783bce99083400f442647f654f2a",
+      "omitted 10 bytes sha256:e03dc029b8a01ce61db4f0d3d5c463d38cec16aa0235354da435cb60d6368990"
      ]
     },
     {
      "group": 3212,
      "kind": 3,
-     "raw": "06038c0c0000",
+     "raw": "omitted 6 bytes sha256:0bca6af87cf8e6d7502d73de82a4c62afb14e8746239d147907e3078ed5cad74",
      "predicate": null,
      "commands": [
-      "090367011000"
+      "omitted 6 bytes sha256:1a28c4311bedbaa3ea3f4504d4b8c789e9d393284b4b7a2d36dc82ceb5812a25"
      ]
     },
     {
      "group": 3218,
      "kind": 3,
-     "raw": "0603920c0100",
+     "raw": "omitted 6 bytes sha256:21cbcccdf78e21372d7f3e13299ec941a4b0cb0751ee8bc87a83e1811c8e3064",
      "predicate": null,
      "commands": [
-      "14036701f70250020a14"
+      "omitted 10 bytes sha256:6accce5c14460dd4e0d19012b3c9fc131a10637f4818e3d337660630a847711b"
      ]
     },
     {
      "group": 3228,
      "kind": 3,
-     "raw": "06039c0c0200",
+     "raw": "omitted 6 bytes sha256:5e36d96800c35b3563101e13a0796ba38f8cab789ef550658ab322fa8830f16f",
      "predicate": null,
      "commands": [
-      "090367011000"
+      "omitted 6 bytes sha256:1a28c4311bedbaa3ea3f4504d4b8c789e9d393284b4b7a2d36dc82ceb5812a25"
      ]
     },
     {
      "group": 3234,
      "kind": 4,
-     "raw": "0a04a20c000000000000",
+     "raw": "omitted 10 bytes sha256:1b7507e102a11250efc2193622eee0299eddc467c8c21f8f76837c0c58176fea",
      "predicate": {
       "op": "==",
       "left": {
@@ -243,17 +243,17 @@
       "right": {
        "immediate": 0
       },
-      "raw": "0003150000"
+      "raw": "omitted 5 bytes sha256:c14c2f4360a4eb39692fcef781c89f5fa4104bd2edc3c2f8c20215f55bd85744"
      },
      "commands": [
-      "c60000001501",
-      "140367012a01ff5dfa00"
+      "omitted 6 bytes sha256:6dd1ed9846cc7430e7da3561728c8e2d2152f459a37a4e66fcc8b2e0a4685f00",
+      "omitted 10 bytes sha256:5ff0dd4196f9df855ce399f03df6cb47c9dc9a441d39c7830c090533d3d9adde"
      ]
     },
     {
      "group": 3256,
      "kind": 9,
-     "raw": "0a09b80c070900000904",
+     "raw": "omitted 10 bytes sha256:73c2de144da9291d47ab58a64453d4f820cb59f5398f338060807434f24c8a05",
      "predicate": {
       "op": "==",
       "left": {
@@ -262,12 +262,12 @@
       "right": {
        "immediate": 0
       },
-      "raw": "0005000000"
+      "raw": "omitted 5 bytes sha256:1ad2f82b4edfc1d7e0e3df7b745eded28daae530594f76346c0a9b2b932a22d7"
      },
      "commands": [
-      "050367010100",
-      "100367010100",
-      "14036701ce0280000a14"
+      "omitted 6 bytes sha256:d7ab759db5afc4702bdf07d1abba5c174770b0974205d13b3ee5144966c3f63e",
+      "omitted 6 bytes sha256:356d2cf45fda349d02821ede1a31a3b84c4f65ce71e8a37182c3043b996ea9d5",
+      "omitted 10 bytes sha256:58393cd5b9b9f55cd2391c11886d4ad98a76fbf79ef5f9058ad62bb5de3a054a"
      ]
     }
    ]
@@ -285,7 +285,7 @@
     {
      "group": 7256,
      "kind": 9,
-     "raw": "0a09581c070900000904",
+     "raw": "omitted 10 bytes sha256:609b0c0b24f1222ce866dcc4828e8bed2e62159aeb5ca6f5254edb2827e56f57",
      "predicate": {
       "op": "==",
       "left": {
@@ -294,18 +294,18 @@
       "right": {
        "immediate": 0
       },
-      "raw": "0005000000"
+      "raw": "omitted 5 bytes sha256:1ad2f82b4edfc1d7e0e3df7b745eded28daae530594f76346c0a9b2b932a22d7"
      },
      "commands": [
-      "050378020100",
-      "100378020100",
-      "14037802ce0280000a14"
+      "omitted 6 bytes sha256:91c5d0544393fd070534b4ff2db0f1a4799c412364d65e66165d15b88b7132b1",
+      "omitted 6 bytes sha256:9e3ed74d6dc980664b08d4838431ee9f0f0a1695ad0a3a476a87ebb3f93fcd71",
+      "omitted 10 bytes sha256:bd69f6a14c517d6bb339847b39d516c72588fc4c1e268bc5a461402742d7d659"
      ]
     },
     {
      "group": 7284,
      "kind": 9,
-     "raw": "0a09741c070900000504",
+     "raw": "omitted 10 bytes sha256:ce1f5636a1b0e87c701eb73b3d22119cd211879fd7db9f9965422aaf7c8e671d",
      "predicate": {
       "op": "==",
       "left": {
@@ -314,18 +314,18 @@
       "right": {
        "immediate": 1
       },
-      "raw": "0005000001"
+      "raw": "omitted 5 bytes sha256:e383821956d61571d630c9defa6df353be174d6b3ec241ecad1e5d1e570e4b28"
      },
      "commands": [
-      "050378020200",
-      "100378020300",
-      "14037802ce0280000a14"
+      "omitted 6 bytes sha256:967438730b828f9a7493a86019625504951076c04d4a622d22ef65c2c03caef9",
+      "omitted 6 bytes sha256:855e968f0c75529a6de512da7efa21dfbcb73e3bd9655ae301cd4f3e9a6de25b",
+      "omitted 10 bytes sha256:bd69f6a14c517d6bb339847b39d516c72588fc4c1e268bc5a461402742d7d659"
      ]
     },
     {
      "group": 7312,
      "kind": 9,
-     "raw": "0a09901c060904000904",
+     "raw": "omitted 10 bytes sha256:be6d89f558576eb6276c52784f07502cce7ee1ee11918fe36d4bbf9f5ed85194",
      "predicate": {
       "op": "==",
       "left": {
@@ -334,18 +334,18 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00030a0000"
+      "raw": "omitted 5 bytes sha256:3709503b081e876653e1f12383261a727f67078d95d805631bb4c18f95dfe671"
      },
      "commands": [
-      "c60000000a01",
-      "02010000070a",
-      "14037802dd00fffdfa00"
+      "omitted 6 bytes sha256:66444724a009f1b3d70152e0a65e17267a4e1d0589f20210d42d0379831de93c",
+      "omitted 6 bytes sha256:600620f262c0667b30425fa6e34f839f0f7a0288bd75ef4956a8f2b1368f7602",
+      "omitted 10 bytes sha256:24ff37dbc5645813ac377935cdcb5dca5b572c4836824ac906f410e8ed2968eb"
      ]
     },
     {
      "group": 7340,
      "kind": 9,
-     "raw": "0a09ac1c010001000904",
+     "raw": "omitted 10 bytes sha256:709f65fefb939d83f941caddab563d99a6758c5127bf17c3967d5c5f4518e323",
      "predicate": {
       "op": "==",
       "left": {
@@ -354,45 +354,45 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00030a0000"
+      "raw": "omitted 5 bytes sha256:3709503b081e876653e1f12383261a727f67078d95d805631bb4c18f95dfe671"
      },
      "commands": [
-      "c60000000a01",
-      "02010000080a",
-      "14037802dd00fffdfa00"
+      "omitted 6 bytes sha256:66444724a009f1b3d70152e0a65e17267a4e1d0589f20210d42d0379831de93c",
+      "omitted 6 bytes sha256:9bf02d089e33c9d2aae2b15aaf161638f8dc783bce99083400f442647f654f2a",
+      "omitted 10 bytes sha256:24ff37dbc5645813ac377935cdcb5dca5b572c4836824ac906f410e8ed2968eb"
      ]
     },
     {
      "group": 7368,
      "kind": 3,
-     "raw": "0603c81c0000",
+     "raw": "omitted 6 bytes sha256:b3c5e07d3409c81eea3ddc628f0d800c4c2c04e1742cce995210dc2339f2a1e8",
      "predicate": null,
      "commands": [
-      "090378021000"
+      "omitted 6 bytes sha256:906672b331e1e4748573fab5f02e89ed43f10c5779afbe7888d62823fd27688c"
      ]
     },
     {
      "group": 7374,
      "kind": 3,
-     "raw": "0603ce1c0100",
+     "raw": "omitted 6 bytes sha256:1f9b2c11cce55b453bbd2af132ae418f76d3995970af0a4791f89486dbe5ae20",
      "predicate": null,
      "commands": [
-      "14037802f70250020a14"
+      "omitted 10 bytes sha256:c0dd8f937dd64d22a45dea57761cd34c6dc6d030d378a906697a637f47bff3db"
      ]
     },
     {
      "group": 7384,
      "kind": 3,
-     "raw": "0603d81c0200",
+     "raw": "omitted 6 bytes sha256:e66b74790e3880929a45ae3d48ec4bd2b9acbdb614a6d26ac73db6182ab23474",
      "predicate": null,
      "commands": [
-      "090378021000"
+      "omitted 6 bytes sha256:906672b331e1e4748573fab5f02e89ed43f10c5779afbe7888d62823fd27688c"
      ]
     },
     {
      "group": 7390,
      "kind": 4,
-     "raw": "0a04de1c000000000000",
+     "raw": "omitted 10 bytes sha256:470e562990d4955dfcd28020c451d5fb971679a01b1fb0fb3964d9df6efb90ca",
      "predicate": {
       "op": "==",
       "left": {
@@ -401,11 +401,11 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00031c0000"
+      "raw": "omitted 5 bytes sha256:bf2fec84898b6a8e857c174f2a6ba4cbb1e7d5aa58f1d50f623c7564ab8f933a"
      },
      "commands": [
-      "c60000001c01",
-      "140378022a01fffdfa00"
+      "omitted 6 bytes sha256:a6a527eabc58b68ce11a53355ac571b468ac70d2843e906594e8e4511abc337b",
+      "omitted 10 bytes sha256:70e61ac030e47296e5b2613a4d7c7011b566b3915d3db4867377a8d7f5b3a8a4"
      ]
     }
    ]
@@ -423,7 +423,7 @@
     {
      "group": 7412,
      "kind": 9,
-     "raw": "0a09f41c070900000904",
+     "raw": "omitted 10 bytes sha256:6a488ed816b29eec2045fbe6f85f9f4607a865a52475d08d03b2fb1ea7443538",
      "predicate": {
       "op": "==",
       "left": {
@@ -432,18 +432,18 @@
       "right": {
        "immediate": 0
       },
-      "raw": "0005000000"
+      "raw": "omitted 5 bytes sha256:1ad2f82b4edfc1d7e0e3df7b745eded28daae530594f76346c0a9b2b932a22d7"
      },
      "commands": [
-      "050379020100",
-      "100379020100",
-      "14037902ce0280000a14"
+      "omitted 6 bytes sha256:09d75ca7f7a5dce938fa8102a1371efca531e0667df12118f889456317638df1",
+      "omitted 6 bytes sha256:2d1fadd3830c28d2738fe55bbfeb4e3bc886eaf750cdf4085d637a4765c57d8b",
+      "omitted 10 bytes sha256:a8950bd5d37cf3431ee97cbb5d013d4b3df53cd551f759e69c9655cf865da1bd"
      ]
     },
     {
      "group": 7440,
      "kind": 9,
-     "raw": "0a09101d070900000504",
+     "raw": "omitted 10 bytes sha256:299ecce89534e02a026066b7ad792efdbc520fda63a4df4b4c03459e6cc73ec4",
      "predicate": {
       "op": "==",
       "left": {
@@ -452,18 +452,18 @@
       "right": {
        "immediate": 1
       },
-      "raw": "0005000001"
+      "raw": "omitted 5 bytes sha256:e383821956d61571d630c9defa6df353be174d6b3ec241ecad1e5d1e570e4b28"
      },
      "commands": [
-      "050379020200",
-      "100379020300",
-      "14037902ce0280000a14"
+      "omitted 6 bytes sha256:7b93188c09c1b0a7caa3af2316e7d11de9f1e6f0c1a012544fffa40bbbd36658",
+      "omitted 6 bytes sha256:02bab4277acc92ac5b15d708165e26ee3eb83f580601b85429ff92c8cf5c045b",
+      "omitted 10 bytes sha256:a8950bd5d37cf3431ee97cbb5d013d4b3df53cd551f759e69c9655cf865da1bd"
      ]
     },
     {
      "group": 7468,
      "kind": 9,
-     "raw": "0a092c1d060904000904",
+     "raw": "omitted 10 bytes sha256:0156c77d4b80830e9f19b5f7b77acee6303cd2c018b0bf5453953bbbd458c990",
      "predicate": {
       "op": "==",
       "left": {
@@ -472,18 +472,18 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00030a0000"
+      "raw": "omitted 5 bytes sha256:3709503b081e876653e1f12383261a727f67078d95d805631bb4c18f95dfe671"
      },
      "commands": [
-      "c60000000a01",
-      "02010000070a",
-      "14037902dd00fffdfa00"
+      "omitted 6 bytes sha256:66444724a009f1b3d70152e0a65e17267a4e1d0589f20210d42d0379831de93c",
+      "omitted 6 bytes sha256:600620f262c0667b30425fa6e34f839f0f7a0288bd75ef4956a8f2b1368f7602",
+      "omitted 10 bytes sha256:9809e75be7b7d7fce5de9bf5cec4b774ac526b4d22f6d241c14131f0ba0feb10"
      ]
     },
     {
      "group": 7496,
      "kind": 9,
-     "raw": "0a09481d010001000904",
+     "raw": "omitted 10 bytes sha256:04542e1dac5c6101716297112a606ca4db1b4e5a4620760494f7fd1860931ec7",
      "predicate": {
       "op": "==",
       "left": {
@@ -492,45 +492,45 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00030a0000"
+      "raw": "omitted 5 bytes sha256:3709503b081e876653e1f12383261a727f67078d95d805631bb4c18f95dfe671"
      },
      "commands": [
-      "c60000000a01",
-      "02010000080a",
-      "14037902dd00fffdfa00"
+      "omitted 6 bytes sha256:66444724a009f1b3d70152e0a65e17267a4e1d0589f20210d42d0379831de93c",
+      "omitted 6 bytes sha256:9bf02d089e33c9d2aae2b15aaf161638f8dc783bce99083400f442647f654f2a",
+      "omitted 10 bytes sha256:9809e75be7b7d7fce5de9bf5cec4b774ac526b4d22f6d241c14131f0ba0feb10"
      ]
     },
     {
      "group": 7524,
      "kind": 3,
-     "raw": "0603641d0000",
+     "raw": "omitted 6 bytes sha256:a66b5435068bc1c4e03d3b7d56c6fcfc4bbcd705701288622512a6e1af1c39ce",
      "predicate": null,
      "commands": [
-      "090379021000"
+      "omitted 6 bytes sha256:1028a6838d4a09c030aaf4d82b0964b5a04aa678d7b91320c76a896a6e1fe2db"
      ]
     },
     {
      "group": 7530,
      "kind": 3,
-     "raw": "06036a1d0100",
+     "raw": "omitted 6 bytes sha256:70776225a18f654ab30758a6a787c6e4cc654a12496fb785f4d278ec99212fcb",
      "predicate": null,
      "commands": [
-      "14037902f70250020a14"
+      "omitted 10 bytes sha256:fb3612e97bb6e23044af045090a3f0cf252a47cf8273c390c283d7bd82839431"
      ]
     },
     {
      "group": 7540,
      "kind": 3,
-     "raw": "0603741d0200",
+     "raw": "omitted 6 bytes sha256:2396f4409bfbec047317b225eb3af0e758da20ef5ad5b7dc43fb62b3e6fef029",
      "predicate": null,
      "commands": [
-      "090379021000"
+      "omitted 6 bytes sha256:1028a6838d4a09c030aaf4d82b0964b5a04aa678d7b91320c76a896a6e1fe2db"
      ]
     },
     {
      "group": 7546,
      "kind": 4,
-     "raw": "0a047a1d000000000000",
+     "raw": "omitted 10 bytes sha256:a60be4b74e5ebbe86fedab9e1b0c628373a8d504a1a1798946c2b261c54b7c1f",
      "predicate": {
       "op": "==",
       "left": {
@@ -539,11 +539,11 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00031b0000"
+      "raw": "omitted 5 bytes sha256:b534eff28d761036bb701eba89dd7a8b41b227abd1c391dbc0a67f06cc8ae10b"
      },
      "commands": [
-      "c60000001b01",
-      "140379022a01fffdfa00"
+      "omitted 6 bytes sha256:0ab9719f6e0ea4bb4ca40eed87e44af5d18c9ccb3645d7ff6420af18f31cfe43",
+      "omitted 10 bytes sha256:f638fcf8c12aac66619f0dcfbfdf0a81a1194938380643258ce0f87592ccc8b4"
      ]
     }
    ]
@@ -561,7 +561,7 @@
     {
      "group": 7568,
      "kind": 9,
-     "raw": "0a09901d070900000904",
+     "raw": "omitted 10 bytes sha256:640451607363d71ff91f8880fa79bb2186d3a9d84ae001d11596a368f133c84f",
      "predicate": {
       "op": "==",
       "left": {
@@ -570,18 +570,18 @@
       "right": {
        "immediate": 0
       },
-      "raw": "0005000000"
+      "raw": "omitted 5 bytes sha256:1ad2f82b4edfc1d7e0e3df7b745eded28daae530594f76346c0a9b2b932a22d7"
      },
      "commands": [
-      "05037a020100",
-      "10037a020100",
-      "14037a02ce0280000a14"
+      "omitted 6 bytes sha256:57540365d57451c7e05b38ef76d2211c6b5260d72a570af2aa92c41f754e6c49",
+      "omitted 6 bytes sha256:dc21a33aa3ee6ba6f95d2916d0af43cd133464a4182365087f4c2e9d3ef85a52",
+      "omitted 10 bytes sha256:23c5bb0d11d92cc8da5e9e4a68098f3c24eed9a475bf306bc9fa13401303400f"
      ]
     },
     {
      "group": 7596,
      "kind": 9,
-     "raw": "0a09ac1d070900000504",
+     "raw": "omitted 10 bytes sha256:c82d195f639edf5c92b94f850403f0349c382e7ac7efdc4e01f82ab183d6f95c",
      "predicate": {
       "op": "==",
       "left": {
@@ -590,18 +590,18 @@
       "right": {
        "immediate": 1
       },
-      "raw": "0005000001"
+      "raw": "omitted 5 bytes sha256:e383821956d61571d630c9defa6df353be174d6b3ec241ecad1e5d1e570e4b28"
      },
      "commands": [
-      "05037a020200",
-      "10037a020300",
-      "14037a02ce0280000a14"
+      "omitted 6 bytes sha256:84f7df534831e56e7588611462d201b8f2f0502c26d433f828a58347a44e0af5",
+      "omitted 6 bytes sha256:e6d7f5209007d9b80ce82ee8cd403757b5559ce2dce861e5317927012061ef29",
+      "omitted 10 bytes sha256:23c5bb0d11d92cc8da5e9e4a68098f3c24eed9a475bf306bc9fa13401303400f"
      ]
     },
     {
      "group": 7624,
      "kind": 9,
-     "raw": "0a09c81d060904000904",
+     "raw": "omitted 10 bytes sha256:155e71595e2a4d12928165757bbf040c85ff1832b1cd98bdc1a312fe1124e62f",
      "predicate": {
       "op": "==",
       "left": {
@@ -610,18 +610,18 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00030a0000"
+      "raw": "omitted 5 bytes sha256:3709503b081e876653e1f12383261a727f67078d95d805631bb4c18f95dfe671"
      },
      "commands": [
-      "c60000000a01",
-      "02010000070a",
-      "14037a02dd00fffdfa00"
+      "omitted 6 bytes sha256:66444724a009f1b3d70152e0a65e17267a4e1d0589f20210d42d0379831de93c",
+      "omitted 6 bytes sha256:600620f262c0667b30425fa6e34f839f0f7a0288bd75ef4956a8f2b1368f7602",
+      "omitted 10 bytes sha256:bc178871a9ef182ecf69413aee9418176ddf31d8a9dcaced821b48e468690b39"
      ]
     },
     {
      "group": 7652,
      "kind": 9,
-     "raw": "0a09e41d010001000904",
+     "raw": "omitted 10 bytes sha256:56b1fa3ce3e1a70b4516d90802b93da8e100f9a90b30db79d1fe09faa3b171e2",
      "predicate": {
       "op": "==",
       "left": {
@@ -630,45 +630,45 @@
       "right": {
        "immediate": 0
       },
-      "raw": "00030a0000"
+      "raw": "omitted 5 bytes sha256:3709503b081e876653e1f12383261a727f67078d95d805631bb4c18f95dfe671"
      },
      "commands": [
-      "c60000000a01",
-      "02010000080a",
-      "14037a02dd00fffdfa00"
+      "omitted 6 bytes sha256:66444724a009f1b3d70152e0a65e17267a4e1d0589f20210d42d0379831de93c",
+      "omitted 6 bytes sha256:9bf02d089e33c9d2aae2b15aaf161638f8dc783bce99083400f442647f654f2a",
+      "omitted 10 bytes sha256:bc178871a9ef182ecf69413aee9418176ddf31d8a9dcaced821b48e468690b39"
      ]
     },
     {
      "group": 7680,
      "kind": 3,
-     "raw": "0603001e0000",
+     "raw": "omitted 6 bytes sha256:fd0dd1c1e37f6fa763ea98dae2c1eb7ba0af42ed2d90317649feea9a2f527e87",
      "predicate": null,
      "commands": [
-      "09037a021000"
+      "omitted 6 bytes sha256:3fd9b71059d140c7e30cdc10a896e2a4ac4ccb8311293475202e41b370330cbf"
      ]
     },
     {
      "group": 7686,
      "kind": 3,
-     "raw": "0603061e0100",
+     "raw": "omitted 6 bytes sha256:44bf0068aed79e454b66cddd6426233610daed9826e254634ab9108b0ec7d928",
      "predicate": null,
      "commands": [
-      "14037a02f70250020a14"
+      "omitted 10 bytes sha256:c51486b3ada515f46099cef87c20ed840096807f18d0f59ef106036eb46683ef"
      ]
     },
     {
      "group": 7696,
      "kind": 3,
-     "raw": "0603101e0200",
+     "raw": "omitted 6 bytes sha256:c0c92fda7d4872542d2419956c6f61c6c55f6f997dce26f7aae5af2ee6aad17d",
      "predicate": null,
      "commands": [
-      "09037a021000"
+      "omitted 6 bytes sha256:3fd9b71059d140c7e30cdc10a896e2a4ac4ccb8311293475202e41b370330cbf"
      ]
     },
     {
      "group": 7702,
      "kind": 4,
-     "raw": "0a04161e000000000000",
+     "raw": "omitted 10 bytes sha256:41c3bc209f46c1573d80c82a1fd282fa2b25b9ed443978282c64aaff46e8bc54",
      "predicate": {
       "op": "==",
       "left": {
@@ -677,11 +677,11 @@
       "right": {
        "immediate": 0
       },
-      "raw": "0003160000"
+      "raw": "omitted 5 bytes sha256:9376b6616bc1c782929b48625d7af0f9355f14b72215af783e74f62c20b4e880"
      },
      "commands": [
-      "c60000001601",
-      "14037a022a01fffdfa00"
+      "omitted 6 bytes sha256:72b934faadd144ca0c04a15f13010feba22d1243fa2711ad5cb3cd0bbd071bf8",
+      "omitted 10 bytes sha256:3a705db72b71c07fb3006ca7ba29446b18749216a6f2ddaa1445f680eab17602"
      ]
     }
    ]

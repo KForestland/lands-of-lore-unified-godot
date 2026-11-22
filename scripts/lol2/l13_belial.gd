@@ -21,10 +21,13 @@ static func attach(map:Node3D)->Node:
 func state()->Dictionary:return host.quest_state.get(KEY,initial())
 func _ready():
  var canvas:=CanvasLayer.new();canvas.layer=34;add_child(canvas);hint=Label.new();hint.position=Vector2(24,455);canvas.add_child(hint)
-func can_enter()->bool:
+func near_web()->bool:
  if playing or state().entered or host.player_form!=0 or not host.starting_magic.world_active() or not Movie.assets_ready():return false
  var d:Vector3=host.camera.global_position-(WEB+Vector3.UP*32)
- return d.length()<125 and (-host.camera.global_basis.z).dot(-d.normalized())>0.85 and host.player.is_on_floor() and host.get_node("L13Prison").all_ruloi_dead()
+ return d.length()<125 and (-host.camera.global_basis.z).dot(-d.normalized())>0.85 and host.player.is_on_floor()
+## Native control:103 use event runs group 8770 (movie31 + arena) under local 0x0E == 0 only; no Ruloi predicate. The
+## all-Ruloi condition belongs to the maidens (prop:253, local 0x14 == 190 -> local 18). Owner F10 01-22-38 on r19o4.
+func can_enter()->bool:return near_web()
 func enter()->bool:
  if not can_enter():return false
  playing=true

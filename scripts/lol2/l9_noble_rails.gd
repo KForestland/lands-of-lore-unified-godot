@@ -50,3 +50,13 @@ func strike()->bool:
 func _process(_delta):restore()
 func _unhandled_input(event: InputEvent):
  if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED and not is_instance_valid(host.inventory) and strike():get_viewport().set_input_as_handled()
+
+## A first approach can be from either side, but not the floor beneath the rail.
+func nearby()->bool:
+ for id in IDS:
+  if str(id) in state().broken:continue
+  var collision:CollisionShape3D=bodies[id].get_child(0)
+  var point:Vector3=collision.to_local(host.player.global_position)
+  var shape:BoxShape3D=collision.shape
+  if absf(point.y)<=shape.size.y/2+64 and absf(point.x)<=shape.size.x/2+160 and absf(point.z)<=shape.size.z/2+160:return true
+ return false

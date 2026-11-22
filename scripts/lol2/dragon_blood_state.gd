@@ -2,7 +2,7 @@ extends RefCounted
 ## Modern placed explosive: six active seconds, 120-unit blast. One record per consumed vial.
 const ITEMS := ["museum:skeleton20:Dragon_Blood_1","museum:skeleton20:Dragon_Blood_2","museum:item1:Dragon_Blood","museum:item2:Dragon_Blood","museum:item3:Dragon_Blood"]
 const FUSE := 6.0
-const AREAS := ["res://scenes/lol2/museum_walkthrough.tscn","res://scenes/lol2/jungle_walkthrough.tscn","res://scenes/lol2/hive_review.tscn"]
+const AREAS := ["res://scenes/lol2/museum_walkthrough.tscn","res://scenes/lol2/jungle_walkthrough.tscn","res://scenes/lol2/hive_review.tscn","res://scenes/lol2/dark_halls.tscn"]
 static func validate(bombs: Variant,spent: Array) -> String:
 	if not bombs is Array or bombs.size()>ITEMS.size():return "Invalid Dragon Blood bombs."
 	var seen: Array=[]

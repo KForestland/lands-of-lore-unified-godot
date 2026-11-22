@@ -21,7 +21,8 @@ func run() -> void:
 	var scene = open_map("L13_RC")
 	for i in 5: await process_frame
 	var p = scene.progression
-	check(p != null and p.native != null and p.scripted_movables.is_empty() and p.hinges.size() == 35, "L13: binder attached, no kind-4 use owners; 35 opcode-1 movers")
+	# L13Altar owns movables 50-68, so the progression hinge set is the other 16 opcode-1 movers.
+	check(p != null and p.native != null and p.scripted_movables.is_empty() and p.hinges.size() == 16, "L13: binder attached, no kind-4 use owners; 16 opcode-1 movers")
 	p.change_scene_enabled = false
 	var r: Array = p.enter_region(489)
 	check(verdicts(r) == ["706:ran"] and p.level_changes.size() == 1 and int(p.level_changes[0].level) == 12 and int(p.level_changes[0].selector) == 2, "L13: region 489 -> level 12 arrival 2 (Claw Mountains), PROVEN (%s)" % [verdicts(r)])
@@ -31,7 +32,13 @@ func run() -> void:
 	for i in 5: await process_frame
 	p = scene.progression
 	p.change_scene_enabled = false
-	check(p != null and p.scripted_movables.size() == 56 and p.hinges.size() == 103, "L16: 56 kind-4 movables, 103 source movers (%d/%d)" % [p.scripted_movables.size(), p.hinges.size()])
+	assert(FileAccess.get_sha256("res://tests/fixtures/g03_l16_hinge_membership.json")=="e410e389d40de25d8903bc2b4376af629a668b7f9c1089742743a3e54773a76b","Independent source-census fixture pin")
+	var membership:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/g03_l16_hinge_membership.json"))
+	for source in membership.sources:
+		assert(FileAccess.get_sha256("res://"+str(source))==membership.sources[source],"Pinned source-only L16 membership census")
+	var expected_ids:Array=membership.original_hinge_ids+membership.additional_hinge_ids;expected_ids.sort()
+	var actual_ids:Array=p.hinges.keys();actual_ids.sort()
+	check(p != null and p.scripted_movables.size()==56 and PackedInt32Array(actual_ids)==PackedInt32Array(expected_ids),"L16: 56 kind4, all original103 hinges plus exact11 published G03 movers; no owner lost (%d/%d)"%[p.scripted_movables.size(),p.hinges.size()])
 	r = p.enter_region(9822)
 	check(verdicts(r) == ["7268:ran"] and p.level_changes.size() == 1 and int(p.level_changes[0].level) == 17 and int(p.level_changes[0].selector) == 3, "L16: region 9822 -> level 17 arrival 3 (Hive Caverns), PROVEN (%s)" % [verdicts(r)])
 	r = p.fire("control:74", 5, {"caller_byte": 4, "caller_byte_2": 0, "context": "control:74"})
@@ -48,14 +55,21 @@ func run() -> void:
 	check(p != null and p.scripted_movables.size() == 23 and p.hinges.size() == 28, "L19: 23 kind-4 movables, 28 source movers (%d/%d)" % [p.scripted_movables.size(), p.hinges.size()])
 	r = p.enter_region(22)
 	check(verdicts(r) == ["0:ran"] and p.level_changes.size() == 1 and int(p.level_changes[0].level) == 17 and int(p.level_changes[0].selector) == 2, "L19: region 22 -> level 17 arrival 2 (Hive Caverns), PROVEN (%s)" % [verdicts(r)])
-	# A test/gate start seeds [0x26E58 + 52] = 0 (PREVIEW_SEEDS, a preview adapter): region 2369 -> level 20 arrival 1.
-	check(p.seeds_applied == [{"table": "0x26E58", "index": 52, "value": 0}] and not scene.arrived_by_level_change, "L19: the dev/test start seeded [0x26E58 + 52] = 0 (%s)" % [p.seeds_applied])
+	# The L19 preview seed is retired. A fresh start leaves [0x26E58 + 52] unknown, so both exits stay unresolved.
+	check(p.seeds_applied.is_empty() and not scene.arrived_by_level_change, "L19: a fresh start leaves [0x26E58 + 52] unknown (%s)" % [p.seeds_applied])
 	r = p.enter_region(2369)
-	check(verdicts(r) == ["15784:ran", "15790:rejected"] and int(p.level_changes[1].level) == 20 and int(p.level_changes[1].selector) == 1, "L19: with [0x26E58 + 52] = 0 -> level 20 arrival 1 (Birthing Chamber), 205 rejected (%s)" % [verdicts(r)])
+	# Adapter L19_to_L20_history (lead 2026-11-14, DEVIATIONS 0661): at the door an unknown cell comes from the player's own
+	# L20 history - no curse cast into the mother here, so 0 -> arrival 1.
+	var hist: Array = p.seeds_applied.filter(func(x): return str(x.get("adapter", "")) == "L19_to_L20_history")
+	check(verdicts(r) == ["15784:ran", "15790:rejected"] and p.level_changes.size() == 2 and int(p.level_changes[1].selector) == 1 and hist.size() == 1 and int(hist[0].value) == 0, "L19: region 2369 with [0x26E58 + 52] unknown takes it from the L20 history (0) -> arrival 1 (%s %s)" % [verdicts(r), p.seeds_applied])
+	p.native.set_local_e58(52, 0)
+	p.current_region = -1
+	r = p.enter_region(2369)
+	check(verdicts(r) == ["15784:ran", "15790:rejected"] and p.level_changes.size() == 3 and int(p.level_changes[2].level) == 20 and int(p.level_changes[2].selector) == 1, "L19: with [0x26E58 + 52] = 0 -> level 20 arrival 1 (Birthing Chamber), 205 rejected (%s)" % [verdicts(r)])
 	p.native.set_local_e58(52, 1)
 	p.current_region = -1
 	r = p.enter_region(2369)
-	check(verdicts(r) == ["15784:rejected", "15790:ran"] and int(p.level_changes[2].level) == 20 and int(p.level_changes[2].selector) == 2, "L19: with [0x26E58 + 52] = 1 -> level 20 arrival 2 (Summoning Chamber) (%s)" % [verdicts(r)])
+	check(verdicts(r) == ["15784:rejected", "15790:ran"] and p.level_changes.size() == 4 and int(p.level_changes[3].level) == 20 and int(p.level_changes[3].selector) == 2, "L19: with [0x26E58 + 52] = 1 -> level 20 arrival 2 (Summoning Chamber) (%s)" % [verdicts(r)])
 	scene.queue_free(); await process_frame
 	# Entered by a native level change (meta lol2_level_change, as _change_level sets it): no seed, the gate stays open in Classic.
 	set_meta("lol2_level_change", true)
@@ -66,7 +80,7 @@ func run() -> void:
 	p.change_scene_enabled = false
 	check(scene.arrived_by_level_change and not has_meta("lol2_level_change") and p.seeds_applied.is_empty(), "L19 entered by a level change: no seed applied (%s)" % [p.seeds_applied])
 	r = p.enter_region(2369)
-	check(verdicts(r) == ["15784:unhosted", "15790:unhosted"] and str(r[0].reasons[0]).contains("0x26E58"), "L19 by level change: region 2369 waits on [0x26E58 + 52], not known (%s)" % [verdicts(r)])
+	check(verdicts(r) == ["15784:ran", "15790:rejected"], "L19 by level change: region 2369 with the cell unknown takes it from the L20 history (0) -> arrival 1 (%s %s)" % [verdicts(r), p.seeds_applied])
 	scene.queue_free(); await process_frame
 	print("Act 2 progression levels: %d failures" % failures)
 	if failures == 0: print("PASS act2 progression levels: L13 -> L12/2, L16 -> L17/3 and L17/1 (control 74), L19 -> L17/2 and L20/1|2 behind predicates 204/205; every level change PROVEN on the host; all source opcode-1 geometry owned dynamically")

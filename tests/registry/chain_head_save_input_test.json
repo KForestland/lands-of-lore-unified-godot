@@ -1,0 +1,78 @@
+{
+  "name": "chain_head_save_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Untouched actual player F5 at the stop, real full-game load/key4/Enegative/Q/F5/F9; no position writes in leaf. Conservative transitive helpers count unused stand sites. Held magic cost clock; no earned-route claim."
+  },
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "component_magic_clock",
+      "pattern": "\\bmagic\\.set_process\\("
+    },
+    {
+      "kind": "legacy_checkpoint_or_validation_vector",
+      "pattern": "\\.apply_save\\("
+    },
+    {
+      "kind": "item_grant_fixture",
+      "pattern": "\\bGrants\\.grant\\("
+    },
+    {
+      "kind": "whole_game_checkpoint_context",
+      "pattern": "\\.load_file\\("
+    }
+  ],
+  "teleports": 0,
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "d2bbc0f894e48f4d6405a4d44cee734f4c2799e16c2f4aaec439cf3a7af015e0"
+  },
+  "context_aid_source_sites": {
+    "count": 5,
+    "sites": [
+      {
+        "path": "tests/chain_head_save_input_test.gd",
+        "line": 13,
+        "column": 20,
+        "kind": "whole_game_checkpoint_context",
+        "source": "if not require(Save.load_file(self,input).is_empty(),\"Original full-game load at the player's actual position\"):return"
+      },
+      {
+        "path": "tests/chain_head_save_input_test.gd",
+        "line": 22,
+        "column": 18,
+        "kind": "component_magic_clock",
+        "source": "await tap(KEY_4);magic.set_process(false)"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 14,
+        "column": 43,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(scene_file).instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g15_spell_input.gd",
+        "line": 19,
+        "column": 48,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not require(scene.ready_for_review and scene.apply_save(saved.state).is_empty(),\"Actual legacy loader applies untouched checkpoint\"):return false"
+      },
+      {
+        "path": "tests/helpers/g15_world_spell_input.gd",
+        "line": 7,
+        "column": 76,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/\"+area_name+\".tscn\").instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 6
+}

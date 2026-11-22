@@ -1,9 +1,9 @@
 extends "res://tests/jungle_aloe_use_test.gd"
 ## Vels fruit rows54-57 (definition84/handler20): local pickup approaches, real E pickups, real inventory UI and saved
-## consumption; not an earned route.
+## no-effect refusal; not an earned route.
 ## - Source identity 102901910/definition84/handler20 for all four rows; catalog use "vels_fruit"; button "Eat fruit".
 ## - Transformed or dead Luther cannot eat (the existing item owners' living-human admission).
-## - Eating removes exactly that fruit into spent history and changes nothing else (no heal, mana or effect state);
+## - The modern no-effect policy keeps fruit when no hosted status can be cured;
 ##   the native status cure has no port status to clear.
 ## - Repeat use refused; disk rollback; picked fruit never respawns; invalid/duplicate history rejected.
 ## - Jungle→Hive (eat there)→darker-jungle transport keeps the history. Sap/Aloe are covered by their own tests.
@@ -21,7 +21,9 @@ func eat(host, id: String) -> bool:
 	await process_frame
 	await process_frame
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	return check(id in host.item_effects.state().spent and id not in ids_of(host), "Fruit was not consumed")
+	var kept:bool=id in ids_of(host) and id not in host.item_effects.state().spent and host.inventory.detail_text.text=="That has no useful effect now. Keep it."
+	host.inventory.close();await process_frame;await process_frame
+	return check(kept,"Fruit with no status effect is kept with its reason")
 
 func run() -> void:
 	var path := "user://tests/opus_fruit_use.json"
@@ -55,7 +57,7 @@ func run() -> void:
 	if not check(not scene.item_effects.use(first) and first in scene.carried_collected, "Dead player ate fruit"): return
 	scene.starting_magic.set_health(17)
 	if not await eat(scene, first): return
-	var expected: Dictionary = before.duplicate(true); expected.spent.append(first)
+	var expected: Dictionary = before.duplicate(true)
 	if not check(scene.item_effects.state() == expected and scene.starting_magic.health() == 17 and scene.starting_magic.magic_state() == magic_before, "Fruit added an unsupported effect"): return
 	if not check(not scene.item_effects.use(first), "Repeated fruit use succeeded"): return
 	if not check(scene.quicksave(path).is_empty(), "Fruit save rejected"): return
@@ -67,8 +69,9 @@ func run() -> void:
 	var saved: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(path))
 	var bad: Dictionary = saved.duplicate(true)
 	bad.quests.jungle_world_items.collected.erase(54.0); bad.quests.jungle_world_items.collected.erase(54)
+	bad.inventory.item_effects.spent.append(first);bad.inventory.collected.erase(first)
 	if not check(not Save.validate(bad).is_empty(), "Eaten fruit without pickup history accepted"): return
-	bad = saved.duplicate(true); bad.inventory.item_effects.spent.append(first)
+	bad = saved.duplicate(true); bad.inventory.item_effects.spent.append_array([first,first]);bad.inventory.collected.erase(first)
 	if not check(not Save.validate(bad).is_empty(), "Duplicate fruit consumption accepted"): return
 	bad = saved.duplicate(true); bad.inventory.item_effects.spent.append(World.id_of(56))
 	if not check(not Save.validate(bad).is_empty(), "Fruit both carried and eaten accepted"): return
@@ -81,7 +84,7 @@ func run() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if not check(hive.apply_area_handoff(JSON.parse_string(JSON.stringify(handoff))).is_empty(), "Hive rejected fruit state"): return
 	if not await eat(hive, World.id_of(55)): return
-	if not check(hive.quicksave(path).is_empty() and hive.quickload(path).is_empty() and World.id_of(55) in hive.item_effects.state().spent, "Hive fruit save/load failed"): return
+	if not check(hive.quicksave(path).is_empty() and hive.quickload(path).is_empty() and World.id_of(55) in hive.item_effects.carried() and World.id_of(55) not in hive.item_effects.state().spent, "Hive fruit save/load failed"): return
 	var back: Dictionary = hive.area_handoff()
 	await finish(hive)
 	var darker = load("res://scenes/lol2/darker_jungle.tscn").instantiate()
@@ -90,8 +93,8 @@ func run() -> void:
 	freeze(darker)
 	if not check(darker.apply_area_handoff(JSON.parse_string(JSON.stringify(back))).is_empty(), "Darker jungle rejected fruit state"): return
 	var spent: Array = darker.item_effects.state().spent
-	if not check(first in spent and World.id_of(55) in spent and World.id_of(56) not in spent and World.id_of(56) in darker.carried_collected, "Fruit history lost on travel"): return
+	if not check(first not in spent and World.id_of(55) not in spent and World.id_of(56) not in spent and FRUIT.all(func(row):return World.id_of(row) in darker.carried_collected), "Fruit history lost on travel"): return
 	await finish(darker)
 	DirAccess.remove_absolute(path)
-	print("PASS fruit source identity (4 rows), E pickups, Eat fruit UI, form/dead gates, consumption without stat effect, no repeated use, disk rollback, no respawn, invalid history rejection and Jungle/Hive(eat)/darker transport; supplied approaches.")
+	print("PASS fruit source identity (4 rows), E pickups, Eat fruit UI, form/dead gates, no-effect refusal/kept fruit, no repeated use, disk rollback, no respawn, invalid history rejection and Jungle/Hive(refuse)/darker transport; supplied approaches.")
 	quit()

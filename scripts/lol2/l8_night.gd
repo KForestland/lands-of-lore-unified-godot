@@ -23,7 +23,13 @@ uniform bool night_enabled = true;
 uniform bool fog_only = false;
 uniform bool has_rows = false;
 uniform sampler2D shade_rows : filter_nearest, repeat_disable;
+// Local lights at the hosted native emitters (the flaming skull torches, l8_night.gd apply_lights): rgb = colour times
+// intensity, w = range in world units; quadratic falloff. Owner lighting rule 2026-10-30: light sources, not a player cone.
+uniform int light_count = 0;
+uniform vec3 light_positions[16];
+uniform vec4 light_colors[16];
 varying vec2 night_level;
+varying vec3 world_position;
 void vertex() {
 	if (billboard) {
 		MODELVIEW_MATRIX = VIEW_MATRIX * mat4(vec4(normalize(cross(vec3(0.0, 1.0, 0.0), INV_VIEW_MATRIX[2].xyz)), 0.0), vec4(0.0, 1.0, 0.0, 0.0), vec4(normalize(INV_VIEW_MATRIX[2].xyz), 0.0), MODEL_MATRIX[3]);
@@ -34,6 +40,7 @@ void vertex() {
 	if (fog_only) { s.x = 63.0; }
 	vec3 view_position = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	night_level = classic_vertex(view_position, s);
+	world_position = (INV_VIEW_MATRIX * vec4(view_position, 1.0)).xyz;
 	UV = UV * uv_scale + uv_offset;
 }
 void fragment() {
@@ -44,6 +51,14 @@ void fragment() {
 	if (night_enabled && row >= 0.0) {
 		float r = clamp(row, 0.0, 63.0);
 		k = has_rows ? texelFetch(shade_rows, ivec2(int(r), 0), 0).rgb : vec3(r / 63.0);
+	}
+	if (night_enabled) {
+		vec3 lit = vec3(0.0);
+		for (int i = 0; i < light_count; i++) {
+			float weight = max(0.0, 1.0 - distance(world_position, light_positions[i]) / max(light_colors[i].w, 1.0));
+			lit += light_colors[i].rgb * weight * weight;
+		}
+		k = min(k + lit, vec3(1.3));
 	}
 	ALBEDO = tex.rgb * k;
 }
@@ -99,6 +114,20 @@ static func material_for(source: StandardMaterial3D, sector_source: int, sector:
 	material.set_shader_parameter("has_rows", rows != null)
 	if rows != null: material.set_shader_parameter("shade_rows", rows)
 	return material
+
+## Upload the local lights (world positions; colour * intensity with the range in w) to every night material.
+static func apply_lights(materials: Array, positions: PackedVector3Array, colors: Array) -> void:
+	var count := mini(positions.size(), 16)
+	var pos := PackedVector3Array()
+	var col: Array[Vector4] = []
+	for i in 16:
+		pos.append(positions[i] if i < count else Vector3.ZERO)
+		col.append(colors[i] if i < count else Vector4.ZERO)
+	for material in materials:
+		if material == null: continue
+		material.set_shader_parameter("light_count", count)
+		material.set_shader_parameter("light_positions", pos)
+		material.set_shader_parameter("light_colors", col)
 
 static func light_of(row: Variant) -> Vector4:
 	if row is Array and (row as Array).size() >= 4:

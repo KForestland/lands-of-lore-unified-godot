@@ -1,0 +1,27 @@
+{
+  "name": "legacy_save_fixture_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1339,
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "dd504a75fb9399b31546c56b9f926b71becffd9b961600b476cdc82d63a5c056"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance.",
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/legacy_save_fixture_test.gd",
+        "line": 20,
+        "column": 22,
+        "kind": "completed_intro_fixture",
+        "source": "if area == \"L3_DH\": scene.introduction_state = \"complete\""
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 1
+}

@@ -1,1 +1,111 @@
-{"name":"l10_level3_input_test","suite":"core","mode":"headless","order":632}
+{
+  "name": "l10_level3_input_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 632,
+  "teleports": 0,
+  "test_aids": 14,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "26f534509e19b3d242dafca7ba834e6dba9f641947606d2eabe5dbd8fb69053a"
+  },
+  "context_aid_source_sites": {
+    "count": 13,
+    "sites": [
+      {
+        "path": "tests/l10_barrel_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_barrel_earned_test.gd",
+        "line": 16,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(input.state).is_empty(),\"actual two-white return input\"):quit(1);return"
+      },
+      {
+        "path": "tests/l10_oil_earned_test.gd",
+        "line": 7,
+        "column": 6,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_oil_earned_test.gd",
+        "line": 11,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(input.state).is_empty(),\"actual earned spilled-oil input\"):return null"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 67,
+        "column": 6,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 71,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(input.state).is_empty(),\"load earned gate input\"):quit(1);return"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 76,
+        "column": 18,
+        "kind": "scene_change_context",
+        "source": "scene.progression.change_scene_enabled=false"
+      },
+      {
+        "path": "tests/l9_mirror_return_earned_test.gd",
+        "line": 4,
+        "column": 62,
+        "kind": "scene_change_context",
+        "source": "scene.starting_magic.interface_request=true;scene.progression.change_scene_enabled=false"
+      },
+      {
+        "path": "tests/l9_mirror_return_earned_test.gd",
+        "line": 31,
+        "column": 6,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_mirror_return_earned_test.gd",
+        "line": 35,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(input.state).is_empty(),\"earned bracers load\"):quit(1);return"
+      },
+      {
+        "path": "tests/l9_opening_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_context",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_opening_earned_test.gd",
+        "line": 16,
+        "column": 14,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(scene.apply_save(input.state).is_empty(),\"earned Ruins arrival load\"):quit(1);return"
+      },
+      {
+        "path": "tests/l9_opening_earned_test.gd",
+        "line": 18,
+        "column": 62,
+        "kind": "scene_change_context",
+        "source": "scene.starting_magic.interface_request=true;scene.progression.change_scene_enabled=false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 27,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

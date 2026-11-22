@@ -26,21 +26,22 @@ func run() -> void:
 	root.add_child(props)
 	await process_frame
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/lol2/generated/museum_props/props.json"))
-	var flat: int = 0
+	var dust: int = 0
 	var upright: int = 0
 	for record in data.props:
 		var flags: int = int(record.get("frame_flags", 0)) & 0xC0
 		var inst: MeshInstance3D = props.get_node("MuseumProp_%d" % int(record.record))
 		var mat := inst.material_override as StandardMaterial3D
 		if flags & 0x80:
-			flat += 1
-			check(is_equal_approx(inst.rotation.x, -PI / 2.0), "dust %d lies flat" % int(record.record))
-			check(mat.billboard_mode == BaseMaterial3D.BILLBOARD_DISABLED, "dust %d billboard stays off" % int(record.record))
+			dust += 1
+			check(is_equal_approx(inst.rotation.x, 0.0), "dust %d hangs upright" % int(record.record))
+			check(mat.billboard_mode == BaseMaterial3D.BILLBOARD_FIXED_Y, "dust %d keeps the fixed billboard" % int(record.record))
+			check(is_equal_approx(mat.uv1_scale.y, -1.0), "dust %d keeps the row flip" % int(record.record))
 		else:
 			upright += 1
 			check(is_equal_approx(inst.rotation.x, 0.0), "prop %d stays upright" % int(record.record))
 			check(mat.billboard_mode == BaseMaterial3D.BILLBOARD_FIXED_Y, "prop %d keeps the fixed billboard" % int(record.record))
-	check(flat == 13 and upright == 89, "13 ceiling dust quads")
+	check(dust == 13 and upright == 89, "13 ceiling dust quads")
 	var host := Host.new()
 	host.player = CharacterBody3D.new()
 	host.camera = Camera3D.new()
@@ -68,5 +69,5 @@ func run() -> void:
 	props.queue_free()
 	host.queue_free()
 	await process_frame
-	if failures == 0: print("PASS museum niche strike and flat ceiling dust")
+	if failures == 0: print("PASS museum niche strike and upright ceiling dust")
 	quit(1 if failures else 0)

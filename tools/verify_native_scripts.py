@@ -382,7 +382,9 @@ def predicate_path(owner, e, entries):
     if entry[3] != 0:
         return f'right type {entry[3]}'
     if entry[1] == 2:
-        return 'left type 2 (0x26E58 array, nothing PROVEN writes it)'
+        if entry[2] == 52:
+            return 'left type 2 (0x26E58 index 52 stays unknown; opcode 199 can store it, and L20 group 7704 does not commit that store)'
+        return 'left type 2 (0x26E58 array, opcode 199 stores byte 5 in 0..2; an unread cell stays unknown)'
     if entry[1] == 5:
         # Kind-4 default context: the object itself when +0x15 bit 0x10 is clear (not known at load).
         return 'A' if e['kind'] == 4 and owner.split(':')[0] in ('movable', 'control') else 'P'

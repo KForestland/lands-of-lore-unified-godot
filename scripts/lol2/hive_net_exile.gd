@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Hive prop214 bone-and-branch pile (hive_net_exile_source.json). Saved as quests.hive_net_exile {version, state}.
 ## E with the pile aimed and in reach grants "26-Net of Exile" once (source kind4 mode0 at state0, then state1);
 ## the pile itself stays. The Net's handler104 on-hit hold lives in net_exile_hold.gd.
@@ -72,10 +73,10 @@ func _feedback(text: String) -> void:
 
 func use() -> bool:
 	if not target(): return false
-	var collected: Array = host.carried_inventory.collected
+	var collected: Array = Grants.pack(host)
 	if int(state.state) != 0: _feedback("Nothing else in the pile."); return true
 	if collected.size() >= preload("res://scripts/lol2/item_catalog.gd").MAX_CARRIED or ITEM in collected: _feedback("You cannot carry more."); return true
-	collected.append(ITEM)
+	Grants.grant(host,ITEM,{"cap":false,"duplicate":"allow"})
 	state.state = 1
 	_feedback("Net of Exile added to inventory.")
 	return true

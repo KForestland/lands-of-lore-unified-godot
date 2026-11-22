@@ -1,0 +1,40 @@
+{
+  "name": "g04_l20_bb_census_input_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Local actual E/F5/F9 census; supplied stands/views, held host/creatures; save from settled arrival. Not earned or exhaustive object interactions."
+  },
+  "count_method": "Audited source sites, not executions.",
+  "teleports": 4,
+  "test_aids": 12,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "d75c4288438a116b9ff4b8e6836690d9309eb9e118aadca3cefbdc3b64d1b1fe"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/g04_floor_input_test.gd",
+        "line": 41,
+        "column": 69,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(\"res://scenes/lol2/maps/L14_HT.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/helpers/g04_area_census_input.gd",
+        "line": 47,
+        "column": 66,
+        "kind": "exit_seed_fixture",
+        "source": "var a:=area();scene=load(Areas.ROWS[a].scene).instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 14
+}

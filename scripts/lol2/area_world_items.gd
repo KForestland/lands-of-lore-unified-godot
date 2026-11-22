@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Shared controller for the original world-item rows of area_world_items_state.gd (Museum, Dark Halls, Savage Jungle): the
 ## Hive/Jungle world-item pickup (hive_world_items.gd / jungle_world_items.gd) with an area argument. Each row is the
 ## original ground sprite (definitions pack) on a modern fixed-Y billboard at the native (x, region floor, -y), its base
@@ -170,7 +171,7 @@ func collect() -> bool:
 	if host.carried_collected.size() >= Catalog.MAX_CARRIED:
 		notice("Inventory full.")
 		return true
-	host.carried_collected.append(id)
+	if not Grants.grant(host,id,{"cap":false,"duplicate":"allow"}).ok: return false
 	history(true).collected.append(row)
 	restore()
 	notice(Definitions.label(State.definition(id)) + " taken.")

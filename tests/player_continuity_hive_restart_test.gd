@@ -14,6 +14,7 @@ func run() -> void:
 		var area = await open_fresh(entry[1])
 		var fresh := Continuity.from_host(area)
 		if not await load_click(area, saved.path): return
+		area = current_scene
 		var loaded := Continuity.from_host(area)
 		var errors := Continuity.compare(Continuity._normalized(saved.snapshot), loaded)
 		result[entry[0]] = {"errors": errors, "fields": loaded.size(), "fresh_differs": not Continuity.compare(fresh, loaded).is_empty()}

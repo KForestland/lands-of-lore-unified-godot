@@ -120,26 +120,36 @@ func _draracle_material(path: String) -> StandardMaterial3D:
 	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
 	mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
 	return mat
-func _draracle_quad(tool: SurfaceTool, a: Vector3, b: Vector3, c: Vector3, d: Vector3) -> void:
-	tool.add_vertex(a); tool.add_vertex(b); tool.add_vertex(c)
-	tool.add_vertex(a); tool.add_vertex(c); tool.add_vertex(d)
+func _draracle_quad(tool: SurfaceTool, a: Vector3, b: Vector3, c: Vector3, d: Vector3, ua: Vector2, ub: Vector2, uc: Vector2, ud: Vector2) -> void:
+	tool.set_uv(ua); tool.add_vertex(a)
+	tool.set_uv(ub); tool.add_vertex(b)
+	tool.set_uv(uc); tool.add_vertex(c)
+	tool.set_uv(ua); tool.add_vertex(a)
+	tool.set_uv(uc); tool.add_vertex(c)
+	tool.set_uv(ud); tool.add_vertex(d)
 func _draracle_bar_mesh() -> ArrayMesh:
 	var hx := 2.5
 	var hy := 60.0
 	var hz := 2.5
+	# Source template faces 2-5 (resource 431) and caps 0-1 (resource 433) each span UV 0..1.
+	# Godot V 0 is the top of the bar, matching native y 0 -> UV v 0 and native y -120 -> UV v 1.
+	var uv_bl := Vector2(0, 1)
+	var uv_br := Vector2(1, 1)
+	var uv_tr := Vector2(1, 0)
+	var uv_tl := Vector2(0, 0)
 	var mesh := ArrayMesh.new()
 	var sides := SurfaceTool.new()
 	sides.begin(Mesh.PRIMITIVE_TRIANGLES)
-	_draracle_quad(sides, Vector3(-hx,-hy,hz), Vector3(hx,-hy,hz), Vector3(hx,hy,hz), Vector3(-hx,hy,hz))
-	_draracle_quad(sides, Vector3(hx,-hy,-hz), Vector3(-hx,-hy,-hz), Vector3(-hx,hy,-hz), Vector3(hx,hy,-hz))
-	_draracle_quad(sides, Vector3(hx,-hy,hz), Vector3(hx,-hy,-hz), Vector3(hx,hy,-hz), Vector3(hx,hy,hz))
-	_draracle_quad(sides, Vector3(-hx,-hy,-hz), Vector3(-hx,-hy,hz), Vector3(-hx,hy,hz), Vector3(-hx,hy,-hz))
+	_draracle_quad(sides, Vector3(-hx,-hy,hz), Vector3(hx,-hy,hz), Vector3(hx,hy,hz), Vector3(-hx,hy,hz), uv_bl, uv_br, uv_tr, uv_tl)
+	_draracle_quad(sides, Vector3(hx,-hy,-hz), Vector3(-hx,-hy,-hz), Vector3(-hx,hy,-hz), Vector3(hx,hy,-hz), uv_bl, uv_br, uv_tr, uv_tl)
+	_draracle_quad(sides, Vector3(hx,-hy,hz), Vector3(hx,-hy,-hz), Vector3(hx,hy,-hz), Vector3(hx,hy,hz), uv_bl, uv_br, uv_tr, uv_tl)
+	_draracle_quad(sides, Vector3(-hx,-hy,-hz), Vector3(-hx,-hy,hz), Vector3(-hx,hy,hz), Vector3(-hx,hy,-hz), uv_bl, uv_br, uv_tr, uv_tl)
 	sides.generate_normals()
 	sides.commit(mesh)
 	var caps := SurfaceTool.new()
 	caps.begin(Mesh.PRIMITIVE_TRIANGLES)
-	_draracle_quad(caps, Vector3(-hx,hy,-hz), Vector3(-hx,hy,hz), Vector3(hx,hy,hz), Vector3(hx,hy,-hz))
-	_draracle_quad(caps, Vector3(-hx,-hy,hz), Vector3(-hx,-hy,-hz), Vector3(hx,-hy,-hz), Vector3(hx,-hy,hz))
+	_draracle_quad(caps, Vector3(-hx,hy,-hz), Vector3(-hx,hy,hz), Vector3(hx,hy,hz), Vector3(hx,hy,-hz), Vector2(0, 0), Vector2(0, 1), Vector2(1, 1), Vector2(1, 0))
+	_draracle_quad(caps, Vector3(-hx,-hy,hz), Vector3(-hx,-hy,-hz), Vector3(hx,-hy,-hz), Vector3(hx,-hy,hz), Vector2(0, 0), Vector2(0, 1), Vector2(1, 1), Vector2(1, 0))
 	caps.generate_normals()
 	caps.commit(mesh)
 	mesh.surface_set_material(0, _draracle_material(BAR_SIDE))

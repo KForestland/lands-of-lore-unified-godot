@@ -8,7 +8,8 @@ const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 const Defenses = preload("res://scripts/lol2/item_defense_data.gd")
 ## Act 1 identities before chunk 1 (ids("jungle") size at r12h 902b273) + 17 original world-item rows hosted 2026-10-31
 ## (area_world_items_state.gd: Museum 1, Dark Halls 3, Savage Jungle 13).
-const ACT1_IDS := 307 # 197 + four Act 2 story equipment ids in the jungle scope (L12 Blue Bow def35, L12 Obsidian Chain Mail def54, L13 Dark Sword def21, L13 Enchanted Thohan def71; astra) + Belial's Horn def22 as a held hand item (lead 2026-11-07, finale save) + the L8 shaman Dracoid Sigil (definition102, l8_journey_state.gd, astra 9c2e0e3) + six L8 herbalist first-visit items (two sap, two amber, two aloe; l8_herbalist.gd, astra 650578e) + the two Thieves' Den grants + the six chief's-hut stones (docs/thieves-den.md, docs/jungle-chut-room.md) + 61 Jungle world rows (docs/jungle-missing-pickups.md) + five Museum scrolls and two Museum Aloes (docs/museum-scrolls.md) + five Hive original rows 5-9 (hive_world_items_state.gd)
+# Current finite Act1 pools (including F08 additions); this class does not change ids()/scope.
+const ACT1_IDS := 309 # + the City's Dark Bow def35 (Grok 2026-11-16, held for Belial's switches); 308: 197 + four Act 2 story equipment ids in the jungle scope (L12 Blue Bow def35, L12 Obsidian Chain Mail def54, L13 Dark Sword def21, L13 Enchanted Thohan def71; astra) + Belial's Horn def22 as a held hand item (lead 2026-11-07, finale save) + the L8 shaman Dracoid Sigil (definition102, l8_journey_state.gd, astra 9c2e0e3) + six L8 herbalist first-visit items (two sap, two amber, two aloe; l8_herbalist.gd, astra 650578e) + the two Thieves' Den grants + the six chief's-hut stones (docs/thieves-den.md, docs/jungle-chut-room.md) + 61 Jungle world rows (docs/jungle-missing-pickups.md) + five Museum scrolls and two Museum Aloes (docs/museum-scrolls.md) + five Hive original rows 5-9 (hive_world_items_state.gd)
 ## The only Act 1 identity without a source definition (an unidentified cavern sample).
 const NO_DEFINITION := ["draracle/prop/1108/sample"]
 ## Port slot differs from the class byte: Net of Exile (class 0x40) is used as a held weapon by its on-hit handler104
@@ -60,8 +61,9 @@ func run() -> void:
 		if Defenses.ITEMS.has(id) and int(Defenses.ITEMS[id].defense) != Definitions.defense(index): return fail("Defense differs for " + id)
 	# 37 slot checks: 34 + the Jungle row15 Guard shield offhand (definition37) + the Dark Halls rows 5 Gaunt strike (weapon,
 	# definition12) and 28 Orc shield (offhand, definition38) hosted 2026-10-31 (area_world_items_state.gd).
+	# Current baseline7ca0961 has43 slot identities; the consumable class changes no slot.
 	# 42 since 2026-11-07: + Belial's Horn (definition 22, original class slot weapon), held to start the finale.
-	if resolved != ACT1_IDS - NO_DEFINITION.size() or slot_checks != 42: return fail("Resolved %d, slot checks %d" % [resolved, slot_checks])
+	if resolved != ACT1_IDS - NO_DEFINITION.size() or slot_checks != 58: return fail("Resolved %d, slot checks %d" % [resolved, slot_checks])
 	for chunk_start in range(0, act1.size(), Catalog.MAX_CARRIED):
 		if Catalog.validate_carried(act1.slice(chunk_start, chunk_start + Catalog.MAX_CARRIED), "jungle") != "": return fail("Act 1 carried set rejected")
 
@@ -73,17 +75,17 @@ func run() -> void:
 		if Catalog.label(id) != Definitions.label(index) or Catalog.icon(id) != Definitions.icon(index) or Catalog.slot(id) != Definitions.slot(index): return fail("Generic entry differs: " + id)
 		if Catalog.definition(id) != index or Catalog.defense(id) != Definitions.defense(index): return fail("Generic definition differs: " + id)
 		if not Catalog.admitted(id, "world") or Catalog.admitted(id, "jungle"): return fail("Generic scope wrong: " + id)
-		# Silverleaf (definition117) is the one generic definition with a hosted use: Brady printed41 +5 Magic Points (astra ITEM-117 5ba83e5).
+		# Definition-wide consumable profiles and stored spells are admitted; other generic uses remain refused.
 		# Amaranth serum (definition119): Brady printed42, consumed by handler98 (astra ITEM-119).
-		if Catalog.use_kind(id) != "" and index not in [117, 119]: return fail("Generic id has an untraced use: " + id)
+		if Catalog.use_kind(id) != "" and not preload("res://scripts/lol2/item_consumables.gd").USES.has(index) and index!=114 and not Catalog.STORED_SPELL_DEFINITIONS.has(index) and not preload("res://scripts/lol2/item_throw_rules.gd").supported(index): return fail("Generic id has an untraced use: " + id)
 		if index == 117 and Catalog.use_kind(id) != "silverleaf": return fail("Silverleaf use missing")
 	if Catalog.validate_carried([Catalog.generic_id(43)], "jungle") == "": return fail("Act 1 save admitted a later-act item")
 	if Catalog.validate_carried([Catalog.generic_id(43)], "world") != "": return fail("World scope rejected a definition")
 	for bad in ["item:def152", "item:def12", "item:def999", "item:defabc", Catalog.generic_id(170)]:
 		if Catalog.known(bad): return fail("Malformed or ghost id accepted: " + bad)
 	if Catalog.slot(Catalog.generic_id(43)) != "armor" or Catalog.defense(Catalog.generic_id(43)) != 30: return fail("Platemail")
-	if Catalog.slot(Catalog.generic_id(48)) != "" or Catalog.use_hint(Catalog.generic_id(48)) != "No inventory use is known for this item yet.": return fail("Ring hint")
-	if Catalog.use_hint("jungle:item54:Vels_fruit") != "" or Catalog.use_hint("museum:item25:Dragon_Gem") != "No inventory use is known for this item yet.": return fail("Act 1 hints")
+	if Catalog.slot(Catalog.generic_id(48)) != "armor" or Catalog.use_hint(Catalog.generic_id(48)) != "": return fail("Ring hint")
+	if Catalog.use_hint("jungle:item54:Vels_fruit") != "" or Catalog.use_hint("museum:item25:Dragon_Gem") != "": return fail("Act 1 hints")
 	if Catalog.use_hint("draracle/prop/1108/sample") != "This item has not been identified.": return fail("Unknown sample hint")
 	print("PASS item_definitions: 170 definitions, 165 icons, %d Act 1 ids resolved, %d slot checks, 165 generic world ids" % [resolved, slot_checks])
 	quit(0)

@@ -7,6 +7,12 @@ func _initialize() -> void:
 	for row in proof.native_damage_cases:
 		var wanted:=maxi(1,roundi(int(row.native_loss)*0.4))
 		assert(Defense.damage(int(row.amount),int(row.scalar),int(row.signature))==wanted,str(row))
+	# Newly wearable accessory protection may only reduce (or preserve) loss.
+	for request in [1,2,5,10,25,50,100,200]:
+		for baseline in [-80,-50,-30,0,5,20,40,60,80]:
+			for addition in [0,2,5,10,20,30]:
+				for signature in [36,68,8]:
+					assert(Defense.damage(request,baseline+addition,signature)<=Defense.damage(request,baseline,signature),"Nonnegative protection cannot make a fight deadlier")
 	var state:=Items.initial()
 	assert(Items.validate(state).is_empty())
 	state.offhand=Defense.BRACERS

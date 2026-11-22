@@ -4,13 +4,13 @@
   {
    "events": [
     {
-     "extra_hex": "010200201c",
+     "extra_hex": "omitted 5 bytes sha256:e13723cae8a5a346a30534781148ca92094265528ce64b2a224000b6c5c6e619",
      "file_offset": 9828340,
      "group": 1048,
      "kind": 2,
      "offset": 426,
      "predicate": null,
-     "raw_hex": "0a02180480010200201c",
+     "raw_hex": "omitted 10 bytes sha256:816e223b4f2313b3333a58f2167826c941e052f9c525e5f7336594f165d40704",
      "stream": 1,
      "value": 128
     },
@@ -22,12 +22,12 @@
      "offset": 436,
      "predicate": {
       "entry_file_offset": 10014534,
-      "entry_hex": "0005000000",
+      "entry_hex": "omitted 5 bytes sha256:1ad2f82b4edfc1d7e0e3df7b745eded28daae530594f76346c0a9b2b932a22d7",
       "index": 206,
       "trailer_file_offset": 9828356,
-      "trailer_hex": "0413ce00"
+      "trailer_hex": "omitted 4 bytes sha256:6b794423c604478e0152ac22d66115263d69c6e46c71db17c981cdaccfc1b487"
      },
-     "raw_hex": "06062c041400",
+     "raw_hex": "omitted 6 bytes sha256:06acaa7bf05b084173ae8cd2973c5570975d3179aa2d575c7d6d066a7a4de085",
      "stream": 1,
      "value": 20
     },
@@ -35,14 +35,14 @@
      "file_offset": 9828356,
      "kind": 19,
      "offset": 442,
-     "raw_hex": "0413ce00"
+     "raw_hex": "omitted 4 bytes sha256:6b794423c604478e0152ac22d66115263d69c6e46c71db17c981cdaccfc1b487"
     }
    ],
    "file_offset": 9842629,
    "index": 335,
    "list_file_offset": 9828340,
    "list_offset": 426,
-   "placement_hex": "5b10422d000048fe02040403aa0103e7005404e7002405e700f405e7000000002100000003",
+   "placement_hex": "omitted 37 bytes sha256:d421280663c7ba36d343a4520ec0be0fcec70fc4864b173a44dd749e78f414b4",
    "ref": "prop:335",
    "table": "prop",
    "terminator_offset": 446
@@ -53,7 +53,7 @@
    "index": 52,
    "list_file_offset": 9827914,
    "list_offset": 0,
-   "placement_hex": "e30d202d2d9887fd8110920300007f00000000000100000000000000f400940013",
+   "placement_hex": "omitted 33 bytes sha256:d480861026cf6e771900cc7c0fdab9be68b68e4d75dd9e851ae8f26087acfeb9",
    "ref": "control:52",
    "table": "control",
    "terminator_offset": 0
@@ -64,7 +64,7 @@
    "index": 53,
    "list_file_offset": 9827914,
    "list_offset": 0,
-   "placement_hex": "ba0d3d2dc1966cfd8110920300007f00000000000100000000000000f400940013",
+   "placement_hex": "omitted 33 bytes sha256:bf6608b882ce2745d31247335262332f25b26faf1ac1146081cd9be2e421d334",
    "ref": "control:53",
    "table": "control",
    "terminator_offset": 0
@@ -75,7 +75,7 @@
    "index": 54,
    "list_file_offset": 9827914,
    "list_offset": 0,
-   "placement_hex": "630d772dc1964efd8110920300007f00000000000100000000000000f400940013",
+   "placement_hex": "omitted 33 bytes sha256:b3d943ed9bdc3ca265a40bf9b32014a112200eac9571516e63e452c6c76d3924",
    "ref": "control:54",
    "table": "control",
    "terminator_offset": 0
@@ -86,7 +86,7 @@
    "index": 55,
    "list_file_offset": 9827914,
    "list_offset": 0,
-   "placement_hex": "8b0d5b2d779764fd8110920300007f00000000000100000000000000f4007c0014",
+   "placement_hex": "omitted 33 bytes sha256:f0fc0d3cf29d4458b6907448b252fee009e2eee9646ec4b056c12a5c5ca229fa",
    "ref": "control:55",
    "table": "control",
    "terminator_offset": 0
@@ -97,7 +97,7 @@
    "index": 56,
    "list_file_offset": 9827914,
    "list_offset": 0,
-   "placement_hex": "400d8d2d779743fd8110920300007f00000000000100000000000000f4007c0014",
+   "placement_hex": "omitted 33 bytes sha256:a91d6559563891da1a29b303a50bc404cff5a6636b4a3451641307cb17ab6479",
    "ref": "control:56",
    "table": "control",
    "terminator_offset": 0
@@ -108,7 +108,7 @@
    "index": 57,
    "list_file_offset": 9827914,
    "list_offset": 0,
-   "placement_hex": "1c0da72dc19638fd8110920300007f00000000000100000000000000f400940013",
+   "placement_hex": "omitted 33 bytes sha256:df16d0dec4429934ad37262beb64a6504c7d51bf4a8d57593762c57e6d88f6c3",
    "ref": "control:57",
    "table": "control",
    "terminator_offset": 0
@@ -121,7 +121,7 @@
     "kind": 3,
     "offset": 1074,
     "opcode": 16,
-    "raw_hex": "10034f010100",
+    "raw_hex": "omitted 6 bytes sha256:ec661615e7eae737c42abb2cb573427b3b46a14abaffa25b9766c61a807e8e37",
     "target": 335
    },
    {
@@ -129,7 +129,7 @@
     "kind": 16,
     "offset": 1080,
     "opcode": 9,
-    "raw_hex": "091034000300",
+    "raw_hex": "omitted 6 bytes sha256:8bf2827d03ffd3248e84d403174134b43b08f985673b0c3a82e62fd4db7d8ce2",
     "target": 52
    },
    {
@@ -137,7 +137,7 @@
     "kind": 16,
     "offset": 1086,
     "opcode": 9,
-    "raw_hex": "091035000300",
+    "raw_hex": "omitted 6 bytes sha256:ffcad92e1e26d936be4023f195189286083594ef7d0463d6087e1c7b8eed247c",
     "target": 53
    },
    {
@@ -145,7 +145,7 @@
     "kind": 16,
     "offset": 1092,
     "opcode": 9,
-    "raw_hex": "091037000300",
+    "raw_hex": "omitted 6 bytes sha256:5790349429ed6c08ea8886859fcb2cff4d7cf7e8b0e5570439f42916ccb91577",
     "target": 55
    },
    {
@@ -153,7 +153,7 @@
     "kind": 16,
     "offset": 1098,
     "opcode": 9,
-    "raw_hex": "091036000300",
+    "raw_hex": "omitted 6 bytes sha256:794debaea488f2330586bde4022f7d2d3128a027538006254611962a7a638fb8",
     "target": 54
    },
    {
@@ -161,7 +161,7 @@
     "kind": 16,
     "offset": 1104,
     "opcode": 9,
-    "raw_hex": "091038000300",
+    "raw_hex": "omitted 6 bytes sha256:731f521d6748b09af8e4674f24d08de214b6a7a544dd71da3967204c72a8360d",
     "target": 56
    },
    {
@@ -169,7 +169,7 @@
     "kind": 16,
     "offset": 1110,
     "opcode": 9,
-    "raw_hex": "091039000300",
+    "raw_hex": "omitted 6 bytes sha256:6027c269a1241741141d1fd10776323b2da3162bad7831c23045045b1eb151b5",
     "target": 57
    },
    {
@@ -177,7 +177,7 @@
     "kind": 3,
     "offset": 1116,
     "opcode": 20,
-    "raw_hex": "14034f015e01ff177d00",
+    "raw_hex": "omitted 10 bytes sha256:5b4aed227700ee34bec9259a6103d1327e5f78a2484527b4d004b40b549ba938",
     "target": 335
    },
    {
@@ -185,7 +185,7 @@
     "kind": 144,
     "offset": 1126,
     "opcode": 208,
-    "raw_hex": "d090000000050500",
+    "raw_hex": "omitted 8 bytes sha256:63f94a31b288bb59a311c7de8265d859f1ec3119f306d2261216606c0c8b646f",
     "target": 0
    },
    {
@@ -193,7 +193,7 @@
     "kind": 144,
     "offset": 1134,
     "opcode": 196,
-    "raw_hex": "c490a203befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:c88c777db84a99d81bca8b674721fe551d0ea330de47609f09b83e8e92e6d9cc",
     "target": 930
    },
    {
@@ -201,7 +201,7 @@
     "kind": 144,
     "offset": 1146,
     "opcode": 196,
-    "raw_hex": "c490a103befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:db9457e8bf95075f90f3c96627e3f27aaa8127c8b101dc13b1285a9f3cfaf6e6",
     "target": 929
    },
    {
@@ -209,7 +209,7 @@
     "kind": 144,
     "offset": 1158,
     "opcode": 196,
-    "raw_hex": "c490a003befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:e56902565cea780b181511930505eccbc11b988f0935560a778d11288ed097b0",
     "target": 928
    },
    {
@@ -217,7 +217,7 @@
     "kind": 144,
     "offset": 1170,
     "opcode": 196,
-    "raw_hex": "c4909f03befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:2eb8ddb92f83071bab9716fd044d71eb5aa40fc07aab14e55b405d48c26b00fc",
     "target": 927
    },
    {
@@ -225,7 +225,7 @@
     "kind": 144,
     "offset": 1182,
     "opcode": 196,
-    "raw_hex": "c4909e03befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:4a2c500d8a8231077a83a359f366f6a708ebe24c249c247073d99f6176cbf85c",
     "target": 926
    },
    {
@@ -233,7 +233,7 @@
     "kind": 144,
     "offset": 1194,
     "opcode": 196,
-    "raw_hex": "c4909d03befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:709511513e588a901cdad57d4f21ed80963ea8efc407d39667e29d0a735ddd41",
     "target": 925
    },
    {
@@ -241,7 +241,7 @@
     "kind": 144,
     "offset": 1206,
     "opcode": 196,
-    "raw_hex": "c4909c03befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:c26a5648a739c0af5474d5f8f0e43ca6145f6c4821e72dbb5764da913eb0b044",
     "target": 924
    },
    {
@@ -249,7 +249,7 @@
     "kind": 144,
     "offset": 1218,
     "opcode": 196,
-    "raw_hex": "c4909b03befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:f6dbd046852673942f583fcc2d9d45651fd790d98f63748f23f471198c1eecdf",
     "target": 923
    },
    {
@@ -257,7 +257,7 @@
     "kind": 144,
     "offset": 1230,
     "opcode": 196,
-    "raw_hex": "c4909a03befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:71ae3bb2870e119500ba3702751ad3ec0970c9460e2c6bd88fad117093aa53f5",
     "target": 922
    },
    {
@@ -265,7 +265,7 @@
     "kind": 144,
     "offset": 1242,
     "opcode": 196,
-    "raw_hex": "c4909903befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:089c7b77ae4770c50a3b58eb84233d133ed6366f59a3e7941c40eb6f44f197c2",
     "target": 921
    },
    {
@@ -273,7 +273,7 @@
     "kind": 144,
     "offset": 1254,
     "opcode": 196,
-    "raw_hex": "c4909803befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:2a81bc904a46e1baa459e23480373b99ebc5146d394ffbe03caa2db96aac8f7b",
     "target": 920
    },
    {
@@ -281,15 +281,15 @@
     "kind": 144,
     "offset": 1266,
     "opcode": 196,
-    "raw_hex": "c4909703befb003200000000",
+    "raw_hex": "omitted 12 bytes sha256:cc9326067682bc0cb2bf7d6756de6cec559bdffed1f7f0a950f2d640ddc8a060",
     "target": 919
    }
   ],
   "count": 21,
   "file_offset": 9822140,
   "group": 1068,
-  "header_hex": "f00000001500",
-  "raw_hex": "f0000000150010034f01010009103400030009103500030009103700030009103600030009103800030009103900030014034f015e01ff177d00d090000000050500c490a203befb003200000000c490a103befb003200000000c490a003befb003200000000c4909f03befb003200000000c4909e03befb003200000000c4909d03befb003200000000c4909c03befb003200000000c4909b03befb003200000000c4909a03befb003200000000c4909903befb003200000000c4909803befb003200000000c4909703befb003200000000",
+  "header_hex": "omitted 6 bytes sha256:5cbbc82ed78884f50503412a00a169298c2d026843e65097d88e195e0da1ef78",
+  "raw_hex": "omitted 210 bytes sha256:fa36e9fa7f3a5f7c514e6228c1cf2d38e801a346bceb7d1a6722c987f6b33e9a",
   "stream": 1
  },
  "scope": "Original prop335 event links and group1068. Region932/916 entry trigger and 60Hz clock modern; no native avalanche dispatcher/audio/camera-shake claim."

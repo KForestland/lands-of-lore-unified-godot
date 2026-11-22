@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const KEY="l14_shard_bowls"
 const Kit=preload("res://scripts/lol2/mechanism_transaction.gd")
 const Items=preload("res://scripts/lol2/act2_items_catalog.gd")
@@ -58,6 +59,7 @@ func reach(id:String)->bool:
  return hit.is_empty() or hit.position.distance_to(BOWLS[id])<12
 func offer(id:String,item:String,capacity:int=64)->Dictionary:
  if not reach(id):return Kit.refuse("Approach the suspended bowl.")
+ if item not in host.carried_collected:return Kit.refuse("The bowl needs a green crystal shard.")
  var s:=state().duplicate(true);var snap:=Kit.empty_snapshot(host.carried_collected,capacity);snap.slots=s.slots
  var result:=Kit.offer(snap,recipe(id),item,{"form":"human"})
  if not result.ok:return result
@@ -65,7 +67,8 @@ func offer(id:String,item:String,capacity:int=64)->Dictionary:
  if not result.ok:return result
  result=Kit.commit(result.snapshot,recipe(id),id)
  if not result.ok:return result
- s.slots=result.snapshot.slots;host.quest_state[KEY]=s;host.carried_collected=result.snapshot.inventory
+ s.slots=result.snapshot.slots;var admission:=Grants.transition(host,result.snapshot.inventory,{KEY:s})
+ if not admission.ok:return admission
  if host.hand_item==item:host.hand_item=""
  Items.sync(host);restore()
  return {"ok":true,"reason":"The passage opens behind the bowls." if complete(s) else "The bowl holds the crystal shard."}
@@ -86,7 +89,8 @@ func _unhandled_key_input(event:InputEvent):
   for id in BOWLS:
    if reach(id) and not Kit.slot(state(),id).committed:
     var item:String=host.hand_item
-    if item.is_empty():
+    if item not in SHARDS or item not in host.carried_collected:
+     item=""
      for candidate in SHARDS:
       if candidate in host.carried_collected:item=candidate;break
     host.save_feedback(offer(id,item).reason);get_viewport().set_input_as_handled();return

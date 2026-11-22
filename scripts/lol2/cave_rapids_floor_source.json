@@ -15,20 +15,20 @@
     "right": {
       "immediate": 0
     },
-    "raw": "0003070000"
+    "raw": "omitted 5 bytes sha256:3459a3cbfab2176975e6c6cf55c481330b643ecf8a808a8100e83716844ae2b3"
   },
   "preceding_commands": [
-    "0503c5010100",
-    "d0909907000a0500",
-    "1403c5017b01ff113e2b"
+    "omitted 6 bytes sha256:3521012a9342f4234b3bc7daa156a97b1afaaa858c8aab0869e36b27d89d7b6f",
+    "omitted 8 bytes sha256:1c86f0ddd406c9a2bef2a6d7439d8d7c7afce4d32786b409222ec91a28a06988",
+    "omitted 10 bytes sha256:9299023e3b256045b9257527c4964217bed6860a6475fa2ca0210585587880d4"
   ],
   "commands": [
-    "cc900700ffff0000",
-    "cc900b00ffff0000",
-    "cc900a00ffff0000",
-    "c490070091fe006400000000",
-    "c4900b00b4fe006400000000",
-    "c4900a00c9fe006400000000"
+    "omitted 8 bytes sha256:dd3797706ed6a29bf582c913f0bda4c54de9ccae1f94210ed87cbeb216353912",
+    "omitted 8 bytes sha256:55bb9f0440591c082240abc8dffe8282ffb31ceb7eeb2c07508dcb02b5e8219e",
+    "omitted 8 bytes sha256:2aaf29838eff22557e0d03f976b4f5f2f6a985bbd27784a981ce5f828bc9e665",
+    "omitted 12 bytes sha256:5d216d6b3a51e37791752d1478c4b8a1794862fcaecbf3d1aac7abf619805612",
+    "omitted 12 bytes sha256:3dd8c30a2ec36fb5c5952ddae1c5669b0c7b0d597cf27bb789c934779e8b1332",
+    "omitted 12 bytes sha256:b4bb49aaad34cf2d58e1751ef5554d1e7fd8d822acb119be569cf2209973e5a5"
   ],
   "floors": [
     {
@@ -62,7 +62,7 @@
         "index": 5,
         "name": "Rapids",
         "resource": 310,
-        "raw_hex": "0836e1d2360100000100451b000004200300050002640b00",
+        "raw_hex": "omitted 24 bytes sha256:2d4ff1dd0d820ac4ffbb759b2265236a651f4b39aabe48c67c12348c80b14888",
         "angle": 0,
         "offset_x": 0,
         "offset_y": 0,
@@ -76,7 +76,7 @@
         "index": 0,
         "name": "Cave floor",
         "resource": 134,
-        "raw_hex": "bbc3b27486000000f5ffbc00000000f00000000001000800",
+        "raw_hex": "omitted 24 bytes sha256:636fbe8c58ccdc9e9145a1ac742c02184449ae5711e93a4e549b8b4a5bb5c459",
         "angle": 0,
         "offset_x": 0,
         "offset_y": 0,
@@ -154,7 +154,7 @@
         "index": 5,
         "name": "Rapids",
         "resource": 310,
-        "raw_hex": "0836e1d2360100000100451b000004200300050002640b00",
+        "raw_hex": "omitted 24 bytes sha256:2d4ff1dd0d820ac4ffbb759b2265236a651f4b39aabe48c67c12348c80b14888",
         "angle": 0,
         "offset_x": 0,
         "offset_y": 0,
@@ -168,7 +168,7 @@
         "index": 0,
         "name": "Cave floor",
         "resource": 134,
-        "raw_hex": "bbc3b27486000000f5ffbc00000000f00000000001000800",
+        "raw_hex": "omitted 24 bytes sha256:636fbe8c58ccdc9e9145a1ac742c02184449ae5711e93a4e549b8b4a5bb5c459",
         "angle": 0,
         "offset_x": 0,
         "offset_y": 0,
@@ -246,7 +246,7 @@
         "index": 5,
         "name": "Rapids",
         "resource": 310,
-        "raw_hex": "0836e1d2360100000100451b000004200300050002640b00",
+        "raw_hex": "omitted 24 bytes sha256:2d4ff1dd0d820ac4ffbb759b2265236a651f4b39aabe48c67c12348c80b14888",
         "angle": 0,
         "offset_x": 0,
         "offset_y": 0,
@@ -260,7 +260,7 @@
         "index": 0,
         "name": "Cave floor",
         "resource": 134,
-        "raw_hex": "bbc3b27486000000f5ffbc00000000f00000000001000800",
+        "raw_hex": "omitted 24 bytes sha256:636fbe8c58ccdc9e9145a1ac742c02184449ae5711e93a4e549b8b4a5bb5c459",
         "angle": 0,
         "offset_x": 0,
         "offset_y": 0,
@@ -313,7 +313,7 @@
     "event": 4,
     "stream": 0,
     "group": 0,
-    "command": "c60000000701"
+    "command": "omitted 6 bytes sha256:b4cdd89d3bd6b90d228d9209d79ba0ef0ff2ab8af5bae9df49fdd8f0f426171a"
   },
   "scope": "Only ordered material/motion portion of accepted group5074. Caller must execute preceding prop453 selector, view effect and sound379, supply native movement admission, apply world geometry/collision and dispatch completion to shared local bank. No hit admission or full puzzle integration claim."
 }

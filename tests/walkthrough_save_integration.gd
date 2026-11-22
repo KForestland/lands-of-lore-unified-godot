@@ -1,5 +1,6 @@
 extends SceneTree
 
+## Legacy packet compatibility (including developer flight); real slot keys are in save_keys_real_input_test.
 const Save = preload("res://scripts/lol2/walkthrough_save.gd")
 const SCENE := "res://scenes/lol2/cave_walkthrough.tscn"
 var view: Node
@@ -40,21 +41,21 @@ func press(key: Key) -> void:
 
 func _run() -> void:
 	# The test runner creates a project with a distinct application name.
-	check(OS.get_user_data_dir().get_file().begins_with("LoL2 Save Integration Test"), "Test user data must be isolated")
+	check(OS.get_environment("LOL2_PRIVATE_SAVE_CASE")=="1" or OS.get_user_data_dir().get_file().begins_with("LoL2 Save Integration Test"), "Test user data must be isolated")
 	if failures:
 		quit(1)
 		return
 	await open_cave()
 	if "--restart-read" in OS.get_cmdline_user_args():
 		check(view.checkpoint == view.fixtures[0].checkpoints.size()+1, "New process starts at source cave entrance")
-		await press(KEY_F9)
+		check(view._quickload(Save.DEFAULT_PATH).is_empty(),"explicit legacy reader")
 		check(view.checkpoint == 118 and view.flying, "New process restores checkpoint and flight")
 		var position: Vector3 = view.point(view.fixtures[0].checkpoints[118].start) + Vector3(0.5, 134, 0.75)
 		check(view.player.position.is_equal_approx(position), "New process restores position")
 		check(is_equal_approx(view.player.rotation.y, 1.25) and view.camera.rotation.is_equal_approx(Vector3(-0.37, 0, 0)), "New process restores view direction")
 		check(not view.lighting_enabled and not view.glows_enabled and not view.props_root.visible and not view.roof.visible and not view.dummy_root.visible, "New process restores display toggles")
 		DirAccess.remove_absolute(Save.DEFAULT_PATH)
-		print("Restart read: %d checks, %d failures" % [checks, failures])
+		print(("PASS" if failures==0 else "FAIL")+" legacy restart read: %d checks, %d failures" % [checks, failures])
 		quit(1 if failures else 0)
 		return
 	view._jump_checkpoint(118)
@@ -68,11 +69,11 @@ func _run() -> void:
 	view.roof.visible = false
 	view.dummy_root.visible = false
 	var expected: Dictionary = view._save_state()
-	await press(KEY_F5)
-	check(FileAccess.file_exists(Save.DEFAULT_PATH), "F5 writes quicksave")
+	check(view._quicksave(Save.DEFAULT_PATH).is_empty(),"explicit legacy writer")
+	check(FileAccess.file_exists(Save.DEFAULT_PATH), "Legacy writer writes quicksave")
 	check(view.save_notice == "Quicksaved.", "Save feedback")
 	if "--restart-write" in OS.get_cmdline_user_args():
-		print("Restart write: %d checks, %d failures" % [checks, failures])
+		print(("PASS" if failures==0 else "FAIL")+" legacy restart write: %d checks, %d failures" % [checks, failures])
 		quit(1 if failures else 0)
 		return
 	view._jump_checkpoint(13)
@@ -82,8 +83,9 @@ func _run() -> void:
 	view.roof.visible = true
 	view.dummy_root.visible = true
 	view.player.velocity = Vector3(10, -99, 20)
-	await press(KEY_F9)
-	check(view._save_state() == expected, "F9 restores all state")
+	check(view._quickload(Save.DEFAULT_PATH).is_empty(),"explicit legacy reader")
+	check(view._save_state() == expected, "Legacy reader restores all state")
+	for i in 2:await process_frame # visual copies synchronize after the exact restored packet check
 	check(view.player.velocity == Vector3.ZERO, "Load clears stale velocity")
 	check(view.light_view.render_target_update_mode == SubViewport.UPDATE_DISABLED, "Reference lighting restored")
 	check(view.light_pairs.all(func(pair): return pair[1].visible == pair[0].is_visible_in_tree()), "Light masks synchronized")
@@ -91,13 +93,13 @@ func _run() -> void:
 	view.queue_free()
 	await process_frame
 	await open_cave()
-	await press(KEY_F9)
+	check(view._quickload(Save.DEFAULT_PATH).is_empty(),"explicit legacy reader")
 	check(view._save_state() == expected, "New scene restores disk save")
 	var before: Dictionary = view._save_state()
 	var file := FileAccess.open(Save.DEFAULT_PATH, FileAccess.WRITE)
 	file.store_string("{\"version\":999}")
 	file.close()
-	await press(KEY_F9)
+	check(not view._quickload(Save.DEFAULT_PATH).is_empty(),"invalid legacy packet refused")
 	check(view._save_state() == before, "Rejected save leaves live state unchanged")
 	check(view.save_notice.begins_with("Load failed:"), "Load failure feedback")
 	await press(KEY_R)
@@ -111,11 +113,11 @@ func _run() -> void:
 	view.roof.visible = true
 	view.dummy_root.visible = true
 	expected = view._save_state()
-	await press(KEY_F5)
+	check(view._quicksave(Save.DEFAULT_PATH).is_empty(),"explicit legacy writer")
 	view._jump_checkpoint(118)
-	await press(KEY_F9)
+	check(view._quickload(Save.DEFAULT_PATH).is_empty(),"explicit legacy reader")
 	check(view._save_state() == expected, "Walking/enhanced state round trip")
 	check(view.light_view.render_target_update_mode == SubViewport.UPDATE_ALWAYS, "Enhanced light pass restored")
 	DirAccess.remove_absolute(Save.DEFAULT_PATH)
-	print("Cavern save/load integration: %d checks, %d failures" % [checks, failures])
+	print(("PASS" if failures==0 else "FAIL")+" Cavern legacy save/load integration: %d checks, %d failures" % [checks, failures])
 	quit(1 if failures else 0)

@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const State = preload("res://scripts/lol2/museum_aloe_state.gd")
 const Catalog = preload("res://scripts/lol2/item_catalog.gd")
 const Definitions = preload("res://scripts/lol2/item_definitions.gd")
@@ -51,7 +52,7 @@ func use() -> bool:
 	if host.carried_collected.size()>=Catalog.MAX_CARRIED:
 		host.save_feedback("You cannot carry more.")
 		return true
-	if not State.take(state,host.carried_collected,i): return false
+	if not State.take(state,Grants.pack(host),i): return false
 	present()
 	host.save_feedback(Catalog.entry(State.IDS[i]).label+" added to inventory.")
 	return true

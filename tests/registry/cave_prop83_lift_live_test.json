@@ -1,6 +1,9 @@
 {
- "name": "cave_prop83_lift_live_test",
- "suite": "core",
- "mode": "rendered",
- "order": 152
+  "name": "cave_prop83_lift_live_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 152,
+  "needs": {
+    "note": "Hard lift/chain/wall/ride/pause/save outcome with disclosed controller and physics steps; late wall-clock audio is a separate known-unstable diagnostic normalized to measured quickload, deterministic seek/state remain hard."
+  }
 }

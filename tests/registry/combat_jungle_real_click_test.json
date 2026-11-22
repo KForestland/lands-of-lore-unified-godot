@@ -1,0 +1,24 @@
+{
+  "name": "combat_jungle_real_click_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1333,
+  "teleports": 1,
+  "test_aids": 4,
+  "count_method": "Audited source sites, not executions.",
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ]
+  },
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "d6e3cec1622ca791ac53017abadd79f8b3fdb5738d80e2d6ff44bb826c75d5cf"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 4
+}

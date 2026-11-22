@@ -1,0 +1,661 @@
+{
+  "atlas_explored": {
+    "areas": {
+      "L5_HC": {
+        "full": false,
+        "regions": [
+          463
+        ]
+      }
+    },
+    "version": 1
+  },
+  "format": "lol2-restoration-hive",
+  "inventory": {
+    "collected": [
+      "museum:item11:Fine_Longsword"
+    ],
+    "curse": {
+      "admission_flags": 0,
+      "cave_triggered": false,
+      "duration": 0.0,
+      "phase": 0,
+      "previous": 0,
+      "remaining": 0.0,
+      "seed": 59976461,
+      "target": 0
+    },
+    "equipped_armor": "",
+    "equipped_item": "museum:item11:Fine_Longsword",
+    "health": 19,
+    "item_effects": {
+      "aloe": {
+        "base": 0,
+        "clock": 0,
+        "fraction": 0.0,
+        "pending": 0
+      },
+      "ancient_charges": 0,
+      "champion": {
+        "active": false,
+        "timer": 0,
+        "version": 1
+      },
+      "fraction": 0.0,
+      "spent": [],
+      "version": 1
+    },
+    "player_form": 0
+  },
+  "player": {
+    "pitch": 0.0,
+    "position": [
+      848.0,
+      20.799999237060547,
+      -4447.0
+    ],
+    "yaw": -1.5707963705062866
+  },
+  "quests": {
+    "conversation": {
+      "completed": false,
+      "elapsed": 0.0,
+      "section_cursor": 0,
+      "started": false
+    },
+    "hive_ambush": {
+      "actors": {
+        "33": {
+          "active": false,
+          "cooldown": 0.0,
+          "elapsed": 0.0,
+          "health": 400,
+          "phase": 0,
+          "position": [
+            -4796.0,
+            -3000.0,
+            -6374.0
+          ],
+          "seed": 324508672,
+          "windup": 0.0
+        },
+        "35": {
+          "active": false,
+          "cooldown": 0.0,
+          "elapsed": 0.0,
+          "health": 300,
+          "phase": 0,
+          "position": [
+            -2562.0,
+            -619.0,
+            -8201.0
+          ],
+          "seed": 324508674,
+          "windup": 0.0
+        }
+      },
+      "contact716": false,
+      "feeding_hit_disabled": false,
+      "local7": 0,
+      "version": 1
+    },
+    "hive_boulder_actor_schema": 1,
+    "hive_boulder_actors": {
+      "actors": {
+        "30": {
+          "active": false,
+          "fraction": 0.0,
+          "frame": 0,
+          "index": 0,
+          "position": [
+            -2194.0,
+            -1207.0,
+            -6549.0
+          ],
+          "rolling": false,
+          "stopping": false,
+          "timer": 0,
+          "velocity_y": 0.0
+        },
+        "31": {
+          "active": false,
+          "fraction": 0.0,
+          "frame": 0,
+          "index": 0,
+          "position": [
+            -2270.0,
+            -1207.0,
+            -6889.0
+          ],
+          "rolling": false,
+          "stopping": false,
+          "timer": 0,
+          "velocity_y": 0.0
+        }
+      },
+      "legacy_retired": false,
+      "version": 1
+    },
+    "hive_boulder_audio": {
+      "clocks": {
+        "30": -1.0,
+        "31": -1.0,
+        "close": -1.0,
+        "exit": -1.0
+      },
+      "version": 1
+    },
+    "hive_boulder_audio_schema": 1,
+    "hive_boulder_contact": {
+      "angle": 0,
+      "magnitude": 0.0,
+      "version": 1
+    },
+    "hive_boulder_contact_schema": 1,
+    "hive_boulder_surfaces": {
+      "elapsed": 0.0,
+      "phase": 0,
+      "version": 1
+    },
+    "hive_chasm": {
+      "activated": false,
+      "elapsed": 0.0
+    },
+    "hive_curse": {
+      "enabled": false,
+      "human_return_used": [],
+      "region": -1,
+      "remaining": 120.0,
+      "running": true,
+      "seed": 324508639
+    },
+    "hive_dawn20": {
+      "body": {
+        "actors": {
+          "20": {
+            "death": 0.0,
+            "health": 100,
+            "position": [
+              -3063.0,
+              -1659.0,
+              -6333.0
+            ],
+            "present": false,
+            "rise": -1.0,
+            "woken": false
+          }
+        },
+        "counter": 0,
+        "live": {
+          "20": {
+            "attack": 0,
+            "elapsed": 0.0,
+            "heading": 40960,
+            "hit": false,
+            "hits": 0,
+            "mode": 0
+          }
+        },
+        "prop93": 0,
+        "regions": [],
+        "version": 1
+      },
+      "hold": false,
+      "receipts": [],
+      "state": {
+        "b5": 0,
+        "clip": {},
+        "death": 0.0,
+        "health": 100,
+        "hit_latches": [],
+        "items": [],
+        "loaded": false,
+        "locals": {
+          "31": 0,
+          "32": 0
+        },
+        "owner_state": 0,
+        "pending": [],
+        "present": false,
+        "region": -1,
+        "repeat": false,
+        "rng": 1,
+        "selector": 0,
+        "sighted": false,
+        "ticks": 0.0,
+        "timers": [
+          {
+            "flags": 1,
+            "remaining": 600,
+            "version": 1
+          }
+        ],
+        "version": 1
+      },
+      "version": 1
+    },
+    "hive_elevator": {
+      "armed": false,
+      "flute_signal": 0,
+      "height": -1579.0,
+      "played_flute": false,
+      "poll_elapsed": 0.0,
+      "target": 7
+    },
+    "hive_encounter": {
+      "cooldown": 0.375,
+      "enemies": [
+        24,
+        24
+      ],
+      "health": 19,
+      "pillar_elapsed": 0.0,
+      "windups": [
+        0.0,
+        0.0
+      ]
+    },
+    "hive_executioner_live": {
+      "cooldown": 0.0,
+      "elapsed": 0.0,
+      "health": 300,
+      "hit_sent": false,
+      "mode": "idle",
+      "position": [
+        -642.0,
+        -235.0,
+        -6462.0
+      ],
+      "version": 1
+    },
+    "hive_nest": {
+      "elapsed": 0.0,
+      "phase": 0
+    },
+    "hive_net_exile": {
+      "state": 0,
+      "version": 1
+    },
+    "hive_reaver_amber": {
+      "amber": {
+        "state": 0,
+        "timer": 0.0
+      },
+      "collapse": {
+        "finished": false,
+        "heights": {},
+        "movers": {}
+      },
+      "pillars": {
+        "401": 0,
+        "426": 0,
+        "676": 0,
+        "725": 0
+      },
+      "reaver": {
+        "state": 0,
+        "timer": 0.0
+      },
+      "version": 1
+    },
+    "hive_return_population": {
+      "actors": {
+        "23": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            -1760.0,
+            -1659.0,
+            -6407.0
+          ],
+          "seed": 324508662,
+          "windup": 0.0
+        },
+        "24": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            -2197.0,
+            -1579.0,
+            -7219.0
+          ],
+          "seed": 324508663,
+          "windup": 0.0
+        },
+        "25": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            -556.0,
+            -235.0,
+            -6181.0
+          ],
+          "seed": 324508664,
+          "windup": 0.0
+        },
+        "26": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            -3.0,
+            -235.0,
+            -7758.0
+          ],
+          "seed": 324508665,
+          "windup": 0.0
+        },
+        "27": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            -1811.0,
+            -235.0,
+            -7624.0
+          ],
+          "seed": 324508666,
+          "windup": 0.0
+        },
+        "28": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            -681.0,
+            -245.0,
+            -6705.0
+          ],
+          "seed": 324508667,
+          "windup": 0.0
+        },
+        "29": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            178.0,
+            -180.0,
+            -5503.0
+          ],
+          "seed": 324508668,
+          "windup": 0.0
+        }
+      },
+      "version": 1
+    },
+    "hive_room_entered": false,
+    "hive_rune_entry": {
+      "flag286": false,
+      "flag7": false,
+      "flag8": false,
+      "lights": false,
+      "marker642_enabled": false,
+      "response_mask": 0,
+      "response_seed": 324508639,
+      "reward_seed": 324508639,
+      "room": "",
+      "speech_elapsed": 0.0,
+      "speech_key": "",
+      "speech_next": "",
+      "stone_elapsed": 0.0,
+      "stone_playing": false
+    },
+    "hive_rune_population": {
+      "actors": {
+        "23": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508662,
+          "windup": 0.0
+        },
+        "24": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508663,
+          "windup": 0.0
+        },
+        "25": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508664,
+          "windup": 0.0
+        },
+        "26": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508665,
+          "windup": 0.0
+        },
+        "27": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508666,
+          "windup": 0.0
+        },
+        "28": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508667,
+          "windup": 0.0
+        },
+        "29": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508668,
+          "windup": 0.0
+        },
+        "32": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508671,
+          "windup": 0.0
+        },
+        "33": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508672,
+          "windup": 0.0
+        },
+        "34": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508673,
+          "windup": 0.0
+        },
+        "35": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508674,
+          "windup": 0.0
+        },
+        "36": {
+          "active": false,
+          "cooldown": 0.0,
+          "health": 400,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 324508675,
+          "windup": 0.0
+        }
+      },
+      "fraction": 0.0,
+      "inside": false,
+      "slots": {
+        "23": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "24": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "25": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "26": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "27": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "28": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "29": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "32": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "33": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "34": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "35": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        },
+        "36": {
+          "counter": 0,
+          "generation": 0,
+          "held": false,
+          "inventory": [],
+          "phase": 0,
+          "template": 0
+        }
+      },
+      "version": 1
+    },
+    "hive_rune_population_schema": 1,
+    "hive_wax_collected": false,
+    "shared_flag_38": 0
+  },
+  "version": 1
+}

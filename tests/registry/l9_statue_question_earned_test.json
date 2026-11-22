@@ -1,1 +1,61 @@
-{"name": "l9_statue_question_earned_test", "suite": "core", "mode": "headless", "order": 646}
+{
+  "name": "l9_statue_question_earned_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 646,
+  "teleports": 0,
+  "test_aids": 27,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ab347ea827128150ddf74e3b9d37fc74cc8e79b498bb18dd89a4f74848ef0a55"
+  },
+  "context_aid_source_sites": {
+    "count": 6,
+    "sites": [
+      {
+        "path": "tests/l10_barrel_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l10_tomb_earned_test.gd",
+        "line": 67,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_chapel_earned_test.gd",
+        "line": 41,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_mirror_return_earned_test.gd",
+        "line": 31,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_opening_earned_test.gd",
+        "line": 12,
+        "column": 6,
+        "kind": "exit_seed_fixture",
+        "source": "scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      },
+      {
+        "path": "tests/l9_statue_earned_test.gd",
+        "line": 10,
+        "column": 74,
+        "kind": "exit_seed_fixture",
+        "source": "var scene=load(\"res://scenes/lol2/dragon_level.tscn\").instantiate();scene.adapter_exit_seeds=false;root.add_child(scene);current_scene=scene"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 33
+}

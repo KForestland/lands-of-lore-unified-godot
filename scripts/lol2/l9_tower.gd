@@ -11,6 +11,7 @@ var aims: Dictionary={}
 var transports: Array=[]
 var transport_wait:=0.0
 var presentation: Array=[]
+var selector_views:Dictionary={}
 class Receiver:
  extends RefCounted
  var owner_node: Node
@@ -40,6 +41,8 @@ func _ready():
   receiver.collision_layer=1;receiver.collision_mask=0;receiver.set_meta("spark_receiver",Receiver.new(self,id))
   var shape:=CollisionShape3D.new();var box:=BoxShape3D.new();box.size=Vector3(26,57,12);shape.shape=box
   receiver.add_child(shape);add_child(receiver)
+  var view:Node3D=preload("res://scripts/lol2/prop_selector_view.gd").attach(host,"L9_DR",int(id))
+  if view!=null:selector_views[id]=view
  blocker=Blockers.new();blocker.name="TowerFields";blocker.player=host.player
  blocker.collision_layer=Blockers.LAYER;blocker.collision_mask=0
  for n in owned:
@@ -77,6 +80,7 @@ func restore(force: bool=false):
  if not force and presentation==lit:return
  presentation=lit.duplicate()
  for id in source.orbs:
+  if selector_views.has(id):selector_views[id].show_selector(1 if id in lit else 0)
   for n in source.orbs[id].regions:
    blocker.dynamic_state[int(n)]=id not in lit
    visual_blocker.dynamic_state[int(n)]=id not in lit

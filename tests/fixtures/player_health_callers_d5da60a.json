@@ -1,0 +1,168 @@
+{
+  "base": "d5da60a",
+  "calls_per_file": {
+    "l14_belial.gd": 1,
+    "player_item_controller.gd": 2,
+    "jungle_dino_population.gd": 2,
+    "player_dragon_blood.gd": 1,
+    "dawn_player_damage.gd": 1,
+    "player_food_effects.gd": 2,
+    "dark_halls_crates.gd": 1,
+    "dawn_modern_combat.gd": 2,
+    "player_starting_magic.gd": 1,
+    "thieves_den_rooms.gd": 1,
+    "l10_oil.gd": 1,
+    "l13_belial.gd": 1,
+    "cave_cfall_room.gd": 1,
+    "player_spark_aura.gd": 1,
+    "l14_trap_route.gd": 1,
+    "l9_flood.gd": 1,
+    "museum_key_locks.gd": 1,
+    "jungle_village_alarm.gd": 1,
+    "scripted_creature_population.gd": 2,
+    "liquid_drowning.gd": 1,
+    "act2_creatures.gd": 1
+  },
+  "sites": [
+    {
+      "path": "scripts/lol2/act2_creatures.gd",
+      "line": 123,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(maxi(0, host.starting_magic.health() - loss))"
+    },
+    {
+      "path": "scripts/lol2/cave_cfall_room.gd",
+      "line": 159,
+      "kind": "direct",
+      "source": "if magic != null and is_instance_valid(magic): magic.set_health(Cfall.heal(magic.health(), int(effect[1])))"
+    },
+    {
+      "path": "scripts/lol2/dark_halls_crates.gd",
+      "line": 365,
+      "kind": "dynamic",
+      "source": "magic.call(\"set_health\", maxi(0, int(magic.call(\"health\")) - last_damage))"
+    },
+    {
+      "path": "scripts/lol2/dawn_modern_combat.gd",
+      "line": 107,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(maxi(0,host.starting_magic.health()-loss))"
+    },
+    {
+      "path": "scripts/lol2/dawn_modern_combat.gd",
+      "line": 130,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(maxi(0,host.starting_magic.health()-loss))"
+    },
+    {
+      "path": "scripts/lol2/dawn_player_damage.gd",
+      "line": 82,
+      "kind": "direct",
+      "source": "magic.set_health(int(health.current))"
+    },
+    {
+      "path": "scripts/lol2/jungle_dino_population.gd",
+      "line": 147,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(maxi(0,health-damage))"
+    },
+    {
+      "path": "scripts/lol2/jungle_dino_population.gd",
+      "line": 286,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(30)"
+    },
+    {
+      "path": "scripts/lol2/jungle_village_alarm.gd",
+      "line": 173,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(maxi(0,health-ARROW_DAMAGE))"
+    },
+    {
+      "path": "scripts/lol2/l10_oil.gd",
+      "line": 114,
+      "kind": "direct",
+      "source": "if host.player.global_position.distance_to(AIM)<BLAST_RADIUS and not host.starting_magic.protected():host.starting_magic.set_health(maxi(0,host.starting_magic.health()-BLAST_DAMAGE))"
+    },
+    {
+      "path": "scripts/lol2/l13_belial.gd",
+      "line": 45,
+      "kind": "direct",
+      "source": "s.poison_clock=fmod(s.poison_clock,2.0);host.starting_magic.set_health(maxi(0,host.starting_magic.health()-1))"
+    },
+    {
+      "path": "scripts/lol2/l14_belial.gd",
+      "line": 68,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(maxi(0,host.starting_magic.health()-mini(amount,15)))"
+    },
+    {
+      "path": "scripts/lol2/l14_trap_route.gd",
+      "line": 57,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(0);host.save_feedback(\"The boulder crushes you. F9 loads your earned save.\")"
+    },
+    {
+      "path": "scripts/lol2/l9_flood.gd",
+      "line": 45,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(0);host.save_feedback(\"You drowned. F9 loads your earned save.\")"
+    },
+    {
+      "path": "scripts/lol2/liquid_drowning.gd",
+      "line": 188,
+      "kind": "direct",
+      "source": "if magic != null and is_instance_valid(magic) and magic.has_method(\"set_health\"): magic.set_health(0)"
+    },
+    {
+      "path": "scripts/lol2/museum_key_locks.gd",
+      "line": 300,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(maxi(0, health - BURN))"
+    },
+    {
+      "path": "scripts/lol2/player_dragon_blood.gd",
+      "line": 56,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(maxi(0,host.starting_magic.health()-DAMAGE))"
+    },
+    {
+      "path": "scripts/lol2/player_item_controller.gd",
+      "line": 163,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(int(result.health))"
+    },
+    {
+      "path": "scripts/lol2/player_spark_aura.gd",
+      "line": 31,
+      "kind": "direct",
+      "source": "magic.set_health(1)"
+    },
+    {
+      "path": "scripts/lol2/player_starting_magic.gd",
+      "line": 164,
+      "kind": "direct",
+      "source": "set_health(mini(30,health()+6))"
+    },
+    {
+      "path": "scripts/lol2/scripted_creature_population.gd",
+      "line": 203,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(maxi(0,health-damage))"
+    },
+    {
+      "path": "scripts/lol2/scripted_creature_population.gd",
+      "line": 405,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(30)"
+    },
+    {
+      "path": "scripts/lol2/thieves_den_rooms.gd",
+      "line": 228,
+      "kind": "direct",
+      "source": "host.starting_magic.set_health(0)"
+    }
+  ],
+  "notes": "23 executable invocation sites in20 files. Raw set_health text occurs in21 files because hive_review.executioner_set_health is a separate adapter, not a facade invocation.",
+  "wo4_note": "Three new facade calls: Black Lichen in controller, Mandrake and War Cluster in food module. All forward to the same PlayerHealth; no new owner or raw alias. Original dynamic Dark Halls crate call preserved."
+}

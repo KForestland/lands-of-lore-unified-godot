@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 const KEY="l14_flute_slot"
 const TARGET="temple:flute_slot76"
 const POINT=Vector3(-114,190,-1516)
@@ -61,7 +62,8 @@ func interact(action:String,item:String="",capacity:int=64)->Dictionary:
  elif action=="retrieve":result=Kit.retrieve(snap,recipe(s.flute))
  else:return Kit.refuse("Unknown slot action.")
  if not result.ok:return result
- s.slots=result.snapshot.slots;host.quest_state[KEY]=s;host.carried_collected=result.snapshot.inventory
+ s.slots=result.snapshot.slots;var admission:=Grants.transition(host,result.snapshot.inventory,{KEY:s})
+ if not admission.ok:return admission
  if action=="insert" and host.hand_item==item:host.hand_item=""
  Items.sync(host);restore()
  return {"ok":true,"reason":"The oil covers close. Take back the flute." if action=="insert" else "You take back the flute."}
@@ -75,14 +77,21 @@ func _physics_process(delta):
 func _process(_delta):
  hint.text=""
  if reachable():hint.text="E — Retrieve flute" if Kit.slot(state(),TARGET).occupied!="" else "E — Place flute" if not committed(state()) else "The oil covers is open"
-func _unhandled_key_input(event:InputEvent):
- if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E or not reachable():return
+func generic_target()->Dictionary:
+ return {"point":POINT} if reachable() else {}
+func try_use()->bool:
+ if not reachable():return false
  var result:Dictionary
  if Kit.slot(state(),TARGET).occupied!="":result=interact("retrieve")
  else:
   var item:String=host.hand_item
-  if item.is_empty():
+  if not accepts(item) or item not in host.carried_collected:
+   item=""
    for id in host.carried_collected:
     if accepts(id):item=id;break
   result=interact("insert",item)
- host.save_feedback(result.reason);get_viewport().set_input_as_handled()
+ host.save_feedback(result.reason)
+ return true
+func _unhandled_key_input(event:InputEvent):
+ if event is not InputEventKey or not event.pressed or event.echo or event.keycode!=KEY_E:return
+ if try_use():get_viewport().set_input_as_handled()

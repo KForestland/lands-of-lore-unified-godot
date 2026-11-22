@@ -1,0 +1,40 @@
+{
+  "name": "generic_l10_robot_ledge_entry_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "teleports": 0,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Rendered component from untouched original robot before247 pin694510565f4f29e8be5685f6c759d7a5997c68be66100ddff0d466177780d13d. Disclosed fixture boot twice; actualW meets native shelf wall before and after actualleft breaks247, then realW returns on floor.248 intact both. Not earned proof."
+  },
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "7334d9b49e0f64432c8f604e186fa58d9cf8f9ec3ea25f1b19f4136fd3693e74"
+  },
+  "context_aid_source_sites": {
+    "count": 2,
+    "sites": [
+      {
+        "path": "tests/generic_l10_robot_socket_test.gd",
+        "line": 13,
+        "column": 69,
+        "kind": "exit_seed_context",
+        "source": "scene=load(\"res://scenes/lol2/maps/L10_DC.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/generic_l10_robot_socket_test.gd",
+        "line": 19,
+        "column": 41,
+        "kind": "legacy_checkpoint_or_validation_vector",
+        "source": "if not check(saved.error.is_empty() and scene.apply_save(saved.state).is_empty(),\"Actual game-written robot area-save fixture applies\"):return false"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 3,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}

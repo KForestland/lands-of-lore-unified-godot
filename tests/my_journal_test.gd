@@ -1,5 +1,5 @@
 extends SceneTree
-## Headless: My Journal (my_journal.gd). The 45 stuck-point notes are read from the planners' JOURNAL_HINTS; a note is
+## Headless: My Journal (my_journal.gd). The original stuck-point notes and approved action lessons are read from the planners' JOURNAL_HINTS; a note is
 ## recorded once, at its moment, into the carried item_effects packet; older saves have none; malformed journals are
 ## rejected; the page shows only discovered note text (never the developer guard text); the Museum pilot flame records
 ## its note only for a Spark before the plate.
@@ -25,8 +25,9 @@ class Host extends Node3D:
 
 func run() -> void:
 	var hints: Dictionary = MyJournal.hints()
-	check(hints.size() == 45, "45 notes from the planners (%d)" % hints.size())
-	check(hints.values().all(func(t): return str(t).length() >= 20), "every note has text")
+	check(hints.size() == 107, "57 original notes, seven spell lessons, seven Citadel action hints, 24 Act3 directions 11 City road notes and one optional Rix note (%d)" % hints.size())
+	check(hints.keys().all(func(id): return str(hints[id]).length() >= 20 or (id == "l13_action_web_pass" and hints[id] == "E - pass the web")), "every note has text")
+	check(str(hints.get("dark_halls_rix_rescue","")).contains("half health") and str(hints.get("dark_halls_rix_rescue","")).contains("Prism"),"optional Rix note records the approved rescue steps")
 	# Old saves and validation.
 	check(not ItemState.initial().has("journal"), "a new game starts with no notes")
 	check(MyJournal.validate(null).is_empty(), "older saves without a journal load")
@@ -75,5 +76,5 @@ func run() -> void:
 		push_error("FAIL: %d My Journal checks" % failures)
 		quit(1)
 		return
-	print("PASS My Journal: 45 notes, recorded once at their moment, saved in item_effects, old saves empty, malformed rejected, page shows text only, pilot note only before the plate")
+	print("PASS My Journal: 70 notes, recorded once at their moment, saved in item_effects, old saves empty, malformed rejected, page shows text only, pilot note only before the plate")
 	quit()

@@ -1,4 +1,8 @@
 extends Node3D
+const PlayerHealth=preload("res://scripts/lol2/player_health.gd")
+var player_health_owner:Node=PlayerHealth.new()
+func _notification(what:int)->void:
+	if what==NOTIFICATION_PREDELETE:PlayerHealth.dispose_unattached(player_health_owner)
 ## Source jungle geometry review. Not connected to the normal walkthrough.
 const ROOT := "res://assets/lol2/generated/jungle_review/"
 @export var geometry_file := ROOT + "jungle.json"
@@ -16,9 +20,25 @@ var projectile_wall_triangles := 0
 var draw_unbound_walls := true
 ## Faces of kind "source_wall" (the Act 2/3 packs) are drawn only unless a host keeps them solid (the Dark Halls).
 var source_wall_kind_collides := false
+## Owner r17 17-59-34. A source wall on a neighbour-less region edge is the drawn boundary of the
+## region graph. The original mover cannot step where no region exists. The host lists those edges
+## and this flag puts that drawn quad on the movement body. A wall on a linked edge stays open.
+var boundary_source_walls_collide := false
+## Region-aware collision (act2_map REGION_COLLISION_AREAS, DEVIATIONS 2026-11-09): the static collision is kept per region and
+## only the regions near the player's own collide, as the original's region-based mover reads only the player's region graph.
+var region_collision_enabled := false
+var collision_regions: PackedInt32Array = PackedInt32Array()
+var region_collision_shapes: Dictionary = {}
+var region_collision_body: StaticBody3D = null
+var region_collision_faces := 0
+var boundary_edges_file := ""
+var boundary_edges: Dictionary = {}
 ## The original portal renderer draws a region's walls only while looking into that region, so a wall is never seen from
 ## behind. When set, wall faces are wound to face their own region and drawn one-sided (floors stay two-sided).
 var one_sided_walls := false
+## Faces of kind "source_wall" (packs the producer left unrenamed) count as walls for one_sided_walls (act2_map per level),
+## except cut-out materials, which stay both-sided.
+var one_sided_source_kind := false
 ## Hooks for a host that lights its static faces per sector (darker_jungle.gd, L8 night): when vertex_light_enabled the static
 ## meshes carry static_face_light(face) in CUSTOM0 (RGBA float) and are listed in static_meshes. Defaults leave every mesh as before.
 var vertex_light_enabled := false
@@ -33,6 +53,14 @@ var pitch_limit := 1.4
 ## Floors whose source floor selector is 255 have no surface material (map_surfaces.py): when cleared they are not drawn
 ## (collision stays), instead of the neutral placeholder colour.
 var draw_floorless := true
+## Floors and ceilings whose native surface selector binds no material (selector 255 = none) are drawn in the neutral
+## placeholder colour by default. Indoor hosts clear them instead (Fable MAPFIX 2026-11-07, Hive: the owner's grey/green
+## planes at r17 17-27-27, 17-30-51, 17-32-57): the original draws nothing there, and the black background shows.
+var draw_untextured_surfaces := true
+## Alternatively such a floor or ceiling takes the material of the nearest textured face of the same kind at the same
+## height (the Jungle floorless rule, extended to ceilings): the Hive's lava river runs on through the segment the
+## producer left unbound (owner r17 17-30-51, longplay 41:00 shows one continuous river). Logged in DEVIATIONS.
+var fill_untextured_surfaces := false
 ## With the original sky: boundary walls without a wall texture, floorless floors and a backing behind each cut-out
 ## boundary wall are drawn with the backdrop (backdrop.gdshader), so they show the panorama and hide what lies beyond.
 var backdrop_edges := false
@@ -45,6 +73,13 @@ const ONE_SIDED_SPAN_MATERIALS := ["744"]
 ## has no opaque texel (Jungle material 469, 78 faces), interior step spans with no wall record, and floorless floors
 ## (source floor selector 255; all 49 Jungle ones are impassable), which take the nearest textured floor's material.
 var fill_untextured_edges := false
+## Owner r18 F10 14-55-28/14-55-48 at (-741,-4356) and 15-18-02 at (-4667,-459): textured interior "header" spans between two
+## open-sky regions (the span from one region's nominal ceiling to the other's, e.g. 107..147 over the canopy, faces 9149 and
+## 10313) hang in the sky as a forest-floor slab or a dark beam. The original draws a wall between floor and ceiling; where
+## neither region has a native ceiling there is nothing to carry a header. The Jungle sets this flag: such spans are not drawn
+## (their collision stays). Headers beside a region with a native ceiling (hut fronts above a door) keep drawing.
+var skip_sky_headers := false
+var sky_header_faces: Dictionary = {}
 ## A region group that runs beneath another region's floor (Jungle: the 22-region river gorge under the south bank) is
 ## drawn only up to the top of its openings: the original portal walk reaches it only through those openings, so its
 ## walls never show above them (longplay 36:40-38:10). Collision is unchanged. See DEVIATIONS (2026-10-25).
@@ -80,6 +115,7 @@ var surface_animation: Node
 var walk_feel = preload("res://scripts/lol2/walk_feel.gd").new()
 
 func _ready() -> void:
+	PlayerHealth.attach(self)
 	# Authored replacement sky; source terrain colors stay unshaded.
 	var sky_material := ProceduralSkyMaterial.new()
 	sky_material.sky_top_color = Color("487f9d")
@@ -101,6 +137,8 @@ func _ready() -> void:
 		environment.background_mode = Environment.BG_COLOR
 		environment.background_color = Color.BLACK
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(geometry_file))
+	if boundary_source_walls_collide:
+		_load_boundary_edges()
 	start = Vector3(data.start[0], data.start[1], data.start[2])
 	# Recovery must be below every authored floor, including the lower Hive.
 	# The 512-unit void margin is an adapter, not native fall-damage behavior.
@@ -128,22 +166,46 @@ func _ready() -> void:
 				centres[int(face.region)] = c / face.points.size()
 	var fills := _edge_fills(data, span_start) if fill_untextured_edges else {}
 	var clips := _sunken_clips(data, span_start) if clip_sunken_groups else {}
+	sky_header_faces = _sky_headers(data, span_start) if skip_sky_headers else {}
 	for index in data.faces.size():
 		var face: Dictionary = fills.get(index, data.faces[index])
 		if not include_static_face(face) or excluded_faces.has(index) or retired_faces.has(index) or skipped_faces.has(index): continue
-		var collision_kept := false
-		if clips.has(index):
+		if fill_untextured_surfaces and not face.has("material") and face.kind in ["floor", "ceiling"]:
+			var filled := _surface_fill(face, data)
+			if not filled.is_empty(): face = filled
+		if sky_header_faces.has(index):
 			if include_collision_face(face):
 				for i in [0, 1, 2, 0, 2, 3]: collision.append(Vector3(face.points[i][0], face.points[i][1], face.points[i][2]))
-			collision_kept = true
-			face = _clipped(face, clips[index])
-			if face.is_empty():
-				face_count += 1
-				continue
+				collision_regions.append(_face_region(face))
+			continue
+		var collision_kept := false
+		if clips.has(index):
+			# A ceiling entirely above the opening (gorge 744 at 400) would stand in the sky. The same quad at the
+			# opening is the black roof you see from inside. The bank floor above it hides that quad from the bank.
+			# That lid stays the collision: it sits above the bank, so it does not stop the walk.
+			if face.kind == "ceiling" and _lowest(face) >= float(clips[index]) - 0.5:
+				if include_collision_face(face):
+					for i in [0, 1, 2, 0, 2, 3]: collision.append(Vector3(face.points[i][0], face.points[i][1], face.points[i][2]))
+					collision_regions.append(_face_region(face))
+				collision_kept = true
+				face = _ceiling_at(face, float(clips[index]))
+			else:
+				# The undrawn part of a gorge wall runs up through the bank floor. Collide only the drawn part.
+				# Owner r17 17-01-09 stood on region 1902 against region 3331 at z -4334 and could not walk on.
+				var solid: Dictionary = _clipped(face, float(clips[index]))
+				if include_collision_face(face) and not solid.is_empty():
+					for i in [0, 1, 2, 0, 2, 3]: collision.append(Vector3(solid.points[i][0], solid.points[i][1], solid.points[i][2]))
+					collision_regions.append(_face_region(face))
+				collision_kept = true
+				face = solid
+				if face.is_empty():
+					face_count += 1
+					continue
 		var lip_top := _lip_top(index)
 		if lip_top >= 0.0:
 			if not collision_kept and include_collision_face(face):
 				for i in [0, 1, 2, 0, 2, 3]: collision.append(Vector3(face.points[i][0], face.points[i][1], face.points[i][2]))
+				collision_regions.append(_face_region(face))
 			face = _clipped(face, lip_top)
 			if face.is_empty():
 				face_count += 1
@@ -152,9 +214,13 @@ func _ready() -> void:
 		# Interior spans (steps and headers between connected regions) are seen from both sides (owner r12h 2026-10-26: one-sided
 		# step faces left sky cracks along slope seams); boundary walls and the flat-black imp-pit material stay one-sided.
 		# Appended source walls (the original's own records) face their region like boundary walls.
-		var one_sided: bool = one_sided_walls and face.kind == "wall" and (index < span_start or material_key in ONE_SIDED_SPAN_MATERIALS or bool(face.get("source_wall", false)))
+		# Cut-out source walls (grates, railings, fences: L13 3057 across the corridor 1132 doorway) stay both-sided.
+		var source_one_sided: bool = one_sided_source_kind and face.kind == "source_wall" and not (face.has("material") and str(face.material) in data.get("alpha_cutout_materials", []))
+		var one_sided: bool = one_sided_walls and (face.kind == "wall" or source_one_sided) and (index < span_start or material_key in ONE_SIDED_SPAN_MATERIALS or bool(face.get("source_wall", false)))
 		var key: String = material_key + ("|wall" if one_sided else "")
-		if not region_cluster.is_empty() and face.has("region") and face.region != null: key += "@%d" % int(region_cluster.get(int(face.region), -1))
+		if not region_cluster.is_empty():
+			var cluster := static_face_cluster(face)
+			if cluster >= 0: key += "@%d" % cluster
 		if backdrop_material != null:
 			var boundary: bool = face.kind == "wall" and index < span_start
 			var cutout: bool = face.has("material") and str(face.material) in data.get("alpha_cutout_materials", [])
@@ -175,10 +241,12 @@ func _ready() -> void:
 					var point: Array = face.points[i]
 					back.append(Vector3(point[0], point[1], point[2]) + along * (1.0 if i in [1, 2] else -1.0))
 				for i in _winding(back, -inward): backdrop.add_vertex(back[i])
-		if not draw_floorless and face.kind == "floor" and not face.has("material"):
-			for i in [0, 1, 2, 0, 2, 3]:
-				var p: Array = face.points[i]
-				if include_collision_face(face): collision.append(Vector3(p[0], p[1], p[2]))
+		if not face.has("material") and ((not draw_floorless and face.kind == "floor") or (not draw_untextured_surfaces and face.kind in ["floor", "ceiling"])):
+			if include_collision_face(face):
+				for i in [0, 1, 2, 0, 2, 3]:
+					var p: Array = face.points[i]
+					collision.append(Vector3(p[0], p[1], p[2]))
+				collision_regions.append(_face_region(face))
 			continue
 		if not groups.has(key):
 			var mat_key: String = key.get_slice("@", 0)
@@ -202,6 +270,10 @@ func _ready() -> void:
 			else:
 				mat.albedo_color = Color(0.24, 0.32, 0.25) if material_key == "floor" else Color(0.32, 0.34, 0.31)
 			if not materials.has(material_key): materials[material_key] = mat
+			# One-sided and two-sided copies of a material are separate objects; the second one is listed under a suffix so
+			# surface_animation animates both (the plain key keeps the first, for every other lookup).
+			elif materials[material_key] != mat and not materials.has(material_key + ("|wall" if one_sided else "|both")):
+				materials[material_key + ("|wall" if one_sided else "|both")] = mat
 			_cluster_material_cache[key.get_slice("@", 0)] = mat
 			var surface := SurfaceTool.new()
 			surface.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -229,16 +301,22 @@ func _ready() -> void:
 		# Appended source walls (prepare_source_walls.py) are drawn only: the original's movement is region-based (bit0 blockers,
 		# floors, ceilings), its wall records never block, and its hedges/veils stand on edges the player may cross (Hive
 		# records 981/1223 across the small-form cavity, material 228). Collision stays with the geometric shell.
+		# A neighbour-less edge is not one of those crossings. boundary_source_walls_collide puts that drawn quad on the
+		# movement body as well (L8 hedge at region 1389 edge 3). Linked edges stay projectile-only.
 		# The Act 2/3 packs (darker_jungle, maps/AREA) carry the original's rendered wall records as kind "source_wall" with no
 		# boolean (bind_surfaces); the same rule applies to them (2026-10-31, Astra's review of the L10 pack: until then those
 		# walls collided while the Act 1 packs' did not).
 		# The Dark Halls pack (dark_halls/area.json) uses the same kind but keeps its walls solid (source_wall_kind_collides): with
 		# its bit0 blockers off (r12r workaround) they are its only walls; r12s dropped them and the detour walk went through walls.
-		if collides and not (bool(face.get("source_wall", false)) or (face.kind == "source_wall" and not source_wall_kind_collides)):
+		var source_drawn_only: bool = bool(face.get("source_wall", false)) or (str(face.kind) == "source_wall" and not source_wall_kind_collides)
+		var boundary_wall: bool = source_drawn_only and ((boundary_source_walls_collide and _boundary_edge(face)) or region_edge_blocks(face))
+		if collides and (not source_drawn_only or boundary_wall):
 			for i in [0, 1, 2, 0, 2, 3]: collision.append(Vector3(face.points[i][0], face.points[i][1], face.points[i][2]))
-		elif face.kind == "source_wall":
+			collision_regions.append(_face_region(face))
+		if face.kind == "source_wall" and not source_wall_kind_collides:
 			# Projectile walls (original-bug row 9, design 2026-10-31): the Act 2/3 packs' source walls never block movement, but a
 			# bolt must not fly through them. They get their own layer, PROJECTILE_WALL_LAYER, which no mover's mask carries.
+			# A boundary wall is on the movement body too. The bolt layer stays.
 			for i in [0, 1, 2, 0, 2, 3]: projectile_walls.append(Vector3(face.points[i][0], face.points[i][1], face.points[i][2]))
 		face_count += 1
 	for key in groups:
@@ -265,12 +343,34 @@ func _ready() -> void:
 		surface_animation.configure(materials, data.animations, geometry_file.get_base_dir() + "/")
 		add_child(surface_animation)
 	var body := StaticBody3D.new()
-	var shape := ConcavePolygonShape3D.new()
-	shape.backface_collision = true
-	shape.set_faces(collision)
-	var collider := CollisionShape3D.new()
-	collider.shape = shape
-	body.add_child(collider)
+	if region_collision_enabled and collision_regions.size() * 6 == collision.size():
+		# One shape per region (plus one for faces of no region); act2_map enables the regions near the player's own.
+		body.name = "RegionCollision"
+		var buckets: Dictionary = {}
+		for face_index in collision_regions.size():
+			var region: int = collision_regions[face_index]
+			if not buckets.has(region): buckets[region] = PackedVector3Array()
+			var bucket: PackedVector3Array = buckets[region]
+			for k in 6: bucket.append(collision[face_index * 6 + k])
+			buckets[region] = bucket
+		for region in buckets:
+			var region_shape := ConcavePolygonShape3D.new()
+			region_shape.backface_collision = true
+			region_shape.set_faces(buckets[region])
+			var region_collider := CollisionShape3D.new()
+			region_collider.name = "R%d" % int(region)
+			region_collider.shape = region_shape
+			body.add_child(region_collider)
+			region_collision_shapes[int(region)] = region_collider
+		region_collision_faces = collision_regions.size()
+		region_collision_body = body
+	else:
+		var shape := ConcavePolygonShape3D.new()
+		shape.backface_collision = true
+		shape.set_faces(collision)
+		var collider := CollisionShape3D.new()
+		collider.shape = shape
+		body.add_child(collider)
 	add_child(body)
 	if not projectile_walls.is_empty():
 		var wall_body := StaticBody3D.new()
@@ -323,6 +423,10 @@ func set_development_mode(enabled: bool) -> void:
 		flying = false
 		player.velocity = Vector3.ZERO
 
+## A host may say where the fall put the player (act2_map: the City).
+func _after_fall() -> void:
+	pass
+
 func reset_position() -> void:
 	jump_requested = false
 	player.position = start
@@ -357,8 +461,13 @@ func player_fallen() -> bool:
 	var magic = get("starting_magic")
 	return magic != null and is_instance_valid(magic) and magic.has_method("health") and int(magic.health()) <= 0
 
+var crouched := false
+func set_crouch(want: bool, check_space: bool = true) -> bool:
+	return preload("res://scripts/lol2/player_crouch.gd").set_crouch(self, want, check_space)
+
 func _physics_process(delta: float) -> void:
 	if not ready_for_review: return
+	preload("res://scripts/lol2/player_crouch.gd").update(self)
 	var direction := Vector3.ZERO
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		var axis := Vector3(float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)), 0, float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W)))
@@ -384,6 +493,7 @@ func request_jump() -> bool:
 func jump_launch_speed(_sprint: bool = false) -> float: return 200.0
 
 func move_grounded(direction: Vector3, delta: float, sprint: bool = false) -> void:
+	if preload("res://scripts/lol2/player_food_effects.gd").sleeping(self):direction=Vector3.ZERO;jump_requested=false
 	# Shared by player input and bounded traversal acceptance tests.
 	var speed: float = walk_feel.RUN_SPEED if sprint else walk_feel.WALK_SPEED
 	var planar := walk_feel.velocity(Vector2(direction.x, direction.z) * speed, delta)
@@ -392,14 +502,21 @@ func move_grounded(direction: Vector3, delta: float, sprint: bool = false) -> vo
 	var jumping := jump_requested and player.is_on_floor()
 	jump_requested = false
 	player.velocity.y = jump_launch_speed(sprint) if jumping else (0.0 if player.is_on_floor() else player.velocity.y - 320 * delta)
-	if not jumping and player.velocity.y <= 0 and preload("res://scripts/lol2/walk_step.gd").try_step(player,Vector3(player.velocity.x,0,player.velocity.z)*delta):
+	if not jumping and player.velocity.y <= 0 and _try_grounded_step(Vector3(player.velocity.x,0,player.velocity.z)*delta):
 		player.velocity.x = 0
 		player.velocity.z = 0
-	player.move_and_slide()
+	_move_grounded_body(delta)
 	walk_feel.bob(camera, Vector2(player.get_real_velocity().x, player.get_real_velocity().z).length(), player.is_on_floor(), delta)
 	if player.position.y < fall_reset_height:
 		resets += 1
 		reset_position()
+		_after_fall()
+
+func _try_grounded_step(motion: Vector3) -> bool:
+	return preload("res://scripts/lol2/walk_step.gd").try_step(player,motion)
+
+func _move_grounded_body(_delta: float) -> void:
+	player.move_and_slide()
 
 ## Horizontal direction from a wall face into its own region (the side the original draws it from).
 func _inward(face: Dictionary, centres: Dictionary) -> Vector3:
@@ -411,6 +528,37 @@ func _inward(face: Dictionary, centres: Dictionary) -> Vector3:
 	return normal
 
 ## Triangle order for a quad whose front (Godot: clockwise, front normal -(p1-p0)x(p2-p0)) faces `toward`.
+var _surface_donors: Dictionary = {}
+## A copy of an untextured floor or ceiling with the material of the nearest textured face of the same kind at the same
+## height (within 2 units; any height when none matches) and the source floor UV rule (64 units per repeat, u = -z, v = x).
+func _surface_fill(face: Dictionary, data: Dictionary) -> Dictionary:
+	var kind := str(face.kind)
+	if not _surface_donors.has(kind):
+		var donors: Array = []
+		for other in data.faces:
+			if other.kind == kind and other.has("material"): donors.append([_centre(other), str(other.material), _lowest(other)])
+		_surface_donors[kind] = donors
+	var donors: Array = _surface_donors[kind]
+	if donors.is_empty(): return {}
+	var centre := _centre(face)
+	var height := _lowest(face)
+	var best: Array = []
+	var best_d := INF
+	for same_height in [true, false]:
+		for donor in donors:
+			if same_height and absf(float(donor[2]) - height) > 2.0: continue
+			var dd := centre.distance_squared_to(donor[0])
+			if dd < best_d: best_d = dd; best = donor
+		if not best.is_empty(): break
+	if best.is_empty(): return {}
+	var uv: Array = []
+	for point in face.points: uv.append([-float(point[2]) / 64.0, float(point[0]) / 64.0])
+	var fill := face.duplicate()
+	fill.material = best[1]
+	fill.uv = uv
+	fill.surface_fill = true
+	return fill
+
 ## Face index -> copy of an untextured outer boundary wall with the nearest textured outer wall's material and a tiled
 ## UV (2 texels per unit along the wall, the texture once over the wall height).
 func _edge_fills(data: Dictionary, span_start: int) -> Dictionary:
@@ -470,6 +618,67 @@ func _edge_fills(data: Dictionary, span_start: int) -> Dictionary:
 		fill.edge_fill = true
 		fills[index] = fill
 	return fills
+
+## Face index -> true for textured interior spans (index >= span_start, not the original's appended wall records) whose foot
+## stands on no floor and whose own region and the region just beyond the wall both lack a native ceiling face.
+func _sky_headers(data: Dictionary, span_start: int) -> Dictionary:
+	var out := {}
+	var area := preload("res://scripts/lol2/atlas_explored.gd").area_of(self)
+	var nav: Array = preload("res://scripts/lol2/region_visibility.gd").load_regions(area) if area != "" else []
+	if nav.is_empty(): return out
+	var ceilinged := {}
+	var sums := {}
+	for face in data.faces:
+		if face.kind == "ceiling": ceilinged[int(face.region)] = true
+		elif face.kind == "floor":
+			var sum: Array = sums.get(int(face.region), [Vector3.ZERO, 0])
+			for point in face.points: sum[0] += Vector3(point[0], 0.0, point[2])
+			sum[1] += face.points.size()
+			sums[int(face.region)] = sum
+	var heights := _floor_vertex_heights(data)
+	for index in range(span_start, data.faces.size()):
+		var face: Dictionary = data.faces[index]
+		if face.kind != "wall" or not face.has("material") or bool(face.get("source_wall", false)): continue
+		var region := int(face.region)
+		if ceilinged.has(region) or _foot_on_floor(face, heights): continue
+		var a := Vector3(face.points[0][0], face.points[0][1], face.points[0][2])
+		var b := Vector3(face.points[1][0], face.points[1][1], face.points[1][2])
+		var mid := (a + b) / 2.0
+		var along := Vector3(b.x - a.x, 0.0, b.z - a.z).normalized()
+		var normal := Vector3(-along.z, 0.0, along.x)
+		if sums.has(region):
+			var centre: Vector3 = (sums[region][0] as Vector3) / float(sums[region][1])
+			if normal.dot(centre - mid) > 0.0: normal = -normal
+		var beyond: int = preload("res://scripts/lol2/region_visibility.gd").region_at_nav(nav, mid + normal * 6.0)
+		if beyond < 0 or ceilinged.has(beyond): continue
+		out[index] = true
+	return out
+
+## Floor vertex heights keyed by rounded x/z (every region), for _foot_on_floor().
+static func _floor_vertex_heights(data: Dictionary) -> Dictionary:
+	var heights := {}
+	for face in data.faces:
+		if face.kind != "floor": continue
+		for point in face.points:
+			var key := Vector2i(int(round(float(point[0]))), int(round(float(point[2]))))
+			if not heights.has(key): heights[key] = []
+			(heights[key] as Array).append(float(point[1]))
+	return heights
+
+## True when both foot points of a wall quad (points 0 and 1) lie within one unit of a floor vertex at that x/z.
+static func _foot_on_floor(face: Dictionary, heights: Dictionary) -> bool:
+	for i in 2:
+		var point: Array = face.points[i]
+		var x := int(round(float(point[0])))
+		var z := int(round(float(point[2])))
+		var y := float(point[1])
+		var found := false
+		for dx in [-1, 0, 1]:
+			for dz in [-1, 0, 1]:
+				for h in heights.get(Vector2i(x + dx, z + dz), []):
+					if absf(float(h) - y) <= 1.0: found = true
+		if not found: return false
+	return true
 
 ## Cut-out materials whose texture has no opaque texel draw nothing at all (Jungle 469: 16x16, fully clear).
 func _clear_materials(data: Dictionary) -> Dictionary:
@@ -555,7 +764,7 @@ func _sunken_clips(data: Dictionary, span_start: int) -> Dictionary:
 		if is_inf(top): continue
 		for index in data.faces.size():
 			var face: Dictionary = data.faces[index]
-			# A sunken group's ceilings (the gorge's black 744 lid at 400) lie above its drawn top as well: dropped like the wall parts.
+			# A sunken group's ceilings (the gorge's black 744 lid at 400) lie above its drawn top. The draw lowers those quads to the opening.
 			if (face.kind == "wall" or face.kind == "ceiling") and _find(parent, int(face.region)) == group and _highest(face) > top + 0.5: clips[index] = top
 	return clips
 
@@ -582,6 +791,13 @@ func _lip_top(index: int) -> float:
 	if index == 10239: return 104.0
 	if index == 9929: return 64.0
 	return -1.0
+
+## The native ceiling quad, moved down to the opening so the gorge has a roof without a plane in the sky.
+func _ceiling_at(face: Dictionary, top: float) -> Dictionary:
+	var lowered := face.duplicate(true)
+	for i in lowered.points.size():
+		lowered.points[i][1] = top
+	return lowered
 
 func _clipped(face: Dictionary, top: float) -> Dictionary:
 	if _lowest(face) >= top - 0.5: return {}
@@ -646,11 +862,52 @@ func _winding(points: Array, toward: Vector3) -> Array:
 func static_face_light(_face: Dictionary) -> Color:
 	return Color(63, 9999, 9999, 128)
 
+## Portal-visibility batch of a static face: its region's cluster (or island); -1 keeps the face always drawn. Hosts may
+## widen this (act2_map.gd places region-less movable faces by their centroid in islands mode).
+func static_face_cluster(face: Dictionary) -> int:
+	if face.has("region") and face.region != null: return int(region_cluster.get(int(face.region), -1))
+	return -1
+
 func static_face_material(_index: int, face: Dictionary) -> String:
 	return face.get("material", face.kind)
 
 func include_collision_face(_face: Dictionary) -> bool:
 	return true
+
+func _load_boundary_edges() -> void:
+	boundary_edges.clear()
+	if boundary_edges_file.is_empty() or not FileAccess.file_exists(boundary_edges_file):
+		return
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(boundary_edges_file))
+	if not parsed is Dictionary:
+		return
+	var rows: Variant = (parsed as Dictionary).get("edges", [])
+	if not rows is Array:
+		return
+	for row in rows as Array:
+		boundary_edges[int(row)] = true
+
+## The owning region of a pack face for the region-aware collision; -1 for a null or missing region.
+func _face_region(face: Dictionary) -> int:
+	var value: Variant = face.get("region", -1)
+	return int(value) if (value is int or value is float) else -1
+
+## Region-edge rule hook (act2_map): a source wall with no walkable region beyond it collides. Off here.
+func region_edge_blocks(_face: Dictionary) -> bool:
+	return false
+
+## Region-aware collision: only the shapes of `active` regions (and the no-region shape) collide; {} enables all.
+func set_active_regions(active: Dictionary) -> void:
+	for region in region_collision_shapes:
+		var collider: CollisionShape3D = region_collision_shapes[region]
+		collider.disabled = not (active.is_empty() or int(region) < 0 or active.has(int(region)))
+
+func _boundary_edge(face: Dictionary) -> bool:
+	if not face.has("region") or not face.has("edge"):
+		return false
+	if face.region == null or face.edge == null:
+		return false
+	return boundary_edges.has(int(face.region) * 4 + int(face.edge))
 
 func include_static_face(face: Dictionary) -> bool:
 	return not (face.kind == "floor" and int(face.region) in dynamic_floor_regions)

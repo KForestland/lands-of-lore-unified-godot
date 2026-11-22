@@ -10,11 +10,11 @@
   "rotation_checks": 202,
   "rotation_code_sha256": "c70c8bebe00b573dc38c0f81e28778e2bebc8157e813c9db8a111689ab8854db",
   "predicates": {
-    "97": "0002260001",
-    "98": "00021d0000",
-    "99": "0604610462",
-    "153": "0003180000",
-    "154": "0604630499"
+    "97": "omitted 5 bytes sha256:83f8855d7c1b9cad1addee81def705d23d3895fc53bfcd0009df3d1f523dd986",
+    "98": "omitted 5 bytes sha256:9fa1acfcc1568882388af409c4d5cc090ff6bb6005ddf209ca364b6dd6ef7df4",
+    "99": "omitted 5 bytes sha256:e856de674062cdb9cf0f711bcd01960e7d58fd70977455a1b608bc4e5407a730",
+    "153": "omitted 5 bytes sha256:be70ac4d5d6b778ccbbe4c2446af7f9faf20582a4de3184f0c43b02c31d87a7d",
+    "154": "omitted 5 bytes sha256:40a3805205cc2801a8c55a2c4e6d6701735cef59330f43da1f0504ef3ec11b91"
   },
   "relocations": [
     {
@@ -70,47 +70,47 @@
   "commands": [
     {
       "offset": 4360,
-      "raw": "08106e0001000000"
+      "raw": "omitted 8 bytes sha256:ca410d6d659d148c164b2ceb1bb7e4023826701f9152a1abdcefcb8f89300ae1"
     },
     {
       "offset": 4368,
-      "raw": "c590dd0e0000"
+      "raw": "omitted 6 bytes sha256:8b12374bdd20bdd441d6de180397965fd5289a21cd3bb6641f87e1b9a08ca8da"
     },
     {
       "offset": 4374,
-      "raw": "0e034c0004000000"
+      "raw": "omitted 8 bytes sha256:482931dc76e6b202dbb3254a775d26e06d015cbe9a369b34eb36ef1c8522f23b"
     },
     {
       "offset": 4382,
-      "raw": "090240001100"
+      "raw": "omitted 6 bytes sha256:18af65b8966c004c30c61b87f6cadef513ec396bd8d4888939b5345cf1eec93e"
     },
     {
       "offset": 4388,
-      "raw": "0903e6001500"
+      "raw": "omitted 6 bytes sha256:cb913e212720e988fc61d9b3835fffdc0820fd92e6d9f01f41d37d19aa17292e"
     },
     {
       "offset": 4394,
-      "raw": "020100000f01"
+      "raw": "omitted 6 bytes sha256:58b3f3c15eccd0e42d63c9962721e9ecb99cf8c92459eef3b8a2c05081d587a0"
     },
     {
       "offset": 4400,
-      "raw": "020100001001"
+      "raw": "omitted 6 bytes sha256:d08439b38f0dca3513cc8e846189ba8a4c165d5c4102166f452a4b0c39701777"
     },
     {
       "offset": 4406,
-      "raw": "c60000001801"
+      "raw": "omitted 6 bytes sha256:a32ea801e41a78526f2dd82fba5a3e59aac8a729f8bbd8bc1086971b35e25a1d"
     },
     {
       "offset": 4412,
-      "raw": "12010000b3fa82140000120000c000230000"
+      "raw": "omitted 18 bytes sha256:af53571470cf39135e62c900f80836768ef3f88e9acb6bed6d57ed7033398682"
     },
     {
       "offset": 4430,
-      "raw": "01204f006400"
+      "raw": "omitted 6 bytes sha256:062dc191dfdcb11c53e6a44e1988967d89d1fb73765e4f94016e8298820cb196"
     },
     {
       "offset": 4436,
-      "raw": "01204e006400"
+      "raw": "omitted 6 bytes sha256:8f2b1fd7c49e75b98274274c66b3cd9ba2f770dcb2da668839c466cbd93c85ef"
     }
   ],
   "condition": "shared38 == 1 AND shared29 == 0 AND local24 == 0",
@@ -5054,23 +5054,23 @@
       "commands": [
         {
           "offset": 964,
-          "raw": "091063000300"
+          "raw": "omitted 6 bytes sha256:0b7034e5c51475cc8a78d1eb94caf1315127d2d9b73ef36b96017dfc15cb3ab2"
         },
         {
           "offset": 970,
-          "raw": "020100002600"
+          "raw": "omitted 6 bytes sha256:d7cca7ebb059a9db54ea2c4513ef77f5716e54fc6149c7a0280a152117b19c29"
         },
         {
           "offset": 976,
-          "raw": "021063000500"
+          "raw": "omitted 6 bytes sha256:a470bdfbeaf56291d4746cd3f40291b01c533ee8bbbaa9badfc2c27e89b64d32"
         },
         {
           "offset": 982,
-          "raw": "0810630000000000"
+          "raw": "omitted 8 bytes sha256:bb0287660fbac19f53f925d73efb14661873ab6caffe3677e637483c2cb843f3"
         },
         {
           "offset": 990,
-          "raw": "081063000a000000"
+          "raw": "omitted 8 bytes sha256:25a4b8b498238ea01b5c84960ea41f3acc80e4a0eca625832b5813f02206b869"
         }
       ]
     },
@@ -5091,27 +5091,27 @@
       "commands": [
         {
           "offset": 21180,
-          "raw": "1403ab010104ff5dfa00"
+          "raw": "omitted 10 bytes sha256:c896f6f769b6e0c941b4d2d582b5f35c2599b3280ac5b583f615f06090953765"
         },
         {
           "offset": 21190,
-          "raw": "020100002700"
+          "raw": "omitted 6 bytes sha256:1b87b6eab5425696d0bbb72b7e54090e96e32bcc2c8c3cac52055d5e27c66373"
         },
         {
           "offset": 21196,
-          "raw": "021063000600"
+          "raw": "omitted 6 bytes sha256:81487558186561f491eab693c93badd00e0076d1a830998a409b82a04f793b29"
         },
         {
           "offset": 21202,
-          "raw": "c60000000f01"
+          "raw": "omitted 6 bytes sha256:2300144ef42c4ccdad17df29deff99853d9212bc98667051e435317f9362c023"
         },
         {
           "offset": 21208,
-          "raw": "0810630001000000"
+          "raw": "omitted 8 bytes sha256:b735f129dff6c9dc3c010cdee6f4d61af9027a38b91370c7a14b04d20906ed8c"
         },
         {
           "offset": 21216,
-          "raw": "091063000200"
+          "raw": "omitted 6 bytes sha256:02df9b1b44edeab43a329a0f22b1eea0a6582fc8ad06739953ff47f5f69456f3"
         }
       ]
     },
@@ -5132,18 +5132,18 @@
       "commands": [
         {
           "offset": 1004,
-          "raw": "c60000000f01"
+          "raw": "omitted 6 bytes sha256:2300144ef42c4ccdad17df29deff99853d9212bc98667051e435317f9362c023"
         }
       ]
     }
   ],
   "dialogue_emission": {
-    "command": "0903e6001500",
+    "command": "omitted 6 bytes sha256:cb913e212720e988fc61d9b3835fffdc0820fd92e6d9f01f41d37d19aa17292e",
     "prop": 230,
     "slot": 376932,
     "target": 742472,
     "event": 20,
-    "listing_hex": "0606be031400041324000606e603140004132b000200",
+    "listing_hex": "omitted 22 bytes sha256:82b886bde4337ee097e276a073a3b035d61c384f3c430d570c1caa4fc107e3d0",
     "code": [
       {
         "start": 741568,

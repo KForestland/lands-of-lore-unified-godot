@@ -1,6 +1,13 @@
 {
- "name": "act1_recovery_cave_test",
- "suite": "core",
- "mode": "rendered",
- "order": 254
+  "name": "act1_recovery_cave_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 254,
+  "teleports": 1,
+  "test_aids": 3,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "a7aab2e4b4cae906850f109fb12195d80f63589581832a65dab3a5d350eafe92"
+  },
+  "count_method": "Audited source sites (K82), not executions. Setup checkpoints/VM initialization, any explicit legacy packet calls/artifact exports and clock probes are disclosed scope; real slot keys are retained for ordinary-play acceptance."
 }

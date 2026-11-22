@@ -1,6 +1,19 @@
 {
- "name": "item_definitions_test",
- "suite": "core",
- "mode": "headless",
- "order": 3
+  "name": "item_definitions_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 3,
+  "teleports": 0,
+  "test_aids": 6,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "0c536e31d2efc42585c6f840c6e5da51d72ff4ed4f9a03684c23d92aca504329"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 6,
+  "count_method": "Audited source sites, not executions."
 }

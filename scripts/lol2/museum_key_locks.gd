@@ -1,4 +1,5 @@
 extends Node3D
+const Grants=preload("res://scripts/lol2/item_grants.gd")
 ## Live owner for the 17 Museum Sk-key locks, the sconces they light and the movable55 SS1 panel.
 ## Source records: scripts/lol2/museum_key_locks_source.json. Saved as checkpoint "museum_key_locks".
 ## Modern adapters: E with the shared museum reach/aim/occlusion test, key/flame/panel markers, and
@@ -92,8 +93,10 @@ func setup(owner: Node3D, saved: Variant = null) -> String:
 		marker.position = aim_point(id)
 		add_child(marker)
 		key_markers[id] = marker
-	# Template36 lock holders are not in the prop pack. A small plate keeps an empty niche aimable
-	# after the key sprite hides. No collision, so the reach ray is unchanged.
+	# Template36 lock holders are not in the prop pack. The flat plate was an empty-niche marker.
+	# Owner 12-12-18, against YouTube 007: that plate is the orange square above the framed triangle,
+	# and the wall already draws the panel. The node stays, with no collision, and it does not draw.
+	# Reach still uses aim_point.
 	var plate_material := StandardMaterial3D.new()
 	plate_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	plate_material.albedo_color = Color(0.62, 0.48, 0.22)
@@ -107,6 +110,7 @@ func setup(owner: Node3D, saved: Variant = null) -> String:
 		plate_quad.center_offset = Vector3(0, 8, 0)
 		plate.mesh = plate_quad
 		plate.material_override = plate_material
+		plate.visible = false
 		var place: Array = source.locks[str(id)].position
 		plate.position = Vector3(float(place[0]), float(place[1]), float(place[2]))
 		add_child(plate)
@@ -355,7 +359,7 @@ func take_hint() -> String:
 func use() -> bool:
 	var t := target()
 	if t.is_empty(): return false
-	var inventory := {"collected":host.carried_collected,"hand":host.hand_item}
+	var inventory := {"collected":Grants.pack(host),"hand":host.hand_item}
 	if t.has("sconce") and t.group == "recharge":
 		# op2 0x18 takes the held crystal; op3 gives it back rekindled (same carried id, 1 charge).
 		if not host.item_effects.recharge_crystal(host.hand_item): return false

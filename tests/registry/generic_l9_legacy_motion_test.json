@@ -1,0 +1,117 @@
+{
+  "name": "generic_l9_legacy_motion_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1349,
+  "needs": {
+    "note": "Real L9 binder/body, isolated old-save motion and VM target vectors, held root/binder/NPC clocks, direct codec use. Not input or earned-walk evidence."
+  },
+  "additional_fixture_context_patterns": [
+    {
+      "kind": "native_motion_codec_vector",
+      "pattern": "\\.native\\.set_field\\("
+    },
+    {
+      "kind": "direct_codec_use_vector",
+      "pattern": "driver\\.use_movable\\("
+    },
+    {
+      "kind": "source_command_codec_vector",
+      "pattern": "\\.native\\.execute_group\\("
+    },
+    {
+      "kind": "common_checkpoint_vector",
+      "pattern": "\\.snapshot_host\\("
+    }
+  ],
+  "teleports": 0,
+  "test_aids": 6,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "5fc027feaf7d087536352886ca58db20558d7e3b2dad0769896099327db45692"
+  },
+  "context_aid_source_sites": {
+    "count": 11,
+    "sites": [
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 8,
+        "column": 74,
+        "kind": "exit_seed_fixture",
+        "source": "var scene=load(\"res://scenes/lol2/dragon_level.tscn\").instantiate();scene.adapter_exit_seeds=false"
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 22,
+        "column": 12,
+        "kind": "native_motion_codec_vector",
+        "source": "progression.native.set_field(\"movable:55\",Rules.TRAVEL,0) # Actual old source writes only the close target0."
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 39,
+        "column": 8,
+        "kind": "direct_codec_use_vector",
+        "source": "assert(driver.use_movable(55,32.0),\"Direct codec use vector stops closing motion\")"
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 51,
+        "column": 12,
+        "kind": "synthetic_vm_group_fixture",
+        "source": "progression.native.groups[codec_key]=instructions.duplicate(true)"
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 52,
+        "column": 35,
+        "kind": "native_group_vector",
+        "source": "var command:Dictionary=progression.native.execute_group(1,65535)"
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 52,
+        "column": 35,
+        "kind": "source_command_codec_vector",
+        "source": "var command:Dictionary=progression.native.execute_group(1,65535)"
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 68,
+        "column": 12,
+        "kind": "native_motion_codec_vector",
+        "source": "progression.native.set_field(\"movable:58\",Rules.TRAVEL,153)"
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 71,
+        "column": 71,
+        "kind": "common_checkpoint_vector",
+        "source": "var through_save:Dictionary=preload(\"res://scripts/lol2/act2_save.gd\").snapshot_host(scene)"
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 83,
+        "column": 12,
+        "kind": "synthetic_vm_group_fixture",
+        "source": "progression.native.groups[codec_key]=instructions58.duplicate(true)"
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 84,
+        "column": 19,
+        "kind": "native_group_vector",
+        "source": "assert(progression.native.execute_group(1,65535).status==\"ran\")"
+      },
+      {
+        "path": "tests/generic_l9_legacy_motion_test.gd",
+        "line": 84,
+        "column": 19,
+        "kind": "source_command_codec_vector",
+        "source": "assert(progression.native.execute_group(1,65535).status==\"ran\")"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 17
+}

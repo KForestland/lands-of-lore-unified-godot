@@ -1,0 +1,32 @@
+{
+  "name": "generic_l9_rollout_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1349,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Four supplied grounded component stands; held root/NPC clocks, real mouse/E/left/F5/F9, C15 checkpoint. Not an earned route. Source-site counts include conservative inherited helpers."
+  },
+  "teleports": 1,
+  "test_aids": 11,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "ac3ee1085175144c27d284759e34d60eac39c397ac5aa5ee4d10714fbe1c4b7b"
+  },
+  "context_aid_source_sites": {
+    "count": 1,
+    "sites": [
+      {
+        "path": "tests/generic_prop_input_test.gd",
+        "line": 26,
+        "column": 37,
+        "kind": "exit_seed_fixture",
+        "source": "scene=load(file).instantiate();scene.adapter_exit_seeds=false"
+      }
+    ],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 12
+}

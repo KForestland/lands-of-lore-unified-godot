@@ -1,6 +1,19 @@
 {
- "name": "item_catalog_test",
- "suite": "core",
- "mode": "headless",
- "order": 2
+  "name": "item_catalog_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 2,
+  "teleports": 0,
+  "test_aids": 1,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "6446e347b25320816dd574af106d9fe84ce1be444072af2294f1bb5cc32653ad"
+  },
+  "context_aid_source_sites": {
+    "count": 0,
+    "sites": [],
+    "note": "Conservative source-site fixture contexts, not execution counts or an earned-walk claim."
+  },
+  "total_disclosed_test_aid_source_sites": 1,
+  "count_method": "Audited source sites, not executions."
 }

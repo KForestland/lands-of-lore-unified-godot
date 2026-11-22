@@ -28,238 +28,238 @@
    "host": "0xeeedc",
    "meaning": "debug",
    "args": 1,
-   "relocation": "0710300902b85e0900"
+   "relocation": "omitted 9 bytes sha256:33ac0ac9e0f5cbbab5d2caef8b2b01f4ca6b8ce90a58ee26650abfe4ee76abbc"
   },
   "0x11b4": {
    "table_offset": 8,
    "host": "0xeeee0",
    "meaning": "load_shape",
    "args": 1,
-   "relocation": "0710340902bc5e0900"
+   "relocation": "omitted 9 bytes sha256:bc652d91b918214ea8158e42f064f642329c22cb53825b9b48d0ce88871be9c3"
   },
   "0x11b8": {
    "table_offset": 12,
    "host": "0xeef34",
    "meaning": "free_shape",
    "args": 0,
-   "relocation": "0710380902105f0900"
+   "relocation": "omitted 9 bytes sha256:b1aa34e380c2c4b3d5dcddafdd1678460834e5592e0edf62a5df39ff70f3c2e8"
   },
   "0x11bc": {
    "table_offset": 16,
    "host": "0xeef60",
    "meaning": "show_sprite",
    "args": 4,
-   "relocation": "07103c09023c5f0900"
+   "relocation": "omitted 9 bytes sha256:28f2e34d1d08d73824d14594208e7535666f581f0152f5fdf2ec61351cad2a12"
   },
   "0x11c0": {
    "table_offset": 20,
    "host": "0xeefe4",
    "meaning": "hide_sprite",
    "args": 1,
-   "relocation": "0710400902c05f0900"
+   "relocation": "omitted 9 bytes sha256:a37ceee7a42011067abd6d5cc53d2e7db42641f407bab0979446dcb59f0a7eeb"
   },
   "0x11c4": {
    "table_offset": 24,
    "host": "0xef028",
    "meaning": "hotspot",
    "args": 5,
-   "relocation": "071044090204600900"
+   "relocation": "omitted 9 bytes sha256:e944b079cc27c2e0a36b0094a5bf679131781d7c91b36506fa223d76b6f81264"
   },
   "0x11c8": {
    "table_offset": 28,
    "host": "0xef07c",
    "meaning": "remove_hotspot",
    "args": 1,
-   "relocation": "071048090258600900"
+   "relocation": "omitted 9 bytes sha256:ec02166f87b0fc227f1f4d82cc40c2c4d0d9cf87bb2d02392f30a86bb35bc25d"
   },
   "0x11cc": {
    "table_offset": 32,
    "host": "0xef0b4",
    "meaning": "npc",
    "args": 6,
-   "relocation": "07104c090290600900"
+   "relocation": "omitted 9 bytes sha256:bd9d351877ad423f37a95b242e7ab84d972d7db34a334a8122ac895b0fa40a38"
   },
   "0x11d0": {
    "table_offset": 36,
    "host": "0xef154",
    "meaning": "stop_npc",
    "args": 1,
-   "relocation": "071050090230610900"
+   "relocation": "omitted 9 bytes sha256:9677ae5b267ea4047e06214713bd8f5a7c3287a3f560228aff248535cdbee329"
   },
   "0x11d4": {
    "table_offset": 40,
    "host": "0xef1c4",
    "meaning": "start_loop",
    "args": 3,
-   "relocation": "0710540902a0610900"
+   "relocation": "omitted 9 bytes sha256:38cbf8aa9e40d9c86ccc72832cff86a98b845968804adab8d8bb2da66227a2d7"
   },
   "0x11d8": {
    "table_offset": 44,
    "host": "0xef1e8",
    "meaning": "stop_loop",
    "args": 3,
-   "relocation": "0710580902c4610900"
+   "relocation": "omitted 9 bytes sha256:bb8fb3ac4b55cfc506cb156724b8e8351a63419ceefcb1727cb74d58e123f8ab"
   },
   "0x11ec": {
    "table_offset": 64,
    "host": "0xef2b8",
    "meaning": "give_item",
    "args": 2,
-   "relocation": "07106c090294620900"
+   "relocation": "omitted 9 bytes sha256:6e8aad4e842eef70255d049963c7edcef3ffaaf168c1905b5ba1f520e912dcb5"
   },
   "0x11f0": {
    "table_offset": 68,
    "host": "0xef304",
    "meaning": "consume_held",
    "args": 0,
-   "relocation": "0710700902e0620900"
+   "relocation": "omitted 9 bytes sha256:d545ce36cb8c90725cc05103645903307727c28ceb17e1b292f46555d2cf44a8"
   },
   "0x11f4": {
    "table_offset": 72,
    "host": "0xef32c",
    "meaning": "set_flag",
    "args": 1,
-   "relocation": "071074090208630900"
+   "relocation": "omitted 9 bytes sha256:c055a7474b03675cf41df9d1c5c0faac36820dd6448142cf02e2739568cdf8bc"
   },
   "0x11fc": {
    "table_offset": 80,
    "host": "0xef380",
    "meaning": "get_flag",
    "args": 1,
-   "relocation": "07107c09025c630900"
+   "relocation": "omitted 9 bytes sha256:979708bb0eed3e29691a6a87114ab976e179fe81c8cd229815219af3846d6846"
   },
   "0x1200": {
    "table_offset": 84,
    "host": "0xee784",
    "meaning": "movie",
    "args": 3,
-   "relocation": "071080090260570900"
+   "relocation": "omitted 9 bytes sha256:0ad022758baf63591ff285b3d0ddfb77210c250bf2595d99977311fc853e4734"
   },
   "0x1214": {
    "table_offset": 100,
    "host": "0xef44c",
    "meaning": "mana_debit",
    "args": 1,
-   "relocation": "071090090228640900"
+   "relocation": "omitted 9 bytes sha256:f7cea99773d65baae5c711eb4d6883c2040f201cd897875e537011888e4bfe17"
   },
   "0x1218": {
    "table_offset": 104,
    "host": "0xef464",
    "meaning": "exit_room",
    "args": 0,
-   "relocation": "071094090240640900"
+   "relocation": "omitted 9 bytes sha256:4bbcc42e3f0c9612aa20e4c506341b48b6f4a6ee2e25cea86d326b1a801198b6"
   },
   "0x121c": {
    "table_offset": 108,
    "host": "0xef484",
    "meaning": "inventory_has",
    "args": 1,
-   "relocation": "071098090260640900"
+   "relocation": "omitted 9 bytes sha256:1895c5eaaa3c5b7d3d715f2c1ad9056669503201ae1cd49fd886c714611f1825"
   },
   "0x1220": {
    "table_offset": 112,
    "host": "0xef4b0",
    "meaning": "get_global",
    "args": 1,
-   "relocation": "07109c09028c640900"
+   "relocation": "omitted 9 bytes sha256:29d706a8b3a87fb224518b84cfa6308fd724caae6045adc11c0210ca3547d76c"
   },
   "0x1224": {
    "table_offset": 116,
    "host": "0xef4c0",
    "meaning": "holding_any",
    "args": 0,
-   "relocation": "0710a009029c640900"
+   "relocation": "omitted 9 bytes sha256:ef9d58454736d49b40b6a11e80c4fc361c97abb144295d3b621b65b8b724bf8c"
   },
   "0x1230": {
    "table_offset": 128,
    "host": "0xef508",
    "meaning": "arm_timer",
    "args": 1,
-   "relocation": "0710ac0902e4640900"
+   "relocation": "omitted 9 bytes sha256:4147624213fddabda97fe7adfb92104e3aa00fee7ab61499cc765862dea77572"
   },
   "0x1234": {
    "table_offset": 132,
    "host": "0xef530",
    "meaning": "stop_timer",
    "args": 0,
-   "relocation": "0710b009020c650900"
+   "relocation": "omitted 9 bytes sha256:6f1b25629cb069a07f0dd0e7f4290589612f9fcc9ca7272c74fe446f191ee004"
   },
   "0x123c": {
    "table_offset": 140,
    "host": "0xef590",
    "meaning": "held_is",
    "args": 1,
-   "relocation": "0710b809026c650900"
+   "relocation": "omitted 9 bytes sha256:0c88a51d6783d4ea09a64b58bb468cec173c786f053b93f3752e2a094ac90c50"
   },
   "0x124c": {
    "table_offset": 156,
    "host": "0xef640",
    "meaning": "set_global",
    "args": 2,
-   "relocation": "0710c809021c660900"
+   "relocation": "omitted 9 bytes sha256:868a9fd03c1fdfa02f1b7444d76ba6a2fde3eb479b8749211a9d39069c56b7fd"
   },
   "0x126c": {
    "table_offset": 188,
    "host": "0xef704",
    "meaning": "load_room",
    "args": 3,
-   "relocation": "0710e80902e0660900"
+   "relocation": "omitted 9 bytes sha256:e82608a892ecf7d992d976110e7adabf430a74864ec0f578a84892168d7dbdaa"
   },
   "0x12ac": {
    "table_offset": 252,
    "host": "0xf133c",
    "meaning": "quip",
    "args": 1,
-   "relocation": "0710280a0218830900"
+   "relocation": "omitted 9 bytes sha256:040f5ca684d889f86886f7f3b7e8a71816f4f03540c96c9e268d029e238e5221"
   },
   "0x12b0": {
    "table_offset": 256,
    "host": "0xf14cc",
    "meaning": "reset_trigger_bits",
    "args": 0,
-   "relocation": "07102c0a02a8840900"
+   "relocation": "omitted 9 bytes sha256:e8ca629da493f9e4ab01afcca7b2d4fe3c1a95dd3e53f10cca2e4ff807e0d3ba"
   },
   "0x12c4": {
    "table_offset": 276,
    "host": "0xf1564",
    "meaning": "cursor_show",
    "args": 0,
-   "relocation": "0710400a0240850900"
+   "relocation": "omitted 9 bytes sha256:f677fb51ee5327c51612fe2c843f6b8b7d9ed5c073bc7a7f5a1983a5b93af363"
   },
   "0x12c8": {
    "table_offset": 280,
    "host": "0xf1550",
    "meaning": "cursor_hide",
    "args": 0,
-   "relocation": "0710440a022c850900"
+   "relocation": "omitted 9 bytes sha256:25641114b577a4aa15a72396d35784f10b192e1fa14e6f3dd131b72bd8e64358"
   },
   "0x12cc": {
    "table_offset": 284,
    "host": "0xeed64",
    "meaning": "movie_flags",
    "args": 4,
-   "relocation": "0710480a02405d0900"
+   "relocation": "omitted 9 bytes sha256:a90560d05f80dbc7dc21d8e7d3ad2a513ade1ecddc32a7c31e6892021f80165e"
   },
   "0x12d4": {
    "table_offset": 288,
    "host": "0xf1574",
    "meaning": "award_fighting",
    "args": 1,
-   "relocation": "07104c0a0250850900"
+   "relocation": "omitted 9 bytes sha256:61f78bf43fca9c7c2da75f80bf9b85e2b90cd362a673ac53536bfbab0c0ab58e"
   },
   "0x12e8": {
    "table_offset": 312,
    "host": "0xf1654",
    "meaning": "ambient_start",
    "args": 2,
-   "relocation": "0710640a0230860900"
+   "relocation": "omitted 9 bytes sha256:2796d850b1b83bb14031ff76bdd64963feca14e9217a7dab1fa15ff4d43ca17c"
   },
   "0x12ec": {
    "table_offset": 316,
    "host": "0xf16d8",
    "meaning": "ambient_stop",
    "args": 2,
-   "relocation": "0710680a02b4860900"
+   "relocation": "omitted 9 bytes sha256:29526a39a58a98c88f26c6f33c1b65b73e66aba7a94a64b82082585013a8e230"
   }
  },
  "router": {

@@ -1,0 +1,17 @@
+{
+  "name": "playtest_checkpoint_adapter_test",
+  "suite": "core",
+  "mode": "headless",
+  "order": 1343,
+  "needs": {
+    "chain": "Private profile driver: sol_lane/c15_playtest_starts_20261111/private_case.py",
+    "note": "Synthetic validation and health-copy unit probes, not earned checkpoint content; one ordinary slot control."
+  },
+  "count_method": "Audited source sites (K82), not executions. Load/UI tests, not new earned walks; post-apply clocks/private autosave held. Producer aids for the original immutable checkpoints are disclosed separately in the manifest.",
+  "teleports": 0,
+  "test_aids": 4,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "74b9c5ef0b28eaf4cfe87c967cffd413eca62ddac6615278243dc98cd1540bd9"
+  }
+}

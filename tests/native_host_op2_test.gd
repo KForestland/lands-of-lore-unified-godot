@@ -56,6 +56,7 @@ func run() -> void:
 	check(reason(one(host, "020100003900")).contains("opcode2_arm57 off"), "arm 57 refuses with opcode2_arm57 off")
 	check(reason(one(host, "0d02390006000000")).contains("+0xA8"), "opcode 13 actor slot 6 refuses while +0xA8 is not known and the adapter is off")
 	check(reason(one(host, "020100001100")).contains("arm not decoded"), "arm 0x11 stays refused")
+	check(reason(one(host, "020100000000")).contains("opcode2_arm0_clear off"), "arm 0 refuses with opcode2_arm0_clear off while the bit is unknown")
 	# --- +0xA8 known: 0x0F skips the store (PROVEN), another value stores PROVEN without the adapter.
 	host = fresh("L7_DH")
 	host.set_adapters_enabled(false)
@@ -88,6 +89,41 @@ func run() -> void:
 	host = fresh("L1_DC")
 	r = host.execute_group(1, 10608)
 	check(str(r.status) == "ran" and host.field(O, "bit_0x16_0x01") == 1, "L1 s1:10608 (arm 57, movie 35, opcode 16) runs (%s)" % reason(r))
+	# Arm 0: a known clear bit stores nothing and names no adapter. A known set bit refuses. An unknown bit uses the adapter.
+	host = fresh("L20_BB")
+	r = one(host, "020100000000")
+	check(str(r.status) == "ran" and r.adapters.has("opcode2_arm0_clear") and host.field(O, "bit_0x227_0x40") == -1, "unknown bit 0x40: arm 0 returns and records the adapter (%s)" % reason(r))
+	host.set_field(O, "bit_0x227_0x40", 0)
+	r = one(host, "020100000000", 970001)
+	check(str(r.status) == "ran" and not r.adapters.has("opcode2_arm0_clear"), "a clear bit returns with no adapter (%s)" % [r.adapters])
+	host.set_field(O, "bit_0x227_0x40", 1)
+	r = one(host, "020100000000", 970002)
+	check(str(r.status) == "unhosted" and reason(r).contains("0x7555C"), "a set bit refuses the four unentered calls (%s)" % reason(r))
+	var arm0_count: int = 0
+	var arm0_ran: Array[String] = []
+	var arm0_posed: Array[String] = []
+	for area_name in ["L1_DC", "L4_HJ", "L5_HC", "L8_SJ", "L20_BB"]:
+		var scan = fresh(area_name, -1)
+		for key in scan.groups:
+			var hit: bool = false
+			for command in scan.groups[key]:
+				var bytes: PackedByteArray = command.bytes
+				if bytes.size() >= 5 and int(bytes[0]) == 2 and int(bytes[4]) == 0:
+					hit = true
+					arm0_count += 1
+			if not hit:
+				continue
+			var parts: PackedStringArray = str(key).split(":")
+			var scanned: Dictionary = scan.execute_group(int(str(parts[0]).substr(1)), int(parts[1]))
+			if str(scanned.status) == "ran":
+				arm0_ran.append(area_name + " " + str(key))
+			for effect in scanned.get("effects", []):
+				if str(effect.get("type", "")) == "player_pose":
+					arm0_posed.append(area_name + " " + str(key))
+			scan.reset_state()
+	check(arm0_count == 28, "opcode 2 arm 0 is 28 commands (%d)" % arm0_count)
+	check(arm0_ran == ["L5_HC s1:5808", "L8_SJ s1:8162", "L20_BB s1:770"], "arm 0 lets three groups run (%s)" % [arm0_ran])
+	check(arm0_posed == ["L20_BB s1:770"], "only the birth group poses (%s)" % [arm0_posed])
 	print("Native host opcode 2 arms: %d failures" % failures)
 	if failures == 0: print("PASS native host op2: arms 0x26/0x27/5/0x0C/0x0B/57 on the 0x22574 object and opcode-13 actor slots 6/10 hosted on adapters; L7 14102 and 14234 run whole, L4 8474 / L8 1498 / L1 10608 run; arm 6 and the other opcode-13 slots refused; 0x223D4 gate honoured")
 	quit(0 if failures == 0 else 1)

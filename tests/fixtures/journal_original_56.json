@@ -1,0 +1,249 @@
+{
+  "head": "de0cbb6e94beeeaa50d8161203be71a62d057536",
+  "source_sha256": {
+    "scripts/lol2/my_journal.gd": "c5148b0c3c9d311fc58662b31072ff6a59a34fb5ff7d211f550afd991e1a4d01",
+    "scripts/lol2/jungle_village_state.gd": "2af78447fb1eb0a50e42026bfc4ae2d3aeaa6bf3be4f9baaffb2ac73552ea54e",
+    "scripts/lol2/monastery_quest_state.gd": "edfb356270c307b68c545b704e860929c508b2bcc1778efb6eedc74d0dcc9385",
+    "scripts/lol2/thieves_den_state.gd": "73eefe9e67e3ec0a5d29ce44d653ee5ea0be4e00c9b67b762007c51dae156aa0",
+    "scripts/lol2/weapon_shop_state.gd": "408799f7470d6b60cfc18618f97f5e27ab58315221e344715c33d51bc21b72de",
+    "scripts/lol2/museum_long_arm_state.gd": "114fbd771f4b00b770ed7063974a1bb6201f527c66f13f5f2116b2fc140b55f8",
+    "scripts/lol2/museum_torches.gd": "f73ff32b64b3f9c4b513f49af82d5f1c387cddc6f72b13dacaa8a1eeb733fd14",
+    "scripts/lol2/l8_larkhon_state.gd": "e2b899caf03294c5658a059c89245e2e3dc5196d2aaa4b95dcb1c951492b7872",
+    "scripts/lol2/l8_tree.gd": "b7d36ac7beae0e9863068b581ede17abe4fdf7e3e651948c019a617404c6afe2",
+    "scripts/lol2/l8_village_hints.gd": "2735c5d4b365be9b8331c639f57fe8d02bc1b240b377f132d073a12f2dcf2d14",
+    "scripts/lol2/l10_journal_hints.gd": "8f7ae29ed44f4ef9a25ee33ec8de9588fb40c9d498cac8a26bf908f369803197",
+    "scripts/lol2/l9_journal_hints.gd": "07123ad8af2dcc7e306b6ec3c99505f192ea1289bd0db94ee59fe2cf359ef35b",
+    "scripts/lol2/l8_tribe_dawn_hints.gd": "b20b769bc1e82660486785b0ea594e372a255edea599443b436eea5aa14d0c75",
+    "scripts/lol2/l13_journal_hints.gd": "46e640d9b4de1f6d0dc313dad73c78ab8eb5b96e0247c9b7f7ac59864c2bf110",
+    "scripts/lol2/l14_journal_hints.gd": "8ef4eba30fad9fab96cafb00d73a4c3d7a5912aec85aa9a0279fba810fa5aa69",
+    "scripts/lol2/l16_journal_hints.gd": "d130a6a728b3fd6e804bafe77c8a52955f829bf02355eb698149b162ce1a0318",
+    "scripts/lol2/act1_journal_hints.gd": "c7453aa211e68edebe196b0bb99e95011527ce1bd8b2347b94ff90fe2136a5ce",
+    "scripts/lol2/act3_journal_hints.gd": "6ee1dd8e79c3b73c181870fff8d226b1ce78c802aae61e9e94e75390ecdd1508"
+  },
+  "ids": {
+    "gate_closed_before_shalla": {
+      "source": "scripts/lol2/jungle_village_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "tavern_after_farewell": {
+      "source": "scripts/lol2/monastery_quest_state.gd",
+      "constant": "CAN_JOURNAL_HINTS"
+    },
+    "kelsrick_attacked_then_hut": {
+      "source": "scripts/lol2/monastery_quest_state.gd",
+      "constant": "CHUT_JOURNAL_HINTS"
+    },
+    "stones": {
+      "source": "scripts/lol2/monastery_quest_state.gd",
+      "constant": "CHUT_JOURNAL_HINTS"
+    },
+    "no_confidante_yet": {
+      "source": "scripts/lol2/thieves_den_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "hut_smoked_before_password": {
+      "source": "scripts/lol2/thieves_den_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "password_known_den_unfound": {
+      "source": "scripts/lol2/thieves_den_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "kelsrick_must_die_quietly": {
+      "source": "scripts/lol2/thieves_den_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "village_hostile_gate_shut": {
+      "source": "scripts/lol2/thieves_den_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "firestorm_wanted": {
+      "source": "scripts/lol2/thieves_den_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "thohan_sword_broken": {
+      "source": "scripts/lol2/weapon_shop_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "long_arm_before_passage": {
+      "source": "scripts/lol2/museum_long_arm_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "pilot_spark_before_plate": {
+      "source": "scripts/lol2/museum_torches.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "larkhon_must_sleep": {
+      "source": "scripts/lol2/l8_larkhon_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "larkhon_join_tribe": {
+      "source": "scripts/lol2/l8_larkhon_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "larkhon_ask_shaman": {
+      "source": "scripts/lol2/l8_larkhon_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "larkhon_serum_needs_leaf": {
+      "source": "scripts/lol2/l8_larkhon_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "larkhon_vapors_unactivated": {
+      "source": "scripts/lol2/l8_larkhon_state.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "tree_torches_unlit": {
+      "source": "scripts/lol2/l8_tree.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l8_blade_for_daniel": {
+      "source": "scripts/lol2/l8_village_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l8_see_temple_first": {
+      "source": "scripts/lol2/l8_village_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l8_show_guard_blade": {
+      "source": "scripts/lol2/l8_village_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l8_shaman_cemetery_mark": {
+      "source": "scripts/lol2/l8_village_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l8_guard_wants_blade_back": {
+      "source": "scripts/lol2/l8_village_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l8_cemetery_gate_east": {
+      "source": "scripts/lol2/l8_village_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l8_leaves_for_the_tribe": {
+      "source": "scripts/lol2/l8_village_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l10_fence_tuck": {
+      "source": "scripts/lol2/l10_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l10_silverleaf_grows": {
+      "source": "scripts/lol2/l10_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l10_tomb_oil": {
+      "source": "scripts/lol2/l10_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l10_emperor_door": {
+      "source": "scripts/lol2/l10_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l10_catacomb_braziers": {
+      "source": "scripts/lol2/l10_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l9_rotten_rail": {
+      "source": "scripts/lol2/l9_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l9_flood_table": {
+      "source": "scripts/lol2/l9_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l9_statue_human": {
+      "source": "scripts/lol2/l9_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l9_flood_late": {
+      "source": "scripts/lol2/l9_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l9_mirror_jungle": {
+      "source": "scripts/lol2/l9_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l8_dawn_sends_to_emperor": {
+      "source": "scripts/lol2/l8_tribe_dawn_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l8_not_initiated": {
+      "source": "scripts/lol2/l8_tribe_dawn_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l10_trees_need_dawn": {
+      "source": "scripts/lol2/l8_tribe_dawn_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l12_claw_arrival": {
+      "source": "scripts/lol2/l13_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l13_citadel_sealed": {
+      "source": "scripts/lol2/l13_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l13_dreamstone": {
+      "source": "scripts/lol2/l13_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l14_scale_bowls": {
+      "source": "scripts/lol2/l14_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l14_boulder_side": {
+      "source": "scripts/lol2/l14_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l14_hopper_bodies": {
+      "source": "scripts/lol2/l14_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l14_chalice": {
+      "source": "scripts/lol2/l14_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l16_hourglass_leaf": {
+      "source": "scripts/lol2/l16_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l16_one_tower": {
+      "source": "scripts/lol2/l16_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "hive_flute_at_pit": {
+      "source": "scripts/lol2/act1_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "jungle_river_drown": {
+      "source": "scripts/lol2/act1_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l16_south_fountain": {
+      "source": "scripts/lol2/act3_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l17_cavern_exit": {
+      "source": "scripts/lol2/act3_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l19_horn_keep": {
+      "source": "scripts/lol2/act3_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l19_sewer_cross": {
+      "source": "scripts/lol2/act3_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l19_ghostly_heads": {
+      "source": "scripts/lol2/act3_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    },
+    "l19_curse_mother": {
+      "source": "scripts/lol2/act3_journal_hints.gd",
+      "constant": "JOURNAL_HINTS"
+    }
+  }
+}

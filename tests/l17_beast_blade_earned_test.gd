@@ -56,8 +56,9 @@ func run():
 	scene.player_form = 0
 	var before: Vector3 = scene.player.position
 	await key(KEY_E)
-	var cut: bool = bool(blade.state().cut) and blade.SCENE_NAME == "hw01.vqa" and not blade.plays_movie()
-	if not check(cut, "Human with a blade records hw01.vqa and does not play it"):
+	var card: Label = blade.find_child("Stage", true, false) as Label
+	var cut: bool = bool(blade.state().cut) and blade.SCENE_NAME == "hw01.vqa" and blade.plays_movie() and not blade.IN_MOVIE_TABLE and card != null and "red strands" in card.text
+	if not check(cut, "Human with a blade shows the hw01.vqa card"):
 		await stop(scene, 1); return
 	if not check(scene.player.position.distance_to(before) < 1.0 and not blade.relocates_player(), "Luther stays on the west edge"):
 		await stop(scene, 1); return
@@ -70,5 +71,5 @@ func run():
 	await process_frame
 	if not check(bool(blade.state().cut) and blade.STRAND_ID == -1, "save keeps the cut and the unbound strand"):
 		await stop(scene, 1); return
-	print("PASS earned west-wall blade records hw01.vqa from the cavern save")
+	print("PASS earned west-wall blade shows the hw01.vqa card and Luther stays")
 	await stop(scene, 0)

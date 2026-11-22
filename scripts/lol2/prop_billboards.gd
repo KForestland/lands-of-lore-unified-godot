@@ -5,7 +5,9 @@
 ## record -> [MultiMesh, index, position]. Placement rows carry their record; attached type-1 children
 ## (map_primitive_geometry) carry none and are keyed by their pack row below zero (-1 - row).
 
-static func batch(host: Node3D, data: Dictionary, geometry_file: String, prefix: String) -> Dictionary:
+## per_island (act2_map.gd islands mode): one MultiMesh per (material, box, flip, render_sector), listed in the host's
+## cluster_meshes under that sector so portal visibility hides a hidden room's props with its walls.
+static func batch(host: Node3D, data: Dictionary, geometry_file: String, prefix: String, per_island: bool = false) -> Dictionary:
 	var prop_materials: Dictionary = {}
 	var groups: Dictionary = {}
 	var placements: Dictionary = {}
@@ -13,6 +15,7 @@ static func batch(host: Node3D, data: Dictionary, geometry_file: String, prefix:
 		var prop: Dictionary = data.props[row]
 		var flip := int(prop.get("frame_flags", 0)) & 0xC0
 		var key := "%s|%s|%s|%s|%s|%d" % [prop.material, prop.left, prop.right, prop.bottom, prop.top, flip]
+		if per_island: key += "|s%d" % int(prop.get("render_sector", -1))
 		if not groups.has(key): groups[key] = []
 		groups[key].append([prop, int(prop.record) if prop.has("record") else -1 - row])
 	var keys := groups.keys()
@@ -57,6 +60,12 @@ static func batch(host: Node3D, data: Dictionary, geometry_file: String, prefix:
 		node.name = "%s_%d" % [prefix, batches]
 		node.multimesh = multi
 		host.add_child(node)
+		if per_island:
+			var sector := int(first.get("render_sector", -1))
+			var listed: Variant = host.get("cluster_meshes")
+			if sector >= 0 and listed is Dictionary:
+				if not listed.has(sector): listed[sector] = []
+				listed[sector].append(node)
 		batches += 1
 		instances += rows.size()
 	return {"batches": batches, "instances": instances, "placements": placements}

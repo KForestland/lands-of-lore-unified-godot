@@ -1,0 +1,54 @@
+{
+  "name": "generic_l10_switch_reach_test",
+  "suite": "core",
+  "mode": "rendered",
+  "order": 1348,
+  "needs": {
+    "args": [
+      "--demo-interface"
+    ],
+    "note": "Untouched actualF5 at switch61 after realF2/F9 from freshv3 whites-return, realW43/E109/W6/E61 stop. SHA392236a7f7d48d3a09993c87cd0f0ba353d3e9e07d2be83341459550d3bfdc6e. Disclosed checkpoint installation, then actualF2/F9/E61/F5/F9. Wall ray and native handle geometry checks are read-only. No suppliedpose/health/clock/actioncalls; continuation only."
+  },
+  "teleports": 0,
+  "test_aids": 0,
+  "honesty": {
+    "method": "audited-source-sites-v1",
+    "audit_sha256": "51c83b1113ac5b9e2eda87000f77e3c441d345d33e80b56d13f20d53b2d4e052"
+  },
+  "context_aid_source_sites": {
+    "count": 4,
+    "sites": [
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 20,
+        "column": 1,
+        "kind": "private_gate_settings",
+        "source": "gate.settings_path=\"user://tests/generic_l10_gate.cfg\""
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 26,
+        "column": 16,
+        "kind": "private_gate_settings_reset",
+        "source": "if not require(isolated_settings.save(gate.settings_path)==OK,\"Reset private test gate settings before actualF2\"):return false"
+      },
+      {
+        "path": "tests/generic_l10_sitting_test.gd",
+        "line": 29,
+        "column": 1,
+        "kind": "original_copy_fixture",
+        "source": "gate.path_field.text=original"
+      },
+      {
+        "path": "tests/generic_l10_switch_reach_test.gd",
+        "line": 9,
+        "column": 16,
+        "kind": "install_game_written_slot",
+        "source": "if not require(DirAccess.copy_absolute(INPUT,Slots.slot_path(1))==OK,\"Install actual earned standing F5 for realF9\"):return"
+      }
+    ],
+    "note": "Conservative transitive source sites, including overridden methods; not execution counts. Output-only checkpoint copies are excluded."
+  },
+  "total_disclosed_test_aid_source_sites": 4,
+  "count_method": "Audited source sites, not executions. F02 detection plus separately enforced fixture/guard contexts; read-only until.call predicates and Array.insert unit fixtures remain conservatively flagged."
+}
